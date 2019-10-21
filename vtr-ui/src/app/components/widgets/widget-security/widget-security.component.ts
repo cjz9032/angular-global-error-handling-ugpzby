@@ -17,6 +17,7 @@ export class WidgetSecurityComponent implements OnInit {
 	region: string;
 	tooltipsTitle = 'security.landing.securityScoreDepends';
 	tooltips: string[];
+	hover: boolean;
 
 	security = {
 		title: [

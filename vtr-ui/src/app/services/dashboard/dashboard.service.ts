@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -24,7 +24,9 @@ export class DashboardService {
 	public cardContentPositionE: any = {};
 	public cardContentPositionF: any = {};
 
-	constructor(shellService: VantageShellService, commonService: CommonService) {
+	constructor(
+		shellService: VantageShellService,
+		commonService: CommonService) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;

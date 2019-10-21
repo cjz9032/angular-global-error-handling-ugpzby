@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -259,7 +260,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +502,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -884,7 +885,8 @@
                 },
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
-                "seeDetailsLink": "Ver detalhes"
+                "seeDetailsLink": "Ver detalhes",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Energia",
@@ -1033,6 +1035,42 @@
                         "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Detecção automática",
                         "note": "Se a Detecção automática for marcada, seu computador ativará o Modo de energia de avião automaticamente quando detectar um ambiente a bordo de uma aeronave e será desativado quando você sair."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,6 +1360,19 @@
                             "reboot": "REINICIALIZAR",
                             "cancel": "NÃO AGORA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funções de teclas de atalhos para VoIP",
+                        "description": {
+                            "main": "Esse recurso permite atender ou rejeitar uma chamada VoIP pressionando as teclas de atalho do teclado:",
+                            "f10": "F10: atender a chamada",
+                            "f11": "F11: rejeitar ou desligar a chamada"
+                        },
+                        "tooltip": "Atualmente, esse recurso é compatível apenas com o Skype for Business 2016 e o Microsoft Teams 1.0.<br>Para usar o recurso, é necessário baixar e instalar os aplicativos primeiro.",
+                        "hasInstalledAppsDescription": "Selecione o aplicativo no qual deseja usar as teclas de atalho:",
+                        "noInstalledAppsDescription": "Esse recurso é compatível apenas com os aplicativos abaixo: ",
+                        "hasInstalledAppsNote": "Nota: No Microsoft Teams 1.0, a tecla F11 não pode ser usada para desligar a chamada.",
+                        "noInstalledAppsNote": "Nota: Para usar o recurso, é necessário baixar e instalar os aplicativos primeiro."
                     }
                 },
                 "userDefinedKey": {
@@ -1397,6 +1448,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada. No entanto, o momento em que a tela será bloqueada também é afetado pelo cenário real do usuário, a capacidade do sensor e as configurações de tempo limite da tela do Windows. Portanto, sugerimos que você bloqueie imediatamente o sistema antes de sair."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONHECIMENTO FACIAL",
+                        "caption": "Você pode ativar o recurso de reconhecimento facial e permitir acesso à câmera. Essa ferramenta captura sua imagem para reconhecer com precisão sua presença ou detectar quando você deixar seu dispositivo sem vigilância. Esses dados são processados localmente no dispositivo. A Lenovo não acessa nem usa esses dados.",
+                        "checkBox": "Ligar a câmera e ativar esse recurso",
+                        "note": {
+                            "permission": "O Lenovo Vantage não tem acesso à câmera. A função da caixa de seleção não funcionará.",
+                            "privacyMode": "O modo de privacidade da câmera do Lenovo Vantage está ativado. A função da caixa de seleção não funcionará.",
+                            "windowsLink": "Ir para as Configurações do Windows para dar acesso",
+                            "privacyLink": "Ir para o modo de privacidade da câmera para desativá-lo"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1586,6 +1648,7 @@
         "banner": {
             "neverChecked": "Bem-vindo ao uso da Atualização do Sistema.",
             "title": "Um sistema atualizado é um sistema saudável.",
+            "installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR ATUALIZAÇÕES",
@@ -1820,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} oferece proteção básica para seu dispositivo",
-                "unknown": "Desconhecido"
+                "unknown": "Desconhecido",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2644,8 @@
         "attention": "Atenção",
         "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
-        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a."
+        "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a.",
+        "testNotApplicable": "Não aplicável em verificação personalizada"
     },
     "smartPerformance": {
         "title": "Health & Support",

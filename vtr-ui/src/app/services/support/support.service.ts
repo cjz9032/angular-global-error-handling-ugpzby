@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { CommonService } from '../common/common.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -71,6 +71,8 @@ export class SupportService {
 				status: 2,
 				url: this.warrantyNormalUrl
 			};
+
+			if (this.getMachineInfo() === undefined) { return; }
 
 			this.getMachineInfo().then((machineInfo) => {
 				if (machineInfo) {

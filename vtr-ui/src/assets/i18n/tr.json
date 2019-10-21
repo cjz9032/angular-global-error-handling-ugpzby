@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -259,7 +260,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +502,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -884,7 +885,8 @@
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
-                "seeDetailsLink": "Ayrıntıları görün"
+                "seeDetailsLink": "Ayrıntıları görün",
+                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
             },
             "power": {
                 "title": "Güç",
@@ -1033,6 +1035,42 @@
                         "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
                         "checkBoxDesc": "Otomatik algılama",
                         "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
+                    },
+                    "gaugeReset": {
+                        "title": "Battery gauge reset",
+                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "barCode": "Barcode",
+                        "progress": "Progress",
+                        "remaining": "Remaining",
+                        "startTime": "Start time",
+                        "lastReset": "Last reset",
+                        "fullChargeCapacity": "Full charge capacity",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+                        "FCCText": "From {{before}} Wh to {{after}} Wh",
+                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Complete. Successful reset.",
+                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
+                            "ERROR_LOGOFF": "Incomplete. User logged off.",
+                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                        },
+                        "popup": {
+                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
+                            "continue": "Continue",
+                            "cancel": "Cancel",
+                            "yes": "Yes",
+                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1322,6 +1360,19 @@
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP Kısayol Tuşları İşlevleri",
+                        "description": {
+                            "main": "Bu özellik, klavyenizdeki kısayol tuşlarına basarak bir VoIP aramasını yanıtlamanızı veya reddetmenizi sağlar:",
+                            "f10": "F10: aramayı yanıtla",
+                            "f11": "F11: aramayı reddet veya kapat"
+                        },
+                        "tooltip": "Şu anda, bu özellik yalnızca Skype Kurumsal 2016 ve Microsoft Teams 1.0'da desteklenmektedir.<br>Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir.",
+                        "hasInstalledAppsDescription": "Kısayol tuşlarını kullanmak istediğiniz uygulamayı seçin:",
+                        "noInstalledAppsDescription": "Bu özellik yalnızca aşağıdaki uygulamaları desteklemektedir: ",
+                        "hasInstalledAppsNote": "Not: Microsoft Teams 1.0'da F11 tuşu aramayı kapatmak için kullanılamaz.",
+                        "noInstalledAppsNote": "Not: Bu özelliği kullanmak için önce uygulamaları indirip yüklemeniz gerekir."
                     }
                 },
                 "userDefinedKey": {
@@ -1397,6 +1448,17 @@
                             "slow": "Yavaş"
                         },
                         "toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin. Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz."
+                    },
+                    "facialRecognition": {
+                        "title": "YÜZ TANIMA",
+                        "caption": "Yüz tanıma özelliğini etkinleştirebilir ve kameranıza erişmesine izin verebilirsiniz. Bu araç, varlığınızı doğru bir şekilde algılamak veya cihazınızın başından ayrıldığınızı tespit etmek için görüntünüzü yakalar. Bu veriler cihazınızda yerel olarak işlenir. Lenovo bu verilere erişmez ya da onları kullanmaz.",
+                        "checkBox": "Kamerayı açın ve bu özelliği etkinleştirin",
+                        "note": {
+                            "permission": "Lenovo Vantage, Kamera'ya erişemiyor. Onay kutusu işlevsel değildir.",
+                            "privacyMode": "Lenovo Vantage Kamera gizliliği kipi açık. Onay kutusu işlevsel değildir.",
+                            "windowsLink": "Erişim izni vermek için Windows Ayarları bölümüne gidin",
+                            "privacyLink": "Kapatmak için Kamera gizliliği kipi bölümüne gidin"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1586,6 +1648,7 @@
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
             "title": "Güncel bir sistem, sağlıklı sistemdir.",
+            "installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
@@ -1820,7 +1883,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
-                "unknown": "Bilinmiyor"
+                "unknown": "Bilinmiyor",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2644,8 @@
         "attention": "Dikkat",
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
-        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin."
+        "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
+        "testNotApplicable": "Özel tarama için geçerli değildir"
     },
     "smartPerformance": {
         "title": "Health & Support",

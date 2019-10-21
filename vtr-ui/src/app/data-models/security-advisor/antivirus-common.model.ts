@@ -45,7 +45,7 @@ export class AntivirusCommon {
 	}
 
 	launch() {
-		this.antivirus.mcafee.launch();
+		// this.antivirus.launch(); // commented to fix build error
 	}
 
 	private onNotification(notification: AppNotification) {

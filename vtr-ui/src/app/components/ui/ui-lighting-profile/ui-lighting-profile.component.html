@@ -11,12 +11,15 @@
 	<div class="lighting-area">
 		<div class="d-flex justify-content-between">
 			<div class="gaming-device-image d-flex align-items-center">
-				<img src='{{panelImage1}}' class="img-responsive" />
+				<img src='{{panelImage1}}'
+					class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
-				<div *ngIf="!isProfileOff && simpleOrComplex===1" class="light-option one-light only-blink">
+				<div *ngIf="!isProfileOff && simpleOrComplex===1"
+					class="light-option one-light only-blink">
 					<vtr-ui-lighting-single-color (changeSingleColorOption)="changeSingleCoorEffect($event)"
-						[enableBrightCondition1] = "enableBrightCondition" [options]="optionsSingleColor"
+						[enableBrightCondition1] = "enableBrightCondition"
+						[options]="optionsSingleColor"
 						[selectedOptionId]="selectedSingleColorOptionId">
 					</vtr-ui-lighting-single-color>
 				</div>
@@ -26,7 +29,8 @@
 					<p *ngIf="defaultLanguage === 'ar'" dir="rtl">
 						{{'gaming.lightingProfile.profile.text1.title' | translate}}</p>
 				</div>
-				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
+				<div *ngIf="!isProfileOff"
+					class="light-option rgb-color one-light">
 					<div *ngIf="profileRGBFeature===255 || simpleOrComplex===2 || simpleOrComplex===3">
 
 						<h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}} </h3>
@@ -48,17 +52,20 @@
 		</div>
 	</div>
 
-	<div class="lighting-area" *ngIf="profileRGBFeature===255 || simpleOrComplex===3">
+	<div class="lighting-area"
+		*ngIf="profileRGBFeature===255 || simpleOrComplex===3">
 		<div class="d-flex justify-content-between">
 			<div class="gaming-device-image d-flex align-items-center">
-				<img src='{{panelImage2}}' class="img-responsive" />
+				<img src='{{panelImage2}}'
+					class="img-responsive" />
 			</div>
 			<div class="gaming-light-options">
 				<div *ngIf="isProfileOff"
 					 class="light-option lighting-off d-flex justify-content-center align-items-center">
 					<p>{{'gaming.lightingProfile.profile.text1.title' | translate}}</p>
 				</div>
-				<div *ngIf="!isProfileOff" class="light-option rgb-color one-light">
+				<div *ngIf="!isProfileOff"
+					class="light-option rgb-color one-light">
 
 					<h3 class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}}</h3>
 					<vtr-ui-lighting-effect [options]="lightingEffectData.drop[1]" [defaultLang]="defaultLanguage"
@@ -86,5 +93,50 @@
 			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
 			class="link"
 			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming.lightingProfile.lightingnarrator.Customize.title' | translate {{currentProfileId}} gaming.lightingProfile.lightingnarrator.heading.title' | translate" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="set lighting profile  {{currentProfileId}} to default" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="set lighting profile  {{currentProfileId}} to default" href="javascript:void(0);"
+			class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+		<a id="gaming_lighting_setdefault_profile" *ngIf="defaultLanguage === 'ar'" dir="rtl" vtrMetrics
+			[metricsItem]="'lighting_set_to_default'" metricsEvent="featureClick"
+			attr.aria-label="gaming_lighting_setdefault_profile" href="javascript:void(0);" class="link"
+			(click)="setDefaultProfile(currentProfileId)">{{'gaming.lightingProfile.button.default.title' | translate}}</a>
+
 	</div>
 </div>

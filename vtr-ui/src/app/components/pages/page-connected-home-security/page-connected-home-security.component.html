@@ -16,7 +16,8 @@
 									*ngIf="account?.state !== 'local'"
 									[allDevices]="allDevicesInfo"
 									[account]="account"
-									[common]="common">
+									[common]="common"
+									[location]="homeSecurityLocation">
 								</vtr-home-security-after-signup>
 								<vtr-home-security-content *ngIf="account?.state === 'local'"
 									page="homeSecurity"
@@ -111,10 +112,9 @@
 																[ngClass]="{'disable': homeSecurityLocation?.isLoading}"
 																metricsItem="enableLocationSecurityHealth"
 																metricsEvent="featureClick"
-																(click)="dialogService?.openCHSPermissionModal()"
+																(onClick)="dialogService?.openCHSPermissionModal()"
 																[isDisabled]="homeSecurityLocation?.isLoading"
 																linkId="chs-btn-enableLocation"
-																[title]="'security.homeprotection.securityhealth.button' | translate"
 																[label]="'security.homeprotection.securityhealth.button' | translate">
 															</vtr-ui-button>
 														</div>

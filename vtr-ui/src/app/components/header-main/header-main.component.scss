@@ -25,6 +25,12 @@
 		margin: 0;
 		position: relative;
 		z-index: 1;
+		@media #{$black-on-white} {
+			margin: 2rem;
+		}
+		@media #{$white-on-black} {
+			margin: 2rem;
+		}
 	}
 	.back {
 		color: $light;
@@ -35,7 +41,14 @@
 		position: relative;
 		cursor: pointer;
 		z-index: 1;
+		@media #{$black-on-white} {
+			margin: 2px;
+		}
+		@media #{$white-on-black} {
+			margin: 2px;
+		}
 
+		
 		a {
 			color: #ffffff;
 			border-bottom: 0.1rem solid $light;
