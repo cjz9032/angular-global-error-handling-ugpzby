@@ -38,13 +38,11 @@ export class VantageShellService {
 				Phoenix.Features.Dashboard,
 				Phoenix.Features.Device,
 				Phoenix.Features.LenovoId,
-				Phoenix.Features.SecurityAdvisor,
 				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
 				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
-				Phoenix.Features.Permissions,
 				Phoenix.Features.UserGuide,
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
@@ -345,6 +343,9 @@ export class VantageShellService {
 
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		if (this.phoenix) {
+			if (!this.phoenix.securityAdvisor) {
+				this.phoenix.loadFeatures([Phoenix.Features.SecurityAdvisor]);
+			}
 			return this.phoenix.securityAdvisor;
 		}
 		return undefined;
@@ -352,6 +353,9 @@ export class VantageShellService {
 
 	public getPermission(): any {
 		if (this.phoenix) {
+			if (!this.phoenix.permissions) {
+				this.phoenix.loadFeatures([Phoenix.Features.Permissions]);
+			}
 			return this.phoenix.permissions;
 		}
 		return undefined;
@@ -359,6 +363,9 @@ export class VantageShellService {
 
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
 		if (this.phoenix) {
+			if (!this.phoenix.connectedHomeSecurity) {
+				this.phoenix.loadFeatures([Phoenix.Features.ConnectedHomeSecurity]);
+			}
 			return this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
@@ -366,6 +373,9 @@ export class VantageShellService {
 
 	public getDevicePosture(): Phoenix.DevicePosture {
 		if (this.phoenix) {
+			if (!this.phoenix.devicePosture) {
+				this.phoenix.loadFeatures([Phoenix.Features.DevicePosture]);
+			}
 			return this.phoenix.devicePosture;
 		}
 		return undefined;
