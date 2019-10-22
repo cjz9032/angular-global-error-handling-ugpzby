@@ -392,6 +392,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 
 	public async getWifiSecuritySettings() {
 		try {
+			const cacheWifiSecurityState = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+			cacheWifiSecurityState === 'enabled' ? this.quickSettings[2].isChecked = true : this.quickSettings[2].isChecked = false;
 			this.securityAdvisor = this.shellServices.getSecurityAdvisor();
 			this.homeSecurity = this.shellServices.getConnectedHomeSecurity();
 			if (this.deviceService.getMachineInfoSync()) {
@@ -419,6 +421,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
 			}
+
 			if (this.wifiHomeViewModel.isLWSEnabled) {
 				this.quickSettings[2].isChecked = true;
 			} else {
