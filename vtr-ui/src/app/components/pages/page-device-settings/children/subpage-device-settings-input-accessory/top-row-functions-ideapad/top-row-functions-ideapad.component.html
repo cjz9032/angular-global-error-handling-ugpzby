@@ -36,7 +36,10 @@
 							</vtr-ui-rectangle-radio>
 						</div>
 					</div>
-					<p class="text mt-3">
+					<p class="text mt-3" *ngIf="hotkey$ | async">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
+					</p>
+					<p class="text mt-3" *ngIf="fnkey$ | async">
 						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.description' | translate}}
 					</p>
 				</div>

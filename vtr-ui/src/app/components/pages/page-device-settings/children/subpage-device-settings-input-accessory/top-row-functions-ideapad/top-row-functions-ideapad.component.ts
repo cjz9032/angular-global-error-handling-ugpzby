@@ -16,7 +16,6 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	keyType = KeyType;
 	// private capability$;
 	private primaryKey$: Observable<PrimaryKeySetting>;
-	private primaryKeySubscription: Subscription;
 
 	update$ = new Subject<KeyType>();
 	private setSubscription: Subscription;
@@ -54,8 +53,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 						const metricsData = {
 							ItemParent: 'Device.MyDeviceSettings',
 							ItemName: 'TopRowFunctionsIdeapad',
-							Param: {machineFamilyName},
-							Value: KeyType.HOTKEY
+							ItemParam: {machineFamilyName},
+							ItemValue: KeyType.HOTKEY
 						};
 						this.metrics.sendMetrics(metricsData);
 					})
@@ -75,8 +74,8 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 						const metricsData = {
 							ItemParent: 'Device.MyDeviceSettings',
 							ItemName: 'TopRowFunctionsIdeapad',
-							Param: {machineFamilyName},
-							Value: KeyType.FNKEY
+							ItemParam: {machineFamilyName},
+							ItemValue: KeyType.FNKEY
 						};
 						this.metrics.sendMetrics(metricsData);
 					})
@@ -91,22 +90,12 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				throttleTime(100),
 				mergeMap(keyType => this.primaryKey$.pipe(map(primaryKey => keyType === primaryKey.value ? StringBooleanEnum.FALSY : StringBooleanEnum.TRUTHY))),
 				switchMap(stringBoolean => this.topRowFunctionsIdeapadService.setFnLockStatus(stringBoolean)),
-				concatMap(() => this.topRowFunctionsIdeapadService.fnLockStatus),
-				tap(() => {
-
-					const metricsData = {
-						itemParent: 'Device.MyDeviceSettings',
-						itemName: 'FlipToBoot',
-						value: status
-					};
-					this.metrics.sendMetrics(metricsData);
-				})
+				concatMap(() => this.topRowFunctionsIdeapadService.fnLockStatus)
 			)
 			.subscribe(res => this.fnLockSubject$.next(res));
 	}
 
 	ngOnDestroy() {
-		this.primaryKeySubscription.unsubscribe();
 		this.setSubscription.unsubscribe();
 	}
 
