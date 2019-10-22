@@ -128,7 +128,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 		windowClass: 'cancel-modal'
 	});
   }
-  GetScanStatus() {		 
+  GetScanStatus() {
 	if(this.percent!==100)
 	{
 		this.timer = setInterval(() => {
@@ -152,7 +152,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
 				this.toggle(this.activegroup);
 			 }
-			}	
+			}
 		 }, 2000);
 	
 	}

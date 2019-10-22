@@ -16,6 +16,8 @@ export class UiSmartPerformanceComponent implements OnInit {
 	backarrow = '< ';
 	isScanning = false;
 	isScanningCompleted = false;
+	subItems = [];
+	currentSubItemCategory: any = {};
 	@Input() activegroup = "Tune up performance";
 	isSubscribed:any;
 	constructor(
@@ -52,5 +54,13 @@ openSubscribeModal() {
         windowClass: 'subscribe-modal',
 
     });
+}
+updateSubItemsList(subItem) {
+	this.currentSubItemCategory = subItem;
+	if (subItem && subItem.items) {
+		this.subItems = subItem.items;
+	} else {
+		this.subItems = [];
+	}
 }
 }

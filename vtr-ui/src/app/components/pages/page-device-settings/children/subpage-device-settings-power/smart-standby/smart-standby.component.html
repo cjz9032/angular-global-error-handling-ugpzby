@@ -2,13 +2,13 @@
 	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-10 mx-auto container-border">
-		<vtr-container-collapsible 
+		<vtr-container-collapsible
 			[cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
 			[isCollapsed]="false"
 			[collapseLinkId]="'smartrStandby'">
 			<ul class="list-group list-group-flush">
 				<li class="">
-					<vtr-ui-row-switch 
+					<vtr-ui-row-switch
 						[caption]="'device.deviceSettings.power.smartStandby.description' | translate"
 						[isSwitchVisible]=true
 						[isLastChild]=true
@@ -20,42 +20,103 @@
 						[switchId]="'smartStandby'"
 						>
 					</vtr-ui-row-switch>
-					<section *ngIf="smartStandby?.isEnabled">
-						<div class="smart-standby-timer">
+					<div>
+						<div class="auto-set-checkbox">
+							<input id="cb-auto-standby"
+								class="custom-control-input"
+								attr.aria-label="cb-auto-standby"
+								type="checkbox"
+								tabindex="0"
+								name="auto-standby-checkbox-id"
+								[(ngModel)]="checkbox"
+								(ngModelChange)='onCheckboxClicked()'
+								checked="" />
+							<span class="checkmark"></span>
+							<label for="cb-auto-standby">
+								{{ 'device.deviceSettings.power.smartStandby.checkbox' | translate }}
+							</label>
+						</div>
+					</div>
+					<div *ngIf="!checkbox" class="schedule">
 							<h5>
 								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}
 							</h5>
-							<vtr-ui-time-picker 
-								[time]="smartStandbyStartTime"
-								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
-								[id]="'dropcheck1'"
-								[showDropDown]="showDropDown[0]"
-								(setTime)="onSetActiveStartEnd($event, true)"
-								[linkId]="'start'">
-							</vtr-ui-time-picker>
-							<vtr-ui-time-picker [time]="smartStandbyEndTime"
-								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
-								[id]="'dropcheck2'"
-								[showDropDown]="showDropDown[1]"
-								(setTime)="onSetActiveStartEnd($event, false)"
-								[linkId]="'end'">
-							</vtr-ui-time-picker>
-							<div *ngIf="showDiffNote"
-								class="row">
-								<div class="col">
-									<div class="note align-items-center" id="smartStandby-timer-endTimeNote"
-									aria-label="smartStandby-timer-endTimeNote">
-										{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
-									</div>
+						<span>
+							{{smartStandbyService.schedule}}
+						</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span>
+								{{'common.ui.from' | translate}} {{smartStandbyStartTime }}
+								{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
+						</span>
+					</div>
+
+					<div *ngIf="!checkbox" class="click-to-change-collapse">
+						<!-- header -->
+						<div class="collapse-header" (click)="onToggle()">
+							<div>
+								<div *ngIf="isCollapsed"
+									class="collapse-text">
+									<!-- Expand -->
+									{{'common.ui.clickToChange' | translate | uppercase }}
+								</div>
+								<div *ngIf="!isCollapsed"
+									class="collapse-text">
+									<!-- Collapse -->
+									{{'common.ui.collapse' | translate | uppercase }}
 								</div>
 							</div>
-							<vtr-ui-days-picker [days]="smartStandby.daysOfWeekOff"
-								[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading3'"
-								[daysId]="'dropcheck3'"
-								[showDropDown]="showDropDown[2]"
-								(setDays)="onSetDaysOfWeekOff($event)"></vtr-ui-days-picker>
+							<div class="collapse-header-icon">
+								<fa-icon *ngIf="isCollapsed"
+									[icon]="['fal', 'chevron-down']"></fa-icon>
+								<fa-icon *ngIf="!isCollapsed"
+									[icon]="['fal', 'chevron-up']"></fa-icon>
+							</div>
 						</div>
-					</section>
+						<!-- header end -->
+
+						<!-- content start -->
+						<div
+							[ngbCollapse]="isCollapsed">
+							<section *ngIf="smartStandby?.isEnabled">
+								<div class="smart-standby-timer">
+									<vtr-ui-time-picker
+										[time]="smartStandbyStartTime"
+										[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading1'"
+										[id]="'dropcheck1'"
+										[showDropDown]="showDropDown[0]"
+										(setTime)="onSetActiveStartEnd($event, true)"
+										[linkId]="'start'">
+									</vtr-ui-time-picker>
+									<vtr-ui-time-picker [time]="smartStandbyEndTime"
+										[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading2'"
+										[id]="'dropcheck2'"
+										[showDropDown]="showDropDown[1]"
+										(setTime)="onSetActiveStartEnd($event, false)"
+										[linkId]="'end'">
+									</vtr-ui-time-picker>
+									<div *ngIf="showDiffNote"
+										class="row">
+										<div class="col">
+											<div class="note align-items-center" id="smartStandby-timer-endTimeNote"
+											aria-label="smartStandby-timer-endTimeNote">
+												{{ 'device.deviceSettings.power.smartStandby.timer.endTimeNote' | translate }}
+											</div>
+										</div>
+									</div>
+									<vtr-ui-days-picker
+										[subHeadingText]="'device.deviceSettings.power.smartStandby.timer.subHeading3'"
+										[daysId]="'dropcheck3'"
+										[showDropDown]="showDropDown[2]"
+										(setDays)="onSetDaysOfWeekOff($event)"></vtr-ui-days-picker>
+								</div>
+							</section>
+						</div>
+						<!-- content end -->
+					</div>
+					<div class="hyperlink-to-graph" (click)="showUsageGraph()">
+							{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
+					</div>
 				</li>
 			</ul>
 		</vtr-container-collapsible>
