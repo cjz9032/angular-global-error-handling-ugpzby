@@ -28,8 +28,9 @@
 			}
 			.icon {
 				color: #7D5FEF;
-				font-size: 11rem;
-				margin-top: 4rem;
+				font-size: 13rem;
+				margin-top: 2rem;
+				margin-bottom: -2rem;
 			}
 			.action-button {
 				border-radius: 2.5rem;
@@ -197,7 +198,7 @@
 				}
 			}
 			.icon-bar {
-				background: $main_lightest;
+				background: $grey_lighter;
 				border-radius: 0.8rem;
 
 				.listed-task-icons {

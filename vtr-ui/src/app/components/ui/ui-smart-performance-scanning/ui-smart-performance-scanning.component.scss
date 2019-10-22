@@ -27,7 +27,7 @@
         }
         .icon {
             color: #7D5FEF;
-			height: 8rem;
+			height: 12rem;
 			width: auto;
 			margin-top:2rem;
         }
@@ -67,7 +67,7 @@
                     border-radius: 0.6rem;
                     border: 1px solid  $screen_dark_01;
                     background: $grey_lighter;
-                    padding: 1rem;
+                    //padding: 1rem;
                     margin: 1.5rem auto;
                     width: 85%;
                     .card-header {
@@ -84,7 +84,7 @@
                                 color: $main_shade !important;
                             }
                             .icon{
-                                color: $main_shade;
+                                color: $menu_hover;
                             }
                         }
                     }
@@ -117,7 +117,7 @@
                                 color: $dark !important;
                             }
                             .icon{
-                                color: $main;
+                                color: $menu_hover;
                             }
                         }
                     }
@@ -357,6 +357,7 @@
 	mask-type: luminance;
 	mask-mode: alpha;
 	position: relative;
+	left: 3rem;
 	&::after {
 		content: '';
 		position: absolute;

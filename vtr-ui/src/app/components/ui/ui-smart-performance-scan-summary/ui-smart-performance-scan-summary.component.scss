@@ -59,7 +59,7 @@
 				border-radius: 0.5rem;
 				padding: 1.7rem 3rem;
 				color: #303D49;
-				width: calc(33.33% - 2rem);
+				width: calc(33.33% - 4.5rem);
 				h5 {
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
@@ -205,8 +205,8 @@
 									width: 20%;
 									.nav-link {
 										border: none;
-										border-left: 1px solid $grey_lighter;
-										border-bottom: 1px solid $grey_lighter;
+										border-left: 1px solid $grey_light;
+										border-bottom: 1px solid $grey_light;
 										color: $dark;
 
 										&.active {
@@ -342,9 +342,10 @@
 			opacity: 0.5;
 			line-height: 2;
 		}
-		fa-icon {
+		.icon {
 			color: #7D5FEF;
-			font-size: 10rem;
+			font-size: 13rem;
+			margin-bottom: -4.5rem;
 		}
 		.action-button {
 			border-radius: 2.5rem;
@@ -443,7 +444,7 @@
 					height: auto;
 					font-size: 2.5rem;
 					top: -1.5rem;
-					left: 49%;
+					left: 39%;
 					text-shadow: 0 0 1rem $dark;
 					transition: all 1s ease-in-out;
 				}
@@ -617,6 +618,9 @@
 			p {
 				font-size: 1.6rem;
 				color: $light;
+				.link-text{
+					color: $light;
+				}
 			}
 		}
 		.pricing{
