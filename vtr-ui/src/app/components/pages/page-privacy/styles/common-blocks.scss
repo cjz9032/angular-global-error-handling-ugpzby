@@ -49,9 +49,13 @@ $topIndent: -5.6rem;
 		padding: 1.5rem 1rem;
 	}
 
-	&:focus,
 	&:hover {
 		background: #2955BC;
+	}
+
+	&:focus {
+		box-shadow: 0 0 1px 1px #4A81FD;
+		background: #346CEF;
 	}
 
 	&--transparent {
@@ -222,10 +226,9 @@ $topIndent: -5.6rem;
 	border: none;
 	background: inherit;
 	text-transform: uppercase;
-	opacity: 0.4;
-	color: #444F78;
-	font-size: 11px;
-	font-weight: 500;
+	color: #667481;
+	font-size: 1.4rem;
+	font-weight: bold;
 	letter-spacing: 0.7px;
 	line-height: 13px;
 	text-align: center;
