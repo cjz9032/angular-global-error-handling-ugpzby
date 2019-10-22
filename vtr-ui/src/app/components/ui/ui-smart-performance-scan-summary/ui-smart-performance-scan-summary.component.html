@@ -56,7 +56,7 @@
 													</p>
 												</div>
 											</div>
-											<div class="row">
+											<div class="row" *ngIf="!isSubscribed">
 													<div class="pc-info-card pc-accordion w-100 my-5">
 														<div class="col-12 px-0">
 															<accordion [isAnimated]="true" [closeOthers]="true">
@@ -513,8 +513,8 @@
 								</div>
 								<!-- <vtr-ui-smart-performance-scan-summary></vtr-ui-smart-performance-scan-summary> -->
 								<!-- subscriber part -->
-								<div class="vtr-ui-smart-performance-scan-summary">
-									<div class="vtr-device-information mt-5">
+								<div class="vtr-ui-smart-performance-scan-summary" *ngIf="isSubscribed">
+									<div class="vtr-scan-information mt-5">
 										<div class="scan-summary-block">
 											<div class="row px-0">
 												<div class="navbar bkg-transparent justify-content-between w-100">
@@ -632,10 +632,10 @@
 					</div>
 				</div>
 				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-					<div class="vtr-page-shift-up">
+					<div class="vtr-page-shift-up" >
 						<div class="container-fluid">
 						 
-							<div class="row mb-40">
+							<div class="row mb-40" *ngIf="!isSubscribed">
 								<div class="col col-12">
 									<div class="recommended-action sidebar-widget">
 										<div class="title pb-3">Recommended Action</div>
@@ -652,6 +652,69 @@
 									</div>
 								</div>
 							</div>
+							<div class="row mb-40" *ngIf="isSubscribed">
+									
+									<div class="col col-12">
+										<div class="subscription-details sidebar-widget">
+											<div class="title pb-3">
+												Subscription details
+											</div>
+											<div class="card-info">
+												<p>You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly. <a href="#" class="para-link">Learn more</a></p>
+											</div>
+											<ul class="status-list">
+												<li class="d-flex justify-content-between">
+													<div class="item">Star date</div>
+													<div class="status">---</div>
+												</li>
+												<li class="d-flex justify-content-between">
+													<div class="item">End date</div>
+													<div class="status">---</div>
+												</li>
+												<li class="d-flex justify-content-between">
+													<div class="item">Status</div>
+													<div class="status"><div class="badge badge-pill badge-danger">INACTIVE</div></div>
+												</li>
+											</ul>
+											<a href="#" class="link-text">Manage Subscription</a>
+										</div>
+									</div>
+								</div>
+								
+								<div class="row mb-40"  *ngIf="isSubscribed">
+									<div class="col col-12">
+										<div class="scan-settings sidebar-widget">
+											<div class="title pb-3">
+												Scan settings
+											</div>
+											<div class="card-info">
+												<p>Enable or disable the scan and set the scan schedule</p>
+											</div>
+											<ul class="chevron-list">
+												<li class="d-flex justify-content-between">
+													<div class="item d-flex">
+														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+														<strong>Enable Scan</strong>
+													</div>
+													<div class="status d-flex justify-content-end">
+														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+													</div>
+												</li>
+												<li class="d-flex justify-content-between">
+													<div class="item d-flex">
+														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+														<strong>Once a week</strong>
+													</div>
+													<div class="status d-flex justify-content-end">
+														<p><strong>SAT</strong> | 12:00AM</p>
+														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+													</div>
+												</li>
+											</ul>
+											<a href="#" class="link-text">Manage Subscription</a>
+										</div>
+									</div>
+								</div>
 						</div>
 					</div>
 				</div>

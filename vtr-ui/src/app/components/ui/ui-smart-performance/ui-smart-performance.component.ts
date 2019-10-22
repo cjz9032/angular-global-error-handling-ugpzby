@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
   selector: 'vtr-ui-smart-performance',
@@ -15,13 +17,15 @@ export class UiSmartPerformanceComponent implements OnInit {
 	isScanning = false;
 	isScanningCompleted = false;
 	@Input() activegroup = "Tune up performance";
+	isSubscribed:any;
 	constructor(
-		private translate: TranslateService,private modalService: NgbModal
+		private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService
 	) {
 		this.translateStrings();
 	}
 
   ngOnInit() {
+	this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
   }
 
   private translateStrings() {
@@ -38,6 +42,7 @@ public changeScanStatus() {
 	console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
 	this.isScanningCompleted = true; 
 	this.isScanning = false;
+	console.log(this.isScanningCompleted+'>>>'+this.isScanning);
 }
 openSubscribeModal() {
     this.modalService.open(ModalSmartPerformanceSubscribeComponent, {

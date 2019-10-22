@@ -64,8 +64,8 @@
 							<div class="row">
 								<div class="pc-info-card pc-accordion w-100 my-5">
 									<div class="col-12">
-										<ngb-accordion [closeOthers]="true">
-											<ngb-panel>
+										<ngb-accordion [closeOthers]="true" #acc="ngbAccordion">
+											<ngb-panel id="Tune up performance">
 												<ng-template ngbPanelTitle>
 												<div class="d-flex justify-content-between">
 													<div class="heading">
@@ -106,7 +106,7 @@
 												</div>
 												</ng-template>
 											</ngb-panel>
-											<ngb-panel>
+											<ngb-panel id="Malware & Security">
 												<ng-template ngbPanelTitle>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="heading">
@@ -151,7 +151,7 @@
 												</div>
 												</ng-template>
 											</ngb-panel>
-											<ngb-panel>
+											<ngb-panel id="Internet performance">
 												<ng-template ngbPanelTitle>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="heading">

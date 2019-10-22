@@ -6,11 +6,12 @@
 			</vtr-header-main>
 		</div>
 	</div>
-	<div class="row vtr-page-content" *ngIf="!isScanning && !isScanningCompleted">
+	 <!-- {{isSubscribed}} and {{isScanningCompleted}} and {{isScanning}} -->
+	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
+					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column"  *ngIf="!isScanning && !isScanningCompleted">
 						<div class="vtr-page-shift-up">
 							<div class="vtr-device-information">
 								<div class="container-fluid">
@@ -280,6 +281,7 @@
 								 <!-- <vtr-ui-smart-performance-scanning 
 								*ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
 							</vtr-ui-smart-performance-scanning> -->
+							
 							<div class="system-scan-complete" *ngIf="isScanningCompleted">
 									<div class="row">
 										<div class="col col-12 offline-info-background">
@@ -339,10 +341,13 @@
 							</div>							
 						</div>
 					</div>
+					
 					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
+						 
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
-								<div class="row mb-40" >
+								<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
+									
 									<div class="col col-12">
 										<div class="subscription-details sidebar-widget">
 											<div class="title pb-3">
@@ -369,7 +374,7 @@
 										</div>
 									</div>
 								</div>
-
+								
 								<div class="row mb-40"  *ngIf="!isScanning && !isScanningCompleted">
 									<div class="col col-12">
 										<div class="scan-settings sidebar-widget">
@@ -405,7 +410,7 @@
 									</div>
 								</div>
 
-								<div class="row mb-40"  *ngIf="isScanning">
+								<!-- <div class="row mb-40"  *ngIf="isScanning">
 									<div class="col col-12">
 										<div class="accumulated-junk sidebar-widget">
 											<div class="mini-text">
@@ -433,12 +438,11 @@
 													</ul>
 												</div>
 											</div>
-											<!-- <a href="#" class="link-text">Manage Subscription</a> -->
-										</div>
+											  <a href="#" class="link-text">Manage Subscription</a>  
 									</div>
-								</div>
+								</div> -->
 
-								<div class="row mb-40"  *ngIf="isScanningCompleted">
+								<!-- <div class="row mb-40"  *ngIf="isScanningCompleted">
 									<div class="col col-12">
 										<div class="recommended-action sidebar-widget">
 											<div class="title pb-3">
@@ -455,7 +459,7 @@
 											<button class="action-button mt-2" (click)=openSubscribeModal()>Sign up</button>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>

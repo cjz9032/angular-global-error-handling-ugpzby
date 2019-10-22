@@ -3,10 +3,10 @@
 	border-top: 1px solid $screen_light_15;
 }
 .vtr-ui-smart-performance-scan-summary {
-	.vtr-device-information {
-		box-shadow: $drop_shadow;
-		border-radius: 0.8rem;
-		background: $light;
+	.vtr-scan-information {
+		// box-shadow: $drop_shadow;
+		// border-radius: 0.8rem;
+		// background: $light;
 		.scan-summary-block {
 			padding: 2rem 4rem;
 			.bkg-transparent {
@@ -471,7 +471,7 @@
 		}
 	}
 	.summary-block{
-		padding: 7rem 8.5rem;
+		padding: 7rem 4rem;
 		.title-big{
 			padding: 0 !important;
 		}

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angu
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { WidgetSpeedometerComponent } from '../../widgets/widget-speedometer/widget-speedometer.component';
-
+import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'vtr-ui-smart-performance-scanning',
   templateUrl: './ui-smart-performance-scanning.component.html',
@@ -11,14 +11,14 @@ import { WidgetSpeedometerComponent } from '../../widgets/widget-speedometer/wid
 export class UiSmartPerformanceScanningComponent implements OnInit {
 	// @ViewChild('speedometer') speedometer: WidgetSpeedometerComponent;
 	@ViewChild('speedometer', { static: false }) speedometer: WidgetSpeedometerComponent;
-
+	@ViewChild('acc', {static:false}) accordionComponent: NgbAccordion;
 	loop;
 	delay;
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
 	@Output() sendScanStatus = new EventEmitter();
-
+	
 	sampleDesc = 'This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up';
 	index = 0;
 	@Input() activegroup = "Tune up performance";
@@ -135,22 +135,31 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			if(this.index < this.vdata.length){
 			 this.GetScanData(this.index)
 			 this.index++;
+			 if(this.index<=1){
+				this.toggle(this.activegroup);
+			 }
 			 if(this.index==2)
 			 {
 				this.activegroup = "Malware & Security";
 				this.currentCategory=2;
 				this.updateMalwareSubItems('Malware', this.sampleDesc);
+				this.toggle(this.activegroup);
 			 }
 			 if(this.index==4)
 			 {
 				this.activegroup = "Internet performance";
 				this.currentCategory=3;
 				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
+				this.toggle(this.activegroup);
 			 }
 			}	
 		 }, 2000);
 	
 	}
+}
+toggle(id:string): void {
+	console.log(id);
+ this.accordionComponent.expand(id);
 }
 GetScanData(i: number) {
 	this.scanData = {};
