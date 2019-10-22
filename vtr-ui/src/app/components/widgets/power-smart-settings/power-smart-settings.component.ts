@@ -277,15 +277,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	async initPowerSmartSettingsForThinkPad() {
 		try {
 			let isITS = false;
-			const its = await this.getDYTCRevision();
-			if (its === 0) {
-				console.log('ITS value is 0');
+			const isPMDriverAvailable = await this.getPMDriverStatus();
+			if (!isPMDriverAvailable) {
+				console.log('isPMDriverAvailable', isPMDriverAvailable);
 				this.showIC = 0;
 				this.cache.showIC = this.showIC;
 				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 				this.isPowerSmartSettingHidden.emit(true);
 				return;
 			}
+			const its = await this.getDYTCRevision();
 			if (its === 4 || its === 5) {
 				// ITS supported or DYTC 4 or 5
 				isITS = true;
@@ -369,6 +370,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
 			this.isPowerSmartSettingHidden.emit(true);
 			return EMPTY;
+		}
+	}
+
+	private getPMDriverStatus(): Promise<number> {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.getPMDriverStatus();
+			}
+		} catch (error) {
+			this.logger.error('getPMDriverStatus', error.message);
 		}
 	}
 
