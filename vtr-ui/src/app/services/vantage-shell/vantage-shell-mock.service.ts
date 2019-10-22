@@ -7,6 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
+import { resolve } from 'q';
 
 declare var Windows;
 
@@ -456,10 +457,88 @@ export class VantageShellService {
 	 * returns modern preload object from VantageShellService of JS Bridge
 	 */
 	public getModernPreload(): any {
-		if (this.phoenix) {
-			return this.phoenix.modernPreload;
+		const modernPreload: any = {};
+		const entitledAppListResult = {
+			appList: [
+				{
+					appID: '07f5e8aaa07d836e817f35847f39cf88',
+					partNum: 'SBB0U39800', // id for get details from CMS entitled apps
+					name: 'X-Rite royalty for UHD panel',
+					status: 'installed',
+					progress: '0',
+					version: '2.1.9'
+				}, {
+					appID: 'c233e07661739ce19e604ebdcc832f7b',
+					partNum: 'SBB0K63291', // id for get details from CMS entitled apps
+					name: 'McAfee LiveSafe 36 Months Subscription Win7 Win10 ',
+					status: 'not installed',
+					progress: '0',
+					version: '16.0.14'
+				}, {
+					appID: '5715374c216f6f89acd63902f5834980',
+					partNum: 'SBB0U39801', // id for get details from CMS entitled apps
+					name: 'Chroma Tune royalty for UHD panel',
+					status: 'not installed',
+					progress: '0',
+					version: '2'
+				}]
+		};
+		modernPreload.initialize = (serialNumber) => ({
+			if (serialNumber) {
+				return true;
+			}
+		});
+		modernPreload.getIsEntitled = () => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve({result: true});
+				}, 1000);
+			})
+		};
+		modernPreload.getEntitledAppList = () => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve(entitledAppListResult);
+				}, 2000);
+			});
+		};
+		modernPreload.downloadOrInstallEntitledApps = (appList, callback, cancelHandler) => {
+			return new Promise((resolve) => {
+				const progressResponseList = [];
+				var cancelled = false;
+				cancelHandler.cancel = () => {
+					cancelled = true;
+				}
+				appList.forEach(app => {
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '10'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '50'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '90'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloaded', progress: '100'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installed', progress: '100'}]);
+				});
+				const downloadAndInstallResult = {appList};
+				downloadAndInstallResult.appList.forEach(app => {
+					app.status = 'installed';
+					app.progress = '100';
+				});
+
+				var i = 0;
+				var downloadInterval = setInterval(() => {
+					if (i < progressResponseList.length && !cancelled) {
+						callback(progressResponseList[i]);
+						i++;
+					} else {
+						resolve(downloadAndInstallResult);
+						clearInterval(downloadInterval);
+					}
+				}, 1000);
+			});
 		}
-		return undefined;
+		return modernPreload;
 	}
 
 	/**
