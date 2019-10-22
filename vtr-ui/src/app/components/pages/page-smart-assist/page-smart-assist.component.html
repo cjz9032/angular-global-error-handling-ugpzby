@@ -248,7 +248,7 @@
 												</div>
 											</div>
 											<div *ngIf="sensitivityVisibility"
-												class="pl-4 custom-row-swicth bold-title pb-4">
+												class="pl-4 custom-row-swicth bold-title pb-4" [class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
 												<h3 class="sensitivityTitle" [class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 													{{'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate}}
 												</h3>
