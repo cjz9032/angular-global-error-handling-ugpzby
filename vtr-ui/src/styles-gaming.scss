@@ -436,6 +436,18 @@
 							color: $gaming_lightest;
 							border: none;
 						}
+						.vtr-battery-gauge-reset {
+							.battery-text{
+								color: $gaming_lightest;
+							}
+							.battery-gauge-info{
+								.row{	
+									.label-text{
+									color:$shade_blue;
+									}
+								}
+							}
+						}
 						.vtr-battery-charge-threshold-settings {
 							.threshold-for-built-in-battery {
 								color: $gaming_grey_lightest;
@@ -1041,14 +1053,14 @@
 								.battery {
 									.acid-container {
 										.percentage {
-											color: $gaming_lightest;
+											color: $main_dark;
 										}
 									}
 									.remaining-time {
-										color: $gaming_lightest;
+										color: $main_dark;
 									}
 									.remaining-text {
-										color: $gaming_grey_lightest;
+										color: $main_dark;
 									}
 								}
 							}

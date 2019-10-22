@@ -189,18 +189,19 @@
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-
-													<div class="auto-set-checkbox" >
+													
+													<div class="custom-control custom-checkbox smart-assist-checkbox">
 														<input id="cb-zero-touch-lock"
 															attr.aria-label="cb-zero-touch-lock"
 															type="checkbox"
 															name="zero-check-lock-checkbox-id"
+															class="custom-control-input"
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															(ngModelChange)='onZeroTouchLockFacialRecoChange()'/>
 															<!-- [checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"/> -->
-														<label for="cb-zero-touch-lock">
+														<label for="cb-zero-touch-lock" class="custom-control-label">
 															{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
 														</label>
 												</div>
@@ -486,7 +487,7 @@
 				</div>
 
 				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
-					<div class="vtr-page-shift-up-medium">
+					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col col-12">

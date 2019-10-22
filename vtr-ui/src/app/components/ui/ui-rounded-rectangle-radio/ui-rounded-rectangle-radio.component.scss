@@ -44,8 +44,7 @@
 		position: relative;
 		z-index: 2;
 		overflow: hidden;
-
-		.label {
+			.label {
 			// @media #{$mediaquery_X4} {
 			// 	padding-right: .5rem;
 			// 	font-size: 1rem;
@@ -71,6 +70,17 @@
 			color: $main;
 			top: 1.3rem;
 			left: 1.3rem;
+			@media #{$white-on-black}{
+				background-color: $dark;
+				border:none;
+				color: $highlight_bright;
+			}
+			@media #{$black-on-white}{
+				background-color: $light;
+				border: none;
+				color: darkviolet;
+			}
+	
 		}
 
 		fa-icon.icon {
@@ -79,7 +89,7 @@
 			top: 9rem;
 			font-size: 3.2rem;
 			color: $main;
-		}
+			}
 
 		span.question {
 			position: absolute;
@@ -93,7 +103,7 @@
 	input[type="radio"]:not(:checked) + label::after {
 		opacity: 0;
 		transition: all 1s ease;
-	}
+		}
 	input:checked + label::after {
 		opacity: 1;
 	}

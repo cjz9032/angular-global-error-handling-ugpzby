@@ -24,6 +24,7 @@ import { MetricsModule } from '../directives/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 
 @NgModule({
 	declarations: [
@@ -83,7 +84,8 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		DeviceService,
 		DisplayService,
 		MockService,
-		SettingsService
+		SettingsService,
+		httpInterceptorProviders
 	],
 	entryComponents: [
 		// ModalWelcomeComponent,
