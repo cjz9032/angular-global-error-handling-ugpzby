@@ -225,7 +225,8 @@
 			},
 			"popupContent": {
 				"clearMacrokey": {
-					"title": "Are you sure you want to clear this macro key?"
+					"title": "Are you sure you want to clear this macro key?",
+					"modalTitle": "clear double confirm window"
 				},
 				"timeoutRecording": {
 					"title": "Time Out For Recording.",
@@ -2011,7 +2012,7 @@
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
 				"unknown": "Unknown",
-				"betterOffer":"Enjoy a better offer here!"
+				"betterOffer": "Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {

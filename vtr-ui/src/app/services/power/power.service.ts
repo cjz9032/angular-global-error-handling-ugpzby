@@ -258,6 +258,28 @@ export class PowerService {
 
 	// Power smart settings
 	// ----------start ITC Capable
+	public getPMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getPMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getITSServiceStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getITSServiceStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {

@@ -8,7 +8,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
+	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -155,12 +155,12 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		bodyText: '',
 		metricsItemClose: 'close dialog',
 		btnConfirm: true,
-		popupWindowTitle: 'clear double confirm window'
+		popupWindowTitle: 'gaming.macroKey.popupContent.clearMacrokey.modalTitle'
 	};
 
-	constructor(private macrokeyService: MacrokeyService) {}
+	constructor(private macrokeyService: MacrokeyService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	async recordDelete(record, i) {
 		try {
@@ -179,7 +179,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					}
 				});
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	clearRecords() {
