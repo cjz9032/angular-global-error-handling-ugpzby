@@ -26,9 +26,10 @@
 				opacity: 0.5;
 				line-height: 2;
 			}
-			fa-icon {
+			.icon {
 				color: #7D5FEF;
-				font-size: 9rem;
+				font-size: 11rem;
+				margin-top: 4rem;
 			}
 			.action-button {
 				border-radius: 2.5rem;
@@ -218,7 +219,7 @@
 								display: none;
 							}
 						}
-						fa-icon {
+						.icon {
 							font-size: 2.6rem;
 							margin-right: 0.8rem;
 							color: $main_shade;
@@ -436,14 +437,14 @@
 				font-size: 1.4rem;
 				.d-flex{
 					&:first-child{
-						fa-icon{
+						.icon{
 							margin-right: 1rem;
 							color: $main;
 							font-size: 2rem;
 						}
 					}
 					&:first-child{
-						fa-icon{
+						.icon{
 							margin-left: 1rem;
 						}
 					}
