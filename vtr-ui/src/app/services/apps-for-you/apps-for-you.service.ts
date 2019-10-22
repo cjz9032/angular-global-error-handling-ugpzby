@@ -295,5 +295,9 @@ export class AppsForYouService {
 			this.cancelToken.cancel();
 		}
 	}
+
+	resetCancelInstall() {
+		this.isCancelInstall = false;
+	}
 }
 

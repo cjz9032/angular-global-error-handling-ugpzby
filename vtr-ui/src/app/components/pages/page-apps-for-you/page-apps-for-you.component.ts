@@ -175,6 +175,8 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					this.isOnline = notification.payload.isOnline;
 					if (!this.isOnline) {
 						this.appsForYouService.cancelInstall();
+					} else {
+						this.appsForYouService.resetCancelInstall();
 					}
 					break;
 				case AppsForYouEnum.GetAppDetailsRespond:
@@ -291,6 +293,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 				return true;
 			}
 		});
+		(screenshotModal.componentInstance as ModalAppsForYouScreenshotComponent).metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
 		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
