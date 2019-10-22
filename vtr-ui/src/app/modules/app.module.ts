@@ -55,6 +55,7 @@ import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonUiModule } from './common/common-ui.module';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -84,6 +85,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		UiButtonModule,
 		RouterModule,
 		CommonPipeModule,
+		CommonUiModule,
 		FormsModule,
 		ReactiveFormsModule,
 		ModernPreloadModule,
@@ -94,6 +96,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		NavbarModule,
 		RouterModule,
 		CommonPipeModule,
+		CommonUiModule,
 		ModernPreloadModule,
 		PageLayoutModule,
 	],

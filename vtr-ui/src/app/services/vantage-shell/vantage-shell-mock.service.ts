@@ -295,11 +295,18 @@ export class VantageShellService {
 	 */
 	public getWarranty(): any {
 		// {lastupdate: null, status: 0}
+		const warranty: any = {};
 
-		if (this.phoenix) {
-			return this.phoenix.warranty;
-		}
-		return undefined;
+		const warrantyInformation =  {
+			status: 0,
+			url: 'https://pcsupport.lenovo.com/us/en/warrantylookup',
+			dayDiff: 729,
+			startDate: new Date('Sat Dec 01 2018 08:00:00 GMT+0800'),
+			endDate: new Date('Sat Nov 30 2020 08:00:00 GMT+0800')
+		};
+		warranty.getWarrantyInformation = this.getPromise(warrantyInformation);
+
+		return warranty;
 	}
 
 	public getShellVersion() {
@@ -995,9 +1002,34 @@ export class VantageShellService {
 	}
 
 	public getPreferenceSettings() {
-		if (this.phoenix) {
-			return this.phoenix.preferenceSettings;
-		}
+		const preferenceSettings: any = {};
+
+		const messagingPreference =  [
+			{
+				id: 'AppFeatures',
+				displayDescription: 'Messages pertaining to System Update, System Health, articles, and other noteworthy features.',
+				displayName: 'App Features',
+				isPolicyManaged: false,
+				settingValue: 2,
+			},
+			{
+				id: 'Marketing',
+				displayDescription: 'Messages pertaining to Lenovo exclusive content, special offers, and other promotional messages.',
+				displayName: 'Marketing',
+				isPolicyManaged: false,
+				settingValue: 1,
+			},
+			{
+				id: 'ActionTriggered',
+				displayDescription: 'Messages triggered by user selected settings such as auto-install critical/recommended updates, display priority control, desktop power manager, etc.',
+				displayName: 'Action Triggered',
+				isPolicyManaged: false,
+				settingValue: 2,
+			},
+		];
+		preferenceSettings.getMessagingPreference = this.getPromise(messagingPreference);
+
+		return preferenceSettings;
 	}
 	public getNetworkBoost() {
 		if (this.phoenix) {
