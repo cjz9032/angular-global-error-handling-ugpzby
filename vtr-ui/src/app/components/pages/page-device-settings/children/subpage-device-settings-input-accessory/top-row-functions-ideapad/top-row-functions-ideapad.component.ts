@@ -1,8 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
 import { FnLockStatus, KeyType, PrimaryKeySetting, StringBooleanEnum } from './top-row-functions-ideapad.interface';
-import { merge, Observable, Subject, Subscription } from 'rxjs';
-import { concatMap, map, mergeMap, switchMap, throttleTime } from 'rxjs/operators';
+import { merge, Observable, of, Subject, Subscription } from 'rxjs';
+import { concatMap, map, mergeMap, switchMap, takeWhile, tap, throttleTime } from 'rxjs/operators';
+import { MetricService } from '../../../../../../services/metric/metric.service';
+import { CommonService } from '../../../../../../services/common/common.service';
+import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-top-row-functions-ideapad',
@@ -11,7 +14,7 @@ import { concatMap, map, mergeMap, switchMap, throttleTime } from 'rxjs/operator
 })
 export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	keyType = KeyType;
-	private capability$;
+	// private capability$;
 	private primaryKey$: Observable<PrimaryKeySetting>;
 	private primaryKeySubscription: Subscription;
 
@@ -24,12 +27,14 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	private fnLockSubject$: Subject<FnLockStatus> = new Subject<FnLockStatus>();
 
 	constructor(
-		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
+		private metrics: MetricService,
+		private commonService: CommonService
 	) {
 	}
 
 	ngOnInit() {
-		this.capability$ = this.topRowFunctionsIdeapadService.capability;
+		// this.capability$ = this.topRowFunctionsIdeapadService.capability;
 		this.primaryKey$ = this.topRowFunctionsIdeapadService.primaryKey;
 		this.fnLockStatus$ = this.topRowFunctionsIdeapadService.fnLockStatus;
 
@@ -41,7 +46,20 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				map(([primaryKeyResponse, fnLockStatusResponse]) => {
 					return (primaryKeyResponse.value === this.keyType.HOTKEY && fnLockStatusResponse.value === StringBooleanEnum.FALSY)
 						|| (primaryKeyResponse.value !== this.keyType.HOTKEY && fnLockStatusResponse.value === StringBooleanEnum.TRUTHY);
-				})
+				}),
+				tap(status => of(status).pipe(
+					takeWhile(status1 => status1),
+					tap(() => {
+						const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
+						const metricsData = {
+							ItemParent: 'Device.MyDeviceSettings',
+							ItemName: 'TopRowFunctionsIdeapad',
+							Param: {machineFamilyName},
+							Value: KeyType.HOTKEY
+						};
+						this.metrics.sendMetrics(metricsData);
+					})
+				))
 			);
 		this.fnkey$ = fnLockStream$
 			.pipe(
@@ -49,7 +67,20 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				map(([primaryKeyResponse, fnLockStatusResponse]) => {
 					return (primaryKeyResponse.value === this.keyType.FNKEY && fnLockStatusResponse.value === StringBooleanEnum.FALSY)
 						|| (primaryKeyResponse.value !== this.keyType.FNKEY && fnLockStatusResponse.value === StringBooleanEnum.TRUTHY);
-				})
+				}),
+				tap(status => of(status).pipe(
+					takeWhile(status1 => status1),
+					tap(() => {
+						const machineFamilyName = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName);
+						const metricsData = {
+							ItemParent: 'Device.MyDeviceSettings',
+							ItemName: 'TopRowFunctionsIdeapad',
+							Param: {machineFamilyName},
+							Value: KeyType.FNKEY
+						};
+						this.metrics.sendMetrics(metricsData);
+					})
+				))
 			);
 
 		/**
@@ -60,7 +91,16 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 				throttleTime(100),
 				mergeMap(keyType => this.primaryKey$.pipe(map(primaryKey => keyType === primaryKey.value ? StringBooleanEnum.FALSY : StringBooleanEnum.TRUTHY))),
 				switchMap(stringBoolean => this.topRowFunctionsIdeapadService.setFnLockStatus(stringBoolean)),
-				concatMap(() => this.topRowFunctionsIdeapadService.fnLockStatus)
+				concatMap(() => this.topRowFunctionsIdeapadService.fnLockStatus),
+				tap(() => {
+
+					const metricsData = {
+						itemParent: 'Device.MyDeviceSettings',
+						itemName: 'FlipToBoot',
+						value: status
+					};
+					this.metrics.sendMetrics(metricsData);
+				})
 			)
 			.subscribe(res => this.fnLockSubject$.next(res));
 	}

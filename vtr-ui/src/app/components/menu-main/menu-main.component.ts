@@ -30,6 +30,7 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
+import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -94,7 +95,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		searchService: AppSearchService
+		searchService: AppSearchService,
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService
 	) {
 		localInfoService
 			.getLocalInfo()
@@ -660,6 +662,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				}
 				return response;
 			});
+		this.topRowFunctionsIdeapadService.capability.subscribe(capabilities => {
+			// todo: there should be a better way to operate this array
+			capabilities.forEach(capability => {
+				if (capability.key === 'fnLock') {
+					this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, capabilities);
+				}
+			});
+		});
 	}
 
 	openModernPreloadModal() {

@@ -144,7 +144,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			const isAvailable = inputAccessoriesCapability.isUdkAvailable
 				|| inputAccessoriesCapability.isKeyboardMapAvailable;
 			const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
-			if (!isAvailable && !isVOIPAvailable) {
+			const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
+			if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
 				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 			}
 		}
