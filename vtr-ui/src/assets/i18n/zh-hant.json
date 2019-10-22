@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "歡迎使用系統更新。",
-			"title": "保持最新狀態的系統才是健康的系統。",
-			"installingTitle": "在更新期間，請勿讓電腦進入睡眠或休眠模式。",
+            "title": "保持最新狀態的系統才是健康的系統。",
+            "installingTitle": "在更新期間，請勿讓電腦進入睡眠或休眠模式。",
             "last": "上次更新：",
             "next": "下次的排定更新：",
             "checkButton": "檢查更新",
@@ -1564,7 +1567,7 @@
             "good": "良好",
             "malicious": "惡意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全結果依下列條件而異：",
+            "securityScoreDepends": "您的安全分數結果將依下列條件而異：",
             "antivirus": "是否獲得防毒軟體的保護",
             "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
             "vpn": "是否監控網路遭受攻擊的風險",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
                 "unknown": "不明",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "在此盡情享受更棒的優惠！"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "在喜好設定頁面中，您可以根據 Vantage 的訊息類別選擇開啟/關閉您的訊息通知，請注意即使所有訊息類別皆已停用，必要時您可能偶爾仍會收到 Vantage 的系統重要訊息。",
         "messagesInLenovoVantage": "Lenovo Vantage 中的訊息",
         "appFeatures": "應用程式功能",
-        "appFeaturesDescription": "與 System Update、文章和其他重要功能相關的訊息。",
+        "appFeaturesDescription": "與系統更新、文章和其他重要功能相關的訊息。",
         "marketing": "行銷",
         "marketingDescription": "促銷訊息包括 Lenovo 特別優惠。",
         "actionTriggered": "引發的動作",

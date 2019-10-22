@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O transformador CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O transformador CA não consegue fornecer energia suficiente.</b>",
-                    "MissingDriver": "<b>O controlador do Lenovo Power Manager</b> não está instalado ou não está a funcionar corretamente. Execute o Windows Update para instalar o controlador mais recente.",
+                    "MissingDriver": "<b>O controlador do Lenovo Power Manager</b> não está instalado ou não está a funcionar corretamente. Execute o Windows Update para instalar o controlador mais recente. Também é possível instalar o controlador a partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">daqui</a>.",
                     "StoreLimitation": "<b>A bateria apenas pode armazenar {{value}}% da</b> respetiva capacidade original de carga total.",
                     "HighTemperature": "<b>A descarga</b> parou porque a <b>temperatura da bateria é demasiado elevada.</b>",
                     "TrickleCharge": "A bateria foi <b>totalmente descarregada</b> e necessita de ser recarregada. Esta operação pode demorar dez horas ou mais.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Bem-vindo à Atualização do Sistema.",
-			"title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
-			"installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
+            "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+            "installingTitle": "Durante as atualizações, não coloque o computador no modo de suspensão ou hibernação.",
             "last": "Última atualização: ",
             "next": "Próxima atualização agendada: ",
             "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
@@ -1564,7 +1567,7 @@
             "good": "BOA",
             "malicious": "MALICIOSA",
             "suspicious": "SUSPEITA",
-            "securityScoreDepends": "A sua pontuação de segurança permite-lhe ter uma ideia de quão seguro está online. O resultado depende de:",
+            "securityScoreDepends": "O seu resultado de segurança depende de estar:",
             "antivirus": "Estar protegido por software antivírus",
             "password": "Ter palavras-passe seguras e complexas geridas de uma forma segura",
             "vpn": "Monitorizar a exposição da sua rede a ataques",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} fornece proteção básica para o dispositivo",
                 "unknown": "Desconhecido",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Aproveite uma oferta melhor aqui!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "Na página de definições de preferências, é possível optar por ativar/desativar as notificações de mensagem com base nas categorias de mensagens do Vantage. Tenha em atenção que, mesmo se todas categorias de mensagem estiverem desativadas, poderá ocasionalmente receber, quando necessário, mensagens críticas do sistema do Vantage.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",
         "appFeatures": "Funcionalidades da aplicação",
-        "appFeaturesDescription": "Mensagens relativas a System Update, artigos e outras funcionalidades relevantes.",
+        "appFeaturesDescription": "Mensagens relativas a Atualização do Sistema, artigos e outras funcionalidades relevantes.",
         "marketing": "Marketing",
         "marketingDescription": "Mensagens de promoções, incluindo ofertas especiais da Lenovo.",
         "actionTriggered": "Ação ativada",

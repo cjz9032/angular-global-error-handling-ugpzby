@@ -108,6 +108,9 @@
                     "sub2": "‏Facebook‏",
                     "sub3": "‏Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "ברוכים הבאים לשימוש ב'עדכון המערכת'.",
-			"title": "מערכת עדכנית היא מערכת תקינה.",
-			"installingTitle": "במהלך העדכונים, אין להעביר את המחשב למצב שינה או המתנה.",
+            "title": "מערכת עדכנית היא מערכת תקינה.",
+            "installingTitle": "במהלך העדכונים, אין להעביר את המחשב למצב שינה או המתנה.",
             "last": "עודכן לאחרונה: ",
             "next": "העדכון המתוכנן הבא: ",
             "checkButton": "חיפוש עדכונים",
@@ -1564,7 +1567,7 @@
             "good": "טוב",
             "malicious": "זדוני",
             "suspicious": "חשוד",
-            "securityScoreDepends": "ציון האבטחה שלכם נותן לכם מושג לגבי רמת האבטחה שלכם ברשת. התוצאה תלויה בנתונים הבאים:",
+            "securityScoreDepends": "תוצאת האבטחה שלכם יכולה להשתנות אם:",
             "antivirus": "האם אתם מוגנים על-ידי תוכנת אנטי-וירוס",
             "password": "האם אתם מנהלים סיסמאות חזקות ומורכבות באופן בטוח",
             "vpn": "האם אתם מנטרים את החשיפה שלכם לתוקפים ברשת",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} מציע הגנה בסיסית למכשיר שלכם",
                 "unknown": "לא ידוע",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "תיהנו מהצעה טובה יותר כאן!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "בדף הגדרת ההעדפות ניתן לבחור להפעיל או לבטל קבלת התראות על הודעות בהתאם לקטגוריות של הודעת Vantage. שימו לב שגם אם כל קטגוריות ההודעות מושבתות, ייתכן שתקבלו מדי פעם הודעה קריטית של המערכת מאת Vantage בעת הצורך.",
         "messagesInLenovoVantage": "הודעות ב-Lenovo Vantage",
         "appFeatures": "תכונות היישום",
-        "appFeaturesDescription": "הודעות המתייחסות ל-System Update, למאמרים ולתכונות חשובות אחרות.",
+        "appFeaturesDescription": "הודעות המתייחסות לעדכון המערכת, למאמרים ולתכונות חשובות אחרות.",
         "marketing": "שיווק",
         "marketingDescription": "הודעות קידום מכירות כולל הצעות מיוחדות של Lenovo.",
         "actionTriggered": "פעולה מבוצעת",

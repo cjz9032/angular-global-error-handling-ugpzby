@@ -308,6 +308,19 @@ export class HardwareScanService {
 		return undefined;
 	}
 
+	public isAvailable() {
+		return this.getPluginInfo()
+			.then((hwscanPluginInfo: any) => {
+				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
+				return hwscanPluginInfo !== undefined &&
+					   hwscanPluginInfo.LegacyPlugin === false &&
+					   hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
+			})
+			.catch(() => {
+				return false;
+			});
+	}
+
 	public getItemsToScan(scanType: number, culture: string) {
 		console.log('[Start]: getItemsToScan() on service');
 		if (this.hardwareScanBridge) {

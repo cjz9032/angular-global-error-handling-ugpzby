@@ -224,7 +224,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 		const url = e;
 
-		if (url.indexOf('sso.lenovo.com') !== -1 ||
+		if (url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
+			url.indexOf('sso.lenovo.com') !== -1 ||
 			url.indexOf('facebook.com') !== -1 ||
 			url.indexOf('accounts.google.com') !== -1 ||
 			url.indexOf('login.live.com') !== -1 ||

@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>Der Akku befindet sich nicht in einem guten Zustand.</b>",
                     "NotSupportACAdapter": "<b>Netzteil wird nicht unterstützt.</b>",
                     "LimitedACAdapterSupport": "<b>Netzteil kann nicht genügend Strom liefern.</b>",
-                    "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus, um den aktuellen Treiber zu installieren.",
+                    "MissingDriver": "Der <b>Lenovo Power Manager-Treiber</b> ist nicht installiert oder funktioniert nicht ordnungsgemäß. Führen Sie Windows Update aus, um den aktuellen Treiber zu installieren. Sie können den Treiber auch von <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installieren.",
                     "StoreLimitation": "Der Akku kann <b>nur {{value}}% der ursprünglichen vollen Ladekapazität</b> speichern.",
                     "HighTemperature": "Das <b>Entladen</b> wurde gestoppt, da die <b>Temperatur des Akkus zu hoch</b> ist.",
                     "TrickleCharge": "Der Akku wurde <b>komplett entladen</b> und muss aufgeladen werden. Das kann zehn Stunden oder länger dauern.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Willkommen bei der Systemaktualisierung.",
-			"title": "Ein aktuelles System ist in gutem Zustand.",
-			"installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
+            "title": "Ein aktuelles System ist in gutem Zustand.",
+            "installingTitle": "Versetzen Sie Ihren Computer während der Aktualisierung nicht in den Energiesparmodus oder Ruhezustand.",
             "last": "Letzte Aktualisierung: ",
             "next": "Nächste geplante Aktualisierung: ",
             "checkButton": "AUF UPDATES PRÜFEN",
@@ -1564,7 +1567,7 @@
             "good": "GUT",
             "malicious": "ZERSTÖRERISCH",
             "suspicious": "VERDÄCHTIG",
-            "securityScoreDepends": "Ihr Sicherheitsfaktor gibt Ihnen eine Vorstellung davon, wie sicher Sie online unterwegs sind. Das Ergebnis hängt davon ab, ob Sie:",
+            "securityScoreDepends": "Ihr Sicherheitsergebnis hängt davon ab, ob Sie:",
             "antivirus": "Durch Antivirensoftware geschützt sind",
             "password": "Starke, komplizierte und sicher verwaltete Passwörter verwenden",
             "vpn": "Ihr Netzwerk auf Angriffe von außen überwachen",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} bietet Ihnen grundlegenden Schutz für Ihr Gerät",
                 "unknown": "Unbekannt",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Nutzen Sie hier ein besseres Angebot!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "Auf der Einstellungsseite können Sie Ihre Nachrichtenbenachrichtigung basierend auf den Kategorien der Vantage-Nachricht ein- und ausschalten. Bitte beachten Sie, dass Sie auch wenn alle Nachrichtenkategorien deaktiviert sind, gelegentlich noch systemkritische Nachrichten von Vantage erhalten können, wenn nötig.",
         "messagesInLenovoVantage": "Nachrichten in Lenovo Vantage",
         "appFeatures": "App-Funktionen",
-        "appFeaturesDescription": "Meldungen zu System Update, Artikeln und anderen nennenswerten Funktionen.",
+        "appFeaturesDescription": "Meldungen zu Systemaktualisierungen, artikeln und anderen nennenswerten Funktionen.",
         "marketing": "Marketing",
         "marketingDescription": "Werbemeldungen mit Lenovo Sonderangeboten.",
         "actionTriggered": "Ausgelöste Aktion",

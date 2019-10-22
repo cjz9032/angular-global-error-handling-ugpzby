@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Sistem Güncellemesi'ne hoş geldiniz.",
-			"title": "Güncel bir sistem, sağlıklı sistemdir.",
-			"installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
+            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+            "installingTitle": "Güncellemeler sırasında bilgisayarınızı uyku veya hazırda bekleme kipine geçirmeyin.",
             "last": "Son güncelleme: ",
             "next": "Sonraki zamanlanmış güncelleme: ",
             "checkButton": "GÜNCELLEMELERİ DENETLE",
@@ -1564,7 +1567,7 @@
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
             "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Güvenlik puanınız çevrimiçinde ne kadar güvende olduğunuza dair bir fikir verir; sonuç, aşağıdakilere bağlıdır:",
+            "securityScoreDepends": "Güvenlik sonucunuz aşağıdakilere bağlıdır:",
             "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
             "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
             "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
                 "unknown": "Bilinmiyor",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Burada daha iyi bir tekliften yararlanabilirsiniz!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "Tercih ayarı sayfasında, ileti bildirimini Vantage'ın ileti kategorilerine göre açıp kapatabilirsiniz. Tüm ileti kategorileri devre dışı bırakılmış olsa bile Vantage uygulamasından gerektiğinde Sistem Kritik iletileri alabileceğinizi lütfen unutmayın.",
         "messagesInLenovoVantage": "Lenovo Vantage'da İletiler",
         "appFeatures": "Uygulama özellikleri",
-        "appFeaturesDescription": "System Update, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
+        "appFeaturesDescription": "Sistem Güncellemesi, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
         "marketing": "Pazarlama",
         "marketingDescription": "Lenovo özel teklifleri de dahil olmak üzere promosyon iletileri.",
         "actionTriggered": "Tetiklenen Eylem",

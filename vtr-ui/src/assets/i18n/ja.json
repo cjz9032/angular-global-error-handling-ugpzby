@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
-                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。",
+                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。また、ドライバーを<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールすることもできます。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "システム アップデートへようこそ。",
-			"title": "最新のシステムは健全なシステムです。",
-			"installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
+            "title": "最新のシステムは健全なシステムです。",
+            "installingTitle": "更新時に、ご使用のコンピューターをスリープ状態または休止状態にしないでください。",
             "last": "最終更新日:",
             "next": "次回の更新スケジュール:",
             "checkButton": "更新の確認",
@@ -1564,7 +1567,7 @@
             "good": "良好",
             "malicious": "悪意",
             "suspicious": "疑わしい",
-            "securityScoreDepends": "セキュリティー・スコアによって、お客様がオンライン時にどれほど安全かがわかります。以下の項目を実行しているかどうかで結果が変わります。",
+            "securityScoreDepends": "セキュリティの結果は、次の条件によって異なります。",
             "antivirus": "ウイルス対策ソフトウェアで保護されている",
             "password": "強力で複雑なパスワードを安全な方法で管理している",
             "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
                 "unknown": "不明",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "こちらでさらに優れた製品をお試しください。"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "「設定の変更」ページでは、メッセージ通知のオンオフを Vantage のメッセージのカテゴリーに基づいて選択できます。すべてのメッセージ・カテゴリーが無効になっている場合でも、必要に応じてシステム・クリティカル・メッセージを Vantage から受信する場合があることに注意してください。",
         "messagesInLenovoVantage": "Lenovo Vantage のメッセージ",
         "appFeatures": "アプリ機能",
-        "appFeaturesDescription": "System Update、記事、その他の注目すべき機能に関連したメッセージ。",
+        "appFeaturesDescription": "システム更新、記事、その他の注目すべき機能に関連したメッセージ。",
         "marketing": "マーケティング",
         "marketingDescription": "Lenovo の特別オファーを含むプロモーション・メッセージ。",
         "actionTriggered": "開始されたアクション",

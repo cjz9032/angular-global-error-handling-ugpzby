@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
-                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo-energiebeheer</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren.",
+                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren. U kunt het stuurprogramma ook vanaf <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installeren.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Welkom bij het gebruik van Systeemupdate.",
-			"title": "Een bijgewerkt systeem is een gezond systeem.",
-			"installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
+            "title": "Een bijgewerkt systeem is een gezond systeem.",
+            "installingTitle": "Tijdens het updaten mag u de computer niet in de slaap- of sluimerstand zetten.",
             "last": "Laatst bijgewerkt: ",
             "next": "Volgende geplande update: ",
             "checkButton": "CONTROLEREN OP UPDATES",
@@ -1564,7 +1567,7 @@
             "good": "GOED",
             "malicious": "SCHADELIJK",
             "suspicious": "VERDACHT",
-            "securityScoreDepends": "Uw beveiligingsscore geeft u een idee hoe veilig u online bent, het resultaat is afhankelijk van het volgende:",
+            "securityScoreDepends": "Het resultaat van de beveiliging hangt af van het volgende:",
             "antivirus": "Beveiligd door antivirussoftware",
             "password": "Sterke en complexe wachtwoorden op een veilige manier beheren",
             "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} biedt basisbeveiliging voor je apparaat",
                 "unknown": "Onbekend",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Profiteer hier van een beter aanbod!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "Op de pagina met voorkeursinstellingen kunt u uw berichtmeldingen in- of uitschakelen op basis van de categorieën van het Vantage-bericht. Let wel: als alle berichtcategorieën zijn uitgeschakeld, is het mogelijk dat u af en toe en alleen indien nodig een kritiek systeembericht van Vantage ontvangt.",
         "messagesInLenovoVantage": "Berichten in Lenovo Vantage",
         "appFeatures": "App-functies",
-        "appFeaturesDescription": "Berichten met betrekking tot System Update, artikelen en andere belangrijke functies.",
+        "appFeaturesDescription": "Berichten met betrekking tot Systeemupdates, artikelen en andere belangrijke functies.",
         "marketing": "Marketing",
         "marketingDescription": "Reclame, inclusief speciale aanbiedingen van Lenovo.",
         "actionTriggered": "Geactiveerd door handelingen",

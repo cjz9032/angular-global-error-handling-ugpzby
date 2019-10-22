@@ -43,16 +43,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	private protocalAction: any;
 	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
 	public isWarrantyVisible = false;
-	public warrantyUrl = '';
 
-	heroBannerItems = [] ;   // tile A
+	heroBannerItems = [];   // tile A
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
 
-	heroBannerItemsCms: [] ;   // tile A
+	heroBannerItemsCms: [];   // tile A
 	cardContentPositionBCms: any = {};
 	cardContentPositionCCms: any = {};
 	cardContentPositionDCms: any = {};
@@ -261,16 +260,16 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		const heroBannerItems = this.cmsService.getOneCMSContent(response,
 			'home-page-hero-banner',
 			'position-A').map((record, index) => {
-			return {
-				albumId: 1,
-				id: record.Id,
-				source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-				title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-				url: record.FeatureImage,
-				ActionLink: record.ActionLink,
-				DataSource: 'cms'
-			};
-		});
+				return {
+					albumId: 1,
+					id: record.Id,
+					source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+					title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+					url: record.FeatureImage,
+					ActionLink: record.ActionLink,
+					DataSource: 'cms'
+				};
+			});
 		if (heroBannerItems && heroBannerItems.length) {
 			this.heroBannerItemsCms = heroBannerItems;
 			this.cmsRequestResult.tileA = true;
@@ -376,22 +375,22 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 
 	fetchUPEContent() {
 		if (this.tileSource.tileA === 'UPE') {
-			this.getUPEHeroBannerItems({position: 'position-A'});
+			this.getUPEHeroBannerItems({ position: 'position-A' });
 		}
 		if (this.tileSource.tileB === 'UPE') {
-			this.getUPECardContentB({position: 'position-B'});
+			this.getUPECardContentB({ position: 'position-B' });
 		}
 		if (this.tileSource.tileC === 'UPE') {
-			this.getUPECardContentC({position: 'position-C'});
+			this.getUPECardContentC({ position: 'position-C' });
 		}
 		if (this.tileSource.tileD === 'UPE') {
-			this.getUPECardContentD({position: 'position-D'});
+			this.getUPECardContentD({ position: 'position-D' });
 		}
 		if (this.tileSource.tileE === 'UPE') {
-			this.getUPECardContentE({position: 'position-E'});
+			this.getUPECardContentE({ position: 'position-E' });
 		}
 		if (this.tileSource.tileF === 'UPE') {
-			this.getUPECardContentF({position: 'position-F'});
+			this.getUPECardContentF({ position: 'position-F' });
 		}
 	}
 
@@ -400,15 +399,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			const heroBannerItems = this.upeService.getOneUPEContent(response,
 				'home-page-hero-banner',
 				'position-A').map((record, index) => {
-				return {
-					albumId: 1,
-					id: record.Id,
-					source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-					title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-					url: record.FeatureImage,
-					ActionLink: record.ActionLink
-				};
-			});
+					return {
+						albumId: 1,
+						id: record.Id,
+						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+						url: record.FeatureImage,
+						ActionLink: record.ActionLink
+					};
+				});
 			if (heroBannerItems && heroBannerItems.length) {
 				this.heroBannerItems = heroBannerItems;
 				this.dashboardService.heroBannerItems = heroBannerItems;
@@ -431,7 +430,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				'half-width-title-description-link-image',
 				'position-B'
 			)[0];
-		 if (cardContentPositionB) {
+			if (cardContentPositionB) {
 				if (cardContentPositionB.BrandName) {
 					cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
 				}
@@ -457,7 +456,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				'half-width-title-description-link-image',
 				'position-C'
 			)[0];
-		 if (cardContentPositionC) {
+			if (cardContentPositionC) {
 				if (cardContentPositionC.BrandName) {
 					cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
 				}
@@ -483,20 +482,20 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				'full-width-title-image-background',
 				'position-D'
 			)[0];
-		 if (cardContentPositionD) {
+			if (cardContentPositionD) {
 				cardContentPositionD.DataSource = 'upe';
 				this.cardContentPositionD = cardContentPositionD;
 				this.dashboardService.cardContentPositionD = this.cardContentPositionD;
 				this.upeRequestResult.tileD = true;
 			}
-			}, (err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
-				this.upeRequestResult.tileD = false;
-				if (this.cmsRequestResult.tileD) {
-					this.cardContentPositionD = this.cardContentPositionDCms;
-					this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
-				}
-			});
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
+			this.upeRequestResult.tileD = false;
+			if (this.cmsRequestResult.tileD) {
+				this.cardContentPositionD = this.cardContentPositionDCms;
+				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
+			}
+		});
 	}
 
 	getUPECardContentE(upeParam) {
@@ -506,20 +505,20 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				'half-width-top-image-title-link',
 				'position-E'
 			)[0];
-		 if (cardContentPositionE) {
+			if (cardContentPositionE) {
 				cardContentPositionE.DataSource = 'upe';
 				this.cardContentPositionE = cardContentPositionE;
 				this.dashboardService.cardContentPositionE = this.cardContentPositionE;
 				this.upeRequestResult.tileE = true;
 			}
-			}, (err) => {
-				this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
-				this.upeRequestResult.tileE = false;
-				if (this.cmsRequestResult.tileE) {
-					this.cardContentPositionE = this.cardContentPositionECms;
-					this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
-				}
-			});
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
+			this.upeRequestResult.tileE = false;
+			if (this.cmsRequestResult.tileE) {
+				this.cardContentPositionE = this.cardContentPositionECms;
+				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
+			}
+		});
 	}
 
 	getUPECardContentF(upeParam) {
@@ -529,11 +528,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				'half-width-top-image-title-link',
 				'position-F'
 			)[0];
-		 if (cardContentPositionF) {
-			cardContentPositionF.DataSource = 'upe';
-			this.cardContentPositionF = cardContentPositionF;
-			this.dashboardService.cardContentPositionF = this.cardContentPositionF;
-			this.upeRequestResult.tileF = true;
+			if (cardContentPositionF) {
+				cardContentPositionF.DataSource = 'upe';
+				this.cardContentPositionF = cardContentPositionF;
+				this.dashboardService.cardContentPositionF = this.cardContentPositionF;
+				this.upeRequestResult.tileF = true;
 			}
 		}, (err) => {
 			this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
@@ -772,14 +771,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case LocalStorageKey.LastWarrantyStatus:
 					if (notification.payload) {
 						this.warrantyData = {
-							info: notification.payload,
+							info: {
+								startDate: notification.payload.startDate,
+								endDate: notification.payload.endDate,
+								status: notification.payload.status,
+								url: this.supportService.getWarrantyUrl(this.supportService.sn)
+							},
 							cache: true
 						};
-						this.warrantyData.info.url = this.warrantyUrl;
 					}
-					break;
-				case 'MachineInfo':
-					this.warrantyUrl = this.supportService.getWarrantyUrl(notification.payload.serialnumber);
 					break;
 				default:
 					break;

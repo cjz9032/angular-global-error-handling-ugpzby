@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
-			"title": "Un système à jour est un système sain.",
-			"installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
+            "title": "Un système à jour est un système sain.",
+            "installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
@@ -1564,7 +1567,7 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
             "antivirus": "Protection par un logiciel anti-virus",
             "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
             "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
                 "unknown": "Inconnu",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Profitez d'une meilleure offre ici !"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
         "appFeatures": "Fonctionnalités des applications",
-        "appFeaturesDescription": "Messages concernant System Update, des articles et d'autres fonctionnalités utiles.",
+        "appFeaturesDescription": "Messages concernant la mise à jour du système, des articles et d'autres fonctionnalités utiles.",
         "marketing": "Marketing",
         "marketingDescription": "Messages de promotion, y compris les offres spéciales Lenovo.",
         "actionTriggered": "Action déclenchée",

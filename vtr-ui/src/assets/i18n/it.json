@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Benvenuto in Aggiornamento del sistema.",
-			"title": "Un sistema aggiornato è un sistema sano.",
-			"installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
+            "title": "Un sistema aggiornato è un sistema sano.",
+            "installingTitle": "Durante gli aggiornamenti, non attivare la modalità Sospensione o Ibernazione del computer.",
             "last": "Ultimo aggiornamento: ",
             "next": "Prossimo aggiornamento pianificato: ",
             "checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
@@ -1564,7 +1567,7 @@
             "good": "BUONA",
             "malicious": "DANNOSA",
             "suspicious": "SOSPETTA",
-            "securityScoreDepends": "Il tuo punteggio di sicurezza ti dà un'idea del livello di protezione del tuo ambiente; il risultato dipende da:",
+            "securityScoreDepends": "Il risultato della protezione dipende dalla scelta iniziale:",
             "antivirus": "La protezione con software antivirus",
             "password": "Password sicure e complesse che garantiscono la massima protezione",
             "vpn": "Monitoraggio dell'esposizione della rete contro i malintenzionati",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo",
                 "unknown": "Sconosciuto",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "La migliore offerta è qui!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "Nella pagina di impostazione delle preferenze è possibile scegliere di attivare o disattivare la notifica del messaggio in base alle categorie del messaggio di Vantage. Tenere presente che anche se tutte le categorie di messaggi sono disabilitate, è possibile che occasionalmente si riceva un messaggio critico di sistema da Vantage, se necessario.",
         "messagesInLenovoVantage": "Messaggi in Lenovo Vantage",
         "appFeatures": "Funzioni app",
-        "appFeaturesDescription": "Messaggi relativi a System Update, articoli e altre funzioni importanti.",
+        "appFeaturesDescription": "Messaggi relativi all'Aggiornamento del sistema, articoli e altre funzioni importanti.",
         "marketing": "Marketing",
         "marketingDescription": "Messaggi promozionali che includono offerte speciali Lenovo.",
         "actionTriggered": "Azione attivata",

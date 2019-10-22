@@ -30,6 +30,7 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
 import { AppUpdateService } from './services/app-update/app-update.service';
+import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 
 declare var Windows;
 @Component({
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	public isGaming: any = false;
 	private beta;
 	private subscription: Subscription;
+	private vantageFocusHelper = new VantageFocusHelper();
 
 	constructor(
 		private displayService: DisplayService,
@@ -84,6 +86,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		}, false);
 		this.notifyNetworkState();
 		this.addInternetListener();
+		this.vantageFocusHelper.start();
 	}
 
 	ngOnInit() {

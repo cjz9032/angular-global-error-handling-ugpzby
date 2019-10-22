@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "Velkommen som bruker av Systemoppdateringer.",
-			"title": "Et oppdatert system er et velfungerende system.",
-			"installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
+            "title": "Et oppdatert system er et velfungerende system.",
+            "installingTitle": "Ikke sett maskinen i hvile- eller dvalemodus under oppdateringer.",
             "last": "Sist oppdatert: ",
             "next": "Neste planlagte oppdatering: ",
             "checkButton": "SE ETTER OPPDATERINGER",
@@ -1564,7 +1567,7 @@
             "good": "GOD",
             "malicious": "SKADELIG",
             "suspicious": "MISTENKELIG",
-            "securityScoreDepends": "Sikkerhetsresultatet ditt gir deg en pekepinn på hvor sikker du er på nettet. Resultatet avhenger av følgende:",
+            "securityScoreDepends": "Sikkerhetsresultatet avhenger av om du er:",
             "antivirus": "Om du er beskyttet av antivirusprogramvare",
             "password": "Om du har sterke passord som du håndterer på en sikker måte",
             "vpn": "Om du overvåker nettverkets sårbarhet for angripere",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
                 "unknown": "Ukjent",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "Få et bedre tilbud her!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
         "appFeatures": "Appfunksjoner",
-        "appFeaturesDescription": "Meldinger relatert til System Update, artikler og andre viktige funksjoner.",
+        "appFeaturesDescription": "Meldinger relatert til Systemoppdatering, artikler og andre viktige funksjoner.",
         "marketing": "Markedsføring",
         "marketingDescription": "Markedsføringsrelaterte meldinger, inkludert spesialtilbud fra Lenovo.",
         "actionTriggered": "Utløst av handlinger",

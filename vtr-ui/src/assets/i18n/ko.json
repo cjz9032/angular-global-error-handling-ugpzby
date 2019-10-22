@@ -108,6 +108,9 @@
                     "sub2": "Facebook",
                     "sub3": "Instagram"
                 }
+            },
+            "narrator": {
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -702,7 +705,7 @@
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
@@ -1409,8 +1412,8 @@
         },
         "banner": {
             "neverChecked": "시스템 업데이트를 시작합니다.",
-			"title": "최신 시스템은 정상적인 시스템입니다.",
-			"installingTitle": "업데이트하는 동안, 컴퓨터를 절전 모드 또는 최대 절전 모드로 전환하지 마십시오.",
+            "title": "최신 시스템은 정상적인 시스템입니다.",
+            "installingTitle": "업데이트하는 동안, 컴퓨터를 절전 모드 또는 최대 절전 모드로 전환하지 마십시오.",
             "last": "마지막 업데이트 날짜: ",
             "next": "다음 예약 업데이트 날짜: ",
             "checkButton": "업데이트 검사",
@@ -1564,7 +1567,7 @@
             "good": "좋음",
             "malicious": "악성",
             "suspicious": "의심스러움",
-            "securityScoreDepends": "사용자의 보안 점수를 보면 온라인에서 안전한 정도를 알 수 있으며, 결과는 다음과 같은 경우에 따라 달라집니다.",
+            "securityScoreDepends": "보안 결과는 다음 사항에 따릅니다.",
             "antivirus": "바이러스 백신 소프트웨어로 보호",
             "password": "강력하고 복잡한 암호를 안전하게 관리",
             "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
@@ -1646,7 +1649,7 @@
             "others": {
                 "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
                 "unknown": "알 수 없음",
-                "betterOffer":"Enjoy a better offer here!"
+                "betterOffer": "다음은 더 낳은 제안입니다!"
             }
         },
         "wifisecurity": {
@@ -2242,7 +2245,7 @@
         "settingsDescription": "환경 설정 페이지에서 Vantage의 메시지 범주를 기반으로 메시지 알림을 켜거나 끌 수 있습니다. 모든 메시지 범주가 비활성화되어 있어도 필요에 따라 때때로 Vantage에서 시스템 중요 메시지를 받는 경우가 있습니다.",
         "messagesInLenovoVantage": "Lenovo Vantage 메시지",
         "appFeatures": "앱 기능",
-        "appFeaturesDescription": "System Update, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
+        "appFeaturesDescription": "시스템 업데이트, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
         "marketing": "판매",
         "marketingDescription": "Lenovo 특별제안을 포함한 프로모션 메시지.",
         "actionTriggered": "트리거된 작업",
