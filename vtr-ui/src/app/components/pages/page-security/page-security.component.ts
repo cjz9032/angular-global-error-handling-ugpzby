@@ -132,12 +132,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			if (result.GEO === 'cn') {
 				this.showVpn = false;
 			}
-			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
-				this.refreshAll();
-			} else {
-				this.getScore();
-				this.getMaliciousWifi();
+			if (this.wifiSecurity) {
+				this.wifiSecurity.getWifiSecurityState();
 			}
+			this.refreshAll();
 		}).catch(e => {
 			this.showVpn = true;
 		});
@@ -162,7 +160,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.securityAdvisor.wifiSecurity.refresh().then(() => {
 			this.getMaliciousWifi();
 		});
-		this.securityAdvisor.wifiSecurity.getWifiSecurityState().then(() => {
+		this.securityAdvisor.wifiSecurity.getWifiSecurityStateOnce().then(() => {
 			this.getScore();
 		});
 		this.securityAdvisor.passwordManager.refresh().then(() => {

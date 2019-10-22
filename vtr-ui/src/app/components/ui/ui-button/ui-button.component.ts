@@ -12,6 +12,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() isHalfWidth: boolean;
 	@Input() alreadyJoinGroup = 'unjoined';
 	@Input() upperCaseLabel = true;
+	@Input() tabindex = 0;
 	@Input() capitalizeLabel = false;
 	@Output() onClick = new EventEmitter<any>();
 

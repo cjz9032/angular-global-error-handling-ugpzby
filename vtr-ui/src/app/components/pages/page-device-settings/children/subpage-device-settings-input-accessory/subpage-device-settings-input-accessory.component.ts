@@ -44,6 +44,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
+	hasUDKCapability = false;
 	fnLockCapability = false;
 	private topRowFunctionsIdeapadSubscription: Subscription;
 
@@ -56,16 +57,19 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	ngOnInit() {
-		this.getVoipHotkeysSettings();
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			this.initDataFromCache();
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			// udk capability
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
 			this.getFnCtrlSwapCapability();
 		}
 		this.getMouseAndTouchPadCapability();
+		this.getVoipHotkeysSettings();
 		this.topRowFunctionsIdeapadSubscription = this.topRowFunctionsIdeapadService.capability.subscribe(capabilities => {
 			capabilities.forEach(capability => {
 				if (capability.key === 'FnLock' && capability.value === StringBooleanEnum.TRUTHY) {
@@ -82,9 +86,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					return res;
 				}
 				this.showVoipHotkeysSection = true;
-				res.appList.forEach(element => {
-					if (element.isAppInstalled) {
+				res.appList.forEach(app => {
+					if (app.isAppInstalled) {
 						this.isAppInstalled = true;
+					}
+					if (app.isSelected) {
+						this.selectedApp = app;
 					}
 				});
 				if (this.isAppInstalled) {
@@ -102,6 +109,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		this.keyboardService.setVoipHotkeysSettings(app.appName)
 			.then(VoipResponse => {
 				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+					this.selectedApp.isSelected = false;
 					this.selectedApp = prev;
 					this.selectedApp.isSelected = true;
 					return VoipResponse;

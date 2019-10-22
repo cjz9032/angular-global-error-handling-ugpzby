@@ -154,13 +154,14 @@ export class VantageShellService {
 		};
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
-		// dashboard.getEyeCareModeState = this.getPromise(obj);
+		dashboard.getEyeCareModeState = this.getPromise(obj);
 		dashboard.warranty = {};
 		dashboard.sysupdate = {};
 		dashboard.warranty.getWarrantyInformation = this.getPromise(warrantyObj);
 		dashboard.sysupdate.getMostRecentUpdateInfo = this.getPromise(sysUpdateObj);
 		dashboard.sysinfo = this.getSysinfo();
 		dashboard.sysinfo.getMemAndDiskUsage = this.getPromise(sysInfoObj);
+
 		return dashboard;
 	}
 	/**
@@ -294,11 +295,18 @@ export class VantageShellService {
 	 */
 	public getWarranty(): any {
 		// {lastupdate: null, status: 0}
+		const warranty: any = {};
 
-		if (this.phoenix) {
-			return this.phoenix.warranty;
-		}
-		return undefined;
+		const warrantyInformation =  {
+			status: 0,
+			url: 'https://pcsupport.lenovo.com/us/en/warrantylookup',
+			dayDiff: 729,
+			startDate: new Date('Sat Dec 01 2018 08:00:00 GMT+0800'),
+			endDate: new Date('Sat Nov 30 2020 08:00:00 GMT+0800')
+		};
+		warranty.getWarrantyInformation = this.getPromise(warrantyInformation);
+
+		return warranty;
 	}
 
 	public getShellVersion() {
@@ -649,48 +657,73 @@ export class VantageShellService {
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */
 	public getEyeCareMode(): any {
-		const eyeCareMode: any = {};
-		const displayEyeCareMode: any = {};
 		const obj = {
 			available: true,
 			status: true,
 			permission: true,
 			isLoading: false
 		};
+		const dayTimeObj = {
+			available: true,
+			current: 6500,
+			eyemodestate: false,
+			maximum: 6500,
+			minimum: 1200,
+		};
+		const eyeCareObj = {
+			available: true,
+			current: 4500,
+			default: 4500,
+			eyecaremode: 4500,
+			maximum: 6500,
+			minimum: 1200,
+			status: false,
+		};
+		const displayEyeCareMode: any = {
+			getDaytimeColorTemperature: this.getPromise(dayTimeObj),
+			getDisplayColortemperature: this.getPromise(eyeCareObj),
+			getEyeCareModeState: this.getPromise(obj),
+			initEyecaremodeSettings: this.getPromise(true),
+			startMonitor: this.getPromise(true),
+			stopMonitor: this.getPromise(true),
+			statusChangedLocationPermission: this.getPromise(true)
+		};
 
-		eyeCareMode.getEyeCareModeState = this.getPromise(obj);
-		displayEyeCareMode.initEyecaremodeSettings = this.getPromise(false);
-
-		return eyeCareMode;
+		return displayEyeCareMode;
 	}
 
 	/**
 	 * returns Privacy Guard object from VantageShellService of JS Bridge
 	 */
 	public getPrivacyGuardObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.display.privacyGuard;
-		}
-		return undefined;
+		const privacyGuardSettings: any = {
+			getPrivacyGuardCapability: this.getPromise(true),
+			getPrivacyGuardOnPasswordCapability: this.getPromise(true)
+		};
+
+		return privacyGuardSettings;
 	}
 
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public getCameraPrivacy(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.camera.cameraPrivacy;
-		}
-		return undefined;
+		const cameraPrivacyStatus: any = {
+			getCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
+			startMonitor: this.getPromise(true)
+		};
+		return cameraPrivacyStatus;
 	}
 	/**
 	 * returns cameraSettings object from VantageShellService of JS Bridge
 	 */
 	public getCameraSettings(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.camera.cameraSettings;
-		}
-		return undefined;
+	 const cameraSettings: any = {
+		startMonitor: this.getPromise(true),
+		getCameraSettings: this.getPromise(true)
+	 };
+
+	 return cameraSettings;
 	}
 	public getVantageToolBar(): any {
 		const devicePower: any = {};
@@ -825,10 +858,19 @@ export class VantageShellService {
 	}
 
 	public getCameraBlur(): any {
-		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
-			return this.phoenix.hwsettings.camera.cameraBlur;
-		}
-		return undefined;
+		const obj = {
+			available: true,
+			currentMode: 'Blur',
+			enabled: true,
+			errorCode: 0,
+			supportedModes: [
+				'Blur',
+				'Comic',
+				'Sketch',
+			]
+		};
+		const cameraBlur: any = {getCameraBlurSettings: this.getPromise(obj) };
+		return cameraBlur;
 	}
 
 	public getCPUOCStatus(): any {
@@ -960,9 +1002,34 @@ export class VantageShellService {
 	}
 
 	public getPreferenceSettings() {
-		if (this.phoenix) {
-			return this.phoenix.preferenceSettings;
-		}
+		const preferenceSettings: any = {};
+
+		const messagingPreference =  [
+			{
+				id: 'AppFeatures',
+				displayDescription: 'Messages pertaining to System Update, System Health, articles, and other noteworthy features.',
+				displayName: 'App Features',
+				isPolicyManaged: false,
+				settingValue: 2,
+			},
+			{
+				id: 'Marketing',
+				displayDescription: 'Messages pertaining to Lenovo exclusive content, special offers, and other promotional messages.',
+				displayName: 'Marketing',
+				isPolicyManaged: false,
+				settingValue: 1,
+			},
+			{
+				id: 'ActionTriggered',
+				displayDescription: 'Messages triggered by user selected settings such as auto-install critical/recommended updates, display priority control, desktop power manager, etc.',
+				displayName: 'Action Triggered',
+				isPolicyManaged: false,
+				settingValue: 2,
+			},
+		];
+		preferenceSettings.getMessagingPreference = this.getPromise(messagingPreference);
+
+		return preferenceSettings;
 	}
 	public getNetworkBoost() {
 		if (this.phoenix) {
@@ -1186,10 +1253,9 @@ export class VantageShellService {
 
 	/** returns OledSettings object from VantageShellService of JS Bridge */
 	public getOledSettings(): any {
-		if (this.getHwSettings()) {
-			return this.getHwSettings().display.OLEDSettings;
-		}
-		return undefined;
+		const oledSettings = { getOLEDPowerControlCapability: this.getPromise(true) };
+
+		return oledSettings;
 	}
 
 	public getVersion(): any {

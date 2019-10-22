@@ -643,7 +643,10 @@
             "collapse": "Згорнути",
             "expand": "Розгорнути",
             "loader": "Отримання <br> статусу",
-            "loading": "Завантаження..."
+            "loading": "Завантаження...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
@@ -881,7 +884,7 @@
                     "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
@@ -1120,7 +1123,9 @@
                         "everyday": "Щодня",
                         "weekdays": "Будні",
                         "weekends": "Вихідні дні"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1405,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "ДОКЛАДНІШЕ",
@@ -1467,7 +1473,7 @@
                     "options": {
                         "near": "Поблизу",
                         "far": "Далеко",
-                        "medium": "Medium"
+                        "medium": "Середній"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1494,7 @@
                     "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
                     "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
@@ -1496,7 +1502,7 @@
                 },
                 "resetToDefault": "Скидання",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "НАЛАШТУВАННЯ СЕНСОРНОЇ ПАНЕЛІ"
                 }
             },
             "intelligentScreen": {
