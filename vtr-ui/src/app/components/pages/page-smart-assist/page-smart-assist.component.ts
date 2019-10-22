@@ -130,12 +130,14 @@ export class PageSmartAssistComponent
 				this.onMouseEnterEvent();
 			});	
 		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
 		this.windowsObj =  this.Windows.Devices.Enumeration.DeviceAccessInformation
 		.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 
 		this.windowsObj.addEventListener('accesschanged', () => {
 			this.permissionChanged();
 		});
+	}
 	}
 
 	ngOnInit() {
