@@ -1364,7 +1364,11 @@
                             "description": "Sprememba funkcije zgornje vrstice bo začela veljati šele po vnovičnem zagonu računalnika. Ali ste prepričani, da želite znova zagnati?",
                             "reboot": "VNOVIČNI ZAGON",
                             "cancel": "NE ZDAJ"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Za dostop do funkcij F1–F12 pritisnite Fn in tipke v zgornji vrstici.",
+							"fnKey": "Za dostop do posebne funkcije pritisnite Fn in tipke v zgornji vrstici."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkcije bližnjice VoIP",

@@ -1364,7 +1364,11 @@
                             "description": "La modifica della funzione della riga superiore richiede il riavvio del computer. Riavviare?",
                             "reboot": "RIAVVIA",
                             "cancel": "NON ORA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
+							"fnKey": "Per accedere alla funzione speciale, premere Fn e i tasti sulla riga superiore."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funzioni dei tasti di scelta rapida per le chiamate VoIP",

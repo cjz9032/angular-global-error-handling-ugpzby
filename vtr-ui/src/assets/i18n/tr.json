@@ -1364,7 +1364,11 @@
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
-                        }
+                        },
+						"note": {
+							"sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
+							"fnKey": "Özel işleve erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP Kısayol Tuşları İşlevleri",

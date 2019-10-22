@@ -1366,6 +1366,10 @@
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
+						},
+						"note": {
+							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
+							"fnKey": "To access special function, press Fn and the keys on the top row."
 						}
 					},
 					"VoipHotkeys": {

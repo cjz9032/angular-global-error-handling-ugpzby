@@ -1364,7 +1364,11 @@
                             "description": "Tem de reiniciar o computador para alterar as funções predefinidas da linha superior. Tem a certeza de que pretende reiniciar?",
                             "reboot": "REINICIAR",
                             "cancel": "AGORA NÃO"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Para aceder à função das teclas F1-F12, prima Fn e as teclas na linha superior.",
+							"fnKey": "Para aceder à função especial, prima Fn e as teclas na linha superior."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funções das teclas de atalho VoIP",

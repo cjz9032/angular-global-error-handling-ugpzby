@@ -1364,7 +1364,11 @@
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
+							"fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkcie klávesových skratiek VoIP",
