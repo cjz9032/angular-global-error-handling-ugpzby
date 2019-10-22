@@ -7,6 +7,7 @@ class DevicePostureDetail {
 	detail: string; // faied,passed
 	path: string;
 	type: string;
+	isHidden: boolean;
 	constructor(obj) {
 		Object.assign(this, obj);
 	}
@@ -30,8 +31,12 @@ export class HomeSecurityDevicePosture {
 		devicePosture.forEach((item) => {
 			this.mappingDevicePosture(devicePostures, item);
 		});
-		if (devicePostures[0].status === 4 && cacheDevicePosture) {
-			devicePostures[0] = cacheDevicePosture.homeDevicePosture[0];
+		if (devicePostures[0].status === 4) {
+			if (cacheDevicePosture && cacheDevicePosture.homeDevicePosture[0].status !== 4) {
+				devicePostures[0] = cacheDevicePosture.homeDevicePosture[0];
+			} else {
+				devicePostures[0].isHidden = true;
+			}
 		}
 		this.homeDevicePosture = devicePostures;
 	}
@@ -85,7 +90,8 @@ export class HomeSecurityDevicePosture {
 				detail: '',
 				path: 'home-security',
 				type: 'security',
-				title: value
+				title: value,
+				isHidden: false
 			};
 		});
 		return devicePostures;
