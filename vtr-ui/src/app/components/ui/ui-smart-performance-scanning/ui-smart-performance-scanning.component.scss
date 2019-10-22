@@ -25,9 +25,10 @@
             opacity: 0.5;
             line-height: 2;
         }
-        fa-icon {
+        .icon {
             color: #7D5FEF;
-			font-size: 8rem;
+			height: 8rem;
+			width: auto;
 			margin-top:2rem;
         }
         .progress-div {
@@ -65,7 +66,7 @@
                 .card {
                     border-radius: 0.6rem;
                     border: 1px solid  $screen_dark_01;
-                    background: $screen_dark_01;
+                    background: $grey_lighter;
                     padding: 1rem;
                     margin: 1.5rem auto;
                     width: 85%;
@@ -82,7 +83,7 @@
                                 font-size: 2rem;
                                 color: $main_shade !important;
                             }
-                            .ng-fa-icon{
+                            .icon{
                                 color: $main_shade;
                             }
                         }
@@ -96,7 +97,10 @@
                             text-transform: uppercase;
                             font-size: 1.6rem;
                             text-align: right;
-                            color: $shade_dark;
+							color: $shade_dark;
+							position: absolute;
+							right: 5rem;
+							top: 40%;
 						}
 						vtr-widget-speedometer {
 							position: absolute;
@@ -112,7 +116,7 @@
                                 font-size: 2.5rem;
                                 color: $dark !important;
                             }
-                            .ng-fa-icon{
+                            .icon{
                                 color: $main;
                             }
                         }
@@ -124,7 +128,7 @@
         &.card-small{
             margin: 2rem auto 0rem auto;
             .heading {
-                .ng-fa-icon{
+                .icon{
                     font-size: 4rem;
                     margin-right: 1.5rem;
                     color: $main_shade;
@@ -134,7 +138,7 @@
         .heading {
             display: flex;
             align-items: center;
-            .ng-fa-icon{
+            .icon{
                 font-size: 4.6rem;
                 margin-right: 1.5rem;
                 color: $main_gstart;
@@ -172,7 +176,7 @@
                 display: none;
             }
         }
-        fa-icon {
+        .icon {
             font-size: 2.6rem;
             margin-right: 0.8rem;
             color: $main_shade;
