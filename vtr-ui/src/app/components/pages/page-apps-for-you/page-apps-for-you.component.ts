@@ -293,7 +293,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 				return true;
 			}
 		});
-		(screenshotModal.componentInstance as ModalAppsForYouScreenshotComponent).metricsParent = this.metricsParent;
+		screenshotModal.componentInstance.metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
 		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
