@@ -189,18 +189,19 @@
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-
-													<div class="auto-set-checkbox" >
+													
+													<div class="custom-control custom-checkbox smart-assist-checkbox">
 														<input id="cb-zero-touch-lock"
 															attr.aria-label="cb-zero-touch-lock"
 															type="checkbox"
 															name="zero-check-lock-checkbox-id"
+															class="custom-control-input"
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															(ngModelChange)='onZeroTouchLockFacialRecoChange()'/>
 															<!-- [checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"/> -->
-														<label for="cb-zero-touch-lock">
+														<label for="cb-zero-touch-lock" class="custom-control-label">
 															{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
 														</label>
 												</div>
@@ -454,8 +455,6 @@
 						[isSRChecked]="superResolution.status"
 						[intelligentMediaAvailable]="intelligentMedia.available"
 						[superResolutionAvailable]="superResolution.available">
-					<vtr-intelligent-media id="media" *ngIf="intelligentMedia.available"
-						[isLoading]="isIntelligentMediaLoading" [isChecked]="intelligentMedia.status">
 					</vtr-intelligent-media>
 
 					<!-- End of Intelligent Media -->
