@@ -1133,6 +1133,11 @@
 			.support-list {
 				background-color: $gaming-Darkslate-blue !important;
 				border: none !important;
+				button {
+					&:hover {
+						background-color: transparent !important;
+					}
+				}
 				.title {
 					color: $gaming_lightest;
 				}
