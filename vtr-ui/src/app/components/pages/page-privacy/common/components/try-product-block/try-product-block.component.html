@@ -9,7 +9,7 @@
 		<p class="try-product__block-description">{{isFigleafReadyToCommunication ? texts.howToFixAfterInstallFigleaf : texts.howToFix}}</p>
 		<div class="try-product__group-button" *ngIf="!isFigleafReadyToCommunication">
 			<div class="try-product__button-link try-product__button-link--download"
-				 vtrOfflineMode positionContextTo="top-right">
+				 vtrOfflineMode positionContextTo="top-right" contextSize="small">
 				<a vtrOpenFigleafInstaller
 				   vtrSendAnalytics
 				   [metricsEvent]="'ItemClick'"

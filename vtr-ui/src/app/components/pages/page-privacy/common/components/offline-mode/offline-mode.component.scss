@@ -6,4 +6,8 @@
 	@extend %text-common;
 	color: #1b1b1b;
 	text-transform: none;
+
+	&--small {
+		width: 20rem;
+	}
 }

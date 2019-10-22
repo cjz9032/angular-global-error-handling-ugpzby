@@ -1,6 +1,6 @@
 import { Component, ContentChild, ElementRef, Input, TemplateRef } from '@angular/core';
 
-export type position = 'center' | 'right' | 'left' | 'top-right';
+export type position = 'center' | 'right' | 'left' | 'top-right' | 'top-left';
 
 @Component({
 	selector: 'vtr-tooltip',

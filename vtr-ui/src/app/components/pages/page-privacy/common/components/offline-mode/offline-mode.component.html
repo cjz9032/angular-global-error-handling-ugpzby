@@ -10,7 +10,8 @@
 	</ng-template>
 	<ng-container>
 		<ng-template #tooltipContext>
-			<div class="tooltip-context">
+			<div class="tooltip-context"
+				 [ngClass]="{'tooltip-context--small': contextSize === 'small'}">
 				Connect to the internet to use this feature
 			</div>
 		</ng-template>
