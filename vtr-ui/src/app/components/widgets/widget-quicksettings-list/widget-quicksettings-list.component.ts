@@ -438,6 +438,11 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
 					this.wifiHomeViewModel.isLWSEnabled = (value === 'enabled' && this.wifiSecurity.isLocationServiceOn);
+					if (value === 'enabled' && this.wifiHomeViewModel.isLWSEnabled === true) {
+						this.quickSettings[2].isChecked = true;
+					} else {
+						this.quickSettings[2].isChecked = false;
+					}
 				}
 			}
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
