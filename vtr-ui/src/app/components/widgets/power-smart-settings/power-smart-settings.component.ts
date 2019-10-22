@@ -286,8 +286,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				this.isPowerSmartSettingHidden.emit(true);
 				return;
 			}
+			const itsServiceStatus = await this.getITSServiceStatus();
 			const its = await this.getDYTCRevision();
-			if (its === 4 || its === 5) {
+			if (itsServiceStatus && (its === 4 || its === 5)) {
 				// ITS supported or DYTC 4 or 5
 				isITS = true;
 				this.intelligentCoolingModes = IntelligentCoolingHardware.ITS;
@@ -373,7 +374,17 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getPMDriverStatus(): Promise<number> {
+	private getITSServiceStatus(): Promise<boolean> {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.getITSServiceStatus();
+			}
+		} catch (error) {
+			this.logger.error('getITSServiceStatus', error.message);
+		}
+	}
+
+	private getPMDriverStatus(): Promise<boolean> {
 		try {
 			if (this.powerService.isShellAvailable) {
 				return this.powerService.getPMDriverStatus();
