@@ -116,10 +116,18 @@
 	&.border-blue {
 		border: 0.3rem solid $main;
 		// transition: all 50ms ease-in;
+		@media #{$black-on-white} {
+			border: 0.3rem solid darkviolet;
+		}
+
 	}
 	&.border-grey {
 		border: 0.3rem solid $shade_lightest;
 		// transition: all 50ms ease-in;
+		@media #{$black-on-white} {
+			border: none;
+		}
+
 	}
 	&.border-disabled {
 		border: 0.3rem solid #e6eaeb;

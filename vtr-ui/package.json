@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.223",
+	"version": "1.0.225",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -9,6 +9,7 @@
 		"serve": "node --max_old_space_size=4048 ./node_modules/@angular/cli/bin/ng serve",
 		"test": "ng test",
 		"lint": "ng lint",
+		"template-lint": "node prebuild/template-lint.js",
 		"fix-no-console": "node prebuild/no-console.js",
 		"update-nuspec": "node postbuild/nuget.js",
 		"e2e": "ng e2e",
@@ -79,6 +80,7 @@
 		"acorn": "^6.0.5",
 		"codelyzer": "^5.0.0",
 		"html-loader": "^0.5.5",
+		"htmlparser2": "^4.0.0",
 		"jasmine-core": "~3.4.0",
 		"jasmine-spec-reporter": "~4.2.1",
 		"karma": "~4.1.0",
@@ -87,6 +89,7 @@
 		"karma-jasmine": "~2.0.1",
 		"karma-jasmine-html-reporter": "^1.4.0",
 		"protractor": "~5.4.0",
+		"recursive-readdir": "^2.2.2",
 		"standard-version": "^5.0.2",
 		"ts-node": "~7.0.0",
 		"tslint": "~5.15.0",

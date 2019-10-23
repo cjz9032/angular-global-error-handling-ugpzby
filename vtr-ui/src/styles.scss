@@ -449,6 +449,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 4rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $gaming_darkest;
+		}
+
 	}
 }
 
