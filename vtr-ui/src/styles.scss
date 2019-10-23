@@ -972,7 +972,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					justify-content: center;
 					flex-direction: column;
 					align-items: center;
-					font-size: 1.8rem;
+					font-size: 1.6rem;
 					text-transform: uppercase;
 					padding: 3.5rem;
 					text-align: center;
@@ -981,7 +981,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					color: $main_lightest;
 					position: relative;
 					z-index: 5;
-					.ng-fa-icon {
+					.icon{
 						height: 12rem;
 						width: 12rem;
 						line-height: 12rem;
@@ -1011,7 +1011,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					&.active{
 						background: $main_lightest !important;
 						color: $main_darker;
-						.ng-fa-icon {
+						.icon {
 							color: $main_light;
 						}
 						&::before {
@@ -1048,3 +1048,114 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 	}
 }
+
+// smart performance icons
+
+@font-face {
+  font-family: "smart-icons";
+  src:url("./assets/smart-icons/smart-icons.eot");
+  src:url("./assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
+    url("./assets/smart-icons/smart-icons.woff") format("woff"),
+    url("./assets/smart-icons/smart-icons.ttf") format("truetype"),
+    url("./assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+	font-family: "smart-icons" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  [class^="icon-"]:before,
+  [class*=" icon-"]:before {
+	font-family: "smart-icons" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-computer-scan-756353:before {
+	content: "\61";
+  }
+  .icon-easy-resume:before {
+	content: "\63";
+  }
+  .icon-error-1582584:before {
+	content: "\64";
+  }
+  .icon-inactive:before {
+	content: "\65";
+  }
+  .icon-internet-performance:before {
+	content: "\66";
+  }
+  .icon-malware-security:before {
+	content: "\67";
+  }
+  .icon-microsoft-windows-22:before {
+	content: "\68";
+  }
+  .icon-noun-registery-key-1581151:before {
+	content: "\69";
+  }
+  .icon-noun-touch-200038:before {
+	content: "\6a";
+  }
+  .icon-performance:before {
+	content: "\6b";
+  }
+  .icon-power-agenda:before {
+	content: "\6c";
+  }
+  .icon-question-circle:before {
+	content: "\6d";
+  }
+  .icon-recycling-2025397:before {
+	content: "\6e";
+  }
+  .icon-multitasking:before {
+	content: "\6f";
+  }
+  .icon-virus:before {
+	content: "\70";
+  }
+  .icon-wifi:before {
+	content: "\62";
+  }
+  .icon-visible-to-online-trackers:before {
+	content: "\71";
+  }
+  .icon-uninstall-375971-2:before {
+	content: "\72";
+  }
+  .icon-uninstall-375971:before {
+	content: "\73";
+  }
+  .icon-uninstall:before {
+	content: "\74";
+  }
+  .icon-thumbsup:before {
+	content: "\75";
+  }
+  .icon-router:before {
+	content: "\76";
+  }
+  .icon-responsive:before {
+	content: "\77";
+  }
+  
