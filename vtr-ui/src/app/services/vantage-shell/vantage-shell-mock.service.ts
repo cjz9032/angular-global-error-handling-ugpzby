@@ -1535,10 +1535,14 @@ export class VantageShellService {
 	}
 
 	public getBetaUser(): any {
-		if (this.phoenix) {
-			return this.phoenix.betaUser;
-		}
-		return true;
+		return {
+			setBetaUser() {
+				return Promise.resolve();
+			},
+			getBetaUser() {
+				return Promise.resolve(true);
+			}
+		};
 	}
 
 	// =================== Start Hardware Scan
