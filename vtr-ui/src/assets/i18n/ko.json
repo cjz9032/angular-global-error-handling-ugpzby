@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "매크로 키를 지우시겠습니까?"
+                    "title": "매크로 키를 지우시겠습니까?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "기록 시간 초과.",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
                 "seeDetailsLink": "세부사항 참조",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오."
             },
             "power": {
                 "title": "전원",
@@ -1040,39 +1041,39 @@
                         "note": "자동 탐지를 선택하면 비행기 탑승 환경을 탐지했을 때 컴퓨터가 비행기 전원 모드를 자동으로 켜고 비행기에서 내리면 끕니다."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "배터리 게이지 리셋",
+                        "description": "이 기능을 사용하면 컴퓨터가 더 정확하게 완전 충전 용량을 측정할 수 있습니다.",
+                        "barCode": "바코드",
+                        "progress": "진행",
+                        "remaining": "남은 시간",
+                        "startTime": "시작 시간",
+                        "lastReset": "최근 리셋",
+                        "fullChargeCapacity": "완전 충전 용량",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "재설정",
+                            "stop": "중지"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
+                        "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
+                        "FCCText": "{{before}} Wh에서 {{after}} Wh",
+                        "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "완료되었습니다. 리셋에 성공했습니다.",
+                            "ERROR_SHUTDOWN": "완료되지 않았습니다. 시스템을 종료합니다.",
+                            "ERROR_LOGOFF": "완료되지 않았습니다. 사용자가 로그아웃했습니다.",
+                            "ERROR_BATTERY_REMOVE": "완료되지 않았습니다. 배터리가 제거되었습니다.",
+                            "ERROR_BATTERY_REPLACE": "완료되지 않았습니다. 배터리가 교체되었습니다.",
+                            "ERROR_AC_DETTACH": "완료되지 않았습니다. AC 전원 어댑터가 분리되었습니다.",
+                            "ERROR_USER_CANCEL": "완료되지 않았습니다. 사용자가 취소했습니다.",
+                            "ERROR_UNEXPECTED": "완료되지 않았습니다. 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
+                            "description2": "참고: <br>1. 이 절차는 몇 시간 정도 걸릴 수 있습니다. 이 시간 동안 컴퓨터 사용을 지양하십시오.<br>2. 열려 있는 모든 앱을 닫고 컴퓨터를 AC 전원에 연결하십시오.<br>3. 절차가 진행되는 동안, 배터리 충전 임계값 기능은 꺼집니다.",
+                            "continue": "계속",
+                            "cancel": "취소",
+                            "yes": "예",
+                            "description3": "배터리 게이지 리셋을 중단하시겠습니까?"
                         }
                     }
                 },

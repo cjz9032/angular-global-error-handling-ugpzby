@@ -160,6 +160,7 @@
 				*ngIf="isOnline">
 				<div class="col col-12 content">
 					<a *ngIf="isOnline"
+						tabindex="0" attr.aria-label="{{ title }} . {{ caption }}"
 						[attr.href]="!actionLink ? null : actionLink"
 						(click)="linkClicked(actionType, actionLink)"
 						target="_blank"
