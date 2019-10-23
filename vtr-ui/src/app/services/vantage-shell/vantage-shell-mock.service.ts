@@ -1350,7 +1350,7 @@ export class VantageShellService {
 				getPreviousResults: this.getPromise(HardwareScanShellMock.previousResults),
 				checkItemsForRecoverBadSectors: this.getPromise(HardwareScanShellMock.checkItemsForRecoverBadSectors),
 				getFinalDoScanResponse: this.getPromise(HardwareScanShellMock.finalDoScanResponse)
-			}
+			};
 		}
 
 		return undefined;
