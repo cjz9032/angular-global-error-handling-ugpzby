@@ -188,5 +188,6 @@ export enum LocalStorageKey {
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
-	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
+	IsSubscribed = '[LocalStorageKey] IsSubscribed',
+	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails'
 }
