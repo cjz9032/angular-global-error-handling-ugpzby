@@ -1538,7 +1538,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.betaUser;
 		}
-		return undefined;
+		return true;
 	}
 
 	// =================== Start Hardware Scan
