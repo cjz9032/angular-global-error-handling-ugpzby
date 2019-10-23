@@ -11,7 +11,6 @@ import { EventTypes, SecurityAdvisor, WindowsHello } from '@lenovo/tan-client-br
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
@@ -84,7 +83,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private dialogService: LenovoIdDialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
@@ -108,9 +106,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.showVpn();
 			});
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
 				LocalStorageKey.SecurityShowWindowsHello

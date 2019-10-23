@@ -20,16 +20,13 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-security-welcome.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { DevicePostureMockService } from 'src/app/services/device-posture/device-posture-mock.service';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
@@ -72,10 +69,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	constructor(
 		public vantageShellService: VantageShellService,
-		public homeSecurityMockService: HomeSecurityMockService,
-		public devicePostureMockService: DevicePostureMockService,
 		public dialogService: DialogService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -89,14 +83,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.devicePosture = this.vantageShellService.getDevicePosture();
 		if (this.vantageShellService.getSecurityAdvisor()) {
 			this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
-		} else {
-			this.wifiSecurity = this.securityAdvisorMockService.getSecurityAdvisor().wifiSecurity;
-		}
-		if (!this.chs) {
-			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
-		}
-		if (!this.devicePosture) {
-			this.devicePosture = this.devicePostureMockService.getDevicePosture();
 		}
 		this.permission = this.vantageShellService.getPermission();
 		this.welcomeModel = new HomeSecurityWelcome();

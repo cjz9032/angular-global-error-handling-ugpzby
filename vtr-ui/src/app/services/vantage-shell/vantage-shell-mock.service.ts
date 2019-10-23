@@ -7,6 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
+import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
 
 declare var Windows;
 
@@ -295,18 +296,11 @@ export class VantageShellService {
 	 */
 	public getWarranty(): any {
 		// {lastupdate: null, status: 0}
-		const warranty: any = {};
 
-		const warrantyInformation =  {
-			status: 0,
-			url: 'https://pcsupport.lenovo.com/us/en/warrantylookup',
-			dayDiff: 729,
-			startDate: new Date('Sat Dec 01 2018 08:00:00 GMT+0800'),
-			endDate: new Date('Sat Nov 30 2020 08:00:00 GMT+0800')
-		};
-		warranty.getWarrantyInformation = this.getPromise(warrantyInformation);
-
-		return warranty;
+		if (this.phoenix) {
+			return this.phoenix.warranty;
+		}
+		return undefined;
 	}
 
 	public getShellVersion() {
@@ -463,10 +457,88 @@ export class VantageShellService {
 	 * returns modern preload object from VantageShellService of JS Bridge
 	 */
 	public getModernPreload(): any {
-		if (this.phoenix) {
-			return this.phoenix.modernPreload;
+		const modernPreload: any = {};
+		const entitledAppListResult = {
+			appList: [
+				{
+					appID: '07f5e8aaa07d836e817f35847f39cf88',
+					partNum: 'SBB0U39800', // id for get details from CMS entitled apps
+					name: 'X-Rite royalty for UHD panel',
+					status: 'installed',
+					progress: '0',
+					version: '2.1.9'
+				}, {
+					appID: 'c233e07661739ce19e604ebdcc832f7b',
+					partNum: 'SBB0K63291', // id for get details from CMS entitled apps
+					name: 'McAfee LiveSafe 36 Months Subscription Win7 Win10 ',
+					status: 'not installed',
+					progress: '0',
+					version: '16.0.14'
+				}, {
+					appID: '5715374c216f6f89acd63902f5834980',
+					partNum: 'SBB0U39801', // id for get details from CMS entitled apps
+					name: 'Chroma Tune royalty for UHD panel',
+					status: 'not installed',
+					progress: '0',
+					version: '2'
+				}]
+		};
+		modernPreload.initialize = (serialNumber) => ({
+			if (serialNumber) {
+				return true;
+			}
+		});
+		modernPreload.getIsEntitled = () => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve({result: true});
+				}, 1000);
+			})
+		};
+		modernPreload.getEntitledAppList = () => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve(entitledAppListResult);
+				}, 2000);
+			});
+		};
+		modernPreload.downloadOrInstallEntitledApps = (appList, callback, cancelHandler) => {
+			return new Promise((resolve) => {
+				const progressResponseList = [];
+				var cancelled = false;
+				cancelHandler.cancel = () => {
+					cancelled = true;
+				}
+				appList.forEach(app => {
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '10'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '50'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '90'}]);
+					progressResponseList.push([{appID: app.appID, status: 'downloaded', progress: '100'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
+					progressResponseList.push([{appID: app.appID, status: 'installed', progress: '100'}]);
+				});
+				const downloadAndInstallResult = {appList};
+				downloadAndInstallResult.appList.forEach(app => {
+					app.status = 'installed';
+					app.progress = '100';
+				});
+
+				var i = 0;
+				var downloadInterval = setInterval(() => {
+					if (i < progressResponseList.length && !cancelled) {
+						callback(progressResponseList[i]);
+						i++;
+					} else {
+						resolve(downloadAndInstallResult);
+						clearInterval(downloadInterval);
+					}
+				}, 1000);
+			});
 		}
-		return undefined;
+		return modernPreload;
 	}
 
 	/**
@@ -483,293 +555,164 @@ export class VantageShellService {
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSystemUpdate(): any {
-		const systemUpdate: any = {};
-		const statusResponse = {
-			status: 'idle',
-			pluginVersion: '',
-			statusCode: '20', // UNKNOWN_EXCEPTION
-			searchProgress: null,
-			downloadProgress: null,
-			installProgress: null,
-			updateTaskList: [],
-			checkForUpdatesResult: null
-		};
-		const mostRecentUpdateInfo = {
-			lastScanTime: '2019-03-12T18:24:03',
-			lastInstallTime: '2019-03-01T10:09:53',
-			nextScheduleScanTime: '2019-03-15T10:07:42',
-			scheduleScanEnabled: true
-		};
-		const updateHistory = [{
-			packageID: 'reboot_type_0',
-			packageName: 'RT_0',
-			packageDesc: '[ID: reboot_type_0] Test package will not reboot',
-			version: '1.0.0.0',
-			utcInstallDate: '2019-10-10T16:16:47',
-			status: 'Installed',
-			packageSize: '51652592',
-			packageReleaseDate: '2014-11-27',
-			rebootType: 'NoRebootRequired'
-		}];
-		const checkForUpdateFinalResponse = {
-			status: '0',
-			updateList: [{
-				coreqPackageID: '',
-				currentInstalledVersion: '10.0.18362.1',
-				diskSpaceRequired: '160000000',
-				licenseUrl: '',
-				packageDesc: '[ID: reboot_type_3] Test package need manual reboot',
-				packageID: 'reboot_type_3',
-				packageName: 'RT_3',
-				packageRebootType: 'RebootRequested',
-				packageReleaseDate: '2015-01-30',
-				packageSeverity: 'Recommended',
-				packageSize: '24551792',
-				packageTips: '',
-				packageType: 'Driver',
-				packageVendor: 'Lenovo',
-				packageVersion: '2.1.15.0',
-				readmeUrl: 'https://download.lenovo.com/test/eda/03514/shareit21150ww.txt'
-			}, {
-				coreqPackageID: '',
-				currentInstalledVersion: '10.0.18362.1',
-				diskSpaceRequired: '80000000',
-				licenseUrl: '',
-				packageDesc: '[ID: reboot_type_5] Test package need delay reboot',
-				packageID: 'reboot_type_5',
-				packageName: 'RT_5',
-				packageRebootType: 'RebootDelayed',
-				packageReleaseDate: '2014-07-17',
-				packageSeverity: 'Recommended',
-				packageSize: '39360920',
-				packageTips: '',
-				packageType: 'Driver',
-				packageVendor: 'Lenovo',
-				packageVersion: '4.4.1.2000',
-				readmeUrl: 'https://download.lenovo.com/test/eda/03514/mx4ltnc01ww.txt'
-			}, {
-				coreqPackageID: "",
-				currentInstalledVersion: "10.0.18362.1",
-				diskSpaceRequired: "1000000",
-				licenseUrl: "",
-				packageDesc: "[ID: reboot_type_1] Test package will force reboot",
-				packageID: "reboot_type_1",
-				packageName: "RT_1",
-				packageRebootType: "RebootForced",
-				packageReleaseDate: "2015-05-20",
-				packageSeverity: "Critical",
-				packageSize: "537072",
-				packageTips: "",
-				packageType: "",
-				packageVendor: "Lenovo",
-				packageVersion: "1.0",
-				readmeUrl: "https://download.lenovo.com/test/eda/03514/forcereboot_1.txt"
-			}, {
-				coreqPackageID: "",
-				currentInstalledVersion: "10.0.18362.1",
-				diskSpaceRequired: "1000000",
-				licenseUrl: "",
-				packageDesc: "[ID: reboot_type_4] Test package will force shutdown",
-				packageID: "reboot_type_4",
-				packageName: "RT_4",
-				packageRebootType: "PowerOffForced",
-				packageReleaseDate: "2015-05-20",
-				packageSeverity: "Recommended",
-				packageSize: "537064",
-				packageTips: "",
-				packageType: "",
-				packageVendor: "Lenovo",
-				packageVersion: "1.0",
-				readmeUrl: "https://download.lenovo.com/test/eda/03514/forceshutdown_1.txt"
-			}]
-		};
-		const checkForUpdatePercentageResponse = [10, 15, 44, 66, 92, 100];
-		const installProgressResponses = [
-			{
-				totalDownloadSize: 100000,
-				installPercentage: 0,
-				downloadPercentage: 10
-			}, {
-				totalDownloadSize: 100010,
-				installPercentage: 0,
-				downloadPercentage: 20
-			}, {
-				totalDownloadSize: 100200,
-				installPercentage: 0,
-				downloadPercentage: 30
-			}, {
-				totalDownloadSize: 130000,
-				installPercentage: 0,
-				downloadPercentage: 50
-			}, {
-				totalDownloadSize: 200000,
-				installPercentage: 0,
-				downloadPercentage: 60
-			}, {
-				totalDownloadSize: 300000,
-				installPercentage: 0,
-				downloadPercentage: 90
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 0,
-				downloadPercentage: 100
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 10,
-				downloadPercentage: 100
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 30,
-				downloadPercentage: 100
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 60,
-				downloadPercentage: 100
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 85,
-				downloadPercentage: 100
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 95,
-				downloadPercentage: 100
-			}, {
-				totalDownloadSize: 500000,
-				installPercentage: 100,
-				downloadPercentage: 100
-			}
-		];
-		const downloadAndInstallAppFinalResult = {
-			"progress": 50.0,
-			"exitCode": 0,
-			"appID": "3C2B09F6-5AD1-4752-92AB-E8587C10E79E",
-			"cancelState": "InstallingCancelled",
-			"resultStatus": "DownloadSuccess",
-			"currentStatus": "InstallerExited",
-			"comment": "test comment",
-			"version": "1.0",
-		    "launchPath": "C:\\test.exe"
-		};
-		const downloadAndInstallAppProgressResponse = [0, 10, 25, 50, 66, 87, 95, 100];
-
-		systemUpdate.scheduleInfo = {
-			criticalAutoUpdates: 'ON',
-			recommendedAutoUpdates: 'ON'
-		};
-		systemUpdate.ignoredUpdates = [{
-			packageName: 'RT_3',
-			isIgnored: true
-		}];
-
-		systemUpdate.getStatus = this.getPromise(statusResponse);
-
-		systemUpdate.getMostRecentUpdateInfo = this.getPromise(mostRecentUpdateInfo);
-
-		systemUpdate.getUpdateSchedule = this.getPromise(systemUpdate.scheduleInfo);
-
-		systemUpdate.setUpdateSchedule = async function(inputScheduleInfo) {
-			systemUpdate.scheduleInfo = inputScheduleInfo;
-			return true;
-		};
-
-		systemUpdate.getUpdateHistory = this.getPromise(updateHistory);
-
-		systemUpdate.getIgnoredUpdates = this.getPromise(systemUpdate.ignoredUpdates);
-
-		systemUpdate.unignoreUpdate = (packageName) => {
-			return new Promise((resolve) => {
-				const index = systemUpdate.ignoredUpdates.findIndex(item => item.packageName === packageName);
-				if (index > -1) {
-					systemUpdate.ignoredUpdates.splice(index, 1);
-				}
-				resolve(systemUpdate.ignoredUpdates);
-			});
+		if (this.phoenix) {
+			return this.phoenix.systemUpdate;
 		}
-
-		systemUpdate.ignoreUpdate = (packageName) => {
-			return new Promise((resolve) => {
-				const index = systemUpdate.ignoredUpdates.findIndex(item => item.packageName === packageName);
-				if (index < 0) {
-					systemUpdate.ignoredUpdates.push({packageName, isIgnored: true});
-				}
-				resolve(systemUpdate.ignoredUpdates);
-			})
-		}
-
-		systemUpdate.checkForUpdates = (callback) => {
-			return new Promise((resolve) => {
-				var i = 0;
-				var checkProgressInterval = setInterval(() => {
-					if (i < checkForUpdatePercentageResponse.length) {
-						callback(checkForUpdatePercentageResponse[i]);
-						i++;
-					} else {
-						resolve(checkForUpdateFinalResponse);
-						clearInterval(checkProgressInterval);
-					}
-				}, 1000);
-			});
-		}
-
-		systemUpdate.installUpdates = (updatesArray, callback) => {
-			return new Promise((resolve) => {
-				var i = 0;
-				var progressInterval = setInterval(()=> {
-					if (i < installProgressResponses.length) {
-						callback(installProgressResponses[i]);
-						i++;
-					} else {
-						const updateResultList = [];
-						updatesArray.forEach(element => {
-							const updateResult = {
-								packageID: element.packageID,
-								actionResult: 'Success'
-							}
-							updateResultList.push(updateResult);
-						});
-						resolve({status: '0', updateResultList});
-						clearInterval(progressInterval);
-					}
-				}, 1000);
-			})
-		};
-
-		systemUpdate.downloadAndInstallApp = (applicationGuid, timeout, callback) => {
-			return new Promise((resolve) => {
-				var i = 0;
-				var appDownloadInterval = setInterval(() => {
-					if (i < downloadAndInstallAppProgressResponse.length) {
-						callback(downloadAndInstallAppProgressResponse[i]);
-						i++;
-					} else {
-						resolve(downloadAndInstallAppFinalResult);
-						clearInterval(appDownloadInterval);
-					}
-				}, 1000);
-			});
-		};
-
-		systemUpdate.getLaunchPath = (applicationGuid) => {
-			return new Promise((resolve) => {
-				resolve('C:\\test.exe');
-			});
-		};
-
-		systemUpdate.getAppStatus = (applicationGuid) => {
-			return new Promise((resolve) => {
-				resolve('InstallDone');
-			});
-		}
-
-
-		return systemUpdate;
+		return undefined;
 	}
 
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
-		if (this.phoenix) {
-			return this.phoenix.securityAdvisor;
-		}
-		return undefined;
+		const securityAdvisor: Phoenix.SecurityAdvisor = {
+			antivirus: {
+				mitt: null,
+				mcafeeDownloadUrl: 'https://www.mcafee.com/consumer/en-us/promos/expiry/l714/mls_430/trial/ab/wb.html?cid=239128&culture=en-us&affid=714&pir=1',
+				mcafee: null,
+				others: null,
+				windowsDefender: {
+					firewallStatus: true,
+					status: true,
+					enabled: true
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+			},
+			passwordManager: {
+				status: 'not-installed',
+				mitt: null,
+				downloadUrl: 'https://www.dashlane.com/lenovo/',
+				loginUrl: 'https://app.dashlane.com',
+				appUrl: 'https://app.dashlane.com',
+				isDashLaneEdgeVersion: false,
+				download() {
+					this.status = 'installed';
+					return Promise.resolve(true);
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			vpn: {
+				status: 'not-installed',
+				mitt: null,
+				downloadUrl: 'https://www.surfeasy.com/lenovo/',
+				download() {
+					this.status = 'installed';
+					return Promise.resolve(true);
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			windowsHello: {
+				fingerPrintStatus: 'active',
+				facialIdStatus: 'inactive',
+				systemPasswordStatus: 'active',
+				mitt: null,
+				supportUrl: 'https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello',
+				windowsHelloProtocol: 'ms-settings:signinoptions',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			wifiSecurity: {
+				mitt: null,
+				state: 'enabled',
+				wifiHistory: [{
+					ssid: 'lenovo',
+					info: '2019/7/1 13:15:32',
+					good: '0'
+				}],
+				isLocationServiceOn: true,
+				isComputerPermissionOn: true,
+				isDevicePermissionOn: true,
+				isLWSPluginInstalled: true,
+				hasSystemPermissionShowed: true,
+				isSupported: true,
+				launchLocationPrivacy() {
+					return Promise.resolve(true);
+				},
+				enableWifiSecurity() {
+					this.state = 'enabled';
+					return Promise.resolve(true);
+				},
+				disableWifiSecurity() {
+					this.state = 'disabled';
+					return Promise.resolve(true);
+				},
+				getWifiSecurityStateOnce(): Promise<any> {
+					return Promise.resolve();
+				},
+				updateWifiSecurityState(): void {},
+				getWifiSecurityState(): Promise<any> {
+					return Promise.resolve();
+				},
+				getWifiState() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					let p1 = new Promise((resolve) => {});
+					let p2 = new Promise((resolve) => {});
+					return Promise.all([p1, p2]);
+				},
+				cancelGetWifiSecurityState() {}
+			},
+			setScoreRegistry() {
+				return Promise.resolve(true);
+			},
+			on(type, handler) {
+				return this;
+			},
+			off(type, handler) {
+				return this;
+			},
+			refresh() {
+				return Promise.resolve();
+			}
+		};
+		return securityAdvisor;
 	}
 
 	public getPermission(): any {
@@ -780,17 +723,79 @@ export class VantageShellService {
 	}
 
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
-		if (this.phoenix) {
-			return this.phoenix.connectedHomeSecurity;
-		}
-		return undefined;
+		const homeSecurity: Phoenix.ConnectedHomeSecurity  = {
+			account: {
+				state: CHSAccountState.trial,
+				role: undefined,
+				lenovoId: 'lenovo@lenovo.com',
+				serverTimeUTC: new Date(),
+				expiration: new Date('sep 15, 2019'),
+				consoleUrl: 'https://chs.lenovo.com',
+				getCHSConsoleUrl() {
+					return Promise.resolve('https://chs.lenovo.com/');
+				}
+			},
+			deviceOverview: {
+				allDevicesCount: 0,
+				allDevicesProtected: true,
+				familyMembersCount: 2,
+				placesCount: 2,
+				personalDevicesCount: 1,
+				wifiNetworkCount: 3,
+				homeDevicesCount: 0
+			},
+			on(type, handler) {
+				return this;
+			},
+			off(type, handler) {
+				return this;
+			},
+			refresh() {
+				return Promise.resolve([true]);
+			},
+			joinAccount(code: string) {
+				return Promise.resolve('success');
+			},
+			quitAccount() {
+				return Promise.resolve('success');
+			},
+			purchase() {
+				WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
+				this.account.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+			},
+			visitWebConsole(feature: string) {
+				WinRT.launchUri(`https://homesecurity.coro.net/`);
+				this.account.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+			}
+		};
+
+		return homeSecurity;
 	}
 
 	public getDevicePosture(): Phoenix.DevicePosture {
-		if (this.phoenix) {
-			return this.phoenix.devicePosture;
-		}
-		return undefined;
+		const devicePosture: Phoenix.DevicePosture = {
+			value: [
+				{ name: 'PasswordProtection', vulnerable: false },
+				{ name: 'HardDriveEncryption', vulnerable: true },
+				{ name: 'AntiVirusAvailability', vulnerable: false },
+				{ name: 'FirewallAvailability', vulnerable: false },
+				{ name: 'AppsFromUnknownSources', vulnerable: true },
+				{ name: 'DeveloperMode', vulnerable: true },
+				{ name: 'NotActivatedWindows', vulnerable: false },
+				{ name: 'UacNotification', vulnerable: false }],
+			getDevicePosture() { return Promise.resolve(); },
+			cancelGetDevicePosture() {},
+			on(type, handler) {
+				return this;
+			},
+			off(type, handler) {
+				return this;
+			},
+			refresh() {
+				return Promise.resolve([true]);
+			}
+		};
+		return devicePosture;
 	}
 
 	/**
@@ -927,6 +932,7 @@ export class VantageShellService {
 			},
 		};
 		battery.getBatteryInformation = this.getPromise(battery);
+		battery.stopBatteryMonitor = this.getPromise(true);
 		return battery;
 	}
 	/**
@@ -1009,7 +1015,7 @@ export class VantageShellService {
 		};
 
 		devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
-		devicePower.stopMonitor = this.getPromise(true);
+		devicePower.stopMonitor = this.getPromise((true));
 		return devicePower;
 	}
 	public getPowerIdeaNoteBook(): any {
@@ -1091,10 +1097,11 @@ export class VantageShellService {
 		return true;
 	}
 	public calcDeviceFilter(filter) {
-		if (this.phoenix) {
-			return this.phoenix.deviceFilter.calc(filter);
-		}
-		return undefined;
+		return Promise.resolve({
+			ConnectedHomeSecurity: true,
+			FeatureSearch: null,
+			TileBSource: 'UPE'
+		});
 	}
 	public getLogger(): any {
 		if (this.shell) {
@@ -1278,34 +1285,9 @@ export class VantageShellService {
 	}
 
 	public getPreferenceSettings() {
-		const preferenceSettings: any = {};
-
-		const messagingPreference =  [
-			{
-				id: 'AppFeatures',
-				displayDescription: 'Messages pertaining to System Update, System Health, articles, and other noteworthy features.',
-				displayName: 'App Features',
-				isPolicyManaged: false,
-				settingValue: 2,
-			},
-			{
-				id: 'Marketing',
-				displayDescription: 'Messages pertaining to Lenovo exclusive content, special offers, and other promotional messages.',
-				displayName: 'Marketing',
-				isPolicyManaged: false,
-				settingValue: 1,
-			},
-			{
-				id: 'ActionTriggered',
-				displayDescription: 'Messages triggered by user selected settings such as auto-install critical/recommended updates, display priority control, desktop power manager, etc.',
-				displayName: 'Action Triggered',
-				isPolicyManaged: false,
-				settingValue: 2,
-			},
-		];
-		preferenceSettings.getMessagingPreference = this.getPromise(messagingPreference);
-
-		return preferenceSettings;
+		if (this.phoenix) {
+			return this.phoenix.preferenceSettings;
+		}
 	}
 	public getNetworkBoost() {
 		if (this.phoenix) {
