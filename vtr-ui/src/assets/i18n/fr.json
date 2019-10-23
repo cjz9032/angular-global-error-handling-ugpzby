@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Voulez-vous vraiment effacer cette touche macro ?"
+                    "title": "Voulez-vous vraiment effacer cette touche macro ?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Délai d'attente pour l'enregistrement.",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
                 "seeDetailsLink": "Voir les détails",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
             },
             "power": {
                 "title": "Alimentation",
@@ -1040,39 +1041,39 @@
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Réinitialisation de la jauge de la batterie",
+                        "description": "Cette fonction permet à votre ordinateur d'estimer plus précisément la capacité de charge totale.",
+                        "barCode": "Code-barres",
+                        "progress": "Progression",
+                        "remaining": "Restant",
+                        "startTime": "Heure de début",
+                        "lastReset": "Dernière réinitialisation",
+                        "fullChargeCapacity": "Capacité de charge totale",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Réinitialiser",
+                            "stop": "Arrêt"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
+                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
+                        "FCCText": "De {{before}} Wh à {{after}} Wh",
+                        "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Terminé. La réinitialisation a abouti.",
+                            "ERROR_SHUTDOWN": "Incomplet. Arrêter le système.",
+                            "ERROR_LOGOFF": "Incomplet. Utilisateur déconnecté.",
+                            "ERROR_BATTERY_REMOVE": "Incomplet. La batterie a été retirée.",
+                            "ERROR_BATTERY_REPLACE": "Incomplet. La batterie a été remplacée.",
+                            "ERROR_AC_DETTACH": "Incomplet. Le boîtier d'alimentation a été débranché.",
+                            "ERROR_USER_CANCEL": "Incomplet. Annulé par l'utilisateur.",
+                            "ERROR_UNEXPECTED": "Incomplet. Une erreur inattendue s'est produite."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
+                            "description2": "Remarques : <br>1. Ce processus peut durer plusieurs heures. Veuillez éviter d'utiliser votre ordinateur pendant cette opération.<br>2. Fermez toutes les applications ouvertes et connectez votre ordinateur à l'alimentation secteur.<br>3. Pendant le processus, la fonction de seuil de chargement de la batterie est désactivée.",
+                            "continue": "Continuer",
+                            "cancel": "Annuler",
+                            "yes": "Oui",
+                            "description3": "Voulez-vous vraiment arrêter la réinitialisation de la jauge de la batterie ?"
                         }
                     }
                 },
