@@ -130,14 +130,16 @@
 
 	<right-content>
 		<div class="container-fluid">
-			<div class="row" *ngIf="warrantyData && deviceService.showWarranty">
+			<div class="row"
+				*ngIf="warrantyData && deviceService.showWarranty">
 				<div class="col-sm-12 px-0 pb-20">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
 				</div>
 			</div>
-			<div class="row" *ngIf="!deviceService.showWarranty">
+			<div class="row"
+				*ngIf="!deviceService.showWarranty">
 				<div class="col-sm-12 px-0 pb-0">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
@@ -147,18 +149,21 @@
 					</vtr-widget-feedback>
 				</div>
 			</div>
-			<div class="row" *ngIf="!deviceService.isArm">
+			<div class="row"
+				*ngIf="!deviceService.isArm">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-quicksettings
 						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
 					</vtr-widget-quicksettings>
 				</div>
 			</div>
-			<div class="row" *ngIf="!deviceService.isArm">
+			<div class="row"
+				*ngIf="!deviceService.isArm">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
-						[description]="'dashboard.systemStatus.subtitle' | translate" [items]="systemStatus"
+						[description]="'dashboard.systemStatus.subtitle' | translate"
+						[items]="systemStatus"
 						[linkId]="'dashboard-ss'">
 					</vtr-widget-status>
 				</div>
@@ -168,7 +173,9 @@
 				*ngIf="!androidService.isAndroid && deviceService.isArm">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-						[description]="'common.qAndA.subtitle' | translate" [items]="qaService.qas" blockPosition="r4"
+						[description]="'common.qAndA.subtitle' | translate"
+						[items]="qaService.qas"
+						blockPosition="r4"
 						[linkId]="'dashboard-qa'"></vtr-widget-questions>
 				</div>
 			</div>
