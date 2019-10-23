@@ -24,7 +24,6 @@ import { faHome } from '@fortawesome/pro-light-svg-icons/faHome';
 import { faTv } from '@fortawesome/pro-light-svg-icons/faTv';
 import { faMapMarkerAlt } from '@fortawesome/pro-light-svg-icons/faMapMarkerAlt';
 import { HomeSecurityAfterSignupComponent } from '../../components/pages/page-connected-home-security/component/home-security-after-signup/home-security-after-signup.component';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 
 library.add(faWifi);
 library.add(faWifiSlash);
@@ -56,8 +55,7 @@ library.add(faMapMarkerAlt);
 		UiListChevronModule
 	],
 	providers: [
-		DialogService,
-		HomeSecurityMockService
+		DialogService
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

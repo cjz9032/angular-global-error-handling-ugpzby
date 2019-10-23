@@ -30,24 +30,24 @@
 									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container left">
 
 										<vtr-ui-landing-feature
-											*ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
+											*ngIf="antivirusLandingViewModel?.subject?.status !== undefined && antivirusLandingViewModel?.subject?.status !== null"
 											[feature]='antivirusLandingViewModel'>
 										</vtr-ui-landing-feature>
 
 										<vtr-ui-landing-feature
-											*ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
+											*ngIf="passwordManagerLandingViewModel?.subject?.status !== undefined && passwordManagerLandingViewModel?.subject?.status !== null"
 											[feature]='passwordManagerLandingViewModel'>
 										</vtr-ui-landing-feature>
 
 										<vtr-ui-landing-feature
-											*ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && showVpn"
+											*ngIf="vpnLandingViewModel?.subject?.status !== undefined && vpnLandingViewModel?.subject?.status !== null && showVpn"
 											[feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>
 
 									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container">
 										<div class="security-widget wifi-connected-home"
-											*ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
+											*ngIf="wifiSecurityLandingViewModel?.subject?.status !== undefined && wifiSecurityLandingViewModel?.subject?.status !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
 													<vtr-ui-object-title
@@ -58,7 +58,7 @@
 														metricsEvent="featureClick">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
-														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
+														*ngIf="wifiHistory && wifiSecurityLandingViewModel?.subject?.status === 0 && wifiHistory.length !== 0">
 														<div class="row align-items-center pt-wifiLength">
 															<div class="col-2 row justify-content-center pl-3">
 																<fa-icon class="wifi-font-icon"
