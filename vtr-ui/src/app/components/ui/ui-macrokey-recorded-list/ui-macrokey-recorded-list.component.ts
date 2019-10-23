@@ -155,7 +155,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		bodyText: '',
 		metricsItemClose: 'close dialog',
 		btnConfirm: true,
-		popupWindowTitle: 'gaming.macroKey.popupContent.clearMacrokey.modalTitle'
+		popupWindowTitle: 'clear double confirm window'
 	};
 
 	constructor(private macrokeyService: MacrokeyService) { }
@@ -179,7 +179,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					}
 				});
 			}
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	clearRecords() {

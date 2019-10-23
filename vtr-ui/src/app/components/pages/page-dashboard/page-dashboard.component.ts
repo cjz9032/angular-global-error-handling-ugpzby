@@ -17,6 +17,7 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
+import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
@@ -86,6 +87,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
 		});

@@ -1,6 +1,7 @@
 import { Component,	OnInit,	OnDestroy } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -24,10 +25,14 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
+		public homeSecurityMockService: HomeSecurityMockService,
 	) {	}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
+		if (!this.chs) {
+			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
+		}
 		this.consoleUrlCallback = (data) => {
 			if (data.account.consoleUrl && !this.currentConsoleUrl) {
 				this.currentConsoleUrl = data.account.consoleUrl;

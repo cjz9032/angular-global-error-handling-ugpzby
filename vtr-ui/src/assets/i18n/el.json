@@ -643,10 +643,7 @@
             "collapse": "Σύμπτυξη",
             "expand": "Επέκταση",
             "loader": "Λήψη της κατάστασης <br>",
-            "loading": "Φόρτωση...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "loading": "Φόρτωση..."
         },
         "app-update": {
             "message": "Γεια! Υπάρχει διαθέσιμη μια νεότερη έκδοση του Vantage, θέλετε να τη φορτώσετε;"
@@ -884,7 +881,7 @@
                     "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
                     "NotSupportACAdapterDetail": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
                     "LimitedACAdapterSupportDetail": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
-                    "FullACAdapterSupport": "<b>Συνδέεται τροφοδοσία {{acWattage}} W {{acAdapterType}}.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχετε ορίσει το {{value}}% ως όριο διακοπής φόρτισης της μπαταρίας σας.",
@@ -1405,8 +1402,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
                     "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
@@ -1473,7 +1469,7 @@
                     "options": {
                         "near": "Κοντά",
                         "far": "Μακριά",
-                        "medium": "Μεσαία"
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1494,7 +1490,7 @@
                     "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
                     "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο.",
                     "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
-                    "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια."
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
@@ -1502,7 +1498,7 @@
                 },
                 "resetToDefault": "Επαναφορά",
                 "sensitivityAdjusting": {
-                    "title": "ΠΡΟΣΑΡΜΟΓΗ ΤΗΣ ΕΥΑΙΣΘΗΣΙΑΣ"
+                    "title": "SENSITIVITY ADJUSTING"
                 }
             },
             "intelligentScreen": {

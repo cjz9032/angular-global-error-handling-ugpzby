@@ -189,19 +189,18 @@
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
-													
-													<div class="custom-control custom-checkbox smart-assist-checkbox">
+
+													<div class="auto-set-checkbox" >
 														<input id="cb-zero-touch-lock"
 															attr.aria-label="cb-zero-touch-lock"
 															type="checkbox"
 															name="zero-check-lock-checkbox-id"
-															class="custom-control-input"
 															[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.facilRecognitionCameraAccess
 															|| intelligentSecurity.facialRecognitionCameraPrivacyMode"
 															[(ngModel)]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"
 															(ngModelChange)='onZeroTouchLockFacialRecoChange()'/>
 															<!-- [checked]="intelligentSecurity.isZeroTouchLockFacialRecoEnabled"/> -->
-														<label for="cb-zero-touch-lock" class="custom-control-label">
+														<label for="cb-zero-touch-lock">
 															{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
 														</label>
 												</div>
@@ -248,8 +247,8 @@
 												</div>
 											</div>
 											<div *ngIf="sensitivityVisibility"
-												class="pl-4 custom-row-swicth bold-title pb-4" [class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
-												<h3 class="sensitivityTitle" [class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+												class="pl-4 custom-row-swicth bold-title pb-4">
+												<h3 class="sensitivityTitle">
 													{{'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate}}
 												</h3>
 												<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
@@ -260,8 +259,7 @@
 													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
-													[value]="sesnsitivityAdjustVal"
-													[enableSlider]= "!intelligentSecurity.isZeroTouchLockEnabled">
+													[value]="sesnsitivityAdjustVal">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">

@@ -643,10 +643,7 @@
             "collapse": "折りたたみ",
             "expand": "展開",
             "loader": "取得ステータス",
-            "loading": "ロード中...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "loading": "ロード中..."
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
@@ -884,7 +881,7 @@
                     "PermanentError": "<b>正常摩耗のためバッテリーは故障</b>しています。バッテリーが充電できません。バッテリーを交換してください。",
                     "NotSupportACAdapterDetail": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
                     "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源が接続されています。</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
                 },
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
@@ -1405,8 +1402,7 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
                 },
                 "controlOptions": {
                     "more": "詳細",
@@ -1473,7 +1469,7 @@
                     "options": {
                         "near": "近い",
                         "far": "遠い",
-                        "medium": "中程度"
+                        "medium": "Medium"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1494,7 +1490,7 @@
                     "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
                     "description6": "4. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。",
-                    "description7": "精度は、体の大きさ、姿勢、動きの頻度によって異なります。コンピューターが予期せずロックされる場合は、感度バーを調整して精度を向上させます。"
+                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 設定に移動",
@@ -1502,7 +1498,7 @@
                 },
                 "resetToDefault": "リセット",
                 "sensitivityAdjusting": {
-                    "title": "感度調整"
+                    "title": "SENSITIVITY ADJUSTING"
                 }
             },
             "intelligentScreen": {

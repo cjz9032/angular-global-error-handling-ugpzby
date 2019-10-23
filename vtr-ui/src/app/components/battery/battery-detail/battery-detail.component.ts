@@ -72,6 +72,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 						response.detail[i].chargeStatusString = this.batteryChargeStatus.getBatteryChargeStatus(id);
 
+						// this.translate.get(this.batteryChargeStatus.getBatteryChargeStatus(id)).subscribe((res: string) => {
+						// 	response.detail[i].chargeStatusString = res;
+						// });
+
 						if (response.detail[i].chargeStatus === this.batteryChargeStatus.NO_ACTIVITY.id
 							|| response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id
 							|| response.detail[i].chargeStatus === this.batteryChargeStatus.NOT_INSTALLED.id) {
@@ -97,12 +101,12 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.remainingTime';
 						}
 						const chemistry: string = response.detail[i].deviceChemistry;
-						if (chemistry === null || chemistry === undefined) {
-							this.deviceChemistry[i] = chemistry;
-						} else {
-							this.deviceChemistry[i] =
+
+						// this.translate.get('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase()).subscribe((res: string) => {
+						// 	this.deviceChemistry[i] = res;
+						// });
+						this.deviceChemistry[i] =
 							'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase();
-						}
 					}
 				}
 			}

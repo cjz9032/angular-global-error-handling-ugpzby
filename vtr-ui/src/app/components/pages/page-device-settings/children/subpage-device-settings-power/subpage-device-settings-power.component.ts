@@ -1232,10 +1232,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			return true;
 		}
-		if (!(!this.isDesktopMachine && !this.isPowerDriverMissing && (this.alwaysOnUSBStatus.available || this.showEasyResumeSection))) {
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
-			return true;
-		}
 		return false;
 	}
 

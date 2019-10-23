@@ -319,9 +319,8 @@
 					position: relative;
 					z-index: 1;
 					height: 100%;
-					padding: 2rem;
-					// display: flex;
-					// justify-content: flex-end;
+					display: flex;
+					justify-content: flex-end;
 					align-items: center;
 					.title {
 						color: $light;

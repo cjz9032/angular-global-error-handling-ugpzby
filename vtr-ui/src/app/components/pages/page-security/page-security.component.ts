@@ -127,10 +127,12 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			if (result.GEO === 'cn') {
 				this.showVpn = false;
 			}
-			if (this.wifiSecurity) {
-				this.wifiSecurity.getWifiSecurityState();
+			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+				this.refreshAll();
+			} else {
+				this.getScore();
+				this.getMaliciousWifi();
 			}
-			this.refreshAll();
 		}).catch(e => {
 			this.showVpn = true;
 		});

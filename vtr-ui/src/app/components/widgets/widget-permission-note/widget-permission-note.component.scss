@@ -22,11 +22,11 @@
 		letter-spacing: 0.76px;
 		text-align: left;
 		@media #{$black-on-white} {
-			color: $blue-light;
+			color: $yellow;
 			border:none;
 		}
 		@media #{$white-on-black} {
-			color: $yellow;
+			color: $blue-light;
 			border:none;
 			
 		}

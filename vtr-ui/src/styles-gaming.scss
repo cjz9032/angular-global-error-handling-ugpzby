@@ -436,18 +436,6 @@
 							color: $gaming_lightest;
 							border: none;
 						}
-						.vtr-battery-gauge-reset {
-							.battery-text{
-								color: $gaming_lightest;
-							}
-							.battery-gauge-info{
-								.row{	
-									.label-text{
-									color:$shade_blue;
-									}
-								}
-							}
-						}
 						.vtr-battery-charge-threshold-settings {
 							.threshold-for-built-in-battery {
 								color: $gaming_grey_lightest;
@@ -1053,14 +1041,14 @@
 								.battery {
 									.acid-container {
 										.percentage {
-											color: $main_dark;
+											color: $gaming_lightest;
 										}
 									}
 									.remaining-time {
-										color: $main_dark;
+										color: $gaming_lightest;
 									}
 									.remaining-text {
-										color: $main_dark;
+										color: $gaming_grey_lightest;
 									}
 								}
 							}
@@ -1244,9 +1232,9 @@
 			.sub-heading {
 				color: $gaming_lightest!important;
 			}
-		}	
-		ul.bullet-list {
-			background: none!important;		
+		}
+	
+		.bullet-list {				
 			li {
 				color: $gaming_lightest!important;
 			}
@@ -1327,14 +1315,11 @@
 		.title {
 			color: $gaming_lightest!important;
 		}
-		.card{
-			background-color: $gaming_dark!important;
 		.card-header {
 			background: $gaming_darkest!important;
 			color: $gaming_lightest!important;
 			border: 0.1rem solid $gaming_dark!important;
 		}
-	}
 	}
 
 	.wifi-security {

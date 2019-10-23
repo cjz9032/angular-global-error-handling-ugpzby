@@ -90,7 +90,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	initSmartStandby() {
-		this.getSmartStandbyIsAutonomic();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
@@ -251,42 +250,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setSmartStandbyIsAutonomic(onOff) {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService.setSmartStandbyIsAutonomic(onOff)
-					.then((value: number) => {
-						console.log('setSmartStandbyIsAutonomic', value);
-					}).catch(error => {
-						this.logger.error('setSmartStandbyIsAutonomic', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('setSmartStandbyIsAutonomic' + error.message);
-		}
-	}
-
-	public getSmartStandbyIsAutonomic() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService.getSmartStandbyIsAutonomic()
-					.then((response: boolean) => {
-						this.checkbox = response;
-						console.log('getSmartStandbyIsAutonomic:', response);
-					}).catch(error => {
-						this.logger.error('getSmartStandbyIsAutonomic', error.message);
-						return EMPTY;
-					});
-			}
-		} catch (error) {
-			this.logger.error('getSmartStandbyIsAutonomic', error.message);
-			return EMPTY;
-		}
-	}
-
 	onCheckboxClicked() {
-		this.setSmartStandbyIsAutonomic(this.checkbox);
+		//this.checkbox
 	}
 
 	public onToggle() {

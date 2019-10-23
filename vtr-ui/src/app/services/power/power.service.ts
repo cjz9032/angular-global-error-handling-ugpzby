@@ -606,25 +606,6 @@ export class PowerService {
 		}
 	}
 
-	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
-		console.log('setSmartStandbyIsAutonomic: ', value);
-		try {
-			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	public getSmartStandbyIsAutonomic(): Promise<boolean> {
-		if (this.devicePowerThinkPad) {
-			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyIsAutonomic();
-		}
-		return undefined;
-	}
-
 	public getGaugeResetCapability(): Promise<boolean> {
 		console.log('Battery Gauge Reset Capability');
 		try {
