@@ -65,6 +65,7 @@ export enum LocalStorageKey {
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
+	WifiSecurityCache = '[LocalStorageKey] WifiSecurityCache',
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
