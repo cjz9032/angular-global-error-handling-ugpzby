@@ -10,7 +10,7 @@
 	<div *ngIf="!showLoader"
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}"
-		(keydown.enter)="toggleLabel.click()"
+		(keydown.enter)="onChange($event)"
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
 		[attr.aria-readonly]="readonly"
@@ -18,7 +18,6 @@
 		role="switch"
 		[tabIndex]="tabIndex">
 		<label class="pb-1 pl-1"
-			#toggleLabel
 			(click)="sendChangeEvent(toggle)"
 			(keydown.enter)="sendChangeEvent(toggle)"
 			vtrMetrics
