@@ -241,7 +241,7 @@
 								<div class="col px-20">
 									<div class="auto-set-checkbox custom-checkbox-gaming"
 										*ngIf="usbChargingInBatteryModeStatus"
-										tabindex="0"
+										[tabIndex]="!toggleAlwaysOnUsbFlag?-1:0"
 										(keydown.enter)='cbAlwaysOnUSB.click()'
 										[attr.aria-checked]="usbChargingCheckboxFlag"
 										[attr.aria-disabled]="!toggleAlwaysOnUsbFlag"
