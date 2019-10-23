@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "您確定要刪除此巨集鍵嗎？"
+                    "title": "您確定要刪除此巨集鍵嗎？",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "錄製逾時。",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
                 "seeDetailsLink": "查看詳細資料",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
             },
             "power": {
                 "title": "電源",
@@ -1040,39 +1041,39 @@
                         "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "電池計量器重設",
+                        "description": "此功能可讓您的電腦更精確地預估充飽容量。",
+                        "barCode": "條碼",
+                        "progress": "進度",
+                        "remaining": "剩餘",
+                        "startTime": "開始時間",
+                        "lastReset": "前次重設",
+                        "fullChargeCapacity": "充飽容量",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "重設",
+                            "stop": "停止"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stageNum}} 的 {{stage}}：充飽校準",
+                        "progressText2": "{{stageNum}} 的 {{stage}}：電池電力不足校準",
+                        "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
+                        "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "完成，已成功重設。",
+                            "ERROR_SHUTDOWN": "未完成。系統已關閉。",
+                            "ERROR_LOGOFF": "未完成。使用者已登出。",
+                            "ERROR_BATTERY_REMOVE": "未完成。電池已取出。",
+                            "ERROR_BATTERY_REPLACE": "未完成。電池已更換。",
+                            "ERROR_AC_DETTACH": "未完成。AC 電源整流器已卸下。",
+                            "ERROR_USER_CANCEL": "未完成。已由使用者取消。",
+                            "ERROR_UNEXPECTED": "未完成。發生非預期的錯誤。"
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
+                            "description2": "附註：<br>1. 這個程序可能需費時數小時。請避免在此期間使用電腦。<br>2.關閉所有已開啟的應用程式，然後將電腦連接到 AC 電源。<br>3.在此程序期間，會停用電池充電臨界值功能。",
+                            "continue": "繼續",
+                            "cancel": "取消",
+                            "yes": "是",
+                            "description3": "您確定要停止電池計量器重設嗎？"
                         }
                     }
                 },

@@ -4,7 +4,7 @@
 	<div class="dropdown-btn"
 		id="header-warranty-icon"
 		tabindex="1"
-		aria-label="header-warranty-icon"
+		attr.aria-label="lenovo warranty status: {{ warrantyData.info.status == 0 ? 'in warranty' : 'warranty expired'}}"
 		ngbDropdownToggle>
 		<div class="icon-con in-warranty"
 			*ngIf="warrantyData.info.status === 0">
