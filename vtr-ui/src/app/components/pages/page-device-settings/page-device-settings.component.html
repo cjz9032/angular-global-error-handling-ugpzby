@@ -13,12 +13,14 @@
 	</form> -->
 
 
-<vtr-settings-page-layout [pageTitle]="'common.menu.device.sub2' | translate"
-	[backLinkText]="'common.ui.back' | translate"
+<vtr-page-layout [title]="'common.menu.device.sub2' | translate"
+	[back]="'common.ui.back' | translate"
 	[textId]="'myDevice-settings'"
 	[parentPath]="parentPath"
 	[menuItems]="menuItems"
-	[pageCssClass]="'device-settings'">
+	[pageCssClass]="'device-settings'"
+	[shiftLeftUp]="false"
+	[shiftRightUp]="true">
 
 	<left-content>
 		<div class="mt-5">
@@ -39,8 +41,6 @@
 			</div>
 			<div class="row mb-40">
 				<div class="col col-12 cont">
-					<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
-					</div>
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 						[description]="'common.qAndA.subtitle' | translate"
 						[items]="qaService.qas"
@@ -74,4 +74,4 @@
 		</div>
 	</right-content>
 
-</vtr-settings-page-layout>
+</vtr-page-layout>
