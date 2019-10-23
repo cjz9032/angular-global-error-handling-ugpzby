@@ -176,11 +176,11 @@
 							<div *ngIf="title"
 								class="title"
 								[innerHtml]="title" id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}"></div>
+								role="text"></div>
 							<div *ngIf="caption"
 								class="caption">
 								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
-								attr.aria-label="{{containerCardId+'-caption'}}"></div>
+								role="text"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -188,7 +188,7 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text"id="{{containerCardId+'-logo-text'}}"
-								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+								role="text">{{logoText}}</span>
 							</div>
 						</div>
 					</a>
@@ -199,11 +199,11 @@
 							<div *ngIf="title"
 								class="title"
 								[innerHtml]="title" id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}"></div>
+								role="text"></div>
 							<div *ngIf="caption"
 								class="caption">
 								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
-								attr.aria-label="{{containerCardId+'-caption'}}"></div>
+								role="text"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -211,13 +211,16 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+								role="text">{{logoText}}</span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row offline-icon col col-12"
+				id="{{containerCardId+'-offline-icon'}}"
+				aria-label="offline-icon"
+				role="img"
 				*ngIf="!isOnline">
 				<fa-icon [icon]="['fal', 'wifi-slash']"></fa-icon>
 			</div>
@@ -292,7 +295,7 @@
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
 							<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-							attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+							role="text">{{logoText}}</span>
 						</div>
 					</div>
 					<div class="row w-100">
@@ -305,13 +308,13 @@
 								[style.font-size.px]="containerCardArticle.clientWidth * 24 / 436"
 								[style.height.px]="containerCardArticle.clientWidth * 54 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
-								attr.aria-label="{{containerCardId+'-title'}}"></div>
+								role="text"></div>
 							<div *ngIf="actionLink"
 								[style.font-size.px]="containerCardArticle.clientWidth * 14 / 436"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
-								<span class="link-label">{{action}}</span>
+								<span class="link-label" role="link">{{action}}</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</div>
 						</div>
@@ -329,7 +332,7 @@
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
 							<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-							attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+							role="text">{{logoText}}</span>
 						</div>
 					</div>
 				</div>
