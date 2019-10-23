@@ -9,7 +9,6 @@ import {
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
@@ -36,16 +35,12 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}];
 	constructor(
 		public activeModal: NgbActiveModal,
-		public homeSecurityMockService: HomeSecurityMockService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService
 	) {	}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
-		if (!this.chs) {
-			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
-		}
 		this.permission = this.vantageShellService.getPermission();
 
 		if (this.switchPage === 2) {
