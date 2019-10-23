@@ -15,6 +15,13 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   public items: any = [];
   isSubscribed:any;
  public menuItems: any = [{ itemName: 'Annual' }, { itemName: 'Quarterly' }, { itemName: 'Custom' }]
+  subscriptionDetails:any;
+  startDate:any;
+  endDate:any;
+  status:any;
+  givenDate:Date
+  
+
   // tslint:disable-next-line:max-line-length
 @Input() isScanning = false;
 @Input() isScanningCompleted = false;
@@ -39,7 +46,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   displayFromDate:any;
   displayToDate:any;
   customDate:any;
-  toggleValue: number;
+  
   ngOnInit() {
 this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
@@ -48,7 +55,26 @@ this.currentDate = new Date();
 	this.items = [ { itemValue : '16 fixes', itemExpandValue : 'lorem ipsum', itemstatus : true, itemDate : this.today},
 	{ itemValue : '0 fixes', itemExpandValue : 'lorem ipsum', itemstatus : false, itemDate : this.today},
 	{ itemValue : '8 fixes', itemExpandValue : 'lorem ipsum', itemstatus : true, itemDate : this.today} ];
-	this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+  this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+  if(this.isSubscribed)
+  {
+    this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+    this.startDate = this.subscriptionDetails[0].StartDate;
+    this.endDate = this.subscriptionDetails[0].EndDate;
+    this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+    
+    if(this.givenDate > this.today)
+      this.status = "ACTIVE";
+    else 
+      this.status = "INACTIVE";
+  }
+  else
+  {
+	this.startDate="---";
+	this.endDate="---";
+	this.status="INACTIVE";
+  }
+  
   }
   expandRow(value) {
 	if (this.toggleValue === value) {
