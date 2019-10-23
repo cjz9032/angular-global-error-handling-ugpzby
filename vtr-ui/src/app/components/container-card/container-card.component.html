@@ -160,6 +160,7 @@
 				*ngIf="isOnline">
 				<div class="col col-12 content">
 					<a *ngIf="isOnline"
+						tabindex="0" attr.aria-label="{{ title }} . {{ caption }}"
 						[attr.href]="!actionLink ? null : actionLink"
 						(click)="linkClicked(actionType, actionLink)"
 						target="_blank"
@@ -172,15 +173,11 @@
 						[metricsItemID]="itemID"
 						[style.background-image]="'url(' + img + ')'"
 						id="{{containerCardId+'-article_link'}}">
-						<div class="inner-content">
-							<div *ngIf="title"
-								class="title"
-								[innerHtml]="title" id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}"></div>
-							<div *ngIf="caption"
-								class="caption">
-								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
-								attr.aria-label="{{containerCardId+'-caption'}}"></div>
+						<div class="inner-content" >
+							<div *ngIf="title" class="title"
+								[innerHtml]="title" id="{{containerCardId+'-title'}}"></div>
+							<div *ngIf="caption" class="caption">
+								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
