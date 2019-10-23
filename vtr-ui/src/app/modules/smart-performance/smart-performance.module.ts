@@ -20,7 +20,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
 import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smart-performance-scanning/ui-smart-performance-scanning.component';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
@@ -28,6 +28,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
+import { FormsModule } from '@angular/forms';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -55,6 +56,8 @@ library.add(faChevronDown);
   imports: [ CommonModule,
 	  NgbModule,
   SmartPerformanceRoutingModule,
+    FormsModule ,
+  NgbDatepickerModule ,
   AccordionModule.forRoot(),
   HeaderMainModule,
   FontAwesomeModule

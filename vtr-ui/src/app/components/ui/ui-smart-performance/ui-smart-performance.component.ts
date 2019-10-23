@@ -20,6 +20,14 @@ export class UiSmartPerformanceComponent implements OnInit {
 	currentSubItemCategory: any = {};
 	@Input() activegroup = "Tune up performance";
 	isSubscribed:any;
+	subscriptionDetails:any;
+	startDate:any;
+	endDate:any;
+	status:any;
+	givenDate:Date;
+	public today = new Date();
+	
+
 	constructor(
 		private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService
 	) {
@@ -27,7 +35,26 @@ export class UiSmartPerformanceComponent implements OnInit {
 	}
 
   ngOnInit() {
+
 	this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+	if(this.isSubscribed)
+  	{
+		this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+		this.startDate = this.subscriptionDetails[0].StartDate;
+		this.endDate = this.subscriptionDetails[0].EndDate;
+		this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+		
+		if(this.givenDate > this.today)
+		this.status = "ACTIVE";
+		else 
+		this.status = "INACTIVE";
+	}
+	else
+	{
+		this.startDate="---";
+		this.endDate="---";
+		this.status="INACTIVE";
+	}
   }
 
   private translateStrings() {
