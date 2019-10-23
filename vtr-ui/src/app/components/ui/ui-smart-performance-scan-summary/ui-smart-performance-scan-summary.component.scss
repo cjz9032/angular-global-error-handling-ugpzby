@@ -484,20 +484,22 @@
 			border-radius: 2.5rem;
 			background: $gradient_main;
 			text-transform: uppercase;
-			padding: 0 5rem;
+			padding: 0 4rem;
 			color: $light;
 			font-size: 1.5rem;
 			height: 5rem;
 			font-weight: $weight_medium;
-			line-height: 5rem;
 			text-align: center;
 			border: 0rem;
 			cursor: pointer;
 		}
 		.desc {
-			p {
-				font-size: 1.6rem;
-			}
+			font-size: 1.4rem;
+			width: 29%;
+			margin: 0.5rem 1rem;
+				&.desc1 {
+					border-right: 0.1rem solid $shade_lighter;
+				}
 		}
 	}
 }
