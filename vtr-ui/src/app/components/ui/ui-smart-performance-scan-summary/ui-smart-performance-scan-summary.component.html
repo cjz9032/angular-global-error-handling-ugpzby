@@ -516,7 +516,7 @@
 								<div class="vtr-ui-smart-performance-scan-summary" *ngIf="isSubscribed">
 									<div class="vtr-scan-information mt-5">
 										<div class="scan-summary-block">
-											<div class="row px-0">
+											<!-- <div class="row px-0">
 												<div class="navbar bkg-transparent justify-content-between w-100">
 													<div class="title-block col">
 														<h3>Scan summary:</h3>
@@ -532,6 +532,92 @@
 														</ul>
 													</div>
 												</div>
+											</div> -->
+											<div class="row px-0">
+												<div class="navbar bkg-transparent justify-content-between w-100">
+								
+													<div class="title-block col">
+														<h3>Scan summary:</h3>
+														<p>we are constantly tuning your computer</p>
+													</div>
+								
+								
+													<div class="summary-period col-auto pr-0 py-0">
+														<ul class="list-group list-group-horizontal">
+															<li class="list-group-item" *ngFor="let item of menuItems;let ind=index"
+																(click)="scanSummaryTime(ind)" [ngClass]="{'selected-list-item': tabIndex === ind}">
+																{{item.itemName}}
+																<!-- <div class="list-item" >
+																	</div> -->
+															</li>
+															<!-- <li class="list-group-item" (click)="scanSummaryTime()">quarterly</li>
+																<li class="list-group-item" (click)="scanSummaryTime()">custom</li> -->
+															<div class="dropdown">
+																<li id="dropdownMenu1" class="list-group-item cl list-selected-item">
+																	<fa-icon class="calender-icon" [icon]="['fal', 'calendar-alt']"></fa-icon>
+																	<span *ngIf="!dropDownToggle">{{currentDate | date:'MMM d, y'}}</span>
+																	<span *ngIf="tabIndex === 0">{{annualYear}}</span>
+																	<span *ngIf="tabIndex === 1">{{quarterlyMonth}}</span>
+																	<span *ngIf="tabIndex === 2">{{customDate}}</span>
+																	<fa-icon class="drop-down-icon" *ngIf="dropDownToggle && !isDropDownOpen"
+																		(click)="openDropDown()" [icon]="['fas', 'chevron-down']"></fa-icon>
+																	<fa-icon class="drop-down-icon" *ngIf="dropDownToggle && isDropDownOpen"
+																		(click)="openDropDown()" [icon]="['fas', 'chevron-up']">
+																	</fa-icon>
+																</li>					
+															</div>
+														</ul>
+														<div *ngIf="isDropDownOpen && tabIndex != 2"
+														[ngClass]="[tabIndex ===2 ? 'calender-drop' : 'dropdownmenu']">
+														<div *ngIf="tabIndex === 0">
+															<a (click)="anualScanSummary(currentYear)"
+																[ngClass]="{'link-active':currentYear == annualYear}">{{currentYear}}</a><br>
+															<a (click)="anualScanSummary(lastYear)"
+																[ngClass]="{'link-active':lastYear == annualYear}">{{lastYear}}</a>
+														</div>
+														<div *ngIf="tabIndex === 1">
+															<div *ngFor="let menu of quarterlyMenu;let ind=index">
+																<a (click)="quarterlyScanSummary(ind)"
+																	[ngClass]="{'link-active':menu == quarterlyMonth}">{{menu}}</a>
+															</div>
+														</div>
+								
+													</div>
+														<div *ngIf="isDropDownOpen && tabIndex === 2" class="calender-dropDown">
+															<div *ngIf="tabIndex === 2">
+																<div class="row mt-1">
+																	<div class="col">
+																		<div class="row custom-from-date py-3"
+																			[ngClass]="{'selected-custom-date':isFromDate}">
+																			<div class="col-1">From</div>
+																			<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
+																					(click)="selectFromDate()" readonly /></div>
+																		</div>
+																		<div class="row custom-to-date mt-3 py-3"
+																			[ngClass]="{'selected-custom-date':!isFromDate}">
+																			<div class="col-1">To</div>
+																			<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
+																					(click)="selectToDate()" readonly /></div>
+								
+																		</div>
+																		<div class="row">
+																			<div class="col-3"></div>
+																			<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">Go</button>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col date-picker">
+																		<ngb-datepicker class="ml-4" *ngIf="isFromDate" [(ngModel)]="selectedfromDate"
+																			(select)="onDateSelected()"></ngb-datepicker>
+																		<ngb-datepicker class="ml-4" *ngIf="!isFromDate" [(ngModel)]="selectedTodate"
+																			(select)="onDateSelected()"></ngb-datepicker>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+								
 											</div>
 											<div class="row my-5 d-flex justify-content-between px-0">
 												<div class="tune">
