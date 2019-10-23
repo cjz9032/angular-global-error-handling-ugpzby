@@ -415,11 +415,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: $light;
 		padding: 4rem;
 		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
+			border: 0.1rem solid;
 			border-radius: 1rem
 		}
 		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
+			border: 0.1rem solid;
 			border-radius: 1rem;
 		}
 
@@ -555,7 +555,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: $light;
 		padding: 3rem 0 0 4rem;
 		overflow: hidden;
-
+		@media #{$black-on-white} {
+			
+			border:0.1rem solid;
+		}
+		@media #{$white-on-black} {
+			
+			border:0.1rem solid;
+		}
 		h1,
 		h2,
 		h3,
