@@ -258,6 +258,28 @@ export class PowerService {
 
 	// Power smart settings
 	// ----------start ITC Capable
+	public getPMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getPMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getITSServiceStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getITSServiceStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
@@ -582,6 +604,25 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+
+	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
+		console.log('setSmartStandbyIsAutonomic: ', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getSmartStandbyIsAutonomic(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyIsAutonomic();
+		}
+		return undefined;
 	}
 
 	public getGaugeResetCapability(): Promise<boolean> {

@@ -62,9 +62,6 @@ export class PageSmartAssistComponent
 	public sesnsitivityAdjustVal = 0;
 	smartAssistCache: SmartAssistCache;
 
-	public isSuperResolutionLoading = true;
-	public superResolution = new FeatureStatus(false, true);
-
 	headerMenuItems: PageAnchorLink[] = [
 		{
 			title: 'device.smartAssist.intelligentSecurity.title',
@@ -133,12 +130,14 @@ export class PageSmartAssistComponent
 				this.onMouseEnterEvent();
 			});	
 		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
 		this.windowsObj =  this.Windows.Devices.Enumeration.DeviceAccessInformation
 		.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
 
 		this.windowsObj.addEventListener('accesschanged', () => {
 			this.permissionChanged();
 		});
+	}
 	}
 
 	ngOnInit() {
@@ -260,11 +259,6 @@ export class PageSmartAssistComponent
 				this.intelligentScreen.isIntelligentScreenVisible = true;
 				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 				this.initIntelligentScreen();
-			}
-			if(this.smartAssistCapability.isSuperResolutionSupported)
-			{
-				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
-				this.getSuperResolutionStatus();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
@@ -637,22 +631,6 @@ export class PageSmartAssistComponent
 		} catch (error) {
 			this.logger.error('getVideoPauseResumeStatus' + error.message);
 			return EMPTY;
-		}
-	}
-
-	private getSuperResolutionStatus() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.getSuperResolutionStatus()
-					.then((response: FeatureStatus) => {
-						this.isSuperResolutionLoading = false;
-						this.superResolution = response;
-					}).catch(error => {
-						console.error('getSuperResolutionStatus.error', error);
-					});
-			}
-		} catch (error) {
-			console.error('getSuperResolutionStatus' + error.message);
 		}
 	}
 
