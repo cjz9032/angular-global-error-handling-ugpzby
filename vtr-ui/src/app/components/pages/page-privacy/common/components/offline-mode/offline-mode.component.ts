@@ -23,6 +23,7 @@ import { position } from '../tooltip/tooltip.component';
 export class OfflineModeComponent implements OnInit, OnDestroy {
 	@Input() positionContextTo: position = 'center';
 	@Input() contextSize: 'medium' | 'small' = 'medium';
+	@Input() display: 'block' | 'inline-block';
 
 	@HostBinding('attr.disabled') isDisabled = false;
 	@HostBinding('class.offline-active') isOfflineActive = false;
