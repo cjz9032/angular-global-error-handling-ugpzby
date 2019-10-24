@@ -1722,7 +1722,7 @@ export const HardwareScanShellMock: any = {
         ]
     },
 
-    doScanIntermediateResponse: {
+    doScanIntermediateResponseQuick: {
         "responses": [
             {
                 "percentageComplete": 42,
@@ -1967,7 +1967,7 @@ export const HardwareScanShellMock: any = {
         "percentageComplete": 0
     },
 
-    doScanIntermediateResponseFinal: {
+    doScanIntermediateResponseFinalQuick: {
         "responses": [
             {
                 "percentageComplete": 100,
@@ -2209,6 +2209,752 @@ export const HardwareScanShellMock: any = {
         "finalResultCode": null,
         "startDate": null,
         "resultDescription": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+        "percentageComplete": 100
+    },
+
+    doScanIntermediateResponseCustom: {
+        "responses": [
+            {
+                "percentageComplete": 0,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": null,
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_CPU_BT_INSTRUCTION_TEST:::13.1.2:::bt:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 5691,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": null
+                            },
+                            {
+                                "id": "TEST_CPU_X87_FLOATING_POINT_TEST:::13.1.3:::x87:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 8839,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_MMX_TEST:::13.1.4:::mmx:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_SSE_FAMILY_TEST:::13.1.6:::sse:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_AES_TEST:::13.1.7:::aes:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_STRESS_TEST:::13.2.12:::s:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "cpu"
+                            }
+                        ],
+                        "moduleName": "cpu"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 0,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": null,
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_QUICK_RANDOM_PATTERN_TEST:::0.1.14:::q:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_ADVANCED_INTEGRITY_TEST:::0.2.1:::a:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_ADDRESS_TEST:::0.2.2:::d:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_BIT_LOW_TEST:::0.2.4:::l:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_BIT_HIGH_TEST:::0.2.3:::h:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_WALKING_ONES_LEFT_TEST:::0.2.6:::w:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_WALKING_ONES_RIGHT_TEST:::0.2.5:::k:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_MODULO_20_TEST:::0.2.7:::t:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_MOVING_INVERSIONS_8_BIT_TEST:::0.2.8:::n:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_MOVING_INVERSIONS_32_BIT_TEST:::0.2.9:::m:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_RANDOM_PATTERN_TEST:::0.2.10:::r:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_RANDOM_NUMBER_SEQUENCE_TEST:::0.2.11:::s:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_BLOCK_MOVE_TEST:::0.2.12:::b:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_NIBBLE_MOVE_TEST:::0.2.15:::i:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "memory"
+                            }
+                        ],
+                        "moduleName": "memory"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 0,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": null,
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_MOTHERBOARD_CHIPSET_TEST:::2.1.1:::c:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            },
+                            {
+                                "id": "TEST_MOTHERBOARD_PCI_/_PCI-E_TEST:::2.1.2:::p:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            },
+                            {
+                                "id": "TEST_MOTHERBOARD_RTC_TEST:::2.1.3:::r:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            },
+                            {
+                                "id": "TEST_MOTHERBOARD_USB_TEST:::2.1.4:::u:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            }
+                        ],
+                        "moduleName": "motherboard"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 0,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "PCI_DEV",
+                        "resultCode": null,
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_PCI_EXPRESS_STATUS_TEST:::5.1.1:::s:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "pci_express"
+                            }
+                        ],
+                        "moduleName": "pci_express"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 0,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": null,
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_RADIO_ENABLED_TEST:::4.1.1:::r:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "wireless"
+                            },
+                            {
+                                "id": "TEST_NETWORK_SCAN_TEST:::4.1.2:::n:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "wireless"
+                            },
+                            {
+                                "id": "TEST_SIGNAL_STRENGTH_TEST:::4.1.3:::s:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "wireless"
+                            }
+                        ],
+                        "moduleName": "wireless"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 0,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": null,
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_SMART_WEAROUT_TEST:::1.1.14:::o:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_CONTROLLER_STATUS_TEST:::1.1.22:::g:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_SMART_TEMPERATURE_TEST:::1.1.20:::a:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_SMART_RELIABILITY_TEST:::1.1.21:::b:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_SMART_SPARE_SPACE_TEST:::1.1.19:::i:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_DEVICE_WRITE_TEST:::1.2.12:::w:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_FULL_DISK_SCAN_TEST:::1.2.13:::n:::1",
+                                "percentageComplete": 0,
+                                "ellappsedMilliseconds": 0,
+                                "result": 0,
+                                "description": null,
+                                "moduleName": "storage"
+                            }
+                        ],
+                        "moduleName": "storage"
+                    }
+                ]
+            }
+        ],
+        "finalResultCode": null,
+        "startDate": null,
+        "resultDescription": null,
+        "percentageComplete": 0
+    },
+
+    doScanIntermediateResponseFinalCustom: {
+        "responses": [
+            {
+                "percentageComplete": 100,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": "WCP0003E00000-NOSVQG",
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_CPU_BT_INSTRUCTION_TEST:::13.1.2:::bt:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 5691,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": null
+                            },
+                            {
+                                "id": "TEST_CPU_X87_FLOATING_POINT_TEST:::13.1.3:::x87:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 8839,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_MMX_TEST:::13.1.4:::mmx:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_SSE_FAMILY_TEST:::13.1.6:::sse:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_AES_TEST:::13.1.7:::aes:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "cpu"
+                            },
+                            {
+                                "id": "TEST_CPU_STRESS_TEST:::13.2.12:::s:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "cpu"
+                            }
+                        ],
+                        "moduleName": "cpu"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 100,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": "WCP0003E00000-NOSVQG",
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_QUICK_RANDOM_PATTERN_TEST:::0.1.14:::q:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_ADVANCED_INTEGRITY_TEST:::0.2.1:::a:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_ADDRESS_TEST:::0.2.2:::d:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_BIT_LOW_TEST:::0.2.4:::l:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_BIT_HIGH_TEST:::0.2.3:::h:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_WALKING_ONES_LEFT_TEST:::0.2.6:::w:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_WALKING_ONES_RIGHT_TEST:::0.2.5:::k:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_MODULO_20_TEST:::0.2.7:::t:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_MOVING_INVERSIONS_8_BIT_TEST:::0.2.8:::n:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_MOVING_INVERSIONS_32_BIT_TEST:::0.2.9:::m:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_RANDOM_PATTERN_TEST:::0.2.10:::r:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_RANDOM_NUMBER_SEQUENCE_TEST:::0.2.11:::s:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_BLOCK_MOVE_TEST:::0.2.12:::b:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            },
+                            {
+                                "id": "TEST_NIBBLE_MOVE_TEST:::0.2.15:::i:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "memory"
+                            }
+                        ],
+                        "moduleName": "memory"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 100,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": "WCP0003E00000-NOSVQG",
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_MOTHERBOARD_CHIPSET_TEST:::2.1.1:::c:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            },
+                            {
+                                "id": "TEST_MOTHERBOARD_PCI_/_PCI-E_TEST:::2.1.2:::p:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            },
+                            {
+                                "id": "TEST_MOTHERBOARD_RTC_TEST:::2.1.3:::r:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            },
+                            {
+                                "id": "TEST_MOTHERBOARD_USB_TEST:::2.1.4:::u:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "motherboard"
+                            }
+                        ],
+                        "moduleName": "motherboard"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 100,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "PCI_DEV",
+                        "resultCode": "WCP0003E00000-NOSVQG",
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_PCI_EXPRESS_STATUS_TEST:::5.1.1:::s:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "pci_express"
+                            }
+                        ],
+                        "moduleName": "pci_express"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 100,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": "WCP0003E00000-NOSVQG",
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_RADIO_ENABLED_TEST:::4.1.1:::r:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "wireless"
+                            },
+                            {
+                                "id": "TEST_NETWORK_SCAN_TEST:::4.1.2:::n:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "wireless"
+                            },
+                            {
+                                "id": "TEST_SIGNAL_STRENGTH_TEST:::4.1.3:::s:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "wireless"
+                            }
+                        ],
+                        "moduleName": "wireless"
+                    }
+                ]
+            },
+            {
+                "percentageComplete": 100,
+                "currentLoop": 1,
+                "groupResults": [
+                    {
+                        "id": "0",
+                        "resultCode": "WCP0003E00000-NOSVQG",
+                        "resultDescription": null,
+                        "testResultList": [
+                            {
+                                "id": "TEST_SMART_WEAROUT_TEST:::1.1.14:::o:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_CONTROLLER_STATUS_TEST:::1.1.22:::g:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_SMART_TEMPERATURE_TEST:::1.1.20:::a:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_SMART_RELIABILITY_TEST:::1.1.21:::b:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_NVME_SMART_SPARE_SPACE_TEST:::1.1.19:::i:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_DEVICE_WRITE_TEST:::1.2.12:::w:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            },
+                            {
+                                "id": "TEST_FULL_DISK_SCAN_TEST:::1.2.13:::n:::1",
+                                "percentageComplete": 100,
+                                "ellappsedMilliseconds": 0,
+                                "result": 2,
+                                "description": null,
+                                "moduleName": "storage"
+                            }
+                        ],
+                        "moduleName": "storage"
+                    }
+                ]
+            }
+        ],
+        "finalResultCode": null,
+        "startDate": null,
+        "resultDescription": null,
         "percentageComplete": 100
     },
 
@@ -2458,11 +3204,20 @@ export const HardwareScanShellMock: any = {
     },
 
     doScan: function(payload, intermediate, cancelHandler) {
+        const isCustomScan = typeof payload.requests[0].moduleId === "number";
+        let intermediateResponses = isCustomScan ? [
+            HardwareScanShellMock.doScanIntermediateResponseCustom,
+            HardwareScanShellMock.doScanIntermediateResponseFinalCustom
+        ] : [
+            HardwareScanShellMock.doScanIntermediateResponseQuick,
+            HardwareScanShellMock.doScanIntermediateResponseFinalQuick
+        ];
+
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                intermediate(HardwareScanShellMock.doScanIntermediateResponse);
+                intermediate(intermediateResponses[0]);
                 setTimeout(() => {
-                    intermediate(HardwareScanShellMock.doScanIntermediateResponseFinal);
+                    intermediate(intermediateResponses[1]);
                     resolve(HardwareScanShellMock.doScanResponse);
                 }, 5000);
             }, 3000);

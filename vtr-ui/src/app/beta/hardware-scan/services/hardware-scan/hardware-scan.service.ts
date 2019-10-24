@@ -767,7 +767,7 @@ export class HardwareScanService {
 			module.resultCode = currentGroup.resultCode;
 			module.description = currentGroup.resultDescription;
 			module.information = currentGroup.resultDescription;
-			for (let i = 0; i < currentGroup.testResultList.length; i++) {
+			for (let i = 0; i < module.listTest.length; i++) {
 				module.listTest[i].status = currentGroup.testResultList[i].result;
 				if (module.listTest[i].status !== HardwareScanTestResult.Pass &&
 					module.listTest[i].status !== HardwareScanTestResult.Na) {
