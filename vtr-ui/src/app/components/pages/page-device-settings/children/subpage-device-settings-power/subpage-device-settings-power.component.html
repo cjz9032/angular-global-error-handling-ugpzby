@@ -47,6 +47,8 @@
 										role="checkbox">
 										<input id="cb-airplane-mode"
 											#cbAirplaneMode
+											tabindex="-1"
+											aria-hidden="true"
 											class="custom-control-input"
 											attr.aria-label="cb-airplane-mode"
 											type="checkbox"
@@ -56,12 +58,15 @@
 											checked="" />
 
 										<span class="checkmark"></span>
-										<label for="cb-airplane-mode">
+										<label for="cb-airplane-mode"
+											title="{{'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}">
 											{{ 'device.deviceSettings.power.batterySettings.airPlanePower.checkBoxDesc' | translate }}
 										</label>
 									</div>
 									<label *ngIf="airplaneAutoDetection"
-										class="auto-detection-note">
+										class="auto-detection-note"
+										tabindex="0"
+										[title]="'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate">
 										{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 									</label>
 								</div>
@@ -239,12 +244,14 @@
 										tabindex="0"
 										(keydown.enter)='cbAlwaysOnUSB.click()'
 										[attr.aria-checked]="usbChargingCheckboxFlag"
+										[attr.aria-disabled]="!toggleAlwaysOnUsbFlag"
 										attr.aria-labelledby="cb-always-on-usb"
 										role="checkbox">
 										<input id="cb-always-on-usb"
 											#cbAlwaysOnUSB
 											class="custom-control-input"
 											attr.aria-label="cb-always-on-usb"
+											aria-hidden="true"
 											type="checkbox"
 											tabindex="-1"
 											name="always-on-usb-checkbox-id"
@@ -254,7 +261,8 @@
 											checked="" />
 										<span class="checkmark"></span>
 										<label for="cb-always-on-usb"
-											tabindex="0">
+											tabindex="0"
+											title="{{'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>

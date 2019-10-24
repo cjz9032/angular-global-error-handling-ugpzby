@@ -61,6 +61,8 @@ export class PageSmartAssistComponent
 	public sensitivityVisibility = false;
 	public sesnsitivityAdjustVal = 0;
 	smartAssistCache: SmartAssistCache;
+	public isSuperResolutionLoading = true;
+	public superResolution = new FeatureStatus(false, true);
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -241,6 +243,7 @@ export class PageSmartAssistComponent
 			this.initZeroTouchLogin();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
+			this.getSuperResolutionStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -258,6 +261,11 @@ export class PageSmartAssistComponent
 				this.intelligentScreen.isIntelligentScreenVisible = true;
 				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 				this.initIntelligentScreen();
+			}
+			if(this.smartAssistCapability.isSuperResolutionSupported)
+			{
+				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+				this.getSuperResolutionStatus();
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
@@ -698,6 +706,22 @@ export class PageSmartAssistComponent
 	ngOnDestroy() {
 		clearTimeout(this.getAutoScreenOffNoteStatus);
 		document.removeEventListener('visibilitychange', this.visibilityChange);
+	}
+
+	private getSuperResolutionStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getSuperResolutionStatus()
+					.then((response: FeatureStatus) => {
+						this.isSuperResolutionLoading = false;
+						this.superResolution = response;
+					}).catch(error => {
+						console.error('getSuperResolutionStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getSuperResolutionStatus' + error.message);
+		}
 	}
 
 }
