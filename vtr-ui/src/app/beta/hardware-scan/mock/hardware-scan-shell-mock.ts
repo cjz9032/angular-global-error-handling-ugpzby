@@ -4,7 +4,213 @@ export const HardwareScanShellMock: any = {
         PluginVersion: "1.0.41"
     },
 
-    itemsToRecoverBadSectors: undefined,
+    itemsToRecoverBadSectors: {
+        "mapContractNameList":[
+     
+        ],
+        "categoryList":[
+           {
+              "name":"Armazenamento",
+              "id":"storage",
+              "description":null,
+              "version":"Version",
+              "imageData":"TDB",
+              "groupList":[
+                 {
+                    "id":"0",
+                    "name":"KINGSTON SA400S37240G - 223.57 GBs",
+                    "Udi":null,
+                    "metaInformation":[
+                       {
+                          "name":"Fabricante",
+                          "index":"",
+                          "value":"Kingston"
+                       },
+                       {
+                          "name":"Modelo",
+                          "index":"",
+                          "value":"KINGSTON SA400S37240G"
+                       },
+                       {
+                          "name":"Serial",
+                          "index":"",
+                          "value":"50026B778293A01B"
+                       },
+                       {
+                          "name":"Firmware",
+                          "index":"",
+                          "value":"SBFK61K1"
+                       },
+                       {
+                          "name":"Tamanho",
+                          "index":"",
+                          "value":"223.57 GBs"
+                       },
+                       {
+                          "name":"Temperatura",
+                          "index":"",
+                          "value":"33 °C"
+                       },
+                       {
+                          "name":"Tamanho do Setor Físico",
+                          "index":"",
+                          "value":"512"
+                       },
+                       {
+                          "name":"Tamanho do Setor Lógico",
+                          "index":"",
+                          "value":"512"
+                       },
+                       {
+                          "name":"Setores Lógicos",
+                          "index":"",
+                          "value":"468862128"
+                       },
+                       {
+                          "name":"Padrões com Suporte",
+                          "index":"",
+                          "value":"ATA8-ACS, ATA7-ATAPI, ATA6-ATAPI, ATA5-ATAPI, ATA4-ATAPI, ATA8-ACS, ATA7-ATAPI, ATA6-ATAPI, ATA5-ATAPI, ATA4-ATAPI"
+                       },
+                       {
+                          "name":"Versão da Especificação",
+                          "index":"",
+                          "value":"Versão Não Reconhecida"
+                       },
+                       {
+                          "name":"Esquema de Partições",
+                          "index":"",
+                          "value":"GPT"
+                       },
+                       {
+                          "name":"Não alocado",
+                          "index":"",
+                          "value":"1.59 MBs"
+                       },
+                       {
+                          "name":"Versão do driver",
+                          "index":"",
+                          "value":"10.0.17763.1"
+                       },
+                       {
+                          "name":"Tipo de partição",
+                          "index":"1",
+                          "value":"EFI System Partition"
+                       },
+                       {
+                          "name":"Tamanho",
+                          "index":"1",
+                          "value":"499.00 MBs"
+                       },
+                       {
+                          "name":"Tipo de partição",
+                          "index":"2",
+                          "value":"Microsoft Reserved Partition"
+                       },
+                       {
+                          "name":"Tamanho",
+                          "index":"2",
+                          "value":"128.00 MBs"
+                       },
+                       {
+                          "name":"Tipo de partição",
+                          "index":"3",
+                          "value":"Windows Basic Data Partition"
+                       },
+                       {
+                          "name":"Sistema de arquivos",
+                          "index":"3",
+                          "value":"ntfs"
+                       },
+                       {
+                          "name":"Rótulo",
+                          "index":"3",
+                          "value":"Windows"
+                       },
+                       {
+                          "name":"Ponto de Montagem",
+                          "index":"3",
+                          "value":"C:\\"
+                       },
+                       {
+                          "name":"Serial",
+                          "index":"3",
+                          "value":"C068E10A"
+                       },
+                       {
+                          "name":"Tamanho",
+                          "index":"3",
+                          "value":"220.73 GBs"
+                       },
+                       {
+                          "name":"Usado",
+                          "index":"3",
+                          "value":"193.36 GBs"
+                       },
+                       {
+                          "name":"Livre",
+                          "index":"3",
+                          "value":"27.36 GBs"
+                       },
+                       {
+                          "name":"Tipo de partição",
+                          "index":"4",
+                          "value":"Windows Recovery Environment"
+                       },
+                       {
+                          "name":"Tamanho",
+                          "index":"4",
+                          "value":"2.23 GBs"
+                       }
+                    ],
+                    "testList":[
+                       {
+                          "id":"TEST_TARGETED_READ_TEST:::1.1.2:::t:::1",
+                          "name":"Teste de Leitura Direcionada",
+                          "description":"Verifica os setores na vizinhança de setores ruins relatados nos logs do SMART",
+                          "groupId":"1"
+                       },
+                       {
+                          "id":"TEST_RANDOM_SEEK_TEST:::1.1.3:::r:::1",
+                          "name":"Teste de Busca Aleatória",
+                          "description":"Verifica a integridade do mecanismo de servo de um dispositivo ao examinar os setores em vários endereços escolhidos aleatoriamente",
+                          "groupId":"1"
+                       },
+                       {
+                          "id":"TEST_FUNNEL_SEEK_TEST:::1.1.4:::f:::1",
+                          "name":"Teste de Busca em Funil",
+                          "description":"Verifica a integridade do mecanismo de servo de um dispositivo ao examinar os setores seguindo um padrão de \"funil\" ou \"borboleta\".",
+                          "groupId":"1"
+                       },
+                       {
+                          "id":"TEST_SHORT_SELF_TEST:::1.1.5:::s:::1",
+                          "name":"Autoteste Curto do SMART",
+                          "description":"Verifica os status de componentes elétricos e mecânicos, bem como a capacidade de leitura do dispositivo",
+                          "groupId":"1"
+                       },
+                       {
+                          "id":"TEST_SMART_STATUS_TEST:::1.1.1:::m:::1",
+                          "name":"Teste de status do SMART",
+                          "description":"Verifica o status relatado pelo SMART para identificar rapidamente se um dispositivo está com defeito ou não",
+                          "groupId":"1"
+                       },
+                       {
+                          "id":"TEST_SMART_WEAROUT_TEST:::1.1.14:::o:::1",
+                          "name":"Teste de Desgaste SMART",
+                          "description":"O Teste de Desgaste SMART verifica o nível de desgaste do dispositivo SSD conectado ao ler os atributos e informativos do SMART quando o dispositivo está em boas condições ou atinge o limite de desgaste.",
+                          "groupId":"1"
+                       },
+                       {
+                          "id":"TEST_FULL_DISK_SCAN_TEST:::1.2.13:::n:::1",
+                          "name":"Verificação Completa de Disco",
+                          "description":"Esse teste executa uma verificação completa do disco.",
+                          "groupId":"2"
+                       }
+                    ]
+                 }
+              ]
+           }
+        ]
+     },
 
     scheduleScan: undefined,
 
@@ -3230,7 +3436,53 @@ export const HardwareScanShellMock: any = {
 
     nextScans: undefined,
 
-    recoverBadSectors: undefined,
+    recoverBadSectorsIntermediateResponse: {
+        "devices":[
+           {
+              "deviceId":0,
+              "deviceName":"KINGSTON SA400S37240G - 223.57 GBs ",
+              "numberOfSectors":0,
+              "numberOfBadSectors":0,
+              "numberOfFixedSectors":0,
+              "numberOfNonFixedSectors":0,
+              "elapsedTime":"",
+              "percentageComplete":0,
+              "status":1
+           }
+        ]
+     },
+
+    recoverBadSectorsResponse: {
+        "devices":[
+           {
+              "deviceId":0,
+              "deviceName":"KINGSTON SA400S37240G - 223.57 GBs ",
+              "numberOfSectors":42794355,
+              "numberOfBadSectors":0,
+              "numberOfFixedSectors":0,
+              "numberOfNonFixedSectors":0,
+              "elapsedTime":"00:58:47",
+              "percentageComplete":100,
+              "status":2
+           }
+        ]
+     },
+
+    recoverBadSectors: function(payload, intermediate, cancelHandler) {
+        return new Promise((resolve, reject) => {
+            let progress = 0;
+            let progressInterval = setInterval(() => {
+                progress += 10;
+                if (progress === 100) {
+                    clearInterval(progressInterval);
+                    resolve(HardwareScanShellMock.recoverBadSectorsResponse);
+                } else {
+                    HardwareScanShellMock.recoverBadSectorsIntermediateResponse.devices[0].percentageComplete = progress;
+                    intermediate(HardwareScanShellMock.recoverBadSectorsIntermediateResponse);
+                }
+            }, 500);
+        });
+    },
 
     cancelScan: {
         "cancelStatus": "OK",
