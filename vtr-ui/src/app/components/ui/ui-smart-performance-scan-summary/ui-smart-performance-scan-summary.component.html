@@ -514,9 +514,9 @@
 												We are frequently scanning and fixing your computer for PC performance, internet performance an malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.
 											</p>
 											<div class="d-flex justify-content-between my-5 w-75">
-												<button class="action-button">SCAN NOW</button>
+												<button class="action-button" (click)="ScanNowSummary()">SCAN NOW</button>
 												<div class="desc desc1">
-													<b>MOST RECENT SCAN:</b><br> 05/25 at 10:56pm
+													<b>MOST RECENT SCAN:</b><br> 10/23 at 06:56pm
 												</div>
 												<div class="desc">
 													<b>NEXT SCHEDULED SCAN:</b><br> 07/25 at 12:00am
@@ -715,7 +715,11 @@
 																				</div>
 																			</div>
 																			<div class="row" *ngIf="toggleValue === ind">
-																				<div class="offset-1 col-11">{{item.itemExpandValue}}</div>
+																				<div class="offset-1 col">
+													                               Tune : {{item.itemExpandValue.tune}}
+																					&nbsp; Boost : {{item.itemExpandValue.boost}}
+																				 &nbsp;Secure : {{item.itemExpandValue.secure}} 
+																				 </div> 
 																			</div>
 																		</div>
 																	</li>
@@ -792,27 +796,29 @@
 												<p>Enable or disable the scan and set the scan schedule</p>
 											</div>
 											<ul class="chevron-list">
-												<li class="d-flex justify-content-between">
-													<div class="item d-flex">
-														<div class="icon icon-visible-to-online-trackers"></div>
-														<strong>Enable Scan</strong>
-													</div>
-													<div class="status d-flex justify-content-end">
-														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-													</div>
-												</li>
-												<li class="d-flex justify-content-between">
-													<div class="item d-flex">
-														<div  class="icon icon-power-agenda"></div>
-														<strong>Once a week</strong>
-													</div>
-													<div class="status d-flex justify-content-end">
-														<p><strong>SAT</strong> | 12:00AM</p>
-														<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-													</div>
-												</li>
-											</ul>
-											<a href="#" class="link-text">Manage Subscription</a>
+                                                <li class="d-flex justify-content-between">
+                                                    <div class="item d-flex">
+                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+                                                        <strong>Enable Scan</strong>
+                                                    </div>
+                                                    <div class="status d-flex justify-content-end">
+                                                        <vtr-ui-switch-onoff [value]="true"
+                                                        [disabled]="false"></vtr-ui-switch-onoff>
+                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <div class="item d-flex">
+                                                        <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+                                                        <strong>Once a week</strong>
+                                                    </div>
+                                                    <div class="status d-flex justify-content-end">
+                                                        <p class="mr-3"><strong>SAT</strong> | 12:00AM</p>
+                                                        <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+                                                    </div>
+                                                </li>
+                                            </ul>
+											<!-- <a href="#" class="link-text">Manage Subscription</a> -->
 										</div>
 									</div>
 								</div>

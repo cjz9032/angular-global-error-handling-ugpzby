@@ -29,6 +29,7 @@ import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/
 import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 import { FormsModule } from '@angular/forms';
+import { CommonUiModule } from '../common/common-ui.module';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -60,9 +61,10 @@ library.add(faChevronDown);
   NgbDatepickerModule ,
   AccordionModule.forRoot(),
   HeaderMainModule,
-  FontAwesomeModule
+  FontAwesomeModule,
+  CommonUiModule
   ],
-  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent],
+  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent,CommonUiModule],
   bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent]
 })
 export class SmartPerformanceModule { }

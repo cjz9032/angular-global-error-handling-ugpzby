@@ -550,10 +550,15 @@
 		}
 	}
 	.summary-block{
-		padding: 7rem 4rem;
+		padding: 7rem 4rem 0;
 		.title-big{
 			padding: 0 !important;
 		}
+		h3{
+            font-size: 2rem;
+            font-weight: $weight_bold;
+            margin-bottom: 1rem;
+        }
 		p {
 			font-size: 1.8rem;
 			line-height: 2.2rem;
