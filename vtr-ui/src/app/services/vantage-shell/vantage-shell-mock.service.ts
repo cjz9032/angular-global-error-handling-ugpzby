@@ -1345,7 +1345,7 @@ export class VantageShellService {
 				deleteScan: this.getPromise(HardwareScanShellMock.deleteScan),
 				editScan: this.getPromise(HardwareScanShellMock.editScan),
 				getNextScans: this.getPromise(HardwareScanShellMock.nextScans),
-				getRecoverBadSectors: this.getPromise(HardwareScanShellMock.recoverBadSectors),
+				getRecoverBadSectors: HardwareScanShellMock.recoverBadSectors,
 				cancelScan: this.getPromise(HardwareScanShellMock.cancelScan),
 				getPreviousResults: this.getPromise(HardwareScanShellMock.previousResults),
 				checkItemsForRecoverBadSectors: this.getPromise(HardwareScanShellMock.checkItemsForRecoverBadSectors),
