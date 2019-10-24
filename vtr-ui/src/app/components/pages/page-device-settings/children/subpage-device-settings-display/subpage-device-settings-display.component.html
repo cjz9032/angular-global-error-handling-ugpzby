@@ -14,8 +14,7 @@
 		id="display">
 		<div class="col-10 mx-auto  container-card">
 			<!-- Display -->
-			<vtr-container-collapsible
-				[tabIndex]="0"
+			<vtr-container-collapsible [tabIndex]="0"
 				[cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 				[vtrAppSearchScroller]="['search-display']"
 				componentName="display"
@@ -25,7 +24,8 @@
 				(toggle)="onCardCollapse($event)"
 				[collapseLinkId]="'device-settings-display'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3" *ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
+					<li class="pt-3"
+						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 							componentName="Display color temperature"
@@ -137,16 +137,13 @@
 										attr.aria-label="privacy guard description, {{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}">
 										{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
 									</p>
-									<!-- <img class="img-privacy-guard"
-											src="assets/images/privacy-guard.svg"
-											alt="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"> -->
 								</div>
 							</div>
 							<div class="row">
 								<div class="feature-note p-4 m-4"
-										tabindex="0"
-										id="privacy-guard-note"
-										attr.aria-label="privacy guard note, {{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}">
+									tabindex="0"
+									id="privacy-guard-note"
+									attr.aria-label="privacy guard note, {{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}">
 									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}
 									</p>
 								</div>
@@ -161,7 +158,7 @@
 											attr.aria-label="cb-privacy-guard"
 											[checked]="privacyGuardCheckBox"
 											(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
-											<span class="checkmark"></span>
+										<span class="checkmark"></span>
 										<label class="custom-control-label"
 											for="cb-privacy-guard">
 											<span id="cb-privacy-guard-description"
@@ -177,7 +174,8 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="hasOLEDPowerControlCapability">
+					<li class="pt-3"
+						*ngIf="hasOLEDPowerControlCapability">
 						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
@@ -250,9 +248,9 @@
 				(toggle)="onCardCollapse($event)"
 				[collapseLinkId]="'device-settings-camera'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3" *ngIf="cameraPrivacyModeStatus.available">
-						<vtr-ui-row-switch
-							[switchId]="'camera-privacy-mode'"
+					<li class="pt-3"
+						*ngIf="cameraPrivacyModeStatus.available">
+						<vtr-ui-row-switch [switchId]="'camera-privacy-mode'"
 							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							componentName="Camera Privacy Mode"
 							[name]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
@@ -275,8 +273,9 @@
 												</fa-icon>
 											</div>
 											<div class="col-11 pr-0 pl-2">
-												<p class="mb-0 mt-auto" id="camera-privacy-mode-note"
-												attr.aria-label="camera-privacy-mode-note">
+												<p class="mb-0 mt-auto"
+													id="camera-privacy-mode-note"
+													attr.aria-label="camera-privacy-mode-note">
 													{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 												</p>
 												<button type="button"
@@ -322,8 +321,8 @@
 											</div>
 											<div class="col-11 pr-0 pl-2">
 												<p class="mb-0 mt-auto"
-												id="device-settings-camera-privacy-note"
-												attr.aria-label="device-settings-camera-privacy-note">
+													id="device-settings-camera-privacy-note"
+													attr.aria-label="device-settings-camera-privacy-note">
 													{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 												</p>
 												<button type="button"
@@ -359,7 +358,7 @@
 					</li>
 
 					<li class="pt-3"
-					*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
+						*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
 							componentName="Camera Background Blur"

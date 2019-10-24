@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "¿Está seguro de que desea borrar esta tecla de macro?"
+                    "title": "¿Está seguro de que desea borrar esta tecla de macro?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tiempo de espera de grabación.",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
                 "seeDetailsLink": "Ver detalles",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
             "power": {
                 "title": "Energía",
@@ -1040,39 +1041,39 @@
                         "note": "Si se la detección está marcada, su sistema se encenderá automáticamente en la modalidad de energía Avión cuando detecte que está en un entorno a bordo de un avión y la desactivará cuando salga de ese entorno."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Restablecimiento del indicador de batería",
+                        "description": "Esta característica permite que su sistema calcule de forma más precisa la capacidad de carga completa.",
+                        "barCode": "Código de barras",
+                        "progress": "Progreso",
+                        "remaining": "Restante",
+                        "startTime": "Hora de inicio",
+                        "lastReset": "Último restablecimiento",
+                        "fullChargeCapacity": "Capacidad de carga completa",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Restablecer",
+                            "stop": "Detener"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+                        "FCCText": "De {{before}} Wh a {{after}} Wh",
+                        "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Completo. Restablecimiento satisfactorio.",
+                            "ERROR_SHUTDOWN": "Incompleto. Se apagó el sistema.",
+                            "ERROR_LOGOFF": "Incompleto. Se cerró la sesión del usuario.",
+                            "ERROR_BATTERY_REMOVE": "Incompleto. Se extrajo la batería.",
+                            "ERROR_BATTERY_REPLACE": "Incompleto. Se reemplazó la batería.",
+                            "ERROR_AC_DETTACH": "Incompleto. Se desconectó el adaptador de alimentación de CA.",
+                            "ERROR_USER_CANCEL": "Incompleto. Cancelado por el usuario.",
+                            "ERROR_UNEXPECTED": "Incompleto. Ha ocurrido un error inesperado."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
+                            "description2": "Notas: <br>1. El proceso podría tomar varias horas. Evite utilizar el sistema durante este periodo.<br>2. Cierre todas las aplicaciones abiertas y conecte el sistema a la alimentación de CA.<br>3. Durante el proceso, la función de umbral de carga de la batería está inhabilitada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sí",
+                            "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
                         }
                     }
                 },
@@ -1571,6 +1572,18 @@
                 "desc": "Esta característica pausará el video cuando deje el equipo y reanudará el video cuando vuelva.",
                 "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
+            "superResolution": {
+				"heading": "Medios inteligentes",
+				"title": "Escalado de resolución de video",
+				"desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
+				"tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Esta característica no funciona cuando;",
+					"description1":"El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
+					"description2":"El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
+					"description3":"La temperatura de la CPU es demasiado alta."
+				}
+			},
             "voice": {
                 "title": "Voz",
                 "description": "Lenovo Voice ayuda a convertir la voz a texto con la función Voz a texto y proporciona traducción en tiempo real de voz a texto con la función Traducción.",

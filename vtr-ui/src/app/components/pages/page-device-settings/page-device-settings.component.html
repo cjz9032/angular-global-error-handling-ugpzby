@@ -31,7 +31,6 @@
 			<div class="row mb-40">
 				<div class="col col-12"
 					[ngClass]="{'battery-unavailable': isDesktopMachine}"
-					tabindex="0"
 					attr.aria-label="battery-details"
 					id="battery-details">
 					<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>

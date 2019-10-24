@@ -97,11 +97,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.remainingTime';
 						}
 						const chemistry: string = response.detail[i].deviceChemistry;
-						if (chemistry === null || chemistry === undefined) {
+						if (chemistry === null || chemistry === undefined || chemistry === '') {
 							this.deviceChemistry[i] = chemistry;
 						} else {
 							this.deviceChemistry[i] =
-							'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase();
+								'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase();
 						}
 					}
 				}

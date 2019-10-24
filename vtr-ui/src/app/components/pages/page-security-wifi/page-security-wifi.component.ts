@@ -12,7 +12,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
@@ -65,7 +64,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public translate: TranslateService,
 		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
 		public deviceService: DeviceService
@@ -76,9 +74,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		if (this.deviceService.getMachineInfoSync()) {
 			this.brand = this.deviceService.getMachineInfoSync().brand;
-		}
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
