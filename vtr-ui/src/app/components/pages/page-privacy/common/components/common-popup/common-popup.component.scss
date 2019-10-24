@@ -49,6 +49,7 @@
 	&__content {
 		max-height: calc(85vh);
 		overflow: auto;
+		overflow-x: hidden;
 		padding: 3.5rem 4rem 3rem 4rem;
 	}
 
