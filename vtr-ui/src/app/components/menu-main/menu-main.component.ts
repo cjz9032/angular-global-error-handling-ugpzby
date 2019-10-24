@@ -63,6 +63,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
+	hideDropDown = false;
 
 	UnreadMessageCount = {
 		totalMessage: 0,
