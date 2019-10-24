@@ -1053,14 +1053,14 @@
 								.battery {
 									.acid-container {
 										.percentage {
-											color: $main_dark;
+											color: $gaming_lightest !important;
 										}
 									}
 									.remaining-time {
-										color: $main_dark;
+										color: $gaming_lightest !important;
 									}
 									.remaining-text {
-										color: $main_dark;
+										color: $gaming_lightest !important;
 									}
 								}
 							}
