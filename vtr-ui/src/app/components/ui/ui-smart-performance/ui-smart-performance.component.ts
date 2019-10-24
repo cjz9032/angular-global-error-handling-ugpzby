@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
   selector: 'vtr-ui-smart-performance',
@@ -17,13 +19,42 @@ export class UiSmartPerformanceComponent implements OnInit {
 	subItems = [];
 	currentSubItemCategory: any = {};
 	@Input() activegroup = "Tune up performance";
+	isSubscribed:any;
+	subscriptionDetails:any;
+	startDate:any;
+	endDate:any;
+	status:any;
+	givenDate:Date;
+	public today = new Date();
+	
+
 	constructor(
-		private translate: TranslateService,private modalService: NgbModal
+		private translate: TranslateService,private modalService: NgbModal,private commonService: CommonService
 	) {
 		this.translateStrings();
 	}
 
   ngOnInit() {
+
+	this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+	if(this.isSubscribed)
+  	{
+		this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+		this.startDate = this.subscriptionDetails[0].StartDate;
+		this.endDate = this.subscriptionDetails[0].EndDate;
+		this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+		
+		if(this.givenDate > this.today)
+		this.status = "ACTIVE";
+		else 
+		this.status = "INACTIVE";
+	}
+	else
+	{
+		this.startDate="---";
+		this.endDate="---";
+		this.status="INACTIVE";
+	}
   }
 
   private translateStrings() {
@@ -40,6 +71,7 @@ public changeScanStatus() {
 	console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
 	this.isScanningCompleted = true; 
 	this.isScanning = false;
+	console.log(this.isScanningCompleted+'>>>'+this.isScanning);
 }
 openSubscribeModal() {
     this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
