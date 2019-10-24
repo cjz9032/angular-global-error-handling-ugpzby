@@ -83,7 +83,8 @@
 		}
 
 		.battery-conditions-tips {
-			font-size: $base;
+			font-size: $fontsize_md;
+			line-height: 1.2em;
 			width: 100%;
 			letter-spacing: 0;
 			padding: 0.5rem 0;

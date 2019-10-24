@@ -31,8 +31,8 @@
 		}
 
 		@media #{$breakpoint_xl} {
-			height: 12.5rem;
-			width: 12.5rem;
+			height: 9.5rem;
+			width: 9.5rem;
 		}
 
 		@media #{$breakpoint_lg} {
@@ -113,13 +113,13 @@
 			}
 	
 			@media #{$breakpoint_xl} {
-				width: 6rem;
-				height: 6rem;
+				width: 5rem;
+				height: 5rem;
 			}
 	
 			@media #{$breakpoint_lg} {
-				width: 10rem;
-				height: 10rem;
+				width: 6rem;
+				height: 6rem;
 			}
 	
 			@media #{$breakpoint_md} {
@@ -128,15 +128,25 @@
 			}
 
 			.icomoon {
-				font-size: 4rem;
+				font-size: 4.5rem;
+				line-height: 1.3em;
+				@media #{$breakpoint_xl3} {
+					font-size: 3.5rem;
+				}
+		
+				@media #{$breakpoint_xl2} {
+					font-size: 2.7rem;
+				}
+		
+				@media #{$breakpoint_xl} {
+					font-size: 3.7rem;
+				}
 				@media #{$breakpoint_lg} {
-					width: 6rem;
-					height: 6rem;
+					font-size: 4.5rem;
 				}
 		
 				@media #{$breakpoint_md} {
-					width: 4rem;
-					height: 4rem;
+					font-size: 4.5rem;
 				}
 			}
 
