@@ -34,16 +34,12 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private modalService: NgbModal,
 		public vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.statusItem = {
 			title: 'security.passwordManager.statusTitle',

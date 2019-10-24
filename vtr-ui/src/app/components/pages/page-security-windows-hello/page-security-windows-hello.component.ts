@@ -31,15 +31,11 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 
 		public vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private router: Router
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.statusItem = {
 			title: 'security.windowsHello.statusTitle',
 			status: 'loading'

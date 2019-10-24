@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -188,7 +188,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					}
 				}
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -384,6 +384,12 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+	}
+
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
@@ -415,7 +421,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -450,9 +456,9 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => {});
+					.catch((error) => { });
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	private notifyNetworkState() {
@@ -465,47 +471,47 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// VAN-5872, server switch feature
-	// private serverSwitchThis() {
-	// 	this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-	// 		if (params.has('serverswitch')) {
-	// 			// retrive from localStorage
-	// 			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-	// 			if (serverSwitchLocalData) {
-	// 				// force cms service to use this server parms
-	// 				serverSwitchLocalData.forceit = true;
-	// 				this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+	private serverSwitchThis() {
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('serverswitch')) {
+				// retrive from localStorage
+				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+				if (serverSwitchLocalData) {
+					// force cms service to use this server parms
+					serverSwitchLocalData.forceit = true;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
-	// 				const langCode = serverSwitchLocalData.language.Value.toLowerCase();
-	// 				const allLangs = this.translate.getLangs();
-	// 				const currentLang = this.translate.currentLang
-	// 					? this.translate.currentLang.toLowerCase()
-	// 					: this.translate.defaultLang.toLowerCase();
+					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
+					const allLangs = this.translate.getLangs();
+					const currentLang = this.translate.currentLang
+						? this.translate.currentLang.toLowerCase()
+						: this.translate.defaultLang.toLowerCase();
 
-	// 				// change language only when countrycode or language code changes
-	// 				if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
-	// 					// this.translate.resetLang('ar');
-	// 					// this.languageService.useLanguage(langCode);
-	// 					if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
-	// 						this.translate.reloadLang(langCode);
-	// 					}
+					// change language only when countrycode or language code changes
+					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
+						// this.translate.resetLang('ar');
+						// this.languageService.useLanguage(langCode);
+						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
+							this.translate.reloadLang(langCode);
+						}
 
-	// 					this.translate.use(langCode).subscribe(
-	// 						(data) => console.log('@sahinul trans use NEXT'),
-	// 						(error) => console.log('@sahinul server switch error ', error),
-	// 						() => {
-	// 							// Evaluate the translations for QA on language Change
-	// 							// this.qaService.setTranslationService(this.translate);
-	// 							// this.qaService.setCurrentLangTranslations();
-	// 							console.log('@sahinul server switch completed');
-	// 						}
-	// 					);
-	// 				}
-	// 			}
-	// 		}
-	// 	});
-	// }
+						this.translate.use(langCode).subscribe(
+							(data) => console.log('@sahinul trans use NEXT'),
+							(error) => console.log('@sahinul server switch error ', error),
+							() => {
+								// Evaluate the translations for QA on language Change
+								// this.qaService.setTranslationService(this.translate);
+								// this.qaService.setCurrentLangTranslations();
+								// console.log('@sahinul server switch completed');
+							}
+						);
+					}
+				}
+			}
+		});
+	}
 
-	@HostListener('window:keyup', [ '$event' ])
+	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -521,16 +527,16 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 
 			// // VAN-5872, server switch feature
-			// if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-			// 	const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-			// 		backdrop: true,
-			// 		size: 'lg',
-			// 		centered: true,
-			// 		windowClass: 'Server-Switch-Modal',
-			// 		keyboard: false
-			// 	});
-			// }
-		} catch (error) {}
+			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+					backdrop: true,
+					size: 'lg',
+					centered: true,
+					windowClass: 'Server-Switch-Modal',
+					keyboard: false
+				});
+			}
+		} catch (error) { }
 	}
 
 	@HostListener('window:load', [ '$event' ])
@@ -545,7 +551,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', [ '$event' ])
+	@HostListener('window:keydown', ['$event'])
 	disableCtrlA($event: KeyboardEvent) {
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 

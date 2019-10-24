@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Vill du rensa denna makrotangent?"
+                    "title": "Vill du rensa denna makrotangent?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tidsgräns för inspelning.",
@@ -643,7 +644,10 @@
             "collapse": "Komprimera",
             "expand": "Utöka",
             "loader": "Hämtar <br> status",
-            "loading": "Läser in..."
+            "loading": "Läser in...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
@@ -881,12 +885,12 @@
                     "PermanentError": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet.",
                     "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
                 "seeDetailsLink": "Visa information",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
             "power": {
                 "title": "Ström",
@@ -1037,39 +1041,39 @@
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Återställning av batterimätare",
+                        "description": "Med denna funktion kan datorn beräkna fulladdningskapaciteten mer exakt.",
+                        "barCode": "Streckkod",
+                        "progress": "Status",
+                        "remaining": "Återstår",
+                        "startTime": "Starttid",
+                        "lastReset": "Senaste återställning",
+                        "fullChargeCapacity": "Fulladdningskapacitet",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Återställ",
+                            "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
+                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+                        "FCCText": "Från {{before}} Wh till {{after}} Wh",
+                        "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Klart. Återställningen lyckades.",
+                            "ERROR_SHUTDOWN": "Ofullständig. Systemavstängning.",
+                            "ERROR_LOGOFF": "Ofullständig. Användare loggade ut.",
+                            "ERROR_BATTERY_REMOVE": "Ofullständig. Batteriet togs bort.",
+                            "ERROR_BATTERY_REPLACE": "Ofullständig. Batteriet byttes ut.",
+                            "ERROR_AC_DETTACH": "Ofullständig. Nätadaptern kopplades bort.",
+                            "ERROR_USER_CANCEL": "Ofullständig. Avbröts av användaren.",
+                            "ERROR_UNEXPECTED": "Ofullständig. Ett oväntat fel inträffade."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
+                            "description2": "Obs! <br>1. Åtgärden kan ta flera timmar. Undvik att använda datorn under tiden.<br>2. Stäng alla öppna program och anslut datorn till nätström.<br>3. Funktionen Gränsvärde för batteriladdning är inaktiverad medan processen pågår.",
+                            "continue": "Fortsätt",
+                            "cancel": "Avbryt",
+                            "yes": "Ja",
+                            "description3": "Vill du stoppa återställning av batterimätaren?"
                         }
                     }
                 },
@@ -1402,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1469,7 +1474,7 @@
                     "options": {
                         "near": "Nära",
                         "far": "Långt bort",
-                        "medium": "Medium"
+                        "medium": "Medel"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1490,7 +1495,7 @@
                     "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
                     "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
                     "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Noggrannheten varierar beroende på kroppsstorlek, hållning och hur ofta du rör dig. Om datorn låses oväntat kan du justera känslighetsfältet och därigenom öka noggrannheten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Öppna inställningarna för Windows Hello",
@@ -1498,7 +1503,7 @@
                 },
                 "resetToDefault": "Återställ",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "JUSTERING AV KÄNSLIGHET"
                 }
             },
             "intelligentScreen": {

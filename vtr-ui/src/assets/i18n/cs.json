@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Opravdu chcete tuto klávesu makra vymazat?"
+                    "title": "Opravdu chcete tuto klávesu makra vymazat?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Vypršel čas záznamu.",
@@ -643,7 +644,10 @@
             "collapse": "Sbalit",
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
-            "loading": "Načítání..."
+            "loading": "Načítání...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -881,12 +885,12 @@
                     "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>"
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
             },
             "power": {
                 "title": "Napájení",
@@ -1037,39 +1041,39 @@
                         "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Reset ukazatele stavu baterie",
+                        "description": "Tato funkce umožňuje počítači přesněji odhadnout maximální kapacitu baterie.",
+                        "barCode": "Čárový kód",
+                        "progress": "Průběh",
+                        "remaining": "Zbývá",
+                        "startTime": "Čas spuštění",
+                        "lastReset": "Poslední reset",
+                        "fullChargeCapacity": "Kapacita při plném nabití",
                         "btnLabel": {
                             "reset": "Reset",
-                            "stop": "Stop"
+                            "stop": "Zastavit"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
+                        "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "FCCText": "Z {{before}} Wh na {{after}} Wh",
+                        "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Dokončeno. Reset proběhl úspěšně.",
+                            "ERROR_SHUTDOWN": "Nedokončeno. Systém byl vypnut.",
+                            "ERROR_LOGOFF": "Nedokončeno. Uživatel se odhlásil.",
+                            "ERROR_BATTERY_REMOVE": "Nedokončeno. Byla vyňata baterie.",
+                            "ERROR_BATTERY_REPLACE": "Nedokončeno. Byla vyměněna baterie.",
+                            "ERROR_AC_DETTACH": "Nedokončeno. Byl odpojen napájecí adaptér.",
+                            "ERROR_USER_CANCEL": "Nedokončeno. Zrušeno uživatelem.",
+                            "ERROR_UNEXPECTED": "Nedokončeno. Došlo k neočekávané chybě."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
+                            "description2": "Poznámky: <br>1. Tento proces může trvat několik hodin. Během této doby počítač nepoužívejte.<br>2. Zavřete všechny otevřené aplikace a připojte počítač k napájení.<br>3. Během procesu je funkce prahu nabití baterie deaktivována.",
+                            "continue": "Pokračuj",
+                            "cancel": "Storno",
+                            "yes": "Ano",
+                            "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
                         }
                     }
                 },
@@ -1402,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "DALŠÍ",
@@ -1469,7 +1474,7 @@
                     "options": {
                         "near": "Malá",
                         "far": "Velká",
-                        "medium": "Medium"
+                        "medium": "Střední"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1490,7 +1495,7 @@
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
                     "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Přesnost se liší podle velikosti trupu, polohy a četnosti pohybu. Pokud se váš počítač neočekávaně uzamkne, seřiďte sloupec citlivosti tak, aby se zvýšila přesnost."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1498,7 +1503,7 @@
                 },
                 "resetToDefault": "Reset",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "SEŘÍZENÍ CITLIVOSTI"
                 }
             },
             "intelligentScreen": {

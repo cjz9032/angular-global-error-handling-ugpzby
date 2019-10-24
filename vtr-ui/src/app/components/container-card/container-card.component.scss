@@ -242,6 +242,14 @@
 					z-index: 1;
 					padding: 2rem;
 					height: 100%;
+					@media #{$black-on-white} {
+						border:0.1rem solid;
+						border-radius:2rem;
+					}
+					@media #{$white-on-black} {
+						border:0.1rem solid;
+						border-radius:2rem;
+					}
 
 					@media #{$mediaquery_X1} {
 						padding: 2rem;
@@ -319,8 +327,9 @@
 					position: relative;
 					z-index: 1;
 					height: 100%;
-					display: flex;
-					justify-content: flex-end;
+					padding: 2rem;
+					// display: flex;
+					// justify-content: flex-end;
 					align-items: center;
 					.title {
 						color: $light;

@@ -104,6 +104,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	isACAttached: boolean;
 	isGaugeResetRunning: boolean[] = [false, false];
 
+	smartStandbyCapability: boolean;
+	showPowerSmartSettings = true;
+	tempHeaderMenuItems = [];
+
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.power.powerSmartSettings.title',
@@ -224,11 +228,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.tempHeaderMenuItems = this.headerMenuItems;
 		this.getFlipToBootCapability();
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
 		this.getVantageToolBarCapability();
 		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
@@ -404,6 +408,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	onSetSmartStandbyCapability(event: boolean) {
+		this.smartStandbyCapability = event;
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
 		}
@@ -535,6 +540,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getAlwaysOnUSBStatusThinkPad();
 			} catch (error) {
 				this.logger.error('getAlwaysOnUSBCapabilityThinkPad', error.message);
+				this.alwaysOnUSBStatus.available = false;
 				return EMPTY;
 			}
 		}
@@ -582,6 +588,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
 			} catch (error) {
 				this.logger.error('getEasyResumeCapabilityThinkPad', error.message);
+				this.showEasyResumeSection = false;
 				return EMPTY;
 			}
 		}
@@ -664,6 +671,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 			} catch (error) {
 				this.logger.error('getAirplaneModeCapabilityThinkPad', error.message);
+				this.showAirplanePowerModeSection = false;
 				return EMPTY;
 			}
 		}
@@ -983,6 +991,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	// End Lenovo Vantage ToolBar
 
 	hidePowerSmartSetting(hide: boolean) {
+		this.showPowerSmartSettings = hide;
 		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
 	}
 
@@ -1072,7 +1081,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					break;
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
-					this.checkPowerDriverMissing(this.isPowerDriverMissing);
 					break;
 				case 'GaugeResetInfo':
 					if (notification.payload) {
@@ -1101,11 +1109,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public checkPowerDriverMissing(status) {
 		this.isPowerDriverMissing = status;
-		if (this.machineType === 1 && status) {
-			this.showAirplanePowerModeSection = false;
-			this.isChargeThresholdAvailable = false;
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+		if (!status) {
+			this.headerMenuItems = this.tempHeaderMenuItems;
+		}
+		this.getBatteryAndPowerSettings(this.machineType);
+		this.getFlipToBootCapability();
+		this.getVantageToolBarCapability();
+		this.getEnergyStarCapability();
+		this.onSetSmartStandbyCapability(this.smartStandbyCapability);
+		if (!this.showPowerSmartSettings) {
+			this.hidePowerSmartSetting(this.showPowerSmartSettings);
 		}
 		const cacheValue = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
 		// if previous value is true & current value is false
@@ -1220,19 +1233,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	hideBatteryLink() {
 		if (!(this.showAirplanePowerModeSection ||
 			(this.conservationModeStatus && this.conservationModeStatus.available) || (this.expressChargingStatus && this.expressChargingStatus.available) ||
-			this.isChargeThresholdAvailable)) {
+			this.isChargeThresholdAvailable || this.gaugeResetCapability)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
-			return true;
 		}
-		return false;
 	}
 
 	hidePowerLink() {
-		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value)) {
+		if (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			return true;
 		}
-		return false;
 	}
 
 	hideOtherSettingsLink() {

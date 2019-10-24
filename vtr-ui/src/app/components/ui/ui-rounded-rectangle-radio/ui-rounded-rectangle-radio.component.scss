@@ -137,14 +137,6 @@
 			}
 		}
 	}
-	&.border-disabled {
-		border: 0.3rem solid #e6eaeb;
-		label {
-			.icon-circle {
-				color: $grey_darker;
-			}
-		}
-	}
 	&.border-checked-disabled {
 		border: 0.3rem solid #667481;
 		label {
@@ -153,6 +145,9 @@
 			}
 		}
 	}
+}
+.large-width {
+	width: 29rem;
 }
 .large-width {
 	width: 29rem;

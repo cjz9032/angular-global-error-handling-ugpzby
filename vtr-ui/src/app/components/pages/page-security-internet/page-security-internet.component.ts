@@ -29,16 +29,12 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.statusItem = {
 			title: 'security.vpn.statusTitle',
 			status: 'loading'

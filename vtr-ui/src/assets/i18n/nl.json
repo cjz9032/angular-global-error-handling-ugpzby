@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Weet u zeker dat u deze macro sleutel wilt verwijderen?"
+                    "title": "Weet u zeker dat u deze macro sleutel wilt verwijderen?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Time-out voor opname.",
@@ -643,7 +644,10 @@
             "collapse": "Samenvouwen",
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",
-            "loading": "Bezig met laden..."
+            "loading": "Bezig met laden...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
@@ -881,12 +885,12 @@
                     "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
                     "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-voeding is aangesloten.</b>"
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
                 "seeDetailsLink": "Bekijk meer informatie",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -1037,39 +1041,39 @@
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "title": "Batterijmeter opnieuw instellen",
+                        "description": "Met deze functie kan de computer nauwkeuriger schatten wat de volledige laadcapaciteit is.",
                         "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "progress": "Voortgang",
+                        "remaining": "Resterend",
+                        "startTime": "Begintijd",
+                        "lastReset": "Laatste reset",
+                        "fullChargeCapacity": "Capaciteit bij volledig geladen",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Resetten",
+                            "stop": "Stoppen"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
+                        "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
+                        "FCCText": "Van {{before}} Wh tot {{after}} Wh",
+                        "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Voltooid. Opnieuw ingesteld.",
+                            "ERROR_SHUTDOWN": "Niet voltooid. Systeem is uitgeschakeld.",
+                            "ERROR_LOGOFF": "Niet voltooid. Gebruiker is afgemeld.",
+                            "ERROR_BATTERY_REMOVE": "Niet voltooid. Batterij is verwijderd.",
+                            "ERROR_BATTERY_REPLACE": "Niet voltooid. Batterij is vervangen.",
+                            "ERROR_AC_DETTACH": "Niet voltooid. Netvoedingsadapter is ontkoppeld.",
+                            "ERROR_USER_CANCEL": "Niet voltooid. Geannuleerd door gebruiker.",
+                            "ERROR_UNEXPECTED": "Niet voltooid. Er is een onverwachte fout opgetreden."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
+                            "description2": "Opmerkingen: <br>1. Dit proces kan enkele uren duren. Gebruik de computer in deze periode niet.<br>2. Sluit alle open apps en sluit de computer aan op de netvoeding.<br>3. Tijdens het proces is de functie drempelwaarde voor batterijlading uitgeschakeld.",
+                            "continue": "Doorgaan",
+                            "cancel": "Annuleren",
+                            "yes": "Ja",
+                            "description3": "Weet u zeker dat u wilt stoppen met het opnieuw instellen van de batterijmeter?"
                         }
                     }
                 },
@@ -1402,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MEER",
@@ -1469,7 +1474,7 @@
                     "options": {
                         "near": "Dichtbij",
                         "far": "Ver",
-                        "medium": "Medium"
+                        "medium": "Gemiddeld"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1490,7 +1495,7 @@
                     "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
                     "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
@@ -1498,7 +1503,7 @@
                 },
                 "resetToDefault": "Resetten",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "GEVOELIGHEID AANPASSEN"
                 }
             },
             "intelligentScreen": {

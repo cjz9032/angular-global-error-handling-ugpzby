@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { AntiVirusViewModel } from '../../../data-models/security-advisor/antivirus.model';
 import { CMSService } from '../../../services/cms/cms.service';
@@ -51,7 +50,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	constructor(
-		public mockService: MockService,
 		private vantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
@@ -64,9 +62,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.antiVirus = this.securityAdvisor.antivirus;
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
