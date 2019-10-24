@@ -55,8 +55,7 @@ library.add(faMapMarkerAlt);
 		UiListChevronModule
 	],
 	providers: [
-		DialogService,
-		HomeSecurityMockService
+		DialogService
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

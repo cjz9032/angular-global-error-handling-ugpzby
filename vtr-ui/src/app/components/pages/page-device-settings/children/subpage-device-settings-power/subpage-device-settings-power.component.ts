@@ -1120,35 +1120,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (!this.showPowerSmartSettings) {
 			this.hidePowerSmartSetting(this.showPowerSmartSettings);
 		}
-		const cacheValue = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
-		// if previous value is true & current value is false
-		if (this.machineType === 1 && cacheValue && !status) {
-			this.getAlwaysOnUSBCapabilityThinkPad();
-			this.showAirplanePowerModeSection = this.airplanePowerCache.toggleState.available;
-			this.isChargeThresholdAvailable = this.batteryChargeThresholdCache.available;
-			if (!this.commonService.isFoundInArray(this.headerMenuItems, 'battery') && !this.hideBatteryLink()) {
-				// "battery" setting is not found & capability available. Go ahead on adding it.
-				const item = {
-					title: 'device.deviceSettings.power.batterySettings.title',
-					path: 'battery',
-					metricsItem: 'BatterySettings'
-				};
-				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, 'other') ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
-
-				this.headerMenuItems.splice(addAtIndex, 0, item);
-			}
-			if (!this.commonService.isFoundInArray(this.headerMenuItems, 'power') && !this.hidePowerLink()) {
-				// "power" setting is not found & capability available. Go ahead on adding it.
-				const item = {
-					title: 'device.deviceSettings.power.powerSettings.title',
-					path: 'power',
-					metricsItem: 'PowerSettings'
-				};
-				const addAtIndex = this.commonService.isFoundInArray(this.headerMenuItems, 'other') ? this.headerMenuItems.length - 1 : this.headerMenuItems.length;
-				this.headerMenuItems.splice(addAtIndex, 0, item);
-			}
-		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
 	}
 
 	public showBatteryThresholdsettings(event) {
@@ -1241,7 +1212,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	hidePowerLink() {
 		if (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
-			return true;
 		}
 	}
 
