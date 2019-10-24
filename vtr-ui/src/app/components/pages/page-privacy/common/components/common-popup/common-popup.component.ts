@@ -97,7 +97,6 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	}
 
 	closePopup() {
-		console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>closePopup', this.popUpId);
 		if (!this.isOpen) {
 			return;
 		}

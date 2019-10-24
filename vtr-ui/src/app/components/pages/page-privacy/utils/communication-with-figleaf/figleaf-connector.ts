@@ -42,7 +42,7 @@ class FigleafConnector {
 		}
 	}
 
-	async connect() {
+	private async connect() {
 		let newConnection = connection;
 
 		if (newConnection === null) {
