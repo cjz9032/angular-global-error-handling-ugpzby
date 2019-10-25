@@ -50,17 +50,18 @@
 											<p>Our scan found <span>54 issues</span> in following areas below. Sign up now to fix this problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.</p>
 											<div class="d-flex justify-content-between my-5">
 												<button class="action-button">Sign up and repair now</button>
-												<div class="desc">
+												<div class="desc col pl-5">
 													<p><b>Only $2 per month.</b> We will automatically fix these issues.
 														<br>Once today and every week thereafter. <a href="#" class="para-link">Learn more</a>
 													</p>
 												</div>
 											</div>
 											<div class="row">
-													<div class="pc-info-card pc-accordion w-100 my-5">
+													<div class="pc-info-card pc-accordion w-100 mb-5">
 														<div class="col-12 px-0">
-															<accordion [isAnimated]="true" [closeOthers]="true">
-																<accordion-group>
+															<ngb-accordion [closeOthers]="true">
+																<ngb-panel id="Tune up performance">
+																	<ng-template ngbPanelTitle>
 																	<div class="d-flex justify-content-between" accordion-heading>
 																		<div class="heading">
 																			<div class="icon icon-performance"></div>
@@ -71,6 +72,8 @@
 	
 																		</div>
 																	</div>
+																	</ng-template>
+																	<ng-template ngbPanelContent>
 																	<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 																		<ngb-tabset class="scan-result-tabs w-100">
 																			<ngb-tab>
@@ -206,9 +209,11 @@
 																			</ngb-tab>
 																		</ngb-tabset>
 																	</div>
-																</accordion-group>
+																	</ng-template>
+																</ngb-panel>
 	
-																<accordion-group>
+																<ngb-panel id="Malware & Security">
+																	<ng-template ngbPanelTitle>
 																	<div class="d-flex justify-content-between" accordion-heading>
 																		<div class="heading">
 																			<div class="icon icon-malware-security"></div>
@@ -218,6 +223,8 @@
 																			<p>18 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
 																		</div>
 																	</div>
+																	</ng-template>
+																	<ng-template ngbPanelContent>
 																	<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
 																		<ngb-tabset class="scan-result-tabs w-100">
 																			<ngb-tab>
@@ -354,156 +361,160 @@
 																			</ngb-tab>
 																		</ngb-tabset>
 																	</div>
-																</accordion-group>
+																	</ng-template>
+																</ngb-panel>
 	
-																<accordion-group>
-																		<div class="d-flex justify-content-between" accordion-heading>
-																			<div class="heading">
-																					<div class="icon icon-internet-performance"></div>
-																				<h2>Internet performance</h2>
-																			</div>
-																			<div class="status-text float-right pull-right pt-4 mt-2">
-																				<p>18 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
-																			</div>
+																<ngb-panel id="Internet performance">
+																	<ng-template ngbPanelTitle>
+																	<div class="d-flex justify-content-between" accordion-heading>
+																		<div class="heading">
+																				<div class="icon icon-internet-performance"></div>
+																			<h2>Internet performance</h2>
 																		</div>
-																		<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-																			<ngb-tabset class="scan-result-tabs w-100">
-																				<ngb-tab>
-																					<ng-template ngbTabTitle>
-																						<div class="icon-box d-flex justify-content-center">
-																								<div class="icon icon-router"></div>
-																							<p>Network Settings</p>
-																						</div>
-																					</ng-template>
-																					<ng-template ngbTabContent>
-																							<p class="py-4">Scanned areas</p>
-																							<ul class="scanned-list">
-																								<li class=" list-item list-heading">
-																									<div class="container-fluid">
-																										<div class="row align-items-center">
-																											<div class="col-6 px-0">
+																		<div class="status-text float-right pull-right pt-4 mt-2">
+																			<p>18 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
+																		</div>
+																	</div>
+																	</ng-template>
+																	<ng-template ngbPanelContent>
+																	<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+																		<ngb-tabset class="scan-result-tabs w-100">
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																							<div class="icon icon-router"></div>
+																						<p>Network Settings</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																						<p class="py-4">Scanned areas</p>
+																						<ul class="scanned-list">
+																							<li class=" list-item list-heading">
+																								<div class="container-fluid">
+																									<div class="row align-items-center">
+																										<div class="col-6 px-0">
+																											<div class="row ">
+																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																													<p class="col">Optimizing Windows settings</p>
+																											</div>
+																										</div>
+																										<div class="col-6 px-0">
+																												<div class="row">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Preventing non-essential service from running</p>
+																												</div>
+																										</div>
+																									</div>
+																								</div>
+																							</li>
+																						</ul>
+																						<ul class="scanned-list">
+																							<li class=" list-item list-heading">
+																								<div class="container-fluid">
+																									<div class="row align-items-center">
+																										<div class="col-6 px-0">
 																												<div class="row ">
 																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																														<p class="col">Optimizing Windows settings</p>
+																														<p class="col">Applying registry and shortcut fixes</p>
 																												</div>
-																											</div>
-																											<div class="col-6 px-0">
-																													<div class="row">
-																															<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																															<p class="col">Preventing non-essential service from running</p>
-																													</div>
-																											</div>
+
+																										</div>
+																										<div class="col-6 px-0">
+																												<div class="row ">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Removing unnecessary residual fies</p>
+																												</div>
+
 																										</div>
 																									</div>
-																								</li>
-																							</ul>
-																							<ul class="scanned-list">
-																								<li class=" list-item list-heading">
-																									<div class="container-fluid">
-																										<div class="row align-items-center">
-																											<div class="col-6 px-0">
-																													<div class="row ">
-																															<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																															<p class="col">Applying registry and shortcut fixes</p>
-																													</div>
-	
-																											</div>
-																											<div class="col-6 px-0">
-																													<div class="row ">
-																															<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																															<p class="col">Removing unnecessary residual fies</p>
-																													</div>
-	
-																											</div>
+																								</div>
+																							</li>
+																						</ul>
+																						<ul class="scanned-list">
+																							<li class=" list-item list-heading">
+																								<div class="container-fluid">
+																									<div class="row align-items-center">
+																										<div class="col-6 px-0">
+																												<div class="row">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Scanning and fixing critical services</p>
+																												</div>
+
+																										</div>
+																										<div class="col-6 px-0">
+																												<div class="row ">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Removing OS and application log files</p>
+																												</div>
+
 																										</div>
 																									</div>
-																								</li>
-																							</ul>
-																							<ul class="scanned-list">
-																								<li class=" list-item list-heading">
-																									<div class="container-fluid">
-																										<div class="row align-items-center">
-																											<div class="col-6 px-0">
-																													<div class="row">
-																															<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																															<p class="col">Scanning and fixing critical services</p>
-																													</div>
-	
-																											</div>
-																											<div class="col-6 px-0">
-																													<div class="row ">
-																															<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																															<p class="col">Removing OS and application log files</p>
-																													</div>
-	
-																											</div>
-																										</div>
-																									</div>
-																								</li>
-																							</ul>
-																						</ng-template>
-																				</ngb-tab>
-																				<ngb-tab>
-																					<ng-template ngbTabTitle>
-																						<div class="icon-box d-flex justify-content-center">
-																								<div class="icon icon-visible-to-online-trackers"></div>
-																							<p>Browser Settings</p>
-																						</div>
+																								</div>
+																							</li>
+																						</ul>
 																					</ng-template>
-																					<ng-template ngbTabContent>
-																						<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																						master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																						dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																						iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																					</ng-template>
-																				</ngb-tab>
-																				<ngb-tab>
-																					<ng-template ngbTabTitle>
-																						<div class="icon-box d-flex justify-content-center">
-																								<div class="icon icon-visible-to-online-trackers"></div>
-																							<p>Browser Security</p>
-																						</div>
-																					</ng-template>
-																					<ng-template ngbTabContent>
-																						<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																						master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																						dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																						iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																					</ng-template>
-																				</ngb-tab>
-																				<ngb-tab>
-																					<ng-template ngbTabTitle>
-																						<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-wifi"></div>
-																							<p>Wi-Fi Performance</p>
-																						</div>
-																					</ng-template>
-																					<ng-template ngbTabContent>
-																						<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																						master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																						dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																						iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																					</ng-template>
-																				</ngb-tab>
-																				<ngb-tab>
-																					<ng-template ngbTabTitle>
-																						<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-uninstall"></div>
-																							<p>E-Junk</p>
-																						</div>
-																					</ng-template>
-																					<ng-template ngbTabContent>
-																						<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																						master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																						dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																						iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																					</ng-template>
-																				</ngb-tab>
-																			</ngb-tabset>
-																		</div>
-																	</accordion-group>
-	
-															</accordion>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																							<div class="icon icon-visible-to-online-trackers"></div>
+																						<p>Browser Settings</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																							<div class="icon icon-visible-to-online-trackers"></div>
+																						<p>Browser Security</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																						<div class="icon icon-wifi"></div>
+																						<p>Wi-Fi Performance</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																						<div class="icon icon-uninstall"></div>
+																						<p>E-Junk</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																		</ngb-tabset>
+																	</div>
+																	</ng-template>
+																</ngb-panel>
+															</ngb-accordion>
 														</div>
 													</div>
 												</div>
