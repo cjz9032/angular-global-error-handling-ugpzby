@@ -21,8 +21,9 @@
 	[pageCssClass]="'device-settings'">
 
 	<left-content>
-		<div class="mt-5">
-			<router-outlet></router-outlet>
+		<div class="mt-5"
+			#hsRouterOutlet>
+			<router-outlet (activate)="onRouteActivate($event, hsRouterOutlet)"></router-outlet>
 		</div>
 	</left-content>
 
