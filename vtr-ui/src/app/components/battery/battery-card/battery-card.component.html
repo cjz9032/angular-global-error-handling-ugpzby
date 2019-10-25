@@ -25,8 +25,8 @@
 				tabindex="0"
 				ngbAutofocus
 				(click)="modal.dismiss('Cross click')"
-				(keydown.esc)="modal.dismiss('Cross click')"
-				(keydown.enter)="modal.dismiss('Cross click')">
+				(keydown.esc)="modal.dismiss('Cross click')">
+				<!-- 	(keydown.enter)="modal.dismiss('Cross click')" this keyboard navigation not required.  -->
 				<!-- <img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="X" /> -->
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 
