@@ -80,7 +80,7 @@
 								}
 							],
 							"optimization": true,
-							"outputHashing": "none",
+							"outputHashing": "all",
 							"sourceMap": true,
 							"extractCss": true,
 							"namedChunks": true,
