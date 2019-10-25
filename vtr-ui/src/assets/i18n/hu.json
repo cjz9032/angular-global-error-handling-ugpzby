@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Biztosan törli ezt a makróbillentyűt?"
+                    "title": "Biztosan törli ezt a makróbillentyűt?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "A rögzítés túllépte az időkorlátot.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Összecsukás",
             "expand": "Kibontás",
             "loader": "Állapot <br> lekérése",
-            "loading": "Betöltés..."
+            "loading": "Betöltés...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
                     "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>"
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-                "seeDetailsLink": "Részletek megtekintése"
+                "seeDetailsLink": "Részletek megtekintése",
+                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
             },
             "power": {
                 "title": "Tápellátás",
@@ -1033,6 +1039,42 @@
                         "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
+                    },
+                    "gaugeReset": {
+                        "title": "Akkumulátormérő nullázása",
+                        "description": "Ezzel a funkcióval a számítógép pontosabban meg tudja határozni a teljes töltési kapacitást.",
+                        "barCode": "Vonalkód",
+                        "progress": "Állapot",
+                        "remaining": "Fennmaradó",
+                        "startTime": "Indítás időpontja",
+                        "lastReset": "Legutóbbi nullázás",
+                        "fullChargeCapacity": "Teljes töltési kapacitás",
+                        "btnLabel": {
+                            "reset": "Visszaállítás",
+                            "stop": "Leállítás"
+                        },
+                        "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
+                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+                        "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
+                        "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Kész. Sikeres nullázás",
+                            "ERROR_SHUTDOWN": "Befejezetlen. Rendszer bezárása.",
+                            "ERROR_LOGOFF": "Befejezetlen. A felhasználó kilépett.",
+                            "ERROR_BATTERY_REMOVE": "Befejezetlen. Akkumulátor eltávolítva.",
+                            "ERROR_BATTERY_REPLACE": "Befejezetlen. Akkumulátor kicserélve.",
+                            "ERROR_AC_DETTACH": "Befejezetlen. A hálózati adapter lecsatlakoztatva.",
+                            "ERROR_USER_CANCEL": "Befejezetlen. A felhasználó megszakította.",
+                            "ERROR_UNEXPECTED": "Befejezetlen. Váratlan hiba történt."
+                        },
+                        "popup": {
+                            "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
+                            "description2": "Megjegyzések: <br>1. A folyamat több órát is igénybe vehet. A számítógépet ezen idő alatt ne használja.<br>2. Zárja be az összes nyitott alkalmazást, és csatlakoztassa a számítógépet hálózati tápellátáshoz.<br>3. A folyamat során az akkumulátortöltési küszöbérték funkció le van tiltva.",
+                            "continue": "Folytatás",
+                            "cancel": "Mégse",
+                            "yes": "Igen",
+                            "description3": "Biztosan leállítja az akkumulátormérő nullázását?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Minden nap",
                         "weekdays": "Hétköznapok",
                         "weekends": "Hétvégén"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "ÚJRAINDÍTÁS",
                             "cancel": "NE MOST"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
+                        "description": {
+                            "main": "A funkció lehetővé teszi, hogy a megfelelő billentyűkkel fogadjon vagy elutasítson egy VoIP-hívást.",
+                            "f10": "F10: hívás fogadása",
+                            "f11": "F11: elutasítás, vagy a hívás befejezése"
+                        },
+                        "tooltip": "Ez a funkció jelenleg csak a Skype for Business 2016 és a Microsoft Teams 1.0 verzióban használható.<br>A funkció használatához le kell tölteni és telepíteni kell a megfelelő alkalmazást.",
+                        "hasInstalledAppsDescription": "Válassza ki, melyik alkalmazással szeretné használni a gyorsbillentyűket:",
+                        "noInstalledAppsDescription": "A funkció csak az alábbi alkalmazásokban áll rendelkezésre: ",
+                        "hasInstalledAppsNote": "Megjegyzés: A Microsoft Teams 1.0 verzióban a hívás nem fejezhető be az F11 billentyűvel.",
+                        "noInstalledAppsNote": "Megjegyzés: A funkció használatához először le kell tölteni és telepíteni kell az alkalmazásokat."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "TOVÁBBIAK",
@@ -1397,6 +1455,17 @@
                             "slow": "Lassú"
                         },
                         "toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben. A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt."
+                    },
+                    "facialRecognition": {
+                        "title": "ARCFELISMERÉS",
+                        "caption": "Engedélyezheti az arcfelismerési funkciót, és lehetővé teheti, hogy hozzáférjen a kamerához. Ez az eszköz rögzíti a képét annak érdekében, hogy pontosan felismerje jelenlétét, vagy észlelje, ha a készüléket felügyelet nélkül hagyta. Ezeket az adatokat helyben dolgozza fel az eszköz. A Lenovo nem fér hozzájuk, és nem használja fel őket.",
+                        "checkBox": "Kapcsolja be a kamerát, és engedélyezze a funkciót",
+                        "note": {
+                            "permission": "A Lenovo Vantage nem fér hozzá a kamerához. A jelölőnégyzet funkciója nem működik.",
+                            "privacyMode": "A Lenovo Vantage kamera adatvédelmi módja be van kapcsolva. A jelölőnégyzet funkciója nem működik.",
+                            "windowsLink": "A Windows beállításaiban adhatja meg a hozzáférést",
+                            "privacyLink": "Lépjen a Kamera adatvédelmi módba, hogy kikapcsolja"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Közel",
                         "far": "Távol",
-                        "medium": "Medium"
+                        "medium": "Közepes"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
                     "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ugrás a Windows Hello beállításaihoz",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Visszaállítás",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "ÉRZÉKENYSÉG BEÁLLÍTÁS"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
+            "superResolution": {
+				"heading": "Intelligens média",
+				"title": "Videófelbontás megnövelése",
+				"desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label> Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ha engedélyezve van, akkor javasoljuk, hogy a számítógépet csatlakoztassa hálózati tápellátáshoz.</label></p>",
+				"tooltip": "Ez a funkció csak a következő lejátszókon működik: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"A funkció az alábbi esetekben nem működik:",
+					"description1":"A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátor töltöttsége kevesebb 20%-nál.",
+					"description2":"A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátortakarékos mód engedélyezve van.",
+					"description3":"A processzor hőmérséklete túl magas."
+				}
+			},
             "voice": {
                 "title": "Hang",
                 "description": "A Lenovo Voice „Hang szöveggé” funkciójával szöveggé alakíthatja át a hangot. A Fordítás funkció valós időben biztosít a hang szöveggé alakításával.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Üdvözöljük a Rendszerfrissítés szolgáltatásban!",
             "title": "A naprakész rendszer megfelelően működik.",
+            "installingTitle": "Frissítés közben ne kapcsolja a számítógépet alvó vagy hibernált módba.",
             "last": "Utolsó frissítés: ",
             "next": "Következő ütemezett frissítés: ",
             "checkButton": "FRISSÍTÉSEK KERESÉSE",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
-                "unknown": "Ismeretlen"
+                "unknown": "Ismeretlen",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Figyelem",
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
-        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse."
+        "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
     },
     "smartPerformance": {
         "title": "Health & Support",

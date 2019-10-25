@@ -23,7 +23,6 @@ export enum LocalStorageKey {
 	SecurityWifiSecurityHistorys = '[LocalStorageKey] SecurityWifiSecurityHistorys',
 	SecurityWifiSecurityIsLocationServiceOn = '[LocalStorageKey] SecurityWifiSecurityIsLocationServiceOn',
 	SecurityHomeProtectionChsConsoleUrl = '[LocalStorageKey] SecurityHomeProtectionChsConsoleUrl',
-	SecurityHomeProtectionDevicePosture = '[LocalStorageKey] SecurityHomeProtectionDevicePosture',
 	SecurityHomeProtectionStatus = '[LocalStorageKey] SecurityHomeProtectionStatus',
 	SecurityHomeProtectionFamilyId = '[LocalStorageKey] SecurityHomeProtectionFamilyId',
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
@@ -66,6 +65,7 @@ export enum LocalStorageKey {
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
+	WifiSecurityCache = '[LocalStorageKey] WifiSecurityCache',
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
@@ -154,6 +154,7 @@ export enum LocalStorageKey {
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
+	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
 	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
@@ -187,5 +188,7 @@ export enum LocalStorageKey {
 	// App Search
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
-	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
+	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
+	IsSubscribed = '[LocalStorageKey] IsSubscribed',
+	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails'
 }

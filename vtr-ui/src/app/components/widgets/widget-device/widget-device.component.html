@@ -14,36 +14,31 @@
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header {{'dirClass' | translate}}"
+				<span class="device-sub-header"
 					id="myDevice-serial"
-					attr.aria-label="myDevice-serial"
-					dir="{{'dir' | translate}}"
-					>{{'device.myDevice.serial' | translate}}: {{myDevice.sn}}</span>
-
+					attr.aria-label="myDevice-serial"><span class="{{'dirClass' | translate}}"
+						dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>:
+					{{myDevice.sn}}</span>
 			</div>
 			<div class="col-12 px-0">
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header {{'dirClass' | translate}}"
+				<span class="device-sub-header"
 					id="myDevice-product-number"
-					attr.aria-label="myDevice-product-number"
-					dir="{{'dir' | translate}}"
-					>{{'device.myDevice.productNumber' | translate}}:
+					attr.aria-label="myDevice-product-number"><span class="{{'dirClass' | translate}}"
+						dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>:
 					{{myDevice.productNo}}</span>
 			</div>
 			<div class="col-12 px-0">
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header text-wrap {{'dirClass' | translate}}"
+				<span class="device-sub-header text-wrap"
 					id="myDevice-bios-version"
-					attr.aria-label="myDevice-bios-version"
-					dir="{{'dir' | translate}}"
-					>
-					<span dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}</span>:
+					attr.aria-label="myDevice-bios-version"><span class="{{'dirClass' | translate}}"
+						dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion' | translate}}</span>:
 					{{myDevice.bios}}</span>
-
 			</div>
 		</div>
 		<div class="row">
@@ -51,15 +46,16 @@
 				<div class="subheader"
 					id="myDevice-status-title"
 					attr.aria-label="myDevice-status-title"
-					dir="{{'dir' | translate}}"
-					>{{'device.myDevice.subtitle'|translate}}</div>
+					dir="{{'dir' | translate}}">{{'device.myDevice.subtitle'|translate}}</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<ul class="status-list">
 					<li *ngFor="let item of deviceStatus; let i=index"
-						[ngClass]="[!item.status?'good':'bad']">
+						[ngClass]="[!item.status?'good':'bad']"
+						[hidden]="item.isHidden"
+						tabindex="0">
 						<div class="container-fluid">
 							<div class="row align-items-center {{'dirClass' | translate}}">
 								<div class="col-auto">
@@ -74,13 +70,11 @@
 										[ngClass]="[!item.status?'good':'bad']"
 										id="myDevice-system-details-{{item.id}}"
 										attr.aria-label="myDevice-system-details-{{item.id}}"
-										dir="{{'dir' | translate}}"
-										>
+										dir="{{'dir' | translate}}">
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
 											class='systemDetails'
-											dir="{{'dir' | translate}}"
-											>({{item.systemDetails}})</span>
+											dir="{{'dir' | translate}}">({{item.systemDetails}})</span>
 									</div>
 
 
@@ -100,13 +94,13 @@
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
 										id="myDevice-status-learn-more-{{item.id}}"
-										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
+										title="{{item.detail}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
 										<div class="detail"
-											[ngClass]="{'highlight':item.asLink}"
-											dir="{{'dir' | translate}}"
-											>
-											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+											[ngClass]="{'highlight':item.asLink}">
+											<span class="{{'dirClass' | translate}}"
+												dir="{{'dir' | translate}}">{{item.detail}}</span>
+											<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
@@ -117,13 +111,13 @@
 										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
 										id="myDevice-status-learn-more-{{item.id}}"
-										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
+										title="{{item.detail}}"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
-											[ngClass]="{'highlight':item.asLink}"
-											dir="{{'dir' | translate}}"
-											>
-											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+											[ngClass]="{'highlight':item.asLink}">
+											<span class="{{'dirClass' | translate}}"
+												dir="{{'dir' | translate}}">{{item.detail}}</span>
+											<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!-- <div class="arrow">

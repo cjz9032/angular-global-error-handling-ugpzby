@@ -118,7 +118,8 @@
 					"networkBoost": "network boost page",
 					"autoClose": "auto close page",
 					"lighting": "Lighting page"
-				}
+				},
+				"mainMenuLink": "Header main logo"
 			}
 		},
 		"macroKey": {
@@ -224,7 +225,8 @@
 			},
 			"popupContent": {
 				"clearMacrokey": {
-					"title": "Are you sure you want to clear this macro key?"
+					"title": "Are you sure you want to clear this macro key?",
+					"modalTitle": "clear double confirm window"
 				},
 				"timeoutRecording": {
 					"title": "Time Out For Recording.",
@@ -264,8 +266,9 @@
 				},
 				"numberInput": {
 					"title": "Number",
-					"bundledSelected": "is selected bundled",
-					"unbundledSelected": "is selected unbundled"
+					"bundled": "bundled",
+					"unbundled": "unbundled",
+					"isSelected": "is selected"
 				}
 			}
 		},
@@ -517,7 +520,7 @@
 			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
@@ -532,7 +535,7 @@
 			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will be shown in the list below."
+				"body": "Only apps currently running will show in the list below."
 			},
 			"noRunningApps": {
 				"title": "No Running Apps To Add",
@@ -541,13 +544,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -643,7 +646,10 @@
 			"collapse": "Collapse",
 			"expand": "Expand",
 			"loader": "Fetching <br> Status",
-			"loading": "Loading..."
+			"loading": "Loading...",
+			"from": "from",
+			"to": "to",
+			"clickToChange": "click to change"
 		},
 		"app-update": {
 			"message": "Hey! A newer version of Vantage is available, do you want to load it?"
@@ -817,6 +823,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -870,11 +877,11 @@
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
 					"Good": "<b>The battery is in good condition.</b>",
-					"Exhaustion": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one.",
+					"Exhaustion": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
 					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
-					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>",
+					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -884,7 +891,7 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery failed to be charged <b>due to normal wear</b>. Please replace it with a new one."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
 				}
 			},
 			"power": {
@@ -951,7 +958,7 @@
 							"close": "close",
 							"coolingModesList": {
 								"list1": "Click on the windows battery-icon in the toolbar",
-								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+								"list2": "The Windows Power mode will appear, slide the slider to choose between optimal time or optimal performance."
 							}
 						}
 					},
@@ -992,9 +999,9 @@
 				"smartStandby": {
 					"title": "Smart Standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set or your computer usage time we get. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
 					"timer": {
-						"heading": "Set time when you typically use this computer",
+						"heading": "The time when you typically use your computer",
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
@@ -1032,7 +1039,9 @@
 						"weekdays": "Weekdays",
 						"weekends": "Weekends"
 					},
-					"warningtip": "Please select at least one day."
+					"warningtip": "Please select at least one day.",
+					"checkbox": "Auto adjusting your computer's active time based on your usage",
+					"hyperlinkToGraph": "Click to see the activity and active time of your computer table"
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1058,6 +1067,42 @@
 							"start": "Start charging when below",
 							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
+						}
+					},
+					"gaugeReset": {
+						"title": "Battery gauge reset",
+						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"barCode": "Barcode",
+						"progress": "Progress",
+						"remaining": "Remaining",
+						"startTime": "Start time",
+						"lastReset": "Last reset",
+						"fullChargeCapacity": "Full charge capacity",
+						"btnLabel": {
+							"reset": "Reset",
+							"stop": "Stop"
+						},
+						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"FCCText": "From {{before}} Wh to {{after}} Wh",
+						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+						"resetLog": {
+							"ERROR_SUCCESS": "Complete. Successful reset.",
+							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
+							"ERROR_LOGOFF": "Incomplete. User logged off.",
+							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+						},
+						"popup": {
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
+							"continue": "Continue",
+							"cancel": "Cancel",
+							"yes": "Yes",
+							"description3": "Are you sure you want to stop the battery gauge reset?"
 						}
 					},
 					"expressCharging": {
@@ -1323,6 +1368,19 @@
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
 						}
+					},
+					"VoipHotkeys": {
+						"title": "VoIP Hotkey Functions",
+						"description": {
+							"main": "This feature enables you to answer or reject a VoIP call by pressing the hotkeys on your keyboard:",
+							"f10": "F10: answer the call",
+							"f11": "F11: reject or hang up the call"
+						},
+						"tooltip": "Currently, this feature is supported only on Skype for Business 2016 and Microsoft Teams 1.0.<br>To use the feature, you need to download and install the apps first.",
+						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
+						"noInstalledAppsDescription": "This feature only support below applications: ",
+						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
 					}
 				},
 				"userDefinedKey": {
@@ -1350,7 +1408,8 @@
 				},
 				"fnCtrlKey": {
 					"title": "FN key and Ctrl key swap",
-					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+					"restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
 				},
 				"controlOptions": {
 					"more": "MORE",
@@ -1398,6 +1457,17 @@
 							"slow": "Slow"
 						},
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+					},
+					"facialRecognition": {
+						"title": "FACIAL RECOGNITION",
+						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"checkBox": "Turn on the camera and enable this feature",
+						"note": {
+							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+							"windowsLink": "Go to Windows Settings to give access",
+							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
 					}
 				},
 				"sensitivityAdjusting": {
@@ -1408,7 +1478,7 @@
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
-						"medium": "Medium",
+						"medium": "Middle",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1504,6 +1574,18 @@
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
 			},
+			"superResolution": {
+				"heading": "Intelligent Media",
+				"title": "Video Resolution Upscaling",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
+				"tooltip": "This feature works only on the following players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"The feature does not work when:",
+					"description1":"The computer is not connected to ac power and the battery power is lower than 20%.",
+					"description2":"The computer is not connected to ac power and the battery saver mode is enabled.",
+					"description3":"The CPU temperature is too high."
+				}
+			},
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
@@ -1587,6 +1669,7 @@
 		"banner": {
 			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
+			"installingTitle": "During the updates, do not put your computer into sleep or hibernate mode.",
 			"last": "Last updated: ",
 			"next": "Next scheduled update: ",
 			"checkButton": "CHECK FOR UPDATES ",
@@ -1728,10 +1811,10 @@
 			"wifiNetworks": "Wi-fi networks",
 			"homeDevices": "Home devices",
 			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
+			"disconnect": "Disconnect",
+			"goDashboard": "Go To Dashboard",
 			"buyNow": "Buy Now",
-			"extendNow": "extend now",
+			"extendNow": "Extend Now",
 			"renewNow": "Renew Now",
 			"poweredBy": "Powered by Coronet",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
@@ -1768,7 +1851,7 @@
 			"startTrial": "Start Trial",
 			"startTrialTitle": "Create your own Connected Home Security",
 			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
+			"join": "Join",
 			"joinTitle": "Join your family's Connected Home Security",
 			"joinDescription": "Become a part of your family security group."
 		},
@@ -1799,7 +1882,7 @@
 			"endDate": "End date: ",
 			"status": "Status: ",
 			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
+			"subDescription2": "We were unable to locate the warranty details for your device. To view more options, please visit our support page.",
 			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS",
 			"offlineTips1": "Please connect to internet for latest warranty info.",
 			"offlineTips2": "Please connect internet to update warranty information."
@@ -1859,7 +1942,7 @@
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
 			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security score gives you an idea of how secure you are online, the result depends on if you are:",
+			"securityScoreDepends": "Your security result depends on if you are:",
 			"antivirus": "Being protected by anti-virus software",
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
@@ -1940,7 +2023,8 @@
 			},
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
-				"unknown": "Unknown"
+				"unknown": "Unknown",
+				"betterOffer": "Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
@@ -1980,7 +2064,7 @@
 				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later.",
 				"offlineText": "We've detected that you're not connected to the internet. Some parts of this page will not function correctly. Please reconnect.",
 				"accountText": "Account creation failed. Please try again later.",
-				"closeText": "close"
+				"closeText": "Close"
 			}
 		},
 		"homeprotection": {
@@ -2355,7 +2439,7 @@
 		},
 		"question4": {
 			"title": "Check your machine's battery use",
-			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in thenew <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or lastfrom last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of thisfeature.It will display a list of the apps have used battery power in that period, and show you what percentage of yourbattery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in the new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or lastfrom last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display.</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of thisfeature.It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "Windows 10 includes a new",
@@ -2404,7 +2488,7 @@
 					"line3": "“Display”,",
 					"line4": "and",
 					"line5": "“Wi-Fi”",
-					"line6": "percentages. This shows how much battery power has been used by system processes, the display,"
+					"line6": "percentages. This shows how much battery power has been used by system processes, the display."
 				},
 				"span8": {
 					"line1": "6. The",
@@ -2629,10 +2713,11 @@
 		"pluginNotUpdate": "Hardware Scan is not available because it is outdated. Please upgrade it.",
 		"doNotSuspend": "These tests must run uninterrupted! Do not close or minimize this app, and do not suspend or turn off your computer during the scan.",
 		"doNotUse": "Please refrain from using your computer until this test completes",
-		"testsMustRunUniterrupted": "These tests must run uniterrupted!",
+		"testsMustRunUniterrupted": "These tests must run uninterrupted!",
 		"doNotCloseOrMinimizeApp": "• Do not close or minimize this app.",
 		"doNotSwitchApp": "• Do not switch to other app.",
 		"doNotSleepOrSignOutOrTurnOffComputer": "• Do not sleep or sign out or turn off your computer.",
+		"testNotApplicable": "Not applicable on custom scan",
 		"customize": {
 			"name": "Customize",
 			"test": "Customize Test",

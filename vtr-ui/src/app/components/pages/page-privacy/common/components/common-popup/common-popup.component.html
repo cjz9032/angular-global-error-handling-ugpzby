@@ -6,7 +6,10 @@
 	 *ngIf="isOpen" (click)="closePopup()">
 	<div class="popup__inner" (click)="preventClick($event)">
 		<button class="popup__close" (click)="closePopup()" aria-label="close"></button>
-		<ng-container [ngTemplateOutlet]="template"></ng-container>
+		<div class="popup__title"><ng-content select="h3"></ng-content></div>
+		<div class="popup__content">
+			<ng-container [ngTemplateOutlet]="template"></ng-container>
+		</div>
 	</div>
 </div>
 

@@ -20,8 +20,7 @@
 
 	&__main-image {
 		vertical-align: top;
-		min-width: 150px;
-		max-width: 100%;
+		width: 100%;
 	}
 
 	&__text {
@@ -75,7 +74,6 @@
 
 	&__show-more-text {
 		@extend %button-link__text;
-		color: #4A81FD;
 	}
 
 	&__list {

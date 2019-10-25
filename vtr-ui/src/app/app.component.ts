@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -12,12 +12,12 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-// import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
+import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { AppAction, GetEnvInfo, AppLoaded } from 'src/app/data-models/metrics/events.model';
 import * as MetricsConst from 'src/app/enums/metrics.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
-// import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
@@ -29,14 +29,16 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 import { AppUpdateService } from './services/app-update/app-update.service';
 import { Title } from '@angular/platform-browser';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { AbTestsGenerateConfigService } from './components/pages/page-privacy/common/components/ab-tests/ab-tests-generate-config.service';
 
 declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: [ './app.component.scss' ],
-	providers: [ TimerService ]
+	styleUrls: ['./app.component.scss'],
+	providers: [TimerService]
 })
 export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
@@ -46,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	private beta;
 	private subscription: Subscription;
 	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
+	private totalDuration = 0; // itermittant app duratin will be added to it
 
 	constructor(
 		private displayService: DisplayService,
@@ -53,16 +56,17 @@ export class AppComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		// private translate: TranslateService,
+		private translate: TranslateService,
 		private userService: UserService,
 		private settingsService: SettingsService,
 		private vantageShellService: VantageShellService,
-		// private activatedRoute: ActivatedRoute,
+		private activatedRoute: ActivatedRoute,
 		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
 		private appUpdateService: AppUpdateService,
 		private titleService: Title,
+		private appsForYouService: AppsForYouService,
 		private abTestsGenerateConfigService: AbTestsGenerateConfigService
 	) {
 		// to check web and js bridge version in browser console
@@ -72,9 +76,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			bridge: bridgeVersion.version
 		};
 
-		// check for new version of experience
-		this.appUpdateService.checkForUpdates();
-
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -83,32 +84,96 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
-		document.addEventListener('visibilitychange', (e) => {
-			if (document.hidden) {
-				this.sendAppSuspendMetric();
-			} else {
-				this.sendAppResumeMetric();
-			}
-		});
-
-		window.addEventListener(
-			'online',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
-
-		window.addEventListener(
-			'offline',
-			(e) => {
-				this.notifyNetworkState();
-			},
-			false
-		);
-
+		window.addEventListener('online', (e) => {
+			this.notifyNetworkState();
+		}, false);
+		window.addEventListener('offline', (e) => {
+			this.notifyNetworkState();
+		}, false);
 		this.notifyNetworkState();
+		this.addInternetListener();
 	}
+
+	// TESTING ACTIVE DURATION
+	private getDuration() {
+		const component = this; // value of this is null/undefined inside the funtions
+		let isVisible = true; // internal flag, defaults to true
+		function onVisible() {
+			// prevent double execution
+			if (isVisible) {
+				return;
+			}
+			// console.log(' APP is VISIBLE-------------------------------------------------------');
+			component.sendAppResumeMetric();
+			// change flag value
+			isVisible = true;
+		} // end of onVisible
+		function onHidden() {
+			// prevent double execution
+			if (!isVisible) {
+				return;
+			}
+			// console.log(' APP is HIDDEN-------------------------------------------------------');
+			component.sendAppSuspendMetric();
+			// change flag value
+			isVisible = false;
+		} // end of onHidden
+		function handleVisibilityChange(forcedFlag) {
+			// forcedFlag is a boolean when this event handler is triggered by a
+			// focus or blur eventotherwise it's an Event object
+			if (typeof forcedFlag === 'boolean') {
+				if (forcedFlag) {
+					return onVisible();
+				}
+				return onHidden();
+			}
+			if (document.hidden) {
+				return onHidden();
+			}
+			return onVisible();
+		} // end of handleVisibilityChange
+		document.addEventListener('visibilitychange', handleVisibilityChange, false);
+		// extra event listeners for better behaviour
+		document.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		document.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+		window.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		window.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+	} // END OF DURATION
+
+	private addInternetListener() {
+		const win: any = window;
+		if (win.NetworkListener) {
+			win.NetworkListener.onnetworkchanged = (state) => {
+				this.notifyNetworkState();
+			};
+			if (win.NetworkListener.isInternetAccess()) {
+				this.notifyNetworkState();
+			} else {
+				this.notifyNetworkState();
+			}
+		} else {
+			window.addEventListener('online', (e) => {
+				this.notifyNetworkState();
+			}, false);
+			window.addEventListener('offline', (e) => {
+				this.notifyNetworkState();
+			}, false);
+
+			if (navigator.onLine) {
+				this.notifyNetworkState();
+			} else {
+				this.notifyNetworkState();
+			}
+		}
+	} // end of addInternetListener
 
 	private launchWelcomeModal() {
 		this.deviceService
@@ -125,7 +190,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					}
 				}
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	private sendFirstRunEvent(machineInfo) {
@@ -184,31 +249,26 @@ export class AppComponent implements OnInit, OnDestroy {
 	private sendAppLoadedMetric() {
 		const vanStub = this.vantageShellService.getVantageStub();
 		this.metricsClient.sendAsync(new AppLoaded(Date.now() - vanStub.navigateTime));
-	}
+	} // end of sendAppLoadedMetric
 
 	public sendAppLaunchMetric(lauchType: string) {
 		this.timerService.start();
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(
-			new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0)
-		);
-	}
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0, this.totalDuration));
+	} // end of sendAppLaunchMetric
 
 	public sendAppResumeMetric() {
 		this.timerService.start(); // restart timer
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(
-			new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0)
-		);
-	}
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0, this.totalDuration));
+	} // enf of sendAppResumeMetric
 
 	public sendAppSuspendMetric() {
 		const duration = this.timerService.stop();
+		this.totalDuration = this.totalDuration + duration;
 		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(
-			new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration)
-		);
-	}
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration, this.totalDuration));
+	} // end of sendAppSuspendMetric
 
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
@@ -267,12 +327,15 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		// active duration
+		this.getDuration();
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		if (this.deviceService.isAndroid) {
 			return;
 		}
 		sessionStorage.clear();
+		this.checkIsDesktopOrAllInOneMachine();
 		this.getMachineInfo();
 
 		this.sendAppLaunchMetric('launch');
@@ -293,6 +356,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.userService.loginSilently();
 		}
 
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
@@ -308,11 +375,9 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		});
 
-		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
-		// this.serverSwitchThis();
-
+		this.serverSwitchThis();
 		this.abTestsGenerateConfigService.shuffle();
 	}
 
@@ -321,6 +386,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.subscription.unsubscribe();
 		}
 	}
+
 
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
@@ -336,12 +402,12 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 
-					const isLocaleSame = this.languageService.isLocaleSame(value.locale);
+					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
 
-					if (!this.languageService.isLanguageLoaded || !isLocaleSame) {
+					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// update DeviceInfo values in case user switched language
+						// // update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
@@ -352,7 +418,7 @@ export class AppComponent implements OnInit, OnDestroy {
 					// then relaunch app you will see the machineinfo in localstorage.
 					return value;
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -387,9 +453,9 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value === 4);
 						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					})
-					.catch((error) => {});
+					.catch((error) => { });
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	private notifyNetworkState() {
@@ -402,47 +468,47 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// VAN-5872, server switch feature
-	// private serverSwitchThis() {
-	// 	this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-	// 		if (params.has('serverswitch')) {
-	// 			// retrive from localStorage
-	// 			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-	// 			if (serverSwitchLocalData) {
-	// 				// force cms service to use this server parms
-	// 				serverSwitchLocalData.forceit = true;
-	// 				this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+	private serverSwitchThis() {
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('serverswitch')) {
+				// retrive from localStorage
+				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+				if (serverSwitchLocalData) {
+					// force cms service to use this server parms
+					serverSwitchLocalData.forceit = true;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
-	// 				const langCode = serverSwitchLocalData.language.Value.toLowerCase();
-	// 				const allLangs = this.translate.getLangs();
-	// 				const currentLang = this.translate.currentLang
-	// 					? this.translate.currentLang.toLowerCase()
-	// 					: this.translate.defaultLang.toLowerCase();
+					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
+					const allLangs = this.translate.getLangs();
+					const currentLang = this.translate.currentLang
+						? this.translate.currentLang.toLowerCase()
+						: this.translate.defaultLang.toLowerCase();
 
-	// 				// change language only when countrycode or language code changes
-	// 				if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
-	// 					// this.translate.resetLang('ar');
-	// 					// this.languageService.useLanguage(langCode);
-	// 					if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
-	// 						this.translate.reloadLang(langCode);
-	// 					}
+					// change language only when countrycode or language code changes
+					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
+						// this.translate.resetLang('ar');
+						// this.languageService.useLanguage(langCode);
+						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
+							this.translate.reloadLang(langCode);
+						}
 
-	// 					this.translate.use(langCode).subscribe(
-	// 						(data) => console.log('@sahinul trans use NEXT'),
-	// 						(error) => console.log('@sahinul server switch error ', error),
-	// 						() => {
-	// 							// Evaluate the translations for QA on language Change
-	// 							// this.qaService.setTranslationService(this.translate);
-	// 							// this.qaService.setCurrentLangTranslations();
-	// 							console.log('@sahinul server switch completed');
-	// 						}
-	// 					);
-	// 				}
-	// 			}
-	// 		}
-	// 	});
-	// }
+						this.translate.use(langCode).subscribe(
+							(data) => console.log('@sahinul trans use NEXT'),
+							(error) => console.log('@sahinul server switch error ', error),
+							() => {
+								// Evaluate the translations for QA on language Change
+								// this.qaService.setTranslationService(this.translate);
+								// this.qaService.setCurrentLangTranslations();
+								// console.log('@sahinul server switch completed');
+							}
+						);
+					}
+				}
+			}
+		});
+	}
 
-	@HostListener('window:keyup', [ '$event' ])
+	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
 			if (this.deviceService.isShellAvailable) {
@@ -458,19 +524,19 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 
 			// // VAN-5872, server switch feature
-			// if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-			// 	const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-			// 		backdrop: true,
-			// 		size: 'lg',
-			// 		centered: true,
-			// 		windowClass: 'Server-Switch-Modal',
-			// 		keyboard: false
-			// 	});
-			// }
-		} catch (error) {}
+			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+					backdrop: true,
+					size: 'lg',
+					centered: true,
+					windowClass: 'Server-Switch-Modal',
+					keyboard: false
+				});
+			}
+		} catch (error) { }
 	}
 
-	@HostListener('window:load', [ '$event' ])
+	@HostListener('window:load', ['$event'])
 	onLoad(event) {
 		this.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -482,7 +548,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', [ '$event' ])
+	@HostListener('window:keydown', ['$event'])
 	disableCtrlA($event: KeyboardEvent) {
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 

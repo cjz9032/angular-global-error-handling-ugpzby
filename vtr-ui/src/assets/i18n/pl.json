@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Czy na pewno chcesz wyczyścić ten klawisz makr?"
+                    "title": "Czy na pewno chcesz wyczyścić ten klawisz makr?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Limit czasu na nagrywanie.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Zwiń",
             "expand": "Rozwiń",
             "loader": "Pobieranie <br> statusu",
-            "loading": "Ładuję..."
+            "loading": "Ładuję...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Akumulator <b>uległ awarii z powodu normalnego zużycia.</b> Nie można naładować akumulatora. Wymień baterię.",
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
                     "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>"
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
-                "seeDetailsLink": "Zobacz szczegóły"
+                "seeDetailsLink": "Zobacz szczegóły",
+                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
             },
             "power": {
                 "title": "Zasilanie",
@@ -1033,6 +1039,42 @@
                         "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
                         "checkBoxDesc": "Autowykrywanie",
                         "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
+                    },
+                    "gaugeReset": {
+                        "title": "Resetowanie wskaźnika stanu akumulatora",
+                        "description": "Funkcja umożliwia komputerowi dokładniejsze szacowanie pojemności ładowania.",
+                        "barCode": "Kod kreskowy",
+                        "progress": "Postęp",
+                        "remaining": "Pozostało",
+                        "startTime": "Godzina rozpoczęcia",
+                        "lastReset": "Ostatni reset",
+                        "fullChargeCapacity": "Pojemność po pełnym naładowaniu",
+                        "btnLabel": {
+                            "reset": "Resetuj",
+                            "stop": "Zatrzymaj"
+                        },
+                        "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
+                        "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
+                        "FCCText": "Od {{before}} Wh do {{after}} Wh",
+                        "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Ukończono. Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SHUTDOWN": "Nie zakończono. System zostanie zamknięty.",
+                            "ERROR_LOGOFF": "Nie zakończono. Wylogowano użytkownika.",
+                            "ERROR_BATTERY_REMOVE": "Nie zakończono. Wyjęto akumulator.",
+                            "ERROR_BATTERY_REPLACE": "Nie zakończono. Wymieniono akumulator.",
+                            "ERROR_AC_DETTACH": "Nie zakończono. Odłączono zasilacz.",
+                            "ERROR_USER_CANCEL": "Nie zakończono. Zadanie anulowane przez użytkownika.",
+                            "ERROR_UNEXPECTED": "Nie zakończono. Wystąpił nieoczekiwany błąd."
+                        },
+                        "popup": {
+                            "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
+                            "description2": "Uwaga: <br>1. Ten proces może zająć wiele godzin. W tym czasie należy unikać używania komputera.<br>2. Zamknij wszystkie otwarte aplikacje i podłącz komputer do zasilania sieciowego.<br>3. Podczas tego procesu funkcja progu ładowania akumulatora jest wyłączona.",
+                            "continue": "Kontynuuj",
+                            "cancel": "Anuluj",
+                            "yes": "Tak",
+                            "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Codzienny",
                         "weekdays": "Dni powszednie",
                         "weekends": "Weekendy"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "URUCHOM PONOWNIE",
                             "cancel": "NIE TERAZ"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcje klawisza dostępu VoIP",
+                        "description": {
+                            "main": "Ta funkcja umożliwia odbieranie lub odrzucanie połączeń VoIP przez naciśnięcie klawiszy dostępu na klawiaturze:",
+                            "f10": "F10: odebranie połączenia",
+                            "f11": "F11: odrzucenie lub zawieszenie połączenia"
+                        },
+                        "tooltip": "Obecnie ta funkcja jest obsługiwana tylko w aplikacji Skype dla firm 2016 i Microsoft Teams 1.0.<br>Aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje.",
+                        "hasInstalledAppsDescription": "Wybierz aplikację, w której chcesz używać klawiszy dostępu:",
+                        "noInstalledAppsDescription": "Ta funkcja obsługuje tylko poniższe aplikacje: ",
+                        "hasInstalledAppsNote": "Uwaga: w przypadku Microsoft Teams 1.0 klawisz F11 nie może być użyty do zawieszenia połączenia.",
+                        "noInstalledAppsNote": "Uwaga: aby użyć tej funkcji, należy najpierw pobrać i zainstalować aplikacje."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "WIĘCEJ",
@@ -1397,6 +1455,17 @@
                             "slow": "Wolno"
                         },
                         "toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta. W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNAWANIE TWARZY",
+                        "caption": "Możesz włączyć funkcję rozpoznawania twarzy oraz zezwolić na dostęp do kamery. Narzędzie przechwytuje obraz w celu dokładnego rozpoznania twojej twarzy lub wykrycia, czy nie pozostawiłeś urządzenia bez nadzoru. Dane są przetwarzane lokalnie na twoim urządzeniu. Lenovo nie ma do nich dostępu ani z nich nie korzysta.",
+                        "checkBox": "Włącz kamerę i uruchom funkcję",
+                        "note": {
+                            "permission": "Aplikacja Lenovo Vantage nie ma dostępu do kamery. Funkcja rozpoznawania jest wyłączona.",
+                            "privacyMode": "Tryb prywatności kamery w Lenovo Vantage jest włączony. Funkcja rozpoznawania jest wyłączona.",
+                            "windowsLink": "Przejdź do ustawień systemu Windows, aby udzielić dostępu",
+                            "privacyLink": "Przejdź do trybu prywatności kamery, aby go wyłączyć"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Blisko",
                         "far": "Daleko",
-                        "medium": "Medium"
+                        "medium": "Średni"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Logowanie bez dotyku nie będzie działać.",
                     "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania.",
                     "description6": "4. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Przejdź do ustawień funkcji Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Resetuj",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "REGULACJA CZUŁOŚCI"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
+            "superResolution": {
+				"heading": "Inteligentne multimedia",
+				"title": "Skalowanie rozdzielczości wideo",
+				"desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
+				"tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Funkcja nie działa, gdy:",
+					"description1":"Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
+					"description2":"Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
+					"description3":"Temperatura procesora jest za wysoka."
+				}
+			},
             "voice": {
                 "title": "Głos",
                 "description": "Funkcja Lenovo Voice pomaga przekształcić Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia tłumaczenie w czasie rzeczywistym z głosu na tekst za pomocą funkcji tłumaczenia.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Witamy w programie Aktualizacja systemu.",
             "title": "Zaktualizowany system to wydajny system.",
+            "installingTitle": "W trakcie aktualizacji nie przełączaj komputera w tryb uśpienia ani hibernacji.",
             "last": "Ostatnia aktualizacja: ",
             "next": "Następna planowana aktualizacja: ",
             "checkButton": "SPRAWDŹ AKTUALIZACJE",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia",
-                "unknown": "Brak danych"
+                "unknown": "Brak danych",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Uwaga",
         "cancelTextPrompt": "Czy na pewno chcesz anulować?",
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
-        "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować."
+        "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować.",
+        "testNotApplicable": "Nie dotyczy skanowania niestandardowego"
     },
     "smartPerformance": {
         "title": "Health & Support",

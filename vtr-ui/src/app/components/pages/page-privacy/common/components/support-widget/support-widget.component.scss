@@ -24,41 +24,19 @@
 	}
 
 	&__button {
+		position: relative;
 		border: 1px solid #ECF0F1;
 		border-radius: 5px;
-		background-color: #F5F7F8;
-		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-		display: flex;
-		align-items: center;
-		padding: 1.7rem 0 1.8rem 1.5rem;
-		margin-top: 2rem;
-	}
-
-	&__icon {
-		max-height: 2.2rem;
-		margin-right: 1.5rem;
-		font-weight: 600;
-	}
-
-	&__support-time {
-		font-size: 1.3rem;
-		color: #34495E;
-		line-height: 1.6rem;
-		display: flex;
-		font-weight: 600;
-		align-items: center;
-
-		strong {
-			font-weight: bold;
-		}
-	}
-
-	&__support-time {
-		margin: 0;
 		width: 100%;
-		position: relative;
+		background-color: #F5F7F8;
+		padding: 1.7rem 0 1.8rem 5rem;
+		margin-top: 2rem;
+		font-size: 1.4rem;
+		font-weight: 600;
+		color: #34495E;
+		text-align: left;
 
-		&:before {
+		&:after {
 			content: "";
 			position: absolute;
 			top: 50%;
@@ -68,7 +46,21 @@
 			right: 1.2rem;
 			width: 1.4rem;
 			height: 0.8rem;
-			background: url("/assets/icons/privacy-tab/icon-gray-arrow.svg") center no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-gray-arrow.svg") center no-repeat;
+			background-size: contain;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			margin-top: -0.1rem;
+			transform: translateY(-50%) rotate(90deg);
+			transform-origin: 50% 50%;
+			left: 1.6rem;
+			width: 2.3rem;
+			height: 2.3rem;
+			background: url("src/assets/icons/privacy-tab/icon-support-clock.png") center no-repeat;
 			background-size: contain;
 		}
 	}

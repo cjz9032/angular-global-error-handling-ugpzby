@@ -13,8 +13,8 @@
 
 		<div class="history-clean"
 			 *ngIf="isUserData && trackingData?.sites.length <= 0">
-			<img src="/assets/images/privacy-tab/privacy-search-completed.png"
-				 srcset="/assets/images/privacy-tab/privacy-search-completed@2x.png 2x"
+			<img src="assets/images/privacy-tab/privacy-search-completed.png"
+				 srcset="assets/images/privacy-tab/privacy-search-completed@2x.png 2x"
 				 alt="search completed"
 				 class="history-clean__img">
 			<span class="history-clean__bold-text">Your browser history is clean.</span>
@@ -28,10 +28,16 @@ Use your browser to view websites, and come back here later, then we can show wh
 	</ng-template>
 
 	<vtr-common-popup [popUpId]="trackingMapSinglePopupId" size="large">
+		<h3>
+			Websites you visit with {{(trackingMapSingleData$ | async)?.tracker.company_name}} tracking tools
+		</h3>
 		<ng-template>
 			<vtr-single-tracker-detail
 				[percentOfTrack]="percentOfTrack"
-				[popUpId]="trackingMapSinglePopupId">
+				[popUpId]="trackingMapSinglePopupId"
+				[trackingMapSingleData]="trackingMapSingleData$ | async"
+				[isTrackersBlocked]="isTrackersBlocked$ | async"
+				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async">
 			</vtr-single-tracker-detail>
 		</ng-template>
 	</vtr-common-popup>

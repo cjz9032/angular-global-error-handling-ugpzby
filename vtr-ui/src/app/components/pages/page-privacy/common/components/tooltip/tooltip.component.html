@@ -8,7 +8,8 @@
 		 [ngClass]="{
 				'tooltip-fg__context--right-to-left': positionContextTo === 'left',
 				'tooltip-fg__context--left-to-right': positionContextTo === 'right',
-				'tooltip-fg__context--top-left-to-right': positionContextTo === 'top-right'
+				'tooltip-fg__context--top-left-to-right': positionContextTo === 'top-right',
+				'tooltip-fg__context--top-right-to-left': positionContextTo === 'top-left'
 			 }"
 		 *ngIf="isShowContext">
 		<ng-container [ngTemplateOutlet]="tooltipContext"></ng-container>

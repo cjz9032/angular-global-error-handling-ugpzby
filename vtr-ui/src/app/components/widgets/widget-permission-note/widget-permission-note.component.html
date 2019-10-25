@@ -1,10 +1,15 @@
 <div class="alert alert-secondary vtr-widget-permission-note">
-	<div id="{{linkId}}-note-title" attr.aria-label="{{linkId}}-note-title" [ngClass]="noPath ? 'text-dark' : ' '">
+	<div 
+		id="{{linkId}}-note-title" 
+		tabindex="0"
+		attr.aria-label="{{ noteTitle }}, {{ description }}" 
+		[ngClass]="noPath ? 'text-dark' : ' '">
 		<strong>{{ noteTitle }}:</strong> {{ description }}
 	</div>
 	<button type="button"
+		tabindex="0"
 		id="{{linkId}}-link"
-		attr.aria-label="{{linkId}}-link"
+		attr.aria-label="{{'device.deviceSettings.displayCamera.camera.url' | translate}}"
 		class="btn btn-link privacy-button pl-0"
 		(click)="onClick($event)" *ngIf="!noPath">
 		{{'device.deviceSettings.displayCamera.camera.url' | translate}}

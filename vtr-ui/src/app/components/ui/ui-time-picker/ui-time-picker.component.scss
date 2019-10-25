@@ -127,6 +127,12 @@
 		display: block;
 		cursor: pointer;
 		margin-bottom: 0rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+		}
 	}
 
 	.dropdown {

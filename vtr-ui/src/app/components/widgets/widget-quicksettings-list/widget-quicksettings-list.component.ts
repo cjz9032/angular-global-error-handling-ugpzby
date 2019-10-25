@@ -1,7 +1,12 @@
+import { Router } from '@angular/router';
+import { isUndefined } from 'util';
+import { StatusTextPipe } from 'src/app/pipe/ui-security-statusbar/status-text.pipe';
+import { TranslateService } from '@ngx-translate/core';
+import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PowerService } from './../../../services/power/power.service';
 import { AudioService } from 'src/app/services/audio/audio.service';
-import { Component, OnInit, Input, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnDestroy, NgZone, HostListener } from '@angular/core';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -9,17 +14,28 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
-import { EventTypes } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { GuardService } from 'src/app/services/guard/security-guardService.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
 	templateUrl: './widget-quicksettings-list.component.html',
-	styleUrls: [ './widget-quicksettings-list.component.scss' ]
+	styleUrls: ['./widget-quicksettings-list.component.scss']
 })
 export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, OnDestroy {
 	@Input() title = '';
-
+	securityAdvisor: SecurityAdvisor;
+	wifiSecurity: WifiSecurity;
+	isShowInvitationCode: boolean;
+	wifiHomeViewModel: WifiHomeViewModel;
+	securityHealthViewModel: SecurityHealthViewModel;
 	public thermalModeStatusObj = new ThermalModeStatus();
 	public setThermalModeStatus: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
@@ -34,6 +50,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			subHeader: '',
 			isVisible: true,
 			isCollapsible: true,
+			readonly: false,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isChecked: false,
@@ -52,6 +69,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			subHeader: '',
 			isCustomizable: false,
 			setLink: '',
+			readonly: false,
 			isVisible: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -73,6 +91,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			isCustomizable: true,
 			routerLink: '/security/wifi-security',
 			isVisible: true,
+			readonly: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
@@ -94,6 +113,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			routerLink: '/device/device-settings/audio',
 			isVisible: true,
 			isCollapsible: false,
+			readonly: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: false,
@@ -144,16 +164,25 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
 		private commonService: CommonService,
-		private shellServices: VantageShellService,
+		public shellServices: VantageShellService,
 		private audioService: AudioService,
-		private powerService: PowerService
-	) {}
+		private powerService: PowerService,
+		private dialogService: DialogService,
+		private ngZone: NgZone,
+		public translate: TranslateService,
+		public deviceService: DeviceService,
+		private guard: GuardService,
+		private router: Router
+	) { }
 
 	ngOnInit() {
+		this.initializeWifiSecCache();
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
 		this.getDolbySettings();
 		this.initialiseRapidChargeSettings();
+		this.getWifiSecuritySettings();
+		this.runLocationService();
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature
 		);
@@ -186,8 +215,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		});
 	}
-
-	ngAfterViewInit() {}
+	private handleError(err) {
+		if (err && err instanceof PluginMissingError) {
+			this.dialogService.wifiSecurityErrorMessageDialog();
+		}
+	}
+	ngAfterViewInit() { }
 	public unRegisterThermalModeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeChangeEvent,
@@ -269,7 +302,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					);
 				}
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public onOptionSelected(event) {
@@ -303,18 +336,20 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 						}
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 	}
 
 	public onToggleStateChanged(event: any) {
 		const { name } = event.target;
 		let status = event.target.value;
-		status = status === "false" ? false : true;
+		status = status === 'false' ? false : true;
 		if (name === 'gaming.dashboard.device.quickSettings.dolby') {
 			this.setDolbySettings(status);
 		} else if (name === 'gaming.dashboard.device.quickSettings.rapidCharge') {
 			this.setRapidChargeSettings(status);
+		} else if (name === 'gaming.dashboard.device.quickSettings.wifiSecurity') {
+			this.setWifiSecuritySettings(status);
 		}
 	}
 	public async getDolbySettings() {
@@ -340,7 +375,97 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			} else {
 				this.quickSettings[3].isChecked = !value;
 			}
-		} catch (err) {}
+		} catch (err) { }
+	}
+
+	public async getWifiSecuritySettings() {
+		this.securityAdvisor = this.shellServices.getSecurityAdvisor();
+		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
+		await this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
+			this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+		});
+		// To check if wifi security feature is available
+		if (!this.wifiSecurity.isSupported) {
+			this.quickSettings[2].isVisible = false;
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.WifiSecurityCache, true);
+			this.quickSettings[2].isVisible = true;
+		}
+		if (this.wifiHomeViewModel.isLWSEnabled) {
+			this.quickSettings[2].isChecked = true;
+		} else {
+			this.quickSettings[2].isChecked = false;
+		}
+		if (this.wifiSecurity) {
+			if (this.guard.previousPageName !== 'device-gaming' && !this.guard.previousPageName.startsWith('Security')) {
+				await this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+				await this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
+			}
+		}
+	}
+
+	public runLocationService() {
+		const wifiSecurity = this.securityAdvisor.wifiSecurity;
+		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
+			if (value) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
+					this.wifiHomeViewModel.isLWSEnabled = (value === 'enabled' && this.wifiSecurity.isLocationServiceOn);
+					if (value === 'enabled' && this.wifiHomeViewModel.isLWSEnabled === true) {
+						this.quickSettings[2].isChecked = true;
+					} else {
+						this.quickSettings[2].isChecked = false;
+					}
+				}
+			}
+		}).on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+			this.ngZone.run(() => {
+				if (value && this.wifiHomeViewModel.isLWSEnabled === true) {
+					this.quickSettings[2].isChecked = true;
+				} else {
+					this.quickSettings[2].isChecked = false;
+				}
+			});
+		});
+	}
+
+	public async setWifiSecuritySettings(value: any) {
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+			if (this.wifiHomeViewModel.isLWSEnabled) {
+				this.wifiHomeViewModel.wifiSecurity.disableWifiSecurity().then((res) => {
+					if (res === true) {
+						this.wifiHomeViewModel.isLWSEnabled = false;
+						this.quickSettings[2].isChecked = false;
+
+					} else {
+						this.wifiHomeViewModel.isLWSEnabled = true;
+						this.quickSettings[2].isChecked = true;
+					}
+					this.quickSettings[2].readonly = false;
+				});
+			} else {
+				this.wifiHomeViewModel.wifiSecurity.enableWifiSecurity().then((res) => {
+					if (res === true) {
+						this.wifiHomeViewModel.isLWSEnabled = true;
+						this.quickSettings[2].isChecked = true;
+					} else {
+						this.wifiHomeViewModel.isLWSEnabled = false;
+						this.quickSettings[2].isChecked = false;
+					}
+					this.quickSettings[2].readonly = false;
+				},
+					(error) => {
+						this.dialogService.wifiSecurityLocationDialog(this.wifiHomeViewModel.wifiSecurity);
+						this.quickSettings[2].isChecked = false;
+						this.quickSettings[2].readonly = true;
+						this.wifiHomeViewModel.isLWSEnabled = false;
+					}
+				);
+			}
+		}
 	}
 
 	public initialiseDolbyCache() {
@@ -351,7 +476,14 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			});
 			this.quickSettings[3].isVisible = available;
 			this.quickSettings[3].isChecked = status;
-		} catch (err) {}
+		} catch (err) { }
+	}
+
+	public initializeWifiSecCache() {
+		const cacheWifiSecurityState = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+		const status = this.commonService.getLocalStorageValue(LocalStorageKey.WifiSecurityCache);
+		cacheWifiSecurityState === 'enabled' ? this.quickSettings[2].isChecked = true : this.quickSettings[2].isChecked = false;
+		status === true ? this.quickSettings[2].isVisible = true : this.quickSettings[2].isVisible = false;
 	}
 
 	public async initialiseRapidChargeSettings() {
@@ -372,10 +504,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			if (isRapidChargeStatusUpdated) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.RapidChargeCache, {
 					available: this.quickSettings[1].isVisible,
-					status: status
+					status
 				});
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public initialiseRapidChargeCache() {
@@ -387,7 +519,21 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		this.quickSettings[1].isChecked = status;
 	}
 
+	@HostListener('window:focus')
+	onFocus(): void {
+		if (this.wifiSecurity) {
+			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+		}
+	}
+
 	ngOnDestroy(): void {
 		this.unRegisterThermalModeEvent();
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('device-gaming') === -1) {
+			if (this.securityAdvisor.wifiSecurity) {
+				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
+			}
+		}
 	}
 }

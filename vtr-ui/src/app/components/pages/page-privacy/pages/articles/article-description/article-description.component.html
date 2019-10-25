@@ -2,7 +2,6 @@
 	 vtrSendAnalytics
 	 [metricsEvent]="'ArticleView'"
 	 [metricsParam]="{'ArticleId': article?.Id}">
-	<h1 class="article__title">{{article?.Title}}</h1>
 	<img class="article__img" src="{{article?.Image}}" alt="{{article?.Title}}">
 	<div #innerHTML [innerHTML]="article?.Body"></div>
 	<div class="article__pitch" *ngIf="!(isFigleafInstalled$ | async)">

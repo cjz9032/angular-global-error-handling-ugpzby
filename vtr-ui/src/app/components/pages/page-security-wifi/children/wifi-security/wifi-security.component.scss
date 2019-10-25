@@ -179,7 +179,7 @@
 	}
 
 	.threat-locator {
-		background: url("/assets/images/threat-locator-background.jpg");
+		background: url("src/assets/images/threat-locator-background.jpg");
 		border-radius: $border_radius;
 		border-top-left-radius: 0rem;
 		border-top-right-radius: 0rem;
@@ -205,14 +205,6 @@
 	}
 	.col-check-use-state{
 		margin: auto;
-	}
-
-	.enable-wifi-security {
-		::ng-deep .button {
-			min-height: 4rem !important;
-			font-size: 1.5rem !important;
-			font-weight: $weight_600 !important;
-		}
 	}
 
 	.content {

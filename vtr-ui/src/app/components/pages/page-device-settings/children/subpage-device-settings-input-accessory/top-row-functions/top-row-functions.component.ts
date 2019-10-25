@@ -120,5 +120,4 @@ export class TopRowFunctionsComponent implements OnInit, OnDestroy {
 		});
 	}
 
-
 }

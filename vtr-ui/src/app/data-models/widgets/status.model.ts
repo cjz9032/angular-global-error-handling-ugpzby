@@ -19,4 +19,5 @@ export class Status {
 	public type: string;
 	public description: string;
 	public metricsItemName: string;
+	public isHidden?: boolean;
 }

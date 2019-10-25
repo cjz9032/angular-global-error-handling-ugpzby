@@ -84,25 +84,28 @@ $shade_lightest: #f1f1f1;
 $shade_extralight: #f6f8f8;
 $shade_blue: #34495e;
 $blue-dark: #24536d;
-$blue-light: #2955BC;
-$blue-lighter: #346CEF;
-$blue_lightest: #0078D7;
+$blue-light: #2955bc;
+$blue-lighter: #346cef;
+$blue_lightest: #0078d7;
 $light-grey: #788590;
+$grey_darker: #34495e;
 $border_light: #f8d5d5;
 $text_light: #fef8f8;
 $button_disable: #808080;
 $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
-$button_red_start: #DB221F;
-$button_red_end: #FF5B4D;
+$button_red_start: #db221f;
+$button_red_end: #ff5b4d;
 $grey_dark: #667481;
 $grey_light: #e6eaeb;
-$grey_lighter: #F5F7F8;
-$blueHyperLink: #346CEF;
+$grey_lighter: #f5f7f8;
+$blueHyperLink: #346cef;
 $green_darker: #00893a;
 $green_dark: #008035;
 $green-light: #00a886;
 $black_light: #424b6c;
+$hover_gray: #C2C8CE;
+$hover_dark: #191C28;
 
 $light: #fff;
 $dark: #000;
@@ -140,10 +143,12 @@ $weight_600: 600;
 $shift_up_small: -6rem;
 $shift_up_medium: -14rem;
 
+$max_page_width: 160rem;
 $menu_height: 9rem;
 $header_height: 20.5rem;
 
-$padding_side: 10%;
+$padding_side: 8rem;
+$padding_side_sm: 5%;
 $gradient_angle: 135deg;
 $gradient_angle_reverse: 315deg;
 
@@ -161,6 +166,29 @@ $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
 $blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
+
+//RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
+$fontsize_xxl: 4rem;
+$fontsize_xl: 2.8rem;
+$fontsize_lg: 2rem;
+$fontsize_md: 1.8rem;
+$fontsize_sm: 1.6rem;
+$fontsize_xs: 1.4rem;
+$fontsize_xxs: 1.2rem;
+
+
+// RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
+$breakpoint_sm: "only screen and (max-width: 575px)";
+$breakpoint_md: "only screen and (max-width: 767px)";
+$breakpoint_lg: "only screen and (max-width: 991px)";
+$breakpoint_xl: "only screen and (max-width: 1199px)";
+$breakpoint_xl2: "only screen and (max-width: 1399px)";
+$breakpoint_xl3: "only screen and (max-width: 1599px)";
+$breakpoint_xl4: "only screen and (max-width: 1799px)";
+$breakpoint_xl5: "only screen and (max-width: 2199px)";
+$breakpoint_xl6: "only screen and (max-width: 2999px)";
+
+// RESPONSIVE EFFORT - The media queries below need to be depricated and removed from the app
 $mediaquery_0: "only screen and (max-width: 3600px)";
 $mediaquery_1: "only screen and (max-width: 3000px)";
 $mediaquery_2: "only screen and (max-width: 2600px)";
@@ -251,7 +279,6 @@ $weight_bold: 700;
 $weight_black: 900;
 
 $shift_up_small: -6rem;
-$padding_side: 8.5rem;
 
 // for battery indicator
 $yellow: #e6e73c;
@@ -317,3 +344,4 @@ $mediaquery_XXL350X: "only screen and (min-width: 1601px) and (max-width: 4000px
 $high-contrast-grey: #c0c0c0;
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
+$screen_dark_01: rgba(0, 0, 0, 0.01);

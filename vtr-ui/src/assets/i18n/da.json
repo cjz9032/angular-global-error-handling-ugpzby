@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Er du sikker på, at du vil rydde denne makro-tast?"
+                    "title": "Er du sikker på, at du vil rydde denne makro-tast?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Timeout for optagelse.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Skjul",
             "expand": "Udvid",
             "loader": "Henter <br> Status",
-            "loading": "Indlæser..."
+            "loading": "Indlæser...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>"
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-                "seeDetailsLink": "Flere oplysninger"
+                "seeDetailsLink": "Flere oplysninger",
+                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
             },
             "power": {
                 "title": "Strøm",
@@ -1033,6 +1039,42 @@
                         "description": "Beskyt flyets vekselstrømskontakt ved at styre systemets strømforbrug.Når Flytilstand er aktiveret, reducerer computeren strømforbruget ved at begrænse batteriopladningshastigheden og systemets ydeevne.",
                         "checkBoxDesc": "Automatisk registrering",
                         "note": "Hvis den automatiske søgefunktion er markeret, slår computeren automatisk Flytilstand til, når den registrerer et miljø om bord på et fly, og slår den fra, når du forlader flyet."
+                    },
+                    "gaugeReset": {
+                        "title": "Nulstilling af batterimåler",
+                        "description": "Denne funktion gør det muligt for computeren at estimere kapaciteten ved fuld opladning mere præcist.",
+                        "barCode": "Stregkode",
+                        "progress": "Status",
+                        "remaining": "resterer",
+                        "startTime": "Starttidspunkt",
+                        "lastReset": "Seneste nulstilling",
+                        "fullChargeCapacity": "Kapacitet ved fuld opladning",
+                        "btnLabel": {
+                            "reset": "Nulstil",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
+                        "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
+                        "FCCText": "Fra {{before}} Wh til {{after}} Wh",
+                        "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Fuldført. Nulstilling lykkedes.",
+                            "ERROR_SHUTDOWN": "Ufuldstændig. Nedlukning af system.",
+                            "ERROR_LOGOFF": "Ufuldstændig. Bruger logget af.",
+                            "ERROR_BATTERY_REMOVE": "Ufuldstændig. Batteriet blev fjernet.",
+                            "ERROR_BATTERY_REPLACE": "Ufuldstændig. Batteriet blev udskiftet.",
+                            "ERROR_AC_DETTACH": "Ufuldstændig. Vekselstrømsadapteren blev fjernet.",
+                            "ERROR_USER_CANCEL": "Ufuldstændig. Annulleret af bruger.",
+                            "ERROR_UNEXPECTED": "Ufuldstændig. Der er opstået en uventet fejl."
+                        },
+                        "popup": {
+                            "description1": "Nulstillingsprocessen er som følger:<br>Fuld opladning af batteriet  -->  fuld afladning af batteriet  -->  fuld genopladning af batteriet",
+                            "description2": "Bemærkninger: <br>1. Processen kan tage op til flere timer. Undgå at bruge computeren i denne periode.<br>2. Luk alle åbne apps, og tilslut computeren til vekselstrøm.<br>3. Under processen er opladningsgrænsen for batteriet deaktiveret.",
+                            "continue": "Fortsæt",
+                            "cancel": "Annuller",
+                            "yes": "Ja",
+                            "description3": "Er du sikker på, at du vil stoppe nulstillingen af batterimåleren?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
                         "weekends": "Weekender"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-genvejsfunktioner:",
+                        "description": {
+                            "main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+                            "f10": "F10: Besvar opkaldet",
+                            "f11": "F11: Afvis eller afbryd opkaldet"
+                        },
+                        "tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+                        "hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+                        "noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+                        "hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "FLERE",
@@ -1397,6 +1455,17 @@
                             "slow": "Langsomt"
                         },
                         "toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIGTSGENKENDELSE",
+                        "caption": "Du kan aktivere ansigtsgenkendelsesfunktionen og tillade, at den får adgang til kameraet. Dette værktøj tager et billede af dig for at kunne registrere din tilstedeværelse med præcision eller registrere, når du har forladt din enhed uden opsyn. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                        "checkBox": "Tænd for kameraet, og aktivér denne funktion",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                            "privacyMode": "Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                            "windowsLink": "Gå til Windows-indstillinger for at give adgang",
+                            "privacyLink": "Gå til privat kameratilstand for at slå det fra"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Tæt på",
                         "far": "Langt",
-                        "medium": "Medium"
+                        "medium": "Mellem"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon.",
                     "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Nulstil",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "JUSTERING AF FØLSOMHED"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Denne funktion afbryder videoen, når du forlader computeren, og genoptager videoen, når du er tilbage.",
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
+            "superResolution": {
+				"heading": "Intelligente medier",
+				"title": "Opskalering af videoopløsning",
+				"desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
+				"tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Denne funktion virker ikke i disse situationer:",
+					"description1":"Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
+					"description2":"Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+					"description3":"CPU-temperaturen er for høj."
+				}
+			},
             "voice": {
                 "title": "stemme",
                 "description": "Lenovo Voice hjælper med at konvertere din tale til tekst med funktionen Tale til tekst og giver mulighed for realtidsoversættelse fra tale til tekst med oversættelsesfunktionen.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Velkommen til brug af systemopdatering",
             "title": "Et opdateret system er et velfungerende system.",
+            "installingTitle": "Under opdateringerne må du ikke sætte computeren i slumre- eller dvaletilstand.",
             "last": "Senest opdateret: ",
             "next": "Næste planlagte opdatering: ",
             "checkButton": "SØG EFTER OPDATERINGER",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
-                "unknown": "Ukendt"
+                "unknown": "Ukendt",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Advarsel!",
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
-        "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den."
+        "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
+        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning"
     },
     "smartPerformance": {
         "title": "Health & Support",

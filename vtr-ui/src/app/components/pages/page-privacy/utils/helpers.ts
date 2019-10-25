@@ -29,7 +29,7 @@ export function getSha1Hash(value: string) {
 	return SHA1(value);
 }
 
-export async function getSha256Hash(value: string) {
+export function getSha256Hash(value: string) {
 	if (typeof value !== 'string') {
 		return value;
 	}

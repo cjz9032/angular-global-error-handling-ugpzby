@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "¿Está seguro de que desea borrar esta tecla de macro?"
+                    "title": "¿Está seguro de que desea borrar esta tecla de macro?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tiempo de espera de grabación.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Contraer",
             "expand": "Expandir",
             "loader": "Obteniendo el estado",
-            "loading": "Cargando..."
+            "loading": "Cargando...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
@@ -880,11 +885,12 @@
                     "PermanentError": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería.",
                     "NotSupportACAdapterDetail": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
                     "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} La alimentación está conectada.</b>"
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
-                "seeDetailsLink": "Ver detalles"
+                "seeDetailsLink": "Ver detalles",
+                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
             "power": {
                 "title": "Energía",
@@ -1033,6 +1039,42 @@
                         "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema.",
                         "checkBoxDesc": "Autodetección",
                         "note": "Si se la detección está marcada, su sistema se encenderá automáticamente en la modalidad de energía Avión cuando detecte que está en un entorno a bordo de un avión y la desactivará cuando salga de ese entorno."
+                    },
+                    "gaugeReset": {
+                        "title": "Restablecimiento del indicador de batería",
+                        "description": "Esta característica permite que su sistema calcule de forma más precisa la capacidad de carga completa.",
+                        "barCode": "Código de barras",
+                        "progress": "Progreso",
+                        "remaining": "Restante",
+                        "startTime": "Hora de inicio",
+                        "lastReset": "Último restablecimiento",
+                        "fullChargeCapacity": "Capacidad de carga completa",
+                        "btnLabel": {
+                            "reset": "Restablecer",
+                            "stop": "Detener"
+                        },
+                        "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+                        "FCCText": "De {{before}} Wh a {{after}} Wh",
+                        "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Completo. Restablecimiento satisfactorio.",
+                            "ERROR_SHUTDOWN": "Incompleto. Se apagó el sistema.",
+                            "ERROR_LOGOFF": "Incompleto. Se cerró la sesión del usuario.",
+                            "ERROR_BATTERY_REMOVE": "Incompleto. Se extrajo la batería.",
+                            "ERROR_BATTERY_REPLACE": "Incompleto. Se reemplazó la batería.",
+                            "ERROR_AC_DETTACH": "Incompleto. Se desconectó el adaptador de alimentación de CA.",
+                            "ERROR_USER_CANCEL": "Incompleto. Cancelado por el usuario.",
+                            "ERROR_UNEXPECTED": "Incompleto. Ha ocurrido un error inesperado."
+                        },
+                        "popup": {
+                            "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
+                            "description2": "Notas: <br>1. El proceso podría tomar varias horas. Evite utilizar el sistema durante este periodo.<br>2. Cierre todas las aplicaciones abiertas y conecte el sistema a la alimentación de CA.<br>3. Durante el proceso, la función de umbral de carga de la batería está inhabilitada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sí",
+                            "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Todos los días",
                         "weekdays": "Entre semana",
                         "weekends": "Fines de semana"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "REINICIAR",
                             "cancel": "NO AHORA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funciones de tecla de acceso directo VoIP",
+                        "description": {
+                            "main": "Esta característica le permite contestar o rechazar una llamada de VoIP pulsando las teclas de acceso directo en el teclado:",
+                            "f10": "F10: contestar la llamada",
+                            "f11": "F11: rechazar o cortar la llamada"
+                        },
+                        "tooltip": "Actualmente, esta característica solo es compatible con Skype for Business 2016 y Microsoft Teams 1.0.<br>Para utilizar la característica, debe descargar e instalar primero las aplicaciones.",
+                        "hasInstalledAppsDescription": "Seleccione la aplicación en la que desea usar las teclas de acceso directo:",
+                        "noInstalledAppsDescription": "Esta característica solo admite las aplicaciones siguientes: ",
+                        "hasInstalledAppsNote": "Nota: para Microsoft Teams 1.0, la tecla F11 no se puede utilizar para cortar la llamada.",
+                        "noInstalledAppsNote": "Nota: para utilizar la característica, debe descargar e instalar primero las aplicaciones."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MÁS",
@@ -1397,6 +1455,17 @@
                             "slow": "Lento"
                         },
                         "toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia. Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONOCIMIENTO FACIAL",
+                        "caption": "Puede activar la función de reconocimiento facial y permitir que acceda a su cámara. Esta herramienta captura su imagen con el fin de reconocer con precisión su presencia o detectar cuando ha dejado su dispositivo desatendido. Estos datos se procesan localmente en su dispositivo. Lenovo no accede a ellos ni los utiliza.",
+                        "checkBox": "Encienda la cámara y active esta función",
+                        "note": {
+                            "permission": "Lenovo Vantage no tiene acceso a la cámara. La función de la casilla de verificación no funcionará.",
+                            "privacyMode": "El modo de Privacidad de cámara de Lenovo Vantage está activado. La función de la casilla de verificación no funcionará.",
+                            "windowsLink": "Vaya a la configuración de Windows para dar acceso",
+                            "privacyLink": "Vaya al modo Privacidad de la cámara para desactivarlo"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Cerca",
                         "far": "Lejos",
-                        "medium": "Medium"
+                        "medium": "Mediana"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
                     "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema está bloqueado de forma inesperada, ajuste la barra de detección para mejorar la precisión."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vaya a valores de Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Restablecer",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "AJUSTE DE DETECCIÓN"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Esta característica pausará el video cuando deje el equipo y reanudará el video cuando vuelva.",
                 "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
+            "superResolution": {
+				"heading": "Medios inteligentes",
+				"title": "Escalado de resolución de video",
+				"desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
+				"tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Esta característica no funciona cuando;",
+					"description1":"El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
+					"description2":"El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
+					"description3":"La temperatura de la CPU es demasiado alta."
+				}
+			},
             "voice": {
                 "title": "Voz",
                 "description": "Lenovo Voice ayuda a convertir la voz a texto con la función Voz a texto y proporciona traducción en tiempo real de voz a texto con la función Traducción.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Bienvenido al uso de Actualización de sistema.",
             "title": "Un sistema actualizado es un sistema en buen estado.",
+            "installingTitle": "Durante la actualización, no ponga su equipo en modalidad de suspensión o hibernación.",
             "last": "Última actualización: ",
             "next": "Siguiente actualización programada: ",
             "checkButton": "COMPROBAR ACTUALIZACIONES",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
-                "unknown": "Desconocido"
+                "unknown": "Desconocido",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Atención",
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
-        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice."
+        "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
+        "testNotApplicable": "No se aplica a personalizar exploración"
     },
     "smartPerformance": {
         "title": "Health & Support",

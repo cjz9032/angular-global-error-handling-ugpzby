@@ -118,7 +118,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -224,7 +225,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "هل تريد بالتأكيد حذف مفتاح الماكرو هذا؟"
+                    "title": "هل تريد بالتأكيد حذف مفتاح الماكرو هذا؟",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "انتهاء مهلة التسجيل.",
@@ -261,7 +263,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -497,16 +505,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -644,7 +646,10 @@
             "collapse": "طي",
             "expand": "توسيع",
             "loader": "الجلب <br> الحالة",
-            "loading": "...جار التحميل"
+            "loading": "...جار التحميل",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
@@ -882,11 +887,12 @@
                     "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
                     "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>"
                 },
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",
-                "seeDetailsLink": "انظر التفاصيل"
+                "seeDetailsLink": "انظر التفاصيل",
+                "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً."
             },
             "power": {
                 "title": "الطاقة",
@@ -1035,6 +1041,42 @@
                         "description": "تمكّن من حماية مأخذ طاقة التيار المتردد في الطائرة عبر التحكم في استهلاك الطاقة في النظام.عند تمكين وضع الطاقة في الطائرة‬، يخفض الكمبيوتر استهلاك الطاقة من خلال الحد من سرعة شحن البطارية وأداء النظام.",
                         "checkBoxDesc": "الكشف التلقائي",
                         "note": "إذا تم اختيار ميزة \"الكشف التلقائي\"، فسيقوم الكمبيوتر بتشغيل وضع الطاقة في الطائرة تلقائيًا عندما يكتشف بيئة متن الطائرة ويغلقه عند مغادرة هذه البيئة."
+                    },
+                    "gaugeReset": {
+                        "title": "إعادة تعيين مقياس البطارية",
+                        "description": "تسمح هذه الميزة للكمبيوتر بتقدير سعة الشحنة الكاملة بشكل أكثر دقة.",
+                        "barCode": "الرمز الشريطي",
+                        "progress": "التقدم",
+                        "remaining": "متبقي",
+                        "startTime": "وقت البدء",
+                        "lastReset": "آخر إعادة تعيين",
+                        "fullChargeCapacity": "سعة الشحنة الكاملة",
+                        "btnLabel": {
+                            "reset": "إعادة تعيين",
+                            "stop": "إيقاف"
+                        },
+                        "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
+                        "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
+                        "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
+                        "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "كامل. تمت إعادة التعيين بنجاح.",
+                            "ERROR_SHUTDOWN": "غير مكتمل. توقف تشغيل النظام.",
+                            "ERROR_LOGOFF": "غير مكتمل. سجل المستخدم خروجه.",
+                            "ERROR_BATTERY_REMOVE": "غير مكتمل. تمت ازالة البطارية.",
+                            "ERROR_BATTERY_REPLACE": "غير مكتمل. تم استبدال البطارية.",
+                            "ERROR_AC_DETTACH": "غير مكتمل. تم فصل محول التيار المتردد.",
+                            "ERROR_USER_CANCEL": "غير مكتمل. تم الإلغاء من قِبل المستخدم.",
+                            "ERROR_UNEXPECTED": "غير مكتمل. حدث خطأ غير متوقع."
+                        },
+                        "popup": {
+                            "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل  -->  إفراغ البطارية بشكل كامل  -->  إعادة شحن البطارية بشكل كامل",
+                            "description2": "ملاحظات: <br>1. قد تستغرق العملية عدة ساعات. يرجى تجنب استخدام الكمبيوتر خلال هذه الفترة.<br>2. أغلق جميع التطبيقات المفتوحة وقم بتوصيل الكمبيوتر بطاقة التيار المتردد.<br>3. أثناء العملية، يتم تعطيل وظيفة حد شحن البطارية.",
+                            "continue": "استمر",
+                            "cancel": "إلغاء",
+                            "yes": "نعم",
+                            "description3": "هل تريد بالتأكيد إيقاف عملية إعادة تعيين مقياس البطارية؟"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1084,7 +1126,9 @@
                         "everyday": "كل يوم",
                         "weekdays": "أيام الأسبوع",
                         "weekends": "عطلة نهاية الأسبوع"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1324,6 +1368,19 @@
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
                         "hideAdvSettings": "إخفاء الإعدادات المتقدمة"
+                    },
+                    "VoipHotkeys": {
+                        "title": "وظائف مفتاح VoIP Hotkey",
+                        "description": {
+                            "main": "تمكنك هذه الميزة من الرد على مكالمة عبر بروتوكول الإنترنت (VoIP) أو رفضها عن طريق الضغط على مفاتيح الاختصار على لوحة المفاتيح:",
+                            "f10": "F10: الرد على المكالمة",
+                            "f11": "F11: رفض المكالمة أو تعليقها"
+                        },
+                        "tooltip": "حاليا، يتم اعتماد هذه الميزة فقط على تطبيق Skype for Business في عام 2016 و Microsoft Teams 1.0.<br>لاستخدام الميزة، تحتاج إلى تنزيل التطبيقات وتثبيتها أولاً.",
+                        "hasInstalledAppsDescription": "حدد التطبيق الذي تريد استخدام مفاتيح الاختصار عليه:",
+                        "noInstalledAppsDescription": "تدعم هذه الميزة التطبيقات أدناه فقط: ",
+                        "hasInstalledAppsNote": "ملاحظة: بالنسبة لـ Microsoft Teams 1.0، لا يمكن استخدام المفتاح F11 لتعليق المكالمة.",
+                        "noInstalledAppsNote": "ملاحظة: لاستخدام الميزة، تحتاج إلى تنزيل التطبيقات وتثبيتها أولاً."
                     }
                 },
                 "userDefinedKey": {
@@ -1351,7 +1408,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "المزيد",
@@ -1399,6 +1457,17 @@
                             "slow": "بطيئة"
                         },
                         "toolTipContent": "حدد الخيار الذي تريده لقفل الشاشة بسرعة سريعة/متوسطة/بطيئة عندما لا يتم الكشف عن وجودك. ومع ذلك، فإن وقت قفل الشاشة سوف يتأثر أيضًا بسيناريو المستخدم الفعلي، وقدرة المستشعر وإعدادات مهلة شاشة Windows. لذلك، نقترح ضرورة إغلاق النظام على الفور قبل المغادرة."
+                    },
+                    "facialRecognition": {
+                        "title": "التعرف على الوجه",
+                        "caption": "يمكنك تمكين ميزة التعرف على الوجه والسماح لها بالوصول إلى الكاميرا. تلتقط هذه الأداة صورتك من أجل التعرف بدقة على وجودك أو كشف عدم وجودك عندما تترك جهازك دون مراقبة. تتم معالجة هذه البيانات محليًا على جهازك. Lenovo لا يمكنها الوصول إليها أو استخدامها.",
+                        "checkBox": "شغل الكاميرا وقم بتمكين هذه الميزة",
+                        "note": {
+                            "permission": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا. وظيفة مربع الاختيار لن تعمل.",
+                            "privacyMode": "وضع خصوصية كاميرا Lenovo Vantage قيد التشغيل. وظيفة مربع الاختيار لن تعمل.",
+                            "windowsLink": "انتقل إلى إعدادات Windows لمنح الوصول",
+                            "privacyLink": "انتقل إلى وضع خصوصية الكاميرا لإيقافها"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1407,7 +1476,7 @@
                     "options": {
                         "near": "قريب",
                         "far": "بعيد",
-                        "medium": "Medium"
+                        "medium": "متوسط"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1428,7 +1497,7 @@
                     "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
                     "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "انتقال إلى إعدادات Windows Hello",
@@ -1436,7 +1505,7 @@
                 },
                 "resetToDefault": "إعادة تعيين",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "ضبط الحساسية"
                 }
             },
             "intelligentScreen": {
@@ -1505,6 +1574,18 @@
                 "desc": "ستعمل هذه الميزة على إيقاف الفيديو بشكل مؤقت عندما تغادر الكمبيوتر، وتستأنف الفيديو عند عودتك إليه.",
                 "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
             },
+            "superResolution": {
+				"heading": "الوسائط الذكية",
+				"title": "رفع مستوى دقة الفيديو",
+				"desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
+				"tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"لا تعمل هذه الميزة في الحالات التالية:",
+					"description1":"الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
+					"description2":"الكمبيوتر غير متصل بطاقة التيار المتردد وتم تمكين وضع توفير البطارية.",
+					"description3":"درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا."
+				}
+			},
             "voice": {
                 "title": "الصوت",
                 "description": "تساعد ميزة Lenovo Voice على تحويل صوتك إلى نصوص باستخدام وظيفة تحويل الصوت إلى نص، وهي توفر الترجمة في الوقت الحقيقي من الصوت إلى النصوص بواسطة وظيفة الترجمة.",
@@ -1588,6 +1669,7 @@
         "banner": {
             "neverChecked": "مرحبًا بك في استخدام تحديث النظام.",
             "title": "النظام المحدّث هو نظام سليم.",
+            "installingTitle": "أثناء التحديثات، احرص على عدم إدخال الكمبيوتر في وضع السكون أو الإسبات.",
             "last": "تاريخ التحديث الأخير: ",
             "next": "التحديث المجدول التالي: ",
             "checkButton": "التحقق من وجود تحديثات",
@@ -1822,7 +1904,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
-                "unknown": "غير معروف"
+                "unknown": "غير معروف",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2582,7 +2665,8 @@
         "attention": "تنبيه",
         "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
         "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
-        "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته."
+        "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
+        "testNotApplicable": "لا ينطبق على الفحص المخصص"
     },
     "smartPerformance": {
         "title": "Health & Support",

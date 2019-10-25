@@ -34,6 +34,7 @@ import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
 import { VideoComponent } from './video/video.component';
 import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-tooltip.component';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { AbTestsComponent } from './ab-tests/ab-tests.component';
 
 @NgModule({
@@ -65,6 +66,7 @@ import { AbTestsComponent } from './ab-tests/ab-tests.component';
 		OfflineModeComponent,
 		VideoComponent,
 		ClearDataTooltipComponent,
+		InfiniteScrollComponent,
 		AbTestsComponent
 	],
 	exports: [
@@ -95,6 +97,7 @@ import { AbTestsComponent } from './ab-tests/ab-tests.component';
 		OfflineModeComponent,
 		VideoComponent,
 		ClearDataTooltipComponent,
+		InfiniteScrollComponent,
 		AbTestsComponent
 	],
 	imports: [

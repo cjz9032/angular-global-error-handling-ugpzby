@@ -54,7 +54,7 @@
 				padding: 1rem 0rem 0rem 0rem;
 				background-size: cover;
 				margin: 1.5rem 0rem 0rem 0rem;
-				background: url("/assets/images/security-health-disabled.png");
+				background: url("src/assets/images/security-health-disabled.png");
 				height: 50rem;
 
 				.peace-of-mind {
@@ -67,12 +67,8 @@
 
 				vtr-ui-button {
 					max-width: 90%;
-					&.disable {
-						opacity: 0.7;
-					}
 					::ng-deep .button {
 						width: 100%;
-						background: $blue_gradient;
 					}
 				}
 			}

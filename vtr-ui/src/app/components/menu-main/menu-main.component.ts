@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
@@ -7,11 +7,10 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { EventTypes, SecurityAdvisor, WindowsHello } from '@lenovo/tan-client-bridge';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
@@ -23,14 +22,13 @@ import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { AdPolicyId, AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
-import { EMPTY } from 'rxjs';
+import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
+import { EMPTY, Observable } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
-import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -58,13 +56,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	private unsupportFeatureEvt: Observable<string>;
 
 	showMenu = false;
-	showHWScanMenu: boolean = false;
+	showHWScanMenu = false;
 	preloadImages: string[];
 	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
+	hideDropDown = false;
 
 	UnreadMessageCount = {
 		totalMessage: 0,
@@ -85,7 +84,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private dialogService: LenovoIdDialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
@@ -109,26 +107,25 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.showVpn();
 			});
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
 				LocalStorageKey.SecurityShowWindowsHello
 			);
 			if (cacheShowWindowsHello) {
 				const securityItem = items.find((item) => item.id === 'security');
-				securityItem.subitems.push({
-					id: 'windows-hello',
-					label: 'common.menu.security.sub6',
-					path: 'windows-hello',
-					icon: '',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.windowshello',
-					routerLinkActiveOptions: { exact: true },
-					subitems: []
-				});
+				if (securityItem) {
+					securityItem.subitems.push({
+						id: 'windows-hello',
+						label: 'common.menu.security.sub6',
+						path: 'windows-hello',
+						icon: '',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.windowshello',
+						routerLinkActiveOptions: { exact: true },
+						subitems: []
+					});
+				}
 			}
 			if (this.securityAdvisor) {
 				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
@@ -223,16 +220,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		this.hardwareScanService.getPluginInfo()
-			.then((hwscanPluginInfo: any) => {
-				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-				this.showHWScanMenu = hwscanPluginInfo !== undefined &&
-									  hwscanPluginInfo.LegacyPlugin === false &&
-									  hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
-			})
-			.catch(() => {
-				this.showHWScanMenu = false;
-			});
+		if (this.hardwareScanService && this.hardwareScanService.getPluginInfo()) {
+			this.hardwareScanService.getPluginInfo()
+				.then((hwscanPluginInfo: any) => {
+					// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
+					this.showHWScanMenu = hwscanPluginInfo !== undefined &&
+						hwscanPluginInfo.LegacyPlugin === false &&
+						hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
+				})
+				.catch(() => {
+					this.showHWScanMenu = false;
+				});
+		}
 	}
 
 	private loadMenuOptions(machineType: number) {
@@ -313,6 +312,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
 		event.stopPropagation();
+	}
+
+	onKeyPress($event){
+		if ($event.keyCode === 13) {
+			this.toggleMenu($event);
+		}
 	}
 
 	isParentActive(item) {
@@ -556,7 +561,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 						this.smartAssist.getIntelligentScreenVisibility(),
 						this.smartAssist.getAPSCapability(),
 						this.smartAssist.getSensorStatus(),
-						this.smartAssist.getHDDStatus()
+						this.smartAssist.getHDDStatus(),
+						this.smartAssist.getSuperResolutionStatus()
 					])
 						.then((responses: any[]) => {
 							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
@@ -567,6 +573,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 							smartAssistCapability.isIntelligentMediaSupported = responses[3];
 							smartAssistCapability.isIntelligentScreenSupported = responses[4];
 							smartAssistCapability.isAPSSupported = responses[5] && responses[6] && responses[7] > 0;
+							smartAssistCapability.isSuperResolutionSupported = responses[8];
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.SmartAssistCapability,
 								smartAssistCapability
@@ -579,7 +586,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 								responses[2] ||
 								responses[3].available ||
 								responses[4] ||
-								(responses[5] && responses[6] && responses[7] > 0);
+								(responses[5] && responses[6] && responses[7] > 0  || responses[8].available);
 							// const isAvailable = true;
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.IsSmartAssistSupported,
@@ -622,8 +629,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	initInputAccessories() {
-		Promise.all([this.keyboardService.GetUDKCapability(), this.keyboardService.GetKeyboardMapCapability()])
-			.then((responses: any[]) => {
+		Promise.all([
+			this.keyboardService.GetUDKCapability(),
+			this.keyboardService.GetKeyboardMapCapability(),
+			// this.keyboardService.getVoipHotkeysSettings()
+		])
+			.then((responses) => {
 				try {
 					let inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 					if (inputAccessoriesCapability === undefined) {
@@ -631,6 +642,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
+					// inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
@@ -639,6 +651,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				}
 			})
 			.catch((error) => { });
+		this.keyboardService.getVoipHotkeysSettings()
+			.then(response => {
+				if (response.capability) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.VOIPCapability, response.capability);
+				}
+				return response;
+			});
 	}
 
 	openModernPreloadModal() {

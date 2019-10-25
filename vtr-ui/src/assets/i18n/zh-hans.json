@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "是否确实要清除此宏键？"
+                    "title": "是否确实要清除此宏键？",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "录制超时。",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",
-            "loading": "载入中..."
+            "loading": "载入中...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -881,10 +886,11 @@
                     "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "查看详细信息"
+                "seeDetailsLink": "查看详细信息",
+                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
             },
             "power": {
                 "title": "电源管理",
@@ -1033,6 +1039,42 @@
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
                         "checkBoxDesc": "自动检测",
                         "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
+                    },
+                    "gaugeReset": {
+                        "title": "电池量表重置",
+                        "description": "此功能可让计算机更加准确地估计完全充电电量。",
+                        "barCode": "条码",
+                        "progress": "进度",
+                        "remaining": "剩余",
+                        "startTime": "开始时间",
+                        "lastReset": "上次重置时间",
+                        "fullChargeCapacity": "完全充电电量",
+                        "btnLabel": {
+                            "reset": "重置",
+                            "stop": "停止"
+                        },
+                        "progressText1": "{{stageNum}} 的 {{stage}}：校准为完全充电",
+                        "progressText2": "{{stageNum}} 的 {{stage}}：校准为电池电量不足",
+                        "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
+                        "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "已完成。已成功重置。",
+                            "ERROR_SHUTDOWN": "未完成。系统已关闭。",
+                            "ERROR_LOGOFF": "未完成。用户已注销。",
+                            "ERROR_BATTERY_REMOVE": "未完成。已卸下电池。",
+                            "ERROR_BATTERY_REPLACE": "未完成。已更换电池。",
+                            "ERROR_AC_DETTACH": "未完成。已拔下交流电源适配器。",
+                            "ERROR_USER_CANCEL": "未完成。已被用户取消。",
+                            "ERROR_UNEXPECTED": "未完成。发生意外错误。"
+                        },
+                        "popup": {
+                            "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
+                            "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2.关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3.在此过程中，将禁用电池充电阈值功能。",
+                            "continue": "继续",
+                            "cancel": "取消",
+                            "yes": "是",
+                            "description3": "确定要停止电池量表重置吗？"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "每天",
                         "weekdays": "工作日",
                         "weekends": "周末"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "重新启动",
                             "cancel": "暂不"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 热键功能",
+                        "description": {
+                            "main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
+                            "f10": "F10：接听电话",
+                            "f11": "F11：拒绝或挂断电话"
+                        },
+                        "tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
+                        "hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
+                        "noInstalledAppsDescription": "此功能仅支持以下应用程序：",
+                        "hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
+                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "更多",
@@ -1397,6 +1455,17 @@
                             "slow": "慢"
                         },
                         "toolTipContent": "当未检测到您的存在时，选择希望的方式以较快/中等/较慢的速度来锁定屏幕。然而，屏幕锁定的时间也会受到实际用户场景、传感器功能和 Windows 屏幕超时设置的影响。因此，我们强烈建议您在离开时即锁定系统。"
+                    },
+                    "facialRecognition": {
+                        "title": "面部识别",
+                        "caption": "您可以启用面部识别功能并允许其访问您的摄像头。此工具可拍摄您的图像，从而准确地识别您的在场状态，或检测您的设备是否因您离开而暂时无人照管。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                        "checkBox": "打开摄像头并启用此功能",
+                        "note": {
+                            "permission": "Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
+                            "privacyMode": "Lenovo Vantage 摄像头隐私模式已开启。复选框的功能将不起作用。",
+                            "windowsLink": "转到 Windows 设置以授予访问权限",
+                            "privacyLink": "转到摄像头隐私模式以将其关闭"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "较近",
                         "far": "较远",
-                        "medium": "Medium"
+                        "medium": "中"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
                     "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "重置",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "灵敏度调整"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
             },
+            "superResolution": {
+				"heading": "智能媒体",
+				"title": "提高视频分辨率",
+				"desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
+				"tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player <br/> 暴风影音 <br/> 迅雷影音",
+				"note":{
+					"description":"此功能在以下情况下无效：",
+					"description1":"计算机未连接交流电源且电池电量低于 20%。",
+					"description2":"计算机未连接交流电源且已启用电池省电模式。",
+					"description3":"CPU 温度过高。"
+				}
+			},
             "voice": {
                 "title": "语音",
                 "description": "联想语音可通过语音转文本功能帮助您将语音转换为文本，并通过翻译功能提供从语音到文本的实时翻译。",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "欢迎使用系统更新。",
             "title": "保持最新状态的系统才是健康的系统。",
+            "installingTitle": "在更新期间，请勿使计算机进入睡眠或休眠模式。",
             "last": "上次更新时间：",
             "next": "下次计划更新时间：",
             "checkButton": "检查更新",
@@ -1739,7 +1821,7 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全分数可以让您了解您的在线安全情况，其结果取决于您是否：",
+            "securityScoreDepends": "您的安全结果取决于您是否：",
             "antivirus": "受到反病毒软件的保护",
             "password": "以安全的方式管理安全程度强且复杂的密码",
             "vpn": "监控您的网络以防暴露给攻击者",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
-                "unknown": "未知"
+                "unknown": "未知",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "注意",
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
-        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。"
+        "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
+        "testNotApplicable": "不适用于定制扫描"
     },
     "smartPerformance": {
         "title": "Health & Support",

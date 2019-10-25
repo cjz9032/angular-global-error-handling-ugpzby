@@ -48,7 +48,9 @@ export class AppSearchService {
 		private commonService: CommonService,
 		private localInfoService: LocalInfoService) {
 		this.betaMenuMapPaths();
-		this.loadSearchIndex();
+		if (deviceService.showSearch) {
+			this.loadSearchIndex();
+		}
 		this.unsupportedFeatures = new Set();
 		const featuresArray = this.commonService.getLocalStorageValue(LocalStorageKey.UnSupportFeatures);
 		if (featuresArray !== undefined && featuresArray.length !== undefined) {
@@ -57,12 +59,12 @@ export class AppSearchService {
 
 		this.regionPromise = new Promise((resolve) => {
 			this.localInfoService.getLocalInfo()
-			.then((result) => {
-				resolve(result.GEO);
-			})
-			.catch((e) => {
-				resolve('us');
-			});
+				.then((result) => {
+					resolve(result.GEO);
+				})
+				.catch((e) => {
+					resolve('us');
+				});
 		});
 	}
 
@@ -169,16 +171,18 @@ export class AppSearchService {
 				if (!await this.isFeatureSupported(feature)) {
 					return;
 				}
-
-				feature.tags.forEach(keyword => {
-					keyword = keyword.toLocaleLowerCase();
-					this.addFeatureToSet(tags, keyword, feature);
-				});
-
-				feature.relevantTags.forEach(keyword => {
-					keyword = keyword.toLocaleLowerCase();
-					this.addFeatureToSet(relevantTags, keyword, feature);
-				});
+				if (feature.tags) {
+					feature.tags.forEach(keyword => {
+						keyword = keyword.toLocaleLowerCase();
+						this.addFeatureToSet(tags, keyword, feature);
+					});
+				}
+				if (feature.relevantTags) {
+					feature.relevantTags.forEach(keyword => {
+						keyword = keyword.toLocaleLowerCase();
+						this.addFeatureToSet(relevantTags, keyword, feature);
+					});
+				}
 			});
 		});
 	}

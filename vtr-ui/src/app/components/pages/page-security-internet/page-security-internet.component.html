@@ -49,22 +49,20 @@
 												<div class="col-12">
 													<vtr-ui-button
 														*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
-														(click)="getSurfEasy()"
+														(onClick)="getSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="getSurfEasy"
 														[linkId]="'sa-vpn-btn-getsufeasy'"
 														[isDisabled]="statusItem.status === 'installing' || isOnline === false"
-														[label]="'security.vpn.getSufEasy' | translate"
-														[title]="'security.vpn.getSufEasy' | translate">
+														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button
 														*ngIf="statusItem.status === 'installed'"
-														(click)="openSurfEasy()"
+														(onClick)="openSurfEasy()"
 														metricsEvent="FeatureClick"
 														metricsItem="openSurfEasy"
 														[linkId]="'sa-vpn-btn-opensufeasy'"
-														[label]="'security.vpn.openSufEasy' | translate"
-														[title]="'security.vpn.openSufEasy' | translate">
+														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
 												</div>
 											</div>
@@ -244,22 +242,6 @@
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<!--<vtr-container-card id="sa-vpn-lnk-cardcontent"
-											aria-label="sa-vpn-lnk-cardcontent"
-											[img]="cardContentPositionA.FeatureImage"
-											[caption]="cardContentPositionA.Description"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[itemID]="cardContentPositionA.ActionLink"
-											[ratioX]="4"
-											[ratioY]="2"
-											type="corner-article"
-											cornerShift="large"
-											order="r1">
-										</vtr-container-card>-->
 										<vtr-container-card
 											[img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
 											[caption]="cardContentPositionA.Description"

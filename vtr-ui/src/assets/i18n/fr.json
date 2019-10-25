@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Voulez-vous vraiment effacer cette touche macro ?"
+                    "title": "Voulez-vous vraiment effacer cette touche macro ?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Délai d'attente pour l'enregistrement.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Réduire",
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
-            "loading": "Chargement..."
+            "loading": "Chargement...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -880,11 +885,12 @@
                     "PermanentError": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>"
                 },
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
-                "seeDetailsLink": "Voir les détails"
+                "seeDetailsLink": "Voir les détails",
+                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
             },
             "power": {
                 "title": "Alimentation",
@@ -1033,6 +1039,42 @@
                         "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système.",
                         "checkBoxDesc": "Détection automatique",
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
+                    },
+                    "gaugeReset": {
+                        "title": "Réinitialisation de la jauge de la batterie",
+                        "description": "Cette fonction permet à votre ordinateur d'estimer plus précisément la capacité de charge totale.",
+                        "barCode": "Code-barres",
+                        "progress": "Progression",
+                        "remaining": "Restant",
+                        "startTime": "Heure de début",
+                        "lastReset": "Dernière réinitialisation",
+                        "fullChargeCapacity": "Capacité de charge totale",
+                        "btnLabel": {
+                            "reset": "Réinitialiser",
+                            "stop": "Arrêt"
+                        },
+                        "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
+                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
+                        "FCCText": "De {{before}} Wh à {{after}} Wh",
+                        "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Terminé. La réinitialisation a abouti.",
+                            "ERROR_SHUTDOWN": "Incomplet. Arrêter le système.",
+                            "ERROR_LOGOFF": "Incomplet. Utilisateur déconnecté.",
+                            "ERROR_BATTERY_REMOVE": "Incomplet. La batterie a été retirée.",
+                            "ERROR_BATTERY_REPLACE": "Incomplet. La batterie a été remplacée.",
+                            "ERROR_AC_DETTACH": "Incomplet. Le boîtier d'alimentation a été débranché.",
+                            "ERROR_USER_CANCEL": "Incomplet. Annulé par l'utilisateur.",
+                            "ERROR_UNEXPECTED": "Incomplet. Une erreur inattendue s'est produite."
+                        },
+                        "popup": {
+                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
+                            "description2": "Remarques : <br>1. Ce processus peut durer plusieurs heures. Veuillez éviter d'utiliser votre ordinateur pendant cette opération.<br>2. Fermez toutes les applications ouvertes et connectez votre ordinateur à l'alimentation secteur.<br>3. Pendant le processus, la fonction de seuil de chargement de la batterie est désactivée.",
+                            "continue": "Continuer",
+                            "cancel": "Annuler",
+                            "yes": "Oui",
+                            "description3": "Voulez-vous vraiment arrêter la réinitialisation de la jauge de la batterie ?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Tous les jours",
                         "weekdays": "Jours de la semaine",
                         "weekends": "Fins de semaine"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Fonctions des touches de raccourci VoIP",
+                        "description": {
+                            "main": "Cette fonction vous permet de répondre à un appel VoIP ou de le rejeter en appuyant sur les touches de raccourci de votre clavier :",
+                            "f10": "F10 : répondre à l'appel",
+                            "f11": "F11 : rejeter ou mettre fin à l'appel"
+                        },
+                        "tooltip": "Cette fonction est actuellement prise en charge par Skype Entreprise 2016 et Microsoft Teams 1.0.<br>Pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications.",
+                        "hasInstalledAppsDescription": "Sélectionnez l'application dans laquelle vous souhaitez utiliser les touches de raccourci :",
+                        "noInstalledAppsDescription": "Cette fonction ne prend en charge que les applications suivantes : ",
+                        "hasInstalledAppsNote": "Remarque : pour Microsoft Teams 1.0, la touche F11 ne peut pas être utilisée pour mettre fin à l'appel.",
+                        "noInstalledAppsNote": "Remarque : pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "PLUS",
@@ -1397,6 +1455,17 @@
                             "slow": "Lent"
                         },
                         "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONNAISSANCE FACIALE",
+                        "caption": "Vous pouvez activer la fonction de reconnaissance faciale et l'autoriser à accéder à votre caméra. Cet outil capture votre image afin de reconnaître précisément votre présence ou détecter lorsque vous avez laissé votre périphérique sans surveillance. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                        "checkBox": "Allumer la caméra et activer cette fonction",
+                        "note": {
+                            "permission": "Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
+                            "privacyMode": "Le mode de confidentialité de la caméra Lenovo Vantage est activé. La fonction de la case cochée ne fonctionnera pas.",
+                            "windowsLink": "Accéder aux paramètres Windows pour donner accès",
+                            "privacyLink": "Accéder au mode de confidentialité de la caméra pour la désactiver"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Proche",
                         "far": "Éloigné",
-                        "medium": "Medium"
+                        "medium": "Moyenne"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
                     "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Réinitialiser",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "AJUSTEMENT DE LA SENSIBILITÉ"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
+            "superResolution": {
+				"heading": "Support intelligent",
+				"title": "Mise à l'échelle de la résolution vidéo",
+				"desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
+				"tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Cette fonction est inopérante quand :",
+					"description1":"L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
+					"description2":"L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+					"description3":"La température de l'unité centrale est trop élevée."
+				}
+			},
             "voice": {
                 "title": "Voix",
                 "description": "Lenovo Voice vous aide à convertir votre voix en texte avec la fonction de la conversion de la parole en texte et vous offre une traduction en temps réel de la parole en texte grâce à la fonction de traduction.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Vous êtes invité à utiliser la mise à jour du système.",
             "title": "Un système à jour est un système sain.",
+            "installingTitle": "Pendant les mises à jour, ne mettez pas votre ordinateur en mode veille ni en hibernation.",
             "last": "Dernière mise à jour : ",
             "next": "Prochaine mise à jour prévue : ",
             "checkButton": "RECHERCHER DES MISES À JOUR",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
-                "unknown": "Inconnu"
+                "unknown": "Inconnu",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Attention",
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
-        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau."
+        "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
+        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée"
     },
     "smartPerformance": {
         "title": "Health & Support",

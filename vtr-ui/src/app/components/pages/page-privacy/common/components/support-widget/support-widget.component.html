@@ -3,16 +3,12 @@
   <p class="support-widget__text">We’re standing by to help, whenever you need it.</p>
   <button class="support-widget__button"
 		  vtrSendAnalytics
+		  vtrOfflineMode
+		  display="block"
 		  [metricsEvent]="'ItemClick'"
 		  [metricsItem]="'ContactSupportButton'"
 		  (click)="openPopup('support-popup')">
-    <img class="support-widget__icon"
-		 src="/assets/icons/privacy-tab/icon-support-clock.png"
-		 srcset="/assets/icons/privacy-tab/icon-support-clock@2x.png 2x"
-		 alt="privacy support">
-    <p class="support-widget__support-time">
-      Contact support
-    </p>
+	  Contact support
   </button>
 </aside>
 <vtr-support-popup></vtr-support-popup>

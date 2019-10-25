@@ -9,9 +9,6 @@ import {
 	EventTypes, ConnectedHomeSecurity, PluginMissingError, CHSAccountState, WifiSecurity, DevicePosture
 } from '@lenovo/tan-client-bridge';
 import {
-	VantageShellService
-} from '../../../services/vantage-shell/vantage-shell.service';
-import {
 	HomeSecurityAccount
 } from 'src/app/data-models/home-security/home-security-account.model';
 import {
@@ -23,20 +20,18 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HomeSecurityMockService } from 'src/app/services/home-security/home-security-mock.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-security-welcome.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { DevicePostureMockService } from 'src/app/services/device-posture/device-posture-mock.service';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { HomeSecurityDevicePosture } from 'src/app/data-models/home-security/home-security-device-posture.model';
 import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 
 @Component({
@@ -74,10 +69,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	constructor(
 		public vantageShellService: VantageShellService,
-		public homeSecurityMockService: HomeSecurityMockService,
-		public devicePostureMockService: DevicePostureMockService,
 		public dialogService: DialogService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -91,14 +83,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.devicePosture = this.vantageShellService.getDevicePosture();
 		if (this.vantageShellService.getSecurityAdvisor()) {
 			this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
-		} else {
-			this.wifiSecurity = this.securityAdvisorMockService.getSecurityAdvisor().wifiSecurity;
-		}
-		if (!this.chs) {
-			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
-		}
-		if (!this.devicePosture) {
-			this.devicePosture = this.devicePostureMockService.getDevicePosture();
 		}
 		this.permission = this.vantageShellService.getPermission();
 		this.welcomeModel = new HomeSecurityWelcome();
@@ -155,7 +139,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
 			}
 		}
-		const cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
+		let cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 		if (this.devicePosture && this.devicePosture.value.length > 0) {
 			this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.devicePosture, cacheDevicePosture, this.translateService);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
@@ -192,8 +176,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
+		this.chs.on(EventTypes.wsPluginMissingEvent, () => {
+			this.handleResponseError(new PluginMissingError());
+		});
+
 		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
 			if (devicePosture && devicePosture.value.length > 0) {
+				cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
 				this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(devicePosture, cacheDevicePosture, this.translateService);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture, {
 					homeDevicePosture: this.homeSecurityDevicePosture.homeDevicePosture
@@ -208,8 +197,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					this.devicePosture.getDevicePosture()
 						.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						})
-						.catch((err: Error) => this.handleResponseError(err));
+						});
 				}
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
 			} else if (!location
@@ -251,15 +239,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					this.devicePosture.getDevicePosture()
 						.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						})
-						.catch((err: Error) => this.handleResponseError(err));
+						});
 				}
 			}
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		}
 	}
@@ -277,8 +263,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		}
 	}
@@ -290,8 +275,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		} else if (visibility === 'hidden') {
 			window.clearInterval(this.intervalId);
@@ -439,7 +423,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.intervalId = window.setInterval(() => {
 			this.chs.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}).catch((err: Error) => this.handleResponseError(err));
+			});
 		}, this.interval);
 	}
 }

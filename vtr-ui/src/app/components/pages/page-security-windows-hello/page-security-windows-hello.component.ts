@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { MockService } from 'src/app/services/mock/mock.service';
 import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
@@ -7,7 +6,6 @@ import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
@@ -28,21 +26,16 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 
 	constructor(
-		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private guard: GuardService,
 
 		public vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private router: Router
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.statusItem = {
 			title: 'security.windowsHello.statusTitle',
 			status: 'loading'

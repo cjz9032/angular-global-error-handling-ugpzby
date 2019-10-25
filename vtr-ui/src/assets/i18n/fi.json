@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Haluatko varmasti tyhjentää tämän makronäppäimen sisällön?"
+                    "title": "Haluatko varmasti tyhjentää tämän makronäppäimen sisällön?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Aikakatkaisu tallennusta varten.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Kutista",
             "expand": "Laajenna",
             "loader": "Noutaminen <br> Tila",
-            "loading": "Ladataan..."
+            "loading": "Ladataan...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
-                "seeDetailsLink": "Lisätietoja on seuraavissa"
+                "seeDetailsLink": "Lisätietoja on seuraavissa",
+                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
             },
             "power": {
                 "title": "Virta",
@@ -1033,6 +1039,42 @@
                         "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä.",
                         "checkBoxDesc": "Automaattinen tunnistus",
                         "note": "Jos automaattinen tunnistus on valittu, tietokone ottaa lentokonevirtatilan käyttöön automaattisesti, kun se havaitsee olevansa lentokoneessa, ja poistaa sen käytöstä, kun poistut."
+                    },
+                    "gaugeReset": {
+                        "title": "Akkumittarin nollaus",
+                        "description": "Tämän toiminnon avulla tietokone voi arvioida täyden varauskapasiteetin aiempaa tarkemmin.",
+                        "barCode": "Viivakoodi",
+                        "progress": "Edistyminen",
+                        "remaining": "jäljellä",
+                        "startTime": "Aloitusaika",
+                        "lastReset": "Edellinen nollaus",
+                        "fullChargeCapacity": "Täyteen ladatun kapasiteetti",
+                        "btnLabel": {
+                            "reset": "Uudelleenasetus",
+                            "stop": "Pysäytä"
+                        },
+                        "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
+                        "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+                        "FCCText": "{{before}}Wh- {{after}} Wh",
+                        "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Valmis. Nollaus onnistui.",
+                            "ERROR_SHUTDOWN": "Vaillinainen. Järjestelmä sammui.",
+                            "ERROR_LOGOFF": "Vaillinainen. Käyttäjä kirjautui ulos.",
+                            "ERROR_BATTERY_REMOVE": "Vaillinainen. Akku poistettiin.",
+                            "ERROR_BATTERY_REPLACE": "Vaillinainen. Akku vaihdettiin.",
+                            "ERROR_AC_DETTACH": "Vaillinainen. Verkkolaite irrotettiin.",
+                            "ERROR_USER_CANCEL": "Vaillinainen. Käyttäjä peruutti toiminnon.",
+                            "ERROR_UNEXPECTED": "Vaillinainen. On tapahtunut odottamaton virhe."
+                        },
+                        "popup": {
+                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
+                            "description2": "Huomautuset: <br>1. Prosessi saattaa kestää useita tunteja. Vältä tietokoneen käyttöä tämän ajanjakson aikana.<br>2. Sulje kaikki avoimet sovellukset ja liitä tietokone verkkovirtaan.<br>3. Prosessin aikana akun varauksen kynnysarvo -toiminto ei ole käytössä.",
+                            "continue": "Jatka",
+                            "cancel": "Peruuta",
+                            "yes": "Kyllä",
+                            "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
                         "weekends": "Viikonloppuisin"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-pikanäppäintoiminnot",
+                        "description": {
+                            "main": "Tämän toiminnon avulla voit vastata VoIP-puheluun tai hylätä sen painamalla näppäimistön pikanäppäimiä:",
+                            "f10": "F10: vastaa puheluun",
+                            "f11": "F11: puhelun hylkääminen tai katkaisu"
+                        },
+                        "tooltip": "Tällä hetkellä tätä toimintoa tuetaan vain Skype for Business 2016- ja Microsoft Teams 1.0 -ohjelmistoissa.<br>Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset.",
+                        "hasInstalledAppsDescription": "Valitse sovellus, jossa haluat käyttää pikanäppäimiä:",
+                        "noInstalledAppsDescription": "Tämä ominaisuus tukee vain seuraavia sovelluksia: ",
+                        "hasInstalledAppsNote": "Huomautus: Jos kyseessä on Microsoft Teams 1.0, F11-näppäintä ei voi käyttää puhelun katkaisuun.",
+                        "noInstalledAppsNote": "Huomautus: Jotta voit käyttää tätä toimintoa, sinun on ensin ladattava ja asennettava sovellukset."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "ENEMMÄN",
@@ -1397,6 +1455,17 @@
                             "slow": "Hidas"
                         },
                         "toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita. Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
+                    },
+                    "facialRecognition": {
+                        "title": "KASVOJENTUNNISTUS",
+                        "caption": "Voit ottaa kasvojentunnistustoiminnon käyttöön ja sallia sen käyttää kameraasi. Tämä työkalu ottaa sinusta valokuvan, jotta se voi tunnistaa oikein, kun olet puhelimen äärellä tai havaita, milloin olet poistunut sen läheltä. Nämä tiedot käsitellään laitteessa paikallisesti. Lenovolla ei ole pääsyä tietoihin eikä se voi käyttää niitä.",
+                        "checkBox": "Kytke kameraan virta ja ota tämä toiminto käyttöön",
+                        "note": {
+                            "permission": "Lenovo Vantage ei voi käyttää kameraa. Valintaruudun toiminto ei toimi.",
+                            "privacyMode": "Lenovo Vantage -ohjelman kameran tietosuojatila on käytössä. Valintaruudun toiminto ei toimi.",
+                            "windowsLink": "Siirry Windows-asetuksiin ja anna käyttöoikeus",
+                            "privacyLink": "Poista se käytöstä siirtymällä kameran tietosuojatilaan"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Lähellä",
                         "far": "Kaukana",
-                        "medium": "Medium"
+                        "medium": "Keskitaso"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
                     "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Siirry Windows Hello -asetuksiin",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Uudelleenasetus",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "TUNNISTUSHERKKYYDEN MUUTTAMINEN"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Tämä ominaisuus keskeyttää videon toiston, kun poistut tietokoneelta, ja jatkaa toistoa, kun palaat takaisin.",
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
+            "superResolution": {
+				"heading": "Älykäs tietoväline",
+				"title": "Näytön tarkkuuden skaalaus",
+				"desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
+				"tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+					"description1":"Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
+					"description2":"Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+					"description3":"Keskusyksikön lämpötila on liian korkea."
+				}
+			},
             "voice": {
                 "title": "Ääni",
                 "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Tervetuloa käyttämään Järjestelmäpäivitystä.",
             "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+            "installingTitle": "Älä aseta tietokonetta lepo- tai horrostilaan päivitysten aikana.",
             "last": "Viimeksi päivitetty: ",
             "next": "Seuraava ajoitettu päivitys: ",
             "checkButton": "TARKISTA PÄIVITYKSET",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
-                "unknown": "Tuntematon"
+                "unknown": "Tuntematon",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Huomio:",
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
-        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se."
+        "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
+        "testNotApplicable": "Ei sovellu mukautettu tarkistus"
     },
     "smartPerformance": {
         "title": "Health & Support",

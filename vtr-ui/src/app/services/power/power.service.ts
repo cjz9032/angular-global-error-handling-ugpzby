@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from "./flipToBoot.interface";
+import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
 @Injectable({
 	providedIn: 'root'
 })
@@ -258,6 +258,28 @@ export class PowerService {
 
 	// Power smart settings
 	// ----------start ITC Capable
+	public getPMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getPMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getITSServiceStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getITSServiceStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
@@ -485,7 +507,7 @@ export class PowerService {
 	}
 
 	public setCtAutoCheckbox(value: any): Promise<any> {
-		//console.log('auto check value here ----->', value);
+		// console.log('auto check value here ----->', value);
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
@@ -577,6 +599,60 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
+		console.log('setSmartStandbyIsAutonomic: ', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getSmartStandbyIsAutonomic(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyIsAutonomic();
+		}
+		return undefined;
+	}
+
+	public getGaugeResetCapability(): Promise<boolean> {
+		console.log('Battery Gauge Reset Capability');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.getGaugeResetCapability();
+			}
+		} catch (error) {
+			console.log('Battery Gauge Reset Error', error);
+		}
+	}
+
+	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('start Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('stop Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
 			}
 			return undefined;
 		} catch (error) {

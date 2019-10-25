@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Jeste li sigurni da želite izbrisati ovu makro tipku?"
+                    "title": "Jeste li sigurni da želite izbrisati ovu makro tipku?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Čekanje za snimanje.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Sažmi",
             "expand": "Proširi",
             "loader": "Preuzimanje <br>statusa",
-            "loading": "Učitavam..."
+            "loading": "Učitavam...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju.",
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
                     "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>"
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
-                "seeDetailsLink": "Prikaži pojedinosti"
+                "seeDetailsLink": "Prikaži pojedinosti",
+                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -1033,6 +1039,42 @@
                         "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava.",
                         "checkBoxDesc": "Automatsko otkrivanje",
                         "note": "Ako je označeno Automatsko otkrivanje, računalo će automatski uključiti Način napajanja u zrakoplovu kada otkrije okruženje unutar zrakoplova i isključiti ga po napuštanju okruženja."
+                    },
+                    "gaugeReset": {
+                        "title": "Ponovno postavljanje mjerača napunjenosti baterije",
+                        "description": "Ova značajka omogućuje računalu da preciznije procijeni kapacitet potpuno napunjene baterije.",
+                        "barCode": "Crtični kod",
+                        "progress": "Tijek",
+                        "remaining": "Preostalo",
+                        "startTime": "Vrijeme pokretanja",
+                        "lastReset": "Najnovije ponovno postavljanje",
+                        "fullChargeCapacity": "Kapacitet potpuno napunjene baterije",
+                        "btnLabel": {
+                            "reset": "Ponovno postavljanje",
+                            "stop": "Zaustavi"
+                        },
+                        "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
+                        "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
+                        "FCCText": "Od {{before}} Wh do {{after}} Wh",
+                        "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Dovršeno. Ponovno je postavljanje uspjelo.",
+                            "ERROR_SHUTDOWN": "Nedovršeno. Isključenje sustava",
+                            "ERROR_LOGOFF": "Nedovršeno. Korisnik je odjavljen.",
+                            "ERROR_BATTERY_REMOVE": "Nedovršeno. Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nedovršeno. Baterija je zamijenjena.",
+                            "ERROR_AC_DETTACH": "Nedovršeno. Prilagodnik napajanja odspojen je.",
+                            "ERROR_USER_CANCEL": "Nedovršeno. Korisnik je odustao.",
+                            "ERROR_UNEXPECTED": "Nedovršeno. Došlo je do neočekivane pogreške."
+                        },
+                        "popup": {
+                            "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
+                            "description2": "Napomene: <br>1. Postupak može potrajati nekoliko sati. Izbjegavajte korištenje računala tijekom ovog postupka.<br>2. Zatvorite sve otvorene aplikacije i povežite računalo na napajanje izmjeničnom strujom.<br>3. Tijekom postupka je onemogućena funkcija praga punjenja baterije.",
+                            "continue": "Nastavi",
+                            "cancel": "Odustani",
+                            "yes": "Da",
+                            "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Svaki dan",
                         "weekdays": "Radnim danom",
                         "weekends": "Vikendi"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcije VoIP tipkovničkog prečaca",
+                        "description": {
+                            "main": "Ova značajka omogućuje odgovaranje ili odbijanje VoIP poziva pritiskom na tipkovničke prečace na tipkovnici:",
+                            "f10": "F10: odgovor na poziv",
+                            "f11": "F11: odbijanje ili prekid poziva"
+                        },
+                        "tooltip": "Ova je značajka trenutačno podržana samo na platformama Skypeu for Business 2016 i Microsoft Teams 1.0.<br>Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije.",
+                        "hasInstalledAppsDescription": "Odaberite aplikaciju na kojoj želite koristiti tipkovničke prečace:",
+                        "noInstalledAppsDescription": "Ova značajka podržava samo aplikacije u nastavku: ",
+                        "hasInstalledAppsNote": "Napomena: Na platformi Microsoft Teams 1.0, tipka F11 ne može se upotrebljavati za prekidanje poziva.",
+                        "noInstalledAppsNote": "Napomena: Kako biste upotrebljavali značajku, najprije morate preuzeti i instalirati aplikacije."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "DODATNO",
@@ -1397,6 +1455,17 @@
                             "slow": "Sporo"
                         },
                         "toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska."
+                    },
+                    "facialRecognition": {
+                        "title": "PREPOZNAVANJE LICA",
+                        "caption": "Možete omogućiti značajku prepoznavanja lica i omogućiti joj pristup kameri. Ovaj alat snima vašu sliku kako bi točno prepoznao vašu nazočnost ili otkrio kada ste uređaj ostavili bez nadzora. Ti se podaci obrađuju lokalno na vašem uređaju. Lenovo im ne pristupa niti ih upotrebljava.",
+                        "checkBox": "Uključite kameru i omogućite ovu značajku",
+                        "note": {
+                            "permission": "Lenovo Vantage nema pristup kameri. Funkcija potvrdnog okvira ne radi.",
+                            "privacyMode": "Uključen je način rada kamere za zaštitu privatnosti Lenovo Vantage. Funkcija potvrdnog okvira ne radi.",
+                            "windowsLink": "Idite na postavke sustava Windows za omogućivanje pristupa",
+                            "privacyLink": "Idite na način rada kamere za zaštitu privatnosti kako biste ga isključili"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Blizu",
                         "far": "Daleko",
-                        "medium": "Medium"
+                        "medium": "Srednje"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave.",
                     "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Idite na postavke sustava Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Ponovno postavljanje",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "PODEŠAVANJE OSJETLJIVOSTI"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
+            "superResolution": {
+				"heading": "Inteligentni mediji",
+				"title": "Povećanje razlučivosti videozapisa",
+				"desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Kad je omogućena, preporučuje se da računalo povežete na napajanje izmjeničnim naponom.</label></p>",
+				"tooltip": "Značajka radi samo na sljedećim reproduktorima videosadržaja: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Ova značajka ne funkcionira kad:",
+					"description1":"računalo nije priključeno na napajanje izmjeničnim naponom, a napunjenost baterije je niža od 20%.",
+					"description2":"računalo nije priključeno na napajanje izmjeničnim naponom, a omogućen je način rada za uštedu baterije.",
+					"description3":"je temperatura CPU-a previsoka."
+				}
+			},
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice omogućuje pretvaranje vašeg govora u tekst s pomoću funkcije Govor u tekst i prijevod govora u tekst u stvarnom vremenu s pomoću funkcije Prijevod.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Slobodno se koristite Ažuriranjem sustava.",
             "title": "Ažurirani sustav je zdrav sustav.",
+            "installingTitle": "Tijekom ažuriranja ne stavljajte računalo u stanje mirovanja ili hibernacije.",
             "last": "Zadnje ažuriranje: ",
             "next": "Sljedeće zakazano ažuriranje: ",
             "checkButton": "TRAŽI AŽURIRANJA",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
-                "unknown": "Nepoznato"
+                "unknown": "Nepoznato",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Pažnja",
         "cancelTextPrompt": "Želite li zaista odustati?",
         "cancelTextProgress": "Pričekajte napredak otkazivanja",
-        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju."
+        "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju.",
+        "testNotApplicable": "Nije primjenjivo za prilagođeni pregled"
     },
     "smartPerformance": {
         "title": "Health & Support",

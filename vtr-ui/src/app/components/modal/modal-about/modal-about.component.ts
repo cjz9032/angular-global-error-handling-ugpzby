@@ -102,6 +102,9 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 			case 'zh-hant':
 				useLang = 'zh-Hant';
 				break;
+			case 'sr-latn':
+				useLang = 'sr';
+				break;
 			default:
 				break;
 		}

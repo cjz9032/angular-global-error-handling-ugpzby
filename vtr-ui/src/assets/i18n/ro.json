@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Sigur ștergeți această tastă macro?"
+                    "title": "Sigur ștergeți această tastă macro?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Sesiunea de înregistrare a expirat.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Restrângere",
             "expand": "Extindere",
             "loader": "Obținerea <br> statutului",
-            "loading": "se incarca..."
+            "loading": "se incarca...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Bateria <b>nu a funcţionat din cauza uzurii normale.</b> Bateria nu poate fi încărcată. Înlocuiţi bateria.",
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
-                "seeDetailsLink": "Vedeți detaliile"
+                "seeDetailsLink": "Vedeți detaliile",
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
             },
             "power": {
                 "title": "Alimentare",
@@ -1033,6 +1039,42 @@
                         "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului.",
                         "checkBoxDesc": "Autodetecție",
                         "note": "Dacă detectarea automată este activată, calculatorul va porni automat modul de alimentare Avion când detectează un mediu de bord de avion și îl va opri când părăsiți acel mediu."
+                    },
+                    "gaugeReset": {
+                        "title": "Resetare indicator baterie",
+                        "description": "Această caracteristică permite computerului să estimeze mai exact capacitatea de încărcare completă.",
+                        "barCode": "Cod de bare",
+                        "progress": "Progres",
+                        "remaining": "Au mai rămas",
+                        "startTime": "Oră pornire",
+                        "lastReset": "Ultima resetare",
+                        "fullChargeCapacity": "Capacitate de încărcare completă",
+                        "btnLabel": {
+                            "reset": "Resetare",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
+                        "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+                        "FCCText": "De la {{before}} Wh la {{after}} Wh",
+                        "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
+                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
+                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                        },
+                        "popup": {
+                            "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
+                            "description2": "Note: <br>1. Procesul poate dura câteva ore. Evitaţi utilizarea computerului în această perioadă.<br>2. Închideţi toate aplicaţiile deschise şi conectaţi computerul la o sursă de c.a.<br>3. În timpul procesului, funcţia Prag încărcare baterie este dezactivată.",
+                            "continue": "Contin.",
+                            "cancel": "Anulare",
+                            "yes": "Da",
+                            "description3": "Sigur opriţi resetarea indicatorului bateriei?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "In fiecare zi",
                         "weekdays": "Zilele saptamanii",
                         "weekends": "Weekend-uri"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "REPORNIȚI",
                             "cancel": "NU ACUM"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funcţii tastă rapidă VoIP",
+                        "description": {
+                            "main": "Această caracteristică vă permite să răspundeţi sau să respingeţi un apel VoIP apăsând tastele rapide de pe tastatură:",
+                            "f10": "F10: răspundeţi la apel",
+                            "f11": "F11: respingeţi sau închideţi apelul"
+                        },
+                        "tooltip": "În prezent, această caracteristică este acceptată doar pe Skype for Business 2016 şi pe Microsoft Teams 1.0.<br>Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile.",
+                        "hasInstalledAppsDescription": "Selectaţi aplicaţia în care doriţi să utilizaţi tastele rapide:",
+                        "noInstalledAppsDescription": "Această caracteristică acceptă doar aplicaţiile de mai jos: ",
+                        "hasInstalledAppsNote": "Notă: Pentru Microsoft Teams 1.0, tasta F11 nu poate fi utilizată pentru a închide apelul.",
+                        "noInstalledAppsNote": "Notă: Pentru a utiliza caracteristica, mai întâi trebuie să descărcaţi şi să instalaţi aplicaţiile."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MAI MULTE",
@@ -1397,6 +1455,17 @@
                             "slow": "Lent"
                         },
                         "toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența. Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca."
+                    },
+                    "facialRecognition": {
+                        "title": "RECUNOAȘTEREA FACIALĂ",
+                        "caption": "Puteți activa funcția de recunoaștere facială și îi puteți permite să acceseze camera. Acest instrument captează imaginea dvs. pentru a vă recunoaște cu exactitate prezența sau a detecta când ați lăsat dispozitivul nesupravegheat. Aceste date sunt procesate local pe dispozitivul dvs. Lenovo nu accesează datele și nu le folosește.",
+                        "checkBox": "Porniți camera și activați această caracteristică.",
+                        "note": {
+                            "permission": "Lenovo Vantage nu are acces la cameră. Funcția casetei de selectare nu este activă.",
+                            "privacyMode": "Modul de confidențialitate Lenovo Vantage este activ pentru cameră. Funcția casetei de selectare nu este activă.",
+                            "windowsLink": "Accesați setările Windows pentru a acorda acces.",
+                            "privacyLink": "Accesați modul de confidențialitate al camerei pentru a-l dezactiva."
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Lângă",
                         "far": "Departe",
-                        "medium": "Medium"
+                        "medium": "Mediu"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
                     "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accesați setările Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Resetare",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "AJUSTAREA SENSIBILITĂŢII"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
+            "superResolution": {
+				"heading": "Medii inteligente",
+				"title": "Mărirea rezoluţiei video",
+				"desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
+				"tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Această caracteristică nu funcţionează când:",
+					"description1":"computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
+					"description2":"computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
+					"description3":"Temperatura procesorului este prea mare."
+				}
+			},
             "voice": {
                 "title": "Voce",
                 "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Începeţi utilizarea Actualizare sistem.",
             "title": "Un sistem actualizat este un sistem sănătos.",
+            "installingTitle": "În timpul actualizărilor, nu treceți computerul în modul repaus sau hibernare.",
             "last": "Ultima actualizare: ",
             "next": "Următoarea actualizare programată: ",
             "checkButton": "CĂUTAȚI ACTUALIZĂRI",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
-                "unknown": "Necunoscut"
+                "unknown": "Necunoscut",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2530,7 +2613,7 @@
             "delete": "Ştergere",
             "warningBatterySaver": "Notă: scanările programate nu vor fi efectuate în modul Economisire baterie",
             "scheduleIntervalLimit": "O altă scanare a fost deja programată într-un interval de timp de zece minute. Alegeţi un alt moment.",
-            "information": "Your scan has been scheduled and will run in the background on the following date:"
+            "information": "Scanarea a fost programată și va rula în fundal la următoarea dată:"
         },
         "recoverBadSectors": {
             "title": "Recuperarea sectoarelor defecte",
@@ -2580,7 +2663,8 @@
         "attention": "Atenţie",
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
-        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi."
+        "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
+        "testNotApplicable": "Nu se aplică la scanarea personalizată"
     },
     "smartPerformance": {
         "title": "Health & Support",

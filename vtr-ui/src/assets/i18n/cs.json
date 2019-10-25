@@ -116,7 +116,8 @@
                     "networkBoost": "network boost page",
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
-                }
+                },
+                "mainMenuLink": "Header main logo"
             }
         },
         "macroKey": {
@@ -222,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Opravdu chcete tuto klávesu makra vymazat?"
+                    "title": "Opravdu chcete tuto klávesu makra vymazat?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Vypršel čas záznamu.",
@@ -259,7 +261,13 @@
                     "option2": "macro key settings enabled when gaming",
                     "option3": "macro key settings off"
                 },
-                "optionSelected": "selected"
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -495,16 +503,10 @@
                     "title": "to default:"
                 }
             },
-            "colourwheelnarrator": {
-                "text1": {
-                    "title": "rgb red value"
-                },
-                "text2": {
-                    "title": "rgb green value"
-                },
-                "text3": {
-                    "title": "rgb blue value"
-                }
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
             }
         },
         "autoClose": {
@@ -642,7 +644,10 @@
             "collapse": "Sbalit",
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
-            "loading": "Načítání..."
+            "loading": "Načítání...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -880,11 +885,12 @@
                     "PermanentError": "Došlo k <b>selhání baterie z důvodu běžného opotřebení.</b> Baterii nelze nabít. Vyměňte ji.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>"
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
-                "seeDetailsLink": "Zobrazit podrobnosti"
+                "seeDetailsLink": "Zobrazit podrobnosti",
+                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
             },
             "power": {
                 "title": "Napájení",
@@ -1033,6 +1039,42 @@
                         "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
                         "checkBoxDesc": "Automatická detekce",
                         "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
+                    },
+                    "gaugeReset": {
+                        "title": "Reset ukazatele stavu baterie",
+                        "description": "Tato funkce umožňuje počítači přesněji odhadnout maximální kapacitu baterie.",
+                        "barCode": "Čárový kód",
+                        "progress": "Průběh",
+                        "remaining": "Zbývá",
+                        "startTime": "Čas spuštění",
+                        "lastReset": "Poslední reset",
+                        "fullChargeCapacity": "Kapacita při plném nabití",
+                        "btnLabel": {
+                            "reset": "Reset",
+                            "stop": "Zastavit"
+                        },
+                        "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
+                        "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "FCCText": "Z {{before}} Wh na {{after}} Wh",
+                        "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Dokončeno. Reset proběhl úspěšně.",
+                            "ERROR_SHUTDOWN": "Nedokončeno. Systém byl vypnut.",
+                            "ERROR_LOGOFF": "Nedokončeno. Uživatel se odhlásil.",
+                            "ERROR_BATTERY_REMOVE": "Nedokončeno. Byla vyňata baterie.",
+                            "ERROR_BATTERY_REPLACE": "Nedokončeno. Byla vyměněna baterie.",
+                            "ERROR_AC_DETTACH": "Nedokončeno. Byl odpojen napájecí adaptér.",
+                            "ERROR_USER_CANCEL": "Nedokončeno. Zrušeno uživatelem.",
+                            "ERROR_UNEXPECTED": "Nedokončeno. Došlo k neočekávané chybě."
+                        },
+                        "popup": {
+                            "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
+                            "description2": "Poznámky: <br>1. Tento proces může trvat několik hodin. Během této doby počítač nepoužívejte.<br>2. Zavřete všechny otevřené aplikace a připojte počítač k napájení.<br>3. Během procesu je funkce prahu nabití baterie deaktivována.",
+                            "continue": "Pokračuj",
+                            "cancel": "Storno",
+                            "yes": "Ano",
+                            "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
+                        }
                     }
                 },
                 "energyStar": {
@@ -1082,7 +1124,9 @@
                         "everyday": "Každý den",
                         "weekdays": "Pracovní dny",
                         "weekends": "Víkendy"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1322,6 +1366,19 @@
                             "reboot": "RESTARTOVAT",
                             "cancel": "TEĎ NE"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkce horkých kláves VoIP:",
+                        "description": {
+                            "main": "Tato funkce umožňuje přijmout nebo odmítnout hovor VoIP stisknutím klávesových zkratek na klávesnici:",
+                            "f10": "F10: přijmout hovor",
+                            "f11": "F11: odmítnout nebo ukončit hovor"
+                        },
+                        "tooltip": "V současné době je tato funkce podporována pouze softwarem Skype for Business 2016 a Microsoft Teams 1.0.<br>Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace.",
+                        "hasInstalledAppsDescription": "Vyberte aplikaci, ve které chcete klávesové zkratky používat:",
+                        "noInstalledAppsDescription": "Tuto funkci podporují pouze dále uvedené aplikace: ",
+                        "hasInstalledAppsNote": "Poznámka: U Microsoft Teams 1.0 nelze použít klávesu F11 k ukončení hovoru.",
+                        "noInstalledAppsNote": "Poznámka: Chcete-li tuto funkci používat, musíte si nejdříve stáhnout a nainstalovat aplikace."
                     }
                 },
                 "userDefinedKey": {
@@ -1349,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "DALŠÍ",
@@ -1397,6 +1455,17 @@
                             "slow": "Pomalá"
                         },
                         "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost. Dobu, za jakou bude obrazovka uzamčena, však ovlivňuje také momentální scénář uživatele, možnosti snímače a nastavení časového limitu obrazovky systému Windows. Proto důrazně doporučujeme, abyste svůj systém okamžitě uzamkli, než jej opustíte."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNÁVÁNÍ OBLIČEJE",
+                        "caption": "Můžete povolit funkci rozpoznávání obličeje a umožnit jí přístup k fotoaparátu. Tento nástroj zachytí váš snímek, aby přesně rozpoznal vaši přítomnost nebo zjistil, kdy jste zařízení nechali bez dozoru. Tato data jsou ve vašem zařízení zpracovávána lokálně. Lenovo k nim nemá přístup ani je nepoužívá.",
+                        "checkBox": "Zapněte fotoaparát a povolte tuto funkci",
+                        "note": {
+                            "permission": "Lenovo Vantage nemá přístup ke kameře. Funkce zaškrtávacího políčka nebude fungovat.",
+                            "privacyMode": "Režim ochrany osobních údajů fotoaparátu Lenovo Vantage je zapnutý. Funkce zaškrtávacího políčka nebude fungovat.",
+                            "windowsLink": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
+                            "privacyLink": "Chcete-li jej vypnout, přejděte do režimu ochrany osobních údajů fotoaparátu"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1405,7 +1474,7 @@
                     "options": {
                         "near": "Malá",
                         "far": "Velká",
-                        "medium": "Medium"
+                        "medium": "Střední"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1426,7 +1495,7 @@
                     "description4": "2. Když je počítač v režimu hibernace nebo vypnutý. Bezkontaktní přihlášení nebude fungovat.",
                     "description5": "3. Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervená kamera mohla rozpoznat váš obličej pro automatické přihlášení.",
                     "description6": "4. Je-li na vašem počítači zapnut režim V letadle, jsou tyto funkce vypnuté.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Přesnost se liší podle velikosti trupu, polohy a četnosti pohybu. Pokud se váš počítač neočekávaně uzamkne, seřiďte sloupec citlivosti tak, aby se zvýšila přesnost."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
@@ -1434,7 +1503,7 @@
                 },
                 "resetToDefault": "Reset",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "SEŘÍZENÍ CITLIVOSTI"
                 }
             },
             "intelligentScreen": {
@@ -1503,6 +1572,18 @@
                 "desc": "Tato funkce pozastaví video, když odejdete od počítače, a opět je spustí, když se vrátíte.",
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
+            "superResolution": {
+				"heading": "Inteligentní média",
+				"title": "Zvýšení rozlišení videa",
+				"desc": "<p><label>Tato funkce zvyšuje zážitek z přehrávání videa zlepšením rozlišení videa. Funguje zejména v případě, že je video ve špatném rozlišení.</label></p> <p style='margin-top:4px;'><label> Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. Pokud je povolená, doporučuje se připojit počítač k napájení střídavým proudem.</label></p>",
+				"tooltip": "Tato funkce funguje pouze u následujících přehrávačů: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Tato funkce nepracuje v následujících případech:",
+					"description1":"Počítač není připojen k napájení střídavým proudem a kapacita baterie je nižší než 20 %.",
+					"description2":"Počítač není připojen k napájení střídavým proudem a je aktivní režim úspory baterie.",
+					"description3":"Teplota procesoru je příliš vysoká."
+				}
+			},
             "voice": {
                 "title": "Hlas",
                 "description": "Lenovo Voice pomáhá převádět váš hlas do textů funkcí Hlas na text a funkcí Překlad zajišťuje překlad v reálném čase z hlasu do textů.",
@@ -1586,6 +1667,7 @@
         "banner": {
             "neverChecked": "Vítejte při použití Aktualizace systému.",
             "title": "Aktualizovaný systém je zdravým systémem.",
+            "installingTitle": "Během aktualizací zařízení nepřepínejte počítač do režimu spánku ani do režimu hibernace.",
             "last": "Poslední aktualizace: ",
             "next": "Příští plánovaná aktualizace: ",
             "checkButton": "ZKONTROLOVAT AKTUALIZACE",
@@ -1820,7 +1902,8 @@
             },
             "others": {
                 "othersProtection": "{{protectedName}} nabízí základní ochranu zařízení",
-                "unknown": "Neznámé"
+                "unknown": "Neznámé",
+                "betterOffer": "Enjoy a better offer here!"
             }
         },
         "wifisecurity": {
@@ -2580,7 +2663,8 @@
         "attention": "Upozornění",
         "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
         "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
-        "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je."
+        "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je.",
+        "testNotApplicable": "Nepoužitelné u vlastních kontrol"
     },
     "smartPerformance": {
         "title": "Health & Support",

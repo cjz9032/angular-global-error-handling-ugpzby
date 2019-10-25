@@ -106,6 +106,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	startScreenshotAutoSwipe() {
+		clearInterval(this.screenshotInterval);
 		this.screenshotInterval = setInterval(() => {
 			this.swipeRightToLeft();
 		}, 5000);
@@ -196,6 +197,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 						this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 					}
 					break;
+				case AppsForYouEnum.GetAppStatusResult:
+					this.updateInstallButtonStatus(notification.payload);
+					break;
 				default:
 					break;
 			}
@@ -206,16 +210,12 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
-		if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1
-			|| appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeWebId) !== -1) {
+		if (this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1
+			|| this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeWebId) !== -1) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
-		} else if (appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
-			|| appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1
-			|| appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
-			this.updateInstallButtonStatus();
 		} else {
-			// TODO: Should be Windows Store App
+			this.appsForYouService.getAppStatus(this.appGuid);
 		}
 		if (this.appDetails.screenshots.length > 3) {
 			this.showArrows = true;
@@ -223,19 +223,25 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	updateInstallButtonStatus() {
-		this.systemUpdateBridge.getAppStatus(this.appGuid).then(status => {
-			if (status === 'InstallDone' || status === 'InstalledBefore') {
-				this.appDetails.showStatus = this.statusEnum.INSTALLED;
-				this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
-			} else if (status === 'InstallerRunning') {
-				this.appDetails.showStatus = this.statusEnum.INSTALLING;
-				this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+	updateInstallButtonStatus(status) {
+		if (this.appDetails && status) {
+			if (this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
+				|| this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1
+				|| this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
+				if (status === 'InstallDone' || status === 'InstalledBefore') {
+					this.appDetails.showStatus = this.statusEnum.INSTALLED;
+					this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+				} else if (status === 'InstallerRunning') {
+					this.appDetails.showStatus = this.statusEnum.INSTALLING;
+					this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+				} else {
+					this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
+					this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+				}
 			} else {
-				this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
-				this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+				// TODO: Should be Windows Store App
 			}
-		});
+		}
 	}
 
 	async clickInstallButton() {

@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } fro
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { PluginMissingError } from '@lenovo/tan-client-bridge';
+import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -12,7 +12,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
@@ -65,10 +64,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public translate: TranslateService,
 		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
-		private deviceService: DeviceService
+		public deviceService: DeviceService
 	) {	}
 
 	ngOnInit() {
@@ -76,9 +74,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
 		if (this.deviceService.getMachineInfoSync()) {
 			this.brand = this.deviceService.getMachineInfoSync().brand;
-		}
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.commonService, this.ngZone, this.dialogService);
@@ -90,6 +85,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 		this.fetchCMSArticles();
 
+		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+			this.handleError(new PluginMissingError());
+		});
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.language = result.Lang;
@@ -105,10 +103,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
 		if (this.wifiSecurity) {
-			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
-				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
-				this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
-			}
+			this.wifiSecurity.refresh();
+			this.wifiSecurity.getWifiSecurityState();
 			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
@@ -128,7 +124,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	@HostListener('window:focus')
 	onFocus(): void {
 		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+			this.wifiSecurity.refresh();
 		}
 		if (!this.intervalId) {
 			this.pullCHS();
@@ -242,7 +238,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.intervalId = window.setInterval(() => {
 			this.homeSecurity.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}).catch((err: Error) => this.handleError(err));
+			});
 		}, this.interval);
 	}
 }

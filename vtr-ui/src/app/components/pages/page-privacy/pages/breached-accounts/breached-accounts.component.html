@@ -12,7 +12,7 @@
 			<span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breached accounts found
 		</vtr-feature-header>
 
-		<button class="breaches-page__button"
+		<button class="breaches-page__button breaches-page__button--max-width"
 				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
@@ -72,8 +72,8 @@
 
 		<ng-template #offlineBlock>
 			<div class="breached-accounts__offline">
-				<img src="/assets/images/privacy-tab/offline-widget/offline-mode-grey.png"
-					 srcset="/assets/images/privacy-tab/offline-widget/offline-mode-grey@2x.png 2x"
+				<img src="assets/images/privacy-tab/offline-widget/offline-mode-grey.png"
+					 srcset="assets/images/privacy-tab/offline-widget/offline-mode-grey@2x.png 2x"
 					 alt="offline-mode-grey">
 				<p class="breached-accounts__offline-title">Application is offline</p>
 				<p class="breached-accounts__offline-text">When you connect to the internet you can view your breaches scan results.</p>

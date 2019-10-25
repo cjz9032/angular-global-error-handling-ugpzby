@@ -1,15 +1,20 @@
 @import '../../../app.theme.scss';
-
+.light-dashline {
+	border-top: 1px solid $screen_light_15;
+}
 .vtr-ui-smart-performance {
 	.vtr-device-information {
 		box-shadow: $drop_shadow;
+		border-radius: 0.8rem;
+		background: $light;
 		.offline-info-background {
-			border-radius: 0.5rem;
+			border-top-left-radius: 0.8rem;
+			border-top-right-radius: 0.8rem;
 			height: 100%;
 			width: 100%;
 			background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-			padding: 4rem 6rem;
+			padding: 0rem 4rem;
 			h1 {
 				color: $light;
 				font-size: 3.5rem;
@@ -21,9 +26,11 @@
 				opacity: 0.5;
 				line-height: 2;
 			}
-			fa-icon {
+			.icon {
 				color: #7D5FEF;
-				font-size: 15rem;
+				font-size: 13rem;
+				margin-top: 2rem;
+				margin-bottom: -2rem;
 			}
 			.action-button {
 				border-radius: 2.5rem;
@@ -48,6 +55,13 @@
 				color: $shade_darkest;
 				margin-bottom: 2rem;
 			}
+			h2 {
+				font-size: 3rem;
+				font-weight: $weight_light;
+				color: $shade_darkest;
+				margin-bottom: 2rem;
+				padding: 0;
+			}
 			h5 {
 				font-size: 2rem;
 				font-weight: $weight_light;
@@ -59,11 +73,12 @@
 				background: $shade_lightest;
 				width: 100%;
 				padding: 3.5rem 2rem;
+
 				.slider {
 					width: 100%;
-					height: 30px;
+					height: 3rem;
 					background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
-					border-radius: 20px;
+					border-radius: 2rem;
 					position: relative;
 					.condition {
 						padding: 0 1.5rem;
@@ -82,10 +97,229 @@
 							top: -18px;
 						}
 					}
+					.verticle-lines {
+						counter-reset: lines -1;
+						display: flex;
+						justify-content: space-between;
+						padding: 0 2rem;
+						.line{
+							width: 0.1rem;
+							height: 2rem;
+							margin-top: 0.5rem;
+							border-left: 0.2rem dotted $main_lightest;
+							&::after {
+								counter-increment: lines;
+								content: counter(lines);
+								position: relative;
+								bottom: -3.5rem;
+								color: $shade_darker;
+								font-size: 1.2rem;
+								left: -0.5rem;
+							}
+						}
+
+					  }
+					  .divider{
+						position:absolute;
+						left:50%;
+
+						border-left:1px solid $shade_darkest;
+					}
+				}
+				.pc-status-info{
+					margin-left: 2rem;
+					.info-text{
+						color: $alt;
+						margin-top: 4rem;
+						font-size: 1.4rem;
+						width: calc(61% - 2rem);
+						text-align: center;
+						position: relative;
+						span{
+							position: relative;
+							z-index: 9;
+						}
+						&::after{
+							content: "";
+							position: absolute;
+							width: 35%;
+							height: 1rem;
+							background: $shade_lightest;
+							left: calc(50% - 17.5%);
+							bottom: 0rem;
+							z-index: 1;
+						}
+						&::before {
+							content: "";
+							position: absolute;
+							width: 100%;
+							height: 1rem;
+							border: 0.1rem solid $alt;
+							border-top: none;
+							left: 0;
+							bottom: 0.5rem;
+							z-index: 0;
+						}
+					}
+				}
+			}
+			:host ::ng-deep .tabset1 a.nav-link {
+				color: green;
+			  }
+
+			  :host ::ng-deep .tabset1 a.nav-link.active {
+				color: red;
+				font-weight: bold;
+			  }
+			.smart-features{
+				.title{
+					font-weight: $weight_bold;
+				}
+				p {
+					font-size: 1.8rem;
+				}
+				> div {
+					position: relative;
+					&::after{
+						position: absolute;
+						content: "";
+						right: 0;
+						top: 0;
+						bottom: 0;
+						width: 1px;
+						height: 100%;
+						background: $screen_dark_10;
+					}
+					&:last-child{
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+			.icon-bar {
+				background: $grey_lighter;
+				border-radius: 0.8rem;
+
+				.listed-task-icons {
+					padding-left: 0;
+					.icon-box {
+						width: 20%;
+						position: relative;
+						&::after {
+							content: '';
+							position: absolute;
+							height: 100%;
+							width: 1px;
+							background: $light;
+							right: 0;
+							top: 0;
+						}
+						&:last-child {
+							&::after {
+								display: none;
+							}
+						}
+						.icon {
+							font-size: 2.6rem;
+							margin-right: 0.8rem;
+							color: $main_shade;
+						}
+						p {
+							font-size: 1.4rem;
+							max-width: 6rem;
+							margin-top: 0.6rem;
+							line-height: 1.6rem;
+							color: $main_shade;
+						}
+					}
+				}
+			}
+			&::ng-deep {
+				.tabset-main{
+					.nav-tabs {
+						.nav-item {
+							&:last-child {
+								position: relative;
+								&:before {
+									position: absolute;
+									content: '\2605';
+									top: -0.1rem;
+									left: 0.5rem;
+									color: #fff;
+									font-size: 2rem;
+									z-index: 9;
+								}
+								&:after {
+									position: absolute;
+									content: '';
+									width: 0;
+									height: 0;
+									border-left: 3rem solid transparent;
+									border-right: 3rem solid transparent;
+									border-bottom: 3rem solid #4579f0;
+									top: -0.3rem;
+									left: -1.8rem;
+									transform: rotate(-45deg);
+									z-index: 5;
+								}
+								.nav-link{
+									box-sizing: border-box;
+									border: 0.2rem solid $main !important;
+									position: relative;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.free-scan {
+			background: $main_darkest;
+			padding: 3rem;
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+			.contents {
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				.action-button {
+					border-radius: 2.5rem;
+					background: $gradient_main;
+					text-transform: uppercase;
+					padding: 0 5rem;
+					color: $light;
+					font-size: 1.5rem;
+					height: 5rem;
+					font-weight: $weight_medium;
+					line-height: 5rem;
+					text-align: center;
+					border: 0rem;
+					cursor: pointer;
+					margin-right: 3rem;
+				}
+				.description {
+					max-width: 40rem;
+					p {
+						strong {
+							font-weight: $weight_bold;
+						}
+						font-size: 1.6rem;
+						color: $main_lightest;
+					}
 				}
 			}
 		}
 	}
+
+	:host ::ng-deep .tabset1 a.nav-link {
+		color: green;
+	  }
+
+	  :host ::ng-deep .tabset1 a.nav-link.active {
+		color: red;
+		font-weight: bold;
+	  }
 	.warranty-box {
 		border-radius: $border_radius;
 		background-size: cover;
@@ -148,6 +382,164 @@
 			}
 		}
 	}
+
+	.sidebar-widget {
+		border-radius: 0.9rem;
+		background-color: $light;
+		box-shadow: 0 0 1.5rem 0 $screen_dark_15;
+		padding: 4rem;
+		.title {
+			font-size: 2.5rem;
+			font-weight: 500;
+		}
+		.card-info{
+			p {
+				font-size: 1.2rem;
+			}
+		}
+		.link-text {
+			font-size: 1.6rem;
+			text-decoration: underline;
+			letter-spacing: 0.05rem;
+			color: #4a81fd;
+			cursor: pointer;
+			font-weight: 600;
+		}
+		.status-list {
+			padding-left: 0;
+			padding: 1rem 1.4rem;
+			border-radius: 0.8rem;
+			background: $shade_extralight;
+			border: 0.1rem solid $shade_lighter;
+			li {
+				border-bottom: 0.1rem solid $screen_dark_05;
+				line-height: 3rem;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+			.item {
+				font-weight: $weight_bold;
+				font-size: 1.2rem;
+			}
+			.status {
+				font-size: 1.2rem;
+			}
+		}
+		.chevron-list {
+			padding-left: 0;
+			border-radius: 0.8rem;
+			background: $shade_extralight;
+			border: 0.1rem solid $shade_lighter;
+			li {
+				padding: 1.2rem;
+				border-bottom: 0.1rem solid $screen_dark_05;
+				line-height: 3rem;
+				font-size: 1.4rem;
+				.d-flex{
+					&:first-child{
+						.icon{
+							margin-right: 1rem;
+							color: $main;
+							font-size: 2rem;
+						}
+					}
+					&:first-child{
+						.icon{
+							margin-left: 1rem;
+						}
+					}
+				}
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+		}
+		.labels {
+			.badge {
+				font-size: 1.2rem;
+				margin-bottom: 0.6rem;
+			}
+			.badge-primary{
+				position: relative;
+				height: 2rem;
+				&::after {
+					content: "";
+					position: absolute;
+					top:1px;
+					right:-7px;
+					width: 0px;
+					height: 0px;
+					border-top: 7px solid transparent;
+					border-bottom: 7px solid transparent;
+					border-left: 7px solid $main;
+				}
+			}
+			.badge-light {
+				background: transparent;
+			}
+		}
+		.junk-list {
+			position: relative;
+			padding-left: 3rem;
+			list-style: none;
+			li {
+				line-height: 2.7rem;
+				font-size: 1.2rem;
+			}
+		}
+		&.recommended-action{
+			background-color: #526fff;
+			background-image: linear-gradient(45deg, #526fff 25%, #f175fd 100%);
+			.title{
+				color: $light;
+				text-transform: uppercase;
+			}
+			.card-info {
+				p {
+					font-size: 1.6rem;
+					color: $light;
+				}
+			}
+			.pricing{
+				.big-text {
+					font-size: 5.5rem;
+					font-weight: $weight_black;
+					color: $light;
+				}
+				small {
+					text-transform: uppercase;
+					color: $gray;
+					font-size: 1.6rem;
+					font-weight: $weight_black;
+				}
+			}
+			p {
+				color: $light;
+				font-size: 1.6rem;
+			}
+			.action-button {
+				border-radius: 2.5rem;
+				background: $light;
+				text-transform: uppercase;
+				padding: 0 5rem;
+				color: $main;
+				font-size: 1.5rem;
+				height: 5rem;
+				font-weight: $weight_medium;
+				line-height: 5rem;
+				text-align: center;
+				border: 0rem;
+				cursor: pointer;
+				width: 100%;
+			}
+		}
+	}
+
 }
+
+
+
+
 
 
