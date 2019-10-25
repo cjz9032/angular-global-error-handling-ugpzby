@@ -45,7 +45,6 @@ import {
 import {
 	NetworkStatus
 } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
@@ -98,7 +97,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService
@@ -111,9 +109,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
@@ -132,12 +127,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			if (result.GEO === 'cn') {
 				this.showVpn = false;
 			}
-			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
-				this.refreshAll();
-			} else {
-				this.getScore();
-				this.getMaliciousWifi();
+			if (this.wifiSecurity) {
+				this.wifiSecurity.getWifiSecurityState();
 			}
+			this.refreshAll();
 		}).catch(e => {
 			this.showVpn = true;
 		});
@@ -162,7 +155,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.securityAdvisor.wifiSecurity.refresh().then(() => {
 			this.getMaliciousWifi();
 		});
-		this.securityAdvisor.wifiSecurity.getWifiSecurityState().then(() => {
+		this.securityAdvisor.wifiSecurity.getWifiSecurityStateOnce().then(() => {
 			this.getScore();
 		});
 		this.securityAdvisor.passwordManager.refresh().then(() => {

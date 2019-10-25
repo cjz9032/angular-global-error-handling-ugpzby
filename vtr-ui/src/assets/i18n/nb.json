@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Er du sikker på at du vil fjerne denne makrotasten?"
+                    "title": "Er du sikker på at du vil fjerne denne makrotasten?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tidsavbrudd for innspilling.",
@@ -643,7 +644,10 @@
             "collapse": "Komprimer",
             "expand": "Utvid",
             "loader": "Henter <br> status",
-            "loading": "Laster..."
+            "loading": "Laster...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -881,12 +885,12 @@
                     "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
                 "seeDetailsLink": "For detaljer se",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
             },
             "power": {
                 "title": "Strøm",
@@ -1037,39 +1041,39 @@
                         "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Tilbakestilling av batterimåler",
+                        "description": "Denne funksjonen gjør at datamaskinen kan beregne full ladekapasitet mer nøyaktig.",
+                        "barCode": "Strekkode",
+                        "progress": "Fremdrift",
+                        "remaining": "Gjenstår",
+                        "startTime": "Starttidspunkt",
+                        "lastReset": "Siste tilbakestilling",
+                        "fullChargeCapacity": "Kapasitet fulladet",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Tilbakestill",
+                            "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
+                        "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+                        "FCCText": "Fra {{before}} Wh til {{after}} Wh",
+                        "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Fullfør. Vellykket tilbakestilling.",
+                            "ERROR_SHUTDOWN": "Ikke fullført. Systemet slås av.",
+                            "ERROR_LOGOFF": "Ikke fullført. Bruker logget av.",
+                            "ERROR_BATTERY_REMOVE": "Ikke fullført. Batteriet ble tatt ut.",
+                            "ERROR_BATTERY_REPLACE": "Ikke fullført. Batteriet ble byttet ut.",
+                            "ERROR_AC_DETTACH": "Ikke fullført. Strømadapteren ble koblet fra.",
+                            "ERROR_USER_CANCEL": "Ikke fullført. Avbrutt av bruker.",
+                            "ERROR_UNEXPECTED": "Ikke fullført. Det oppstod en uventet feil."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
+                            "description2": "Merk: <br>1. Denne prosessen kan ta flere timer. Unngå å bruke datamaskinen i løpet av denne tiden.<br>2. Lukk alle åpne apper, og koble datamaskinen til strømnettet.<br>3. Batteriladeterskelen er deaktivert under prosessen.",
+                            "continue": "Fortsett",
+                            "cancel": "Avbryt",
+                            "yes": "Ja",
+                            "description3": "Er du sikker på at du vil stoppe tilbakestillingen av batterimåleren?"
                         }
                     }
                 },
@@ -1120,7 +1124,9 @@
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
                         "weekends": "Helger"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1467,7 +1474,7 @@
                     "options": {
                         "near": "Kort avstand",
                         "far": "Lang avstand",
-                        "medium": "Medium"
+                        "medium": "Middels"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1495,7 @@
                     "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
                     "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til Windows Hello-innstillinger",
@@ -1496,7 +1503,7 @@
                 },
                 "resetToDefault": "Tilbakestill",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "JUSTERING AV FØLSOMHET"
                 }
             },
             "intelligentScreen": {
@@ -1565,6 +1572,18 @@
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
+            "superResolution": {
+				"heading": "Intelligent medieavspilling",
+				"title": "Oppskalering av videooppløsning",
+				"desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
+				"tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Denne funksjonen fungerer ikke når følgende er tilfelle:",
+					"description1":"Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
+					"description2":"Datamaskinen er ikke koblet til strømnettet, og batterisparingsmodus er aktivert.",
+					"description3":"CPU-temperaturen er for høy."
+				}
+			},
             "voice": {
                 "title": "Tale",
                 "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekster med funksjonen for tale på tekst, og gir sann tids oversetting fra tale til tekster med Oversettelses funksjonen.",

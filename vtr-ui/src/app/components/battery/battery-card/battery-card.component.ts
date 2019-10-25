@@ -281,7 +281,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
-				keyboard: false,
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})

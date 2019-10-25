@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Tem a certeza de que pretende eliminar esta tecla de macro?"
+                    "title": "Tem a certeza de que pretende eliminar esta tecla de macro?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tempo de Gravação Expirou.",
@@ -643,7 +644,10 @@
             "collapse": "Fechar",
             "expand": "Expandir",
             "loader": "Buscando <br> Status",
-            "loading": "Carregando..."
+            "loading": "Carregando...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
@@ -881,12 +885,12 @@
                     "PermanentError": "A bateria <b>falhou devido ao desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
                     "NotSupportACAdapterDetail": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
                     "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>A alimentação {{acWattage}} W {{acAdapterType}} está ligada.</b>"
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
                 "seeDetailsLink": "Ver detalhes",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
             },
             "power": {
                 "title": "Alimentação",
@@ -1037,39 +1041,39 @@
                         "note": "Se a Deteção automática estiver marcada, o computador ativa automaticamente o Modo de alimentação em avião quando deteta um ambiente a bordo de um avião e desativa-o quando deixa o avião."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Reposição do indicador de bateria",
+                        "description": "Esta funcionalidade permite ao computador efetuar uma estimativa da capacidade de carga total com maior precisão.",
+                        "barCode": "Código de barras",
+                        "progress": "Progresso",
+                        "remaining": "Restante",
+                        "startTime": "Hora de início",
+                        "lastReset": "Última reposição",
+                        "fullChargeCapacity": "Capacidade de carga total",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Redefinir",
+                            "stop": "Parar"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
+                        "FCCText": "De {{before}} Wh até {{after}} Wh",
+                        "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Concluído. Reposição com êxito.",
+                            "ERROR_SHUTDOWN": "Incompleto. Encerramento do sistema.",
+                            "ERROR_LOGOFF": "Incompleto. Utilizador com sessão terminada.",
+                            "ERROR_BATTERY_REMOVE": "Incompleto. Bateria removida.",
+                            "ERROR_BATTERY_REPLACE": "Incompleto. Bateria substituída.",
+                            "ERROR_AC_DETTACH": "Incompleto. Transformador CA desligado.",
+                            "ERROR_USER_CANCEL": "Incompleto. Cancelado pelo utilizador.",
+                            "ERROR_UNEXPECTED": "Incompleto. Ocorreu um erro inesperado."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "O processo de reposição é o seguinte:<br>Carregar totalmente a bateria  -->  Descarregar totalmente a bateria  -->  Voltar a carregar totalmente a bateria",
+                            "description2": "Notas: <br>1. O processo poderá demorar várias horas. Evite utilizar o computador durante este período.<br>2. Feche todas as aplicações abertas e ligue o computador à alimentação CA.<br>3. Durante o processo, a função de limiar de carregamento da bateria é desativada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sim",
+                            "description3": "Tem a certeza de que pretende parar a reposição do indicador de bateria?"
                         }
                     }
                 },
@@ -1120,7 +1124,9 @@
                         "everyday": "Todo dia",
                         "weekdays": "Dias úteis",
                         "weekends": "Finais de semana"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MAIS",
@@ -1467,7 +1474,7 @@
                     "options": {
                         "near": "Perto",
                         "far": "Longe",
-                        "medium": "Medium"
+                        "medium": "Médio"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1495,7 @@
                     "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
                     "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático.",
                     "description6": "4. Se o Modo de avião estiver ativo no computador, estas funcionalidades estão desativadas.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "A precisão varia de acordo com o tamanho do corpo, postura e frequência de movimento. Se o seu computador estiver bloqueado inesperadamente, ajuste a barra de sensibilidade para melhorar a precisão."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Vá para as definições Windows Hello",
@@ -1496,7 +1503,7 @@
                 },
                 "resetToDefault": "Redefinir",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "AJUSTE DA SENSIBILIDADE"
                 }
             },
             "intelligentScreen": {
@@ -1565,6 +1572,18 @@
                 "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
                 "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
             },
+            "superResolution": {
+				"heading": "Multimédia Inteligente",
+				"title": "Melhorar a resolução de vídeo",
+				"desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label> Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Quando ativada, é recomendado ligar o computador à alimentação CA.</label></p>",
+				"tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Esta funcionalidade não funciona quando:",
+					"description1":"O computador não está ligado à alimentação CA e a carga da bateria é inferior a 20%.",
+					"description2":"O computador não está ligado à alimentação CA e o modo de poupança de bateria está ativado.",
+					"description3":"A temperatura da CPU é demasiado elevada."
+				}
+			},
             "voice": {
                 "title": "Voz",
                 "description": "O Lenovo Voice ajuda a converter a sua voz em texto através da função Voz em texto e fornece tradução em tempo real da voz para o texto com a função de Tradução.",

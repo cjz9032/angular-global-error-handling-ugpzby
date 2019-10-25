@@ -96,7 +96,8 @@
 				}
 			}
 
-			&.black, &.text-blue {
+			&.black,
+			&.text-blue {
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
@@ -119,6 +120,11 @@
 				&:hover {
 					text-decoration: none;
 				}
+				&:focus + [role="link"] {
+					// display: block;
+					// position: absolute;
+					top: 100%;
+				}
 			}
 
 			.item-icon-image {
@@ -126,15 +132,15 @@
 				height: 3rem;
 				width: 3rem;
 			}
-			.item-icon-class{
+			.item-icon-class {
 				display: flex;
 				height: 3rem;
 				width: 3rem;
 				align-items: center;
 				margin: auto;
-				.icon{
-					font-size: 2rem;
-					margin: auto
+				.icon {
+					font-size: $fontsize_lg;
+					margin: auto;
 				}
 			}
 
@@ -144,7 +150,7 @@
 				cursor: pointer;
 				.title {
 					cursor: pointer;
-					font-size: $body;
+					font-size: $fontsize_md;
 					font-weight: $weight_bold;
 					float: left;
 					padding-top: 0.1rem;
@@ -165,7 +171,7 @@
 					padding-top: 0.3rem;
 					float: right;
 					text-align: right;
-					font-size: 1.2rem;
+					font-size: $fontsize_xxs;
 					color: $shade_dark;
 					font-weight: $weight_medium;
 					max-width: 50%;
@@ -183,7 +189,8 @@
 						color: $stop_dark;
 					}
 
-					&.blue, &.text-blue {
+					&.blue,
+					&.text-blue {
 						color: $main_gstart;
 					}
 
@@ -208,10 +215,16 @@
 						&:hover {
 							text-decoration: none;
 						}
+						&:focus + [role="link"] {
+							//display: block;
+							//position: absolute;
+							//top: 100%;
+							text-decoration: none;
+						}
 					}
 				}
 
-				.sub-text{
+				.sub-text {
 					font-size: 1.2rem;
 					margin-top: 2px;
 					white-space: nowrap;
@@ -244,5 +257,4 @@
 			cursor: default !important;
 		}
 	}
-
 }

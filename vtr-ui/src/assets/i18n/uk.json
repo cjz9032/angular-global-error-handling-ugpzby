@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Дійсно очистити цю клавішу макросів?"
+                    "title": "Дійсно очистити цю клавішу макросів?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Час записування сплив.",
@@ -643,7 +644,10 @@
             "collapse": "Згорнути",
             "expand": "Розгорнути",
             "loader": "Отримання <br> статусу",
-            "loading": "Завантаження..."
+            "loading": "Завантаження...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
@@ -881,12 +885,12 @@
                     "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
                 "seeDetailsLink": "Показати відомості",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
             },
             "power": {
                 "title": "Живлення",
@@ -1037,39 +1041,39 @@
                         "note": "Якщо функцію автовизначення ввімкнено та комп'ютер визначить, що знаходиться на борту літака, він автоматично перейде у режим \"У літаку\" та вийде з нього, коли виявить, що політ завершено."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Скидання даних акумуляторного вольтметра",
+                        "description": "Ця функція дає комп'ютеру змогу точніше розраховувати повну ємність акумулятора.",
+                        "barCode": "Штрих-код",
+                        "progress": "Прогрес",
+                        "remaining": "Залишилося",
+                        "startTime": "Час початку",
+                        "lastReset": "Останнє скидання",
+                        "fullChargeCapacity": "Повна ємність акумулятора",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Скидання",
+                            "stop": "Зупинити"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} з {{stageNum}}: калібрування до повного заряду",
+                        "progressText2": "{{stage}} з {{stageNum}}: калібрування до низького заряду",
+                        "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
+                        "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Готово. Успішне скидання.",
+                            "ERROR_SHUTDOWN": "Не завершено. Система завершила роботу.",
+                            "ERROR_LOGOFF": "Не завершено. Користувач вийшов із системи.",
+                            "ERROR_BATTERY_REMOVE": "Не завершено. Акумулятор знято.",
+                            "ERROR_BATTERY_REPLACE": "Не завершено. Акумулятор замінено.",
+                            "ERROR_AC_DETTACH": "Не завершено. Адаптер живлення змінного струму від’єднано.",
+                            "ERROR_USER_CANCEL": "Не завершено. Скасовано користувачем.",
+                            "ERROR_UNEXPECTED": "Не завершено. Сталася невідома помилка."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Скидання виконуйте в такій послідовності:<br>повністю зарядіть акумулятор  -->  повністю розрядіть акумулятор  -->  повністю перезарядіть акумулятор",
+                            "description2": "Примітка. <br>1. Цей процес може зайняти декілька годин. Не користуйтеся комп'ютером під час цієї процедури.<br>2. Закрийте всі відкриті програми та підключіть комп’ютер до джерела живлення змінного струму.<br>3. Під час процесу функція граничного значення заряду акумулятора вимкнуто.",
+                            "continue": "Далі",
+                            "cancel": "Скасувати",
+                            "yes": "Так",
+                            "description3": "Дійсно зупинити скидання даних акумуляторного вольтметра?"
                         }
                     }
                 },
@@ -1120,7 +1124,9 @@
                         "everyday": "Щодня",
                         "weekdays": "Будні",
                         "weekends": "Вихідні дні"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "ДОКЛАДНІШЕ",
@@ -1467,7 +1474,7 @@
                     "options": {
                         "near": "Поблизу",
                         "far": "Далеко",
-                        "medium": "Medium"
+                        "medium": "Середній"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1495,7 @@
                     "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
                     "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
@@ -1496,7 +1503,7 @@
                 },
                 "resetToDefault": "Скидання",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "НАЛАШТУВАННЯ СЕНСОРНОЇ ПАНЕЛІ"
                 }
             },
             "intelligentScreen": {
@@ -1565,6 +1572,18 @@
                 "desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",
                 "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
             },
+            "superResolution": {
+				"heading": "Інтелектуальне відтворення мультимедіа",
+				"title": "Підвищення роздільної здатності відео",
+				"desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label> Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Коли ви вмикаєте цю функцію, рекомендуємо підключати комп'ютер до джерела живлення змінного струму.</label></p>",
+				"tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Ця функція не працює, коли:",
+					"description1":"Комп'ютер не підключено до джерела живлення змінного струму, і рівень заряду акумулятора нижче 20 %.",
+					"description2":"Комп'ютер не підключено до джерела живлення змінного струму, і ввімкнуто режим економії заряду.",
+					"description3":"Температура процесора зависока."
+				}
+			},
             "voice": {
                 "title": "Голос",
                 "description": "Lenovo Voice перетворює ваш голос у текст за допомогою функції \"Голос у текст\" і забезпечує письмовий переклад введених голосом даних у режимі реального часу за допомогою функції перекладу.",

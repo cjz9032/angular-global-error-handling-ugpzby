@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "매크로 키를 지우시겠습니까?"
+                    "title": "매크로 키를 지우시겠습니까?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "기록 시간 초과.",
@@ -643,7 +644,10 @@
             "collapse": "축소",
             "expand": "확장",
             "loader": "페치 상태",
-            "loading": "로드 중..."
+            "loading": "로드 중...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -881,12 +885,12 @@
                     "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
                     "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>"
                 },
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
                 "seeDetailsLink": "세부사항 참조",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오."
             },
             "power": {
                 "title": "전원",
@@ -1037,39 +1041,39 @@
                         "note": "자동 탐지를 선택하면 비행기 탑승 환경을 탐지했을 때 컴퓨터가 비행기 전원 모드를 자동으로 켜고 비행기에서 내리면 끕니다."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "배터리 게이지 리셋",
+                        "description": "이 기능을 사용하면 컴퓨터가 더 정확하게 완전 충전 용량을 측정할 수 있습니다.",
+                        "barCode": "바코드",
+                        "progress": "진행",
+                        "remaining": "남은 시간",
+                        "startTime": "시작 시간",
+                        "lastReset": "최근 리셋",
+                        "fullChargeCapacity": "완전 충전 용량",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "재설정",
+                            "stop": "중지"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
+                        "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
+                        "FCCText": "{{before}} Wh에서 {{after}} Wh",
+                        "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "완료되었습니다. 리셋에 성공했습니다.",
+                            "ERROR_SHUTDOWN": "완료되지 않았습니다. 시스템을 종료합니다.",
+                            "ERROR_LOGOFF": "완료되지 않았습니다. 사용자가 로그아웃했습니다.",
+                            "ERROR_BATTERY_REMOVE": "완료되지 않았습니다. 배터리가 제거되었습니다.",
+                            "ERROR_BATTERY_REPLACE": "완료되지 않았습니다. 배터리가 교체되었습니다.",
+                            "ERROR_AC_DETTACH": "완료되지 않았습니다. AC 전원 어댑터가 분리되었습니다.",
+                            "ERROR_USER_CANCEL": "완료되지 않았습니다. 사용자가 취소했습니다.",
+                            "ERROR_UNEXPECTED": "완료되지 않았습니다. 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
+                            "description2": "참고: <br>1. 이 절차는 몇 시간 정도 걸릴 수 있습니다. 이 시간 동안 컴퓨터 사용을 지양하십시오.<br>2. 열려 있는 모든 앱을 닫고 컴퓨터를 AC 전원에 연결하십시오.<br>3. 절차가 진행되는 동안, 배터리 충전 임계값 기능은 꺼집니다.",
+                            "continue": "계속",
+                            "cancel": "취소",
+                            "yes": "예",
+                            "description3": "배터리 게이지 리셋을 중단하시겠습니까?"
                         }
                     }
                 },
@@ -1120,7 +1124,9 @@
                         "everyday": "매일",
                         "weekdays": "평일",
                         "weekends": "주말"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1467,7 +1474,7 @@
                     "options": {
                         "near": "근처",
                         "far": "보다 멀리",
-                        "medium": "Medium"
+                        "medium": "중간"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1495,7 @@
                     "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
                     "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
@@ -1496,7 +1503,7 @@
                 },
                 "resetToDefault": "재설정",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "감도 조정"
                 }
             },
             "intelligentScreen": {
@@ -1565,6 +1572,18 @@
                 "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
+            "superResolution": {
+				"heading": "지능형 미디어",
+				"title": "비디오 해상도 업스케일링",
+				"desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
+				"tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"다음의 경우에는 이 기능이 작동하지 않습니다.",
+					"description1":"컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
+					"description2":"컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+					"description3":"CPU 온도가 너무 높습니다."
+				}
+			},
             "voice": {
                 "title": "음성",
                 "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",

@@ -23,8 +23,12 @@ export class HomeSecurityCommon {
 			this.isOnline = isOnline;
 	}
 
-	openCornet() {
-		this.connectedHomeSecurity.visitWebConsole();
+	openCoronet() {
+		if (!this.isOnline) {
+			this.dialogService.homeSecurityOfflineDialog();
+		} else {
+			this.connectedHomeSecurity.visitWebConsole();
+		}
 	}
 
 	upgrade() {

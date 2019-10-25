@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Möchten Sie diese Makrotaste wirklich löschen?"
+                    "title": "Möchten Sie diese Makrotaste wirklich löschen?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Zeitüberschreitung für die Aufzeichnung.",
@@ -643,7 +644,10 @@
             "collapse": "Ausblenden",
             "expand": "Erweitern",
             "loader": "Abrufen des <br> Status",
-            "loading": "Wird geladen..."
+            "loading": "Wird geladen...",
+            "from": "from",
+            "to": "to",
+            "clickToChange": "click to change"
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
@@ -881,12 +885,12 @@
                     "PermanentError": "Am Akku ist <b>aufgrund von normalem Gebrauch ein Fehler aufgetreten</b>. Der Akku kann nicht aufgeladen werden. Tauschen Sie den Akku aus.",
                     "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
                     "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>"
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
                 "seeDetailsLink": "Details anzeigen",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen."
             },
             "power": {
                 "title": "Stromversorgung",
@@ -1037,39 +1041,39 @@
                         "note": "Ist die Funktion für automatische Erkennung aktiviert, schaltet der Computer den Flugzeug-Energiemodus automatisch ein, sobald er eine Umgebung erkennt, die dem Inneren einer Flugzeugkabine entspricht, und schaltet ihn beim Verlassen dieser Umgebung wieder aus."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+                        "title": "Akkuzustandsanzeiger zurücksetzen",
+                        "description": "Mit dieser Funktion kann Ihr Computer die volle Ladekapazität genauer berechnen.",
                         "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "progress": "Fortschritt",
+                        "remaining": "Verbleibend",
+                        "startTime": "Startzeit",
+                        "lastReset": "Zuletzt zurückgesetzt",
+                        "fullChargeCapacity": "Kapazität bei voller Ladung",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Zurücksetzen",
+                            "stop": "Stoppen"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
+                        "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
+                        "FCCText": "Von {{before}} Wh auf {{after}} Wh",
+                        "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Fertig. Erfolgreich zurückgesetzt.",
+                            "ERROR_SHUTDOWN": "Nicht abgeschlossen. Das System wird heruntergefahren.",
+                            "ERROR_LOGOFF": "Nicht abgeschlossen. Der Benutzer ist abgemeldet.",
+                            "ERROR_BATTERY_REMOVE": "Nicht abgeschlossen. Der Akku wurde entfernt.",
+                            "ERROR_BATTERY_REPLACE": "Nicht abgeschlossen. Der Akku wurde ausgetauscht.",
+                            "ERROR_AC_DETTACH": "Nicht abgeschlossen. Das Netzteil wurde entfernt.",
+                            "ERROR_USER_CANCEL": "Nicht abgeschlossen. Die Aktion wurde vom Benutzer abgebrochen.",
+                            "ERROR_UNEXPECTED": "Nicht abgeschlossen. Ein unerwarteter Fehler ist aufgetreten."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Das Zurücksetzen wird wie folgt durchgeführt:<br>Akku wird vollständig aufgeladen  -->  Akku wird vollständig entladen  -->  Akku wird vollständig aufgeladen",
+                            "description2": "Hinweise: <br>1. Der Prozess kann mehrere Stunden dauern. Verwenden Sie den Computer während dieser Zeit nicht.<br>2. Schließen Sie alle offenen Anwendungen und schließen Sie Ihren Computer an die Stromversorgung an.<br>3. Während des Vorgangs ist die Funktion für den Schwellenwert für Akkuladung deaktiviert.",
+                            "continue": "Weiter",
+                            "cancel": "Abbrechen",
+                            "yes": "Ja",
+                            "description3": "Möchten Sie das Zurücksetzen des Akkustandsanzeigers wirklich anhalten?"
                         }
                     }
                 },
@@ -1120,7 +1124,9 @@
                         "everyday": "Jeden Tag",
                         "weekdays": "Wochentage",
                         "weekends": "Wochenenden"
-                    }
+                    },
+                    "checkbox": "Auto adjusting your computer's active time based on your usage",
+                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
                 }
             },
             "audio": {
@@ -1400,7 +1406,8 @@
                 },
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
                 },
                 "controlOptions": {
                     "more": "MEHR",
@@ -1467,7 +1474,7 @@
                     "options": {
                         "near": "Nah",
                         "far": "Weit",
-                        "medium": "Medium"
+                        "medium": "Mittel"
                     },
                     "tooltipcontent": {
                         "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
@@ -1488,7 +1495,7 @@
                     "description4": "2. Wenn sich der Computer im Ruhezustand befindet oder ausgeschaltet ist. Die Zero-Touch-Anmeldung funktioniert nicht.",
                     "description5": "3. Passen Sie den Computerbildschirm auf einen Winkel an, bei dem die IR-Kamera Ihr Gesicht für die automatische Anmeldung erkennen kann.",
                     "description6": "4. Wenn der Flugzeugmodus auf Ihrem Computer aktiviert ist, sind die folgenden Funktionen deaktiviert.",
-                    "description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
+                    "description7": "Die Genauigkeit variiert je nach Körpergröße, Haltung und Bewegungshäufigkeit. Wenn Ihr Computer unerwartet gesperrt wird, passen Sie die Empfindlichkeit an, um die Genauigkeit zu verbessern."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello-Einstellungen aufrufen",
@@ -1496,7 +1503,7 @@
                 },
                 "resetToDefault": "Zurücksetzen",
                 "sensitivityAdjusting": {
-                    "title": "SENSITIVITY ADJUSTING"
+                    "title": "ANPASSEN DER EMPFINDLICHKEIT"
                 }
             },
             "intelligentScreen": {
@@ -1565,6 +1572,18 @@
                 "desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
                 "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
+            "superResolution": {
+				"heading": "Intelligente Medien",
+				"title": "Upscaling der Videoauflösung",
+				"desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
+				"tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Diese Funktion funktioniert nicht, wenn:",
+					"description1":"Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
+					"description2":"Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
+					"description3":"Die CPU-Temperatur zu hoch ist."
+				}
+			},
             "voice": {
                 "title": "Sprache",
                 "description": "Lenovo Voice hilft Ihnen dabei, Ihre Stimme mit der Funktion \"Sprache zu Text\" in Text umzuwandeln und bietet mit der Übersetzungsfunktion auch die Echtzeit-Übersetzung von Sprache zu Text.",

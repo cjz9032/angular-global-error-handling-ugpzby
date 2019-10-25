@@ -16,7 +16,6 @@ import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
-import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DisplayColorTempComponent } from 'src/app/components/display/display-color-temp/display-color-temp.component';
 import { DolbyModesTranslationPipe } from 'src/app/pipe/dolby-modes-translation.pipe';
@@ -89,41 +88,8 @@ import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircl
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 
-library.add(faCheck);
-library.add(faCheckCircle);
-library.add(faChevronCircleUp);
-library.add(faPlane);
-library.add(faThumbtack);
-library.add(faQuestionCircle);
-library.add(faBatteryHalf);
-library.add(faBatteryBolt);
-library.add(faBatteryQuarter);
-library.add(faUsb);
-library.add(faTachometerFast);
-library.add(faMicrophone);
-library.add(faKeyboard);
-library.add(faEye);
-library.add(faTv);
-library.add(faCamera);
-library.add(faGem);
-library.add(faBatteryThreeQuarters);
-library.add(faBatteryFull);
-library.add(faChevronDown);
-library.add(faChevronUp);
-library.add(faCaretUp);
-library.add(faCaretDown);
-library.add(faTimesCircle);
-library.add(faPlusCircle);
-library.add(faMinusCircle);
-library.add(falCheck);
-library.add(falTimes);
-library.add(faCircle);
-library.add(falCircle);
-library.add(faSync);
-library.add(faCircleNotch);
-library.add(faAngleRight);
-library.add(faCalendarAlt);
 
 @NgModule({
 	declarations: [
@@ -138,7 +104,6 @@ library.add(faCalendarAlt);
 		CameraBackgroundBlurComponent,
 		CameraControlComponent,
 		ClockComponent,
-		ContainerCollapsibleComponent,
 		DisplayColorTempComponent,
 		DolbyModesTranslationPipe,
 		EyeCareModeComponent,
@@ -162,7 +127,8 @@ library.add(faCalendarAlt);
 		SubpageDeviceSettingsPowerComponent,
 		UserDefinedKeyComponent,
 		TopRowFunctionsComponent,
-		VoiceComponent
+		VoiceComponent,
+		SmartStandbyGraphComponent
 	],
 	imports: [
 		CommonModule,
@@ -196,4 +162,41 @@ library.add(faCalendarAlt);
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareSettingsModule {}
+export class HardwareSettingsModule {
+	constructor() {
+		library.add(faCheck);
+		library.add(faCheckCircle);
+		library.add(faChevronCircleUp);
+		library.add(faPlane);
+		library.add(faThumbtack);
+		library.add(faQuestionCircle);
+		library.add(faBatteryHalf);
+		library.add(faBatteryBolt);
+		library.add(faBatteryQuarter);
+		library.add(faUsb);
+		library.add(faTachometerFast);
+		library.add(faMicrophone);
+		library.add(faKeyboard);
+		library.add(faEye);
+		library.add(faTv);
+		library.add(faCamera);
+		library.add(faGem);
+		library.add(faBatteryThreeQuarters);
+		library.add(faBatteryFull);
+		library.add(faChevronDown);
+		library.add(faChevronUp);
+		library.add(faCaretUp);
+		library.add(faCaretDown);
+		library.add(faTimesCircle);
+		library.add(faPlusCircle);
+		library.add(faMinusCircle);
+		library.add(falCheck);
+		library.add(falTimes);
+		library.add(faCircle);
+		library.add(falCircle);
+		library.add(faSync);
+		library.add(faCircleNotch);
+		library.add(faAngleRight);
+		library.add(faCalendarAlt);
+	}
+}
