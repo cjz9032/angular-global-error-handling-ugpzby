@@ -1668,6 +1668,10 @@ export class VantageShellService {
 	}
 
 	public getSuperResolution(): any {
-		throw new Error('Method not implemented.');
+		const inputControlLinks: any = {
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false })
+		};
+
+		return inputControlLinks;
 	}
 }
