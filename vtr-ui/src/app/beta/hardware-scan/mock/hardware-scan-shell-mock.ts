@@ -3436,22 +3436,6 @@ export const HardwareScanShellMock: any = {
 
     nextScans: undefined,
 
-    recoverBadSectorsIntermediateResponse: {
-        "devices":[
-           {
-              "deviceId":0,
-              "deviceName":"KINGSTON SA400S37240G - 223.57 GBs ",
-              "numberOfSectors":0,
-              "numberOfBadSectors":0,
-              "numberOfFixedSectors":0,
-              "numberOfNonFixedSectors":0,
-              "elapsedTime":"",
-              "percentageComplete":0,
-              "status":1
-           }
-        ]
-     },
-
     recoverBadSectorsResponse: {
         "devices":[
            {
@@ -3469,24 +3453,40 @@ export const HardwareScanShellMock: any = {
      },
 
     recoverBadSectors: function(payload, intermediate, cancelHandler) {
+        HardwareScanShellMock.cancelRequested = false;
         return new Promise((resolve, reject) => {
             let progress = 0;
             let progressInterval = setInterval(() => {
                 progress += 10;
+
+                if (HardwareScanShellMock.cancelRequested) {
+                    clearInterval(progressInterval);
+                    HardwareScanShellMock.recoverBadSectorsResponse.devices[0].status = 5;
+                    HardwareScanShellMock.recoverBadSectorsResponse.devices[0].percentageComplete = 100;
+                    return resolve(HardwareScanShellMock.recoverBadSectorsResponse);
+                }
+
+                HardwareScanShellMock.recoverBadSectorsResponse.devices[0].percentageComplete = progress;
+                HardwareScanShellMock.recoverBadSectorsResponse.devices[0].status = 1;
+                intermediate(HardwareScanShellMock.recoverBadSectorsResponse);
+
                 if (progress === 100) {
                     clearInterval(progressInterval);
-                    resolve(HardwareScanShellMock.recoverBadSectorsResponse);
-                } else {
-                    HardwareScanShellMock.recoverBadSectorsIntermediateResponse.devices[0].percentageComplete = progress;
-                    intermediate(HardwareScanShellMock.recoverBadSectorsIntermediateResponse);
+                    HardwareScanShellMock.recoverBadSectorsResponse.devices[0].status = 2;
+                    return resolve(HardwareScanShellMock.recoverBadSectorsResponse);
                 }
             }, 500);
         });
     },
 
-    cancelScan: {
-        "cancelStatus": "OK",
-        "finalDoScanResponse": null
+    cancelScan: function(payload, intermediate, cancelHandler) {
+        return new Promise((resolve, reject) => {
+            HardwareScanShellMock.cancelRequested = true;
+            return {
+                "cancelStatus": "OK",
+                "finalDoScanResponse": null
+            }
+        });
     },
 
     previousResults: {
