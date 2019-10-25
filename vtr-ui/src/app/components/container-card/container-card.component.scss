@@ -532,6 +532,7 @@
 		.title {
 			color: $main_dark;
 			font-size: 2.5rem;
+			line-height: 1.1em;
 			font-weight: $weight_bold;
 
 		/*	@media #{$mediaquery_X4} {
@@ -563,6 +564,8 @@
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
+			line-height: 1.1em;
+			padding-top: 1rem;
 
 			/*@media #{$mediaquery_X4} {
 				font-size: 1.8rem;

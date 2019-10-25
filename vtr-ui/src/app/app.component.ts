@@ -333,6 +333,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			return;
 		}
 		sessionStorage.clear();
+		this.checkIsDesktopOrAllInOneMachine();
 		this.getMachineInfo();
 
 		this.sendAppLaunchMetric('launch');
@@ -372,7 +373,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		});
 
-		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
 		this.serverSwitchThis();

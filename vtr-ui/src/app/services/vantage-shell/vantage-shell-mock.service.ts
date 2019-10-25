@@ -9,6 +9,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
+import { of } from 'rxjs';
 
 declare var Windows;
 
@@ -485,16 +486,16 @@ export class VantageShellService {
 				}]
 		};
 		modernPreload.initialize = (serialNumber) => ({
-			if (serialNumber) {
+			if(sn) {
 				return true;
 			}
 		});
 		modernPreload.getIsEntitled = () => {
 			return new Promise((resolve) => {
 				setTimeout(() => {
-					resolve({result: true});
+					resolve({ result: true });
 				}, 1000);
-			})
+			});
 		};
 		modernPreload.getEntitledAppList = () => {
 			return new Promise((resolve) => {
@@ -506,29 +507,29 @@ export class VantageShellService {
 		modernPreload.downloadOrInstallEntitledApps = (appList, callback, cancelHandler) => {
 			return new Promise((resolve) => {
 				const progressResponseList = [];
-				var cancelled = false;
+				let cancelled = false;
 				cancelHandler.cancel = () => {
 					cancelled = true;
-				}
+				};
 				appList.forEach(app => {
-					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '0'}]);
-					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '10'}]);
-					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '50'}]);
-					progressResponseList.push([{appID: app.appID, status: 'downloading', progress: '90'}]);
-					progressResponseList.push([{appID: app.appID, status: 'downloaded', progress: '100'}]);
-					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
-					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
-					progressResponseList.push([{appID: app.appID, status: 'installing', progress: '0'}]);
-					progressResponseList.push([{appID: app.appID, status: 'installed', progress: '100'}]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '10' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '50' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '90' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloaded', progress: '100' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installing', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installing', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installing', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installed', progress: '100' }]);
 				});
-				const downloadAndInstallResult = {appList};
+				const downloadAndInstallResult = { appList };
 				downloadAndInstallResult.appList.forEach(app => {
 					app.status = 'installed';
 					app.progress = '100';
 				});
 
-				var i = 0;
-				var downloadInterval = setInterval(() => {
+				let i = 0;
+				const downloadInterval = setInterval(() => {
 					if (i < progressResponseList.length && !cancelled) {
 						callback(progressResponseList[i]);
 						i++;
@@ -538,7 +539,7 @@ export class VantageShellService {
 					}
 				}, 1000);
 			});
-		}
+		};
 		return modernPreload;
 	}
 
@@ -680,7 +681,7 @@ export class VantageShellService {
 				getWifiSecurityStateOnce(): Promise<any> {
 					return Promise.resolve();
 				},
-				updateWifiSecurityState(): void {},
+				updateWifiSecurityState(): void { },
 				getWifiSecurityState(): Promise<any> {
 					return Promise.resolve();
 				},
@@ -694,11 +695,11 @@ export class VantageShellService {
 					return this;
 				},
 				refresh() {
-					let p1 = new Promise((resolve) => {});
-					let p2 = new Promise((resolve) => {});
+					const p1 = new Promise((resolve) => { });
+					const p2 = new Promise((resolve) => { });
 					return Promise.all([p1, p2]);
 				},
-				cancelGetWifiSecurityState() {}
+				cancelGetWifiSecurityState() { }
 			},
 			setScoreRegistry() {
 				return Promise.resolve(true);
@@ -724,7 +725,7 @@ export class VantageShellService {
 	}
 
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
-		const homeSecurity: Phoenix.ConnectedHomeSecurity  = {
+		const homeSecurity: Phoenix.ConnectedHomeSecurity = {
 			account: {
 				state: CHSAccountState.trial,
 				role: undefined,
@@ -785,7 +786,7 @@ export class VantageShellService {
 				{ name: 'NotActivatedWindows', vulnerable: false },
 				{ name: 'UacNotification', vulnerable: false }],
 			getDevicePosture() { return Promise.resolve(); },
-			cancelGetDevicePosture() {},
+			cancelGetDevicePosture() { },
 			on(type, handler) {
 				return this;
 			},
@@ -1001,12 +1002,12 @@ export class VantageShellService {
 	 * returns cameraSettings object from VantageShellService of JS Bridge
 	 */
 	public getCameraSettings(): any {
-	 const cameraSettings: any = {
-		startMonitor: this.getPromise(true),
-		getCameraSettings: this.getPromise(true)
-	 };
+		const cameraSettings: any = {
+			startMonitor: this.getPromise(true),
+			getCameraSettings: this.getPromise(true)
+		};
 
-	 return cameraSettings;
+		return cameraSettings;
 	}
 	public getVantageToolBar(): any {
 		const devicePower: any = {};
@@ -1120,10 +1121,109 @@ export class VantageShellService {
 	}
 
 	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
-		}
-		return undefined;
+		return {
+			openInstaller: () => of(true),
+			openUriInDefaultBrowser: (uri) => of(true),
+			openFigleafByUrl: (uri) => of(true),
+			sendContractToPlugin: (contract): any => {
+				switch (contract.command) {
+					case 'Get-InstalledBrowsers':
+						return of({ browsers: ['chrome', 'firefox', 'edge'] });
+					case 'Get-AccessiblePasswords':
+						return of({ chrome: 11, firefox: 1, edge: 1 });
+					case 'Get-MaskedPasswords':
+						return of({
+							edge: [{
+								url: 'https://test.test.com/my.policy',
+								domain: 'test.com',
+								login: 't****',
+								password: 't*************)'
+							}],
+							chrome: [
+								{
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}
+							],
+							firefox: [{
+								url: 'https://test.test.com/my.policy',
+								domain: 'test.com',
+								login: 't****',
+								password: 't*************)'
+							}]
+						});
+					case 'Get-VisitedWebsites':
+						return of({
+							visitedWebsites: [{
+								domain: 'google.com',
+								totalVisitsCount: 26871,
+								lastVisitTimeUtc: '2019-10-24T10:50:28Z'
+							}, {
+								domain: 'facebook.com',
+								totalVisitsCount: 3715,
+								lastVisitTimeUtc: '2019-10-24T08:16:21Z'
+							}],
+						});
+				}
+			}
+		};
 	}
 
 	public getUserGuide() {
@@ -1153,7 +1253,7 @@ export class VantageShellService {
 				'Sketch',
 			]
 		};
-		const cameraBlur: any = {getCameraBlurSettings: this.getPromise(obj) };
+		const cameraBlur: any = { getCameraBlurSettings: this.getPromise(obj) };
 		return cameraBlur;
 	}
 
@@ -1582,5 +1682,13 @@ export class VantageShellService {
 
 	public getVoipHotkeysObject() {
 		throw new Error('Method not implemented.');
+	}
+
+	public getSuperResolution(): any {
+		const inputControlLinks: any = {
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false })
+		};
+
+		return inputControlLinks;
 	}
 }
