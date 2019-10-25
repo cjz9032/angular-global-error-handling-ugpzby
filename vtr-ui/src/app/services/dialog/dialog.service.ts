@@ -114,7 +114,6 @@ export class DialogService {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
-				size: 'lg',
 				centered: true,
 				windowClass: 'home-security-plugin-missing-modal'
 			});
@@ -135,7 +134,6 @@ export class DialogService {
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
 			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
 				backdrop: 'static',
-				size: 'lg',
 				centered: true,
 				windowClass: 'home-security-offline-modal'
 			});
