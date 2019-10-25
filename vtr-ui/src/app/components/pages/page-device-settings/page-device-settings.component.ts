@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -13,6 +13,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -20,7 +21,9 @@ import { EMPTY } from 'rxjs';
 	styleUrls: ['./page-device-settings.component.scss']
 })
 export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
-
+	routerSubscription: Subscription;
+	activeElement: HTMLElement;
+	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 	title = 'Device Settings';
 	back = 'BACK';
 	backarrow = '< ';
@@ -70,7 +73,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		public audioService: AudioService,
 		private logger: LoggerService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private router: Router
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -117,6 +121,28 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getMicrophoneSettings();
 		}
+
+		this.routerSubscription = this.router.events.subscribe((evt) => {
+			if (!(evt instanceof NavigationEnd)) {
+				return;
+			}
+			// focus same active link element after route change , content loaded.
+			if (this.activeElement) {
+				this.activeElement.focus();
+			}
+
+			//window.scrollTo(0, 0);
+			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
+			if (focusParentElement) {
+				focusParentElement.focus();
+				console.log('aa 1:: ' + this.hsRouterOutlet.nativeElement);
+				console.log('aa 2:: ' + focusParentElement);
+			} */
+			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
+			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
+			element.focus(); */
+			//vtr - subpage
+		});
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -208,12 +234,18 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		};
 	}
 
+	onRouteActivate($event, hsRouterOutlet: HTMLElement) {
+		// On route change , change foucs to immediate next below first tabindex on route change response
+		this.activeElement = document.activeElement as HTMLElement;
+	}
+
 	// VAN-5872, server switch feature
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
 		this.qaService.destroyChangeSubscribed();
+		this.routerSubscription.unsubscribe();
 	}
 
 }
