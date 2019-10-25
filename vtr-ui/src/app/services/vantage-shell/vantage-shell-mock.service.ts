@@ -7,7 +7,8 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
-import { resolve } from 'q';
+import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
+import { of } from 'rxjs';
 
 declare var Windows;
 
@@ -562,10 +563,157 @@ export class VantageShellService {
 	}
 
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
-		if (this.phoenix) {
-			return this.phoenix.securityAdvisor;
-		}
-		return undefined;
+		const securityAdvisor: Phoenix.SecurityAdvisor = {
+			antivirus: {
+				mitt: null,
+				mcafeeDownloadUrl: 'https://www.mcafee.com/consumer/en-us/promos/expiry/l714/mls_430/trial/ab/wb.html?cid=239128&culture=en-us&affid=714&pir=1',
+				mcafee: null,
+				others: null,
+				windowsDefender: {
+					firewallStatus: true,
+					status: true,
+					enabled: true
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+			},
+			passwordManager: {
+				status: 'not-installed',
+				mitt: null,
+				downloadUrl: 'https://www.dashlane.com/lenovo/',
+				loginUrl: 'https://app.dashlane.com',
+				appUrl: 'https://app.dashlane.com',
+				isDashLaneEdgeVersion: false,
+				download() {
+					this.status = 'installed';
+					return Promise.resolve(true);
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			vpn: {
+				status: 'not-installed',
+				mitt: null,
+				downloadUrl: 'https://www.surfeasy.com/lenovo/',
+				download() {
+					this.status = 'installed';
+					return Promise.resolve(true);
+				},
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			windowsHello: {
+				fingerPrintStatus: 'active',
+				facialIdStatus: 'inactive',
+				systemPasswordStatus: 'active',
+				mitt: null,
+				supportUrl: 'https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello',
+				windowsHelloProtocol: 'ms-settings:signinoptions',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			wifiSecurity: {
+				mitt: null,
+				state: 'enabled',
+				wifiHistory: [{
+					ssid: 'lenovo',
+					info: '2019/7/1 13:15:32',
+					good: '0'
+				}],
+				isLocationServiceOn: true,
+				isComputerPermissionOn: true,
+				isDevicePermissionOn: true,
+				isLWSPluginInstalled: true,
+				hasSystemPermissionShowed: true,
+				isSupported: true,
+				launchLocationPrivacy() {
+					return Promise.resolve(true);
+				},
+				enableWifiSecurity() {
+					this.state = 'enabled';
+					return Promise.resolve(true);
+				},
+				disableWifiSecurity() {
+					this.state = 'disabled';
+					return Promise.resolve(true);
+				},
+				getWifiSecurityStateOnce(): Promise<any> {
+					return Promise.resolve();
+				},
+				updateWifiSecurityState(): void {},
+				getWifiSecurityState(): Promise<any> {
+					return Promise.resolve();
+				},
+				getWifiState() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off(type, handler) {
+					return this;
+				},
+				refresh() {
+					let p1 = new Promise((resolve) => {});
+					let p2 = new Promise((resolve) => {});
+					return Promise.all([p1, p2]);
+				},
+				cancelGetWifiSecurityState() {}
+			},
+			setScoreRegistry() {
+				return Promise.resolve(true);
+			},
+			on(type, handler) {
+				return this;
+			},
+			off(type, handler) {
+				return this;
+			},
+			refresh() {
+				return Promise.resolve();
+			}
+		};
+		return securityAdvisor;
 	}
 
 	public getPermission(): any {
@@ -576,17 +724,79 @@ export class VantageShellService {
 	}
 
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
-		if (this.phoenix) {
-			return this.phoenix.connectedHomeSecurity;
-		}
-		return undefined;
+		const homeSecurity: Phoenix.ConnectedHomeSecurity  = {
+			account: {
+				state: CHSAccountState.trial,
+				role: undefined,
+				lenovoId: 'lenovo@lenovo.com',
+				serverTimeUTC: new Date(),
+				expiration: new Date('sep 15, 2019'),
+				consoleUrl: 'https://chs.lenovo.com',
+				getCHSConsoleUrl() {
+					return Promise.resolve('https://chs.lenovo.com/');
+				}
+			},
+			deviceOverview: {
+				allDevicesCount: 0,
+				allDevicesProtected: true,
+				familyMembersCount: 2,
+				placesCount: 2,
+				personalDevicesCount: 1,
+				wifiNetworkCount: 3,
+				homeDevicesCount: 0
+			},
+			on(type, handler) {
+				return this;
+			},
+			off(type, handler) {
+				return this;
+			},
+			refresh() {
+				return Promise.resolve([true]);
+			},
+			joinAccount(code: string) {
+				return Promise.resolve('success');
+			},
+			quitAccount() {
+				return Promise.resolve('success');
+			},
+			purchase() {
+				WinRT.launchUri('https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows');
+				this.account.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+			},
+			visitWebConsole(feature: string) {
+				WinRT.launchUri(`https://homesecurity.coro.net/`);
+				this.account.state = this.state === CHSAccountState.trial ? CHSAccountState.trialExpired : CHSAccountState.standard;
+			}
+		};
+
+		return homeSecurity;
 	}
 
 	public getDevicePosture(): Phoenix.DevicePosture {
-		if (this.phoenix) {
-			return this.phoenix.devicePosture;
-		}
-		return undefined;
+		const devicePosture: Phoenix.DevicePosture = {
+			value: [
+				{ name: 'PasswordProtection', vulnerable: false },
+				{ name: 'HardDriveEncryption', vulnerable: true },
+				{ name: 'AntiVirusAvailability', vulnerable: false },
+				{ name: 'FirewallAvailability', vulnerable: false },
+				{ name: 'AppsFromUnknownSources', vulnerable: true },
+				{ name: 'DeveloperMode', vulnerable: true },
+				{ name: 'NotActivatedWindows', vulnerable: false },
+				{ name: 'UacNotification', vulnerable: false }],
+			getDevicePosture() { return Promise.resolve(); },
+			cancelGetDevicePosture() {},
+			on(type, handler) {
+				return this;
+			},
+			off(type, handler) {
+				return this;
+			},
+			refresh() {
+				return Promise.resolve([true]);
+			}
+		};
+		return devicePosture;
 	}
 
 	/**
@@ -888,10 +1098,11 @@ export class VantageShellService {
 		return true;
 	}
 	public calcDeviceFilter(filter) {
-		if (this.phoenix) {
-			return this.phoenix.deviceFilter.calc(filter);
-		}
-		return undefined;
+		return Promise.resolve({
+			ConnectedHomeSecurity: true,
+			FeatureSearch: null,
+			TileBSource: 'UPE'
+		});
 	}
 	public getLogger(): any {
 		if (this.shell) {
@@ -909,10 +1120,109 @@ export class VantageShellService {
 	}
 
 	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
-		}
-		return undefined;
+		return {
+			openInstaller: () => of(true),
+			openUriInDefaultBrowser: (uri) => of(true),
+			openFigleafByUrl: (uri) => of(true),
+			sendContractToPlugin: (contract): any => {
+				switch (contract.command) {
+					case 'Get-InstalledBrowsers':
+						return of({browsers: ['chrome', 'firefox', 'edge']});
+					case 'Get-AccessiblePasswords':
+						return of({chrome: 11, firefox: 1, edge: 1});
+					case 'Get-MaskedPasswords':
+						return of({
+							edge: [{
+								url: 'https://test.test.com/my.policy',
+								domain: 'test.com',
+								login: 't****',
+								password: 't*************)'
+							}],
+							chrome: [
+								{
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}
+							],
+							firefox: [{
+								url: 'https://test.test.com/my.policy',
+								domain: 'test.com',
+								login: 't****',
+								password: 't*************)'
+							}]
+						});
+					case 'Get-VisitedWebsites':
+						return of({
+							visitedWebsites: [{
+								domain: 'google.com',
+								totalVisitsCount: 26871,
+								lastVisitTimeUtc: '2019-10-24T10:50:28Z'
+							}, {
+								domain: 'facebook.com',
+								totalVisitsCount: 3715,
+								lastVisitTimeUtc: '2019-10-24T08:16:21Z'
+							}],
+						});
+				}
+			}
+		};
 	}
 
 	public getUserGuide() {
@@ -1325,10 +1635,14 @@ export class VantageShellService {
 	}
 
 	public getBetaUser(): any {
-		if (this.phoenix) {
-			return this.phoenix.betaUser;
-		}
-		return undefined;
+		return {
+			setBetaUser() {
+				return Promise.resolve();
+			},
+			getBetaUser() {
+				return Promise.resolve(true);
+			}
+		};
 	}
 
 	// =================== Start Hardware Scan

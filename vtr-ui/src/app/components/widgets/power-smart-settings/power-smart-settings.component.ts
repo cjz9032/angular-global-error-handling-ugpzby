@@ -83,7 +83,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.apsStatus = this.cache.apsState;
 			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
-			this.setPerformanceAndCool(this.cache.mode);
+			if (this.cache.mode) {
+				this.setPerformanceAndCool(this.cache.mode);
+			}
 
 		} else {
 			this.cache = new IntelligentCoolingCapability();
