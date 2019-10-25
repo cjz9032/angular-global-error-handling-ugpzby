@@ -36,10 +36,6 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 		}
 	}
 
-	openCornet() {
-		this.common.openCornet();
-	}
-
 	isMoreThen30Day(num: number): boolean {
 		if (num > 30) {
 			return true;
