@@ -76,8 +76,8 @@
 				.detail {
 					color: $shade_darkest;
 					/*  &.highlight {
-            color: $shade_darkest;
-          } */
+						color: $shade_darkest;
+					} */
 				}
 			}
 			&.bad {
@@ -112,8 +112,8 @@
 					border-style: solid;
 					text-align: center;
 					fa-icon {
-						font-size: 1.6rem;
-						line-height: 2.7rem;
+						font-size: $fontsize_sm;
+						line-height: $fontsize_xl;
 						color: $light;
 					}
 				}
@@ -135,13 +135,18 @@
 				color: $shade;
 			}
 			.detail {
-				font-size: $body;
+				font-size: $fontsize_lg;
 				text-decoration: underline;
 				&.highlight {
 					text-decoration: underline;
 					&:hover {
 						text-decoration: underline;
 					}
+				}
+				fa-icon {
+					margin-left: .5em;
+					position: relative;
+					top: .1em;
 				}
 			}
 			.arrow {
@@ -161,7 +166,6 @@
 		}
 	}
 
-	
 	.device-sub-header .rtl {
 		display: inline-block;
 	}
