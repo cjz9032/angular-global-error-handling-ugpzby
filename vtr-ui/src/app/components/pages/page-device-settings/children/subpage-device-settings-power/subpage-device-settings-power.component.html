@@ -79,7 +79,7 @@
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 									[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 									[isSwitchVisible]=true
-									[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
+									[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available && !gaugeResetCapability"
 									[leftIcon]="['fal', 'battery-half']"
 									[rightIcon]="['far', 'question-circle']"
 									[showChildContent]="true"
