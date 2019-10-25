@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
+import { of } from 'rxjs';
 
 declare var Windows;
 
@@ -1119,10 +1120,109 @@ export class VantageShellService {
 	}
 
 	public getPrivacyCore() {
-		if (this.phoenix && this.phoenix.privacy) {
-			return this.phoenix.privacy;
-		}
-		return undefined;
+		return {
+			openInstaller: () => of(true),
+			openUriInDefaultBrowser: (uri) => of(true),
+			openFigleafByUrl: (uri) => of(true),
+			sendContractToPlugin: (contract): any => {
+				switch (contract.command) {
+					case 'Get-InstalledBrowsers':
+						return of({browsers: ['chrome', 'firefox', 'edge']});
+					case 'Get-AccessiblePasswords':
+						return of({chrome: 11, firefox: 1, edge: 1});
+					case 'Get-MaskedPasswords':
+						return of({
+							edge: [{
+								url: 'https://test.test.com/my.policy',
+								domain: 'test.com',
+								login: 't****',
+								password: 't*************)'
+							}],
+							chrome: [
+								{
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}, {
+									url: 'https://test.test.com/my.policy',
+									domain: 'test.com',
+									login: 't****',
+									password: 't*************)'
+								}
+							],
+							firefox: [{
+								url: 'https://test.test.com/my.policy',
+								domain: 'test.com',
+								login: 't****',
+								password: 't*************)'
+							}]
+						});
+					case 'Get-VisitedWebsites':
+						return of({
+							visitedWebsites: [{
+								domain: 'google.com',
+								totalVisitsCount: 26871,
+								lastVisitTimeUtc: '2019-10-24T10:50:28Z'
+							}, {
+								domain: 'facebook.com',
+								totalVisitsCount: 3715,
+								lastVisitTimeUtc: '2019-10-24T08:16:21Z'
+							}],
+						});
+				}
+			}
+		};
 	}
 
 	public getUserGuide() {
