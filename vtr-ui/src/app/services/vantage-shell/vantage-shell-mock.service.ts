@@ -7,6 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
+import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
 
@@ -1647,9 +1648,25 @@ export class VantageShellService {
 
 	// =================== Start Hardware Scan
 	public getHardwareScan(): any {
-		if (this.phoenix) {
-			return this.phoenix.hardwareScan;
+		if (HardwareScanShellMock) {				
+			return {
+				getPluginInformation: this.getPromise(HardwareScanShellMock.pluginInfo),
+				getItemsToRecoverBadSectors: this.getPromise(HardwareScanShellMock.itemsToRecoverBadSectors),
+				getScheduleScan: this.getPromise(HardwareScanShellMock.scheduleScan),
+				getItemsToScan: this.getPromise(HardwareScanShellMock.itemsToScan),
+				getPreScanInformation: this.getPromise(HardwareScanShellMock.preScanInformation),
+				getDoScan: HardwareScanShellMock.doScan,
+				deleteScan: this.getPromise(HardwareScanShellMock.deleteScan),
+				editScan: this.getPromise(HardwareScanShellMock.editScan),
+				getNextScans: this.getPromise(HardwareScanShellMock.nextScans),
+				getRecoverBadSectors: HardwareScanShellMock.recoverBadSectors,
+				cancelScan: HardwareScanShellMock.cancelScan,
+				getPreviousResults: this.getPromise(HardwareScanShellMock.previousResults),
+				checkItemsForRecoverBadSectors: this.getPromise(HardwareScanShellMock.checkItemsForRecoverBadSectors),
+				getFinalDoScanResponse: this.getPromise(HardwareScanShellMock.finalDoScanResponse)
+			};
 		}
+
 		return undefined;
 	}
 	// ==================== End Hardware Scan
