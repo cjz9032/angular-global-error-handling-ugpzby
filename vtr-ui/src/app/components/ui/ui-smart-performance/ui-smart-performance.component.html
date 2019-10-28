@@ -7,7 +7,7 @@
 		</div>
 	</div>
 	 <!-- {{isSubscribed}} and {{isScanningCompleted}} and {{isScanning}} -->
-	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted">
+	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted && !isSubscribed">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
@@ -270,8 +270,10 @@
 													</ngb-tab>
 												</ngb-tabset>
 											</div>
+											 
 										</div>
 									</div>
+									
 									<div class="row">
 										<div class="col col-12 free-scan">
 											<div class="row">
@@ -348,6 +350,7 @@
 								</div>
 							</div>							
 						</div>
+						
 					</div>
 					
 					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
@@ -393,27 +396,29 @@
 												<p>Enable or disable the scan and set the scan schedule</p>
 											</div>
 											<ul class="chevron-list">
-												<li class="d-flex justify-content-between">
-													<div class="item d-flex">
-														<div class="icon icon-visible-to-online-trackers"></div>
-														<strong>Enable Scan</strong>
-													</div>
-													<div class="status d-flex justify-content-end">
-														<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-													</div>
-												</li>
-												<li class="d-flex justify-content-between">
-													<div class="item d-flex">
-														<div class="icon icon-power-agenda"></div>
-														<strong>Once a week</strong>
-													</div>
-													<div class="status d-flex justify-content-end">
-														<p><strong>SAT</strong> | 12:00AM</p>
-														<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-													</div>
-												</li>
-											</ul>
-											<a href="#" class="link-text">Manage Subscription</a>
+                                                <li class="d-flex justify-content-between">
+                                                    <div class="item d-flex">
+                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+                                                        <strong>Enable Scan</strong>
+                                                    </div>
+                                                    <div class="status d-flex justify-content-end">
+                                                        <vtr-ui-switch-onoff [value]="true"
+                                                        [disabled]="false"></vtr-ui-switch-onoff>
+                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <div class="item d-flex">
+                                                        <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+                                                        <strong>Once a week</strong>
+                                                    </div>
+                                                    <div class="status d-flex justify-content-end">
+                                                        <p class="mr-3"><strong>SAT</strong> | 12:00AM</p>
+                                                        <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+                                                    </div>
+                                                </li>
+                                            </ul>
+											<!-- <a href="#" class="link-text">Manage Subscription</a> -->
 										</div>
 									</div>
 								</div>
@@ -479,5 +484,5 @@
 	<vtr-ui-smart-performance-scanning 
 *ngIf="isScanning" (sendScanStatus)="changeScanStatus()">
 </vtr-ui-smart-performance-scanning>
-<vtr-ui-smart-performance-scan-summary *ngIf="isScanningCompleted"></vtr-ui-smart-performance-scan-summary>
+<vtr-ui-smart-performance-scan-summary *ngIf="(isScanningCompleted || isSubscribed) && !isScanning " (backToScan)="changeScanEvent()"></vtr-ui-smart-performance-scan-summary>
 </div>

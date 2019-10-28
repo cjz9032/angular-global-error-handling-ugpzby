@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ModalSmartPerformanceSubscribeComponent } from '../../modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { NgbModal,NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -46,15 +46,14 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   displayFromDate:any;
   displayToDate:any;
   customDate:any;
+  @Output() backToScan = new EventEmitter();
   
   ngOnInit() {
 this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
     this.toDate = this.selectedDate;
     this.fromDate = this.selectedDate;
-	this.items = [ { itemValue : '16 fixes', itemExpandValue : 'lorem ipsum', itemstatus : true, itemDate : this.today},
-	{ itemValue : '0 fixes', itemExpandValue : 'lorem ipsum', itemstatus : false, itemDate : this.today},
-	{ itemValue : '8 fixes', itemExpandValue : 'lorem ipsum', itemstatus : true, itemDate : this.today} ];
+	 this.items = [{ itemValue: '16 fixes', itemExpandValue: {tune :'10 GB' , boost :'13' ,secure : '3'}, itemstatus: true, itemDate: this.today },{ itemValue: '0 fixes', itemExpandValue: {tune :'0 GB' , boost :'0' ,secure : '0'}, itemstatus: false, itemDate: this.today },{ itemValue: '8 fixes', itemExpandValue: {tune :'14 GB' , boost :'5' ,secure : '3'}, itemstatus: true, itemDate: this.today }]; 
   this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
   if(this.isSubscribed)
   {
@@ -154,5 +153,9 @@ openSubscribeModal() {
         windowClass: 'subscribe-modal',
 
     });
+}
+ScanNowSummary(){
+	console.log("summary");
+	this.backToScan.emit();
 }
 }

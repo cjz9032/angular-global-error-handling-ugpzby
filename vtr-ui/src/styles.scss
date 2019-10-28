@@ -1171,4 +1171,39 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
   .icon-responsive:before {
 	content: "\77";
   }
-  
+  // smart-performance-scan-summary-calendar-styles
+  .vtr-ui-smart-performance-scan-summary {
+	.date-picker {
+	  ngb-datepicker {
+		  width: 100%;
+		  border: none;
+		  border-radius: 0;
+		  .ngb-dp-header {
+			  background: transparent;
+		  }
+		  .ngb-dp-month {
+			  width: 100%;
+			  .ngb-dp-week {
+				  display: flex;
+				  justify-content: space-around;
+				  &.ngb-dp-weekdays {
+					  border: none;
+				  }
+				  &.bg-light {
+					  background: transparent !important;
+				  }
+				  .ngb-dp-weekday {
+					  font-style: normal;
+				  }
+			  }
+		  }
+		  .bg-primary {
+			  background: transparent !important;
+			  &.text-white {
+				  color: $go_dark !important;
+				  font-weight: $weight_bold;
+			  }
+		  }
+	  }
+	}
+}
