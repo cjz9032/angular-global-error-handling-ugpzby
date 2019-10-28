@@ -36,7 +36,7 @@ export class AbTestsGenerateConfigService {
 				} catch (e) {
 					console.error(e);
 				}
-			});
+			}, (err) => console.log(err));
 	}
 
 	private getDefaultConfig(): ShuffleTests {

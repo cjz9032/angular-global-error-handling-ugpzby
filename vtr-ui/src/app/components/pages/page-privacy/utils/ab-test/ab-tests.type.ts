@@ -6,22 +6,9 @@
  */
 
 export interface AbTestsConfig {
-  avaliableOptions?: {
-    colorButton?: ColorButton;
-    colorLink?: ColorLink;
-  };
   abTestsName?: AbTestsName;
 }
 
-export enum ColorButton {
-  A = "A",
-  B = "B",
-  C = "C"
-}
-export enum ColorLink {
-  A = "A",
-  B = "B"
-}
 export enum AbTestsName {
   colorButton = "colorButton",
   colorLink = "colorLink"

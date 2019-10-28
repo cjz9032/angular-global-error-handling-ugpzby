@@ -1,13 +1,27 @@
 {
-	"version": 1,
+	"version": 12,
+	"config_version": 10,
 	"tests": [
-		{   "key": "colorButton",
-			"avaliableOptions": ["A", "B", "C"],
-			"defaultOptions": ["A"]
+		{
+			"key": "colorButton",
+			"availableOptions": [
+				"A",
+				"B",
+				"C"
+			],
+			"defaultOptions": [
+				"A"
+			]
 		},
-		{  "key": "colorLink",
-			"avaliableOptions": ["A", "B"],
-			"defaultOptions": ["B"]
+		{
+			"key": "colorLink",
+			"availableOptions": [
+				"A",
+				"B"
+			],
+			"defaultOptions": [
+				"B"
+			]
 		}
 	]
 }
