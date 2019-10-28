@@ -148,6 +148,13 @@ export class VantageShellService {
 			}
 		};
 
+		const systemInfo = {
+			memory: { total: 8261181440, used: 7720923136 },
+			disk: { total: 256060514304, used: 93606965248 },
+			warranty: { expired: '2017-10-16T00:00:00.000Z', status: 1 },
+			systemupdate: { lastupdate: '2019-10-25T17:27:51', status: 1 }
+		};
+
 		const today = new Date().toISOString();
 		const warrantyObj: any = {
 			endDate: today,
@@ -160,12 +167,12 @@ export class VantageShellService {
 		dashboard.getMicphoneStatus = this.getPromise(obj);
 		dashboard.getCameraStatus = this.getPromise(obj);
 		dashboard.getEyeCareModeState = this.getPromise(obj);
+		dashboard.getSystemInfo = this.getPromise(systemInfo);
 		dashboard.warranty = {};
 		dashboard.sysupdate = {};
 		dashboard.warranty.getWarrantyInformation = this.getPromise(warrantyObj);
 		dashboard.sysupdate.getMostRecentUpdateInfo = this.getPromise(sysUpdateObj);
 		dashboard.sysinfo = this.getSysinfo();
-		dashboard.getSystemInfo = this.getSysinfo();
 		dashboard.sysinfo.getMemAndDiskUsage = this.getPromise(sysInfoObj);
 
 		return dashboard;
@@ -1346,6 +1353,7 @@ export class VantageShellService {
 		// 	if (!this.phoenix.gaming) {
 		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
 		// 	}
+		// 	console.log('CAP ############################', this.phoenix.gaming.gamingAllCapabilities);
 		// 	return this.phoenix.gaming.gamingAllCapabilities;
 		// }
 		// return undefined;
@@ -1432,13 +1440,25 @@ export class VantageShellService {
 	}
 
 	public getGamingHwInfo() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-			}
-			return this.phoenix.gaming.gamingHwInfo;
-		}
-		return undefined;
+		let gamingHWInfo = {};
+		const hwInfoObj = {
+			cpuBaseFrequence: '1.80GHz',
+			cpuModuleName: 'Intel(R) Core(TM) i10-8250U CPU @ 1.60GHz',
+			gpuMemorySize: '4GB',
+			gpuModuleName: 'Intel(R) UHD Graphics 620',
+			memorySize: '8.0GB',
+			memoryModuleName: 'Samsung'
+		};
+
+		gamingHWInfo = this.getPromise(hwInfoObj);
+		return gamingHWInfo;
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		// 	}
+		// 	return this.phoenix.gaming.gamingHwInfo;
+		// }
+		// return undefined;
 	}
 
 	public getIntelligentMedia(): any {
