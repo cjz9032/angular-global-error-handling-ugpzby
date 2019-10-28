@@ -70,7 +70,7 @@
 			</div>
 
 			<div class="browser-accounts">
-				<infinite-scroll (scrolled)="test()">
+				<infinite-scroll (scrolled)="changeScrollEnd()">
 					<ng-container *ngFor="let account of installedBrowser.accounts | slice:0:scrollEnd; trackBy: trackAccountsById; let i = index;">
 						<div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
 							<div class="browser-account__img-col">

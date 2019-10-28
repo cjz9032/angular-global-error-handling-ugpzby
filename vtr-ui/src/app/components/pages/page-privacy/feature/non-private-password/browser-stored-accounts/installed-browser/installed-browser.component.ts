@@ -31,7 +31,7 @@ export class InstalledBrowserComponent {
 		return index;
 	}
 
-	test() {
+	changeScrollEnd() {
 		this.scrollEnd = this.scrollEnd + 10;
 	}
 
