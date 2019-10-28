@@ -31,6 +31,8 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { StringBooleanEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { catchError } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -248,6 +250,26 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		if (machineType === 1) {
 			this.initInputAccessories();
 		}
+		if (machineType === 0) {
+			this.topRowFunctionsIdeapadService.capability
+				.pipe(
+					catchError(() => {
+						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
+						return EMPTY;
+					})
+				)
+				.subscribe(capabilities => {
+					if (capabilities.length === 0) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+					}
+					// todo: there should be a better way to operate this array
+					capabilities.forEach(capability => {
+						if (capability.key === 'FnLock') {
+							this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
+						}
+					});
+				});
+		}
 	}
 
 	private initUnreadMessage() {
@@ -320,7 +342,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		event.stopPropagation();
 	}
 
-	onKeyPress($event){
+	onKeyPress($event) {
 		if ($event.keyCode === 13) {
 			this.toggleMenu($event);
 		}
@@ -662,14 +684,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				}
 				return response;
 			});
-		this.topRowFunctionsIdeapadService.capability.subscribe(capabilities => {
-			// todo: there should be a better way to operate this array
-			capabilities.forEach(capability => {
-				if (capability.key === 'fnLock') {
-					this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, capabilities);
-				}
-			});
-		});
 	}
 
 	openModernPreloadModal() {
