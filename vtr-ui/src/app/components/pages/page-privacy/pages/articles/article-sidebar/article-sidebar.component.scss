@@ -20,6 +20,7 @@
 		@extend %button-link__text;
 		@extend %button-link--padding-0;
 		@extend %button-link--uppercase;
+		font-weight: bold;
 	}
 }
 .all-articles-block {
