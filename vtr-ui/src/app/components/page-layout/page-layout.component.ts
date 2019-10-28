@@ -7,12 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PageLayoutComponent implements OnInit {
 
-	@Input() pageTitle: string;
+	@Input() title: string;
 	@Input() textId: string;
 	@Input() pageCssClass: string;
 	@Input() parentPath: string;
-	@Input() backLinkText: string;
+	@Input() back: string;
+	@Input() backId: string;
 	@Input() menuItems: any[];
+	@Input() shiftLeftUp: boolean = false;
+	@Input() shiftRightUp: boolean = false;
 
 	constructor() { }
 

@@ -65,6 +65,7 @@ export enum LocalStorageKey {
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
 	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
+	WifiSecurityCache = '[LocalStorageKey] WifiSecurityCache',
 	LightingProfileById = '[LocalStorageKey] LightingProfileById',
 	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
@@ -188,5 +189,6 @@ export enum LocalStorageKey {
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
-	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing'
+	IsSubscribed = '[LocalStorageKey] IsSubscribed',
+	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails'
 }

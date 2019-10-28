@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Sigur ștergeți această tastă macro?"
+                    "title": "Sigur ștergeți această tastă macro?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Sesiunea de înregistrare a expirat.",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
                 "seeDetailsLink": "Vedeți detaliile",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
             },
             "power": {
                 "title": "Alimentare",
@@ -1040,39 +1041,39 @@
                         "note": "Dacă detectarea automată este activată, calculatorul va porni automat modul de alimentare Avion când detectează un mediu de bord de avion și îl va opri când părăsiți acel mediu."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Resetare indicator baterie",
+                        "description": "Această caracteristică permite computerului să estimeze mai exact capacitatea de încărcare completă.",
+                        "barCode": "Cod de bare",
+                        "progress": "Progres",
+                        "remaining": "Au mai rămas",
+                        "startTime": "Oră pornire",
+                        "lastReset": "Ultima resetare",
+                        "fullChargeCapacity": "Capacitate de încărcare completă",
                         "btnLabel": {
-                            "reset": "Reset",
+                            "reset": "Resetare",
                             "stop": "Stop"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
+                        "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+                        "FCCText": "De la {{before}} Wh la {{after}} Wh",
+                        "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
+                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
+                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
+                            "description2": "Note: <br>1. Procesul poate dura câteva ore. Evitaţi utilizarea computerului în această perioadă.<br>2. Închideţi toate aplicaţiile deschise şi conectaţi computerul la o sursă de c.a.<br>3. În timpul procesului, funcţia Prag încărcare baterie este dezactivată.",
+                            "continue": "Contin.",
+                            "cancel": "Anulare",
+                            "yes": "Da",
+                            "description3": "Sigur opriţi resetarea indicatorului bateriei?"
                         }
                     }
                 },
@@ -1575,6 +1576,18 @@
                 "desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
+            "superResolution": {
+				"heading": "Medii inteligente",
+				"title": "Mărirea rezoluţiei video",
+				"desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
+				"tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Această caracteristică nu funcţionează când:",
+					"description1":"computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
+					"description2":"computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
+					"description3":"Temperatura procesorului este prea mare."
+				}
+			},
             "voice": {
                 "title": "Voce",
                 "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",

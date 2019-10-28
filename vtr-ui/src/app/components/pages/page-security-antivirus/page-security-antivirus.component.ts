@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { AntiVirusViewModel } from '../../../data-models/security-advisor/antivirus.model';
 import { CMSService } from '../../../services/cms/cms.service';
@@ -9,7 +8,6 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
@@ -52,12 +50,10 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	constructor(
-		public mockService: MockService,
 		private vantageShell: VantageShellService,
 		public cmsService: CMSService,
 		public commonService: CommonService,
 		public modalService: NgbModal,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
 		private localInfoService: LocalInfoService,
@@ -66,9 +62,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.antiVirus = this.securityAdvisor.antivirus;
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;

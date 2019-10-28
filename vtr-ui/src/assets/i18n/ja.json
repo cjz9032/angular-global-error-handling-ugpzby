@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "このマクロ・キーをクリアしてもよろしいですか?"
+                    "title": "このマクロ・キーをクリアしてもよろしいですか?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "記録のタイムアウト。",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
                 "seeDetailsLink": "詳細を見る",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
             },
             "power": {
                 "title": "電源",
@@ -1040,39 +1041,39 @@
                         "note": "自動検出が選択されている場合は、コンピューターは飛行機に搭乗している環境を検出すると自動的に飛行機電源モードをオンにし、飛行機を離れると飛行機電源モードをオフにします。"
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "バッテリー・ゲージのリセット",
+                        "description": "この機能でコンピューターは完全充電時の容量をより正確に推定できます。",
+                        "barCode": "バーコード",
+                        "progress": "進行状況",
+                        "remaining": "残り",
+                        "startTime": "開始時刻",
+                        "lastReset": "前回のリセット",
+                        "fullChargeCapacity": "完全充電時の容量",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "リセット",
+                            "stop": "停止"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
+                        "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
+                        "FCCText": "{{before}} Wh から {{after}} Wh",
+                        "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "完了しました。リセットに成功しました。",
+                            "ERROR_SHUTDOWN": "未完了。システムがシャットダウンしました。",
+                            "ERROR_LOGOFF": "未完了。ユーザーがログオフしました。",
+                            "ERROR_BATTERY_REMOVE": "未完了。バッテリーが取り外されました。",
+                            "ERROR_BATTERY_REPLACE": "未完了。バッテリーが交換されました。",
+                            "ERROR_AC_DETTACH": "未完了。AC 電源アダプターが取り外されました。",
+                            "ERROR_USER_CANCEL": "未完了。ユーザーによってキャンセルされました。",
+                            "ERROR_UNEXPECTED": "未完了。予期しないエラーが発生しました。"
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電  -->  バッテリーを完全に放電  -->  バッテリーを完全に再充電",
+                            "description2": "注: <br>1. この処理には数時間かかる場合があります。この間、コンピューターの使用は避けてください。<br>2.開いているすべてのアプリを閉じて、コンピューターを AC 電源に接続します。<br>3.プロセス中、バッテリー充電のしきい値機能は無効になります。",
+                            "continue": "続行",
+                            "cancel": "キャンセル",
+                            "yes": "はい",
+                            "description3": "バッテリー・ゲージのリセットを中止してよろしいですか?"
                         }
                     }
                 },
@@ -1575,6 +1576,18 @@
                 "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
+            "superResolution": {
+				"heading": "インテリジェント・メディア",
+				"title": "ビデオ解像度のアップスケーリング",
+				"desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
+				"tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"この機能は次の場合は動作しません。",
+					"description1":"コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
+					"description2":"コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
+					"description3":"CPU の温度が高すぎる場合。"
+				}
+			},
             "voice": {
                 "title": "音声",
                 "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",

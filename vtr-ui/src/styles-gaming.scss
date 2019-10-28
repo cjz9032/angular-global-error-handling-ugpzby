@@ -1053,14 +1053,14 @@
 								.battery {
 									.acid-container {
 										.percentage {
-											color: $main_dark;
+											color: $gaming_lightest !important;
 										}
 									}
 									.remaining-time {
-										color: $main_dark;
+										color: $gaming_lightest !important;
 									}
 									.remaining-text {
-										color: $main_dark;
+										color: $gaming_lightest !important;
 									}
 								}
 							}
@@ -1244,9 +1244,9 @@
 			.sub-heading {
 				color: $gaming_lightest!important;
 			}
-		}
-	
-		.bullet-list {				
+		}	
+		ul.bullet-list {
+			background: none!important;		
 			li {
 				color: $gaming_lightest!important;
 			}
@@ -1327,11 +1327,14 @@
 		.title {
 			color: $gaming_lightest!important;
 		}
+		.card{
+			background-color: $gaming_dark!important;
 		.card-header {
 			background: $gaming_darkest!important;
 			color: $gaming_lightest!important;
 			border: 0.1rem solid $gaming_dark!important;
 		}
+	}
 	}
 
 	.wifi-security {

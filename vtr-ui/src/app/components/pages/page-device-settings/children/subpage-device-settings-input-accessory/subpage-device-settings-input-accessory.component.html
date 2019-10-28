@@ -7,37 +7,48 @@
 			</vtr-ui-header-subpage>
 		</div>
 	</div>
-
-	<div class="row py-5 smartsettings-card" id="Input & Accessories" attr.aria-label="Input & Accessories">
-		<div class="col-10 mx-auto ">
-			<!-- Input & Accessories -->
-			<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
-				[vtrAppSearchScroller]="['search-hidden-keyboard-fn', 'search-Keyboard-top-row']"
-				[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
-				componentName="Input & Accessories" [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'">
-				<ul class="list-group list-group-flush">
-					<li class="pt-3" *ngIf="machineType == 1 && keyboardCompatibility">
-						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
-							componentName="Input Accessories"
-							[caption]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate"
-							[leftIcon]="['fal', 'keyboard']" [showChildContent]="true" [theme]="'white'"
-							[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
-							<div class="row">
-								<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-									<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
-									<div class="img-preview" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
-										<div class="img-preview"
-											[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
+	<div class="row px-40">
+		<div class="col">
+			<div class="row py-5 smartsettings-card"
+				id="Input & Accessories"
+				attr.aria-label="Input & Accessories">
+				<div class="col-12 mx-auto ">
+					<!-- Input & Accessories -->
+					<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
+						[vtrAppSearchScroller]="['search-hidden-keyboard-fn', 'search-Keyboard-top-row']"
+						[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
+						componentName="Input & Accessories"
+						[isCollapsed]="false"
+						[allowCollapse]="true"
+						[theme]="'white'">
+						<ul class="list-group list-group-flush">
+							<li class="pt-3"
+								*ngIf="machineType == 1 && keyboardCompatibility">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
+									componentName="Input Accessories"
+									[caption]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate"
+									[leftIcon]="['fal', 'keyboard']"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[switchId]="'inputAccessories-hiddenKeyboardFunctions'">
+									<div class="row">
+										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+											<!-- <img src="../../../../../../assets/icons/Hidden keyboard functions.svg" alt="">-->
 											<div class="img-preview"
-												[style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
+												[ngStyle]="{ 'background-image': 'url(' + image + ')'}">
 												<div class="img-preview"
-													[style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
-													<img *ngIf="additionalCapabilitiesObj.performance" [src]="zoomIcon"
-														class="image" />
+													[style.background-image]="additionalCapabilitiesObj.privacy ? 'url(' + privacyIcon + ')': ''">
+													<div class="img-preview"
+														[style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
+														<div class="img-preview"
+															[style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
+															<img *ngIf="additionalCapabilitiesObj.performance"
+																[src]="zoomIcon"
+																class="image" />
+														</div>
+													</div>
 												</div>
-											</div>
-										</div>
 
 									</div>
 								</div>

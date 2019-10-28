@@ -225,7 +225,8 @@
 			},
 			"popupContent": {
 				"clearMacrokey": {
-					"title": "Are you sure you want to clear this macro key?"
+					"title": "Are you sure you want to clear this macro key?",
+					"modalTitle": "clear double confirm window"
 				},
 				"timeoutRecording": {
 					"title": "Time Out For Recording.",
@@ -1577,6 +1578,18 @@
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
 			},
+			"superResolution": {
+				"heading": "Intelligent Media",
+				"title": "Video Resolution Upscaling",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
+				"tooltip": "This feature works only on the following players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"The feature does not work when:",
+					"description1":"The computer is not connected to ac power and the battery power is lower than 20%.",
+					"description2":"The computer is not connected to ac power and the battery saver mode is enabled.",
+					"description3":"The CPU temperature is too high."
+				}
+			},
 			"voice": {
 				"title": "Voice",
 				"description": "Lenovo Voice helps converting your voice into texts with the Voice to text function and provides real-time translation from voice to texts with the Translation function.",
@@ -1938,7 +1951,17 @@
 			"password": "Having strong and complex passwords managed in a safe way",
 			"vpn": "Monitoring your network exposure to attackers",
 			"wifi": "Encrypting your personal data when using public WiFi",
-			"windowsHello": "Protecting your device using safe login options"
+			"windowsHello": "Protecting your device using safe login options",
+			"uacTitle": "What is UAC notification?",
+			"uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+			"windowsTitle": "Why I need to active Windows?",
+			"windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+			"encryptionTitle": "What is Hard Drive Encryption?",
+			"encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+			"passwordTitle": "How to protect password better?",
+			"passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+			"enhanceTitle": "What should I do to enhance security protection?",
+			"enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
 		},
 		"antivirus": {
 			"common": {
@@ -2015,7 +2038,7 @@
 			"others": {
 				"othersProtection": "{{protectedName}} offers you basic protection for your device",
 				"unknown": "Unknown",
-				"betterOffer":"Enjoy a better offer here!"
+				"betterOffer": "Enjoy a better offer here!"
 			}
 		},
 		"wifisecurity": {
@@ -2479,7 +2502,7 @@
 					"line3": "“Display”,",
 					"line4": "and",
 					"line5": "“Wi-Fi”",
-					"line6": "percentages. This shows how much battery power has been used by system processes, the display,"
+					"line6": "percentages. This shows how much battery power has been used by system processes, the display."
 				},
 				"span8": {
 					"line1": "6. The",

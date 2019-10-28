@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Želite li zaista da obrišete ovaj taster makroa?"
+                    "title": "Želite li zaista da obrišete ovaj taster makroa?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Istek vremena za snimanje.",
@@ -889,7 +890,7 @@
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
                 "seeDetailsLink": "Pogledajte detalje",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -1040,39 +1041,39 @@
                         "note": "Ako je označena Automatska detekcija, vaš računar će automatski uključiti režim napajanja u avionu kada otkrije okruženje unutar aviona i isključiti ga kada napustite okruženje."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Resetovanje pokazivača napunjenosti baterije",
+                        "description": "Ova funkcija omogućava računaru da preciznije proceni pun kapacitet punjenja.",
+                        "barCode": "Bar-kod",
+                        "progress": "Napredovanje",
+                        "remaining": "Ostalo",
+                        "startTime": "Vreme početka",
+                        "lastReset": "Poslednje resetovanje",
+                        "fullChargeCapacity": "Pun kapacitet punjenja",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Poništi",
+                            "stop": "Zaustavi"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
+                        "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+                        "FCCText": "Sa {{before}} Wh na {{after}} Wh",
+                        "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Završeno. Uspešan reset.",
+                            "ERROR_SHUTDOWN": "Nije završeno. Sistem se isključio.",
+                            "ERROR_LOGOFF": "Nije završeno. Korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Nije završeno. Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nije završeno. Baterija je zamenjena.",
+                            "ERROR_AC_DETTACH": "Nije završeno. Adapter za naizmeničnu struju je otkačen.",
+                            "ERROR_USER_CANCEL": "Nije završeno. Otkazano od strane korisnika.",
+                            "ERROR_UNEXPECTED": "Nije završeno. Došlo je do neočekivane greške."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
+                            "description2": "Napomene: <br>1. Ovaj proces može da traje nekoliko sati. Izbegavajte korišćenje računara tokom ovog perioda.<br>2. Zatvorite sve otvorene aplikacije i povežite računar sa napajanjem naizmeničnom strujom.<br>3. Tokom procesa, funkcija za prag punjenja baterije je onemogućena.",
+                            "continue": "Nastavi",
+                            "cancel": "Otkaži",
+                            "yes": "Da",
+                            "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
                         }
                     }
                 },
@@ -1575,6 +1576,18 @@
                 "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
+            "superResolution": {
+				"heading": "Inteligentni mediji",
+				"title": "Poboljšavanje video rezolucije",
+				"desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
+				"tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note":{
+					"description":"Ova funkcija ne radi kada:",
+					"description1":"Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
+					"description2":"Računar nije povezan na napajanje naizmeničnom strujom i omogućen je režim uštede baterije.",
+					"description3":"Temperatura procesora je previsoka."
+				}
+			},
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice pomaže da konvertujete glas u tekst pomoću funkcije Glasa u tekst i pomoću funkcije Prevod obezbeđuje prevod iz glasa u tekst u realnom vremenu.",
