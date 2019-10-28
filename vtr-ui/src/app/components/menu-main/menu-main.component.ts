@@ -251,6 +251,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.initInputAccessories();
 		}
 		if (machineType === 0) {
+			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
+			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
 			this.topRowFunctionsIdeapadService.capability
 				.pipe(
 					catchError(() => {
