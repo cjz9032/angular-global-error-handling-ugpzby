@@ -200,7 +200,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true,
+			isGaming: true, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -1440,8 +1440,8 @@ export class VantageShellService {
 	}
 
 	public getGamingHwInfo() {
-		let gamingHWInfo = {};
-		const hwInfoObj = {
+		const gamingHwInfo: any = {};
+		const hwINFOObj = {
 			cpuBaseFrequence: '1.80GHz',
 			cpuModuleName: 'Intel(R) Core(TM) i10-8250U CPU @ 1.60GHz',
 			gpuMemorySize: '4GB',
@@ -1449,9 +1449,8 @@ export class VantageShellService {
 			memorySize: '8.0GB',
 			memoryModuleName: 'Samsung'
 		};
-
-		gamingHWInfo = this.getPromise(hwInfoObj);
-		return gamingHWInfo;
+		gamingHwInfo.getMachineInfomation = this.getPromise(hwINFOObj);
+		return gamingHwInfo;
 		// if (this.phoenix) {
 		// 	if (!this.phoenix.gaming) {
 		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
