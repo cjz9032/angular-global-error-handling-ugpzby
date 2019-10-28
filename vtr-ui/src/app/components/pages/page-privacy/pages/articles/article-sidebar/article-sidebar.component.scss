@@ -16,11 +16,10 @@
 	}
 
 	&__link {
+		@extend %button-link;
 		@extend %button-link__text;
-		font-size: 1.3rem;
-		color: #4A81FD;
-		font-weight: 500;
-		text-transform: uppercase;
+		@extend %button-link--padding-0;
+		@extend %button-link--uppercase;
 	}
 }
 .all-articles-block {
