@@ -1365,7 +1365,11 @@
                             "description": "Cambiar la función de fila superior predeterminada requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
                             "reboot": "REINICIAR",
                             "cancel": "NO AHORA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Para tener acceso a la función F1-F12, presione Fn y las teclas de la fila superior.",
+							"fnKey": "Para tener acceso a la función especial, presione Fn y las teclas de la fila superior."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funciones de tecla de acceso directo VoIP",

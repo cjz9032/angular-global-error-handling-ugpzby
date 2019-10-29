@@ -1365,7 +1365,11 @@
                             "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
                             "reboot": "OPNIEUW OPSTARTEN",
                             "cancel": "NIET NU"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
+							"fnKey": "Om een speciale functie te gebruiken, druk op Fn en de toetsen op de bovenste rij."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-sneltoetsfuncties",
