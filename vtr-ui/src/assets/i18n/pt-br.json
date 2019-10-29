@@ -722,7 +722,9 @@
                 "accessUrl": "Ir para as configurações do Windows para dar acesso",
                 "microphoneNote": "O Lenovo Vantage não tem acesso ao microfone.",
                 "cameraPrivacyNote": "O Lenovo Vantage não tem acesso à câmera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Status do sistema",
@@ -1365,7 +1367,11 @@
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
                             "cancel": "NÃO AGORA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
+							"fnKey": "Para acessar as funções especiais, pressione Fn e as teclas da fileira superior."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funções de teclas de atalhos para VoIP",
@@ -1573,17 +1579,17 @@
                 "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
             },
             "superResolution": {
-				"heading": "Mídia inteligente",
-				"title": "Upscaling da resolução de vídeo",
-				"desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
-				"tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Esse recurso não funciona quando:",
-					"description1":"O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
-					"description2":"O computador não está conectado à energia CA e o modo de economia da bateria está ativado.",
-					"description3":"A temperatura da CPU está muito alta."
-				}
-			},
+                "heading": "Mídia inteligente",
+                "title": "Upscaling da resolução de vídeo",
+                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
+                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Esse recurso não funciona quando:",
+                    "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
+                    "description2": "O computador não está conectado à energia CA e o modo de economia da bateria está ativado.",
+                    "description3": "A temperatura da CPU está muito alta."
+                }
+            },
             "voice": {
                 "title": "Voz",
                 "description": "O Lenovo Voice ajuda a converter sua voz em texto com a função Voz para texto e oferece tradução em tempo real de voz para textos com a função Tradução.",
@@ -1826,7 +1832,17 @@
             "password": "Tem senhas fortes e complexas gerenciadas de maneira segura",
             "vpn": "Monitora sua exposição de rede aos invasores",
             "wifi": "Criptografa seus dados pessoais ao usar WiFi público",
-            "windowsHello": "Protege seu dispositivo usando opções de login seguras"
+            "windowsHello": "Protege seu dispositivo usando opções de login seguras",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

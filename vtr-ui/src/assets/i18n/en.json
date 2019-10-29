@@ -1369,6 +1369,10 @@
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
+						},
+						"note": {
+							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
+							"fnKey": "To access special function, press Fn and the keys on the top row."
 						}
 					},
 					"VoipHotkeys": {
@@ -1409,8 +1413,8 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "FN key and Ctrl key swap",
-					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+					"title": "Fn and Ctrl key swap",
+					"description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
 					"restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
 				},
 				"controlOptions": {

@@ -63,7 +63,7 @@
 							[switchId]="'threshold'"
 							[value]="thresholdStatus"
 							[isBlocked]="!thresholdStatus"
-							[disable]="!batteryInfo[0].isCapable"
+							[disable]="batteryInfo && batteryInfo.length > 0 && !batteryInfo[0].isCapable"
 							[isLoading]="thresholdLoadingStatus">
 						</vtr-widget-switch-icon>
 					</div>
@@ -77,11 +77,11 @@
 							(toggle)="setConservationModeStatusIdeaNoteBook(!conservationModeStatus.status)"
 							[value]="conservationModeStatus.status"
 							[disable]="!conservationModeStatus.available"
-							[isBlocked]="!conservationModeStatus.status"							
+							[isBlocked]="!conservationModeStatus.status"
 							[isLoading]="false">
 						</vtr-widget-switch-icon>
 					</div>
-				</div>			
+				</div>
 			</div>
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">

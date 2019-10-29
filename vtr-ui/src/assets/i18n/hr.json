@@ -722,7 +722,9 @@
                 "accessUrl": "Idite na postavke sustava Windows za omogućavanje pristupa",
                 "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Status sustava",
@@ -1365,7 +1367,11 @@
                             "description": "Kako bi se promijenile zadane funkcije u gornjem redu, potrebno je ponovno pokretanje računala. Želite li zaista ponovno pokretanje?",
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
+							"fnKey": "Da biste pristupili posebnoj funkciji, pritisnite Fn i tipke u gornjem redu."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkcije VoIP tipkovničkog prečaca",
@@ -1573,17 +1579,17 @@
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Povećanje razlučivosti videozapisa",
-				"desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Kad je omogućena, preporučuje se da računalo povežete na napajanje izmjeničnim naponom.</label></p>",
-				"tooltip": "Značajka radi samo na sljedećim reproduktorima videosadržaja: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Ova značajka ne funkcionira kad:",
-					"description1":"računalo nije priključeno na napajanje izmjeničnim naponom, a napunjenost baterije je niža od 20%.",
-					"description2":"računalo nije priključeno na napajanje izmjeničnim naponom, a omogućen je način rada za uštedu baterije.",
-					"description3":"je temperatura CPU-a previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Povećanje razlučivosti videozapisa",
+                "desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Kad je omogućena, preporučuje se da računalo povežete na napajanje izmjeničnim naponom.</label></p>",
+                "tooltip": "Značajka radi samo na sljedećim reproduktorima videosadržaja: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ova značajka ne funkcionira kad:",
+                    "description1": "računalo nije priključeno na napajanje izmjeničnim naponom, a napunjenost baterije je niža od 20%.",
+                    "description2": "računalo nije priključeno na napajanje izmjeničnim naponom, a omogućen je način rada za uštedu baterije.",
+                    "description3": "je temperatura CPU-a previsoka."
+                }
+            },
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice omogućuje pretvaranje vašeg govora u tekst s pomoću funkcije Govor u tekst i prijevod govora u tekst u stvarnom vremenu s pomoću funkcije Prijevod.",
@@ -1826,7 +1832,17 @@
             "password": "Snažne i složene lozinke kojima se upravlja na siguran način",
             "vpn": "Praćenje izloženosti vaše mreže napadačima",
             "wifi": "Šifriranje vaših osobnih podataka kada koristite javni WiFi",
-            "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja"
+            "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
