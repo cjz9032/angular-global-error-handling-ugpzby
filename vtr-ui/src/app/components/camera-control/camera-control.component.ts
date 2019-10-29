@@ -56,8 +56,19 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private appLogger: LoggerService,
 		private ngZone: NgZone
-	) {
-		this.Windows = vantageShellService.getWindows();
+	) { }
+
+	ngOnInit() {
+		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
+			(cameraDetail: CameraDetail) => {
+				this.cameraDetail = cameraDetail;
+			},
+			error => {
+				console.log(error);
+			}
+		);
+
+		this.Windows = this.vantageShellService.getWindows();
 		this.Capture = this.Windows.Media.Capture;
 		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
@@ -69,17 +80,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.visibilityChange = this.onVisibilityChanged.bind(this);
 		document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
-	}
-
-	ngOnInit() {
-		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
-			(cameraDetail: CameraDetail) => {
-				this.cameraDetail = cameraDetail;
-			},
-			error => {
-				console.log(error);
-			}
-		);
 	}
 
 	ngOnDestroy() {
@@ -94,8 +94,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		let deviceInfo = null;
 		// Get available devices for capturing pictures
 		return this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture)
-			.then(function (devices) {
-				devices.forEach(function (cameraDeviceInfo) {
+			.then((devices) => {
+				devices.forEach((cameraDeviceInfo) => {
 					if (cameraDeviceInfo.enclosureLocation != null && cameraDeviceInfo.enclosureLocation.panel === panel) {
 						deviceInfo = cameraDeviceInfo;
 						return;
@@ -169,7 +169,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
-				}).then(function () {
+				}).then(() => {
 					return self.startPreviewAsync();
 				}).done();
 		} catch (error) {
