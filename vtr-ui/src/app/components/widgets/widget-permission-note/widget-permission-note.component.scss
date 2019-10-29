@@ -7,12 +7,12 @@
 	border: 1px solid $shade_lighter;
 	@media #{$black-on-white} {
 		color: $alt;
-		background-color: $shade_lightest;
+		background-color: $light-grey;
 		border:none;
 	}
 	@media #{$white-on-black} {
 		color: $alt;
-		background-color: $shade_lightest;
+		background-color: $light-grey;
 		border:none;
 	}
 
