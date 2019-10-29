@@ -13,7 +13,7 @@
 				<a vtrOpenFigleafInstaller
 				   vtrSendAnalytics
 				   [metricsEvent]="'ItemClick'"
-				   [metricsItem]="'InstallButton'">
+				   [metricsItem]="'InstallButton' | changeActionButtonText | async">
 					{{'Install' | changeActionButtonText | async}}
 				</a>
 			</div>

@@ -28,7 +28,16 @@ export class AbTestsComponent implements AfterContentInit {
 		this.abTestsService.getCurrentOptions(this.testName).subscribe(
 			(current) => {
 				const currentTemplate = this.templates.find((option) => option.testOption === current.option);
-				currentTemplate.display();
+
+				if (currentTemplate) {
+					currentTemplate.display();
+				}
+
+				if (!currentTemplate) {
+					console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', this.templates)
+					this.templates.first.display();
+					this.abTestsBackendService.sendError(`wrong option name in ${this.testName}`);
+				}
 			},
 			(err) => this.abTestsBackendService.sendError(err)
 		);

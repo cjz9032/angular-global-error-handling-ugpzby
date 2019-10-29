@@ -6,6 +6,7 @@ import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import { AB_TESTS_CONFIG, AbTestsService, BACKEND_CONFIG_VERSION } from './ab-tests.service';
 import { catchError, timeout } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 const TIMEOUT_FOR_BACKEND = 3000;
 
@@ -22,13 +23,10 @@ export class AbTestsGenerateConfigService {
 	}
 
 	shuffle() {
-		const rawCurrentConfigVersion = Number(this.storageService.getItem(BACKEND_CONFIG_VERSION));
-		const currentConfigVersion = rawCurrentConfigVersion ? rawCurrentConfigVersion : null;
-
-		this.abTestsBackendService.shuffle(config.version, currentConfigVersion).pipe(
+		this.abTestsBackendService.shuffle().pipe(
 			timeout(TIMEOUT_FOR_BACKEND),
-			catchError((err) => {
-				this.abTestsBackendService.sendError(err);
+			catchError((err: HttpErrorResponse) => {
+				this.abTestsBackendService.sendError(err.error);
 				return of(this.getDefaultConfig());
 			})
 		).subscribe((res) => {

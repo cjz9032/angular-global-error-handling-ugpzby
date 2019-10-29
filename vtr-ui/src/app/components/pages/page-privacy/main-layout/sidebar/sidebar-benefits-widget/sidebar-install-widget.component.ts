@@ -7,6 +7,7 @@ import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
 import { getFigleafProtectedStatus } from '../../../utils/helpers';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -16,6 +17,7 @@ import { AppStatusesService } from '../../../common/services/app-statuses/app-st
 export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	primaryButtonText = 'Install Now';
 	linkButtonText = 'Learn more';
+	currentTests = AbTestsName;
 
 	installWidgetSettings: InstallWidgetPageSettings = {
 		visible: false,

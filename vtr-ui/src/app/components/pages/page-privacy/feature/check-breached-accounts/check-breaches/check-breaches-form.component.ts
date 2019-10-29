@@ -12,6 +12,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
+import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 
 interface UserProfile {
 	addressList: string[];
@@ -42,6 +43,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	lenovoId = '';
 	islenovoIdOpen = false;
 	isFormFocused = false;
+	currentTests = AbTestsName;
 
 	constructor(
 		private formBuilder: FormBuilder,

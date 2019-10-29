@@ -9,7 +9,7 @@
 					vtrOfflineMode
 					positionContextTo="top-right"
 					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'InstallButton'"
+					[metricsItem]="'InstallButton' | changeActionButtonText | async"
 					[metricsParam]="articleId ? {ArticleId: articleId} : {}">
 				{{'Install Now' | changeActionButtonText | async}}
 			</button>
