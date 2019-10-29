@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -35,9 +35,11 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 		const back = document.getElementById(this.backId);
-		back.addEventListener('focus' , () => {
-			window.scrollTo(0, 0);
-		});
+		if (back) {
+			back.addEventListener('focus', () => {
+				window.scrollTo(0, 0);
+			});
+		}
 	}
 
 	onInnerBack() {

@@ -722,7 +722,9 @@
                 "accessUrl": "Odprite nastavitve sistema Windows in omogočite dostop",
                 "microphoneNote": "Lenovo Vantage nima dostopa do mikrofona.",
                 "cameraPrivacyNote": "Lenovo Vantage nima dostopa do kamere."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Stanje sistema",
@@ -1577,17 +1579,17 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Povečanje ločljivosti videoposnetkov",
-				"desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-				"tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Ta funkcija ne deluje v naslednjih primerih:",
-					"description1":"Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
-					"description2":"Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
-					"description3":"Temperatura CPE je previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Povečanje ločljivosti videoposnetkov",
+                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
+                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ta funkcija ne deluje v naslednjih primerih:",
+                    "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
+                    "description2": "Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
+                    "description3": "Temperatura CPE je previsoka."
+                }
+            },
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice s funkcijo pretvorbe glasu v besedilo pomaga pretvoriti glas v besedilo, s funkcijo Prevajanje pa zagotavlja prevode iz glasu v besedila v realnem času.",
@@ -1830,7 +1832,17 @@
             "password": "Upravljate z močnimi in kompleksnimi gesli na varen način",
             "vpn": "Spremljate izpostavljenost napadalcem v omrežju",
             "wifi": "Šifrirate osebne podatke pri uporabi javnega omrežja WiFi",
-            "windowsHello": "Zaščitite napravo z možnostmi za varno prijavo"
+            "windowsHello": "Zaščitite napravo z možnostmi za varno prijavo",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
