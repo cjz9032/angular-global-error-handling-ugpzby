@@ -1113,6 +1113,10 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getSmartPerformance() {
+		return undefined;
+	}
+
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
