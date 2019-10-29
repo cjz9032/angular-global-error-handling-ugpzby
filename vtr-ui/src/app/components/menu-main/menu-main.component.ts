@@ -713,7 +713,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		Promise.all([
 			this.keyboardService.GetUDKCapability(),
 			this.keyboardService.GetKeyboardMapCapability(),
-			// this.keyboardService.getVoipHotkeysSettings()
+			this.keyboardService.GetKeyboardVersion()
 		])
 			.then((responses) => {
 				try {
@@ -723,7 +723,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-					// inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
+					inputAccessoriesCapability.keyboardVersion = responses[2];
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
