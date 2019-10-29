@@ -29,6 +29,9 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
+import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { StringBooleanEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { catchError } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -93,7 +96,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		searchService: AppSearchService
+		searchService: AppSearchService,
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService
 	) {
 		localInfoService
 			.getLocalInfo()
@@ -241,6 +245,28 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 		if (machineType === 1) {
 			this.initInputAccessories();
+		}
+		if (machineType === 0) {
+			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
+			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+			this.topRowFunctionsIdeapadService.capability
+				.pipe(
+					catchError(() => {
+						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
+						return EMPTY;
+					})
+				)
+				.subscribe(capabilities => {
+					if (capabilities.length === 0) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+					}
+					// todo: there should be a better way to operate this array
+					capabilities.forEach(capability => {
+						if (capability.key === 'FnLock') {
+							this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
+						}
+					});
+				});
 		}
 	}
 
@@ -643,9 +669,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					const isAvailable =
 						assistCapability.isIntelligentSecuritySupported ||
 						assistCapability.isLenovoVoiceSupported ||
-						assistCapability.isIntelligentMediaSupported ||
+						assistCapability.isIntelligentMediaSupported.available ||
 						assistCapability.isIntelligentScreenSupported ||
-						assistCapability.isSuperResolutionSupported ||
+						assistCapability.isSuperResolutionSupported.available ||
 						assistCapability.isAPSSupported;
 					// const isAvailable = true;
 					this.commonService.setLocalStorageValue(
@@ -687,7 +713,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		Promise.all([
 			this.keyboardService.GetUDKCapability(),
 			this.keyboardService.GetKeyboardMapCapability(),
-			// this.keyboardService.getVoipHotkeysSettings()
+			this.keyboardService.GetKeyboardVersion()
 		])
 			.then((responses) => {
 				try {
@@ -697,7 +723,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-					// inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
+					inputAccessoriesCapability.keyboardVersion = responses[2];
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);

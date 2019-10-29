@@ -9,7 +9,7 @@ export class SmartPerformanceService {
     private getSmartPerformance: any;
     public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
-		this.getSmartPerformance = shellService.getSmartPerformance();
+		//this.getSmartPerformance = shellService.getSmartPerformance();
 		if (this.getSmartPerformance) {
 			this.isShellAvailable = true;
 		}

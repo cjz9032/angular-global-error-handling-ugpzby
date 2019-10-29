@@ -722,7 +722,9 @@
                 "accessUrl": "Gå til Windows-innstillinger for å gi tilgang",
                 "microphoneNote": "Lenovo Vantage har ikke tilgang til mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage har ikke tilgang til kamera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -1365,7 +1367,11 @@
                             "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
                             "reboot": "START PÅ NYTT",
                             "cancel": "IKKE NÅ"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
+							"fnKey": "Du får tilgang til spesialfunksjonen ved å trykke på Fn og tastene på den øverste raden."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Hurtigtastfunksjoner for VoIP",
@@ -1573,17 +1579,17 @@
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },
             "superResolution": {
-				"heading": "Intelligent medieavspilling",
-				"title": "Oppskalering av videooppløsning",
-				"desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
-				"tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Denne funksjonen fungerer ikke når følgende er tilfelle:",
-					"description1":"Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
-					"description2":"Datamaskinen er ikke koblet til strømnettet, og batterisparingsmodus er aktivert.",
-					"description3":"CPU-temperaturen er for høy."
-				}
-			},
+                "heading": "Intelligent medieavspilling",
+                "title": "Oppskalering av videooppløsning",
+                "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
+                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
+                    "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
+                    "description2": "Datamaskinen er ikke koblet til strømnettet, og batterisparingsmodus er aktivert.",
+                    "description3": "CPU-temperaturen er for høy."
+                }
+            },
             "voice": {
                 "title": "Tale",
                 "description": "Lenovo Voice hjelper deg med å konvertere stemmen din til tekster med funksjonen for tale på tekst, og gir sann tids oversetting fra tale til tekster med Oversettelses funksjonen.",
@@ -1826,7 +1832,17 @@
             "password": "Om du har sterke passord som du håndterer på en sikker måte",
             "vpn": "Om du overvåker nettverkets sårbarhet for angripere",
             "wifi": "Om du krypterer personlige data når du bruker offentlig WiFi",
-            "windowsHello": "Om du beskytter enheten ved hjelp av sikre påloggingsmåter"
+            "windowsHello": "Om du beskytter enheten ved hjelp av sikre påloggingsmåter",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

@@ -24,4 +24,10 @@ public description: string;
 	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
 		this.closeModal();
 	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.Battery-Charge-Threshold-Modal') as HTMLElement;
+		modal.focus();
+	}
 }

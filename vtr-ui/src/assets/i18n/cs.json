@@ -722,7 +722,9 @@
                 "accessUrl": "Chcete-li poskytnout přístup, přejděte do nastavení systému Windows",
                 "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -1365,7 +1367,11 @@
                             "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
                             "reboot": "RESTARTOVAT",
                             "cancel": "TEĎ NE"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich funkce F1-F12.",
+							"fnKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich sekundární funkce."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkce horkých kláves VoIP:",
@@ -1573,17 +1579,17 @@
                 "tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
             },
             "superResolution": {
-				"heading": "Inteligentní média",
-				"title": "Zvýšení rozlišení videa",
-				"desc": "<p><label>Tato funkce zvyšuje zážitek z přehrávání videa zlepšením rozlišení videa. Funguje zejména v případě, že je video ve špatném rozlišení.</label></p> <p style='margin-top:4px;'><label> Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. Pokud je povolená, doporučuje se připojit počítač k napájení střídavým proudem.</label></p>",
-				"tooltip": "Tato funkce funguje pouze u následujících přehrávačů: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Tato funkce nepracuje v následujících případech:",
-					"description1":"Počítač není připojen k napájení střídavým proudem a kapacita baterie je nižší než 20 %.",
-					"description2":"Počítač není připojen k napájení střídavým proudem a je aktivní režim úspory baterie.",
-					"description3":"Teplota procesoru je příliš vysoká."
-				}
-			},
+                "heading": "Inteligentní média",
+                "title": "Zvýšení rozlišení videa",
+                "desc": "<p><label>Tato funkce zvyšuje zážitek z přehrávání videa zlepšením rozlišení videa. Funguje zejména v případě, že je video ve špatném rozlišení.</label></p> <p style='margin-top:4px;'><label> Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. Pokud je povolená, doporučuje se připojit počítač k napájení střídavým proudem.</label></p>",
+                "tooltip": "Tato funkce funguje pouze u následujících přehrávačů: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Tato funkce nepracuje v následujících případech:",
+                    "description1": "Počítač není připojen k napájení střídavým proudem a kapacita baterie je nižší než 20 %.",
+                    "description2": "Počítač není připojen k napájení střídavým proudem a je aktivní režim úspory baterie.",
+                    "description3": "Teplota procesoru je příliš vysoká."
+                }
+            },
             "voice": {
                 "title": "Hlas",
                 "description": "Lenovo Voice pomáhá převádět váš hlas do textů funkcí Hlas na text a funkcí Překlad zajišťuje překlad v reálném čase z hlasu do textů.",
@@ -1826,7 +1832,17 @@
             "password": "Chráněni silnými a složitými hesly s bezpečnou správou",
             "vpn": "Sledujete svou expozici útočníkům v síti",
             "wifi": "Při používání veřejných sítít WiFi chráněni šifrováním svých osobních údajů",
-            "windowsHello": "Chráníte své zařízení používáním bezpečných možností přihlášení"
+            "windowsHello": "Chráníte své zařízení používáním bezpečných možností přihlášení",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
