@@ -526,15 +526,15 @@ export class VantageShellService {
 					cancelled = true;
 				};
 				appList.forEach((app) => {
-					progressResponseList.push([ { appID: app.appID, status: 'downloading', progress: '0' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'downloading', progress: '10' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'downloading', progress: '50' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'downloading', progress: '90' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'downloaded', progress: '100' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'installing', progress: '0' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'installing', progress: '0' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'installing', progress: '0' } ]);
-					progressResponseList.push([ { appID: app.appID, status: 'installed', progress: '100' } ]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '10' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '50' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloading', progress: '90' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'downloaded', progress: '100' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installing', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installing', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installing', progress: '0' }]);
+					progressResponseList.push([{ appID: app.appID, status: 'installed', progress: '100' }]);
 				});
 				const downloadAndInstallResult = { appList };
 				downloadAndInstallResult.appList.forEach((app) => {
@@ -698,7 +698,7 @@ export class VantageShellService {
 				getWifiSecurityStateOnce(): Promise<any> {
 					return Promise.resolve();
 				},
-				updateWifiSecurityState(): void {},
+				updateWifiSecurityState(): void { },
 				getWifiSecurityState(): Promise<any> {
 					return Promise.resolve();
 				},
@@ -712,11 +712,11 @@ export class VantageShellService {
 					return this;
 				},
 				refresh() {
-					const p1 = new Promise((resolve) => {});
-					const p2 = new Promise((resolve) => {});
-					return Promise.all([ p1, p2 ]);
+					const p1 = new Promise((resolve) => { });
+					const p2 = new Promise((resolve) => { });
+					return Promise.all([p1, p2]);
 				},
-				cancelGetWifiSecurityState() {}
+				cancelGetWifiSecurityState() { }
 			},
 			setScoreRegistry() {
 				return Promise.resolve(true);
@@ -770,7 +770,7 @@ export class VantageShellService {
 				return this;
 			},
 			refresh() {
-				return Promise.resolve([ true ]);
+				return Promise.resolve([true]);
 			},
 			joinAccount(code: string) {
 				return Promise.resolve('success');
@@ -810,7 +810,7 @@ export class VantageShellService {
 			getDevicePosture() {
 				return Promise.resolve();
 			},
-			cancelGetDevicePosture() {},
+			cancelGetDevicePosture() { },
 			on(type, handler) {
 				return this;
 			},
@@ -818,7 +818,7 @@ export class VantageShellService {
 				return this;
 			},
 			refresh() {
-				return Promise.resolve([ true ]);
+				return Promise.resolve([true]);
 			}
 		};
 		return devicePosture;
@@ -852,7 +852,7 @@ export class VantageShellService {
 		const obj: any = {
 			available: true,
 			currentMode: 'Dynamic',
-			supporedModes: [ 'Dynamic', 'Movie', 'Music', 'Games', 'Voip' ]
+			supporedModes: ['Dynamic', 'Movie', 'Music', 'Games', 'Voip']
 		};
 
 		dolby.getDolbyMode = this.getPromise(obj);
@@ -867,7 +867,7 @@ export class VantageShellService {
 		const microphone: any = {};
 		const micSupportedModes: any = {
 			current: 'MultipleVoices',
-			modes: [ 'VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices' ]
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices']
 		};
 
 		const micSettings = {
@@ -926,7 +926,7 @@ export class VantageShellService {
 			batteryInformation: [
 				{
 					barCode: 'X2XP888JB1S',
-					batteryCondition: [ 'Normal' ],
+					batteryCondition: ['Normal'],
 					batteryHealth: 0,
 					chargeStatus: 2,
 					cycleCount: 98,
@@ -1166,7 +1166,7 @@ export class VantageShellService {
 			sendContractToPlugin: (contract): any => {
 				switch (contract.command) {
 					case 'Get-InstalledBrowsers':
-						return of({ browsers: [ 'chrome', 'firefox', 'edge' ] });
+						return of({ browsers: ['chrome', 'firefox', 'edge'] });
 					case 'Get-AccessiblePasswords':
 						return of({ chrome: 11, firefox: 1, edge: 1 });
 					case 'Get-MaskedPasswords':
@@ -1303,7 +1303,7 @@ export class VantageShellService {
 			currentMode: 'Blur',
 			enabled: true,
 			errorCode: 0,
-			supportedModes: [ 'Blur', 'Comic', 'Sketch' ]
+			supportedModes: ['Blur', 'Comic', 'Sketch']
 		};
 		const cameraBlur: any = { getCameraBlurSettings: this.getPromise(obj) };
 		return cameraBlur;
@@ -1312,7 +1312,7 @@ export class VantageShellService {
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
@@ -1322,7 +1322,7 @@ export class VantageShellService {
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
@@ -1364,18 +1364,70 @@ export class VantageShellService {
 	}
 
 	public getGamingLighting(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-			}
-			return this.phoenix.gaming.gamingLighting;
-		}
-		return undefined;
+		const lightingObj = {
+			LightPanelType: [32, 64],
+			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
+			LedType_simple: [0],
+			BrightAdjustLevel: 4,
+			RGBfeature: 255
+		};
+		const obj = {
+			biosDate: '08292018',
+			biosVersion: 'R0PET47W 1.24 ',
+			brand: 'Lenovo',
+			country: 'us',
+			cpuAddressWidth: '64',
+			cpuArchitecture: 'AMD64',
+			cpuinfo: {
+				addressWidth: '64',
+				name: 'Intel(R) Core(TM) i3-7020U CPU @ 2.30GHz',
+				type: 'AMD64',
+				vendor: 'GenuineIntel'
+			},
+			deviceId: '0879eb1af41243f0af686ffe29eff508f6d1eb99fef906b2417be2ea0f5787fc',
+			eCVersion: '1.24',
+			enclosureType: 'notebook',
+			family: 'ThinkPad E480',
+			firstRunDate: '2019-06-18T00:54:24',
+			isGaming: true, // change value to true for gaming machine
+			isSMode: false,
+			locale: 'en',
+			manufacturer: 'LENOVO',
+			memorys: [
+				{
+					serialNumber: '8B264B0A',
+					sizeInBytes: 4194304,
+					type: 'DDR4'
+				},
+				{
+					serialNumber: '4A7D0400',
+					sizeInBytes: 8388608,
+					type: 'DDR4'
+				}
+			],
+			mt: '20KN',
+			mtm: '20KNS0DD00',
+			os: 'Windows',
+			osBitness: '64',
+			osName: 'Windows 10 Pro',
+			osVersionString: '10.0.18362.356',
+			serialnumber: 'PG01EBJS',
+			sku: 'LENOVO_MT_20KN_BU_Think_FM_ThinkPad E480',
+			subBrand: 'ThinkPad'
+		};
+
+		const profileObj = { didSuccess: true, profileId: 1, brightness: 2, lightInfo: [{ lightPanelType: 32, lightEffectType: 1, lightColor: 'FF0000' }, { lightPanelType: 64, lightEffectType: 1, lightColor: 'FF0000' }] };
+		const gamingLighting: any = {
+			getLightingProfileById: this.getPromise(profileObj),
+			getLightingCapabilities: this.getPromise(lightingObj),
+			getMachineInfo: this.getPromise(obj)
+		};
+		return gamingLighting;
 	}
 	public getGamingOverClock(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingOverclock;
 		}
@@ -1426,7 +1478,7 @@ export class VantageShellService {
 	public getGamingKeyLock() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingKeyLock;
 		}
@@ -1436,7 +1488,7 @@ export class VantageShellService {
 	public getGamingHybridMode() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingHybridMode;
 		}
@@ -1478,23 +1530,171 @@ export class VantageShellService {
 		}
 	}
 	public getNetworkBoost() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-			}
-			return this.phoenix.gaming.gamingNetworkBoost;
-		}
-		return undefined;
+		const runningList: any = {
+			processList: [{
+				processDescription: 'Google Chrome',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,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'
+			}, {
+				processDescription: 'InputApp',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft Teams',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVFhHYxiyoLz+uUJ10+v+ysaX+0EYxAaJQaVpC6qaXiZUN7/+jw2D5KDKaAPAPsdiMTKmaUiAghqbpSgYqAaqHAwCIk/2A/F/JIwiTxIAxzc2S5EwSA1UOTbLKXMEGQ7AZjkYQ5WQBvJKL/XnlV3+j4wLKm6gOgIpCrBZDMP+4ccVGLyD9pz3Dt7znxzsFbTpv1/wVLAjkB2AnAixWQzDYAXYDCYFu3m3ozgAPRsCLcKfBrAZSgp29Wzdn1t6EW9BBLIMq+UggG4gIYCuHmoM+QDdQEIAXT16FKDj4uqnyD5HxeHHz+ONAhjAJgfDhBwAwlgth+JRB4w6YNQBg9sBxOCh7oD7FFXH7v5rKXKAf+TJBmiNgB9Y2OT8x4at7Qv/e/r3kueA8JProcYTBhGxK/dHxK38jwtjtIiQcFHlk/dAC+8jWX6faJ/DQFLWnoSkzD3/seH0vKNYLYZhqvUTgA2O89gswIuBeqDaKQeg1k5l88v3WC3CgkFqqd5BARlIVEgA1VDdcmQAilds/QOQGM37htQFDAwAyVPg8+K1GtYAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdge',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVFhHxZc9SgRBEIX3CB7BI3gEj+ARPIKpmaZGYmoiGJoYGBqYGAomsiDiD8iCCLogogjSzrdMDzW9r6d7enR98Jidmq6uV9W/Oxptjt2/UhoXSWmMcHX/wR1cTN3l5NMpnN2+u42TJ7e8cyP9JaUx4Nrho7t//arD5AGhWUKksebS9rU7vnqru+yP6ce3Wz+ayL4bSmNFgsdK3RedIpTxN4N7REUo4+75S+02D+YCw7J1+tyQyZcCwyHnRGhgpofAGVEre3ez6sDQj85TVUN46DcnIMyGDH1Qn23o40kbxHZhrgr2hY8eZEPG2Hn67FJLC5FdoJItH/vCJgII5stMcJ+VLGFANYQW9N3ysS+U1wbn6TMHCLTtFfFJoeVjX2xwGJaT74hMMQWq1MRtflS0HxCSmlCliAqwZOP4K2QJGHIGpJAlIGcsS5ElQCF3Eqbo95cZbVBLBVaFajuI0lgRpSGwqbaDKI0VY5OQ25FqX0xprBhbhuwNfURwdnA9iw6fNFZMbUQMR0wIQUnADmNvATB1snnY1RETXSQgPIyGoEgAtMfxEBQLgPZCUopBAiDDQSd9q0H7zj8p0thBhHAxsTM8BNUiaNZylcZFUhoXxrH7AZdMAv2haziRAAAAAElFTkSuQmCC'
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdgeDevToolsPreview',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.WindowsMaps',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.WindowsStore',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.ZuneVideo',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Skype for Business(UcMapi)',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP8SURBVFhHzZfPb4xBGMdHEUIlLiQSwcGdIyeOTvgLcHMQIQ4cuTg5cBAhIbhK9t1VNHFRURGHSmmIixAHpK28O20X/bHb8XzmnVnzvp33bSsOnuSb3e7M82Oe31X/J9VaW1Siz6u6HlI1PSmfRjAl35+pevO0ujfaq26Y1fJ9ozJmheP6R5Q0z4iillMaRU8jnQn/XpnoVk9Dv1ZJel010oPWuGUTL6nrWwhccz/tnHzz0wx+nzOj0x0zJngyPmtOjfw0Gx5M5IyJYWUjHZPPc+q2WeukL4HqzbMwb+3Xc28n28aY+Sgwpv511ryXO83ZjsWHVtvUvsyYE2L05v4/BvYk+qNKJvY6DRXUl25TtXSal1cpXwpmOvPm2sdps8kZIuFqS2iOOk0llDQvchm3x4T+DcZnOubAi1bXG9VG1PQwl4h5TFiITz/a5vKHaXP+/S+zb3DK5gXfh/VC3vb8vDky9CPwRFk46uksl0i4ohAPYn30VSasDNsfT9r8CPkwwnvC5kQ0MZ0AEixk9kD5ridTOWVVwEMhP+HwOSE457QGRJORQ0otZPRAoGO22D/YMg156dPxOYvTEobwHBCqUAaJye9SoqML+4TtcNrGM2TyINZe8MaHE9YjxTvkAGf+XjEnqI6uF2hWOaK9ygFNBneFjCA0gDgXzz1QekESspgHHvQJK4eOmSPp7b69JhHmQy+DchKQDyiJeaIKNCv4bdvOkR0smfB3kUZ0+3PGGAPGEDruLGYQHRMeZofT7Iip5gSWCYklWgyUapkMfu/ezU3RbBDZg6pXDEiVHBMFYbLFgFdicnIG8OiQrFvkADcVGWMg4a5IeR6W/IgZhCeKPIS3e2fArHKqM7KJIQckSpFxKcCYrnBBrFpIcM5swrPU5IjSkENKpchIknFW5lqPHaLUGwCK53Ta3u4+IaWfI5qDHNAsaBohYygUI8Izj3x8tdldcs8/xja/HEkp2jYph7TNkGmxPkAJ4vLwDhMylOFBu3d3ppzmgBgUcogXwo5IX18s80OUvR4Qhu7dBSSj0o5MOWSEMko9I6+lBLvMJaBfVOUJI9/eraVzTmuBZGmwy4NcYpkIjQB44464nJ6PQZQh3/mtOAFjYOnJDNAjTmOEWJ/ci/BEbED9LVj7rOxEX3LaSkiM8J4gJ0jMYnUsFyy8LL6ygbXVfb3TaaogwuFywhtCn6BZ0TGJNWBFpyrKNiqAclb+TFbzqtOwBGKHk+rwJVoF9gnqnFLDGBKOmOP27OXcaz5X/WaNk74MYmTTrKRj0rb97PDw+0QlEn1X9X1Z5yT+A7JTVKYaxj3+tl6UHJf/MR7Jb98ypbJt1/QnwU1Vm9jjuP4nUuo3Rc+6UWVSJz8AAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Skype for Business(lync)',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP8SURBVFhHzZfPb4xBGMdHEUIlLiQSwcGdIyeOTvgLcHMQIQ4cuTg5cBAhIbhK9t1VNHFRURGHSmmIixAHpK28O20X/bHb8XzmnVnzvp33bSsOnuSb3e7M82Oe31X/J9VaW1Siz6u6HlI1PSmfRjAl35+pevO0ujfaq26Y1fJ9ozJmheP6R5Q0z4iillMaRU8jnQn/XpnoVk9Dv1ZJel010oPWuGUTL6nrWwhccz/tnHzz0wx+nzOj0x0zJngyPmtOjfw0Gx5M5IyJYWUjHZPPc+q2WeukL4HqzbMwb+3Xc28n28aY+Sgwpv511ryXO83ZjsWHVtvUvsyYE2L05v4/BvYk+qNKJvY6DRXUl25TtXSal1cpXwpmOvPm2sdps8kZIuFqS2iOOk0llDQvchm3x4T+DcZnOubAi1bXG9VG1PQwl4h5TFiITz/a5vKHaXP+/S+zb3DK5gXfh/VC3vb8vDky9CPwRFk46uksl0i4ohAPYn30VSasDNsfT9r8CPkwwnvC5kQ0MZ0AEixk9kD5ridTOWVVwEMhP+HwOSE457QGRJORQ0otZPRAoGO22D/YMg156dPxOYvTEobwHBCqUAaJye9SoqML+4TtcNrGM2TyINZe8MaHE9YjxTvkAGf+XjEnqI6uF2hWOaK9ygFNBneFjCA0gDgXzz1QekESspgHHvQJK4eOmSPp7b69JhHmQy+DchKQDyiJeaIKNCv4bdvOkR0smfB3kUZ0+3PGGAPGEDruLGYQHRMeZofT7Iip5gSWCYklWgyUapkMfu/ezU3RbBDZg6pXDEiVHBMFYbLFgFdicnIG8OiQrFvkADcVGWMg4a5IeR6W/IgZhCeKPIS3e2fArHKqM7KJIQckSpFxKcCYrnBBrFpIcM5swrPU5IjSkENKpchIknFW5lqPHaLUGwCK53Ta3u4+IaWfI5qDHNAsaBohYygUI8Izj3x8tdldcs8/xja/HEkp2jYph7TNkGmxPkAJ4vLwDhMylOFBu3d3ppzmgBgUcogXwo5IX18s80OUvR4Qhu7dBSSj0o5MOWSEMko9I6+lBLvMJaBfVOUJI9/eraVzTmuBZGmwy4NcYpkIjQB44464nJ6PQZQh3/mtOAFjYOnJDNAjTmOEWJ/ci/BEbED9LVj7rOxEX3LaSkiM8J4gJ0jMYnUsFyy8LL6ygbXVfb3TaaogwuFywhtCn6BZ0TGJNWBFpyrKNiqAclb+TFbzqtOwBGKHk+rwJVoF9gnqnFLDGBKOmOP27OXcaz5X/WaNk74MYmTTrKRj0rb97PDw+0QlEn1X9X1Z5yT+A7JTVKYaxj3+tl6UHJf/MR7Jb98ypbJt1/QnwU1Vm9jjuP4nUuo3Rc+6UWVSJz8AAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Visual Studio Code',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP0SURBVFhHtZfbT5tlHMd/9GCh21JZp9kFSA8DF73RaHZh4oWLXnjpf2C80CxCB7JyWimHHhiwUsQZo/M4HIcNKNC1UMs2k7m4LaNd25dyYUxGkHioF2u7u7E8/t6nz7aCb5+Xw/pNPlfv8/w+3/d52iaFYuRlx+U3qkdWblcO3/236txqynBm2cseFT+iXGVbyIL9ClG7r5MXL92nmCdT66YvfjvPlhUnLzmvvq86Gc5C+2XyiBr//Q2YJ1LrhmIUMXSELGBD6SZq/FlJTBdT62ZP4i22fXd5wR6ug5MLRIqaWRQWwDT29xobsfPo20OT0BYmhaiZQRkHNmZnedYWmpCS5lM9neXCRm0vh1vCel1rKAytPxE5qn0o4kAH6geEr+HTJBHZM7h08/BnST19IBFRXtocWoaWENkKUtJ8QO8VzsLgEslHObCUrfIuvcucj0PlTcFlaMbhMiitwewh50J99RSKOIDWE78BXhRLcMAj9DM3GNvmj6ha5tagaZ7IIZYU1xNC9hyazBIesPe0EIIBgRRC05f4tbJr4R1F01wGrHNEDl1L4IJ4UmJpWmAiQ3iAeN+afiEJHhQWoj/6EFrxe20NFkTRGMw81xw8Ro+LBQtopaT50IW5ErEknEYZD/s1AidQuAlNYyBZ0eQ/QoflhRa4iCIObGku+3oT49CfwDfm4LiFUjzuxgBlnzUwXtEwv5+N2BAsUGa+kCE82NIn2dsXG4M+FPHoieInPUx0jTPNbJtkaIFxFHFgS59Ee2J2FDquE+iNy6LricsVKDWPoYgDW5qL9hOUN/gJpe0qgVMokkHrjo9WeIRCV7C1AuIdKhtmBaifJRtovYLHjSIZlO64oO+Nv06H5QULaEyjGcIjJ7f4BDiOQims+JvuWnwI7hjhUeKOpfFKPmRuGlpgBEUcQFM/EwDLDCmE2uL7Ree4cbTEFUuDC2UylLmiI4+uBAs8YzqfJjxAFIBlGmX/p+z4tIu+CkbXHX9N6YyugvMOkUPhiCTE9VsqUFo39TnUoTCPko+n0rr66beZ+3HwiMsV3ZEEOFAkQ4nzTrr8VPQj449pwoMOVtf6zkCtj4goan3XdMculdMHEtlOCRHjMIo4sLHbi1hC3RXxQzf+IMlgPIciDmzkzqLqjAxDF4o4GH9AEQc2audR2bFEZ4QUwoASHmzM7qLuWPwAOlAogeF7FBWg8qt/VtiI3UdtwxJ2lG7C8N09SSrPph4cGPj9Tbb96UTZfvs9aF+8h+DfshyGb1GYB771A/3gyjdsy9OP2nbrVbBhCdsiUXXGSRVKRSq+LLJ4Q9puvvL80B8/64dW/zo4tPbnfu/dHvZkUwD+A8E98pKW4pfHAAAAAElFTkSuQmCC'
+			}, {
+				processDescription: 'windows.immersivecontrolpanel',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVFhHxZUxSgRBEEX3CB7Bo3gEj2O4qZG5ieA5DA0FwwURRBATQc0UQcZ96xbW/v5TM4swU/Bg+3d1dXdVTe9icbLqZsWKU2LFKbFiD8eXT93y6qU7PL1v5tCYw0fnSqwoEPTh9asLO7t+bXzYPAzf0QexonBx874N/WtvH9+ND1o21qiPxYrC0fnjNuyfsQG3Bj0gxhoXq8GKhtvnz23oYaMELobFigINlntgyPA9WN7ZWA0q0DykNFJIIK1vGHo1F18LsYhpG1OFfFN+680JTN3zDfmNpodhbS4d47zXhjzghJURrEotc0O90mQhD/K3rMbtqs0DfPrKgrHHzpo8iNfMBWgWFriLEJMHrHlFdwYJ/bbH3D7ANxuxnN8GK67Jt+D0zqciZ7HMnhXXzH6AWUpAg9Ao+fRh5S2EnL0wYqKXTegWhhFgTBbwcRcIay6SB7M/RJCfXoL99ynO6wefYuCENE38GVGzvpSiV3NxyL3+jBwE0kxUhm/OUIkVDfscgNK5GBYrCqRQjZRSd9A3A4sSDmJFQTegvuqjvcAa9bFYUaB5cgmab3kND1gYvrbhHFbsgaD6CQbxVz5648CKU2LFKbHiZKy6H/tgIDQUAVyRAAAAAElFTkSuQmCC'
+			}]
+		};
+
+		const networkBoostList: any = {
+			processList: [{
+				processDescription: 'Google Chrome',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,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'
+			}, {
+				processDescription: 'InputApp',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft Teams',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVFhHYxiyoLz+uUJ10+v+ysaX+0EYxAaJQaVpC6qaXiZUN7/+jw2D5KDKaAPAPsdiMTKmaUiAghqbpSgYqAaqHAwCIk/2A/F/JIwiTxIAxzc2S5EwSA1UOTbLKXMEGQ7AZjkYQ5WQBvJKL/XnlV3+j4wLKm6gOgIpCrBZDMP+4ccVGLyD9pz3Dt7znxzsFbTpv1/wVLAjkB2AnAixWQzDYAXYDCYFu3m3ozgAPRsCLcKfBrAZSgp29Wzdn1t6EW9BBLIMq+UggG4gIYCuHmoM+QDdQEIAXT16FKDj4uqnyD5HxeHHz+ONAhjAJgfDhBwAwlgth+JRB4w6YNQBg9sBxOCh7oD7FFXH7v5rKXKAf+TJBmiNgB9Y2OT8x4at7Qv/e/r3kueA8JProcYTBhGxK/dHxK38jwtjtIiQcFHlk/dAC+8jWX6faJ/DQFLWnoSkzD3/seH0vKNYLYZhqvUTgA2O89gswIuBeqDaKQeg1k5l88v3WC3CgkFqqd5BARlIVEgA1VDdcmQAilds/QOQGM37htQFDAwAyVPg8+K1GtYAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdge',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVFhHxZc9SgRBEIX3CB7BI3gEj+ARPIKpmaZGYmoiGJoYGBqYGAomsiDiD8iCCLogogjSzrdMDzW9r6d7enR98Jidmq6uV9W/Oxptjt2/UhoXSWmMcHX/wR1cTN3l5NMpnN2+u42TJ7e8cyP9JaUx4Nrho7t//arD5AGhWUKksebS9rU7vnqru+yP6ce3Wz+ayL4bSmNFgsdK3RedIpTxN4N7REUo4+75S+02D+YCw7J1+tyQyZcCwyHnRGhgpofAGVEre3ez6sDQj85TVUN46DcnIMyGDH1Qn23o40kbxHZhrgr2hY8eZEPG2Hn67FJLC5FdoJItH/vCJgII5stMcJ+VLGFANYQW9N3ysS+U1wbn6TMHCLTtFfFJoeVjX2xwGJaT74hMMQWq1MRtflS0HxCSmlCliAqwZOP4K2QJGHIGpJAlIGcsS5ElQCF3Eqbo95cZbVBLBVaFajuI0lgRpSGwqbaDKI0VY5OQ25FqX0xprBhbhuwNfURwdnA9iw6fNFZMbUQMR0wIQUnADmNvATB1snnY1RETXSQgPIyGoEgAtMfxEBQLgPZCUopBAiDDQSd9q0H7zj8p0thBhHAxsTM8BNUiaNZylcZFUhoXxrH7AZdMAv2haziRAAAAAElFTkSuQmCC'
+			}]
+		};
+
+		const gamingNetworkBoost: any = {
+			getProcessesInNetworkBoost: this.getPromise(networkBoostList),
+			getNetUsingProcesses: this.getPromise(runningList)
+		};
+		return gamingNetworkBoost;
 	}
 
 	public getGamingAutoClose() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-			}
-			return this.phoenix.gaming.gamingAutoClose;
-		}
-		return undefined;
+		const runningList: any = {
+			processList: [{
+				processDescription: 'Google Chrome',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,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'
+			}, {
+				processDescription: 'InputApp',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft Teams',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVFhHYxiyoLz+uUJ10+v+ysaX+0EYxAaJQaVpC6qaXiZUN7/+jw2D5KDKaAPAPsdiMTKmaUiAghqbpSgYqAaqHAwCIk/2A/F/JIwiTxIAxzc2S5EwSA1UOTbLKXMEGQ7AZjkYQ5WQBvJKL/XnlV3+j4wLKm6gOgIpCrBZDMP+4ccVGLyD9pz3Dt7znxzsFbTpv1/wVLAjkB2AnAixWQzDYAXYDCYFu3m3ozgAPRsCLcKfBrAZSgp29Wzdn1t6EW9BBLIMq+UggG4gIYCuHmoM+QDdQEIAXT16FKDj4uqnyD5HxeHHz+ONAhjAJgfDhBwAwlgth+JRB4w6YNQBg9sBxOCh7oD7FFXH7v5rKXKAf+TJBmiNgB9Y2OT8x4at7Qv/e/r3kueA8JProcYTBhGxK/dHxK38jwtjtIiQcFHlk/dAC+8jWX6faJ/DQFLWnoSkzD3/seH0vKNYLYZhqvUTgA2O89gswIuBeqDaKQeg1k5l88v3WC3CgkFqqd5BARlIVEgA1VDdcmQAilds/QOQGM37htQFDAwAyVPg8+K1GtYAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdge',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVFhHxZc9SgRBEIX3CB7BI3gEj+ARPIKpmaZGYmoiGJoYGBqYGAomsiDiD8iCCLogogjSzrdMDzW9r6d7enR98Jidmq6uV9W/Oxptjt2/UhoXSWmMcHX/wR1cTN3l5NMpnN2+u42TJ7e8cyP9JaUx4Nrho7t//arD5AGhWUKksebS9rU7vnqru+yP6ce3Wz+ayL4bSmNFgsdK3RedIpTxN4N7REUo4+75S+02D+YCw7J1+tyQyZcCwyHnRGhgpofAGVEre3ez6sDQj85TVUN46DcnIMyGDH1Qn23o40kbxHZhrgr2hY8eZEPG2Hn67FJLC5FdoJItH/vCJgII5stMcJ+VLGFANYQW9N3ysS+U1wbn6TMHCLTtFfFJoeVjX2xwGJaT74hMMQWq1MRtflS0HxCSmlCliAqwZOP4K2QJGHIGpJAlIGcsS5ElQCF3Eqbo95cZbVBLBVaFajuI0lgRpSGwqbaDKI0VY5OQ25FqX0xprBhbhuwNfURwdnA9iw6fNFZMbUQMR0wIQUnADmNvATB1snnY1RETXSQgPIyGoEgAtMfxEBQLgPZCUopBAiDDQSd9q0H7zj8p0thBhHAxsTM8BNUiaNZylcZFUhoXxrH7AZdMAv2haziRAAAAAElFTkSuQmCC'
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdgeDevToolsPreview',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.WindowsMaps',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.WindowsStore',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.ZuneVideo',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Skype for Business(UcMapi)',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP8SURBVFhHzZfPb4xBGMdHEUIlLiQSwcGdIyeOTvgLcHMQIQ4cuTg5cBAhIbhK9t1VNHFRURGHSmmIixAHpK28O20X/bHb8XzmnVnzvp33bSsOnuSb3e7M82Oe31X/J9VaW1Siz6u6HlI1PSmfRjAl35+pevO0ujfaq26Y1fJ9ozJmheP6R5Q0z4iillMaRU8jnQn/XpnoVk9Dv1ZJel010oPWuGUTL6nrWwhccz/tnHzz0wx+nzOj0x0zJngyPmtOjfw0Gx5M5IyJYWUjHZPPc+q2WeukL4HqzbMwb+3Xc28n28aY+Sgwpv511ryXO83ZjsWHVtvUvsyYE2L05v4/BvYk+qNKJvY6DRXUl25TtXSal1cpXwpmOvPm2sdps8kZIuFqS2iOOk0llDQvchm3x4T+DcZnOubAi1bXG9VG1PQwl4h5TFiITz/a5vKHaXP+/S+zb3DK5gXfh/VC3vb8vDky9CPwRFk46uksl0i4ohAPYn30VSasDNsfT9r8CPkwwnvC5kQ0MZ0AEixk9kD5ridTOWVVwEMhP+HwOSE457QGRJORQ0otZPRAoGO22D/YMg156dPxOYvTEobwHBCqUAaJye9SoqML+4TtcNrGM2TyINZe8MaHE9YjxTvkAGf+XjEnqI6uF2hWOaK9ygFNBneFjCA0gDgXzz1QekESspgHHvQJK4eOmSPp7b69JhHmQy+DchKQDyiJeaIKNCv4bdvOkR0smfB3kUZ0+3PGGAPGEDruLGYQHRMeZofT7Iip5gSWCYklWgyUapkMfu/ezU3RbBDZg6pXDEiVHBMFYbLFgFdicnIG8OiQrFvkADcVGWMg4a5IeR6W/IgZhCeKPIS3e2fArHKqM7KJIQckSpFxKcCYrnBBrFpIcM5swrPU5IjSkENKpchIknFW5lqPHaLUGwCK53Ta3u4+IaWfI5qDHNAsaBohYygUI8Izj3x8tdldcs8/xja/HEkp2jYph7TNkGmxPkAJ4vLwDhMylOFBu3d3ppzmgBgUcogXwo5IX18s80OUvR4Qhu7dBSSj0o5MOWSEMko9I6+lBLvMJaBfVOUJI9/eraVzTmuBZGmwy4NcYpkIjQB44464nJ6PQZQh3/mtOAFjYOnJDNAjTmOEWJ/ci/BEbED9LVj7rOxEX3LaSkiM8J4gJ0jMYnUsFyy8LL6ygbXVfb3TaaogwuFywhtCn6BZ0TGJNWBFpyrKNiqAclb+TFbzqtOwBGKHk+rwJVoF9gnqnFLDGBKOmOP27OXcaz5X/WaNk74MYmTTrKRj0rb97PDw+0QlEn1X9X1Z5yT+A7JTVKYaxj3+tl6UHJf/MR7Jb98ypbJt1/QnwU1Vm9jjuP4nUuo3Rc+6UWVSJz8AAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Skype for Business(lync)',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP8SURBVFhHzZfPb4xBGMdHEUIlLiQSwcGdIyeOTvgLcHMQIQ4cuTg5cBAhIbhK9t1VNHFRURGHSmmIixAHpK28O20X/bHb8XzmnVnzvp33bSsOnuSb3e7M82Oe31X/J9VaW1Siz6u6HlI1PSmfRjAl35+pevO0ujfaq26Y1fJ9ozJmheP6R5Q0z4iillMaRU8jnQn/XpnoVk9Dv1ZJel010oPWuGUTL6nrWwhccz/tnHzz0wx+nzOj0x0zJngyPmtOjfw0Gx5M5IyJYWUjHZPPc+q2WeukL4HqzbMwb+3Xc28n28aY+Sgwpv511ryXO83ZjsWHVtvUvsyYE2L05v4/BvYk+qNKJvY6DRXUl25TtXSal1cpXwpmOvPm2sdps8kZIuFqS2iOOk0llDQvchm3x4T+DcZnOubAi1bXG9VG1PQwl4h5TFiITz/a5vKHaXP+/S+zb3DK5gXfh/VC3vb8vDky9CPwRFk46uksl0i4ohAPYn30VSasDNsfT9r8CPkwwnvC5kQ0MZ0AEixk9kD5ridTOWVVwEMhP+HwOSE457QGRJORQ0otZPRAoGO22D/YMg156dPxOYvTEobwHBCqUAaJye9SoqML+4TtcNrGM2TyINZe8MaHE9YjxTvkAGf+XjEnqI6uF2hWOaK9ygFNBneFjCA0gDgXzz1QekESspgHHvQJK4eOmSPp7b69JhHmQy+DchKQDyiJeaIKNCv4bdvOkR0smfB3kUZ0+3PGGAPGEDruLGYQHRMeZofT7Iip5gSWCYklWgyUapkMfu/ezU3RbBDZg6pXDEiVHBMFYbLFgFdicnIG8OiQrFvkADcVGWMg4a5IeR6W/IgZhCeKPIS3e2fArHKqM7KJIQckSpFxKcCYrnBBrFpIcM5swrPU5IjSkENKpchIknFW5lqPHaLUGwCK53Ta3u4+IaWfI5qDHNAsaBohYygUI8Izj3x8tdldcs8/xja/HEkp2jYph7TNkGmxPkAJ4vLwDhMylOFBu3d3ppzmgBgUcogXwo5IX18s80OUvR4Qhu7dBSSj0o5MOWSEMko9I6+lBLvMJaBfVOUJI9/eraVzTmuBZGmwy4NcYpkIjQB44464nJ6PQZQh3/mtOAFjYOnJDNAjTmOEWJ/ci/BEbED9LVj7rOxEX3LaSkiM8J4gJ0jMYnUsFyy8LL6ygbXVfb3TaaogwuFywhtCn6BZ0TGJNWBFpyrKNiqAclb+TFbzqtOwBGKHk+rwJVoF9gnqnFLDGBKOmOP27OXcaz5X/WaNk74MYmTTrKRj0rb97PDw+0QlEn1X9X1Z5yT+A7JTVKYaxj3+tl6UHJf/MR7Jb98ypbJt1/QnwU1Vm9jjuP4nUuo3Rc+6UWVSJz8AAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Visual Studio Code',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP0SURBVFhHtZfbT5tlHMd/9GCh21JZp9kFSA8DF73RaHZh4oWLXnjpf2C80CxCB7JyWimHHhiwUsQZo/M4HIcNKNC1UMs2k7m4LaNd25dyYUxGkHioF2u7u7E8/t6nz7aCb5+Xw/pNPlfv8/w+3/d52iaFYuRlx+U3qkdWblcO3/236txqynBm2cseFT+iXGVbyIL9ClG7r5MXL92nmCdT66YvfjvPlhUnLzmvvq86Gc5C+2XyiBr//Q2YJ1LrhmIUMXSELGBD6SZq/FlJTBdT62ZP4i22fXd5wR6ug5MLRIqaWRQWwDT29xobsfPo20OT0BYmhaiZQRkHNmZnedYWmpCS5lM9neXCRm0vh1vCel1rKAytPxE5qn0o4kAH6geEr+HTJBHZM7h08/BnST19IBFRXtocWoaWENkKUtJ8QO8VzsLgEslHObCUrfIuvcucj0PlTcFlaMbhMiitwewh50J99RSKOIDWE78BXhRLcMAj9DM3GNvmj6ha5tagaZ7IIZYU1xNC9hyazBIesPe0EIIBgRRC05f4tbJr4R1F01wGrHNEDl1L4IJ4UmJpWmAiQ3iAeN+afiEJHhQWoj/6EFrxe20NFkTRGMw81xw8Ro+LBQtopaT50IW5ErEknEYZD/s1AidQuAlNYyBZ0eQ/QoflhRa4iCIObGku+3oT49CfwDfm4LiFUjzuxgBlnzUwXtEwv5+N2BAsUGa+kCE82NIn2dsXG4M+FPHoieInPUx0jTPNbJtkaIFxFHFgS59Ee2J2FDquE+iNy6LricsVKDWPoYgDW5qL9hOUN/gJpe0qgVMokkHrjo9WeIRCV7C1AuIdKhtmBaifJRtovYLHjSIZlO64oO+Nv06H5QULaEyjGcIjJ7f4BDiOQims+JvuWnwI7hjhUeKOpfFKPmRuGlpgBEUcQFM/EwDLDCmE2uL7Ree4cbTEFUuDC2UylLmiI4+uBAs8YzqfJjxAFIBlGmX/p+z4tIu+CkbXHX9N6YyugvMOkUPhiCTE9VsqUFo39TnUoTCPko+n0rr66beZ+3HwiMsV3ZEEOFAkQ4nzTrr8VPQj449pwoMOVtf6zkCtj4goan3XdMculdMHEtlOCRHjMIo4sLHbi1hC3RXxQzf+IMlgPIciDmzkzqLqjAxDF4o4GH9AEQc2audR2bFEZ4QUwoASHmzM7qLuWPwAOlAogeF7FBWg8qt/VtiI3UdtwxJ2lG7C8N09SSrPph4cGPj9Tbb96UTZfvs9aF+8h+DfshyGb1GYB771A/3gyjdsy9OP2nbrVbBhCdsiUXXGSRVKRSq+LLJ4Q9puvvL80B8/64dW/zo4tPbnfu/dHvZkUwD+A8E98pKW4pfHAAAAAElFTkSuQmCC'
+			}, {
+				processDescription: 'windows.immersivecontrolpanel',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVFhHxZUxSgRBEEX3CB7Bo3gEj2O4qZG5ieA5DA0FwwURRBATQc0UQcZ96xbW/v5TM4swU/Bg+3d1dXdVTe9icbLqZsWKU2LFKbFiD8eXT93y6qU7PL1v5tCYw0fnSqwoEPTh9asLO7t+bXzYPAzf0QexonBx874N/WtvH9+ND1o21qiPxYrC0fnjNuyfsQG3Bj0gxhoXq8GKhtvnz23oYaMELobFigINlntgyPA9WN7ZWA0q0DykNFJIIK1vGHo1F18LsYhpG1OFfFN+680JTN3zDfmNpodhbS4d47zXhjzghJURrEotc0O90mQhD/K3rMbtqs0DfPrKgrHHzpo8iNfMBWgWFriLEJMHrHlFdwYJ/bbH3D7ANxuxnN8GK67Jt+D0zqciZ7HMnhXXzH6AWUpAg9Ao+fRh5S2EnL0wYqKXTegWhhFgTBbwcRcIay6SB7M/RJCfXoL99ynO6wefYuCENE38GVGzvpSiV3NxyL3+jBwE0kxUhm/OUIkVDfscgNK5GBYrCqRQjZRSd9A3A4sSDmJFQTegvuqjvcAa9bFYUaB5cgmab3kND1gYvrbhHFbsgaD6CQbxVz5648CKU2LFKbHiZKy6H/tgIDQUAVyRAAAAAElFTkSuQmCC'
+			}]
+		};
+
+		const autoCloseList: any = {
+			processList: [{
+				processDescription: 'Google Chrome',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,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'
+			}, {
+				processDescription: 'InputApp',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft Teams',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVFhHYxiyoLz+uUJ10+v+ysaX+0EYxAaJQaVpC6qaXiZUN7/+jw2D5KDKaAPAPsdiMTKmaUiAghqbpSgYqAaqHAwCIk/2A/F/JIwiTxIAxzc2S5EwSA1UOTbLKXMEGQ7AZjkYQ5WQBvJKL/XnlV3+j4wLKm6gOgIpCrBZDMP+4ccVGLyD9pz3Dt7znxzsFbTpv1/wVLAjkB2AnAixWQzDYAXYDCYFu3m3ozgAPRsCLcKfBrAZSgp29Wzdn1t6EW9BBLIMq+UggG4gIYCuHmoM+QDdQEIAXT16FKDj4uqnyD5HxeHHz+ONAhjAJgfDhBwAwlgth+JRB4w6YNQBg9sBxOCh7oD7FFXH7v5rKXKAf+TJBmiNgB9Y2OT8x4at7Qv/e/r3kueA8JProcYTBhGxK/dHxK38jwtjtIiQcFHlk/dAC+8jWX6faJ/DQFLWnoSkzD3/seH0vKNYLYZhqvUTgA2O89gswIuBeqDaKQeg1k5l88v3WC3CgkFqqd5BARlIVEgA1VDdcmQAilds/QOQGM37htQFDAwAyVPg8+K1GtYAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdge',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVFhHxZc9SgRBEIX3CB7BI3gEj+ARPIKpmaZGYmoiGJoYGBqYGAomsiDiD8iCCLogogjSzrdMDzW9r6d7enR98Jidmq6uV9W/Oxptjt2/UhoXSWmMcHX/wR1cTN3l5NMpnN2+u42TJ7e8cyP9JaUx4Nrho7t//arD5AGhWUKksebS9rU7vnqru+yP6ce3Wz+ayL4bSmNFgsdK3RedIpTxN4N7REUo4+75S+02D+YCw7J1+tyQyZcCwyHnRGhgpofAGVEre3ez6sDQj85TVUN46DcnIMyGDH1Qn23o40kbxHZhrgr2hY8eZEPG2Hn67FJLC5FdoJItH/vCJgII5stMcJ+VLGFANYQW9N3ysS+U1wbn6TMHCLTtFfFJoeVjX2xwGJaT74hMMQWq1MRtflS0HxCSmlCliAqwZOP4K2QJGHIGpJAlIGcsS5ElQCF3Eqbo95cZbVBLBVaFajuI0lgRpSGwqbaDKI0VY5OQ25FqX0xprBhbhuwNfURwdnA9iw6fNFZMbUQMR0wIQUnADmNvATB1snnY1RETXSQgPIyGoEgAtMfxEBQLgPZCUopBAiDDQSd9q0H7zj8p0thBhHAxsTM8BNUiaNZylcZFUhoXxrH7AZdMAv2haziRAAAAAElFTkSuQmCC'
+			}, {
+				processDescription: 'Microsoft.MicrosoftEdgeDevToolsPreview',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVFhH7ZTbCoJAEIaFCCKCCKJnLTpQVBdB14HQ00T0CqUP4AN41puJAVe92F3HRZegHfgQFvH7/1nQMmPmZ+Z8uYJOCm01vJe64PF8cZ+Ftho89DxPC8IAeZ73QpZlJWmattsAfsBavsk0yRsD3Ox7ST3A4uTC/OjC7ODCdO/AZOfAeOvAaPOB4foDg1UVwLZtIUmSqG2AIq9vgNcc5coBKHIWgNec0RhAdAUUOSJrjsRxrLYBihxBMa85QzkARY7ImjOkAURXQJEjKOY1Z0RRpLYBihyRNUe5cgCKHEEprzmjMYDoCqjImiNhGKptgApvA3V57wFkzbUGEMmDIGgfAKH84ShypQBdyn3fFwfQSaE1Y+bvx7K+efsbU5+Ow3MAAAAASUVORK5CYII='
+			}, {
+				processDescription: 'Skype for Business(UcMapi)',
+				// tslint:disable-next-line:max-line-length
+				iconName: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP8SURBVFhHzZfPb4xBGMdHEUIlLiQSwcGdIyeOTvgLcHMQIQ4cuTg5cBAhIbhK9t1VNHFRURGHSmmIixAHpK28O20X/bHb8XzmnVnzvp33bSsOnuSb3e7M82Oe31X/J9VaW1Siz6u6HlI1PSmfRjAl35+pevO0ujfaq26Y1fJ9ozJmheP6R5Q0z4iillMaRU8jnQn/XpnoVk9Dv1ZJel010oPWuGUTL6nrWwhccz/tnHzz0wx+nzOj0x0zJngyPmtOjfw0Gx5M5IyJYWUjHZPPc+q2WeukL4HqzbMwb+3Xc28n28aY+Sgwpv511ryXO83ZjsWHVtvUvsyYE2L05v4/BvYk+qNKJvY6DRXUl25TtXSal1cpXwpmOvPm2sdps8kZIuFqS2iOOk0llDQvchm3x4T+DcZnOubAi1bXG9VG1PQwl4h5TFiITz/a5vKHaXP+/S+zb3DK5gXfh/VC3vb8vDky9CPwRFk46uksl0i4ohAPYn30VSasDNsfT9r8CPkwwnvC5kQ0MZ0AEixk9kD5ridTOWVVwEMhP+HwOSE457QGRJORQ0otZPRAoGO22D/YMg156dPxOYvTEobwHBCqUAaJye9SoqML+4TtcNrGM2TyINZe8MaHE9YjxTvkAGf+XjEnqI6uF2hWOaK9ygFNBneFjCA0gDgXzz1QekESspgHHvQJK4eOmSPp7b69JhHmQy+DchKQDyiJeaIKNCv4bdvOkR0smfB3kUZ0+3PGGAPGEDruLGYQHRMeZofT7Iip5gSWCYklWgyUapkMfu/ezU3RbBDZg6pXDEiVHBMFYbLFgFdicnIG8OiQrFvkADcVGWMg4a5IeR6W/IgZhCeKPIS3e2fArHKqM7KJIQckSpFxKcCYrnBBrFpIcM5swrPU5IjSkENKpchIknFW5lqPHaLUGwCK53Ta3u4+IaWfI5qDHNAsaBohYygUI8Izj3x8tdldcs8/xja/HEkp2jYph7TNkGmxPkAJ4vLwDhMylOFBu3d3ppzmgBgUcogXwo5IX18s80OUvR4Qhu7dBSSj0o5MOWSEMko9I6+lBLvMJaBfVOUJI9/eraVzTmuBZGmwy4NcYpkIjQB44464nJ6PQZQh3/mtOAFjYOnJDNAjTmOEWJ/ci/BEbED9LVj7rOxEX3LaSkiM8J4gJ0jMYnUsFyy8LL6ygbXVfb3TaaogwuFywhtCn6BZ0TGJNWBFpyrKNiqAclb+TFbzqtOwBGKHk+rwJVoF9gnqnFLDGBKOmOP27OXcaz5X/WaNk74MYmTTrKRj0rb97PDw+0QlEn1X9X1Z5yT+A7JTVKYaxj3+tl6UHJf/MR7Jb98ypbJt1/QnwU1Vm9jjuP4nUuo3Rc+6UWVSJz8AAAAASUVORK5CYII='
+			}]
+		};
+
+		const gamingAutoClose: any = {
+			getAutoCloseList: this.getPromise(autoCloseList),
+			getRunningList: this.getPromise(runningList)
+		};
+		return gamingAutoClose;
 	}
 	/***
      * returns macroKeyClearInfo object from VantageShellService of JS Bridge
@@ -1502,7 +1702,7 @@ export class VantageShellService {
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
@@ -1512,7 +1712,7 @@ export class VantageShellService {
 	public getGamingMacroKey(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey;
 		}
@@ -1528,7 +1728,7 @@ export class VantageShellService {
 	public macroKeyInitializeEvent(): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
 		}
@@ -1538,7 +1738,7 @@ export class VantageShellService {
 	public macroKeySetApplyStatus(key): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
 		}
@@ -1548,7 +1748,7 @@ export class VantageShellService {
 	public macroKeySetStartRecording(key): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
 		}
@@ -1558,7 +1758,7 @@ export class VantageShellService {
 	public macroKeySetStopRecording(key, isSuccess, message): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
 		}
@@ -1568,7 +1768,7 @@ export class VantageShellService {
 	public macroKeySetKey(key): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setKey(key);
 		}
@@ -1578,7 +1778,7 @@ export class VantageShellService {
 	public macroKeyClearKey(key): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setClear(key);
 		}
@@ -1588,7 +1788,7 @@ export class VantageShellService {
 	public macroKeySetRepeat(key, repeat): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
 		}
@@ -1598,7 +1798,7 @@ export class VantageShellService {
 	public macroKeySetInterval(key, interval): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
 		}
@@ -1608,7 +1808,7 @@ export class VantageShellService {
 	public macroKeySetMacroKey(key, inputs): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
@@ -1618,7 +1818,7 @@ export class VantageShellService {
 	public getGamingThermalMode() {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
 			}
 			return this.phoenix.gaming.gamingThermalmode;
 		}
