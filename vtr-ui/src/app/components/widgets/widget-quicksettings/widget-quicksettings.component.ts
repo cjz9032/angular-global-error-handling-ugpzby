@@ -514,7 +514,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				const value = await this.powerService.setConservationModeStatusIdeaNoteBook(status);
 				console.log('setConservationModeStatusIdeaNoteBook.then', value);
-
+				// this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
 			}
 		} catch (error) {
 			this.logger.error('setConservationModeStatusIdeaNoteBook', error.message);
