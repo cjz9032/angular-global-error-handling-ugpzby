@@ -17,7 +17,8 @@ export class ChangeActionButtonTextPipe implements PipeTransform {
 	}
 
 	private changeText(currentText: string, newText: string, oldText: string) {
-		return currentText.toLowerCase().replace(oldText, newText);
+		const text = newText.charAt(0).toUpperCase() + newText.slice(1);
+		return currentText.toLowerCase().replace(oldText, text);
 	}
 
 }

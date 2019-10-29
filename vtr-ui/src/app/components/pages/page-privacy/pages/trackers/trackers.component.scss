@@ -61,6 +61,10 @@
 	&__btn {
 		@extend %theme-btn;
 		min-width: 22rem;
+
+		&--transparent {
+			@extend %theme-btn--transparent;
+		}
 	}
 }
 

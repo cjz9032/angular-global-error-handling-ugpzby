@@ -14,6 +14,7 @@ import {
 } from '../../common/services/analytics/task-action-with-timeout.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 
 @Component({
 	// selector: 'app-admin',
@@ -64,6 +65,8 @@ export class TrackersComponent implements OnInit {
 	textForTooltip = 'Your private information is being collected and shared without your permission. ' +
 		'You allowed us to scan your browsing history, and we found that you\'ve visited sites ' +
 		'that frequently use tracking tools.';
+
+	currentTests = AbTestsName;
 
 	constructor(
 		private userAllowService: UserAllowService,

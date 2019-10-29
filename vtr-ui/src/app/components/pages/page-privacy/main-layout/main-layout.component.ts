@@ -9,6 +9,7 @@ import { FigleafOverviewService } from '../common/services/figleaf-overview.serv
 import { UpdateTriggersService } from '../common/services/update-triggers.service';
 import { TaskObserverService } from '../common/services/analytics/task-observer.service';
 import { WidgetDataService } from '../common/services/widget-data.service';
+import { AbTestsGenerateConfigService } from '../common/components/ab-tests/ab-tests-generate-config.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -62,7 +63,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private figleafOverviewService: FigleafOverviewService,
 		private updateTriggersService: UpdateTriggersService,
 		private taskObserverService: TaskObserverService,
-		private widgetDataService: WidgetDataService
+		private widgetDataService: WidgetDataService,
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService
 	) {
 	}
 
@@ -81,6 +83,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			.subscribe(
 				(currentPath) => this.setCurrentRouterPage(currentPath)
 			);
+
+		this.abTestsGenerateConfigService.shuffle();
 	}
 
 	ngOnDestroy() {

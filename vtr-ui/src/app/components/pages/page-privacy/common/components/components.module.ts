@@ -35,6 +35,7 @@ import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
 import { VideoComponent } from './video/video.component';
 import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-tooltip.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
+import { AbTestsComponent } from './ab-tests/ab-tests.component';
 
 @NgModule({
 	declarations: [
@@ -65,7 +66,8 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
 		OfflineModeComponent,
 		VideoComponent,
 		ClearDataTooltipComponent,
-		InfiniteScrollComponent
+		InfiniteScrollComponent,
+		AbTestsComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -95,7 +97,8 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
 		OfflineModeComponent,
 		VideoComponent,
 		ClearDataTooltipComponent,
-		InfiniteScrollComponent
+		InfiniteScrollComponent,
+		AbTestsComponent
 	],
 	imports: [
 		CommonModule,

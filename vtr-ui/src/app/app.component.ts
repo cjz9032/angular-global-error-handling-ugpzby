@@ -31,6 +31,7 @@ import { AppUpdateService } from './services/app-update/app-update.service';
 import { Title } from '@angular/platform-browser';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
+import { AbTestsGenerateConfigService } from './components/pages/page-privacy/common/components/ab-tests/ab-tests-generate-config.service';
 
 declare var Windows;
 @Component({
@@ -65,7 +66,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private appUpdateService: AppUpdateService,
 		private titleService: Title,
-		private appsForYouService: AppsForYouService
+		private appsForYouService: AppsForYouService,
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -376,6 +378,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
 		this.serverSwitchThis();
+		this.abTestsGenerateConfigService.shuffle();
 	}
 
 	ngOnDestroy() {

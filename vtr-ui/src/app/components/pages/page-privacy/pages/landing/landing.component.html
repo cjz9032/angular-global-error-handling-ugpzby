@@ -26,7 +26,7 @@
 					<button class="landing-pitch__button"
 							vtrSendAnalytics
 							[metricsEvent]="'ItemClick'"
-							[metricsItem]="'InstallButton'"
+							[metricsItem]="'InstallButton' | changeActionButtonText | async"
 							vtrOfflineMode
 							positionContextTo="top-left"
 							vtrOpenFigleafInstaller>{{'Install Now' | changeActionButtonText | async}}</button>
@@ -135,7 +135,7 @@
 					<button class="landing-pitch__button"
 							vtrSendAnalytics
 							[metricsEvent]="'ItemClick'"
-							[metricsItem]="'InstallButton'"
+							[metricsItem]="'InstallButton' | changeActionButtonText | async"
 							vtrOfflineMode
 							positionContextTo="top-right"
 							vtrOpenFigleafInstaller>

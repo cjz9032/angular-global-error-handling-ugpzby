@@ -12,6 +12,7 @@ import {
 } from '../../common/services/analytics/task-action-with-timeout.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 import { UserAllowService } from '../../common/services/user-allow.service';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 
 @Component({
 	// selector: 'app-admin',
@@ -30,6 +31,8 @@ export class BrowserAccountsComponent {
 	nonPrivatePasswordCount$ = this.countNumberOfIssuesService.nonPrivatePasswordCount;
 	dashboardData$ = this.figleafOverviewService.figleafDashboard$;
 	isConsentToGetBrowsersAccountsGiven$ = this.userAllowService.allowToShow.pipe(map((allowMap) => allowMap.consentForVulnerablePassword));
+
+	currentTests = AbTestsName;
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
