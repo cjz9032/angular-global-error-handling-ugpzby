@@ -722,7 +722,9 @@
                 "accessUrl": "Zu Windows-Einstellungen wechseln, um Zugriff zu gewähren",
                 "microphoneNote": "Lenovo Vantage hat keinen Zugriff auf das Mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage hat keinen Zugriff auf die Kamera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -1577,17 +1579,17 @@
                 "tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
             },
             "superResolution": {
-				"heading": "Intelligente Medien",
-				"title": "Upscaling der Videoauflösung",
-				"desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
-				"tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Diese Funktion funktioniert nicht, wenn:",
-					"description1":"Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
-					"description2":"Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
-					"description3":"Die CPU-Temperatur zu hoch ist."
-				}
-			},
+                "heading": "Intelligente Medien",
+                "title": "Upscaling der Videoauflösung",
+                "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
+                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Diese Funktion funktioniert nicht, wenn:",
+                    "description1": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
+                    "description2": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkusparmodus aktiviert ist.",
+                    "description3": "Die CPU-Temperatur zu hoch ist."
+                }
+            },
             "voice": {
                 "title": "Sprache",
                 "description": "Lenovo Voice hilft Ihnen dabei, Ihre Stimme mit der Funktion \"Sprache zu Text\" in Text umzuwandeln und bietet mit der Übersetzungsfunktion auch die Echtzeit-Übersetzung von Sprache zu Text.",
@@ -1830,7 +1832,17 @@
             "password": "Starke, komplizierte und sicher verwaltete Passwörter verwenden",
             "vpn": "Ihr Netzwerk auf Angriffe von außen überwachen",
             "wifi": "Ihre persönlichen Daten in öffentlichen WiFi-Netzwerken verschlüsseln",
-            "windowsHello": "Ihre Einheit mit sicheren Anmeldeoptionen schützen"
+            "windowsHello": "Ihre Einheit mit sicheren Anmeldeoptionen schützen",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
