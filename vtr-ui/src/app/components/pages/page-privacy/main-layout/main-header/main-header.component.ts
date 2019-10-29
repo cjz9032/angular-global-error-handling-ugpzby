@@ -26,8 +26,6 @@ const defaultPageSettings: PageSettings = {
 	styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit, OnDestroy {
-	testConfig = AbTestsName.colorButton;
-
 	title = 'Lenovo Privacy Essentials';
 	backButton = false;
 	figLeafIcon = true;

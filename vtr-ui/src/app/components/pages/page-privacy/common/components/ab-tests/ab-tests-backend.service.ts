@@ -48,6 +48,6 @@ export class AbTestsBackendService {
 	}
 
 	sendError(error: string) {
-
+		console.log(error);
 	}
 }

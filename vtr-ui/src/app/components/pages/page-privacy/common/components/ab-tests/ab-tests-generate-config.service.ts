@@ -27,16 +27,20 @@ export class AbTestsGenerateConfigService {
 
 		this.abTestsBackendService.shuffle(config.version, currentConfigVersion).pipe(
 			timeout(TIMEOUT_FOR_BACKEND),
-			catchError(() => of(this.getDefaultConfig()))
+			catchError((err) => {
+				this.abTestsBackendService.sendError(err);
+				return of(this.getDefaultConfig());
+			})
 		).subscribe((res) => {
 				try {
 					this.storageService.setItem(BACKEND_CONFIG_VERSION, JSON.stringify(res.version));
 					this.storageService.setItem(AB_TESTS_CONFIG, JSON.stringify(res.tests));
 					this.abTestsService.setCurrentOptions(res.tests);
-				} catch (e) {
-					console.error(e);
+				} catch (err) {
+					console.error(err);
+					this.abTestsBackendService.sendError(err);
 				}
-			}, (err) => console.log(err));
+			}, (err) => this.abTestsBackendService.sendError(err));
 	}
 
 	private getDefaultConfig(): ShuffleTests {

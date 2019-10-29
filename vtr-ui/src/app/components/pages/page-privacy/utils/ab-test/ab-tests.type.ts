@@ -10,6 +10,5 @@ export interface AbTestsConfig {
 }
 
 export enum AbTestsName {
-  colorButton = "colorButton",
-  colorLink = "colorLink"
+  PrimaryButtonPitch = "PrimaryButtonPitch"
 }

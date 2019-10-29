@@ -2,6 +2,7 @@ import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import { AbTestsService } from './ab-tests.service';
 import { TestOptionDirective } from '../../directives/test-option.directive';
+import { AbTestsBackendService } from './ab-tests-backend.service';
 
 @Component({
 	selector: 'vtr-ab-tests',
@@ -13,7 +14,10 @@ export class AbTestsComponent implements AfterContentInit {
 
 	@ContentChildren(TestOptionDirective) templates: QueryList<TestOptionDirective>;
 
-	constructor(private abTestsService: AbTestsService) {
+	constructor(
+		private abTestsService: AbTestsService,
+		private abTestsBackendService: AbTestsBackendService
+	) {
 	}
 
 	ngAfterContentInit() {
@@ -21,9 +25,12 @@ export class AbTestsComponent implements AfterContentInit {
 	}
 
 	private findOption() {
-		this.abTestsService.getCurrentOptions(this.testName).subscribe((current) => {
-			const currentTemplate = this.templates.find((option) => option.testOption === current.option);
-			currentTemplate.display();
-		});
+		this.abTestsService.getCurrentOptions(this.testName).subscribe(
+			(current) => {
+				const currentTemplate = this.templates.find((option) => option.testOption === current.option);
+				currentTemplate.display();
+			},
+			(err) => this.abTestsBackendService.sendError(err)
+		);
 	}
 }

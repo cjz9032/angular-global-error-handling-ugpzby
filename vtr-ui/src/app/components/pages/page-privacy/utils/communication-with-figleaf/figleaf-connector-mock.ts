@@ -8,7 +8,7 @@ export interface MessageToFigleaf {
 const onConnectListeners = [];
 const onDisconnectListeners = [];
 
-const CONNECTION = true;
+const CONNECTION = false;
 
 class FigleafConnector {
 

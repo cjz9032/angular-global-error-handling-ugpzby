@@ -23,7 +23,7 @@ async function generate() {
 	fs.writeFileSync(path.join(__dirname, 'abTestsConfig.json'), JSON.stringify(abTestsConfig))
 }
 
-const VERSION = 12;
+const VERSION = 15;
 const url = `https://api.tz.figleafapp.com/api/v1/vantage/tests/config?version=${VERSION}`;
 
 https.get(url, res => {
