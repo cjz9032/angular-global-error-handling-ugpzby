@@ -13,7 +13,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
