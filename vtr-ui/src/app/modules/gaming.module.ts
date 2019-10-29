@@ -1,3 +1,4 @@
+import { GamingDashboardModule } from './gaming-dashboard.module';
 import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { WidgetNetworkboostComponent } from './../components/widgets/widget-networkboost/widget-networkboost.component';
 import { GamingCommonModule } from './gaming/gaming.common.module';
@@ -82,6 +83,7 @@ library.add(faArrowAltToTop);
 		CommonUiModule,
 		CommonWidgetModule,
 		GamingCommonModule,
+		GamingDashboardModule,
 		SharedModule,
 		GamingRoutingModule,
 		FontAwesomeModule,
@@ -93,10 +95,8 @@ library.add(faArrowAltToTop);
 		NgbTooltipModule,
 		FeedbackModule
 	],
-	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	exports: [ ContainerCardModule, MetricsModule, WidgetOfflineModule ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 	entryComponents: []
-
-
 })
-export class GamingModule { }
+export class GamingModule {}

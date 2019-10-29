@@ -722,7 +722,9 @@
                 "accessUrl": "Gå til Windows-indstillingerne for at give adgang",
                 "microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -1577,17 +1579,17 @@
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
             "superResolution": {
-				"heading": "Intelligente medier",
-				"title": "Opskalering af videoopløsning",
-				"desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-				"tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Denne funktion virker ikke i disse situationer:",
-					"description1":"Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
-					"description2":"Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
-					"description3":"CPU-temperaturen er for høj."
-				}
-			},
+                "heading": "Intelligente medier",
+                "title": "Opskalering af videoopløsning",
+                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
+                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Denne funktion virker ikke i disse situationer:",
+                    "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
+                    "description2": "Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+                    "description3": "CPU-temperaturen er for høj."
+                }
+            },
             "voice": {
                 "title": "stemme",
                 "description": "Lenovo Voice hjælper med at konvertere din tale til tekst med funktionen Tale til tekst og giver mulighed for realtidsoversættelse fra tale til tekst med oversættelsesfunktionen.",
@@ -1830,7 +1832,17 @@
             "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
             "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
             "wifi": "Krypterer dine personlige data, når du bruger offentligt WiFi",
-            "windowsHello": "Beskytter din enhed med indstillinger til sikker login"
+            "windowsHello": "Beskytter din enhed med indstillinger til sikker login",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

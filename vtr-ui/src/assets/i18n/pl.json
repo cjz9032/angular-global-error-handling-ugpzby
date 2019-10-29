@@ -722,7 +722,9 @@
                 "accessUrl": "Przejdź do ustawień systemu Windows, aby udzielić dostępu",
                 "microphoneNote": "Aplikacja Lenovo Vantage nie ma dostępu do mikrofonu.",
                 "cameraPrivacyNote": "Aplikacja Lenovo Vantage nie ma dostępu do kamery."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Stan systemu",
@@ -1577,17 +1579,17 @@
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
             "superResolution": {
-				"heading": "Inteligentne multimedia",
-				"title": "Skalowanie rozdzielczości wideo",
-				"desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-				"tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Funkcja nie działa, gdy:",
-					"description1":"Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
-					"description2":"Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
-					"description3":"Temperatura procesora jest za wysoka."
-				}
-			},
+                "heading": "Inteligentne multimedia",
+                "title": "Skalowanie rozdzielczości wideo",
+                "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
+                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Funkcja nie działa, gdy:",
+                    "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
+                    "description2": "Komputer nie jest podłączony do zasilania prądem przemiennym, a tryb oszczędzania akumulatora jest włączony.",
+                    "description3": "Temperatura procesora jest za wysoka."
+                }
+            },
             "voice": {
                 "title": "Głos",
                 "description": "Funkcja Lenovo Voice pomaga przekształcić Twój głos na tekst za pomocą funkcji Głos na tekst i zapewnia tłumaczenie w czasie rzeczywistym z głosu na tekst za pomocą funkcji tłumaczenia.",
@@ -1830,7 +1832,17 @@
             "password": "Używasz silnych i skomplikowanych haseł i zarządzasz nimi w bezpieczny sposób",
             "vpn": "Monitorujesz narażenie sieci na ataki",
             "wifi": "Szyfrujesz dane osobowe podczas korzystania z publicznej sieci WiFi",
-            "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania"
+            "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

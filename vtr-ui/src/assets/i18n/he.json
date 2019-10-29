@@ -722,7 +722,9 @@
                 "accessUrl": "עברו להגדרות Windows כדי לאפשר גישה",
                 "microphoneNote": "ל-Lenovo Vantage אין גישה למיקרופון.",
                 "cameraPrivacyNote": "ל-Lenovo Vantage אין גישה למצלמה."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "מצב המערכת",
@@ -1577,17 +1579,17 @@
                 "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player‏, 5KPlayer וכן הלאה תומכים בתכונה זו."
             },
             "superResolution": {
-				"heading": "מדיה חכמה",
-				"title": "הגדלת רזולוציית הווידאו",
-				"desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על-ידי שיפור רזולוציית הווידאו. התכונה פעולת טוב במיוחד כאשר רזולוציית הווידאו גרועה.</label></p> <p style='margin-top:4px;'><label> פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. כאשר התכונה מופעלת, מומלץ לחבר את המחשב לכבל חשמל.</label></p>",
-				"tooltip": "התכונה פועלת רק בנגנים הבאים: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"התכונה אינה פועלת כאשר:",
-					"description1":"המחשב אינו מחובר לחשמל ועוצמת הסוללה נמוכה מ -20%.",
-					"description2":"המחשב אינו מחובר לחשמל ומצב החיסכון בצריכת סוללה מופעל.",
-					"description3":"טמפרטורת המעבד גבוהה מדי."
-				}
-			},
+                "heading": "מדיה חכמה",
+                "title": "הגדלת רזולוציית הווידאו",
+                "desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על-ידי שיפור רזולוציית הווידאו. התכונה פעולת טוב במיוחד כאשר רזולוציית הווידאו גרועה.</label></p> <p style='margin-top:4px;'><label> פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. כאשר התכונה מופעלת, מומלץ לחבר את המחשב לכבל חשמל.</label></p>",
+                "tooltip": "התכונה פועלת רק בנגנים הבאים: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "התכונה אינה פועלת כאשר:",
+                    "description1": "המחשב אינו מחובר לחשמל ועוצמת הסוללה נמוכה מ -20%.",
+                    "description2": "המחשב אינו מחובר לחשמל ומצב החיסכון בצריכת סוללה מופעל.",
+                    "description3": "טמפרטורת המעבד גבוהה מדי."
+                }
+            },
             "voice": {
                 "title": "קול",
                 "description": "התוכנה Lenovo Voice מסייעת בהמרת הדיבור לטקסטים באמצעות פונקציית המרת דיבור לטקסט והיא מספקת תרגום בזמן אמת של דיבור לטקסטים באמצעות פונקציית התרגום.",
@@ -1830,7 +1832,17 @@
             "password": "האם אתם מנהלים סיסמאות חזקות ומורכבות באופן בטוח",
             "vpn": "האם אתם מנטרים את החשיפה שלכם לתוקפים ברשת",
             "wifi": "האם אתם מצפינים את המידע האישי שלהם כשאתם משתמשים ב-WiFi ציבורי",
-            "windowsHello": "האם אתם מגינים על המכשיר שלכם באמצעות אפשרויות כניסה בטוחות"
+            "windowsHello": "האם אתם מגינים על המכשיר שלכם באמצעות אפשרויות כניסה בטוחות",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

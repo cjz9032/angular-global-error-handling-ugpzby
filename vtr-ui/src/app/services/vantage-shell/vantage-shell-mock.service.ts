@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
-import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
+import { WinRT, CHSAccountState, CHSAccountRole, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
+import { TopRowFunctionsIdeapad } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 declare var Windows;
 
@@ -72,10 +73,70 @@ export class VantageShellService {
 	}
 
 	public registerEvent(eventType: any, handler: any) {
-		if (this.phoenix) {
-			this.phoenix.on(eventType, (val) => {
-				handler(val);
-			});
+		switch (eventType) {
+			case EventTypes.gamingMacroKeyInitializeEvent:
+				setTimeout(() => {
+					const keyTypeResponse = { MacroKeyType: 0, MacroKeyStatus: 1 };
+					handler(keyTypeResponse);
+				}, 1000);
+				break;
+			case EventTypes.gamingMacroKeyRecordedChangeEvent:
+				const recordChangeResponse = [
+					{ key: '7', status: false },
+					{ key: '8', status: false },
+					{ key: '9', status: false },
+					{ key: '4', status: false },
+					{ key: '5', status: false },
+					{ key: '6', status: false },
+					{ key: '1', status: false },
+					{ key: '2', status: false },
+					{ key: '3', status: false },
+					{ key: '0', status: true }
+				];
+				setTimeout(() => {
+					handler(recordChangeResponse);
+				}, 1000);
+				break;
+			case EventTypes.gamingMacroKeyKeyChangeEvent:
+				const keyEventChangeResponse = {
+					key: '0',
+					macro: {
+						repeat: 1,
+						interval: 1,
+						inputs: [
+							{ status: 1, key: '1', interval: 0 },
+							{ status: 0, key: '1', interval: 267 },
+							{ status: 1, key: '2', interval: 146 },
+							{ status: 1, key: '3', interval: 270 },
+							{ status: 0, key: '2', interval: 46 },
+							{ status: 0, key: '3', interval: 89 },
+							{ status: 1, key: 'W', interval: 177 },
+							{ status: 1, key: 'A', interval: 39 },
+							{ status: 0, key: 'W', interval: 44 },
+							{ status: 1, key: 'S', interval: 227 },
+							{ status: 1, key: 'D', interval: 47 },
+							{ status: 0, key: 'A', interval: 67 },
+							{ status: 0, key: 'S', interval: 49 },
+							{ status: 0, key: 'D', interval: 94 },
+							{ status: 1, key: 'A', interval: 39 },
+							{ status: 1, key: 'S', interval: 44 },
+							{ status: 1, key: 'D', interval: 69 },
+							{ status: 0, key: 'A', interval: 83 },
+							{ status: 0, key: 'S', interval: 35 },
+							{ status: 0, key: 'D', interval: 67 }
+						]
+					}
+				};
+				setTimeout(() => {
+					handler(keyEventChangeResponse);
+				}, 1000);
+				break;
+			default:
+				if (this.phoenix) {
+					this.phoenix.on(eventType, (val) => {
+						handler(val);
+					});
+				}
 		}
 	}
 
@@ -1710,12 +1771,24 @@ export class VantageShellService {
 	}
 
 	public getGamingMacroKey(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey;
-		}
+		const gamingMacroKey = {
+			mitt: {},
+			composer: { total: null, registryComposer: {} },
+			mapping: null,
+			key: null,
+			recorded: [],
+			isRecording: false,
+			inputs: null,
+			start: null
+		};
+		return gamingMacroKey;
+		// if (this.phoenix) {
+		// 	if (!this.phoenix.gaming) {
+		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
+		// 	}
+		// 	console.log('MACROKEY ', JSON.stringify(this.phoenix.gaming.gamingMacroKey));
+		// 	return this.phoenix.gaming.gamingMacroKey;
+		// }
 	}
 
 	public getIntelligentCoolingForIdeaPad(): any {
@@ -1726,13 +1799,10 @@ export class VantageShellService {
 	}
 
 	public macroKeyInitializeEvent(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
-		}
-		return undefined;
+		// const initRes = true;
+		// const macrokeyInit.then = this.getPromise(initRes);
+		// return macrokeyInit;
+		return Promise.resolve(true);
 	}
 
 	public macroKeySetApplyStatus(key): any {
@@ -1979,5 +2049,8 @@ export class VantageShellService {
 		};
 
 		return inputControlLinks;
+	}
+	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
+		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
 	}
 }
