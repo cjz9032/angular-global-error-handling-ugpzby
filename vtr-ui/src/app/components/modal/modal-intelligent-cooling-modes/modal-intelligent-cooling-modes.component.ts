@@ -24,5 +24,9 @@ export class ModalIntelligentCoolingModesComponent implements OnInit {
 		this.closeModal();
 	}
 
-
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.Intelligent-Cooling-Modes-Modal') as HTMLElement;
+		modal.focus();
+	}
 }

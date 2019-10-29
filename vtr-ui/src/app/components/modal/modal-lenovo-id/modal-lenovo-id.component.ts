@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
 import { SupportService } from '../../../services/support/support.service';
@@ -463,5 +463,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.lenovo-id-modal-size') as HTMLElement;
+		modal.focus();
 	}
 }

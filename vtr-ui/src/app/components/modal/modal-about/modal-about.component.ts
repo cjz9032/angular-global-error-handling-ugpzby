@@ -1,6 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
+import { NgbModal, NgbModalRef, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.component';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
@@ -119,5 +118,11 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 
 	closeModal() {
 		this.activeModal.close('close');
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.About-Modal') as HTMLElement;
+		modal.focus();
 	}
 }

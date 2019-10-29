@@ -167,10 +167,13 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			return;
 		} else {
 			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-			const isAvailable = inputAccessoriesCapability.isUdkAvailable
-				|| inputAccessoriesCapability.isKeyboardMapAvailable;
+			let isAvailable;
+			if (inputAccessoriesCapability) {
+				isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+			}
 			const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
-			if (!isAvailable && !isVOIPAvailable) {
+			const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
+			if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
 				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 			}
 		}
