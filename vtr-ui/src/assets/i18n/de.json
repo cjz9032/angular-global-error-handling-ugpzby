@@ -1365,7 +1365,11 @@
                             "description": "Nach Ändern der Standardfunktion der oberen Reihe müssen Sie Ihren Computer neu starten. Möchten Sie wirklich neu starten?",
                             "reboot": "NEU STARTEN",
                             "cancel": "NICHT JETZT"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Um die F1-F12-Funktion zu verwenden, drücken Sie die Fn-Taste und die Tasten in der obersten Reihe.",
+							"fnKey": "Um die Sonderfunktion zu verwenden, drücken Sie die Fn-Taste und die Tasten in der obersten Reihe."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP Hotkey-Funktionen",

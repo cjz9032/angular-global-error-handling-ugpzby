@@ -1365,7 +1365,11 @@
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
                             "cancel": "NÃO AGORA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
+							"fnKey": "Para acessar as funções especiais, pressione Fn e as teclas da fileira superior."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funções de teclas de atalhos para VoIP",

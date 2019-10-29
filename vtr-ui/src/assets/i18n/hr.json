@@ -1365,7 +1365,11 @@
                             "description": "Kako bi se promijenile zadane funkcije u gornjem redu, potrebno je ponovno pokretanje računala. Želite li zaista ponovno pokretanje?",
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
+							"fnKey": "Da biste pristupili posebnoj funkciji, pritisnite Fn i tipke u gornjem redu."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkcije VoIP tipkovničkog prečaca",
