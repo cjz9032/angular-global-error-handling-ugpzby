@@ -722,7 +722,9 @@
                 "accessUrl": "Siirry Windows-asetuksiin ja anna käyttöoikeus",
                 "microphoneNote": "Lenovo Vantage ei voi käyttää mikrofonia.",
                 "cameraPrivacyNote": "Lenovo Vantage ei voi käyttää kameraa."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Järjestelmän tila",
@@ -1577,17 +1579,17 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "superResolution": {
-				"heading": "Älykäs tietoväline",
-				"title": "Näytön tarkkuuden skaalaus",
-				"desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
-				"tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-					"description1":"Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
-					"description2":"Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
-					"description3":"Keskusyksikön lämpötila on liian korkea."
-				}
-			},
+                "heading": "Älykäs tietoväline",
+                "title": "Näytön tarkkuuden skaalaus",
+                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
+                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+                    "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
+                    "description2": "Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+                    "description3": "Keskusyksikön lämpötila on liian korkea."
+                }
+            },
             "voice": {
                 "title": "Ääni",
                 "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
@@ -1830,7 +1832,17 @@
             "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
             "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
-            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla"
+            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

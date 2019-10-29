@@ -722,7 +722,9 @@
                 "accessUrl": "Ga naar de Windows-instellingen om toegang te geven",
                 "microphoneNote": "Lenovo Vantage heeft geen toegang tot de microfoon.",
                 "cameraPrivacyNote": "Lenovo Vantage heeft geen toegang tot de camera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Systeemstatus",
@@ -1577,17 +1579,17 @@
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },
             "superResolution": {
-				"heading": "Intelligente media",
-				"title": "Schaalverhoging beeldschermresolutie",
-				"desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
-				"tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Deze functie werkt niet als:",
-					"description1":"De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
-					"description2":"De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
-					"description3":"De CPU-temperatuur te hoog is."
-				}
-			},
+                "heading": "Intelligente media",
+                "title": "Schaalverhoging beeldschermresolutie",
+                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
+                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Deze functie werkt niet als:",
+                    "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
+                    "description2": "De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
+                    "description3": "De CPU-temperatuur te hoog is."
+                }
+            },
             "voice": {
                 "title": "Spraak",
                 "description": "Lenovo Voice helpt bij het converteren van uw stem naar teksten met de functie Stem naar tekst en biedt realtime vertaling van Stem naar tekst met de vertaalfunctie.",
@@ -1830,7 +1832,17 @@
             "password": "Sterke en complexe wachtwoorden op een veilige manier beheren",
             "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
             "wifi": "Uw persoonlijke gegevens coderen als u openbare WiFi gebruikt",
-            "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties"
+            "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

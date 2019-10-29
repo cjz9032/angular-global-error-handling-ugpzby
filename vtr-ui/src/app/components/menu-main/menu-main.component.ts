@@ -669,9 +669,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					const isAvailable =
 						assistCapability.isIntelligentSecuritySupported ||
 						assistCapability.isLenovoVoiceSupported ||
-						assistCapability.isIntelligentMediaSupported ||
+						assistCapability.isIntelligentMediaSupported.available ||
 						assistCapability.isIntelligentScreenSupported ||
-						assistCapability.isSuperResolutionSupported ||
+						assistCapability.isSuperResolutionSupported.available ||
 						assistCapability.isAPSSupported;
 					// const isAvailable = true;
 					this.commonService.setLocalStorageValue(
