@@ -1,7 +1,7 @@
 import { environment } from '../../../../environments/environment';
 
 const productionEnvironment = {
-	backendUrl: 'https://api.tz.figleafapp.com',
+	backendUrl: 'https://api.figleafapp.com',
 	staticUrl: 'https://static.figleafapp.com/anti-tracking/img/'
 };
 
