@@ -24,7 +24,7 @@
 									[brand]="brand"></wifi-security>
 							</div>
 						</div>
-						<div class="connected-home-status" *ngIf="showChs">
+						<div class="connected-home-status" *ngIf="showChs || !deviceService.isGaming">
 							<vtr-connected-home-status
 								[homeSecurity]="homeSecurity"></vtr-connected-home-status>
 						</div>
