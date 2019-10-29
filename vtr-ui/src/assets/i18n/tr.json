@@ -722,7 +722,9 @@
                 "accessUrl": "Erişim vermek için Windows ayarlarına gidin",
                 "microphoneNote": "Lenovo Vantage, Mikrofon'a erişemiyor.",
                 "cameraPrivacyNote": "Lenovo Vantage, Kamera'ya erişemiyor."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Sistem Durumu",
@@ -1573,17 +1575,17 @@
                 "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },
             "superResolution": {
-				"heading": "Akıllı Medya",
-				"title": "Video Çözünürlüğünü Yükseltme",
-				"desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
-				"tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Bu özellik şu durumlarda çalışmaz:",
-					"description1":"Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
-					"description2":"Bilgisayar AC gücüne bağlı değil ve pil tasarrufu kipi etkin.",
-					"description3":"CPU sıcaklığı çok yüksek."
-				}
-			},
+                "heading": "Akıllı Medya",
+                "title": "Video Çözünürlüğünü Yükseltme",
+                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
+                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Bu özellik şu durumlarda çalışmaz:",
+                    "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
+                    "description2": "Bilgisayar AC gücüne bağlı değil ve pil tasarrufu kipi etkin.",
+                    "description3": "CPU sıcaklığı çok yüksek."
+                }
+            },
             "voice": {
                 "title": "Ses",
                 "description": "Lenovo Voice, Sesten metne işlevi sayesinde sesinizi metne dönüştürmeye yardımcı olur ve Çeviri işlevi sayesinde sesten metne gerçek zamanlı çeviri sağlar.",
@@ -1826,7 +1828,17 @@
             "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
             "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
             "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
-            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız"
+            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

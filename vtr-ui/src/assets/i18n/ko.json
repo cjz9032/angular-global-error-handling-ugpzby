@@ -722,7 +722,9 @@
                 "accessUrl": "액세스 권한을 부여하려면 Windows 설정으로 이동합니다",
                 "microphoneNote": "Lenovo Vantage가 마이크에 액세스할 수 없습니다.",
                 "cameraPrivacyNote": "Lenovo Vantage가 카메라에 액세스할 수 없습니다."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "시스템 상태",
@@ -1573,17 +1575,17 @@
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "superResolution": {
-				"heading": "지능형 미디어",
-				"title": "비디오 해상도 업스케일링",
-				"desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-				"tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"다음의 경우에는 이 기능이 작동하지 않습니다.",
-					"description1":"컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
-					"description2":"컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
-					"description3":"CPU 온도가 너무 높습니다."
-				}
-			},
+                "heading": "지능형 미디어",
+                "title": "비디오 해상도 업스케일링",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
+                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
+                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description3": "CPU 온도가 너무 높습니다."
+                }
+            },
             "voice": {
                 "title": "음성",
                 "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",
@@ -1826,7 +1828,17 @@
             "password": "강력하고 복잡한 암호를 안전하게 관리",
             "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
             "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
-            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호"
+            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

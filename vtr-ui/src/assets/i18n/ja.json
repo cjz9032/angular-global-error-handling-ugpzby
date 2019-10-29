@@ -722,7 +722,9 @@
                 "accessUrl": "Windows 設定に移動してアクセスできるようにします",
                 "microphoneNote": "Lenovo Vantage がマイクロホンにアクセスできません。",
                 "cameraPrivacyNote": "Lenovo Vantage がカメラにアクセスできません。"
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "システム状況",
@@ -1573,17 +1575,17 @@
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "superResolution": {
-				"heading": "インテリジェント・メディア",
-				"title": "ビデオ解像度のアップスケーリング",
-				"desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
-				"tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"この機能は次の場合は動作しません。",
-					"description1":"コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
-					"description2":"コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
-					"description3":"CPU の温度が高すぎる場合。"
-				}
-			},
+                "heading": "インテリジェント・メディア",
+                "title": "ビデオ解像度のアップスケーリング",
+                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
+                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "この機能は次の場合は動作しません。",
+                    "description1": "コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
+                    "description2": "コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
+                    "description3": "CPU の温度が高すぎる場合。"
+                }
+            },
             "voice": {
                 "title": "音声",
                 "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",
@@ -1826,7 +1828,17 @@
             "password": "強力で複雑なパスワードを安全な方法で管理している",
             "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
             "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
-            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している"
+            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {

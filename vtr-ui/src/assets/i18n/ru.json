@@ -722,7 +722,9 @@
                 "accessUrl": "Перейдите в раздел параметров Windows, чтобы предоставить доступ",
                 "microphoneNote": "У Lenovo Vantage нет доступа к микрофону.",
                 "cameraPrivacyNote": "У Lenovo Vantage нет доступа к камере."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Состояние системы",
@@ -1573,17 +1575,17 @@
                 "tooltip": "Эта функция не распространяется на интернет-проигрыватели видео. Самые популярные локальные видеопроигрыватели (например,проигрыватель Windows Media Player, 5KPlayer и т. д.) поддерживают эту функцию."
             },
             "superResolution": {
-				"heading": "Интеллектуальная работа с мультимедиа",
-				"title": "Масштабирование разрешения видео",
-				"desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label> Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. При включении этой функции рекомендуется подключить компьютер к сети переменного тока.</label></p>",
-				"tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Эта функция не работает, если:",
-					"description1":"компьютер не подключен к сети переменного тока, а заряд аккумулятора ниже 20%.",
-					"description2":"компьютер не подключен к сети переменного тока и включен режим экономии заряда.",
-					"description3":"температура процессора слишком высокая."
-				}
-			},
+                "heading": "Интеллектуальная работа с мультимедиа",
+                "title": "Масштабирование разрешения видео",
+                "desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label> Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. При включении этой функции рекомендуется подключить компьютер к сети переменного тока.</label></p>",
+                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Эта функция не работает, если:",
+                    "description1": "компьютер не подключен к сети переменного тока, а заряд аккумулятора ниже 20%.",
+                    "description2": "компьютер не подключен к сети переменного тока и включен режим экономии заряда.",
+                    "description3": "температура процессора слишком высокая."
+                }
+            },
             "voice": {
                 "title": "Голос",
                 "description": "Lenovo Voice помогает преобразовать речь в текст с использование функции преобразования голоса в текст и обеспечивает перевод в режиме реального времени при преобразовании голоса в текст с помощью функции перевода.",
@@ -1826,7 +1828,17 @@
             "password": "Использование надежных и сложных паролей с безопасной системой управления паролями",
             "vpn": "Мониторинг уязвимости сети к атакам",
             "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
-            "windowsHello": "Защита устройства с помощью параметров безопасного входа"
+            "windowsHello": "Защита устройства с помощью параметров безопасного входа",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
