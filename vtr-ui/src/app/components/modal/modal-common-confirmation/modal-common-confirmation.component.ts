@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT } from '@lenovo/tan-client-bridge';
 
@@ -40,5 +40,11 @@ export class ModalCommonConfirmationComponent implements OnInit {
 
 	public onCancelClick($event: any) {
 		this.activeModal.close(false);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.common-confirmation-modal') as HTMLElement;
+		modal.focus();
 	}
 }

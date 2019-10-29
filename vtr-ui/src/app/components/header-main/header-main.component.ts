@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 		'./header-main.component.gaming.scss'
 	]
 })
-export class HeaderMainComponent implements OnInit {
+export class HeaderMainComponent implements OnInit, AfterViewInit {
 
 	@Input() title: string;
 	@Input() back: string;
@@ -31,6 +31,13 @@ export class HeaderMainComponent implements OnInit {
 				d.path = self.parentPath + '/' + d.path;
 			});
 		}
+	}
+
+	ngAfterViewInit() {
+		const back = document.getElementById(this.backId);
+		back.addEventListener('focus' , () => {
+			window.scrollTo(0, 0);
+		});
 	}
 
 	onInnerBack() {

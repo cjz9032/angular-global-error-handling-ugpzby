@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -41,4 +41,10 @@ selectBilledMonthly(){
   location.reload();
 	// this.router.navigate(['device/smart-performance']);
 }
+
+  @HostListener('window: focus')
+  onFocus(): void {
+  const modal = document.querySelector('.subscribe-modal') as HTMLElement;
+		modal.focus();
+  }
 }

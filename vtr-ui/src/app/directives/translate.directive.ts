@@ -29,7 +29,7 @@ export class TranslateDirective {
 			});
 		}
 		childNodes.forEach((childNode, index) => {
-			const childElement: HTMLElement = (<HTMLElement>childNode);
+			const childElement: HTMLElement = (childNode as HTMLElement);
 			childElement.insertAdjacentElement('afterend', document.createElement('span'));
 			if (index < contentTextList.length) {
 				childElement.insertAdjacentText('beforebegin', contentTextList[index]);
@@ -37,11 +37,13 @@ export class TranslateDirective {
 			this.commonService.notification.subscribe((notification: AppNotification) => {
 				this.onNotification(notification);
 				if (this.isOnline || (childElement.attributes['unSupportOffline'] ? childElement.attributes['unSupportOffline'].value : false)) {
+					childNode.tabIndex = 0;
 					if (index < tagTextList.length) {
 						childElement.innerText = tagTextList[index];
 						childElement.nextElementSibling.innerHTML = '';
 					}
 				} else {
+					childNode.tabIndex = -1;
 					if (index < tagTextList.length) {
 						childElement.innerText = '';
 						childElement.nextElementSibling.className = childElement.className;
