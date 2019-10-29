@@ -7,6 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
+import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 declare var Windows;
 
@@ -530,6 +531,18 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getSmartPerformance() {
+		console.log('----------CALLING');
+		if (this.phoenix) {
+			if (!this.phoenix.smartPerformance) {
+				return this.phoenix.loadFeatures([Phoenix.Features.HwSettings]);
+			}
+			console.log(this.phoenix.hwsettings.smartPerformance);
+			console.log('----------DONE');
+		}
+		return undefined;
+	}
+
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
@@ -945,5 +958,9 @@ export class VantageShellService {
 			return this.phoenix.hwsettings.input.inputControlLinks;
 		}
 		return undefined;
+	}
+
+	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
+		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
 	}
 }

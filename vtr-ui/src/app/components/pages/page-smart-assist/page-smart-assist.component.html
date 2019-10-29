@@ -272,40 +272,42 @@
 
 													</div>
 												</div>
-											</div>
-											<div *ngIf="sensitivityVisibility"
-												class="pl-4 custom-row-swicth bold-title pb-4"
-												[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
-												<h3 class="sensitivityTitle"
-													[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
-													{{'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate}}
-												</h3>
-												<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
-													[manualRefresh]="manualRefresh"
-													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="1"
-													(change)="setHPDLeaveSensitivitySetting($event)"
-													[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
-													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="3"
-													[value]="sesnsitivityAdjustVal"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled">
-												</vtr-ui-range-slider>
-												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
-													<div class="feature-note p-4">
-														<div class="row blur">
-															<div class="col">
-																<p id="smart-assist-intelligent-security-note"
-																	attr.aria-label="smart-assist-intelligent-security-note">
-																	{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
-																</p>
-															</div>
+											</div>											
+										</vtr-ui-row-switch>
+										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
+										[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
+										<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
+											[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
+											[isSwitchVisible]="false" [showChildContent]="true"
+											[isSwitchChecked]="false" [theme]="'white'"
+											[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+										</vtr-ui-row-switch>
+										<div class="slider-note"
+											[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+											<vtr-ui-range-slider [rangeSliderId]="'thinkpadSensitivity'"
+												[manualRefresh]="manualRefresh"
+												[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+												[minValue]="1" (change)="setHPDLeaveSensitivitySetting($event)"
+												[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
+												[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+												[maxValue]="3" [value]="sesnsitivityAdjustVal"
+												[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
+											</vtr-ui-range-slider>
+											<div class="pt-3"
+												[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
+												<div class="feature-note p-4">
+													<div class="row blur">
+														<div class="col">
+															<p id="smart-assist-intelligent-security-note"
+																attr.aria-label="smart-assist-intelligent-security-note">
+																{{'device.smartAssist.intelligentSecurity.note.description7' | translate}}
+															</p>
 														</div>
 													</div>
 												</div>
 											</div>
-										</vtr-ui-row-switch>
+										</div>
+									</div>
 										<div class="bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
 											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled"
