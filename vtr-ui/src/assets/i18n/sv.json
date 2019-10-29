@@ -1367,7 +1367,11 @@
                             "description": "Om du ändrar standardfunktionen för den översta raden måste du starta om datorn. Vill du starta om?",
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt funktion F1 till och med F12.",
+							"fnKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt specialfunktionen."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-snabbtangentsfunktioner",

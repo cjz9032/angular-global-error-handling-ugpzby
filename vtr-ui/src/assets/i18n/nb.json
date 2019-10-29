@@ -1367,7 +1367,11 @@
                             "description": "Du må starte datamaskinen på nytt hvis du endrer standardfunksjonen for den øverste raden. Er du sikker på at du vil starte på nytt?",
                             "reboot": "START PÅ NYTT",
                             "cancel": "IKKE NÅ"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
+							"fnKey": "Du får tilgang til spesialfunksjonen ved å trykke på Fn og tastene på den øverste raden."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Hurtigtastfunksjoner for VoIP",

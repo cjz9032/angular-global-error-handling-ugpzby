@@ -153,6 +153,7 @@
 															<div class="text-regular">
 																{{'security.windowsHello.startUsingWindowsHello' | translate}}
 																<a *ngIf="isOnline; else spanText" id="sa-wh-lnk-visitmicrosoft"
+																	[tabindex]="isOnline ? 0 : -1"
 																	target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
@@ -245,6 +246,7 @@
 															{{'security.windowsHello.startUsingWindowsHello' | translate}}
 															<a *vtrLinkStatus="'security.windowsHello.visitMicrosoft' | translate" id="sa-wh-lnk-visitmicrosoft"
 																target="_blank"
+																[tabindex]="isOnline ? 0 : -1"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
 																metricsEvent="FeatureClick"

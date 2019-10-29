@@ -1367,7 +1367,11 @@
                             "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Hvis du vil have adgang til F1-F12-funktionen, skal du trykke på Fn og tasterne på den øverste række.",
+							"fnKey": "Hvis du vil have adgang til den særlige funktion, skal du trykke på Fn og tasterne på den øverste række."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-genvejsfunktioner:",

@@ -1367,7 +1367,11 @@
                             "cancel": "NE SAD"
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
-                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE"
+                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
+						"note": {
+							"sFunKey": "Da biste pristupili funkciji tastera F1-F12, pritisnite taster Fn i tastera na gornjem redu.",
+							"fnKey": "Da biste pristupili specijalnoj funkciji, pritisnite taster Fn i tastera na gornjem redu."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP funkcije prečica",

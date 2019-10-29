@@ -1367,7 +1367,11 @@
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
+							"fnKey": "Jos haluat käyttää erikoistoimintoa, paina Fn-näppäintä ja ylärivin näppäimiä."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-pikanäppäintoiminnot",

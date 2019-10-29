@@ -1367,7 +1367,11 @@
                             "description": "V případě změny funkce horní řady kláves je nutno počítač restartovat, aby se změny projevily. Skutečně chcete restartovat?",
                             "reboot": "RESTARTOVAT",
                             "cancel": "TEĎ NE"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich funkce F1-F12.",
+							"fnKey": "Pomocí podržení klávesy Fn a stisknutí jedné z kláves v horní řadě aktivujete jejich sekundární funkce."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkce horkých kláves VoIP:",

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -7,14 +7,16 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
-import { EMPTY } from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
+import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
 	templateUrl: './subpage-device-settings-input-accessory.component.html',
 	styleUrls: ['./subpage-device-settings-input-accessory.component.scss']
 })
-export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
+export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnDestroy {
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
@@ -43,9 +45,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 	hasUDKCapability = false;
+	fnLockCapability = false;
+	private topRowFunctionsIdeapadSubscription: Subscription;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
 		private logger: LoggerService
 	) {
@@ -65,6 +70,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		}
 		this.getMouseAndTouchPadCapability();
 		this.getVoipHotkeysSettings();
+		this.topRowFunctionsIdeapadSubscription = this.topRowFunctionsIdeapadService.capability.subscribe(capabilities => {
+			capabilities.forEach(capability => {
+				if (capability.key === 'FnLock' && capability.value === StringBooleanEnum.TRUTHY) {
+					this.fnLockCapability = true;
+				}
+			});
+		});
 	}
 
 	getVoipHotkeysSettings() {
@@ -373,5 +385,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
 			});
 		}
+	}
+
+	ngOnDestroy(): void {
+		this.topRowFunctionsIdeapadSubscription.unsubscribe();
 	}
 }

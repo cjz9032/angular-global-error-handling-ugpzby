@@ -1367,7 +1367,11 @@
                             "description": "Aby zmiana funkcji klawisza z górnego wiersza zaczęła obowiązywać, należy ponownie uruchomić komputer. Czy na pewno chcesz uruchomić ponownie?",
                             "reboot": "URUCHOM PONOWNIE",
                             "cancel": "NIE TERAZ"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
+							"fnKey": "Aby uzyskać dostęp do funkcji specjalnych, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funkcje klawisza dostępu VoIP",
