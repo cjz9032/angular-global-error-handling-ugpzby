@@ -130,12 +130,12 @@ export class VantageShellService {
 					handler(keyEventChangeResponse);
 				}, 1000);
 				break;
-		}
-
-		if (this.phoenix) {
-			this.phoenix.on(eventType, (val) => {
-				handler(val);
-			});
+			default:
+				if (this.phoenix) {
+					this.phoenix.on(eventType, (val) => {
+						handler(val);
+					});
+				}
 		}
 	}
 
