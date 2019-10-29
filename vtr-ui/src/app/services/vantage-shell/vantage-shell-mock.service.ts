@@ -10,6 +10,7 @@ import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
 import { WinRT, CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
+import { TopRowFunctionsIdeapad } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 declare var Windows;
 
@@ -1779,5 +1780,8 @@ export class VantageShellService {
 		};
 
 		return inputControlLinks;
+	}
+	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
+		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
 	}
 }
