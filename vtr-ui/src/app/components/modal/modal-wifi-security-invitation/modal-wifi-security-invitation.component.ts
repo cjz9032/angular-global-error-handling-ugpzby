@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
@@ -105,4 +105,10 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.isFocusIn = false;
 	}
 
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.wifi-security-location-modal') as HTMLElement;
+		modal.focus();
+	}
 }

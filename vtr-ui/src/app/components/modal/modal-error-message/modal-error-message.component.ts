@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -23,6 +23,12 @@ export class ModalErrorMessageComponent implements OnInit {
 
 	public onCloseClick($event: any) {
 		this.activeModal.close(false);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.wifi-security-error-modal') as HTMLElement;
+		modal.focus();
 	}
 
 }
