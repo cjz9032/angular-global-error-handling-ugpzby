@@ -349,6 +349,14 @@
 								transform: rotate(45deg);
 								right: 1.2rem;
 								top: 4rem;
+								@media #{$black-on-white} {
+									
+									background: $high-contrast-blue;
+								}
+								@media #{$white-on-black} {
+									background: $yellow;
+											}
+						
 							}
 
 							&::before {
@@ -361,6 +369,13 @@
 								transform: rotate(135deg);
 								right: 2rem;
 								top: 4rem;
+								@media #{$black-on-white} {
+									background: $high-contrast-blue;
+								}
+								@media #{$white-on-black} {
+									background: $yellow;
+											}
+						
 							}
 
 							&.user {
