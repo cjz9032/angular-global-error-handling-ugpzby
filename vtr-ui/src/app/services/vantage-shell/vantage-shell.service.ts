@@ -530,17 +530,17 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSmartPerformance() {
-		console.log('----------CALLING');
-		if (this.phoenix) {
-			if (!this.phoenix.smartPerformance) {
-				return this.phoenix.loadFeatures([Phoenix.Features.HwSettings]);
-			}
-			console.log(this.phoenix.hwsettings.smartPerformance);
-			console.log('----------DONE');
-		}
-		return undefined;
-	}
+	// public getSmartPerformance() {
+	// 	console.log('----------CALLING');
+	// 	if (this.phoenix) {
+	// 		if (!this.phoenix.smartPerformance) {
+	// 			return this.phoenix.loadFeatures([Phoenix.Features.HwSettings]);
+	// 		}
+	// 		console.log(this.phoenix.hwsettings.smartPerformance);
+	// 		console.log('----------DONE');
+	// 	}
+	// 	return undefined;
+	// }
 
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge

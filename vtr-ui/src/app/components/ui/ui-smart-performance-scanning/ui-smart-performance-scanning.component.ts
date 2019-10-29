@@ -53,8 +53,36 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			},
 			"rating":7
 		 },
+		 {
+			"percentage":45,
+			"status":{
+			   "category":"internetperformance",
+			   "subcategory":"Network Settings",
+			   "final":"completed"
+			},
+			"result":{
+			   "Tune":34,
+			   "Boost":14,
+			   "Secure":12
+			},
+			"rating":7
+		 },
+		 {
+			"percentage":60,
+			"status":{
+			   "category":"internetperformance",
+			   "subcategory":"e-junk",
+			   "final":"completed"
+			},
+			"result":{
+			   "Tune":34,
+			   "Boost":14,
+			   "Secure":12
+			},
+			"rating":7
+		 },
 	 {
-		"percentage":50,
+		"percentage":75,
 		"status":{
 		   "category":"Malware & Security",
 		   "subcategory":"Malware Scan",
@@ -68,38 +96,10 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 		"rating":7
 	 },
 	 {
-		"percentage":60,
+		"percentage":100,
 		"status":{
 		   "category":"Malware & Security",
 		   "subcategory":"Annoying adware",
-		   "final":"completed"
-		},
-		"result":{
-		   "Tune":34,
-		   "Boost":14,
-		   "Secure":12
-		},
-		"rating":7
-	 },
-	 {
-		"percentage":75,
-		"status":{
-		   "category":"internetperformance",
-		   "subcategory":"Network Settings",
-		   "final":"completed"
-		},
-		"result":{
-		   "Tune":34,
-		   "Boost":14,
-		   "Secure":12
-		},
-		"rating":7
-	 },
-	 {
-		"percentage":100,
-		"status":{
-		   "category":"internetperformance",
-		   "subcategory":"e-junk",
 		   "final":"completed"
 		},
 		"result":{
@@ -140,18 +140,21 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			 }
 			 if(this.index==2)
 			 {
-				this.activegroup = "Malware & Security";
+				this.activegroup = "Internet performance";
 				this.currentCategory=2;
-				this.updateMalwareSubItems('Malware', this.sampleDesc);
+				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
 				this.toggle(this.activegroup);
+				this.initSpeed();
 			 }
 			 if(this.index==4)
 			 {
-				this.activegroup = "Internet performance";
+				this.activegroup = "Malware & Security";
 				this.currentCategory=3;
-				this.updateInternetPerformanceSubItems('Internet performance', this.sampleDesc);
+				this.updateMalwareSubItems('Malware', this.sampleDesc);
 				this.toggle(this.activegroup);
+				this.initSpeed();
 			 }
+			
 			}
 		 }, 5000);
 	
@@ -177,12 +180,12 @@ initSpeed() {
 	const self = this;
 	self.loop = setInterval(function(){
 		self.speedometer.speedCurrent = Math.floor(Math.random() * (self.speedometer.speedMax/2)) + 1;
-	}, 200);
+	}, 1000);
 
 	self.delay = setTimeout(function(){
 		clearInterval(self.loop);
 		self.speedometer.speedCurrent = self.speedometer.speedMax * .9;
-	}, 3000);
+	}, 10000);
 }
 updateTuneUpPerformanceSubItems(name, desc) {
 	this.subItems = {
