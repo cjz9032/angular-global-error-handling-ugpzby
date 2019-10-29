@@ -62,7 +62,7 @@ input.wifi-checked + .switch {
 		background: darkviolet;
 	}
 	@media #{$white-on-black} {
-		
+		background: $highlight_bright;
 	}
 
 }

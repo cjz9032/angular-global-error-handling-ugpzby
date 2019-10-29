@@ -33,10 +33,10 @@
 			z-index: 1;
 			max-width: $max_page_width;
 			@media #{$black-on-white} {
-				margin: 2rem;
+				margin-top: 1rem;
 			}
 			@media #{$white-on-black} {
-				margin: 2rem;
+				margin-top: 1rem;
 			}
 		}
 		.back {
