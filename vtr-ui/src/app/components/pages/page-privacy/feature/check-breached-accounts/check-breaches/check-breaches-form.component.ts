@@ -32,6 +32,8 @@ interface UserProfile {
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	@Input() strategy: 'default' | 'emitEmail' = 'default';
+	@Input() appearance: 'default' | 'small' = 'default';
+	@Input() runAbTest = false;
 	@Output() userEmail = new EventEmitter<string>();
 
 	emailForm = this.formBuilder.group({

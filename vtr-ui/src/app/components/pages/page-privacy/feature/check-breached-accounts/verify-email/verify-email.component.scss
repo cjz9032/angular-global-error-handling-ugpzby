@@ -23,8 +23,14 @@ $leftIndent: 7.5rem;
 	&__wrapper {
 		display: flex;
 		flex-flow: column;
-		text-align: center;
-		padding: 6rem;
+		padding: 3rem 4rem;
+	}
+
+	&__wrapper-email {
+		display: flex;
+		flex-flow: column;
+		padding: 2rem 4rem;
+		background-color: #F5F7F8;
 	}
 
 	&__title {
@@ -47,11 +53,43 @@ $leftIndent: 7.5rem;
 		margin-top: 2rem;
 	}
 
+	&__email-title {
+		@extend %text-common;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&__email-text {
+		@extend %text-common;
+	}
+
+	&__email-check-form {
+		margin: 2rem 0 4rem;
+	}
+
+	&__button-wrapper {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+		align-content: center;
+		margin-top: 4rem;
+	}
+
 	&__button {
 		@extend %theme-btn;
-		padding: 1.5rem 6rem;
 		display: inline;
-		margin-top: 4rem;
+
+		&--transparent {
+			@extend %theme-btn--transparent;
+		}
+	}
+
+	&__button-link {
+		@extend %button-link;
+		@extend %button-link__text;
+		@extend %button-link--padding-0;
+		@extend %button-link--uppercase;
 	}
 }
 

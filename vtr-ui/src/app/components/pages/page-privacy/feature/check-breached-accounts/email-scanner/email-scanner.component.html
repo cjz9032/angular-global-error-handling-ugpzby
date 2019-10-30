@@ -1,5 +1,5 @@
 <div class="check-breaches" *ngIf="!emailWasScanned && scanCounter < scanCounterLimit">
-	<vtr-check-breaches-form></vtr-check-breaches-form>
+	<vtr-check-breaches-form [runAbTest]="true"></vtr-check-breaches-form>
 </div>
 
 <button class="check-breaches__preview-link"
