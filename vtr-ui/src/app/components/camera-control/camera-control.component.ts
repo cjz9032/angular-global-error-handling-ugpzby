@@ -59,15 +59,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	) { }
 
 	ngOnInit() {
-		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
-			(cameraDetail: CameraDetail) => {
-				this.cameraDetail = cameraDetail;
-			},
-			error => {
-				console.log(error);
-			}
-		);
-
 		this.Windows = this.vantageShellService.getWindows();
 		this.Capture = this.Windows.Media.Capture;
 		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
@@ -80,6 +71,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.visibilityChange = this.onVisibilityChanged.bind(this);
 		document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
+
+		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
+			(cameraDetail: CameraDetail) => {
+				this.cameraDetail = cameraDetail;
+			},
+			error => {
+				console.log(error);
+			}
+		);
 	}
 
 	ngOnDestroy() {
