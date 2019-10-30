@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Bu makro tuşunu temizlemek istediğinizden emin misiniz?"
+                    "title": "Bu makro tuşunu temizlemek istediğinizden emin misiniz?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Kayıt Zaman Aşımı.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Erişim vermek için Windows ayarlarına gidin",
                 "microphoneNote": "Lenovo Vantage, Mikrofon'a erişemiyor.",
                 "cameraPrivacyNote": "Lenovo Vantage, Kamera'ya erişemiyor."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Sistem Durumu",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
                 "seeDetailsLink": "Ayrıntıları görün",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
             },
             "power": {
                 "title": "Güç",
@@ -1040,39 +1043,39 @@
                         "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Pil göstergesi sıfırlama",
+                        "description": "Bu özellik, bilgisayarınızın tam şarj kapasitesini daha doğru tahmin etmesini sağlar.",
+                        "barCode": "Barkod",
+                        "progress": "Sürüyor",
+                        "remaining": "Kalan",
+                        "startTime": "Başlangıç zamanı",
+                        "lastReset": "Son sıfırlama",
+                        "fullChargeCapacity": "Tam şarj kapasitesi",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Sıfırla",
+                            "stop": "Durdur"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "FCCText": "{{before}} Wh - {{after}} Wh",
+                        "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Tamamlandı. Başarılı sıfırlama.",
+                            "ERROR_SHUTDOWN": "Tamamlanmadı. Sistemi kapat.",
+                            "ERROR_LOGOFF": "Tamamlanmadı. Kullanıcı oturumunu kapat.",
+                            "ERROR_BATTERY_REMOVE": "Tamamlanmadı. Pil çıkarıldı.",
+                            "ERROR_BATTERY_REPLACE": "Tamamlanmadı. Pil değiştirildi.",
+                            "ERROR_AC_DETTACH": "Tamamlanmadı. AC güç bağdaştırıcısı çıkarıldı.",
+                            "ERROR_USER_CANCEL": "Tamamlanmadı. Kullanıcı tarafından iptal edildi.",
+                            "ERROR_UNEXPECTED": "Tamamlanmadı. Beklenmedik bir hata oluştu."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
+                            "description2": "Notlar: <br>1. Bu işlem birkaç saat sürebilir. Bu sırada lütfen bilgisayarınızı kullanmaktan kaçının.<br>2. Tüm açık uygulamaları kapatın ve bilgisayarınızı AC gücüne bağlayın.<br>3. İşlem sırasında pil şarj eşiği işlevi devre dışı bırakılır.",
+                            "continue": "Devam",
+                            "cancel": "İptal",
+                            "yes": "Evet",
+                            "description3": "Pil göstergesi sıfırlama işlemini durdurmak istediğinizden emin misiniz?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Varsayılan üst sıra işlevlerinde değişiklik yapılması bilgisayarınızın yeniden başlatmanızı gerektirir. Yeniden başlatmak istediğinizden emin misiniz?",
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
-                        }
+                        },
+						"note": {
+							"sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
+							"fnKey": "Özel işleve erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP Kısayol Tuşları İşlevleri",
@@ -1570,6 +1577,18 @@
                 "title": "Sıfır Dokunma ile Video Oynatma",
                 "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
                 "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
+            },
+            "superResolution": {
+                "heading": "Akıllı Medya",
+                "title": "Video Çözünürlüğünü Yükseltme",
+                "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
+                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Bu özellik şu durumlarda çalışmaz:",
+                    "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
+                    "description2": "Bilgisayar AC gücüne bağlı değil ve pil tasarrufu kipi etkin.",
+                    "description3": "CPU sıcaklığı çok yüksek."
+                }
             },
             "voice": {
                 "title": "Ses",
@@ -1808,12 +1827,22 @@
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
             "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Güvenlik puanınız çevrimiçinde ne kadar güvende olduğunuza dair bir fikir verir; sonuç, aşağıdakilere bağlıdır:",
+            "securityScoreDepends": "Güvenlik sonucunuz aşağıdakilere bağlıdır:",
             "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
             "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
             "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
             "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
-            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız"
+            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
                 "unknown": "Bilinmiyor",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Burada daha iyi bir tekliften yararlanabilirsiniz!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Tercih ayarı sayfasında, ileti bildirimini Vantage'ın ileti kategorilerine göre açıp kapatabilirsiniz. Tüm ileti kategorileri devre dışı bırakılmış olsa bile Vantage uygulamasından gerektiğinde Sistem Kritik iletileri alabileceğinizi lütfen unutmayın.",
         "messagesInLenovoVantage": "Lenovo Vantage'da İletiler",
         "appFeatures": "Uygulama özellikleri",
-        "appFeaturesDescription": "System Update, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
+        "appFeaturesDescription": "Sistem Güncellemesi, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
         "marketing": "Pazarlama",
         "marketingDescription": "Lenovo özel teklifleri de dahil olmak üzere promosyon iletileri.",
         "actionTriggered": "Tetiklenen Eylem",

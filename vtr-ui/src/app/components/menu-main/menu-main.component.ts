@@ -23,12 +23,15 @@ import { ModernPreloadService } from 'src/app/services/modern-preload/modern-pre
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
-import { EMPTY, Observable } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
+import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { StringBooleanEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -63,6 +66,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
+	hideDropDown = false;
 
 	UnreadMessageCount = {
 		totalMessage: 0,
@@ -92,7 +96,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		searchService: AppSearchService
+		searchService: AppSearchService,
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService
 	) {
 		localInfoService
 			.getLocalInfo()
@@ -219,13 +224,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		if (this.hardwareScanService && this.hardwareScanService.getPluginInfo()) {
-			this.hardwareScanService.getPluginInfo()
-				.then((hwscanPluginInfo: any) => {
-					// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-					this.showHWScanMenu = hwscanPluginInfo !== undefined &&
-						hwscanPluginInfo.LegacyPlugin === false &&
-						hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
+		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+			this.hardwareScanService.isAvailable()
+				.then((isAvailable: any) => {
+					this.showHWScanMenu = isAvailable;
 				})
 				.catch(() => {
 					this.showHWScanMenu = false;
@@ -240,6 +242,28 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 		if (machineType === 1) {
 			this.initInputAccessories();
+		}
+		if (machineType === 0) {
+			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
+			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+			this.topRowFunctionsIdeapadService.capability
+				.pipe(
+					catchError(() => {
+						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
+						return undefined;
+					})
+				)
+				.subscribe((capabilities: Array<any>) => {
+					if (capabilities.length === 0) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
+					}
+					// todo: there should be a better way to operate this array
+					capabilities.forEach(capability => {
+						if (capability.key === 'FnLock') {
+							this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
+						}
+					});
+				});
 		}
 	}
 
@@ -263,6 +287,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	updateUnreadMessageCount(item, event?) {
+		this.showMenu = false;
 		if (item.id === 'user') {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
@@ -313,7 +338,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		event.stopPropagation();
 	}
 
-	onKeyPress($event){
+	onKeyPress($event) {
 		if ($event.keyCode === 13) {
 			this.toggleMenu($event);
 		}
@@ -533,72 +558,78 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 
 	private showSmartAssist() {
 		this.logger.info('inside showSmartAssist');
-		this.getMenuItems().then((items) => {
+		this.getMenuItems().then(async (items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
-					this.logger.info('get IsSmartAssistSupported');
-
 					// if cache has value true for IsSmartAssistSupported, add menu item
 					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
 						LocalStorageKey.IsSmartAssistSupported,
 						false
 					);
+					this.logger.info('showSmartAssist isSmartAssistSupported cache value', isSmartAssistSupported);
 
 					if (isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
-					this.logger.info('before Promise.all JS Bridge call');
 
-					// still check if any of the feature supported. if yes then add menu
-					Promise.all([
-						this.smartAssist.getHPDVisibilityInIdeaPad(),
-						this.smartAssist.getHPDVisibilityInThinkPad(),
-						this.smartAssist.isLenovoVoiceAvailable(),
-						this.smartAssist.getVideoPauseResumeStatus(), // returns object
-						this.smartAssist.getIntelligentScreenVisibility(),
-						this.smartAssist.getAPSCapability(),
-						this.smartAssist.getSensorStatus(),
-						this.smartAssist.getHDDStatus()
-					])
-						.then((responses: any[]) => {
-							this.logger.info('inside Promise.all THEN JS Bridge call', responses);
-							// cache smart assist capability
-							const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
-							smartAssistCapability.isIntelligentSecuritySupported = responses[0] || responses[1];
-							smartAssistCapability.isLenovoVoiceSupported = responses[2];
-							smartAssistCapability.isIntelligentMediaSupported = responses[3];
-							smartAssistCapability.isIntelligentScreenSupported = responses[4];
-							smartAssistCapability.isAPSSupported = responses[5] && responses[6] && responses[7] > 0;
-							this.commonService.setLocalStorageValue(
-								LocalStorageKey.SmartAssistCapability,
-								smartAssistCapability
-							);
-							this.logger.info('inside Promise.all THEN JS Bridge call', smartAssistCapability);
+					// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
+					const assistCapability: SmartAssistCapability = new SmartAssistCapability();
+					// HPD and Intelligent Screen capability check
+					try {
+						assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
+						assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
+					} catch (error) {
+						this.logger.exception('showSmartAssist smartAssist.getHPDVisibility check', error);
+					}
+					// lenovo voice  capability check
+					try {
+						assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
+					} catch (error) {
+						this.logger.exception('showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
+					}
+					// lenovo voice  capability check
+					try {
+						assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
+					} catch (error) {
+						this.logger.exception('showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
+					}
+					// lenovo voice  capability check
+					try {
+						// assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+					} catch (error) {
+						this.logger.exception('showSmartAssist smartAssist.getSuperResolutionStatus check', error);
+					}
+					try {
+						assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
+						assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
+						assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
+						assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0;
+					} catch (error) {
+						this.logger.exception('showSmartAssist APS capability check', error);
+					}
 
-							const isAvailable =
-								responses[0] ||
-								responses[1] ||
-								responses[2] ||
-								responses[3].available ||
-								responses[4] ||
-								(responses[5] && responses[6] && responses[7] > 0);
-							// const isAvailable = true;
-							this.commonService.setLocalStorageValue(
-								LocalStorageKey.IsSmartAssistSupported,
-								isAvailable
-							);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
+					this.logger.info('showSmartAssist capability check', assistCapability);
 
-							// avoid duplicate entry. if not added earlier then add menu
-							if (isAvailable && !isSmartAssistSupported) {
-								this.addSmartAssistMenu(myDeviceItem);
-							}
-						})
-						.catch((error) => {
-							this.logger.error('error in initSmartAssist.Promise.all()', error.message);
-							return EMPTY;
-						});
+					const isAvailable =
+						assistCapability.isIntelligentSecuritySupported ||
+						assistCapability.isLenovoVoiceSupported ||
+						assistCapability.isIntelligentMediaSupported.available ||
+						assistCapability.isIntelligentScreenSupported ||
+						assistCapability.isSuperResolutionSupported.available ||
+						assistCapability.isAPSSupported;
+					// const isAvailable = true;
+					this.commonService.setLocalStorageValue(
+						LocalStorageKey.IsSmartAssistSupported,
+						isAvailable
+					);
+
+					// avoid duplicate entry. if not added earlier then add menu
+					if (isAvailable && !isSmartAssistSupported) {
+						this.addSmartAssistMenu(myDeviceItem);
+					}
 				}
 			}
 		});
@@ -629,7 +660,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		Promise.all([
 			this.keyboardService.GetUDKCapability(),
 			this.keyboardService.GetKeyboardMapCapability(),
-			// this.keyboardService.getVoipHotkeysSettings()
+			this.keyboardService.GetKeyboardVersion()
 		])
 			.then((responses) => {
 				try {
@@ -639,7 +670,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					}
 					inputAccessoriesCapability.isUdkAvailable = responses[0];
 					inputAccessoriesCapability.isKeyboardMapAvailable = responses[1];
-					// inputAccessoriesCapability.isVoipAvailable = responses[2].capability;
+					inputAccessoriesCapability.keyboardVersion = responses[2];
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability,
 						inputAccessoriesCapability
 					);
@@ -658,6 +689,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	openModernPreloadModal() {
+		this.showMenu = false;
 		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
 			backdrop: 'static',
 			size: 'lg',

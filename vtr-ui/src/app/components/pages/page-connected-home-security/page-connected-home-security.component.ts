@@ -59,6 +59,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	interval = 15000;
 	devicePostureArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	devicePostureArticleCategory: string;
+	showContentA = false;
+	showContentB = false;
 
 	cardContentPositionA: any = {
 		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png'
@@ -266,6 +268,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				});
 			this.pullCHS();
 		}
+		if (!this.showContentA || !this.showContentB) {
+			this.fetchCMSArticles();
+		}
 	}
 
 	@HostListener('document: visibilitychange')
@@ -351,7 +356,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				'position-left-content-row-1'
 			)[0];
 			if (cardContentPositionA) {
+				this.showContentA = true;
 				this.cardContentPositionA = cardContentPositionA;
+			} else {
+				this.showContentA = false;
 			}
 
 			const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -360,10 +368,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 				'position-right-sidebar-row-1'
 			)[0];
 			if (cardContentPositionB) {
+				this.showContentB = true;
 				this.cardContentPositionB = cardContentPositionB;
 				if (this.cardContentPositionB.BrandName) {
 					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 				}
+			} else {
+				this.showContentB = false;
 			}
 		});
 		this.cmsService.fetchCMSArticle(this.devicePostureArticleId, { Lang: 'EN' }).then((response: any) => {

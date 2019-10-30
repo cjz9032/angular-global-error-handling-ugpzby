@@ -658,80 +658,76 @@
 					}
 				}
 
-				//badsectorspage				
-					.vtr-device-information{						
-						vtr-recover-bad-sectors{
-							.vtr-recover-bad-sectors{
-								background: $dark_cell;
-								.header {
+				//badsectorspage
+				.vtr-device-information {
+					vtr-recover-bad-sectors {
+						.vtr-recover-bad-sectors {
+							background: $dark_cell;
+							.header {
 								.heading1 {
-								color: $gaming_info_link;
+									color: $gaming_info_link;
 								}
-								} 
-								.vtr-ui-list-checkbox-hardware {
-									.list-group {
-										.list-group-item {
-											background-color: $gaming-Darkslate-blue;
-											border: 0.1rem solid $screen_dark_15;
-											.title {
+							}
+							.vtr-ui-list-checkbox-hardware {
+								.list-group {
+									.list-group-item {
+										background-color: $gaming-Darkslate-blue;
+										border: 0.1rem solid $screen_dark_15;
+										.title {
 											color: $gaming_lightest;
-											}
-											.subtitle {
+										}
+										.subtitle {
 											color: $gaming_grey_lightest;
-											}
-											.select-item-subtitle {
-												color: $gaming_grey_lightest;
-											} 
 										}
-									}
-									.options {
-										.select-item {
-											color: $main;									
-										}							
 										.select-item-subtitle {
-											color: $shade_darker;
+											color: $gaming_grey_lightest;
 										}
 									}
-
 								}
-							
+								.options {
+									.select-item {
+										color: $main;
+									}
+									.select-item-subtitle {
+										color: $shade_darker;
+									}
+								}
 							}
 						}
-					}		
+					}
+				}
 
 				//till here
 
-
 				.vtr-hardware-components {
-					.vtr-device-information{
+					.vtr-device-information {
 						background: $dark_cell;
 						.header {
-						.heading1 {
-						color: $gaming_info_link;
+							.heading1 {
+								color: $gaming_info_link;
+							}
 						}
-						} 
 						vtr-ui-hardware-list-checkbox {
-						.vtr-ui-list-checkbox-hardware {
-						.list-group {
-						.list-group-item {
-						background-color: $gaming-Darkslate-blue;
-						border: 0.1rem solid $screen_dark_15;
-						.title {
-						color: $gaming_lightest;
-						}
-						.subtitle {
-						color: $gaming_grey_lightest;
-						}
-						}
-						}
-						}
+							.vtr-ui-list-checkbox-hardware {
+								.list-group {
+									.list-group-item {
+										background-color: $gaming-Darkslate-blue;
+										border: 0.1rem solid $screen_dark_15;
+										.title {
+											color: $gaming_lightest;
+										}
+										.subtitle {
+											color: $gaming_grey_lightest;
+										}
+									}
+								}
+							}
 						}
 						.select-item-subtitle {
-						color: $gaming_grey_lightest;
-						} 
-						
+							color: $gaming_grey_lightest;
+						}
 					}
-						
+
 					.hardware-scan-items {
 						background: $dark_cell;
 						.header {
@@ -894,15 +890,15 @@
 
 				@media #{$small-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 3rem 1.5rem 3rem;
-					background-color: $gaming_darkest;
+					padding: 6rem 3rem 1.5rem 3rem !important;
+					background-color: $gaming_darkest !important;
 					background-image: none;
 				}
 
 				@media #{$medium-screen} {
 					margin-top: -0.1rem;
-					padding: 6rem 6.5rem 4rem 6.5rem;
-					background-color: $gaming_darkest;
+					padding: 6rem 6.5rem 4rem 6.5rem !important;
+					background-color: $gaming_darkest !important;
 					background-image: none;
 				}
 
@@ -1053,14 +1049,14 @@
 								.battery {
 									.acid-container {
 										.percentage {
-											color: $main_dark;
+											color: $gaming_lightest !important;
 										}
 									}
 									.remaining-time {
-										color: $main_dark;
+										color: $gaming_lightest !important;
 									}
 									.remaining-text {
-										color: $main_dark;
+										color: $gaming_lightest !important;
 									}
 								}
 							}
@@ -1157,6 +1153,11 @@
 			.support-list {
 				background-color: $gaming-Darkslate-blue !important;
 				border: none !important;
+				button {
+					&:hover {
+						background-color: transparent !important;
+					}
+				}
 				.title {
 					color: $gaming_lightest;
 				}
@@ -1438,7 +1439,6 @@
 	}
 }
 
-// hide by Bob Liu: VAN-8765
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {

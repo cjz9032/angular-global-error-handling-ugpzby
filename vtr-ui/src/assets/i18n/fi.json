@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Haluatko varmasti tyhjentää tämän makronäppäimen sisällön?"
+                    "title": "Haluatko varmasti tyhjentää tämän makronäppäimen sisällön?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Aikakatkaisu tallennusta varten.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Siirry Windows-asetuksiin ja anna käyttöoikeus",
                 "microphoneNote": "Lenovo Vantage ei voi käyttää mikrofonia.",
                 "cameraPrivacyNote": "Lenovo Vantage ei voi käyttää kameraa."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Järjestelmän tila",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
             },
             "power": {
                 "title": "Virta",
@@ -1040,39 +1043,39 @@
                         "note": "Jos automaattinen tunnistus on valittu, tietokone ottaa lentokonevirtatilan käyttöön automaattisesti, kun se havaitsee olevansa lentokoneessa, ja poistaa sen käytöstä, kun poistut."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Akkumittarin nollaus",
+                        "description": "Tämän toiminnon avulla tietokone voi arvioida täyden varauskapasiteetin aiempaa tarkemmin.",
+                        "barCode": "Viivakoodi",
+                        "progress": "Edistyminen",
+                        "remaining": "jäljellä",
+                        "startTime": "Aloitusaika",
+                        "lastReset": "Edellinen nollaus",
+                        "fullChargeCapacity": "Täyteen ladatun kapasiteetti",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Uudelleenasetus",
+                            "stop": "Pysäytä"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
+                        "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+                        "FCCText": "{{before}}Wh- {{after}} Wh",
+                        "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Valmis. Nollaus onnistui.",
+                            "ERROR_SHUTDOWN": "Vaillinainen. Järjestelmä sammui.",
+                            "ERROR_LOGOFF": "Vaillinainen. Käyttäjä kirjautui ulos.",
+                            "ERROR_BATTERY_REMOVE": "Vaillinainen. Akku poistettiin.",
+                            "ERROR_BATTERY_REPLACE": "Vaillinainen. Akku vaihdettiin.",
+                            "ERROR_AC_DETTACH": "Vaillinainen. Verkkolaite irrotettiin.",
+                            "ERROR_USER_CANCEL": "Vaillinainen. Käyttäjä peruutti toiminnon.",
+                            "ERROR_UNEXPECTED": "Vaillinainen. On tapahtunut odottamaton virhe."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
+                            "description2": "Huomautuset: <br>1. Prosessi saattaa kestää useita tunteja. Vältä tietokoneen käyttöä tämän ajanjakson aikana.<br>2. Sulje kaikki avoimet sovellukset ja liitä tietokone verkkovirtaan.<br>3. Prosessin aikana akun varauksen kynnysarvo -toiminto ei ole käytössä.",
+                            "continue": "Jatka",
+                            "cancel": "Peruuta",
+                            "yes": "Kyllä",
+                            "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
+							"fnKey": "Jos haluat käyttää erikoistoimintoa, paina Fn-näppäintä ja ylärivin näppäimiä."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-pikanäppäintoiminnot",
@@ -1570,6 +1577,18 @@
                 "title": "Zero Touch -videon toisto",
                 "desc": "Tämä ominaisuus keskeyttää videon toiston, kun poistut tietokoneelta, ja jatkaa toistoa, kun palaat takaisin.",
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
+            },
+            "superResolution": {
+                "heading": "Älykäs tietoväline",
+                "title": "Näytön tarkkuuden skaalaus",
+                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
+                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+                    "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
+                    "description2": "Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+                    "description3": "Keskusyksikön lämpötila on liian korkea."
+                }
             },
             "voice": {
                 "title": "Ääni",
@@ -1808,12 +1827,22 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
             "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
             "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
             "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
-            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla"
+            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
                 "unknown": "Tuntematon",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Saat paremman tarjouksen täältä!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Oletusasetusten määrityssivulla voit ottaa käyttöön tai poistaa käytöstä viesti-ilmoitukset Vantagen viestiluokkien perusteella. Huomaa, että vaikka kaikki viestiluokat on poistettu käytöstä, voit silloin tällöin edelleen saada järjestelmälle tärkeitä viestejä Vantagelta, mikäli tarpeen.",
         "messagesInLenovoVantage": "Lenovo Vantage -sovelluksen viestit",
         "appFeatures": "Sovelluksen ominaisuudet",
-        "appFeaturesDescription": "System Update, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
+        "appFeaturesDescription": "Järjestelmäpäivityksiä, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
         "marketing": "Markkinointi",
         "marketingDescription": "Kampanjaviestit, mukaan lukien Lenovon erikoistarjoukset.",
         "actionTriggered": "Toiminto käynnistetty",

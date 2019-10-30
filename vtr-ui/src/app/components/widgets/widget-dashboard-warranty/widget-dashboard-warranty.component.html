@@ -1,4 +1,4 @@
-<div class="vtr-widget-warranty"
+<div class="vtr-widget-warranty p-40"
 	[ngClass]="{'in-warranty': item.info.status == 0, 'expired': item.info.status ==1, 'not-found': item.info.status == 2}">
 	<div class="container-fluid">
 		<div class="row">
@@ -15,12 +15,12 @@
 						<div class="right-col">
 							<div class="pb-2">
 								<span>{{'support.warranty.startDate' | translate}}</span>
-								<b *ngIf="item.info.status !== 2">{{dateFormat(item.info.startDate)}}</b>
+								<b *ngIf="item.info.status !== 2">{{ item.info.startDate | dateFormat}}</b>
 								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 							<div class="pb-2">
 								<span>{{'support.warranty.endDate' | translate}}</span>
-								<b *ngIf="item.info.status !== 2">{{dateFormat(item.info.endDate)}}</b>
+								<b *ngIf="item.info.status !== 2">{{ item.info.endDate | dateFormat }}</b>
 								<b *ngIf="item.info.status === 2">{{'common.securityAdvisor.notFound' | translate}}</b>
 							</div>
 						</div>

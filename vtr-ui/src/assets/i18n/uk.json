@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Дійсно очистити цю клавішу макросів?"
+                    "title": "Дійсно очистити цю клавішу макросів?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Час записування сплив.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Перейдіть до настройок Windows, щоб надати доступ",
                 "microphoneNote": "Lenovo Vantage не надано доступ до мікрофона.",
                 "cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Стан системи",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
                 "seeDetailsLink": "Показати відомості",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
             },
             "power": {
                 "title": "Живлення",
@@ -1040,39 +1043,39 @@
                         "note": "Якщо функцію автовизначення ввімкнено та комп'ютер визначить, що знаходиться на борту літака, він автоматично перейде у режим \"У літаку\" та вийде з нього, коли виявить, що політ завершено."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Скидання даних акумуляторного вольтметра",
+                        "description": "Ця функція дає комп'ютеру змогу точніше розраховувати повну ємність акумулятора.",
+                        "barCode": "Штрих-код",
+                        "progress": "Прогрес",
+                        "remaining": "Залишилося",
+                        "startTime": "Час початку",
+                        "lastReset": "Останнє скидання",
+                        "fullChargeCapacity": "Повна ємність акумулятора",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Скидання",
+                            "stop": "Зупинити"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} з {{stageNum}}: калібрування до повного заряду",
+                        "progressText2": "{{stage}} з {{stageNum}}: калібрування до низького заряду",
+                        "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
+                        "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Готово. Успішне скидання.",
+                            "ERROR_SHUTDOWN": "Не завершено. Система завершила роботу.",
+                            "ERROR_LOGOFF": "Не завершено. Користувач вийшов із системи.",
+                            "ERROR_BATTERY_REMOVE": "Не завершено. Акумулятор знято.",
+                            "ERROR_BATTERY_REPLACE": "Не завершено. Акумулятор замінено.",
+                            "ERROR_AC_DETTACH": "Не завершено. Адаптер живлення змінного струму від’єднано.",
+                            "ERROR_USER_CANCEL": "Не завершено. Скасовано користувачем.",
+                            "ERROR_UNEXPECTED": "Не завершено. Сталася невідома помилка."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Скидання виконуйте в такій послідовності:<br>повністю зарядіть акумулятор  -->  повністю розрядіть акумулятор  -->  повністю перезарядіть акумулятор",
+                            "description2": "Примітка. <br>1. Цей процес може зайняти декілька годин. Не користуйтеся комп'ютером під час цієї процедури.<br>2. Закрийте всі відкриті програми та підключіть комп’ютер до джерела живлення змінного струму.<br>3. Під час процесу функція граничного значення заряду акумулятора вимкнуто.",
+                            "continue": "Далі",
+                            "cancel": "Скасувати",
+                            "yes": "Так",
+                            "description3": "Дійсно зупинити скидання даних акумуляторного вольтметра?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Якщо змінити режим роботи верхнього рядка, потрібно перезавантажити комп'ютер. Готові перезавантажити?",
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
+							"fnKey": "Щоб скористатися спеціальною функцією, натисніть клавішу Fn і потрібну клавішу з верхнього ряду."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Функції гарячих клавіш VoIP",
@@ -1570,6 +1577,18 @@
                 "title": "Автоматичне відтворення відео",
                 "desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",
                 "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
+            },
+            "superResolution": {
+                "heading": "Інтелектуальне відтворення мультимедіа",
+                "title": "Підвищення роздільної здатності відео",
+                "desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label> Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Коли ви вмикаєте цю функцію, рекомендуємо підключати комп'ютер до джерела живлення змінного струму.</label></p>",
+                "tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ця функція не працює, коли:",
+                    "description1": "Комп'ютер не підключено до джерела живлення змінного струму, і рівень заряду акумулятора нижче 20 %.",
+                    "description2": "Комп'ютер не підключено до джерела живлення змінного струму, і ввімкнуто режим економії заряду.",
+                    "description3": "Температура процесора зависока."
+                }
             },
             "voice": {
                 "title": "Голос",
@@ -1808,12 +1827,22 @@
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
             "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Ваша оцінка безпеки показує рівень вашої безпеки в мережі. Результат залежить від того, чи:",
+            "securityScoreDepends": "Ваша безпека залежить від того, чи ви:",
             "antivirus": "Захищені ви антивірусом;",
             "password": "Маєте складні паролі та безпечно керуєте ними;",
             "vpn": "Відстежуєте вразливість мережі до нападів;",
             "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
-            "windowsHello": "Захищаєте пристрій безпечними способами входу."
+            "windowsHello": "Захищаєте пристрій безпечними способами входу.",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
                 "unknown": "Невідома",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Отримайте кращу пропозицію тут!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "На сторінці настройок параметрів можна ввімкнути або вимкнути певні категорії сповіщень у Vantage. Зверніть увагу: навіть якщо всі категорії повідомлень відключені, ви все одно можете час від часу отримувати від Vantage повідомлення про критичні помилки системи.",
         "messagesInLenovoVantage": "Повідомлення в Lenovo Vantage",
         "appFeatures": "Функції програми",
-        "appFeaturesDescription": "Повідомлення про System Update, статті та інші важливі функції.",
+        "appFeaturesDescription": "Повідомлення про Оновлення системи, статті та інші важливі функції.",
         "marketing": "Маркетинг",
         "marketingDescription": "Рекламні повідомлення, зокрема про спеціальні пропозиції Lenovo.",
         "actionTriggered": "Сповіщення про дії",

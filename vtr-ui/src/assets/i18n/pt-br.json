@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Tem certeza de que deseja limpar esta tecla macro?"
+                    "title": "Tem certeza de que deseja limpar esta tecla macro?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tempo limite excedido para gravação.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Ir para as configurações do Windows para dar acesso",
                 "microphoneNote": "O Lenovo Vantage não tem acesso ao microfone.",
                 "cameraPrivacyNote": "O Lenovo Vantage não tem acesso à câmera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Status do sistema",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
                     "NotSupportACAdapter": "<b>O adaptador de energia CA não é suportado.</b>",
                     "LimitedACAdapterSupport": "<b>O adaptador de energia CA não pode fornecer potência suficiente.</b>",
-                    "MissingDriver": "<b>O driver do Lenovo Power Manager</b> não está instalado ou não está funcionando corretamente. Execute o Windows Update para instalar o driver mais recente.",
+                    "MissingDriver": "<b>O driver do Lenovo Power Manager</b> não está instalado ou não está funcionando corretamente. Execute o Windows Update para instalar o driver mais recente. Você também pode instalar o driver <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aqui</a>.",
                     "StoreLimitation": "<b>A bateria só pode armazenar {{value}}% da</b> capacidade de carga máxima original.",
                     "HighTemperature": "O <b>descarregamento</b> foi interrompido porque a <b>temperatura da bateria está muito alta.</b>",
                     "TrickleCharge": "A bateria <b>descarregou completamente</b> e precisa ser recarregada. Isso poderá levar dez horas ou mais.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
                 "seeDetailsLink": "Ver detalhes",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Nota:</b> A redefinição do medidor de bateria está em andamento. Mantenha o adaptador de energia CA conectado."
             },
             "power": {
                 "title": "Energia",
@@ -1040,39 +1043,39 @@
                         "note": "Se a Detecção automática for marcada, seu computador ativará o Modo de energia de avião automaticamente quando detectar um ambiente a bordo de uma aeronave e será desativado quando você sair."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Redefinição do medidor da bateria",
+                        "description": "Esse recurso permite que seu computador estime a capacidade de carga completa mais precisamente.",
+                        "barCode": "Código de barras",
+                        "progress": "Em andamento",
+                        "remaining": "Restantes",
+                        "startTime": "Hora de início",
+                        "lastReset": "Última redefinição",
+                        "fullChargeCapacity": "Capacidade da carga máxima",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Reconfigurar",
+                            "stop": "Parar"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
+                        "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
+                        "FCCText": "De {{before}} Wh para {{after}} Wh",
+                        "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Concluído. Êxito na redefinição.",
+                            "ERROR_SHUTDOWN": "Não concluído. Desligamento do sistema.",
+                            "ERROR_LOGOFF": "Não concluído. O usuário fez logoff.",
+                            "ERROR_BATTERY_REMOVE": "Não concluído. A bateria foi removida.",
+                            "ERROR_BATTERY_REPLACE": "Não concluído. A bateria foi substituída.",
+                            "ERROR_AC_DETTACH": "Não concluído. O adaptador de energia CA foi desconectado.",
+                            "ERROR_USER_CANCEL": "Não concluído. Cancelada pelo usuário.",
+                            "ERROR_UNEXPECTED": "Não concluído. Erro inesperado."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "O processo de redefinição é o seguinte:<br>Carregue totalmente a bateria  -->  Descarregue totalmente a bateria  -->  Recarregue totalmente a bateria",
+                            "description2": "Notas: <br>1. O processo pode levar várias horas. Evite usar o computador durante este período.<br>2. Feche todos os aplicativos abertos e conecte o computador à energia CA.<br>3. Durante o processo, a função de limite de carga da bateria será desativada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sim",
+                            "description3": "Tem certeza de que deseja parar a redefinição do medidor da bateria?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Alterações à função padrão da fileira superior requerem a reinicialização do computador. Tem certeza de que deseja reiniciar?",
                             "reboot": "REINICIALIZAR",
                             "cancel": "NÃO AGORA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
+							"fnKey": "Para acessar as funções especiais, pressione Fn e as teclas da fileira superior."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funções de teclas de atalhos para VoIP",
@@ -1570,6 +1577,18 @@
                 "title": "Reprodução de vídeo sem toques",
                 "desc": "Esse recurso pausará o vídeo quando você deixar o computador e continuará o vídeo quando você voltar.",
                 "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
+            },
+            "superResolution": {
+                "heading": "Mídia inteligente",
+                "title": "Upscaling da resolução de vídeo",
+                "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
+                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Esse recurso não funciona quando:",
+                    "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
+                    "description2": "O computador não está conectado à energia CA e o modo de economia da bateria está ativado.",
+                    "description3": "A temperatura da CPU está muito alta."
+                }
             },
             "voice": {
                 "title": "Voz",
@@ -1808,12 +1827,22 @@
             "good": "BOA",
             "malicious": "PERIGOSA",
             "suspicious": "SUSPEITA",
-            "securityScoreDepends": "Sua pontuação de segurança dá uma ideia de como você está seguro on-line, o resultado depende se você:",
+            "securityScoreDepends": "O resultado de segurança depende se você:",
             "antivirus": "É protegido por um software antivírus",
             "password": "Tem senhas fortes e complexas gerenciadas de maneira segura",
             "vpn": "Monitora sua exposição de rede aos invasores",
             "wifi": "Criptografa seus dados pessoais ao usar WiFi público",
-            "windowsHello": "Protege seu dispositivo usando opções de login seguras"
+            "windowsHello": "Protege seu dispositivo usando opções de login seguras",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} oferece proteção básica para seu dispositivo",
                 "unknown": "Desconhecido",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Aproveite uma oferta melhor aqui!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Na página de configurações de preferências, você pode optar por ativar/desativar a notificação de mensagens com base nas categorias de mensagens do Vantage. Observe que, mesmo que todas as categorias de mensagens estejam desativadas, talvez você ainda receba ocasionalmente mensagens Críticas do Sistema do Vantage, quando necessário.",
         "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",
         "appFeatures": "Recursos do aplicativo",
-        "appFeaturesDescription": "Mensagens sobre System Update, artigos e outros recursos notáveis.",
+        "appFeaturesDescription": "Mensagens sobre Atualização do Sistema, artigos e outros recursos notáveis.",
         "marketing": "Marketing",
         "marketingDescription": "Mensagens de promoções, incluindo ofertas especiais da Lenovo.",
         "actionTriggered": "Ação acionadas",

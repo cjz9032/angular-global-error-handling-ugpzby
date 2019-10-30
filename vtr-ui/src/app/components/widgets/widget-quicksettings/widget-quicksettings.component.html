@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
-				<div class="heading"
+				<div class="heading py-20"
 					id="dashboard-quick-settings-title"
 					attr.aria-label="dashboard-quick-settings-title">{{'dashboard.quickSettings.title' | translate}}
 				</div>
@@ -39,7 +39,7 @@
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
-					<div class="text-right">
+					<!-- <div class="text-right">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
 							[title]="'dashboard.quickSettings.eyeCareMode' | translate"
@@ -52,8 +52,36 @@
 							(toggle)="onEyeCareModeToggle($event)"
 							[disable]="!(eyeCareModeStatus.available && quickSettingsWidget[2].state)"
 							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
+					</div> -->
+					<div class="text-right" *ngIf="machineType ==1">
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
+							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
+							[title]="'dashboard.quickSettings.threshold' | translate"
+							id="qs-switch-threshold"
+							(toggle)="showBatteryThresholdsettings(!thresholdStatus)"
+							aria-label="qs-switch-threshold"
+							[switchId]="'threshold'"
+							[value]="thresholdStatus"
+							[isBlocked]="!thresholdStatus"
+							[disable]="batteryInfo && batteryInfo.length > 0 && !batteryInfo[0].isCapable"
+							[isLoading]="thresholdLoadingStatus">
+						</vtr-widget-switch-icon>
 					</div>
-				</div>			
+					<div class="text-right" *ngIf="machineType ==0">
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
+							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
+							[title]="'dashboard.quickSettings.conservation' | translate"
+							id="qs-switch-conservation"
+							aria-label="qs-switch-conservation"
+							[switchId]="'conservation'"
+							(toggle)="setConservationModeStatusIdeaNoteBook(!conservationModeStatus.status)"
+							[value]="conservationModeStatus.status"
+							[disable]="!conservationModeStatus.available"
+							[isBlocked]="!conservationModeStatus.status"
+							[isLoading]="false">
+						</vtr-widget-switch-icon>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">

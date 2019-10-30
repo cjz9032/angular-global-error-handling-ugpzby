@@ -119,7 +119,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -225,7 +225,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "هل تريد بالتأكيد حذف مفتاح الماكرو هذا؟"
+                    "title": "هل تريد بالتأكيد حذف مفتاح الماكرو هذا؟",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "انتهاء مهلة التسجيل.",
@@ -723,7 +724,9 @@
                 "accessUrl": "انتقل إلى إعدادات Windows لمنح الوصول",
                 "microphoneNote": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون.",
                 "cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "حالة النظام",
@@ -878,7 +881,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
@@ -891,7 +894,7 @@
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",
                 "seeDetailsLink": "انظر التفاصيل",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً."
             },
             "power": {
                 "title": "الطاقة",
@@ -1042,39 +1045,39 @@
                         "note": "إذا تم اختيار ميزة \"الكشف التلقائي\"، فسيقوم الكمبيوتر بتشغيل وضع الطاقة في الطائرة تلقائيًا عندما يكتشف بيئة متن الطائرة ويغلقه عند مغادرة هذه البيئة."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "إعادة تعيين مقياس البطارية",
+                        "description": "تسمح هذه الميزة للكمبيوتر بتقدير سعة الشحنة الكاملة بشكل أكثر دقة.",
+                        "barCode": "الرمز الشريطي",
+                        "progress": "التقدم",
+                        "remaining": "متبقي",
+                        "startTime": "وقت البدء",
+                        "lastReset": "آخر إعادة تعيين",
+                        "fullChargeCapacity": "سعة الشحنة الكاملة",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "إعادة تعيين",
+                            "stop": "إيقاف"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
+                        "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
+                        "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
+                        "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "كامل. تمت إعادة التعيين بنجاح.",
+                            "ERROR_SHUTDOWN": "غير مكتمل. توقف تشغيل النظام.",
+                            "ERROR_LOGOFF": "غير مكتمل. سجل المستخدم خروجه.",
+                            "ERROR_BATTERY_REMOVE": "غير مكتمل. تمت ازالة البطارية.",
+                            "ERROR_BATTERY_REPLACE": "غير مكتمل. تم استبدال البطارية.",
+                            "ERROR_AC_DETTACH": "غير مكتمل. تم فصل محول التيار المتردد.",
+                            "ERROR_USER_CANCEL": "غير مكتمل. تم الإلغاء من قِبل المستخدم.",
+                            "ERROR_UNEXPECTED": "غير مكتمل. حدث خطأ غير متوقع."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل  -->  إفراغ البطارية بشكل كامل  -->  إعادة شحن البطارية بشكل كامل",
+                            "description2": "ملاحظات: <br>1. قد تستغرق العملية عدة ساعات. يرجى تجنب استخدام الكمبيوتر خلال هذه الفترة.<br>2. أغلق جميع التطبيقات المفتوحة وقم بتوصيل الكمبيوتر بطاقة التيار المتردد.<br>3. أثناء العملية، يتم تعطيل وظيفة حد شحن البطارية.",
+                            "continue": "استمر",
+                            "cancel": "إلغاء",
+                            "yes": "نعم",
+                            "description3": "هل تريد بالتأكيد إيقاف عملية إعادة تعيين مقياس البطارية؟"
                         }
                     }
                 },
@@ -1366,7 +1369,11 @@
                             "cancel": "ليس الآن"
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
-                        "hideAdvSettings": "إخفاء الإعدادات المتقدمة"
+                        "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
+						"note": {
+							"sFunKey": "للوصول إلى وظيفة F1-F12، اضغط على المفتاح Fn والمفاتيح على الصف العلوي.",
+							"fnKey": "للوصول إلى وظيفة خاصة، اضغط على المفتاح Fn والمفاتيح على الصف العلوي."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "وظائف مفتاح VoIP Hotkey",
@@ -1572,6 +1579,18 @@
                 "title": "تشغيل الفيديو من دون لمس",
                 "desc": "ستعمل هذه الميزة على إيقاف الفيديو بشكل مؤقت عندما تغادر الكمبيوتر، وتستأنف الفيديو عند عودتك إليه.",
                 "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
+            },
+            "superResolution": {
+                "heading": "الوسائط الذكية",
+                "title": "رفع مستوى دقة الفيديو",
+                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
+                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "لا تعمل هذه الميزة في الحالات التالية:",
+                    "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
+                    "description2": "الكمبيوتر غير متصل بطاقة التيار المتردد وتم تمكين وضع توفير البطارية.",
+                    "description3": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا."
+                }
             },
             "voice": {
                 "title": "الصوت",
@@ -1810,12 +1829,22 @@
             "good": "جيد",
             "malicious": "ضار",
             "suspicious": "مشبوه",
-            "securityScoreDepends": "تمنحك درجة الأمان لديك فكرة عن مدى أمانك على الإنترنت، وتتوقف النتيجة على ما إذا كنت:",
+            "securityScoreDepends": "تتوقف نتيجة الأمان على ما إذا كنت:",
             "antivirus": "محميًا بواسطة برنامج مكافحة الفيروسات",
             "password": "تستخدم كلمات مرور قوية ومعقدة تدار بطريقة آمنة",
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
             "wifi": "تشفر بياناتك الشخصية عند استخدام شبكة WiFi عامة",
-            "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة"
+            "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1892,7 +1921,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
                 "unknown": "غير معروف",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "استمتع بعرض أفضل هنا!"
             }
         },
         "wifisecurity": {
@@ -2488,7 +2517,7 @@
         "settingsDescription": "في صفحة إعداد التفضيلات، يمكنك اختيار تشغيل/إيقاف تشغيل إخطار الرسائل الخاص بك استنادًا إلى فئات رسالة Vantage، يرجى ملاحظة أنه حتى إذا تم تعطيل جميع فئات الرسائل، فربما تظل تتلقى في بعض الأحيان رسالة هامة من نظام Vantage عند الضرورة.",
         "messagesInLenovoVantage": "الرسائل في Lenovo Vantage",
         "appFeatures": "ميزات التطبيق",
-        "appFeaturesDescription": "الرسائل المتعلقة System Update والمقالات وغيرها من الميزات المثيرة للاهتمام.",
+        "appFeaturesDescription": "الرسائل المتعلقة بتحديث النظام والمقالات وغيرها من الميزات المثيرة للاهتمام.",
         "marketing": "التسويق",
         "marketingDescription": "رسائل الترويج بما في ذلك العروض الخاصة من Lenovo.",
         "actionTriggered": "الرسائل التي تشغلها إجراءات",

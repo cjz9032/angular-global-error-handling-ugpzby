@@ -7,6 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
+import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 declare var Windows;
 
@@ -187,19 +188,15 @@ export class VantageShellService {
 				eventName = 'PageView';
 				break;
 			case 'featureclick':
-				eventName = 'FeatureClick';
-				break;
 			case 'itemclick':
-				eventName = 'ItemClick';
+				eventName = 'FeatureClick';
 				break;
 			case 'itemview':
 				eventName = 'ItemView';
 				break;
 			case 'articleclick':
-				eventName = 'ArticleClick';
-				break;
 			case 'docclick':
-				eventName = 'DocClick';
+				eventName = 'ArticleClick';
 				break;
 			case 'articleview':
 				eventName = 'ArticleView';
@@ -530,6 +527,18 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	// public getSmartPerformance() {
+	// 	console.log('----------CALLING');
+	// 	if (this.phoenix) {
+	// 		if (!this.phoenix.smartPerformance) {
+	// 			return this.phoenix.loadFeatures([Phoenix.Features.HwSettings]);
+	// 		}
+	// 		console.log(this.phoenix.hwsettings.smartPerformance);
+	// 		console.log('----------DONE');
+	// 	}
+	// 	return undefined;
+	// }
+
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
@@ -694,6 +703,13 @@ export class VantageShellService {
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentMedia;
+		}
+		return undefined;
+	}
+
+	public getSuperResolution(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.ai.superResolution;
 		}
 		return undefined;
 	}
@@ -936,6 +952,17 @@ export class VantageShellService {
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.inputControlLinks;
+		}
+		return undefined;
+	}
+
+	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
+		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+	}
+
+	public getRegistryUtil(): Phoenix.RegistryFeature {
+		if (this.phoenix) {
+			return this.phoenix.registry;
 		}
 		return undefined;
 	}

@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Želite li zaista da obrišete ovaj taster makroa?"
+                    "title": "Želite li zaista da obrišete ovaj taster makroa?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Istek vremena za snimanje.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Idite na postavke operativnog sistema Windows da biste dali pristup",
                 "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Status sistema",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
                 "seeDetailsLink": "Pogledajte detalje",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -1040,39 +1043,39 @@
                         "note": "Ako je označena Automatska detekcija, vaš računar će automatski uključiti režim napajanja u avionu kada otkrije okruženje unutar aviona i isključiti ga kada napustite okruženje."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Resetovanje pokazivača napunjenosti baterije",
+                        "description": "Ova funkcija omogućava računaru da preciznije proceni pun kapacitet punjenja.",
+                        "barCode": "Bar-kod",
+                        "progress": "Napredovanje",
+                        "remaining": "Ostalo",
+                        "startTime": "Vreme početka",
+                        "lastReset": "Poslednje resetovanje",
+                        "fullChargeCapacity": "Pun kapacitet punjenja",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Poništi",
+                            "stop": "Zaustavi"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
+                        "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+                        "FCCText": "Sa {{before}} Wh na {{after}} Wh",
+                        "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Završeno. Uspešan reset.",
+                            "ERROR_SHUTDOWN": "Nije završeno. Sistem se isključio.",
+                            "ERROR_LOGOFF": "Nije završeno. Korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Nije završeno. Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nije završeno. Baterija je zamenjena.",
+                            "ERROR_AC_DETTACH": "Nije završeno. Adapter za naizmeničnu struju je otkačen.",
+                            "ERROR_USER_CANCEL": "Nije završeno. Otkazano od strane korisnika.",
+                            "ERROR_UNEXPECTED": "Nije završeno. Došlo je do neočekivane greške."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
+                            "description2": "Napomene: <br>1. Ovaj proces može da traje nekoliko sati. Izbegavajte korišćenje računara tokom ovog perioda.<br>2. Zatvorite sve otvorene aplikacije i povežite računar sa napajanjem naizmeničnom strujom.<br>3. Tokom procesa, funkcija za prag punjenja baterije je onemogućena.",
+                            "continue": "Nastavi",
+                            "cancel": "Otkaži",
+                            "yes": "Da",
+                            "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "cancel": "NE SAD"
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
-                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE"
+                        "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
+						"note": {
+							"sFunKey": "Da biste pristupili funkciji tastera F1-F12, pritisnite taster Fn i tastera na gornjem redu.",
+							"fnKey": "Da biste pristupili specijalnoj funkciji, pritisnite taster Fn i tastera na gornjem redu."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP funkcije prečica",
@@ -1570,6 +1577,18 @@
                 "title": "Zero Touch reprodukcija video snimaka",
                 "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
+            },
+            "superResolution": {
+                "heading": "Inteligentni mediji",
+                "title": "Poboljšavanje video rezolucije",
+                "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
+                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ova funkcija ne radi kada:",
+                    "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
+                    "description2": "Računar nije povezan na napajanje naizmeničnom strujom i omogućen je režim uštede baterije.",
+                    "description3": "Temperatura procesora je previsoka."
+                }
             },
             "voice": {
                 "title": "Glas",
@@ -1808,12 +1827,22 @@
             "good": "DOBRO",
             "malicious": "ZLONAMERNO",
             "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Bezbednosna ocena vam daje ideju o tome koliko ste bezbedni na mreži, rezultat zavisi od toga:",
+            "securityScoreDepends": "Vaš rezultat bezbednosti zavisi od toga da li ste:",
             "antivirus": "Da li ste zaštićeni antivirusnim softverom",
             "password": "Da li imate jake i složene lozinke kojima upravljate na bezbedan način",
             "vpn": "Da li nadzirete izloženost mreže napadačima",
             "wifi": "Da li šifrujete svoje lične podatke kada koristite javni WiFi",
-            "windowsHello": "Da li štitite uređaj korišćenjem opcije za bezbedno prijavljivanje"
+            "windowsHello": "Da li štitite uređaj korišćenjem opcije za bezbedno prijavljivanje",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu za vaš uređaj",
                 "unknown": "Nepoznato",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Uživajte u boljoj ponudi!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Na stranici „Postavke željenih opcija“, možete da odaberete da uključite/isključite obaveštenja porukama na osnovu kategorija Vantage poruka. Imajte u vidu da, čak i ako su sve kategorije poruka onemogućene, možete i dalje povremeno dobijati sistemske kritične poruke od aplikacije Vantage kada je to neophodno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
         "appFeatures": "Funkcije aplikacije",
-        "appFeaturesDescription": "Poruke koje se odnose na aplikaciju System Update, članke i druge značajne funkcije.",
+        "appFeaturesDescription": "Poruke koje se odnose na Ažuriranje sistema, članke i druge značajne funkcije.",
         "marketing": "Marketing",
         "marketingDescription": "Promotivne poruke uključujući Lenovo posebne ponude.",
         "actionTriggered": "Pokrenuta radnja",

@@ -68,7 +68,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		this.chs.off(EventTypes.chsEvent, this.consoleUrlCallback);
 	}
 
-	openCornet() {
+	openCoronet() {
 		this.chs.visitWebConsole();
 		this.closeModal();
 	}
@@ -79,7 +79,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		this.subscribe = takeNumbers.subscribe( x => {
 			this.countdownNumber = (3 - x - 1);
 			if (this.countdownNumber === 0) {
-				this.openCornet();
+				this.openCoronet();
 			}
 		});
 	}

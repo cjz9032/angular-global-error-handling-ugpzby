@@ -15,6 +15,7 @@ export class SmartAssistService {
 	private intelligentMedia;
 	private activeProtectionSystem;
 	private lenovoVoice;
+	private superResolution;
 
 	public isShellAvailable = false;
 	public isAPSavailable = false;
@@ -24,9 +25,10 @@ export class SmartAssistService {
 		this.intelligentMedia = shellService.getIntelligentMedia();
 		this.activeProtectionSystem = shellService.getActiveProtectionSystem(); // getting APS Object from //vantage-shell.service
 		this.lenovoVoice = shellService.getLenovoVoice();
+		this.superResolution = shellService.getSuperResolution();
 
 		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
-		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice) {
+		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -36,15 +38,15 @@ export class SmartAssistService {
 	/**
 	 * IdeaPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getHPDVisibilityInIdeaPad(): Promise<boolean> {
-		// HPD global switch status. true means show, false means hide
-		return this.intelligentSensing.GetHPDCapability();
-	}
+	// public getHPDVisibilityInIdeaPad(): Promise<boolean> {
+	// 	// HPD global switch status. true means show, false means hide
+	// 	return this.intelligentSensing.GetHPDCapability();
+	// }
 
 	/**
 	 * ThinkPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getHPDVisibilityInThinkPad(): Promise<boolean> {
+	public getHPDVisibility(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
 		return this.intelligentSensing.GetHPDCapability();
 	}
@@ -100,7 +102,7 @@ export class SmartAssistService {
 		return this.intelligentSensing.getLockFacialRecognitionSettings();
 	}
 
-	public setZeroTouchLockFacialRecoStatus(value: boolean):Promise<boolean> {
+	public setZeroTouchLockFacialRecoStatus(value: boolean): Promise<boolean> {
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.setLockFacialRecognitionSettings(option);
 
@@ -229,6 +231,28 @@ export class SmartAssistService {
 		}
 	}
 
+	public getSuperResolutionStatus(): Promise<FeatureStatus> {
+		try {
+			if (this.isShellAvailable) {
+				return this.superResolution.getSuperResolutionStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setSuperResolutionStatus(value: boolean): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.superResolution.setSuperResolutionStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	//#endregion
 
 
@@ -329,7 +353,7 @@ export class SmartAssistService {
 		return undefined;
 	}
 	// HDD Status
-	public getHDDStatus(): Promise<boolean> {
+	public getHDDStatus(): Promise<number> {
 		if (this.isAPSavailable) {
 			return this.activeProtectionSystem.getHDDStatus();
 		}

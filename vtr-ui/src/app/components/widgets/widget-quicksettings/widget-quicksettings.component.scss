@@ -4,8 +4,7 @@
 	.heading {
 		color: $main_darker;
 		font-size: 3.5rem;
-		margin-bottom: 4rem;
-		margin-top: -1rem;
+		line-height: 1.1em;
 		font-weight: $weight-medium;
 	}
 	.widget-icon-3 {
@@ -37,6 +36,12 @@
 		font-size: 1.3rem;
 		letter-spacing: 0.76px;
 		text-align: left;
+		@media #{$black-on-white} {
+			color: $yellow;
+		}
+		@media #{$white-on-black} {
+			color: $blue-lighter;
+		}
 	}
 }
 	.link-text {

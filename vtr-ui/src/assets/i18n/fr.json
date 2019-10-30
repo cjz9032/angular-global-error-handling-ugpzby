@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Voulez-vous vraiment effacer cette touche macro ?"
+                    "title": "Voulez-vous vraiment effacer cette touche macro ?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Délai d'attente pour l'enregistrement.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Accéder aux paramètres Windows pour donner accès",
                 "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
                 "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "État du système",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
                 "seeDetailsLink": "Voir les détails",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
             },
             "power": {
                 "title": "Alimentation",
@@ -1040,39 +1043,39 @@
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Réinitialisation de la jauge de la batterie",
+                        "description": "Cette fonction permet à votre ordinateur d'estimer plus précisément la capacité de charge totale.",
+                        "barCode": "Code-barres",
+                        "progress": "Progression",
+                        "remaining": "Restant",
+                        "startTime": "Heure de début",
+                        "lastReset": "Dernière réinitialisation",
+                        "fullChargeCapacity": "Capacité de charge totale",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Réinitialiser",
+                            "stop": "Arrêt"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
+                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
+                        "FCCText": "De {{before}} Wh à {{after}} Wh",
+                        "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Terminé. La réinitialisation a abouti.",
+                            "ERROR_SHUTDOWN": "Incomplet. Arrêter le système.",
+                            "ERROR_LOGOFF": "Incomplet. Utilisateur déconnecté.",
+                            "ERROR_BATTERY_REMOVE": "Incomplet. La batterie a été retirée.",
+                            "ERROR_BATTERY_REPLACE": "Incomplet. La batterie a été remplacée.",
+                            "ERROR_AC_DETTACH": "Incomplet. Le boîtier d'alimentation a été débranché.",
+                            "ERROR_USER_CANCEL": "Incomplet. Annulé par l'utilisateur.",
+                            "ERROR_UNEXPECTED": "Incomplet. Une erreur inattendue s'est produite."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
+                            "description2": "Remarques : <br>1. Ce processus peut durer plusieurs heures. Veuillez éviter d'utiliser votre ordinateur pendant cette opération.<br>2. Fermez toutes les applications ouvertes et connectez votre ordinateur à l'alimentation secteur.<br>3. Pendant le processus, la fonction de seuil de chargement de la batterie est désactivée.",
+                            "continue": "Continuer",
+                            "cancel": "Annuler",
+                            "yes": "Oui",
+                            "description3": "Voulez-vous vraiment arrêter la réinitialisation de la jauge de la batterie ?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
+							"fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Fonctions des touches de raccourci VoIP",
@@ -1570,6 +1577,18 @@
                 "title": "Lecture de la vidéo sans pression tactile",
                 "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
+            },
+            "superResolution": {
+                "heading": "Support intelligent",
+                "title": "Mise à l'échelle de la résolution vidéo",
+                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
+                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Cette fonction est inopérante quand :",
+                    "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
+                    "description2": "L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+                    "description3": "La température de l'unité centrale est trop élevée."
+                }
             },
             "voice": {
                 "title": "Voix",
@@ -1808,12 +1827,22 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
             "antivirus": "Protection par un logiciel anti-virus",
             "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
             "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
             "wifi": "Chiffrement de vos données personnelles lors de l'utilisation de WiFi public",
-            "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée"
+            "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
                 "unknown": "Inconnu",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Profitez d'une meilleure offre ici !"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
         "appFeatures": "Fonctionnalités des applications",
-        "appFeaturesDescription": "Messages concernant System Update, des articles et d'autres fonctionnalités utiles.",
+        "appFeaturesDescription": "Messages concernant la mise à jour du système, des articles et d'autres fonctionnalités utiles.",
         "marketing": "Marketing",
         "marketingDescription": "Messages de promotion, y compris les offres spéciales Lenovo.",
         "actionTriggered": "Action déclenchée",

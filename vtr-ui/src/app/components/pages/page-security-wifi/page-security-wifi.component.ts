@@ -16,8 +16,9 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -47,8 +48,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	cancelClick = false;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	region = 'us';
-	language = 'en';
 	brand;
 	showChs = false;
 	intervalId: number;
@@ -62,11 +61,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
 		public translate: TranslateService,
-		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
 		private guard: GuardService,
 		private router: Router,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private hypSettings: HypothesisService,
+		private configService: ConfigService
 	) {	}
 
 	ngOnInit() {
@@ -88,14 +88,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
 			this.handleError(new PluginMissingError());
 		});
-		this.localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-			this.language = result.Lang;
-			this.showChs = this.region === 'us' && this.language === 'en' && this.brand !== 'think';
-		}).catch(e => {
-			this.region = 'us';
-			this.language = 'en';
-		});
+		this.showChs = this.configService.showCHS;
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);

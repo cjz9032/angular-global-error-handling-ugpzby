@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Biztosan törli ezt a makróbillentyűt?"
+                    "title": "Biztosan törli ezt a makróbillentyűt?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "A rögzítés túllépte az időkorlátot.",
@@ -721,7 +722,9 @@
                 "accessUrl": "A Windows beállításai között adhat hozzáférést",
                 "microphoneNote": "A Lenovo Vantage nem fér hozzá a mikrofonhoz.",
                 "cameraPrivacyNote": "A Lenovo Vantage nem fér hozzá a kamerához."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Rendszerállapot",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
                 "seeDetailsLink": "Részletek megtekintése",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
             },
             "power": {
                 "title": "Tápellátás",
@@ -1040,39 +1043,39 @@
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Akkumulátormérő nullázása",
+                        "description": "Ezzel a funkcióval a számítógép pontosabban meg tudja határozni a teljes töltési kapacitást.",
+                        "barCode": "Vonalkód",
+                        "progress": "Állapot",
+                        "remaining": "Fennmaradó",
+                        "startTime": "Indítás időpontja",
+                        "lastReset": "Legutóbbi nullázás",
+                        "fullChargeCapacity": "Teljes töltési kapacitás",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Visszaállítás",
+                            "stop": "Leállítás"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
+                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+                        "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
+                        "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Kész. Sikeres nullázás",
+                            "ERROR_SHUTDOWN": "Befejezetlen. Rendszer bezárása.",
+                            "ERROR_LOGOFF": "Befejezetlen. A felhasználó kilépett.",
+                            "ERROR_BATTERY_REMOVE": "Befejezetlen. Akkumulátor eltávolítva.",
+                            "ERROR_BATTERY_REPLACE": "Befejezetlen. Akkumulátor kicserélve.",
+                            "ERROR_AC_DETTACH": "Befejezetlen. A hálózati adapter lecsatlakoztatva.",
+                            "ERROR_USER_CANCEL": "Befejezetlen. A felhasználó megszakította.",
+                            "ERROR_UNEXPECTED": "Befejezetlen. Váratlan hiba történt."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
+                            "description2": "Megjegyzések: <br>1. A folyamat több órát is igénybe vehet. A számítógépet ezen idő alatt ne használja.<br>2. Zárja be az összes nyitott alkalmazást, és csatlakoztassa a számítógépet hálózati tápellátáshoz.<br>3. A folyamat során az akkumulátortöltési küszöbérték funkció le van tiltva.",
+                            "continue": "Folytatás",
+                            "cancel": "Mégse",
+                            "yes": "Igen",
+                            "description3": "Biztosan leállítja az akkumulátormérő nullázását?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
                             "reboot": "ÚJRAINDÍTÁS",
                             "cancel": "NE MOST"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
+							"fnKey": "Adott funkciót az Fn és a fenti soron lévő billentyűk megnyomásával érhet el."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
@@ -1570,6 +1577,18 @@
                 "title": "Zero Touch Videolejátszás",
                 "desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
+            },
+            "superResolution": {
+                "heading": "Intelligens média",
+                "title": "Videófelbontás megnövelése",
+                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label> Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ha engedélyezve van, akkor javasoljuk, hogy a számítógépet csatlakoztassa hálózati tápellátáshoz.</label></p>",
+                "tooltip": "Ez a funkció csak a következő lejátszókon működik: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "A funkció az alábbi esetekben nem működik:",
+                    "description1": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátor töltöttsége kevesebb 20%-nál.",
+                    "description2": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátortakarékos mód engedélyezve van.",
+                    "description3": "A processzor hőmérséklete túl magas."
+                }
             },
             "voice": {
                 "title": "Hang",
@@ -1808,12 +1827,22 @@
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
             "suspicious": "GYANÚS",
-            "securityScoreDepends": "A biztonsági pontszám azt jelzi, hogy mennyire van biztonságban a rendszere az interneten. Az eredményt a következők befolyásolják:",
+            "securityScoreDepends": "Adatainak biztonsága attól függ, hogy Ön:",
             "antivirus": "Vírusirtó szoftver használata",
             "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
             "vpn": "A hálózat támadóknak való kitettségének mérése",
             "wifi": "A személyes adatok titkosítása nyilvános WiFi használata esetén",
-            "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal"
+            "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
                 "unknown": "Ismeretlen",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Kedvezőbb ajánlatot kínálunk Önnek!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
         "appFeatures": "Az alkalmazás funkciói",
-        "appFeaturesDescription": "A System Update szolgáltatással kapcsolatos üzenetek, cikkek és további fontos funkciók.",
+        "appFeaturesDescription": "A Rendszerfrissítéssel kapcsolatos üzenetek, cikkek és további fontos tudnivalók.",
         "marketing": "Marketing",
         "marketingDescription": "Promóciós üzenetek, többek között a Lenovo különleges ajánlatai.",
         "actionTriggered": "Aktivált művelet",

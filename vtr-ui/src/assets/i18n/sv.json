@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Vill du rensa denna makrotangent?"
+                    "title": "Vill du rensa denna makrotangent?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Tidsgräns för inspelning.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Ge åtkomst via inställningarna i Windows",
                 "microphoneNote": "Lenovo Vantage har inte åtkomst till mikrofonen.",
                 "cameraPrivacyNote": "Lenovo Vantage har inte åtkomst till kameran."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
                 "seeDetailsLink": "Visa information",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
             "power": {
                 "title": "Ström",
@@ -1040,39 +1043,39 @@
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Återställning av batterimätare",
+                        "description": "Med denna funktion kan datorn beräkna fulladdningskapaciteten mer exakt.",
+                        "barCode": "Streckkod",
+                        "progress": "Status",
+                        "remaining": "Återstår",
+                        "startTime": "Starttid",
+                        "lastReset": "Senaste återställning",
+                        "fullChargeCapacity": "Fulladdningskapacitet",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Återställ",
+                            "stop": "Stopp"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
+                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+                        "FCCText": "Från {{before}} Wh till {{after}} Wh",
+                        "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Klart. Återställningen lyckades.",
+                            "ERROR_SHUTDOWN": "Ofullständig. Systemavstängning.",
+                            "ERROR_LOGOFF": "Ofullständig. Användare loggade ut.",
+                            "ERROR_BATTERY_REMOVE": "Ofullständig. Batteriet togs bort.",
+                            "ERROR_BATTERY_REPLACE": "Ofullständig. Batteriet byttes ut.",
+                            "ERROR_AC_DETTACH": "Ofullständig. Nätadaptern kopplades bort.",
+                            "ERROR_USER_CANCEL": "Ofullständig. Avbröts av användaren.",
+                            "ERROR_UNEXPECTED": "Ofullständig. Ett oväntat fel inträffade."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
+                            "description2": "Obs! <br>1. Åtgärden kan ta flera timmar. Undvik att använda datorn under tiden.<br>2. Stäng alla öppna program och anslut datorn till nätström.<br>3. Funktionen Gränsvärde för batteriladdning är inaktiverad medan processen pågår.",
+                            "continue": "Fortsätt",
+                            "cancel": "Avbryt",
+                            "yes": "Ja",
+                            "description3": "Vill du stoppa återställning av batterimätaren?"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Om du ändrar standardfunktionen för den översta raden måste du starta om datorn. Vill du starta om?",
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt funktion F1 till och med F12.",
+							"fnKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt specialfunktionen."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-snabbtangentsfunktioner",
@@ -1570,6 +1577,18 @@
                 "title": "Beröringsfri videouppspelning",
                 "desc": "Videon pausas när du lämnar datorn och återupptas när du är tillbaka.",
                 "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
+            },
+            "superResolution": {
+                "heading": "Intelligenta medier",
+                "title": "Öka videoupplösningen",
+                "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label> Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Vi rekommenderar att du ansluter datorn till nätström när funktionen är aktiverad.</label></p>",
+                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Funktionen fungerar inte när:",
+                    "description1": "datorn inte är ansluten till nätström och batterinivån är lägre än 20 %.",
+                    "description2": "datorn inte är ansluten till nätström och batterisparläget är aktiverat.",
+                    "description3": "processortemperaturen är för hög."
+                }
             },
             "voice": {
                 "title": "Röst",
@@ -1808,12 +1827,22 @@
             "good": "BRA",
             "malicious": "SKADLIGT",
             "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Din säkerhetspoäng ger dig en uppfattning om hur säker du är online. Resultatet beror på om du",
+            "securityScoreDepends": "Säkerhetsresultatet beror på om du:",
             "antivirus": "Skyddas av ett antivirusprogram",
             "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
             "vpn": "Övervakar nätverkets exponering för angripare",
             "wifi": "Krypterar dina personliga data när du använder offentlig WiFi",
-            "windowsHello": "Skyddar din enhet med alternativ för säker inloggning."
+            "windowsHello": "Skyddar din enhet med alternativ för säker inloggning.",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
                 "unknown": "Okänd",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Här får du ett bättre erbjudande!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "På sidan Preferensinställningar kan du välja att aktivera/inaktivera aviseringar baserat på de olika kategorierna av Vantage-meddelanden. Tänk på att om du inaktiverar alla meddelandekategorier kan du fortfarande få systemkritiska meddelanden från Vantage när detta är nödvändigt.",
         "messagesInLenovoVantage": "Meddelanden i Lenovo Vantage",
         "appFeatures": "Appfunktioner",
-        "appFeaturesDescription": "Meddelanden som gäller System Update, artiklar och andra relevanta funktioner.",
+        "appFeaturesDescription": "Meddelanden som gäller Systemuppdatering, artiklar och andra relevanta funktioner.",
         "marketing": "Marknadsföring",
         "marketingDescription": "Marknadsföringsmeddelanden, bland annat specialerbjudanden från Lenovo.",
         "actionTriggered": "Åtgärdsbaserat",

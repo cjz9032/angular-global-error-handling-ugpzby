@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -223,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Σίγουρα θέλετε να διαγράψετε αυτό το πλήκτρο μακροεντολής;"
+                    "title": "Σίγουρα θέλετε να διαγράψετε αυτό το πλήκτρο μακροεντολής;",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Λήξη χρόνου για εγγραφή.",
@@ -721,7 +722,9 @@
                 "accessUrl": "Μεταβείτε στις ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση",
                 "microphoneNote": "Το Lenovo Vantage δεν έχει πρόσβαση στο μικρόφωνο.",
                 "cameraPrivacyNote": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Κατάσταση συστήματος",
@@ -876,7 +879,7 @@
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
-                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης. Μπορείτε επίσης να εγκαταστήσετε το πρόγραμμα οδήγησης από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
@@ -889,7 +892,7 @@
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Για να παρατείνετε τη διάρκεια ζωής της μπαταρίας, έχετε ορίσει το {{value}}% ως όριο διακοπής φόρτισης της μπαταρίας σας.",
                 "seeDetailsLink": "Βλέπε λεπτομέρειες",
-                "gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected."
+                "gaugeResetWarning": "<b>Σημείωση:</b> Η επαναφορά του μετρητή μπαταρίας βρίσκεται σε εξέλιξη. Διατηρήστε τον μετασχηματιστή εναλλασσόμενου ρεύματος (ac) συνδεδεμένο."
             },
             "power": {
                 "title": "Ενέργεια",
@@ -1040,39 +1043,39 @@
                         "note": "Αν είναι επιλεγμένος ο Αυτο-εντοπισμός, ο υπολογιστής σας θα ενεργοποιήσει τη λειτουργία Ενέργειας πτήσης αυτόματα, όταν εντοπίσει περιβάλλον εντός αεροπλάνου και θα την απενεργοποιήσει όταν αποχωρήσετε."
                     },
                     "gaugeReset": {
-                        "title": "Battery gauge reset",
-                        "description": "This feature enables your computer to estimate the full charge capacity more accurately.",
-                        "barCode": "Barcode",
-                        "progress": "Progress",
-                        "remaining": "Remaining",
-                        "startTime": "Start time",
-                        "lastReset": "Last reset",
-                        "fullChargeCapacity": "Full charge capacity",
+                        "title": "Επαναφορά μετρητή μπαταρίας",
+                        "description": "Αυτή η δυνατότητα επιτρέπει στον υπολογιστή σας να υπολογίζει με μεγαλύτερη ακρίβεια τη χωρητικότητα πλήρους φόρτισης.",
+                        "barCode": "Γραμμωτός κώδικας",
+                        "progress": "Πρόοδος",
+                        "remaining": "Απομένει",
+                        "startTime": "Ώρα έναρξης",
+                        "lastReset": "Τελευταία επαναφορά",
+                        "fullChargeCapacity": "Χωρητικότητα πλήρους φόρτισης",
                         "btnLabel": {
-                            "reset": "Reset",
-                            "stop": "Stop"
+                            "reset": "Επαναφορά",
+                            "stop": "Διακοπή"
                         },
-                        "progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
-                        "progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
-                        "FCCText": "From {{before}} Wh to {{after}} Wh",
-                        "note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+                        "progressText1": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε πλήρη φόρτιση",
+                        "progressText2": "{{stage}} από {{stageNum}}: Βαθμονόμηση σε χαμηλό επίπεδο φόρτισης μπαταρίας",
+                        "FCCText": "Από {{before}} Wh σε {{after}} Wh",
+                        "note": "Σημείωση: Πριν επαναφέρετε τον μετρητή μπαταρίας, βεβαιωθείτε ότι έχετε συνδέσει τον υπολογιστή σας σε παροχή εναλλασσόμενου ρεύματος. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Complete. Successful reset.",
-                            "ERROR_SHUTDOWN": "Incomplete. System shut down.",
-                            "ERROR_LOGOFF": "Incomplete. User logged off.",
-                            "ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-                            "ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-                            "ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-                            "ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-                            "ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+                            "ERROR_SUCCESS": "Ολοκληρώθηκε. Επιτυχής επαναφορά.",
+                            "ERROR_SHUTDOWN": "Δεν ολοκληρώθηκε. Τερματισμός συστήματος.",
+                            "ERROR_LOGOFF": "Δεν ολοκληρώθηκε. Ο χρήστης είναι αποσυνδεδεμένος.",
+                            "ERROR_BATTERY_REMOVE": "Δεν ολοκληρώθηκε. Η μπαταρία έχει αφαιρεθεί.",
+                            "ERROR_BATTERY_REPLACE": "Δεν ολοκληρώθηκε. Η μπαταρία έχει αντικατασταθεί.",
+                            "ERROR_AC_DETTACH": "Δεν ολοκληρώθηκε. Ο μετασχηματιστής εναλλασσόμενου ρεύματος έχει αποσυνδεθεί.",
+                            "ERROR_USER_CANCEL": "Δεν ολοκληρώθηκε. Ακυρώθηκε από το χρήστη.",
+                            "ERROR_UNEXPECTED": "Δεν ολοκληρώθηκε. Παρουσιάστηκε απροσδόκητο σφάλμα."
                         },
                         "popup": {
-                            "description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-                            "description2": "Notes: <br>1. The process may take  several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The battery charge threshold function will be disabled when resetting.",
-                            "continue": "Continue",
-                            "cancel": "Cancel",
-                            "yes": "Yes",
-                            "description3": "Are you sure you want to stop the battery gauge reset?"
+                            "description1": "Η διαδικασία επαναφοράς είναι η εξής:<br>Πλήρης φόρτιση της μπαταρίας  -->  Πλήρης εκφόρτιση της μπαταρίας  -->  Πλήρης επαναφόρτιση της μπαταρίας",
+                            "description2": "Σημειώσεις: <br>1. Η διαδικασία ίσως διαρκέσει αρκετές ώρες. Αποφύγετε τη χρήση του υπολογιστή κατά τη διάρκεια αυτής της περιόδου.<br>2. Κλείστε όλες τις ανοιχτές εφαρμογές και συνδέστε τον υπολογιστή σας σε παροχή εναλλασσόμενου ρεύματος.<br>3. Κατά τη διάρκεια της διαδικασίας, η λειτουργία ορίου φορτίου μπαταρίας είναι απενεργοποιημένη.",
+                            "continue": "Συνέχιση",
+                            "cancel": "Άκυρο",
+                            "yes": "Ναι",
+                            "description3": "Είστε βέβαιοι ότι θέλετε να διακόψετε την επαναφορά του μετρητή της μπαταρίας;"
                         }
                     }
                 },
@@ -1364,7 +1367,11 @@
                             "description": "Η αλλαγή της προεπιλεγμένης λειτουργίας επάνω σειράς απαιτεί να κάνετε επανεκκίνηση του υπολογιστή σας. Είστε βέβαιοι ότι θέλετε επανεκκίνηση;",
                             "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
                             "cancel": "ΟΧΙ ΤΩΡΑ"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
+							"fnKey": "Για να αποκτήσετε πρόσβαση σε ειδική λειτουργία, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Λειτουργίες πλήκτρων συντόμευσης VoIP",
@@ -1570,6 +1577,18 @@
                 "title": "Αναπαραγωγή βίντεο μηδενικής αφής",
                 "desc": "Αυτή η δυνατότητα διακόπτει την αναπαραγωγή του βίντεο μόλις απομακρυνθείτε από τον υπολογιστή και συνεχίζει την αναπαραγωγή του βίντεο μόλις επιστρέψετε.",
                 "tooltip": "Αυτή η δυνατότητα δεν ισχύει για προγράμματα αναπαραγωγής βίντεο Web. Αυτή η δυνατότητα υποστηρίζεται από τα πλέον δημοφιλή τοπικά προγράμματα αναπαραγωγής βίντεο, π.χ. Windows Media Player, 5KPlayer κ.λπ."
+            },
+            "superResolution": {
+                "heading": "Έξυπνα μέσα",
+                "title": "Αναβάθμιση ανάλυσης βίντεο",
+                "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση του βίντεο. Αποδίδει ιδιαίτερα όταν η ανάλυση του βίντεο είναι χαμηλή.</label></p> <p style='margin-top:4px;'><label> Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Όταν είναι ενεργοποιημένη, συνιστάται να έχετε τον υπολογιστή συνδεδεμένο σε παροχή εναλλασσόμενου ρεύματος.</label></p>",
+                "tooltip": "Η δυνατότητα λειτουργεί μόνο στα ακόλουθα προγράμματα αναπαραγωγής: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
+                    "description1": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος και η ισχύς της μπαταρίας είναι χαμηλότερη από 20%.",
+                    "description2": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος και είναι ενεργοποιημένη η λειτουργία εξοικονόμησης μπαταρίας.",
+                    "description3": "Η θερμοκρασία της CPU είναι πολύ υψηλή."
+                }
             },
             "voice": {
                 "title": "Φωνή",
@@ -1808,12 +1827,22 @@
             "good": "ΚΑΛΟ",
             "malicious": "ΚΑΚΟΒΟΥΛΟ",
             "suspicious": "ΥΠΟΠΤΟ",
-            "securityScoreDepends": "Η βαθμολογία ασφαλείας σάς δίνει μια ιδέα για το πόσο ασφαλής είστε στο διαδίκτυο, το αποτέλεσμα εξαρτάται από το εάν:",
+            "securityScoreDepends": "Το αποτέλεσμα ασφάλειας εξαρτάται από το αν είστε:",
             "antivirus": "Προστατεύεστε από λογισμικό προστασίας από ιούς",
             "password": "Έχετε ισχυρούς και περίπλοκους κωδικούς πρόσβασης, που διαχειρίζεστε με ασφαλή τρόπο",
             "vpn": "Παρακολουθείτε την έκθεση του δικτύου σας σε επιτιθέμενους",
             "wifi": "Κρυπτογραφείτε τα προσωπικά δεδομένα σας, όταν χρησιμοποιείτε δημόσιο WiFi",
-            "windowsHello": "Προστατεύετε τη συσκευή σας χρησιμοποιώντας ασφαλείς επιλογές σύνδεσης"
+            "windowsHello": "Προστατεύετε τη συσκευή σας χρησιμοποιώντας ασφαλείς επιλογές σύνδεσης",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1890,7 +1919,7 @@
             "others": {
                 "othersProtection": "Το {{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας",
                 "unknown": "Άγνωστη",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Απολαύστε μια καλύτερη προσφορά εδώ!"
             }
         },
         "wifisecurity": {
@@ -2486,7 +2515,7 @@
         "settingsDescription": "Στη σελίδα ρύθμισης προτιμήσεων, μπορείτε να επιλέξετε να ενεργοποιήσετε/απενεργοποιήσετε την ειδοποίησή σας με βάση τις κατηγορίες του μηνύματος Vantage, σημειώστε ότι ακόμη και αν όλες οι κατηγορίες μηνυμάτων είναι απενεργοποιημένες, ενδέχεται να λαμβάνετε περιστασιακά μήνυμα System Critical από Vantage, όταν είναι απαραίτητο.",
         "messagesInLenovoVantage": "Μηνύματα στο Lenovo Vantage",
         "appFeatures": "Δυνατότητες εφαρμογής",
-        "appFeaturesDescription": "Μηνύματα σχετικά με την System Update, άρθρα και άλλες αξιοσημείωτες δυνατότητες.",
+        "appFeaturesDescription": "Μηνύματα σχετικά με την ενημέρωση συστήματος, άρθρα και άλλες αξιοσημείωτες δυνατότητες.",
         "marketing": "Μάρκετινγκ",
         "marketingDescription": "Μηνύματα προώθησης, συμπεριλαμβανομένων των ειδικών προσφορών της Lenovo.",
         "actionTriggered": "Ενέργεια που ενεργοποιείται",

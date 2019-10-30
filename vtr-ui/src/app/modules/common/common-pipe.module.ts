@@ -11,6 +11,7 @@ import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { TextClassPipe } from 'src/app/pipe/ui-security-statusbar/text-class.pipe';
 import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
+import { DateFormatPipe } from 'src/app/pipe/date-format/date-format.pipe';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 		SvgInlinePipe,
 		TextClassPipe,
 		StripTagsPipe,
+		DateFormatPipe,
 		RemoveSpacePipe,
 	],
 	exports: [
@@ -39,6 +41,7 @@ import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 		TextClassPipe,
 		StripTagsPipe,
 		SanitizeModule,
+		DateFormatPipe,
 		RemoveSpacePipe,
 	],
 	imports: [

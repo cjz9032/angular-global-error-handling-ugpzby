@@ -83,7 +83,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			this.showIntelligentCoolingModes = this.cache.showIntelligentCoolingModes;
 			this.apsStatus = this.cache.apsState;
 			this.selectedModeText = this.cache.selectedModeText !== '' ? this.translate.instant(this.cache.selectedModeText) : '';
-			this.setPerformanceAndCool(this.cache.mode);
+			if (this.cache.mode) {
+				this.setPerformanceAndCool(this.cache.mode);
+			}
 
 		} else {
 			this.cache = new IntelligentCoolingCapability();
@@ -110,7 +112,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.showIntelligentCoolingModes = true;
 			this.enableIntelligentCoolingToggle = false;
-			isSetManualMode ? this.setManualModeSetting(IntelligentCoolingModes.Performance) : '';
+			if (isSetManualMode) {
+				this.setManualModeSetting(IntelligentCoolingModes.Performance);
+			}
 		}
 		this.cache.showIC = this.showIC;
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
