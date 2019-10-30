@@ -36,7 +36,7 @@ but not to any other element on the page. using ::ng-deep
 					border:none;
 				}
 				@media #{$black-on-white}{
-					background-color: darkviolet;
+					background-color: $high-contrast-white-textselected;
 					border:none;
 				}
 			}
@@ -48,16 +48,7 @@ but not to any other element on the page. using ::ng-deep
 				border-radius: 2.8rem;
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
-
-					@media #{$white-on-black}{
-						background-color: $highlight_bright;
-						
-					}
-					@media #{$black-on-white}{
-						background-color: darkviolet;
-						
-					}
-				&::after {
+					&::after {
 					display: block;
 					text-align: center;
 					background: transparent;
@@ -139,15 +130,7 @@ but not to any other element on the page. using ::ng-deep
 
 	[disabled].ng5-slider .ng5-slider-pointer {
 		background-color: initial;
-		// @media #{$white-on-black}{
-		// 	background-color: green;
-			
-		// }
-		// @media #{$black-on-white}{
-		// 	background-color: green;
-			
-		// }
-	}
+		}
 	[disabled].ng5-slider .ng5-slider-selection {
 		@media #{$white-on-black}{
 			background-color: $go_dark;
