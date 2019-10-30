@@ -62,7 +62,7 @@ export class ConfigService {
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			if (this.deviceService.showPrivacy && brand !== 'think') {
+			if (this.deviceService.showPrivacy && brand.toLowerCase() !== 'think') {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
