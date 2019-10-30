@@ -79,7 +79,7 @@
 									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 									[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 									[isSwitchVisible]=true
-									[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
+									[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available && !gaugeResetCapability"
 									[leftIcon]="['fal', 'battery-half']"
 									[rightIcon]="['far', 'question-circle']"
 									[showChildContent]="true"
@@ -317,7 +317,7 @@
 			</div>
 
 			<div class="row py-5 smartsettings-card"
-				*ngIf="machineType === 1 && isEnergyStarProduct">
+				*ngIf="isEnergyStarProduct">
 				<div class="col-12 mx-auto container-card">
 					<vtr-container-collapsible
 						componentName="'device.deviceSettings.power.energyStar.title' | translate"

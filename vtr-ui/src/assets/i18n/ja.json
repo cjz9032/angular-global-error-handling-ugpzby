@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Windows 設定に移動してアクセスできるようにします",
                 "microphoneNote": "Lenovo Vantage がマイクロホンにアクセスできません。",
                 "cameraPrivacyNote": "Lenovo Vantage がカメラにアクセスできません。"
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "システム状況",
@@ -877,7 +879,7 @@
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
-                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。",
+                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。また、ドライバーを<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールすることもできます。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
@@ -1365,7 +1367,11 @@
                             "description": "最上部の行の機能を変更するには、コンピューターを再起動する必要があります。再起動しますか?",
                             "reboot": "リブート",
                             "cancel": "今はしない"
-                        }
+                        },
+						"note": {
+							"sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
+							"fnKey": "特殊機能を使用するには、Fn および最上部の行のキーを押します。"
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP ホット・キーの機能",
@@ -1573,17 +1579,17 @@
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },
             "superResolution": {
-				"heading": "インテリジェント・メディア",
-				"title": "ビデオ解像度のアップスケーリング",
-				"desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
-				"tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"この機能は次の場合は動作しません。",
-					"description1":"コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
-					"description2":"コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
-					"description3":"CPU の温度が高すぎる場合。"
-				}
-			},
+                "heading": "インテリジェント・メディア",
+                "title": "ビデオ解像度のアップスケーリング",
+                "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
+                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "この機能は次の場合は動作しません。",
+                    "description1": "コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
+                    "description2": "コンピューターが AC 電源に接続されておらず、バッテリー節約モードが有効の場合。",
+                    "description3": "CPU の温度が高すぎる場合。"
+                }
+            },
             "voice": {
                 "title": "音声",
                 "description": "Lenovo Voice は、音声テキスト変換機能を使用して音声をテキストに変換し、翻訳機能を使用して音声からテキストへのリアルタイムの翻訳を提供します。",
@@ -1821,12 +1827,22 @@
             "good": "良好",
             "malicious": "悪意",
             "suspicious": "疑わしい",
-            "securityScoreDepends": "セキュリティー・スコアによって、お客様がオンライン時にどれほど安全かがわかります。以下の項目を実行しているかどうかで結果が変わります。",
+            "securityScoreDepends": "セキュリティの結果は、次の条件によって異なります。",
             "antivirus": "ウイルス対策ソフトウェアで保護されている",
             "password": "強力で複雑なパスワードを安全な方法で管理している",
             "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
             "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
-            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している"
+            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} は、デバイスに基本的な保護機能を提供します",
                 "unknown": "不明",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "こちらでさらに優れた製品をお試しください。"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "「設定の変更」ページでは、メッセージ通知のオンオフを Vantage のメッセージのカテゴリーに基づいて選択できます。すべてのメッセージ・カテゴリーが無効になっている場合でも、必要に応じてシステム・クリティカル・メッセージを Vantage から受信する場合があることに注意してください。",
         "messagesInLenovoVantage": "Lenovo Vantage のメッセージ",
         "appFeatures": "アプリ機能",
-        "appFeaturesDescription": "System Update、記事、その他の注目すべき機能に関連したメッセージ。",
+        "appFeaturesDescription": "システム更新、記事、その他の注目すべき機能に関連したメッセージ。",
         "marketing": "マーケティング",
         "marketingDescription": "Lenovo の特別オファーを含むプロモーション・メッセージ。",
         "actionTriggered": "開始されたアクション",

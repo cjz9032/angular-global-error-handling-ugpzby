@@ -6,7 +6,7 @@
 				<div class="custom-control form-control-lg custom-checkbox">
 					<input id="{{ item.id }}" type="checkbox" class="custom-control-input"
 						[indeterminate]="item.indeterminate" [(ngModel)]="item.selected"
-						(click)="onSelectAllChildren(item.id)" />
+						(change)="onSelectAllChildren(item.id)" />
 					<label class="custom-control-label name" for="{{ item.id }}">{{ item.name }} - <span
 							class="subname">{{ item.subname }}</span></label>
 				</div>

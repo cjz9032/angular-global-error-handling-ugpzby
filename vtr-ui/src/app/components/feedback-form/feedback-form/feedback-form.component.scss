@@ -130,6 +130,10 @@
 			color: $shade_blue;
 			user-select: all;
 			overflow-y: auto;
+
+			&:focus {
+				border-color: $main;
+			}
 		}
 
 		@media screen and (max-height: 600px) {

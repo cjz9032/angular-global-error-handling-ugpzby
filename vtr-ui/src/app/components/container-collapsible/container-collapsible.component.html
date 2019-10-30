@@ -20,11 +20,11 @@
 									id="{{collapseLinkId+'-collapse-link'}}"
 									attr.aria-label="{{collapseLinkId+'-collapse-link'}}"
 									metricsEvent="itemClick"
-									[metricsValue]="isCollapsed"
+									[metricsValue]="!isCollapsed"
 									[metricsItem]="'btn.collapse'"
 									[metricsParent]="metricsParent"
 									(click)="onToggle()"
-									(keydown.enter)="onToggle()"
+									(keyup.enter)="onToggle()"
 									role="region"
 									[attr.aria-expanded]="!isCollapsed"
 									[attr.aria-labelledby]="collapseLinkId+'-collapse-card-title'">

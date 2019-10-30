@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Vai alle impostazioni di Windows per consentire l'accesso",
                 "microphoneNote": "Lenovo Vantage non ha accesso al microfono.",
                 "cameraPrivacyNote": "Lenovo Vantage non ha accesso alla fotocamera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Stato del sistema",
@@ -877,7 +879,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
@@ -1365,7 +1367,11 @@
                             "description": "La modifica della funzione della riga superiore richiede il riavvio del computer. Riavviare?",
                             "reboot": "RIAVVIA",
                             "cancel": "NON ORA"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
+							"fnKey": "Per accedere alla funzione speciale, premere Fn e i tasti sulla riga superiore."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Funzioni dei tasti di scelta rapida per le chiamate VoIP",
@@ -1573,17 +1579,17 @@
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },
             "superResolution": {
-				"heading": "Supporti intelligenti",
-				"title": "Upscaling della risoluzione video",
-				"desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-				"tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Questa funzione non può essere utilizzata quando:",
-					"description1":"Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
-					"description2":"Il computer non è collegato all'alimentazione CA ed è abilitata la modalità di risparmio batteria.",
-					"description3":"La temperatura della CPU è elevata."
-				}
-			},
+                "heading": "Supporti intelligenti",
+                "title": "Upscaling della risoluzione video",
+                "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
+                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Questa funzione non può essere utilizzata quando:",
+                    "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
+                    "description2": "Il computer non è collegato all'alimentazione CA ed è abilitata la modalità di risparmio batteria.",
+                    "description3": "La temperatura della CPU è elevata."
+                }
+            },
             "voice": {
                 "title": "Voce",
                 "description": "Lenovo Voice consente di convertire la voce in testo con la funzione \"Voce in testo\" e fornisce una traduzione in tempo reale da voce a testo con la funzione \"Traduzione\".",
@@ -1821,12 +1827,22 @@
             "good": "BUONA",
             "malicious": "DANNOSA",
             "suspicious": "SOSPETTA",
-            "securityScoreDepends": "Il tuo punteggio di sicurezza ti dà un'idea del livello di protezione del tuo ambiente; il risultato dipende da:",
+            "securityScoreDepends": "Il risultato della protezione dipende dalla scelta iniziale:",
             "antivirus": "La protezione con software antivirus",
             "password": "Password sicure e complesse che garantiscono la massima protezione",
             "vpn": "Monitoraggio dell'esposizione della rete contro i malintenzionati",
             "wifi": "Crittografia dei dati personali quando si utilizzano le reti WiFi pubbliche",
-            "windowsHello": "Protezione del dispositivo con opzioni di accesso sicure"
+            "windowsHello": "Protezione del dispositivo con opzioni di accesso sicure",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo",
                 "unknown": "Sconosciuto",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "La migliore offerta è qui!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "Nella pagina di impostazione delle preferenze è possibile scegliere di attivare o disattivare la notifica del messaggio in base alle categorie del messaggio di Vantage. Tenere presente che anche se tutte le categorie di messaggi sono disabilitate, è possibile che occasionalmente si riceva un messaggio critico di sistema da Vantage, se necessario.",
         "messagesInLenovoVantage": "Messaggi in Lenovo Vantage",
         "appFeatures": "Funzioni app",
-        "appFeaturesDescription": "Messaggi relativi a System Update, articoli e altre funzioni importanti.",
+        "appFeaturesDescription": "Messaggi relativi all'Aggiornamento del sistema, articoli e altre funzioni importanti.",
         "marketing": "Marketing",
         "marketingDescription": "Messaggi promozionali che includono offerte speciali Lenovo.",
         "actionTriggered": "Azione attivata",

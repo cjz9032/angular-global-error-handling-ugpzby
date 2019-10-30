@@ -183,7 +183,7 @@
 									[theme]="'white'"
 									[tooltipText]="'device.deviceSettings.audio.microphone.suppress.tooltip' | translate"
 									(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
-									[disabled]="microphoneProperties.disableEffect"
+									[disabled]="microphoneProperties.disableEffect || microOptimizeModeResponse.current === 'VoiceRecognition'"
 									[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression"
 									[showLoaderState]="microphoneLoader"
 									[switchId]="'audio-microphone-suppress'">
@@ -205,7 +205,7 @@
 									[theme]="'white'"
 									[tooltipText]="'device.deviceSettings.audio.microphone.acoustic.tooltip' | translate"
 									(toggleOnOff)="setMicrophoneAEC($event)"
-									[disabled]="microphoneProperties.disableEffect"
+									[disabled]="microphoneProperties.disableEffect || microOptimizeModeResponse.current === 'VoiceRecognition'"
 									[isSwitchChecked]="microphoneProperties.AEC"
 									[showLoaderState]="microphoneLoader"
 									[switchId]="'audio-microphone-acousticEcho'">

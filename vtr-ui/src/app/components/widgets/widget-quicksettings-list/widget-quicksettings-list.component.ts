@@ -439,23 +439,25 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					if (res === true) {
 						this.wifiHomeViewModel.isLWSEnabled = false;
 						this.quickSettings[2].isChecked = false;
+						this.quickSettings[2].readonly = true;
 
 					} else {
 						this.wifiHomeViewModel.isLWSEnabled = true;
 						this.quickSettings[2].isChecked = true;
+						this.quickSettings[2].readonly = false;
 					}
-					this.quickSettings[2].readonly = false;
 				});
 			} else {
 				this.wifiHomeViewModel.wifiSecurity.enableWifiSecurity().then((res) => {
 					if (res === true) {
 						this.wifiHomeViewModel.isLWSEnabled = true;
 						this.quickSettings[2].isChecked = true;
+						this.quickSettings[2].readonly = false;
 					} else {
 						this.wifiHomeViewModel.isLWSEnabled = false;
 						this.quickSettings[2].isChecked = false;
+						this.quickSettings[2].readonly = true;
 					}
-					this.quickSettings[2].readonly = false;
 				},
 					(error) => {
 						this.dialogService.wifiSecurityLocationDialog(this.wifiHomeViewModel.wifiSecurity);

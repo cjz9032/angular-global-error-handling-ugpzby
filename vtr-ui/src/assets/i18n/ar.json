@@ -119,7 +119,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -724,7 +724,9 @@
                 "accessUrl": "انتقل إلى إعدادات Windows لمنح الوصول",
                 "microphoneNote": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون.",
                 "cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "حالة النظام",
@@ -879,7 +881,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
@@ -1367,7 +1369,11 @@
                             "cancel": "ليس الآن"
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
-                        "hideAdvSettings": "إخفاء الإعدادات المتقدمة"
+                        "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
+						"note": {
+							"sFunKey": "للوصول إلى وظيفة F1-F12، اضغط على المفتاح Fn والمفاتيح على الصف العلوي.",
+							"fnKey": "للوصول إلى وظيفة خاصة، اضغط على المفتاح Fn والمفاتيح على الصف العلوي."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "وظائف مفتاح VoIP Hotkey",
@@ -1575,17 +1581,17 @@
                 "tooltip": "لا تنطبق هذه الميزة على مشغلات فيديو الويب. تدعم مشغلات الفيديو المحلية الأكثر رواجًا، مثل Windows Media Player و5KPlayer وغيرها، هذه الميزة."
             },
             "superResolution": {
-				"heading": "الوسائط الذكية",
-				"title": "رفع مستوى دقة الفيديو",
-				"desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
-				"tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"لا تعمل هذه الميزة في الحالات التالية:",
-					"description1":"الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
-					"description2":"الكمبيوتر غير متصل بطاقة التيار المتردد وتم تمكين وضع توفير البطارية.",
-					"description3":"درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا."
-				}
-			},
+                "heading": "الوسائط الذكية",
+                "title": "رفع مستوى دقة الفيديو",
+                "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
+                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "لا تعمل هذه الميزة في الحالات التالية:",
+                    "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
+                    "description2": "الكمبيوتر غير متصل بطاقة التيار المتردد وتم تمكين وضع توفير البطارية.",
+                    "description3": "درجة حرارة وحدة المعالجة المركزية (CPU) مرتفعة جدًا."
+                }
+            },
             "voice": {
                 "title": "الصوت",
                 "description": "تساعد ميزة Lenovo Voice على تحويل صوتك إلى نصوص باستخدام وظيفة تحويل الصوت إلى نص، وهي توفر الترجمة في الوقت الحقيقي من الصوت إلى النصوص بواسطة وظيفة الترجمة.",
@@ -1823,12 +1829,22 @@
             "good": "جيد",
             "malicious": "ضار",
             "suspicious": "مشبوه",
-            "securityScoreDepends": "تمنحك درجة الأمان لديك فكرة عن مدى أمانك على الإنترنت، وتتوقف النتيجة على ما إذا كنت:",
+            "securityScoreDepends": "تتوقف نتيجة الأمان على ما إذا كنت:",
             "antivirus": "محميًا بواسطة برنامج مكافحة الفيروسات",
             "password": "تستخدم كلمات مرور قوية ومعقدة تدار بطريقة آمنة",
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
             "wifi": "تشفر بياناتك الشخصية عند استخدام شبكة WiFi عامة",
-            "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة"
+            "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1905,7 +1921,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
                 "unknown": "غير معروف",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "استمتع بعرض أفضل هنا!"
             }
         },
         "wifisecurity": {
@@ -2501,7 +2517,7 @@
         "settingsDescription": "في صفحة إعداد التفضيلات، يمكنك اختيار تشغيل/إيقاف تشغيل إخطار الرسائل الخاص بك استنادًا إلى فئات رسالة Vantage، يرجى ملاحظة أنه حتى إذا تم تعطيل جميع فئات الرسائل، فربما تظل تتلقى في بعض الأحيان رسالة هامة من نظام Vantage عند الضرورة.",
         "messagesInLenovoVantage": "الرسائل في Lenovo Vantage",
         "appFeatures": "ميزات التطبيق",
-        "appFeaturesDescription": "الرسائل المتعلقة System Update والمقالات وغيرها من الميزات المثيرة للاهتمام.",
+        "appFeaturesDescription": "الرسائل المتعلقة بتحديث النظام والمقالات وغيرها من الميزات المثيرة للاهتمام.",
         "marketing": "التسويق",
         "marketingDescription": "رسائل الترويج بما في ذلك العروض الخاصة من Lenovo.",
         "actionTriggered": "الرسائل التي تشغلها إجراءات",

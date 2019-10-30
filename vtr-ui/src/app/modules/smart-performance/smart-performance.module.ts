@@ -19,16 +19,17 @@ import { faBug } from '@fortawesome/free-solid-svg-icons/faBug';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import {faCircle} from '@fortawesome/free-solid-svg-icons/faCircle';
 
 import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
 import { UiSmartPerformanceScanningComponent } from '../../components/ui/ui-smart-performance-scanning/ui-smart-performance-scanning.component';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
-import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { WidgetSpeedometerComponent } from '../../components/widgets/widget-speedometer/widget-speedometer.component';
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 import { FormsModule } from '@angular/forms';
+import { CommonUiModule } from '../common/common-ui.module';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -40,6 +41,7 @@ library.add(faBug);
 library.add(faCheck);
 library.add(faTimes);
 library.add(faChevronDown);
+library.add(faCircle);
 @NgModule({
   declarations: [
 	  PageSmartPerformanceComponent,
@@ -58,11 +60,11 @@ library.add(faChevronDown);
   SmartPerformanceRoutingModule,
     FormsModule ,
   NgbDatepickerModule ,
-  AccordionModule.forRoot(),
   HeaderMainModule,
-  FontAwesomeModule
+  FontAwesomeModule,
+  CommonUiModule
   ],
-  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent],
+  exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent,CommonUiModule],
   bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent]
 })
 export class SmartPerformanceModule { }

@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "액세스 권한을 부여하려면 Windows 설정으로 이동합니다",
                 "microphoneNote": "Lenovo Vantage가 마이크에 액세스할 수 없습니다.",
                 "cameraPrivacyNote": "Lenovo Vantage가 카메라에 액세스할 수 없습니다."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "시스템 상태",
@@ -877,7 +879,7 @@
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
@@ -1365,7 +1367,11 @@
                             "description": "기본 맨 윗줄 기능을 변경하면, 컴퓨터를 다시 시작해야 해야 합니다. 다시 시작하시겠습니까?",
                             "reboot": "다시 부팅",
                             "cancel": "나중에"
-                        }
+                        },
+						"note": {
+							"sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
+							"fnKey": "특수 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "VoIP 단축키 기능",
@@ -1573,17 +1579,17 @@
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
             },
             "superResolution": {
-				"heading": "지능형 미디어",
-				"title": "비디오 해상도 업스케일링",
-				"desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-				"tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"다음의 경우에는 이 기능이 작동하지 않습니다.",
-					"description1":"컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
-					"description2":"컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
-					"description3":"CPU 온도가 너무 높습니다."
-				}
-			},
+                "heading": "지능형 미디어",
+                "title": "비디오 해상도 업스케일링",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
+                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
+                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description3": "CPU 온도가 너무 높습니다."
+                }
+            },
             "voice": {
                 "title": "음성",
                 "description": "Lenovo Voice는 음성에서 텍스트로의 변환 기능을 제공하며 번역 기능을 사용하여 음성에서 텍스트로의 실시간 번역을 제공합니다.",
@@ -1821,12 +1827,22 @@
             "good": "좋음",
             "malicious": "악성",
             "suspicious": "의심스러움",
-            "securityScoreDepends": "사용자의 보안 점수를 보면 온라인에서 안전한 정도를 알 수 있으며, 결과는 다음과 같은 경우에 따라 달라집니다.",
+            "securityScoreDepends": "보안 결과는 다음 사항에 따릅니다.",
             "antivirus": "바이러스 백신 소프트웨어로 보호",
             "password": "강력하고 복잡한 암호를 안전하게 관리",
             "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
             "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
-            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호"
+            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
                 "unknown": "알 수 없음",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "다음은 더 낳은 제안입니다!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "환경 설정 페이지에서 Vantage의 메시지 범주를 기반으로 메시지 알림을 켜거나 끌 수 있습니다. 모든 메시지 범주가 비활성화되어 있어도 필요에 따라 때때로 Vantage에서 시스템 중요 메시지를 받는 경우가 있습니다.",
         "messagesInLenovoVantage": "Lenovo Vantage 메시지",
         "appFeatures": "앱 기능",
-        "appFeaturesDescription": "System Update, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
+        "appFeaturesDescription": "시스템 업데이트, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
         "marketing": "판매",
         "marketingDescription": "Lenovo 특별제안을 포함한 프로모션 메시지.",
         "actionTriggered": "트리거된 작업",

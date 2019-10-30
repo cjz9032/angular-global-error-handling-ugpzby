@@ -324,6 +324,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: $go_dark;
 }
 
+.warning_red {
+	color: $button_red_start !important;
+}
+
 /*intelligent-cooling-read-more-pop-up-style*/
 
 .read-more {
@@ -558,7 +562,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 3rem 0 0 4rem;
+		padding: 3rem 0 0 0;
 		overflow: hidden;
 		@media #{$black-on-white} {
 			
@@ -694,7 +698,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem 0 0 4rem;
+		padding: 4rem 0 0 0;
 		overflow: hidden;
 	}
 }
@@ -1171,4 +1175,39 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
   .icon-responsive:before {
 	content: "\77";
   }
-  
+  // smart-performance-scan-summary-calendar-styles
+  .vtr-ui-smart-performance-scan-summary {
+	.date-picker {
+	  ngb-datepicker {
+		  width: 100%;
+		  border: none;
+		  border-radius: 0;
+		  .ngb-dp-header {
+			  background: transparent;
+		  }
+		  .ngb-dp-month {
+			  width: 100%;
+			  .ngb-dp-week {
+				  display: flex;
+				  justify-content: space-around;
+				  &.ngb-dp-weekdays {
+					  border: none;
+				  }
+				  &.bg-light {
+					  background: transparent !important;
+				  }
+				  .ngb-dp-weekday {
+					  font-style: normal;
+				  }
+			  }
+		  }
+		  .bg-primary {
+			  background: transparent !important;
+			  &.text-white {
+				  color: $go_dark !important;
+				  font-weight: $weight_bold;
+			  }
+		  }
+	  }
+	}
+}

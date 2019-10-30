@@ -1,6 +1,8 @@
 import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
+
 export class AntiVirusViewModel {
 	currentPage = 'windows';
 	mcafeeInstall: boolean;
@@ -40,7 +42,10 @@ export class AntiVirusViewModel {
 	showMetricsList = true;
 	showMetricButton = true;
 
-	constructor(antiVirus: Antivirus, private commonService: CommonService) {
+	constructor(antiVirus: Antivirus, private commonService: CommonService, private translate: TranslateService, ) {
+		translate.stream(this.otherAntiVirus.name).subscribe((res) => {
+			this.otherAntiVirus.name = res;
+		});
 		const cacheCurrentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;

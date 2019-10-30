@@ -13,7 +13,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -21,6 +20,8 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { PowerService } from 'src/app/services/power/power.service';
+
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -33,6 +34,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public eyeCareModeStatus = new FeatureStatus(true, false);
 	private notificationSubscription: Subscription;
 	public isOnline: any = true;
+	public batteryInfo: any = [];
+	public thresholdStatus = false;
+	public machineType: any;
+	public thresholdLoadingStatus = false;
+	public conservationModeStatus = new FeatureStatus(false, true);
+
 	public quickSettingsWidget = [
 		{
 			// tooltipText: 'MICROPHONE',
@@ -56,6 +63,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		public dashboardService: DashboardService,
 		public displayService: DisplayService,
 		private commonService: CommonService,
+		private powerService: PowerService,
 		private logger: LoggerService,
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
@@ -76,6 +84,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -102,7 +112,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
-		this.stopEyeCareMonitor();
+		// this.stopEyeCareMonitor();
+
 	}
 
 	//#region private functions
@@ -136,10 +147,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private initFeatures() {
 		this.getMicrophoneStatus();
 		this.getCameraPrivacyStatus();
-		this.initEyecaremodeSettings();
-		this.startEyeCareMonitor();
+		if (this.machineType === 1) {
+			this.getBatteryThresholdInformation();
+		} else {
+			this.getConservationModeStatusIdeaPad();
+		}
+		// this.initEyecaremodeSettings();
+		// this.startEyeCareMonitor();
 	}
-
 	public getCameraPermission() {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -164,31 +179,31 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public initEyecaremodeSettings() {
-		try {
-				this.eyeCareModeStatus.isLoading = true;
+	// public initEyecaremodeSettings() {
+	// 	try {
+	// 			this.eyeCareModeStatus.isLoading = true;
 
-				this.displayService.initEyecaremodeSettings()
-					.then((result: boolean) => {
-						this.eyeCareModeStatus.isLoading = false;
-						console.log('initEyecaremodeSettings.then', result);
-						if (result === true) {
-							const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
-							if (eyeCare) {
-								this.eyeCareModeStatus = eyeCare;
-							} else {
-								this.getEyeCareModeStatus();
-							}
-						}
-					}).catch(error => {
-						this.logger.error('initEyecaremodeSettings', error.message);
-						return EMPTY;
-					});
-		} catch (error) {
-			this.logger.error('initEyecaremodeSettings', error.message);
-			return EMPTY;
-		}
-	}
+	// 			this.displayService.initEyecaremodeSettings()
+	// 				.then((result: boolean) => {
+	// 					this.eyeCareModeStatus.isLoading = false;
+	// 					console.log('initEyecaremodeSettings.then', result);
+	// 					if (result === true) {
+	// 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
+	// 						if (eyeCare) {
+	// 							this.eyeCareModeStatus = eyeCare;
+	// 						} else {
+	// 							this.getEyeCareModeStatus();
+	// 						}
+	// 					}
+	// 				}).catch(error => {
+	// 					this.logger.error('initEyecaremodeSettings', error.message);
+	// 					return EMPTY;
+	// 				});
+	// 	} catch (error) {
+	// 		this.logger.error('initEyecaremodeSettings', error.message);
+	// 		return EMPTY;
+	// 	}
+	// }
 
 	private getCameraPrivacyStatus() {
 		try {
@@ -285,22 +300,22 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getEyeCareModeStatus() {
-		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService
-				.getEyeCareMode()
-				.then((featureStatus: FeatureStatus) => {
-					console.log('getEyeCareMode.then', featureStatus);
-					this.eyeCareModeStatus.available = featureStatus.available;
-					this.eyeCareModeStatus.status = featureStatus.status;
-					this.eyeCareModeStatus.isLoading = featureStatus.isLoading;
-				})
-				.catch(error => {
-					this.logger.error('getEyeCareMode', error.message);
-					return EMPTY;
-				});
-		}
-	}
+	// private getEyeCareModeStatus() {
+	// 	if (this.dashboardService.isShellAvailable) {
+	// 		this.dashboardService
+	// 			.getEyeCareMode()
+	// 			.then((featureStatus: FeatureStatus) => {
+	// 				console.log('getEyeCareMode.then', featureStatus);
+	// 				this.eyeCareModeStatus.available = featureStatus.available;
+	// 				this.eyeCareModeStatus.status = featureStatus.status;
+	// 				this.eyeCareModeStatus.isLoading = featureStatus.isLoading;
+	// 			})
+	// 			.catch(error => {
+	// 				this.logger.error('getEyeCareMode', error.message);
+	// 				return EMPTY;
+	// 			});
+	// 	}
+	// }
 
 	//#endregion
 
@@ -358,61 +373,151 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onEyeCareModeToggle($event: boolean) {
-		this.eyeCareModeStatus.isLoading = true;
-		this.quickSettingsWidget[2].state = false;
+	// public onEyeCareModeToggle($event: boolean) {
+	// 	this.eyeCareModeStatus.isLoading = true;
+	// 	this.quickSettingsWidget[2].state = false;
+	// 	try {
+	// 		if (this.dashboardService.isShellAvailable) {
+	// 			this.dashboardService.setEyeCareMode($event)
+	// 				.then((value: boolean) => {
+
+	// 					console.log('setEyeCareMode.then', value, $event);
+	// 					this.eyeCareModeStatus.isLoading = false;
+	// 					this.eyeCareModeStatus.status = $event;
+	// 					this.quickSettingsWidget[2].state = true;
+	// 				}).catch(error => {
+
+	// 					this.eyeCareModeStatus.isLoading = false;
+	// 					this.quickSettingsWidget[2].state = true;
+	// 					this.logger.error('setEyeCareMode', error.message);
+	// 					return EMPTY;
+	// 				});
+	// 		}
+	// 	} catch (error) {
+	// 		this.eyeCareModeStatus.isLoading = false;
+	// 		this.quickSettingsWidget[2].state = true;
+	// 		console.log('onEyeCareModeToggle', error.message);
+	// 		return EMPTY;
+	// 	}
+	// }
+
+	// private getEyeCareModeCallback(response: any) {
+	// 	this.eyeCareModeStatus.status = response.eyecaremodeState;
+	// }
+
+	// private startEyeCareMonitor() {
+	// 	console.log('start eyecare monitor');
+	// 	if (this.displayService.isShellAvailable) {
+	// 		this.displayService
+	// 			.startEyeCareMonitor(this.getEyeCareModeCallback.bind(this))
+	// 			.then((value: any) => {
+	// 				console.log('startEyeCareMonitor', value);
+	// 			}).catch(error => {
+	// 				this.logger.error('startEyeCareMonitor', error.message);
+	// 				return EMPTY;
+	// 			});
+
+	// 	}
+	// }
+
+	// public stopEyeCareMonitor() {
+	// 	console.log('stopEyeCareMonitor');
+	// 	if (this.displayService.isShellAvailable) {
+	// 		this.displayService
+	// 			.stopEyeCareMonitor();
+	// 	}
+	// }
+	onClick(path) {
+		this.deviceService.launchUri(path);
+	}
+	public getBatteryThresholdInformation() {
+		if (this.powerService.isShellAvailable) {
+			try {
+				// const res = await this.powerService.getChargeThresholdInfo();
+				this.powerService.getChargeThresholdInfo().then(res => {
+					this.thresholdLoadingStatus = false;
+					this.batteryInfo = res || [];
+					this.thresholdStatus = this.batteryInfo[0].isOn;
+				});
+
+			} catch (error) {
+				this.logger.error('getBatteryThresholdInformation :: error', error.message);
+				return EMPTY;
+			}
+		}
+	}
+	public showBatteryThresholdsettings(event) {
+		this.thresholdStatus = !this.thresholdStatus;
+		this.thresholdLoadingStatus = true;
+		if (event) {
+			this.batteryInfo.forEach(batteryInfo => {
+				this.setChargeThresholdValues(batteryInfo);
+			});
+			this.thresholdLoadingStatus = false;
+		} else {
+			this.powerService.setToggleOff(this.batteryInfo.length)
+				.then((value: any) => {
+					this.thresholdLoadingStatus = false;
+					this.getBatteryThresholdInformation();
+				})
+				.catch(error => {
+					this.logger.error('change threshold value', error.message);
+					return EMPTY;
+				});
+		}
+
+	}
+	public setChargeThresholdValues(batteryDetails: any) {
+		let batteryInfo: any = {};
 		try {
-			if (this.dashboardService.isShellAvailable) {
-				this.dashboardService.setEyeCareMode($event)
-					.then((value: boolean) => {
-
-						console.log('setEyeCareMode.then', value, $event);
-						this.eyeCareModeStatus.isLoading = false;
-						this.eyeCareModeStatus.status = $event;
-						this.quickSettingsWidget[2].state = true;
-					}).catch(error => {
-
-						this.eyeCareModeStatus.isLoading = false;
-						this.quickSettingsWidget[2].state = true;
-						this.logger.error('setEyeCareMode', error.message);
+			if (this.powerService.isShellAvailable) {
+				batteryInfo = {
+					batteryNumber: batteryDetails.batteryNum,
+					startValue: batteryDetails.startValue,
+					stopValue: batteryDetails.stopValue,
+					checkBoxValue: batteryDetails.checkBoxValue
+				};
+				this.powerService
+					.setChargeThresholdValue(batteryInfo)
+					.then((value: any) => {
+						this.thresholdLoadingStatus = false;
+					})
+					.catch(error => {
+						this.logger.error('change threshold value', error.message);
 						return EMPTY;
 					});
+
 			}
 		} catch (error) {
-			this.eyeCareModeStatus.isLoading = false;
-			this.quickSettingsWidget[2].state = true;
-			console.log('onEyeCareModeToggle', error.message);
+			this.logger.error('setChargeThresholdValues', error.message);
 			return EMPTY;
 		}
 	}
 
-	private getEyeCareModeCallback(response: any) {
-		this.eyeCareModeStatus.status = response.eyecaremodeState;
-	}
-
-	private startEyeCareMonitor() {
-		console.log('start eyecare monitor');
-		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.startEyeCareMonitor(this.getEyeCareModeCallback.bind(this))
-				.then((value: any) => {
-					console.log('startEyeCareMonitor', value);
-				}).catch(error => {
-					this.logger.error('startEyeCareMonitor', error.message);
-					return EMPTY;
-				});
-
+	private async getConservationModeStatusIdeaPad() {
+		if (this.powerService.isShellAvailable) {
+			try {
+				const featureStatus = await this.powerService.getConservationModeStatusIdeaNoteBook();
+				console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
+				this.conservationModeStatus = featureStatus;
+				} catch (error) {
+				this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
+				return EMPTY;
+			}
 		}
 	}
-
-	public stopEyeCareMonitor() {
-		console.log('stopEyeCareMonitor');
-		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.stopEyeCareMonitor();
+	public async setConservationModeStatusIdeaNoteBook(status: any) {
+		console.log('======== setConservationModeStatusIdeaNoteBook.then ======== ');
+		try {
+			console.log('setConservationModeStatusIdeaNoteBook.then', status);
+			if (this.powerService.isShellAvailable) {
+				const value = await this.powerService.setConservationModeStatusIdeaNoteBook(status);
+				console.log('setConservationModeStatusIdeaNoteBook.then', value);
+				// this.commonService.setLocalStorageValue(LocalStorageKey.ConservationModeCapability, this.conservationModeCache);
+			}
+		} catch (error) {
+			this.logger.error('setConservationModeStatusIdeaNoteBook', error.message);
+			return EMPTY;
 		}
-	}
-	onClick(path) {
-		this.deviceService.launchUri(path);
 	}
 }

@@ -90,4 +90,9 @@ updateSubItemsList(subItem) {
 		this.subItems = [];
 	}
 }
+changeScanEvent(){
+	console.log("emitted");
+this.isScanning=true;
+this.isScanningCompleted=false;
+}
 }

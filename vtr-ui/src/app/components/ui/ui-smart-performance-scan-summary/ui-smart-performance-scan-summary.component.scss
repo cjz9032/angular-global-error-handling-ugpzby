@@ -27,7 +27,7 @@
 			.summary-period {
 				.list-group {
 					background: #303D49;
-					
+
 					border-radius: 0.5rem;
 					.list-selected-item{
 						width: 25rem;
@@ -73,7 +73,7 @@
 							border-radius: 0;
 					}
 				}
-				
+
 						.dropdownmenu {
 							width: 25%;
 							background: $light;
@@ -103,15 +103,15 @@
 							padding: 1rem;
 							z-index: 9999;
 						}
-				
+
 				.calender-dropDown{
 							position: absolute;
-							width: 96%;
+							width: 97.5%;
 							background: $light;
 							box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 							border-radius: 0.9rem;
 							padding: 1rem;
-							z-index: 99999;
+							z-index: 1;
 							font-size: 1.2rem;
 							.selected-custom-date{
 								background-color:#F5F7F8;
@@ -147,30 +147,18 @@
 					font-weight: $weight_bold;
 					span {
 						font-size: 1.6rem;
-						padding-left: 1rem;
 					}
 				}
 				p {
 					font-size: 1.4rem;
 					font-weight: $weight_light;
 					color: $shade;
-					width: 75%;
+					width: 99.9%;
 				}
-				fa-icon {
+				.icon {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
-				}
-				.bug {
-					position: absolute;
-					font-size: 2.1rem;
-					top: 1.9rem;
-					right: 3.05rem;
-				}
-				.shield {
-					position: absolute;
-					top: 2rem;
-					right: 4rem;
 				}
 			}
 			.scan-list-container {
@@ -241,6 +229,30 @@
 						.chevron-down {
 							color: $main;
 						}
+						.scan-items {
+							font-size: 1.2rem;
+							.icon {
+								font-size: 1.6rem;
+								color: $main;
+								padding-right: 1rem;
+							}
+						}
+						.scan-item-value {
+							font-size: 1.2rem;
+							font-weight: $weight_bold;
+						}
+						.scan-status {
+							padding-right: 0;
+							fa-icon {
+								padding-left: 0.3rem;
+								color: $go_dark;
+								font-size: 0.5rem;
+								vertical-align: middle;
+								&.red-icon {
+									color: $stop;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -252,152 +264,152 @@
 	border-radius: 0.8rem;
 	background: $light;
 	.pc-info-card{
-		&::ng-deep {
-			.panel{
-				.card {
-					border-radius: 0.6rem;
-					border: 1px solid  $screen_dark_01;
-					background: $grey_lighter;
-					padding: 0 1rem;
-					margin: 1.5rem auto;
-					width: 100%;
-					.card-header {
-						background-color: transparent;
+        &::ng-deep {
+            ngb-accordion{
+                .card {
+                    border-radius: 0.6rem;
+                    border: 1px solid  $screen_dark_01;
+                    background: $grey_lighter;
+                    //padding: 1rem;
+                    margin: 1.5rem auto;
+                    width: 100%;
+                    .card-header {
+                        background-color: transparent;
 						border-bottom: none;
-						.heading {
-							h3, h2{
-								font-size: 2rem;
-								color: $main_shade !important;
-							}
-							.icon{
-								color: $main;
+						.btn-link{
+							&:hover, &:focus{
+								text-decoration: none;
 							}
 						}
-					}
-					.card-body {
+                        .heading {
+                            h3, h2{
+                                font-size: 2rem;
+                                color: $main_shade !important;
+                            }
+                            .icon{
+                                color: $menu_hover;
+                            }
+                        }
+                    }
+                    .card-body {
 						padding: 0 1.25rem;
 						.scan-result-tabs {
-							.nav-tabs {
-								border-bottom: none;
-								.nav-item {
-									width: 20%;
-									.nav-link {
-										border: none;
-										border-left: 1px solid $grey_light;
-										border-bottom: 1px solid $grey_light;
-										color: $dark;
-
-										&.active {
-											background-color: transparent;
-											border-bottom-color: transparent;
-										}
-
-									}
-									&:first-child{
-										.nav-link{
-											border-left: none;
-										}
-									}
-								}
-							}
-							.icon-box {
-
-								p{
-									font-size: 1.4rem;
-									max-width: 8.1rem;
-									margin-top: 0.6rem;
+                            .nav-tabs {
+                                border-bottom: none;
+                                .nav-item {
+                                    width: 20%;
+                                    .nav-link {
+                                        border: none;
+                                        border-left: 1px solid $grey_light;
+                                        border-bottom: 1px solid $grey_light;
+                                        color: $dark;                                        &.active {
+                                            background-color: transparent;
+                                            border-bottom-color: transparent;
+                                        }                                    }
+                                    &:first-child{
+                                        .nav-link{
+                                            border-left: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .icon-box {
+								 p{
+                                    font-size: 1.4rem;
+                                    max-width: 8.1rem;
+                                    margin-top: 0.6rem;
 									line-height: 1.6rem;
-								}
-								.icon {
-									font-size: 2.6rem;
-									margin-right: 0.8rem;
-									color: $main;
-								}
-							}
-							.scanned-list {
-								list-style-type: none;
-								padding: 0;
-								.list-item {
-									p{
-										font-size: 1.4rem;
-									}
-										fa-icon {
-											font-size: 1.4rem;
-											margin-right: 0.8rem;
-											color: $go_dark;
-										}
-								}
-							}
-						}
-
-					}
-					.status-text{
-						flex-grow: 8;
-						p {
-							text-transform: uppercase;
-							font-size: 1.6rem;
-							text-align: right;
+                                }
+                                .icon {
+                                    font-size: 2.6rem;
+                                    margin-right: 0.8rem;
+                                    color: $main;
+                                }
+                            }
+                            .scanned-list {
+                                list-style-type: none;
+                                padding: 0;
+                                .list-item {
+                                    p{
+                                        font-size: 1.4rem;
+                                    }
+                                        fa-icon {
+                                            font-size: 1.4rem;
+                                            margin-right: 0.8rem;
+                                            color: $go_dark;
+                                        }
+                                }
+                            }
+                        }
+                    }
+                    .status-text{
+                        flex-grow: 8;
+                        p {
+                            text-transform: uppercase;
+                            font-size: 1.6rem;
+                            text-align: right;
 							color: $shade_dark;
-							span {
-								fa-icon {
-									color: $main;
-								}
-							}
+							position: absolute;
+							right: 5rem;
+							// top: 40%;
 						}
-					}
-				}
-				&.panel-open{
-					.card-header {
-						.heading {
-							h3, h2{
-								font-size: 2rem;
-								color: $dark !important;
-								font-weight: $weight_bold;
-							}
-							.icon{
-								color: $main;
-							}
+						vtr-widget-speedometer {
+							position: absolute;
+							right: -54%;
+							top: 2.2rem;
 						}
-					}
+                    }
+                }
+                &.panel-open{
+                    .card-header {
+                        .heading {
+                            h3, h2{
+                                font-size: 2.5rem;
+                                color: $dark !important;
+                            }
+                            .icon{
+                                color: $menu_hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-				}
-			}
-		}
-
-		&.card-small{
-			margin: 2rem auto 0rem auto;
-			.heading {
-				.icon{
-					font-size: 4rem;
-					margin-right: 1.5rem;
-					color: $main_shade;
-				}
-			}
-		}
-		.heading {
-			display: flex;
-			align-items: center;
-			.icon{
-				font-size: 4.6rem;
-				margin-right: 1.5rem;
-				color: $main_gstart;
-			}
-			h2 {
-				font-size: 2.5rem;
-				padding: 0;
-				font-weight: $weight_medium;
-				color: $main_darkest;
-				text-transform: uppercase;
-			}
-			h3 {
-				font-size: 2rem;
-				padding: 0;
-				font-weight: $weight_medium;
-				color: $main_shade;
-				text-transform: uppercase;
-			}
-		}
-	}
+        &.card-small{
+            margin: 2rem auto 0rem auto;
+            .heading {
+                .icon{
+                    font-size: 4rem;
+                    margin-right: 1.5rem;
+                    color: $main_shade;
+                }
+            }
+        }
+        .heading {
+            display: flex;
+            align-items: center;
+            .icon{
+                font-size: 4.6rem;
+                margin-right: 1.5rem;
+                color: $main_gstart;
+            }
+            h2 {
+                font-size: 2.5rem;
+                padding: 0;
+                font-weight: $weight_medium;
+                color: $main_darkest;
+                text-transform: uppercase;
+            }
+            h3 {
+                font-size: 2rem;
+                padding: 0;
+                font-weight: $weight_medium;
+                color: $main_shade;
+                text-transform: uppercase;
+            }
+        }
+    }
 }
 
 .system-scan-complete {
@@ -550,10 +562,15 @@
 		}
 	}
 	.summary-block{
-		padding: 7rem 4rem;
+		padding: 7rem 4rem 0;
 		.title-big{
 			padding: 0 !important;
 		}
+		h3{
+            font-size: 2rem;
+            font-weight: $weight_bold;
+            margin-bottom: 1rem;
+        }
 		p {
 			font-size: 1.8rem;
 			line-height: 2.2rem;

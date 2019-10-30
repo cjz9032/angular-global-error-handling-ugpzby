@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Accéder aux paramètres Windows pour donner accès",
                 "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
                 "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "État du système",
@@ -877,7 +879,7 @@
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
@@ -1365,7 +1367,11 @@
                             "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
-                        }
+                        },
+						"note": {
+							"sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
+							"fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
+						}
                     },
                     "VoipHotkeys": {
                         "title": "Fonctions des touches de raccourci VoIP",
@@ -1573,17 +1579,17 @@
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
             },
             "superResolution": {
-				"heading": "Support intelligent",
-				"title": "Mise à l'échelle de la résolution vidéo",
-				"desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
-				"tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Cette fonction est inopérante quand :",
-					"description1":"L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
-					"description2":"L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
-					"description3":"La température de l'unité centrale est trop élevée."
-				}
-			},
+                "heading": "Support intelligent",
+                "title": "Mise à l'échelle de la résolution vidéo",
+                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
+                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Cette fonction est inopérante quand :",
+                    "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
+                    "description2": "L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+                    "description3": "La température de l'unité centrale est trop élevée."
+                }
+            },
             "voice": {
                 "title": "Voix",
                 "description": "Lenovo Voice vous aide à convertir votre voix en texte avec la fonction de la conversion de la parole en texte et vous offre une traduction en temps réel de la parole en texte grâce à la fonction de traduction.",
@@ -1821,12 +1827,22 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
             "antivirus": "Protection par un logiciel anti-virus",
             "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
             "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
             "wifi": "Chiffrement de vos données personnelles lors de l'utilisation de WiFi public",
-            "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée"
+            "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
                 "unknown": "Inconnu",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Profitez d'une meilleure offre ici !"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
         "appFeatures": "Fonctionnalités des applications",
-        "appFeaturesDescription": "Messages concernant System Update, des articles et d'autres fonctionnalités utiles.",
+        "appFeaturesDescription": "Messages concernant la mise à jour du système, des articles et d'autres fonctionnalités utiles.",
         "marketing": "Marketing",
         "marketingDescription": "Messages de promotion, y compris les offres spéciales Lenovo.",
         "actionTriggered": "Action déclenchée",

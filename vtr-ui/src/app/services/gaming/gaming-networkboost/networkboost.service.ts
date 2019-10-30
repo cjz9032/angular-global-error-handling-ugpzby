@@ -10,7 +10,7 @@ export class NetworkBoostService {
 	private gamingNetworkBoost: any;
 	public isShellAvailable = false;
 
-	public cardContentPositionA: any = {
+	public cardContentPositionF: any = {
 		FeatureImage:
 			'./../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
