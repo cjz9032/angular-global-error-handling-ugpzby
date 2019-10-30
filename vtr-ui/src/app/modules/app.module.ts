@@ -55,6 +55,7 @@ import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { CommonUiModule } from './common/common-ui.module';
+import { WebpackTranslateLoader } from '../loader/webpack-translate-loader.loader';
 
 @NgModule({
 	declarations: [
@@ -73,7 +74,7 @@ import { CommonUiModule } from './common/common-ui.module';
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
+				useClass: WebpackTranslateLoader,
 				deps: [HttpClient]
 			},
 			isolate: false
