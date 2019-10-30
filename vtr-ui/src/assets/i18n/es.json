@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -879,7 +879,7 @@
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
-                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente.",
+                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
@@ -1827,7 +1827,7 @@
             "good": "BIEN",
             "malicious": "MALINTENCIONADO",
             "suspicious": "SOSPECHOSO",
-            "securityScoreDepends": "La puntuación de seguridad le da una idea de qué tan seguro está en línea, el resultado depende de si:",
+            "securityScoreDepends": "Su resultado de seguridad depende de si está:",
             "antivirus": "Está protegido por software antivirus",
             "password": "Dispone de contraseñas seguras y complejas gestionadas de forma segura",
             "vpn": "Está supervisando la exposición de la red a los atacantes",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
                 "unknown": "Desconocido",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Disfrute de una mejor oferta aquí."
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "En la página de configuración de preferencias, puede elegir entre activar/desactivar la notificación de mensajes basándose en las categorías de mensaje de Vantage, tenga en cuenta que, incluso si todas las categorías de mensajes están inhabilitadas, puede recibir ocasionalmente un mensaje crítico del sistema de Vantage cuando sea necesario.",
         "messagesInLenovoVantage": "Mensajes en Lenovo Vantage",
         "appFeatures": "Características de aplicación",
-        "appFeaturesDescription": "Mensajes pertinentes a la System Update, artículos y otras características destacadas.",
+        "appFeaturesDescription": "Mensajes pertinentes a la Actualización de sistema, artículos y otras características destacadas.",
         "marketing": "Marketing",
         "marketingDescription": "Mensajes de promoción, incluidas las ofertas especiales de Lenovo.",
         "actionTriggered": "Acción activada",

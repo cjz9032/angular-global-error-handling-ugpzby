@@ -90,7 +90,7 @@
 												class="white-btn"
 												linkId="sa-av-link-subscribe"
 												metricsEvent="itemClick"
-												metricsItem="subscribe"
+												metricsItem="btn.subscribe.no-antivirus"
 												metricsParent="security.antivirus"
 												upperCaseLabel=false
 												btnHeight=true
@@ -140,7 +140,7 @@
 												<p class="subtitle sub-font"
 													*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-														metricsItem="subscribe" metricsParent="security.antivirus"
+														metricsItem="link.subscribe" metricsParent="security.antivirus"
 														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
 												</p>
 											</div>
@@ -148,7 +148,7 @@
 												<p class="subtitle sub-font"
 													*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-														metricsItem="subscribe" metricsParent="security.antivirus"
+														metricsItem="link.subscribe" metricsParent="security.antivirus"
 														href="{{common.urlGetMcAfee}}" target="_blank"></a>
 												</p>
 											</div>
@@ -167,7 +167,7 @@
 													<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
 														linkId="sa-av-link-subscribe"
 														metricsEvent="itemClick"
-														metricsItem="subscribe"
+														metricsItem="btn.subscribe"
 														metricsParent="security.antivirus"
 														upperCaseLabel=false
 														btnHeight=true
@@ -178,7 +178,7 @@
 														class="px-4"
 														linkId="sa-av-link-subscribe"
 														metricsEvent="itemClick"
-														metricsItem="subscribe"
+														metricsItem="btn.subscribe"
 														metricsParent="security.antivirus"
 														upperCaseLabel=false
 														btnHeight=true
@@ -211,7 +211,7 @@
 											<p class="subtitle sub-font"
 												*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-													metricsItem="subscribe" metricsParent="security.antivirus"
+													metricsItem="link.subscribe500" metricsParent="security.antivirus"
 													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
 											</p>
 										</div>
@@ -220,7 +220,7 @@
 											<p class="subtitle sub-font"
 												*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
-													metricsItem="subscribe" metricsParent="security.antivirus"
+													metricsItem="link.subscribe500" metricsParent="security.antivirus"
 													href="{{common.urlGetMcAfee}}" target="_blank"></a>
 											</p>
 										</div>
@@ -235,7 +235,7 @@
 								[title]="'dashboard.offlineInfo.title' | translate" [isSubtitleVisible]="false"
 								[isButtonVisible]="false"></vtr-widget-offline-info>
 							<div class="subheader" [ngClass]="{'mt-minus': isOnline}">
-								<div class="rounded-card-with-shadow p-5 bg-white">
+								<div class="rounded-card-with-shadow p-5 bg-white mb-5">
 									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
@@ -276,10 +276,16 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall" [isOnline]="isOnline"
-										[name]="viewModel.otherAntiVirus.name" [common]="common"></vtr-widget-mcafee>
-									<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 								</div>
+								<vtr-container-collapsible [collapseLinkId]="'othersBetterOffer'"
+										[cardTitle]="'security.antivirus.others.betterOffer' | translate"
+										componentName="othersBetterOfferCollapsible"
+										[allowCollapse]="true">
+										<vtr-widget-mcafee [install]="viewModel.mcafeeInstall" [isOnline]="isOnline"
+											[name]="viewModel.otherAntiVirus.name" [common]="common">
+										</vtr-widget-mcafee>
+										<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
+								</vtr-container-collapsible>
 							</div>
 						</div>
 					</div>

@@ -119,7 +119,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -881,7 +881,7 @@
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
@@ -1829,7 +1829,7 @@
             "good": "جيد",
             "malicious": "ضار",
             "suspicious": "مشبوه",
-            "securityScoreDepends": "تمنحك درجة الأمان لديك فكرة عن مدى أمانك على الإنترنت، وتتوقف النتيجة على ما إذا كنت:",
+            "securityScoreDepends": "تتوقف نتيجة الأمان على ما إذا كنت:",
             "antivirus": "محميًا بواسطة برنامج مكافحة الفيروسات",
             "password": "تستخدم كلمات مرور قوية ومعقدة تدار بطريقة آمنة",
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
@@ -1921,7 +1921,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
                 "unknown": "غير معروف",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "استمتع بعرض أفضل هنا!"
             }
         },
         "wifisecurity": {
@@ -2517,7 +2517,7 @@
         "settingsDescription": "في صفحة إعداد التفضيلات، يمكنك اختيار تشغيل/إيقاف تشغيل إخطار الرسائل الخاص بك استنادًا إلى فئات رسالة Vantage، يرجى ملاحظة أنه حتى إذا تم تعطيل جميع فئات الرسائل، فربما تظل تتلقى في بعض الأحيان رسالة هامة من نظام Vantage عند الضرورة.",
         "messagesInLenovoVantage": "الرسائل في Lenovo Vantage",
         "appFeatures": "ميزات التطبيق",
-        "appFeaturesDescription": "الرسائل المتعلقة System Update والمقالات وغيرها من الميزات المثيرة للاهتمام.",
+        "appFeaturesDescription": "الرسائل المتعلقة بتحديث النظام والمقالات وغيرها من الميزات المثيرة للاهتمام.",
         "marketing": "التسويق",
         "marketingDescription": "رسائل الترويج بما في ذلك العروض الخاصة من Lenovo.",
         "actionTriggered": "الرسائل التي تشغلها إجراءات",
