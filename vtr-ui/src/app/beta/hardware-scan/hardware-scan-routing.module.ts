@@ -13,7 +13,7 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Device.HardwareScan'
+			pageName: 'HardwareScan'
 		},
 		children: [
 			{
