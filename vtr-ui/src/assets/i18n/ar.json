@@ -119,7 +119,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -875,18 +875,18 @@
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
                     "Good": "<b>البطارية بحالة جيدة.</b>",
-                    "Exhaustion": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
+                    "Exhaustion": "لقد <b>تراجعت‏‎</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
                     "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
                     "OverheatedBattery": "البطارية <b>ساخنة أكثر من اللازم</b>. اعمل على إخراجها من الكمبيوتر وتبريدها وصولاً إلى درجة حرارة الغرفة.",
-                    "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
+                    "PermanentError": "لقد <b>تراجعت</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
                     "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
                     "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>"
@@ -1370,10 +1370,10 @@
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
                         "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
-						"note": {
-							"sFunKey": "للوصول إلى وظيفة F1-F12، اضغط على المفتاح Fn والمفاتيح على الصف العلوي.",
-							"fnKey": "للوصول إلى وظيفة خاصة، اضغط على المفتاح Fn والمفاتيح على الصف العلوي."
-						}
+                        "note": {
+                            "sFunKey": "للوصول إلى وظيفة F1-F12، اضغط على المفتاح Fn والمفاتيح على الصف العلوي.",
+                            "fnKey": "للوصول إلى وظيفة خاصة، اضغط على المفتاح Fn والمفاتيح على الصف العلوي."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "وظائف مفتاح VoIP Hotkey",
@@ -1415,7 +1415,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟"
                 },
                 "controlOptions": {
                     "more": "المزيد",
@@ -1450,7 +1450,7 @@
                 "zeroTouchLogin": {
                     "title": "تسجيل الدخول من دون لمس",
                     "caption": "تلغي هذه الميزة قفل الكمبيوتر أو تنبهه تلقائيًا عندما تجلس أمامه أو تقترب منه.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "عند تواجدك أمام الكمبيوتر أو أثناء اقترابك منه (على مسافة 1.2 متر)، تتيح لك هذه الميزة تسجيل الدخول تلقائيًا إلى النظام بعد التعرف على وجهك. إذا كنت في الخارج بدلاً من أن تكون في المكتب، فيجب أن تكون على مسافة أقرب من الكمبيوتر وستستغرق عملية التنبيه وقتًا أطول."
                 },
                 "zeroTouchLock": {
                     "title": "قفل من دون لمس",
@@ -1500,7 +1500,7 @@
                     "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
+                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو متوقفًا عن التشغيل، فلن تعمل ميزة تسجيل الدخول من دون لمس‬.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
                     "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
                     "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة."
@@ -1829,7 +1829,7 @@
             "good": "جيد",
             "malicious": "ضار",
             "suspicious": "مشبوه",
-            "securityScoreDepends": "تمنحك درجة الأمان لديك فكرة عن مدى أمانك على الإنترنت، وتتوقف النتيجة على ما إذا كنت:",
+            "securityScoreDepends": "تتوقف نتيجة الأمان على ما إذا كنت:",
             "antivirus": "محميًا بواسطة برنامج مكافحة الفيروسات",
             "password": "تستخدم كلمات مرور قوية ومعقدة تدار بطريقة آمنة",
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
@@ -1921,7 +1921,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
                 "unknown": "غير معروف",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "استمتع بعرض أفضل هنا!"
             }
         },
         "wifisecurity": {
@@ -2517,7 +2517,7 @@
         "settingsDescription": "في صفحة إعداد التفضيلات، يمكنك اختيار تشغيل/إيقاف تشغيل إخطار الرسائل الخاص بك استنادًا إلى فئات رسالة Vantage، يرجى ملاحظة أنه حتى إذا تم تعطيل جميع فئات الرسائل، فربما تظل تتلقى في بعض الأحيان رسالة هامة من نظام Vantage عند الضرورة.",
         "messagesInLenovoVantage": "الرسائل في Lenovo Vantage",
         "appFeatures": "ميزات التطبيق",
-        "appFeaturesDescription": "الرسائل المتعلقة System Update والمقالات وغيرها من الميزات المثيرة للاهتمام.",
+        "appFeaturesDescription": "الرسائل المتعلقة بتحديث النظام والمقالات وغيرها من الميزات المثيرة للاهتمام.",
         "marketing": "التسويق",
         "marketingDescription": "رسائل الترويج بما في ذلك العروض الخاصة من Lenovo.",
         "actionTriggered": "الرسائل التي تشغلها إجراءات",

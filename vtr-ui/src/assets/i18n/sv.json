@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -873,18 +873,18 @@
                 "condition": {
                     "Illegal": "Det installerade batteriet <b>stöds inte</b> på enheten och kommer inte att laddas. Byt ut batteriet mot ett Lenovo-batteri.",
                     "Good": "<b>Batteriet är i gott skick.</b>",
-                    "Exhaustion": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet.",
+                    "Exhaustion": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "Bad": "<b>Ett batterifel har uppstått.</b> Batteriet går inte att ladda/ladda ur. Byt ut batteriet.",
                     "NotDetected": "<b>Inget batteri upptäcktes</b> eller batteriet är inte anslutet.",
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
                     "OverheatedBattery": "Batteriet är <b>för varmt</b>. Ta ut batteriet ur datorn och låt batteriet svalna i rumstemperatur.",
-                    "PermanentError": "Batteriet har <b>försämrats till följd av vanlig användning.</b> Batteriet går inte att ladda. Byt ut batteriet.",
+                    "PermanentError": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "STARTA OM",
                             "cancel": "INTE NU"
                         },
-						"note": {
-							"sFunKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt funktion F1 till och med F12.",
-							"fnKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt specialfunktionen."
-						}
+                        "note": {
+                            "sFunKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt funktion F1 till och med F12.",
+                            "fnKey": "Tryck på Fn och på tangenterna på den översta raden om du vill komma åt specialfunktionen."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-snabbtangentsfunktioner",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Du måste starta om datorn om du vill byta två tangenters funktion. Vill du verkligen göra det?"
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Beröringsfri inloggning",
                     "caption": "Denna funktion låser automatiskt upp eller aktiverar datorn när du närmar dig den eller sitter framför den.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "När du står framför datorn eller närmar dig den (inom ett avstånd på 1,2 meter) gör den här funktionen att du kan logga in i systemet automatiskt genom att ditt ansikte känns igen. Om du befinner dig i utomhus i stället för på kontoret måste du vara närmare datorn och väckningen tar längre tid."
                 },
                 "zeroTouchLock": {
                     "title": "Beröringsfritt lås",
@@ -1498,7 +1498,7 @@
                     "description1": "Funktionen bygger på Windows Hello. Kontrollera att ansiktsigenkänning är aktiverat i Windows-inställningarna.",
                     "description2": "Funktionen använder sensorer och kamera för att identifiera din närvaro. Den samlar INTE in, sparar eller läcker personliga uppgifter eller bilder.",
                     "description3": "1. Dessa funktioner kanske inte fungerar korrekt om datorn är i tält-, pekplatte- eller stödläge.",
-                    "description4": "2. Om datorn är i viloläge eller avstängd. Beröringsfri inloggning fungerar inte.",
+                    "description4": "2. Om datorn är i viloläge eller har stängts av går det inte att logga in med beröringsfri inloggning.",
                     "description5": "3. Justera datorskärmen i rätt vinkel så att IR-kameran kan identifiera ditt ansikte för automatisk inloggning.",
                     "description6": "4. Om flygplansläget är aktiverat på datorn är dessa funktioner inaktiverade.",
                     "description7": "Noggrannheten varierar beroende på kroppsstorlek, hållning och hur ofta du rör dig. Om datorn låses oväntat kan du justera känslighetsfältet och därigenom öka noggrannheten."
@@ -1827,7 +1827,7 @@
             "good": "BRA",
             "malicious": "SKADLIGT",
             "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Din säkerhetspoäng ger dig en uppfattning om hur säker du är online. Resultatet beror på om du",
+            "securityScoreDepends": "Säkerhetsresultatet beror på om du:",
             "antivirus": "Skyddas av ett antivirusprogram",
             "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
             "vpn": "Övervakar nätverkets exponering för angripare",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} ger ett grundskydd av din enhet",
                 "unknown": "Okänd",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Här får du ett bättre erbjudande!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "På sidan Preferensinställningar kan du välja att aktivera/inaktivera aviseringar baserat på de olika kategorierna av Vantage-meddelanden. Tänk på att om du inaktiverar alla meddelandekategorier kan du fortfarande få systemkritiska meddelanden från Vantage när detta är nödvändigt.",
         "messagesInLenovoVantage": "Meddelanden i Lenovo Vantage",
         "appFeatures": "Appfunktioner",
-        "appFeaturesDescription": "Meddelanden som gäller System Update, artiklar och andra relevanta funktioner.",
+        "appFeaturesDescription": "Meddelanden som gäller Systemuppdatering, artiklar och andra relevanta funktioner.",
         "marketing": "Marknadsföring",
         "marketingDescription": "Marknadsföringsmeddelanden, bland annat specialerbjudanden från Lenovo.",
         "actionTriggered": "Åtgärdsbaserat",

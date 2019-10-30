@@ -35,6 +35,16 @@ export class AppUpdateService {
 		}
 	}
 
+	public checkForUpdatesNoPrompt(): void {
+		this.logger.info('AppUpdateService: app launch, checking for update');
+		this.updates.available.subscribe(() => {
+			this.logger.info('AppUpdateService: new version available, activating updates');
+			this.updates.activateUpdate().then(() => {
+				this.logger.info('AppUpdateService: updates activated, it will be applied on next launch');
+			});
+		});
+	}
+
 	public checkForUpdates(): void {
 		this.logger.info('AppUpdateService: app launch, checking for update');
 		// this.promptUser();
