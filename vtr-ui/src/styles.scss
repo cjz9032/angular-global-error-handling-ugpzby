@@ -324,6 +324,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: $go_dark;
 }
 
+.warning_red {
+	color: $button_red_start !important;
+}
+
 /*intelligent-cooling-read-more-pop-up-style*/
 
 .read-more {
@@ -558,7 +562,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 3rem 0 0 4rem;
+		padding: 3rem 0 0 0;
 		overflow: hidden;
 		@media #{$black-on-white} {
 			
@@ -694,7 +698,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem 0 0 4rem;
+		padding: 4rem 0 0 0;
 		overflow: hidden;
 	}
 }

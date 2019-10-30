@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
-import { WinRT, CHSAccountState, CHSAccountRole, EventTypes } from '@lenovo/tan-client-bridge';
+import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
 import { TopRowFunctionsIdeapad } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
@@ -410,19 +410,15 @@ export class VantageShellService {
 				eventName = 'PageView';
 				break;
 			case 'featureclick':
-				eventName = 'FeatureClick';
-				break;
 			case 'itemclick':
-				eventName = 'ItemClick';
+				eventName = 'FeatureClick';
 				break;
 			case 'itemview':
 				eventName = 'ItemView';
 				break;
 			case 'articleclick':
-				eventName = 'ArticleClick';
-				break;
 			case 'docclick':
-				eventName = 'DocClick';
+				eventName = 'ArticleClick';
 				break;
 			case 'articleview':
 				eventName = 'ArticleView';

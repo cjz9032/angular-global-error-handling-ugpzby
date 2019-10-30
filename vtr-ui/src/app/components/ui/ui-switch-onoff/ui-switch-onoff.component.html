@@ -22,6 +22,7 @@
 			#toggleLabel
 			(click)="sendChangeEvent(toggle)"
 			(keydown.enter)="sendChangeEvent(toggle)"
+			(keyup.enter)="onChange(toggle)"
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="onOffSwitchId"
