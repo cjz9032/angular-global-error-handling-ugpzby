@@ -7,6 +7,14 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 export class GamingLightingService {
 	private getGamingLighting: any;
 	public isShellAvailable = false;
+
+	public cardContentPositionF: any = {
+		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+	};
+	public cardContentPositionB: any = {
+		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+	};
+
 	constructor(shellService: VantageShellService) {
 		this.getGamingLighting = shellService.getGamingLighting();
 		if (this.getGamingLighting) {

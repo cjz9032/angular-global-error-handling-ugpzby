@@ -66,7 +66,9 @@
 
 					<div *ngIf="manualmodeBtnVal" class="click-to-change-collapse">
 						<!-- header -->
-						<div class="collapse-header" (click)="onToggle()">
+						<div class="collapse-header"
+							(click)="onToggle(timeToggle)" (keydown.enter)="onToggle(timeToggle)" [attr.aria-expanded]="!isCollapsed"
+							#timeToggle tabindex="0" aria-label="smart standby, time picker-toggle button">
 							<div>
 								<div *ngIf="isCollapsed"
 									class="collapse-text">
@@ -99,6 +101,7 @@
 										[id]="'dropcheck1'"
 										[showDropDown]="showDropDown[0]"
 										(setTime)="onSetActiveStartEnd($event, true)"
+										[label]="'smart standby , start time dropdown'"
 										[linkId]="'start'">
 									</vtr-ui-time-picker>
 									<vtr-ui-time-picker [time]="smartStandbyEndTime"
@@ -106,6 +109,7 @@
 										[id]="'dropcheck2'"
 										[showDropDown]="showDropDown[1]"
 										(setTime)="onSetActiveStartEnd($event, false)"
+										[label]="'smart standby , end time dropdown'"
 										[linkId]="'end'">
 									</vtr-ui-time-picker>
 									<div *ngIf="showDiffNote"
@@ -127,7 +131,7 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div class="hyperlink-to-graph" (click)="showUsageGraph()">
+					<div class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0" attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 							{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>
 				</li>

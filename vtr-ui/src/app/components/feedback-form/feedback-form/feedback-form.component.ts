@@ -102,4 +102,8 @@ export class FeedbackFormComponent implements OnInit {
 		const modal = document.querySelector('.feedback-modal') as HTMLElement;
 		modal.focus();
 	}
+
+	setRadioStatus(name: string, status: boolean) {
+		this.feedbackForm.patchValue({ [name]: status });
+	}
 }

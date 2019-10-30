@@ -150,7 +150,7 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule
+		SettingsPageLayoutModule,
 	],
 	exports: [
 		CommonModule,
@@ -159,7 +159,8 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 		CommonModalModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
-		RouterModule
+		RouterModule,
+		HeaderMainModule,
 	],
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
