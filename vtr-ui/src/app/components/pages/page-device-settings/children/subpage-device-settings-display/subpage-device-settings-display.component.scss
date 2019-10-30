@@ -82,10 +82,12 @@
 				font-size: 1.2rem;
 				letter-spacing: 0.76px;
 				@media #{$black-on-white} {
-					color: $yellow;
+					color: $high-contrast-blue;
+					border:none;
 				}
 				@media #{$white-on-black} {
-					color: $blue-lighter;
+					color: $yellow;
+					border:none;
 				}
 			}
 		}
@@ -185,10 +187,12 @@
 			text-align: left;
 			text-align: left;
 			@media #{$black-on-white} {
-				color: $yellow;
+				color: $high-contrast-blue;
+				border:none;
 			}
 			@media #{$white-on-black} {
-				color: $blue-lighter;
+				color: $yellow;
+				border: none;
 			}
 		}
 	}

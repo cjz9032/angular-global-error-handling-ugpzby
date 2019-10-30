@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -879,7 +879,7 @@
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
@@ -1827,7 +1827,7 @@
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
             "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Ваша оцінка безпеки показує рівень вашої безпеки в мережі. Результат залежить від того, чи:",
+            "securityScoreDepends": "Ваша безпека залежить від того, чи ви:",
             "antivirus": "Захищені ви антивірусом;",
             "password": "Маєте складні паролі та безпечно керуєте ними;",
             "vpn": "Відстежуєте вразливість мережі до нападів;",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
                 "unknown": "Невідома",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Отримайте кращу пропозицію тут!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "На сторінці настройок параметрів можна ввімкнути або вимкнути певні категорії сповіщень у Vantage. Зверніть увагу: навіть якщо всі категорії повідомлень відключені, ви все одно можете час від часу отримувати від Vantage повідомлення про критичні помилки системи.",
         "messagesInLenovoVantage": "Повідомлення в Lenovo Vantage",
         "appFeatures": "Функції програми",
-        "appFeaturesDescription": "Повідомлення про System Update, статті та інші важливі функції.",
+        "appFeaturesDescription": "Повідомлення про Оновлення системи, статті та інші важливі функції.",
         "marketing": "Маркетинг",
         "marketingDescription": "Рекламні повідомлення, зокрема про спеціальні пропозиції Lenovo.",
         "actionTriggered": "Сповіщення про дії",

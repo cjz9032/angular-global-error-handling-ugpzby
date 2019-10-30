@@ -25,7 +25,7 @@
 									[permission]="permission">
 								</vtr-home-security-content>
 								<div class="article-card pt-5 col-12 mt-5"
-										*ngIf="account?.state !== 'local'">
+										*ngIf="account?.state !== 'local' && showContentA">
 									<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
 										[img]="cardContentPositionA.FeatureImage"
 										[title]="cardContentPositionA.Title"
@@ -138,7 +138,7 @@
 									</div>
                                 </div>
 							</div>
-							<div class="row article-card">
+							<div class="row article-card" *ngIf="showContentB">
 								<div class="col col-12">
 									<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"
 										[img]="cardContentPositionB.FeatureImage"

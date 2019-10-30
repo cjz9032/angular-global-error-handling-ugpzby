@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -879,7 +879,7 @@
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
@@ -1827,7 +1827,7 @@
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
             "suspicious": "GYANÚS",
-            "securityScoreDepends": "A biztonsági pontszám azt jelzi, hogy mennyire van biztonságban a rendszere az interneten. Az eredményt a következők befolyásolják:",
+            "securityScoreDepends": "Adatainak biztonsága attól függ, hogy Ön:",
             "antivirus": "Vírusirtó szoftver használata",
             "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
             "vpn": "A hálózat támadóknak való kitettségének mérése",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
                 "unknown": "Ismeretlen",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Kedvezőbb ajánlatot kínálunk Önnek!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
         "appFeatures": "Az alkalmazás funkciói",
-        "appFeaturesDescription": "A System Update szolgáltatással kapcsolatos üzenetek, cikkek és további fontos funkciók.",
+        "appFeaturesDescription": "A Rendszerfrissítéssel kapcsolatos üzenetek, cikkek és további fontos tudnivalók.",
         "marketing": "Marketing",
         "marketingDescription": "Promóciós üzenetek, többek között a Lenovo különleges ajánlatai.",
         "actionTriggered": "Aktivált művelet",

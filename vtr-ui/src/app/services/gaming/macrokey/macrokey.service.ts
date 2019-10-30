@@ -13,6 +13,12 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 export class MacrokeyService {
 	private macroKey: any;
 	public isMacroKeyAvailable: Boolean = false;
+	public cardContentPositionF: any = {
+		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+	};
+	public cardContentPositionB: any = {
+		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+	};
 
 	constructor(private shellService: VantageShellService, private commonService: CommonService) {
 		this.macroKey = shellService.getGamingMacroKey();

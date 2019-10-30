@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -879,7 +879,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
@@ -1827,7 +1827,7 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
             "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
             "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
                 "unknown": "Tuntematon",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Saat paremman tarjouksen täältä!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "Oletusasetusten määrityssivulla voit ottaa käyttöön tai poistaa käytöstä viesti-ilmoitukset Vantagen viestiluokkien perusteella. Huomaa, että vaikka kaikki viestiluokat on poistettu käytöstä, voit silloin tällöin edelleen saada järjestelmälle tärkeitä viestejä Vantagelta, mikäli tarpeen.",
         "messagesInLenovoVantage": "Lenovo Vantage -sovelluksen viestit",
         "appFeatures": "Sovelluksen ominaisuudet",
-        "appFeaturesDescription": "System Update, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
+        "appFeaturesDescription": "Järjestelmäpäivityksiä, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
         "marketing": "Markkinointi",
         "marketingDescription": "Kampanjaviestit, mukaan lukien Lenovon erikoistarjoukset.",
         "actionTriggered": "Toiminto käynnistetty",
