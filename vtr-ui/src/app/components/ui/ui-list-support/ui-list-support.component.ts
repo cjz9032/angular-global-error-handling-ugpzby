@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SupportService } from 'src/app/services/support/support.service';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-ui-list-support',
@@ -17,8 +18,12 @@ export class UiListSupportComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	itemClick(clickItem: string) {
-		this.supportService.widgetItemClick(clickItem);
+	itemClick(item: any) {
+		if (item.url) {
+			WinRT.launchUri(item.url);
+		} else if (item.clickItem) {
+			this.supportService.widgetItemClick(item.clickItem);
+		}
 	}
 
 }

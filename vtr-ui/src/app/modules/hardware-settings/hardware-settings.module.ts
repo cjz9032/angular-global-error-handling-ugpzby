@@ -150,7 +150,7 @@ import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-dev
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule
+		SettingsPageLayoutModule,
 	],
 	exports: [
 		CommonModule,

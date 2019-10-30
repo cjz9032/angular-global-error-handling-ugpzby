@@ -112,7 +112,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.showIntelligentCoolingModes = true;
 			this.enableIntelligentCoolingToggle = false;
-			isSetManualMode ? this.setManualModeSetting(IntelligentCoolingModes.Performance) : '';
+			if (isSetManualMode) {
+				this.setManualModeSetting(IntelligentCoolingModes.Performance);
+			}
 		}
 		this.cache.showIC = this.showIC;
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;

@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -879,7 +879,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko namestite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
@@ -1827,7 +1827,7 @@
             "good": "DOBRA",
             "malicious": "ZLONAMERNA",
             "suspicious": "SUMLJIVA",
-            "securityScoreDepends": "Vaša varnostna ocena vam pokaže, kako varni ste v spletu, rezultat pa je odvisen od tega, ali:",
+            "securityScoreDepends": "Vaš rezultat varnosti je odvisen od vaše vloge:",
             "antivirus": "Imate zaščito s protivirusno programsko opremo",
             "password": "Upravljate z močnimi in kompleksnimi gesli na varen način",
             "vpn": "Spremljate izpostavljenost napadalcem v omrežju",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
                 "unknown": "Neznan",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Boljšo ponudbo dobite tukaj!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",
         "appFeatures": "Funkcije aplikacije",
-        "appFeaturesDescription": "Sporočila, ki se nanašajo na System Update, članke in druge pomembne funkcije.",
+        "appFeaturesDescription": "Sporočila, ki se nanašajo na posodobitev sistema, članke in druge pomembne funkcije.",
         "marketing": "Trženje",
         "marketingDescription": "Promocijska sporočila, vključno s posebnimi ponudbami družbe Lenovo.",
         "actionTriggered": "Sproženo dejanje",
