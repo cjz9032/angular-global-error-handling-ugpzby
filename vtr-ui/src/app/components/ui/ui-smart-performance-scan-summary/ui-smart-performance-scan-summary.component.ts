@@ -20,7 +20,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   endDate:any;
   status:any;
   givenDate:Date
-  
+
 
   // tslint:disable-next-line:max-line-length
 @Input() isScanning = false;
@@ -48,8 +48,6 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   customDate:any;
   @Output() backToScan = new EventEmitter();
   
-
-
   //scan settings
   scheduleTab;
 	isChangeSchedule = false;
@@ -71,7 +69,9 @@ this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
     this.toDate = this.selectedDate;
     this.fromDate = this.selectedDate;
-	 this.items = [{ itemValue: '16 fixes', itemExpandValue: {tune :'10 GB' , boost :'13' ,secure : '3'}, itemstatus: true, itemDate: this.today },{ itemValue: '0 fixes', itemExpandValue: {tune :'0 GB' , boost :'0' ,secure : '0'}, itemstatus: false, itemDate: this.today },{ itemValue: '8 fixes', itemExpandValue: {tune :'14 GB' , boost :'5' ,secure : '3'}, itemstatus: true, itemDate: this.today }]; 
+	 	this.items = [ { itemValue : '16 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today},
+	{ itemValue : '0 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : false, itemDate : this.today},
+	{ itemValue : '8 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today} ];
   this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
   if(this.isSubscribed)
   {
@@ -79,10 +79,10 @@ this.currentDate = new Date();
     this.startDate = this.subscriptionDetails[0].StartDate;
     this.endDate = this.subscriptionDetails[0].EndDate;
     this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
-    
+
     if(this.givenDate > this.today)
       this.status = "ACTIVE";
-    else 
+    else
       this.status = "INACTIVE";
   }
   else
@@ -91,8 +91,6 @@ this.currentDate = new Date();
 	this.endDate="---";
 	this.status="INACTIVE";
   }
-  
-
   //scan settings
   this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
@@ -126,7 +124,7 @@ this.currentDate = new Date();
       this.displayToDate=this.toDate.month+'/'+this.toDate.day+'/'+this.toDate.year;
       this.selectedfromDate=this.fromDate;
       this.selectedTodate=this.toDate;
-      this.customDate=this.displayFromDate+'-'+this.displayToDate;    
+      this.customDate=this.displayFromDate+'-'+this.displayToDate;
     }
   }
   anualScanSummary(year) {
@@ -153,7 +151,7 @@ this.currentDate = new Date();
   onDateSelected(){
     console.log('date');
     console.log(this.selectedDate);
-    if(this.isFromDate){  
+    if(this.isFromDate){
       this.displayFromDate=this.selectedfromDate.month+'/'+this.selectedfromDate.day+'/'+this.selectedfromDate.year;
     }
     else{

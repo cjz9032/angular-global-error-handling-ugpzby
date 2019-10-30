@@ -27,7 +27,7 @@
 			.summary-period {
 				.list-group {
 					background: #303D49;
-					
+
 					border-radius: 0.5rem;
 					.list-selected-item{
 						width: 25rem;
@@ -73,7 +73,7 @@
 							border-radius: 0;
 					}
 				}
-				
+
 						.dropdownmenu {
 							width: 25%;
 							background: $light;
@@ -103,15 +103,15 @@
 							padding: 1rem;
 							z-index: 9999;
 						}
-				
+
 				.calender-dropDown{
 							position: absolute;
-							width: 96%;
+							width: 97.5%;
 							background: $light;
 							box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 							border-radius: 0.9rem;
 							padding: 1rem;
-							z-index: 99999;
+							z-index: 1;
 							font-size: 1.2rem;
 							.selected-custom-date{
 								background-color:#F5F7F8;
@@ -147,30 +147,18 @@
 					font-weight: $weight_bold;
 					span {
 						font-size: 1.6rem;
-						padding-left: 1rem;
 					}
 				}
 				p {
 					font-size: 1.4rem;
 					font-weight: $weight_light;
 					color: $shade;
-					width: 75%;
+					width: 99.9%;
 				}
-				fa-icon {
+				.icon {
 					color: $main;
 					font-size: 4rem;
 					line-height: 1;
-				}
-				.bug {
-					position: absolute;
-					font-size: 2.1rem;
-					top: 1.9rem;
-					right: 3.05rem;
-				}
-				.shield {
-					position: absolute;
-					top: 2rem;
-					right: 4rem;
 				}
 			}
 			.scan-list-container {
@@ -241,6 +229,30 @@
 						.chevron-down {
 							color: $main;
 						}
+						.scan-items {
+							font-size: 1.2rem;
+							.icon {
+								font-size: 1.6rem;
+								color: $main;
+								padding-right: 1rem;
+							}
+						}
+						.scan-item-value {
+							font-size: 1.2rem;
+							font-weight: $weight_bold;
+						}
+						.scan-status {
+							padding-right: 0;
+							fa-icon {
+								padding-left: 0.3rem;
+								color: $go_dark;
+								font-size: 0.5rem;
+								vertical-align: middle;
+								&.red-icon {
+									color: $stop;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -301,7 +313,7 @@
                                     }
                                 }
                             }
-                            .icon-box {                               
+                            .icon-box {
 								 p{
                                     font-size: 1.4rem;
                                     max-width: 8.1rem;
@@ -363,7 +375,7 @@
                 }
             }
         }
-        
+
         &.card-small{
             margin: 2rem auto 0rem auto;
             .heading {

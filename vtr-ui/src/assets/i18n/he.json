@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
                     "Good": "<b>הסוללה במצב תקין.</b>",
-                    "Exhaustion": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
+                    "Exhaustion": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
                     "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
-                    "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
+                    "PermanentError": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
                     "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
                     "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "הפעלה מחדש",
                             "cancel": "לא עכשיו"
                         },
-						"note": {
-							"sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
-							"fnKey": "כדי לגשת לפונקציות המיוחדות, לחצו על המקש Fn ועל המקשים בשורה העליונה."
-						}
+                        "note": {
+                            "sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
+                            "fnKey": "כדי לגשת לפונקציות המיוחדות, לחצו על המקש Fn ועל המקשים בשורה העליונה."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "פונקציות VoIP Hotkey",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "החלפת הפונקציה של שני מקשים מחייבת הפעלה מחדש של המחשב, האם אתם בטוחים שברצונכם להפעיל מחדש?"
                 },
                 "controlOptions": {
                     "more": "עוד",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "כניסה באפס מגע",
                     "caption": "תכונה זו מעוררת או מבטלת את נעילת המחשב באופן אוטומטי כשאתם יושבים מולו או מתקרבים אליו.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "כשאתם מול המחשב שלכם או מתקרבים אליו (במרחק של 1.2 מטר), תכונה זו מאפשרת להתחבר אוטומטית למערכת לאחר זיהוי הפנים שלכם. אם נמצאים בחוץ ולא במשרד, עליכם להיות קרובים יותר למחשב והיקיצה תימשך זמן רב יותר."
                 },
                 "zeroTouchLock": {
                     "title": "נעילה ללא מגע",
@@ -1498,7 +1498,7 @@
                     "description1": "תכונה זו מסתמכת על Windows Hello. ודאו שזיהוי פנים מופעל בהגדרות Windows.",
                     "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם. עם זאת, התכונה אינה אוספת נתונים אישיים כלל.",
                     "description3": "1. אם המחשב נמצא במצב אוהל, לוח או מעמד, ייתכן שתכונות אלה לא יפעלו כראוי.",
-                    "description4": "2. אם המחשב במצב שינה או כבוי. כניסה ללא מגע לא תעבוד.",
+                    "description4": "2. אם המחשב במצב שינה או כבוי, 'כניסה באפס מגע' לא תעבוד.",
                     "description5": "3. כווננו את מסך המחשב לזווית מתאימה כך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לצורך כניסה אוטומטית.",
                     "description6": "4. אם מצב טיסה מופעל במחשב, כל התכונות האלה מושבתות.",
                     "description7": "הדיוק משתנה לפי גודל הגוף, היציבה ותדירות התנועה. אם המחשב שלכם ננעל באופן בלתי צפוי, התאימו את סרגל הרגישות כדי לשפר את הדיוק."
