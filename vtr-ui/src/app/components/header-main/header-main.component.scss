@@ -30,7 +30,7 @@
 			font-weight: $weight_light;
 			margin: 0;
 			position: relative;
-			//z-index: 1; to fix 10334
+			z-index: 1;
 			max-width: $max_page_width;
 			@media #{$black-on-white} {
 				margin-top: 1rem;
@@ -47,7 +47,7 @@
 			display: table;
 			position: relative;
 			cursor: pointer;
-			//z-index: 1; to fix 10334
+			z-index: 1;
 			@media #{$black-on-white} {
 				margin: 2px;
 			}
