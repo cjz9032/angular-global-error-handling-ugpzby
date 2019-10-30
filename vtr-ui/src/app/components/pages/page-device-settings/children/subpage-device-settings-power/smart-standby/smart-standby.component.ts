@@ -289,7 +289,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.setSmartStandbyIsAutonomic(this.checkbox);
 	}
 
-	public onToggle() {
+	public onToggle(elem: HTMLElement) {
+		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
 	}
 

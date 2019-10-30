@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
                     "Good": "<b>La batteria è in buone condizioni.</b>",
-                    "Exhaustion": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria.",
+                    "Exhaustion": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
                     "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
                     "OverheatedBattery": "La batteria è <b>troppo calda</b>. Rimuoverla dal computer e lasciare che si raffreddi fino a temperatura ambiente.",
-                    "PermanentError": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria.",
+                    "PermanentError": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
                     "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "RIAVVIA",
                             "cancel": "NON ORA"
                         },
-						"note": {
-							"sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
-							"fnKey": "Per accedere alla funzione speciale, premere Fn e i tasti sulla riga superiore."
-						}
+                        "note": {
+                            "sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
+                            "fnKey": "Per accedere alla funzione speciale, premere Fn e i tasti sulla riga superiore."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funzioni dei tasti di scelta rapida per le chiamate VoIP",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?"
                 },
                 "controlOptions": {
                     "more": "ALTRO",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Accesso automatico",
                     "caption": "Questa funzione sblocca o attiva automaticamente il computer quando l'utente si avvicina o si siede di fronte al PC.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Quando si è davanti o ci si sta avvicinando al computer (entro una distanza di 1,2 metri), questa funzione consente di accedere automaticamente al sistema dopo il riconoscimento del volto. Se si è in un ambiente esterno anziché in ufficio, è necessario essere più vicini al computer e la riattivazione richiederà più tempo."
                 },
                 "zeroTouchLock": {
                     "title": "Blocco zero touch",
@@ -1498,7 +1498,7 @@
                     "description1": "Questa funzione si basa su Windows Hello. Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
                     "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
-                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
+                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento, l'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico.",
                     "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "L'accuratezza varia a seconda della corporatura, della postura e della frequenza del movimento. Se il computer si blocca in modo imprevisto, regolare la barra della sensibilità per migliorare la precisione."

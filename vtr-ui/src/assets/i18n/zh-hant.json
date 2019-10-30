@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
                     "Good": "<b>電池狀況良好。</b>",
-                    "Exhaustion": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+                    "Exhaustion": "電池容量已<b>降級</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
                     "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
-                    "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+                    "PermanentError": "電池容量已<b>降級</b>。請更換新的電池。",
                     "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
                     "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源已連接。</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "重新開機",
                             "cancel": "現在不要"
                         },
-						"note": {
-							"sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
-							"fnKey": "若要存取特殊功能，請按下 Fn 和最上面一排的按鍵。"
-						}
+                        "note": {
+                            "sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
+                            "fnKey": "若要存取特殊功能，請按下 Fn 和最上面一排的按鍵。"
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP 快速鍵功能",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？"
                 },
                 "controlOptions": {
                     "more": "其他資訊",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "紅外線攝影機自動登入",
                     "caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。"
                 },
                 "zeroTouchLock": {
                     "title": "自動鎖定螢幕",
@@ -1498,7 +1498,7 @@
                     "description1": "此功能必須依賴 Windows Hello。確定 Windows 設定中已開啟臉部辨識。",
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
-                    "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
+                    "description4": "2. 如果您的電腦處於休眠模式或已關閉，零接觸登入將無法運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
                     "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
                     "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"

@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "Ovaj sistem <b>ne podržava</b> instaliranu bateriju i ona se neće puniti. Zamenite bateriju odgovarajućom Lenovo baterijom za ovaj sistem.",
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
-                    "Exhaustion": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju.",
+                    "Exhaustion": "Kapacitet baterije je <b>smanjen</b>. Zamenite je novom.",
                     "Bad": "<b>Došlo je do greške sa baterijom.</b> Nije moguće napuniti/isprazniti bateriju. Zamenite bateriju.",
                     "NotDetected": "<b>Baterija nije otkrivena ili nije</b> priključena.",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
                     "OverheatedBattery": "Baterija je <b>pregrejana</b>. Uklonite je iz računara i ohladite je do sobne temperature.",
-                    "PermanentError": "Baterija je <b>otkazala usled normalnog trošenja.</b> Nije moguće napuniti bateriju. Zamenite bateriju.",
+                    "PermanentError": "Kapacitet baterije je <b>smanjen</b>. Zamenite je novom.",
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
                     "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>"
@@ -1368,10 +1368,10 @@
                         },
                         "showAdvSettings": "PRIKAŽI NAPREDNE POSTAVKE",
                         "hideAdvSettings": "SAKRI NAPREDNE POSTAVKE",
-						"note": {
-							"sFunKey": "Da biste pristupili funkciji tastera F1-F12, pritisnite taster Fn i tastera na gornjem redu.",
-							"fnKey": "Da biste pristupili specijalnoj funkciji, pritisnite taster Fn i tastera na gornjem redu."
-						}
+                        "note": {
+                            "sFunKey": "Da biste pristupili funkciji tastera F1-F12, pritisnite taster Fn i tastera na gornjem redu.",
+                            "fnKey": "Da biste pristupili specijalnoj funkciji, pritisnite taster Fn i tastera na gornjem redu."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP funkcije prečica",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Premeštanje funkcije dva tastera zahteva od vas da ponovo pokrenete računar. Želite li zaista da ponovo pokrenete?"
                 },
                 "controlOptions": {
                     "more": "VIŠE",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Bezdodirno prijavljivanje",
                     "caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch zaključavanje",
@@ -1498,7 +1498,7 @@
                     "description1": "Ova funkcija se oslanja na sistem Windows Hello. Uverite se da je prepoznavanje lica uključeno u postavkama operativnog sistema Windows.",
                     "description2": "Funkcija koristi senzore i kameru da bi otkrila vaše prisustvo. Međutim, funkcija NE prikuplja, nikakve lične podatke.",
                     "description3": "1. Ako je računar u režimima šatora, tableta ili postolja, ove funkcije možda neće ispravno funkcionisati.",
-                    "description4": "2. Ako je računar u režimu hibernacije ili je isključen. Bezdodirno prijavljivanje neće raditi.",
+                    "description4": "2. Ako je računar u režimu hibernacije ili ako je isključen, Zero Touch prijavljivanje ne radi.",
                     "description5": "3. Podesite ekran računara na odgovarajući ugao kako bi IC kamera mogla da prepozna vaše lice za automatsko prijavljivanje.",
                     "description6": "4. Ako je na računaru omogućen režim rada u avionu, ove funkcije su onemogućene.",
                     "description7": "Preciznost zavisi od veličine tela, držanja tela i učestalosti kretanja. Ako se računar neočekivano zaključa, podesite traku osetljivosti da biste poboljšali preciznost."
