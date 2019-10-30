@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é suportada</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para este sistema.",
                     "Good": "<b>A bateria está em boas condições.</b>",
-                    "Exhaustion": "A bateria <b>falhou devido ao desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
+                    "Exhaustion": "A capacidade da bateria <b>degradou-se</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro de bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
                     "NotDetected": "<b>Nenhuma bateria detetada ou</b> bateria não ligada.",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>A descarga</b> parou porque a <b>temperatura da bateria é demasiado elevada.</b>",
                     "TrickleCharge": "A bateria foi <b>totalmente descarregada</b> e necessita de ser recarregada. Esta operação pode demorar dez horas ou mais.",
                     "OverheatedBattery": "A bateria está <b>demasiado quente</b>. Remova-a do computador e arrefeça-a à temperatura ambiente.",
-                    "PermanentError": "A bateria <b>falhou devido ao desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
+                    "PermanentError": "A capacidade da bateria <b>degradou-se</b>. Substitua por uma nova.",
                     "NotSupportACAdapterDetail": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
                     "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto.",
                     "FullACAdapterSupport": "<b>A alimentação {{acWattage}} W {{acAdapterType}} está ligada.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "REINICIAR",
                             "cancel": "AGORA NÃO"
                         },
-						"note": {
-							"sFunKey": "Para aceder à função das teclas F1-F12, prima Fn e as teclas na linha superior.",
-							"fnKey": "Para aceder à função especial, prima Fn e as teclas na linha superior."
-						}
+                        "note": {
+                            "sFunKey": "Para aceder à função das teclas F1-F12, prima Fn e as teclas na linha superior.",
+                            "fnKey": "Para aceder à função especial, prima Fn e as teclas na linha superior."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funções das teclas de atalho VoIP",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Trocar a função de duas teclas requer que o computador seja reiniciado. Tem a certeza de que pretende reiniciar?"
                 },
                 "controlOptions": {
                     "more": "MAIS",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Login sem toques",
                     "caption": "Esta funcionalidade desbloqueia ou reativa automaticamente o computador quando o utilizador estiver sentado em frente ou se aproximar do mesmo.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Quando está em frente ao computador ou a aproximar-se do mesmo (a uma distância máxima de 1,2 metros), esta funcionalidade permite iniciar sessão automaticamente no sistema após o seu rosto ser reconhecido. Se estiver no exterior e não no escritório, é necessário estar mais próximo do computador e a reativação demorará mais."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio Zero Touch",
@@ -1498,7 +1498,7 @@
                     "description1": "Esta funcionalidade depende do Windows Hello. Verifique se o reconhecimento facial está ativado nas definições do Windows.",
                     "description2": "O recurso usa sensores e câmara para detetar a sua presença. No entanto, a funcionalidade NÃO recolhe qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo Tenda, Tablet ou Suporte, estas funcionalidades poderão não funcionar corretamente.",
-                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O login sem toques não funcionará.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado, o Login sem toques não funcionará.",
                     "description5": "3. Ajuste o ecrã do computador para um ângulo que permita que a câmara de IV possa reconhecer o seu rosto para o início de sessão automático.",
                     "description6": "4. Se o Modo de avião estiver ativo no computador, estas funcionalidades estão desativadas.",
                     "description7": "A precisão varia de acordo com o tamanho do corpo, postura e frequência de movimento. Se o seu computador estiver bloqueado inesperadamente, ajuste a barra de sensibilidade para melhorar a precisão."

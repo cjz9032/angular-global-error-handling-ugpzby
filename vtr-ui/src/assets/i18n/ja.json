@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "取り付けられているバッテリーはシステムでは<b>サポートされない</b>ため、充電は行われません。ご使用のシステムに適した Lenovo バッテリーに交換してください。",
                     "Good": "<b>バッテリーは良好な状態です。</b>",
-                    "Exhaustion": "<b>正常摩耗のためバッテリーは故障</b>しています。バッテリーが充電できません。バッテリーを交換してください。",
+                    "Exhaustion": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "Bad": "<b>バッテリー・エラーが発生しました。</b>バッテリーを充電/放電できません。バッテリーを交換してください。",
                     "NotDetected": "<b>バッテリーが検出されないか</b>、接続されていません。",
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
                     "OverheatedBattery": "バッテリーが<b>熱くなって</b>います。コンピューターから取り外して、室温まで冷ましてください。",
-                    "PermanentError": "<b>正常摩耗のためバッテリーは故障</b>しています。バッテリーが充電できません。バッテリーを交換してください。",
+                    "PermanentError": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "NotSupportACAdapterDetail": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
                     "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源が接続されています。</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "リブート",
                             "cancel": "今はしない"
                         },
-						"note": {
-							"sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
-							"fnKey": "特殊機能を使用するには、Fn および最上部の行のキーを押します。"
-						}
+                        "note": {
+                            "sFunKey": "F1 ～ F12 機能を使用するには、Fn および最上部の行のキーを押します。",
+                            "fnKey": "特殊機能を使用するには、Fn および最上部の行のキーを押します。"
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP ホット・キーの機能",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?"
                 },
                 "controlOptions": {
                     "more": "詳細",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "タッチレスログイン",
                     "caption": "この機能は、コンピューターの前にいたり近づいているときにコンピューターのロック解除またはウェイクアップを自動的に行います。",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "コンピューターの前にいるとき、またはコンピューターに近づいているとき（1.2 メートル以内）、この機能を使用すると、顔が認識された後、システムに自動的にログインできます。オフィスではなく屋外にいる場合は、コンピューターに近づく必要があり、ウェイクアップに時間がかかります。"
                 },
                 "zeroTouchLock": {
                     "title": "オートロック",
@@ -1498,7 +1498,7 @@
                     "description1": "この機能は Windows Hello に依存しています。Windows の設定で顔認識がオンになっていることを確認してください。",
                     "description2": "この機能はセンサーとカメラを使ってユーザーの存在を検出します。ただし、この機能が個人のデータを収集することはありません。",
                     "description3": "1. コンピューターがテント・モード、タブレット・モード、またはスタンド・モードの場合、この機能が適切に動作しないことがあります。",
-                    "description4": "2. コンピューターが休止状態またはオフであるとき、タッチレスログインは機能しません。",
+                    "description4": "2. コンピューターが休止状態であるか、またはオフである場合、ゼロ・タッチ・ログインは作動しません。",
                     "description5": "3. 自動ログインのために IR カメラが顔を認識できるように、コンピューター画面を適切な角度に調整してください。",
                     "description6": "4. お使いのコンピューターで機内モードを有効にすると、これらの機能は無効になります。",
                     "description7": "精度は、体の大きさ、姿勢、動きの頻度によって異なります。コンピューターが予期せずロックされる場合は、感度バーを調整して精度を向上させます。"

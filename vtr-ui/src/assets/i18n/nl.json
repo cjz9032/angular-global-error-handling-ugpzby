@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",
                     "Good": "<b>De batterij is in goede staat.</b>",
-                    "Exhaustion": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
+                    "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
                     "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
-                    "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
+                    "PermanentError": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
                     "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-voeding is aangesloten.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "OPNIEUW OPSTARTEN",
                             "cancel": "NIET NU"
                         },
-						"note": {
-							"sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
-							"fnKey": "Om een speciale functie te gebruiken, druk op Fn en de toetsen op de bovenste rij."
-						}
+                        "note": {
+                            "sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
+                            "fnKey": "Om een speciale functie te gebruiken, druk op Fn en de toetsen op de bovenste rij."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-sneltoetsfuncties",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?"
                 },
                 "controlOptions": {
                     "more": "MEER",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Aanmelding bij nul aanraken",
                     "caption": "Met deze functie wordt de computer automatisch ontgrendeld of uit de slaapstand gehaald wanneer u ervoor zit of er dicht bij komt.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen de afstand van 1,2 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer."
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
@@ -1498,7 +1498,7 @@
                     "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
+                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgezet, werkt Aanmelding bij nul aanraken niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
                     "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
                     "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."

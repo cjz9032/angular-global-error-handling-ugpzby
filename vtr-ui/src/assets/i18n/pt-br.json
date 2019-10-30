@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "A bateria instalada <b>não é aceita</b> pelo sistema e não será carregada. Substitua a bateria pela bateria correta da Lenovo para esse sistema.",
                     "Good": "<b>A bateria está em boas condições.</b>",
-                    "Exhaustion": "A bateria <b>falhou devido a desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
+                    "Exhaustion": "A capacidade da bateria foi <b>degradada</b>. Substitua por uma nova.",
                     "Bad": "<b>Ocorreu um erro na bateria.</b> Não é possível carregar/descarregar a bateria. Substitua a bateria.",
                     "NotDetected": "<b>Nenhuma bateria detectada ou nenhuma</b> bateria conectada.",
                     "NotGood": "<b>A bateria não está em boas condições.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "O <b>descarregamento</b> foi interrompido porque a <b>temperatura da bateria está muito alta.</b>",
                     "TrickleCharge": "A bateria <b>descarregou completamente</b> e precisa ser recarregada. Isso poderá levar dez horas ou mais.",
                     "OverheatedBattery": "A bateria está <b>quente demais</b>. Remova-a do computador e aguarde ela esfriar em temperatura ambiente.",
-                    "PermanentError": "A bateria <b>falhou devido a desgaste normal.</b> Não é possível carregar a bateria. Substitua a bateria.",
+                    "PermanentError": "A capacidade da bateria foi <b>degradada</b>. Substitua por uma nova.",
                     "NotSupportACAdapterDetail": "<b>O adaptador de energia CA não é suportado.</b> Seu computador Lenovo não suporta este adaptador de energia CA. Ele pode causar um desligamento repentino. Conecte um adaptador de energia CA correto.",
                     "LimitedACAdapterSupportDetail": "<b>O adaptador de energia CA não pode fornecer energia suficiente</b> para o seu computador Lenovo, isso afetará o desempenho do sistema e a velocidade de carregamento. Reconecte o adaptador de energia CA correto.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de energia está conectado.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "REINICIALIZAR",
                             "cancel": "NÃO AGORA"
                         },
-						"note": {
-							"sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
-							"fnKey": "Para acessar as funções especiais, pressione Fn e as teclas da fileira superior."
-						}
+                        "note": {
+                            "sFunKey": "Para acessar as funções F1-F12, pressione Fn e as teclas da fileira superior.",
+                            "fnKey": "Para acessar as funções especiais, pressione Fn e as teclas da fileira superior."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funções de teclas de atalhos para VoIP",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Trocar a função de duas teclas requer a reinicialização do computador. Tem certeza de que deseja reiniciar?"
                 },
                 "controlOptions": {
                     "more": "MAIS",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Login sem toques",
                     "caption": "Este recurso desbloqueia ou ativa o computador automaticamente quando você está na frente dele ou se aproximando.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Quando você está na frente do computador ou se aproximando dele (a uma distância de 1,2 metros), esse recurso permite que você efetue login automaticamente no sistema após o reconhecimento do seu rosto. Se você estiver ao ar livre e não no escritório, será necessário se aproximar mais do computador e a ativação levará mais tempo."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueio sem toques",
@@ -1498,7 +1498,7 @@
                     "description1": "Esse recurso depende do Windows Hello. Verifique se o reconhecimento facial está ativado nas configurações do Windows.",
                     "description2": "O recurso usa sensores e câmera para detectar sua presença. No entanto, o recurso NÃO coleta qualquer dado pessoal.",
                     "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base, esses recursos podem não funcionar devidamente.",
-                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado. O Login sem toques não funcionará.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou foi desligado, o Login sem toques não funcionará.",
                     "description5": "3. Ajuste a tela do computador em um ângulo adequado para que a câmara IR possa reconhecer o seu rosto para fazer login automático.",
                     "description6": "4. Se o Modo avião estiver ativado no seu computador, esses recursos são desativados.",
                     "description7": "A precisão varia de acordo com o tamanho do corpo, a postura e a frequência de movimento. Se seu computador bloquear inesperadamente, ajuste a barra de sensibilidade para melhorar a precisão."

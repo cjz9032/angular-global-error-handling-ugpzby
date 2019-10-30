@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
                     "Good": "<b>Batéria je v dobrom stave.</b>",
-                    "Exhaustion": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
                     "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
                     "OverheatedBattery": "Batéria je <b>príliš horúca</b>. Vyberte ju z počítača a ochlaďte ju na izbovú teplotu.",
-                    "PermanentError": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "PermanentError": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "NotSupportACAdapterDetail": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
                         },
-						"note": {
-							"sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
-							"fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
-						}
+                        "note": {
+                            "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
+                            "fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funkcie klávesových skratiek VoIP",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?"
                 },
                 "controlOptions": {
                     "more": "VIAC",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Bezdotykové prihlásenie",
                     "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ak ste pred počítačom alebo sa k nemu približujete (do vzdialenosti 1,2 metra), táto funkcia umožňuje automatické prihlásenie sa do systému po rozpoznaní tváre. Ak ste skôr v exteriéri než v kancelárii, musíte byť bližšie k počítaču a prebudenie bude trvať dlhšie."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
@@ -1498,7 +1498,7 @@
                     "description1": "Táto funkcia využíva službu Windows Hello. Uistite sa, že v nastaveniach systému Windows je zapnuté rozpoznávanie tváre.",
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
-                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
+                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, funkcie Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
                     "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
                     "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
