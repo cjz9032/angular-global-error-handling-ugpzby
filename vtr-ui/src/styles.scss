@@ -1111,9 +1111,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
   .icon-error-1582584:before {
 	content: "\64";
   }
-  .icon-inactive:before {
-	content: "\65";
-  }
   .icon-internet-performance:before {
 	content: "\66";
   }
@@ -1170,6 +1167,30 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
   }
   .icon-responsive:before {
 	content: "\77";
+  }
+  .icon-icon-247-protection:before {
+	content: "\65";
+  }
+  .icon-icon-automated-resolution:before {
+	content: "\78";
+  }
+  .icon-icon-browser-security:before {
+	content: "\79";
+  }
+  .icon-icon-browser-settings:before {
+	content: "\7a";
+  }
+  .icon-icon-e-junk:before {
+	content: "\41";
+  }
+  .icon-icon-schedule-scan:before {
+	content: "\42";
+  }
+  .icon-icon-security-settings:before {
+	content: "\43";
+  }
+  .icon-icon-zero-day:before {
+	content: "\44";
   }
   // smart-performance-scan-summary-calendar-styles
   .vtr-ui-smart-performance-scan-summary {
