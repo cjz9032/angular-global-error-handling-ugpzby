@@ -78,7 +78,7 @@
 			@media #{$black-on-white}{
 				background-color: $light;
 				border: none;
-				color: darkviolet;
+				color: $high-contrast-white-textselected;
 			}
 	
 		}

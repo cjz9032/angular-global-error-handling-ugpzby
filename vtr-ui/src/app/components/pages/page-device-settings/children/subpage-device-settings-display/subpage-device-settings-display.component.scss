@@ -187,10 +187,10 @@
 			text-align: left;
 			text-align: left;
 			@media #{$black-on-white} {
-				color: $yellow;
+				color: $high-contrast-blue;
 			}
 			@media #{$white-on-black} {
-				color: $blue-lighter;
+				color: $yellow;
 			}
 		}
 	}
