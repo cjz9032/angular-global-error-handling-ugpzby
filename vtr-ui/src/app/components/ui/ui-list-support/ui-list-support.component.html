@@ -1,14 +1,12 @@
 <div class="vtr-ui-list-support">
 	<ul class="support-list">
 		<li *ngFor="let item of items">
-			<a role="button"
+			<button
 				tabindex="100"
 				id="{{item.metricsItem}}"
-				attr.aria-label="{{item.metricsItem}}"
-				*ngIf="item.url"
-				href="{{item.url}}"
+				attr.aria-label="{{item.title | translate}}"
+				(click)="itemClick(item)"
 				target="_blank"
-				rel="noopener"
 				title="{{item.title | translate}}"
 				vtrMetrics
 				metricsItem="{{item?.metricsItem}}"
@@ -16,7 +14,7 @@
 				metricsParent="{{item?.metricsParent}}">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col col-1 text-center">
+						<div class="col col-1 text-center item-icon-content">
 							<div class="item-icon"
 								*ngIf="item.icon">
 								<div class="icon-bkg">
@@ -41,48 +39,7 @@
 						</div>
 					</div>
 				</div>
-			</a>
-			<a role="button"
-				tabindex="100"
-				id="{{item.metricsItem}}"
-				attr.aria-label="{{item.metricsItem}}"
-				href="javascript:;"
-				title="{{item.title | translate}}"
-				*ngIf="item.clickItem"
-				(click)="itemClick(item.clickItem)"
-				vtrMetrics
-				metricsItem="{{item?.metricsItem}}"
-				metricsEvent="{{item?.metricsEvent}}"
-				metricsParent="{{item?.metricsParent}}">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col col-1 text-center"
-							style="cursor: pointer">
-							<div class="item-icon"
-								*ngIf="item.icon">
-								<div class="icon-bkg">
-									<fa-icon [icon]="item.icon"></fa-icon>
-								</div>
-							</div>
-							<div class="item-icon-image"
-								*ngIf="item.iconPath">
-								<img [src]="item.iconPath|svgInline|async" />
-							</div>
-						</div>
-						<div class="col col-10 item-text">
-							<div class="title">
-								{{item.title | translate}}
-							</div>
-						</div>
-						<div class="col col-1 text-center">
-							<div class="arrow"
-								*ngIf="!item.hideArrow">
-								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
-							</div>
-						</div>
-					</div>
-				</div>
-			</a>
+			</button>
 		</li>
 	</ul>
 </div>

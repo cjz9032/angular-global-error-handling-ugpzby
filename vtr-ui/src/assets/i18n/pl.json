@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -873,18 +873,18 @@
                 "condition": {
                     "Illegal": "Zainstalowany akumulator <b>nie jest obsługiwany</b> w tym systemie i nie będzie ładowany. Wymień go na właściwy akumulator Lenovo dla tego systemu.",
                     "Good": "<b>Akumulator jest w dobrym stanie.</b>",
-                    "Exhaustion": "Akumulator <b>uległ awarii z powodu normalnego zużycia.</b> Nie można naładować akumulatora. Wymień baterię.",
+                    "Exhaustion": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "Bad": "<b>Wystąpił błąd akumulatora.</b> Nie można naładować/rozładować akumulatora. Wymień baterię.",
                     "NotDetected": "<b>Nie wykryto akumulatora lub</b> akumulator nie jest podłączony do prądu.",
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
-                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik.",
+                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>.",
                     "StoreLimitation": "<b>Pojemność akumulatora to tylko {{value}}% pierwotnej pojemności</b> po pełnym naładowaniu.",
                     "HighTemperature": "<b>Rozładowywanie</b> zostało zatrzymane, ponieważ <b>temperatura akumulatora jest zbyt wysoka.</b>",
                     "TrickleCharge": "Akumulator <b>całkowicie się rozładował</b> i należy go ponownie naładować. Może to zająć dziesięć godzin lub więcej.",
                     "OverheatedBattery": "Akumulator jest <b>zbyt gorący</b>. Wyjmij go z komputera i schłodź do temperatury pokojowej.",
-                    "PermanentError": "Akumulator <b>uległ awarii z powodu normalnego zużycia.</b> Nie można naładować akumulatora. Wymień baterię.",
+                    "PermanentError": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
                     "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
                     "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "URUCHOM PONOWNIE",
                             "cancel": "NIE TERAZ"
                         },
-						"note": {
-							"sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
-							"fnKey": "Aby uzyskać dostęp do funkcji specjalnych, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie."
-						}
+                        "note": {
+                            "sFunKey": "Aby uzyskać dostęp do klawiszy F1-F12, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie.",
+                            "fnKey": "Aby uzyskać dostęp do funkcji specjalnych, należy przytrzymać klawisz Fn, a następnie nacisnąć odpowiedni klawisz w górnym rzędzie."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funkcje klawisza dostępu VoIP",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?"
                 },
                 "controlOptions": {
                     "more": "WIĘCEJ",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Logowanie bez dotyku",
                     "caption": "Ta funkcja automatycznie odblokowuje lub wybudza komputer, gdy jesteś przed nim lub zbliżasz się do niego.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Gdy znajdujesz się przed komputerem lub zbliżysz się do niego (w odległości 1,2 metra), ta funkcja umożliwia automatyczne logowanie do systemu po rozpoznaniu twarzy. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej."
                 },
                 "zeroTouchLock": {
                     "title": "Blokada bez dotyku",
@@ -1498,7 +1498,7 @@
                     "description1": "Ta funkcja zależy od funkcji Windows Hello. Upewnij się, że funkcja rozpoznawania twarzy jest włączona w ustawieniach systemu Windows.",
                     "description2": "Funkcja wykorzystuje czujniki i kamerę do wykrywania Twojej obecności. Jednak ta funkcja NIE zbiera żadnych danych osobowych.",
                     "description3": "1. Funkcja może nie działać prawidłowo, gdy komputer jest w trybie namiotu, tabletu lub podstawki.",
-                    "description4": "2. Gdy komputer jest w trybie hibernacji lub został wyłączony. Logowanie bez dotyku nie będzie działać.",
+                    "description4": "2. Jeśli komputer znajduje się w trybie hibernacji lub został wyłączony, funkcja logowanie bez dotyku nie będzie działać.",
                     "description5": "3. Dostosuj ekran komputera do odpowiedniego kąta, tak aby kamera IR mogła rozpoznać Twoją twarz w celu automatycznego logowania.",
                     "description6": "4. Po włączeniu trybu samolotowego komputera te funkcje są wyłączone.",
                     "description7": "Dokładność zależy od wielkości ciała, postawy i częstotliwości ruchu. Jeśli komputer zostanie nieoczekiwanie zablokowany, dostosuj pasek czułości, aby poprawić dokładność."
@@ -1827,7 +1827,7 @@
             "good": "DOBRY",
             "malicious": "ZŁOŚLIWY",
             "suspicious": "PODEJRZANY",
-            "securityScoreDepends": "Wynik bezpieczeństwa odzwierciedla Twój stopień bezpieczeństwa w sieci i jest zależny od tego, czy:",
+            "securityScoreDepends": "Twój wynik bezpieczeństwa zależy od tego, czy:",
             "antivirus": "Używasz oprogramowania antywirusowego",
             "password": "Używasz silnych i skomplikowanych haseł i zarządzasz nimi w bezpieczny sposób",
             "vpn": "Monitorujesz narażenie sieci na ataki",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} oferuje podstawową ochronę urządzenia",
                 "unknown": "Brak danych",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Tutaj znajdziesz lepszą ofertę!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "Na stronie ustawień preferencji możesz włączyć lub wyłączyć powiadomienie o wiadomości na podstawie kategorii wiadomości Vantage. Należy pamiętać, że nawet jeśli wszystkie kategorie wiadomości są wyłączone, nadal mogą być czasami otrzymywane z programu Vantage krytyczne wiadomości dotyczące systemu, gdy jest to konieczne.",
         "messagesInLenovoVantage": "Wiadomości w aplikacji Lenovo Vantage",
         "appFeatures": "Funkcje aplikacji",
-        "appFeaturesDescription": "Wiadomości związane z programem System Update, artykułami i innymi ciekawymi funkcjami.",
+        "appFeaturesDescription": "Wiadomości związane z Aktualizacjami systemu, artykułami i innymi ciekawymi funkcjami.",
         "marketing": "Marketing",
         "marketingDescription": "Wiadomości promocyjne, w tym oferty specjalne Lenovo.",
         "actionTriggered": "Wykonane działanie",

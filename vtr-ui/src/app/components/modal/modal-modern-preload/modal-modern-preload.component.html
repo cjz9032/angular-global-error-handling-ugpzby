@@ -1,70 +1,119 @@
-<div class="modal-body vtr-modal-modern-preload" [class.page-app]="page != PageNames.LOADING" [ngSwitch]="page">
-	<div role="button" class="close-btn" [class.show]="page != PageNames.LOADING" aria-hidden="true" vtrMetrics
-		metricsItem="ModernPreload.closeButton" metricsEvent="FeatureClick" metricsParent="Modern Preload"
-		id="modern-preload-close-button" attr.aria-label="modern-preload-close-button" (click)="closeModal()">
-		<img [src]=" '/assets/icons/Close-white.svg' | svgInline | async" alt="" srcset="">
-	</div>
-	<div class="content" *ngSwitchCase="PageNames.LOADING">
+<div class="modal-body vtr-modal-modern-preload"
+	[class.page-app]="page != PageNames.LOADING"
+	[ngSwitch]="page">
+	<div class="content"
+		*ngSwitchCase="PageNames.LOADING">
 		<div class="loading-page">
-			<div class="loading-content" #loadingImg [style.height.px]="loadingImg.clientWidth * 115 / 386">
-				<img src="assets/images/modern-preload/img_modern_preload_loading_386x115_200.jpg" />
+			<div class="loading-content"
+				#loadingImg
+				[style.height.px]="loadingImg.clientWidth * 115 / 386">
+				<img src="/assets/images/modern-preload/img_modern_preload_loading_386x115_200.jpg" />
 			</div>
 			<div class="spinner-content w-100 text-center">
-				<div class="spinner-border text-primary progress-spinner" role="status"></div>
+				<div class="spinner-border text-primary progress-spinner"
+					id="modern-preload-loading"
+					attr.aria-label="modern-preload-loading"
+					role="status"></div>
 			</div>
-			<div class="loading-text" [innerHTML]="'modernPreload.loadingDescription' | translate"></div>
+			<div class="loading-text"
+				[innerHTML]="'modernPreload.loadingDescription' | translate"></div>
 		</div>
 	</div>
-	<div class="content" *ngSwitchCase="PageNames.APP">
+	<div class="content"
+		*ngSwitchCase="PageNames.APP">
 		<div class="app-page">
 			<div class="landing-content">
 				<div class="title-box">
-					<div class="title" [innerHTML]="'modernPreload.title' | translate"></div>
-					<div class="sub-title" [innerHTML]="'modernPreload.shortDescription' | translate"></div>
+					<div class="title"
+						[innerHTML]="'modernPreload.title' | translate"></div>
+					<div class="sub-title"
+						[innerHTML]="'modernPreload.shortDescription' | translate"></div>
 				</div>
 			</div>
 			<div class="app-content">
-				<div class="description" [innerHTML]="'modernPreload.softwareDescription' | translate"></div>
-				<div class="row no-gutters" *ngIf="appList">
-					<div class="col-12 col-md-6 app-item" *ngFor="let app of appList">
+				<div class="description"
+					[innerHTML]="'modernPreload.softwareDescription' | translate"></div>
+				<div class="row no-gutters"
+					id="modern-preload-app-list"
+					role="list"
+					*ngIf="appList">
+					<div class="col-12 col-md-6 app-item"
+						*ngFor="let app of appList"
+						id="modern-preload-app-item-{{app.udcId}}"
+						role="listitem">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" [(ngModel)]="app.isChecked"
+							<input type="checkbox"
+								class="custom-control-input"
+								[(ngModel)]="app.isChecked"
 								id="modern-preload-app-{{app.udcId}}"
 								[disabled]="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING"
-								attr.aria-label="modern-preload-app-{{app.udcId}}" (change)="checkedApp()" />
-							<label class="custom-control-label" for="modern-preload-app-{{app.udcId}}">
+								attr.aria-label="modern-preload-app-{{app.udcId}}"
+								(change)="checkedApp()" />
+							<label class="custom-control-label"
+								for="modern-preload-app-{{app.udcId}}">
 								<div class="app-logo">
 									<img [src]="app.thumbnail" />
 								</div>
 							</label>
 						</div>
 
-						<div class="item-info" [ngSwitch]="app.showStatus">
+						<div class="item-info"
+							[ngSwitch]="app.showStatus">
 							<b>{{ app.title }}</b>
-							<div class="status-box download_available" *ngSwitchCase="statusEnum.NOT_INSTALL">
+							<div class="status-box download_available"
+								*ngSwitchCase="statusEnum.NOT_INSTALL">
 								<img class="status-icon"
-									[src]="downloadIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text" [innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
+									[src]="downloadIconBase64 | sanitize : 'resourceUrl'"
+									alt=""
+									srcset="">
+								<div class="status-text"
+									role="text"
+									id="modern-preload-status-download-available-{{ app.udcId }}"
+									[innerHTML]="'modernPreload.downloadAvailable' | translate"></div>
 							</div>
-							<div class="status-box download_complete" *ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
+							<div class="status-box download_complete"
+								*ngSwitchCase="statusEnum.DOWNLOAD_COMPLETE">
 								<img class="status-icon"
-									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text" [innerHTML]="'modernPreload.downloadComplete' | translate"></div>
+									[src]="successIconBase64 | sanitize : 'resourceUrl'"
+									alt=""
+									srcset="">
+								<div class="status-text"
+									role="text"
+									id="modern-preload-status-download-complete-{{ app.udcId }}"
+									[innerHTML]="'modernPreload.downloadComplete' | translate"></div>
 							</div>
-							<div class="status-box failed-install" *ngSwitchCase="statusEnum.FAILED_INSTALL">
+							<div class="status-box failed-install"
+								*ngSwitchCase="statusEnum.FAILED_INSTALL">
 								<img class="status-icon"
-									[src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text" [innerHTML]="'modernPreload.failedInstall' | translate"></div>
+									[src]="errorIconBase64 | sanitize : 'resourceUrl'"
+									alt=""
+									srcset="">
+								<div class="status-text"
+									role="text"
+									id="modern-preload-status-failed-install-{{ app.udcId }}"
+									[innerHTML]="'modernPreload.failedInstall' | translate"></div>
 							</div>
-							<div class="status-box installed" *ngSwitchCase="statusEnum.INSTALLED">
+							<div class="status-box installed"
+								*ngSwitchCase="statusEnum.INSTALLED">
 								<img class="status-icon"
-									[src]="successIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
-								<div class="status-text" [innerHTML]="'modernPreload.installed' | translate"></div>
+									[src]="successIconBase64 | sanitize : 'resourceUrl'"
+									alt=""
+									srcset="">
+								<div class="status-text"
+									role="text"
+									id="modern-preload-status-installed-{{ app.udcId }}"
+									[innerHTML]="'modernPreload.installed' | translate"></div>
 							</div>
-							<div class="status-box downloading" *ngSwitchCase="statusEnum.DOWNLOADING">
-								<div class="downloading-text">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
+							<div class="status-box downloading"
+								*ngSwitchCase="statusEnum.DOWNLOADING">
+								<div class="downloading-text"
+									role="text"
+									id="modern-preload-status-downloading-{{ app.udcId }}">{{ app.progress }}% <span
+										[innerHTML]="'modernPreload.downloading' | translate"></span></div>
 								<div class="progress-box w-100">
-									<ngb-progressbar type="success" [value]="app.progress" [height]="'0.8rem'">
+									<ngb-progressbar type="success"
+										[value]="app.progress"
+										[height]="'0.8rem'">
 									</ngb-progressbar>
 								</div>
 							</div>
@@ -75,68 +124,131 @@
 					</div>
 				</div>
 				<div class="button-content mb-4">
-					<div class="btn-box mr-5" [ngSwitch]="modernPreloadService.DownloadButtonStatus">
+					<div class="btn-box mr-5"
+						[ngSwitch]="modernPreloadService.DownloadButtonStatus">
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOAD"
-							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
-							metricsItem="btn.Download" [isFullWidth]="true" [isDisabled]="checkedAppList.length === 0"
+							(onClick)="installEntitledApp()"
+							linkId="modern-preload-download-button"
+							metricsEvent="FeatureClick"
+							metricsParent="Modern Preload"
+							metricsItem="btn.Download"
+							[isFullWidth]="true"
+							[isDisabled]="checkedAppList.length === 0"
 							[label]="'modernPreload.download' | translate">
 						</vtr-ui-button>
 						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.RESTART_DOWNLOAD"
-							(onClick)="installEntitledApp()" metricsEvent="FeatureClick" metricsParent="Modern Preload"
-							metricsItem="btn.RestartDownload" [isFullWidth]="true"
-							[isDisabled]="checkedAppList.length === 0" [label]="'modernPreload.restartDownload' | translate">
+							(onClick)="installEntitledApp()"
+							linkId="modern-preload-restart-download-button"
+							metricsEvent="FeatureClick"
+							metricsParent="Modern Preload"
+							metricsItem="btn.RestartDownload"
+							[isFullWidth]="true"
+							[isDisabled]="checkedAppList.length === 0 || modernPreloadService.IsCancelInstall"
+							[label]="'modernPreload.restartDownload' | translate">
 						</vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOADING" [isFullWidth]="true"
-							[isDisabled]="true" [label]="'modernPreload.downloading' | translate">
+						<vtr-ui-button *ngSwitchCase="DownloadButtonStatusEnum.DOWNLOADING"
+							linkId="modern-preload-downloading-button"
+							[isFullWidth]="true"
+							[isDisabled]="true"
+							[label]="'modernPreload.downloading' | translate">
 						</vtr-ui-button>
 					</div>
-					<a *ngIf="modernPreloadService.DownloadButtonStatus !== DownloadButtonStatusEnum.DOWNLOADING" vtrMetrics
-						metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
-						metricsParent="Modern Preload" id="modern-preload-skip-button"
-						attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
-						(click)="closeModal()" [innerHTML]="'modernPreload.skip' | translate"></a>
-					<a *ngIf="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING" vtrMetrics
-						metricsItem="ModernPreload.CancelButton" metricsEvent="FeatureClick"
-						metricsParent="Modern Preload" id="modern-preload-cancel-button"
-						attr.aria-label="modern-preload-cancel-button" href="javascript:;" class="btn-skip"
-						(click)="cancel()" [innerHTML]="'modernPreload.cancel' | translate"></a>
+					<a *ngIf="modernPreloadService.DownloadButtonStatus !== DownloadButtonStatusEnum.DOWNLOADING"
+						vtrMetrics
+						metricsItem="ModernPreload.skipButton"
+						metricsEvent="FeatureClick"
+						metricsParent="Modern Preload"
+						id="modern-preload-skip-button"
+						attr.aria-label="modern-preload-skip-button"
+						href="javascript:;"
+						class="btn-skip"
+						(click)="closeModal()"
+						[innerHTML]="'modernPreload.skip' | translate"></a>
+					<a *ngIf="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING"
+						vtrMetrics
+						metricsItem="ModernPreload.CancelButton"
+						metricsEvent="FeatureClick"
+						metricsParent="Modern Preload"
+						id="modern-preload-cancel-button"
+						attr.aria-label="modern-preload-cancel-button"
+						href="javascript:;"
+						class="btn-skip"
+						(click)="cancel()"
+						[innerHTML]="'modernPreload.cancel' | translate"></a>
 				</div>
-				<div class="bottom-tips" *ngIf="!isAppInstallError" [innerHTML]="'modernPreload.noteDownloading' | translate"></div>
-				<div class="bottom-tips" *ngIf="isAppInstallError" [innerHTML]="'modernPreload.noteFailedDownload' | translate"></div>
+				<div class="bottom-tips"
+					*ngIf="!isAppInstallError"
+					[innerHTML]="'modernPreload.noteDownloading' | translate"></div>
+				<div class="bottom-tips"
+					*ngIf="isAppInstallError"
+					[innerHTML]="'modernPreload.noteFailedDownload' | translate"></div>
 			</div>
 		</div>
 	</div>
-	<div class="content" *ngSwitchCase="PageNames.ERROR">
+	<div class="content"
+		*ngSwitchCase="PageNames.ERROR">
 		<div class="app-page">
 			<div class="landing-content">
 				<div class="title-box">
-					<div class="title" [innerHTML]="'modernPreload.title' | translate"></div>
-					<div class="sub-title" [innerHTML]="'modernPreload.shortDescription' | translate"></div>
+					<div class="title"
+						[innerHTML]="'modernPreload.title' | translate"></div>
+					<div class="sub-title"
+						[innerHTML]="'modernPreload.shortDescription' | translate"></div>
 				</div>
 			</div>
 			<div class="error-content">
 				<div class="d-flex">
 					<div class="error-icon">
-						<img [src]="errorIconBase64 | sanitize : 'resourceUrl'" alt="" srcset="">
+						<img [src]="errorIconBase64 | sanitize : 'resourceUrl'"
+							alt=""
+							srcset="">
 					</div>
 					<div class="error-box w-100 pt-2">
-						<div class="bottom-tips mb-5" [innerHTML]="'modernPreload.errorDescription' | translate"></div>
+						<div class="bottom-tips mb-5"
+							[innerHTML]="'modernPreload.errorDescription' | translate"></div>
 						<div class="button-content mb-4">
 							<div class="btn-box mr-5">
-								<vtr-ui-button (onClick)="retry()" metricsEvent="FeatureClick"
-									metricsParent="Modern Preload" metricsItem="btn.Retry" [isFullWidth]="true"
+								<vtr-ui-button (onClick)="retry()"
+									linkId="modern-preload-retry-button"
+									metricsEvent="FeatureClick"
+									metricsParent="Modern Preload"
+									metricsItem="btn.Retry"
+									[isFullWidth]="true"
 									[label]="'modernPreload.retry' | translate">
 								</vtr-ui-button>
 							</div>
-							<a vtrMetrics metricsItem="ModernPreload.skipButton" metricsEvent="FeatureClick"
-								metricsParent="Modern Preload" id="modern-preload-skip-button"
-								attr.aria-label="modern-preload-skip-button" href="javascript:;" class="btn-skip"
+							<a vtrMetrics
+								metricsItem="ModernPreload.skipButton"
+								metricsEvent="FeatureClick"
+								metricsParent="Modern Preload"
+								id="modern-preload-skip-button"
+								attr.aria-label="modern-preload-skip-button"
+								href="javascript:;"
+								class="btn-skip"
 								[title]="'modernPreload.skip' | translate"
-								(click)="closeModal()" [innerHTML]="'modernPreload.skip' | translate"></a>
+								(click)="closeModal()"
+								[innerHTML]="'modernPreload.skip' | translate"></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div role="button"
+		class="close-btn"
+		tabindex="0"
+		[class.show]="page != PageNames.LOADING"
+		aria-hidden="true"
+		vtrMetrics
+		metricsItem="ModernPreload.closeButton"
+		metricsEvent="FeatureClick"
+		metricsParent="Modern Preload"
+		id="modern-preload-close-button"
+		attr.aria-label="modern-preload-close-button"
+		(keyup.enter)="closeModal()"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close-white.svg' | svgInline | async"
+			alt=""
+			srcset="">
 	</div>
 </div>

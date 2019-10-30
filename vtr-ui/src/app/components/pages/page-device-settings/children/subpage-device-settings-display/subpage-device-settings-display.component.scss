@@ -188,9 +188,11 @@
 			text-align: left;
 			@media #{$black-on-white} {
 				color: $high-contrast-blue;
+				border:none;
 			}
 			@media #{$white-on-black} {
 				color: $yellow;
+				border: none;
 			}
 		}
 	}

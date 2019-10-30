@@ -13,7 +13,7 @@
 .vtr-menu-main {
 	position: fixed;
 	top: 0;
-	z-index: 100;
+	z-index: 100!important;
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
@@ -72,6 +72,9 @@
 
 		.navbar-brand a {
 			border: none;
+			display: block;
+			width: 100%;
+			height: 100%;
 		}
 
 		.navbar-text {
@@ -375,7 +378,10 @@
 									background: $yellow;
 											}
 						
+<<<<<<< HEAD
 													
+=======
+>>>>>>> 2884e689d355e27de58a9c15d56152e7fc2d81f1
 							}
 
 							&.user {

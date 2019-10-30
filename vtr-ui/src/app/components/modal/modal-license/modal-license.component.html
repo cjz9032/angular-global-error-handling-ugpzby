@@ -1,23 +1,47 @@
-<div class="modal-body vtr-modal-license">
-  <div role="button" class="close-btn" aria-hidden="true"
-				vtrMetrics
-				metricsItem="{{licenseModalMetrics.closeButton}}"
-				metricsEvent="FeatureClick"
-				metricsParent="{{licenseModalMetrics.pageName}}"
-				(click)="closeModal()">
-		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</div>
-	<div class="article-content" [class.show]="loading">
+<div class="modal-body vtr-modal-license"
+	id="license-dialog"
+	tabindex="-1"
+	role="dialog">
+	<div class="article-content"
+		[class.show]="loading">
 		<div class="article-body">
-			<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+			<div class="spinner-content">
+				<div class="spinner-border text-primary progress-spinner"
+					role="status"></div>
+			</div>
 		</div>
 	</div>
-	<div class="article-content" [class.show]="type=='txt' && !loading">
-		<div class="article-body" [innerHTML]="articleBody"></div>
+	<div *ngIf="type!='txt' && !loading" tabindex="0" class="empty" id="license-dialog-empty"></div>
+	<div class="article-content"
+		[class.show]="type=='txt' && !loading">
+		<div class="article-body"
+			tabindex="0"
+			[innerHTML]="articleBody"></div>
 	</div>
-	<div class="iframe-content" [class.show]="type!='txt' && !loading">
-		<iframe id="license-agreement-iframe" class="article-frame" src=""
-		attr.sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-		width="100%" height="100%" ></iframe>
+	<div class="iframe-content"
+		[class.show]="type!='txt' && !loading">
+		<iframe id="license-agreement-iframe"
+			class="article-frame"
+			src=""
+			attr.sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+			width="100%"
+			height="100%"
+			tabindex="0"></iframe>
+	</div>
+	<div role="button"
+		class="close-btn"
+		aria-hidden="true"
+		vtrMetrics
+		tabindex="0"
+		id="btn-{{licenseModalMetrics.closeButton}}"
+		[attr.aria-label]="licenseModalMetrics.closeButton"
+		[metricsItem]="licenseModalMetrics.closeButton"
+		[metricsParent]="licenseModalMetrics.pageName"
+		metricsEvent="FeatureClick"
+		(keyup.enter)="closeModal()"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
 	</div>
 </div>

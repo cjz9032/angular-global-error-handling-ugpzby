@@ -82,11 +82,11 @@
       font-size: 1.6rem;
       font-weight: $weight_bold;
       @media #{$black-on-white} {
-        color: $high-contrast-blue;
-    }
-  @media #{$white-on-black} {
-    color: $yellow;
-    }
+						color: $high-contrast-blue;
+				}
+			@media #{$white-on-black} {
+        color: $yellow;
+				}
       &:hover {
         list-style: none;
         color: $light;
