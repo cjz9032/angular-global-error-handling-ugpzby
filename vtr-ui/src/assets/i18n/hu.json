@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "A Windows beállításai között adhat hozzáférést",
                 "microphoneNote": "A Lenovo Vantage nem fér hozzá a mikrofonhoz.",
                 "cameraPrivacyNote": "A Lenovo Vantage nem fér hozzá a kamerához."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Rendszerállapot",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
-                    "Exhaustion": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
+                    "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
                     "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
                     "OverheatedBattery": "Az akkumulátor <b>túl meleg</b>. Vegye ki a számítógépből, és hagyja lehűlni szobahőmérsékletre.",
-                    "PermanentError": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
+                    "PermanentError": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
                     "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Az alapértelmezett felső sor funkciója módosításának érvénybe léptetéséhez újra kell indítania a számítógépet. Biztosan újraindítja?",
                             "reboot": "ÚJRAINDÍTÁS",
                             "cancel": "NE MOST"
+                        },
+                        "note": {
+                            "sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
+                            "fnKey": "Adott funkciót az Fn és a fenti soron lévő billentyűk megnyomásával érhet el."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?"
                 },
                 "controlOptions": {
                     "more": "TOVÁBBIAK",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Érintés nélküli bejelentkezés",
                     "caption": "Amikor a felhasználó a számítógép előtt ül vagy a közelében van, a funkció automatikusan feloldja vagy felébreszti a számítógépet.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 méteres távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart."
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
@@ -1492,7 +1498,7 @@
                     "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
+                    "description4": "2. Ha a számítógép hibernált módban van, vagy ki van kapcsolva, az érintés nélküli bejelentkezés nem működik.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
                     "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
             },
             "superResolution": {
-				"heading": "Intelligens média",
-				"title": "Videófelbontás megnövelése",
-				"desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label> Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ha engedélyezve van, akkor javasoljuk, hogy a számítógépet csatlakoztassa hálózati tápellátáshoz.</label></p>",
-				"tooltip": "Ez a funkció csak a következő lejátszókon működik: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"A funkció az alábbi esetekben nem működik:",
-					"description1":"A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátor töltöttsége kevesebb 20%-nál.",
-					"description2":"A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátortakarékos mód engedélyezve van.",
-					"description3":"A processzor hőmérséklete túl magas."
-				}
-			},
+                "heading": "Intelligens média",
+                "title": "Videófelbontás megnövelése",
+                "desc": "<p><label>Ez a szolgáltatás fokozza a videó lejátszásának élményét azáltal, hogy javítja a videófelbontást. Különösen akkor működik, ha a videó rossz felbontású.</label></p> <p style='margin-top:4px;'><label> Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ha engedélyezve van, akkor javasoljuk, hogy a számítógépet csatlakoztassa hálózati tápellátáshoz.</label></p>",
+                "tooltip": "Ez a funkció csak a következő lejátszókon működik: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "A funkció az alábbi esetekben nem működik:",
+                    "description1": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátor töltöttsége kevesebb 20%-nál.",
+                    "description2": "A számítógép nincs csatlakoztatva a hálózati tápellátáshoz, és az akkumulátortakarékos mód engedélyezve van.",
+                    "description3": "A processzor hőmérséklete túl magas."
+                }
+            },
             "voice": {
                 "title": "Hang",
                 "description": "A Lenovo Voice „Hang szöveggé” funkciójával szöveggé alakíthatja át a hangot. A Fordítás funkció valós időben biztosít a hang szöveggé alakításával.",
@@ -1821,12 +1827,22 @@
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
             "suspicious": "GYANÚS",
-            "securityScoreDepends": "A biztonsági pontszám azt jelzi, hogy mennyire van biztonságban a rendszere az interneten. Az eredményt a következők befolyásolják:",
+            "securityScoreDepends": "Adatainak biztonsága attól függ, hogy Ön:",
             "antivirus": "Vírusirtó szoftver használata",
             "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
             "vpn": "A hálózat támadóknak való kitettségének mérése",
             "wifi": "A személyes adatok titkosítása nyilvános WiFi használata esetén",
-            "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal"
+            "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
                 "unknown": "Ismeretlen",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Kedvezőbb ajánlatot kínálunk Önnek!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
         "appFeatures": "Az alkalmazás funkciói",
-        "appFeaturesDescription": "A System Update szolgáltatással kapcsolatos üzenetek, cikkek és további fontos funkciók.",
+        "appFeaturesDescription": "A Rendszerfrissítéssel kapcsolatos üzenetek, cikkek és további fontos tudnivalók.",
         "marketing": "Marketing",
         "marketingDescription": "Promóciós üzenetek, többek között a Lenovo különleges ajánlatai.",
         "actionTriggered": "Aktivált művelet",

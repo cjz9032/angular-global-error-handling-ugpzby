@@ -89,6 +89,7 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
+import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 
 
 @NgModule({
@@ -128,7 +129,8 @@ import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-gra
 		UserDefinedKeyComponent,
 		TopRowFunctionsComponent,
 		VoiceComponent,
-		SmartStandbyGraphComponent
+		SmartStandbyGraphComponent,
+		TopRowFunctionsIdeapadComponent
 	],
 	imports: [
 		CommonModule,
@@ -148,7 +150,7 @@ import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-gra
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule
+		SettingsPageLayoutModule,
 	],
 	exports: [
 		CommonModule,
@@ -157,7 +159,8 @@ import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-gra
 		CommonModalModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
-		RouterModule
+		RouterModule,
+		HeaderMainModule,
 	],
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

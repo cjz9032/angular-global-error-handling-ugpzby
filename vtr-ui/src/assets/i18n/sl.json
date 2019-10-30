@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Odprite nastavitve sistema Windows in omogočite dostop",
                 "microphoneNote": "Lenovo Vantage nima dostopa do mikrofona.",
                 "cameraPrivacyNote": "Lenovo Vantage nima dostopa do kamere."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Stanje sistema",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "Sistem <b>ne podpira</b> nameščene baterije, zato se ne bo polnila. Baterijo zamenjajte z ustrezno baterijo Lenovo za ta sistem.",
                     "Good": "<b>Baterija je v dobrem stanju.</b>",
-                    "Exhaustion": "Baterija <b>ne deluje več zaradi običajne obrabe.</b> Baterije ni mogoče polniti. Zamenjajte baterijo.",
+                    "Exhaustion": "Zmogljivost baterije je <b>zmanjšana</b>. Prosimo, zamenjajte jo z novo.",
                     "Bad": "<b>Prišlo je do napake baterije.</b> Baterije ni mogoče polniti/prazniti. Zamenjajte baterijo.",
                     "NotDetected": "<b>Baterija ni zaznana ali ni</b> priključena.",
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko namestite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
                     "OverheatedBattery": "Baterija je <b>prevroča</b>. Odstranite jo iz računalnika in jo ohladite na sobno temperaturo.",
-                    "PermanentError": "Baterija <b>ne deluje več zaradi običajne obrabe.</b> Baterije ni mogoče polniti. Zamenjajte baterijo.",
+                    "PermanentError": "Zmogljivost baterije je <b>zmanjšana</b>. Prosimo, zamenjajte jo z novo.",
                     "NotSupportACAdapterDetail": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
                     "LimitedACAdapterSupportDetail": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W napajanje {{acAdapterType}} je priključeno.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Sprememba funkcije zgornje vrstice bo začela veljati šele po vnovičnem zagonu računalnika. Ali ste prepričani, da želite znova zagnati?",
                             "reboot": "VNOVIČNI ZAGON",
                             "cancel": "NE ZDAJ"
+                        },
+                        "note": {
+                            "sFunKey": "Za dostop do funkcij F1–F12 pritisnite Fn in tipke v zgornji vrstici.",
+                            "fnKey": "Za dostop do posebne funkcije pritisnite Fn in tipke v zgornji vrstici."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?"
                 },
                 "controlOptions": {
                     "more": "VEČ",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Prijava brez dotika",
                     "caption": "Ta funkcija samodejno odklene ali prebudi računalnik, ko ste pred njim ali se mu približujete.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ko ste pred računalnikom ali se mu približujete (na razdalji 1,2 metra), vam ta funkcija omogoča samodejno prijavo v sistem, po tem ko prepozna vaš obraz. Če ste zunaj in ne v pisarni, morate biti bližje računalniku in bujenje bo trajalo dlje."
                 },
                 "zeroTouchLock": {
                     "title": "Zaklepanje brez dotika",
@@ -1492,7 +1498,7 @@
                     "description1": "Ta funkcija uporablja Windows Hello. Poskrbite, da je funkcija prepoznavanja obraza vklopljena v nastavitvah sistema Windows.",
                     "description2": "Funkcija uporablja senzorje in kamero za zaznavanje vaše prisotnosti. Vendar pa funkcija NE zbira, shranjuje ali posreduje kakršnih koli osebnih podatkov ali slik.",
                     "description3": "1. Če je računalnik v načinu šotora, tabličnega računalnika ali stanja, te funkcije morda ne bodo pravilno delovale.",
-                    "description4": "2. Če je računalnik v načinu mirovanja ali je izklopljen. Prijava brez dotika ne bo delovala.",
+                    "description4": "2. Če je računalnik v načinu mirovanja ali izklopljen, samodejna prijava brez dotika ne bo delovala.",
                     "description5": "3. Prilagodite zaslon računalnika na primeren kot, tako da bo lahko IR-kamera prepoznala vaš obraz za samodejno prijavo.",
                     "description6": "4. Če je v računalniku vklopljen letalski način, so te funkcije onemogočene.",
                     "description7": "Natančnost se razlikuje glede na velikost telesa, držo in pogostost gibanja. Če se računalnik nepričakovano zaklene, prilagodite vrstico za občutljivost, da izboljšate natančnost."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
             },
             "superResolution": {
-				"heading": "Inteligentni mediji",
-				"title": "Povečanje ločljivosti videoposnetkov",
-				"desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-				"tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Ta funkcija ne deluje v naslednjih primerih:",
-					"description1":"Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
-					"description2":"Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
-					"description3":"Temperatura CPE je previsoka."
-				}
-			},
+                "heading": "Inteligentni mediji",
+                "title": "Povečanje ločljivosti videoposnetkov",
+                "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
+                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ta funkcija ne deluje v naslednjih primerih:",
+                    "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
+                    "description2": "Računalnik ni priključen na izmenično napajanje in omogočen je način varčevanja z baterijo.",
+                    "description3": "Temperatura CPE je previsoka."
+                }
+            },
             "voice": {
                 "title": "Glas",
                 "description": "Lenovo Voice s funkcijo pretvorbe glasu v besedilo pomaga pretvoriti glas v besedilo, s funkcijo Prevajanje pa zagotavlja prevode iz glasu v besedila v realnem času.",
@@ -1821,12 +1827,22 @@
             "good": "DOBRA",
             "malicious": "ZLONAMERNA",
             "suspicious": "SUMLJIVA",
-            "securityScoreDepends": "Vaša varnostna ocena vam pokaže, kako varni ste v spletu, rezultat pa je odvisen od tega, ali:",
+            "securityScoreDepends": "Vaš rezultat varnosti je odvisen od vaše vloge:",
             "antivirus": "Imate zaščito s protivirusno programsko opremo",
             "password": "Upravljate z močnimi in kompleksnimi gesli na varen način",
             "vpn": "Spremljate izpostavljenost napadalcem v omrežju",
             "wifi": "Šifrirate osebne podatke pri uporabi javnega omrežja WiFi",
-            "windowsHello": "Zaščitite napravo z možnostmi za varno prijavo"
+            "windowsHello": "Zaščitite napravo z možnostmi za varno prijavo",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} ponuja osnovno zaščito za vašo napravo",
                 "unknown": "Neznan",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Boljšo ponudbo dobite tukaj!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
         "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",
         "appFeatures": "Funkcije aplikacije",
-        "appFeaturesDescription": "Sporočila, ki se nanašajo na System Update, članke in druge pomembne funkcije.",
+        "appFeaturesDescription": "Sporočila, ki se nanašajo na posodobitev sistema, članke in druge pomembne funkcije.",
         "marketing": "Trženje",
         "marketingDescription": "Promocijska sporočila, vključno s posebnimi ponudbami družbe Lenovo.",
         "actionTriggered": "Sproženo dejanje",

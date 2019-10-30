@@ -57,7 +57,7 @@ export class PageSmartAssistComponent
 	private windowsObj: any;
 	public hpdSensorType = 0;
 	public sensitivityVisibility = false;
-	public sesnsitivityAdjustVal = 0;
+	public sesnsitivityAdjustVal: number;
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
 	public superResolution = new FeatureStatus(false, true);
@@ -284,10 +284,10 @@ export class PageSmartAssistComponent
 		}
 	}
 
-	public getHPDLeaveSensitivityStatus() {
+	public async getHPDLeaveSensitivityStatus() {
 		try {
-			this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
-				this.sesnsitivityAdjustVal = value;
+			await this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
+				this.sesnsitivityAdjustVal = value || 2;
 				console.log('getHPDLeaveSensitivity value----->', value);
 			});
 		} catch (error) {
@@ -361,7 +361,7 @@ export class PageSmartAssistComponent
 
 	private getAutoScreenOffNoteStatusFunc() {
 		this.getAutoScreenOffNoteStatus = setInterval(() => {
-			console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
+			// console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
 			this.smartAssist.getAutoScreenOffNoteStatus().then((response) => {
 				this.intelligentScreen.isAutoScreenOffNoteVisible = response;
 			});

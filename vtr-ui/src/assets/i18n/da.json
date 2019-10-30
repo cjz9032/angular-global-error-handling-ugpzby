@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Gå til Windows-indstillingerne for at give adgang",
                 "microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",
                     "Good": "<b>Batteriets tilstand er god.</b>",
-                    "Exhaustion": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
+                    "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
                     "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver.",
+                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
-                    "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
+                    "PermanentError": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
+                        },
+                        "note": {
+                            "sFunKey": "Hvis du vil have adgang til F1-F12-funktionen, skal du trykke på Fn og tasterne på den øverste række.",
+                            "fnKey": "Hvis du vil have adgang til den særlige funktion, skal du trykke på Fn og tasterne på den øverste række."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?"
                 },
                 "controlOptions": {
                     "more": "FLERE",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Logon uden berøring",
                     "caption": "Denne funktion aktiverer eller låser automatisk computeren op, når du sidder foran den eller nærmer dig den.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Når du sidder foran computeren eller nærmer dig den (inden for en afstand af 1,2 meter), kan du bruge denne funktion til at logge på systemet automatisk, når dit ansigt genkendes. Hvis du er udendørs i stedet for på kontoret, skal du være tættere på computeren, og opvågningen vil tage længere tid."
                 },
                 "zeroTouchLock": {
                     "title": "Lås uden berøring",
@@ -1492,7 +1498,7 @@
                     "description1": "Denne funktion er afhængig af Windows Hello. Kontrollér, at ansigtsgenkendelse er slået til i Windows-indstillinger.",
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
-                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
+                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket, vil logon uden berøring ikke fungere.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon.",
                     "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
                     "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },
             "superResolution": {
-				"heading": "Intelligente medier",
-				"title": "Opskalering af videoopløsning",
-				"desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-				"tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Denne funktion virker ikke i disse situationer:",
-					"description1":"Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
-					"description2":"Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
-					"description3":"CPU-temperaturen er for høj."
-				}
-			},
+                "heading": "Intelligente medier",
+                "title": "Opskalering af videoopløsning",
+                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
+                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Denne funktion virker ikke i disse situationer:",
+                    "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
+                    "description2": "Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+                    "description3": "CPU-temperaturen er for høj."
+                }
+            },
             "voice": {
                 "title": "stemme",
                 "description": "Lenovo Voice hjælper med at konvertere din tale til tekst med funktionen Tale til tekst og giver mulighed for realtidsoversættelse fra tale til tekst med oversættelsesfunktionen.",
@@ -1821,12 +1827,22 @@
             "good": "GODT",
             "malicious": "SKADELIGT",
             "suspicious": "MISTÆNKELIGT",
-            "securityScoreDepends": "Dit sikkerhedsresultat giver dig et indtryk af, hvor sikker du er online. Resultatet afhænger af, om du:",
+            "securityScoreDepends": "Dit sikkerhedsresultat afhænger af, om du er:",
             "antivirus": "Er beskyttet af antivirussoftware",
             "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
             "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
             "wifi": "Krypterer dine personlige data, når du bruger offentligt WiFi",
-            "windowsHello": "Beskytter din enhed med indstillinger til sikker login"
+            "windowsHello": "Beskytter din enhed med indstillinger til sikker login",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
                 "unknown": "Ukendt",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Få et bedre tilbud her!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "På siden med præferenceindstillinger kan du vælge at aktivere/deaktivere meddelelser om beskeder baseret på kategorierne for Vantages besked. Bemærk, at selvom alle beskedkategorierne er deaktiverede, kan du stadig få vist systemkritiske beskeder fra Vantage, når det er nødvendigt.",
         "messagesInLenovoVantage": "Meddelelser i Lenovo Vantage",
         "appFeatures": "Appfunktioner",
-        "appFeaturesDescription": "Meddelelser om System Update, artikler og andre vigtige funktioner.",
+        "appFeaturesDescription": "Meddelelser om systemopdatering, artikler og andre vigtige funktioner.",
         "marketing": "Markedsføring",
         "marketingDescription": "Reklamebeskeder, herunder Lenovos særtilbud.",
         "actionTriggered": "Udløst handling",

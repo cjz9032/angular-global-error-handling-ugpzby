@@ -119,7 +119,7 @@
 					"autoClose": "auto close page",
 					"lighting": "Lighting page"
 				},
-				"mainMenuLink": "Header main logo"
+				"mainMenuLink": "go back to home page"
 			}
 		},
 		"macroKey": {
@@ -888,7 +888,7 @@
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
 					"LimitedACAdapterSupportDetail": "<b>AC adapter cannot provide enough power</b> to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter.",
-					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver.",
+					"MissingDriver": "<b>The Lenovo Power Manager driver</b> is not installed or not working properly. Please run Windows Update to install the latest driver. You also can install the driver from <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">here</a>. After the installation, restart your computer.",
 					"StoreLimitation": "<b>The battery can only store {{value}}% of</b> it's original full charge capacity.",
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
@@ -1369,6 +1369,10 @@
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
+						},
+						"note": {
+							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
+							"fnKey": "To access special function, press Fn and the keys on the top row."
 						}
 					},
 					"VoipHotkeys": {
@@ -1409,9 +1413,9 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "FN key and Ctrl key swap",
-					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-					"restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+					"title": "Fn and Ctrl key swap",
+					"description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
+					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?"
 				},
 				"controlOptions": {
 					"more": "MORE",
@@ -1499,7 +1503,7 @@
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off, Zero Touch Login will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
 					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
 					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."

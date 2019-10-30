@@ -272,7 +272,7 @@
 
 													</div>
 												</div>
-											</div>											
+											</div>
 										</vtr-ui-row-switch>
 										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 										[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
@@ -280,7 +280,7 @@
 											[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
 											[isSwitchVisible]="false" [showChildContent]="true"
 											[isSwitchChecked]="false" [theme]="'white'"
-											[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
+											[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="slider-note"
 											[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
@@ -290,7 +290,8 @@
 												[minValue]="1" (change)="setHPDLeaveSensitivitySetting($event)"
 												[mediumValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.medium' | translate"
 												[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-												[maxValue]="3" [value]="sesnsitivityAdjustVal"
+												[maxValue]="3"
+												[value]="sesnsitivityAdjustVal"
 												[enableSlider]="!intelligentSecurity.isZeroTouchLockEnabled || !intelligentSecurity.isHPDEnabled">
 											</vtr-ui-range-slider>
 											<div class="pt-3"
@@ -436,6 +437,7 @@
 											[leftIcon]="['icomoon', 'icomoon-auto-screen-off']"
 											[theme]="'white'"
 											(toggleOnOff)="onAutoScreenOffToggle($event)"
+											[isDisabled]="intelligentScreen.isAutoScreenOffNoteVisible"
 											[isSwitchChecked]="intelligentScreen.isAutoScreenOffEnabled">
 										</vtr-ui-row-switch>
 										<div class="row"

@@ -68,7 +68,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.translate);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService);
+		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate);
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = Object.assign({}, {
 				localName: this.antiVirus.mcafee.localName,

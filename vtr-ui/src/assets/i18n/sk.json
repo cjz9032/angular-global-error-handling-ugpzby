@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Prejdite do nastavení systému Windows a povoľte prístup",
                 "microphoneNote": "Lenovo Vantage nemá prístup k mikrofónu.",
                 "cameraPrivacyNote": "Lenovo Vantage nemá prístup k fotoaparátu."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
                     "Good": "<b>Batéria je v dobrom stave.</b>",
-                    "Exhaustion": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
                     "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
                     "OverheatedBattery": "Batéria je <b>príliš horúca</b>. Vyberte ju z počítača a ochlaďte ju na izbovú teplotu.",
-                    "PermanentError": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "PermanentError": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "NotSupportACAdapterDetail": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
+                        },
+                        "note": {
+                            "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
+                            "fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?"
                 },
                 "controlOptions": {
                     "more": "VIAC",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Bezdotykové prihlásenie",
                     "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ak ste pred počítačom alebo sa k nemu približujete (do vzdialenosti 1,2 metra), táto funkcia umožňuje automatické prihlásenie sa do systému po rozpoznaní tváre. Ak ste skôr v exteriéri než v kancelárii, musíte byť bližšie k počítaču a prebudenie bude trvať dlhšie."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
@@ -1492,7 +1498,7 @@
                     "description1": "Táto funkcia využíva službu Windows Hello. Uistite sa, že v nastaveniach systému Windows je zapnuté rozpoznávanie tváre.",
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
-                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
+                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, funkcie Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
                     "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
                     "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },
             "superResolution": {
-				"heading": "Inteligentné médiá",
-				"title": "Zvýšenie rozlíšenia videa",
-				"desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
-				"tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Funkcia nefunguje v týchto prípadoch:",
-					"description1":"Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
-					"description2":"Počítač nie je pripojený k zdroju napájania a je zapnutý šetriaci režim batérie.",
-					"description3":"Teplota procesora je príliš vysoká."
-				}
-			},
+                "heading": "Inteligentné médiá",
+                "title": "Zvýšenie rozlíšenia videa",
+                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
+                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Funkcia nefunguje v týchto prípadoch:",
+                    "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
+                    "description2": "Počítač nie je pripojený k zdroju napájania a je zapnutý šetriaci režim batérie.",
+                    "description3": "Teplota procesora je príliš vysoká."
+                }
+            },
             "voice": {
                 "title": "Hlas",
                 "description": "Aplikácia Lenovo Voice umožňuje prevádzať hlas na text pomocou funkcie Hlas na text a prekladať hlas na text v reálnom čase pomocou funkcie Preklad.",
@@ -1821,12 +1827,22 @@
             "good": "DOBRÉ",
             "malicious": "ŠKODLIVÉ",
             "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Vaše skóre zabezpečenia poskytuje predstavu o vašom zabezpečení online. Výsledok závisí od toho, či:",
+            "securityScoreDepends": "Výsledok zabezpečenia závisí od toho, či ste:",
             "antivirus": "Ste chránení antivírusovým softvérom;",
             "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
             "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
             "wifi": "Šifrujete svoje osobné údaje pri používaní verejných sietí WiFi;",
-            "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia."
+            "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia.",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
                 "unknown": "Neznáma",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Lepšiu ponuku využite tu!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
         "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",
         "appFeatures": "Funkcie aplikácie",
-        "appFeaturesDescription": "Správy týkajúce sa System Update, článkov a ďalších zaujímavých funkcií.",
+        "appFeaturesDescription": "Správy týkajúce sa aktualizácie systému, článkov a ďalších zaujímavých funkcií.",
         "marketing": "Marketing",
         "marketingDescription": "Propagačné správy vrátane špeciálnych ponúk spoločnosti Lenovo.",
         "actionTriggered": "Akcia bola spustená",

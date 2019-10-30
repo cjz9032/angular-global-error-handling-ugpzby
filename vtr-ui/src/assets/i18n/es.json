@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Vaya a la configuración de Windows para dar acceso",
                 "microphoneNote": "Lenovo Vantage no tiene acceso al micrófono.",
                 "cameraPrivacyNote": "Lenovo Vantage no tiene acceso a la cámara."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Estado del sistema",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "El sistema <b>no admite</b> la batería instalada, por lo que esta no cargará. Sustituya la batería con la batería Lenovo correcta para este sistema.",
                     "Good": "<b>La batería está en buen estado.</b>",
-                    "Exhaustion": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería.",
+                    "Exhaustion": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "Bad": "<b>Se produjo un error de batería.</b> No se puede cargar/descargar la batería. Sustituya la batería.",
                     "NotDetected": "<b>No se ha detectado ninguna batería o no hay</b> ninguna batería conectada.",
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
-                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente.",
+                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
                     "OverheatedBattery": "La batería tiene una <b>temperatura demasiado alta</b>. Retírela del sistema y deje que se enfríe a temperatura ambiente.",
-                    "PermanentError": "La batería ha <b>fallado debido al desgaste normal.</b> No se puede cargar la batería. Sustituya la batería.",
+                    "PermanentError": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "NotSupportACAdapterDetail": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
                     "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} La alimentación está conectada.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Cambiar la función de fila superior predeterminada requiere que reinicie su equipo. ¿Está seguro de que desea reiniciar?",
                             "reboot": "REINICIAR",
                             "cancel": "NO AHORA"
+                        },
+                        "note": {
+                            "sFunKey": "Para tener acceso a la función F1-F12, presione Fn y las teclas de la fila superior.",
+                            "fnKey": "Para tener acceso a la función especial, presione Fn y las teclas de la fila superior."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?"
                 },
                 "controlOptions": {
                     "more": "MÁS",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Inicio de sesión sin interacción",
                     "caption": "Esta característica desbloquea o activa automáticamente el equipo cuando se encuentra frente o se acerca a este.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Cuando esté delante de la sistema o cerca de él (a una distancia de 1,2 metros), esta característica le permite iniciar sesión automáticamente en el sistema después de que se reconozca su cara. Si está en el exterior en lugar de en la oficina, debe estar más cerca del sistema y la reactivación tardará más."
                 },
                 "zeroTouchLock": {
                     "title": "Bloqueo sin interacción",
@@ -1492,7 +1498,7 @@
                     "description1": "Esta característica se basa en Windows Hello. Asegúrese de que el reconocimiento facial esté activado en los valores de Windows.",
                     "description2": "La característica utiliza sensores y la cámara para detectar su presencia. Sin embargo, la característica NO recopila datos personales.",
                     "description3": "1. Si el equipo está en modalidad de lienzo, tableta o pedestal, estas características podrían no funcionar correctamente.",
-                    "description4": "2. Si el sistema se encuentra en hibernación o se apagó. El inicio de sesión sin interacción no funcionará.",
+                    "description4": "2. Si el equipo está en modalidad de hibernación o se apagó, el inicio de sesión sin contacto no funcionará.",
                     "description5": "3. Ajuste la pantalla del sistema en un ángulo adecuado de forma que la cámara IR pueda reconocer su rostro para el inicio de sesión automático.",
                     "description6": "4. Si el modo de avión está habilitado en su equipo, estas características inalámbricas se deshabilitarán.",
                     "description7": "La precisión varía según el tamaño del cuerpo, la postura y la frecuencia de movimiento. Si el sistema está bloqueado de forma inesperada, ajuste la barra de detección para mejorar la precisión."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
             },
             "superResolution": {
-				"heading": "Medios inteligentes",
-				"title": "Escalado de resolución de video",
-				"desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
-				"tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Esta característica no funciona cuando;",
-					"description1":"El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
-					"description2":"El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
-					"description3":"La temperatura de la CPU es demasiado alta."
-				}
-			},
+                "heading": "Medios inteligentes",
+                "title": "Escalado de resolución de video",
+                "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
+                "tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Esta característica no funciona cuando;",
+                    "description1": "El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
+                    "description2": "El sistema no está conectado a la alimentación de CA y el modo de ahorro de energía de la batería está habilitado.",
+                    "description3": "La temperatura de la CPU es demasiado alta."
+                }
+            },
             "voice": {
                 "title": "Voz",
                 "description": "Lenovo Voice ayuda a convertir la voz a texto con la función Voz a texto y proporciona traducción en tiempo real de voz a texto con la función Traducción.",
@@ -1821,12 +1827,22 @@
             "good": "BIEN",
             "malicious": "MALINTENCIONADO",
             "suspicious": "SOSPECHOSO",
-            "securityScoreDepends": "La puntuación de seguridad le da una idea de qué tan seguro está en línea, el resultado depende de si:",
+            "securityScoreDepends": "Su resultado de seguridad depende de si está:",
             "antivirus": "Está protegido por software antivirus",
             "password": "Dispone de contraseñas seguras y complejas gestionadas de forma segura",
             "vpn": "Está supervisando la exposición de la red a los atacantes",
             "wifi": "Está cifrando sus datos personales al utilizar WiFi público",
-            "windowsHello": "Está protegiendo el dispositivo utilizando opciones de inicio de sesión seguro"
+            "windowsHello": "Está protegiendo el dispositivo utilizando opciones de inicio de sesión seguro",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} le ofrece protección básica para su dispositivo",
                 "unknown": "Desconocido",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Disfrute de una mejor oferta aquí."
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "En la página de configuración de preferencias, puede elegir entre activar/desactivar la notificación de mensajes basándose en las categorías de mensaje de Vantage, tenga en cuenta que, incluso si todas las categorías de mensajes están inhabilitadas, puede recibir ocasionalmente un mensaje crítico del sistema de Vantage cuando sea necesario.",
         "messagesInLenovoVantage": "Mensajes en Lenovo Vantage",
         "appFeatures": "Características de aplicación",
-        "appFeaturesDescription": "Mensajes pertinentes a la System Update, artículos y otras características destacadas.",
+        "appFeaturesDescription": "Mensajes pertinentes a la Actualización de sistema, artículos y otras características destacadas.",
         "marketing": "Marketing",
         "marketingDescription": "Mensajes de promoción, incluidas las ofertas especiales de Lenovo.",
         "actionTriggered": "Acción activada",

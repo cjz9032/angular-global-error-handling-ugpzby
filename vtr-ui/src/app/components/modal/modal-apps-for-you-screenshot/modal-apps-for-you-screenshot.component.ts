@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, Input, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,6 +10,7 @@ export class ModalAppsForYouScreenshotComponent implements OnInit, OnDestroy, Af
 
 	@Input() image: string;
 
+	public metricsParent = 'AppsForYou';
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -32,4 +33,9 @@ export class ModalAppsForYouScreenshotComponent implements OnInit, OnDestroy, Af
 	}
 
 
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.apps-for-you-dialog') as HTMLElement;
+		modal.focus();
+	}
 }

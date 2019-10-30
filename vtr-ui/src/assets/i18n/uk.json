@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Перейдіть до настройок Windows, щоб надати доступ",
                 "microphoneNote": "Lenovo Vantage не надано доступ до мікрофона.",
                 "cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Стан системи",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "Установлений акумулятор <b>не підтримується</b> цією системою та не буде заряджатися. Замініть акумулятор акумулятором Lenovo, придатним для цієї системи.",
                     "Good": "<b>Акумулятор у доброму стані.</b>",
-                    "Exhaustion": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "Exhaustion": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
                     "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
-                    "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "PermanentError": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
                     "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Якщо змінити режим роботи верхнього рядка, потрібно перезавантажити комп'ютер. Готові перезавантажити?",
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ"
+                        },
+                        "note": {
+                            "sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
+                            "fnKey": "Щоб скористатися спеціальною функцією, натисніть клавішу Fn і потрібну клавішу з верхнього ряду."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Щоб переключити функції двох клавіш, потрібно перезавантажити комп'ютер. Справді перезавантажити?"
                 },
                 "controlOptions": {
                     "more": "ДОКЛАДНІШЕ",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Автоматичний вхід",
                     "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ця функція дає змогу автоматично входити в систему після розпізнавання обличчя, якщо ви перебуваєте перед комп'ютером або підходите до нього (на відстані до 1,2 метра). На відкритому просторі поза офісом вам потрібно бути ближче до комп'ютера, а пробудження триватиме довше."
                 },
                 "zeroTouchLock": {
                     "title": "Автоматичне блокування",
@@ -1492,7 +1498,7 @@
                     "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
                     "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
-                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
+                    "description4": "2. Якщо комп'ютер перебуває в режимі глибокого сну або вимкнений, автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
                     "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
                     "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
             },
             "superResolution": {
-				"heading": "Інтелектуальне відтворення мультимедіа",
-				"title": "Підвищення роздільної здатності відео",
-				"desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label> Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Коли ви вмикаєте цю функцію, рекомендуємо підключати комп'ютер до джерела живлення змінного струму.</label></p>",
-				"tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Ця функція не працює, коли:",
-					"description1":"Комп'ютер не підключено до джерела живлення змінного струму, і рівень заряду акумулятора нижче 20 %.",
-					"description2":"Комп'ютер не підключено до джерела живлення змінного струму, і ввімкнуто режим економії заряду.",
-					"description3":"Температура процесора зависока."
-				}
-			},
+                "heading": "Інтелектуальне відтворення мультимедіа",
+                "title": "Підвищення роздільної здатності відео",
+                "desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label> Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Коли ви вмикаєте цю функцію, рекомендуємо підключати комп'ютер до джерела живлення змінного струму.</label></p>",
+                "tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ця функція не працює, коли:",
+                    "description1": "Комп'ютер не підключено до джерела живлення змінного струму, і рівень заряду акумулятора нижче 20 %.",
+                    "description2": "Комп'ютер не підключено до джерела живлення змінного струму, і ввімкнуто режим економії заряду.",
+                    "description3": "Температура процесора зависока."
+                }
+            },
             "voice": {
                 "title": "Голос",
                 "description": "Lenovo Voice перетворює ваш голос у текст за допомогою функції \"Голос у текст\" і забезпечує письмовий переклад введених голосом даних у режимі реального часу за допомогою функції перекладу.",
@@ -1821,12 +1827,22 @@
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
             "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Ваша оцінка безпеки показує рівень вашої безпеки в мережі. Результат залежить від того, чи:",
+            "securityScoreDepends": "Ваша безпека залежить від того, чи ви:",
             "antivirus": "Захищені ви антивірусом;",
             "password": "Маєте складні паролі та безпечно керуєте ними;",
             "vpn": "Відстежуєте вразливість мережі до нападів;",
             "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
-            "windowsHello": "Захищаєте пристрій безпечними способами входу."
+            "windowsHello": "Захищаєте пристрій безпечними способами входу.",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
                 "unknown": "Невідома",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Отримайте кращу пропозицію тут!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "На сторінці настройок параметрів можна ввімкнути або вимкнути певні категорії сповіщень у Vantage. Зверніть увагу: навіть якщо всі категорії повідомлень відключені, ви все одно можете час від часу отримувати від Vantage повідомлення про критичні помилки системи.",
         "messagesInLenovoVantage": "Повідомлення в Lenovo Vantage",
         "appFeatures": "Функції програми",
-        "appFeaturesDescription": "Повідомлення про System Update, статті та інші важливі функції.",
+        "appFeaturesDescription": "Повідомлення про Оновлення системи, статті та інші важливі функції.",
         "marketing": "Маркетинг",
         "marketingDescription": "Рекламні повідомлення, зокрема про спеціальні пропозиції Lenovo.",
         "actionTriggered": "Сповіщення про дії",

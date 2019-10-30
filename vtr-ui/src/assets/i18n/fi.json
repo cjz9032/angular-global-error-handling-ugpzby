@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Siirry Windows-asetuksiin ja anna käyttöoikeus",
                 "microphoneNote": "Lenovo Vantage ei voi käyttää mikrofonia.",
                 "cameraPrivacyNote": "Lenovo Vantage ei voi käyttää kameraa."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Järjestelmän tila",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "Järjestelmä <b>ei tue</b> asennettua akkua, ja sitä ei ladata. Vaihda akku oikeaan, tälle järjestelmälle tarkoitettuun Lenovon akkuun.",
                     "Good": "<b>Akun toimintakunto on hyvä.</b>",
-                    "Exhaustion": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
+                    "Exhaustion": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
                     "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
                     "OverheatedBattery": "Akun lämpötila on <b>liian korkea</b>. Poista akku tietokoneesta ja jäähdytä se huoneenlämpöiseksi.",
-                    "PermanentError": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
+                    "PermanentError": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Ylärivin oletustoiminnon muuttaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?",
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
+                        },
+                        "note": {
+                            "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
+                            "fnKey": "Jos haluat käyttää erikoistoimintoa, paina Fn-näppäintä ja ylärivin näppäimiä."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?"
                 },
                 "controlOptions": {
                     "more": "ENEMMÄN",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Zero Touch -kirjautuminen",
                     "caption": "Tämä ominaisuus avaa tietokoneen lukituksen tai herättää tietokoneen automaattisesti, kun olet tietokoneen edessä tai lähestyt tietokonetta.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Kun olet tietokoneen äärellä tai lähestyt sitä (1,2 metrin etäisyydellä), tämän toiminnon avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
@@ -1492,7 +1498,7 @@
                     "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
+                    "description4": "2. Jos tietokone on horrostilassa tai jos tietokoneesta on katkaistu virta, Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
                     "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
                     "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },
             "superResolution": {
-				"heading": "Älykäs tietoväline",
-				"title": "Näytön tarkkuuden skaalaus",
-				"desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
-				"tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
-					"description1":"Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
-					"description2":"Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
-					"description3":"Keskusyksikön lämpötila on liian korkea."
-				}
-			},
+                "heading": "Älykäs tietoväline",
+                "title": "Näytön tarkkuuden skaalaus",
+                "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
+                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
+                    "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
+                    "description2": "Tietokone ei ole liitettynä verkkovirtaan, ja akun virransäästötila on käytössä.",
+                    "description3": "Keskusyksikön lämpötila on liian korkea."
+                }
+            },
             "voice": {
                 "title": "Ääni",
                 "description": "Lenovo Voice muuttaa puheen tekstiksi Puhe tekstiksi -toiminnon avulla ja antaa reaaliaikaisen käännöksen puheesta tekstiksi Käännös-toiminnon avulla.",
@@ -1821,12 +1827,22 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
             "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
             "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
             "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
-            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla"
+            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
                 "unknown": "Tuntematon",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Saat paremman tarjouksen täältä!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "Oletusasetusten määrityssivulla voit ottaa käyttöön tai poistaa käytöstä viesti-ilmoitukset Vantagen viestiluokkien perusteella. Huomaa, että vaikka kaikki viestiluokat on poistettu käytöstä, voit silloin tällöin edelleen saada järjestelmälle tärkeitä viestejä Vantagelta, mikäli tarpeen.",
         "messagesInLenovoVantage": "Lenovo Vantage -sovelluksen viestit",
         "appFeatures": "Sovelluksen ominaisuudet",
-        "appFeaturesDescription": "System Update, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
+        "appFeaturesDescription": "Järjestelmäpäivityksiä, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
         "marketing": "Markkinointi",
         "marketingDescription": "Kampanjaviestit, mukaan lukien Lenovon erikoistarjoukset.",
         "actionTriggered": "Toiminto käynnistetty",

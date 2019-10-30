@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -215,5 +215,12 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngOnDestroy() {
 		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 		this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
+	}
+
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.welcome-modal-size') as HTMLElement;
+		modal.focus();
 	}
 }

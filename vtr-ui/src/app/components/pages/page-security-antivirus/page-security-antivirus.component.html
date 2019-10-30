@@ -297,6 +297,15 @@
 								<div class="title title-normal pb-3"
 									[innerHTML]="viewModel.otherFirewall?.name">
 								</div>
+								<vtr-container-collapsible [collapseLinkId]="'othersBetterOffer'"
+										[cardTitle]="'security.antivirus.others.betterOffer' | translate"
+										componentName="othersBetterOfferCollapsible"
+										[allowCollapse]="true">
+										<vtr-widget-mcafee [install]="viewModel.mcafeeInstall" [isOnline]="isOnline"
+											[name]="viewModel.otherAntiVirus.name" [common]="common">
+										</vtr-widget-mcafee>
+										<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
+								</vtr-container-collapsible>
 							</div>
 							<div class="col-auto px-0">
 							</div>

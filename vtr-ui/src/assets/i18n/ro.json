@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -722,7 +722,9 @@
                 "accessUrl": "Accesați setările Windows pentru a acorda acces",
                 "microphoneNote": "Lenovo Vantage nu are acces la microfon.",
                 "cameraPrivacyNote": "Lenovo Vantage nu are acces la cameră."
-            }
+            },
+            "threshold": "Threshold",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "Starea sistemului",
@@ -871,18 +873,18 @@
                 "condition": {
                     "Illegal": "Bateria instalată <b>nu este acceptată</b> de sistem şi nu se va încărca. Înlocuiţi bateria cu bateria Lenovo corectă pentru acest sistem.",
                     "Good": "<b>Bateria este în stare bună.</b>",
-                    "Exhaustion": "Bateria <b>nu a funcţionat din cauza uzurii normale.</b> Bateria nu poate fi încărcată. Înlocuiţi bateria.",
+                    "Exhaustion": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "Bad": "<b>A apărut o eroare la baterie.</b> Bateria nu poate fi încărcată/descărcată. Înlocuiţi bateria.",
                     "NotDetected": "<b>Nu a fost detectată nicio baterie sau bateria nu</b> este conectată.",
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
                     "OverheatedBattery": "Bateria este <b>prea fierbinte</b>. Scoateţi-o din calculator şi lăsaţi-o să se răcească la temperatura camerei.",
-                    "PermanentError": "Bateria <b>nu a funcţionat din cauza uzurii normale.</b> Bateria nu poate fi încărcată. Înlocuiţi bateria.",
+                    "PermanentError": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
                     "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
@@ -1365,6 +1367,10 @@
                             "description": "Pentru ca schimbarea funcției implicite a rândului de sus să aibă efect, computerul trebuie repornit. Sigur reporniți?",
                             "reboot": "REPORNIȚI",
                             "cancel": "NU ACUM"
+                        },
+                        "note": {
+                            "sFunKey": "Pentru a accesa funcţiile F1–F12, apăsaţi Fn şi tastele de pe rândul de sus.",
+                            "fnKey": "Pentru a accesa funcţiile speciale, apăsaţi Fn şi tastele de pe rândul de sus."
                         }
                     },
                     "VoipHotkeys": {
@@ -1407,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?"
                 },
                 "controlOptions": {
                     "more": "MAI MULTE",
@@ -1442,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Conectare fără atingere",
                     "caption": "Această funcție deblochează sau activează automat computerul atunci când stați în fața acestuia sau vă apropiați de el.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Când vă aflaţi în faţa computerului sau vă apropiaţi de acesta (la o distanţă de 1,2 metri), această caracteristică vă permite să vă conectaţi automat la sistem după ce faţa dvs. este recunoscută. Dacă vă aflaţi în aer liber, nu în birou, trebuie să fiţi mai aproape de computer, iar pornirea va dura mai mult."
                 },
                 "zeroTouchLock": {
                     "title": "Blocare fără atingere",
@@ -1492,7 +1498,7 @@
                     "description1": "Această caracteristică se bazează pe Windows Hello. Asigurați-vă că recunoașterea feței este activată în setările Windows.",
                     "description2": "Această caracteristică folosește senzorii și camera pentru a vă detecta prezența. Cu toate acestea, caracteristica NU colectează date personale.",
                     "description3": "1. În cazul în care computerul dvs. se află în modul Cort, Tabletă sau Suport, este posibil ca aceste caracteristici să nu funcționeze corect.",
-                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit. Conectarea fără atingere nu va funcționa.",
+                    "description4": "2. În cazul în care computerul dvs. se află în modul hibernare sau a fost oprit, Conectarea fără atingere nu va funcţiona.",
                     "description5": "3. Vă rugăm să reglați ecranul computerului la un unghi corespunzător, astfel încât camera IR să vă poată recunoaște fața pentru autentificare automată.",
                     "description6": "4. Dacă Modul avion este activat pe computer, aceste funcţii sunt dezactivate.",
                     "description7": "Precizia variază în funcţie de dimensiunea corpului, postură şi frecvenţa mişcării. În cazul în care computerul se blochează în mod neaşteptat, ajustaţi bara de sensibilitate pentru a îmbunătăţi precizia."
@@ -1573,17 +1579,17 @@
                 "tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
             },
             "superResolution": {
-				"heading": "Medii inteligente",
-				"title": "Mărirea rezoluţiei video",
-				"desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
-				"tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
-				"note":{
-					"description":"Această caracteristică nu funcţionează când:",
-					"description1":"computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
-					"description2":"computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
-					"description3":"Temperatura procesorului este prea mare."
-				}
-			},
+                "heading": "Medii inteligente",
+                "title": "Mărirea rezoluţiei video",
+                "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
+                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Această caracteristică nu funcţionează când:",
+                    "description1": "computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
+                    "description2": "computerul nu este conectat la o sursă de c.a. şi modul Economisire baterie este activat.",
+                    "description3": "Temperatura procesorului este prea mare."
+                }
+            },
             "voice": {
                 "title": "Voce",
                 "description": "Lenovo Voice vă ajută să vă convertiți vocea în texte cu ajutorul funcției Voce în text și vă oferă traducere în timp real din voce în texte cu ajutorul funcției Traducere.",
@@ -1821,12 +1827,22 @@
             "good": "BUN",
             "malicious": "RĂU-INTENȚIONAT",
             "suspicious": "SUSPECTED",
-            "securityScoreDepends": "Scorul dvs. de securitate vă oferă o idee despre cât de sigur sunteți online, iar rezultatul depinde de următoarele:",
+            "securityScoreDepends": "Rezultatul dvs. de securitate depinde dacă sunteţi:",
             "antivirus": "Dacă sunteți protejat de software antivirus",
             "password": "Dacă aveți parole puternice și complexe gestionate într-un mod sigur",
             "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
             "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
-            "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure"
+            "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure",
+            "uacTitle": "What is UAC notification?",
+            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+            "windowsTitle": "Why I need to active Windows?",
+            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+            "encryptionTitle": "What is Hard Drive Encryption?",
+            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+            "passwordTitle": "How to protect password better?",
+            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+            "enhanceTitle": "What should I do to enhance security protection?",
+            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
         },
         "antivirus": {
             "common": {
@@ -1903,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vă oferă protecție de bază pentru dispozitivul dvs.",
                 "unknown": "Necunoscut",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Bucuraţi-vă de o ofertă mai bună aici!"
             }
         },
         "wifisecurity": {
@@ -2499,7 +2515,7 @@
         "settingsDescription": "În pagina de setare a preferințelor, puteți alege să activați/dezactivați notificările pentru mesaje în funcție de categoria mesajului Vantage. Rețineți că, indiferent dacă toate categoriile de mesaje sunt dezactivate, puteți primi ocazional mesaje critice de sistem din partea Vantage când este necesar.",
         "messagesInLenovoVantage": "Mesaje în Lenovo Vantage",
         "appFeatures": "Caracteristici aplicație",
-        "appFeaturesDescription": "Mesaje referitoare la System Update, articole și alte caracteristici notabile.",
+        "appFeaturesDescription": "Mesaje referitoare la Actualizare sistem, articole şi alte caracteristici importante.",
         "marketing": "Comercializare",
         "marketingDescription": "Mesaje de promovare, inclusiv oferte speciale Lenovo.",
         "actionTriggered": "Acțiuni declanșate",

@@ -4,4 +4,5 @@ export class InputAccessoriesCapability {
 	isVoipAvailable: boolean;
 	image = '';
 	additionalCapabilitiesObj: any;
+	keyboardVersion: string;
 }
