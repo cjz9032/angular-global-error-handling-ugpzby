@@ -237,11 +237,22 @@
 				text-align: center;
 				cursor: pointer;
 
-				fa-icon {
-					font-size: 3.6rem;
+				.item-icon {
+					height: 5rem;
 					color: $main;
 					margin-bottom: 0;
 					cursor: pointer;
+					padding-top: 1rem;
+					overflow: hidden;
+					.item-img {
+						background-color: red;
+					}
+
+					img {
+						position: relative;
+						height: 3.6rem;
+						filter: drop-shadow(0px 100px 0px #fff);
+					}
 				}
 
 				.item-title {
@@ -300,6 +311,12 @@
 						color: $main_dark;
 						cursor: pointer;
 
+					}
+
+					.item-icon {
+						img {
+							top: -100px;
+						}
 					}
 				}
 			}

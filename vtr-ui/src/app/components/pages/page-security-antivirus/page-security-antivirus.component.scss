@@ -257,6 +257,19 @@
 			box-shadow: none;
 		}
 
+		::ng-deep {
+			.card-header {
+				padding: 1.25rem 3rem !important;
+				.header{
+					color: $screen_dark_70 !important;
+					font-weight: 400 !important;
+				}
+			}
+
+			.card-body {
+				padding: 0.75rem 3rem !important;
+			}
+		}
 	}
 
 	.description {

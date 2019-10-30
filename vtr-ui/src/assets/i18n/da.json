@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -879,7 +879,7 @@
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver.",
+                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
@@ -1827,7 +1827,7 @@
             "good": "GODT",
             "malicious": "SKADELIGT",
             "suspicious": "MISTÆNKELIGT",
-            "securityScoreDepends": "Dit sikkerhedsresultat giver dig et indtryk af, hvor sikker du er online. Resultatet afhænger af, om du:",
+            "securityScoreDepends": "Dit sikkerhedsresultat afhænger af, om du er:",
             "antivirus": "Er beskyttet af antivirussoftware",
             "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
             "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tilbyder grundlæggende beskyttelse af din enhed",
                 "unknown": "Ukendt",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Få et bedre tilbud her!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "På siden med præferenceindstillinger kan du vælge at aktivere/deaktivere meddelelser om beskeder baseret på kategorierne for Vantages besked. Bemærk, at selvom alle beskedkategorierne er deaktiverede, kan du stadig få vist systemkritiske beskeder fra Vantage, når det er nødvendigt.",
         "messagesInLenovoVantage": "Meddelelser i Lenovo Vantage",
         "appFeatures": "Appfunktioner",
-        "appFeaturesDescription": "Meddelelser om System Update, artikler og andre vigtige funktioner.",
+        "appFeaturesDescription": "Meddelelser om systemopdatering, artikler og andre vigtige funktioner.",
         "marketing": "Markedsføring",
         "marketingDescription": "Reklamebeskeder, herunder Lenovos særtilbud.",
         "actionTriggered": "Udløst handling",

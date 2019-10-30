@@ -105,49 +105,7 @@
 												</div>
 												</ng-template>
 											</ngb-panel>
-											<ngb-panel id="Malware & Security">
-												<ng-template ngbPanelTitle>
-												<div class="d-flex justify-content-between align-items-center">
-													<div class="heading">
-														<div class="icon icon-malware-security"></div>
-														<h3>Malware &amp; Security</h3>
-													</div>
-													<div class="status-text float-right pull-right">
-															<vtr-widget-speedometer #speedometer *ngIf="activegroup === 'Malware & Security'"></vtr-widget-speedometer>
-															<p *ngIf="activegroup === 'Tune up performance'">
-																WAITING TO SCAN
-															</p>
-															<p *ngIf="activegroup === 'Internet performance'">
-																	Completed
-															</p>
-													</div>
-												</div>
-												</ng-template>
-												<ng-template ngbPanelContent>
-												<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-													<div class="icon-box d-flex justify-content-center">
-														<div class="icon icon-virus"></div>
-														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Malware Scan'}">Malware Scan</p>
-													</div>
-													<div class="icon-box d-flex justify-content-center">
-														<div class="icon icon-power-agenda"></div>
-														<p>Zero-day Infections</p>
-													</div>
-													<div class="icon-box d-flex justify-content-center">
-														<div class="icon icon-malware-security"></div>
-														<p>Security Settings</p>
-													</div>
-													<div class="icon-box d-flex justify-content-center">
-														<div class="icon icon-uninstall-375971"></div>
-														<p>Errant Programs</p>
-													</div>
-													<div class="icon-box d-flex justify-content-center">
-														<div class="icon icon-multitasking"></div>
-														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Annoying adware'}">Annoying adware</p>
-													</div>
-												</div>
-												</ng-template>
-											</ngb-panel>
+											
 											<ngb-panel id="Internet performance">
 												<ng-template ngbPanelTitle>
 												<div class="d-flex justify-content-between align-items-center">
@@ -160,7 +118,11 @@
 													</div> -->
 													<div  class="status-text float-right pull-right" >
 															<vtr-widget-speedometer #speedometer  *ngIf="activegroup === 'Internet performance'"></vtr-widget-speedometer>
-															<p *ngIf="activegroup !== 'Internet performance'">WAITING TO SCAN</p>
+
+															<p *ngIf="activegroup === 'Tune up performance'">WAITING TO SCAN</p>
+															<p *ngIf="activegroup === 'Malware & Security'">
+																Completed
+														</p>
 													</div>
 												</div>
 												</ng-template>
@@ -186,6 +148,47 @@
 													<div class="icon-box d-flex justify-content-center">
 														<div class="icon icon-uninstall"></div>
 														<p [ngClass]="{'text-primary': scanData.status.subcategory=='e-junk'}">E-Junk</p>
+													</div>
+												</div>
+												</ng-template>
+											</ngb-panel>
+											<ngb-panel id="Malware & Security">
+												<ng-template ngbPanelTitle>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="heading">
+														<div class="icon icon-malware-security"></div>
+														<h3>Malware &amp; Security</h3>
+													</div>
+													<div class="status-text float-right pull-right">
+															<vtr-widget-speedometer #speedometer *ngIf="activegroup === 'Malware & Security'"></vtr-widget-speedometer>
+															<p *ngIf="activegroup === 'Internet performance'">
+																WAITING TO SCAN
+															</p>
+														
+													</div>
+												</div>
+												</ng-template>
+												<ng-template ngbPanelContent>
+												<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-virus"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Malware Scan'}">Malware Scan</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-power-agenda"></div>
+														<p>Zero-day Infections</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-malware-security"></div>
+														<p>Security Settings</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-uninstall-375971"></div>
+														<p>Errant Programs</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-multitasking"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Annoying adware'}">Annoying adware</p>
 													</div>
 												</div>
 												</ng-template>
