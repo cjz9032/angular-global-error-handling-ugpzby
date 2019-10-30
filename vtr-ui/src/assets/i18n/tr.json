@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
                     "Good": "<b>Pil iyi durumda.</b>",
-                    "Exhaustion": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
+                    "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
                     "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
                     "OverheatedBattery": "Pilin <b>çok ısındı</b>. Bilgisayardan çıkarın ve oda sıcaklığında soğumasını sağlayın.",
-                    "PermanentError": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
+                    "PermanentError": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
                         },
-						"note": {
-							"sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
-							"fnKey": "Özel işleve erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın."
-						}
+                        "note": {
+                            "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
+                            "fnKey": "Özel işleve erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP Kısayol Tuşları İşlevleri",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?"
                 },
                 "controlOptions": {
                     "more": "DAHA FAZLA",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 metre mesafe içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1498,7 +1498,7 @@
                     "description1": "Bu özellik için Windows Hello gereklidir. Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
-                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
+                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa Sıfır Dokunma ile Oturum Açma özelliği çalışmaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
                     "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."

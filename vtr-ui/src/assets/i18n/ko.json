@@ -873,7 +873,7 @@
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
-                    "Exhaustion": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
+                    "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
@@ -884,7 +884,7 @@
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
                     "OverheatedBattery": "배터리가 <b>너무 뜨겁습니다</b>. 컴퓨터에서 배터리를 제거하여 상온 정도까지 식히십시오.",
-                    "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
+                    "PermanentError": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
                     "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "다시 부팅",
                             "cancel": "나중에"
                         },
-						"note": {
-							"sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
-							"fnKey": "특수 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오."
-						}
+                        "note": {
+                            "sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
+                            "fnKey": "특수 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP 단축키 기능",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "제로 터치 로그인",
                     "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오는 경우 컴퓨터를 자동으로 잠금해제하거나 절전 모드에서 해제합니다.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2m 거리 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다."
                 },
                 "zeroTouchLock": {
                     "title": "제로 터치 잠금",
@@ -1498,7 +1498,7 @@
                     "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
-                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
+                    "description4": "2. 컴퓨터가 최대 절전 모드에 있거나 꺼져 있으면, 제로 터치 로그인은 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
                     "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
                     "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
