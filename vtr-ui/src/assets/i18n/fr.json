@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -873,18 +873,18 @@
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
                     "Good": "<b>La batterie est en bon état.</b>",
-                    "Exhaustion": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
+                    "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
                     "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
                     "OverheatedBattery": "La batterie est <b>trop chaude</b>. Retirez-la de l'ordinateur et laissez-la refroidir à la température ambiante.",
-                    "PermanentError": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
+                    "PermanentError": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>"
@@ -1368,10 +1368,10 @@
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
                         },
-						"note": {
-							"sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
-							"fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
-						}
+                        "note": {
+                            "sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
+                            "fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Fonctions des touches de raccourci VoIP",
@@ -1413,7 +1413,7 @@
                 "fnCtrlKey": {
                     "title": "FN key and Ctrl key swap",
                     "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?"
                 },
                 "controlOptions": {
                     "more": "PLUS",
@@ -1448,7 +1448,7 @@
                 "zeroTouchLogin": {
                     "title": "Connexion sans pression tactile",
                     "caption": "Cette fonction déverrouille ou fait sortir l'ordinateur du mode veille automatiquement lorsque vous êtes assis devant ou que vous vous en approchez.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Lorsque vous vous trouvez devant votre ordinateur ou que vous l'approchez (dans les limites d'une distance de 1,2 mètres), cette fonction vous permet de vous connecter automatiquement au système une fois qu'il aura reconnu votre visage. Si vous êtes à l'extérieur plutôt qu'au bureau, vous devez vous situer plus près de l'ordinateur et le réveil sera plus long."
                 },
                 "zeroTouchLock": {
                     "title": "Verrouillage sans pression tactile",
@@ -1498,7 +1498,7 @@
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
+                    "description4": "2. Si votre ordinateur est en mode hibernation ou a été mis hors tension, la connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
                     "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
                     "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
@@ -1827,7 +1827,7 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
             "antivirus": "Protection par un logiciel anti-virus",
             "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
             "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
                 "unknown": "Inconnu",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Profitez d'une meilleure offre ici !"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2515,7 @@
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
         "appFeatures": "Fonctionnalités des applications",
-        "appFeaturesDescription": "Messages concernant System Update, des articles et d'autres fonctionnalités utiles.",
+        "appFeaturesDescription": "Messages concernant la mise à jour du système, des articles et d'autres fonctionnalités utiles.",
         "marketing": "Marketing",
         "marketingDescription": "Messages de promotion, y compris les offres spéciales Lenovo.",
         "actionTriggered": "Action déclenchée",

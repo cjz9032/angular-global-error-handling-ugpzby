@@ -80,7 +80,7 @@ export class UPEService {
 	}
 
 	private generateAPIKey() {
-		const salt = environment.upeSharedKey;
+		const salt = window.atob(environment.upeSharedKey);
 		const anonUserID = this.upeUserID;
 		const anonDeviceId = this.deviceService.getMachineInfoSync().deviceId;
 		const clientAgentId = environment.upeClientID;

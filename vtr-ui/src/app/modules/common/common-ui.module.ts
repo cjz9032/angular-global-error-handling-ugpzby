@@ -25,6 +25,7 @@ import { UiSwitchTristateComponent } from 'src/app/components/ui/ui-switch-trist
 import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-time-picker.component';
 import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
 import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.component';
+import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -36,7 +37,6 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCircle';
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
-import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
 
 library.add(faCircle);
 library.add(faCheckCircle);
@@ -71,7 +71,8 @@ library.add(faChevronUp);
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
 		UiTooltipsComponent,
-		UiToggleComponent
+		UiToggleComponent,
+		ContainerCollapsibleComponent
 	],
 	exports: [
 		UiApsSliderComponent,
@@ -97,7 +98,8 @@ library.add(faChevronUp);
 		UiPopoverComponent,
 		MetricsModule,
 		UiTooltipsComponent,
-		UiToggleComponent
+		UiToggleComponent,
+		ContainerCollapsibleComponent
 	],
 	imports: [
 		CommonModule,

@@ -44,6 +44,10 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.timerService.start();
+		setTimeout(() => { 
+			document.getElementById('license-dialog').parentElement.parentElement.parentElement.parentElement.focus();
+			document.getElementById('license-dialog-empty').focus();
+		}, 0);
 	}
 
 	ngOnDestroy() {
