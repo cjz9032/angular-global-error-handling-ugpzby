@@ -305,6 +305,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	// @media #{$mediaquery_xl} {
 	// 	max-width: 20rem;
 	// }
+	@media #{$black-on-white} {
+		border: 0.1rem solid;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;

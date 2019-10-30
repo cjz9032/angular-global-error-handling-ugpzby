@@ -48,13 +48,9 @@ but not to any other element on the page. using ::ng-deep
 				border-radius: 2.8rem;
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
-<<<<<<< HEAD
-					&::after {
-=======
 
 					
 				&::after {
->>>>>>> 2884e689d355e27de58a9c15d56152e7fc2d81f1
 					display: block;
 					text-align: center;
 					background: transparent;
@@ -139,11 +135,7 @@ but not to any other element on the page. using ::ng-deep
 
 	[disabled].ng5-slider .ng5-slider-pointer {
 		background-color: initial;
-<<<<<<< HEAD
-		}
-=======
 	}
->>>>>>> 2884e689d355e27de58a9c15d56152e7fc2d81f1
 	[disabled].ng5-slider .ng5-slider-selection {
 		@media #{$white-on-black}{
 			background-color: $go_dark;
