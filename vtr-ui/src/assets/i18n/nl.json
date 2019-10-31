@@ -645,9 +645,9 @@
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",
             "loading": "Bezig met laden...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "uit",
+            "to": "naar",
+            "clickToChange": "klik om te wijzigen"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
@@ -956,7 +956,7 @@
                             "close": "sluiten",
                             "coolingModesList": {
                                 "list1": "Klik op het batterijpictogram van Windows op de werkbalk",
-                                "list2": "De batterijmeter van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
+                                "list2": "De modus Energiebeheer van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Slim stand-by",
                     "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
-                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande begintijd over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt, of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
                     "timer": {
-                        "heading": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
+                        "heading": "De tijd waarop u gewoonlijk uw computer gebruikt",
                         "subHeading1": "met",
                         "subHeading2": "eind",
                         "subHeading3": "Gebruik deze planning voor",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Doordeweekse dagen",
                         "weekends": "Weekends"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
+                    "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }

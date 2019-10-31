@@ -645,9 +645,9 @@
             "expand": "Utvid",
             "loader": "Henter <br> status",
             "loading": "Laster...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klikk for å endre"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -956,7 +956,7 @@
                             "close": "Lukk",
                             "coolingModesList": {
                                 "list1": "Klikk på Windows batteri-ikonet på verktøylinjen",
-                                "list2": "Windows-batterimåler vises. Skyv glidebryteren for å velge mellom optimal tid eller optimal ytelse."
+                                "list2": "Strømmodus for Windows vises. Skyv glidebryteren for å velge mellom optimal tid eller optimal ytelse."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Smart hvilemodus",
                     "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt starttidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden vi mottar for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                        "heading": "Tidspunkter du vanligvis bruker datamaskinen",
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Uke dager",
                         "weekends": "Helger"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
+                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }

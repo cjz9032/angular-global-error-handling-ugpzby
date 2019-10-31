@@ -645,9 +645,9 @@
             "expand": "Expandir",
             "loader": "Buscando <br> Status",
             "loading": "Carregando...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "de",
+            "to": "para",
+            "clickToChange": "clique para alterar"
         },
         "app-update": {
             "message": "Olá! Está disponível uma versão mais recente do Vantage, pretende carregá-la?"
@@ -956,7 +956,7 @@
                             "close": "fechar",
                             "coolingModesList": {
                                 "list1": "Clique no ícone da bateria do Windows na barra de ferramentas",
-                                "list2": "Aparecerá o indicador de bateria do Windows, deslize o controle deslizante para escolher entre tempo ideal ou desempenho ideal."
+                                "list2": "Aparecerá Modo de Energia do Windows, deslize o controle deslizante para escolher entre tempo ideal ou desempenho ideal."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Modo de Suspensão Inteligente",
                     "description": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
-                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da Hora de início agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido pelo utilizador. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
+                    "tooltip": "Quando o Modo de Suspensão Inteligente está ativado, o computador muda para o Modo de Suspensão Moderno antes da hora de INÍCIO agendada e entra em hibernação quando estiver inativo durante um determinado período de tempo quando alimentado pela bateria. Este período de tempo é otimizado com base no agendamento definido ou no tempo de utilização do computador obtido. O computador muda do modo de hibernação para o Modo de Suspensão Moderno apenas em dias agendados e não muda quando está inativo por dias agendados consecutivos.",
                     "timer": {
-                        "heading": "Hora definida em que geralmente utiliza este computador",
+                        "heading": "A hora em que geralmente utiliza o computador",
                         "subHeading1": "comece",
                         "subHeading2": "fim",
                         "subHeading3": "utilizar este agendamento para",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Dias úteis",
                         "weekends": "Finais de semana"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Ajustar automaticamente o tempo ativo do computador com base na utilização",
+                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da tabela do computador"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }

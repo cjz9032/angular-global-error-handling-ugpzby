@@ -645,9 +645,9 @@
             "expand": "Extindere",
             "loader": "Obținerea <br> statutului",
             "loading": "se incarca...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "de la",
+            "to": "cu",
+            "clickToChange": "faceţi clic pentru a schimba"
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
@@ -956,7 +956,7 @@
                             "close": "închidere",
                             "coolingModesList": {
                                 "list1": "Dați clic pe pictograma baterie din bara de instrumente Windows",
-                                "list2": "Va apărea indicatorul de baterie Windows; mutați glisorul pentru a alege între durată optimă sau performanță optimă."
+                                "list2": "Va apărea modul de alimentare Windows. Mutaţi glisorul pentru a alege între durata optimă sau performanţa optimă."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
                     "description": "Această caracteristică programează computerul dvs. să optimizeze economia de energie de la baterie în timpul orelor de inactivitate, fără a renunța la timpii rapizi de pornire pe durata orelor de utilizare mai intensivă.",
-                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru Pornire şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
+                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată în funcţie de programul pe care îl setaţi sau de timpul de utilizare al computerului pe care îl obţinem. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
                     "timer": {
-                        "heading": "Setați orele la care utilizați de obicei acest computer",
+                        "heading": "Orele la care utilizaţi de obicei computerul",
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Zilele saptamanii",
                         "weekends": "Weekend-uri"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
+                    "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }

@@ -645,9 +645,9 @@
             "expand": "Genişlet",
             "loader": "Durum <br> Alma",
             "loading": "Yükleniyor...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "başlangıç",
+            "to": "->",
+            "clickToChange": "değiştirmek için tıklatın"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
@@ -956,7 +956,7 @@
                             "close": "kapat",
                             "coolingModesList": {
                                 "list1": "Araç çubuğundaki Windows pil simgesine tıklayın",
-                                "list2": "Windows pil göstergesi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
+                                "list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
                     "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
-                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan Başlangıç saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya aldığımız bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
+                        "heading": "Bilgisayarınızı genelde kullandığınız saatleri ayarlayın",
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Hafta içi",
                         "weekends": "Hafta sonları"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
+                    "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }

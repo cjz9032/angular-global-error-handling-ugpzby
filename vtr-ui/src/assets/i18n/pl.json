@@ -645,9 +645,9 @@
             "expand": "Rozwiń",
             "loader": "Pobieranie <br> statusu",
             "loading": "Ładuję...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "z",
+            "to": "na",
+            "clickToChange": "kliknij, aby zmienić"
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
@@ -956,7 +956,7 @@
                             "close": "zamknij",
                             "coolingModesList": {
                                 "list1": "Kliknij ikonę akumulatora systemu Windows na pasku narzędzi",
-                                "list2": "Pojawi się wskaźnik stanu akumulatora systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
+                                "list2": "Pojawi się wskaźnik trybu zasilania systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
                     "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
-                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną początkową komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z akumulatora przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub otrzymanego przez nas twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
                     "timer": {
-                        "heading": "Ustaw typowe godziny korzystania z komputera",
+                        "heading": "Typowe godziny korzystania przez ciebie z komputera",
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Dni powszednie",
                         "weekends": "Weekendy"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }

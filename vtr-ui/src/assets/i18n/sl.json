@@ -645,9 +645,9 @@
             "expand": "Razširi",
             "loader": "Pridobivanje <br> statusa",
             "loading": "nalaganje...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "od",
+            "to": "do",
+            "clickToChange": "kliknite, če želite spremeniti"
         },
         "app-update": {
             "message": "Živijo! Na voljo je novejša različica aplikacije Vantage, jo želite naložiti?"
@@ -956,7 +956,7 @@
                             "close": "zapri",
                             "coolingModesList": {
                                 "list1": "Kliknite ikono baterije v sistemu Windows v orodni vrstici",
-                                "list2": "Ko se prikaže merilnik baterije v sistemu Windows, premaknite drsnik in izberite med optimalnim časom ali optimalno zmogljivostjo."
+                                "list2": "Pojavil se bo način porabe energije za Windows; z drsnikom izberite med optimalnim časom in optimalno zmogljivostjo."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Pametno stanje pripravljenosti",
                     "description": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro začetka, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na urnik, ki ga nastavite. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
+                    "tooltip": "Ko je omogočeno pametno stanje pripravljenosti, računalnik preklopi v sodobno stanje pripravljenosti pred načrtovano uro ZAGONA, ko je nekaj časa nedejaven pri baterijskem napajanju, pa preklopi v stanje mirovanja. To časovno obdobje je optimizirano glede na razpored, ki ste ga določili, ali čas uporabe računalnika, ki ga beležimo. Računalnik preklopi iz mirovanja v sodobno stanje pripravljenosti samo ob načrtovanih dnevih in ne preklopi, ko je nedejaven več zaporednih načrtovanih dni.",
                     "timer": {
-                        "heading": "Nastavite uro, ko običajno uporabljate ta računalnik",
+                        "heading": "Čas, ko običajno uporabljate računalnik",
                         "subHeading1": "začeti",
                         "subHeading2": "konec",
                         "subHeading3": "ta urnik uporabi za",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Med tedni",
                         "weekends": "Vikendi"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
+                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika"
                 }
             },
             "audio": {
@@ -2836,5 +2836,6 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
 }
