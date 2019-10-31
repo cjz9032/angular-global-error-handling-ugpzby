@@ -12,11 +12,9 @@ export enum ScanFeatures {
 	nonPrivatePasswordsScan = 'nonPrivatePasswordsScan',
 }
 
-export interface WidgetCounters {
-	[ScanFeatures.breachedAccountsScan]: null | number;
-	[ScanFeatures.websiteTrackersScan]: null | number;
-	[ScanFeatures.nonPrivatePasswordsScan]: null | number;
-}
+export type WidgetCounters = {
+	[key in ScanFeatures]: null | number;
+};
 
 function getCountOfIssues(status: FeaturesStatuses, issuesCount: number): number | null {
 	switch (status) {
