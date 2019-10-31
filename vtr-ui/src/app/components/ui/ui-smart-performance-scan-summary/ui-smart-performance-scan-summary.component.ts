@@ -63,7 +63,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	frequencyValue: number = 1;
 	dayValue: number = 0;
 	scanTime: any = { 'hour': this.hours[11],'hourId': 11,'min': this.mins[0],'minId': 0,'amPm': this.amPm[0],'amPmId': 0};
-	copyScanTime: any = {'hour': this.hours[11], 'hourId': 11, 'min': this.mins[0], 'minId': 0, 'amPm': this.amPm[0], 'amPmId': 0 };
+  copyScanTime: any = {'hour': this.hours[11], 'hourId': 11, 'min': this.mins[0], 'minId': 0, 'amPm': this.amPm[0], 'amPmId': 0 };
+  scanScheduleDate:any;
   ngOnInit() {
 this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
@@ -94,7 +95,8 @@ this.currentDate = new Date();
   //scan settings
   this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
-		this.isDaySelectionEnable = false;
+    this.isDaySelectionEnable = false;
+    this.scanScheduleDate=this.selectedDate;
   }
   expandRow(value) {
 	if (this.toggleValue === value) {
@@ -253,5 +255,8 @@ changeMinutesTime(value) {
 changeAmPm(value) {
   this.copyScanTime.amPm = this.amPm[value];
   this.copyScanTime.amPmId = value;
+}
+changeScanScheduleDate(){
+  this.scheduleTab = '';
 }
 }

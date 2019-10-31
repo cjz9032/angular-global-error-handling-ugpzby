@@ -915,6 +915,23 @@
 																</div>
 															</li>
 								
+															<li *ngIf="frequencyValue === 3" class="d-flex justify-content-between">
+																	<div class="item d-flex">
+																		<b>Date</b>
+																	</div>
+																	<div class="status d-flex justify-content-end">
+																		<p class="mr-3">{{scanScheduleDate.day}}/{{scanScheduleDate.month}}/{{scanScheduleDate.year}}</p>
+																		<fa-icon *ngIf="scheduleTab != 4" [icon]="['fas', 'chevron-down']"
+																			(click)="openScanScheduleDropDown(4)"></fa-icon>
+																			<fa-icon *ngIf="scheduleTab === 4" (click)="openScanScheduleDropDown(4)"
+																			[icon]="['fas', 'chevron-up']"></fa-icon>
+									
+																	</div>
+																	<div *ngIf="scheduleTab === 4" class="day-dropdown date-picker">
+																				<ngb-datepicker [(ngModel)]="scanScheduleDate" (select)="changeScanScheduleDate()"></ngb-datepicker>
+																	</div>
+																</li>
+
 															<li *ngIf="frequencyValue === 1 || frequencyValue === 2" class="d-flex justify-content-between">
 																<div class="item d-flex">
 																	<b>Day</b>
