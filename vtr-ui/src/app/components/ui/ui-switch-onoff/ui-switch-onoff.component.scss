@@ -93,7 +93,6 @@ input.wifi-checked + .switch {
 	@media #{$white-on-black} {
 		background-color: $dark;
 	}
-
 }
 
 input.wifi-checked + .switch > small {

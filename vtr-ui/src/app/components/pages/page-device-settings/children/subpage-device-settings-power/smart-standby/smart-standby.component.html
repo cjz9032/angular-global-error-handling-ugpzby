@@ -21,7 +21,7 @@
 						>
 					</vtr-ui-row-switch>
 					<div>
-						<div class="auto-set-checkbox">
+						<!-- <div class="auto-set-checkbox">
 							<input id="cb-auto-standby"
 								class="custom-control-input"
 								attr.aria-label="cb-auto-standby"
@@ -35,11 +35,24 @@
 							<label for="cb-auto-standby">
 								{{ 'device.deviceSettings.power.smartStandby.checkbox' | translate }}
 							</label>
-						</div>
+						</div> -->
+						<div class="col-12 schedule_header">
+							<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
+							<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'" [group]="'smartStandByBtns'" name="nMehod_show"
+							  [label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
+							  [value]="'Automatic mode'" [checked]="automodeBtnVal" (change)="changeMode(true, false)"
+							  [disabled]="!smartStandby.isEnabled">
+							</vtr-ui-rounded-rectangle-radio>
+							<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'" [group]="'smartStandByBtns'" name="fnKeyMehod_show"
+							  [label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
+							  [value]="'Manual mode'" [checked]="manualmodeBtnVal" (change)="changeMode(false, true)"
+							  [disabled]="!smartStandby.isEnabled">
+							</vtr-ui-rounded-rectangle-radio>						
+						  </div>
 					</div>
-					<div *ngIf="!checkbox" class="schedule">
+					<div *ngIf="manualmodeBtnVal" class="schedule">
 							<h5>
-								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate | uppercase }}
+								{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 							</h5>
 						<span>
 							{{smartStandbyService.schedule}}
@@ -51,7 +64,7 @@
 						</span>
 					</div>
 
-					<div *ngIf="!checkbox" class="click-to-change-collapse">
+					<div *ngIf="manualmodeBtnVal" class="click-to-change-collapse">
 						<!-- header -->
 						<div class="collapse-header"
 							(click)="onToggle(timeToggle)" (keydown.enter)="onToggle(timeToggle)" [attr.aria-expanded]="!isCollapsed"

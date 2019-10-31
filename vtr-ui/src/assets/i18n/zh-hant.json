@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
         "deviceStatistics": "與 Lenovo 分享統計資料",
         "deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
-        "Note": "附註：",
+		"userProfile": "User profile",
+		"Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
     },
     "modernPreload": {
