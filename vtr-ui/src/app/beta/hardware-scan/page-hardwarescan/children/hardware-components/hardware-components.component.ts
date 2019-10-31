@@ -45,7 +45,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private cancelHandler = {
 		'cancel': undefined
 	};
-	private cancelRequested = false;
 	private batteryMessage: string;
 	private culture: any;
 	private showETicket = false;
@@ -110,22 +109,27 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.setPageTitle();
 
 		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isScanDoneExecuting()) {
-				this.hardwareScanService.setIsScanDone(false);
-				this.hardwareScanService.setScanExecutionStatus(false);
-				this.hardwareScanService.setRecoverExecutionStatus(false);
-			}
-
 			if (this.hardwareScanService.isRecoverInit()) {
 				this.doRecoverBadSectors();
 				this.hardwareScanService.setRecoverInit(false);
 			}
 
-			if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting() && !this.hardwareScanService.isLoadingDone()) {
-				this.hardwareScanService.initLoadingModules(this.culture);
+			if (this.hardwareScanService.hasLastResponse()) {
+				this.hardwareScanService.renderLastResponse();
+			} else {
+				if (this.hardwareScanService.isScanDoneExecuting()) {
+					this.hardwareScanService.setIsScanDone(false);
+					this.hardwareScanService.setScanExecutionStatus(false);
+					this.hardwareScanService.setRecoverExecutionStatus(false);
+				}
+
+				if (!this.hardwareScanService.isLoadingDone()) {
+					this.hardwareScanService.initLoadingModules(this.culture);
+				}
+
+				this.hardwareScanService.setFinalResponse(null);
+				this.hardwareScanService.setEnableViewResults(false);
 			}
-			this.hardwareScanService.setFinalResponse(null);
-			this.hardwareScanService.setEnableViewResults(false);
 		}
 	}
 
@@ -221,12 +225,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.modalCancelRef.componentInstance.cancelRequested.subscribe(() => {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
-					this.cancelRequested = true;
 					//this.cancelHandler.cancel();
 					this.hardwareScanService.cancelScanExecution()
 						.then((response) => {
 							console.log('response: ', response);
 						});
+
+					this.hardwareScanService.isWorkDone().subscribe((done) => {
+						if (done) {
+							this.modalCancelRef.close();
+						}
+					});
 				}
 			});
 		}
@@ -264,7 +273,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		console.log('[Start]: getDoScan()');
 		this.startDate = new Date();
 		this.progress = 0;
-		this.cancelRequested = false;
 
 		const payload = {
 			'requests': requests,
@@ -285,10 +293,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					console.log(this.hardwareScanService.getFinalResponse());
 				})
 				.catch((ex: any) => {
-					// This command avoid crashs on HW Scan and cancelScan if an exception occurs.
-					if (ex !== null) {
-						this.cancelRequested = true;
-					}
+					console.error('[getDoScan] An exception has occurred: ', ex);
 				})
 				.finally(() => {
 					this.cleaningUpScan(undefined);
@@ -301,11 +306,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.hardwareScanService.setFinalResponse(response);
 		}
 
-		if (this.modalCancelRef) {
-			this.modalCancelRef.close();
-		}
-
-		if (this.cancelRequested === false) {
+		if (!this.hardwareScanService.isCancelRequested()) {
 			this.hardwareScanService.setEnableViewResults(true);
 		} else {
 			this.initComponent();
