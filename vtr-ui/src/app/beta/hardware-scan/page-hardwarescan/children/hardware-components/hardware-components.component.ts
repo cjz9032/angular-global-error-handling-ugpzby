@@ -48,7 +48,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private batteryMessage: string;
 	private culture: any;
 	private showETicket = false;
-	private modalCancelRef: any;
 
 	public isOnline = true;
 	completeStatusToken: string;
@@ -216,13 +215,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					});
 			}
 		} else {
-			this.modalCancelRef = this.modalService.open(ModalCancelComponent, {
+			let modalCancel = this.modalService.open(ModalCancelComponent, {
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
 			});
 
-			this.modalCancelRef.componentInstance.cancelRequested.subscribe(() => {
+			modalCancel.componentInstance.cancelRequested.subscribe(() => {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
 					//this.cancelHandler.cancel();
@@ -233,7 +232,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 					this.hardwareScanService.isWorkDone().subscribe((done) => {
 						if (done) {
-							this.modalCancelRef.close();
+							modalCancel.close();
 						}
 					});
 				}
