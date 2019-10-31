@@ -846,40 +846,160 @@
 								</div>
 
 								<div class="row mb-40"  *ngIf="isSubscribed">
-									<div class="col col-12">
-										<div class="scan-settings sidebar-widget">
-											<div class="title pb-3">
-												Scan settings
+										<div class="col col-12">
+												<div class="scan-settings sidebar-widget">
+													<div *ngIf="!isChangeSchedule">
+														<div class="title pb-3">
+															Scan settings
+														</div>
+														<div class="card-info">
+															<p>Enable or disable the scan and set the scan schedule</p>
+														</div>
+														<ul class="chevron-list">
+															<li class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+																	<strong>Enable Scan</strong>
+																</div>
+																<div class="status d-flex justify-content-end">
+																	<vtr-ui-switch-onoff [value]="scanToggleValue" (toggle)="setEnableScanStatus($event)"></vtr-ui-switch-onoff>
+								
+																</div>
+															</li>
+															<li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
+																<div class="item d-flex">
+																	<fa-icon class="icon" [icon]="['far', 'calendar-alt']"></fa-icon>
+																	<strong>Once a week</strong>
+																</div>
+																<div class="status d-flex justify-content-end" >
+																	<p class="mr-3 text-uppercase"><strong>{{selectedDay | slice:0:3}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
+																	<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+																</div>
+															</li>
+														</ul>
+														<!-- <a href="#" class="link-text">Manage Subscription</a> -->
+													</div>
+								
+								
+								
+								
+								
+													<div *ngIf="isChangeSchedule" class="change-scan-schedule">
+														<div class="title pb-3">
+															Change scan schedule
+														</div>
+														<div class="card-info">
+															<p>Edit the scan schedule to run when you need it.</p>
+														</div>
+														<ul class="chevron-list">
+															<li class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<b>Frequency</b>
+																</div>
+																<div class="status d-flex justify-content-end">
+																	<p class="mr-3">{{selectedFrequency}}</p>
+																	<fa-icon  *ngIf="scheduleTab != 1" (click)="openScanScheduleDropDown(1)"
+																		[icon]="['fas', 'chevron-down']"></fa-icon>
+																		<fa-icon *ngIf="scheduleTab === 1" (click)="openScanScheduleDropDown(1)"
+																		[icon]="['fas', 'chevron-up']"></fa-icon>
+																	
+																	<!-- <div *ngIf="scheduleTab === 1" class="dropdown">
+																		<li>Every Day</li>
+																		<li>Every Day</li>
+																		<li>Every Day</li>
+																	</div> -->
+																</div>
+																<div *ngIf="scheduleTab === 1" class="freq-dropdown">
+																	<div *ngFor="let freq of scanFrequency;let ind=index" class="frequency-text"
+																		(click)="changeScanFrequency(ind)" [ngClass]="{'selected-frequency':frequencyValue === ind}">{{freq}}</div>
+																</div>
+															</li>
+								
+															<li *ngIf="frequencyValue === 3" class="d-flex justify-content-between">
+																	<div class="item d-flex">
+																		<b>Date</b>
+																	</div>
+																	<div class="status d-flex justify-content-end">
+																		<p class="mr-3">{{scanScheduleDate.day}}/{{scanScheduleDate.month}}/{{scanScheduleDate.year}}</p>
+																		<fa-icon *ngIf="scheduleTab != 4" [icon]="['fas', 'chevron-down']"
+																			(click)="openScanScheduleDropDown(4)"></fa-icon>
+																			<fa-icon *ngIf="scheduleTab === 4" (click)="openScanScheduleDropDown(4)"
+																			[icon]="['fas', 'chevron-up']"></fa-icon>
+									
+																	</div>
+																	<div *ngIf="scheduleTab === 4" class="day-dropdown date-picker">
+																				<ngb-datepicker [(ngModel)]="scanScheduleDate" (select)="changeScanScheduleDate()"></ngb-datepicker>
+																	</div>
+																</li>
+
+															<li *ngIf="frequencyValue === 1 || frequencyValue === 2" class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<b>Day</b>
+																</div>
+																<div class="status d-flex justify-content-end">
+																	<p class="mr-3">{{selectedDay}}</p>
+																	<fa-icon *ngIf="scheduleTab != 2" [icon]="['fas', 'chevron-down']"
+																		(click)="openScanScheduleDropDown(2)"></fa-icon>
+																		<fa-icon *ngIf="scheduleTab === 2" (click)="openScanScheduleDropDown(2)"
+																		[icon]="['fas', 'chevron-up']"></fa-icon>
+								
+																</div>
+																<div *ngIf="scheduleTab === 2" class="day-dropdown">
+																	<div *ngFor="let day of days;let ind=index"
+																		(click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dayValue === ind}">{{day}}</div>
+																</div>
+															</li>
+															<li class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<b>Time</b>
+																</div>
+																<div  class="icon" class="status d-flex justify-content-end">
+																	<!-- <p class="mr-3">12:00AM</p> -->
+																	<p class="mr-3">{{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
+																	<fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']" (click)="openScanScheduleDropDown(3)"></fa-icon>
+																	<fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
+																	[icon]="['fas', 'chevron-up']"></fa-icon>
+																</div>
+																<div *ngIf="scheduleTab === 3" class="time-dropdown">
+																	<div class="row">
+																		<div class="col hour-block">
+																				<div class="hour-text" *ngFor="let hour of hours;let ind=index" [ngClass]="{'selected-text':copyScanTime.hourId === ind}"
+																				(click)="changeHoursTime(ind)">{{hour}}</div>
+																			</div>
+																			<div class="col minutes-block">
+																					<div class="min-text" *ngFor="let min of mins;let ind=index" [ngClass]="{'selected-text':copyScanTime.minId === ind}"
+																					(click)="changeMinutesTime(ind)">{{min}}</div>
+																				</div>
+																				<div class="col amPm-block">
+																						<div class="amPm-text" *ngFor="let amPm of amPm;let ind=index" [ngClass]="{'selected-text':copyScanTime.amPmId === ind}"
+																						(click)="changeAmPm(ind)">{{amPm}}</div>
+																							
+																					</div>
+																		</div>
+																		
+																				<div class="row select-close py-2">
+																					<div class="col text-center"><fa-icon [icon]="['fal', 'check']"	(click)="saveChangeScanTime()"></fa-icon></div>
+																					<div class="col text-center"><fa-icon [icon]="['fal', 'times']" (click)="cancelChangeScanTime()"></fa-icon></div>
+																					
+																				
+																				
+																			</div>
+																</div>
+																
+															</li>
+														</ul>
+														<!-- <a href="#" class="link-text">Manage Subscription</a> -->
+														<div >
+																<button class="save-button" (click)="saveChangedScanSchedule()">save</button>
+																<a class="cancel-link active" (click)="cancelChangedScanSchedule()">cancel</a>
+															</div>
+														
+													</div>
+													
+								
+								
+												</div>
 											</div>
-											<div class="card-info">
-												<p>Enable or disable the scan and set the scan schedule</p>
-											</div>
-											<ul class="chevron-list">
-                                                <li class="d-flex justify-content-between">
-                                                    <div class="item d-flex">
-                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
-                                                        <strong>Enable Scan</strong>
-                                                    </div>
-                                                    <div class="status d-flex justify-content-end">
-                                                        <vtr-ui-switch-onoff [value]="true"
-                                                        [disabled]="false"></vtr-ui-switch-onoff>
-                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex justify-content-between">
-                                                    <div class="item d-flex">
-                                                        <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-                                                        <strong>Once a week</strong>
-                                                    </div>
-                                                    <div class="status d-flex justify-content-end">
-                                                        <p class="mr-3"><strong>SAT</strong> | 12:00AM</p>
-                                                        <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-                                                    </div>
-                                                </li>
-                                            </ul>
-											<!-- <a href="#" class="link-text">Manage Subscription</a> -->
-										</div>
-									</div>
 								</div>
 						</div>
 					</div>
@@ -887,3 +1007,18 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
