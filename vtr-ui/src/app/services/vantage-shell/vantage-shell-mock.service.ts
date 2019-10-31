@@ -2049,4 +2049,18 @@ export class VantageShellService {
 	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
 		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
 	}
+
+	public getRegistryUtil(): Phoenix.RegistryFeature {
+		if (this.phoenix) {
+			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	public getSelfSelect(){
+		if (this.phoenix) {
+			return this.phoenix.selfSelect;
+		}
+		return undefined;
+	}
 }
