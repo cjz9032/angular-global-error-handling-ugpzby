@@ -8,7 +8,7 @@
 					<img *ngIf="!deviceService.isGaming"  class="coronet-logo"
 					[src]=" 'assets/images/coronet-logo.svg' | svgInline | async" />
 					<img *ngIf="deviceService.isGaming"  class="coronet-logo"
-					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />					
+					[src]="'assets/images/coronet-logo-gaming.svg' | svgInline | async" />
 			</div>
 		</div>
 		<div class="row mt-20 no-gutters">
@@ -106,7 +106,6 @@
 						</div>
 					</div>
 					<div id="wifi-collapse"
-						role="button"
 						class="collapse show"
 						*ngIf="data.isLWSEnabled && isShowMore===false">
 						<div class="card-body">
