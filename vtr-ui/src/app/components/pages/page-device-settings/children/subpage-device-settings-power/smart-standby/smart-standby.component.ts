@@ -8,6 +8,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -31,6 +33,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
+		private modalService: NgbModal,
 		public powerService: PowerService,
 		private logger: LoggerService,
 		public commonService: CommonService,
@@ -299,7 +302,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.manualmodeBtnVal = manualMode;
 	}
 	public showUsageGraph() {
-
+			// this.modalService.open(SmartStandbyGraphComponent, { backdrop: true, windowClass: 'gaming-help-modal' });
 	}
 
 	ngOnDestroy() {
