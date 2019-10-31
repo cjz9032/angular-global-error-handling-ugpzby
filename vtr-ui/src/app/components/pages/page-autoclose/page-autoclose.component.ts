@@ -18,7 +18,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: [ './page-autoclose.component.scss' ]
+	styleUrls: ['./page-autoclose.component.scss']
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -26,7 +26,7 @@ export class PageAutocloseComponent implements OnInit {
 	public autoCloseAppList: any;
 	// Toggle status
 	isOnline = true;
-	toggleStatus: boolean;
+	toggleStatus: boolean = this.gamingAutoCloseService.getAutoCloseStatusCache() || false;
 	needToAsk: any;
 	getNeedStatus: boolean;
 	autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
@@ -75,14 +75,13 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// AutoClose Init
+		console.log('this.toggleStatusthis.toggleStatusthis.toggleStatus', this.toggleStatus);
+		this.getAutoCloseStatus();
+		this.refreshAutoCloseList();
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
-		// AutoClose Init
-		this.refreshAutoCloseList();
-		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
-		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -270,7 +269,7 @@ export class PageAutocloseComponent implements OnInit {
 			});
 
 			if (this.tileSource.positionB === 'UPE') {
-				const upeParam = {position: 'position-B'};
+				const upeParam = { position: 'position-B' };
 				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
 					const cardContentPositionB = this.upeService.getOneUPEContent(
 						upeResp,
@@ -297,7 +296,7 @@ export class PageAutocloseComponent implements OnInit {
 			}
 
 			if (this.tileSource.positionF === 'UPE') {
-				const upeParam = {position: 'position-F'};
+				const upeParam = { position: 'position-F' };
 				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
 					const cardContentPositionF = this.upeService.getOneUPEContent(
 						upeResp,
@@ -341,5 +340,15 @@ export class PageAutocloseComponent implements OnInit {
 	private setPreviousContent() {
 		this.cardContentPositionF = this.gamingAutoCloseService.cardContentPositionF;
 		this.cardContentPositionB = this.gamingAutoCloseService.cardContentPositionB;
+	}
+
+	async getAutoCloseStatus() {
+		try {
+			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+			this.toggleStatus = await this.gamingAutoCloseService.getAutoCloseStatus();
+			this.gamingAutoCloseService.setAutoCloseStatusCache(this.toggleStatus);
+		} catch (err) {
+			console.log(`ERROR in getAutoCloseStatus()`, err);
+		}
 	}
 }
