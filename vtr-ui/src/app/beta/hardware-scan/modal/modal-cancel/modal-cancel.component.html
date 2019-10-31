@@ -30,7 +30,8 @@
     *ngIf="!loading"
     vtrMetrics
     metricsEvent="FeatureClick"
-    metricsParent="Device.HardwareScan"
+    metricsParent="{{ItemParent}}"
+    metricsItem=""
     (click)="closeModal()">
     <img [src]=" '/assets/icons/Close.svg' | svgInline | async"
       alt=""

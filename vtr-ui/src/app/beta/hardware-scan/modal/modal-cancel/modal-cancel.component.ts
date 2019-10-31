@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,6 +16,7 @@ export class ModalCancelComponent implements OnInit {
 	loading: boolean;
 
 	timerRef: any;
+	@Input() ItemParent: string;
 
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 
@@ -24,9 +25,11 @@ export class ModalCancelComponent implements OnInit {
 	ngOnInit() {
 		this.loading = false;
 		this.timerRef = setTimeout(() => { this.onAgree(); }, 10000);
+		console.log("ngOnIni >>>>> valor ItemParent: " + this.ItemParent);
 	}
 
 	public closeModal() {
+		console.log("closeModal >>>>> valor ItemParent: " + this.ItemParent);
 		if (this.timerRef) {
 			clearTimeout(this.timerRef);
 		}
