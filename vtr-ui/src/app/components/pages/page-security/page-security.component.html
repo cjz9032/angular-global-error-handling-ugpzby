@@ -9,7 +9,7 @@
 	<left-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12">
+				<div class="col-12 p-0">
 					<vtr-widget-security *ngIf="isOnline"
 						[showWindowsHello]="windowsHelloLandingViewModel? true : false"
 						[percentValue]="score"></vtr-widget-security>
@@ -20,8 +20,8 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container left">
+			<div class="row landing-widgets p-20">
+				<div class="col-md-12 col-lg-6 p-20 widgets-left">
 
 					<vtr-ui-landing-feature
 						*ngIf="antivirusLandingViewModel?.subject?.status !== undefined && antivirusLandingViewModel?.subject?.status !== null"
@@ -39,11 +39,11 @@
 					</vtr-ui-landing-feature>
 				</div>
 
-				<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container">
-					<div class="security-widget wifi-connected-home"
+				<div class="col-md-12 col-lg-6 p-20 widgets-right">
+					<div class="landing-widget security-widget-wifi"
 						*ngIf="wifiSecurityLandingViewModel?.subject?.status !== undefined && wifiSecurityLandingViewModel?.subject?.status !== null">
-						<div class="security-widget-inner">
-							<div class="security-widget-wifi">
+						<div class="landing-widget-inner">
+							<div>
 								<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
 								</vtr-ui-object-title>
 								<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList"
@@ -92,7 +92,8 @@
 									</ul>
 								</div>
 							</div>
-							<div class="pull"><img class="coronet-logo"
+							<div class="pull">
+								<img class="logo"
 									[src]="wifiSecurityLandingViewModel.imgUrl|svgInline|async" />
 							</div>
 						</div>

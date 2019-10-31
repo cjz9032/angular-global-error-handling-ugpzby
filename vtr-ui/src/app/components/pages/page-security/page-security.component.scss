@@ -1,34 +1,28 @@
 @import "../../../app.theme";
 ::ng-deep {
 	.vtr-page-security {
-		.vtr-page-right-column {
-			.align-center {
-				padding: 0 6rem 0rem 6rem;
-			}
-		}
-
-		.vtr-page-left-column-inner {
+		.landing-widgets {
 			background-color: $light;
 			box-shadow: $drop_shadow;
-			border-radius: $border_radius;
-
-			.security-widgets-container.left {
+			border-radius: 0 0 $border_radius $border_radius;
+			.widgets-left {
 				border-right: solid 1px $main_lightest;
 			}
-
-			.security-widgets-container {
-				.security-widget {
-					border-bottom: solid 1px $main_lightest;
-					padding: 3rem;
-					.security-widget-inner {
-						.title {
-							font-size: 2.5rem;
-							font-weight: $weight_regular;
-							margin-bottom: -1.5rem;
-						}
+			.landing-widget {
+				border-bottom: solid 1px $main_lightest;
+				padding-bottom: 2.5rem;
+				margin-bottom: 2.5rem;
+				.landing-widget-inner {
+					.title {
+						font-size: $fontsize_xl;
+						font-weight: $weight_regular;
+					}
+					.logo {
+						width: 12rem;
+						padding-top: 1rem;
 					}
 				}
-				.security-widget .security-widget-wifi {
+				&.security-widget-wifi {
 					.wifi-history {
 						font-size: 1.3rem;
 						border: 0.1rem solid $shade_lighter;
@@ -117,29 +111,6 @@
 									border-bottom: none;
 								}
 							}
-						}
-					}
-				}
-				.security-widget.wifi-connected-home {
-					.security-widget-inner {
-						.title {
-							color: $go_dark;
-						}
-						.coronet-logo {
-							width: 9rem;
-							padding-top: 1rem;
-						}
-					}
-				}
-				.security-widget.windows-hello {
-					border-bottom: none;
-					.security-widget-inner {
-						.title {
-							color: $go_dark;
-						}
-						.windows-logo {
-							width: 9rem;
-							padding-top: 1rem;
 						}
 					}
 				}

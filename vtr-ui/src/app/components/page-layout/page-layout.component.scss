@@ -73,6 +73,9 @@
 				padding-left: $padding_side;
 				padding-right: 3rem;
 				background-color: $shade_extralight;
+				@media #{$breakpoint_xl} {
+					padding-left: $padding_side_sm;
+				}
 				@media #{$breakpoint_lg} {
 					padding-left: $padding_side_sm;
 					padding-right: $padding_side_sm;
@@ -82,6 +85,9 @@
 				padding-right: $padding_side;
 				padding-left: 3rem;
 				background-color: $light;
+				@media #{$breakpoint_xl} {
+					padding-right: $padding_side_sm;
+				}
 				@media #{$breakpoint_lg} {
 					padding-left: $padding_side_sm;
 					padding-right: $padding_side_sm;

@@ -9,53 +9,56 @@
 	<left-content>
 		<div *ngIf="viewModel?.currentPage ==='windows'"
 			class="windows">
-			<div *ngIf="isOnline"
-				class="row justify-content-center">
-				<div class="header w-100 mt-minus row justify-content-between w-windows">
-					<div class="rounded-card-with-shadow py-4 pl-4 pl-md-0 pr-4 col mr-md-5 part-position">
-						<div class="d-flex flex-column flex-md-row"
-							[vtrAppSearchScroller]="['search-anti-virus']">
-							<div class="align-self-center">
-								<img class="img-fluid"
-									src="assets/images/antivirus/protection.png" />
+			<div class="row"
+				*ngIf="isOnline">
+				<div class="col-xl-8 py-0 left-col">
+					<div class="row h-100 rounded-card-with-shadow"
+						[vtrAppSearchScroller]="['search-anti-virus']">
+						<div class="col-xl-3 align-self-center text-center p-0">
+							<img class="img-limit img-xl-15"
+								src="assets/images/antivirus/protection.png" />
+						</div>
+						<div class="col-xl-9 align-self-center">
+							<div class="subtitle color-light p-0"
+								[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
 							</div>
-							<div class="col align-self-center px-5 mb-5 px-md-0 mb-md-0">
-								<div class="subtitle p-0"
-									[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
+						</div>
+						<div class="row rounded-card-with-shadow bg-white b-border d-xl-none inset">
+							<div class="col-4 align-self-center pr-0">
+								<img class="img-limit"
+									[src]="'/assets/images/antivirus/mcafee_black.png'" />
+							</div>
+							<div class="col-8 align-self-center">
+								<div class="title"
+									[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
 								</div>
-							</div>
-							<div
-								class="d-md-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-8 row b-border align-self-center">
-								<img class="align-self-center col-4"
-									[src]=" '/assets/images/antivirus/mcafee_black.png'" />
-								<div class="align-self-center col-8 p-0">
-									<div class="title"
-										[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
-									</div>
-									<div class="row">
-										<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate"
-											class="subtitle subtitle-color">
-											<a vtrMetrics
-												id="sa-av-link-view"
-												metricsEvent="ArticleClick"
-												metricsItem="ViewTips"
-												metricsItemPosition="1"
-												metricsPageNumber="1"
-												[metricsItemID]="mcafeeArticleId"
-												[metricsItemCategory]="mcafeeArticleCategory"
-												href="javascript:void(0)"
-												target="_blank"
-												(click)="openArticle()"></a>
-										</div>
+								<div class="row">
+									<div *vtrTranslate="'security.antivirus.windowsDefender.topContent' | translate"
+										class="subtitle subtitle-color">
+										<a vtrMetrics
+											id="sa-av-link-view"
+											metricsEvent="ArticleClick"
+											metricsItem="ViewTips"
+											metricsItemPosition="1"
+											metricsPageNumber="1"
+											[metricsItemID]="mcafeeArticleId"
+											[metricsItemCategory]="mcafeeArticleCategory"
+											href="javascript:void(0)"
+											target="_blank"
+											(click)="openArticle()"></a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-4 row b-border md-none">
-						<img class="align-self-center col-4"
-							[src]=" '/assets/images/antivirus/mcafee_black.png'" />
-						<div class="align-self-center col-8 p-0">
+				</div>
+				<div class="col-xl-4 d-none d-xl-block py-0 right-col">
+					<div class="row h-100 rounded-card-with-shadow bg-white b-border">
+						<div class="col-4 align-self-center pr-0">
+							<img class="img-limit"
+								[src]="'/assets/images/antivirus/mcafee_black.png'" />
+						</div>
+						<div class="col-8 align-self-center">
 							<div class="title"
 								[innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">
 							</div>
@@ -83,51 +86,55 @@
 				[title]="'dashboard.offlineInfo.title' | translate"
 				[isSubtitleVisible]="false"
 				[isButtonVisible]="false"></vtr-widget-offline-info>
-			<div class="subheader antivirus-block row justify-content-between">
-				<div class="rounded-card-with-shadow p-5 bg-white defender-part"
-					[ngClass]="{'offline-part': isOnline}">
-					<div class="row justify-content-between">
-						<div class="row">
-							<img class="mcafee-logo align-self-start"
-								[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
-							<div class="title"
-								[innerHTML]="'security.antivirus.mcafee.title' | translate">
+			<div class="row">
+				<div class="col-xl-6 left-col">
+					<div class="rounded-card-with-shadow bg-white defender-part p-40"
+						[ngClass]="{'offline-part': isOnline}">
+						<div class="row justify-content-between">
+							<div class="row">
+								<img class="mcafee-logo align-self-start"
+									[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+								<div class="title larger"
+									[innerHTML]="'security.antivirus.mcafee.title' | translate">
+								</div>
+							</div>
+							<div class="flex-column button white-button">
+								<vtr-ui-button class="white-btn"
+									linkId="sa-av-link-subscribe"
+									metricsEvent="itemClick"
+									metricsItem="subscribe"
+									metricsParent="security.antivirus"
+									upperCaseLabel=false
+									btnHeight=true
+									[isDisabled]="isOnline === false"
+									[label]="'security.antivirus.windowsDefender.buyNow' | translate"
+									[href]="common.urlGetMcAfee"></vtr-ui-button>
 							</div>
 						</div>
-						<div class="flex-column button white-button">
-							<vtr-ui-button class="white-btn"
-								linkId="sa-av-link-subscribe"
-								metricsEvent="itemClick"
-								metricsItem="subscribe"
-								metricsParent="security.antivirus"
-								upperCaseLabel=false
-								btnHeight=true
-								[isDisabled]="isOnline === false"
-								[label]="'security.antivirus.windowsDefender.buyNow' | translate"
-								[href]="common.urlGetMcAfee"></vtr-ui-button>
-						</div>
+						<div class="divider"></div>
+						<div class="subtitle"
+							[innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
+						<vtr-widget-mcafee-state [windowsDefender]="true"
+							[url]="common.urlGetMcAfee"
+							[isOnline]="isOnline">
+						</vtr-widget-mcafee-state>
+						<div class="subtitle mt-5 text-center"
+							[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
 					</div>
-					<div class="divider"></div>
-					<div class="subtitle"
-						[innerHTML]="'security.antivirus.windowsDefender.buy' | translate"></div>
-					<vtr-widget-mcafee-state [windowsDefender]="true"
-						[url]="common.urlGetMcAfee"
-						[isOnline]="isOnline">
-					</vtr-widget-mcafee-state>
-					<div class="subtitle mt-5 text-center"
-						[innerHTML]="'security.antivirus.mcafee.discount' | translate"></div>
 				</div>
-				<div class="rounded-card-with-shadow p-5 bg-white defender-part s-border">
-					<div class="title"
-						[innerHTML]="'security.antivirus.windowsDefender.windowsSubtitle' | translate">
+				<div class="col-xl-6 right-col">
+					<div class="rounded-card-with-shadow bg-white defender-part s-border p-40">
+						<div class="title larger"
+							[innerHTML]="'security.antivirus.windowsDefender.windowsSubtitle' | translate">
+						</div>
+						<div class="divider"></div>
+						<div class="subtitle"
+							[innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate"></div>
+						<vtr-widget-mcafee-state [windowsDefender]="true"
+							[statusList]="viewModel.windowsDefenderstatusList | statusTransform"
+							[isOnline]="isOnline">
+						</vtr-widget-mcafee-state>
 					</div>
-					<div class="divider"></div>
-					<div class="subtitle"
-						[innerHTML]="'security.antivirus.windowsDefender.onlyBasic' | translate"></div>
-					<vtr-widget-mcafee-state [windowsDefender]="true"
-						[statusList]="viewModel.windowsDefenderstatusList | statusTransform"
-						[isOnline]="isOnline">
-					</vtr-widget-mcafee-state>
 				</div>
 			</div>
 			<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
@@ -298,13 +305,15 @@
 									[innerHTML]="viewModel.otherFirewall?.name">
 								</div>
 								<vtr-container-collapsible [collapseLinkId]="'othersBetterOffer'"
-										[cardTitle]="'security.antivirus.others.betterOffer' | translate"
-										componentName="othersBetterOfferCollapsible"
-										[allowCollapse]="true">
-										<vtr-widget-mcafee [install]="viewModel.mcafeeInstall" [isOnline]="isOnline"
-											[name]="viewModel.otherAntiVirus.name" [common]="common">
-										</vtr-widget-mcafee>
-										<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
+									[cardTitle]="'security.antivirus.others.betterOffer' | translate"
+									componentName="othersBetterOfferCollapsible"
+									[allowCollapse]="true">
+									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
+										[isOnline]="isOnline"
+										[name]="viewModel.otherAntiVirus.name"
+										[common]="common">
+									</vtr-widget-mcafee>
+									<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 								</vtr-container-collapsible>
 							</div>
 							<div class="col-auto px-0">

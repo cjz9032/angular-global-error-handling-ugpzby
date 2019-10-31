@@ -14,7 +14,7 @@
 		<div class="container-fluid p-0">
 			<div class="row security-card p-40">
 
-
+					<div class="container-fluid p-0">
 				<div class="row"
 					[vtrAppSearchScroller]="['search-internet-protection']">
 					<div class="col">
@@ -61,6 +61,7 @@
 						</div>
 					</div>
 				</div>
+				</div>
 			</div>
 			<div class="row"
 				*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'">
@@ -68,7 +69,7 @@
 					<div class="col col-12 col-sm-12 mt-40">
 						<div>
 							<p class="title">{{'security.vpn.whySufEasy' | translate}}</p>
-							<p class="text">{{'security.vpn.whySufEasyDescription' | translate}}
+							<p class="text-regular">{{'security.vpn.whySufEasyDescription' | translate}}
 							</p>
 						</div>
 					</div>
@@ -152,7 +153,7 @@
 					<div class="col col-12 col-sm-12 mt-40">
 						<div>
 							<p class="title">{{'security.vpn.howToUseSufEasy' | translate}}</p>
-							<p class="text">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
+							<p class="text-regular">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
 						</div>
 					</div>
 				</div>

@@ -261,7 +261,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: false, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -316,7 +316,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: false, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -1446,7 +1446,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: false, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
