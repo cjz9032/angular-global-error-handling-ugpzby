@@ -13,34 +13,34 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Device.HardwareScan'
+			pageName: 'HardwareScan'
 		},
 		children: [
 			{
 				path: '',
 				component: HardwareComponentsComponent,
-				canDeactivate: [GuardService],
-				canActivate: [GuardService],
+				//canDeactivate: [GuardService],
+				//canActivate: [GuardService],
 				data: {
-					pageName: 'Device.HardwareScan'
+					pageName: 'HardwareScan'
 				}
 			},
 			{
 				path: 'recover-bad-sectors',
 				component: RecoverBadSectorsComponent,
-				canDeactivate: [GuardService],
-				canActivate: [GuardService],
+				//canDeactivate: [GuardService],
+				//canActivate: [GuardService],
 				data: {
-					pageName: 'Device.HardwareScan'
+					pageName: 'HardwareScan.RecoverBadSectors'
 				}
 			},
 			{
 				path: 'view-results',
 				component: HardwareViewResultsComponent,
-				canDeactivate: [GuardService],
-				canActivate: [GuardService],
+				//canDeactivate: [GuardService],
+				//canActivate: [GuardService],
 				data: {
-					pageName: 'Device.HardwareScan'
+					pageName: 'HardwareScan.ViewResults'
 				}
 			},
 		]
