@@ -56,6 +56,7 @@ import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownloa
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonUiModule } from './common/common-ui.module';
+import { WebpackTranslateLoader } from './webpack-translate-loader.loader';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -74,7 +75,7 @@ import { CommonUiModule } from './common/common-ui.module';
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
+				useClass: WebpackTranslateLoader,
 				deps: [HttpClient]
 			},
 			isolate: false

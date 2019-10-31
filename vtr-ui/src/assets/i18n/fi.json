@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "deviceStatistics": "Jaa tilastotiedot Lenovolle",
         "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
-        "Note": "Huomautus: ",
+		"userProfile": "User profile",
+		"Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },
     "modernPreload": {
