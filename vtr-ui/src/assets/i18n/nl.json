@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
         "deviceStatistics": "Statistische gegevens delen met Lenovo",
         "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
-        "Note": "Opmerking: ",
+		"userProfile": "User profile",
+		"Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr",
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    "dirClass": "ltr"
 }

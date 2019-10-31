@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
         "deviceStatistics": "Κοινοποίηση στατιστικών δεδομένων στη Lenovo",
         "deviceStatisticsDescription": "Κάνει κοινή χρήση στατιστικών δεδομένων με τη Lenovo προκειμένου να βελτιωθεί η αξιοπιστία και ο σχεδιασμός και να βελτιστοποιηθούν οι δυνατότητες του υπολογιστή σας.",
-        "Note": "Σημείωση: ",
+		"userProfile": "User profile",
+		"Note": "Σημείωση: ",
         "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη."
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr",
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    "dirClass": "ltr"
 }

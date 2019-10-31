@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
         "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
-        "Note": "Opomba: ",
+		"userProfile": "User profile",
+		"Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr",
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    "dirClass": "ltr"
 }

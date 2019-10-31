@@ -2527,7 +2527,8 @@
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
         "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
         "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
-        "Note": "ملاحظة: ",
+		"userProfile": "User profile",
+		"Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    },
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    }
 }

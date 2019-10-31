@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
         "deviceStatistics": "Udostępniaj dane statystyczne Lenovo",
         "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
-        "Note": "Uwaga: ",
+		"userProfile": "User profile",
+		"Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr",
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    "dirClass": "ltr"
 }

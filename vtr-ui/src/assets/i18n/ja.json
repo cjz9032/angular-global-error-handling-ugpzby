@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
         "deviceStatistics": "Lenovoと統計データを共有する",
         "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
-        "Note": "注:",
+		"userProfile": "User profile",
+		"Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr",
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    "dirClass": "ltr"
 }

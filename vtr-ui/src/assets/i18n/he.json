@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
         "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
         "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
-        "Note": "שימו לב: ",
+		"userProfile": "User profile",
+		"Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
     },
     "modernPreload": {
@@ -2836,6 +2837,5 @@
         }
     },
     "dir": "rtl",
-    "dirClass": "rtl",
-    "testString": "test string, no need to copy to other lang. lorem ipsum dolor sit amet"
+    "dirClass": "rtl"
 }
