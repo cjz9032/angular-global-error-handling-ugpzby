@@ -56,7 +56,7 @@
 									</div>
 									<div class="select-close">
 										<fa-icon [icon]="['fal', 'check']"
-											(click)="setOffDays()"
+											(click)="setOffDays(dayslistbox)"
 											(keydown.enter)="setOffDays(dayslistbox)"
 											role="button"
 											tabindex="0"
@@ -71,7 +71,7 @@
 											tabindex="0"
 											attr.aria-label="daysPickerClear"
 											(click)="clearSettings(dayslistbox)"
-											(keydonw.enter)="clearSettings()"
+											(keydonw.enter)="clearSettings(dayslistbox)"
 											aria-label="'cancel changes'">
 										</fa-icon>
 									</div>
