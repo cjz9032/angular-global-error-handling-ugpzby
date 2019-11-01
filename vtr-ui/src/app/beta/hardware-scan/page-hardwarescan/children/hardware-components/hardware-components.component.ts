@@ -292,8 +292,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.progress = 0;
 		this.cancelRequested = false;
 
-		this.currentScanType = (scanType == 0 ? ScanType.QuickScan : ScanType.CustomScan);
-
 		const payload = {
 			'requests': requests,
 			'categories': [],
@@ -465,6 +463,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public checkPreScanInfo(scanType: number) {
 		this.hardwareScanService.cleanResponses();
+
+		this.currentScanType = (scanType == 0 ? ScanType.QuickScan : ScanType.CustomScan);
+
 		let requests;
 		if (scanType === 0) { // quick
 			this.modules = this.hardwareScanService.getQuickScanResponse();
@@ -514,8 +515,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					windowClass: 'schedule-new-modal-size'
 				});
 
+				this.currentScanAction = ScanAction.Confirm;
+
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ItemParent = this.getMetricsParentValue();
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = this.getMetricsItemNameCancel();
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = this.getMetricsItemNameConfirm();
 
 				modal.result.then((result) => {
 					this.getDoScan(scanType, requests);
