@@ -206,7 +206,7 @@
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.title' | translate}}
 													</h3>
 													<p id="smart-assist-zero-touch-lock-faical-recognition-desc"
-														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
+														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-desc">
 														{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.caption' | translate}}
 													</p>
 
@@ -226,18 +226,16 @@
 															{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
 														</label>
 													</div>
-													<div class="permission-note p-4">
-														<div *ngIf="(!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode)
-										&& intelligentSecurity.isZeroTouchLockEnabled"
-															>
+													<div *ngIf="(!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode)
+															&& intelligentSecurity.isZeroTouchLockEnabled" class="permission-note p-4">
 															<div class="row">
 																<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
 																	class="col">
-																	<p class="mb-0 mt-auto"
+																	<span class="mb-0 mt-auto"
 																		id="ztl-facial-recognition-permission-note"
 																		attr.aria-label="ztl-facial-recognition-permission-note">
 																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.permission' | translate}}
-																	</p>
+																	</span>
 																	<button type="button"
 																		class="btn btn-link privacy-button pl-0"
 																		(click)="onClick('ms-settings:privacy-webcam')"
@@ -248,11 +246,11 @@
 																</div>
 																<div class="col"
 																	*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
-																	<p class="mb-0 mt-auto"
+																	<span class="mb-0 mt-auto"
 																		id="ztl-facial-recognition-privacy-note"
 																		attr.aria-label="ztl-facial-recognition-privacy-note">
 																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.privacyMode' | translate}}
-																	</p>
+																	</span>
 																	<button type="button"
 																		class="btn btn-link privacy-button pl-0"
 																		(click)="onJumpClick()"
@@ -263,7 +261,6 @@
 																</div>
 															</div>
 														</div>
-													</div>
 												</div>
 											</div>
 										</vtr-ui-row-switch>
