@@ -34,10 +34,10 @@
 	}
 	.title {
 		color: $light;
-		font-size: 5.75rem;
+		font-size: 4.6rem;
 		font-weight: $weight_light;
 		display: inline-block;
-		margin: 0;
+		margin: 1.5rem 0 0 0;
 		position: relative;
 
     &--icon {
@@ -95,7 +95,8 @@
 	.back-button {
 		color: #fff;
 		font-weight: bold;
-		font-size: 1.1rem;
+		font-size: 1.4rem;
+		letter-spacing: 0;
 		border: none;
 		background: none;
 		padding: 0;
@@ -104,19 +105,19 @@
 		position: absolute;
 		bottom: 100%;
 		left: 0;
-		margin: 0 0 .5rem 1.5rem;
+		margin: 0 0 0 1.5rem;
 
 		&:before {
 			position: absolute;
 			right: 100%;
 			top: 50%;
 			transform: translateY(-50%);
-			content: '';
+			content: '<';
 			margin-right: 1.5rem - .7rem;
 			width: .7rem;
-			height: 1.1rem;
-			background: url("src/assets/icons/privacy-tab/icon-white-back.svg") center no-repeat;
-			background-size: cover;
+			//height: 1.1rem;
+			//background: url("src/assets/icons/privacy-tab/icon-white-back.svg") center no-repeat;
+			//background-size: cover;
 		}
 	}
 }

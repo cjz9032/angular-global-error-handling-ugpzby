@@ -16,7 +16,7 @@ interface PageSettings {
 
 const defaultPageSettings: PageSettings = {
 	title: 'Lenovo Privacy Essentials',
-	backButton: false,
+	backButton: true,
 	figLeafIcon: true,
 };
 
