@@ -226,18 +226,13 @@
 															{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.checkBox' | translate }}
 														</label>
 													</div>
-													<div class="row col-12 pr-0 pt-0">
+													<div class="permission-note p-4">
 														<div *ngIf="(!intelligentSecurity.facilRecognitionCameraAccess || intelligentSecurity.facialRecognitionCameraPrivacyMode)
 										&& intelligentSecurity.isZeroTouchLockEnabled"
-															class="row permission-note mt-5">
-															<div class="col-12 p-3 d-flex">
-																<div class="col-1 pl-0 text-center">
-																	<fa-icon [icon]="['fas','exclamation-circle']"
-																		class="note-icon">
-																	</fa-icon>
-																</div>
+															>
+															<div class="row">
 																<div *ngIf="!intelligentSecurity.facilRecognitionCameraAccess"
-																	class="col-11 pr-0 pl-2">
+																	class="col">
 																	<p class="mb-0 mt-auto"
 																		id="ztl-facial-recognition-permission-note"
 																		attr.aria-label="ztl-facial-recognition-permission-note">
@@ -251,7 +246,7 @@
 																		{{'device.smartAssist.intelligentSecurity.zeroTouchLock.facialRecognition.note.windowsLink' | translate}}
 																	</button>
 																</div>
-																<div class="col-11 pr-0 pl-2"
+																<div class="col"
 																	*ngIf="intelligentSecurity.facilRecognitionCameraAccess && intelligentSecurity.facialRecognitionCameraPrivacyMode">
 																	<p class="mb-0 mt-auto"
 																		id="ztl-facial-recognition-privacy-note"
@@ -267,9 +262,7 @@
 																	</button>
 																</div>
 															</div>
-
 														</div>
-
 													</div>
 												</div>
 											</div>
