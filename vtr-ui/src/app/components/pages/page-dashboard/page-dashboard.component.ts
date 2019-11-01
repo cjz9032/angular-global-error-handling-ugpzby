@@ -262,7 +262,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
-					DataSource: 'cms'
+					ActionType: record.ActionType,
+					DataSource: 'cms',
 				};
 			});
 		if (heroBannerItems && heroBannerItems.length) {
@@ -400,7 +401,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
 						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
 						url: record.FeatureImage,
-						ActionLink: record.ActionLink
+						ActionLink: record.ActionLink,
+						ActionType: record.ActionType,
+						DataSource: 'upe',
 					};
 				});
 			if (heroBannerItems && heroBannerItems.length) {

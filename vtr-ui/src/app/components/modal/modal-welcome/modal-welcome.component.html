@@ -76,7 +76,7 @@
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
-								(click)="saveUsageType('PERSONAL')">
+								(click)="saveUsageType('personal')">
 								<input type="radio"
 									name="radio"
 									id="radio1"
@@ -95,7 +95,7 @@
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
-								(click)="saveUsageType('BUSINESS')">
+								(click)="saveUsageType('business')">
 								<input type="radio"
 									name="radio"
 									id="radio2"
@@ -113,7 +113,7 @@
 							<div class="device-image"
 								id="tutorial_customExp"
 								attr.aria-label="tutorial_customExp"
-								(click)="saveUsageType('CUSTOM')">
+								(click)="saveUsageType('custom')">
 								<input type="radio"
 									name="radio"
 									id="radio3"
@@ -136,13 +136,14 @@
 					</div>
 					<div class="row d-flex justify-content-center interests">
 						<div class="col-auto inline-block"
-							*ngFor="let interest of interestCopy">
+							*ngFor="let interest of selfSelectService.interests; index as i">
 							<input type="checkbox"
-								[id]="interest + 'checkbox'"
+								[id]="interest.label + 'checkbox'"
 								#checkbox1
-								(click)="toggle($event, interest)" />
-							<label class="bludFocusBoder" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
-								[for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
+								(click)="toggle($event, interest.label)"
+								[checked]="interest.checked"/>
+							<label class="bludFocusBoder" [ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
+								[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"

@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
         "deviceStatistics": "Statistische gegevens delen met Lenovo",
         "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
-        "Note": "Opmerking: ",
+		"userProfile": "User profile",
+		"Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
     },
     "modernPreload": {

@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
-        "Note": "Bemærk: ",
+		"userProfile": "User profile",
+		"Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },
     "modernPreload": {
