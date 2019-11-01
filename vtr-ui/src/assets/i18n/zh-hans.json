@@ -1,5 +1,5 @@
 {
-	"gaming": {
+    "gaming": {
         "dashboard": {
             "device": {
                 "quickSettings": {
@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-		"mainMenuLink": "go back to home page"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -645,9 +645,9 @@
             "expand": "展开",
             "loader": "获取状态",
             "loading": "载入中...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "从",
+            "to": "到",
+            "clickToChange": "单击以更改"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -880,7 +880,7 @@
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
-		    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新或者点击<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装最新的驱动程序。安装后需要重启计算机。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新或者点击<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装最新的驱动程序。安装后需要重启计算机。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
@@ -957,7 +957,7 @@
                             "close": "关闭",
                             "coolingModesList": {
                                 "list1": "单击工具栏中的 Windows 电池图标",
-                                "list2": "将显示 Windows 电池量表，滑动滑块以在最佳时间或最佳性能之间进行选择。"
+                                "list2": "将显示 Windows 电源模式，滑动滑块以在最佳时间或最佳性能之间进行选择。"
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "智能待机",
                     "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划或我们获得的计算机使用时间而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "设置通常使用此计算机的时间",
+                        "heading": "通常使用计算机的时间",
                         "subHeading1": "开始",
                         "subHeading2": "结束",
                         "subHeading3": "将此计划用于",
@@ -1127,8 +1127,8 @@
                         "weekdays": "工作日",
                         "weekends": "周末"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "根据您的使用情况自动调整计算机的活动时间",
+                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表"
                 }
             },
             "audio": {
@@ -1827,7 +1827,7 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-	    "securityScoreDepends": "您的安全性结果取决于您是否：",
+            "securityScoreDepends": "您的安全性结果取决于您是否：",
             "antivirus": "受到反病毒软件的保护",
             "password": "以安全的方式管理安全程度强且复杂的密码",
             "vpn": "监控您的网络以防暴露给攻击者",
@@ -1919,7 +1919,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
                 "unknown": "未知",
-		"betterOffer": "在这里享受更好的服务！"
+                "betterOffer": "在这里享受更好的服务！"
             }
         },
         "wifisecurity": {

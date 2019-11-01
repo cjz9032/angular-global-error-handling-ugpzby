@@ -645,9 +645,9 @@
             "expand": "展開",
             "loader": "獲取狀態",
             "loading": "載入中...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "從",
+            "to": "至",
+            "clickToChange": "按一下以變更"
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
@@ -956,7 +956,7 @@
                             "close": "關閉",
                             "coolingModesList": {
                                 "list1": "按一下工具列中的 Windows 電池圖示",
-                                "list2": "Windows 電池計量器隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
+                                "list2": "Windows 電源模式隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "智慧型待命",
                     "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或我們取得的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
                     "timer": {
-                        "heading": "設定您一般使用這部電腦的時間",
+                        "heading": "您一般使用您的電腦的時間",
                         "subHeading1": "開始",
                         "subHeading2": "結束",
                         "subHeading3": "將此排程用於",
@@ -1127,8 +1127,8 @@
                         "weekdays": "週間日",
                         "weekends": "週末"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
+                    "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間"
                 }
             },
             "audio": {

@@ -645,9 +645,9 @@
             "expand": "Udvid",
             "loader": "Henter <br> Status",
             "loading": "Indlæser...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klik for at ændre"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -956,7 +956,7 @@
                             "close": "luk",
                             "coolingModesList": {
                                 "list1": "Klik på Windows-batteriikonet på værktøjslinjen",
-                                "list2": "Windows-batterimåleren vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
+                                "list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Smart-standby",
                     "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte starttidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Hverdage",
                         "weekends": "Weekender"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
+                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord"
                 }
             },
             "audio": {

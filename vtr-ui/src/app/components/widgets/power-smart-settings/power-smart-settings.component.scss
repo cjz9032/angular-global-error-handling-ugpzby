@@ -98,5 +98,11 @@
     color: $light;
     text-decoration: underline;
     cursor: pointer;
+    @media #{$black-on-white} {
+      color: $high-contrast-blue;
+  }
+@media #{$white-on-black} {
+  color: $yellow;
+  }
   }
 }
