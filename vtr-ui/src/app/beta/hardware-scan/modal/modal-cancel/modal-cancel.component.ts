@@ -17,6 +17,8 @@ export class ModalCancelComponent implements OnInit {
 
 	timerRef: any;
 	@Input() ItemParent: string;
+	@Input() CancelItemName: string;
+	@Input() ConfirmItemName: string;
 
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 
@@ -25,11 +27,9 @@ export class ModalCancelComponent implements OnInit {
 	ngOnInit() {
 		this.loading = false;
 		this.timerRef = setTimeout(() => { this.onAgree(); }, 10000);
-		console.log("ngOnIni >>>>> valor ItemParent: " + this.ItemParent);
 	}
 
 	public closeModal() {
-		console.log("closeModal >>>>> valor ItemParent: " + this.ItemParent);
 		if (this.timerRef) {
 			clearTimeout(this.timerRef);
 		}

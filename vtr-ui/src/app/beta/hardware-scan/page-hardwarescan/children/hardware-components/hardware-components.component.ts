@@ -17,15 +17,19 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 enum ScanType {
-	QuickScan = 0,
-	CustomScan = 1
+	QuickScan = "QuickScan",
+	CustomScan = "CustomScan"
 }
 
 enum ScanAction {
-	Confirm = 0,
-	Run = 1,
-	Cancel = 2	
+	Confirm = "Confirm",
+	Run = "Run",
+	Cancel = "Cancel"	
 }
+
+const RootParent = "HardwareScan";
+const ConfirmButton = "Confirm";
+const CancelButton = "Cancel";
 
 @Component({
 	selector: 'vtr-hardware-components',
@@ -34,14 +38,6 @@ enum ScanAction {
 })
 
 export class HardwareComponentsComponent implements OnInit, OnDestroy {
-
-	private ParentConfirmQuickScan = "HardwareScan.ConfirmQuickScan";
-	private ParentConfirmCustomizeScan = "HardwareScan.ConfirmCustomizeScan";
-	private ParentRunQuickScan = "HardwareScan.RunQuickScan";
-	private ParentRunCustomizeScan = "HardwareScan.RunCustomizeScan";
-	private ParentCancelQuickScan = "HardwareScan.CancelQuickScan";
-	private ParentCancelCustomizeScan = "HardwareScan.CancelCustomizeScan";
-
 
 	public viewResultsText = this.translate.instant('hardwareScan.viewResults');
 	public refreshText = this.translate.instant('hardwareScan.refreshModule');
@@ -245,7 +241,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			});
 
 			this.modalCancelRef.componentInstance.ItemParent = this.getMetricsParentValue();
-
+			this.modalCancelRef.componentInstance.CancelItemName = this.getMetricsItemNameCancel();
+			this.modalCancelRef.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
+			
 			this.modalCancelRef.componentInstance.cancelRequested.subscribe(() => {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
@@ -294,7 +292,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.progress = 0;
 		this.cancelRequested = false;
 
-		this.currentScanType = scanType;
+		this.currentScanType = (scanType == 0 ? ScanType.QuickScan : ScanType.CustomScan);
 
 		const payload = {
 			'requests': requests,
@@ -732,26 +730,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private getMetricsParentValue(){
-		switch (this.currentScanAction) {
-			case ScanAction.Cancel:
-				if (this.currentScanType == ScanType.CustomScan)
-					return this.ParentCancelCustomizeScan;
-				else if (this.currentScanType == ScanType.QuickScan)
-					return this.ParentCancelQuickScan;
-				break;
-			case ScanAction.Run:
-				if (this.currentScanType == ScanType.CustomScan)
-					return this.ParentRunCustomizeScan;
-				else if (this.currentScanType == ScanType.QuickScan)
-					return this.ParentRunQuickScan;
-				break;
-			case ScanAction.Confirm:
-				if (this.currentScanType == ScanType.CustomScan)
-					return this.ParentConfirmCustomizeScan;
-				else if (this.currentScanType == ScanType.QuickScan)
-					return this.ParentConfirmQuickScan;
-				break;
-		}
-		return "";
+		return RootParent + "." + this.currentScanAction + this.currentScanType;		
 	}
+
+	private getMetricsItemNameConfirm(){
+		return this.currentScanAction + this.currentScanType + "." + ConfirmButton;
+	}
+
+	private getMetricsItemNameCancel(){
+		return this.currentScanAction + this.currentScanType + "." + CancelButton;
+	}
+
+
 }
