@@ -1049,7 +1049,9 @@
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
 					"hyperlinkToGraph": "The usage and Modern Standby schedule for your computer.",
 					"automaticMode": "Automatic mode",
-					"manualMode": "Manual mode"
+					"manualMode": "Manual mode",
+					"graph1Tittle": "The usage of your computer",
+					"graph2Tittle": "The Modern Standby schedule for your computer"
 				},
 				"batterySettings": {
 					"title": "Battery settings",

@@ -606,6 +606,16 @@ export class PowerService {
 		}
 	}
 
+	public getIsAutonomicCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.getIsAutonomicCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
 		console.log('setSmartStandbyIsAutonomic: ', value);
 		try {
@@ -621,6 +631,13 @@ export class PowerService {
 	public getSmartStandbyIsAutonomic(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyIsAutonomic();
+		}
+		return undefined;
+	}
+	public getSmartStandbyPresenceData() {
+		if (this.devicePowerThinkPad) {
+			const res = this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyPresenceData();
+			return res;
 		}
 		return undefined;
 	}

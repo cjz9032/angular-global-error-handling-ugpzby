@@ -439,6 +439,26 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+/*.smart-standBy-modal-styles*/
+.smart-standBy-modal {
+	.modal-dialog {
+		max-width: 85%;	
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid;
+			border-radius: 1rem
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+	}
+}
+
 /*modal-intelligent-cooling-modes-styles*/
 .Intelligent-Cooling-Modes-Modal {
 	.modal-dialog {
@@ -551,9 +571,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 3rem 0 0 4rem;
 		overflow: hidden;
 	}
-}
-
-.Article-Detail-Modal {
+}.Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
 		margin: 1.75rem auto;
