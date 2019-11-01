@@ -4,11 +4,9 @@ import { StorageService } from '../../services/storage.service';
 import { AbTestsBackendService, ShuffleTests, Test } from './ab-tests-backend.service';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import { AB_TESTS_CONFIG, AbTestsService, BACKEND_CONFIG_VERSION } from './ab-tests.service';
-import { catchError, timeout } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
-
-const TIMEOUT_FOR_BACKEND = 3000;
 
 @Injectable({
 	providedIn: 'root'
@@ -24,7 +22,6 @@ export class AbTestsGenerateConfigService {
 
 	shuffle() {
 		this.abTestsBackendService.shuffle().pipe(
-			timeout(TIMEOUT_FOR_BACKEND),
 			catchError((err: HttpErrorResponse) => {
 				this.abTestsBackendService.sendError(err.error);
 				return of(this.getDefaultConfig());

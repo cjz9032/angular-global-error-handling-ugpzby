@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { BACKEND_CONFIG_VERSION } from './ab-tests.service';
 import { StorageService } from '../../services/storage.service';
 import * as config from '../../../utils/ab-test/config.json';
@@ -28,6 +28,7 @@ export interface ShuffleTests {
 	providedIn: 'root'
 })
 export class AbTestsBackendService {
+	private abTestsCache$: Observable<ShuffleTests>;
 
 	constructor(
 		private http: HttpClient,
@@ -37,18 +38,23 @@ export class AbTestsBackendService {
 	}
 
 	shuffle(): Observable<ShuffleTests>  {
-		const headers = new HttpHeaders({
-			'Content-Type': 'text/plain;charset=UTF-8',
-		});
-		return this.http.post<ResponseShuffleTests>(
-			`${this.environment.backendUrl}/api/v1/vantage/tests/shuffle?${this.getVersionForBackend()}`,
-			{headers}
-		).pipe(
-			map((res) => ({
-				version: res.config_version,
-				tests: res.tests
-			}))
-		);
+		if (!this.abTestsCache$) {
+			const headers = new HttpHeaders({
+				'Content-Type': 'text/plain;charset=UTF-8',
+			});
+			this.abTestsCache$ = this.http.post<ResponseShuffleTests>(
+				`${this.environment.backendUrl}/api/v1/vantage/tests/shuffle?${this.getVersionForBackend()}`,
+				{headers}
+			).pipe(
+				map((res) => ({
+					version: res.config_version,
+					tests: res.tests
+				})),
+				shareReplay(1)
+			);
+		}
+
+		return this.abTestsCache$;
 	}
 
 	sendError(error: string) {
