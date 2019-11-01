@@ -27,6 +27,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem:any = 'lighting_profile_cms_inner_content';
 
 	upeRequestResult = {
 		positionB: true,
