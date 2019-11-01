@@ -1128,7 +1128,10 @@
                         "weekends": "Viikonloppuisin"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
-                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa"
+                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "deviceStatistics": "Jaa tilastotiedot Lenovolle",
         "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
-		"userProfile": "User profile",
-		"Note": "Huomautus: ",
+        "userProfile": "User profile",
+        "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },
     "modernPreload": {

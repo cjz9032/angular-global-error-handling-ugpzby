@@ -1128,7 +1128,10 @@
                         "weekends": "víkendy"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača"
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
-		"userProfile": "User profile",
-		"Note": "Poznámka: ",
+        "userProfile": "User profile",
+        "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
     },
     "modernPreload": {
