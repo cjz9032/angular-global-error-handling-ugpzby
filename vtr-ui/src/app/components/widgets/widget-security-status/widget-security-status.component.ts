@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { Component, OnInit, Input, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
 import { AntivirusWidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/antivirus-widget-item.model';
@@ -35,10 +35,11 @@ export class WidgetSecurityStatusComponent implements OnInit{
 		private guard: GuardService) {}
 
 	ngOnInit() {
-		this.items = [];
-		this.items.push(new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService));
-		this.items.push(new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone));
-		this.items.push(new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService));
+		this.items = [
+			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
+			new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone),
+			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService)
+		];
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.showVpn();
