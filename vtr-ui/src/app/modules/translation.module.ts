@@ -1,8 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslatePipe, MissingTranslationHandler } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 
 @NgModule({
 	imports: [
@@ -12,6 +13,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 				provide: TranslateLoader,
 				useFactory: HttpLoaderFactory,
 				deps: [HttpClient]
+			},
+			missingTranslationHandler: {
+				provide: MissingTranslationHandler,
+				useClass: MissingTranslationDefaultHandler
 			},
 			isolate: false
 		})
