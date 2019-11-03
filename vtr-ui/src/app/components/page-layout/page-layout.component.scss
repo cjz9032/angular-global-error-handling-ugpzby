@@ -108,6 +108,26 @@
 	}
 }
 
+:host-context(.is-gaming) {
+	.vtr-page {
+		&.page-content-bg {
+			background: $gaming_darkest;
+		}
+		.vtr-page-columns {
+			.vtr-page-column {
+				&.vtr-page-left-column {
+					background-color: $gaming_darkest;
+				}
+				&.vtr-page-right-column {
+					background-color: $gaming_dark;
+				}
+			}
+		}
+	}
+}
+
+
+
 // RESPONSIVE EFFORT
 // ::ng-deep {
 // 	.page-content-bg {
