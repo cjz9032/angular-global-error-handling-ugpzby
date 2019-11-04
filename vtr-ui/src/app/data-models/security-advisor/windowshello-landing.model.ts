@@ -20,7 +20,7 @@ export class WindowsHelloLandingViewModel {
 
 	whStatus = {
 		status: 4,
-		detail: 'common.securityAdvisor.loading', // active or inactive
+		detail: '', // active or inactive
 		path: 'security/windows-hello',
 		title: 'security.landing.fingerprint',
 		type: 'security',
@@ -28,10 +28,10 @@ export class WindowsHelloLandingViewModel {
 	};
 	subject = {
 		status: 2,
-		title: 'common.securityAdvisor.windowsHello',
+		title: '',
 		type: 'security',
 	};
-
+	translateString: any;
 	constructor(
 		public translate: TranslateService,
 		whModel: phoenix.WindowsHello,
@@ -49,19 +49,22 @@ export class WindowsHelloLandingViewModel {
 		});
 		this.statusList = new Array(this.whStatus);
 
-		translate.stream(this.whStatus.detail).subscribe((res: string) => {
-			this.whStatus.detail = res;
-		});
-		translate.stream(this.whStatus.title).subscribe((res: string) => {
-			this.whStatus.title = res;
-		});
-		translate.stream(this.subject.title).subscribe((res: string) => {
-			this.subject.title = res;
-		});
+		translate.stream([
+			'common.securityAdvisor.loading',
+			'common.securityAdvisor.windowsHello',
+			'common.securityAdvisor.registered',
+			'common.securityAdvisor.notRegistered'
+		]).subscribe((res: any) => {
+				this.translateString = res;
+				if (!this.whStatus.detail) {
+					this.whStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				this.subject.title = res['common.securityAdvisor.windowsHello'];
+			});
 	}
 
 	setWhStatus(finger: string) {
-		this.whStatus.detail = finger === 'active' ? 'common.securityAdvisor.registered' : 'common.securityAdvisor.notRegistered';
+		this.whStatus.detail = this.translate[`common.securityAdvisor.${finger === 'active' ? 'registered' : 'notRegistered'}`];
 		this.whStatus.status = finger === 'active' ? 0 : 1;
 		this.subject.status = finger === 'active' ? 0 : 1;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.subject.status === 0 ? 'enabled' : 'disabled');
