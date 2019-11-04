@@ -37,6 +37,7 @@ export class PageAutocloseComponent implements OnInit {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem:any = 'autoclose_cms_inner_content';
 
 	upeRequestResult = {
 		positionB: true,

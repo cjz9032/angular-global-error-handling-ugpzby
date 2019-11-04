@@ -645,9 +645,9 @@
             "expand": "Erweitern",
             "loader": "Abrufen des <br> Status",
             "loading": "Wird geladen...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "von",
+            "to": "nach",
+            "clickToChange": "zum Ändern klicken"
         },
         "app-update": {
             "message": "Hallo! Es ist eine neuere Version von Vantage verfügbar. Möchten Sie sie herunterladen?"
@@ -956,7 +956,7 @@
                             "close": "schließen",
                             "coolingModesList": {
                                 "list1": "Klicken Sie auf das Windows-Akkusymbol in der Symbolleiste",
-                                "list2": "Der Windows-Akkuzustandsanzeiger wird angezeigt. Mit dem Schieberegler können Sie zwischen optimaler Akkulaufzeit oder optimaler Leistung wählen."
+                                "list2": "Der Windows-Energiemodus wird angezeigt. Mit dem Schieberegler können Sie zwischen optimaler Akkulaufzeit und optimaler Leistung wählen."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Smart-Standby",
                     "description": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
-                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten Startzeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird auf Grundlage des von Ihnen festgelegten Zeitplans optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
+                    "tooltip": "Wenn Smart-Standby aktiviert ist, wechselt Ihr Computer vor der festgelegten START-Zeit zu Modern-Standby und wird in den Ruhezustand versetzt, wenn er für einen gewissen Zeitraum im Akkubetrieb inaktiv war. Dieser Zeitraum wird anhand des von Ihnen festgelegten Zeitplans oder Ihrer Computernutzungszeiten optimiert. Der Computer wechselt nur an geplanten Tagen vom Ruhezustand zu Modern-Standby und wechselt nicht, wenn er an aufeinanderfolgenden geplanten Tagen inaktiv ist.",
                     "timer": {
-                        "heading": "Typische Nutzungszeiten für diesen Computer festlegen",
+                        "heading": "Die typischen Nutzungszeiten für Ihren Computer",
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Wochentage",
                         "weekends": "Wochenenden"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
+                    "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
         "deviceStatistics": "Statistikdaten mit Lenovo teilen",
         "deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
-        "Note": "Hinweis: ",
+		"userProfile": "User profile",
+		"Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden."
     },
     "modernPreload": {

@@ -645,9 +645,9 @@
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
             "loading": "Načítání...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "z",
+            "to": "změňte na",
+            "clickToChange": "kliknutím upravte"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -956,7 +956,7 @@
                             "close": "Zavřít",
                             "coolingModesList": {
                                 "list1": "V panelu nástrojů klikněte na ikonu baterie systému Windows",
-                                "list2": "Ve Windows se zobrazí ukazatel stavu baterie, posunutím jezdce vyberte optimální čas nebo optimální výkon."
+                                "list2": "Ve Windows se zobrazí režim spotřeby energie Windows posunutím jezdce vyberte optimální čas nebo optimální výkon."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
                     "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
-                    "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným začátkem přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
+                    "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové období se optimalizuje na základě nastaveného plánu nebo doby používání vašeho počítače. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Nastavte čas, kdy počítač obvykle používáte",
+                        "heading": "Čas, kdy počítač obvykle používáte",
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Pracovní dny",
                         "weekends": "Víkendy"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
         "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
-        "Note": "Poznámka: ",
+		"userProfile": "User profile",
+		"Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
     },
     "modernPreload": {

@@ -645,9 +645,9 @@
             "expand": "Kibontás",
             "loader": "Állapot <br> lekérése",
             "loading": "Betöltés...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "ettől",
+            "to": "sort",
+            "clickToChange": "a módosításhoz kattintson ide"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
@@ -956,7 +956,7 @@
                             "close": "bezárás",
                             "coolingModesList": {
                                 "list1": "Kattintson az eszköztáron a Windows akkumulátorikonjára",
-                                "list2": "Megjelenik a Windows akkumulátormérője; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
+                                "list2": "Megjelenik a Windows Energiaséma módja; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Intelligens készenlét",
                     "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
-                    "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett kezdési idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
+                    "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időtartamot az Ön által beállított munkarend vagy az érzékelt számítógép-használati séma alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre, és ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
-                        "heading": "Adja meg, hogy általában mikor használja a számítógépet",
+                        "heading": "A számítógép jellemző használati időszaka",
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Hétköznapok",
                         "weekends": "Hétvégén"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
+                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
         "deviceStatistics": "Statisztikai adatok megosztása a Lenovóval",
         "deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
-        "Note": "Megjegyzés: ",
+		"userProfile": "User profile",
+		"Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
     },
     "modernPreload": {

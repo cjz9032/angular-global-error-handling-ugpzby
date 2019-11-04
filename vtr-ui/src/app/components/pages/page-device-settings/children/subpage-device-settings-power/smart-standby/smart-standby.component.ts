@@ -26,7 +26,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	toggleSubscription: Subscription;
 	checkbox = false;
 	isCollapsed = false;
-
+	public automodeBtnVal = true;
+	public manualmodeBtnVal = false;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
@@ -293,7 +294,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		elem.focus();
 		this.isCollapsed = !this.isCollapsed;
 	}
-
+	public changeMode(automaticMode, manualMode) {
+		this.automodeBtnVal = automaticMode;
+		this.manualmodeBtnVal = manualMode;
+	}
 	public showUsageGraph() {
 
 	}

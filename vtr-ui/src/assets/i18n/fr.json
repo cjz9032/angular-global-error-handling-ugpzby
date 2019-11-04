@@ -645,9 +645,9 @@
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
             "loading": "Chargement...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "à partir de",
+            "to": "pour",
+            "clickToChange": "cliquez pour modifier"
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -956,7 +956,7 @@
                             "close": "fermer",
                             "coolingModesList": {
                                 "list1": "Cliquez sur l'icône de la batterie Windows dans la barre d'outils",
-                                "list2": "La jauge de la batterie Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
+                                "list2": "La mode d'alimentation de Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Veille intelligente",
                     "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, votre ordinateur passe à la Veille moderne avant l'heure de début prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Jours de la semaine",
                         "weekends": "Fins de semaine"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
+                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
         "deviceStatistics": "Partager des données statistiques avec Lenovo",
         "deviceStatisticsDescription": "Partage des données statistiques avec Lenovo afin d'améliorer la fiabilité, le concept et l'optimisation des fonctionnalités de votre ordinateur.",
-        "Note": "Remarque : ",
+		"userProfile": "User profile",
+		"Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."
     },
     "modernPreload": {

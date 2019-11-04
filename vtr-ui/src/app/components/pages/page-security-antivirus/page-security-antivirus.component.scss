@@ -1,63 +1,81 @@
 @import "../../../app.theme.scss";
-
-.vtr-page-security-antivirus {
-	::ng-deep .vtr-widget-offline-info {
-		margin-top: $shift_up_small;
-	}
-
-	.img-fluid {
-		width: 10rem;
-		@media #{$mediaquery_md} {
-			width: 15rem;
+::ng-deep {
+	.vtr-page-security-antivirus {
+		.vtr-widget-offline-info {
+			margin-top: $shift_up_small;
 		}
-	}
 
-	.mt-minus {
-		margin-top: $shift_up_small;
-	}
-
-	.w-windows {
-		@media #{$mediaquery_md} {
-			margin-top: -30rem;
-			width: 80% !important;
+		.img-fluid {
+			width: 10rem;
+			@media #{$mediaquery_md} {
+				width: 15rem;
+			}
 		}
-	}
 
-	.windows-logo {
-		width: 10rem;
-		padding-top: 0.9rem;
-	}
+		.left-col {
+			padding-top: 4rem;
+			padding-bottom: 0;
+			padding-left: 0;
+			padding-right: 2rem;
+			@media #{$breakpoint_xl} {
+				padding-right: 0;
+			}
+		}
 
-	.mcafee-logo {
-		width: 10rem;
-		padding-top: 0.7rem;
-	}
+		.right-col {
+			padding-top: 4rem;
+			padding-bottom: 0;
+			padding-right: 0;
+			padding-left: 2rem;
+			@media #{$breakpoint_xl} {
+				padding-left: 0;
+			}
+		}
 
-	.divider {
-		margin: 2rem 0 1rem 0;
-		height: 0.1rem;
-		background-color: $light-grey;
-	}
-
-	.mt-60 {
-		margin-top: 60px;
-	}
-
-	.header {
 		.rounded-card-with-shadow {
 			box-shadow: $drop_shadow;
 			border-radius: $border_radius;
 			background: $main_darkest;
+			padding: 1rem;
+
+			&.inset {
+				margin: 2rem auto;
+				@media #{$breakpoint_lg} {
+					max-width: 80%;
+				}
+				@media #{$breakpoint_xl} {
+					max-width: 60%;
+				}
+			}
+
+			&.b-border {
+				border: 0.1rem solid #27add7;
+				box-shadow: none;
+			}
+
+			.img-limit {
+				max-width: 100%;
+				margin: 0 auto;
+				&.img-xl-15 {
+					@media #{$breakpoint_xl} {
+						max-width: 15rem;
+					}
+				}
+			}
 
 			.title {
 				color: $shade_darkest;
-				font-size: 1.6rem;
+				font-size: $fontsize_sm;
 				font-weight: 600;
-				line-height: 2.9rem;
+				line-height: 1.2em;
+				margin-bottom: 1rem;
+				&.larger {
+					font-size: $fontsize_lg;
+					line-height: 1.4em;
+				}
 			}
 
 			.subtitle {
-				color: $light;
 				font-size: 1.4rem;
 				line-height: 2.1rem;
 			}
@@ -83,331 +101,20 @@
 			}
 		}
 
-		.part-position {
-			@media #{$mediaquery_md} {
-				position: relative;
-				top: 34rem;
-			}
+		.windows-logo {
+			width: 10rem;
+			padding-top: 0.9rem;
 		}
 
-		.b-border {
-			border: 0.1rem solid #27ADD7;
-			box-shadow: none;
+		.mcafee-logo {
+			width: 10rem;
+			padding-top: 0.7rem;
 		}
 
-		.md-none {
-			@media #{$mediaquery_md} {
-				display: none;
-			}
-		}
-
-		.flex-bas {
-			flex-basis: 30%;
-		}
-	}
-
-	.mcafee {
-		::ng-deep .vtr-widget-offline-info {
-			@media #{$mediaquery_md} {
-				position: relative;
-				top: -13rem;
-			}
-		}
-
-		@media #{$mediaquery_md} {
-			position: relative;
-			margin-top: 20rem;
-		}
-	}
-
-	.subheader {
-		@media #{$mediaquery_md} {
-			flex-direction: column;
-		}
-
-		.rounded-card-with-shadow {
-			box-shadow: $drop_shadow;
-			border-radius: $border_radius;
-			background: $light;
-
-			@media #{$mediaquery_md} {
-				margin-bottom: 3rem;
-			}
-
-			.title {
-				color: $shade_darkest;
-				font-size: 2rem;
-				font-weight: 600;
-				line-height: 3rem;
-			}
-
-			.title-normal {
-				font-size: 2.5rem;
-				font-weight: $weight_regular;
-				color: $screen_dark_70;
-			}
-
-			.subtitle {
-				color: $shade_darkest;
-				font-size: 1.5rem;
-				font-weight: $weight_regular;
-				line-height: 2.3rem;
-			}
-
-			.content {
-				color: $shade_darkest;
-				font-size: 1.5rem;
-				font-weight: $weight_regular;
-				line-height: 2.3rem;
-			}
-
-			.text {
-				font-size: 1.5rem;
-				line-height: 2.1rem;
-			}
-
-			.date {
-				color: $go_dark;
-				font-size: 1.6rem;
-				font-weight: $weight_bold;
-				line-height: 3rem;
-			}
-
-			.stopdate {
-				color: $stop_dark;
-				font-size: 1.6rem;
-				font-weight: $weight_bold;
-				line-height: 3rem;
-			}
-
-			.height-line {
-				width: 0.01rem;
-				margin: 0 0.5rem;
-				background-color: $shade_darker;
-				height: 2.8rem;
-			}
-
-			.divider {
-				margin: 1rem 0 2rem 0;
-				height: 0.1rem;
-				background-color: $light-grey;
-
-				@media #{$mediaquery_md} {
-					margin: 2rem 0;
-				}
-			}
-
-			a {
-				text-decoration: underline;
-			}
-
-			.sub-font {
-				padding: 2rem 4rem 2rem 2rem;
-				color: $main_darker;
-
-				@media #{$mediaquery_md} {
-					display: none;
-				}
-			}
-
-			.md-display {
-				@media #{$mediaquery_md} {
-					flex-direction: column;
-					position: relative;
-					margin-top: -15rem;
-				}
-			}
-
-			.md-margin {
-				@media #{$mediaquery_md} {
-					margin-top: 3rem;
-				}
-			}
-		}
-
-		.defender-part {
-			flex-basis: 47%;
-
-			@media #{$mediaquery_md} {
-				flex-basis: 0;
-			}
-
-			padding-bottom: 2rem !important;
-
-			.subtitle {
-				color: $main_darker;
-				font-size: 1.4rem;
-				font-weight: $weight_medium;
-				line-height: 2.3rem;
-			}
-
-			img {
-				margin-right: 1rem;
-			}
-		}
-
-		.offline-part {
-			@media #{$mediaquery_md} {
-				padding-top: 34rem !important;
-			}
-		}
-
-		.s-border {
-			border: 0.1rem solid $shade_lighter;
-			box-shadow: none;
-		}
-
-		::ng-deep {
-			.card-header {
-				padding: 1.25rem 3rem !important;
-				.header{
-					color: $screen_dark_70 !important;
-					font-weight: 400 !important;
-				}
-			}
-
-			.card-body {
-				padding: 0.75rem 3rem !important;
-			}
-		}
-	}
-
-	.description {
-		margin-top: 5rem;
-		box-shadow: $drop_shadow;
-		border-radius: $border_radius;
-		background: $light;
-
-		.title {
-			color: $main_dark;
-			font-size: 2.5rem;
-			font-weight: $weight_bold;
-			line-height: 4.2rem;
-			text-align: center;
-		}
-
-		.height {
-			height: 8rem;
-		}
-
-		.subtitle {
-			color: $main_shade;
-			font-size: 1.4rem;
-			font-weight: $weight_light;
-			line-height: 2.3rem;
-		}
-
-		.inner-body {
-			padding: 4rem 2rem;
-
-			.title {
-				color: $main_darker;
-				font-size: 1.4rem;
-				font-weight: 600;
-				line-height: 2.3rem;
-				text-align: left;
-			}
-
-			.logo {
-				height: 6rem;
-			}
-
-			.subtitle {
-				color: $main_darker;
-				font-size: 1.4rem;
-				font-weight: $weight_light;
-				line-height: 2.3rem;
-			}
-		}
-	}
-
-	.body {
-		.title {
-			color: $screen_dark_70;
-			font-size: 3.5rem;
-			font-weight: $weight_regular;
-			line-height: 4.2rem;
-		}
-
-		.subtitle {
-			color: $screen_dark_70;
-			font-size: 2.5rem;
-			font-weight: $weight_bold;
-			line-height: 2.9rem;
-		}
-
-		.text {
-			color: $main_shade;
-			font-size: 1.5rem;
-			font-weight: $weight_regular;
-			line-height: 2.3rem;
-		}
-	}
-
-	.antivirus-block {
-		margin-top: 4rem;
-
-		ul.list-unstyled {
-			li {
-				.col-auto {
-					padding-left: 0.8rem;
-				}
-			}
-		}
-	}
-
-	.badge {
-		font-weight: normal;
-		font-size: 69%;
-	}
-
-	.button {
-		::ng-deep {
-			.button-box {
-				.button {
-					font-size: 1.5rem !important;
-					font-weight: $weight_600 !important;
-					width: 100%;
-					min-height: 3rem;
-				}
-			}
-		}
-	}
-
-	.white-button {
-		::ng-deep {
-			.button-box {
-				.button {
-					border: 0.1rem solid $main;
-					background: $light;
-					color: $main;
-					&:hover {
-						background: $light;
-						color: $main;
-					}
-				}
-			}
-		}
-	}
-
-	.normal-button {
-		::ng-deep {
-			.button-box {
-				.button {
-					color: $light;
-					background: $main;
-				}
-			}
-		}
-	}
-
-	.dashlane-side-left-img {
-		width: 90%;
-	}
-
-	.vtr-page-right-column {
-		@media #{$mediaquery_X5} {
-			padding: 4rem 4rem 4rem 8.5rem;
+		.divider {
+			margin: 2rem 0 1rem 0;
+			height: 0.1rem;
+			background-color: $light-grey;
 		}
 	}
 }

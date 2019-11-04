@@ -645,9 +645,9 @@
             "expand": "Expandir",
             "loader": "Obteniendo el estado",
             "loading": "Cargando...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "a partir de",
+            "to": "en",
+            "clickToChange": "haga clic para cambiar"
         },
         "app-update": {
             "message": "¡Ey! Hay disponible una versión más reciente de Vantage, ¿desea cargarla?"
@@ -956,7 +956,7 @@
                             "close": "cerrar",
                             "coolingModesList": {
                                 "list1": "Haga clic en el icono batería de Windows en la barra de herramientas",
-                                "list2": "Aparecerá el indicador de batería de Windows, deslice el control deslizante para elegir entre duración óptima o rendimiento óptimo."
+                                "list2": "Aparecerá el modo de energía de Windows, deslice el control deslizante para elegir entre duración óptima o rendimiento óptimo."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Suspensión inteligente",
                     "description": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
-                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de inicio programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo se optimiza de acuerdo con su planificación establecida. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
+                    "tooltip": "Cuando está activada la Suspensión inteligente, su equipo cambiará a Suspensión moderna antes de la hora de INICIO programada y entrará en hibernación de energía de la batería después de estar inactivo por un periodo determinado. Este periodo de tiempo está optimizado según la planificación que haya establecido o el sistema tiempo de uso que obtenemos. El equipo cambiará de hibernación a Suspensión moderna solo en los días programados, no cambiará cuando esté inactivo por días programados consecutivos.",
                     "timer": {
-                        "heading": "Establezca los horarios en los que normalmente utiliza este equipo",
+                        "heading": "La hora en la que normalmente utiliza su equipo",
                         "subHeading1": "comience",
                         "subHeading2": "final",
                         "subHeading3": "utilice esta planificación para",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Entre semana",
                         "weekends": "Fines de semana"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
+                    "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
-        "Note": "Nota: ",
+		"userProfile": "User profile",
+		"Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
     },
     "modernPreload": {

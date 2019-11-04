@@ -32,8 +32,6 @@ interface WifiSecurityState {
 	styleUrls: ['./page-security-wifi.component.scss']
 })
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
-	backarrow = '< ';
-	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
 	isShowHistory: boolean;

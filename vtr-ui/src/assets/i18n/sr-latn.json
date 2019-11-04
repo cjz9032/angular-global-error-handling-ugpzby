@@ -645,9 +645,9 @@
             "expand": "Raširi",
             "loader": "Status <br> preuzimanja",
             "loading": "Učitavanje...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "iz",
+            "to": "u",
+            "clickToChange": "kliknite za promenu"
         },
         "app-update": {
             "message": "Hej! Novija verzija programa Vantage je raspoloživa, želite li da ga učitate?"
@@ -956,7 +956,7 @@
                             "close": "zatvori",
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu baterije sistema Windows na traci sa alatkama",
-                                "list2": "Pojaviće se pokazivač napunjenosti baterije sistema Windows, povucite kizač da izaberete između optimalnog vremena ili optimalnih performansi."
+                                "list2": "Pojaviće se režim za uštedu energije sistema Windows, povucite klizač da izaberete između optimalnog vremena ili optimalnih performansi."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Pametno stanje pripravnosti",
                     "description": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena brzog pokretanja tokom časova intenzivnijeg korišćenja.",
-                    "tooltip": "Kada je omogućeno pametno stanje pripravnosti, računar se prebacuje u moderno stanje pripravnosti pre zakazanog vremena početka i ulazi u stanje hibernacije nakon izvesnog perioda neaktivnosti tokom rada na bateriju. Taj vremenski period je optimizovan na osnovu rasporeda koji ste podesili. Računar se prebacuje iy stanja hibernacije u moderno stanje pripravnosti samo tokom zakazanih dana, a ne prebacuje se kad je neaktivan tokom uzastopnih zakazanih dana.",
+                    "tooltip": "Kad je omogućena funkcija Pametno vreme pripravnosti, računar se prebacuje na funkciju Moderno vreme pripravnosti pre zakazanog vremena POČETKA i ulazi u hibernaciju nakon što neko vreme bude neaktivan a napaja se na bateriju. Ovaj period se optimizuje na osnovu rasporeda koji ste podesili ili vremena korišćenja računara koje dobijemo. Računar prelazi iz hibernacije u Moderno stanje pripravnosti samo zakazanim danima i ne prelazi kada je neaktivan nekoliko uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Podesite vreme kada obično koristite ovaj računar",
+                        "heading": "Vreme kada obično koristite računar",
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Weekdays",
                         "weekends": "Vikendom"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
+                    "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
         "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
         "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
-        "Note": "Napomena: ",
+		"userProfile": "User profile",
+		"Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
     },
     "modernPreload": {

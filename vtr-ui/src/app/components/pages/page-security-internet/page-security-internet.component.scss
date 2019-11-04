@@ -1,223 +1,219 @@
 @import "../../../app.theme.scss";
-
-.vtr-page-security-internet {
-	.vtr-subpage {
-		::ng-deep .vtr-widget-offline-info {
-			margin-top: $shift_up_small;
+::ng-deep {
+	.vtr-page-security-internet {
+		.vtr-subpage {
+			.vtr-widget-offline-info {
+				margin-top: $shift_up_small;
+			}
 		}
-	}
-	.security-card {
-		box-shadow: $drop_shadow;
-		border-radius: $border_radius;
-		background-color: $light;
-		padding: 1.5rem;
-	}
-
-	.title {
-		color: $main_dark;
-		font-size: 4.2rem;
-		font-weight: $weight_medium;
-	}
-
-	.heading {
-		color: $main_dark;
-		font-size: 2.5rem;
-		font-weight: $weight_regular;
-	}
-
-	.sub-heading {
-		color: $main_dark;
-		font-size: 2rem;
-		font-weight: $weight_black;
-		text-transform: uppercase;
-		margin-bottom: 1rem;
-	}
-
-	.list-heading {
-		color: $main_dark;
-		font-size: 3rem;
-		font-weight: $weight_bold;
-
-		.adjust-left {
-			padding-left: 0rem;
+		.security-card {
+			box-shadow: $drop_shadow;
+			border-radius: $border_radius;
+			background-color: $light;
+			padding: 1.5rem;
 		}
-	}
 
-	.top-line {
-		margin-top: 4rem;
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-		border-top: 0.2rem solid $shade_lighter;
-	}
+		.title {
+			color: $main_dark;
+			font-size: 4.2rem;
+			font-weight: $weight_medium;
+		}
 
-	.surfeasy_logo_teal {
-		height: 1.8rem;
-		width: 14rem;
-		margin-top: 1rem;
-	}
+		.heading {
+			color: $main_dark;
+			font-size: 2.5rem;
+			font-weight: $weight_regular;
+		}
 
-	.surfeasy_logo_bottom {
-		height: 3rem;
-		width: 18rem;
-	}
+		.sub-heading {
+			color: $main_dark;
+			font-size: 2rem;
+			font-weight: $weight_black;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
 
-	.text-regular {
-		color: $main_dark;
-		font-size: 1.6rem;
+		.list-heading {
+			color: $main_dark;
+			font-size: 3rem;
+			font-weight: $weight_bold;
 
-		a {
+			.adjust-left {
+				padding-left: 0rem;
+			}
+		}
+
+		.top-line {
+			margin-top: 4rem;
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+			border-top: 0.2rem solid $shade_lighter;
+		}
+
+		.surfeasy_logo_teal {
+			height: 1.8rem;
+			width: 14rem;
+			margin-top: 1rem;
+		}
+
+		.surfeasy_logo_bottom {
+			height: 3rem;
+			width: 18rem;
+		}
+
+		.text-regular {
+			color: $main_dark;
+			font-size: 1.6rem;
+
+			a {
+				text-decoration: underline;
+			}
+		}
+
+		.btn-round-xs {
+			border-radius: 5rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			cursor: default;
+		}
+
+		.btn-round-sm {
+			border-radius: 4.5rem;
+			padding: 1rem 4rem 1rem 4rem;
+			font-size: 1.8rem;
+			font-weight: $weight_bold;
+		}
+
+		.surfeasy-side-left-img {
+			width: 90%;
+		}
+
+		.surfeasy-side-right-img {
+			width: 90%;
+		}
+
+		.learnmore {
 			text-decoration: underline;
 		}
-	}
 
-	.btn-round-xs {
-		border-radius: 5rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
-		cursor: default;
-	}
+		.bullet-list {
+			margin-top: 1rem;
+			list-style: none;
+			padding: 0;
 
-	.btn-round-sm {
-		border-radius: 4.5rem;
-		padding: 1rem 4rem 1rem 4rem;
-		font-size: 1.8rem;
-		font-weight: $weight_bold;
-	}
+			li {
+				margin: 0;
+				padding: 1rem 1rem 1rem 0;
+				color: $main_dark;
 
-	.surfeasy-side-left-img {
-		width: 90%;
-	}
+				.text-regular {
+					color: $main_shade;
+					font-size: 1.6rem;
+				}
 
-	.surfeasy-side-right-img {
-		width: 90%;
-	}
+				&.good {
+					.bullet-icon {
+						.icon-bkg {
+							background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+							background-color: $go_dark;
+							border-color: $go_dark;
+						}
+					}
+				}
 
-	.learnmore {
-		text-decoration: underline;
-	}
+				&.bad {
+					.bullet-icon {
+						.icon-bkg {
+							background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+							background-color: $stop_dark;
+							border-color: $stop_dark;
+						}
+					}
 
-	.bullet-list {
-		margin-top: 1rem;
-		list-style: none;
-		padding: 0;
+					.detail {
+						color: $stop;
+					}
 
-		li {
-			margin: 0;
-			padding: 1rem 1rem 1rem 0;
-			color: $main_dark;
+					.arrow {
+						color: $stop;
+					}
+				}
+
+				.bullet-icon {
+					.icon-bkg {
+						display: inline-block;
+						border-radius: 50%;
+						height: 3rem;
+						width: 3rem;
+						border-width: 0.2rem;
+						border-style: solid;
+						text-align: center;
+
+						fa-icon {
+							font-size: 1.6rem;
+							line-height: 2.6rem;
+							color: $light;
+						}
+					}
+
+					.icon-installed {
+						border-width: 9px;
+						border-color: $main !important;
+					}
+				}
+			}
+		}
+
+		.number-list {
+			margin-top: 1rem;
+			list-style: none;
+			padding: 0;
 
 			.text-regular {
 				color: $main_shade;
-				font-size: 1.6rem;
+				padding: 0.8rem;
+				font-size: 1.8rem;
 			}
 
-			&.good {
-				.bullet-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						background-color: $go_dark;
-						border-color: $go_dark;
-					}
-				}
-			}
-
-			&.bad {
-				.bullet-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						background-color: $stop_dark;
-						border-color: $stop_dark;
-					}
-				}
-
-				.detail {
-					color: $stop;
-				}
-
-				.arrow {
-					color: $stop;
-				}
-			}
-
-			.bullet-icon {
-				.icon-bkg {
-					display: inline-block;
-					border-radius: 50%;
-					height: 3rem;
-					width: 3rem;
-					border-width: 0.2rem;
-					border-style: solid;
-					text-align: center;
-
-					fa-icon {
-						font-size: 1.6rem;
-						line-height: 2.6rem;
-						color: $light;
-					}
-				}
-
-				.icon-installed {
-					border-width: 9px;
-					border-color: $main !important;
-				}
+			.serial {
+				font-size: 3.6rem;
+				color: $main_dark;
 			}
 		}
-	}
 
-	.number-list {
-		margin-top: 1rem;
-		list-style: none;
-		padding: 0;
-
-		.text-regular {
-			color: $main_shade;
-			padding: 0.8rem;
-			font-size: 1.8rem;
+		.button-box {
+			padding: 1rem;
+			margin: 1.2rem;
 		}
 
-		.serial{
-			font-size: 3.6rem;
-			color: $main_dark;
+		.get-app-code-box {
+			background-color: $shade_lightest;
+			border: 0.1rem solid $shade_lighter;
+			border-radius: $border_radius;
+			text-align: center;
+
+			.sub-heading {
+				margin-top: 2rem;
+				color: $main_dark;
+				font-size: 1.8rem;
+				font-weight: $weight_bold;
+				text-transform: uppercase;
+				margin-left: -5rem;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+
+			.text-regular {
+				color: $main_dark;
+				font-size: 2rem;
+				font-weight: $weight_light;
+			}
+		}
+		.vtr-page-right-column {
+			@media #{$mediaquery_X8} {
+				padding: 0 4rem 4rem 8.5rem;
+			}
 		}
 
-	}
-
-	.button-box {
-		padding: 1rem;
-		margin: 1.2rem;
-	}
-
-	.get-app-code-box {
-		background-color: $shade_lightest;
-		border: 0.1rem solid $shade_lighter;
-		border-radius: $border_radius;
-		text-align: center;
-
-		.sub-heading {
-			margin-top: 2rem;
-			color: $main_dark;
-			font-size: 1.8rem;
-			font-weight: $weight_bold;
-			text-transform: uppercase;
-			margin-left: -5rem;
-			word-break: break-all;
-			word-wrap: break-word;
-		}
-
-		.text-regular {
-			color: $main_dark;
-			font-size: 2rem;
-			font-weight: $weight_light;
-		}
-	}
-	.vtr-page-right-column{
-		@media #{$mediaquery_X8} {
-			padding: 0 4rem 4rem 8.5rem;
-		}
-	}
-
-	.text{
-		color: $main_shade;
-		font-size: 1.6rem;
 	}
 }

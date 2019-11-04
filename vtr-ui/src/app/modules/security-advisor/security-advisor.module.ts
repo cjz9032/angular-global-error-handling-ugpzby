@@ -56,6 +56,7 @@ import { WidgetMcafeeMetricComponent } from 'src/app/components/pages/page-secur
 import { WidgetCommonAntivirusComponent } from '../../components/pages/page-security-antivirus/widget/widget-common-antivirus/widget-common-antivirus.component';
 import { PercentIconPipe } from 'src/app/pipe/widget-security/percent-icon.pipe';
 import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-qa.component';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 library.add(
 	faLockAlt,
@@ -119,7 +120,8 @@ library.add(
 		WidgetOfflineModule,
 		UiListChevronModule,
 		CommonModalModule,
-		LocationNoticeModule
+		LocationNoticeModule,
+		PageLayoutModule
 	],
 	providers: [
 		DialogService

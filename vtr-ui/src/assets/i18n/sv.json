@@ -645,9 +645,9 @@
             "expand": "Utöka",
             "loader": "Hämtar <br> status",
             "loading": "Läser in...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "från",
+            "to": "till",
+            "clickToChange": "klicka för att ändra"
         },
         "app-update": {
             "message": "Hej! Det finns en nyare version av Vantage. Vill du läsa in den?"
@@ -956,7 +956,7 @@
                             "close": "stäng",
                             "coolingModesList": {
                                 "list1": "Klicka på batteriikonen i systemfältet i Windows",
-                                "list2": "Dra reglaget på Windows-batterimätaren för att välja mellan optimal tid och prestanda."
+                                "list2": "Läget Energialternativ i Windows visas. Dra reglaget för att välja mellan optimal tid och optimal prestanda."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Smart vänteläge",
                     "description": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tidsperiod på batteriström. Denna tidsperiod optimeras utifrån schemat du har angett. Datorn övergår från viloläge till modernt vänteläge endast på schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
+                    "tooltip": "När Smart vänteläge är aktiverat sätts datorn i modernt vänteläge före den schemalagda starttiden och i viloläge när den inte har använts under en viss tid på batterikraft. Tiden optimeras utifrån det schema du har valt eller den datoranvändningstid vi får. Datorn övergår från viloläge till modernt vänteläge endast schemalagda dagar och inte när den inte används under flera schemalagda dagar i rad.",
                     "timer": {
-                        "heading": "Ange vilken tid du använder datorn mest",
+                        "heading": "Tiden då du brukar använda datorn",
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
@@ -1127,8 +1127,8 @@
                         "weekdays": "vardagar",
                         "weekends": "helger"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
+                    "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid"
                 }
             },
             "audio": {
@@ -2525,7 +2525,8 @@
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
         "deviceStatistics": "Dela statistisk information med Lenovo",
         "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
-        "Note": "Obs! ",
+		"userProfile": "User profile",
+		"Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
     },
     "modernPreload": {

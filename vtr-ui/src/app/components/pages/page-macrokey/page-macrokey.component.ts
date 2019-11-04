@@ -29,6 +29,7 @@ export class PageMacrokeyComponent implements OnInit {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
 
 	upeRequestResult = {
 		positionB: true,
