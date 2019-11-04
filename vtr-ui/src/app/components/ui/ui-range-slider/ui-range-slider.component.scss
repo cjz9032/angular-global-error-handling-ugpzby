@@ -43,7 +43,7 @@ but not to any other element on the page. using ::ng-deep
 					background: grey;
 				}
 				@media #{$black-on-white} {
-					border: 1px solid #fff;
+					border: 1px solid #000;
 					background: grey;
 				}
 
