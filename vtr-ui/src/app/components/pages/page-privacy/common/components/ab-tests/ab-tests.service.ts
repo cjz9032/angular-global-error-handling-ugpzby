@@ -34,6 +34,10 @@ export class AbTestsService {
 	}
 
 	private getCurrentOptionsFromStorage() {
-		return JSON.parse(this.storageService.getItem(AB_TESTS_CONFIG)) as Test[] || null;
+		try {
+			return JSON.parse(this.storageService.getItem(AB_TESTS_CONFIG)) as Test[] || null;
+		} catch (e) {
+			return null;
+		}
 	}
 }

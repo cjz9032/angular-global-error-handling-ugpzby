@@ -6,10 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 	providedIn: 'root'
 })
 export class UserAllowService {
-	allowToShow = new BehaviorSubject(JSON.parse(this.storageService.getItem(ALLOW_MAP__NAME)) || {
-		trackingMap: false,
-		consentForVulnerablePassword: false
-	});
+	allowToShow = new BehaviorSubject(this.getAllowMap());
 
 	constructor(private storageService: StorageService) {
 	}
@@ -26,5 +23,18 @@ export class UserAllowService {
 
 	private saveToStorage(allowMap) {
 		this.storageService.setItem(ALLOW_MAP__NAME, JSON.stringify(allowMap));
+	}
+
+	private getAllowMap() {
+		const defaultAllowMap = {
+			trackingMap: false,
+			consentForVulnerablePassword: false
+		};
+
+		try {
+			return JSON.parse(this.storageService.getItem(ALLOW_MAP__NAME)) || defaultAllowMap;
+		} catch (e) {
+			return defaultAllowMap;
+		}
 	}
 }

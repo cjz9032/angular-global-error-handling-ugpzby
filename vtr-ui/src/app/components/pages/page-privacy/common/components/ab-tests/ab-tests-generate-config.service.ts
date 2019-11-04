@@ -40,12 +40,28 @@ export class AbTestsGenerateConfigService {
 
 	private getDefaultConfig(): ShuffleTests {
 		return {
-			version: Number(this.storageService.getItem(BACKEND_CONFIG_VERSION)) || null,
-			tests: JSON.parse(this.storageService.getItem(AB_TESTS_CONFIG)) as Test[] || this.getDefaultTests()
+			version: this.getCurrentVersionFromStorage(),
+			tests: this.getCurrentOptionsFromStorage()
 		};
 	}
 
 	private getDefaultTests() {
 		return config.tests.map((test) => ({key: test.key as AbTestsName, option: test.defaultOptions[0]}));
+	}
+
+	private getCurrentOptionsFromStorage() {
+		try {
+			return JSON.parse(this.storageService.getItem(AB_TESTS_CONFIG)) as Test[] || this.getDefaultTests();
+		} catch (e) {
+			return this.getDefaultTests();
+		}
+	}
+
+	private getCurrentVersionFromStorage() {
+		try {
+			return Number(this.storageService.getItem(BACKEND_CONFIG_VERSION)) || null;
+		} catch (e) {
+			return null;
+		}
 	}
 }
