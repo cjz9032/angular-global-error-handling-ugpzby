@@ -652,6 +652,11 @@
 			border-bottom: 0.1rem solid $screen_dark_05;
 			line-height: 3rem;
 			font-size: 1.4rem;
+			fa-icon{
+				margin-right: 1rem;
+				color: $main;
+				cursor: pointer;
+			}
 			.d-flex{
 				&:first-child{
 					.icon{
@@ -660,18 +665,22 @@
 						font-size: 2rem;
 					}
 				}
-				&:first-child{
-					.icon{
-						margin-left: 1rem;
-					}
-				}
+				// &:first-child{
+				// 	.icon{
+				// 		margin-left: 1rem;
+				// 	}
+				// }
 			}
 			&:last-child{
 				border-bottom: none;
 			}
 		}
+		.disable-list {
+			background: $gaming_switch_light;
+			opacity: 0.3;
+		}
 	}
-	.labels {
+	.labels { 
 		.badge {
 			font-size: 1.2rem;
 			margin-bottom: 0.6rem;
@@ -753,8 +762,171 @@
 			width: 100%;
 		}
 	}
-}
+	.save-button{
+		border-radius: 2.5rem;
+			background: $main;
+			text-transform: uppercase;
+			padding: 0 5rem;
+			color: $light;
+			font-size: 1.5rem;
+			height: 5rem;
+			font-weight: $weight_medium;
+			line-height: 5rem;
+			text-align: center;
+			border: 0rem;
+			cursor: pointer;
+			
+	}
+	.cancel-link {
+		color: $main;
+		font-size: 1.5rem;
+		text-decoration: underline;
+		vertical-align: middle;
+		padding: 1rem 3rem;
+		font-weight: $weight_bold;
+		margin-top: 1rem;
+		cursor: pointer;
 
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.change-scan-schedule {
+		.freq-dropdown {
+			background: $light;
+			list-style-type: none;
+			position: absolute;
+			z-index: 9999;
+			padding: 2rem;
+			// top: 48%;
+			margin-top: 4rem;
+			right: 9%;
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+			border-radius: 0.5rem;
+			float: right;
+			.selected-frequency{
+				color: #11b85b;
+				font-weight: $weight_bold;
+				
+			}
+			.frequency-text{
+				cursor: pointer;
+			}
+			&:before {
+				content: '';
+				width: 0; 
+				height: 0; 
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid $light;
+				top: -6%;
+				right: 7%;
+				position: absolute;
+			}
+		}
+		.day-dropdown {
+			background: $light;
+			list-style-type: none;
+			position: absolute;
+			z-index: 9999;
+			padding: 2rem;
+			// top: 48%;
+			margin-top: 4rem;
+			right: 9%;
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+			border-radius: 0.5rem;
+			.selected-day{
+				color: #11b85b;
+				font-weight: $weight_bold;
+			}
+			.days-text{
+				cursor: pointer;
+			}
+			&:before {
+				content: '';
+				width: 0; 
+				height: 0; 
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid $light;
+				top: -4%;
+				right: 10%;
+				position: absolute;
+			}
+		}
+		.time-dropdown {
+			background: $light;
+			list-style-type: none;
+			position: absolute;
+			z-index: 9999;
+			padding-top: 2rem;
+			margin-top: 4rem;
+			// top: 66%;
+			right: 9%;
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+			border-radius: 0.5rem;
+			.hour-block{
+				border-right: 1px solid $shade_light;
+				border-bottom: 1px solid $shade_light;
+				padding-right: 2rem;
+				padding-left: 2rem;
+				
+				.hour-text{
+					cursor: pointer;
+				}
+				.selected-text{
+					color: #11b85b;
+					font-weight: $weight_bold;
+				}
+			}
+			.minutes-block{
+				border-right: 1px solid $shade_light;
+				border-bottom: 1px solid $shade_light;
+				padding-right: 2rem;
+				padding-left: 2rem;
+				.min-text{
+					cursor: pointer;
+				}
+				.selected-text{
+					color: #11b85b;
+					font-weight: $weight_bold;
+				}
+			}
+			.amPm-block{
+				border-bottom: 1px solid $shade_light;
+				padding-right: 2rem;
+				padding-left: 2rem;
+				.amPm-text{
+					cursor: pointer;
+				}
+				.selected-text{
+					color: #11b85b;
+					font-weight: $weight_bold;
+				}
+			}
+			&:before {
+				content: '';
+				width: 0; 
+				height: 0; 
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid $light;
+				top: -2%;
+				right: 6%;
+				position: absolute;
+			}
+			.select-close {
+				fa-icon {
+					font-size: 2rem;
+					margin-left: 0;
+					color: $dark !important;
+					cursor: pointer;
+				}
+			}
+		}
+	
+}
+}
 @keyframes expanding {
 	0%{
 		width: 5%;

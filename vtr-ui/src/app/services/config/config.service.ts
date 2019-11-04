@@ -7,11 +7,11 @@ import {
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
-import {privacyPolicyLinks} from 'src/assets/privacy-policy-links/policylinks.json';
+import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 
-declare var Windows;
+// declare var Windows;
 
 interface ShellVersion {
 	major: number;
@@ -61,7 +61,7 @@ export class ConfigService {
 
 			if (isGaming) {
 				if (isBetaUser && this.deviceService.showSearch) {
-					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 				resolve(resultMenu);
 			}
@@ -91,7 +91,7 @@ export class ConfigService {
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (this.deviceService.showSearch) {
-					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
 			resultMenu = this.brandFilter(resultMenu);
@@ -108,10 +108,15 @@ export class ConfigService {
 	}
 
 	isShowCHSByShellVersion(shellVersion: ShellVersion) {
-		const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-		return packageVersion.major !== shellVersion.major ? packageVersion.major > shellVersion.major :
-		packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
-		packageVersion.build >= shellVersion.build;
+		const Windows = this.getWindows();
+		if (Windows) {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			return packageVersion.major !== shellVersion.major ? packageVersion.major > shellVersion.major :
+				packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
+					packageVersion.build >= shellVersion.build;
+		} else {
+			return true;
+		}
 	}
 
 	brandFilter(menu: Array<any>) {
@@ -140,5 +145,13 @@ export class ConfigService {
 				resolve(privacyPolicyLinks[val.locale] || privacyPolicyLinks.default);
 			});
 		});
+	}
+
+	private getWindows(): any {
+		const win: any = window;
+		if (win.Windows) {
+			return win.Windows;
+		}
+		return undefined;
 	}
 }

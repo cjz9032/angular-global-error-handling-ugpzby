@@ -75,17 +75,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.selfSelectService.getConfig().then((config) => {
 			if (config && config.segment) {
 				this.data.page2.radioValue = config.segment;
-				switch (this.data.page2.radioValue) {
-					case 'personal':
-						document.getElementById('radio1').click();
-						break;
-					case 'business':
-						document.getElementById('radio2').click();
-						break;
-					case 'custom':
-						document.getElementById('radio3').click();
-						break;
-				}
 			}
 			if (config && config.customtags) {
 				const checkedTags = config.customtags;

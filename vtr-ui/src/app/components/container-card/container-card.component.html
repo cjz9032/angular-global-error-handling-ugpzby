@@ -25,6 +25,7 @@
 						id="{{containerCardId+'_doc_link'}}"
 						metricsItemCategory="corner"
 						metricsEvent="docClick"
+						[metricsItem]="dynamicmetricsItem"
 					 	[metricsParam]="dataSource"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
@@ -379,7 +380,7 @@
 							</div>
 						</a>
 						<div *ngIf="!isOnline"
-							class="default-cursor">
+						class="offline-a">
 							<div class="col col-12 content">
 								<div *ngIf="title"
 									class="title"

@@ -27,6 +27,10 @@ div {
 	cursor: default;
 }
 
+.color-light {
+	color: $light;
+}
+
 *:not(a),
 *:not(a > *),
 input:not([type="radio"]):not([type="checkbox"]),
@@ -1236,5 +1240,45 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			  }
 		  }
 	  }
+	} 
+}
+
+.sidebar-widget {
+	.change-scan-schedule {
+		.day-dropdown {
+			&.date-picker {
+				ngb-datepicker {
+					width: 20rem;
+					border: none;
+					border-radius: 0;
+					.ngb-dp-header {
+						background: transparent;
+					}
+					.ngb-dp-month {
+						width: 100%;
+						.ngb-dp-week {
+							display: flex;
+							justify-content: space-around;
+							&.ngb-dp-weekdays {
+								border: none;
+							}
+							&.bg-light {
+								background: transparent !important;
+							}
+							.ngb-dp-weekday {
+								font-style: normal;
+							}
+						}
+					}
+					.bg-primary {
+						background: transparent !important;
+						&.text-white {
+							color: $go_dark !important;
+							font-weight: $weight_bold;
+						}
+					}
+				}
+			}
+		}
 	}
 }

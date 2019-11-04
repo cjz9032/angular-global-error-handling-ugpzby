@@ -645,9 +645,9 @@
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
             "loading": "Caricamento in corso...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "da",
+            "to": "a",
+            "clickToChange": "fare clic per modificare"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
@@ -956,7 +956,7 @@
                             "close": "chiudi",
                             "coolingModesList": {
                                 "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti",
-                                "list2": "Viene visualizzato l'indicatore della batteria di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
+                                "list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Standby intelligente",
                     "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di inizio pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "Impostare l'ora in cui generalmente si utilizza il computer",
+                        "heading": "L'ora in cui generalmente si utilizza il computer",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -1127,8 +1127,8 @@
                         "weekdays": "Nei giorni feriali",
                         "weekends": "Fine settimana"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer"
                 }
             },
             "audio": {
