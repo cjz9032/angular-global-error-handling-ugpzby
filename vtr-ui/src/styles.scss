@@ -27,6 +27,10 @@ div {
 	cursor: default;
 }
 
+.color-light {
+	color: $light;
+}
+
 *:not(a),
 *:not(a > *),
 input:not([type="radio"]):not([type="checkbox"]),

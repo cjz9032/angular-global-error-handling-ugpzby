@@ -23,7 +23,6 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-	backId = 'sa-pm-btn-back';
 	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
 	dashlaneArticleCategory: string;
 	isOnline = true;

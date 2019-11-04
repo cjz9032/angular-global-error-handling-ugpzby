@@ -7,7 +7,9 @@
 				[forwardLink]=""
 				[textId]="textId"
 				[back]="back"
-				[backId]="backId"></vtr-header-main>
+				[backId]="backId">
+				<ng-content select="header-content"></ng-content>
+			</vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-columns">
