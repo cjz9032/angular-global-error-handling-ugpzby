@@ -12,19 +12,35 @@ export class VpnLandingViewModel {
 
 	vpnStatus: StatusInfo = {
 		status: 4,
-		detail: 'common.securityAdvisor.loading',
+		detail: '',
 		path: 'security/internet-protection',
-		title: 'security.landing.vpnVirtual',
+		title: '',
 		type: 'security',
 		id: 'sa-ov-link-vpn'
 	};
 	subject = {
 		status: 2,
-		title: 'security.landing.vpnSecurity',
+		title: '',
 		type: 'security',
 	};
+	translateString: any;
 	constructor(public translate: TranslateService, vpnModel: phoenix.Vpn, public commonService: CommonService) {
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		translate.stream([
+			'common.securityAdvisor.loading',
+			'security.landing.vpnVirtual',
+			'security.landing.vpnSecurity',
+			'common.securityAdvisor.installed',
+			'common.securityAdvisor.installing',
+			'common.securityAdvisor.notInstalled'
+		]).subscribe((res: any) => {
+				this.translateString = res;
+				if (!this.vpnStatus.detail) {
+					this.vpnStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				this.vpnStatus.title = res['security.landing.vpnVirtual'];
+				this.subject.title = res['security.landing.vpnSecurity'];
+			});
 		if (vpnModel.status) {
 			this.setVpnStatus(vpnModel.status);
 		} else if (cacheStatus) {
@@ -34,39 +50,26 @@ export class VpnLandingViewModel {
 			this.setVpnStatus(data);
 		});
 		this.statusList = new Array(this.vpnStatus);
-
-		translate.stream(this.vpnStatus.detail).subscribe((res: string) => {
-			this.vpnStatus.detail = res;
-		});
-		translate.stream(this.vpnStatus.title).subscribe((res: string) => {
-			this.vpnStatus.title = res;
-		});
-		translate.stream(this.subject.title).subscribe((res: string) => {
-			this.subject.title = res;
-		});
 	}
 
 	setVpnStatus(status: string) {
 		switch (status) {
 			case 'installed':
-				this.vpnStatus.detail = 'common.securityAdvisor.installed';
+				this.vpnStatus.detail = this.translateString['common.securityAdvisor.installed'];
 				this.vpnStatus.status = 5;
 				this.subject.status = 2;
 				break;
 			case 'installing':
-				this.vpnStatus.detail = 'common.securityAdvisor.installing';
+				this.vpnStatus.detail = this.translateString['common.securityAdvisor.installing'];
 				this.vpnStatus.status = 4;
 				this.subject.status = 1;
 				break;
 			default:
-				this.vpnStatus.detail = 'common.securityAdvisor.notInstalled';
+				this.vpnStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
 				this.vpnStatus.status = 5;
 				this.subject.status = 1;
 		}
 
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
-		this.translate.stream(this.vpnStatus.detail).subscribe((res: string) => {
-			this.statusList[0].detail = res;
-		});
 	}
 }
