@@ -12,6 +12,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 export class HardwareScanService {
 
 	private hardwareScanBridge: any;
+	available: boolean;
 	private modulesRetrieved: any; // modules retrieve from get items [object from ItemToScanResponse]
 	private isLoadingModulesDone = false;
 	private isScanDone = false;
@@ -46,6 +47,9 @@ export class HardwareScanService {
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
+		this.isAvailable().then(result => {
+			this.available = result;
+		});
 	}
 
 	public getCategoryInformation() {
