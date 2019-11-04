@@ -11,6 +11,7 @@ import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -34,6 +35,7 @@ export class PageNetworkboostComponent implements OnInit {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
 
@@ -63,7 +65,8 @@ export class PageNetworkboostComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService,
 	) {
 		this.titleService.setTitle('gaming.common.narrator.pageTitle.networkBoost');
 		this.isUPEFailed = false; // init UPE request status

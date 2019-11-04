@@ -155,11 +155,8 @@ export class AppComponent implements OnInit, OnDestroy {
 			win.NetworkListener.onnetworkchanged = (state) => {
 				this.notifyNetworkState();
 			};
-			if (win.NetworkListener.isInternetAccess()) {
-				this.notifyNetworkState();
-			} else {
-				this.notifyNetworkState();
-			}
+			
+			this.notifyNetworkState();
 		} else {
 			window.addEventListener('online', (e) => {
 				this.notifyNetworkState();
@@ -168,11 +165,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				this.notifyNetworkState();
 			}, false);
 
-			if (navigator.onLine) {
-				this.notifyNetworkState();
-			} else {
-				this.notifyNetworkState();
-			}
+			this.notifyNetworkState();
 		}
 	} // end of addInternetListener
 

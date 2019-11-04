@@ -1128,7 +1128,10 @@
                         "weekends": "Helger"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
-                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen"
+                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Bytte av Fn- og Ctrl-tasten",
+                    "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
                     "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Middels"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Når denne funksjonen er aktivert, blir deteksjonsavstanden justert automatisk. Du kan også angi deteksjonsavstanden manuelt ved hjelp av glidebryteren. Alternativer:",
+                        "context2": "Når du angir deteksjonsavstanden manuelt, må du være oppmerksom på følgende:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Kort avstand: 0–0,42 meter (17 tommer)",
+                            "line2": "Middels avstand: 0–0,60 meter (24 tommer)",
+                            "line3": "Lang avstand: 0–1,20 meter (47 tommer)",
+                            "line4": "Maksimal deteksjonsavstand er 1,2 meter. Hvis du overskrider 1,2 meter, vil ikke sensoren oppdage din tilstedeværelse.",
+                            "line5": "Anbefalt deteksjonsavstand er mindre enn 0,60 meter."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
-		"userProfile": "User profile",
-		"Note": "Merk: ",
+        "userProfile": "User profile",
+        "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
     },
     "modernPreload": {

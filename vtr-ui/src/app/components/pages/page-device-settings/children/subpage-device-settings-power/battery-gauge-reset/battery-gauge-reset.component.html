@@ -16,7 +16,8 @@
 							<div class="battery-text"
 								id=""
 								tabindex="0"
-								attr.aria-label="">
+								attr.aria-label="{{ headings[i] | translate }}"
+								role="none">
 								{{ headings[i] | translate }}
 							</div>
 							<div class="battery-gauge-info py-3">
@@ -109,7 +110,8 @@
 					<div class="row px-20 pt-3">
 						<span *ngIf="!isACAttached"
 							class="note warning-note"
-							tabindex="0">
+							tabindex="0"
+							attr.aria-label="	{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}">
 							{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}
 						</span>
 						<span *ngIf="isACAttached && batteryGaugeResetInfo.length>1"

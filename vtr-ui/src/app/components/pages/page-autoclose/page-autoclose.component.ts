@@ -14,6 +14,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -37,6 +38,7 @@ export class PageAutocloseComponent implements OnInit {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem:any = 'autoclose_cms_inner_content';
 
 	upeRequestResult = {
 		positionB: true,
@@ -63,7 +65,8 @@ export class PageAutocloseComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService,
 	) {
 		this.setPreviousContent();
 		this.fetchCMSArticles();
@@ -83,6 +86,7 @@ export class PageAutocloseComponent implements OnInit {
 		this.refreshAutoCloseList();
 		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
 		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+		console.log("zakir is gaming",this.deviceService.isGaming);
 	}
 
 	private onNotification(notification: AppNotification) {
