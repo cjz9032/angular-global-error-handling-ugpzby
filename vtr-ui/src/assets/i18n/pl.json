@@ -1128,7 +1128,10 @@
                         "weekends": "Weekendy"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
-                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera"
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Klawisz przełączania Fn i Ctrl",
+                    "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
                     "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Średni"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Po włączeniu odległość wykrywania zostanie automatycznie dostosowana. Możesz także ręcznie ustawić odległość wykrywania za pomocą suwaka. Dostępne są następujące opcje:",
+                        "context2": "Podczas ręcznego ustawiania odległości wykrywania należy zwrócić uwagę na następujące kwestie:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "W pobliżu: 0 - 0,42 metra (17 cali)",
+                            "line2": "Środek: 0 - 0,60 metra (24 cali)",
+                            "line3": "Daleko: 0 - 1,20 metra (47 cali)",
+                            "line4": "Maksymalna odległość wykrywania wynosi 1,2 metra. Po przekroczeniu odległości 1,2 metra, czujnik nie wykryje twojej obecności.",
+                            "line5": "Zalecana odległość wykrywania wynosi 0,60 metra."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
         "deviceStatistics": "Udostępniaj dane statystyczne Lenovo",
         "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
-		"userProfile": "User profile",
-		"Note": "Uwaga: ",
+        "userProfile": "User profile",
+        "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },
     "modernPreload": {
