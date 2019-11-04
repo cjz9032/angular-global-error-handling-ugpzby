@@ -21,7 +21,6 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-	backId = 'sa-wh-btn-back';
 	isOnline = this.commonService.isOnline;
 	notificationSubscription: Subscription;
 
