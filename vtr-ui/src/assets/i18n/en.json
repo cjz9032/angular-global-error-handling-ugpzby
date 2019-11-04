@@ -1212,6 +1212,15 @@
 				},
 				"display": {
 					"title": "Display",
+					"displayColorTemperature": {
+						"title": "Display color temperature",
+						"description": "You can adjust the color temperature of your display to emit blue light and reduce eye strain. Adjusts displays to warmer colors during sunset to sunrise to help you sleep.",
+						"link": {
+							"click": "Click",
+							"here": "here",
+							"rest": "to change the color temperature."
+						}
+					},
 					"eyeCareMode": {
 						"title": "Color Temperature in Eye Care Mode",
 						"checkbox": "Schedule eye care mode from sunset to sunrise",

@@ -407,4 +407,8 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+
+	resetEyecaremodeAllSettings() {
+		return this.displayEyeCareMode.resetEyecaremodeAllSettings();
+	}
 }

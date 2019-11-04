@@ -1,4 +1,13 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	EventEmitter,
+	NgZone,
+	AfterViewInit
+} from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -21,6 +30,7 @@ import { map, timeout, takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { WinRT } from "@lenovo/tan-client-bridge";
 
 
 @Component({
@@ -30,7 +40,7 @@ import { EMPTY } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.Default
 })
 export class SubpageDeviceSettingsDisplayComponent
-	implements OnInit, OnDestroy {
+	implements OnInit, OnDestroy, AfterViewInit {
 	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
@@ -1059,5 +1069,25 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	onClick(path) {
 		this.deviceService.launchUri(path);
+	}
+
+	launchProtocol(protocol: string) {
+		WinRT.launchUri(protocol);
+	}
+
+	resetEyecaremodeAllSettings() {
+		if (!window.localStorage.getItem(LocalStorageKey.EyeCareModeResetStatus)) {
+			return;
+		}
+		this.displayService.resetEyecaremodeAllSettings()
+			.then(response => {
+				if (response.errorCode === 0) {
+					window.localStorage.setItem(LocalStorageKey.EyeCareModeResetStatus, 'true');
+				}
+			});
+	}
+
+	ngAfterViewInit(): void {
+		this.resetEyecaremodeAllSettings();
 	}
 }

@@ -1,6 +1,14 @@
 @import "../../../../../app.theme.scss";
 
 .subpage-device-settings-display {
+	.displayColorTemperatureLink {
+		padding-left: 2.5rem;
+		font-size: 2rem;
+		font-weight: 300;
+	}
+	#goto_nightlight_link {
+		text-decoration: underline;
+	}
 	.title {
 		opacity: 0.8;
 		color: $main_darker;
@@ -37,20 +45,20 @@
 				border: 0.1rem solid $dark;
 				border-radius: 1rem;
 				box-sizing: border-box;
-				
-				
+
+
 			}
 			@media #{$white-on-black} {
 				//background-color: $high-contrast-grey;
 				border: 0.1rem solid $light;
 				border-radius: 1rem;
 				box-sizing: border-box;
-				
-				
+
+
 			}
 		}
 	.smartsettings-card {
-		
+
 		.subtitle {
 			width: 100%;
 
