@@ -224,7 +224,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			modalCancel.componentInstance.cancelRequested.subscribe(() => {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
-					//this.cancelHandler.cancel();
 					this.hardwareScanService.cancelScanExecution()
 						.then((response) => {
 							console.log('response: ', response);
@@ -232,7 +231,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 					this.hardwareScanService.isWorkDone().subscribe((done) => {
 						if (done) {
+							// When the cancelation is done, close the cancelation dialog and sets the
+							// status of the scan to avoid problems when viewing their results
+							// (without that, the back button doesn't work as expected!).
 							modalCancel.close();
+							this.hardwareScanService.setIsScanDone(false);
 						}
 					});
 				}

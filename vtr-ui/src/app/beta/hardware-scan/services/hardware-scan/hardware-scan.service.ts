@@ -425,6 +425,9 @@ export class HardwareScanService {
 		}
 	}
 
+	/**
+	 * This can be observed to know when a Scan/RBS work has done (successfully or canceled)
+	 */
 	public isWorkDone(): Observable<boolean> {
 		return this.workDone.pipe(first())
 	}
