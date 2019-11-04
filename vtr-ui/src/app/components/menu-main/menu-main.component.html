@@ -271,7 +271,7 @@
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
 							<span class="unread-count-tag"
-								*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
+								*ngIf="!deviceService.isArm && UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<div ngbDropdownMenu
 							class="dropdown-menu {{item.id}} dropdown-menu-id"
