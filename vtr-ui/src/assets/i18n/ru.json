@@ -1128,7 +1128,10 @@
                         "weekends": "Выходные дни"
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
-                    "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера"
+                    "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Переключение функций клавиш Fn и Ctrl",
+                    "description": "Если вы по привычке нажали клавишу Fn, намереваясь нажать клавишу Ctrl, вы можете поменять функции этих клавиш.",
                     "restartNote": "Для переключения функции двух клавших необходимо перезапустить компьютер. Выполнить перезапуск?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Средняя"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Если эта функция включена, расстояние обнаружения корректируется автоматически. Кроме того, можно вручную настроить расстояние обнаружения с помощью ползунка. Доступные варианты:",
+                        "context2": "При настройке расстояния обнаружения вручную обращайте внимание на следующие факторы:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Близко: 0–0,42 м (17 дюймов)",
+                            "line2": "Средне: 0–0,60 м (24 дюймов)",
+                            "line3": "Далеко: 0–1,20 м (47 дюймов)",
+                            "line4": "Максимальное расстояние обнаружения — 1,2 метра. На расстоянии более 1,2 метра датчик не сможет распознать ваше присутствие.",
+                            "line5": "Рекомендованное расстояние обнаружения — 0,6 метра."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
         "deviceStatistics": "Поделиться статистическими данными с Lenovo",
         "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
-		"userProfile": "User profile",
-		"Note": "Замечание: ",
+        "userProfile": "User profile",
+        "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение."
     },
     "modernPreload": {
