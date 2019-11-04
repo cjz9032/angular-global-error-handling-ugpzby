@@ -1,3 +1,4 @@
+import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,6 +12,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-lighting.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalGamingLightingComponent } from '../../modal/modal-gaming-lighting/modal-gaming-lighting.component';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -46,6 +49,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	metrics: any;
 
 	constructor(
+		private modalService: NgbModal,
 		private titleService: Title,
 		private commonService: CommonService,
 		private cmsService: CMSService,
@@ -77,6 +81,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 	ngOnInit() { }
 	ngOnDestroy() { }
+
+	openModal() {
+		this.modalService.open(ModalGamingLightingComponent, { backdrop:true, windowClass: 'gaming-lighting-cms-content-help' });
+	}
+
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
