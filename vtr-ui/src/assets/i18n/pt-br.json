@@ -1128,7 +1128,10 @@
                         "weekends": "Finais de semana"
                     },
                     "checkbox": "Ajuste automático do tempo ativo do computador com base no uso",
-                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da mesa do computador"
+                    "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da mesa do computador",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Enviar estatísticas anônimas de uso para a Lenovo.",
         "deviceStatistics": "Compartilhar dados estatísticos com a Lenovo",
         "deviceStatisticsDescription": "Compartilha dados estatísticos com a Lenovo para melhorar a confiabilidade, o design e a otimização de recursos em seu computador.",
-		"userProfile": "User profile",
-		"Note": "Nota: ",
+        "userProfile": "User profile",
+        "Note": "Nota: ",
         "settingsNotes": "todas as configurações nesta página precisarão que os usuários reiniciem este aplicativo para entrarem em vigor."
     },
     "modernPreload": {

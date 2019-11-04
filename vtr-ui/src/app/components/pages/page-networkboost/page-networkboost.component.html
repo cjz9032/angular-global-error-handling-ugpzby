@@ -61,7 +61,7 @@
 							<div class="vtr-page-shift-up">
 								<div class="container-fluid">
 									<div class="row">
-										<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+										<div *ngIf="!deviceService.isGaming" class="col-sm-12 col-md-6 col-lg-12 mb-60">
 											<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
 												[img]="cardContentPositionF.FeatureImage"
 												[title]="cardContentPositionF.Title"

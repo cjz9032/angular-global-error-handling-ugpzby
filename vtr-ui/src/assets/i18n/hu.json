@@ -1128,7 +1128,10 @@
                         "weekends": "Hétvégén"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
-                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez"
+                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
         "deviceStatistics": "Statisztikai adatok megosztása a Lenovóval",
         "deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
-		"userProfile": "User profile",
-		"Note": "Megjegyzés: ",
+        "userProfile": "User profile",
+        "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
     },
     "modernPreload": {
