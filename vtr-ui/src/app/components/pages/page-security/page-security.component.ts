@@ -132,7 +132,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			if (result.GEO === 'cn') {
 				this.showVpn = false;
 			}
-			console.log(`this.guard.previousPageName: ${this.guard.previousPageName}`);
 			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
 				this.refreshAll();
 			} else {

@@ -34,25 +34,28 @@ export class VpnLandingViewModel {
 			'common.securityAdvisor.installing',
 			'common.securityAdvisor.notInstalled'
 		]).subscribe((res: any) => {
-				this.translateString = res;
-				if (!this.vpnStatus.detail) {
-					this.vpnStatus.detail = res['common.securityAdvisor.loading'];
-				}
-				this.vpnStatus.title = res['security.landing.vpnVirtual'];
-				this.subject.title = res['security.landing.vpnSecurity'];
-			});
-		if (vpnModel.status) {
-			this.setVpnStatus(vpnModel.status);
-		} else if (cacheStatus) {
-			this.setVpnStatus(cacheStatus);
-		}
+			this.translateString = res;
+			if (!this.vpnStatus.detail) {
+				this.vpnStatus.detail = res['common.securityAdvisor.loading'];
+			}
+			this.vpnStatus.title = res['security.landing.vpnVirtual'];
+			this.subject.title = res['security.landing.vpnSecurity'];
+			if (vpnModel.status) {
+				this.setVpnStatus(vpnModel.status);
+			} else if (cacheStatus) {
+				this.setVpnStatus(cacheStatus);
+			}
+			this.statusList = new Array(this.vpnStatus);
+		});
 		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
 			this.setVpnStatus(data);
 		});
-		this.statusList = new Array(this.vpnStatus);
 	}
 
 	setVpnStatus(status: string) {
+		if (!this.translateString) {
+			return;
+		}
 		switch (status) {
 			case 'installed':
 				this.vpnStatus.detail = this.translateString['common.securityAdvisor.installed'];

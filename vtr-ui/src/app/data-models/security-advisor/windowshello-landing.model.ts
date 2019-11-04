@@ -14,7 +14,7 @@ import {
 import { StatusInfo } from './status-info.model';
 
 export class WindowsHelloLandingViewModel {
-	statusList: Array < StatusInfo > ;
+	statusList: Array<StatusInfo>;
 	type = 'security';
 	imgUrl = '../../../../assets/images/windows-logo.svg';
 
@@ -37,17 +37,9 @@ export class WindowsHelloLandingViewModel {
 		whModel: phoenix.WindowsHello,
 		public commonService: CommonService,
 	) {
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
-		if (whModel && whModel.fingerPrintStatus) {
-			this.setWhStatus(whModel.fingerPrintStatus);
-		} else if (cacheStatus) {
-			this.setWhStatus(whModel.fingerPrintStatus);
-		}
-
 		whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
 			this.setWhStatus(data);
 		});
-		this.statusList = new Array(this.whStatus);
 
 		translate.stream([
 			'common.securityAdvisor.loading',
@@ -56,22 +48,29 @@ export class WindowsHelloLandingViewModel {
 			'common.securityAdvisor.notRegistered',
 			'security.landing.fingerprint'
 		]).subscribe((res: any) => {
-				this.translateString = res;
-				if (!this.whStatus.detail) {
-					this.whStatus.detail = res['common.securityAdvisor.loading'];
-				}
-				this.whStatus.title = res['security.landing.fingerprint'];
-				this.subject.title = res['common.securityAdvisor.windowsHello'];
-			});
+			this.translateString = res;
+			if (!this.whStatus.detail) {
+				this.whStatus.detail = res['common.securityAdvisor.loading'];
+			}
+			this.whStatus.title = res['security.landing.fingerprint'];
+			this.subject.title = res['common.securityAdvisor.windowsHello'];
+			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
+			if (whModel && whModel.fingerPrintStatus) {
+				this.setWhStatus(whModel.fingerPrintStatus);
+			} else if (cacheStatus) {
+				this.setWhStatus(whModel.fingerPrintStatus);
+			}
+			this.statusList = new Array(this.whStatus);
+		});
 	}
 
 	setWhStatus(finger: string) {
-		this.whStatus.detail = this.translate[`common.securityAdvisor.${finger === 'active' ? 'registered' : 'notRegistered'}`];
+		if (!this.translateString) {
+			return;
+		}
+		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'registered' : 'notRegistered'}`];
 		this.whStatus.status = finger === 'active' ? 0 : 1;
 		this.subject.status = finger === 'active' ? 0 : 1;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.subject.status === 0 ? 'enabled' : 'disabled');
-		this.translate.stream(this.whStatus.detail).subscribe((res: string) => {
-			this.statusList[0].detail = res;
-		});
 	}
 }

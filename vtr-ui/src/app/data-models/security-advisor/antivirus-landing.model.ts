@@ -42,18 +42,6 @@ export class AntiVirusLandingViewModel {
 	};
 	translateString: any;
 	constructor(public translate: TranslateService, avModel: phoenix.Antivirus, public commonService: CommonService, ) {
-		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
-		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		const cacheCurrentPage = commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
-		if (cacheCurrentPage) {
-			this.currentPage = cacheCurrentPage;
-		}
-		if (avModel.mcafee || avModel.windowsDefender || avModel.others) {
-			this.setPage(avModel);
-		} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
-			this.setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
-		}
-
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			this.setPage(av);
 
@@ -62,10 +50,6 @@ export class AntiVirusLandingViewModel {
 			});
 		});
 
-		const statusList = new Array(this.avStatus, this.fwStatus.status !== null ? this.fwStatus : null);
-		this.statusList = statusList.filter(current => {
-			return current !== undefined && current !== null;
-		});
 		translate.stream([
 			'common.securityAdvisor.enabled',
 			'common.securityAdvisor.disabled',
@@ -73,17 +57,32 @@ export class AntiVirusLandingViewModel {
 			'security.landing.firewall',
 			'common.securityAdvisor.loading'
 		]).subscribe((res: any) => {
-				this.translateString = res;
-				if (!this.avStatus.detail) {
-					this.avStatus.detail = res['common.securityAdvisor.loading'];
-				}
-				if (!this.fwStatus.detail) {
-					this.fwStatus.detail = res['common.securityAdvisor.loading'];
-				}
-				this.avStatus.title = res['common.securityAdvisor.antiVirus'];
-				this.fwStatus.title = res['security.landing.firewall'];
-				this.subject.title = res['common.securityAdvisor.antiVirus'];
+			this.translateString = res;
+			if (!this.avStatus.detail) {
+				this.avStatus.detail = res['common.securityAdvisor.loading'];
+			}
+			if (!this.fwStatus.detail) {
+				this.fwStatus.detail = res['common.securityAdvisor.loading'];
+			}
+			this.avStatus.title = res['common.securityAdvisor.antiVirus'];
+			this.fwStatus.title = res['security.landing.firewall'];
+			this.subject.title = res['common.securityAdvisor.antiVirus'];
+			const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
+			const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
+			const cacheCurrentPage = commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
+			if (cacheCurrentPage) {
+				this.currentPage = cacheCurrentPage;
+			}
+			if (avModel.mcafee || avModel.windowsDefender || avModel.others) {
+				this.setPage(avModel);
+			} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined) {
+				this.setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+			}
+			const statusList = new Array(this.avStatus, this.fwStatus.status !== null ? this.fwStatus : null);
+			this.statusList = statusList.filter(current => {
+				return current !== undefined && current !== null;
 			});
+		});
 	}
 
 	setPage(antiVirus: Antivirus) {

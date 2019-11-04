@@ -40,24 +40,6 @@ export class WifiSecurityLandingViewModel {
 		public commonService: CommonService,
         ngZone: NgZone
 	) {
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		const cacheWifiHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
-		if (wfModel && wfModel.state) {
-			if (wfModel.isLocationServiceOn !== undefined) {
-				this.setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
-			}
-		} else if (cacheStatus) {
-			if (wfModel && wfModel.isLocationServiceOn !== undefined) {
-				this.setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
-			}
-		}
-		if (wfModel.wifiHistory && wfModel.wifiHistory.length > 0) {
-			this.wifiHistory = wfModel.wifiHistory;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wfModel.wifiHistory);
-		} else if (cacheWifiHistory) {
-			this.wifiHistory = cacheWifiHistory;
-		}
-
 		wfModel.on(EventTypes.wsWifiHistoryEvent, (data) => {
 			this.wifiHistory = data;
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, data);
@@ -70,7 +52,6 @@ export class WifiSecurityLandingViewModel {
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
 			this.setWiFiSecurityState(data, wfModel.isLocationServiceOn);
 		});
-		this.statusList = new Array(this.wfStatus);
 
 		translate.stream([
 			'common.securityAdvisor.loading',
@@ -84,10 +65,31 @@ export class WifiSecurityLandingViewModel {
 			}
 			this.wfStatus.title = res['common.securityAdvisor.wifi'];
 			this.subject.title = res['common.securityAdvisor.wifi'];
+			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+			const cacheWifiHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
+			if (wfModel && wfModel.state) {
+				if (wfModel.isLocationServiceOn !== undefined) {
+					this.setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
+				}
+			} else if (cacheStatus) {
+				if (wfModel && wfModel.isLocationServiceOn !== undefined) {
+					this.setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
+				}
+			}
+			if (wfModel.wifiHistory && wfModel.wifiHistory.length > 0) {
+				this.wifiHistory = wfModel.wifiHistory;
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wfModel.wifiHistory);
+			} else if (cacheWifiHistory) {
+				this.wifiHistory = cacheWifiHistory;
+			}
+			this.statusList = new Array(this.wfStatus);
 		});
 	}
 
 	setWiFiSecurityState(state: string, location: any) {
+		if (!this.translateString) {
+			return;
+		}
 		if (location) {
 			this.wfStatus.status = state === 'enabled' ? 0 : 1;
 			this.wfStatus.detail = this.translateString[`common.securityAdvisor.${state === 'enabled' ? 'enabled' : 'disabled'}`];

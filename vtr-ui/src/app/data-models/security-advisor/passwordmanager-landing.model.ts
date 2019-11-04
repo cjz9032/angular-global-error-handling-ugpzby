@@ -40,19 +40,22 @@ export class PasswordManagerLandingViewModel {
 			this.translateString = res;
 			this.pmStatus.title = res['common.securityAdvisor.pswdMgr'];
 			this.subject.title = res['security.landing.pwdHealth'];
+			if (pmModel.status) {
+				this.setPmStatus(pmModel.status);
+			} else if (cacheStatus) {
+				this.setPmStatus(cacheStatus);
+			}
+			this.statusList = new Array(this.pmStatus);
 		});
-		if (pmModel.status) {
-			this.setPmStatus(pmModel.status);
-		} else if (cacheStatus) {
-			this.setPmStatus(cacheStatus);
-		}
 		pmModel.on(EventTypes.pmStatusEvent, (data) => {
 			this.setPmStatus(data);
 		});
-		this.statusList = new Array(this.pmStatus);
 	}
 
 	setPmStatus(status: string) {
+		if (!this.translateString) {
+			return;
+		}
 		switch (status) {
 			case 'installed':
 				this.pmStatus.detail = this.translateString['common.securityAdvisor.installed'];
