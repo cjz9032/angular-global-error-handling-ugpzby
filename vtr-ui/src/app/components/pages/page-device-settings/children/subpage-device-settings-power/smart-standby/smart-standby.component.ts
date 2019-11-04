@@ -8,6 +8,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
+import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
 
 @Component({
 	selector: 'vtr-smart-standby',
@@ -28,15 +31,17 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	isCollapsed = false;
 	public automodeBtnVal = true;
 	public manualmodeBtnVal = false;
+	public isAutonomicCapability = false;
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 
 	constructor(
+		private modalService: NgbModal,
 		public powerService: PowerService,
 		private logger: LoggerService,
 		public commonService: CommonService,
 		public smartStandbyService: SmartStandbyService) {
-			this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
-		 }
+		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
+	}
 
 	ngOnInit() {
 		this.showSmartStandby();
@@ -92,6 +97,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	initSmartStandby() {
 		this.getSmartStandbyIsAutonomic();
+		this.getIsAutonomicCapability();
 		this.initDataFromCache();
 		this.splitStartEndTime();
 	}
@@ -251,7 +257,25 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
-
+	public getIsAutonomicCapability() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.getIsAutonomicCapability()
+					.then(response => {
+						console.log('===== getIsAutonomicCapability =====:', response);
+						this.isAutonomicCapability = response || false;
+						if (!this.isAutonomicCapability) {
+							this.checkbox = true;						}
+					}).catch(error => {
+						this.logger.error('getIsAutonomicCapability', error.message);
+						return EMPTY;
+					});
+			}
+		} catch (error) {
+			this.logger.error('getIsAutonomicCapability', error.message);
+			return EMPTY;
+		}
+	}
 	public setSmartStandbyIsAutonomic(onOff) {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -286,7 +310,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onCheckboxClicked() {
+	onCheckboxClicked(event) {
+		this.checkbox = event;
 		this.setSmartStandbyIsAutonomic(this.checkbox);
 	}
 
@@ -299,7 +324,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.manualmodeBtnVal = manualMode;
 	}
 	public showUsageGraph() {
-
+		this.modalService.open(ModalSmartStandByComponent, { backdrop: 'static',
+		centered: true,
+		windowClass: 'smart-standBy-modal'});
 	}
 
 	ngOnDestroy() {
