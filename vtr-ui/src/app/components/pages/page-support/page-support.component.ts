@@ -103,11 +103,11 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		'assets/images/support/support-offline-4.jpg',
 	];
 	localCateIcons = [
-		'assets/images/support/design-innovation.svg',
-		'assets/images/support/how-to.svg',
-		'assets/images/support/lifestyle-entertainment.svg',
-		'assets/images/support/software-apps.svg',
-	]
+		'assets/images/support/design-innovation.png',
+		'assets/images/support/how-to.png',
+		'assets/images/support/lifestyle-entertainment.png',
+		'assets/images/support/software-apps.png',
+	];
 
 	cateStartTime: any;
 	contentStartTime: any;
