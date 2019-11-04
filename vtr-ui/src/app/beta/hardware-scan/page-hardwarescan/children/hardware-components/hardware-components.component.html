@@ -24,11 +24,22 @@
 						{{getComponentsTitle()}}</div>
 					<a class="action-anchor" (click)="isScanExecuting() ? onViewResults() : onViewResultsRecover()"
 						*ngIf="getEnableViewResults()" [routerLink]="viewResultsPath"
-						routerLinkActive="active">{{viewResultsText}}</a>
+						routerLinkActive="active">{{viewResultsText}}
+					</a>
 
-					<a class="refresh-button" *ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
-						(click)="refreshModules()">{{refreshText}} <fa-icon class="refresh-icon" placement="auto"
-							[icon]="['fal', 'redo']" container="body"></fa-icon> </a>
+					<a class="refresh-button" 
+						*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+						vtrMetrics 
+						metricsEvent="FeatureClick" 
+						metricsParent="HardwareScan"
+						metricsItem="HardwareScan.RefreshModules" 
+						(click)="refreshModules()">{{refreshText}} 
+						<fa-icon class="refresh-icon" 
+							placement="auto" 
+							[icon]="['fal', 'redo']" 
+							container="body">
+						</fa-icon>
+					</a>
 				</div>
 			</div>
 		</div>

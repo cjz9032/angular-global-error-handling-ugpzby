@@ -17,7 +17,14 @@
                             metricsItem="HardwareScan.QuickScan" 
                             [disabled]="disableQuickScan" 
                             (click)="onQuickScan()">{{buttonText}}</button>
-                        <a [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}</a>
+                        <a 
+                            vtrMetrics 
+                            metricsEvent="FeatureClick" 
+                            metricsParent="HardwareScan"
+                            metricsItem="HardwareScan.CustomizeScan" 
+                            [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
+                            {{anchorText}}
+                        </a>
                     </div>
                 </div>
                 <div *ngIf="showProgress" class="col row hwscan-header">
