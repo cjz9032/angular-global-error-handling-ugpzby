@@ -1128,7 +1128,10 @@
                         "weekends": "Fine settimana"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
-                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer"
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Scambio tasto Fn e Ctrl",
+                    "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
                     "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Medio"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Quando abilitata, la distanza di rilevamento verrà regolata automaticamente. È anche possibile impostare manualmente la distanza di rilevamento tramite il dispositivo di scorrimento. Le opzioni sono:",
+                        "context2": "Quando si imposta manualmente la distanza di rilevamento, fare attenzione a quanto segue:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Vicina: 0 – 0,42 metri (17 pollici)",
+                            "line2": "Media: 0 – 0,6 metri (24 pollici)",
+                            "line3": "Lontana: 0 – 1,2 metri (47 pollici)",
+                            "line4": "La distanza di rilevamento massima è di 1,2 metri. Se superiore a 1,2 metri, il sensore non rileva la presenza dell'utente.",
+                            "line5": "La distanza di rilevamento consigliata è entro 0,6 metri."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
         "deviceStatistics": "Condividi i dati statistici con Lenovo",
         "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
-		"userProfile": "User profile",
-		"Note": "Nota: ",
+        "userProfile": "User profile",
+        "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
     },
     "modernPreload": {

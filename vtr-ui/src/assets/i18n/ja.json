@@ -1128,7 +1128,10 @@
                         "weekends": "週末"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
-                    "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します"
+                    "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Fn キーと Ctr キーの入れ替え",
+                    "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
                     "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "中程度"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "有効にすると、検出距離が自動的に調整されます。スライダーによって検出距離を手動で設定することもできます。オプションは次のとおりです。",
+                        "context2": "検出距離を手動で設定するときは、次のことに注意してください。",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "近距離: 0 ～ 0.42 メートル (17インチ)",
+                            "line2": "中距離: 0 ～ 0.60 メートル (24インチ)",
+                            "line3": "長距離: 0 ～ 1.20 メートル (47インチ)",
+                            "line4": "最大検出距離は 1.2 メートルです。1.2 メートルを超えると、センサーはユーザーの存在を検出できなくなります。",
+                            "line5": "推奨の検出距離は 0.60 メートル以内です。"
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
         "deviceStatistics": "Lenovoと統計データを共有する",
         "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
-		"userProfile": "User profile",
-		"Note": "注:",
+        "userProfile": "User profile",
+        "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     },
     "modernPreload": {

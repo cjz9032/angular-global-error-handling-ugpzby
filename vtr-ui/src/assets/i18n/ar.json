@@ -1130,7 +1130,10 @@
                         "weekends": "عطلة نهاية الأسبوع"
                     },
                     "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
-                    "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر."
+                    "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1413,8 +1416,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "مبادلة المفتاح Fn والمفتاح Ctrl‬",
+                    "description": "إذا كنت تضغط عادةً على المفتاح Fn عندما تريد الضغط على المفتاح Ctrl، فيمكنك مبادلة وظائف المفتاحين.",
                     "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟"
                 },
                 "controlOptions": {
@@ -1485,14 +1488,14 @@
                         "medium": "متوسط"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "عند تمكين هذا الخيار، سيتم ضبط مسافة الكشف تلقائيًا. يمكنك أيضًا تعيين مسافة الكشف يدويًا باستخدام شريط التمرير. الخيارات هي:",
+                        "context2": "عند تعيين مسافة الكشف يدويًا، يرجى الانتباه إلى ما يلي:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "مسافة قريبة: 0 – 0.42 متر (17 بوصة)",
+                            "line2": "مسافة متوسطة: 0 – 0.60 متر (24 بوصة)",
+                            "line3": "مسافة بعيدة: 0 – 1.20 متر (47 بوصة)",
+                            "line4": "الحد الأقصى لمسافة الكشف هو 1.2 متر. إذا تجاوزت 1.2 متر، فسيفشل المستشعر في الكشف عن وجودك.",
+                            "line5": "مسافة الكشف المستحسنة هي ضمن 0.60 متر."
                         }
                     }
                 },
@@ -2527,8 +2530,8 @@
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
         "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
         "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
-		"userProfile": "User profile",
-		"Note": "ملاحظة: ",
+        "userProfile": "User profile",
+        "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },
     "modernPreload": {

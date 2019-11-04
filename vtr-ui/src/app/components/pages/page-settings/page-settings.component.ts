@@ -86,17 +86,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.selfSelectService.getConfig().then((config) => {
 			if (config && config.segment) {
 				this.usageRadioValue = config.segment;
-				switch (this.usageRadioValue) {
-					case 'personal':
-						document.getElementById('radioPersonal').click();
-						break;
-					case 'business':
-						document.getElementById('radioBusiness').click();
-						break;
-					case 'custom':
-						document.getElementById('radioCustom').click();
-						break;
-				}
 			}
 			if (config && config.customtags) {
 				const checkedTags = config.customtags;

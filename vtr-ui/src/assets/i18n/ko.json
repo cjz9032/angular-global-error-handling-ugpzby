@@ -1128,7 +1128,10 @@
                         "weekends": "주말"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
-                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인"
+                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Fn 키와 Ctrl 키 바꾸기",
+                    "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
                     "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "중간"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "이 기능을 사용하면, 감지 거리가 자동으로 조정됩니다. 또한 슬라이더를 통해 감지 거리를 수동으로 설정할 수 있습니다. 옵션은 다음과 같습니다.",
+                        "context2": "감지 거리를 수동으로 설정하는 경우, 다음과 같은 사항에 주의하십시오.",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "근거리: 0~0.42m(17인치)",
+                            "line2": "중간: 0~0.60m(24인치)",
+                            "line3": "원거리: 0~1.20m(47인치)",
+                            "line4": "최대 감지 거리는 1.2m입니다. 1.2m를 초과하는 경우, 센서가 사용자의 현재 상태를 감지하지 못합니다.",
+                            "line5": "권장 감지 거리는 0.60m 내입니다."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
         "deviceStatistics": "Lenovo와 통계 데이터 공유",
         "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
-		"userProfile": "User profile",
-		"Note": "참고: ",
+        "userProfile": "User profile",
+        "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     },
     "modernPreload": {
