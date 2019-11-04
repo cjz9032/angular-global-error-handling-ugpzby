@@ -4,6 +4,7 @@ ul.list-group {
 	padding-bottom: 1rem;
 }
 .schedule_header{
+	padding: 0 1rem;
 	h5 {
 		font-size: $caption;
 		color: $shade_blue;
@@ -11,11 +12,11 @@ ul.list-group {
 		letter-spacing: 0.89px;
 		line-height: 23px;
 		text-transform: uppercase;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2.5rem;
 	}
 }
 .schedule {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	margin-left: 1rem;
 	span {
 		font-size: $body;

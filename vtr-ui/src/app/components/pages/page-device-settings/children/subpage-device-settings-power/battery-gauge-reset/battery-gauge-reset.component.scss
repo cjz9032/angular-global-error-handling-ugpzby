@@ -16,10 +16,12 @@
 			}
 		}
 	}
-	.warning-note {
-		color: $stop;
+	.note {
 		font-weight: $weight_light;
 		font-size: $body;
+	}
+	.warning-note {
+		color: $stop;
 	}
 
 	.battery-gauge-info {
@@ -64,7 +66,7 @@
 				.button-box {
 					.button {
 						background: $grey_light;
-						color: $shade_blue;
+						color: $button_disable_text;
 					}
 				}
 			}

@@ -98,7 +98,6 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	async startBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
-		// const argument = this.getResetParameters(gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 		try {
 			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 			if (response) {

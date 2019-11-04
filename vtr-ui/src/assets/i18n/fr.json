@@ -1128,7 +1128,10 @@
                         "weekends": "Fins de semaine"
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
-                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur"
+                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Permutation touches Fn et Ctrl",
+                    "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
                     "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Moyenne"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Lorsque cette option est activée, la distance de détection est automatiquement ajustée. Vous pouvez également définir manuellement la distance de détection à l'aide du curseur. Les options sont les suivantes :",
+                        "context2": "Lorsque vous définissez manuellement la distance de détection, veuillez prendre en considération les éléments suivants :",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Distance proche : 0 à 0,42 mètres (17 pouces)",
+                            "line2": "Distance moyenne : 0 à 0,60 mètres (24 pouces)",
+                            "line3": "Distance éloignée : 0 à 1,20 mètres (47 pouces)",
+                            "line4": "La distance de détection maximale est de 1,2 mètres. En cas de dépassement d'une distance de 1,2 mètres, le capteur ne détectera pas votre présence.",
+                            "line5": "La distance de détection recommandée est de moins de 0,60 mètres."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
         "deviceStatistics": "Partager des données statistiques avec Lenovo",
         "deviceStatisticsDescription": "Partage des données statistiques avec Lenovo afin d'améliorer la fiabilité, le concept et l'optimisation des fonctionnalités de votre ordinateur.",
-		"userProfile": "User profile",
-		"Note": "Remarque : ",
+        "userProfile": "User profile",
+        "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."
     },
     "modernPreload": {

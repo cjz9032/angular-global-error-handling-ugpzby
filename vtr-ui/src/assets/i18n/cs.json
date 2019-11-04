@@ -1128,7 +1128,10 @@
                         "weekends": "Víkendy"
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
-                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač"
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Záměna kláves Fn a Ctrl",
+                    "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
                     "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Střední"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Je-li tato možnost povolena, vzdálenost rozpoznávání se upraví automaticky. Vzdálenost rozpoznávání můžete nastavit i ručně pomocí posuvníku. Máte následující možnosti:",
+                        "context2": "Pokud vzdálenost rozpoznávání nastavíte ručně, věnujte pozornost následujícím údajům:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Blízko: 0–0,42 metru (17 palců)",
+                            "line2": "Středně daleko: 0–0,60 metru (24 palců)",
+                            "line3": "Daleko: 0–1,20 metru (47 palců)",
+                            "line4": "Maximální vzdálenost rozpoznávání je 1,2 metru. Při překročení vzdálenosti 1,2 metru nedokáže snímač rozpoznat vaši přítomnost.",
+                            "line5": "Doporučení vzdálenost rozpoznávání je do 0,60 metru."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
         "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
-		"userProfile": "User profile",
-		"Note": "Poznámka: ",
+        "userProfile": "User profile",
+        "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
     },
     "modernPreload": {

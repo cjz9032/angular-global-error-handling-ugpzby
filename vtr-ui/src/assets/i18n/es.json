@@ -1128,7 +1128,10 @@
                         "weekends": "Fines de semana"
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
-                    "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema"
+                    "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Cambio de teclas Fn y Ctrl",
+                    "description": "Si normalmente presionaba la tecla Fn al intentar presionar la tecla Ctrl, you puede intercambiar las funciones de ambas teclas.",
                     "restartNote": "Para intercambiar la función de dos claves es necesario reiniciar el sistema. ¿Está seguro de que desea reiniciarlo?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Mediana"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Cuando está habilitada, la distancia de detección se ajustará automáticamente. También puede establecer manualmente la distancia de detección mediante el control deslizante. Las opciones son:",
+                        "context2": "Cuando establezca manualmente la distancia de detección, preste atención a lo siguiente:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Cerca: 0 a 0,42 metros (17 pulgadas)",
+                            "line2": "Medio: 0 a 0,60 metros (24 pulgadas)",
+                            "line3": "Lejos: 0 a 1,20 metros (47 pulgadas)",
+                            "line4": "La distancia máxima de detección es de 1,2 metros. Si excede los 1,2 metros, el sensor no detectará su presencia.",
+                            "line5": "La distancia de detección recomendada es de 0,60 metros."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
-		"userProfile": "User profile",
-		"Note": "Nota: ",
+        "userProfile": "User profile",
+        "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
     },
     "modernPreload": {
