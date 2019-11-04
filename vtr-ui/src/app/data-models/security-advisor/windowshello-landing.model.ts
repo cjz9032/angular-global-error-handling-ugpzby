@@ -22,7 +22,7 @@ export class WindowsHelloLandingViewModel {
 		status: 4,
 		detail: '', // active or inactive
 		path: 'security/windows-hello',
-		title: 'security.landing.fingerprint',
+		title: '',
 		type: 'security',
 		id: 'sa-ov-link-windowsHello'
 	};
@@ -53,12 +53,14 @@ export class WindowsHelloLandingViewModel {
 			'common.securityAdvisor.loading',
 			'common.securityAdvisor.windowsHello',
 			'common.securityAdvisor.registered',
-			'common.securityAdvisor.notRegistered'
+			'common.securityAdvisor.notRegistered',
+			'security.landing.fingerprint'
 		]).subscribe((res: any) => {
 				this.translateString = res;
 				if (!this.whStatus.detail) {
 					this.whStatus.detail = res['common.securityAdvisor.loading'];
 				}
+				this.whStatus.title = res['security.landing.fingerprint'];
 				this.subject.title = res['common.securityAdvisor.windowsHello'];
 			});
 	}
