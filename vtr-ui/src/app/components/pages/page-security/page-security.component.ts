@@ -77,7 +77,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	showVpn: boolean;
-	backId = 'sa-ov-btn-back';
 	isRS5OrLater: boolean;
 	itemStatusClass = {
 		0: 'good',
@@ -100,7 +99,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService
-	) {	}
+	) { }
 
 	@HostListener('window: focus')
 	onFocus(): void {
