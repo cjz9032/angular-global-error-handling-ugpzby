@@ -34,6 +34,7 @@ export class PageNetworkboostComponent implements OnInit {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
 
