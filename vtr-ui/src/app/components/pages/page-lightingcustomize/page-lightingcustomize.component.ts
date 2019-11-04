@@ -11,6 +11,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-lighting.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -27,6 +28,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem:any = 'lighting_profile_cms_inner_content';
 
 	upeRequestResult = {
 		positionB: true,
@@ -56,7 +58,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService) {
+		private translate: TranslateService,
+		public deviceService: DeviceService,) {
 		this.metrics = this.shellService.getMetrics();
 
 		this.route.params.subscribe((params) => {

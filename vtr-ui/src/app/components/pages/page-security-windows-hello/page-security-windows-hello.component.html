@@ -1,305 +1,295 @@
-<div class="vtr-page-security-windows-hello vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[title]="'security.windowsHello.title' | translate"
-				[backId]="backId"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-12 col-lg-7 col-xl-8 vtr-page-left-column">
-						<div class="vtr-subpage">
-							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-								[isSubtitleVisible]="false"
-								[isButtonVisible]="false"></vtr-widget-offline-info>
-							<div [ngClass]="{'vtr-page-shift-up': isOnline}">
-								<div class="vtr-page-security-windows-hello">
-									<div class="container-fluid p-40 security-card">
-										<div class="row"
-										[vtrAppSearchScroller]="['search-windows-hello']">
-											<div class="col">
-												<div class="heading">{{'security.windowsHello.title' | translate}}</div>
-											</div>
-											<div class="pull right"><img class="dashlane_logo_teal"
-													src="../../../../assets/images/windows-logo.png" /></div>
-										</div>
-										<div *ngIf="statusItem.status === 'disabled'"
-											class="row mt-20">
-											<div class="col">
-												<div class="text-regular">
-													{{'security.windowsHello.protectYourDevice' | translate}}
-												</div>
-											</div>
-										</div>
-										<div *ngIf="statusItem.status === 'enabled'"
-											class="row">
-											<div class="col">
-												<div class="text-regular">
-													{{'security.windowsHello.protectYourDevice' | translate}}
-												</div>
-											</div>
-										</div>
-										<div class="row mt-40">
-											<div class="col">
-												<vtr-ui-security-statusbar [statusList]="[statusItem]">
-												</vtr-ui-security-statusbar>
-											</div>
-										</div>
-										<div *ngIf="statusItem.status === 'disabled'"
-											class="row mt-40">
-											<div class="col">
-												<div class="text-regular">{{'security.windowsHello.signIn' | translate}}
-												</div>
-											</div>
-											<div class=" pull right">
-												<div class="col-12">
-													<vtr-ui-button
-														metricsEvent="FeatureClick"
-														metricsItem="setUpWindowsHello"
-														[linkId]="'sa-wh-btn-setupwindowshello'"
-														(onClick)="setUpWindowsHello()"
-														[label]="'security.windowsHello.setUp' | translate">
-													</vtr-ui-button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row vtr-page-security-windows-hello"
-							*ngIf="statusItem.status === 'disabled'">
-							<div class="row">
-								<div class="col col-12 col-sm-12 mt-40">
-									<div>
-										<p class="title">{{'security.windowsHello.whyWindowsHello' | translate}}</p>
-										<p class="text">
-											{{'security.windowsHello.whyWindowsHelloDescription1' | translate}}</p>
-									</div>
-								</div>
-							</div>
-							<div class="row no-gutters w-100">
-								<div class="col-12 col-lg-6 mt-40">
-									<img src="../../../../assets/images/windows-hello-left-img.png" class="dashlane-side-left-img" />
-								</div>
-								<div class="col-12 col-lg-6 mt-40">
-									<div class="col">
-										<div class="list-heading">
-											<p class="adjust-left">
-												{{'security.windowsHello.startUsingToday' | translate}}</p>
-										</div>
-										<ul class="bullet-list">
-											<li class="good">
-												<div class="container-fluid">
-													<div class="row align-items-center">
-														<div class="col-auto pl-1">
-															<div class="bullet-icon">
-																<div class="icon-bkg">
-																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																</div>
-															</div>
-														</div>
-														<div class="col">
-															<div class="text-regular">
-																{{'security.windowsHello.visitAndRegister' | translate}}
-																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
-																	<a id="sa-wh-lnk-visitwindowshello"
-																		vtrMetrics
-																		metricsEvent="FeatureClick"
-																		metricsItem="setUpWindowsHello"
-																		unSupportOffline="true"
-																		href="javascript:void(0)"
-																		(click)="setUpWindowsHello()"
-																		target="_blank"></a>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="good">
-												<div class="container-fluid">
-													<div class="row align-items-center">
-														<div class="col-auto pl-1">
-															<div class="bullet-icon">
-																<div class="icon-bkg">
-																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																</div>
-															</div>
-														</div>
-														<div class="col">
-															<div class="text-regular">
-																{{'security.windowsHello.unlock' | translate}}
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="good">
-												<div class="container-fluid">
-													<div class="row align-items-center">
-														<div class="col-auto pl-1">
-															<div class="bullet-icon">
-																<div class="icon-bkg">
-																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																</div>
-															</div>
-														</div>
-														<div class="col">
-															<div class="text-regular">
-																{{'security.windowsHello.startUsingWindowsHello' | translate}}
-																<a *ngIf="isOnline; else spanText" id="sa-wh-lnk-visitmicrosoft"
-																	[tabindex]="isOnline ? 0 : -1"
-																	target="_blank"
-																	vtrMetrics
-																	metricsItem="visitMicrosoft"
-																	metricsEvent="FeatureClick"
-																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
-																	{{'security.windowsHello.visitMicrosoft' | translate}}
-																</a>
-																<ng-template #spanText>{{'security.windowsHello.visitMicrosoft' | translate}}</ng-template>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="col col-12 ">
-								<div class="row top-line">
-									<div class="col">
-										<div class="list-heading">
-											{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
-										<p class="text-regular"
-											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
-											<a id="sa-wh-lnk-privacypolicy"
-												vtrMetrics
-												metricsEvent="FeatureClick"
-												metricsItem="privacyPolicy"
-												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
-												target="_blank"></a>
-										</p>
-									</div>
-									<div class="pull right"><img class="dashlane_logo_teal"
-											src="../../../../assets/images/windows-logo.png" /></div>
-								</div>
-							</div>
-						</div>
-						<div class="row vtr-connected-security-password"
-							*ngIf="statusItem.status === 'enabled'">
-							<div class="row">
-								<div class="col col-12 col-sm-12 mt-40">
-									<div>
-										<p class="title">{{'security.windowsHello.signInTitle' | translate}}</p>
-										<p class="text">
-											{{'security.windowsHello.whyWindowsHelloDescription2' | translate}}</p>
-										<p class="sub-heading mt-40">
-											{{'security.windowsHello.authentication' | translate}}</p>
-										<p class="text">{{'security.windowsHello.traditional' | translate}}</p>
-									</div>
-								</div>
-							</div>
-							<div class="row justify-content-between no-gutters">
-								<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
-									<div class="col">
-										<img src="assets/images/windows-hello-finger-print.png"
-											class="dashlane-side-right-img pull-right" />
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40">
-									<div class="col">
-										<div class="sub-heading">
-											<p class="adjust-left">{{'security.windowsHello.howToStart' | translate}}
-											</p>
-										</div>
-										<div class="number-list">
-											<ol>
-												<li>
-													<div class="text-regular">
-														{{'security.windowsHello.visitAndRegister' | translate}}
-														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
-															<a id="sa-wh-lnk-visitwindowshello"
-																vtrMetrics
-																metricsEvent="FeatureClick"
-																metricsItem="setUpWindowsHello"
-																unSupportOffline="true"
-																href="javascript:void(0)"
-																(click)="setUpWindowsHello()"
-																target="_blank"></a>
-														</span>
-													</div>
-												</li>
-												<li>
-													<div class="text-regular">
-														{{'security.windowsHello.unlock' | translate}}
-													</div>
-												</li>
-												<li>
-													<div class="col">
-														<div class="text-regular">
-															{{'security.windowsHello.startUsingWindowsHello' | translate}}
-															<a *vtrLinkStatus="'security.windowsHello.visitMicrosoft' | translate" id="sa-wh-lnk-visitmicrosoft"
-																target="_blank"
-																[tabindex]="isOnline ? 0 : -1"
-																vtrMetrics
-																metricsItem="visitMicrosoft"
-																metricsEvent="FeatureClick"
-																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
-																</a>
-														</div>
-													</div>
-												</li>
-											</ol>
-										</div>
-									</div>
-								</div>
-							</div>
+<vtr-page-layout [title]="'security.windowsHello.title' | translate"
+	[textId]="'security-windows-hello'"
+	[pageCssClass]="'security-windows-hello'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'sa-wh-btn-back'">
+
+	<left-content>
+		<vtr-widget-offline-info *ngIf="!isOnline"
+			[title]="'dashboard.offlineInfo.title' | translate"
+			[isSubtitleVisible]="false"
+			[isButtonVisible]="false"></vtr-widget-offline-info>
+		<div class="container-fluid p-0">
+			<div class="row security-card p-40">
+				<div class="row"
+					[vtrAppSearchScroller]="['search-windows-hello']">
+					<div class="col">
+						<div class="heading">{{'security.windowsHello.title' | translate}}</div>
+					</div>
+					<div class="pull right"><img class="dashlane_logo_teal"
+							src="../../../../assets/images/windows-logo.png" /></div>
+				</div>
+				<div *ngIf="statusItem.status === 'disabled'"
+					class="row mt-20">
+					<div class="col">
+						<div class="text-regular">
+							{{'security.windowsHello.protectYourDevice' | translate}}
 						</div>
 					</div>
-					<div class="col-sm-12 col-lg-5 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<!--Start of Security Card Advisor-->
-								<div class="row mb-40">
-									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-											[linkId]="'windows-hello'">
-										</vtr-widget-security-status>
+				</div>
+				<div *ngIf="statusItem.status === 'enabled'"
+					class="row">
+					<div class="col">
+						<div class="text-regular">
+							{{'security.windowsHello.protectYourDevice' | translate}}
+						</div>
+					</div>
+				</div>
+				<div class="row mt-40">
+					<div class="col">
+						<vtr-ui-security-statusbar [statusList]="[statusItem]">
+						</vtr-ui-security-statusbar>
+					</div>
+				</div>
+				<div *ngIf="statusItem.status === 'disabled'"
+					class="row mt-40">
+					<div class="col">
+						<div class="text-regular">{{'security.windowsHello.signIn' | translate}}
+						</div>
+					</div>
+					<div class=" pull right">
+						<div class="col-12">
+							<vtr-ui-button metricsEvent="FeatureClick"
+								metricsItem="setUpWindowsHello"
+								[linkId]="'sa-wh-btn-setupwindowshello'"
+								(onClick)="setUpWindowsHello()"
+								[label]="'security.windowsHello.setUp' | translate">
+							</vtr-ui-button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row"
+				*ngIf="statusItem.status === 'disabled'">
+				<div class="row">
+					<div class="col col-12 col-sm-12 mt-40">
+						<div>
+							<p class="title">{{'security.windowsHello.whyWindowsHello' | translate}}</p>
+							<p class="text">
+								{{'security.windowsHello.whyWindowsHelloDescription1' | translate}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="row no-gutters w-100">
+					<div class="col-12 col-lg-6 mt-40">
+						<img src="../../../../assets/images/windows-hello-left-img.png"
+							class="dashlane-side-left-img" />
+					</div>
+					<div class="col-12 col-lg-6 mt-40">
+						<div class="col">
+							<div class="list-heading">
+								<p class="adjust-left">
+									{{'security.windowsHello.startUsingToday' | translate}}</p>
+							</div>
+							<ul class="bullet-list">
+								<li class="good">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col-auto pl-1">
+												<div class="bullet-icon">
+													<div class="icon-bkg">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="text-regular">
+													{{'security.windowsHello.visitAndRegister' | translate}}
+													<span
+														*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+														<a id="sa-wh-lnk-visitwindowshello"
+															vtrMetrics
+															metricsEvent="FeatureClick"
+															metricsItem="setUpWindowsHello"
+															unSupportOffline="true"
+															href="javascript:void(0)"
+															(click)="setUpWindowsHello()"
+															target="_blank"></a>
+													</span>
+												</div>
+											</div>
+										</div>
 									</div>
-								</div>
-								<!--End of Security Card Advisor-->
-								<div class="row">
-									<div class="col col-12">
-										<vtr-container-card
-											[img]="cardContentPositionA.FeatureImage"
-											[caption]="cardContentPositionA.Description"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[itemID]="cardContentPositionA.ActionLink"
-											[ratioX]="4"
-											[ratioY]="2"
-											type="corner-article"
-											cornerShift="large"
-											order="1"
-											sideFlag="r"
-											[containerCardId]="'sa-wh-modal'">
-										</vtr-container-card>
+								</li>
+								<li class="good">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col-auto pl-1">
+												<div class="bullet-icon">
+													<div class="icon-bkg">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="text-regular">
+													{{'security.windowsHello.unlock' | translate}}
+												</div>
+											</div>
+										</div>
 									</div>
-								</div>
+								</li>
+								<li class="good">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col-auto pl-1">
+												<div class="bullet-icon">
+													<div class="icon-bkg">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="text-regular">
+													{{'security.windowsHello.startUsingWindowsHello' | translate}}
+													<a *ngIf="isOnline; else spanText"
+														id="sa-wh-lnk-visitmicrosoft"
+														target="_blank"
+														vtrMetrics
+														metricsItem="visitMicrosoft"
+														metricsEvent="FeatureClick"
+														href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+														{{'security.windowsHello.visitMicrosoft' | translate}}
+													</a>
+													<ng-template #spanText>
+														{{'security.windowsHello.visitMicrosoft' | translate}}
+													</ng-template>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col col-12 ">
+					<div class="row top-line">
+						<div class="col">
+							<div class="list-heading">
+								{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
+							<p class="text-regular"
+								*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
+								<a id="sa-wh-lnk-privacypolicy"
+									vtrMetrics
+									metricsEvent="FeatureClick"
+									metricsItem="privacyPolicy"
+									href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+									target="_blank"></a>
+							</p>
+						</div>
+						<div class="pull right"><img class="dashlane_logo_teal"
+								src="../../../../assets/images/windows-logo.png" /></div>
+					</div>
+				</div>
+			</div>
+			<div class="row vtr-connected-security-password"
+				*ngIf="statusItem.status === 'enabled'">
+				<div class="row">
+					<div class="col col-12 col-sm-12 mt-40">
+						<div>
+							<p class="title">{{'security.windowsHello.signInTitle' | translate}}</p>
+							<p class="text">
+								{{'security.windowsHello.whyWindowsHelloDescription2' | translate}}</p>
+							<p class="sub-heading mt-40">
+								{{'security.windowsHello.authentication' | translate}}</p>
+							<p class="text">{{'security.windowsHello.traditional' | translate}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-between no-gutters">
+					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
+						<div class="col">
+							<img src="assets/images/windows-hello-finger-print.png"
+								class="dashlane-side-right-img pull-right" />
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40">
+						<div class="col">
+							<div class="sub-heading">
+								<p class="adjust-left">{{'security.windowsHello.howToStart' | translate}}
+								</p>
+							</div>
+							<div class="number-list">
+								<ol>
+									<li>
+										<div class="text-regular">
+											{{'security.windowsHello.visitAndRegister' | translate}}
+											<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+												<a id="sa-wh-lnk-visitwindowshello"
+													vtrMetrics
+													metricsEvent="FeatureClick"
+													metricsItem="setUpWindowsHello"
+													unSupportOffline="true"
+													href="javascript:void(0)"
+													(click)="setUpWindowsHello()"
+													target="_blank"></a>
+											</span>
+										</div>
+									</li>
+									<li>
+										<div class="text-regular">
+											{{'security.windowsHello.unlock' | translate}}
+										</div>
+									</li>
+									<li>
+										<div class="col">
+											<div class="text-regular">
+												{{'security.windowsHello.startUsingWindowsHello' | translate}}
+												<a *vtrLinkStatus="'security.windowsHello.visitMicrosoft' | translate"
+													id="sa-wh-lnk-visitmicrosoft"
+													target="_blank"
+													vtrMetrics
+													metricsItem="visitMicrosoft"
+													metricsEvent="FeatureClick"
+													href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+												</a>
+											</div>
+										</div>
+									</li>
+								</ol>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<!--Start of Security Card Advisor-->
+			<div class="row mb-40">
+				<div class="col col-12">
+					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+						[linkId]="'windows-hello'">
+					</vtr-widget-security-status>
+				</div>
+			</div>
+			<!--End of Security Card Advisor-->
+			<div class="row">
+				<div class="col col-12">
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[itemID]="cardContentPositionA.ActionLink"
+						[ratioX]="4"
+						[ratioY]="2"
+						type="corner-article"
+						cornerShift="large"
+						order="1"
+						sideFlag="r"
+						[containerCardId]="'sa-wh-modal'">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

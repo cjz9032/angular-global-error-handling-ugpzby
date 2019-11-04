@@ -1128,7 +1128,10 @@
                         "weekends": "Weekender"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
-                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord"
+                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
-		"userProfile": "User profile",
-		"Note": "Bemærk: ",
+        "userProfile": "User profile",
+        "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },
     "modernPreload": {

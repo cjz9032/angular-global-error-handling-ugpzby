@@ -1,17 +1,18 @@
 <div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
-		<div class="row" *ngIf="!isOnline">
-				<div class="col col-12 px-40 pb-40">
-					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
-						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
-						[isButtonVisible]="false" id="dashboard-btn-connectivity">
-					</vtr-widget-offline-info>
-				</div>
-			</div>
+	<div class="row" *ngIf="!isOnline">
+		<div class="col col-12 px-40 pb-40">
+			<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+				[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+				[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+				[isButtonVisible]="false" id="dashboard-btn-connectivity">
+			</vtr-widget-offline-info>
+		</div>
+	</div>
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'gaming.macroKey.title' | translate" [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate" [backId]="backId" ariaLabel="{{ 'gaming.macroKey.narrator.backDashboard' | translate }}">
+				[back]="'common.ui.back' | translate" [backId]="backId"
+				ariaLabel="{{ 'gaming.macroKey.narrator.backDashboard' | translate }}">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -34,7 +35,7 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+									<div *ngIf="!deviceService.isGaming" class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
 											[img]="cardContentPositionF.FeatureImage"
 											[title]="cardContentPositionF.Title"
@@ -50,6 +51,7 @@
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+											[dynamicmetricsItem]="dynamic_metricsItem"
 											[img]="cardContentPositionB.FeatureImage"
 											[caption]="cardContentPositionB.Description"
 											[title]="cardContentPositionB.Title"
