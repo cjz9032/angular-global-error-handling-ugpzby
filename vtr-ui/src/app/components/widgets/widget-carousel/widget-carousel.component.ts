@@ -106,8 +106,6 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 		} else {
 			this.articleClicked(actionLink);
 		}
-
-		this.articleClicked(actionLink);
 		return false;
 	}
 
