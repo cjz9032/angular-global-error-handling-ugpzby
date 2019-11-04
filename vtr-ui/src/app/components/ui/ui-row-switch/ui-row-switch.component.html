@@ -34,7 +34,7 @@
 								tabindex="0"
 								id="{{switchId}}-title"
 								attr.aria-label="{{ title }}"
-								role="none">
+								role="text">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
@@ -42,7 +42,7 @@
 									id="{{switchId}}-caption"
 									tabindex="0"
 									attr.aria-label="{{caption}}"
-									role="none"
+									role="text"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
