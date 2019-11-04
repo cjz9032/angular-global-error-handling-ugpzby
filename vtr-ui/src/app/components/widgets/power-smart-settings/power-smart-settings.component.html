@@ -104,7 +104,7 @@
 									*ngIf="!onReadMoreClick"
 									(click)="readMore()"
 									(keydown.enter)="readMore()"
-									tabindex="1"
+									tabindex="0"
 									role="link"
 									attr.aria-label="powerSmartSettings-intelligentCooling-read-more"
 									(keydown.enter)="readMore()">{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate}}</a>
@@ -129,7 +129,7 @@
 									class="more-info-button"
 									type="button"
 									(click)="coolingModesPopUp()"
-									tabindex="1"
+									tabindex="0"
 									role="link"
 									attr.aria-label="powerSmartSettings-intelligentCooling-more-info ">
 									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line4' | translate}}
