@@ -1128,7 +1128,10 @@
                         "weekends": "Weekend-uri"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
-                    "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului"
+                    "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Schimbare taste Fn şi Ctrl",
+                    "description": "Dacă apăsaţi în mod obişnuit tasta Fn când de fapt intenţionaţi să apăsaţi tasta Ctrl, puteţi schimba între ele funcţiile celor două taste.",
                     "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Mediu"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Când această opţiune este activată, distanţa de detecţie va fi reglată automat. De asemenea, puteţi seta manual distanţa de detecţie cu ajutorul glisorului. Opţiunile sunt:",
+                        "context2": "Atunci când setaţi manual distanţa de detecţie, fiţi atent la următoarele:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Aproape: 0 – 0,42 metri (17 inchi)",
+                            "line2": "Mediu: 0 – 0,60 metri (24 inchi)",
+                            "line3": "Departe: 0 – 1,20 metri (47 inchi)",
+                            "line4": "Distanţa maximă de detecţie este de 1,2 metri. Dacă se depăşesc 1,2 metri, senzorul nu va mai detecta prezenţa dvs.",
+                            "line5": "Distanţa recomandată de detecţie este de maximum 0,60 metri."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
-		"userProfile": "User profile",
-		"Note": "Notă: ",
+        "userProfile": "User profile",
+        "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },
     "modernPreload": {

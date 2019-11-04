@@ -38,9 +38,11 @@
 		text-align: left;
 		@media #{$black-on-white} {
 			color: $yellow;
+			border:none;
 		}
 		@media #{$white-on-black} {
 			color: $blue-lighter;
+			border:none;
 		}
 	}
 }

@@ -1128,7 +1128,10 @@
                         "weekends": "Vikendi"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
-                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika"
+                    "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Zamenjava tipk Fn in Ctrl",
+                    "description": "Če stalno pritiskate tipko Fn, ko nameravate pritisniti tipko Ctrl, lahko zamenjate funkcijo obeh tipk.",
                     "restartNote": "Če zamenjate funkcijo dveh tipk, morate znova zagnati računalnik. Ali ste prepričani, da ga želite znova zagnati?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Srednje"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Ko je ta možnost omogočena, bo razdalja zaznavanja samodejno prilagojena. Razdaljo zaznavanja lahko z drsnikom nastavite tudi ročno. Možnosti so:",
+                        "context2": "Pri ročni nastavitvi razdalje zaznavanja bodite pozorni na naslednje:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Blizu: 0–0,42 m (17 palcev)",
+                            "line2": "Srednje: 0–0,60 m (24 palcev)",
+                            "line3": "Daleč: 0–1,20 m (47 palcev)",
+                            "line4": "Največja razdalja zaznavanja je 1,2 metra. Če je razdalja večja od 1,2 metra, senzor ne bo zaznal vaše prisotnosti.",
+                            "line5": "Priporočena razdalja zaznavanja je 0,60 metra."
                         }
                     }
                 },
@@ -2525,8 +2528,8 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
         "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
-		"userProfile": "User profile",
-		"Note": "Opomba: ",
+        "userProfile": "User profile",
+        "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
     },
     "modernPreload": {
