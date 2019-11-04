@@ -1,9 +1,10 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import { NgbCarouselConfig, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -12,7 +13,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 	providers: [NgbCarouselConfig]
 })
 
-export class WidgetCarouselComponent implements OnInit {
+export class WidgetCarouselComponent implements OnInit, OnChanges {
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: CarouselModel[] = [];
 	@Input() cardTitle: string;
@@ -92,13 +93,18 @@ export class WidgetCarouselComponent implements OnInit {
 	}
 
 	linkClicked($event, actionType: string, actionLink: string) {
-
 		if (!actionLink) {
 			$event.preventDefault();
 		}
 
 		if (!actionType || actionType !== 'Internal') {
 			return;
+		}
+
+		if (actionLink.indexOf('lenovo-vantage3:') === 0) {
+			WinRT.launchUri(actionLink);
+		} else {
+			this.articleClicked(actionLink);
 		}
 
 		this.articleClicked(actionLink);
