@@ -224,15 +224,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.hardwareScanService.isAvailable()
-				.then((isAvailable: any) => {
-					this.showHWScanMenu = isAvailable;
-				})
-				.catch(() => {
-					this.showHWScanMenu = false;
-				});
-		}
+		// VAN-10950 hide HW scan from Vantage UI in 3.1.1
+		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+		// 	this.hardwareScanService.isAvailable()
+		// 		.then((isAvailable: any) => {
+		// 			this.showHWScanMenu = isAvailable;
+		// 		})
+		// 		.catch(() => {
+		// 			this.showHWScanMenu = false;
+		// 		});
+		// }
 	}
 
 	private loadMenuOptions(machineType: number) {
