@@ -5,8 +5,9 @@
     .security-widget-inner {
         .title {
             font-size: 2.5rem;
-            font-weight: $weight_regular;
-            margin-bottom: -1.5rem;
+			font-weight: $weight_medium;
+			margin-bottom: -1.5rem;
+			color: $main_darker;
         }
     }
     // &:last-child {
@@ -16,11 +17,8 @@
 .security-widget.security-widget-no-bottom-border {
     border-bottom: none;
 }
-.security-widget.windows-hello {
+.security-widget {
     .security-widget-inner {
-        .title {
-            color: $go_dark;
-        }
         .windows-logo {
 			width: 12rem;
 			padding-top: 1rem;

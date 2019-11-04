@@ -152,7 +152,6 @@
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
-		"brand": "-[think]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",
@@ -347,7 +346,6 @@
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
-		"brand": "-[think]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",
