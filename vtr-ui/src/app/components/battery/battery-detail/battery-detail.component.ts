@@ -58,9 +58,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			'device.deviceSettings.batteryGauge.details.primary',
 			'device.deviceSettings.batteryGauge.details.secondary',
 			'device.deviceSettings.batteryGauge.details.tertiary'];
-
 		if (response) {
 			if (response.detail) {
+				this.remainingHours = [];
+				this.remainingMinutes = [];
 				for (let i = 0; i < response.detail.length; i++) {
 					if (response.detail[i] && response.detail[i] !== null) {
 						response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
