@@ -74,6 +74,12 @@ export class AntiVirusLandingViewModel {
 			'common.securityAdvisor.loading'
 		]).subscribe((res: any) => {
 				this.translateString = res;
+				if (!this.avStatus.detail) {
+					this.avStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				if (!this.fwStatus.detail) {
+					this.fwStatus.detail = res['common.securityAdvisor.loading'];
+				}
 				this.avStatus.title = res['common.securityAdvisor.antiVirus'];
 				this.fwStatus.title = res['security.landing.firewall'];
 				this.subject.title = res['common.securityAdvisor.antiVirus'];
