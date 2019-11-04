@@ -9,6 +9,8 @@ export class VerifyEmailComponent {
 	@Input() breachedAccountsLength = 0;
 	@Input() userEmail = '';
 	@Input() isFigleafReadyForCommunication = false;
+	@Input() scanCounter: number;
+	@Input() scanCounterLimit: number;
 
 	@Output() verifyEmailEmit = new EventEmitter<boolean>();
 

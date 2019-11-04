@@ -11,6 +11,8 @@ import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 import { ScanCounterService } from '../../common/services/scan-counter.service';
 
+const SCAN_COUNTER_LIMIT = 2;
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -48,6 +50,7 @@ export class BreachedAccountsFacadeService {
 	userEmail$ = this.emailScannerService.userEmail$;
 
 	scanCounter$ = this.scanCounterService.getScanCounter();
+	scanCounterLimit = SCAN_COUNTER_LIMIT;
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,

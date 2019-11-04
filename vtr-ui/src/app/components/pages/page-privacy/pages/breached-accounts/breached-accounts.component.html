@@ -45,6 +45,7 @@
 				class="breached-accounts__email-scanner"
 				*ngIf="(isUndefinedWithoutFigleafState$ | async)"
 				[scanCounter]="scanCounter$ | async"
+				[scanCounterLimit]="scanCounterLimit"
 				[emailWasScanned]="breachedAccountWasScanned$ | async">
 			</vtr-email-scanner>
 			<vtr-breached-account
@@ -61,6 +62,8 @@
 				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
 				[userEmail]="userEmail$ | async"
 				[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
+				[scanCounter]="scanCounter$ | async"
+				[scanCounterLimit]="scanCounterLimit"
 				(verifyEmailEmit)="startVerify()">
 			</vtr-verify-email>
 

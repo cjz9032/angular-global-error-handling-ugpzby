@@ -5,8 +5,9 @@
 		<div class="verify__wrapper">
 			<ng-container [ngTemplateOutlet]="verifyBlock"></ng-container>
 		</div>
-		<div class="verify__wrapper-email" *ngIf="isShowEmailBlock" >
-			<ng-container [ngTemplateOutlet]="emailBlock"></ng-container>
+		<div class="verify__wrapper-email" *ngIf="isShowEmailBlock">
+			<ng-container [ngTemplateOutlet]="emailBlock" *ngIf="scanCounter < scanCounterLimit"></ng-container>
+			<ng-container [ngTemplateOutlet]="scanLimitBlock" *ngIf="scanCounter >= scanCounterLimit"></ng-container>
 		</div>
 
 	</div>
@@ -25,6 +26,32 @@
 	<p class="verify__email-text">You’ve already checked 1 of 2 email addresses. Make sure you enter your second email accurately because you won’t be able to check a third one.</p>
 
 	<vtr-check-breaches-form class="verify__email-check-form"></vtr-check-breaches-form>
+</ng-template>
+
+<ng-template #scanLimitBlock>
+	<p class="verify__email-title verify__email-title--limit">You’ve reached your breach scan limit</p>
+	<p class="verify__email-text">If you want to check more emails, Install Lenovo Privacy Essentials by FigLeaf.</p>
+
+	<div class="limit__group-button">
+		<div class="limit__button-link limit__button-link--download"
+			 vtrOfflineMode
+			 positionContextTo="top-right">
+			<a vtrOpenFigleafInstaller
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="'InstallButton' | changeActionButtonText | async">
+				{{'Install' | changeActionButtonText | async}}
+			</a>
+		</div>
+		<div class="limit__button-link limit__button-link--to-right">
+			<a routerLink="/privacy/landing"
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="'LearnMoreLink'">
+				Learn more
+			</a>
+		</div>
+	</div>
 </ng-template>
 
 <ng-template #verifyBlock>

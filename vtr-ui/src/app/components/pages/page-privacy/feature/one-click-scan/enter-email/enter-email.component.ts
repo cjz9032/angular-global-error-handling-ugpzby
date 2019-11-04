@@ -10,7 +10,7 @@ import { BreachedAccountsFacadeService } from '../../../pages/breached-accounts/
 export class EnterEmailComponent implements Permit {
 	@Output() allow = new EventEmitter<boolean>();
 	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
-	scanCounterLimit = 2;
+	scanCounterLimit = this.breachedAccountsFacadeService.scanCounterLimit;
 
 	constructor(private breachedAccountsFacadeService: BreachedAccountsFacadeService) {
 	}

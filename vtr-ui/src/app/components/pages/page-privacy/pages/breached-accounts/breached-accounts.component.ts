@@ -31,6 +31,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
+	scanCounterLimit = this.breachedAccountsFacadeService.scanCounterLimit;
 
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
