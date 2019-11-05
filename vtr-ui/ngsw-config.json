@@ -9,7 +9,6 @@
 					"/index.html",
 					"/assets/fonts/**",
 					"/*.css",
-					"/assets/i18n/**",
 					"/assets/cms-cache/**"
 				]
 			}
@@ -20,8 +19,9 @@
 			"updateMode": "prefetch",
 			"resources": {
 				"files": [
-					"/assets/**",
-					"!/assets/privacy-json/trackers.json"
+					"!/assets/i18n/**",
+					"!/assets/privacy-json/trackers.json",
+					"/assets/**"
 				],
 				"urls": [
 					"https://qa.csw.lenovo.com/**",
