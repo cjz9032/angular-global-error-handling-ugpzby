@@ -7,6 +7,7 @@ export enum LocalStorageKey {
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
 	SecurityWindowsHelloStatus = '[LocalStorageKey] SecurityWindowsHelloStatus',
 	SecurityShowWindowsHello = '[LocalStorageKey] SecurityShowWindowsHello',
+	SecurityShowWifiSecurity = '[LocalStorageKey] SecurityShowWifiSecurity',
 	SecurityMcAfee = '[LocalStorageKey] SecurityMcAfee',
 	SecurityWindowsDefender = '[LocalStorageKey] SecurityWindowsDefender',
 	SecurityOtherAntiVirus = '[LocalStorageKey] SecurityOtherAntiVirus',
