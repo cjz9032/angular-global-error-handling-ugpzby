@@ -21,7 +21,7 @@ import { filter } from 'rxjs/internal/operators/filter';
 export class HomeComponent implements OnInit, OnDestroy {
 	private subscription: Subscription;
 	private redirectToUrl: string;
-	private queryParams: Params;
+	private isTranslationLoaded = false;
 	constructor(
 		public deviceService: DeviceService,
 		private router: Router,
@@ -40,8 +40,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.logger.info(`HomeComponent.ngOnInit`);
-
-
 		try {
 			this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 				this.onNotification(notification);
@@ -55,6 +53,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 						this.logger.debug('HomeComponent: machine info received', cachedDeviceInfo);
 						// update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+						if (this.isTranslationLoaded) {
+							this.redirectToPage();
+						}
 					}
 				});
 			} else {
@@ -93,9 +94,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case TranslationNotification.TranslationLoaded:
+					this.isTranslationLoaded = true;
 					if (this.redirectToUrl) {
 						this.logger.info(`HomeComponent.onNotification redirecting to`, this.redirectToUrl);
-						this.router.navigateByUrl(this.redirectToUrl);
+						this.redirectToPage();
 					} else {
 						this.logger.info(`HomeComponent.onNotification`, notification);
 						const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
@@ -106,5 +108,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
+	}
+
+	private redirectToPage() {
+		this.router.navigateByUrl(this.redirectToUrl);
 	}
 }
