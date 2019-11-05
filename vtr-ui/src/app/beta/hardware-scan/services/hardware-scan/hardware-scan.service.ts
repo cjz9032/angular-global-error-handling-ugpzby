@@ -362,6 +362,7 @@ export class HardwareScanService {
 			this.modules = modules;
 			this.scanExecution = true;
 			this.workDone.next(false);
+			this.clearLastResponse();
 			return this.hardwareScanBridge.getDoScan(payload, (response: any) => {
 				console.log('response', response);
 				// Keeping track of the latest response allows the right render when user
@@ -466,6 +467,7 @@ export class HardwareScanService {
 		console.log('[Start] Recover on Service');
 		this.disableCancel = true;
 		if (this.hardwareScanBridge) {
+			this.clearLastResponse();
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				// Keeping track of the latest response allows the right render when user
 				// navigates to another page and then come back to the Hardware Scan page
