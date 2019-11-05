@@ -6,6 +6,7 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -33,6 +34,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public inputAccessoriesCapability: InputAccessoriesCapability;
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
 		private commonService: CommonService,
 		private logger: LoggerService

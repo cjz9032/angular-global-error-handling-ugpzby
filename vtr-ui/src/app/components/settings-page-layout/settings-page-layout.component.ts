@@ -36,7 +36,9 @@ export class SettingsPageLayoutComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.notificationSubscription.unsubscribe();
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 }
