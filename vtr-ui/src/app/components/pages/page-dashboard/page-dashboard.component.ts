@@ -85,6 +85,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		tileF: 'CMS'
 	};
 
+	welcomeTextIndexes: any[] = [''];
+	welcomeText = '';
+
 	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
@@ -150,6 +153,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -192,6 +196,22 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 		this.qaService.destroyChangeSubscribed();
+	}
+
+	private getWelcomeText() {
+	// dashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
+		const dashboardWelcomeText = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardWelcomeText);
+		if (dashboardWelcomeText) {
+			this.welcomeText = dashboardWelcomeText;
+		} else {
+			this.welcomeTextIndexes = [''];
+			for (let i = 2; i <= 15; i++) {
+				this.welcomeTextIndexes.push(i);
+			}
+			const textIndex = this.welcomeTextIndexes[Math.floor(Math.random() * this.welcomeTextIndexes.length)];
+			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
+			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
+		}
 	}
 
 	private fetchContent(lang?: string) {
