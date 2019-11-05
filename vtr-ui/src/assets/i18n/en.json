@@ -516,7 +516,9 @@
 		"offlineInfo": {
 			"title": "No internet connection detected",
 			"subtitle": "Learn more on how to solve connection issues in our",
-			"buttonText": "Get Support"
+			"buttonText": "Get Support",
+			"welcomeToVantage": "Welcome to the next generation of Vantage",
+			"systemHealth": "System Health"
 		},
 		"feedback": {
 			"title": "Give Feedback",

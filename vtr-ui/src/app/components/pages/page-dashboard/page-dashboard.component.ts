@@ -214,6 +214,15 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			tileF: false
 		};
 
+		if (this.isOnline) {
+			if (this.dashboardService.heroBannerItemsOnline.length > 0) { this.heroBannerItems = this.dashboardService.heroBannerItemsOnline; }
+			if (this.dashboardService.cardContentPositionBOnline) { this.cardContentPositionB = this.dashboardService.cardContentPositionBOnline; }
+			if (this.dashboardService.cardContentPositionCOnline) { this.cardContentPositionC = this.dashboardService.cardContentPositionCOnline; }
+			if (this.dashboardService.cardContentPositionDOnline) { this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline; }
+			if (this.dashboardService.cardContentPositionEOnline) { this.cardContentPositionE = this.dashboardService.cardContentPositionEOnline; }
+			if (this.dashboardService.cardContentPositionFOnline) { this.cardContentPositionF = this.dashboardService.cardContentPositionFOnline; }
+		}
+
 		this.getTileSource().then(() => {
 			this.fetchCMSContent(lang);
 			this.fetchUPEContent();
@@ -239,12 +248,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				if (response && response.length > 0) {
 					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 
-					this.getCMSHeroBannerItems(response);
-					this.getCMSCardContentB(response);
-					this.getCMSCardContentC(response);
-					this.getCMSCardContentD(response);
-					this.getCMSCardContentE(response);
-					this.getCMSCardContentF(response);
+					if (this.dashboardService.heroBannerItemsOnline.length === 0) { this.getCMSHeroBannerItems(response); }
+					if (!this.dashboardService.cardContentPositionBOnline) { this.getCMSCardContentB(response); }
+					if (!this.dashboardService.cardContentPositionCOnline) { this.getCMSCardContentC(response); }
+					if (!this.dashboardService.cardContentPositionDOnline) { this.getCMSCardContentD(response); }
+					if (!this.dashboardService.cardContentPositionEOnline) { this.getCMSCardContentE(response); }
+					if (!this.dashboardService.cardContentPositionFOnline) { this.getCMSCardContentF(response); }
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
@@ -276,7 +285,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileA = true;
 			if (!this.upeRequestResult.tileA || this.tileSource.tileA === 'CMS') {
 				this.heroBannerItems = this.heroBannerItemsCms;
-				this.dashboardService.heroBannerItems = this.heroBannerItemsCms;
+				this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
 			}
 		}
 	}
@@ -298,7 +307,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileB = true;
 			if (!this.upeRequestResult.tileB || this.tileSource.tileB === 'CMS') {
 				this.cardContentPositionB = this.cardContentPositionBCms;
-				this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
 			}
 		}
 	}
@@ -318,7 +327,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileC = true;
 			if (!this.upeRequestResult.tileC || this.tileSource.tileC === 'CMS') {
 				this.cardContentPositionC = this.cardContentPositionCCms;
-				this.dashboardService.cardContentPositionC = this.cardContentPositionCCms;
+				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
 			}
 		}
 	}
@@ -335,7 +344,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileD = true;
 			if (!this.upeRequestResult.tileD || this.tileSource.tileD === 'CMS') {
 				this.cardContentPositionD = this.cardContentPositionDCms;
-				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
+				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
 			}
 		}
 	}
@@ -352,7 +361,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileE = true;
 			if (!this.upeRequestResult.tileE || this.tileSource.tileE === 'CMS') {
 				this.cardContentPositionE = this.cardContentPositionECms;
-				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
+				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
 			}
 		}
 	}
@@ -369,7 +378,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.cmsRequestResult.tileF = true;
 			if (!this.upeRequestResult.tileF || this.tileSource.tileF === 'CMS') {
 				this.cardContentPositionF = this.cardContentPositionFCms;
-				this.dashboardService.cardContentPositionF = this.cardContentPositionFCms;
+				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
 			}
 		}
 	}
@@ -413,7 +422,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				});
 			if (heroBannerItems && heroBannerItems.length) {
 				this.heroBannerItems = heroBannerItems;
-				this.dashboardService.heroBannerItems = heroBannerItems;
+				this.dashboardService.heroBannerItemsOnline = heroBannerItems;
 				this.upeRequestResult.tileA = true;
 			}
 		}, (err) => {
@@ -421,7 +430,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.upeRequestResult.tileA = false;
 			if (this.cmsRequestResult.tileA) {
 				this.heroBannerItems = this.heroBannerItemsCms;
-				this.dashboardService.heroBannerItems = this.heroBannerItemsCms;
+				this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
 			}
 		});
 	}
@@ -439,7 +448,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				}
 				cardContentPositionB.DataSource = 'upe';
 				this.cardContentPositionB = cardContentPositionB;
-				this.dashboardService.cardContentPositionB = this.cardContentPositionB;
+				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionB;
 				this.upeRequestResult.tileB = true;
 			}
 		}, (err) => {
@@ -447,7 +456,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.upeRequestResult.tileB = false;
 			if (this.cmsRequestResult.tileB) {
 				this.cardContentPositionB = this.cardContentPositionBCms;
-				this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
 			}
 		});
 	}
@@ -465,7 +474,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				}
 				cardContentPositionC.DataSource = 'upe';
 				this.cardContentPositionC = cardContentPositionC;
-				this.dashboardService.cardContentPositionC = this.cardContentPositionC;
+				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionC;
 				this.upeRequestResult.tileC = true;
 			}
 		}, (err) => {
@@ -473,7 +482,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.upeRequestResult.tileC = false;
 			if (this.cmsRequestResult.tileC) {
 				this.cardContentPositionC = this.cardContentPositionCCms;
-				this.dashboardService.cardContentPositionC = this.cardContentPositionCCms;
+				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
 			}
 		});
 	}
@@ -488,7 +497,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			if (cardContentPositionD) {
 				cardContentPositionD.DataSource = 'upe';
 				this.cardContentPositionD = cardContentPositionD;
-				this.dashboardService.cardContentPositionD = this.cardContentPositionD;
+				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionD;
 				this.upeRequestResult.tileD = true;
 			}
 		}, (err) => {
@@ -496,7 +505,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.upeRequestResult.tileD = false;
 			if (this.cmsRequestResult.tileD) {
 				this.cardContentPositionD = this.cardContentPositionDCms;
-				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
+				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
 			}
 		});
 	}
@@ -511,7 +520,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			if (cardContentPositionE) {
 				cardContentPositionE.DataSource = 'upe';
 				this.cardContentPositionE = cardContentPositionE;
-				this.dashboardService.cardContentPositionE = this.cardContentPositionE;
+				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionE;
 				this.upeRequestResult.tileE = true;
 			}
 		}, (err) => {
@@ -519,7 +528,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.upeRequestResult.tileE = false;
 			if (this.cmsRequestResult.tileE) {
 				this.cardContentPositionE = this.cardContentPositionECms;
-				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
+				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
 			}
 		});
 	}
@@ -534,7 +543,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			if (cardContentPositionF) {
 				cardContentPositionF.DataSource = 'upe';
 				this.cardContentPositionF = cardContentPositionF;
-				this.dashboardService.cardContentPositionF = this.cardContentPositionF;
+				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionF;
 				this.upeRequestResult.tileF = true;
 			}
 		}, (err) => {
@@ -542,7 +551,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			this.upeRequestResult.tileF = false;
 			if (this.cmsRequestResult.tileF) {
 				this.cardContentPositionF = this.cardContentPositionFCms;
-				this.dashboardService.cardContentPositionF = this.cardContentPositionFCms;
+				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
 			}
 		});
 	}
@@ -770,6 +779,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					if (!this.isOnline) {
+						this.getPreviousContent();
+					} else {
+						this.fetchContent();
+						this.fetchUPEContent();
+					}
 					break;
 				case LocalStorageKey.LastWarrantyStatus:
 					if (notification.payload) {

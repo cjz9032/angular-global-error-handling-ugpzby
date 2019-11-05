@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Ingen internetforbindelse fundet",
             "subtitle": "Læs mere om, hvordan du løser forbindelsesproblemer, i vores",
-            "buttonText": "Få support"
+            "buttonText": "Få support",
+            "welcomeToVantage": "Velkommen til den næste generation af Vantage",
+            "systemHealth": "Systemsundhed"
         },
         "feedback": {
             "title": "Giv feedback",

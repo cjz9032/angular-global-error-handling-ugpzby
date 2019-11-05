@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Det finns ingen Internetanslutning",
             "subtitle": "Läs mer om hur du åtgärdar anslutningsproblem i",
-            "buttonText": "Få support"
+            "buttonText": "Få support",
+            "welcomeToVantage": "Välkommen till nästa generations Vantage",
+            "systemHealth": "Systemtillstånd"
         },
         "feedback": {
             "title": "Ge feedback",

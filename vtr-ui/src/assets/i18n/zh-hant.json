@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "未偵測到網際網路連線",
             "subtitle": "進一步瞭解如何解決連線問題",
-            "buttonText": "獲得支援"
+            "buttonText": "獲得支援",
+            "welcomeToVantage": "歡迎使用新一代 Vantage",
+            "systemHealth": "系統性能狀態"
         },
         "feedback": {
             "title": "提供意見回饋",

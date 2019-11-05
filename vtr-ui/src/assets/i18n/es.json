@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "No se ha detectado ninguna conexión a Internet",
             "subtitle": "Obtenga más información sobre cómo resolver problemas de conexión en nuestro",
-            "buttonText": "Obtenga soporte"
+            "buttonText": "Obtenga soporte",
+            "welcomeToVantage": "Bienvenido a la próxima generación de Vantage",
+            "systemHealth": "Estado del sistema"
         },
         "feedback": {
             "title": "Proporcionar comentarios",
