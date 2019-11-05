@@ -21,7 +21,7 @@ import { filter } from 'rxjs/internal/operators/filter';
 export class HomeComponent implements OnInit, OnDestroy {
 	private subscription: Subscription;
 	private redirectToUrl: string;
-	private isTranslationLoaded = false;
+
 	constructor(
 		public deviceService: DeviceService,
 		private router: Router,
@@ -47,15 +47,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 			if (this.deviceService.isShellAvailable) {
 				this.deviceService.getMachineInfo().then((value: any) => {
+					this.logger.debug('HomeComponent: machine info received');
 					if (!this.languageService.isLanguageLoaded) {
+						this.logger.debug('HomeComponent: language not loaded');
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						this.logger.debug('HomeComponent: machine info received', cachedDeviceInfo);
 						// update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-						if (this.isTranslationLoaded) {
-							this.redirectToPage();
-						}
+					} else if (this.redirectToUrl) {
+						this.logger.debug('HomeComponent: language not loaded');
+						this.redirectToPage();
 					}
 				});
 			} else {
@@ -94,7 +95,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case TranslationNotification.TranslationLoaded:
-					this.isTranslationLoaded = true;
 					if (this.redirectToUrl) {
 						this.logger.info(`HomeComponent.onNotification redirecting to`, this.redirectToUrl);
 						this.redirectToPage();
@@ -111,6 +111,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	private redirectToPage() {
-		this.router.navigateByUrl(this.redirectToUrl);
+		if (this.redirectToUrl) {
+			this.router.navigateByUrl(this.redirectToUrl);
+		}
 	}
 }
