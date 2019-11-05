@@ -7,7 +7,7 @@
 			"resources": {
 				"files": [
 					"/index.html",
-					"/assets/fonts/**",
+					"/assets/fonts/icomoon.woff",
 					"/*.css",
 					"/assets/cms-cache/**"
 				]
