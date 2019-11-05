@@ -29,7 +29,7 @@
 		"subitems": [{
 			"id": "support",
 			"label": "gaming.common.menu.support.sub1",
-			"path": "support",
+			"path": null,
 			"icon": null,
 			"externallink": false,
 			"metricsEvent": "featureClick",

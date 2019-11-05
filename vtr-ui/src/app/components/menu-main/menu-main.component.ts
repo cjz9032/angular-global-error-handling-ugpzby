@@ -446,7 +446,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 
-	showWindowsHelloItem(windowsHello: WindowsHello) {
+	showWindowsHelloItem() {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
 
@@ -696,10 +696,10 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			if (this.securityAdvisor) {
 			const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
 			if (windowsHello.fingerPrintStatus) {
-				this.showWindowsHelloItem(windowsHello);
+				this.showWindowsHelloItem();
 			}
 			windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-				this.showWindowsHelloItem(windowsHello);
+				this.showWindowsHelloItem();
 			});
 			}
 		});
