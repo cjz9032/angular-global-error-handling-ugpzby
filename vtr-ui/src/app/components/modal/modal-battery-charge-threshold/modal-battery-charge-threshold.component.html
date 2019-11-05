@@ -1,5 +1,6 @@
 <div class="modal-body vtr-modal-battery-charge-threshold"
-	role="dialog">
+	role="dialog"
+	aria-modal="true">
 	<div class="row justify-content-end">
 		<div class="btn-close">
 			<button type="button"
@@ -27,7 +28,7 @@
 		role="text"
 		[innerHTML]="description2 | translate">
 	</p>
-	<hr>
+	<hr aria-hidden="true">
 	<div class="row">
 		<button id="battery-threshold-popup-enable"
 			tabindex="0"
