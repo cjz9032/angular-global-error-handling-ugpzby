@@ -29,9 +29,9 @@ enum ScanAction {
 	Cancel	
 }
 
-export class ScanResult {
-	countSuccess: number;
-	resultJson: any;
+class ScanResult {
+	countSuccesses: number;
+	scanResultJson: any;
 }
 
 const RootParent = "HardwareScan";
@@ -332,9 +332,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					}
 				})
 				.finally(() => {
-					let metricsResult = this.getMetricsTaskActionScanResult();
-					this.sendActionTaskMetrics(this.currentScanType, metricsResult.countSuccess, 
-						"", metricsResult.resultJson, this.timerService.stop());
+					let metricsResult = this.getMetricsTaskResult();
+					this.sendActionTaskMetrics(this.currentScanType, metricsResult.countSuccesses, 
+						"", metricsResult.scanResultJson, this.timerService.stop());
 					this.cleaningUpScan(undefined);
 				});			
 		}
@@ -767,22 +767,28 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return ScanAction[this.currentScanAction] + ScanType[this.currentScanType] + "." + CloseButton;
 	}
 
-	private getMetricsTaskActionScanResult() {
+	private getMetricsTaskResult() {
 
 		let scanResult = new ScanResult();
-		let countSuccess = 0;
-		let resultJson = {};
+		let scanResultJson = {};
+		let countSuccesses = 0;
 
-		resultJson["Result"] = ""; // ver como pegar esse valor
-		resultJson["Reason"] = "NA";
+		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
+		// because of that, I'm creating a map with the best order to determine the scan overall status
+		let resultSeverityConversion = {}
+		resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
+		resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
+		resultSeverityConversion[HardwareScanTestResult.Na] = 2;
+		resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
+		resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
+		resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
+		resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
 
-		resultJson["TestsList"] = [];
+		let overalTestResult = HardwareScanTestResult.Pass;
 
+		scanResultJson["TestsList"] = [];
 		if (this.modules) {
 			for (const module of this.modules) {
-				//let moduleData = {};
-				//moduleData["Name"] = module.id;
-				//moduleData["TestsList"] = []
 				for (const test of module.listTest) {
 					let testList = {};
 					let testName = test.id.split(":::")[0];
@@ -790,34 +796,27 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					testList["Result"] = HardwareScanTestResult[test.status];
 					// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
 					testList["Reason"] = "NA"; 
-					if (test.status === HardwareScanTestResult.Pass)
-						countSuccess = countSuccess + 1;
 					
-					resultJson["TestsList"].push(testList);
+					if (test.status === HardwareScanTestResult.Pass) {
+						countSuccesses = countSuccesses + 1;
+					} 
+					
+					// Only change result when finds a worse case
+					if (resultSeverityConversion[overalTestResult] < resultSeverityConversion[test.status]) {
+						overalTestResult = test.status;
+					}
+					
+					scanResultJson["TestsList"].push(testList);
+
 				}
-				//resultJson["Modules"].push(moduleData);
 			}
 		}
+	
+		scanResultJson["Result"] = HardwareScanTestResult[overalTestResult];
+		scanResultJson["Reason"] = "NA";
 
-		/*const finalResponse = this.hardwareScanService.getFinalResponse();
-		if (finalResponse) {
-			for (const scanRequest of finalResponse.responses) { // For each module
-				for (const groupResult of scanRequest.groupResults) { // For each device
-					for (const testResult of groupResult.testResultList) { // For each test
-						let testName = testResult.id.split(":::")[0]
-						resultJson[testName] = {}
-						resultJson[testName].Result = HardwareScanTestResult[testResult.result];
-						// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
-						resultJson[testName].Reason = "NA"; 
-						if (testResult.result === HardwareScanTestResult.Pass)
-							countSuccess = countSuccess + 1;
-					}
-				}
-			}
-		}*/	
-		
-		scanResult.resultJson = resultJson;
-		scanResult.countSuccess = countSuccess;
+		scanResult.scanResultJson = scanResultJson;
+		scanResult.countSuccesses = countSuccesses;
 
 		return scanResult;
 	}	
@@ -835,8 +834,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
 		}
-	}
-
-	
+	}	
 
 }
