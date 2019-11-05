@@ -57,6 +57,7 @@
 													name="airplane-mode-checkbox-id"
 													[(ngModel)]="airplaneAutoDetection"
 													(ngModelChange)='onAirplaneAutoModeStatusChange()'
+													aria-hidden="true"
 													checked="" />
 
 												<span class="checkmark"></span>
@@ -65,6 +66,7 @@
 												</label>
 											</div>
 											<label *ngIf="airplaneAutoDetection"
+												role="text"
 												class="auto-detection-note">
 												{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 											</label>
@@ -255,6 +257,7 @@
 													[disabled]="!toggleAlwaysOnUsbFlag"
 													[(ngModel)]="usbChargingCheckboxFlag"
 													(ngModelChange)='onUsbChargingStatusChange()'
+													aria-hidden="true"
 													checked="" />
 												<span class="checkmark"></span>
 												<label for="cb-always-on-usb">
