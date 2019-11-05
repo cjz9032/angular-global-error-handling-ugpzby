@@ -1838,16 +1838,16 @@
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
             "wifi": "تشفر بياناتك الشخصية عند استخدام شبكة WiFi عامة",
             "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "ما ميزة إعلام التحكم في حساب المستخدم (UAC)؟",
+            "uacText": "يعتبر التحكم في حساب المستخدم ميزة أمان شديدة الأهمية من Windows تساعد على الحؤول دون قيام البرامج التي من المحتمل أن تكون ضارة بإدخال تغييرات على نظامك.",
+            "windowsTitle": "لماذا أحتاج إلى نسخة Windows نشطة؟",
+            "windowsText": "قد يؤدي تشغيل نسخة غير أصلية من Windows إلى زيادة مستوى تعريضك لمخاطر الفيروسات والتهديدات الأمنية الأخرى.",
+            "encryptionTitle": "ما ميزة تشفير محرك الأقراص الثابتة‬؟",
+            "encryptionText": "تساعدك هذه الميزة على حماية بياناتك من خلال توفير التشفير لمحرك الأقراص الثابتة بكامله لمنع الوصول غير المخوّل على الرغم من إزالة محرك الأقراص من الكمبيوتر الحالي ووضعه في أجهزة أخرى.",
+            "passwordTitle": "كيفية حماية كلمة المرور بشكل أفضل؟",
+            "passwordText": "يمكنك تخزين جميع كلمات مرورك المشفرة وإدارتها بواسطة تطبيق احترافي للحماية الرقمية بدلاً من تخزينها في المستعرضات التي يمكن الوصول إليها بسهولة من قِبل أطراف ثالثة من دون علمك.",
+            "enhanceTitle": "ما الإجراء الذي عليّ اتخاذه لتعزيز الحماية الأمنية؟",
+            "enhanceText": "ننصحك بضرورة حماية أجهزة أجهزتك بواسطة برامج مكافحة الفيروسات وجدار الحماية وإعداد إعلام التحكم في حساب المستخدم (UAC) عند الحد الأدنى للحماية. وعليك أيضًا إنشاء كلمات مرور قوية وإدارتها بطريقة آمنة وتشفير بياناتك أثناء استخدام الشبكة العامة كإجراء حماية متقدمة."
         },
         "antivirus": {
             "common": {
