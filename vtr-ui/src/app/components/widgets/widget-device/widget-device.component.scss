@@ -7,11 +7,13 @@
 	overflow: hidden;
 	position: relative;
 	.circleimage {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 25rem;
+		max-width: 36%;
 		img {
-			position: absolute;
-			top: 2rem;
-			right: 2rem;
-			width: 20rem;
+			width: 100%;
 		}
 	}
 
@@ -21,7 +23,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		max-width: 75%;
+		max-width: 70%;
 		@media #{$mediaquery_12} {
 			max-width: 65%;
 		}

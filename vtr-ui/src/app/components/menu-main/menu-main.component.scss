@@ -17,7 +17,7 @@
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
-		position: absolute;
+		position: fixed;
 		left: 0%;
 		right: 0%;
 	}
