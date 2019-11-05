@@ -1859,16 +1859,16 @@
             "vpn": "是否監控網路遭受攻擊的風險",
             "wifi": "是否在使用公共 WiFi 時加密您的個人資料",
             "windowsHello": "是否使用安全登入選項來保護裝置",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "什麼是 UAC 通知？",
+			"uacText": "使用者帳戶控制是 Windows 非常重要的一項安全性功能，可協助防止潛在有害的程式對您的系統進行變更。",
+			"windowsTitle": "為什麼需要啟用 Windows？",
+			"windowsText": "執行非正版 Windows 會使得遭受病毒與其他安全性威脅攻擊的風險大幅提高。",
+			"encryptionTitle": "什麼是硬碟加密？",
+			"encryptionText": "此功能透過將整個硬碟加密保護您的資料，即使該硬碟從目前的 PC 卸下並放入其他裝置亦可避免遭到未經授權的存取。",
+			"passwordTitle": "如何能更妥善保護密碼？",
+			"passwordText": "安全地儲存及管理所有經由專業數位保護應用程式加密過的密碼，而不是逕行存放於瀏覽器使第三方可在您不知情的情況下輕易存取。",
+			"enhanceTitle": "應該採取哪些措施以強化安全保護？",
+			"enhanceText": "強烈建議您交由防毒軟體和防火牆保護您的裝置，設定 UAC 通知以提供最低限度的保護。此外，建立高保護性密碼並以安全的方式進行管理，使用公用網路時加密您的資料做為進階保護措施。"
         },
         "antivirus": {
             "common": {

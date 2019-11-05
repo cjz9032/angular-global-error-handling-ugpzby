@@ -1859,16 +1859,16 @@
             "vpn": "Παρακολουθείτε την έκθεση του δικτύου σας σε επιτιθέμενους",
             "wifi": "Κρυπτογραφείτε τα προσωπικά δεδομένα σας, όταν χρησιμοποιείτε δημόσιο WiFi",
             "windowsHello": "Προστατεύετε τη συσκευή σας χρησιμοποιώντας ασφαλείς επιλογές σύνδεσης",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Τι είναι η ειδοποίηση UAC;",
+            "uacText": "Ο έλεγχος λογαριασμού χρήστη είναι ένα πολύ σημαντικό χαρακτηριστικό ασφαλείας των Windows που βοηθά στην παρεμπόδιση ενδεχομένως επιβλαβών προγραμμάτων να κάνουν αλλαγές στο σύστημά σας.",
+            "windowsTitle": "Γιατί χρειάζεται ενεργοποιήσω τα Windows;",
+            "windowsText": "Η εκτέλεση ενός μη γνήσιου αντιγράφου των Windows μπορεί να σας θέσει σε μεγαλύτερο κίνδυνο για ιούς και άλλες απειλές για την ασφάλεια.",
+            "encryptionTitle": "Τι είναι η κρυπτογράφηση σκληρού δίσκου;",
+            "encryptionText": "Βοηθά στην προστασία των δεδομένων σας παρέχοντας κρυπτογράφηση για ολόκληρο τον σκληρό δίσκο από μη εξουσιοδοτημένη πρόσβαση ακόμη κι αν η μονάδα αφαιρεθεί από τον τρέχοντα Η/Υ και τοποθετηθεί σε άλλες συσκευές.",
+            "passwordTitle": "Πώς θα προστατεύσετε καλύτερα τον κωδικό πρόσβασης;",
+            "passwordText": "Αποθηκεύστε και διαχειριστείτε με ασφάλεια όλους τους κωδικούς πρόσβασης με κρυπτογράφηση από επαγγελματική εφαρμογή ψηφιακής προστασίας αντί για απλή αποθήκευση στα προγράμματα περιήγησής σας, τα οποία είναι εύκολα προσβάσιμα από τρίτα μέρη χωρίς να το γνωρίζετε.",
+            "enhanceTitle": "Τι θα πρέπει να κάνω για να βελτιώσω την προστασία της ασφάλειας;",
+            "enhanceText": "Συνιστάται ιδιαίτερα η προστασία των συσκευών σας με λογισμικό προστασίας από ιούς και τείχος προστασίας και η ρύθμιση της ειδοποίησης UAC στην ελάχιστη προστασία. Επιπλέον, δημιουργήστε ισχυρούς κωδικούς πρόσβασης και διαχειριστείτε με ασφαλή τρόπο. Κρυπτογραφήστε τα δεδομένα σας ενώ χρησιμοποιείτε το δημόσιο δίκτυο ως προηγμένη προστασία."
         },
         "antivirus": {
             "common": {

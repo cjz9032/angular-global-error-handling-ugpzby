@@ -15,7 +15,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 const httpOptions = {
 	headers: new HttpHeaders({
 		'Content-Type': 'application/json',
-		Authorization: 'Access-Control-Allow-Origin'
 	})
 };
 

@@ -1859,16 +1859,16 @@
             "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
             "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
             "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Ce este notificarea UAC?",
+            "uacText": "Control cont utilizator (User Account Control – UAC) este o caracteristică de securitate foarte importantă din Windows, care împiedică efectuarea de modificări în sistemul dvs. de programe potenţial dăunătoare.",
+            "windowsTitle": "De ce trebuie să activez Windows?",
+            "windowsText": "Rularea unei copii Windows care nu este originală poate prezenta un risc mai mare împotriva virusurilor şi a altor ameninţări de securitate.",
+            "encryptionTitle": "Ce este criptarea unităţii HDD?",
+            "encryptionText": "Vă ajută să vă protejaţi datele, oferind criptare pentru întreaga unitate HDD împotriva accesului neautorizat, chiar dacă unitatea este scoasă din PC-ul actual şi este introdusă în alte dispozitive.",
+            "passwordTitle": "Cum să vă protejaţi mai bine parola?",
+            "passwordText": "Stocaţi şi gestionaţi în mod securizat toate parolele criptate cu o aplicaţie profesională de protecţie digitală, în loc să le stocaţi pur şi simplu în browserele dvs., care pot fi accesate cu uşurinţă de către terţe părţi, fără cunoştinţa dvs.",
+            "enhanceTitle": "Ce ar trebui să fac pentru a îmbunătăţi protecţia de securitate?",
+            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice."
         },
         "antivirus": {
             "common": {

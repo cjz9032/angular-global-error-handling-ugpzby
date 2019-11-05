@@ -1859,16 +1859,16 @@
             "vpn": "Мониторинг уязвимости сети к атакам",
             "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
             "windowsHello": "Защита устройства с помощью параметров безопасного входа",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Что такое уведомление функции контроля учетных записей пользователей?",
+            "uacText": "Контроль учетных записей пользователей — очень важная функция безопасности Windows, которая не дает потенциально вредоносным программам внести изменения в систему.",
+            "windowsTitle": "Зачем активировать Windows?",
+            "windowsText": "Использование неподлинной копии Windows повышает риск заражения системы вирусами и воздействия других угроз безопасности.",
+            "encryptionTitle": "Что такое шифрование жесткого диска?",
+            "encryptionText": "Эта функция помогает защитить данные путем шифрования всего жесткого диска, чтобы предотвратить несанкционированный доступ даже в случае извлечения диска из текущего компьютера и подключения к другим устройствам.",
+            "passwordTitle": "Как обеспечить надежную защиту пароля?",
+            "passwordText": "Используйте профессиональное приложение цифровой защиты для хранения и администрирования всех своих паролей в зашифрованном виде, вместо того чтобы хранить их в браузере, где к ним легко могут получить доступ третьи лица без вашего ведома.",
+            "enhanceTitle": "Как повысить безопасность системы?",
+            "enhanceText": "Настоятельно рекомендуем защитить устройства антивирусной программой и брандмауэром, а также настроить уведомление функции контроля учетных записей пользователей на минимальный уровень защиты. Кроме того, используйте надежные пароли и управляйте ими безопасным способом, а для дополнительной защиты шифруйте данные при использовании общедоступных сетей."
         },
         "antivirus": {
             "common": {

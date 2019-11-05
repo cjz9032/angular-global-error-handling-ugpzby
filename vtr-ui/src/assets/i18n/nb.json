@@ -1859,16 +1859,16 @@
             "vpn": "Om du overvåker nettverkets sårbarhet for angripere",
             "wifi": "Om du krypterer personlige data når du bruker offentlig WiFi",
             "windowsHello": "Om du beskytter enheten ved hjelp av sikre påloggingsmåter",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Hva er UAC-varsling?",
+            "uacText": "Brukerkontokontroll er en svært viktig sikkerhetsfunksjon i Windows som bidrar til å hindre at potensielt skadelige programmer gjør endringer på systemet.",
+            "windowsTitle": "Hvorfor må jeg aktive Windows?",
+            "windowsText": "Hvis du kjører en versjon av Windows som ikke er offisiell, er du mer utsatt for virus og andre sikkerhetstrusler.",
+            "encryptionTitle": "Hva er kryptering av harddisk?",
+            "encryptionText": "Det bidrar til å beskytte dataene dine ved å kryptere hele harddisken for å hindre uautorisert tilgang selv om stasjonen fjernes fra PC-en og settes inn i andre enheter.",
+            "passwordTitle": "Hvordan beskytter du passordene dine bedre?",
+            "passwordText": "Lagre og administrere alle passordene dine på en sikker måte ved å kryptere dem med en profesjonell digital beskyttelsesapp i stedet for bare å lagre dem i nettleserne, som tredjeparter enkelt kan få tilgang uten din viten.",
+            "enhanceTitle": "Hva bør jeg gjøre for å forbedre sikkerhetsbeskyttelsen?",
+            "enhanceText": "Vi anbefaler at du beskytter enhetene dine med antivirusprogramvare og brannmur, og konfigurerer UAC-varsling som minimumsbeskyttelse. I tillegg bør du opprette sterke passord og administrere dem på en sikker måte, og kryptere dataene dine som avansert beskyttelse når du bruker offentlige nettverk."
         },
         "antivirus": {
             "common": {

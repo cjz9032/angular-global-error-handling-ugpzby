@@ -1859,16 +1859,16 @@
             "vpn": "Monitorujesz narażenie sieci na ataki",
             "wifi": "Szyfrujesz dane osobowe podczas korzystania z publicznej sieci WiFi",
             "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Czym jest powiadomienie kontroli konta użytkownika?",
+            "uacText": "Kontrola konta użytkownika jest bardzo ważną funkcją bezpieczeństwa systemu Windows, która pomaga zapobiegać wprowadzaniu zmian w systemie przez potencjalnie szkodliwe programy.",
+            "windowsTitle": "Dlaczego muszę aktywować system Windows?",
+            "windowsText": "Uruchomienie nieoryginalnej kopii systemu Windows może zwiększyć ryzyko wirusów i innych zagrożeń dla bezpieczeństwa.",
+            "encryptionTitle": "Czym jest szyfrowanie dysku twardego?",
+            "encryptionText": "Pomaga chronić dane, zapewniając szyfrowanie całego dysku twardego przed nieautoryzowanym dostępem, nawet jeśli dysk zostanie usunięty z danego komputera i umieszczony w innym urządzeniu.",
+            "passwordTitle": "Jak lepiej chronić hasło?",
+            "passwordText": "Bezpiecznie przechowuj wszystkie hasła i nimi zarządzaj po zaszyfrowaniu przez profesjonalną cyfrową aplikację zabezpieczającą zamiast tylko przechowywać je w przeglądarce, do której dostęp bez twojej wiedzy mogą uzyskać osoby trzecie.",
+            "enhanceTitle": "Co powinno się wykonać, aby zwiększyć ochronę?",
+            "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej."
         },
         "antivirus": {
             "common": {

@@ -1859,16 +1859,16 @@
             "vpn": "האם אתם מנטרים את החשיפה שלכם לתוקפים ברשת",
             "wifi": "האם אתם מצפינים את המידע האישי שלהם כשאתם משתמשים ב-WiFi ציבורי",
             "windowsHello": "האם אתם מגינים על המכשיר שלכם באמצעות אפשרויות כניסה בטוחות",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "מהי הודעת UAC?",
+            "uacText": "בקרת חשבון משתמש היא תכונת אבטחה חשובה מאוד של Windows, המסייעת למנוע מתוכניות שעלולות להזיק לבצע שינויים במערכת שלכם.",
+            "windowsTitle": "מדוע עלי להפעיל את Windows?",
+            "windowsText": "הפעלת עותק שאינו מקורי של Windows עלולה להעמיד אתכם בסיכון גדול יותר לאיומים של וירוסים ואיומי אבטחה אחרים.",
+            "encryptionTitle": "מהי הצפנת כונן קשיח?",
+            "encryptionText": "תכונה זו עוזרת להגן על הנתונים שלכם על ידי הצפנה של כל הכונן הקשיח מפני גישה לא מורשית, אפילו אם הכונן מוסר מהמחשב הנוכחי ומוכנס למכשירים אחרים.",
+            "passwordTitle": "כיצד להגן טוב יותר על סיסמאות?",
+            "passwordText": "אחסנו ונהלו בצורה מאובטחת את כל הסיסמאות המוצפנות שלכם בעזרת יישום הגנה דיגיטלי ומקצועי, במקום פשוט לאחסן את הסיסמאות בדפדפנים שלכם, שאליהם צד שלישי יכול לגשת בקלות ללא ידיעתכם.",
+            "enhanceTitle": "מה עלי לעשות כדי לשפר את ההגנה על האבטחה?",
+            "enhanceText": "אנו ממליצים מאוד שהמכשירים שלכם יהיו מוגנים על ידי תוכנת אנטי-וירוס וחומת אש, הגדירו את הודעת ה- UAC כהגנה מינימלית. וכדאי ליצור סיסמאות חזקות ולנהל אותן בצורה מאובטחת, ולהצפין את הנתונים שלכם תוך כדי שימוש ברשת הציבורית כהגנה מתקדמת."
         },
         "antivirus": {
             "common": {

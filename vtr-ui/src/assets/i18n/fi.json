@@ -1859,16 +1859,16 @@
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
             "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
             "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Mikä on käyttäjätilien valvontailmoitus?",
+            "uacText": "Käyttäjätilien valvonta on erittäin tärkeä Windowsin tietoturvaominaisuus, joka auttaa estämään mahdollisesti vahingollisten ohjelmien muutosten tekemisen järjestelmääsi.",
+            "windowsTitle": "Miksi minun täytyy aktivoida Windows?",
+            "windowsText": "Ei-aidon Windows-kopion käyttäminen saattaa lisätä virusten ja muiden tietoturvauhkien riskiä.",
+            "encryptionTitle": "Mitä on kiintolevyaseman salaus?",
+            "encryptionText": "Se auttaa suojaamaan tietosi tarjoamalla salauksen koko kovalevylle luvattomalta käytöltä, vaikka asema poistetaan nykyisestä tietokoneesta ja asennetaan muihin laitteisiin.",
+            "passwordTitle": "Miten suojata salasana paremmin?",
+            "passwordText": "Tallenna ja hallitse kaikkia salasanojasi ammattimaisen digitaalisen suojaussovelluksen avulla sen sijaan, että vain tallennat ne selaimissa, mistä kolmannet osapuolet pääsevät niihin helposti käsiksi tietämättäsi.",
+            "enhanceTitle": "Mitä minun pitäisi tehdä parantaakseni tietoturvasuojausta?",
+            "enhanceText": "Suosittelemme, että vähintään suojaat laitteesi virustentorjuntaohjelmistolla ja palomuurilla ja määrität käyttäjätilien valvontailmoitukset. Ja lisäsuojauksena luot vahvoja salasanoja ja hallitset niitä turvallisesti, ja salaat tietosi, kun käytät julkista verkkoa."
         },
         "antivirus": {
             "common": {

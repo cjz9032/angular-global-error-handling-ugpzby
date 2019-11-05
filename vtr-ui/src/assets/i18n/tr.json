@@ -1859,16 +1859,16 @@
             "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
             "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
             "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC bildirimi nedir?",
+            "uacText": "Kullanıcı Hesabı Denetimi, zararlı olabilecek programların sisteminizde değişiklik yapmasını önlemeye yardımcı olan çok önemli bir Windows güvenlik özelliğidir.",
+            "windowsTitle": "Neden etkin bir Windows'a ihtiyacım var?",
+            "windowsText": "Orijinal olmayan bir Windows kopyası çalıştırmak sizi virüslere ve diğer güvenlik tehditlerine karşı daha büyük risk altında bırakabilir.",
+            "encryptionTitle": "Sabit Sürücü Şifrelemesi nedir?",
+            "encryptionText": "Sabit sürücünün tamamı için şifreleme sağlayarak sürücü geçerli bilgisayardan çıkarılıp başka cihazlara yerleştirilse bile verilerinizin yetkisiz erişime karşı korunmasına yardımcı olur.",
+            "passwordTitle": "Parolalar nasıl daha iyi korunur?",
+            "passwordText": "Tüm parolalarınızı 3. tarafların bilginiz olmadan kolayca erişebileceği tarayıcılarınızda saklamak yerine, profesyonel bir dijital koruma uygulamasıyla şifreleyerek güvenle saklayın ve yönetin.",
+            "enhanceTitle": "Güvenlik korumasını geliştirmek için ne yapmalıyım?",
+            "enhanceText": "Cihazlarınızı virüsten koruma yazılımı ve güvenlik duvarı ile korumanızı, UAC bildirimini minimum koruma düzeyine ayarlamanızı önemle tavsiye ederiz. Ayrıca, güçlü parolalar oluşturun ve bunları güvenli bir şekilde yönetin; gelişmiş koruma olarak genel ağları kullanırken verilerinizi şifreleyin."
         },
         "antivirus": {
             "common": {

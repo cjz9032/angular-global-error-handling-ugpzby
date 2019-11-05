@@ -1859,16 +1859,16 @@
             "vpn": "A hálózat támadóknak való kitettségének mérése",
             "wifi": "A személyes adatok titkosítása nyilvános WiFi használata esetén",
             "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Mi az UAC-értesítés?",
+            "uacText": "A Felhasználói fiókok felügyelete a Windows nagyon fontos biztonsági funkciója, amely megakadályozza, hogy az esetlegesen káros programok a megváltoztassák a rendszert.",
+            "windowsTitle": "Miért kell aktiválnom a Windows rendszert?",
+            "windowsText": "Ha nem eredeti Windows-példányt futtat nagyobb a veszélye a vírusoknak és más biztonsági fenyegetéseknek.",
+            "encryptionTitle": "Mi a merevlemez-titkosítás?",
+            "encryptionText": "Segíti az adatok védelmét azáltal, hogy a teljes merevlemez-meghajtót titkosítja a jogosulatlan hozzáférés ellen, még akkor is, ha a meghajtót eltávolítják az aktuális számítógépből, és más eszközbe helyezik.",
+            "passwordTitle": "Hogyan lehet jobban megvédeni a jelszavakat?",
+            "passwordText": "Biztonságosan tárolja és kezeli az összes jelszavát, amelyet egy professzionális digitális védelmi alkalmazás titkosított, ahelyett, hogy csupán böngészőiben tárolja azokat, amelyhez harmadik felek könnyen hozzáférhetnek az Ön tudta nélkül.",
+            "enhanceTitle": "Mit kell tennem a biztonsági védelem fokozása érdekében?",
+            "enhanceText": "Ajánljuk, hogy vírusvédelmi szoftverrel és tűzfallal védje eszközét, és állítson be UAC-értesítést minimális védelmi szinten. Adjon meg erős jelszavakat, kezelje azokat biztonságosan, titkosítsa adatait miközben a nyilvános hálózatot használja fejlett védelemként."
         },
         "antivirus": {
             "common": {

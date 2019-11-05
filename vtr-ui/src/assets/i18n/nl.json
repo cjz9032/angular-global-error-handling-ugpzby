@@ -1859,16 +1859,16 @@
             "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
             "wifi": "Uw persoonlijke gegevens coderen als u openbare WiFi gebruikt",
             "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Wat is een UAC-melding?",
+            "uacText": "Gebruikersaccountbeheer (UAC - User Account Control) is een zeer belangrijke beveiligingsfunctie van Windows waarmee u kunt voorkomen dat mogelijk schadelijke programma's wijzigingen aanbrengen in uw systeem.",
+            "windowsTitle": "Waarom moet ik Windows activeren?",
+            "windowsText": "Het gebruiken van een niet-legitieme versie van Windows levert meer risico's op voor virussen en andere bedreigingen.",
+            "encryptionTitle": "Wat is versleuteling van de vaste schijf?",
+            "encryptionText": "Door versleuteling van de gehele vaste schijf worden uw gegevens beter beschermd tegen toegang door onbevoegden, zelfs al wordt de harde schijf van de huidige pc verwijderd en in een ander apparaat geplaatst.",
+            "passwordTitle": "Hoe kunnen wachtwoorden beter beschermd worden?",
+            "passwordText": "Bewaar en beheer al uw wachtwoorden versleuteld door een professionele digitale beschermings-app te gebruiken in plaats van eenvoudig op te slaan in uw browsers. Deze kunnen door derden worden geopend zonder dat u het weet.",
+            "enhanceTitle": "Wat moet ik doen om de beveiliging te verbeteren?",
+            "enhanceText": "Het wordt nadrukkelijk aanbevolen om uw apparatuur te beschermen met antivirussoftware en een firewall, en stel de UAC-meldingen in met minimale bescherming. Maak sterke wachtwoorden en beheer deze op een veilige manier. Versleutel uw gegevens wanneer u een openbaar netwerk gebruikt als geavanceerde bescherming."
         },
         "antivirus": {
             "common": {

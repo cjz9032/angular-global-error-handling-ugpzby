@@ -1859,16 +1859,16 @@
             "vpn": "Övervakar nätverkets exponering för angripare",
             "wifi": "Krypterar dina personliga data när du använder offentlig WiFi",
             "windowsHello": "Skyddar din enhet med alternativ för säker inloggning.",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Vad är UAC-meddelanden?",
+            "uacText": "User Account Control är en viktig säkerhetsfunktion i Windows som bidrar till att förhindra att potentiellt skadliga program gör ändringar i systemet.",
+            "windowsTitle": "Varför behöver jag aktivera Windows?",
+            "windowsText": "Om du kör en oäkta kopia av Windows kan det utsätta dig för större risk för virus och andra säkerhetshot.",
+            "encryptionTitle": "Vad är hårddiskkryptering?",
+            "encryptionText": "Kryptering av hela hårddisken bidrar till att skydda dina data mot obehörig åtkomst även om hårddisken tas bort från den nuvarande datorn och sätts i en annan enhet.",
+            "passwordTitle": "Hur skyddar jag mina lösenord bättre?",
+            "passwordText": "Lagra och hantera alla dina lösenord krypterade med en professionell onlineskyddsapp i stället för att bara lagra dem i webbläsaren där de är lättåtkomliga för obehöriga.",
+            "enhanceTitle": "Vad ska jag göra för att öka säkerheten?",
+            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd."
         },
         "antivirus": {
             "common": {
