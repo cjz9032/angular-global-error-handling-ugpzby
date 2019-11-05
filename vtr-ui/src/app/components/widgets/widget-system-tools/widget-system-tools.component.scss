@@ -12,9 +12,11 @@
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-
+		@media #{$breakpoint_xl} {
+			padding: 4rem 2rem;
+		}
 		// remove once populated
-		min-height: 20rem;
+		// min-height: 20rem;
 		.system-tool-icons {
 			list-style: none;
 			padding-left: 0rem;
@@ -25,18 +27,18 @@
 				a {
 					text-decoration: none;
 					display: inline-block;
-					padding: 2rem 2rem;
+					padding: 1rem;
 					border-radius: 1.2rem;
 					width: 100%;
 					background: transparent;
 					transition: all .3s ease-in-out;
-					min-height: 18.5rem;
-					@media #{$medium-screen} {
-						padding: 2rem 0rem;
-					}
-					@media #{$small-screen} {
-						padding: 2rem 0rem;
-					}
+					// min-height: 18.5rem;
+					// @media #{$medium-screen} {
+					// 	padding: 2rem 0rem;
+					// }
+					// @media #{$small-screen} {
+					// 	padding: 2rem 0rem;
+					// }
 					&:hover {
 						background: $gaming_shade;
 						.system-icon::before {
@@ -48,7 +50,7 @@
 					text-align: center;
 					color: $light;
 					margin: auto;
-					padding: 0 1rem;
+					padding: 0;
 					.system-icon {
 						cursor: pointer;
 						display: flex;
@@ -64,6 +66,10 @@
 						box-sizing: border-box;
 						background-clip: padding-box;
 						border: solid 0.4rem transparent;
+						@media #{$breakpoint_xl} {
+							height: 6rem;
+							width: 6rem;
+						}
 						&::after {
 							content: '';
 							position: absolute;
@@ -102,7 +108,10 @@
 						}
 					}
 					figcaption {
-						font-size: 1.6rem;
+						font-size: $fontsize_sm;
+						@media #{$breakpoint_xl} {
+							font-size: $fontsize_xs;
+						}
 						line-height: 2rem;
 						margin-top: 1.2rem;
 						text-overflow: ellipsis;
