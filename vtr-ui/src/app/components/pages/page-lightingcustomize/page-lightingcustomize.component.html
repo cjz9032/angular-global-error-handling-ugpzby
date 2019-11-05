@@ -35,7 +35,7 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+									<div  *ngIf="!deviceService.isGaming" class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<div class="tryMcAfee card">
 											<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
 												[img]="cardContentPositionF.FeatureImage"
@@ -52,8 +52,9 @@
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<div class="manage-pass card">
+										<div class="manage-pass card" (click)="openModal()" >
 											<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+												[dynamicmetricsItem]="dynamic_metricsItem"
 												[img]="cardContentPositionB.FeatureImage"
 												[caption]="cardContentPositionB.Description"
 												[title]="cardContentPositionB.Title"

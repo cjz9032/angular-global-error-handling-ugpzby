@@ -3,9 +3,20 @@ ul.list-group {
 	list-style-type: none;
 	padding-bottom: 1rem;
 }
-
+.schedule_header{
+	padding: 0 1rem;
+	h5 {
+		font-size: $caption;
+		color: $shade_blue;
+		font-weight: $weight_bold;
+		letter-spacing: 0.89px;
+		line-height: 23px;
+		text-transform: uppercase;
+		margin-bottom: 2.5rem;
+	}
+}
 .schedule {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	margin-left: 1rem;
 	span {
 		font-size: $body;
@@ -13,10 +24,11 @@ ul.list-group {
 		color: $main_darker;
 	}
 	h5 {
-		font-size: $base;
+		font-size: $caption;
 		color: $shade_blue;
-		font-weight: $weight_bold;
+		// font-weight: $weight_bold;
 		letter-spacing: 0.89px;
+		font-family: "Segoe UI", Sans-serif;
 		line-height: 23px;
 	}
 }

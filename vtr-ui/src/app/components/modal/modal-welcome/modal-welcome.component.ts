@@ -9,6 +9,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -30,20 +31,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			radioValue: null
 		}
 	};
-	interests = [
-		'games',
-		'news',
-		'entertainment',
-		'technology',
-		'sports',
-		'arts',
-		'regionalNews',
-		'politics',
-		'music',
-		'science'
-	];
+
 	// to show small list. on click of More Interest show all.
-	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
 	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
@@ -59,6 +48,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService,
+		public selfSelectService: SelfSelectService,
 		private configService: ConfigService,
 		private timerService: TimerService,
 		private userService: UserService) {
@@ -77,6 +67,22 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.timerService.start();
 		this.configService.getPrivacyPolicyLink().then((policyLink) => {
 			this.privacyPolicyLink = policyLink;
+		});
+		this.initializeSelfSelectConfig();
+	}
+
+	private initializeSelfSelectConfig() {
+		this.selfSelectService.getConfig().then((config) => {
+			if (config && config.segment) {
+				this.data.page2.radioValue = config.segment;
+			}
+			if (config && config.customtags) {
+				const checkedTags = config.customtags;
+				this.checkedArray = checkedTags.split(',');
+				this.selfSelectService.interests.forEach(item => {
+					item.checked = checkedTags && checkedTags.includes(item.label);
+				});
+			}
 		});
 	}
 
@@ -137,10 +143,14 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			};
 			this.metrics.sendAsync(usageData);
 
+			const interestMetricValue = {};
+			this.checkedArray.forEach(item => {
+				interestMetricValue[item] = true;
+			});
 			const interestData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'Interest',
-				ItemValue: this.checkedArray,
+				ItemValue: interestMetricValue,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(interestData);
@@ -158,8 +168,17 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
 			this.activeModal.close(tutorialData);
+			this.saveSelfSelectConfig();
 		}
 		this.page = ++page;
+	}
+
+	private saveSelfSelectConfig() {
+		const selfSelectConfig = {
+			customtags: this.checkedArray.join(','),
+			segment: this.data.page2.radioValue
+		};
+		this.selfSelectService.updateConfig(selfSelectConfig);
 	}
 
 	toggle($event, value) {
@@ -209,7 +228,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 	moreInterestClicked() {
-		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
 	}
 	ngOnDestroy() {

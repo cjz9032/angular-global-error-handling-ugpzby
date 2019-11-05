@@ -645,9 +645,9 @@
             "expand": "展開",
             "loader": "取得ステータス",
             "loading": "ロード中...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "から",
+            "to": "～",
+            "clickToChange": "クリックして変更"
         },
         "app-update": {
             "message": "お知らせがあります。新しいバージョンの Vantage が利用可能です。ロードしますか?"
@@ -956,7 +956,7 @@
                             "close": "閉じる",
                             "coolingModesList": {
                                 "list1": "ツールバーの Windows バッテリー・アイコンをクリック",
-                                "list2": "Windows のバッテリー・ゲージが表示されるので、スライダーをスライドさせて最適な時間と最適なパフォーマンスのどちらかを選択してください。"
+                                "list2": "Windows の電源モードが表示されるので、スライダーをスライドさせて最適な時間と最適なパフォーマンスのどちらかを選択してください。"
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "スマート・スタンバイ",
                     "description": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
-                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。時間は設定されたスケジュールに基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
+                    "tooltip": "スマート・スタンバイを有効にすると、コンピューターはスケジュールされた開始時間前にモダン・スタンバイに切り替わり、バッテリー電源の使用中に一定時間操作されない場合は休止状態に入ります。この期間は、設定したスケジュールまたは取得したコンピューターの使用時間に基づいて最適化されます。コンピューターはスケジュールされた日のみ休止状態からモダン・スタンバイに切り替わります。スケジュールされた日に連続して操作されない場合は切り替わりません。",
                     "timer": {
-                        "heading": "通常このコンピューターを使用する時刻を設定します",
+                        "heading": "通常コンピューターを使用する時刻を設定します",
                         "subHeading1": "フィールドの",
                         "subHeading2": "終了",
                         "subHeading3": "このスケジュールを使用する期間",
@@ -1127,8 +1127,11 @@
                         "weekdays": "平日",
                         "weekends": "週末"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
+                    "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Fn キーと Ctr キーの入れ替え",
+                    "description": "Ctrl キーを押そうとする際に Fn キーを押してしまう場合は、2 つのキーの機能を入れ替えることができます。",
                     "restartNote": "2 つのキーの機能を交換するには、コンピューターを再起動する必要があります。再起動してもよろしいですか?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "中程度"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "有効にすると、検出距離が自動的に調整されます。スライダーによって検出距離を手動で設定することもできます。オプションは次のとおりです。",
+                        "context2": "検出距離を手動で設定するときは、次のことに注意してください。",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "近距離: 0 ～ 0.42 メートル (17インチ)",
+                            "line2": "中距離: 0 ～ 0.60 メートル (24インチ)",
+                            "line3": "長距離: 0 ～ 1.20 メートル (47インチ)",
+                            "line4": "最大検出距離は 1.2 メートルです。1.2 メートルを超えると、センサーはユーザーの存在を検出できなくなります。",
+                            "line5": "推奨の検出距離は 0.60 メートル以内です。"
                         }
                     }
                 },
@@ -1833,16 +1836,16 @@
             "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
             "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
             "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC 通知とは何ですか?",
+            "uacText": "ユーザーアカウント制御は、Windows の非常に重要なセキュリティ機能であり、潜在的に有害なプログラムによってシステムが変更されるのを防ぎます。",
+            "windowsTitle": "Windows をアクティブにする必要があるのはなぜですか?",
+            "windowsText": "非正規の Windows のコピーを実行すると、ウイルスやその他のセキュリティの脅威に対するリスクが高まります。",
+            "encryptionTitle": "ハードディスク・ドライブの暗号化とは?",
+            "encryptionText": "ドライブが現在の PC から削除されて他のデバイスに挿入された場合でも、ハードディスク・ドライブ全体を暗号化することにより、不正アクセスからデータを保護するのに役立ちます。",
+            "passwordTitle": "パスワードをより良く保護する方法は?",
+            "passwordText": "知らないうちに第三者が簡単にアクセスできるブラウザーに単に保存するのではなく、専用のデジタル保護アプリで、暗号化されたすべてのパスワードを安全に保存および管理します。",
+            "enhanceTitle": "セキュリティ保護を強化するにはどうすればよいですか?",
+            "enhanceText": "デバイスをアンチウイルスソフトウェアとファイアウォールで保護し、最小限の保護で UAC 通知を設定することを強くお勧めします。強力なパスワードを作成して安全な方法で管理し、高度な保護として公衆ネットワークを使用しながらデータを暗号化します。"
         },
         "antivirus": {
             "common": {
@@ -2525,6 +2528,7 @@
         "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
         "deviceStatistics": "Lenovoと統計データを共有する",
         "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
+        "userProfile": "User profile",
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
     },

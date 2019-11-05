@@ -1,14 +1,17 @@
 <div>
-	<div *ngIf="showLoader" class="row spinner-row" [ngClass]="{'white-theme': theme==='white',
+	<div *ngIf="showLoader"
+		class="row spinner-row"
+		[ngClass]="{'white-theme': theme==='white',
 					'blue-theme': theme==='blue'}">
 		<vtr-spinner></vtr-spinner>
-		<span [innerHTML]="'common.ui.loader' | translate" class="spinner-text"></span>
+		<span [innerHTML]="'common.ui.loader' | translate"
+			class="spinner-text"></span>
 	</div>
 	<div *ngIf="!showLoader"
 		class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}"
 		#toggleMain
-		(keydown.enter)="toggleLabel.click();toggleMain.focus();"
+		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
 		[attr.aria-checked]="value"
 		[attr.aria-disabled]="disabled"
 		[attr.aria-readonly]="readonly"
@@ -17,14 +20,13 @@
 		[tabIndex]="disabled?-1:tabIndex">
 		<label class="pb-1 pl-1"
 			#toggleLabel
-			(click)="sendChangeEvent(toggle)"
 			(keydown.enter)="sendChangeEvent(toggle)"
-			(keyup.enter)="onChange(toggle)"
-			vtrMetrics
-			metricsEvent="featureClick"
-			[metricsItem]="onOffSwitchId"
-			[metricsValue]="!value">
+			(keyup.enter)="onChange(toggle)">
 			<input type="checkbox"
+				vtrMetrics
+				metricsEvent="featureClick"
+				[metricsItem]="onOffSwitchId"
+				[metricsValue]="!value"
 				id="{{onOffSwitchId+'_checkbox'}}"
 				#toggle
 				role="switch"
@@ -42,7 +44,8 @@
 				attr.aria-label="{{onOffSwitchId}}"
 				aria-hidden="true"
 				(change)="onChange($event)"
-				(keydown.enter)="onChange($event)" />
+				(keydown.enter)="onChange($event)"
+				(click)="sendChangeEvent(toggle)"/>
 			<span class="switch {{ size }}"
 				aria-hidden="true"
 				id="{{onOffSwitchId+'_sizeStopProp'}}"

@@ -11,7 +11,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'gaming.autoClose.title' | translate" [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate" [backId]="backId" [ariaLabel]="'gaming.autoClose.autocClosenarratorback' | translate">
+				[back]="'common.ui.back' | translate" [backId]="backId"
+				[ariaLabel]="'gaming.autoClose.autocClosenarratorback' | translate">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -29,14 +30,12 @@
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-sm-12">
-															<vtr-ui-toggle [toggleId]="'Auto close '"
-																(toggle)="toggleAutoClose($event)"
-																[value]="toggleStatus">
+															<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [toggleId]="'Auto close '"
+																(toggle)="toggleAutoClose($event)" [value]="toggleStatus">
 															</vtr-ui-toggle>
 															<p class="intro-text">
 																{{'gaming.autoClose.introLine' | translate}}</p>
-															<vtr-widget-autoclose [appListData]="autoCloseAppList"
-																(actionModal)="openTargetModal()"
+															<vtr-widget-autoclose [appListData]="autoCloseAppList" (actionModal)="openTargetModal()"
 																(removeFromList)="deleteAppFromList($event)"
 																[modalStatus]="showAppsModal || showTurnOnModal">
 															</vtr-widget-autoclose>
@@ -54,21 +53,18 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+									<div *ngIf="!deviceService.isGaming" class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
-											[img]="cardContentPositionF.FeatureImage"
-											[title]="cardContentPositionF.Title"
-											[logoText]="cardContentPositionF.BrandName"
-											[action]="cardContentPositionF.Action"
-											[dataSource]="cardContentPositionF.DataSource"
-											[actionType]="cardContentPositionF.ActionType"
-											[actionLink]="cardContentPositionF.ActionLink" [type]="'article'"
-											[ratioX]="4" [ratioY]="4">
+											[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
+											[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
+											[dataSource]="cardContentPositionF.DataSource" [actionType]="cardContentPositionF.ActionType"
+											[actionLink]="cardContentPositionF.ActionLink" [type]="'article'" [ratioX]="4" [ratioY]="4">
 										</vtr-container-card>
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
 										<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+											[dynamicmetricsItem]="dynamic_metricsItem"
 											[img]="cardContentPositionB.FeatureImage"
 											[caption]="cardContentPositionB.Description"
 											[title]="cardContentPositionB.Title"

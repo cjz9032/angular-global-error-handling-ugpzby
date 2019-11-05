@@ -135,6 +135,129 @@
 							</div>
 						</div>
 
+						<div class="row py-5" *ngIf="userProfileEnabled"
+							id="user-profile-setting">
+							<div class="col-10 mx-auto ">
+								<vtr-container-collapsible
+									[tabIndex]="0"
+									name="SettingsUserProfile"
+									[cardTitle]=" 'settings.userProfile' | translate "
+									[isCollapsed]="true">
+									<div class="row">
+										<div class="col-auto">
+											<div class="left-icon-block">
+												<fa-icon class="left-icon" [icon]="['fal','laptop']"></fa-icon>
+											</div>
+										</div>
+										<div class="col">
+											<div class="row mb-3">
+													<div class="user-profile-title">
+														{{ "welcometutorial.subtitle1" | translate }}
+													</div>
+											</div>
+											<div class="row mb-2 d-flex"
+												[ngClass]="{'radio-is-selected' : usageRadioValue !== null }">
+												<div class="mb-3 mr-5">
+													<div class="device-image mx-auto"
+														id="tutorial_personalUse"
+														attr.aria-label="tutorial_personalUse"
+														(click)="saveUsageType('personal')">
+														<input type="radio"
+															name="radio"
+															id="radioPersonal"
+															value="personal"
+															[checked]="usageRadioValue && usageRadioValue === 'personal'"
+															#radioPersonal />
+														<img for="radioPersonal"
+															alt="Personal Use"
+															src="assets/images/welcome/personal-use.jpg"
+															class="" />
+														<label for="radioPersonal"  tabindex="0" (keypress)="onKeyPress($event)"
+															class="centered">{{ "welcometutorial.personal" | translate }}</label>
+													</div>
+												</div>
+												<div class="mb-3 mr-5">
+													<div class="device-image mx-auto"
+														id="tutorial_businessUse"
+														attr.aria-label="tutorial_businessUse"
+														(click)="saveUsageType('business')">
+														<input type="radio"
+															name="radio"
+															id="radioBusiness"
+															value="business"
+															[checked]="usageRadioValue && usageRadioValue === 'business'"
+															#radioBusiness />
+														<img alt="Business Use"
+															for="radioBusiness"
+															src="assets/images/welcome/business-use.jpg"
+															class="business" />
+														<label for="radioBusiness"  tabindex="0" (keypress)="onKeyPress($event)"
+															class="centered">{{ "welcometutorial.business" | translate }}</label>
+													</div>
+												</div>
+												<div class="mb-3 mr-5">
+													<div class="device-image mx-auto"
+														id="tutorial_customExp"
+														attr.aria-label="tutorial_customExp"
+														(click)="saveUsageType('custom')">
+														<input type="radio"
+															name="radio"
+															id="radioCustom"
+															value="custom"
+															[checked]="usageRadioValue && usageRadioValue === 'custom'"
+															#radioCustom />
+														<img alt="Custom Experience"
+															for="radioCustom"
+															src="assets/images/welcome/custom-use.jpg"
+															class="custom" />
+														<label for="radioCustom" tabindex="0" (keypress)="onKeyPress($event)"
+															class="centered">{{ "welcometutorial.custom" | translate }} </label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-auto">
+											<div class="left-icon-block">
+												<fa-icon class="left-icon" [icon]="['fal','heart']"></fa-icon>
+											</div>
+										</div>
+										<div class="col">
+											<div class="row mb-3">
+												<div class="user-profile-title">
+													{{ "welcometutorial.subtitle2" | translate}}
+												</div>
+											</div>
+											<div class="row d-flex interests">
+												<div class="inline-block"
+													*ngFor="let interest of selfSelectService.interests">
+													<input type="checkbox"
+														[id]="interest.label + 'checkbox'"
+														#checkbox1
+														[checked]="interest.checked"
+														(click)="toggle($event, interest.label)" />
+													<label class="bludFocusBoder" tabindex="0" (keypress)="onKeyPress($event)" #interestChkboxs
+														[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row save-button">
+										<vtr-ui-button
+											id="settings-profile-save-button"
+											[label]="'hardwareScan.save' | translate"
+											(onClick)="saveUserProfile()"
+											tabindex="0">
+										</vtr-ui-button>
+									</div>
+
+								</vtr-container-collapsible>
+							</div>
+						</div>
+
 						<div class="row py-5"
 							id="settings-other-settings">
 							<div class="col-10 mx-auto ">

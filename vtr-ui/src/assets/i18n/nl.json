@@ -645,9 +645,9 @@
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",
             "loading": "Bezig met laden...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "uit",
+            "to": "naar",
+            "clickToChange": "klik om te wijzigen"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
@@ -956,7 +956,7 @@
                             "close": "sluiten",
                             "coolingModesList": {
                                 "list1": "Klik op het batterijpictogram van Windows op de werkbalk",
-                                "list2": "De batterijmeter van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
+                                "list2": "De modus Energiebeheer van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Slim stand-by",
                     "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
-                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande begintijd over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt, of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
                     "timer": {
-                        "heading": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
+                        "heading": "De tijd waarop u gewoonlijk uw computer gebruikt",
                         "subHeading1": "met",
                         "subHeading2": "eind",
                         "subHeading3": "Gebruik deze planning voor",
@@ -1127,8 +1127,11 @@
                         "weekdays": "Doordeweekse dagen",
                         "weekends": "Weekends"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
+                    "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Fn-toets en Ctrl-toets wisselen",
+                    "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken, kunt u de functie van de twee toetsen omwisselen.",
                     "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Gemiddeld"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Als u deze functie inschakelt, wordt de detectieafstand automatisch aangepast. U kunt de detectieafstand ook handmatig instellen met de schuifregelaar. U hebt de volgende opties:",
+                        "context2": "Wanneer u de detectieafstand handmatig instelt, moet u op het volgende letten:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Nabij: 0 – 0,42 meter",
+                            "line2": "Midden: 0 – 0,60 meter",
+                            "line3": "Ver: 0 – 1,20 meter",
+                            "line4": "De maximale detectieafstand is 1,2 meter. Als de afstand groter is dan 1,2 meter, wordt uw aanwezigheid niet gedetecteerd door de sensor.",
+                            "line5": "De aanbevolen detectieafstand is maximaal 0,60 meter."
                         }
                     }
                 },
@@ -1833,16 +1836,16 @@
             "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
             "wifi": "Uw persoonlijke gegevens coderen als u openbare WiFi gebruikt",
             "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Wat is een UAC-melding?",
+            "uacText": "Gebruikersaccountbeheer (UAC - User Account Control) is een zeer belangrijke beveiligingsfunctie van Windows waarmee u kunt voorkomen dat mogelijk schadelijke programma's wijzigingen aanbrengen in uw systeem.",
+            "windowsTitle": "Waarom moet ik Windows activeren?",
+            "windowsText": "Het gebruiken van een niet-legitieme versie van Windows levert meer risico's op voor virussen en andere bedreigingen.",
+            "encryptionTitle": "Wat is versleuteling van de vaste schijf?",
+            "encryptionText": "Door versleuteling van de gehele vaste schijf worden uw gegevens beter beschermd tegen toegang door onbevoegden, zelfs al wordt de harde schijf van de huidige pc verwijderd en in een ander apparaat geplaatst.",
+            "passwordTitle": "Hoe kunnen wachtwoorden beter beschermd worden?",
+            "passwordText": "Bewaar en beheer al uw wachtwoorden versleuteld door een professionele digitale beschermings-app te gebruiken in plaats van eenvoudig op te slaan in uw browsers. Deze kunnen door derden worden geopend zonder dat u het weet.",
+            "enhanceTitle": "Wat moet ik doen om de beveiliging te verbeteren?",
+            "enhanceText": "Het wordt nadrukkelijk aanbevolen om uw apparatuur te beschermen met antivirussoftware en een firewall, en stel de UAC-meldingen in met minimale bescherming. Maak sterke wachtwoorden en beheer deze op een veilige manier. Versleutel uw gegevens wanneer u een openbaar netwerk gebruikt als geavanceerde bescherming."
         },
         "antivirus": {
             "common": {
@@ -2525,6 +2528,7 @@
         "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
         "deviceStatistics": "Statistische gegevens delen met Lenovo",
         "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
+        "userProfile": "User profile",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
     },

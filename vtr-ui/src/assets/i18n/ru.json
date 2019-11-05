@@ -645,9 +645,9 @@
             "expand": "Развернуть",
             "loader": "Получение <br> статуса",
             "loading": "загрузка...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "с",
+            "to": "на",
+            "clickToChange": "щелкните для изменения"
         },
         "app-update": {
             "message": "Привет! Доступна более новая версия Vantage. Загрузить?"
@@ -956,7 +956,7 @@
                             "close": "закрыть",
                             "coolingModesList": {
                                 "list1": "Нажмите на значок аккумулятора Windows на панели задач",
-                                "list2": "Появится индикатор аккумулятора Windows. Перемещайте ползунок, чтобы выбрать оптимальное время работы от аккумулятора или оптимальную производительность."
+                                "list2": "Появится экран Windows \"Режим питания\". Перемещайте ползунок, чтобы выбрать оптимальное время работы от аккумулятора или оптимальную производительность."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Интеллектуальный режим ожидания",
                     "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
-                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени начала работы, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется на основе заданного расписания. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
+                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени НАЧАЛА РАБОТЫ, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется с учетом установленного пользователем графика или данных о времени использования компьютера, которые мы получаем. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
                     "timer": {
-                        "heading": "Укажите время, когда вы обычно используете этот компьютер",
+                        "heading": "Время, когда вы обычно используете компьютер",
                         "subHeading1": "начнете",
                         "subHeading2": "окончание",
                         "subHeading3": "использовать это расписание в",
@@ -1127,8 +1127,11 @@
                         "weekdays": "Будние дни",
                         "weekends": "Выходные дни"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
+                    "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Переключение функций клавиш Fn и Ctrl",
+                    "description": "Если вы по привычке нажали клавишу Fn, намереваясь нажать клавишу Ctrl, вы можете поменять функции этих клавиш.",
                     "restartNote": "Для переключения функции двух клавших необходимо перезапустить компьютер. Выполнить перезапуск?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Средняя"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Если эта функция включена, расстояние обнаружения корректируется автоматически. Кроме того, можно вручную настроить расстояние обнаружения с помощью ползунка. Доступные варианты:",
+                        "context2": "При настройке расстояния обнаружения вручную обращайте внимание на следующие факторы:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Близко: 0–0,42 м (17 дюймов)",
+                            "line2": "Средне: 0–0,60 м (24 дюймов)",
+                            "line3": "Далеко: 0–1,20 м (47 дюймов)",
+                            "line4": "Максимальное расстояние обнаружения — 1,2 метра. На расстоянии более 1,2 метра датчик не сможет распознать ваше присутствие.",
+                            "line5": "Рекомендованное расстояние обнаружения — 0,6 метра."
                         }
                     }
                 },
@@ -1833,16 +1836,16 @@
             "vpn": "Мониторинг уязвимости сети к атакам",
             "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
             "windowsHello": "Защита устройства с помощью параметров безопасного входа",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Что такое уведомление функции контроля учетных записей пользователей?",
+            "uacText": "Контроль учетных записей пользователей — очень важная функция безопасности Windows, которая не дает потенциально вредоносным программам внести изменения в систему.",
+            "windowsTitle": "Зачем активировать Windows?",
+            "windowsText": "Использование неподлинной копии Windows повышает риск заражения системы вирусами и воздействия других угроз безопасности.",
+            "encryptionTitle": "Что такое шифрование жесткого диска?",
+            "encryptionText": "Эта функция помогает защитить данные путем шифрования всего жесткого диска, чтобы предотвратить несанкционированный доступ даже в случае извлечения диска из текущего компьютера и подключения к другим устройствам.",
+            "passwordTitle": "Как обеспечить надежную защиту пароля?",
+            "passwordText": "Используйте профессиональное приложение цифровой защиты для хранения и администрирования всех своих паролей в зашифрованном виде, вместо того чтобы хранить их в браузере, где к ним легко могут получить доступ третьи лица без вашего ведома.",
+            "enhanceTitle": "Как повысить безопасность системы?",
+            "enhanceText": "Настоятельно рекомендуем защитить устройства антивирусной программой и брандмауэром, а также настроить уведомление функции контроля учетных записей пользователей на минимальный уровень защиты. Кроме того, используйте надежные пароли и управляйте ими безопасным способом, а для дополнительной защиты шифруйте данные при использовании общедоступных сетей."
         },
         "antivirus": {
             "common": {
@@ -2525,6 +2528,7 @@
         "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
         "deviceStatistics": "Поделиться статистическими данными с Lenovo",
         "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
+        "userProfile": "User profile",
         "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение."
     },

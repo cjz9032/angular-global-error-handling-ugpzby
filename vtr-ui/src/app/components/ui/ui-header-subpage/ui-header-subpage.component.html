@@ -5,7 +5,8 @@
 			<h2 class="title"
 				id="{{textId}}-header-title">
 				<span tabindex="0"
-					attr.aria-label="{{title}}'page'">{{title}}</span>
+					attr.aria-label="{{title}}'page'"
+					role="none">{{title}}</span>
 			</h2>
 		</div>
 	</div>
@@ -19,6 +20,7 @@
 						<div class="caption"
 							id="{{textId}}-header-caption"
 							attr.aria-label="{{caption}}"
+							role="none"
 							tabindex="0">
 							{{caption}}
 						</div>
@@ -39,6 +41,7 @@
 					<div *ngFor="let item of items; let i=index"
 						class="col-auto p-0">
 						<div class="menu-item"
+							role="link"
 							tabindex="0"
 							vtrMetrics
 							metricsItem="{{item.metricsItem}}"

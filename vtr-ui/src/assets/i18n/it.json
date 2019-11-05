@@ -645,9 +645,9 @@
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
             "loading": "Caricamento in corso...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "da",
+            "to": "a",
+            "clickToChange": "fare clic per modificare"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
@@ -956,7 +956,7 @@
                             "close": "chiudi",
                             "coolingModesList": {
                                 "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti",
-                                "list2": "Viene visualizzato l'indicatore della batteria di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
+                                "list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
                             }
                         }
                     },
@@ -1086,9 +1086,9 @@
                 "smartStandby": {
                     "title": "Standby intelligente",
                     "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di inizio pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "Impostare l'ora in cui generalmente si utilizza il computer",
+                        "heading": "L'ora in cui generalmente si utilizza il computer",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -1127,8 +1127,11 @@
                         "weekdays": "Nei giorni feriali",
                         "weekends": "Fine settimana"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode"
                 }
             },
             "audio": {
@@ -1411,8 +1414,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Scambio tasto Fn e Ctrl",
+                    "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
                     "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?"
                 },
                 "controlOptions": {
@@ -1483,14 +1486,14 @@
                         "medium": "Medio"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Quando abilitata, la distanza di rilevamento verrà regolata automaticamente. È anche possibile impostare manualmente la distanza di rilevamento tramite il dispositivo di scorrimento. Le opzioni sono:",
+                        "context2": "Quando si imposta manualmente la distanza di rilevamento, fare attenzione a quanto segue:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Vicina: 0 – 0,42 metri (17 pollici)",
+                            "line2": "Media: 0 – 0,6 metri (24 pollici)",
+                            "line3": "Lontana: 0 – 1,2 metri (47 pollici)",
+                            "line4": "La distanza di rilevamento massima è di 1,2 metri. Se superiore a 1,2 metri, il sensore non rileva la presenza dell'utente.",
+                            "line5": "La distanza di rilevamento consigliata è entro 0,6 metri."
                         }
                     }
                 },
@@ -1833,16 +1836,16 @@
             "vpn": "Monitoraggio dell'esposizione della rete contro i malintenzionati",
             "wifi": "Crittografia dei dati personali quando si utilizzano le reti WiFi pubbliche",
             "windowsHello": "Protezione del dispositivo con opzioni di accesso sicure",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Cos'è la notifica di controllo dell'account utente?",
+            "uacText": "Il controllo dell'account utente è una funzione di sicurezza di Windows molto importante, che impedisce ai programmi potenzialmente dannosi di apportare modifiche al sistema.",
+            "windowsTitle": "Perché devo attivare Windows?",
+            "windowsText": "L'esecuzione di una copia di Windows non originale può comportare rischi maggiori in termini di virus e altre minacce di sicurezza.",
+            "encryptionTitle": "Cos'è la crittografia dell'unità disco fisso?",
+            "encryptionText": "Consente di proteggere i dati fornendo la crittografia dell'intera unità disco fisso, impedendo l'accesso non autorizzato, anche se l'unità viene rimossa dal PC corrente e installata in altri dispositivi.",
+            "passwordTitle": "Come posso proteggere al meglio le password?",
+            "passwordText": "Memorizza e gestisci in modo sicuro tutte le tue password codificate da un'applicazione di protezione digitale professionale invece di archiviarle solo nel browser, rendendole facilmente accessibili da terzi senza il tuo consenso.",
+            "enhanceTitle": "Come posso migliorare la sicurezza?",
+            "enhanceText": "Ti consigliamo di proteggere i dispositivi con software antivirus e firewall e di configurare la notifica di controllo dell'account utente al livello di protezione minimo. Crea inoltre password complesse e gestiscile in modo sicuro, codifica i dati utilizzando la rete pubblica come protezione avanzata."
         },
         "antivirus": {
             "common": {
@@ -2525,6 +2528,7 @@
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
         "deviceStatistics": "Condividi i dati statistici con Lenovo",
         "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
+        "userProfile": "User profile",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
     },

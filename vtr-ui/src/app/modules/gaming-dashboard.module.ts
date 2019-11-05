@@ -39,6 +39,8 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 import { LocationNoticeModule } from './location-notice/location-notice.module';
 import { DialogService } from '../services/dialog/dialog.service';
 import { FeedbackModule } from './feedback/feedback.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { ModalGamingLightingComponent } from '../components/modal/modal-gaming-lighting/modal-gaming-lighting.component';
 
 library.add(faKeyboard);
 library.add(faQuestionCircle);
@@ -55,6 +57,7 @@ library.add(faCheck);
 		PageDeviceGamingComponent,
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
+		ModalGamingLightingComponent,
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
@@ -79,13 +82,15 @@ library.add(faCheck);
 		MetricsModule,
 		WidgetOfflineModule,
 		LocationNoticeModule,
-		FeedbackModule
+		FeedbackModule,
+		PageLayoutModule
 	],
 	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	providers: [MockService, DialogService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
+		ModalGamingLightingComponent,
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,

@@ -49,18 +49,13 @@ export class WifiHomeViewModel {
 					if (this.wifiSecurity.state) {
 						this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
 					}
-					if (!value && this.wifiSecurity.state === 'enabled') {
+					if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
 						this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 					} else if (value) {
 						if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
 							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 							this.wifiSecurity.enableWifiSecurity().then((res) => {
-								if (res === true) {
-									this.isLWSEnabled = true;
-								} else {
-									this.isLWSEnabled = false;
-								}
-							}, (error) => {
+								this.isLWSEnabled = res;
 							});
 						}
 					}
