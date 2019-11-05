@@ -44,7 +44,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 				this.onNotification(notification);
 			});
 
-			if (!this.deviceService.isShellAvailable) {
+			if (this.deviceService.isShellAvailable) {
+				if (this.languageService.isLanguageLoaded) {
+					this.redirectToPage();
+				}
+			} else {
 				// for browser
 				this.languageService.useLanguage();
 				this.vantageLaunch(false);
