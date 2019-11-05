@@ -52,7 +52,8 @@
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<div class="manage-pass card" (click)="openModal()" >
+										<a href="javascript:void(0)" role="link" (click)="openModal()">
+										<div class="manage-pass card">
 											<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
 												[dynamicmetricsItem]="dynamic_metricsItem"
 												[img]="cardContentPositionB.FeatureImage"
@@ -65,9 +66,10 @@
 												[actionLink]="cardContentPositionB.ActionLink" [type]="'corner'"
 												[ratioX]="4" [ratioY]="2" [cornerShift]="'large'"
 												id="lighting_customize_crm_card_B"
-												aria-label="lighting_customize_crm_card_B">
+												aria-label="open article window">
 											</vtr-container-card>
 										</div>
+										</a>
 									</div>
 								</div>
 							</div>
