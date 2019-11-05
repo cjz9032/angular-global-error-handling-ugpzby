@@ -11,11 +11,11 @@
 <div class="vtr-battery-card"
 	*ngIf="!isLoading"
 	role="dialog"
-	tabindex="0"
 	ngbAutofocus>
 	<ng-template #batteryDetail
 		let-modal>
-		<div class="modal-header">
+		<div class="modal-header"
+			role="heading">
 			<h4 class="modal-title battery-detail-modal-title pl-5"
 				id="myDevice-settings-battery-deatails-heading"
 				role="text">
