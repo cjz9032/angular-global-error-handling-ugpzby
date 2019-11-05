@@ -103,7 +103,7 @@ export class ConfigService {
 		return this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then((result) => {
 			return ((result || '').toString() === 'true');
 		}, (error) => {
-			this.logger.error('DeviceService.initShowCHSMenu: promise rejected ', error);
+			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 		});
 	}
 
