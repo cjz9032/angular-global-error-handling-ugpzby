@@ -52,7 +52,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// // update DeviceInfo values in case user switched language
+						this.logger.debug('HomeComponent: machine info received', cachedDeviceInfo);
+						// update DeviceInfo values in case user switched language
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 				});
