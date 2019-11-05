@@ -34,4 +34,8 @@ export class VerifyEmailComponent {
 	openInputEmailBlock() {
 		this.isShowEmailBlock = true;
 	}
+
+	hideEmailBlock() {
+		this.isShowEmailBlock = false;
+	}
 }

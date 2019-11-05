@@ -102,7 +102,12 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		const userEmail = this.emailForm.value.email;
 
 		this.emailScannerService.setUserEmail(userEmail);
-		this.strategy === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
+
+		this.userEmail.emit(userEmail);
+
+		if (this.strategy === 'default') {
+			this.setScanBreachedAccounts();
+		}
 	}
 
 	private handleStartTyping() {

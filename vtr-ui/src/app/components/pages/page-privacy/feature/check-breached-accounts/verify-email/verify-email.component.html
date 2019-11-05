@@ -25,7 +25,7 @@
 	<p class="verify__email-title">Check another email</p>
 	<p class="verify__email-text">You’ve already checked 1 of 2 email addresses. Make sure you enter your second email accurately because you won’t be able to check a third one.</p>
 
-	<vtr-check-breaches-form class="verify__email-check-form"></vtr-check-breaches-form>
+	<vtr-check-breaches-form class="verify__email-check-form" (userEmail)="hideEmailBlock()"></vtr-check-breaches-form>
 </ng-template>
 
 <ng-template #scanLimitBlock>
