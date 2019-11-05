@@ -1,6 +1,6 @@
 import { DeviceService } from 'src/app/services/device/device.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
@@ -11,7 +11,6 @@ import { TranslationNotification } from 'src/app/data-models/translation/transla
 import { Subscription } from 'rxjs/internal/Subscription';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 import { filter } from 'rxjs/internal/operators/filter';
-
 
 @Component({
 	selector: 'vtr-home',
@@ -45,21 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 				this.onNotification(notification);
 			});
 
-			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineInfo().then((value: any) => {
-					this.logger.debug('HomeComponent: machine info received');
-					if (!this.languageService.isLanguageLoaded) {
-						this.logger.debug('HomeComponent: language not loaded');
-						this.languageService.useLanguageByLocale(value.locale);
-						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// update DeviceInfo values in case user switched language
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-					} else if (this.redirectToUrl) {
-						this.logger.debug('HomeComponent: language not loaded');
-						this.redirectToPage();
-					}
-				});
-			} else {
+			if (!this.deviceService.isShellAvailable) {
 				// for browser
 				this.languageService.useLanguage();
 				this.vantageLaunch(false);
@@ -78,7 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	private vantageLaunch(isGaming: boolean) {
-		this.logger.info(`HomeComponent.vantageLaunch `, isGaming);
+		this.logger.info(`HomeComponent.vantageLaunch isGamingDevice: `, isGaming);
 		try {
 			if (isGaming) {
 				this.router.navigate(['/device-gaming']);

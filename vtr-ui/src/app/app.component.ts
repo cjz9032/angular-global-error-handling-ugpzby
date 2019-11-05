@@ -246,37 +246,37 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getMachineInfo() {
+	private async getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 			// this.isMachineInfoLoaded = this.isTranslationLoaded();
-			return this.deviceService
-				.getMachineInfo()
-				.then((value: any) => {
-					this.commonService.sendNotification('MachineInfo', this.machineInfo);
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+			// return this.deviceService
+			// 	.getMachineInfo()
+			// 	.then((value: any) => {
+			try {
+				const value = await this.deviceService.getMachineInfo();
+				if (!this.languageService.isLanguageLoaded) {
+					this.languageService.useLanguageByLocale(value.locale);
+					const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+					// // update DeviceInfo values in case user switched language
+					this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+				}
 
-					this.isMachineInfoLoaded = true;
-					this.machineInfo = value;
-					this.isGaming = value.isGaming;
-
-					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
-
-					if (!this.languageService.isLanguageLoaded) {
-						this.languageService.useLanguageByLocale(value.locale);
-						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// // update DeviceInfo values in case user switched language
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-					}
-
-					this.setFirstRun(value);
-
-					// if u want to see machineinfo in localstorage
-					// just add a key "machineinfo-cache-enable" and set it true
-					// then relaunch app you will see the machineinfo in localstorage.
-					return value;
-				})
-				.catch((error) => { });
+				this.commonService.sendNotification('MachineInfo', this.machineInfo);
+				this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+				this.isMachineInfoLoaded = true;
+				this.machineInfo = value;
+				this.isGaming = value.isGaming;
+				this.setFirstRun(value);
+			} catch (error) {
+				this.logger.error(error.message);
+			}
+			// if u want to see machineinfo in localstorage
+			// just add a key "machineinfo-cache-enable" and set it true
+			// then relaunch app you will see the machineinfo in localstorage.
+			// 	return value;
+			// })
+			// .catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -442,16 +442,16 @@ export class AppComponent implements OnInit, OnDestroy {
 				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
 				regUtil.queryValue(regPath).then(val => {
 					if (!val || (val.keyList || []).length === 0) {
-						return ;
+						return;
 					}
-					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then( val => {
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val => {
 						if (val !== true) {
 							this.logger.error('failed to write shell run version to registry');
 						}
 					});
 				});
 			}
-			}, 2000);
+		}, 2000);
 	}
 
 }
