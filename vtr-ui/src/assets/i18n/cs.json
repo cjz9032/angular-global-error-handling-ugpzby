@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nebylo zjištěno žádné připojení k Internetu.",
             "subtitle": "Další informace o řešení problémů s připojením naleznete v našem článku",
-            "buttonText": "Získejte podporu"
+            "buttonText": "Získejte podporu",
+            "welcomeToVantage": "Vítejte v další generaci Vantage",
+            "systemHealth": "Stav systému"
         },
         "feedback": {
             "title": "Zaslat zpětnou vazbu",

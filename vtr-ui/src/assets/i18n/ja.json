@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "インターネット接続は検出されませんでした",
             "subtitle": "接続の問題を解決する方法の詳細については、",
-            "buttonText": "サポートを受ける"
+            "buttonText": "サポートを受ける",
+            "welcomeToVantage": "次世代の Vantage へようこそ",
+            "systemHealth": "システム正常性"
         },
         "feedback": {
             "title": "フィードバックを送る",

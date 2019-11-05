@@ -45,7 +45,7 @@ body a>*,
 .no-pointer>*,
 .no-pointer>div,
 a>div {
-	cursor: pointer !important;
+	cursor: pointer;
 }
 a.disabled {
 	pointer-events: none;

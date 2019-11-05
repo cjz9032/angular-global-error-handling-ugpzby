@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "인터넷이 연결되어 있지 않음",
             "subtitle": "연결 문제 해결 방법에 대해 자세히 알아보기",
-            "buttonText": "지원 가져오기"
+            "buttonText": "지원 가져오기",
+            "welcomeToVantage": "차세대 Vantage를 소개합니다.",
+            "systemHealth": "시스템 상태"
         },
         "feedback": {
             "title": "피드백 제출",

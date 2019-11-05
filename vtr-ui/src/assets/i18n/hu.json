@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nem található Internet kapcsolat.",
             "subtitle": "További információ arról, hogyan oldhatja meg a csatlakozási problémákat eszközünkben",
-            "buttonText": "Támogatáskérés"
+            "buttonText": "Támogatáskérés",
+            "welcomeToVantage": "Üdvözöljük a Vantage következő generációjában",
+            "systemHealth": "Rendszer állapota"
         },
         "feedback": {
             "title": "Visszajelzés küldése",

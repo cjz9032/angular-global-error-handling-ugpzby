@@ -29,6 +29,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
 	@Input() dataSource = '';
+	@Input() isOfflineArm = false;
 
 	isLoading = true;
 
@@ -66,6 +67,10 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	linkClicked(actionType: string, actionLink: string) {
+		if (this.isOfflineArm) {
+			return false;
+		}
+
 		if (!actionType || actionType !== 'Internal') {
 			return;
 		}
