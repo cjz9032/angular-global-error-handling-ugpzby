@@ -28,7 +28,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
- 
+
 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
@@ -46,7 +46,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public fnCtrlSwapCapability = false;
 	public fnCtrlSwapStatus = false;
 	public isRestartRequired = false;
-	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
@@ -195,7 +195,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
-		const type = machineType.toLowerCase();	
+		const type = machineType.toLowerCase();
 		this.imagesArray.forEach(element => {
 			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
 				if (this.keyboardVersion === '1') {
