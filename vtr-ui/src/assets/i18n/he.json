@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "לא נמצא חיבור לאינטרנט",
             "subtitle": "מידע נוסף על פתרון בעיות חיבור",
-            "buttonText": "קבלת תמיכה"
+            "buttonText": "קבלת תמיכה",
+            "welcomeToVantage": "ברוכים הבאים לדור הבא של Vantage",
+            "systemHealth": "תקינות המערכת"
         },
         "feedback": {
             "title": "תנו משוב",

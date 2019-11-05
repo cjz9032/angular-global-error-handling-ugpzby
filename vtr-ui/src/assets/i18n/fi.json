@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Ohjelma ei ole havainnut Internet-yhteyttä",
             "subtitle": "Lue lisätietoja siitä, miten ratkaista yhteysongelmat",
-            "buttonText": "Hae tukea"
+            "buttonText": "Hae tukea",
+            "welcomeToVantage": "Tervetuloa seuraavan sukupolven Vantage",
+            "systemHealth": "Järjestelmän kunto"
         },
         "feedback": {
             "title": "Anna palautetta",

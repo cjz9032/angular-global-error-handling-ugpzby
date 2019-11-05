@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Det ble ikke funnet noen Internett-forbindelse",
             "subtitle": "Lær mer om hvordan du løser tilkoblingsproblemer i",
-            "buttonText": "Få støtte"
+            "buttonText": "Få støtte",
+            "welcomeToVantage": "Velkommen til neste generasjons Vantage",
+            "systemHealth": "Systemhelse"
         },
         "feedback": {
             "title": "Gi tilbakemelding",

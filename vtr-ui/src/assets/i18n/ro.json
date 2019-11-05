@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nu s-a detectat nicio conexiune la internet",
             "subtitle": "Aflați cum puteți rezolva problemele de conexiune în",
-            "buttonText": "Obțineți asistență"
+            "buttonText": "Obțineți asistență",
+            "welcomeToVantage": "Bun venit la următoarea generaţie de Vantage",
+            "systemHealth": "Funcţionare sistem"
         },
         "feedback": {
             "title": "Oferiţi feedback",

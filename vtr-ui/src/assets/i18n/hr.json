@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Internetska veza nije otkrivena",
             "subtitle": "Doznajte više o rješavanju poteškoća s vezom u našem",
-            "buttonText": "Ostvarite podršku"
+            "buttonText": "Ostvarite podršku",
+            "welcomeToVantage": "Dobrodošli u novu generaciju Vantage",
+            "systemHealth": "Stanje sustava"
         },
         "feedback": {
             "title": "Pošaljite povratne informacije",

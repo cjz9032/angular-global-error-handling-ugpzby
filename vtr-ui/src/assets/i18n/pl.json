@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nie wykryto połączenia z Internetem.",
             "subtitle": "Uzyskaj więcej informacji, jak rozwiązać problemy z połączeniem w naszym",
-            "buttonText": "Uzyskaj pomoc techniczną"
+            "buttonText": "Uzyskaj pomoc techniczną",
+            "welcomeToVantage": "Witamy w aplikacji Vantage nowej generacji",
+            "systemHealth": "Stan systemu"
         },
         "feedback": {
             "title": "Przekaż opinię",

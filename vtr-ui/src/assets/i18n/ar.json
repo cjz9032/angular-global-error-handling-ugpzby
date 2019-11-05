@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "لم يتم الكشف عن اتصال بالإنترنت",
             "subtitle": "اعرف المزيد حول كيفية حل مشاكل الاتصال في",
-            "buttonText": "الحصول على الدعم"
+            "buttonText": "الحصول على الدعم",
+            "welcomeToVantage": "مرحبًا بك في الجيل القادم من Vantage",
+            "systemHealth": "سلامة النظام"
         },
         "feedback": {
             "title": "تقديم تعليقات",

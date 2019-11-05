@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Geen internetverbinding aangetroffen",
             "subtitle": "Meer informatie over het oplossen van verbindingsproblemen in onze",
-            "buttonText": "Ondersteuning"
+            "buttonText": "Ondersteuning",
+            "welcomeToVantage": "Welkom bij de volgende generatie Vantage",
+            "systemHealth": "Systeemstatus"
         },
         "feedback": {
             "title": "Feedback geven",

@@ -80,14 +80,15 @@ export class WidgetCarouselComponent implements OnInit, OnChanges {
 	parseToCarouselModel() {
 		this.carouselModel = [];
 
-		for (let i = 0; i < this.data.length; i++) {
+		for (const carousel of this.data) {
 			this.carouselModel.push({
-				id: this.data[i].id,
-				source: this.data[i].source,
-				cardTitle: this.data[i].title,
-				image: this.data[i].url,
-				link: this.data[i].ActionLink ? this.data[i].ActionLink : '',
-				linkType: this.data[i].ActionType || ''
+				id: carousel.id,
+				source: carousel.source,
+				cardTitle: carousel.title,
+				image: carousel.url,
+				link: carousel.ActionLink ? carousel.ActionLink : '',
+				linkType: carousel.ActionType || '',
+				dataSource: carousel.DataSource || ''
 			});
 		}
 	}
@@ -149,6 +150,7 @@ interface CarouselModel {
 	link: string;
 	id: string;
 	linkType: string;
+	dataSource: string;
 }
 
 

@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Internet bağlantısı saptanmadı",
             "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
-            "buttonText": "Destek Alın"
+            "buttonText": "Destek Alın",
+            "welcomeToVantage": "Yeni nesil Vantage'a hoş geldiniz",
+            "systemHealth": "Sistem Sağlığı"
         },
         "feedback": {
             "title": "Geri Bildirim Gönder",
