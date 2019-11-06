@@ -170,13 +170,15 @@ $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
 
 //RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
-$fontsize_xxl: 4rem;
-$fontsize_xl: 2.8rem;
+$fontsize_xl4: 4.6rem;
+$fontsize_xl3: 4rem;
+$fontsize_xl2: 3.4rem;
+$fontsize_xl: 2.4rem;
 $fontsize_lg: 2rem;
 $fontsize_md: 1.8rem;
 $fontsize_sm: 1.6rem;
 $fontsize_xs: 1.4rem;
-$fontsize_xxs: 1.2rem;
+$fontsize_xs2: 1.2rem;
 
 
 // RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
