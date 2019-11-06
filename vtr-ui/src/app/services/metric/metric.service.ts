@@ -12,9 +12,10 @@ declare var Windows;
 export class MetricService {
 	private metricsClient: any;
 	private blurStart = Date.now();
-	private durationCalculator;
+	private focusDurationCounter;
+	private blurDurationCounter;
+	private suspendDurationCounter;
 
-	private totalDuration = 0; 	// itermittant app duratin will be added to it
 	constructor(private shellService: VantageShellService, private timerService: TimerServiceEx) {
 		this.metricsClient = this.shellService.getMetrics();
 		document.addEventListener('vantageSessionLose', () => {
@@ -23,6 +24,14 @@ export class MetricService {
 
 		document.addEventListener('vantageSessionResume', () => {
 			this.onResumeSession();
+		});
+
+		document.addEventListener('visibilitychange', () => {
+			if (document.hidden) {
+				this.onInvisable();
+			} else {
+				this.onVisable();
+			}
 		});
 	}
 
@@ -91,36 +100,35 @@ export class MetricService {
 	}
 
 	public sendAppLaunchMetric() {
-		this.durationCalculator = this.timerService.getActiveCounter();
+		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
+		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
+
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0, this.totalDuration));
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0, 0));
 	}
 
 	public sendAppResumeMetric() {
-		this.durationCalculator = this.timerService.getActiveCounter();
+		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
+		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
+
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0, this.totalDuration));
+		const suspendDuration = this.suspendDurationCounter ? this.suspendDurationCounter.getDuration() : 0;
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, suspendDuration, 0));
 	}
 
 	public sendAppSuspendMetric() {
-		if (!this.durationCalculator) {
-			return;
-		}
-
-		const duration = this.durationCalculator.getDuration();
-		this.totalDuration += duration;
+		this.suspendDurationCounter = this.timerService.getSuspendDurationCounter();
+		const focusDuration = this.focusDurationCounter ? this.focusDurationCounter.getDuration() : 0;
+		const blurDuration = this.blurDurationCounter ? this.blurDurationCounter.getDuration() : 0;
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration, this.totalDuration));
+		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, focusDuration, blurDuration));
 	}
 
 	private onLoseSession() {
-		this.sendAppSuspendMetric();
 		this.blurStart = Date.now();
 	}
 
 	private onResumeSession() {
-		this.sendAppResumeMetric();
-
 		if (this.blurStart) {
 			return;
 		}
@@ -132,4 +140,11 @@ export class MetricService {
 		this.blurStart = null;
 	}
 
+	private onInvisable() {
+		this.sendAppSuspendMetric();
+	}
+
+	private onVisable() {
+		this.sendAppResumeMetric();
+	}
 }
