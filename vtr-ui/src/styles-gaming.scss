@@ -164,165 +164,382 @@
 			}
 		}
 	}
-	.vtr-page,
-	.vtr-page-support {
-		.vtr-page-content {
-			.vtr-page-left-column {
-				// background-color: $gaming_darkest !important;
-
-				// @media #{$between-small-medium-screen} {
-				// 	padding: 0rem 5rem 4rem 5rem;
-				// }
-
-				// @media #{$medium-screen} {
-				// 	padding: 0 8.5rem 4rem 8.5rem;
-				// }
-
-				.installation-history-container {
-					background: $dark_cell;
-				}
-
-				.vtr-available-updates {
-					background: $dark_cell;
-
-					.header {
-						.heading {
-							color: $gaming_lightest;
-						}
-					}
-
-					.text-regular {
-						color: $gaming_lightest;
-					}
-
-					.vtr-ui-list-checkbox {
-						.list-group {
-							.list-group-item {
-								background-color: $gaming-Darkslate-blue;
-								.update-title,
-								.fail-reason {
+	.vtr-page{
+		.vtr-page-columns {
+			.vtr-page-column {
+				&.vtr-page-left-column{
+					.vtr-subpage {
+						&.subpage-device-settings-power, &.subpage-device-settings-audio, &.subpage-device-settings-display{
+							.vtr-ui-header-subpage{
+								.title {
 									color: $gaming_lightest;
 								}
-
-								.custom-control {
-									&.custom-checkbox {
-										.custom-control-input:disabled ~ .custom-control-label::before {
-											background-color: $gaming-Darkslate-blue;
-										}
-
-										.custom-control-input:disabled:checked ~ .custom-control-label::before {
-											border-color: $gaming-Darkslate-blue;
-										}
-									}
-
-									.button-box {
-										.btn-round-sm {
-											background: $gaming_orange_grad;
-											color: $gaming_lightest;
-										}
-									}
-								}
-								.icon-check,
-								.icon-times {
-									.icon-bg {
-										fa-icon {
-											color: $gaming-Darkslate-blue;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-
-				.installation-history-container {
-					vtr-container-collapsible {
-						.vtr-container-collapsible {
-							background: none;
-							box-shadow: none;
-							border: none;
-
-							.vtr-installation-history {
-								background-color: transparent;
-
-								.heading {
-									color: $gaming_lightest;
-								}
-
-								.installation-list {
-									background-color: transparent;
-									border: none;
-
-									.list-heading {
+								.left-border{
+									.caption {
 										color: $gaming_lightest;
-										border-color: $screen_dark_20;
-
-										.sort-order {
-											a {
-												text-decoration: none;
-											}
-										}
-
-										.item-text {
-											padding-left: 0;
-										}
 									}
-
-									li {
-										border-color: $screen_dark_20;
-
-										.item-text {
-											color: $gaming_lightest;
-											padding-left: 0;
-										}
-
-										.icon-check,
-										.icon-times {
-											.icon-bg {
-												fa-icon {
-													color: $gaming-Darkslate-blue;
-												}
-											}
-
-											&::before {
-												content: "";
-											}
+									.menu-title {
+										color: $gaming_lightest;
+									}
+									.menu-item {
+										border-bottom-style: dotted;
+										&:hover {
+											border-bottom-style: none;
 										}
 									}
 								}
 							}
-
+						}
+						.vtr-container-collapsible {
 							&.white-theme {
 								.card {
-									background-color: $dark_cell !important;
-									.card-header {
+									.card-header{
 										.header {
-											text-transform: uppercase;
-											font-weight: $weight_black;
-											position: relative;
-
-											&::after {
-												content: "";
-												position: absolute;
-												height: 0.4rem;
-												width: 110%;
-												left: 0;
-												bottom: -0.6rem;
-												background: $gaming_info_link;
-											}
+											color: $gaming_lightest;
 										}
-
 										.collapse-control {
 											.collapse-text {
 												color: $gaming_lightest;
 											}
 										}
 									}
+									.card-body {
+										vtr-ui-row-switch {
+											.vtr-ui-switch-row {
+												&.white-theme {
+													.title {
+														color: $gaming_lightest;
+													}
+													.caption {
+														color: $gaming_lightest;
+													}
+													.vtr-battery-charge-threshold-settings {
+														.threshold-for-built-in-battery {
+															color: $gaming_grey_lightest;
+														}
+														.inputSection {
+															.btn-block button.btn-outline-shadow {
+																border: none;
+																background: $gaming-Darkslate-blue;
+																.select-title {
+																	color: $gaming_lightest;
+																}
+																.select-text {
+																	color: $gaming_grey_lightest;
+																}
+															}
+														}
+														.row-seperator {
+															height: 0.1rem;
+															background-color: $screen_dark_20;
+														}
+													}
+													.auto-set-checkbox.custom-checkbox-gaming {
+														.custom-control-input {
+															position: absolute;
+															opacity: 0;
+															top: 0.4;
+															cursor: pointer;
+															height: 1.4rem;
+															width: 1.4rem;
+															&:checked ~ .checkmark {
+																background-color: $gaming_light_blue;
+																&::after {
+																	display: block;
+																}
+															}
+														}
+														.checkmark {
+															position: absolute;
+															top: 0.3rem;
+															left: 0;
+															height: 1.7rem;
+															width: 1.7rem;
+															pointer-events: none;
+															background-color: $gaming_lightest;
+															border: 0.2rem solid $screen_light_15;
+															&::after {
+																content: "";
+																position: absolute;
+																display: none;
+																left: 0.4rem;
+																top: 0.1rem;
+																width: 0.6rem;
+																height: 0.9rem;
+																border: solid $gaming_darkest;
+																border-width: 0 0.1rem 0.1rem 0;
+																-webkit-transform: rotate(45deg);
+																-ms-transform: rotate(45deg);
+																transform: rotate(45deg);
+															}
+														}
+														label {
+															color: $gaming_grey_lightest;
+															margin-left: 0.8rem;
+														}
+													}
+													.auto-detection-note {
+														background: $gaming-Darkslate-blue;
+														color: $gaming_lightest;
+														border: none;
+													}
+													.left-icon-block {
+														top: 0;
+													}
+												}
+											}
+										}
+										.vtr-battery-gauge-reset {
+											.battery-text{
+												color: $gaming_lightest;
+											}
+											.battery-gauge-info{
+												.row{
+													.label-text{
+													color:$shade_blue;
+													}
+												}
+											}
+										}
+									}
+								}
+								.seperator {
+									color: $gaming_grey_lightest !important;
+								}
+							}
+						}
+					}
+					.installation-history-container {
+						background: $dark_cell;
+					}
+					.vtr-available-updates {
+						background: $dark_cell;
+	
+						.header {
+							.heading {
+								color: $gaming_lightest;
+							}
+						}
+	
+						.text-regular {
+							color: $gaming_lightest;
+						}
+	
+						.vtr-ui-list-checkbox {
+							.list-group {
+								.list-group-item {
+									background-color: $gaming-Darkslate-blue;
+									.update-title,
+									.fail-reason {
+										color: $gaming_lightest;
+									}
+	
+									.custom-control {
+										&.custom-checkbox {
+											.custom-control-input:disabled ~ .custom-control-label::before {
+												background-color: $gaming-Darkslate-blue;
+											}
+	
+											.custom-control-input:disabled:checked ~ .custom-control-label::before {
+												border-color: $gaming-Darkslate-blue;
+											}
+										}
+	
+										.button-box {
+											.btn-round-sm {
+												background: $gaming_orange_grad;
+												color: $gaming_lightest;
+											}
+										}
+									}
+									.icon-check,
+									.icon-times {
+										.icon-bg {
+											fa-icon {
+												color: $gaming-Darkslate-blue;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+	
+					.installation-history-container {
+						vtr-container-collapsible {
+							.vtr-container-collapsible {
+								background: none;
+								box-shadow: none;
+								border: none;
+	
+								.vtr-installation-history {
+									background-color: transparent;
+	
+									.heading {
+										color: $gaming_lightest;
+									}
+	
+									.installation-list {
+										background-color: transparent;
+										border: none;
+	
+										.list-heading {
+											color: $gaming_lightest;
+											border-color: $screen_dark_20;
+	
+											.sort-order {
+												a {
+													text-decoration: none;
+												}
+											}
+	
+											.item-text {
+												padding-left: 0;
+											}
+										}
+	
+										li {
+											border-color: $screen_dark_20;
+	
+											.item-text {
+												color: $gaming_lightest;
+												padding-left: 0;
+											}
+	
+											.icon-check,
+											.icon-times {
+												.icon-bg {
+													fa-icon {
+														color: $gaming-Darkslate-blue;
+													}
+												}
+	
+												&::before {
+													content: "";
+												}
+											}
+										}
+									}
+								}
+	
+								&.white-theme {
+									.card {
+										background-color: $dark_cell !important;
+										.card-header {
+											.header {
+												text-transform: uppercase;
+												font-weight: $weight_black;
+												position: relative;
+	
+												&::after {
+													content: "";
+													position: absolute;
+													height: 0.4rem;
+													width: 110%;
+													left: 0;
+													bottom: -0.6rem;
+													background: $gaming_info_link;
+												}
+											}
+	
+											.collapse-control {
+												.collapse-text {
+													color: $gaming_lightest;
+												}
+											}
+										}
+									}
 								}
 							}
 						}
 					}
 				}
+				&.vtr-page-right-column {
+					.vtr-battery-card {
+						.container {
+							background-color: $gaming_dark !important;
+
+							.battery-gauge-label,
+							.battery-conditions-tips {
+								color: $gaming_grey_lightest;
+							}
+
+							.battery-health {
+								color: $gaming_lightest;
+							}
+						}
+					}
+					vtr-autoupdate-settings {
+						.vtr-autoupdate-settings {
+							background-color: auto;
+							background: $dark_cell;
+	
+							.title {
+								color: $gaming_lightest;
+							}
+	
+							.description {
+								color: $gaming_grey_lightest;
+								font-size: 1.2rem;
+							}
+	
+							.settings-container {
+								.list-group-item {
+									background-color: $gaming-Darkslate-blue;
+	
+									.update-title {
+										color: $gaming_lightest;
+									}
+								}
+							}
+						}
+					}
+	
+					vtr-widget-questions {
+						.vtr-widget-questions {
+							background-color: auto;
+							background: $dark_cell !important;
+	
+							.title {
+								color: $gaming_lightest !important;
+							}
+	
+							.description {
+								color: $gaming_grey_lightest;
+								font-size: 1.2rem;
+							}
+	
+							.vtr-ui-list-chevron {
+								.chevron-list {
+									background-color: $gaming-Darkslate-blue;
+									border: none;
+									overflow: hidden;
+	
+									.good {
+										color: $gaming_lightest;
+										border-bottom: 1px solid $screen_dark_15;
+									}
+	
+									li {
+										a {
+											.title {
+												font-weight: $weight_regular !important;
+												font-size: 1.6rem !important;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.vtr-page,
+	.vtr-page-support {
+		.vtr-page-content {
+			.vtr-page-left-column {		
 
 				.vtr-subpage {
 					// .vtr-ui-header-subpage {
@@ -900,85 +1117,10 @@
 				// 	background-image: none;
 				// }
 
-				vtr-autoupdate-settings {
-					.vtr-autoupdate-settings {
-						background-color: auto;
-						background: $dark_cell;
-
-						.title {
-							color: $gaming_lightest;
-						}
-
-						.description {
-							color: $gaming_grey_lightest;
-							font-size: 1.2rem;
-						}
-
-						.settings-container {
-							.list-group-item {
-								background-color: $gaming-Darkslate-blue;
-
-								.update-title {
-									color: $gaming_lightest;
-								}
-							}
-						}
-					}
-				}
-
-				vtr-widget-questions {
-					.vtr-widget-questions {
-						background-color: auto;
-						background: $dark_cell !important;
-
-						.title {
-							color: $gaming_lightest !important;
-						}
-
-						.description {
-							color: $gaming_grey_lightest;
-							font-size: 1.2rem;
-						}
-
-						.vtr-ui-list-chevron {
-							.chevron-list {
-								background-color: $gaming-Darkslate-blue;
-								border: none;
-								overflow: hidden;
-
-								.good {
-									color: $gaming_lightest;
-									border-bottom: 1px solid $screen_dark_15;
-								}
-
-								li {
-									a {
-										.title {
-											font-weight: $weight_regular !important;
-											font-size: 1.6rem !important;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+				
 
 				.vtr-page-shift-up-medium {
-					.vtr-battery-card {
-						.container {
-							background-color: $gaming_dark !important;
-
-							.battery-gauge-label,
-							.battery-conditions-tips {
-								color: $gaming_grey_lightest;
-							}
-
-							.battery-health {
-								color: $gaming_lightest;
-							}
-						}
-					}
+					
 				}
 
 				.vtr-widget-schedule-scan {
