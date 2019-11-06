@@ -1836,16 +1836,16 @@
             "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
             "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
             "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC 通知とは何ですか?",
+            "uacText": "ユーザーアカウント制御は、Windows の非常に重要なセキュリティ機能であり、潜在的に有害なプログラムによってシステムが変更されるのを防ぎます。",
+            "windowsTitle": "Windows をアクティブにする必要があるのはなぜですか?",
+            "windowsText": "非正規の Windows のコピーを実行すると、ウイルスやその他のセキュリティの脅威に対するリスクが高まります。",
+            "encryptionTitle": "ハードディスク・ドライブの暗号化とは?",
+            "encryptionText": "ドライブが現在の PC から削除されて他のデバイスに挿入された場合でも、ハードディスク・ドライブ全体を暗号化することにより、不正アクセスからデータを保護するのに役立ちます。",
+            "passwordTitle": "パスワードをより良く保護する方法は?",
+            "passwordText": "知らないうちに第三者が簡単にアクセスできるブラウザーに単に保存するのではなく、専用のデジタル保護アプリで、暗号化されたすべてのパスワードを安全に保存および管理します。",
+            "enhanceTitle": "セキュリティ保護を強化するにはどうすればよいですか?",
+            "enhanceText": "デバイスをアンチウイルスソフトウェアとファイアウォールで保護し、最小限の保護で UAC 通知を設定することを強くお勧めします。強力なパスワードを作成して安全な方法で管理し、高度な保護として公衆ネットワークを使用しながらデータを暗号化します。"
         },
         "antivirus": {
             "common": {

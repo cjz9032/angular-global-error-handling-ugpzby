@@ -1836,16 +1836,16 @@
             "vpn": "Está supervisando la exposición de la red a los atacantes",
             "wifi": "Está cifrando sus datos personales al utilizar WiFi público",
             "windowsHello": "Está protegiendo el dispositivo utilizando opciones de inicio de sesión seguro",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "¿Qué es la notificación de UAC?",
+            "uacText": "El Control de cuentas de usuario es una característica de seguridad muy importante de Windows que ayuda a evitar que programas potencialmente dañinos realicen cambios en el sistema.",
+            "windowsTitle": "¿Por qué tengo que activar Windows?",
+            "windowsText": "La ejecución de una copia no original de Windows puede ponerle en mayor riesgo de virus y otras amenazas de seguridad.",
+            "encryptionTitle": "¿Qué es el cifrado de unidad de disco duro?",
+            "encryptionText": "Ayuda a proteger los datos mediante el cifrado de todo el disco duro para impedir acceso no autorizado, incluso si la unidad se elimina del PC actual y se coloca en otros dispositivos.",
+            "passwordTitle": "¿Cómo proteger mejor la contraseña?",
+            "passwordText": "Almacene y gestione de forma segura todas las contraseñas cifradas mediante una aplicación de protección digital profesional en lugar de simplemente almacenarlas en sus navegadores, a los que pueden acceder fácilmente los terceros sin su conocimiento.",
+            "enhanceTitle": "¿Qué debo hacer para mejorar la protección de seguridad?",
+            "enhanceText": "Recomendamos encarecidamente que los dispositivos estén protegidos mediante software antivirus y firewall, configurando la notificación de UAC a la protección mínima. Y cree contraseñas seguras y administre de forma segura, cifre los datos utilizando una red pública como protección avanzada."
         },
         "antivirus": {
             "common": {

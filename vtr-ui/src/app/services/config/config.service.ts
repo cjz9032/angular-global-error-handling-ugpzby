@@ -52,7 +52,7 @@ export class ConfigService {
 		private logger: LoggerService,
 		private vantageShellService: VantageShellService) {
 		this.menuItemSubject = new BehaviorSubject<AppNotification>(
-			new AppNotification('init')
+			new AppNotification(MenuItem.MenuItemChange, 'init')
 		);
 		this.menuItemNotification = this.menuItemSubject;
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
