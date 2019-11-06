@@ -1137,7 +1137,8 @@
 					"expressCharging": {
 						"title": "Rapid Charge",
 						"description": "Rapid Charge allows your battery to a full charge much faster than normal mode.",
-						"tooltip": "Rapid Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+						"tooltip": "Rapid Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery.",
+						"toggle_aria": "Rapid charging toggle button"
 					},
 					"conservationMode": {
 						"title": "Conservation Mode",
