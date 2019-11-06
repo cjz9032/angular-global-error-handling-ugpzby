@@ -40,11 +40,11 @@ but not to any other element on the page. using ::ng-deep
 
 				@media #{$white-on-black} {
 					border: 1px solid #fff;
-					background: grey;
+					background: $high-contrast-blue;
 				}
 				@media #{$black-on-white} {
 					border: 1px solid #000;
-					background: grey;
+					background: $high-contrast-blue;
 				}
 
 				&::after {
