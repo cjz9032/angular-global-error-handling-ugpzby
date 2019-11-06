@@ -110,14 +110,19 @@ export class DeviceService {
 
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
+		this.logger.debug('DeviceService.getMachineInfo: pre API call');
 		if (this.machineInfo) {
+			this.logger.debug('DeviceService.getMachineInfo: found cached response');
 			this.commonService.sendNotification('MachineInfo', this.machineInfo);
 			return Promise.resolve(this.machineInfo);
 		}
 
 		if (this.isShellAvailable && this.sysInfo) {
+			this.logger.debug('DeviceService.getMachineInfo: no cache, invoking API');
+
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
+					this.logger.debug('DeviceService.getMachineInfo: response received from API');
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
@@ -132,6 +137,7 @@ export class DeviceService {
 						}
 					}
 					this.commonService.sendNotification('MachineInfo', this.machineInfo);
+					this.logger.debug('DeviceService.getMachineInfo: returning response from API');
 					return info;
 				});
 		}
