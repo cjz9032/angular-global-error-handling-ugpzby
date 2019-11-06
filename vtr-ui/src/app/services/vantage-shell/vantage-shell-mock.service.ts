@@ -21,6 +21,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
+	private isGamingDevice = true;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -261,7 +262,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: this.isGamingDevice, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -316,7 +317,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: this.isGamingDevice, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -1446,7 +1447,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: this.isGamingDevice, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -2057,7 +2058,7 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSelfSelect(){
+	public getSelfSelect() {
 		if (this.phoenix) {
 			return this.phoenix.selfSelect;
 		}

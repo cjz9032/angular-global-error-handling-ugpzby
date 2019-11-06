@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Udvid",
             "loader": "Henter <br> Status",
             "loading": "Indlæser...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klik for at ændre"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Grænse",
+            "conservation": "Bevaring"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -956,7 +973,7 @@
                             "close": "luk",
                             "coolingModesList": {
                                 "list1": "Klik på Windows-batteriikonet på værktøjslinjen",
-                                "list2": "Windows-batterimåleren vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
+                                "list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Annuller",
                             "yes": "Ja",
                             "description3": "Er du sikker på, at du vil stoppe nulstillingen af batterimåleren?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Smart-standby",
                     "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte starttidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Hverdage",
                         "weekends": "Weekender"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
+                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1411,8 +1437,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Ombytning af Fn- og Ctrl-tast",
+                    "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du bytte om på funktionen for de to taster.",
                     "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?"
                 },
                 "controlOptions": {
@@ -1483,14 +1509,14 @@
                         "medium": "Mellem"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Når funktionen er aktiveret, justeres registreringsafstanden automatisk. Du kan også angive registreringsafstanden manuelt med skyderen. Du kan vælge mellem:",
+                        "context2": "Når du indstiller registreringsafstanden, skal du være opmærksom på følgende:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Tæt på: 0-0,42 meter",
+                            "line2": "Mellem: 0-0,60 meter",
+                            "line3": "Langt: 0-1,20 meter",
+                            "line4": "Den maksimale registreringsafstand er 1,2 meter. Hvis der er mere end 1,2 meter, vil sensoren ikke registrere din tilstedeværelse.",
+                            "line5": "Den anbefalede registreringsafstand er inden for 0,60 meter."
                         }
                     }
                 },
@@ -1833,16 +1859,16 @@
             "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
             "wifi": "Krypterer dine personlige data, når du bruger offentligt WiFi",
             "windowsHello": "Beskytter din enhed med indstillinger til sikker login",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Hvad er Kontrol af brugerkonti (UAC-meddelelse)?",
+            "uacText": "Kontrol af brugerkonti er en meget vigtig sikkerhedsfunktion i Windows, der forhindrer, at potentielt skadelige programmer kan foretage ændringer af systemet.",
+            "windowsTitle": "Hvorfor skal jeg aktivere Windows?",
+            "windowsText": "Hvis du bruger en uægte kopi af Windows, kan du blive udsat for større risiko for virus og andre sikkerhedstrusler.",
+            "encryptionTitle": "Hvad er kryptering af harddisk?",
+            "encryptionText": "Denne funktion giver mulighed for kryptering af en hel harddisk og beskytter på den måde dine data mod uautoriseret adgang, også selvom drevet fjernes fra den aktuelle computer og sættes i andre enheder.",
+            "passwordTitle": "Hvordan beskytter jeg min adgangskode bedre?",
+            "passwordText": "Du kan gemme og administrere alle dine adgangskoder sikkert ved at kryptere dem med en professionel, digital beskyttelsesapp i stedet for at gemme dem i webbrowseren, der nemt kan tilgås af en tredjepart, uden at du ved det.",
+            "enhanceTitle": "Hvad skal jeg gøre for at forbedre sikkerheden?",
+            "enhanceText": "Vi anbefaler, at du beskytter dine enheder med antivirussoftware og en firewall og konfigurerer Kontrol af brugerkonti (UAC-meddelelse) til minimumsbeskyttelse. Opret desuden stærke adgangskoder, som du opbevarer på en sikker måde, og krypter dine data, når du bruger offentlige netværk, som udvidet beskyttelse."
         },
         "antivirus": {
             "common": {
@@ -2525,8 +2551,8 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
-		"userProfile": "User profile",
-		"Note": "Bemærk: ",
+        "userProfile": "User profile",
+        "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },
     "modernPreload": {

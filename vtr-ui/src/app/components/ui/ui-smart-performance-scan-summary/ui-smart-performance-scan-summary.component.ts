@@ -47,7 +47,24 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   displayToDate:any;
   customDate:any;
   @Output() backToScan = new EventEmitter();
-
+  
+  //scan settings
+  scheduleTab;
+	isChangeSchedule = false;
+	selectedFrequency: any;
+	selectedDay: any;
+	scanFrequency: any = ['Every day', 'Once a week', 'Every other week', 'Once a month'];
+	days: any = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	hours: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	mins: any = ['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'];
+	amPm: any = ['AM', 'PM'];
+  isDaySelectionEnable = true;
+  scanToggleValue:boolean=true;
+	frequencyValue: number = 1;
+	dayValue: number = 0;
+	scanTime: any = { 'hour': this.hours[11],'hourId': 11,'min': this.mins[0],'minId': 0,'amPm': this.amPm[0],'amPmId': 0};
+  copyScanTime: any = {'hour': this.hours[11], 'hourId': 11, 'min': this.mins[0], 'minId': 0, 'amPm': this.amPm[0], 'amPmId': 0 };
+  scanScheduleDate:any;
   ngOnInit() {
 this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
@@ -75,7 +92,11 @@ this.currentDate = new Date();
 	this.endDate="---";
 	this.status="INACTIVE";
   }
-
+  //scan settings
+  this.selectedFrequency = this.scanFrequency[1];
+		this.selectedDay = this.days[0];
+    this.isDaySelectionEnable = false;
+    this.scanScheduleDate=this.selectedDate;
   }
   expandRow(value) {
 	if (this.toggleValue === value) {
@@ -159,5 +180,83 @@ openSubscribeModal() {
 ScanNowSummary(){
 	console.log("summary");
 	this.backToScan.emit();
+}
+
+
+//scan settings
+changeScanSchedule() {
+  if (this.scanToggleValue) {
+    this.isChangeSchedule = true;
+  }
+
+}
+openScanScheduleDropDown(value) {
+  if (value === this.scheduleTab) {
+    this.scheduleTab = '';
+  }
+  else {
+    this.scheduleTab = value;
+  }
+
+}
+changeScanFrequency(value) {
+  this.frequencyValue = value;
+  this.scheduleTab = '';
+  if (value === 0) {
+    this.isDaySelectionEnable = false;
+  } else {
+    this.isDaySelectionEnable = true;
+  }
+  this.selectedFrequency = this.scanFrequency[value];
+}
+changeScanDay(value) {
+  this.dayValue = value;
+  this.scheduleTab = '';
+  this.selectedDay = this.days[value];
+}
+saveChangedScanSchedule() {
+  this.scheduleTab = '';
+  this.isChangeSchedule = false;
+}
+cancelChangedScanSchedule() {
+  this.scheduleTab = '';
+  this.isChangeSchedule = false;
+}
+setEnableScanStatus(event) {
+  console.log(event.switchValue);
+  this.scanToggleValue = event.switchValue;
+}
+saveChangeScanTime() {
+  this.scheduleTab = '';
+  this.scanTime.hour = this.copyScanTime.hour;
+  this.scanTime.min = this.copyScanTime.min;
+  this.scanTime.amPm = this.copyScanTime.amPm;
+  this.scanTime.hourId = this.copyScanTime.hourId;
+  this.scanTime.minId = this.copyScanTime.minId;
+  this.scanTime.amPmId = this.copyScanTime.amPmId;
+}
+cancelChangeScanTime() {
+  this.scheduleTab = '';
+  this.copyScanTime.hour = this.scanTime.hour;
+  this.copyScanTime.min = this.scanTime.min;
+  this.copyScanTime.amPm = this.scanTime.amPm;
+  this.copyScanTime.hourId = this.scanTime.hourId;
+  this.copyScanTime.minId = this.scanTime.minId;
+  this.copyScanTime.amPmId = this.scanTime.amPmId;
+}
+changeHoursTime(value) {
+  this.copyScanTime.hour = this.hours[value];
+  this.copyScanTime.hourId = value;
+}
+changeMinutesTime(value) {
+  this.copyScanTime.min = this.mins[value];
+  this.copyScanTime.minId = value;
+}
+changeAmPm(value) {
+  this.copyScanTime.amPm = this.amPm[value];
+  this.copyScanTime.amPmId = value;
+}
+changeScanScheduleDate(){
+  this.scheduleTab = '';
 }
 }

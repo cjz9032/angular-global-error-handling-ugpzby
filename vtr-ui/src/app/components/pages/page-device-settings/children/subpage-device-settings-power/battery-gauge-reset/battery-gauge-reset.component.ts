@@ -7,6 +7,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 @Component({
 	selector: 'vtr-battery-gauge-reset',
@@ -28,7 +29,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	resetBtnDisabled: boolean[];
 	headings: string[];
 
-	constructor(public shellService: VantageShellService, public modalService: NgbModal, public powerService: PowerService, public commonService: CommonService) { }
+	constructor(public shellService: VantageShellService, public modalService: NgbModal, public powerService: PowerService, public commonService: CommonService, public batteryService: BatteryDetailService) { }
 
 	ngOnInit() {
 		this.initBatteryGaugeResetInfo();
@@ -45,10 +46,10 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	}
 
 	onNotification(notification: AppNotification) {
-		if (notification && notification.type === 'BatteryInfoForGaugeReset') {
-			this.remainingPercentages = notification.payload.remainingPercentages;
-			this.isACAttached = notification.payload.isACAttached;
-		}
+		// if (notification && notification.type === 'BatteryInfoForGaugeReset') {
+		// 	this.remainingPercentages = notification.payload.remainingPercentages;
+		// 	this.isACAttached = notification.payload.isACAttached;
+		// }
 		if (notification && notification.type === 'GaugeResetInfo') {
 			this.batteryGaugeResetInfo = notification.payload;
 			this.getBatteryGaugeResetInfo(this.batteryGaugeResetInfo);
@@ -98,7 +99,6 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	async startBatteryGaugeReset(index) {
 		const gaugeResetInfo = this.batteryGaugeResetInfo[index];
-		// const argument = this.getResetParameters(gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 		try {
 			const response = await this.powerService.startBatteryGaugeReset(this.updateGaugeResetInfo.bind(this), gaugeResetInfo.barCode, gaugeResetInfo.batteryNum);
 			if (response) {

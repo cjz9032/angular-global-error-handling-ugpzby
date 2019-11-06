@@ -166,6 +166,7 @@
 															name="radio"
 															id="radioPersonal"
 															value="personal"
+															[checked]="usageRadioValue && usageRadioValue === 'personal'"
 															#radioPersonal />
 														<img for="radioPersonal"
 															alt="Personal Use"
@@ -184,6 +185,7 @@
 															name="radio"
 															id="radioBusiness"
 															value="business"
+															[checked]="usageRadioValue && usageRadioValue === 'business'"
 															#radioBusiness />
 														<img alt="Business Use"
 															for="radioBusiness"
@@ -202,6 +204,7 @@
 															name="radio"
 															id="radioCustom"
 															value="custom"
+															[checked]="usageRadioValue && usageRadioValue === 'custom'"
 															#radioCustom />
 														<img alt="Custom Experience"
 															for="radioCustom"

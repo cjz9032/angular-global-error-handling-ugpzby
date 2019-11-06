@@ -522,6 +522,25 @@
 				}
 			}
 		}
+
+		.offline-a {
+
+			.default-cursor {
+				cursor: default;
+			}
+
+			.content {
+				cursor: default;
+
+				.title {
+					cursor: default;
+				}
+
+				.read-more {
+					cursor: default;
+				}
+			}
+		}
 	}
 
 	.content {

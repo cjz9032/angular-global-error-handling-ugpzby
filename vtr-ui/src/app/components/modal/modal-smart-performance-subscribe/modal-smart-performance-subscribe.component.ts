@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { v4 as uuid } from 'uuid';
 import {formatDate} from '@angular/common';
 
-myDate:Date;
+
 
 @Component({
   selector: 'vtr-modal-smart-performance-subscribe',

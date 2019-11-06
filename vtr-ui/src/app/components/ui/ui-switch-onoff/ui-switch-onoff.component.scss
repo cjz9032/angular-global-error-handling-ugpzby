@@ -93,7 +93,6 @@ input.wifi-checked + .switch {
 	@media #{$white-on-black} {
 		background-color: $dark;
 	}
-
 }
 
 input.wifi-checked + .switch > small {
@@ -157,6 +156,13 @@ input.wifi-checked + .switch.switch-xs > small {
 	pointer-events: none;
 	.switch {
 		background: #e6eaeb !important;
+		@media #{$black-on-white} {
+			background: $high-contrast-black-disabled !important;
+		}
+		@media #{$white-on-black} {
+			background: $high-contrast-black-disabled !important;
+		}
+
 	}
 }
 
@@ -186,16 +192,7 @@ input.wifi-checked + .switch.switch-xs > small {
 	&.off-label {
 		left: 2rem;
 		color: $shade_darkest;
-		@media #{$black-on-white} {
-			color:$light;
-			
 		}
-		@media #{$white-on-black} {
-			color: $dark;
-			
-		}
-
-	}
 }
 
 .spinner-text {

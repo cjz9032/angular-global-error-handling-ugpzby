@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Extindere",
             "loader": "Obținerea <br> statutului",
             "loading": "se incarca...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "de la",
+            "to": "cu",
+            "clickToChange": "faceţi clic pentru a schimba"
         },
         "app-update": {
             "message": "Bună ziua! Este disponibilă o versiune mai nouă de Vantage, doriți să o încărcați?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage nu are acces la microfon.",
                 "cameraPrivacyNote": "Lenovo Vantage nu are acces la cameră."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Prag",
+            "conservation": "Economisire"
         },
         "systemStatus": {
             "title": "Starea sistemului",
@@ -956,7 +973,7 @@
                             "close": "închidere",
                             "coolingModesList": {
                                 "list1": "Dați clic pe pictograma baterie din bara de instrumente Windows",
-                                "list2": "Va apărea indicatorul de baterie Windows; mutați glisorul pentru a alege între durată optimă sau performanță optimă."
+                                "list2": "Va apărea modul de alimentare Windows. Mutaţi glisorul pentru a alege între durata optimă sau performanţa optimă."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Anulare",
                             "yes": "Da",
                             "description3": "Sigur opriţi resetarea indicatorului bateriei?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Stare de veghe inteligentă",
                     "description": "Această caracteristică programează computerul dvs. să optimizeze economia de energie de la baterie în timpul orelor de inactivitate, fără a renunța la timpii rapizi de pornire pe durata orelor de utilizare mai intensivă.",
-                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru Pornire şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată pe baza programului pe care îl setaţi dvs. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
+                    "tooltip": "Atunci când este activată Starea de veghe inteligentă, computerul dvs. trece în Starea de veghe modernă înaintea orei programate pentru PORNIRE şi intră în hibernare după ce este inactiv o anumită perioadă de timp cu alimentare de la baterie. Această perioadă de timp este optimizată în funcţie de programul pe care îl setaţi sau de timpul de utilizare al computerului pe care îl obţinem. Computerul trece din hibernare în Starea de veghe modernă doar în zilele planificate şi nu face acest lucru atunci când este inactiv pe durata mai multor zile programate consecutive.",
                     "timer": {
-                        "heading": "Setați orele la care utilizați de obicei acest computer",
+                        "heading": "Orele la care utilizaţi de obicei computerul",
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Zilele saptamanii",
                         "weekends": "Weekend-uri"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
+                    "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1411,8 +1437,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Schimbare taste Fn şi Ctrl",
+                    "description": "Dacă apăsaţi în mod obişnuit tasta Fn când de fapt intenţionaţi să apăsaţi tasta Ctrl, puteţi schimba între ele funcţiile celor două taste.",
                     "restartNote": "Comutarea funcţiei a două taste necesită repornirea computerului. Sigur reporniţi?"
                 },
                 "controlOptions": {
@@ -1483,14 +1509,14 @@
                         "medium": "Mediu"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Când această opţiune este activată, distanţa de detecţie va fi reglată automat. De asemenea, puteţi seta manual distanţa de detecţie cu ajutorul glisorului. Opţiunile sunt:",
+                        "context2": "Atunci când setaţi manual distanţa de detecţie, fiţi atent la următoarele:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Aproape: 0 – 0,42 metri (17 inchi)",
+                            "line2": "Mediu: 0 – 0,60 metri (24 inchi)",
+                            "line3": "Departe: 0 – 1,20 metri (47 inchi)",
+                            "line4": "Distanţa maximă de detecţie este de 1,2 metri. Dacă se depăşesc 1,2 metri, senzorul nu va mai detecta prezenţa dvs.",
+                            "line5": "Distanţa recomandată de detecţie este de maximum 0,60 metri."
                         }
                     }
                 },
@@ -1833,16 +1859,16 @@
             "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
             "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
             "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Ce este notificarea UAC?",
+            "uacText": "Control cont utilizator (User Account Control – UAC) este o caracteristică de securitate foarte importantă din Windows, care împiedică efectuarea de modificări în sistemul dvs. de programe potenţial dăunătoare.",
+            "windowsTitle": "De ce trebuie să activez Windows?",
+            "windowsText": "Rularea unei copii Windows care nu este originală poate prezenta un risc mai mare împotriva virusurilor şi a altor ameninţări de securitate.",
+            "encryptionTitle": "Ce este criptarea unităţii HDD?",
+            "encryptionText": "Vă ajută să vă protejaţi datele, oferind criptare pentru întreaga unitate HDD împotriva accesului neautorizat, chiar dacă unitatea este scoasă din PC-ul actual şi este introdusă în alte dispozitive.",
+            "passwordTitle": "Cum să vă protejaţi mai bine parola?",
+            "passwordText": "Stocaţi şi gestionaţi în mod securizat toate parolele criptate cu o aplicaţie profesională de protecţie digitală, în loc să le stocaţi pur şi simplu în browserele dvs., care pot fi accesate cu uşurinţă de către terţe părţi, fără cunoştinţa dvs.",
+            "enhanceTitle": "Ce ar trebui să fac pentru a îmbunătăţi protecţia de securitate?",
+            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice."
         },
         "antivirus": {
             "common": {
@@ -2525,8 +2551,8 @@
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
-		"userProfile": "User profile",
-		"Note": "Notă: ",
+        "userProfile": "User profile",
+        "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },
     "modernPreload": {

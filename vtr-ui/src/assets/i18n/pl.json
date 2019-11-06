@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Rozwiń",
             "loader": "Pobieranie <br> statusu",
             "loading": "Ładuję...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "z",
+            "to": "na",
+            "clickToChange": "kliknij, aby zmienić"
         },
         "app-update": {
             "message": "Witaj! Dostępna jest nowsza wersja Vantage, czy chcesz ją pobrać?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Aplikacja Lenovo Vantage nie ma dostępu do mikrofonu.",
                 "cameraPrivacyNote": "Aplikacja Lenovo Vantage nie ma dostępu do kamery."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Próg",
+            "conservation": "Oszczędzanie energii"
         },
         "systemStatus": {
             "title": "Stan systemu",
@@ -956,7 +973,7 @@
                             "close": "zamknij",
                             "coolingModesList": {
                                 "list1": "Kliknij ikonę akumulatora systemu Windows na pasku narzędzi",
-                                "list2": "Pojawi się wskaźnik stanu akumulatora systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
+                                "list2": "Pojawi się wskaźnik trybu zasilania systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Anuluj",
                             "yes": "Tak",
                             "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Inteligentne wstrzymanie",
                     "description": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
-                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną początkową komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z akumulatora przechodzi w tryb hibernacji. Okres bezczynności jest optymalizowany na podstawie ustawionego harmonogramu. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowanych dniach, a nie przełącza się w ogóle, jeśli nie jest używany przez kilka kolejnych zaplanowanych dni.",
+                    "tooltip": "Gdy włączona jest funkcja inteligentnego wstrzymania, przed zaplanowaną godziną POCZĄTKOWĄ komputer przełącza się w tryb wstrzymania przy zachowaniu połączenia, a po pewnym okresie bezczynności przy zasilaniu z baterii przechodzi w tryb hibernacji. Ten okres jest optymalizowany na podstawie ustalonego przez ciebie harmonogramu lub otrzymanego przez nas twojego czasu użytkowania komputera. Komputer przełącza się z hibernacji w tryb wstrzymania przy zachowaniu połączenia tylko w zaplanowane dni; nie przełącza się w ogóle, jeśli według harmonogramu nie jest używany przez kilka kolejnych dni.",
                     "timer": {
-                        "heading": "Ustaw typowe godziny korzystania z komputera",
+                        "heading": "Typowe godziny korzystania przez ciebie z komputera",
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Dni powszednie",
                         "weekends": "Weekendy"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
+                    "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1411,8 +1437,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Klawisz przełączania Fn i Ctrl",
+                    "description": "Jeśli zwykle naciskasz klawisz Fn, gdy chcesz nacisnąć klawisz Ctrl, funkcje tych dwóch klawiszy można zamienić.",
                     "restartNote": "Zamiana funkcji dwóch klawiszy wymaga ponownego uruchomienia komputera. Czy na pewno chcesz ponownie go uruchomić?"
                 },
                 "controlOptions": {
@@ -1483,14 +1509,14 @@
                         "medium": "Średni"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Po włączeniu odległość wykrywania zostanie automatycznie dostosowana. Możesz także ręcznie ustawić odległość wykrywania za pomocą suwaka. Dostępne są następujące opcje:",
+                        "context2": "Podczas ręcznego ustawiania odległości wykrywania należy zwrócić uwagę na następujące kwestie:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "W pobliżu: 0 - 0,42 metra (17 cali)",
+                            "line2": "Środek: 0 - 0,60 metra (24 cali)",
+                            "line3": "Daleko: 0 - 1,20 metra (47 cali)",
+                            "line4": "Maksymalna odległość wykrywania wynosi 1,2 metra. Po przekroczeniu odległości 1,2 metra, czujnik nie wykryje twojej obecności.",
+                            "line5": "Zalecana odległość wykrywania wynosi 0,60 metra."
                         }
                     }
                 },
@@ -1833,16 +1859,16 @@
             "vpn": "Monitorujesz narażenie sieci na ataki",
             "wifi": "Szyfrujesz dane osobowe podczas korzystania z publicznej sieci WiFi",
             "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Czym jest powiadomienie kontroli konta użytkownika?",
+            "uacText": "Kontrola konta użytkownika jest bardzo ważną funkcją bezpieczeństwa systemu Windows, która pomaga zapobiegać wprowadzaniu zmian w systemie przez potencjalnie szkodliwe programy.",
+            "windowsTitle": "Dlaczego muszę aktywować system Windows?",
+            "windowsText": "Uruchomienie nieoryginalnej kopii systemu Windows może zwiększyć ryzyko wirusów i innych zagrożeń dla bezpieczeństwa.",
+            "encryptionTitle": "Czym jest szyfrowanie dysku twardego?",
+            "encryptionText": "Pomaga chronić dane, zapewniając szyfrowanie całego dysku twardego przed nieautoryzowanym dostępem, nawet jeśli dysk zostanie usunięty z danego komputera i umieszczony w innym urządzeniu.",
+            "passwordTitle": "Jak lepiej chronić hasło?",
+            "passwordText": "Bezpiecznie przechowuj wszystkie hasła i nimi zarządzaj po zaszyfrowaniu przez profesjonalną cyfrową aplikację zabezpieczającą zamiast tylko przechowywać je w przeglądarce, do której dostęp bez twojej wiedzy mogą uzyskać osoby trzecie.",
+            "enhanceTitle": "Co powinno się wykonać, aby zwiększyć ochronę?",
+            "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej."
         },
         "antivirus": {
             "common": {
@@ -2525,8 +2551,8 @@
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
         "deviceStatistics": "Udostępniaj dane statystyczne Lenovo",
         "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
-		"userProfile": "User profile",
-		"Note": "Uwaga: ",
+        "userProfile": "User profile",
+        "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },
     "modernPreload": {

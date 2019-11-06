@@ -1102,12 +1102,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
 					}
 					break;
-				case 'BatteryInfoForGaugeReset':
-					if (notification.payload) {
-						this.remainingPercentages = notification.payload.remainingPercentages;
-						this.isACAttached = notification.payload.isACAttached;
-						break;
-					}
+				// case 'BatteryInfoForGaugeReset':
+				// 	if (notification.payload) {
+				// 		this.remainingPercentages = notification.payload.remainingPercentages;
+				// 		this.isACAttached = notification.payload.isACAttached;
+				// 		break;
+				// 	}
 			}
 
 		}

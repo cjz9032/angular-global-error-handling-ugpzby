@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Proširi",
             "loader": "Preuzimanje <br>statusa",
             "loading": "Učitavam...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "od",
+            "to": "do",
+            "clickToChange": "kliknite za izmjenu"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Prag",
+            "conservation": "Konzervacija"
         },
         "systemStatus": {
             "title": "Status sustava",
@@ -956,7 +973,7 @@
                             "close": "zatvori",
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu baterije na alatnoj traci sustava Windows",
-                                "list2": "Pojavit će se prikaz napunjenosti baterije sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
+                                "list2": "Pojavit će se način napajanja sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Odustani",
                             "yes": "Da",
                             "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
                     "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja brzog pokretanja tijekom rada s većim opterećenjem.",
-                    "tooltip": "Kada je pametno stanje mirovanja omogućeno, računalo će se prebaciti u moderno stanje mirovanja prije zakazanog vremena početka i pokrenuti hibernaciju nakon određenog vremena neaktivnosti uz napajanje putem baterije. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
+                    "tooltip": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. Ovaj se vremenski interval optimizira na temelju rasporeda koji postavite ili vremena uporabe računala koje dobivamo. Računalo se prebacuje iz hibernacije u Suvremeno stanje pripravnosti samo zakazanim danima te se ne prebacuje kad je neaktivno tijekom uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Postavite vrijeme kada obično koristite računalo",
+                        "heading": "Vrijeme kada obično koristite računalo",
                         "subHeading1": "početak",
                         "subHeading2": "završetak",
                         "subHeading3": "koristi ovaj raspored za",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Radnim danom",
                         "weekends": "Vikendi"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
+                    "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1411,8 +1437,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Zamjena tipki Fn i Ctrl",
+                    "description": "Ako obično pritisnete tipku Fn kada ste namjeravali pritisnuti tipku Ctrl, možete zamijeniti funkcije te dvije tipke.",
                     "restartNote": "Zamjena funkcije dvije tipke zahtijeva ponovno pokretanje, jeste li sigurni da želite ponovno pokrenuti računalo?"
                 },
                 "controlOptions": {
@@ -1483,14 +1509,14 @@
                         "medium": "Srednje"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Kada je omogućeno, udaljenost detekcije automatski će se prilagoditi. Također možete ručno postaviti udaljenost otkrivanja pomoću klizača. Mogućnosti su:",
+                        "context2": "Kad ručno postavite udaljenost otkrivanja, obratite pažnju na sljedeće:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Blizu: 0 - 0,42 metra (17 inča)",
+                            "line2": "Srednje: 0 - 0,60 metra (24 inča)",
+                            "line3": "Udaljeno: 0 - 1,20 metra (47 inča)",
+                            "line4": "Maksimalna udaljenost otkrivanja je 1,2 metra. Ako prijeđe 1,2 metra, senzor neće otkriti vašu prisutnost.",
+                            "line5": "Preporučena udaljenost otkrivanja je do 0,60 metra."
                         }
                     }
                 },
@@ -1833,16 +1859,16 @@
             "vpn": "Praćenje izloženosti vaše mreže napadačima",
             "wifi": "Šifriranje vaših osobnih podataka kada koristite javni WiFi",
             "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Što je to obavijest kontrole korisničkog računa (UAC)?",
+            "uacText": "Kontrola korisničkog računa vrlo je važna sigurnosna značajka sustava Windows i pomaže u sprečavanju promjena koje potencijalno štetni programi mogu nanijeti vašem sustavu.",
+            "windowsTitle": "Zašto mi je potreban aktiviran Windows?",
+            "windowsText": "Pokretanje neoriginalne kopije sustava Windows može vas dovesti u veću opasnost od virusa i drugih sigurnosnih prijetnji.",
+            "encryptionTitle": "Što je to šifriranje tvrdog diska?",
+            "encryptionText": "Pomaže u zaštiti vaših podataka omogućujući šifriranje za cijeli tvrdi disk, protiv neovlaštenog pristupa, iako je disk uklonjen s trenutnog računala i umetnut u druge uređaje.",
+            "passwordTitle": "Kako bolje zaštititi lozinku?",
+            "passwordText": "Sigurno pohranite i upravljajte svim svojim lozinkama šifriranim profesionalnom aplikacijom za digitalnu zaštitu, umjesto jednostavne pohrane u vašim preglednicima kojima treće strane mogu lako pristupiti bez vašeg znanja.",
+            "enhanceTitle": "Što trebam učiniti za poboljšanje zaštite sigurnosti?",
+            "enhanceText": "Toplo preporučujemo da svoje uređaje zaštitite antivirusnim softverom i vatrozidom te podesite obavijest kontrole korisničkog računa uz minimalnu zaštitu. Također, izradite snažne lozinke i upravljajte na siguran način te šifrirajte svoje podatke dok koristite javnu mrežu kao naprednu zaštitu."
         },
         "antivirus": {
             "common": {
@@ -2525,8 +2551,8 @@
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
         "deviceStatistics": "Podijelite statističke podatke s tvrtkom Lenovo",
         "deviceStatisticsDescription": "Šalje statističke podatke tvrtki Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije značajki na računalu.",
-		"userProfile": "User profile",
-		"Note": "Napomena: ",
+        "userProfile": "User profile",
+        "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."
     },
     "modernPreload": {

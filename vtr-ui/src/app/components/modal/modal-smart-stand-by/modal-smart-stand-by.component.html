@@ -1,0 +1,29 @@
+<div class="modal-body vtr-modal-smart-stand-by">
+    <div class="row justify-content-end">
+        <div class="btn-close">
+            <button type="button" role="button" class="close" tabindex="1" aria-hidden="true"
+                aria-label="ds-rsmart-standby-close-button" (click)="closeModal()" (keydown.enter)="closeModal()">
+                <fa-icon [icon]="['fal', 'times']"></fa-icon>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <!-- {{activities | json}} -->
+        <div class="col-12">
+            <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph1Tittle' | translate }}</h4>
+            <!-- <vtr-smart-standby-graph></vtr-smart-standby-graph> -->
+            <!-- <div class="app-smart-standby-activity my-3" #activityChart></div> -->
+            <div #activityChart></div>
+        </div>
+        <div class="col-12 mt-3">
+                <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph2Tittle' | translate }}</h4>
+                 <div #scheduleChart></div>
+        </div>
+        <div>
+            <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
+                class="btn close-button" (click)="closeModal()"
+                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

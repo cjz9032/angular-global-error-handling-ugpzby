@@ -10,6 +10,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -21,7 +22,6 @@ export class PageMacrokeyComponent implements OnInit {
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
 
-	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
 
@@ -29,6 +29,7 @@ export class PageMacrokeyComponent implements OnInit {
 	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
 	cardContentPositionFCms: any = {};
+	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
 
 	upeRequestResult = {
 		positionB: true,
@@ -55,7 +56,8 @@ export class PageMacrokeyComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService) {
+		private translate: TranslateService,
+		public deviceService: DeviceService,) {
 		this.metrics = this.shellService.getMetrics();
 		this.titleService.setTitle('gaming.common.narrator.pageTitle.macroKey');
 		this.metrics = this.shellService.getMetrics();

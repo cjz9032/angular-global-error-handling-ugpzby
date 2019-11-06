@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Rozbalit",
             "loader": "Načítání <br> Status",
             "loading": "Načítání...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "z",
+            "to": "změňte na",
+            "clickToChange": "kliknutím upravte"
         },
         "app-update": {
             "message": "Ahoj! K dispozici je novější verze aplikace Vantage, chcete ji načíst?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Práh",
+            "conservation": "Ochrana baterie"
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -956,7 +973,7 @@
                             "close": "Zavřít",
                             "coolingModesList": {
                                 "list1": "V panelu nástrojů klikněte na ikonu baterie systému Windows",
-                                "list2": "Ve Windows se zobrazí ukazatel stavu baterie, posunutím jezdce vyberte optimální čas nebo optimální výkon."
+                                "list2": "Ve Windows se zobrazí režim spotřeby energie Windows posunutím jezdce vyberte optimální čas nebo optimální výkon."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Storno",
                             "yes": "Ano",
                             "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Chytrý pohotovostní režim",
                     "description": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění při intenzivnějším využívání.",
-                    "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným začátkem přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové rozmezí se optimalizuje na základě nastaveného plánu. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
+                    "tooltip": "Když chytrý pohotovostní režim povolíte, počítač se před jeho plánovaným ZAČÁTKEM přepne do moderního pohotovostního režimu, a pokud bude napájen z baterie a nebudete s ním po určitou dobu pracovat, přejde do režimu hibernace. Toto časové období se optimalizuje na základě nastaveného plánu nebo doby používání vašeho počítače. Počítač se bude z hibernace probouzet pouze v určené dny a nezapne se, když bude neaktivní po dobu několika po sobě jdoucích vybraných dnů.",
                     "timer": {
-                        "heading": "Nastavte čas, kdy počítač obvykle používáte",
+                        "heading": "Čas, kdy počítač obvykle používáte",
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Pracovní dny",
                         "weekends": "Víkendy"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1411,8 +1437,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Záměna kláves Fn a Ctrl",
+                    "description": "Pokud se vám stává, že místo klávesy Ctrl stisknete klávesu Fn, funkce obou kláves můžete zaměnit.",
                     "restartNote": "Záměna funkcí dvou kláves vyžaduje restart počítače. Opravdu chcete počítač restartovat?"
                 },
                 "controlOptions": {
@@ -1483,14 +1509,14 @@
                         "medium": "Střední"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Je-li tato možnost povolena, vzdálenost rozpoznávání se upraví automaticky. Vzdálenost rozpoznávání můžete nastavit i ručně pomocí posuvníku. Máte následující možnosti:",
+                        "context2": "Pokud vzdálenost rozpoznávání nastavíte ručně, věnujte pozornost následujícím údajům:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Blízko: 0–0,42 metru (17 palců)",
+                            "line2": "Středně daleko: 0–0,60 metru (24 palců)",
+                            "line3": "Daleko: 0–1,20 metru (47 palců)",
+                            "line4": "Maximální vzdálenost rozpoznávání je 1,2 metru. Při překročení vzdálenosti 1,2 metru nedokáže snímač rozpoznat vaši přítomnost.",
+                            "line5": "Doporučení vzdálenost rozpoznávání je do 0,60 metru."
                         }
                     }
                 },
@@ -1833,16 +1859,16 @@
             "vpn": "Sledujete svou expozici útočníkům v síti",
             "wifi": "Při používání veřejných sítít WiFi chráněni šifrováním svých osobních údajů",
             "windowsHello": "Chráníte své zařízení používáním bezpečných možností přihlášení",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Co je oznámení UAC?",
+            "uacText": "Řízení uživatelských účtů UAC (User Account Control) je velmi důležitá funkce zabezpečení systému Windows, která pomáhá zabránit potenciálně nebezpečným programům v tom, aby provedly změny systému.",
+            "windowsTitle": "Proč musím aktivovat systém Windows?",
+            "windowsText": "Spuštění jiného než originálního systému Windows vás může silně ohrozit napadením viry a dalšími bezpečnostními hrozbami.",
+            "encryptionTitle": "Co je šifrování pevného disku?",
+            "encryptionText": "Pomáhá chránit vaše data tím, že zajistí šifrování celého pevného disku proti neoprávněnému přístupu i v případě, že bude disková jednotka vyňata ze současného počítače a vložena do jiných zařízení.",
+            "passwordTitle": "Jak lépe chránit heslo?",
+            "passwordText": "Všechna svá zašifrovaná hesla si bezpečně uložte a spravujte je profesionální aplikací digitální ochrany namísto toho, abyste si je jednoduše uložili ve svých prohlížečích, ke kterým mohou jiné strany snadno získat přístup bez vašeho vědomí.",
+            "enhanceTitle": "Co mám dělat k vylepšení ochrany zabezpečení?",
+            "enhanceText": "Důrazně doporučujeme, abyste si svá zařízení chránili antivirovým softwarem a bránou firewall, nastavte oznamování UAC na minimální ochranu. A vytvořte silná hesla a ta spravujte bezpečným způsobem, při používání veřejné sítě šifrujte svá data, což představuje dodatečnou ochranu."
         },
         "antivirus": {
             "common": {
@@ -2525,8 +2551,8 @@
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
         "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
-		"userProfile": "User profile",
-		"Note": "Poznámka: ",
+        "userProfile": "User profile",
+        "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
     },
     "modernPreload": {

@@ -79,15 +79,16 @@
 								(click)="saveUsageType('personal')">
 								<input type="radio"
 									name="radio"
-									id="radio1"
+									id="personalRadio"
 									value="personal"
-									#radio1 />
-								<img for="radio1"
+									[checked]="data.page2.radioValue && data.page2.radioValue === 'personal'"
+									#personalRadio />
+								<img for="personalRadio"
 									alt="Personal Use"
-									for="radio1"
+									for="personalRadio"
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
-								<label for="radio1"  tabindex="1" (keypress)="onKeyPress($event)"
+								<label for="personalRadio"  tabindex="1" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
@@ -98,14 +99,15 @@
 								(click)="saveUsageType('business')">
 								<input type="radio"
 									name="radio"
-									id="radio2"
+									id="businessRadio"
 									value="business"
-									#radio2 />
+									[checked]="data.page2.radioValue && data.page2.radioValue === 'business'"
+									#businessRadio />
 								<img alt="Business Use"
-									for="radio2"
+									for="businessRadio"
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
-								<label for="radio2"  tabindex="2" (keypress)="onKeyPress($event)"
+								<label for="businessRadio"  tabindex="2" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
@@ -116,14 +118,15 @@
 								(click)="saveUsageType('custom')">
 								<input type="radio"
 									name="radio"
-									id="radio3"
+									id="customRadio"
 									value="custom"
-									#radio3 />
+									[checked]="data.page2.radioValue && data.page2.radioValue === 'custom'"
+									#customRadio />
 								<img alt="Custom Experience"
-									for="radio3"
+									for="customRadio"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
-								<label for="radio3" tabindex="3	" (keypress)="onKeyPress($event)"
+								<label for="customRadio" tabindex="3	" (keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.custom" | translate }} </label>
 							</div>
 						</div>

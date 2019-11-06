@@ -509,6 +509,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -647,9 +664,9 @@
             "expand": "توسيع",
             "loader": "الجلب <br> الحالة",
             "loading": "...جار التحميل",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "من",
+            "to": "الى",
+            "clickToChange": "انقر للتغيير"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
@@ -725,8 +742,8 @@
                 "microphoneNote": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون.",
                 "cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "حد",
+            "conservation": "ترشيد الاستهلاك"
         },
         "systemStatus": {
             "title": "حالة النظام",
@@ -958,7 +975,7 @@
                             "close": "إغلاق",
                             "coolingModesList": {
                                 "list1": "انقر على رمز بطارية Windows في شريط الأدوات",
-                                "list2": "سيظهر مقياس بطارية Windows، حرك شريط التمرير للاختيار بين الوقت الأمثل أو الأداء الأمثل."
+                                "list2": "سيظهر وضع الطاقة في Windows، حرك شريط التمرير للاختيار بين الوقت الأمثل أو الأداء الأمثل."
                             }
                         }
                     },
@@ -1078,7 +1095,8 @@
                             "cancel": "إلغاء",
                             "yes": "نعم",
                             "description3": "هل تريد بالتأكيد إيقاف عملية إعادة تعيين مقياس البطارية؟"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1088,9 +1106,9 @@
                 "smartStandby": {
                     "title": "وضع الاستعداد الذكي",
                     "description": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدل توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
-                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول زمنيًا ويدخل في الإسبات بعد عدم النشاط في طاقة البطارية لفترة زمنية محددة. يتم تحسين هذه المدة الزمنية استنادًا إلى الجدول الزمني الذي حددته. لا يتحول الكمبيوتر من الإسبات إلى الوضع الاحتياطي الحديث إلا في الأيام المجدولة زمنيًا ولا يتم التحول عند عدم النشاط لعدة أيام متتالية مجدولة زمنيًا.",
+                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول، ويدخل في وضع الإسبات بعد مرور فترة زمنية معينة لم يسجل خلالها أي نشاط أثناء عمله على طاقة البطارية. تم تحسين هذه الفترة الزمنية استنادًا إلى الجدول الذي تحدده أو وقت استخدام الكمبيوتر الذي نحصل عليه. ينتقل الكمبيوتر من الإسبات إلى وضع الاستعداد الحديث في الأيام المجدولة فقط، ولا تتم عملية الانتقال هذه عندما لا يسجل الكمبيوتر أي نشاط لعدة أيام مجدولة متتالية.",
                     "timer": {
-                        "heading": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
+                        "heading": "الوقت الذي تستخدم فيه الكمبيوتر عادة",
                         "subHeading1": "بدء",
                         "subHeading2": "إنهاء",
                         "subHeading3": "استخدم هذا الجدول الزمني لأجل",
@@ -1129,8 +1147,16 @@
                         "weekdays": "أيام الأسبوع",
                         "weekends": "عطلة نهاية الأسبوع"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
+                    "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1413,8 +1439,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "مبادلة المفتاح Fn والمفتاح Ctrl‬",
+                    "description": "إذا كنت تضغط عادةً على المفتاح Fn عندما تريد الضغط على المفتاح Ctrl، فيمكنك مبادلة وظائف المفتاحين.",
                     "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟"
                 },
                 "controlOptions": {
@@ -1485,14 +1511,14 @@
                         "medium": "متوسط"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "عند تمكين هذا الخيار، سيتم ضبط مسافة الكشف تلقائيًا. يمكنك أيضًا تعيين مسافة الكشف يدويًا باستخدام شريط التمرير. الخيارات هي:",
+                        "context2": "عند تعيين مسافة الكشف يدويًا، يرجى الانتباه إلى ما يلي:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "مسافة قريبة: 0 – 0.42 متر (17 بوصة)",
+                            "line2": "مسافة متوسطة: 0 – 0.60 متر (24 بوصة)",
+                            "line3": "مسافة بعيدة: 0 – 1.20 متر (47 بوصة)",
+                            "line4": "الحد الأقصى لمسافة الكشف هو 1.2 متر. إذا تجاوزت 1.2 متر، فسيفشل المستشعر في الكشف عن وجودك.",
+                            "line5": "مسافة الكشف المستحسنة هي ضمن 0.60 متر."
                         }
                     }
                 },
@@ -1835,16 +1861,16 @@
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
             "wifi": "تشفر بياناتك الشخصية عند استخدام شبكة WiFi عامة",
             "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "ما ميزة إعلام التحكم في حساب المستخدم (UAC)؟",
+            "uacText": "يعتبر التحكم في حساب المستخدم ميزة أمان شديدة الأهمية من Windows تساعد على الحؤول دون قيام البرامج التي من المحتمل أن تكون ضارة بإدخال تغييرات على نظامك.",
+            "windowsTitle": "لماذا أحتاج إلى نسخة Windows نشطة؟",
+            "windowsText": "قد يؤدي تشغيل نسخة غير أصلية من Windows إلى زيادة مستوى تعريضك لمخاطر الفيروسات والتهديدات الأمنية الأخرى.",
+            "encryptionTitle": "ما ميزة تشفير محرك الأقراص الثابتة‬؟",
+            "encryptionText": "تساعدك هذه الميزة على حماية بياناتك من خلال توفير التشفير لمحرك الأقراص الثابتة بكامله لمنع الوصول غير المخوّل على الرغم من إزالة محرك الأقراص من الكمبيوتر الحالي ووضعه في أجهزة أخرى.",
+            "passwordTitle": "كيفية حماية كلمة المرور بشكل أفضل؟",
+            "passwordText": "يمكنك تخزين جميع كلمات مرورك المشفرة وإدارتها بواسطة تطبيق احترافي للحماية الرقمية بدلاً من تخزينها في المستعرضات التي يمكن الوصول إليها بسهولة من قِبل أطراف ثالثة من دون علمك.",
+            "enhanceTitle": "ما الإجراء الذي عليّ اتخاذه لتعزيز الحماية الأمنية؟",
+            "enhanceText": "ننصحك بضرورة حماية أجهزة أجهزتك بواسطة برامج مكافحة الفيروسات وجدار الحماية وإعداد إعلام التحكم في حساب المستخدم (UAC) عند الحد الأدنى للحماية. وعليك أيضًا إنشاء كلمات مرور قوية وإدارتها بطريقة آمنة وتشفير بياناتك أثناء استخدام الشبكة العامة كإجراء حماية متقدمة."
         },
         "antivirus": {
             "common": {
@@ -2527,8 +2553,8 @@
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
         "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
         "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
-		"userProfile": "User profile",
-		"Note": "ملاحظة: ",
+        "userProfile": "User profile",
+        "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },
     "modernPreload": {

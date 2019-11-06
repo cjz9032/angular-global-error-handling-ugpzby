@@ -38,7 +38,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	antiSpam = 'security.antivirus.mcafee.antiSpam';
 	quickClean = 'security.antivirus.mcafee.quickClean';
 	vulnerability = 'security.antivirus.mcafee.vulnerability';
-	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
 	isOnline = true;
 	notificationSubscription: Subscription;

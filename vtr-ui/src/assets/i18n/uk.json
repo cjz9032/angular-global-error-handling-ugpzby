@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Розгорнути",
             "loader": "Отримання <br> статусу",
             "loading": "Завантаження...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "з",
+            "to": "до",
+            "clickToChange": "натисніть, щоб змінити"
         },
         "app-update": {
             "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage не надано доступ до мікрофона.",
                 "cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Граничне значення",
+            "conservation": "Збереження"
         },
         "systemStatus": {
             "title": "Стан системи",
@@ -956,7 +973,7 @@
                             "close": "закрити",
                             "coolingModesList": {
                                 "list1": "Натисніть піктограму акумулятора Windows на панелі інструментів",
-                                "list2": "З’явиться індикатор акумулятора Windows, перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
+                                "list2": "Відкриється режим живлення Windows: перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Скасувати",
                             "yes": "Так",
                             "description3": "Дійсно зупинити скидання даних акумуляторного вольтметра?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Розумне очікування",
                     "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
-                    "tooltip": "Коли розумне очікування ввімкнуто, комп’ютер переключається в сучасний режим очікування перед початком використання та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Цей час оптимізується згідно з розкладом, який ви вказали. Комп’ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
+                    "tooltip": "Коли розумне очікування ввімкнуто, комп'ютер переключається в сучасний режим очікування перед запланованим ПОЧАТКОМ роботи та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Ми оптимізуємо цей період залежно від встановленого вами розкладу або проаналізованого часу використання комп'ютера. Комп'ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
                     "timer": {
-                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп'ютером",
                         "subHeading1": "Початок використання",
                         "subHeading2": "Завершення використання",
                         "subHeading3": "Використовувати цей розклад",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Будні",
                         "weekends": "Вихідні дні"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
+                    "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1411,8 +1437,8 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
+                    "title": "Зміна функцій клавіш Fn і Ctrl",
+                    "description": "Якщо ви зазвичай натискаєте клавішу Fn замість клавіші Ctrl, функції цих двох клавіш можна поміняти.",
                     "restartNote": "Щоб переключити функції двох клавіш, потрібно перезавантажити комп'ютер. Справді перезавантажити?"
                 },
                 "controlOptions": {
@@ -1483,14 +1509,14 @@
                         "medium": "Середній"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Якщо ввімкнути цю функцію, відстань розпізнавання регулюватиметься автоматично. Ви також можете вручну встановити відстань розпізнавання за допомогою повзунка. Доступні варіанти:",
+                        "context2": "Коли ви вручну встановлюєте відстань розпізнавання, зверніть увагу на наведене нижче:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Близька: 0–0,42 м",
+                            "line2": "Середня: 0–0,60 м",
+                            "line3": "Далека: 0–1,20 м",
+                            "line4": "Максимальна відстань розпізнавання – 1,2 метра. Якщо відстань перевищує 1,2 метра, датчик не зможе виявити вашу присутність.",
+                            "line5": "Рекомендована відстань розпізнавання – 0,60 метра."
                         }
                     }
                 },
@@ -1833,16 +1859,16 @@
             "vpn": "Відстежуєте вразливість мережі до нападів;",
             "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
             "windowsHello": "Захищаєте пристрій безпечними способами входу.",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Що таке сповіщення UAC?",
+            "uacText": "Служба захисту користувачів – дуже важлива функція безпеки Windows, що запобігає внесенню змін у систему з боку потенційно шкідливих програм.",
+            "windowsTitle": "Чому мені потрібна активна операційна система Windows?",
+            "windowsText": "Використання контрафактної копії Windows підвищує ризик інфікування вірусом та інших загроз безпеці.",
+            "encryptionTitle": "Що таке шифрування жорсткого диска?",
+            "encryptionText": "Шифрування всього жорсткого диска від несанкціонованого доступу допомагає захистити ваші дані, навіть у разі встановлення в інші пристрої.",
+            "passwordTitle": "Як краще захистити пароль?",
+            "passwordText": "Використовуйте спеціалізовані програми для безпечного зберігання ваших паролів замість браузерів, до яких зловмисники можуть легко отримати доступ без вашого відома.",
+            "enhanceTitle": "Що мені робити для кращого захисту?",
+            "enhanceText": "Наполегливо радимо захистити пристрої антивірусними програмами та брандмауером, та як мінімум налаштувати сповіщення UAC. Для додаткового захисту даних, використовуйте надійні паролі та шифруйте свої дані під час використання загальнодоступних мереж."
         },
         "antivirus": {
             "common": {
@@ -2525,8 +2551,8 @@
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
         "deviceStatistics": "Поділіться статистичними даними з Lenovo",
         "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
-		"userProfile": "User profile",
-		"Note": "Примітка. ",
+        "userProfile": "User profile",
+        "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
     },
     "modernPreload": {

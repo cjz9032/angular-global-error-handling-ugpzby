@@ -27,6 +27,10 @@ div {
 	cursor: default;
 }
 
+.color-light {
+	color: $light;
+}
+
 *:not(a),
 *:not(a > *),
 input:not([type="radio"]):not([type="checkbox"]),
@@ -41,10 +45,10 @@ li {
 	cursor: default;
 }
 
-body a>*,
-.no-pointer>*,
-.no-pointer>div,
-a>div {
+body a > *,
+.no-pointer > *,
+.no-pointer > div,
+a > div {
 	cursor: pointer !important;
 }
 a.disabled {
@@ -157,7 +161,7 @@ button {
 }
 
 // for bootstrap hamburger menu touch input
-.dropdown-backdrop{
+.dropdown-backdrop {
 	z-index: 0;
 }
 
@@ -194,7 +198,6 @@ button {
 // 		.vtr-page-right-column {
 // 			padding: 0 $padding_side 4rem 4rem;
 // 		}
-
 
 // 		@media only screen and (min-width: 400px) and (max-width: 768px) {
 // 			.navbar {
@@ -305,6 +308,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	// @media #{$mediaquery_xl} {
 	// 	max-width: 20rem;
 	// }
+	@media #{$black-on-white} {
+		border: 0.1rem solid;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid;
+	}
 
 	.tooltip-inner {
 		padding: 1.2rem;
@@ -422,14 +431,32 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 4rem;
 		@media #{$black-on-white} {
 			border: 0.1rem solid;
-			border-radius: 1rem
+			border-radius: 1rem;
 		}
 		@media #{$white-on-black} {
 			border: 0.1rem solid;
 			border-radius: 1rem;
 		}
+	}
+}
 
-
+/*.smart-standBy-modal-styles*/
+.smart-standBy-modal {
+	.modal-dialog {
+		max-width: 85%;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+		@media #{$black-on-white} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
 	}
 }
 
@@ -459,7 +486,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		@media #{$white-on-black} {
 			border: 0.1rem solid $gaming_darkest;
 		}
-
 	}
 }
 
@@ -546,7 +572,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow: hidden;
 	}
 }
-
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -565,12 +590,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		padding: 3rem 0 0 0;
 		overflow: hidden;
 		@media #{$black-on-white} {
-			
-			border:0.1rem solid;
+			border: 0.1rem solid;
 		}
 		@media #{$white-on-black} {
-			
-			border:0.1rem solid;
+			border: 0.1rem solid;
 		}
 		h1,
 		h2,
@@ -925,7 +948,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		box-shadow: none;
 	}
 	&:focus::after {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		left: -0.4rem;
@@ -937,48 +960,47 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
-.tabset1 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+.tabset1 .nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
 	background: $shade_lightest !important;
 	color: $shade_darkest !important;
 	border-radius: 0 !important;
 	border-color: none !important;
 	padding-bottom: 2px;
-  }
-  .tabset1 .nav-tabs .nav-link
-  {
+}
+.tabset1 .nav-tabs .nav-link {
 	border: none !important;
 	border-right: 1px solid #ffffff !important;
-  }
-  .tabset1 .nav-link {
+}
+.tabset1 .nav-link {
 	//margin-bottom: 25px !important;
-	color:  $shade_darkest !important;
+	color: $shade_darkest !important;
 
-	padding:2rem !important;
+	padding: 2rem !important;
 	font-size: 1.5rem;
-  }
-  .tabset1 .nav-tabs{
+}
+.tabset1 .nav-tabs {
 	border-color: 0 !important;
 	border-bottom: 0 !important;
 	background: $shade_lighter !important;
-  }
-  .tabset1 .tab-content > .tab-pane
-  {
-	  padding: 2rem !important;
+}
+.tabset1 .tab-content > .tab-pane {
+	padding: 2rem !important;
 	background: $shade_lightest !important;
-  }
+}
 
 /*koch code*/
-.pc-performance-block{
-	.tabset-main{
+.pc-performance-block {
+	.tabset-main {
 		width: 100%;
-		& > .nav-tabs{
+		& > .nav-tabs {
 			display: flex;
 			justify-content: space-between !important;
 			padding: 1.5rem;
 			border-radius: 0.8rem;
 			background: $main_darkest;
 			margin-bottom: 8rem;
-			.nav-item{
+			.nav-item {
 				width: calc(25% - 1rem);
 				.nav-link {
 					height: 22rem;
@@ -998,7 +1020,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					color: $main_lightest;
 					position: relative;
 					z-index: 5;
-					.icon{
+					.icon {
 						height: 12rem;
 						width: 12rem;
 						line-height: 12rem;
@@ -1007,7 +1029,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 						color: $main_light;
 					}
 					&::before {
-						content: '';
+						content: "";
 						position: absolute;
 						display: block;
 						// height: 4rem;
@@ -1025,7 +1047,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 						border-right: 20px solid transparent;
 						border-top: 20px solid $main_darkest;
 					}
-					&.active{
+					&.active {
 						background: $main_lightest !important;
 						color: $main_darker;
 						.icon {
@@ -1038,13 +1060,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				}
 			}
 		}
-		& > .tab-content{
-			vtr-ui-smart-tune-pc{
+		& > .tab-content {
+			vtr-ui-smart-tune-pc {
 				.tabset1 {
 					.nav-tabs {
 						display: flex;
 						justify-content: space-between !important;
-						.nav-item{
+						.nav-item {
 							flex: 1;
 							.nav-link {
 								display: flex;
@@ -1069,15 +1091,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 // smart performance icons
 
 @font-face {
-  font-family: "smart-icons";
-  src:url("./assets/smart-icons/smart-icons.eot");
-  src:url("./assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
-    url("./assets/smart-icons/smart-icons.woff") format("woff"),
-    url("./assets/smart-icons/smart-icons.ttf") format("truetype"),
-    url("./assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-
+	font-family: "smart-icons";
+	src: url("./assets/smart-icons/smart-icons.eot");
+	src: url("./assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
+		url("./assets/smart-icons/smart-icons.woff") format("woff"),
+		url("./assets/smart-icons/smart-icons.ttf") format("truetype"),
+		url("./assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
 [data-icon]:before {
@@ -1091,10 +1112,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  }
-  
-  [class^="icon-"]:before,
-  [class*=" icon-"]:before {
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
 	font-family: "smart-icons" !important;
 	font-style: normal !important;
 	font-weight: normal !important;
@@ -1104,131 +1125,185 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-computer-scan-756353:before {
+}
+
+.icon-computer-scan-756353:before {
 	content: "\61";
-  }
-  .icon-easy-resume:before {
+}
+.icon-easy-resume:before {
 	content: "\63";
-  }
-  .icon-error-1582584:before {
+}
+.icon-error-1582584:before {
 	content: "\64";
-  }
-  .icon-internet-performance:before {
+}
+.icon-internet-performance:before {
 	content: "\66";
-  }
-  .icon-malware-security:before {
+}
+.icon-malware-security:before {
 	content: "\67";
-  }
-  .icon-microsoft-windows-22:before {
+}
+.icon-microsoft-windows-22:before {
 	content: "\68";
-  }
-  .icon-noun-registery-key-1581151:before {
+}
+.icon-noun-registery-key-1581151:before {
 	content: "\69";
-  }
-  .icon-noun-touch-200038:before {
+}
+.icon-noun-touch-200038:before {
 	content: "\6a";
-  }
-  .icon-performance:before {
+}
+.icon-performance:before {
 	content: "\6b";
-  }
-  .icon-power-agenda:before {
+}
+.icon-power-agenda:before {
 	content: "\6c";
-  }
-  .icon-question-circle:before {
+}
+.icon-question-circle:before {
 	content: "\6d";
-  }
-  .icon-recycling-2025397:before {
+}
+.icon-recycling-2025397:before {
 	content: "\6e";
-  }
-  .icon-multitasking:before {
+}
+.icon-multitasking:before {
 	content: "\6f";
-  }
-  .icon-virus:before {
+}
+.icon-virus:before {
 	content: "\70";
-  }
-  .icon-wifi:before {
+}
+.icon-wifi:before {
 	content: "\62";
-  }
-  .icon-visible-to-online-trackers:before {
+}
+.icon-visible-to-online-trackers:before {
 	content: "\71";
-  }
-  .icon-uninstall-375971-2:before {
+}
+.icon-uninstall-375971-2:before {
 	content: "\72";
-  }
-  .icon-uninstall-375971:before {
+}
+.icon-uninstall-375971:before {
 	content: "\73";
-  }
-  .icon-uninstall:before {
+}
+.icon-uninstall:before {
 	content: "\74";
-  }
-  .icon-thumbsup:before {
+}
+.icon-thumbsup:before {
 	content: "\75";
-  }
-  .icon-router:before {
+}
+.icon-router:before {
 	content: "\76";
-  }
-  .icon-responsive:before {
+}
+.icon-responsive:before {
 	content: "\77";
-  }
-  .icon-icon-247-protection:before {
+}
+.icon-icon-247-protection:before {
 	content: "\65";
-  }
-  .icon-icon-automated-resolution:before {
+}
+.icon-icon-automated-resolution:before {
 	content: "\78";
-  }
-  .icon-icon-browser-security:before {
+}
+.icon-icon-browser-security:before {
 	content: "\79";
-  }
-  .icon-icon-browser-settings:before {
+}
+.icon-icon-browser-settings:before {
 	content: "\7a";
-  }
-  .icon-icon-e-junk:before {
+}
+.icon-icon-e-junk:before {
 	content: "\41";
-  }
-  .icon-icon-schedule-scan:before {
+}
+.icon-icon-schedule-scan:before {
 	content: "\42";
-  }
-  .icon-icon-security-settings:before {
+}
+.icon-icon-security-settings:before {
 	content: "\43";
-  }
-  .icon-icon-zero-day:before {
+}
+.icon-icon-zero-day:before {
 	content: "\44";
-  }
-  // smart-performance-scan-summary-calendar-styles
-  .vtr-ui-smart-performance-scan-summary {
+}
+// smart-performance-scan-summary-calendar-styles
+.vtr-ui-smart-performance-scan-summary {
 	.date-picker {
-	  ngb-datepicker {
-		  width: 100%;
-		  border: none;
-		  border-radius: 0;
-		  .ngb-dp-header {
-			  background: transparent;
-		  }
-		  .ngb-dp-month {
-			  width: 100%;
-			  .ngb-dp-week {
-				  display: flex;
-				  justify-content: space-around;
-				  &.ngb-dp-weekdays {
-					  border: none;
-				  }
-				  &.bg-light {
-					  background: transparent !important;
-				  }
-				  .ngb-dp-weekday {
-					  font-style: normal;
-				  }
-			  }
-		  }
-		  .bg-primary {
-			  background: transparent !important;
-			  &.text-white {
-				  color: $go_dark !important;
-				  font-weight: $weight_bold;
-			  }
-		  }
-	  }
+		ngb-datepicker {
+			width: 100%;
+			border: none;
+			border-radius: 0;
+			.ngb-dp-header {
+				background: transparent;
+			}
+			.ngb-dp-month {
+				width: 100%;
+				.ngb-dp-week {
+					display: flex;
+					justify-content: space-around;
+					&.ngb-dp-weekdays {
+						border: none;
+					}
+					&.bg-light {
+						background: transparent !important;
+					}
+					.ngb-dp-weekday {
+						font-style: normal;
+					}
+				}
+			}
+			.bg-primary {
+				background: transparent !important;
+				&.text-white {
+					color: $go_dark !important;
+					font-weight: $weight_bold;
+				}
+			}
+		}
+	}
+}
+
+.sidebar-widget {
+	.change-scan-schedule {
+		.day-dropdown {
+			&.date-picker {
+				ngb-datepicker {
+					width: 20rem;
+					border: none;
+					border-radius: 0;
+					.ngb-dp-header {
+						background: transparent;
+					}
+					.ngb-dp-month {
+						width: 100%;
+						.ngb-dp-week {
+							display: flex;
+							justify-content: space-around;
+							&.ngb-dp-weekdays {
+								border: none;
+							}
+							&.bg-light {
+								background: transparent !important;
+							}
+							.ngb-dp-weekday {
+								font-style: normal;
+							}
+						}
+					}
+					.bg-primary {
+						background: transparent !important;
+						&.text-white {
+							color: $go_dark !important;
+							font-weight: $weight_bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* override bootstrap custom check box in high contrast mode*/
+.custom-control-label::before {
+	@media #{$white-on-black} {
+		color: #fff;
+		border-color: aqua;
+		background-color: aqua;
+	}
+	@media #{$black-on-white} {
+		color: #fff;
+		border-color: aqua;
+		background-color: aqua;
 	}
 }

@@ -3,66 +3,65 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
-	providedIn: 'root'
+    providedIn: 'root'
 })
 export class SmartPerformanceService {
     private getSmartPerformance: any;
     public isShellAvailable = false;
-	constructor(shellService: VantageShellService) {
-		//this.getSmartPerformance = shellService.getSmartPerformance();
-		if (this.getSmartPerformance) {
-			this.isShellAvailable = true;
-		}
+    constructor(shellService: VantageShellService) {
+        //this.getSmartPerformance = shellService.getSmartPerformance();
+        if (this.getSmartPerformance) {
+            this.isShellAvailable = true;
+        }
     }
-    
-    getReadiness(): Promise<boolean>{
+
+    getReadiness(): Promise<boolean> {
         try {
             if (this.isShellAvailable) {
-				return this.getSmartPerformance.GetReadiness();
-			}
+                return this.getSmartPerformance.GetReadiness();
+            }
             return undefined;
         } catch (error) {
             throw new Error(error.message);
         }
     }
 
-    launchScan(): Promise<any>{
+    launchScan(): Promise<any> {
         try {
             if (this.isShellAvailable) {
-				return this.getSmartPerformance.LaunchScan();
-			}
+                return this.getSmartPerformance.LaunchScan();
+            }
             return undefined;
         } catch (error) {
             throw new Error(error.message);
         }
     }
 
-    launchScanAndFix(): Promise<any>{
+    launchScanAndFix(): Promise<any> {
         try {
             if (this.isShellAvailable) {
-				return this.getSmartPerformance.LaunchScanAndFix();
-			}
+                return this.getSmartPerformance.LaunchScanAndFix();
+            }
             return undefined;
         } catch (error) {
             throw new Error(error.message);
         }
     }
 
-    cancelScan(): Promise<boolean>{
+    cancelScan(): Promise<boolean> {
         try {
             if (this.isShellAvailable) {
-				return this.getSmartPerformance.CancelScan();
-			}
+                return this.getSmartPerformance.CancelScan();
+            }
             return undefined;
         } catch (error) {
             throw new Error(error.message);
         }
     }
 
-    getSubscriptionDetails(profile:string): Promise<any>{
+    getSubscriptionDetails(profile: string): Promise<any> {
         try {
-            if(this.isShellAvailable)
-            {
+            if (this.isShellAvailable) {
                 return this.getSmartPerformance.GetSubscriptionDetails(profile);
             }
             return undefined;
@@ -71,10 +70,9 @@ export class SmartPerformanceService {
         }
     }
 
-    getScanSettings(profile:string): Promise<any>{
+    getScanSettings(profile: string): Promise<any> {
         try {
-            if(this.isShellAvailable)
-            {
+            if (this.isShellAvailable) {
                 return this.getSmartPerformance.GetScanSettings(profile);
             }
             return undefined;
@@ -83,10 +81,9 @@ export class SmartPerformanceService {
         }
     }
 
-    getScanSummary(profile:string): Promise<any>{
+    getScanSummary(profile: string): Promise<any> {
         try {
-            if(this.isShellAvailable)
-            {
+            if (this.isShellAvailable) {
                 return this.getSmartPerformance.GetScanSummary(profile);
             }
             return undefined;

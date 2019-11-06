@@ -117,11 +117,11 @@
 						[ngClass]="{'active': isParentActive(item)}">
 						<a ngbDropdownToggle
 							class="nav-link dropdown-toggle {{item.id}}"
-							[ngClass]="{'beta-item':item.beta}"
+							[ngClass]="{'beta-item':item.beta,'dropdown-toggle': true}"
 							vtrMetrics
 							tabindex="1"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
-							[attr.aria-label]="item.id"
+							attr.aria-label="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
 							[metricsItem]="item.metricsItem"
@@ -131,11 +131,9 @@
 							attr.aria-haspopup="true"
 							attr.aria-expanded="false"
 							href="javascript:void(0)"
-							(click)="onMenuItemClick(item);hideDropDown=true"
-							(mouseover)="hideDropDown=false"
-							(mouseout)="hideDropDown=true"
+							(click)="onMenuItemClick(item);"
 							(keydown.enter)="onMenuItemClick(item)"
-							role="menuitem"
+							role="button"
 							*ngIf="item.label | translate">
 							<div class="icon">
 								<fa-icon [icon]="item.icon"
@@ -146,16 +144,13 @@
 								class="beta">Beta</span>
 						</a>
 						<div ngbDropdownMenu
-							(mouseover)="hideDropDown=false"
-							(mouseout)="hideDropDown=true"
+							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
-							[ngClass]="{'d-none': hideDropDown}"
 							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
-								<a ngbDropdownItem
-									*ngIf="subitem.externallink"
+								<a ngbDropdownItem *ngIf="subitem.externallink"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
@@ -172,25 +167,7 @@
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
 									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
 									role="menuitem">{{subitem.label | translate}}</a>
-								<a ngbDropdownItem
-									*ngIf="!subitem.externallink && subitem.path==='support'"
-									vtrMetrics
-									tabindex="1"
-									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
-									attr.aria-label="{{subitem.label | translate}}"
-									routerLinkActive="link-active"
-									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-									[metricsEvent]="subitem.metricsEvent"
-									[metricsParent]="subitem.metricsParent"
-									[metricsItem]="subitem.metricsItem"
-									class="dropdown-item link"
-									routerLink="{{subitem.path}}"
-									(click)="onMenuItemClick(subitem)"
-									(keyup.enter)="onMenuItemClick(subitem)"
-									href="javascript:void(0)"
-									role="menuitem">{{subitem.label | translate}}</a>
-								<a ngbDropdownItem
-									*ngIf="!subitem.externallink  && subitem.path!=='support'"
+								<a ngbDropdownItem *ngIf="!subitem.externallink"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
@@ -284,7 +261,7 @@
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
 							</div>
 							<span class="unread-count-tag"
-								*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
+								*ngIf="!deviceService.isArm && UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<div ngbDropdownMenu
 							class="dropdown-menu {{item.id}} dropdown-menu-id"

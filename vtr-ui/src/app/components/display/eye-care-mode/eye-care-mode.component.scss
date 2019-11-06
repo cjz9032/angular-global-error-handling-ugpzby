@@ -1,115 +1,115 @@
 @import "../../../app.theme.scss";
 
 .vtr-eye-care-mode {
-  .mode-slider {
-    width: 100%;
-  }
-  .reset-temperature {
-    //width: 20rem;
-    margin-top: 2.5rem;
-    position: relative;
+	.mode-slider {
+		width: 100%;
+	}
+	.reset-temperature {
+		//width: 20rem;
+		margin-top: 2.5rem;
+		position: relative;
 
-    @media #{$mediaquery_7} {
-      margin-top: 1.6rem;
-      position: relative;
-    }
+		@media #{$mediaquery_7} {
+			margin-top: 1.6rem;
+			position: relative;
+		}
 
-    @media #{$mediaquery_10} {
-      margin-top: 1.7rem;
-      position: relative;
-    }
-    .button-box {
-      margin: 0rem 0rem 0rem 0.5rem;
-      ::ng-deep .button {
-        min-height: 3rem;
-        border-radius: 2.25rem;
-        font-weight: $weight_bold;
-		padding: 0.5rem 1.5rem;
-		max-width: 12rem;
-      }
-    }
-    .text {
-      font-size: 1.4rem;
-    }
-  }
-  .eye-care-checkbox {
-    margin: 1rem 0rem 1rem 0rem;
-    font-size: 1.4rem;
-  }
-  
-  .custom-control-input:disabled ~ .custom-control-label::before {
-    // background-color: $light-grey;
-    //border-color: $shade;
-  }
+		@media #{$mediaquery_10} {
+			margin-top: 1.7rem;
+			position: relative;
+		}
+		.button-box {
+			margin: 0rem 0rem 0rem 0.5rem;
+			::ng-deep .button {
+				min-height: 3rem;
+				border-radius: 2.25rem;
+				font-weight: $weight_bold;
+				padding: 0.5rem 1.5rem;
+				max-width: 12rem;
+			}
+		}
+		.text {
+			font-size: 1.4rem;
+		}
+	}
+	.eye-care-checkbox {
+		margin: 1rem 0rem 1rem 0rem;
+		font-size: 1.4rem;
+	}
 
-  .custom-control-input:disabled ~ .custom-control-label {
-    cursor: not-allowed;
-  }
+	.custom-control-input:disabled ~ .custom-control-label::before {
+		// background-color: $light-grey;
+		//border-color: $shade;
+	}
 
-  .custom-control-label {
-    padding-left: 0.5rem;
-    line-height: 1.15;
-    @media #{$mediaquery_14} {
-      line-height: 1.3;
-    }
-    @media #{$mediaquery_19} {
-      line-height: 1.3;
-    }
-    @media #{$mediaquery_X15} {
-      line-height: 1.3;
-    }
+	.custom-control-input:disabled ~ .custom-control-label {
+		cursor: not-allowed;
+	}
 
-    color: $dark;
+	.custom-control-label {
+		padding-left: 0.5rem;
+		line-height: 1.15;
+		@media #{$mediaquery_14} {
+			line-height: 1.3;
+		}
+		@media #{$mediaquery_19} {
+			line-height: 1.3;
+		}
+		@media #{$mediaquery_X15} {
+			line-height: 1.3;
+		}
 
-    .disabled {
-      color: $light-grey;
-    }
-    // rounded square-box background
-    &::before {
-      top: 0.2rem;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+		color: $dark;
 
-    // tick mark
-    &::after {
-      top: 0rem;
-      width: 2rem;
-      height: 2rem;
-      left: -1.7rem;
-    }
-  }
+		.disabled {
+			color: $light-grey;
+		}
+		// rounded square-box background
+		&::before {
+			top: 0.2rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
 
-  .custom-checkbox {
-    @media #{$black-on-white}{  
-      .custom-control-input~.custom-control-label::after {
-        content: "";
-        position: absolute;
-        height: 1.7rem;
-        width: 1.7rem;
-        border: 1px solid $main_darker;
-        background: none;
-        left: -1.8rem;
-        background: $main_lightest;
-        z-index: 0;
-        border-radius: 2px;
-      }
+		// tick mark
+		&::after {
+			top: 0rem;
+			width: 2rem;
+			height: 2rem;
+			left: -1.7rem;
+		}
+	}
 
-      .custom-control-input:checked~.custom-control-label::before {
-        content: "";
-        position: absolute;
-        border-radius: 0;
-        height: 5px;
-        width: 8px;
-        border: 2px solid $main_darker;
-        border-top: none;
-        border-right: none;
-        transform: rotate(-45deg);
-        background: none;
-        left: -1.3rem;
-        top: 4px;
-        z-index: 1;
-      }
-    }
-  }
+	//   .custom-checkbox {
+	//     @media #{$black-on-white}{
+	//       .custom-control-input~.custom-control-label::after {
+	//         content: "";
+	//         position: absolute;
+	//         height: 1.7rem;
+	//         width: 1.7rem;
+	//         border: 1px solid $main_darker;
+	//         background: none;
+	//         left: -1.8rem;
+	//         background: $main_lightest;
+	//         z-index: 0;
+	//         border-radius: 2px;
+	//       }
+
+	//       .custom-control-input:checked~.custom-control-label::before {
+	//         content: "";
+	//         position: absolute;
+	//         border-radius: 0;
+	//         height: 5px;
+	//         width: 8px;
+	//         border: 2px solid $main_darker;
+	//         border-top: none;
+	//         border-right: none;
+	//         transform: rotate(-45deg);
+	//         background: none;
+	//         left: -1.3rem;
+	//         top: 4px;
+	//         z-index: 1;
+	//       }
+	//     }
+	//   }
 }

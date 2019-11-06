@@ -1,41 +1,57 @@
-<div class="vtr-ui-switch-row" [ngClass]="{
+<div class="vtr-ui-switch-row"
+	[ngClass]="{
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue',
 		'last-child': isLastChild
 	}">
-	<div class="container-fluid p-0" [ngClass]="{'vtr-disabled': disabled}">
+	<div class="container-fluid p-0"
+		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
 			<div class="vtr-col-pad"
 				[ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
-					<div class="row m-0">
-						<div class="col-auto left-icon-column" *ngIf="leftIcon.length > 0">
+					<div class="row m-0"
+						role="text"
+						tabindex="0">
+						<div class="col-auto left-icon-column"
+							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
-									class="left-icon" [icon]="leftIcon"></fa-icon>
-								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'" [applyCss]="true"
-									[stretch]="true" class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
+									class="left-icon"
+									[icon]="leftIcon"></fa-icon>
+								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
+									[applyCss]="true"
+									[stretch]="true"
+									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
 									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
 									[ngClass]="'icomoon '+leftIcon[1]"></span>
-								<img *ngIf="isAdminRequired" class="adminLogo" />
+								<img *ngIf="isAdminRequired"
+									class="adminLogo" />
 							</div>
 						</div>
 						<div class="col">
-							<div class="title" tabindex="0" id="{{switchId}}-title" attr.aria-label="{{ title }}">
+							<div class="title"
+								id="{{switchId}}-title"
+								role="text">
 								{{ title }}
 							</div>
 							<span *ngIf="caption">
-								<div class="caption" id="{{switchId}}-caption" tabindex="0"
-									attr.aria-label="{{ title }}, {{caption}}"
+								<div class="caption"
+									id="{{switchId}}-caption"
+									role="text"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
 							<!-- {{ caption. add it only if there is a readmore, else comment it}} -->
 							<!-- attr.aria-label="hello {{'read_more_'+ switchId}}" -->
-							<span id="{{'read_more_'+ switchId}}" *ngIf="readMoreText && !contentExpand" tabindex="0"
-								class="read-more" (click)="onReadMoreClick($event)"
+							<span id="{{'read_more_'+ switchId}}"
+								*ngIf="readMoreText && !contentExpand"
+								role="text"
+								tabindex="0"
+								class="read-more"
+								(click)="onReadMoreClick($event)"
 								attr.aria-label="read more about, {{ title }}"
 								(keydown.enter)="onReadMoreClick($event)">
 								{{ readMoreText }}
@@ -48,7 +64,9 @@
 			<div class="vtr-row-switch"
 				[ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}">
 				<!-- <div class="row"> -->
-				<div class="p-0" [ngClass]="{'ml-auto': type!=='Camera'}" *ngIf="resetText.length > 0">
+				<div class="p-0"
+					[ngClass]="{'ml-auto': type!=='Camera'}"
+					*ngIf="resetText.length > 0">
 					<!-- attr.aria-label="three  {{switchId+ '-reset-btn'}}"   -->
 					<button id="{{switchId+ '-reset-btn'}}"
 						tabindex="0"
@@ -63,61 +81,89 @@
 					</button>
 
 				</div>
-				<div class="" *ngIf="isSwitchVisible">
-					<vtr-ui-switch-onoff [onOffSwitchId]="switchId" [value]="isSwitchChecked"
-						[disabled]="disabled || isDisabled" (toggle)="onOnOffChange($event)"
-						[showLoader]="showLoaderState" [theme]="theme" [isSwitchDisable]="isDisabled" [tabIndex]="0"
-						id="{{switchId}}-onOffButton" attr.aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
+				<div class=""
+					*ngIf="isSwitchVisible">
+					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
+						[value]="isSwitchChecked"
+						[disabled]="disabled || isDisabled"
+						(toggle)="onOnOffChange($event)"
+						[showLoader]="showLoaderState"
+						[theme]="theme"
+						[isSwitchDisable]="isDisabled"
+						[tabIndex]="0"
+						id="{{switchId}}-onOffButton"
+						attr.aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
 				</div>
-				<div *ngIf="!isSwitchVisible && linkText" class="p-0 link-text">
-					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock" tabindex="0"
-						id="{{switchId+ '_click_link'}}" attr.aria-label="{{ title + '_click_link'}}"
-						href="javascript:void(0)" (click)="onLinkClick(linkPath)"
-						(keydown.enter)="onLinkClick(linkPath)" class="link-text">
+				<div *ngIf="!isSwitchVisible && linkText"
+					class="p-0 link-text">
+					<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
+						tabindex="0"
+						id="{{switchId+ '_click_link'}}"
+						attr.aria-label="{{ title + '_click_link'}}"
+						href="javascript:void(0)"
+						(click)="onLinkClick(linkPath)"
+						(keydown.enter)="onLinkClick(linkPath)"
+						class="link-text">
 						{{linkText}}
 					</a>
 					<ng-template #elseBlock>
-						<a routerLink="/{{linkPath}}" class="link-text">
+						<a routerLink="/{{linkPath}}"
+							role="link"
+							class="link-text">
 							{{linkText}}
 						</a>
 					</ng-template>
 
 				</div>
 
-				<div class="p-0" [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
+				<div class="p-0"
+					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
-					<fa-icon 
-						id="{{switchId+ '_tooltip_right_icon'}}" 
+					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
-						class="right-icon" 
-						tabindex="0" 
-						triggers="click:blur keydown.enter:keydown.Tab" 
-						placement="auto" 
+						class="right-icon"
+						tabindex="0"
+						triggers="click:blur keydown.enter:keydown.Tab"
+						placement="auto"
 						autoClose="false"
-						[ngbTooltip]="tooltipRef" 
-						[icon]="rightIcon" 
-						container="body" 
+						[ngbTooltip]="tooltipRef"
+						[icon]="rightIcon"
+						container="body"
 						tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)" 
-						(keydown.enter)="onRightIconClick($event)"
-						>
+						(click)="onRightIconClick($event)"
+						(keydown.enter)="onRightIconClick($event)">
 					</fa-icon>
 				</div>
-				<div class="p-0" [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
+				<div class="p-0"
+					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
 					*ngIf="rightIcon.length > 0 && toolTipStatus">
-					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}" tabindex="0"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}" class="right-icon"
-						triggers="click:blur keydown.enter:keydown.Tab" placement="auto" [ngbTooltip]="smartTooltipRef"
-						[icon]="rightIcon" container="body" tooltipClass="vtr-tooltip"
-						(click)="onRightIconClick($event)" (keydown.enter)="onRightIconClick($event)" 
-						></fa-icon>
+					<fa-icon id="{{switchId+ '_smartTooltip_right_icon'}}"
+						tabindex="0"
+						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						class="right-icon"
+						triggers="click:blur keydown.enter:keydown.Tab"
+						placement="auto"
+						[ngbTooltip]="smartTooltipRef"
+						[icon]="rightIcon"
+						container="body"
+						tooltipClass="vtr-tooltip"
+						(click)="onRightIconClick($event)"
+						(keydown.enter)="onRightIconClick($event)"></fa-icon>
 				</div>
 
-				<div class="p-0" *ngIf="rightIcon.length > 0 && voice">
-					<fa-icon vtrMetrics metricsEvent="FeatureClick" metricsParent="Device.SmartAssist"
-						metricsItem="{{metricsParent}}HelpIcon" id="{{switchId+ '_voice_right_icon'}}"
-						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}" class="right-icon" tabindex="0" [icon]="rightIcon"
-						(click)="voicePopUp()" (keydown.enter)="voicePopUp()"></fa-icon>
+				<div class="p-0"
+					*ngIf="rightIcon.length > 0 && voice">
+					<fa-icon vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Device.SmartAssist"
+						metricsItem="{{metricsParent}}HelpIcon"
+						id="{{switchId+ '_voice_right_icon'}}"
+						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
+						class="right-icon"
+						tabindex="0"
+						[icon]="rightIcon"
+						(click)="voicePopUp()"
+						(keydown.enter)="voicePopUp()"></fa-icon>
 				</div>
 				<!-- </div> -->
 			</div>
@@ -158,7 +204,8 @@
 					(click)="onRightIconClick($event)"></fa-icon>
 			</div> -->
 		</div>
-		<div class="row m-0" *ngIf="showChildContent">
+		<div class="row m-0"
+			*ngIf="showChildContent">
 			<!-- <div class="col-1 pr-0"></div> -->
 			<div class="col-12 pr-0">
 				<ng-content #childContent></ng-content>
@@ -168,13 +215,16 @@
 	</div>
 </div>
 <ng-template #tooltipRef>
-	<div [innerHTML]='tooltipText' id="{{switchId}}-toolTip" tabindex="0" attr.aria-label="tooltipText">
+	<div [innerHTML]='tooltipText'
+		id="{{switchId}}-toolTip"
+		tabindex="0"
+		attr.aria-label="tooltipText">
 	</div>
 </ng-template>
 
 <!-- Intelligent-security distance sensitivity adjusting tooltip content -->
 <ng-template #smartTooltipRef>
-	<div>
+	<div role="text">
 		{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.context1' | translate}}
 	</div>
 	<ul class="smart-tooltip-list">
@@ -183,7 +233,8 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col">
+				<div class="col"
+					role="text">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line1' | translate}}
 				</div>
 			</div>
@@ -193,7 +244,8 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col">
+				<div class="col"
+					role="text">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line2' | translate}}
 				</div>
 			</div>
@@ -203,13 +255,14 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col">
+				<div class="col"
+					role="text">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line3' | translate}}
 				</div>
 			</div>
 		</li>
 	</ul>
-	<div>
+	<div role="text">
 		{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.context2' | translate}}
 	</div>
 	<ul class="smart-tooltip-list">
@@ -218,7 +271,8 @@
 				<div class="col-auto pl-0">
 					<fa-icon [icon]="['fas', 'circle']"></fa-icon>
 				</div>
-				<div class="col">
+				<div class="col"
+					role="text">
 					{{'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.tooltipcontent.list.line4' | translate}}
 				</div>
 			</div>
