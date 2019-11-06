@@ -1836,16 +1836,16 @@
             "vpn": "Sledujete svou expozici útočníkům v síti",
             "wifi": "Při používání veřejných sítít WiFi chráněni šifrováním svých osobních údajů",
             "windowsHello": "Chráníte své zařízení používáním bezpečných možností přihlášení",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Co je oznámení UAC?",
+            "uacText": "Řízení uživatelských účtů UAC (User Account Control) je velmi důležitá funkce zabezpečení systému Windows, která pomáhá zabránit potenciálně nebezpečným programům v tom, aby provedly změny systému.",
+            "windowsTitle": "Proč musím aktivovat systém Windows?",
+            "windowsText": "Spuštění jiného než originálního systému Windows vás může silně ohrozit napadením viry a dalšími bezpečnostními hrozbami.",
+            "encryptionTitle": "Co je šifrování pevného disku?",
+            "encryptionText": "Pomáhá chránit vaše data tím, že zajistí šifrování celého pevného disku proti neoprávněnému přístupu i v případě, že bude disková jednotka vyňata ze současného počítače a vložena do jiných zařízení.",
+            "passwordTitle": "Jak lépe chránit heslo?",
+            "passwordText": "Všechna svá zašifrovaná hesla si bezpečně uložte a spravujte je profesionální aplikací digitální ochrany namísto toho, abyste si je jednoduše uložili ve svých prohlížečích, ke kterým mohou jiné strany snadno získat přístup bez vašeho vědomí.",
+            "enhanceTitle": "Co mám dělat k vylepšení ochrany zabezpečení?",
+            "enhanceText": "Důrazně doporučujeme, abyste si svá zařízení chránili antivirovým softwarem a bránou firewall, nastavte oznamování UAC na minimální ochranu. A vytvořte silná hesla a ta spravujte bezpečným způsobem, při používání veřejné sítě šifrujte svá data, což představuje dodatečnou ochranu."
         },
         "antivirus": {
             "common": {

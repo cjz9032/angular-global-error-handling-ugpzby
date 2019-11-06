@@ -509,6 +509,24 @@
 				"heading": {
 					"title": "Select Profile:"
 				}
+			},
+			"lightingProfileModal": {
+				"heading1": "Fantastic Lighting to Improve your Gaming Life",
+				"heading1Content": "Easy ways to set your own lighting profile.",
+				"heading2": "Create your own profile",
+				"heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+				"heading3": "Lighting effect",
+				"heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+				"heading4": "Brightness (available on some models)",
+				"heading4Content": "You can set the brightness for lighting.",
+				"heading5": "Speed (available on some models)",
+				"heading5Content": "You can set the speed for lighting effect, - such as breath.",
+				"heading6": "Color",
+				"heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+				"heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+				"heading7": "Set to default",
+				"heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
+
 			}
 		},
 		"autoClose": {

@@ -1836,16 +1836,16 @@
             "vpn": "Ihr Netzwerk auf Angriffe von außen überwachen",
             "wifi": "Ihre persönlichen Daten in öffentlichen WiFi-Netzwerken verschlüsseln",
             "windowsHello": "Ihre Einheit mit sicheren Anmeldeoptionen schützen",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Was ist die Benutzerkontensteuerung?",
+            "uacText": "Die Benutzerkontensteuerung ist ein sehr wichtiges Sicherheitsfeature von Windows, das potenziell schädliche Programme daran hindern kann, Änderungen am System vorzunehmen.",
+            "windowsTitle": "Warum sollte ich Windows aktivieren?",
+            "windowsText": "Durch die Verwendung einer nicht originalen Kopie von Windows kann Ihre Einheit einem größeren Risiko für Viren und andere Sicherheitsbedrohungen ausgesetzt sein.",
+            "encryptionTitle": "Was versteht man unter Festplattenlaufwerk-Verschlüsselung?",
+            "encryptionText": "Sie hilft beim Schutz Ihrer Daten, indem sie das gesamte Festplattenlaufwerk verschlüsselt und so nicht autorisierten Zugriff verhindert – selbst wenn das Laufwerk aus dem aktuellen PC entfernt und in eine andere Einheit eingesetzt wird.",
+            "passwordTitle": "Wie kann ich mein Kennwort besser schützen?",
+            "passwordText": "Speichern und verwalten Sie alle Ihre Kennwörter in einer professionellen App für digitalen Schutz, anstatt sie einfach in Ihren Browsern zu speichern, wo sie ohne Ihr Wissen leicht von Drittanbietern abgerufen werden können.",
+            "enhanceTitle": "Wie kann ich meine Einheiten besser schützen?",
+            "enhanceText": "Es wird dringend empfohlen, alle Einheiten mit Antivirensoftware und einer Firewall zu schützen und die Benutzerkontensteuerung (Mindestschutz oder höher) zu verwenden. Zusätzlich sollten Sie starke Kennwörter erstellen, diese sicher verwalten und Ihre Daten in öffentlichen Netzwerken für erweiterten Schutz verschlüsseln."
         },
         "antivirus": {
             "common": {

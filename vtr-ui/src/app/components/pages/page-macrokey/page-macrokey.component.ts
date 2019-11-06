@@ -22,7 +22,6 @@ export class PageMacrokeyComponent implements OnInit {
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
 
-	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
 

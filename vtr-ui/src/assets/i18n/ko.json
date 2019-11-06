@@ -1836,16 +1836,16 @@
             "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
             "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
             "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC 알림이 무엇입니까?",
+            "uacText": "사용자 계정 컨트롤은 Windows의 매우 중요한 보안 기능으로, 잠재적으로 유해한 프로그램이 시스템을 변경하지 못하도록 방지하는 데 도움이 됩니다.",
+            "windowsTitle": "Windows를 활성화해야 하는 이유는 무엇입니까?",
+            "windowsText": "정품이 아닌 Windows의 복사본을 실행하면, 바이러스나 기타 보안 위험이 더욱 높아질 수 있습니다.",
+            "encryptionTitle": "하드 드라이브 암호화가 무엇입니까?",
+            "encryptionText": "드라이브를 현재 PC에서 제거하고 다른 장치에 저장하는 경우에도 무단 액세스에 대비해 전체 하드 드라이브에 대한 암호화를 제공하여 데이터를 보호하는 데 도움이 됩니다.",
+            "passwordTitle": "암호를 보다 잘 보호하는 방법은 무엇입니까?",
+            "passwordText": "제3자에서 사용자를 알지 못하는 상태에서 쉽게 액세스할 수 있는 브라우저에 저장하는 것으로 그치지 않고 전문 디지털 보호 앱으로 암호화된 모든 암호를 안전하게 저장 및 관리하십시오.",
+            "enhanceTitle": "보안 보호를 강화하려면 어떻게 해야 합니까?",
+            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오."
         },
         "antivirus": {
             "common": {
