@@ -156,10 +156,11 @@ $gradient_angle_reverse: 315deg;
 $border_radius: 0.9rem;
 $border_radius_sm: 0.6rem;
 
+$gaming_hd_diameter_xl: 12rem;
 $gaming_hd_diameter_lg: 10rem;
 $gaming_hd_diameter_md: 8rem;
 $gaming_hd_diameter_sm: 7rem;
-$gaming_hd_diameter_xs: 5rem;
+$gaming_hd_diameter_xs: 6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
 $gradient_red: linear-gradient(103deg, $button_red_start 0%, $button_red_end 100%);
@@ -169,13 +170,15 @@ $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
 
 //RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
-$fontsize_xxl: 4rem;
-$fontsize_xl: 2.8rem;
+$fontsize_xl4: 4.6rem;
+$fontsize_xl3: 4rem;
+$fontsize_xl2: 3.4rem;
+$fontsize_xl: 2.4rem;
 $fontsize_lg: 2rem;
 $fontsize_md: 1.8rem;
 $fontsize_sm: 1.6rem;
 $fontsize_xs: 1.4rem;
-$fontsize_xxs: 1.2rem;
+$fontsize_xs2: 1.2rem;
 
 
 // RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below

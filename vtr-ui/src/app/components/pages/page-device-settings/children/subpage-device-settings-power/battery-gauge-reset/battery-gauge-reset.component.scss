@@ -41,13 +41,6 @@
 		.battery-gauge-btn {
 			margin: 1.5rem 0;
 			padding-left: 1.5rem;
-			::ng-deep .vtr-ui-button {
-				.button-box {
-					.button {
-						padding: 0 15rem;
-					}
-				}
-			}
 		}
 
 		.stop-btn {

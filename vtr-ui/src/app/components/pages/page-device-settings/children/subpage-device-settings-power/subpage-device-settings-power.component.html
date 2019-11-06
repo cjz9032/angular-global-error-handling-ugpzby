@@ -57,6 +57,7 @@
 													name="airplane-mode-checkbox-id"
 													[(ngModel)]="airplaneAutoDetection"
 													(ngModelChange)='onAirplaneAutoModeStatusChange()'
+													aria-hidden="true"
 													checked="" />
 
 												<span class="checkmark"></span>
@@ -65,6 +66,7 @@
 												</label>
 											</div>
 											<label *ngIf="airplaneAutoDetection"
+												role="text"
 												class="auto-detection-note">
 												{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 											</label>
@@ -228,7 +230,8 @@
 										</div>
 										<div class="col-auto px-0 align-self-center seperator"
 											id="always-on-usb-or"
-											attr.aria-label="always-on-usb-or">
+											attr.aria-label="always-on-usb-or"
+											role="text">
 											{{'device.deviceSettings.power.powerSettings.or' | translate}}
 										</div>
 										<div class="col-auto pl-2">
@@ -255,9 +258,11 @@
 													[disabled]="!toggleAlwaysOnUsbFlag"
 													[(ngModel)]="usbChargingCheckboxFlag"
 													(ngModelChange)='onUsbChargingStatusChange()'
+													aria-hidden="true"
 													checked="" />
 												<span class="checkmark"></span>
-												<label for="cb-always-on-usb">
+												<label for="cb-always-on-usb"
+													role="text">
 													{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 												</label>
 											</div>
@@ -328,11 +333,13 @@
 						[collapseLinkId]="'device-settings-power-otherSettings'">
 						<div class="row energystar-container">
 							<div class="col-lg-2 col-md-2 col-sm-12">
-								<img class="img-fluid mx-auto d-block"
+								<img role="img"
+									class="img-fluid mx-auto d-block"
 									src="assets/images/energystar.png">
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-12 align-self-center">
-								<p class="energystar-text">
+								<p class="energystar-text"
+									role="text">
 									{{'device.deviceSettings.power.energyStar.description' | translate}}
 								</p>
 							</div>
