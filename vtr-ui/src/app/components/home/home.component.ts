@@ -1,6 +1,6 @@
 import { DeviceService } from 'src/app/services/device/device.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
@@ -12,7 +12,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 import { filter } from 'rxjs/internal/operators/filter';
 
-
 @Component({
 	selector: 'vtr-home',
 	templateUrl: './home.component.html',
@@ -21,7 +20,7 @@ import { filter } from 'rxjs/internal/operators/filter';
 export class HomeComponent implements OnInit, OnDestroy {
 	private subscription: Subscription;
 	private redirectToUrl: string;
-	private isTranslationLoaded = false;
+
 	constructor(
 		public deviceService: DeviceService,
 		private router: Router,
@@ -46,18 +45,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 			});
 
 			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineInfo().then((value: any) => {
-					if (!this.languageService.isLanguageLoaded) {
-						this.languageService.useLanguageByLocale(value.locale);
-						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						this.logger.debug('HomeComponent: machine info received', cachedDeviceInfo);
-						// update DeviceInfo values in case user switched language
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-						if (this.isTranslationLoaded) {
-							this.redirectToPage();
-						}
-					}
-				});
+				if (this.languageService.isLanguageLoaded) {
+					this.redirectToPage();
+				}
 			} else {
 				// for browser
 				this.languageService.useLanguage();
@@ -77,7 +67,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	private vantageLaunch(isGaming: boolean) {
-		this.logger.info(`HomeComponent.vantageLaunch `, isGaming);
+		this.logger.info(`HomeComponent.vantageLaunch isGamingDevice: `, isGaming);
 		try {
 			if (isGaming) {
 				this.router.navigate(['/device-gaming']);
@@ -94,7 +84,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case TranslationNotification.TranslationLoaded:
-					this.isTranslationLoaded = true;
 					if (this.redirectToUrl) {
 						this.logger.info(`HomeComponent.onNotification redirecting to`, this.redirectToUrl);
 						this.redirectToPage();
@@ -111,6 +100,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	private redirectToPage() {
-		this.router.navigateByUrl(this.redirectToUrl);
+		if (this.redirectToUrl) {
+			this.router.navigateByUrl(this.redirectToUrl);
+		}
 	}
 }

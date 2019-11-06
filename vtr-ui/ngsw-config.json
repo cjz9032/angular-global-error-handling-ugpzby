@@ -6,8 +6,8 @@
 			"installMode": "prefetch",
 			"resources": {
 				"files": [
+					"/*.woff",
 					"/index.html",
-					"/assets/fonts/**",
 					"/*.css",
 					"/assets/cms-cache/**"
 				]

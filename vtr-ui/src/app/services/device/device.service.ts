@@ -26,7 +26,7 @@ export class DeviceService {
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
-	private machineInfo: any;
+	public machineInfo: any;
 	public showSearch = false;
 	constructor(
 		private shellService: VantageShellService,
@@ -110,6 +110,11 @@ export class DeviceService {
 
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
+		if (this.machineInfo) {
+			this.commonService.sendNotification('MachineInfo', this.machineInfo);
+			return Promise.resolve(this.machineInfo);
+		}
+
 		if (this.isShellAvailable && this.sysInfo) {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
