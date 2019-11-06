@@ -30,6 +30,7 @@ export class HardwareScanService {
 	private recoverInit = false;
 	private deviceInRecover: string;
 	private isViewingRecoverLog = false;
+	private hasDevicesToRecover = false;
 
 	private quickScanRequest: any = []; // request modules
 	private quickScanResponse: any = []; // response modules
@@ -114,6 +115,10 @@ export class HardwareScanService {
 
 	public getPreviousResultsWidget() {
 		return this.previousItemsWidget;
+	}
+
+	public getHasDevicesToRecover() {
+		return this.hasDevicesToRecover;
 	}
 
 	public isScanExecuting() {
@@ -235,6 +240,10 @@ export class HardwareScanService {
 
 	public isCancelRequested() {
 		return this.cancelRequested;
+	}
+
+	public setHasDevicesToRecover(status: boolean) {
+		this.hasDevicesToRecover = status;
 	}
 
 	public deleteScan(payload) {
@@ -569,14 +578,13 @@ export class HardwareScanService {
 	public async initLoadingModules(culture) {
 		this.hasItemsToRecoverBadSectors = false;
 		this.getAllItems(culture).then(() => {
-			// Recover is hidden because CLI is under approval on SSRB - SR-2087 -->
-			// this.getItemsToRecoverBadSectors().then((response) => {
-			// 	this.devicesToRecoverBadSectors = response.categoryList[0];
-			// 	console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
-			// 	if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
-			// 		this.hasItemsToRecoverBadSectors = true;
-			// 	}
-			// });
+			this.getItemsToRecoverBadSectors().then((response) => {
+				this.devicesToRecoverBadSectors = response.categoryList[0];
+				console.log('this.devicesToRecoverBadSectors', this.devicesToRecoverBadSectors);
+				if (this.devicesToRecoverBadSectors.groupList.length !== 0) {
+					this.hasItemsToRecoverBadSectors = true;
+				}
+			});
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
 		});
