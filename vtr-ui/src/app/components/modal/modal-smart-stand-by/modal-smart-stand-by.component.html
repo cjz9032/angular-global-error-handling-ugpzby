@@ -8,16 +8,17 @@
         </div>
     </div>
     <div class="row">
+        <!-- {{activities | json}} -->
         <div class="col-12">
             <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph1Tittle' | translate }}</h4>
             <!-- <vtr-smart-standby-graph></vtr-smart-standby-graph> -->
             <!-- <div class="app-smart-standby-activity my-3" #activityChart></div> -->
             <div #activityChart></div>
         </div>
-        <!-- <div class="col-12 mt-3">
+        <div class="col-12 mt-3">
                 <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph2Tittle' | translate }}</h4>
                  <div #scheduleChart></div>
-        </div> -->
+        </div>
         <div>
             <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
                 class="btn close-button" (click)="closeModal()"
