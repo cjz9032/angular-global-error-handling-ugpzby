@@ -177,14 +177,30 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.manualSnooze = !this.manualSnooze;
 		this.smartAssist
 			.setSnoozeSetting(value)
-			.then(res => console.log('SNOOZE STATUS SET --------------------------------- ', res));
+			.then(res => {
+				console.log('SNOOZE STATUS SET --------------------------------- ', res);
+				this.smartAssist
+					.getSnoozeTime()
+					.then(time => {
+						console.log('MANUAL SNOOZE TIME --------------------------------- ', time);
+						this.manualSnoozeTime = +(time);
+					});
+			});
 	}
 
 	setSnoozeTime(event: DropDownInterval) {
 		this.selectedSnoozeTime = event.value;
 		this.smartAssist
 			.setSnoozeTime(event.value.toString())
-			.then(res => console.log('SNOOZE TIME SET ---------------------------------', event.value, res));
+			.then(res => {
+				console.log('SNOOZE TIME SET ---------------------------------', event.value, res);
+				this.smartAssist
+					.getSnoozeTime()
+					.then(time => {
+						console.log('MANUAL SNOOZE TIME --------------------------------- ', time);
+						this.manualSnoozeTime = +(time);
+					});
+			});
 	}
 
 	suspendNow() {
