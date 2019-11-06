@@ -30,6 +30,7 @@ import { WidgetSpeedometerComponent } from '../../components/widgets/widget-spee
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 import { FormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
+import { TranslationModule } from '../translation.module';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -62,7 +63,8 @@ library.add(faCircle);
   NgbDatepickerModule ,
   HeaderMainModule,
   FontAwesomeModule,
-  CommonUiModule
+  CommonUiModule,
+  TranslationModule.forChild()
   ],
   exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent,CommonUiModule],
   bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent]
