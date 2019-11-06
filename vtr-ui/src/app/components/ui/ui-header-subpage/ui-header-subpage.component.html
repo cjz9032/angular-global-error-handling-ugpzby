@@ -1,4 +1,6 @@
-<div class="vtr-ui-header-subpage container-fluid">
+<div class="vtr-ui-header-subpage container-fluid"
+	role="text"
+	tabindex="0">
 	<div class="row"
 		*ngIf="title!=undefined">
 		<div class="col">
@@ -6,7 +8,7 @@
 				id="{{textId}}-header-title">
 				<span tabindex="0"
 					attr.aria-label="{{title}}'page'"
-					role="none">{{title}}</span>
+					role="text">{{title}}</span>
 			</h2>
 		</div>
 	</div>
@@ -20,7 +22,7 @@
 						<div class="caption"
 							id="{{textId}}-header-caption"
 							attr.aria-label="{{caption}}"
-							role="none"
+							role="text"
 							tabindex="0">
 							{{caption}}
 						</div>
