@@ -948,8 +948,8 @@
 								height: $gaming_hd_diameter_xs;
 							}
 							@media #{$breakpoint_lg} {
-								width: $gaming_hd_diameter_lg;
-								height: $gaming_hd_diameter_lg;
+								width: $gaming_hd_diameter_sm;
+								height: $gaming_hd_diameter_sm;
 							}
 							@media #{$breakpoint_md} {
 								width: $gaming_hd_diameter_xs;
