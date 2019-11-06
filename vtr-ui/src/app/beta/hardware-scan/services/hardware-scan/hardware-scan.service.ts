@@ -5,6 +5,8 @@ import { HardwareScanOverallResult } from 'src/app/beta/hardware-scan/enums/hard
 import { TranslateService } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Subject, Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -43,6 +45,8 @@ export class HardwareScanService {
 	private disableCancel = false;
 	private finalResponse: any;
 	private enableViewResults = false;
+	private lastResponse: any;
+	private workDone = new Subject<boolean>();
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
@@ -229,6 +233,10 @@ export class HardwareScanService {
 		return this.enableViewResults;
 	}
 
+	public isCancelRequested() {
+		return this.cancelRequested;
+	}
+
 	public deleteScan(payload) {
 		console.log('[Start] DeleteScan (hwscanService)!');
 		if (this.hardwareScanBridge) {
@@ -353,8 +361,13 @@ export class HardwareScanService {
 			this.cancelRequested = false;
 			this.modules = modules;
 			this.scanExecution = true;
+			this.workDone.next(false);
+			this.clearLastResponse();
 			return this.hardwareScanBridge.getDoScan(payload, (response: any) => {
 				console.log('response', response);
+				// Keeping track of the latest response allows the right render when user
+				// navigates to another page and then come back to the Hardware Scan page
+				this.lastResponse = response;
 				this.updateProgress(response);
 				this.updateScanResponse(response);
 			}, cancelHandler)
@@ -363,6 +376,12 @@ export class HardwareScanService {
 					if (response !== null && response.finalResultCode !== null) {
 						return response;
 					}
+				}).catch((ex: any) => {
+					console.error('[getDoScan on service] An exception has occurred: ', ex);
+					if (ex !== null) {
+						this.cancelRequested = true;
+					}
+					throw ex;
 				}).finally(() => {
 					this.setIsScanDone(true);
 					this.cleanUp();
@@ -371,9 +390,47 @@ export class HardwareScanService {
 						this.scanExecution = false;
 						// this.isLoadingModulesDone = false;
 					}
+
+					this.workDone.next(true);
 				});
 		}
 		return undefined;
+	}
+
+	public hasLastResponse() {
+		return this.lastResponse != undefined;
+	}
+
+	public clearLastResponse() {
+		this.lastResponse = undefined;
+	}
+
+	/**
+	 * Renders the latest Scan/RBS's status.
+	 * It ensures that the user will see an updated status when entering in the
+	 * HardwareScan main page if either a Scan or RBS is running.
+	 */
+	public renderLastResponse() {
+		// Recover bad sectors response has a member devices,
+		// Scan responses doesn't.
+		const isRBSResponse = this.lastResponse.devices &&
+			this.lastResponse.devices.length &&
+			this.lastResponse.devices[0].numberOfSectors != undefined;
+
+		if (isRBSResponse) {
+			this.updateRecover(this.lastResponse);
+			this.updateProgressRecover(this.lastResponse);
+		} else {
+			this.updateProgress(this.lastResponse);
+			this.updateScanResponse(this.lastResponse);
+		}
+	}
+
+	/**
+	 * This can be observed to know when a Scan/RBS work has done (successfully or canceled)
+	 */
+	public isWorkDone(): Observable<boolean> {
+		return this.workDone.pipe(first())
 	}
 
 	public cancelScanExecution() {
@@ -384,6 +441,7 @@ export class HardwareScanService {
 			})
 			.then((response) => {
 				this.cancelRequested = true;
+				this.clearLastResponse();
 			})
 			.finally(() => {
 				this.cleanUp();
@@ -409,7 +467,11 @@ export class HardwareScanService {
 		console.log('[Start] Recover on Service');
 		this.disableCancel = true;
 		if (this.hardwareScanBridge) {
+			this.clearLastResponse();
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
+				// Keeping track of the latest response allows the right render when user
+				// navigates to another page and then come back to the Hardware Scan page
+				this.lastResponse = response;
 				this.updateRecover(response);
 				this.updateProgressRecover(response);
 				this.disableCancel = false;
@@ -422,6 +484,9 @@ export class HardwareScanService {
 					}
 				}
 
+				// Keeping track of the latest response allows the right render when user
+				// navigates to another page and then come back to the Hardware Scan page
+				this.lastResponse = response;
 				this.updateRecover(response);
 				this.updateProgressRecover(response);
 				console.log('[End]: Recover on service');
