@@ -164,6 +164,68 @@
 			}
 		}
 	}
+	.vtr-page{
+		.vtr-page-columns {
+			.vtr-page-column {
+				&.vtr-page-left-column{
+					.vtr-subpage {
+						&.subpage-device-settings-power{
+							.vtr-ui-header-subpage{
+								.title {
+									color: $gaming_lightest;
+								}
+								.left-border{
+									.caption {
+										color: $gaming_lightest;
+									}
+									.menu-title {
+										color: $gaming_lightest;
+									}
+									.menu-item {
+										border-bottom-style: dotted;
+										&:hover {
+											border-bottom-style: none;
+										}
+									}
+								}
+							}
+						}
+						.vtr-container-collapsible {
+							&.white-theme {
+								.card {
+									.card-header{
+										.header {
+											color: $gaming_lightest;
+										}
+										.collapse-control {
+											.collapse-text {
+												color: $gaming_lightest;
+											}
+										}
+									}
+									.card-body {
+										vtr-ui-row-switch {
+											.vtr-ui-switch-row {
+												&.white-theme {
+													.title {
+														color: $gaming_lightest;
+													}
+													.caption {
+														color: $gaming_lightest;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
 	.vtr-page,
 	.vtr-page-support {
 		.vtr-page-content {
