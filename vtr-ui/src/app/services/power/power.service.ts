@@ -634,10 +634,15 @@ export class PowerService {
 		}
 		return undefined;
 	}
-	public getSmartStandbyPresenceData() {
+	public getSmartStandbyPresenceData(): Promise<any> {
 		if (this.devicePowerThinkPad) {
-			const res = this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyPresenceData();
-			return res;
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyPresenceData();
+		}
+		return undefined;
+	}
+	public GetSmartStandbyActiveHours(): Promise<any> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveHours();
 		}
 		return undefined;
 	}

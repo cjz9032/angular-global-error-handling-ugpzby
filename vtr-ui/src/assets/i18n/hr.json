@@ -1836,16 +1836,16 @@
             "vpn": "Praćenje izloženosti vaše mreže napadačima",
             "wifi": "Šifriranje vaših osobnih podataka kada koristite javni WiFi",
             "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Što je to obavijest kontrole korisničkog računa (UAC)?",
+            "uacText": "Kontrola korisničkog računa vrlo je važna sigurnosna značajka sustava Windows i pomaže u sprečavanju promjena koje potencijalno štetni programi mogu nanijeti vašem sustavu.",
+            "windowsTitle": "Zašto mi je potreban aktiviran Windows?",
+            "windowsText": "Pokretanje neoriginalne kopije sustava Windows može vas dovesti u veću opasnost od virusa i drugih sigurnosnih prijetnji.",
+            "encryptionTitle": "Što je to šifriranje tvrdog diska?",
+            "encryptionText": "Pomaže u zaštiti vaših podataka omogućujući šifriranje za cijeli tvrdi disk, protiv neovlaštenog pristupa, iako je disk uklonjen s trenutnog računala i umetnut u druge uređaje.",
+            "passwordTitle": "Kako bolje zaštititi lozinku?",
+            "passwordText": "Sigurno pohranite i upravljajte svim svojim lozinkama šifriranim profesionalnom aplikacijom za digitalnu zaštitu, umjesto jednostavne pohrane u vašim preglednicima kojima treće strane mogu lako pristupiti bez vašeg znanja.",
+            "enhanceTitle": "Što trebam učiniti za poboljšanje zaštite sigurnosti?",
+            "enhanceText": "Toplo preporučujemo da svoje uređaje zaštitite antivirusnim softverom i vatrozidom te podesite obavijest kontrole korisničkog računa uz minimalnu zaštitu. Također, izradite snažne lozinke i upravljajte na siguran način te šifrirajte svoje podatke dok koristite javnu mrežu kao naprednu zaštitu."
         },
         "antivirus": {
             "common": {

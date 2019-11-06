@@ -661,16 +661,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	showMenuItems() {
 		this.localInfoService
-		.getLocalInfo()
-		.then((result) => {
-			this.region = result.GEO;
-			this.showVpn();
-			this.initUnreadMessage();
-		})
-		.catch((e) => {
-			this.region = 'us';
-			this.showVpn();
-		});
+			.getLocalInfo()
+			.then((result) => {
+				this.region = result.GEO;
+				this.showVpn();
+				this.initUnreadMessage();
+			})
+			.catch((e) => {
+				this.region = 'us';
+				this.showVpn();
+			});
 
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.getMenuItems().then((items) => {
@@ -678,20 +678,23 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				LocalStorageKey.SecurityShowWindowsHello
 			);
 			if (cacheShowWindowsHello) {
-			const securityItem = items.find((item) => item.id === 'security');
-			if (securityItem) {
-				securityItem.subitems.push({
-					id: 'windows-hello',
-					label: 'common.menu.security.sub6',
-					path: 'windows-hello',
-					icon: '',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.windowshello',
-					routerLinkActiveOptions: { exact: true },
-					subitems: []
-				});
-			}
+				const securityItem = items.find((item) => item.id === 'security');
+				if (securityItem) {
+					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
+					if (!windowsHelloItem) {
+						securityItem.subitems.push({
+							id: 'windows-hello',
+							label: 'common.menu.security.sub6',
+							path: 'windows-hello',
+							icon: '',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.windowshello',
+							routerLinkActiveOptions: { exact: true },
+							subitems: []
+						});
+					}
+				}
 			}
 			if (this.securityAdvisor) {
 			const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;

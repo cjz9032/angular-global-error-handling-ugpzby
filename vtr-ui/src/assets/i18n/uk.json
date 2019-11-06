@@ -1836,16 +1836,16 @@
             "vpn": "Відстежуєте вразливість мережі до нападів;",
             "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
             "windowsHello": "Захищаєте пристрій безпечними способами входу.",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Що таке сповіщення UAC?",
+            "uacText": "Служба захисту користувачів – дуже важлива функція безпеки Windows, що запобігає внесенню змін у систему з боку потенційно шкідливих програм.",
+            "windowsTitle": "Чому мені потрібна активна операційна система Windows?",
+            "windowsText": "Використання контрафактної копії Windows підвищує ризик інфікування вірусом та інших загроз безпеці.",
+            "encryptionTitle": "Що таке шифрування жорсткого диска?",
+            "encryptionText": "Шифрування всього жорсткого диска від несанкціонованого доступу допомагає захистити ваші дані, навіть у разі встановлення в інші пристрої.",
+            "passwordTitle": "Як краще захистити пароль?",
+            "passwordText": "Використовуйте спеціалізовані програми для безпечного зберігання ваших паролів замість браузерів, до яких зловмисники можуть легко отримати доступ без вашого відома.",
+            "enhanceTitle": "Що мені робити для кращого захисту?",
+            "enhanceText": "Наполегливо радимо захистити пристрої антивірусними програмами та брандмауером, та як мінімум налаштувати сповіщення UAC. Для додаткового захисту даних, використовуйте надійні паролі та шифруйте свої дані під час використання загальнодоступних мереж."
         },
         "antivirus": {
             "common": {

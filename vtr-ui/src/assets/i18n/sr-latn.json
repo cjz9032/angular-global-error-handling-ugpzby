@@ -1836,16 +1836,16 @@
             "vpn": "Da li nadzirete izloženost mreže napadačima",
             "wifi": "Da li šifrujete svoje lične podatke kada koristite javni WiFi",
             "windowsHello": "Da li štitite uređaj korišćenjem opcije za bezbedno prijavljivanje",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Šta je to UAC obaveštenje?",
+			"uacText": "Kontrola korisničkog naloga je veoma važna bezbednosna funkcija operativnog sistema Windows koja pomaže u sprečavanju potencijalno štetnih programa da menjaju vaš sistem.",
+			"windowsTitle": "Zašto treba da aktiviram Windows?",
+			"windowsText": "Korišćenjem neoriginalne kopije operativnog sistema Windows izloženi ste većem riziku od virusa i drugih bezbednosnih pretnji.",
+			"encryptionTitle": "Šta je šifrovanje hard diska?",
+			"encryptionText": "Ono vam pomaže da zaštitite podatke šifrovanjem čitavog hard diska protiv neovlašćenog pristupa, čak i kada se disk ukloni iz postojećeg računara i stavi u neki drugi uređaj.",
+			"passwordTitle": "Kako da bolje zaštitim lozinku?",
+			"passwordText": "Bezbedno smestite sve svoje lozinke i upravljajte njima tako što ćete ih šifrovati pomoću aplikacije za profesionalnu digitalnu zaštitu umesto da ih samo sačuvate u pregledaču gde im treće strane mogu lako pristupiti bez vašeg znanja.",
+			"enhanceTitle": "Šta treba da uradim da bih poboljšao zaštitu bezbednosti?",
+			"enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu."
         },
         "antivirus": {
             "common": {
