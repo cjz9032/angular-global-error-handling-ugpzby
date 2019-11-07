@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Ohjelma ei ole havainnut Internet-yhteyttä",
             "subtitle": "Lue lisätietoja siitä, miten ratkaista yhteysongelmat",
-            "buttonText": "Hae tukea"
+            "buttonText": "Hae tukea",
+            "welcomeToVantage": "Tervetuloa seuraavan sukupolven Vantage",
+            "systemHealth": "Järjestelmän kunto"
         },
         "feedback": {
             "title": "Anna palautetta",
@@ -1838,8 +1840,21 @@
         "logout": "Kirjaudu ulos",
         "unlockExclusives": "Ota käyttöön erikoissisältöä",
         "user": "Käyttäjä",
-        "welcomeText": "Näytät energiseltä tänään {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Näytät energiseltä tänään {{firstName}}!",
+		"welcomeText2": "Happy to see you again {{firstName}}",
+		"welcomeText3": "What a pleasant surprise {{firstName}}",
+		"welcomeText4": "Smile {{firstName}}, it's contagious :)",
+		"welcomeText5": "Knock, knock {{firstName}}",
+		"welcomeText6": "You're off to great places!",
+		"welcomeText7": "Today is your day {{firstName}}!",
+		"welcomeText8": "Who likes happy little trees?",
+		"welcomeText9": "Party on {{firstName}}!",
+		"welcomeText10": "Keep calm and Vantage on",
+		"welcomeText11": "A bigger Vantage for your buck",
+		"welcomeText12": "Bring home the Vantage",
+		"welcomeText13": "Eat, sleep, Vantage, repeat",
+		"welcomeText14": "Every moment is a fresh Vantage",
+		"welcomeText15": "Vantage to the fullest",
         "welcomeTextWithoutUserName": "Näytät energiseltä tänään!",
         "helloUser": "Hei {{firstName}}!",
         "ssoErrorTitle": "Virhe",
@@ -2171,7 +2186,7 @@
         },
         "question6": {
             "title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
-            "description": "<div class='faqInFs4Fb'>    Tutustu Cortanaan, henkilökohtaiseen avustajaasi</div><hr><h3 class='faqInFs25FbP10'>Mikä Cortana on?</h3><hr /><p>Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.</p><p>Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.</p><p>Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)</p><p>Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute</li></ol><p>Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:</p><ul>    <li>Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.</li>    <li>Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.</li>    <li>Lähetä sähköposteja ja tekstiviestejä.</li>    <li>Hallitse kalenteriasi ja pidä itsesi ajan tasalla.</li>    <li>Luo ja hallinnoi luetteloja.</li>    <li>Jutustele ja pelata pelejä.</li>    <li>Hae faktoja, tiedostoja, paikkoja ja tietoja.</li>    <li>Avaa mikä tahansa järjestelmän sovellus.</li></ul><h3 class='faqInFs25FbP10'>Kokeile tätä: muistutuksen asetus</h3><hr /><p>Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.</p><p>Voit esimerkiksi kirjoittaa tai sanoa: \\\"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\\\".</p><p>Muistutus tulee näkyviin, kun Tarja soittaa sinulle.</p><p>Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hei Cortana?</h3><hr /><p>Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \\\"Hei Cortana\\\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \\\"Hei Cortana\\\" -komentoon.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Huomautus</p><p>Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Tutustu Cortanaan, henkilökohtaiseen avustajaasi</div><hr><h3 class='faqInFs25FbP10'>Mikä Cortana on?</h3><hr /><p>Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.</p><p>Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.</p><p>Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)</p><p>Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute</li></ol><p>Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:</p><ul>    <li>Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.</li>    <li>Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.</li>    <li>Lähetä sähköposteja ja tekstiviestejä.</li>    <li>Hallitse kalenteriasi ja pidä itsesi ajan tasalla.</li>    <li>Luo ja hallinnoi luetteloja.</li>    <li>Jutustele ja pelata pelejä.</li>    <li>Hae faktoja, tiedostoja, paikkoja ja tietoja.</li>    <li>Avaa mikä tahansa järjestelmän sovellus.</li></ul><h3 class='faqInFs25FbP10'>Kokeile tätä: muistutuksen asetus</h3><hr /><p>Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.</p><p>Voit esimerkiksi kirjoittaa tai sanoa: \"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\".</p><p>Muistutus tulee näkyviin, kun Tarja soittaa sinulle.</p><p>Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hei Cortana?</h3><hr /><p>Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \"Hei Cortana\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \"Hei Cortana\" -komentoon.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Huomautus</p><p>Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",

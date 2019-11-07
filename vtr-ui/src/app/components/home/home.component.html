@@ -1,6 +1,9 @@
 <div id="splashAnimation"
 	class="vtr-home d-flex align-items-center justify-content-center">
-	<fa-icon [icon]="['fal', 'circle-notch']"
-		class="spinner"
-		[spin]="true"></fa-icon>
+	<div class="spinner-border text-primary"
+		style="width: 8rem; height: 8rem; border-width: .7rem;"
+		role="status">
+		<!-- screen reader only -->
+		<span class="sr-only">Loading...</span>
+	</div>
 </div>

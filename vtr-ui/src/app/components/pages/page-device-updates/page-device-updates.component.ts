@@ -24,6 +24,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -158,6 +159,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	};
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
@@ -459,10 +461,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public isUpdateListVisible() {
 		const isVisible = ((this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted)
-		&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
-		|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
-		|| (this.optionalUpdates && this.optionalUpdates.length > 0)
-		|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
+			&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
+				|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
+				|| (this.optionalUpdates && this.optionalUpdates.length > 0)
+				|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
 	}
 
@@ -485,7 +487,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		let removeDelayedUpdates = false;
 		let updatesToInstall = [];
 
-		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));;
+		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));
 		if (!isInstallAll) {
 			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
 		} else {

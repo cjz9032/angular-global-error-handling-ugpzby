@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, EventEmitter, NgZone } from '@angular/core';
+import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
@@ -19,6 +19,7 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public displayColorTempDataSource: any;
 	public displayColorTempCache: EyeCareModeResponse;
 	public eyeCareModeCache: EyeCareModeCapability;
-	public cameraDetails1: ICameraSettingsResponse;
+	public cameraDetails1: CameraSettingsResponse;
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
@@ -131,6 +132,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	isAllInOneMachineFlag = false;
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		public displayService: DisplayService,
@@ -138,18 +140,18 @@ export class SubpageDeviceSettingsDisplayComponent
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
 		private cameraFeedService: CameraFeedService,
-		private logger: LoggerService) {
-
-		this.dataSource = new CameraDetail();
-		this.cameraFeatureAccess = new CameraFeatureAccess();
-		this.eyeCareDataSource = new EyeCareMode();
-		this.Windows = vantageShellService.getWindows();
-		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
-		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+		private logger: LoggerService
+	) {
 	}
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
+		this.Windows = this.vantageShellService.getWindows();
+		this.dataSource = new CameraDetail();
+		this.cameraFeatureAccess = new CameraFeatureAccess();
+		this.eyeCareDataSource = new EyeCareMode();
+		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 		this.initDataFromCache();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -172,7 +174,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.initFeatures();
 			}
 		} else {
-				this.initFeatures();
+			this.initFeatures();
 		}
 	}
 
@@ -235,7 +237,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	initFeatures()  {
+	initFeatures() {
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
@@ -322,6 +324,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
+		this.displayService.stopMonitorForCameraPermission();
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
 		clearTimeout(this.privacyGuardInterval);
@@ -497,10 +500,12 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	private getEyeCareModeStatus() {
 		if (this.displayService.isShellAvailable) {
+			this.logger.debug('SubpageDeviceSettingsDisplayComponent.getEyeCareModeStatus .then');
+
 			this.displayService
 				.getEyeCareModeState()
 				.then((featureStatus: FeatureStatus) => {
-					console.log('getEyeCareModeState.then', featureStatus);
+					this.logger.debug('SubpageDeviceSettingsDisplayComponent.getEyeCareModeStatus inside then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
 					this.enableSlider = featureStatus.status;
 					// this.isEyeCareMode = this.eyeCareModeStatus.status;
@@ -513,7 +518,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.commonService.setLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, this.eyeCareModeCache);
 				})
 				.catch(error => {
-					this.logger.error('getEyeCareModeState', error.message);
+					this.logger.error('SubpageDeviceSettingsDisplayComponent.getEyeCareModeStatus', error.message);
 					return EMPTY;
 				});
 		}

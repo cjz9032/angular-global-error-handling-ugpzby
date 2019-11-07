@@ -17,6 +17,7 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -89,6 +90,7 @@ export class PageSmartAssistComponent implements OnInit {
 	private smartAssistCapability: SmartAssistCapability = undefined;
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private smartAssist: SmartAssistService,
 		private deviceService: DeviceService,
 		public qaService: QaService,

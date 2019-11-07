@@ -20,7 +20,7 @@
 			</svg>
 			<span *ngIf="selectedNumber"><span
 					*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-				{{ selectedNumber.key | translate }}</span>
+				{{ selectedNumber.key }}</span>
 		</div>
 	</div>
 	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
@@ -33,7 +33,7 @@
 				[attr.aria-label]="(selectedNumber && number.key === selectedNumber.key) ? 'selected macrokey numpad '+ number.key : 'macrokey numpad '+number.key"
 				role="button">
 				<div>
-					{{ number.key | translate }}
+					{{ number.key }}
 				</div>
 			</li>
 		</ng-container>

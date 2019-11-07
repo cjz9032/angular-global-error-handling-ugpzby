@@ -9,7 +9,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, EMPTY } from 'rxjs';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import {
 	FlipToBootCurrentModeEnum,
@@ -23,7 +23,7 @@ import { MetricService } from '../../../../../services/metric/metric.service';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 
 enum PowerMode {
@@ -207,12 +207,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	constructor(
+		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public powerService: PowerService,
 		private commonService: CommonService,
 		private logger: LoggerService,
 		public modalService: NgbModal,
 		public shellServices: VantageShellService,
-		private metrics: MetricService
+		private metrics: MetricService,
 	) {
 	}
 
@@ -1064,12 +1065,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case "ThresholdWarningNote":
+				case 'ThresholdWarningNote':
 					this.showWarningMsg = notification.payload;
 					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
 					break;
-				case "IsPowerDriverMissing":
+				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					this.checkPowerDriverMissing(this.isPowerDriverMissing);
 					break;
@@ -1083,8 +1084,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.machineType === 1 && status) {
 			this.showAirplanePowerModeSection = false;
 			this.isChargeThresholdAvailable = false;
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.checkMenuItemsEmpty();
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);

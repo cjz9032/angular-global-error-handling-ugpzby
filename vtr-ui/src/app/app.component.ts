@@ -75,7 +75,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		this.initIsBeta();
 
 		//#endregion
 		window.addEventListener('online', (e) => {
@@ -99,19 +98,10 @@ export class AppComponent implements OnInit, OnDestroy {
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		sessionStorage.clear();
-
 		this.getMachineInfo();
+
+		this.initIsBeta();
 		this.metricService.sendAppLaunchMetric();
-
-		// use when deviceService.isArm is set to true
-		// todo: enable below line when integrating ARM feature
-		// document.getElementById('html-root').classList.add('is-arm');
-
-		const self = this;
-		window.onresize = () => {
-			self.displayService.calcSize(self.displayService);
-		};
-		self.displayService.calcSize(self.displayService);
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
@@ -246,21 +236,14 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getMachineInfo() {
+	private async getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			// this.isMachineInfoLoaded = this.isTranslationLoaded();
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
-					this.commonService.sendNotification('MachineInfo', this.machineInfo);
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-
-					this.isMachineInfoLoaded = true;
+					this.logger.debug('AppComponent.getMachineInfo received getMachineInfo. is lang loaded: ', this.languageService.isLanguageLoaded);
 					this.machineInfo = value;
-					this.isGaming = value.isGaming;
-
-					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
+					this.commonService.sendNotification('MachineInfo', this.machineInfo);
 
 					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
@@ -269,12 +252,16 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
+					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+					this.isMachineInfoLoaded = true;
+					this.isGaming = value.isGaming;
 					this.setFirstRun(value);
 
 					// if u want to see machineinfo in localstorage
 					// just add a key "machineinfo-cache-enable" and set it true
 					// then relaunch app you will see the machineinfo in localstorage.
-					return value;
+					// 	return value;
 				})
 				.catch((error) => { });
 		} else {
@@ -442,16 +429,29 @@ export class AppComponent implements OnInit, OnDestroy {
 				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
 				regUtil.queryValue(regPath).then(val => {
 					if (!val || (val.keyList || []).length === 0) {
-						return ;
+						return;
 					}
-					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then( val => {
-						if (val !== true) {
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val2 => {
+						if (val2 !== true) {
 							this.logger.error('failed to write shell run version to registry');
 						}
 					});
 				});
 			}
-			}, 2000);
+		}, 2000);
 	}
 
+	// private registerWebWorker() {
+	// 	if (typeof Worker !== 'undefined') {
+	// 		// Create a new
+	// 		const worker = new Worker('./web-worker/app-worker.worker', { type: 'module' });
+	// 		worker.onmessage = ({ data }) => {
+	// 			console.log(`page got message: ${data}`);
+	// 		};
+	// 		worker.postMessage('hello');
+	// 	} else {
+	// 		// Web Workers are not supported in this environment.
+	// 		// You should add a fallback so that your program still executes correctly.
+	// 	}
+	// }
 }

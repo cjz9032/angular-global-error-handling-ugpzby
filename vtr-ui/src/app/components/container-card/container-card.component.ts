@@ -4,6 +4,7 @@ import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -28,6 +29,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	@Input() sideFlag = '';
 	@Input() containerCardId = '';
 	@Input() dataSource = '';
+	@Input() isOfflineArm = false;
 
 	isLoading = true;
 
@@ -65,11 +67,20 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	linkClicked(actionType: string, actionLink: string) {
+		if (this.isOfflineArm) {
+			return false;
+		}
+
 		if (!actionType || actionType !== 'Internal') {
 			return;
 		}
 
-		this.articleClicked(actionLink);
+		if (actionLink.indexOf('lenovo-vantage3:') === 0) {
+			WinRT.launchUri(actionLink);
+		} else {
+			this.articleClicked(actionLink);
+		}
+
 		return false;
 	}
 

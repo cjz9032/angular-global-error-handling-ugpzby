@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Internetska veza nije otkrivena",
             "subtitle": "Doznajte više o rješavanju poteškoća s vezom u našem",
-            "buttonText": "Ostvarite podršku"
+            "buttonText": "Ostvarite podršku",
+            "welcomeToVantage": "Dobrodošli u novu generaciju Vantage",
+            "systemHealth": "Stanje sustava"
         },
         "feedback": {
             "title": "Pošaljite povratne informacije",
@@ -1838,8 +1840,21 @@
         "logout": "Odjava",
         "unlockExclusives": "Otključaj ekskluzivne stavke",
         "user": "Korisnik",
-        "welcomeText": "Danas smo puni energije, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Danas smo puni energije, {{firstName}}!",
+		"welcomeText2": "Happy to see you again {{firstName}}",
+		"welcomeText3": "What a pleasant surprise {{firstName}}",
+		"welcomeText4": "Smile {{firstName}}, it's contagious :)",
+		"welcomeText5": "Knock, knock {{firstName}}",
+		"welcomeText6": "You're off to great places!",
+		"welcomeText7": "Today is your day {{firstName}}!",
+		"welcomeText8": "Who likes happy little trees?",
+		"welcomeText9": "Party on {{firstName}}!",
+		"welcomeText10": "Keep calm and Vantage on",
+		"welcomeText11": "A bigger Vantage for your buck",
+		"welcomeText12": "Bring home the Vantage",
+		"welcomeText13": "Eat, sleep, Vantage, repeat",
+		"welcomeText14": "Every moment is a fresh Vantage",
+		"welcomeText15": "Vantage to the fullest",
         "welcomeTextWithoutUserName": "Danas smo puni energije!",
         "helloUser": "Pozdrav, {{firstName}}!",
         "ssoErrorTitle": "Pogreška",
@@ -2171,7 +2186,7 @@
         },
         "question6": {
             "title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
-            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortanu, svoju osobnu pomoćnicu</div><hr><h3 class='faqInFs25FbP10'>Što je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.</p><p>Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.</p><p>Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)</p><p>Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može učiniti za vas:</p><ul>    <li>Dati vam podsjetnike na temelju vremena, mjesta ili osoba.</li>    <li>Pratite pakete, timove, interese i letove.</li>    <li>Slati e-poštu i tekstove.</li>    <li>Upravljati vašim kalendarom i obavještavati vas o svemu.</li>    <li>Izrađivati popise i upravljati njima.</li>    <li>Razgovarati i igrati igre.</li>    <li>Pronaći činjenice, datoteke, mjesta i informacije.</li>    <li>Otvoriti bilo koju aplikaciju u vašem sustavu.</li></ul><h3 class='faqInFs25FbP10'>Pokušajte sljedeće: postavite podsjetnik</h3><hr /><p>Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.</p><p>Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove.”</p><p>Podsjetnik će se pojaviti kada dobijete poziv od Tanye.</p><p>Dodatni bonus &mdash; ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Postavite Cortanu da vas čuje kad god kažete: \\\"Hej Cortana\\\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \\\"Hey Cortana.\\\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortanu, svoju osobnu pomoćnicu</div><hr><h3 class='faqInFs25FbP10'>Što je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.</p><p>Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.</p><p>Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)</p><p>Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može učiniti za vas:</p><ul>    <li>Dati vam podsjetnike na temelju vremena, mjesta ili osoba.</li>    <li>Pratite pakete, timove, interese i letove.</li>    <li>Slati e-poštu i tekstove.</li>    <li>Upravljati vašim kalendarom i obavještavati vas o svemu.</li>    <li>Izrađivati popise i upravljati njima.</li>    <li>Razgovarati i igrati igre.</li>    <li>Pronaći činjenice, datoteke, mjesta i informacije.</li>    <li>Otvoriti bilo koju aplikaciju u vašem sustavu.</li></ul><h3 class='faqInFs25FbP10'>Pokušajte sljedeće: postavite podsjetnik</h3><hr /><p>Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.</p><p>Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove.”</p><p>Podsjetnik će se pojaviti kada dobijete poziv od Tanye.</p><p>Dodatni bonus &mdash; ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Postavite Cortanu da vas čuje kad god kažete: \"Hej Cortana\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \"Hey Cortana.\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",

@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/cor
 import { SupportService } from '../../../services/support/support.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -56,9 +57,26 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	showArticleDetails() {
+	clickContent() {
 		this.metricsDatas.viewOrder++;
+		if (this.articleType === 'content') {
+			if (!this.item.ActionType || this.item.ActionType !== 'Internal') {
+				return;
+			}
+			if (this.item.ActionLink.indexOf('lenovo-vantage3:') === 0) {
+				WinRT.launchUri(this.item.ActionLink);
+			} else {
+				this.showArticleDetails(this.item.ActionLink);
+			}
 
+			return false;
+		} else {
+			this.showArticleDetails(this.item.Id);
+			return false;
+		}
+	}
+
+	showArticleDetails(actionLink: string) {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			backdrop: true,
 			size: 'lg',
@@ -72,10 +90,6 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 				return true;
 			}
 		});
-		if (this.articleType === 'content') {
-			articleDetailModal.componentInstance.articleId = this.item.ActionLink;
-		} else {
-			articleDetailModal.componentInstance.articleId = this.item.Id;
-		}
+		articleDetailModal.componentInstance.articleId = actionLink;
 	}
 }

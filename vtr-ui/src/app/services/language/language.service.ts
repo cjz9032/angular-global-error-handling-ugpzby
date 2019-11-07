@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LoggerService } from '../logger/logger.service';
 import { CommonService } from '../common/common.service';
-import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
-import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
-import { EMPTY } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -78,7 +75,6 @@ export class LanguageService {
 			this.useLanguage(langCode);
 		} catch (error) {
 			this.logger.error('LanguageService.useLanguageByLocale', error.message);
-			return EMPTY;
 		}
 	}
 
@@ -92,9 +88,12 @@ export class LanguageService {
 			let locale = lang.toLowerCase();
 			const isLanguageSupported = this.isLanguageSupported(locale);
 			locale = isLanguageSupported ? locale : this.defaultLanguage;
+			this.logger.debug('LanguageService.useLanguage load translation for ', locale);
+
 			this.translate.use(locale).subscribe(() => {
+				// of(true).pipe(delay(250));
 				// translation file loaded
-				this.logger.error('LanguageService.useLanguage translation loaded', locale);
+				this.logger.debug('LanguageService.useLanguage translation loaded', locale);
 				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
 			});
 		}
@@ -103,15 +102,6 @@ export class LanguageService {
 	private isLanguageSupported(lang: string): boolean {
 		if (lang) {
 			return this.supportedLanguages.includes(lang.toLowerCase());
-		}
-		return false;
-	}
-
-	public isLocaleSame(lang: string) {
-		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
-		if (cachedDeviceInfo && cachedDeviceInfo.locale && cachedDeviceInfo.locale.length > 0) {
-			const isLocaleSame = cachedDeviceInfo.locale === lang.toLowerCase();
-			return isLocaleSame;
 		}
 		return false;
 	}

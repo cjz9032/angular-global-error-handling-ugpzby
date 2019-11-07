@@ -177,8 +177,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	createViewModels() {
-		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
+		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
@@ -205,21 +205,24 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		// this.securityAdvisor.refresh();
 	}
 
-	getWifiStatus(good) {
+	getWifiStatus(good: string) {
 		let itemStatClass = 'good';
-		if (good !== undefined && good !== '') {
-			if (this.itemStatusClass.hasOwnProperty(good)) {
-				itemStatClass = this.itemStatusClass[good];
+		if (good) {
+			if (this.itemStatusClass.hasOwnProperty(Number(good))) {
+				itemStatClass = this.itemStatusClass[Number(good)];
 			}
 		}
 		return itemStatClass;
 	}
 
-	getWifiDetail(good) {
+	getWifiDetail(good: string) {
 		let itemDetail = 'good';
-		if (good !== undefined && good !== '') {
-			if (this.itemDetail.hasOwnProperty(good)) {
-				itemDetail = this.itemDetail[good];
+		if (good) {
+			if (this.itemDetail.hasOwnProperty(Number(good))) {
+				itemDetail = this.itemDetail[Number(good)];
+				this.translate.stream(itemDetail).subscribe((res) => {
+					itemDetail = res;
+				});
 			}
 		}
 		return itemDetail;
@@ -250,7 +253,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
 		const antivirusScore = antivirusScoreInit.filter(current => {
-			return current !== undefined && current !== null && current !== '';
+			return current !== undefined && current !== null;
 		});
 		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
 		this.score = Math.floor(valid / antivirusScore.length * 100);

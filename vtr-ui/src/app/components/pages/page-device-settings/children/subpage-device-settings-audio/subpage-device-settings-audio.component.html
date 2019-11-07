@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-		*ngIf="dolbyModeResponse.available"
+		*ngIf="dolbyModeResponse?.available"
 		id="audio">
 		<div class="col-10 mx-auto">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
@@ -106,11 +106,11 @@
 					[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
 					[path]="'ms-settings:privacy-microphone'"
 					[linkId]="'audio-microphone-permission'"
-					*ngIf="!microphoneProperties.permission">
+					*ngIf="!microphoneProperties?.permission">
 
 				</vtr-widget-permission-note>
 				<ul class="list-group list-group-flush"
-					*ngIf="microphoneProperties.permission">
+					*ngIf="microphoneProperties?.permission">
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
 							[name]="'device.deviceSettings.audio.microphone.title' | translate"

@@ -1,6 +1,6 @@
 import { DeviceService } from 'src/app/services/device/device.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
@@ -10,7 +10,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { EMPTY } from 'rxjs/internal/observable/empty';
-
+import { filter } from 'rxjs/internal/operators/filter';
 
 @Component({
 	selector: 'vtr-home',
@@ -18,34 +18,37 @@ import { EMPTY } from 'rxjs/internal/observable/empty';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-	// private deviceInfo: DeviceInfo;
 	private subscription: Subscription;
+	private redirectToUrl: string;
+
 	constructor(
 		public deviceService: DeviceService,
 		private router: Router,
 		private logger: LoggerService,
 		private languageService: LanguageService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private route: ActivatedRoute
 	) {
+		this.route.queryParams
+			.pipe(filter(params => params.redirectTo))
+			.subscribe((param) => {
+				this.logger.debug('HomeComponent: redirect url', param);
+				this.redirectToUrl = param.redirectTo;
+			});
 	}
 
 	ngOnInit() {
 		this.logger.info(`HomeComponent.ngOnInit`);
-
 		try {
 			this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 				this.onNotification(notification);
 			});
 
 			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineInfo().then((value: any) => {
-					if (!this.languageService.isLanguageLoaded) {
-						this.languageService.useLanguageByLocale(value.locale);
-						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// // update DeviceInfo values in case user switched language
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-					}
-				});
+				this.logger.info(`HomeComponent.ngOnInit is language loaded ${this.languageService.isLanguageLoaded}`);
+				if (this.languageService.isLanguageLoaded) {
+					this.redirectToPage();
+				}
 			} else {
 				// for browser
 				this.languageService.useLanguage();
@@ -65,7 +68,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	private vantageLaunch(isGaming: boolean) {
-		this.logger.info(`HomeComponent.vantageLaunch `, isGaming);
+		this.logger.info(`HomeComponent.vantageLaunch isGamingDevice: `, isGaming);
 		try {
 			if (isGaming) {
 				this.router.navigate(['/device-gaming']);
@@ -82,13 +85,24 @@ export class HomeComponent implements OnInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case TranslationNotification.TranslationLoaded:
-					this.logger.info(`HomeComponent.onNotification`, notification);
-					const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
-					this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+					if (this.redirectToUrl) {
+						this.logger.info(`HomeComponent.onNotification redirecting to`, this.redirectToUrl);
+						this.redirectToPage();
+					} else {
+						this.logger.info(`HomeComponent.onNotification`, notification);
+						const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+						this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+					}
 					break;
 				default:
 					break;
 			}
+		}
+	}
+
+	private redirectToPage() {
+		if (this.redirectToUrl) {
+			this.router.navigateByUrl(this.redirectToUrl);
 		}
 	}
 }

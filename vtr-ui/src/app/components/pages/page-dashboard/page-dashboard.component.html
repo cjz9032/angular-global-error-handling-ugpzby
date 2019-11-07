@@ -1,5 +1,5 @@
 <vtr-page-layout
-	[pageTitle]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
+	[pageTitle]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? (welcomeText | translate:{firstName:''} | punctuationRemoveSpace) : (welcomeText | translate:{firstName:userService.firstName})"
 	[textId]="'dashboard'"
 	[pageCssClass]="'dashboard'">
 
@@ -44,6 +44,7 @@
 						[actionType]="cardContentPositionB.ActionType"
 						[actionLink]="cardContentPositionB.ActionLink"
 						[dataSource]="cardContentPositionB.DataSource"
+						[isOfflineArm]="deviceService.isArm && !isOnline"
 						[type]="'corner'"
 						[ratioX]="4"
 						[ratioY]="2"
@@ -63,6 +64,7 @@
 						[action]="cardContentPositionC.Action"
 						[actionType]="cardContentPositionC.ActionType"
 						[actionLink]="cardContentPositionC.ActionLink"
+						[isOfflineArm]="deviceService.isArm && !isOnline"
 						[type]="'corner'"
 						[ratioX]="4"
 						[ratioY]="2"
@@ -80,6 +82,7 @@
 						[action]="cardContentPositionD.Action"
 						[actionType]="cardContentPositionD.ActionType"
 						[actionLink]="cardContentPositionD.ActionLink"
+						[isOfflineArm]="deviceService.isArm && !isOnline"
 						[type]="'highlight'"
 						[ratioX]="8"
 						[ratioY]="2"
@@ -88,7 +91,7 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 card-left">
+				<div class="col-xl-6 card-left" *ngIf="!deviceService.isSMode">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
 						[img]="cardContentPositionE.FeatureImage"
@@ -97,6 +100,7 @@
 						[action]="cardContentPositionE.Action"
 						[actionType]="cardContentPositionE.ActionType"
 						[actionLink]="cardContentPositionE.ActionLink"
+						[isOfflineArm]="deviceService.isArm && !isOnline"
 						[type]="'article'"
 						[ratioX]="4"
 						[ratioY]="4"
@@ -105,7 +109,7 @@
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 card-right">
+				<div class="col-xl-6 card-right" *ngIf="!deviceService.isSMode">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage"
@@ -114,6 +118,7 @@
 						[action]="cardContentPositionF.Action"
 						[actionType]="cardContentPositionF.ActionType"
 						[actionLink]="cardContentPositionF.ActionLink"
+						[isOfflineArm]="deviceService.isArm && !isOnline"
 						[type]="'article'"
 						[ratioX]="4"
 						[ratioY]="4"

@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { HttpLoaderFactory } from './translation.module';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonService } from '../services/common/common.service';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
@@ -55,7 +55,8 @@ import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { CommonUiModule } from './common/common-ui.module';
-import { WebpackTranslateLoader } from '../loader/webpack-translate-loader.loader';
+import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
+import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 
 @NgModule({
 	declarations: [
@@ -76,6 +77,10 @@ import { WebpackTranslateLoader } from '../loader/webpack-translate-loader.loade
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
 				deps: [HttpClient]
+			},
+			missingTranslationHandler: {
+				provide: MissingTranslationHandler,
+				useClass: MissingTranslationDefaultHandler
 			},
 			isolate: false
 		}),

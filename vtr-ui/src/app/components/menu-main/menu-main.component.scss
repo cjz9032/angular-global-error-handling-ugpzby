@@ -13,11 +13,11 @@
 .vtr-menu-main {
 	position: fixed;
 	top: 0;
-	z-index: 100;
+	z-index: 100 !important;
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
-		position: absolute;
+		position: fixed;
 		left: 0%;
 		right: 0%;
 	}

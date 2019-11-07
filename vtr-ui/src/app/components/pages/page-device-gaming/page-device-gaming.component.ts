@@ -192,6 +192,7 @@ export class PageDeviceGamingComponent implements OnInit {
 	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
+		this.dashboardService.setDefaultCMSContent();
 		this.heroBannerItems = this.dashboardService.heroBannerItems;
 		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
 		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
@@ -433,6 +434,11 @@ export class PageDeviceGamingComponent implements OnInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					if (!this.isOnline) {
+						this.getPreviousContent();
+					} else {
+						this.fetchCmsContents();
+					}
 					break;
 				default:
 					break;

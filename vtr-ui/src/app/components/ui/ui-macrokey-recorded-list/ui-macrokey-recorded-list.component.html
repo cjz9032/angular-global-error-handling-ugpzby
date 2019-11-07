@@ -6,7 +6,7 @@
 				{{ 'gaming.macroKey.details.recorded.title' | translate }}
 				<span>
 					<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-					{{ number.key | translate }}
+					{{ number.key }}
 				</span>
 			</div>
 		</div>
@@ -47,10 +47,10 @@
 												id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
 										</g>
 									</svg>
-									{{ record.key | translate }}
+									{{ record.key }}
 								</div>
 								<div class="interval" [ngClass]="{'hide': ignoreInterval}">
-									{{ record.interval + ' ms' | translate}}
+									{{ record.interval + ' ms' }}
 								</div>
 							</div>
 							<div class="releasing" *ngIf="record.status === 0">
@@ -63,10 +63,10 @@
 												id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
 										</g>
 									</svg>
-									{{ record.key | translate }}
+									{{ record.key }}
 								</div>
 								<div class="interval" [ngClass]="{'hide': ignoreInterval}">
-									{{ record.interval + ' ms' | translate }}
+									{{ record.interval + ' ms' }}
 								</div>
 							</div>
 							<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">

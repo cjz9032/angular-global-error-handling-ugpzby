@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -30,13 +30,15 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, AfterViewInit {
+export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('menuTarget', { static: false })
 	menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
@@ -49,13 +51,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	public isDashboard = false;
 	public countryCode: string;
 	public locale: string;
-	public items: any = [];
+	public items: Array<any> = [];
 	public showSearchBox = false;
 	public showSearchMenu = false;
 	public searchTips = '';
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
-
+	private subscription: Subscription;
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
@@ -80,8 +82,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		public userService: UserService,
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
-		vantageShellService: VantageShellService,
-		localInfoService: LocalInfoService,
+		private vantageShellService: VantageShellService,
+		private localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
@@ -91,12 +93,55 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
-		private hardwareScanService: HardwareScanService,
+		// private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		searchService: AppSearchService
+		private searchService: AppSearchService
 	) {
-		localInfoService
+	}
+
+	ngOnInit() {
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+		this.initComponent();
+
+		this.isDashboard = true;
+
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		if (machineType) {
+			this.loadMenuOptions(machineType);
+		} else if (this.deviceService.isShellAvailable) {
+			this.deviceService
+				.getMachineType()
+				.then((value: number) => {
+					this.loadMenuOptions(value);
+				})
+				.catch((error) => { });
+		}
+
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		if (cacheMachineFamilyName) {
+			this.machineFamilyName = cacheMachineFamilyName;
+		}
+
+		// VAN-10950 hide HW scan from Vantage UI in 3.1.1
+		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+		// 	this.hardwareScanService.isAvailable()
+		// 		.then((isAvailable: any) => {
+		// 			this.showHWScanMenu = isAvailable;
+		// 		})
+		// 		.catch(() => {
+		// 			this.showHWScanMenu = false;
+		// 		});
+		// }
+	}
+
+	private initComponent() {
+		this.localInfoService
 			.getLocalInfo()
 			.then((result) => {
 				this.region = result.GEO;
@@ -107,14 +152,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.region = 'us';
 				this.showVpn();
 			});
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
 		this.getMenuItems().then((items) => {
-			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
-				LocalStorageKey.SecurityShowWindowsHello
-			);
+			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 			if (cacheShowWindowsHello) {
 				const securityItem = items.find((item) => item.id === 'security');
 				if (securityItem) {
@@ -158,8 +201,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.showSearchMenu = true;
 			}
 		});
-
-		this.unsupportFeatureEvt = searchService.getUnsupportFeatureEvt();
+		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
 		this.unsupportFeatureEvt.subscribe(featureDesc => {
 			if (this.searchTipsTimeout) {
 				clearTimeout(this.searchTipsTimeout);
@@ -197,43 +239,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
 
-		this.isDashboard = true;
-
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
-		if (machineType) {
-			this.loadMenuOptions(machineType);
-		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService
-				.getMachineType()
-				.then((value: number) => {
-					this.loadMenuOptions(value);
-				})
-				.catch((error) => { });
-		}
-
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
-			LocalStorageKey.MachineFamilyName,
-			undefined
-		);
-		if (cacheMachineFamilyName) {
-			this.machineFamilyName = cacheMachineFamilyName;
-		}
-
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.hardwareScanService.isAvailable()
-				.then((isAvailable: any) => {
-					this.showHWScanMenu = isAvailable;
-				})
-				.catch(() => {
-					this.showHWScanMenu = false;
-				});
-		}
-	}
 
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
@@ -295,6 +301,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
+		this.logger.debug('MenuMainComponent.getMenuItems ngAfterViewInit');
 		this.getMenuItems().then((items) => {
 			const chsItem = items.find((item) => item.id === 'home-security');
 			if (!chsItem) {
@@ -304,11 +311,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		});
 	}
 
-	// ngOnDestroy() {
-	// 	if (this.commonMenuSubscription) {
-	// 		this.commonMenuSubscription.unsubscribe();
-	// 	}
-	// }
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+	}
 
 	toggleMenu(event) {
 		this.updateSearchBoxState(false);
@@ -528,7 +535,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	getMenuItems(): Promise<any> {
+		const str = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.MenuItems, undefined);
+		const menuItems = (str && str.length > 0) ? JSON.parse(str) : undefined;
+		if ((this.items && this.items.length > 0) || menuItems) {
+			this.items = menuItems;
+			return Promise.resolve(this.items);
+		}
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
+			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.MenuItems, items);
 			this.items = items;
 			return this.items;
 		});
