@@ -7,7 +7,7 @@ import { DeviceService } from '../device/device.service';
 })
 export class LocalInfoService {
 
-	private sysInfo: any;
+	// private sysInfo: any;
 	private localInfo: any;
 	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-latn', 'sv', 'tr', 'uk', 'zh-hant'];
 
@@ -15,7 +15,7 @@ export class LocalInfoService {
 		private shellService: VantageShellService,
 		private deviceService: DeviceService
 	) {
-		this.sysInfo = shellService.getSysinfo();
+		// this.sysInfo = shellService.getSysinfo();
 	}
 
 	async getLocalInfo() {

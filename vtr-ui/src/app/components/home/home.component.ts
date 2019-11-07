@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 			});
 
 			if (this.deviceService.isShellAvailable) {
+				this.logger.info(`HomeComponent.ngOnInit is language loaded ${this.languageService.isLanguageLoaded}`);
 				if (this.languageService.isLanguageLoaded) {
 					this.redirectToPage();
 				}

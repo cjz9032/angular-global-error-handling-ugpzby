@@ -103,16 +103,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.initIsBeta();
 		this.metricService.sendAppLaunchMetric();
 
-		// use when deviceService.isArm is set to true
-		// todo: enable below line when integrating ARM feature
-		// document.getElementById('html-root').classList.add('is-arm');
-
-		const self = this;
-		window.onresize = () => {
-			self.displayService.calcSize(self.displayService);
-		};
-		self.displayService.calcSize(self.displayService);
-
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
 		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
@@ -252,6 +242,9 @@ export class AppComponent implements OnInit, OnDestroy {
 				.getMachineInfo()
 				.then((value: any) => {
 					this.logger.debug('AppComponent.getMachineInfo received getMachineInfo. is lang loaded: ', this.languageService.isLanguageLoaded);
+					this.machineInfo = value;
+					this.commonService.sendNotification('MachineInfo', this.machineInfo);
+
 					if (!this.languageService.isLanguageLoaded) {
 						this.languageService.useLanguageByLocale(value.locale);
 						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
@@ -259,11 +252,9 @@ export class AppComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 					}
 
-					this.commonService.sendNotification('MachineInfo', this.machineInfo);
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
 					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 					this.isMachineInfoLoaded = true;
-					this.machineInfo = value;
 					this.isGaming = value.isGaming;
 					this.setFirstRun(value);
 
@@ -440,8 +431,8 @@ export class AppComponent implements OnInit, OnDestroy {
 					if (!val || (val.keyList || []).length === 0) {
 						return;
 					}
-					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val => {
-						if (val !== true) {
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val2 => {
+						if (val2 !== true) {
 							this.logger.error('failed to write shell run version to registry');
 						}
 					});
