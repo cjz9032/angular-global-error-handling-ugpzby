@@ -222,7 +222,13 @@ export class AppsForYouService {
 				const applicationGuid = appGuid;
 				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
 					(progressResponse) => {
-						this.updateCachedAppStatus(appGuid, 'InstallerRunning');
+						// SU plugin will launch installer after progress 85, so check status by the progerss;
+						//   for compatibility reasons, SU plugin will not add additonal status indicator
+						if (progressResponse < 85) {
+							this.updateCachedAppStatus(appGuid, 'Downloading');
+						} else {
+							this.updateCachedAppStatus(appGuid, 'InstallerRunning');
+						}
 						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
 					});
 				this.updateCachedAppStatus(appGuid, result);
