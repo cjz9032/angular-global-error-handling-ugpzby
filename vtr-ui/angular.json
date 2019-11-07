@@ -31,8 +31,7 @@
 							"src/assets",
 							"src/mock-api",
 							"src/manifest.webmanifest",
-							"src/pre-load.js",
-							"src/vantage-worker.min.js"
+							"src/pre-load.js"
 						],
 						"styles": [
 							"src/styles.scss"
@@ -248,8 +247,7 @@
 						"assets": [
 							"src/favicon.ico",
 							"src/assets",
-							"src/manifest.webmanifest",
-							"src/vantage-worker.js"
+							"src/manifest.webmanifest"
 						]
 					}
 				},
