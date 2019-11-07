@@ -241,6 +241,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	initDataFromCache() {
+		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
 		this.initExpressChargingFromCache();
@@ -965,6 +966,19 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	// End Lenovo Vantage ToolBar
+	public initPowerSmartSettingFromCache() {
+		try {
+			const cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
+			if (cache) {
+				const showIC = cache.showIC;
+				if (showIC === 0) {
+					this.hidePowerSmartSetting(true);
+				}
+			}
+		} catch (error) {
+			console.log('initPowerSmartSettingFromCache', error);
+		}
+	}
 
 	hidePowerSmartSetting(hide: boolean) {
 		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
@@ -1179,7 +1193,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	checkMenuItemsEmpty() {
-		if (this.headerMenuItems.length === 0 ) {
+		if (this.headerMenuItems.length === 0) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsHidePowerPage, true);
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.IsHidePowerPage, false);
