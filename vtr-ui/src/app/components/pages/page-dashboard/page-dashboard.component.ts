@@ -85,6 +85,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		tileF: 'CMS'
 	};
 
+	welcomeText = '';
+
 	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
@@ -150,6 +152,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getWelcomeText();
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -192,6 +195,31 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 		this.qaService.destroyChangeSubscribed();
+	}
+
+	private getWelcomeText() {
+	// dashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
+		const dashboardWelcomeText = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardWelcomeText);
+		if (dashboardWelcomeText) {
+			this.welcomeText = dashboardWelcomeText;
+		} else {
+			let textIndex = 1;
+			const welcomeTextLength = 15;
+			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
+			if (dashboardLastWelcomeText) {
+				const lastIndex = parseInt(dashboardLastWelcomeText.replace('lenovoId.welcomeText', ''), 10);
+				if (lastIndex === welcomeTextLength) {
+					textIndex = 1;
+				} else {
+					textIndex = lastIndex + 1;
+				}
+			} else {
+				textIndex = Math.floor(Math.random() * 15 + 1);
+			}
+			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
+			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
+			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.welcomeText);
+		}
 	}
 
 	private fetchContent(lang?: string) {
