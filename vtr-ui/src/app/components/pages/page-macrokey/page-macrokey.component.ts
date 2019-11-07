@@ -19,7 +19,8 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
-	articleContent: any = {};
+	cardContentPositionC: any = {};
+	cardContentPositionF: any = {};
 
 	constructor(
 		private cmsService: CMSService,
@@ -46,17 +47,33 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
-			Page: 'macro-key',
+			Page: 'dashboard',
 			Lang: 'en',
 			GEO: 'US',
 			OEM: 'Lenovo',
 			OS: 'Windows',
 			Brand: 'idea',
-			Segment: 'gaming'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-			if (Object.keys(response).length) {
-				this.articleContent = response[0];
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
+			}
+
+			const cardContentPositionC = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-title-description-link-image',
+				'position-C'
+			)[0];
+			if (cardContentPositionC) {
+				this.cardContentPositionC = cardContentPositionC;
+				if (this.cardContentPositionC.BrandName) {
+					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+				}
 			}
 		});
 	}
