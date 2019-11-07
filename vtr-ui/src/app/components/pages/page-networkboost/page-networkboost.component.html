@@ -61,16 +61,33 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-											<vtr-container-card *ngIf="(articleContent | json) != '{}'" order="2" [itemID]="articleContent.id"
-												[img]="articleContent.FeatureImage"
-												[caption]="articleContent.Description"
-												[title]="articleContent.Title"
-												[logoText]="articleContent.BrandName"
-												[action]="articleContent.Action"
-												[dataSource]="articleContent.DataSource"
-												[actionType]="articleContent.ActionType"
-												[actionLink]="articleContent.ActionLink" [type]="'corner'"
-												[ratioX]="4" [ratioY]="2" [cornerShift]="'large'">
+											<vtr-container-card order="1" 
+											  [itemID]="cardContentPositionF.Id"
+												[img]="cardContentPositionF.FeatureImage"
+												[title]="cardContentPositionF.Title"
+												[logoText]="cardContentPositionF.BrandName"
+												[action]="cardContentPositionF.Action"
+												[actionType]="cardContentPositionF.ActionType"
+												[actionLink]="cardContentPositionF.ActionLink" 
+												[type]="'article'"
+												[ratioX]="4" 
+												[ratioY]="4">
+											</vtr-container-card>
+										</div>
+
+										<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+											<vtr-container-card order="2" 
+											  [itemID]="cardContentPositionC.id"
+												[img]="cardContentPositionC.FeatureImage"
+												[caption]="cardContentPositionC.Description"
+												[title]="cardContentPositionC.Title"
+												[logoText]="cardContentPositionC.BrandName"
+												[action]="cardContentPositionC.Action"
+												[actionType]="cardContentPositionC.ActionType"
+												[actionLink]="cardContentPositionC.ActionLink" 
+												[type]="'corner'"
+												[ratioX]="4" 
+												[ratioY]="2">
 											</vtr-container-card>
 										</div>
 									</div>

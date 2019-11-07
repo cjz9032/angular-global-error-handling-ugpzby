@@ -58,7 +58,8 @@
 									</vtr-ui-checkbox>
 								</div> -->
 							</vtr-ui-row-switch>
-							<div class="custom-control custom-checkbox aps-checkbox">
+							<div class="custom-control custom-checkbox aps-checkbox"
+								[class.aps-disabled]="!apsStatus">
 								<input id="aps-toggle-checkbox"
 									attr.aria-label="aps-toggle-checkbox"
 									type="checkbox"
