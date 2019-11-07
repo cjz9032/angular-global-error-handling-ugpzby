@@ -288,6 +288,19 @@
 													.left-icon-block {
 														top: 0;
 													}
+													.vtr-eye-care-mode {
+														.vtr-ui-range-slider{
+															.label {
+																color: $gaming_lightest;
+															}
+														}
+														.custom-control-label{
+															.disabled {
+																color: $gaming_grey_lightest;
+															}
+														}
+													}
+													
 												}
 											}
 										}
