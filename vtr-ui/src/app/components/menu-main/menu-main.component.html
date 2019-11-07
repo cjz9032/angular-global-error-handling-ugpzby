@@ -131,7 +131,9 @@
 							attr.aria-haspopup="true"
 							attr.aria-expanded="false"
 							href="javascript:void(0)"
-							(click)="onMenuItemClick(item);"
+							(click)="onMenuItemClick(item);hideDropDown=true"
+							(mouseover)="hideDropDown=false"
+							(mouseout)="hideDropDown=true"
 							(keydown.enter)="onMenuItemClick(item)"
 							role="button"
 							*ngIf="item.label | translate">
@@ -144,8 +146,11 @@
 								class="beta">Beta</span>
 						</a>
 						<div ngbDropdownMenu
+						(mouseover)="hideDropDown=false"
+						(mouseout)="hideDropDown=true"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
+							[ngClass]="{'d-none': hideDropDown}"
 							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
