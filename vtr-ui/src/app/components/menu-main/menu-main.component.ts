@@ -301,7 +301,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngAfterViewInit(): void {
-		this.logger.debug('MenuMainComponent.getMenuItems ngAfterViewInit');
 		this.getMenuItems().then((items) => {
 			const chsItem = items.find((item) => item.id === 'home-security');
 			if (!chsItem) {
