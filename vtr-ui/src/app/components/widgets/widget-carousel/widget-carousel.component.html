@@ -5,7 +5,7 @@
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
-			ngbSlide>
+			ngbSlide id="ngb-slide-{{cIndex}}">
 			<a [href]="model.link"
 				vtrMetrics
 				id="{{carouselId}}-{{cIndex}}"

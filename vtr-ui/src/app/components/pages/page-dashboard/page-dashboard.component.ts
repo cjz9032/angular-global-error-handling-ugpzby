@@ -85,7 +85,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		tileF: 'CMS'
 	};
 
-	welcomeTextIndexes: any[] = [''];
 	welcomeText = '';
 
 	/*forwardLink = {
@@ -204,13 +203,22 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		if (dashboardWelcomeText) {
 			this.welcomeText = dashboardWelcomeText;
 		} else {
-			this.welcomeTextIndexes = [''];
-			for (let i = 2; i <= 15; i++) {
-				this.welcomeTextIndexes.push(i);
+			let textIndex = 1;
+			const welcomeTextLength = 15;
+			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
+			if (dashboardLastWelcomeText) {
+				const lastIndex = parseInt(dashboardLastWelcomeText.replace('lenovoId.welcomeText', ''), 10);
+				if (lastIndex === welcomeTextLength) {
+					textIndex = 1;
+				} else {
+					textIndex = lastIndex + 1;
+				}
+			} else {
+				textIndex = Math.floor(Math.random() * 15 + 1);
 			}
-			const textIndex = this.welcomeTextIndexes[Math.floor(Math.random() * this.welcomeTextIndexes.length)];
 			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
+			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.welcomeText);
 		}
 	}
 
