@@ -535,17 +535,22 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	getMenuItems(): Promise<any> {
-		const str = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.MenuItems, undefined);
-		const menuItems = (str && str.length > 0) ? JSON.parse(str) : undefined;
-		if ((this.items && this.items.length > 0) || menuItems) {
-			this.items = menuItems;
+		// if available in variable return it
+		if (this.items && this.items.length > 0) {
 			return Promise.resolve(this.items);
 		}
-		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
-			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.MenuItems, items);
-			this.items = items;
-			return this.items;
-		});
+		// check for local storage
+		const menuItems = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.MenuItems, undefined);
+		if (menuItems) {
+			this.items = menuItems;
+			return Promise.resolve(this.items);
+		} else {
+			return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
+				this.commonService.setLocalStorageValue(DashboardLocalStorageKey.MenuItems, items);
+				this.items = items;
+				return this.items;
+			});
+		}
 	}
 
 	private showSmartAssist() {
