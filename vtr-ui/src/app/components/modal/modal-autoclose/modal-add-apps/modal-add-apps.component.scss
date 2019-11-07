@@ -30,9 +30,6 @@ ui-popover-apps {
 	@media #{$small-screen} {
 		max-width: 80%;
 	}
-	@media #{$large-screen} {
-		min-width: 110rem;
-	}
 }
 ::ng-deep .vtr-modal-add-apps {
 	.top-header {
@@ -44,15 +41,6 @@ ui-popover-apps {
 		min-height: 60rem;
 	}
 	.modal-body {
-		@media #{$large-screen} {
-			min-width: 91.4rem;
-		}
-		@media #{$mediaquery_X7} {
-			min-width: 91.4rem;
-		}
-		@media #{$mediaquery_X5} {
-			min-width: 70rem;
-		}
 		.main-content-body {
 			padding: 1rem 4rem;
 			.running-apps {
@@ -105,10 +93,18 @@ ui-popover-apps {
 					width: 20%;
 					padding-left: 0.5rem;
 					padding-right: 0.5rem;
+					@media #{$breakpoint_lg} {
+						width: 25%;
+						padding-left: 1rem;
+						padding-right: 1rem;
+					}
 					@media #{$mediaquery_md} {
-						width: 33.3% !important;
-						padding-left: 2rem;
-						padding-right: 2rem;
+						width: 33.3%;
+						padding-left: 1rem;
+						padding-right: 1rem;
+					}
+					@media #{$breakpoint_sm} {
+						width: 50%;
 					}
 					div.app-text-title {
 						margin: 0 auto;
