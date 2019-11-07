@@ -190,6 +190,10 @@ export class CommonService {
 		return array.filter(e => e.path !== path);
 	}
 
+	public removeObjById(array: any[], id: string) {
+		return array.filter(e => e.id !== id);
+	}
+
 	public getCapabalitiesNotification(): Observable<any> {
 		return this.gamingCapabalities.asObservable();
 	}

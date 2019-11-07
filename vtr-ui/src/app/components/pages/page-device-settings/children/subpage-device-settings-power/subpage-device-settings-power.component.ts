@@ -228,6 +228,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
+			this.checkMenuItemsEmpty();
 		}
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
@@ -383,6 +384,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	onSetSmartStandbyCapability(event: boolean) {
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
+			this.checkMenuItemsEmpty();
 		}
 	}
 
@@ -966,6 +968,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	hidePowerSmartSetting(hide: boolean) {
 		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
+		this.checkMenuItemsEmpty();
 	}
 
 	// start battery threshold settings
@@ -1068,6 +1071,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.isChargeThresholdAvailable = false;
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+			this.checkMenuItemsEmpty();
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
 	}
@@ -1156,18 +1160,29 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			(this.conservationModeStatus && this.conservationModeStatus.available) || (this.expressChargingStatus && this.expressChargingStatus.available) ||
 			this.isChargeThresholdAvailable)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.checkMenuItemsEmpty();
 		}
 	}
 
 	showPowerSettings() {
 		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+			this.checkMenuItemsEmpty();
 		}
 	}
 
 	hideOtherSettingsLink() {
 		if (this.vantageToolbarStatus && !this.vantageToolbarStatus.available) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
+			this.checkMenuItemsEmpty();
+		}
+	}
+
+	checkMenuItemsEmpty() {
+		if (this.headerMenuItems.length === 0 ) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsHidePowerPage, true);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsHidePowerPage, false);
 		}
 	}
 

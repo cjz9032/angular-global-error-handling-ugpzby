@@ -13,6 +13,8 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -70,7 +72,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		public deviceService: DeviceService,
 		public audioService: AudioService,
 		private logger: LoggerService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private router: Router,
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -82,7 +85,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
-
+		const showPowerPage = this.commonService.getLocalStorageValue(LocalStorageKey.IsHidePowerPage);
+		if (showPowerPage) {
+			this.hidePowerPage();
+		}
 		// translate subheader menus
 		this.menuItems.forEach(m => {
 			// m.label = this.translate.instant(m.label);//VAN-5872, server switch feature
@@ -98,6 +104,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});
 		console.log('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+
 		// translate subheader menus
 		/*this.menuItems.forEach(m => {
 			//m.label = this.translate.instant(m.label);
@@ -119,6 +126,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	hidePowerPage() {
+		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
+		this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
+	}
+
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
@@ -126,6 +138,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
 						this.getMicrophoneSettings();
+					}
+					break;
+				case LocalStorageKey.IsHidePowerPage:
+					if (payload) {
+						this.hidePowerPage();
 					}
 					break;
 				default:
@@ -137,13 +154,13 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	initInputAccessories() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		if (this.machineType !== 1) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			this.menuItems = this.commonService.removeObjById(this.menuItems, 'input-accessories');
 			return;
 		}
 		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
 		const isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
 		if (!isAvailable) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			this.menuItems = this.commonService.removeObjById(this.menuItems, 'input-accessories');
 		}
 	}
 
@@ -154,7 +171,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 					.then((microphone: Microphone) => {
 						console.log('getMicrophoneSettings', microphone);
 						if (!microphone.available) {
-							this.menuItems.splice(1, 1);
+							this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
 						}
 					}).catch(error => {
 						this.logger.error('getMicrophoneSettings', error.message);
