@@ -36,9 +36,10 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	installButtonStatusEnum = {
 		INSTALL: 1,
-		INSTALLING: 2,
-		LAUNCH: 3,
-		SEEMORE: 4,
+		DOWNLOADING: 2,
+		INSTALLING: 3,
+		LAUNCH: 4,
+		SEEMORE: 5,
 		UNKNOWN: -1
 	};
 
@@ -185,8 +186,13 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					break;
 				case AppsForYouEnum.InstallAppProgress:
 					if (this.appDetails && this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
-						this.appDetails.showStatus = this.statusEnum.INSTALLING;
-						this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+						if (notification.payload < 85) {
+							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+							this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
+						} else {
+							this.appDetails.showStatus = this.statusEnum.INSTALLING;
+							this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
+						}
 					}
 					break;
 				case AppsForYouEnum.InstallAppResult:
@@ -198,6 +204,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 							this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
 							this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
+						} else if (notification.payload === 'Downloading') {
+							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+							this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
 						} else if (notification.payload === 'InstallerRunning') {
 							this.appDetails.showStatus = this.statusEnum.INSTALLING;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
@@ -242,6 +251,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 				if (status === 'InstallDone' || status === 'InstalledBefore') {
 					this.appDetails.showStatus = this.statusEnum.INSTALLED;
 					this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
+				} else if (status === 'Downloading') {
+					this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
+					this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
 				} else if (status === 'InstallerRunning') {
 					this.appDetails.showStatus = this.statusEnum.INSTALLING;
 					this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
