@@ -45,7 +45,7 @@ export class AntivirusCommon {
 	}
 
 	launch() {
-		// this.antivirus.launch(); // commented to fix build error
+		this.antivirus.launch();
 	}
 
 	private onNotification(notification: AppNotification) {
