@@ -31,6 +31,7 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -300,6 +301,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngAfterViewInit(): void {
+		this.logger.debug('MenuMainComponent.getMenuItems ngAfterViewInit');
 		this.getMenuItems().then((items) => {
 			const chsItem = items.find((item) => item.id === 'home-security');
 			if (!chsItem) {
@@ -533,10 +535,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	getMenuItems(): Promise<any> {
-		if (this.items && this.items.length > 0) {
+		const str = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.MenuItems, undefined);
+		const menuItems = (str && str.length > 0) ? JSON.parse(str) : undefined;
+		if ((this.items && this.items.length > 0) || menuItems) {
+			this.items = menuItems;
 			return Promise.resolve(this.items);
 		}
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
+			this.commonService.setLocalStorageValue(DashboardLocalStorageKey.MenuItems, items);
 			this.items = items;
 			return this.items;
 		});
