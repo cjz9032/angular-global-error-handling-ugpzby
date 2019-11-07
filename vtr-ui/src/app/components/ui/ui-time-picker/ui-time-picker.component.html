@@ -68,7 +68,7 @@
 											(click)="updateHours(false)"
 											(keydown.enter)="updateHours(false)"
 											tabindex="0"
-											role="none"
+											role="button"
 											id="smartStandby-{{linkId}}-hours-prev-btn"
 											aria-label="smart standby hours decrease button">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
@@ -82,7 +82,7 @@
 											(click)="updateHours(true)"
 											(keydown.enter)="updateHours(true)"
 											tabindex="0"
-											role="none"
+											role="button"
 											id="smartStandby-{{linkId}}-hours-next-btn"
 											aria-label="smart standby hours increase button">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
@@ -96,7 +96,7 @@
 											(keydown.enter)="updateMinutes(false)"
 											id="smartStandby-{{linkId}}-minutes-prev-btn"
 											tabindex="0"
-											role="none"
+											role="button"
 											aria-label="smart standby minutes decrease button">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
@@ -109,7 +109,7 @@
 											(click)="updateMinutes(true)"
 											(keydown.enter)="updateMinutes(true)"
 											tabindex="0"
-											role="none"
+											role="button"
 											id="smartStandby-{{linkId}}-minutes-next-btn"
 											aria-label="smart standby minutes increase button">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>

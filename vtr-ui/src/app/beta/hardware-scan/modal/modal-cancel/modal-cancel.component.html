@@ -13,7 +13,12 @@
 
   <div class="row">
     <div class="col" *ngIf="!loading">
-      <button type="sub`mit" id="ScheduleButton"
+      <button type="submit" 
+        id="ScheduleButton"
+        vtrMetrics
+        metricsEvent="FeatureClick"
+        metricsParent="{{ItemParent}}"
+        metricsItem="{{ConfirmItemName}}"
         class="btn btn-primary user-submit"
         (click)= "onAgree()"> {{ buttonText }}
       </button>
@@ -30,7 +35,8 @@
     *ngIf="!loading"
     vtrMetrics
     metricsEvent="FeatureClick"
-    metricsParent="Device.HardwareScan"
+    metricsParent="{{ItemParent}}"
+    metricsItem="{{CancelItemName}}"
     (click)="closeModal()">
     <img [src]=" '/assets/icons/Close.svg' | svgInline | async"
       alt=""
