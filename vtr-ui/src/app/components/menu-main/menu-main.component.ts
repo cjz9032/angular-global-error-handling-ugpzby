@@ -176,13 +176,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 
 		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			// this.hardwareScanService.isAvailable()
-			// 	.then((isAvailable: any) => {
-			// 		this.showHWScanMenu = isAvailable;
-			// 	})
-			// 	.catch(() => {
-			// 		this.showHWScanMenu = false;
-			// 	});
 			this.showHWScanMenu = this.hardwareScanService.isHardwareScanAvailable();
 		}
 	}
