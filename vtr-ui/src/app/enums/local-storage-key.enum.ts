@@ -15,6 +15,7 @@ export enum LocalStorageKey {
 	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
 	SecurityMcAfeeMetricList = '[LocalStorageKey] SecurityMcAfeeMetricList',
 	SecurityShowMetricList = '[LocalStorageKey] SecurityShowMetricList',
+	SecurityShowMcafee = '[LocalStorageKey] SecurityShowMcafee',
 	SecurityShowMetricButton = '[LocalStorageKey] SecurityShowMetricButton',
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
