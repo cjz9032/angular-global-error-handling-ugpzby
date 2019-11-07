@@ -88,6 +88,23 @@
 			border: 0rem;
 			cursor: pointer;
 		}
+
+		.action-button-disable {
+			border-radius: 2.5rem;
+			background: $gradient_main;
+			text-transform: uppercase;
+			padding: 0 3rem;
+			color: $light;
+			font-size: 1.5rem;
+			height: 5rem;
+			max-width: 100%;
+			font-weight: $weight_bold;
+			line-height: 5rem;
+
+			text-align: center;
+			border: 0rem;
+			cursor: default;
+		}
 	}
 
 	.errorMessage {
