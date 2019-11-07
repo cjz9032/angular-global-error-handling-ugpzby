@@ -2,22 +2,24 @@
 
 ui-popover {
 	position: absolute;
-	width: 70rem;
+	width: 60rem;
 	padding: 3rem 5rem;
 	background: $gaming_lightest;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 8rem;
-	top: -12rem;
+	top: -13rem;
 	@media #{$small-screen} {
-		width: 45rem;
+		width: 35rem;
+		top: -14rem;
 	}
 	@media #{$medium-screen} {
-		width: 55rem;
+		width: 45rem;
+		top: -13rem;
 	}
 	@media #{$mediaquery_X31} {
-		width: 48rem;
+		width: 38rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;
