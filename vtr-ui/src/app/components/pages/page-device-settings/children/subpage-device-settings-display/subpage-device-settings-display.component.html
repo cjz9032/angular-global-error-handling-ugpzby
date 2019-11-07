@@ -50,7 +50,8 @@
 									</vtr-display-color-temp>
 									<div class="row">
 										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
-											id="day-time-color-temp-note" attr.aria-label="day-time-color-temp-note" >
+											id="day-time-color-temp-note"
+											attr.aria-label="day-time-color-temp-note">
 											<p>{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 											</p>
 										</div>
@@ -141,8 +142,8 @@
 							</div>
 							<div class="row">
 								<div class="feature-note p-4 m-4"
-										id="privacy-guard-note"
-										attr.aria-label="privacy-guard-note">
+									id="privacy-guard-note"
+									attr.aria-label="privacy-guard-note">
 									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}
 									</p>
 								</div>
@@ -157,8 +158,9 @@
 											attr.aria-label="cb-privacy-guard"
 											[checked]="privacyGuardCheckBox"
 											(change)="setPrivacyGuardOnPasswordStatusVal($event)" />
-											<span class="checkmark"></span>
+										<span class="checkmark"></span>
 										<label class="custom-control-label"
+											attr.disabled="privacyGuardToggleStatus"
 											for="cb-privacy-guard">
 											<span id="cb-privacy-guard-description"
 												attr.aria-label="cb-privacy-guard-description">
@@ -173,7 +175,8 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="hasOLEDPowerControlCapability">
+					<li class="pt-3"
+						*ngIf="hasOLEDPowerControlCapability">
 						<!-- [rightIcon]="['far', 'question-circle']"  [tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate" -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
@@ -248,9 +251,9 @@
 				(toggle)="onCardCollapse($event)"
 				[collapseLinkId]="'device-settings-camera'">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3" *ngIf="cameraPrivacyModeStatus.available">
-						<vtr-ui-row-switch
-							[switchId]="'camera-privacy-mode'"
+					<li class="pt-3"
+						*ngIf="cameraPrivacyModeStatus.available">
+						<vtr-ui-row-switch [switchId]="'camera-privacy-mode'"
 							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							componentName="Camera Privacy Mode"
 							[name]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
@@ -273,8 +276,9 @@
 												</fa-icon>
 											</div>
 											<div class="col-11 pr-0 pl-2">
-												<p class="mb-0 mt-auto" id="camera-privacy-mode-note"
-												attr.aria-label="camera-privacy-mode-note">
+												<p class="mb-0 mt-auto"
+													id="camera-privacy-mode-note"
+													attr.aria-label="camera-privacy-mode-note">
 													{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 												</p>
 												<button type="button"
@@ -320,8 +324,8 @@
 											</div>
 											<div class="col-11 pr-0 pl-2">
 												<p class="mb-0 mt-auto"
-												id="device-settings-camera-privacy-note"
-												attr.aria-label="device-settings-camera-privacy-note">
+													id="device-settings-camera-privacy-note"
+													attr.aria-label="device-settings-camera-privacy-note">
 													{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
 												</p>
 												<button type="button"
