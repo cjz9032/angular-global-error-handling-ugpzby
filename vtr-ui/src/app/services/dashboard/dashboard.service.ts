@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { DeviceService } from '../device/device.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -32,7 +33,9 @@ export class DashboardService {
 
 	constructor(
 		shellService: VantageShellService,
-		commonService: CommonService) {
+		commonService: CommonService,
+		private deviceService: DeviceService
+		) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
@@ -218,7 +221,7 @@ export class DashboardService {
 					}
 					// first launch will not have data, below code will break
 					const result = { endDate: null, status: 2, startDate: null };
-					this.sysinfo.getMachineInfo().then((data) =>
+					this.deviceService.getMachineInfo().then((data) =>
 						this.warranty.getWarrantyInformation(data.serialnumber).then(
 							(warrantyRep) => {
 								if (warrantyRep && warrantyRep.status !== 2) {
