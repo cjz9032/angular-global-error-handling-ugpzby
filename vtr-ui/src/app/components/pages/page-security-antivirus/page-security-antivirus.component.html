@@ -277,7 +277,7 @@
 				[isButtonVisible]="false"></vtr-widget-offline-info>
 			<div class="subheader"
 				[ngClass]="{'mt-minus': isOnline}">
-				<div class="rounded-card-with-shadow p-5 bg-white">
+				<div class="rounded-card-with-shadow p-5 bg-white mb-5">
 					<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 						<div class="row">
 							<div class="col-auto px-0 mr-auto">
@@ -304,17 +304,6 @@
 								<div class="title title-normal pb-3"
 									[innerHTML]="viewModel.otherFirewall?.name">
 								</div>
-								<vtr-container-collapsible [collapseLinkId]="'othersBetterOffer'"
-									[cardTitle]="'security.antivirus.others.betterOffer' | translate"
-									componentName="othersBetterOfferCollapsible"
-									[allowCollapse]="true">
-									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-										[isOnline]="isOnline"
-										[name]="viewModel.otherAntiVirus.name"
-										[common]="common">
-									</vtr-widget-mcafee>
-									<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
-								</vtr-container-collapsible>
 							</div>
 							<div class="col-auto px-0">
 							</div>
@@ -328,12 +317,17 @@
 						</vtr-ui-security-statusbar>
 
 					</div>
-					<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-						[isOnline]="isOnline"
-						[name]="viewModel.otherAntiVirus.name"
-						[common]="common"></vtr-widget-mcafee>
-					<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
 				</div>
+				<vtr-container-collapsible
+						*ngIf="viewModel.showMcafee"
+						[collapseLinkId]="'othersBetterOffer'"
+						[cardTitle]="'security.antivirus.others.betterOffer' | translate"
+						componentName="othersBetterOfferCollapsible" [allowCollapse]="true">
+						<vtr-widget-mcafee [install]="viewModel.mcafeeInstall" [isOnline]="isOnline"
+							[name]="viewModel.otherAntiVirus.name" [common]="common">
+						</vtr-widget-mcafee>
+						<vtr-widget-common-antivirus></vtr-widget-common-antivirus>
+				</vtr-container-collapsible>
 			</div>
 		</div>
 	</left-content>
