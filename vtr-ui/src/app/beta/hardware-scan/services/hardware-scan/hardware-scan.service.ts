@@ -48,9 +48,11 @@ export class HardwareScanService {
 	private enableViewResults = false;
 	private lastResponse: any;
 	private workDone = new Subject<boolean>();
+	private hardwareScanAvailable: boolean;
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
+		this.hardwareScanAvailable = this.isAvailable();
 	}
 
 	public getCategoryInformation() {
@@ -246,6 +248,14 @@ export class HardwareScanService {
 		this.hasDevicesToRecover = status;
 	}
 
+	public getHardwareScanAvailable() {
+		return this.hardwareScanAvailable;
+	}
+
+	public setHardwareScanAvailable(status: boolean) {
+		this.hardwareScanAvailable = status;
+	}
+
 	public deleteScan(payload) {
 		console.log('[Start] DeleteScan (hwscanService)!');
 		if (this.hardwareScanBridge) {
@@ -325,16 +335,20 @@ export class HardwareScanService {
 		return undefined;
 	}
 
+	public isHardwareScanAvailable() {
+		return this.hardwareScanAvailable;
+	}
+
 	public isAvailable() {
 		return this.getPluginInfo()
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-				return hwscanPluginInfo !== undefined &&
+				this.hardwareScanAvailable = hwscanPluginInfo !== undefined &&
 					   hwscanPluginInfo.LegacyPlugin === false &&
 					   hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
 			})
 			.catch(() => {
-				return false;
+				this.hardwareScanAvailable = false;
 			});
 	}
 
