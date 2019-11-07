@@ -50,9 +50,6 @@ ui-popover-apps {
 		@media #{$mediaquery_X7} {
 			min-width: 91.4rem;
 		}
-		@media #{$mediaquery_X5} {
-			min-width: 70rem;
-		}
 		.main-content-body {
 			padding: 1rem 4rem;
 			.running-apps {
