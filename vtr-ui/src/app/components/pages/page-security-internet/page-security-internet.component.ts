@@ -8,7 +8,7 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
-import { GuardService } from '../../../services/guard/security-guardService.service';
+import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 
@@ -66,13 +66,13 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.vpn.refresh();
 		}
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}

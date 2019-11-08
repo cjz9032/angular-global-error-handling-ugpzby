@@ -11,7 +11,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { GuardService } from '../../../services/guard/security-guardService.service';
+import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
@@ -70,13 +70,13 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
+		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.passwordManager.refresh();
 		}
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1) {
 			if (this.securityAdvisor.wifiSecurity) {
 				this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
 			}

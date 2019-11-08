@@ -41,7 +41,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
-	private beta;
 	private subscription: Subscription;
 	private vantageFocusHelper = new VantageFocusHelper();
 
@@ -192,38 +191,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
-	private initIsBeta() {
-		if (this.vantageShellService.isShellAvailable) {
-			this.beta = this.vantageShellService.getBetaUser();
-			this.deviceService.getIsARM().then((status) => {
-				if (!status) {
-					this.beta.getBetaUser().then((result) => {
-						if (!result) {
-							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-								this.commonService.isBetaUser().then((data) => {
-									if (data === 0 || data === 3) {
-										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-										this.beta.setBetaUser();
-									}
-								});
-							} else {
-								this.beta.setBetaUser();
-							}
-						} else {
-							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-						}
-					});
-				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-					this.commonService.isBetaUser().then((data) => {
-						if (data === 0 || data === 3) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-						}
-					});
-				}
-			});
-		}
-	}
-
 	private async getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 			return this.deviceService
@@ -249,7 +216,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
-		this.initIsBeta();
+		// this.initIsBeta();
 		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale.toLowerCase()) {
 			this.languageService.useLanguageByLocale(value.locale);
 		}

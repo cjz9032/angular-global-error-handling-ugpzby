@@ -723,6 +723,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.InstallationComplete:
 					this.systemUpdateService.getUpdateHistory();
+					this.getLastUpdateScanDetail();
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
@@ -852,6 +853,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
+					this.getLastUpdateScanDetail();
 					this.systemUpdateService.getUpdateHistory();
 					// using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {

@@ -180,15 +180,6 @@
 			</div>
 
 			<div class="row no-gutters"
-				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1 && !deviceService.isGaming">
-				<div class="col-sm-12 py-40">
-					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-						[linkId]="'dashboard'">
-					</vtr-widget-security-status>
-				</div>
-			</div>
-
-			<div class="row no-gutters"
 				*ngIf="deviceService.showWarranty"
 				[vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 col-md-12 pb-60">

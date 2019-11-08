@@ -1,4 +1,4 @@
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NgModule } from '@angular/core';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';

@@ -9,35 +9,52 @@ import { RoutersName } from './privacy-routing-name';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { IsOnlineGuard } from './common/guards/is-online.guard';
+import { PrivacyGuardService } from 'src/app/services/guard/privacy-guardService.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 const adminRoutes: Routes = [
 	{
 		path: RoutersName.MAIN,
 		component: MainLayoutComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, PrivacyGuardService],
 		pathMatch: 'prefix',
 		children: [
 			{
 				path: RoutersName.MAIN, // /privacy
 				redirectTo: RoutersName.BREACHES,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService],
 			}, {
 				path: RoutersName.BREACHES,
-				component: BreachedAccountsComponent
+				component: BreachedAccountsComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService],
 			}, {
 				path: RoutersName.TRACKERS,
 				component: TrackersComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService],
 			}, {
 				path: RoutersName.BROWSERACCOUNTS,
-				component: BrowserAccountsComponent
+				component: BrowserAccountsComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService],
 			}, {
 				path: RoutersName.LANDING,
-				component: LandingComponent
+				component: LandingComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService],
 			}, {
 				path: RoutersName.ARTICLES,
 				component: ArticlesComponent,
-				canActivate: [IsOnlineGuard]
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService, IsOnlineGuard],
 			}, {
 				path: `${RoutersName.ARTICLEDETAILS}`,
-				component: ArticleSingleComponent
+				component: ArticleSingleComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, PrivacyGuardService],
 			}
 		]
 	},

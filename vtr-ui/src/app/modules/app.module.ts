@@ -1,8 +1,3 @@
-import {
-	CUSTOM_ELEMENTS_SCHEMA,
-	ErrorHandler,
-	NgModule
-} from '@angular/core';
 import { AppComponent } from '../app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +6,7 @@ import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common/common-ui.module';
 import { CommsService } from '../services/comms/comms.service';
 import { CookieService } from 'ngx-cookie-service';
+import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { environment } from 'src/environments/environment';
@@ -31,6 +27,8 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { faGift } from '@fortawesome/pro-light-svg-icons/faGift';
+import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
+import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
@@ -45,11 +43,7 @@ import { HttpClient } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
-import {
-	MissingTranslationHandler,
-	TranslateLoader,
-	TranslateModule
-} from '@ngx-translate/core';
+import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component';
@@ -63,6 +57,7 @@ import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
+
 
 // export function preloadTranslation(
 // 	languageService: LanguageService,
@@ -180,5 +175,7 @@ export class AppModule {
 		library.add(faExclamationCircle);
 		library.add(faQuestionCircle);
 		library.add(faCloudDownload);
+		library.add(faLaptop);
+		library.add(faHeart);
 	}
 }
