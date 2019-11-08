@@ -11,7 +11,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { GuardService } from '../../../services/guard/security-guardService.service';
+import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
