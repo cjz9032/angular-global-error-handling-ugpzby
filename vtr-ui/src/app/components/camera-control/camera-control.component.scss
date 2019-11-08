@@ -49,7 +49,9 @@
 	@media screen and (orientation:portrait) {
 		/* portrait-specific styles */
 		.feed{
-		transform: rotate(90deg);
+			transform: rotate(90deg);
+			margin-top:4rem;
+			margin-bottom: 4rem;
 		}
 	}
 	/* landscape */
