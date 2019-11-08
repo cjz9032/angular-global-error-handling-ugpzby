@@ -12,10 +12,8 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-// import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
-// import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
@@ -99,17 +97,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
+		// this.initIsBeta(); // its calling machine  info again
 		this.metricService.sendAppLaunchMetric();
-
-		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
-			this.userService.loginSilently();
-		}
-
-		if (this.appsForYouService.showLmaMenu()) {
-			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
-		}
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
@@ -208,26 +197,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				.getMachineInfo()
 				.then((value: any) => {
 					this.logger.debug('AppComponent.getMachineInfo received getMachineInfo. is lang loaded: ', this.languageService.isLanguageLoaded);
-					this.machineInfo = value;
-					this.commonService.sendNotification('MachineInfo', this.machineInfo);
-
-					if (!this.languageService.isLanguageLoaded) {
-						this.languageService.useLanguageByLocale(value.locale);
-						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// // update DeviceInfo values in case user switched language
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-					}
-
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-					this.isMachineInfoLoaded = true;
-					this.isGaming = value.isGaming;
-					this.setFirstRun(value);
-
-					// if u want to see machineinfo in localstorage
-					// just add a key "machineinfo-cache-enable" and set it true
-					// then relaunch app you will see the machineinfo in localstorage.
-					// 	return value;
+					this.onMachineInfoReceived(value);
 				})
 				.catch((error) => { });
 		} else {
@@ -236,6 +206,32 @@ export class AppComponent implements OnInit, OnDestroy {
 			if (!this.languageService.isLanguageLoaded) {
 				this.languageService.useLanguage();
 			}
+		}
+	}
+
+	private onMachineInfoReceived(value: any) {
+		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+		this.machineInfo = value;
+		this.isMachineInfoLoaded = true;
+		this.isGaming = value.isGaming;
+		this.commonService.sendNotification('MachineInfo', this.machineInfo);
+		// this.initIsBeta();
+		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale.toLowerCase()) {
+			this.languageService.useLanguageByLocale(value.locale);
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+		this.setFirstRun(value);
+
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
+			this.userService.loginSilently();
+		}
+
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
 		}
 	}
 

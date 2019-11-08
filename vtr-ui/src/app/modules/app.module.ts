@@ -1,64 +1,80 @@
-import { HomeComponent } from './../components/home/home.component';
 import { AppComponent } from '../app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
-import { GlobalErrorHandler } from '../services/error-handler/global.service';
-import { HttpLoaderFactory } from './translation.module';
-import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { CommonPipeModule } from './common/common-pipe.module';
 import { CommonService } from '../services/common/common.service';
-import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
-import { NavbarModule } from './common/navbar.module';
+import { CommonUiModule } from './common/common-ui.module';
+import { CommsService } from '../services/comms/comms.service';
+import { CookieService } from 'ngx-cookie-service';
+import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
-import { CookieService } from 'ngx-cookie-service';
-import { CommsService } from '../services/comms/comms.service';
-import { ModalWelcomeComponent } from '../components/modal/modal-welcome/modal-welcome.component';
-import { NgbTooltipModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
-import { faExclamation } from '@fortawesome/free-solid-svg-icons/faExclamation';
-import { faBolt } from '@fortawesome/pro-light-svg-icons/faBolt';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
-import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
-import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
-import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
-import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
-import { faBrowser } from '@fortawesome/pro-light-svg-icons/faBrowser';
-import { faGift } from '@fortawesome/pro-light-svg-icons/faGift';
-import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltDots';
-import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
-import { RouterModule } from '@angular/router';
-import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
-import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
-import { CommonPipeModule } from './common/common-pipe.module';
-import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
-import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
-import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
-import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
-import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
-import { ModernPreloadModule } from './modern-preload/modern-preload.module';
-import { PageLayoutModule } from '../components/page-layout/page-layout.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from 'src/environments/environment';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
+import { faBolt } from '@fortawesome/pro-light-svg-icons/faBolt';
+import { faBrowser } from '@fortawesome/pro-light-svg-icons/faBrowser';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
+import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
-import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
-import { CommonUiModule } from './common/common-ui.module';
-import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
+import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltDots';
+import { faExclamation } from '@fortawesome/free-solid-svg-icons/faExclamation';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
+import { faGift } from '@fortawesome/pro-light-svg-icons/faGift';
+import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
+import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
+import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
+import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GlobalErrorHandler } from '../services/error-handler/global.service';
+import { HomeComponent } from './../components/home/home.component';
+import { HttpClient } from '@angular/common/http';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
+import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
+import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
+import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component';
+import { ModalWelcomeComponent } from '../components/modal/modal-welcome/modal-welcome.component';
+import { ModernPreloadModule } from './modern-preload/modern-preload.module';
+import { NavbarModule } from './common/navbar.module';
+import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { PageLayoutModule } from '../components/page-layout/page-layout.module';
+import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
+import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
+import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
+
+
+// export function preloadTranslation(
+// 	languageService: LanguageService,
+// 	shellService: VantageShellService) {
+// 	if (languageService && shellService) {
+// 		const sysInfo = shellService.getSysinfo();
+// 		if (sysInfo) {
+// 			sysInfo.getMachineInfo()
+// 				.then((info) => {
+// 					languageService.useLanguage(info.locale);
+// 				});
+// 		} else {
+// 			languageService.useLanguage();
+// 		}
+// 	}
+// 	return function initFromCore() { /* called from angular code, don't remove */ };
+// }
 
 @NgModule({
 	declarations: [
@@ -114,7 +130,16 @@ import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranls
 		DisplayService,
 		CookieService,
 		CommsService,
-		{ provide: ErrorHandler, useClass: GlobalErrorHandler }
+		{
+			provide: ErrorHandler,
+			useClass: GlobalErrorHandler
+		},
+		// {
+		// 	provide: APP_INITIALIZER,
+		// 	useFactory: preloadTranslation
+		// 	, deps: [LanguageService, VantageShellService],
+		// 	multi: true
+		// }
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

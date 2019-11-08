@@ -110,7 +110,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		this.initComponent();
+		// this.initComponent();
 
 		this.isDashboard = true;
 
@@ -416,6 +416,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case 'MachineInfo':
+					this.initComponent();
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.MachineFamilyName,
