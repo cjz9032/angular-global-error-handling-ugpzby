@@ -291,7 +291,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		const usageData = {
 			ItemType: 'FeatureClick',
 			ItemName: 'UsageType',
-			ItemValue: this.selfSelectService.usageType,
+			ItemValue: this.deviceService.isGaming? 'Gaming' : this.selfSelectService.usageType,
 			ItemParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(usageData);

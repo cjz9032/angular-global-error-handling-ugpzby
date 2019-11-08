@@ -115,7 +115,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			const usageData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'UsageType',
-				ItemValue: this.selfSelectService.usageType,
+				ItemValue: this.deviceService.isGaming? 'Gaming' : this.selfSelectService.usageType,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(usageData);
