@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',

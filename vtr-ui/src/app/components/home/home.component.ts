@@ -45,11 +45,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 			});
 
 			if (this.deviceService.isShellAvailable) {
-				this.logger.info(`HomeComponent.ngOnInit is language loaded ${this.languageService.isLanguageLoaded}`);
-				if (this.languageService.isLanguageLoaded) {
+				const isLanguageLoaded = this.languageService.isLanguageLoaded;
+				this.logger.info(`HomeComponent.ngOnInit is language loaded ${isLanguageLoaded}`);
+				if (isLanguageLoaded) {
 					this.redirectToPage();
 				}
-				if (!this.redirectToUrl) {
+				if (!this.redirectToUrl && isLanguageLoaded) {
 					this.redirectToDashBoard();
 				}
 			} else {
@@ -104,7 +105,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	private redirectToDashBoard() {
 		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
-		this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+		if (cachedDeviceInfo) {
+			this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+		}
 	}
 
 	private redirectToPage() {

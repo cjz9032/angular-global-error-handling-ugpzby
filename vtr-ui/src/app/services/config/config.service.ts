@@ -60,7 +60,7 @@ export class ConfigService {
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise(async (resolve, reject) => {
 			const isBetaUser = this.commonService.getBetaUser();
-			const machineInfo = this.deviceService.getMachineInfoSync();
+			const machineInfo = await this.deviceService.getMachineInfo();
 			const brand: string = machineInfo.brand;
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {

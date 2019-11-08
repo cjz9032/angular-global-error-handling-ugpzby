@@ -110,7 +110,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		this.initComponent();
+		// this.initComponent();
 
 		this.isDashboard = true;
 
@@ -134,7 +134,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		// }
 	}
 
-	private initComponent(refreshMenu?: boolean) {
+	private initComponent() {
 		this.localInfoService
 			.getLocalInfo()
 			.then((result) => {
@@ -144,7 +144,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
-		this.getMenuItems(refreshMenu).then((items) => {
+		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 			if (cacheShowWindowsHello) {
 				const securityItem = items.find((item) => item.id === 'security');
@@ -306,6 +306,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (this.subscription) {
 			this.subscription.unsubscribe();
 		}
+		if (this.commonMenuSubscription) {
+			this.commonMenuSubscription.unsubscribe();
+		}
 	}
 
 	toggleMenu(event) {
@@ -413,6 +416,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case 'MachineInfo':
+					this.initComponent();
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.MachineFamilyName,
@@ -430,7 +434,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.showSystemUpdates();
 					break;
 				case MenuItem.MenuItemChange:
-					this.initComponent(true);
+					this.initComponent();
 					break;
 				default:
 					break;
@@ -498,23 +502,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 
-	getMenuItems(refreshMenu?: boolean): Promise<any> {
-		// if available in variable return it
-		if (this.items && this.items.length > 0 && !refreshMenu) {
-			return Promise.resolve(this.items);
-		}
-		// check for local storage
-		const menuItems = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.MenuItems, undefined);
-		if (menuItems && !refreshMenu) {
-			this.items = menuItems;
-			return Promise.resolve(this.items);
-		} else {
-			return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
-				this.commonService.setLocalStorageValue(DashboardLocalStorageKey.MenuItems, items);
-				this.items = items;
-				return this.items;
-			});
-		}
+	getMenuItems(): Promise<any> {
+		// remove onfocus showVpn()
+		// need refresh menuItem from config service, don't need localStorage
+		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
+			this.items = items;
+			return this.items;
+		});
 	}
 
 	private showSmartAssist() {

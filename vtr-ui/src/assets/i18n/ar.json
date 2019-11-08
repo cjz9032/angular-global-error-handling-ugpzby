@@ -2233,7 +2233,8 @@
         "subtitle2": "أخبرنا عن اهتماماتك",
         "personal": "استخدام شخصي",
         "business": "استخدام في العمل",
-        "custom": "تجربة مخصصة",
+		"custom": "تجربة مخصصة",
+		"professional": "Professional Use",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
         "moreInterest": "‏+ المزيد من الاهتمامات",
         "title1": "مرحبًا بك في",
@@ -2274,7 +2275,8 @@
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
         "betaSettingTitle": "Beta program",
         "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingDescription": "Try the latest features we're working on.",
+		"userProfile": "ملف تعريف المستخدم"
     },
     "modernPreload": {
         "cancel": "إلغاء",
