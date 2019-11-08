@@ -2233,7 +2233,8 @@
         "subtitle2": "Povězte nám o svých zájmech",
         "personal": "Osobní použití",
         "business": "Obchodní použití",
-        "custom": "Vlastní zkušenost",
+		"custom": "Vlastní zkušenost",
+		"professional": "Professional Use",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
         "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
-        "Note": "Poznámka: ",
+		"userProfile": "Profil uživatele",
+		"Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
     },
     "modernPreload": {

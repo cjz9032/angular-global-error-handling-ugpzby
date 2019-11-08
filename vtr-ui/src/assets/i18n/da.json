@@ -2233,7 +2233,8 @@
         "subtitle2": "Fortæl os om dine interesser",
         "personal": "Personlig brug",
         "business": "På arbejde",
-        "custom": "Tilpasset oplevelse",
+		"custom": "Tilpasset oplevelse",
+		"professional": "Professional Use",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
-        "Note": "Bemærk: ",
+		"userProfile": "Brugerprofil",
+		"Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
     },
     "modernPreload": {

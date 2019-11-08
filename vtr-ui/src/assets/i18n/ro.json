@@ -2233,7 +2233,8 @@
         "subtitle2": "Spuneți-ne despre interesele dvs",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
-        "custom": "Experiență personalizată",
+		"custom": "Experiență personalizată",
+		"professional": "Professional Use",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
-        "Note": "Notă: ",
+		"userProfile": "Profil utilizator",
+		"Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
     },
     "modernPreload": {

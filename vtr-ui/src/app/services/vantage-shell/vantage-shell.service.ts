@@ -57,7 +57,8 @@ export class VantageShellService {
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy,
-				Phoenix.Features.Registry
+				Phoenix.Features.Registry,
+				Phoenix.Features.SelfSelect,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -71,6 +72,13 @@ export class VantageShellService {
 				handler(val);
 			});
 		}
+	}
+
+	public getSelfSelect(){
+		if (this.phoenix) {
+			return this.phoenix.selfSelect;
+		}
+		return undefined;
 	}
 
 	public unRegisterEvent(eventType: any, handler: any) {
