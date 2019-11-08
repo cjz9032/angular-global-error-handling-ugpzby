@@ -186,5 +186,6 @@ export enum LocalStorageKey {
 	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing',
+	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
 	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
 }

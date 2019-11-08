@@ -12,10 +12,8 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-// import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
-// import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
@@ -43,7 +41,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
-	private beta;
 	private subscription: Subscription;
 	private vantageFocusHelper = new VantageFocusHelper();
 
@@ -75,7 +72,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		this.initIsBeta();
 
 		//#endregion
 		window.addEventListener('online', (e) => {
@@ -99,29 +95,10 @@ export class AppComponent implements OnInit, OnDestroy {
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		sessionStorage.clear();
-
 		this.getMachineInfo();
+
+		// this.initIsBeta(); // its calling machine  info again
 		this.metricService.sendAppLaunchMetric();
-
-		// use when deviceService.isArm is set to true
-		// todo: enable below line when integrating ARM feature
-		// document.getElementById('html-root').classList.add('is-arm');
-
-		const self = this;
-		window.onresize = () => {
-			self.displayService.calcSize(self.displayService);
-		};
-		self.displayService.calcSize(self.displayService);
-
-		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
-			this.userService.loginSilently();
-		}
-
-		if (this.appsForYouService.showLmaMenu()) {
-			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
-		}
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
@@ -214,75 +191,47 @@ export class AppComponent implements OnInit, OnDestroy {
 		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
-	private initIsBeta() {
-		if (this.vantageShellService.isShellAvailable) {
-			this.beta = this.vantageShellService.getBetaUser();
-			this.deviceService.getIsARM().then((status) => {
-				if (!status) {
-					this.beta.getBetaUser().then((result) => {
-						if (!result) {
-							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-								this.commonService.isBetaUser().then((data) => {
-									if (data === 0 || data === 3) {
-										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-										this.beta.setBetaUser();
-									}
-								});
-							} else {
-								this.beta.setBetaUser();
-							}
-						} else {
-							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-						}
-					});
-				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-					this.commonService.isBetaUser().then((data) => {
-						if (data === 0 || data === 3) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-						}
-					});
-				}
-			});
-		}
-	}
-
 	private async getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			// this.isMachineInfoLoaded = this.isTranslationLoaded();
-			// return this.deviceService
-			// 	.getMachineInfo()
-			// 	.then((value: any) => {
-			try {
-				const value = await this.deviceService.getMachineInfo();
-				if (!this.languageService.isLanguageLoaded) {
-					this.languageService.useLanguageByLocale(value.locale);
-					const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-					// // update DeviceInfo values in case user switched language
-					this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-				}
-
-				this.commonService.sendNotification('MachineInfo', this.machineInfo);
-				this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
-				this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-				this.isMachineInfoLoaded = true;
-				this.machineInfo = value;
-				this.isGaming = value.isGaming;
-				this.setFirstRun(value);
-			} catch (error) {
-				this.logger.error(error.message);
-			}
-			// if u want to see machineinfo in localstorage
-			// just add a key "machineinfo-cache-enable" and set it true
-			// then relaunch app you will see the machineinfo in localstorage.
-			// 	return value;
-			// })
-			// .catch((error) => { });
+			return this.deviceService
+				.getMachineInfo()
+				.then((value: any) => {
+					this.logger.debug('AppComponent.getMachineInfo received getMachineInfo. is lang loaded: ', this.languageService.isLanguageLoaded);
+					this.onMachineInfoReceived(value);
+				})
+				.catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
 			if (!this.languageService.isLanguageLoaded) {
 				this.languageService.useLanguage();
 			}
+		}
+	}
+
+	private onMachineInfoReceived(value: any) {
+		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+		this.machineInfo = value;
+		this.isMachineInfoLoaded = true;
+		this.isGaming = value.isGaming;
+		this.commonService.sendNotification('MachineInfo', this.machineInfo);
+		// this.initIsBeta();
+		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale.toLowerCase()) {
+			this.languageService.useLanguageByLocale(value.locale);
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+		this.setFirstRun(value);
+
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
+			this.userService.loginSilently();
+		}
+
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
 		}
 	}
 
@@ -444,8 +393,8 @@ export class AppComponent implements OnInit, OnDestroy {
 					if (!val || (val.keyList || []).length === 0) {
 						return;
 					}
-					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val => {
-						if (val !== true) {
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val2 => {
+						if (val2 !== true) {
 							this.logger.error('failed to write shell run version to registry');
 						}
 					});
@@ -454,4 +403,17 @@ export class AppComponent implements OnInit, OnDestroy {
 		}, 2000);
 	}
 
+	// private registerWebWorker() {
+	// 	if (typeof Worker !== 'undefined') {
+	// 		// Create a new
+	// 		const worker = new Worker('./web-worker/app-worker.worker', { type: 'module' });
+	// 		worker.onmessage = ({ data }) => {
+	// 			console.log(`page got message: ${data}`);
+	// 		};
+	// 		worker.postMessage('hello');
+	// 	} else {
+	// 		// Web Workers are not supported in this environment.
+	// 		// You should add a fallback so that your program still executes correctly.
+	// 	}
+	// }
 }

@@ -6,7 +6,7 @@ import { RecoverBadSectorsComponent } from './page-hardwarescan/children/recover
 import { HardwareViewResultsComponent } from './page-hardwarescan/children/hardware-view-results/hardware-view-results.component';
 
 import { HardwareScanGuard } from './guard/hardware-scan-guard';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 const routes: Routes = [
 	{

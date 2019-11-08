@@ -55,7 +55,6 @@ export class VantageShellMockService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
@@ -394,9 +393,7 @@ export class VantageShellMockService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getLocalStorageValue(
-							LocalStorageKey.BetaUser
-						);
+						const isBeta = that.commonService.getBetaUser();
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}

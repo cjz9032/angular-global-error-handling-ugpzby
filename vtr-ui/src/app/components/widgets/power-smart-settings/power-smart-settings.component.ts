@@ -457,16 +457,17 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	private async setManualModeSetting(mode: IntelligentCoolingMode) {
 		try {
 			if (this.intelligentCoolingModes === IntelligentCoolingHardware.ITS13) {
-				await this.powerService.setITSModeForICIdeapad(mode.ideapadType3);
 				this.setPerformanceAndCool(mode);
+				await this.powerService.setITSModeForICIdeapad(mode.ideapadType3);
 			} else if (this.intelligentCoolingModes === IntelligentCoolingHardware.ITS14) {
 				this.updateSelectedModeText(mode);
+				this.setPerformanceAndCool(mode);
 				await this.powerService.setITSModeForICIdeapad(mode.ideapadType4);
-				this.setPerformanceAndCool(mode);
 			} else if (this.intelligentCoolingModes === IntelligentCoolingHardware.Legacy) {
-				await this.setLegacyManualModeState(mode.status);
 				this.setPerformanceAndCool(mode);
+				await this.setLegacyManualModeState(mode.status);
 			} else if (this.powerService.isShellAvailable) {
+				this.setPerformanceAndCool(mode);
 				this.powerService
 					.setManualModeSetting(mode.type)
 					.then((value: boolean) => {

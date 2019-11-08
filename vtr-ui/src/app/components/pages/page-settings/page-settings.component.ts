@@ -5,6 +5,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { ConfigService } from 'src/app/services/config/config.service';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -14,6 +16,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
+	public segmentConst = SegmentConst;
 	backId = 'setting-page-btn-back';
 
 	toggleAppFeature = false;
@@ -21,10 +24,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 	toggleDeviceStatistics = false;
+	toggleBetaStatistics = false;
 
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
+	usageRadioValue = null;
 
 	valueToBoolean = [false, true, false];
 
@@ -51,20 +56,28 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			leftImageSource: ['fal', 'shoe-prints'],
 		}
 	];
+
+	betaSettings = [
+		{
+			leftImageSource: ['fal', 'flask'],
+		}
+	];
 	metrics: any;
 	metricsPreference: any;
 
 	constructor(
 		private shellService: VantageShellService,
+		public configService: ConfigService,
 		private settingsService: SettingsService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
+		public selfSelectService: SelfSelectService,
 		private timerService: TimerService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
 		this.metricsPreference = shellService.getMetricPreferencePlugin();
-		shellService.getMetricsPolicy((result)=>{
+		shellService.getMetricsPolicy((result) => {
 			this.metrics.metricsEnabled = result;
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
 		});
@@ -73,7 +86,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.getAllToggles();
 		this.timerService.start();
-
+		this.selfSelectService.getConfig();
 	}
 
 	ngOnDestroy() {
@@ -105,6 +118,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.isToggleDeviceStatistics = this.settingsService.isDeviceStatisticsSupported;
 		} else {
 			this.getDeviceStatisticsPreference();
+		}
+		if (this.commonService) {
+			this.toggleBetaStatistics = this.commonService.getBetaUser();
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -230,6 +246,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
+	onToggleOfBetaStatistics(event: any) {
+		this.toggleBetaStatistics = event.switchValue;
+		this.commonService.setBetaUser(this.toggleBetaStatistics);
+		this.configService.notifyMenuChange();
+	}
+
 	sendMetrics(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
@@ -244,6 +266,47 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.sendMetrics(settingUpdateMetrics);
+	}
+
+	onKeyPress($event) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+		}
+	}
+
+	saveUsageType(value) {
+		this.selfSelectService.usageType = value;
+	}
+
+	toggle($event, value) {
+		if ($event.target.checked) {
+			this.selfSelectService.checkedArray.push(value);
+		} else {
+			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
+		}
+	}
+
+	saveUserProfile() {
+		this.selfSelectService.saveConfig();
+		const usageData = {
+			ItemType: 'FeatureClick',
+			ItemName: 'UsageType',
+			ItemValue: this.deviceService.isGaming? 'Gaming' : this.selfSelectService.usageType,
+			ItemParent: 'Page.Settings'
+		};
+		this.metrics.sendAsync(usageData);
+
+		const interestMetricValue = {};
+		this.selfSelectService.checkedArray.forEach(item => {
+			interestMetricValue[item] = true;
+		});
+		const interestData = {
+			ItemType: 'FeatureClick',
+			ItemName: 'Interest',
+			ItemValue: interestMetricValue,
+			ItemParent: 'Page.Settings'
+		};
+		this.metrics.sendAsync(interestData);
 	}
 
 }

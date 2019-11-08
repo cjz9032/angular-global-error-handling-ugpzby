@@ -9,6 +9,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { MenuItem } from 'src/app/enums/menuItem.enum';
 
 declare var Windows;
 
@@ -32,11 +35,17 @@ export class ConfigService {
 	betaItem = betaItem;
 	showCHSMenu = false;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
+	public readonly menuItemNotification: Observable<AppNotification>;
+	private menuItemSubject: BehaviorSubject<AppNotification>;
 	constructor(
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private logger: LoggerService,
 		private commonService: CommonService) {
+			this.menuItemSubject = new BehaviorSubject<AppNotification>(
+				new AppNotification(MenuItem.MenuItemChange, 'init')
+			);
+			this.menuItemNotification = this.menuItemSubject;
 	}
 
 
@@ -50,8 +59,8 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise(async (resolve, reject) => {
-			const isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
-			const machineInfo = this.deviceService.getMachineInfoSync();
+			const isBetaUser = this.commonService.getBetaUser();
+			const machineInfo = await this.deviceService.getMachineInfo();
 			const brand: string = machineInfo.brand;
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
@@ -80,6 +89,7 @@ export class ConfigService {
 					}
 				});
 			}
+			this.showVpn(country.toLowerCase(), resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (this.deviceService.showSearch) {
@@ -106,6 +116,34 @@ export class ConfigService {
 		packageVersion.build >= shellVersion.build;
 	}
 
+	showVpn(region, items) {
+		const securityItemForVpn = items.find((item) => item.id === 'security');
+		if (securityItemForVpn !== undefined) {
+			const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
+			if (region !== 'cn') {
+				if (!vpnItem) {
+					securityItemForVpn.subitems.splice(4, 0, {
+						id: 'internet-protection',
+						label: 'common.menu.security.sub5',
+						path: 'internet-protection',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.internetprotection',
+						routerLinkActiveOptions: { exact: true },
+						icon: '',
+						subitems: []
+					});
+				}
+			} else {
+				if (vpnItem) {
+					securityItemForVpn.subitems = securityItemForVpn.subitems.filter(
+						(item) => item.id !== 'internet-protection'
+					);
+				}
+			}
+		}
+	}
+
 	brandFilter(menu: Array<any>) {
 		const machineInfo = this.deviceService.getMachineInfoSync();
 		if (!machineInfo) { return menu; }
@@ -124,5 +162,10 @@ export class ConfigService {
 			}
 		});
 		return menu;
+	}
+
+	notifyMenuChange(payload?) {
+		const appNotification = new AppNotification(MenuItem.MenuItemChange, payload);
+		this.menuItemSubject.next(appNotification);
 	}
 }

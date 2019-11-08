@@ -5,6 +5,7 @@ import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-
 import { CommonService } from '../common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { DeviceService } from '../device/device.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -27,6 +28,7 @@ export class SupportService {
 		private shellService: VantageShellService,
 		private commonService: CommonService,
 		private modalService: NgbModal,
+		private deviceService: DeviceService
 	) {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
@@ -53,10 +55,7 @@ export class SupportService {
 	}
 
 	public getMachineInfo(): Promise<any> {
-		if (this.sysinfo) {
-			return this.sysinfo.getMachineInfo();
-		}
-		return undefined;
+		return this.deviceService.getMachineInfo();
 	}
 
 	async getSerialnumber(): Promise<any> {
@@ -80,7 +79,7 @@ export class SupportService {
 				url: this.warrantyNormalUrl
 			};
 
-			if (this.getMachineInfo() === undefined) { return; }
+			// if (this.getMachineInfo() === undefined) { return; } // duplicate MachineInfo call
 
 			this.getMachineInfo().then((machineInfo) => {
 				if (machineInfo) {

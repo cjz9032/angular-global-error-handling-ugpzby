@@ -45,8 +45,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 			});
 
 			if (this.deviceService.isShellAvailable) {
-				if (this.languageService.isLanguageLoaded) {
+				const isLanguageLoaded = this.languageService.isLanguageLoaded;
+				this.logger.info(`HomeComponent.ngOnInit is language loaded ${isLanguageLoaded}`);
+				if (isLanguageLoaded) {
 					this.redirectToPage();
+				}
+				if (!this.redirectToUrl && isLanguageLoaded) {
+					this.redirectToDashBoard();
 				}
 			} else {
 				// for browser
@@ -89,8 +94,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 						this.redirectToPage();
 					} else {
 						this.logger.info(`HomeComponent.onNotification`, notification);
-						const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
-						this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+						this.redirectToDashBoard();
 					}
 					break;
 				default:
@@ -99,8 +103,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	private redirectToDashBoard() {
+		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+		if (cachedDeviceInfo) {
+			this.vantageLaunch(cachedDeviceInfo.isGamingDevice);
+		}
+	}
+
 	private redirectToPage() {
 		if (this.redirectToUrl) {
+			window.history.replaceState([], '', '');
 			this.router.navigateByUrl(this.redirectToUrl);
 		}
 	}

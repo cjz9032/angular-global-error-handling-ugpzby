@@ -324,6 +324,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
+		this.displayService.stopMonitorForCameraPermission();
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
 		clearTimeout(this.privacyGuardInterval);

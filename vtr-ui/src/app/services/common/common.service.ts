@@ -190,6 +190,10 @@ export class CommonService {
 		return array.filter(e => e.path !== path);
 	}
 
+	public removeObjById(array: any[], id: string) {
+		return array.filter(e => e.id !== id);
+	}
+
 	public getCapabalitiesNotification(): Observable<any> {
 		return this.gamingCapabalities.asObservable();
 	}
@@ -197,11 +201,12 @@ export class CommonService {
 		this.gamingCapabalities.next({ type: action, payload });
 	}
 
-	public isBetaUser(): Promise<number> {
-		const win: any = window;
-		if (WinRT && win.Windows) {
-			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
-		}
+	public getBetaUser(): boolean {
+		return this.getLocalStorageValue(LocalStorageKey.BetaUser, false);
+	}
+
+	public setBetaUser(value: boolean) {
+		this.setLocalStorageValue(LocalStorageKey.BetaUser, value);
 	}
 
 	public cloneObj(obj) {

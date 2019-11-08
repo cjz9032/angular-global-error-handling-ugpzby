@@ -55,10 +55,10 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy,
-				Phoenix.Features.Registry
+				Phoenix.Features.Registry,
+				Phoenix.Features.SelfSelect,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -72,6 +72,13 @@ export class VantageShellService {
 				handler(val);
 			});
 		}
+	}
+
+	public getSelfSelect(){
+		if (this.phoenix) {
+			return this.phoenix.selfSelect;
+		}
+		return undefined;
 	}
 
 	public unRegisterEvent(eventType: any, handler: any) {
@@ -252,9 +259,7 @@ export class VantageShellService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getLocalStorageValue(
-							LocalStorageKey.BetaUser
-						);
+						const isBeta = that.commonService.getBetaUser();
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}
