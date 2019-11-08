@@ -67,8 +67,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			console.log(params);
 			if (params.has('batterydetail') && !this.isModalShown) {
-				// this.isModalShown = true;
-				this.getBatteryDetails();
+				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
+				this.getBatteryDetails(showBatteryDetail);
 			}
 		});
 		this.getBatteryDetailOnCard();
@@ -116,11 +116,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public getBatteryDetailOnCard() {
 		try {
 			if (this.batteryService.isShellAvailable) {
-				this.getBatteryDetails();
+				this.getBatteryDetails(false);
 
 				this.batteryCardTimer = setInterval(() => {
 					console.log('Trying after 30 seconds');
-					this.getBatteryDetails();
+					this.getBatteryDetails(false);
 				}, 30000);
 			}
 		} catch (error) {
@@ -132,7 +132,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	/**
 	 * gets battery details from js bridge
 	 */
-	public getBatteryDetails() {
+	public getBatteryDetails(showBatteryDetail) {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
@@ -140,11 +140,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
-
-				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
-				if (showBatteryDetail && !this.isModalShown) {
+				if (showBatteryDetail) {
 					this.showDetailModal(this.batteryModal);
-					this.isModalShown = true;
 				}
 			}).catch(error => {
 				this.logger.error('getBatteryDetails error', error.message);
@@ -238,6 +235,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
+		this.isModalShown = true;
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
