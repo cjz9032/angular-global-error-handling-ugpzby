@@ -38,10 +38,20 @@ export class SelfSelectService {
 		this.getConfig();
 	}
 
-	public getConfig() {
+	public async getSegment() {
+		if (this.usageType) {
+			return this.usageType;
+		} else {
+			await this.getConfig();
+			return this.usageType;
+		}
+	}
+
+	public async getConfig() {
 		if (this.selfSelect) {
 			this.userProfileEnabled = true;
-			this.selfSelect.getConfig().then((config) => {
+			try {
+				const config = await this.selfSelect.getConfig();
 				if (config && config.segment) {
 					this.usageType = config.segment;
 				} else if (!this.deviceService.isGaming) {
@@ -54,10 +64,15 @@ export class SelfSelectService {
 						item.checked = checkedTags && checkedTags.includes(item.label);
 					});
 				}
-			}).catch((error) => {
+
+			} catch (error) {
 				console.log('SelfSelectService.getConfig failed. ', error);
+				this.usageType = this.getDefaultSegment();
 				this.userProfileEnabled = false;
-			});;
+			}
+		} else {
+			this.userProfileEnabled = false;
+			this.usageType = this.getDefaultSegment();
 		}
 	}
 
