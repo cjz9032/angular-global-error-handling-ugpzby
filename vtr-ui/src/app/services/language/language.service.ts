@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { LoggerService } from '../logger/logger.service';
 import { CommonService } from '../common/common.service';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
+import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
+import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -84,6 +86,10 @@ export class LanguageService {
 	 */
 	public useLanguage(lang: string = this.defaultLanguage) {
 		if (lang) {
+			// don't load same language multiple times
+			if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
+				return;
+			}
 			this.isLanguageLoaded = true;
 			let locale = lang.toLowerCase();
 			const isLanguageSupported = this.isLanguageSupported(locale);
@@ -101,6 +107,15 @@ export class LanguageService {
 	private isLanguageSupported(lang: string): boolean {
 		if (lang) {
 			return this.supportedLanguages.includes(lang.toLowerCase());
+		}
+		return false;
+	}
+
+	public isLocaleSame(lang: string) {
+		const cachedDeviceInfo: DeviceInfo = this.commonService.getLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, undefined);
+		if (cachedDeviceInfo && cachedDeviceInfo.locale && cachedDeviceInfo.locale.length > 0) {
+			const isLocaleSame = cachedDeviceInfo.locale === lang.toLowerCase();
+			return isLocaleSame;
 		}
 		return false;
 	}
