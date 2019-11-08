@@ -35,6 +35,7 @@ export class SelfSelectService {
 	constructor(private vantageShellService: VantageShellService,
 		public deviceService: DeviceService) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
+		this.getConfig();
 	}
 
 	public getConfig() {
