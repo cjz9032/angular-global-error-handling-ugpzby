@@ -2233,7 +2233,8 @@
         "subtitle2": "Recite nam više o svojim interesima",
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
-        "custom": "Prilagodite iskustvo",
+		"custom": "Prilagodite iskustvo",
+		"professional": "Professional Use",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
         "deviceStatistics": "Podijelite statističke podatke s tvrtkom Lenovo",
         "deviceStatisticsDescription": "Šalje statističke podatke tvrtki Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije značajki na računalu.",
-        "Note": "Napomena: ",
+		"userProfile": "Korisnički profil",
+		"Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."
     },
     "modernPreload": {

@@ -2233,7 +2233,8 @@
         "subtitle2": "Cuéntenos sus intereses",
         "personal": "Uso personal",
         "business": "Uso empresarial",
-        "custom": "Experiencia personalizada",
+		"custom": "Experiencia personalizada",
+		"professional": "Professional Use",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
         "moreInterest": "+ más intereses",
         "title1": "Bienvenido a",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
-        "Note": "Nota: ",
+		"userProfile": "Perfil de usuario",
+		"Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
     },
     "modernPreload": {

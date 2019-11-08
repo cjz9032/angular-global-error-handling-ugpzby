@@ -41,6 +41,8 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
+import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
@@ -148,5 +150,7 @@ export class AppModule {
 		library.add(faExclamationCircle);
 		library.add(faQuestionCircle);
 		library.add(faCloudDownload);
+		library.add(faLaptop);
+		library.add(faHeart);
 	}
 }

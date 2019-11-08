@@ -2233,7 +2233,8 @@
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi",
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
-        "custom": "Mukautettu käyttökokemus",
+		"custom": "Mukautettu käyttökokemus",
+		"professional": "Professional Use",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "deviceStatistics": "Jaa tilastotiedot Lenovolle",
         "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
-        "Note": "Huomautus: ",
+		"userProfile": "Käyttäjäprofiili",
+		"Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },
     "modernPreload": {

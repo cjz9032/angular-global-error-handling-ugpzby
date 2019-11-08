@@ -6,6 +6,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -15,6 +16,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
+	public segmentConst = SegmentConst;
 	backId = 'setting-page-btn-back';
 
 	toggleAppFeature = false;
@@ -27,6 +29,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
+	usageRadioValue = null;
 
 	valueToBoolean = [false, true, false];
 
@@ -68,6 +71,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		private settingsService: SettingsService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
+		public selfSelectService: SelfSelectService,
 		private timerService: TimerService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
@@ -82,7 +86,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.getAllToggles();
 		this.timerService.start();
-
+		this.selfSelectService.getConfig();
 	}
 
 	ngOnDestroy() {
@@ -262,6 +266,47 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.sendMetrics(settingUpdateMetrics);
+	}
+
+	onKeyPress($event) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+		}
+	}
+
+	saveUsageType(value) {
+		this.selfSelectService.usageType = value;
+	}
+
+	toggle($event, value) {
+		if ($event.target.checked) {
+			this.selfSelectService.checkedArray.push(value);
+		} else {
+			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
+		}
+	}
+
+	saveUserProfile() {
+		this.selfSelectService.saveConfig();
+		const usageData = {
+			ItemType: 'FeatureClick',
+			ItemName: 'UsageType',
+			ItemValue: this.selfSelectService.usageType,
+			ItemParent: 'Page.Settings'
+		};
+		this.metrics.sendAsync(usageData);
+
+		const interestMetricValue = {};
+		this.selfSelectService.checkedArray.forEach(item => {
+			interestMetricValue[item] = true;
+		});
+		const interestData = {
+			ItemType: 'FeatureClick',
+			ItemName: 'Interest',
+			ItemValue: interestMetricValue,
+			ItemParent: 'Page.Settings'
+		};
+		this.metrics.sendAsync(interestData);
 	}
 
 }

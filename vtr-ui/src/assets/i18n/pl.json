@@ -2233,7 +2233,8 @@
         "subtitle2": "Opowiedz nam o swoich zainteresowaniach",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
-        "custom": "Niestandardowe zastosowanie",
+		"custom": "Niestandardowe zastosowanie",
+		"professional": "Professional Use",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
         "title1": "Witamy w aplikacji",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
         "deviceStatistics": "Udostępniaj dane statystyczne Lenovo",
         "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
-        "Note": "Uwaga: ",
+		"userProfile": "Profil użytkownika",
+		"Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
     },
     "modernPreload": {

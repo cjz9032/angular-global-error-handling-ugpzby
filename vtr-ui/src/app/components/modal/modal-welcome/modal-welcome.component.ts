@@ -9,6 +9,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import {DeviceService}  from 'src/app/services/device/device.service';
 import { $ } from 'protractor';
 import { UserService } from 'src/app/services/user/user.service';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -17,26 +18,18 @@ import { UserService } from 'src/app/services/user/user.service';
 	providers: [TimerService]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
+	public segmentConst = SegmentConst;
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
 	privacyPolicy = true;
-	checkedArray: string[] = [];
 	metrics: any;
 	data: any = {
 		page2: {
 			title: '',
 			subtitle: '',
-			radioValue: null,
 		}
 	};
-	interests = [
-		'games', 'news', 'entertainment', 'technology',
-		'sports', 'arts', 'regionalNews', 'politics',
-		'music', 'science'
-	];
-	// to show small list. on click of More Interest show all.
-	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
 	machineInfo: any;
@@ -47,10 +40,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	shouldManuallyFocusMoreInterest =  false;
 
 	constructor(
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService,
+		public selfSelectService: SelfSelectService,
 		private timerService: TimerService,
 		private userService: UserService) {
 		this.metrics = shellService.getMetrics();
@@ -66,6 +60,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnInit() {
 		this.timerService.start();
+		this.selfSelectService.getConfig();
 	}
 
 	ngAfterViewInit() {
@@ -120,15 +115,19 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			const usageData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'UsageType',
-				ItemValue: this.data.page2.radioValue,
+				ItemValue: this.selfSelectService.usageType,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(usageData);
 
+			const interestMetricValue = {};
+			this.selfSelectService.checkedArray.forEach(item => {
+				interestMetricValue[item] = true;
+			});
 			const interestData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'Interest',
-				ItemValue: this.checkedArray,
+				ItemValue: interestMetricValue,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(interestData);
@@ -142,26 +141,27 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
-			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
+			tutorialData = new WelcomeTutorial(2, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
 			this.activeModal.close(tutorialData);
+			this.selfSelectService.saveConfig();
 		}
 		this.page = ++page;
 	}
 
 	toggle($event, value) {
 		if ($event.target.checked) {
-			this.checkedArray.push(value);
+			this.selfSelectService.checkedArray.push(value);
 		} else {
-			this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
+			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
-		console.log(this.checkedArray);
-		console.log(this.checkedArray.length);
+		console.log(this.selfSelectService.checkedArray);
+		console.log(this.selfSelectService.checkedArray.length);
 		if (!this.isInterestProgressChanged) {
 			this.progress += 16;
 			this.isInterestProgressChanged = true;
-		} else if (this.checkedArray.length === 0) {
+		} else if (this.selfSelectService.checkedArray.length === 0) {
 			this.progress -= 16;
 			this.isInterestProgressChanged = false;
 		}
@@ -181,10 +181,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	saveUsageType(value) {
-		if (this.data.page2.radioValue == null) {
+		if (this.selfSelectService.usageType == null) {
 			this.progress += 16;
 		}
-		this.data.page2.radioValue = value;
+		this.selfSelectService.usageType = value;
 	}
 
 	savePrivacy($event, value) {
@@ -197,7 +197,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 	moreInterestClicked() {
-		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
 	}
 	ngOnDestroy() {

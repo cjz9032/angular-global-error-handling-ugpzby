@@ -2233,7 +2233,8 @@
         "subtitle2": "Povedzte nám o svojich záujmoch",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-        "custom": "Vlastné prostredie",
+		"custom": "Vlastné prostredie",
+		"professional": "Professional Use",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2270,7 +2271,8 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
-        "Note": "Poznámka: ",
+		"userProfile": "Profil používateľa",
+		"Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
     },
     "modernPreload": {
