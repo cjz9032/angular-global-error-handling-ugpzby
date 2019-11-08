@@ -6,7 +6,7 @@ import {
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem, wifiSecurityItem } from 'src/assets/menu/menu.json';
+import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
@@ -36,12 +36,10 @@ export class ConfigService {
 	menuItemsPrivacy = menuItemsPrivacy;
 	appSearch = appSearch;
 	betaItem = betaItem;
-	wifiSecurityItem = wifiSecurityItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
 	wifiSecurity: WifiSecurity;
 	securityAdvisor: SecurityAdvisor;
-	itemNotification = new EventEmitter<any>();
 	public readonly menuItemNotification: Observable<AppNotification>;
 	private menuItemSubject: BehaviorSubject<AppNotification>;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
@@ -153,11 +151,29 @@ export class ConfigService {
 			if (element.brand) {
 				const mode = element.brand.charAt(0);
 				const brands = element.brand.substring(2, element.brand.length - 1).split(',');
-				if (mode === '+') {
+				if (mode === '+' && element.isSupported !== false) {
 					element.hide = !brands.includes(brand);
 				} else if (mode === '-') {
 					element.hide = brands.includes(brand);
 				}
+			}
+		});
+		return menu;
+	}
+
+	supportFilter(menu: Array<any>,  id: string, isSupported: boolean) {
+		menu.forEach(item => {
+			if (item.id === id) {
+				item.isSupported = isSupported;
+				item.hide = !isSupported;
+			}
+			if (item.subitems.length > 0) {
+				item.subitems.forEach(subitem => {
+					if (subitem.id === id) {
+						subitem.isSupported = isSupported;
+						subitem.hide = !isSupported;
+					}
+				});
 			}
 		});
 		return menu;
@@ -181,23 +197,10 @@ export class ConfigService {
 
 	getWifiItem(resultMenu) {
 		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
-		// this.wifiSecurity.getWifiSecurityStateOnce();
-		if (cacheShowWifiSecurity) {
-			resultMenu.splice(resultMenu.length - 2, 0, this.wifiSecurityItem);
-		} else {
-			const securityItem = resultMenu.find((item) => item.id === 'security');
-			securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'wifi-security');
-		}
-		if (this.wifiSecurity.isSupported === false) {
-			const securityItem = resultMenu.find((item) => item.id === 'security');
-			securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'wifi-security');
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
-		} else if (typeof this.wifiSecurity.isSupported === 'boolean') {
-			const wifiItem = resultMenu.find((item) => item.id === 'wifi-security');
-			if (!wifiItem) {
-				resultMenu.splice(resultMenu.length - 2, 0, this.wifiSecurityItem);
-			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, true);
+		resultMenu = this.supportFilter(resultMenu, 'wifi-security', cacheShowWifiSecurity);
+		if (typeof this.wifiSecurity.isSupported === 'boolean') {
+			resultMenu = this.supportFilter(resultMenu, 'wifi-security', this.wifiSecurity.isSupported);
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 		}
 		return resultMenu;
 	}
