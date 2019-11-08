@@ -91,7 +91,6 @@ export class LanguageService {
 			this.logger.debug('LanguageService.useLanguage load translation for ', locale);
 
 			this.translate.use(locale).subscribe(() => {
-				// of(true).pipe(delay(250));
 				// translation file loaded
 				this.logger.debug('LanguageService.useLanguage translation loaded', locale);
 				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
