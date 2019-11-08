@@ -127,28 +127,30 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
+		if (!this.guard.previousPageName.startsWith('Security')) {
+			this.refreshAll();
+		} else {
+			this.getScore();
+			this.getMaliciousWifi();
+		}
+
 		this.localInfoService.getLocalInfo().then(result => {
 			this.showVpn = true;
 			if (result.GEO === 'cn') {
 				this.showVpn = false;
 			}
-			if (this.guard.previousPageName !== 'Dashboard' && !this.guard.previousPageName.startsWith('Security')) {
-				this.refreshAll();
-			} else {
-				this.getScore();
-				this.getMaliciousWifi();
-			}
 		}).catch(e => {
 			this.showVpn = true;
+		}).finally(() => {
+			this.getScore();
 		});
 		this.fetchCMSArticles();
 	}
 
 	ngOnDestroy() {
-		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.router.routerState.snapshot.url.indexOf('dashboard') === -1) {
-			if (this.wifiSecurity) {
-				this.wifiSecurity.cancelGetWifiSecurityState();
-			}
+		if (this.router.routerState.snapshot.url.indexOf('security') === -1 && this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiSecurityState();
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
