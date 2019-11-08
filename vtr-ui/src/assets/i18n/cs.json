@@ -707,7 +707,7 @@
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
-                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač. Ovladač můžete nainstalovat také <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>.",
+                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač. Ovladač můžete nainstalovat také <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>. Po instalaci restartujte počítač.",
                     "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
         "Note": "Poznámka: ",
-        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
+        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Storno",

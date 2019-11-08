@@ -707,7 +707,7 @@
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>. Перезавантажте комп'ютер після завершення інсталяції.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Поділіться статистичними даними з Lenovo",
         "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
         "Note": "Примітка. ",
-        "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
+        "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Скасувати",

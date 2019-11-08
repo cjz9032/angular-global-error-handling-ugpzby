@@ -707,7 +707,7 @@
                     "NotGood": "<b>バッテリーは良好な状態ではありません。</b>",
                     "NotSupportACAdapter": "<b>AC アダプターがサポートされていません。</b>",
                     "LimitedACAdapterSupport": "<b>ACアダプターが十分な電力を供給できません。</b>",
-                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。また、ドライバーを<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールすることもできます。",
+                    "MissingDriver": "<b>Lenovo Power Managerドライバー</b>がインストールされていないか、正しく機能していません。Windows Update を実行して。最新のドライバーをインストールしてください。また、ドライバーを<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ここ</a>からインストールすることもできます。インストール後に、コンピューターを再起動します。",
                     "StoreLimitation": "<b>バッテリーはフル充電容量の {{value}}%</b> しか充電できません。",
                     "HighTemperature": "<b>バッテリー温度が高温になりすぎた</b>ので、<b>放電</b>を中止しました。",
                     "TrickleCharge": "バッテリーは<b>完全に放電</b>しています。再充電してください。再充電には 10 時間以上かかる場合があります。",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Lenovoと統計データを共有する",
         "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
         "Note": "注:",
-        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。"
+        "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "キャンセル",

@@ -707,7 +707,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
         "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
         "Note": "Napomena: ",
-        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
+        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Otkaži",

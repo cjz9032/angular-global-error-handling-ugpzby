@@ -707,7 +707,7 @@
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
         "Note": "Poznámka: ",
-        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
+        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Zrušiť",

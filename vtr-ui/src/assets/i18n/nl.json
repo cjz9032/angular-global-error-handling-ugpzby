@@ -707,7 +707,7 @@
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
                     "NotSupportACAdapter": "<b>De netvoedingsadapter wordt niet ondersteund.</b>",
                     "LimitedACAdapterSupport": "<b>De netvoedingsadapter kan niet voldoende stroom leveren.</b>",
-                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren. U kunt het stuurprogramma ook vanaf <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installeren.",
+                    "MissingDriver": "<b>Het stuurprogramma voor Lenovo Power Manager</b> is niet geïnstalleerd of werkt niet goed. Voer Windows Update uit om het meest recente stuurprogramma te installeren. U kunt het stuurprogramma ook vanaf <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">hier</a> installeren. Start uw computer na het installeren opnieuw op.",
                     "StoreLimitation": "<b>De batterij kan slechts {{value}}% van</b> de oorspronkelijke volledige laadcapaciteit opslaan.",
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Statistische gegevens delen met Lenovo",
         "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
         "Note": "Opmerking: ",
-        "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben."
+        "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Annuleren",

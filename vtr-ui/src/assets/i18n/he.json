@@ -707,7 +707,7 @@
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>. לאחר ההתקנה, הפעילו מחדש את המחשב.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
         "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
         "Note": "שימו לב: ",
-        "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
+        "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "ביטול",

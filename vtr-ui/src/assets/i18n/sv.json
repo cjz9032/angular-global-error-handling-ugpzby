@@ -707,7 +707,7 @@
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>. Starta om datorn efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
@@ -2271,7 +2271,10 @@
         "deviceStatistics": "Dela statistisk information med Lenovo",
         "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
         "Note": "Obs! ",
-        "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
+        "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Avbryt",
