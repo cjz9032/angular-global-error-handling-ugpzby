@@ -15,7 +15,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { GuardService } from '../../../services/guard/security-guardService.service';
+import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { DeviceService } from 'src/app/services/device/device.service';
