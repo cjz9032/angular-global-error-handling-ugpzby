@@ -773,8 +773,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private getMetricsTaskResult() {
 
 		let scanResult = new ScanResult();
-		let scanResultJson = {};
 		let countSuccesses = 0;
+		let overalTestResult = HardwareScanTestResult.Pass;
 
 		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
 		// because of that, I'm creating a map with the best order to determine the scan overall status
@@ -787,19 +787,29 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
 		resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
 
-		let overalTestResult = HardwareScanTestResult.Pass;
+		let resultJson = {
+			Result: "",
+			Reason: "",
+			TestsList: {}
+		}
 
-		scanResultJson["TestsList"] = [];
+		//scanResultJson["TestsList"] = {};
 		if (this.modules) {
 			for (const module of this.modules) {
 				for (const test of module.listTest) {
-					let testList = {};
+
 					let testName = test.id.split(":::")[0];
-					testList["Name"] = testName;
-					testList["Result"] = HardwareScanTestResult[test.status];
-					// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
-					testList["Reason"] = "NA"; 
-					
+					if (!(testName in resultJson.TestsList)) {
+						resultJson.TestsList[testName] = []
+					}
+	
+					const testObj = {
+						Id: module.groupId,
+						Result: HardwareScanTestResult[test.status],
+						// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
+						Reason: "NA", 
+					}
+
 					if (test.status === HardwareScanTestResult.Pass) {
 						countSuccesses = countSuccesses + 1;
 					} 
@@ -809,16 +819,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						overalTestResult = test.status;
 					}
 					
-					scanResultJson["TestsList"].push(testList);
-
+					resultJson.TestsList[testName].push(testObj);
 				}
 			}
 		}
 	
-		scanResultJson["Result"] = HardwareScanTestResult[overalTestResult];
-		scanResultJson["Reason"] = "NA";
+		resultJson.Result = HardwareScanTestResult[overalTestResult];
+		resultJson.Reason = "NA";
 
-		scanResult.scanResultJson = scanResultJson;
+		scanResult.scanResultJson = resultJson;
 		scanResult.countSuccesses = countSuccesses;
 
 		return scanResult;
