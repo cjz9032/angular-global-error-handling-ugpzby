@@ -216,6 +216,20 @@
 			"subitems": []
 		}]
 	}, {
+		"id": "wifi-security",
+		"label": "common.menu.security.sub3",
+		"path": "security/wifi-security",
+		"icon": ["fal", "lock"],
+		"brand": "+[think]",
+		"metricsEvent": "itemClick",
+		"metricsParent": "navbar",
+		"metricsItem": "link.wifisecurity",
+		"routerLinkActiveOptions": {
+			"exact": true
+		},
+		"subitems": []
+	},
+	{
 		"id": "support",
 		"label": "common.menu.support",
 		"path": "support",
@@ -398,6 +412,20 @@
 			"subitems": []
 		}]
 	}, {
+		"id": "wifi-security",
+		"label": "common.menu.security.sub3",
+		"path": "security/wifi-security",
+		"icon": ["fal", "lock"],
+		"brand": "+[think]",
+		"metricsEvent": "itemClick",
+		"metricsParent": "navbar",
+		"metricsItem": "link.wifisecurity",
+		"routerLinkActiveOptions": {
+			"exact": true
+		},
+		"subitems": []
+	}, 
+	{
 		"id": "support",
 		"label": "common.menu.support",
 		"path": "support",
@@ -456,20 +484,6 @@
 		},
 		"icon": ["fal", "search"],
 		"forArm": false,
-		"subitems": []
-	},
-	"wifiSecurityItem": {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
-		"path": "security/wifi-security",
-		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
 		"subitems": []
 	},
     "betaItem": [{

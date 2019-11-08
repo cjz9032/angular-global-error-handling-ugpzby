@@ -79,6 +79,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public isOnline = true;
 	completeStatusToken: string;
+	public startScanClicked = false;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -468,6 +469,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCustomizeScan() {
 		if (this.isLoadingDone()) {
+			this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 			const modalRef = this.modalService.open(this.customizeModal, {
 				size: 'lg',
 				centered: true,
@@ -479,11 +481,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.hardwareScanService.filterCustomTests(this.culture);
 				this.checkPreScanInfo(1); // custom scan
 			});
+
+			modalRef.componentInstance.modalClosing.subscribe(success => {
+				// Re-enabling the button, once the modal has been closed in a way
+				// the user didn't started the Scan proccess.
+				if (!success) {
+					this.startScanClicked = false;
+				}
+			});
 		}
 	}
 
 	public checkPreScanInfo(scanType: number) {
-
+		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 		this.hardwareScanService.cleanResponses();
 
 		this.currentScanType = scanType;
@@ -548,8 +558,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				modal.result.then((result) => {
 					this.getDoScan(scanType, requests);
+
+					// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
+					this.startScanClicked = false;
 				}, (reason) => {
 					this.hardwareScanService.cleanCustomTests();
+
+					// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
+					this.startScanClicked = false;
 				});
 			} else {
 				this.getDoScan(scanType, requests);
