@@ -41,6 +41,12 @@ ui-popover-apps {
 		min-height: 60rem;
 	}
 	.modal-body {
+		@media #{$large-screen} {
+			min-width: 91.4rem;
+		}
+		@media #{$mediaquery_X7} {
+			min-width: 91.4rem;
+		}
 		.main-content-body {
 			padding: 1rem 4rem;
 			.running-apps {
