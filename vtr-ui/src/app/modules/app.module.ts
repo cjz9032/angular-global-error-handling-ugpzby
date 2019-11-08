@@ -1,8 +1,6 @@
 import {
-	APP_INITIALIZER,
 	CUSTOM_ELEMENTS_SCHEMA,
 	ErrorHandler,
-	Injectable,
 	NgModule
 } from '@angular/core';
 import { AppComponent } from '../app.component';
@@ -13,8 +11,6 @@ import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common/common-ui.module';
 import { CommsService } from '../services/comms/comms.service';
 import { CookieService } from 'ngx-cookie-service';
-import { DashboardLocalStorageKey } from '../enums/dashboard-local-storage-key.enum';
-import { DeviceInfo } from '../data-models/common/device-info.model';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { environment } from 'src/environments/environment';
@@ -46,7 +42,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
 import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
-import { LanguageService } from '../services/language/language.service';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
@@ -69,12 +64,22 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
 
-export function preloadTranslation(languageService: LanguageService) {
-	if (languageService) {
-		languageService.useLanguage();
-	}
-	return function initFromCore() { /* called from angular code, don't remove */ };
-}
+// export function preloadTranslation(
+// 	languageService: LanguageService,
+// 	shellService: VantageShellService) {
+// 	if (languageService && shellService) {
+// 		const sysInfo = shellService.getSysinfo();
+// 		if (sysInfo) {
+// 			sysInfo.getMachineInfo()
+// 				.then((info) => {
+// 					languageService.useLanguage(info.locale);
+// 				});
+// 		} else {
+// 			languageService.useLanguage();
+// 		}
+// 	}
+// 	return function initFromCore() { /* called from angular code, don't remove */ };
+// }
 
 @NgModule({
 	declarations: [
@@ -134,12 +139,12 @@ export function preloadTranslation(languageService: LanguageService) {
 			provide: ErrorHandler,
 			useClass: GlobalErrorHandler
 		},
-		{
-			provide: APP_INITIALIZER,
-			useFactory: preloadTranslation
-			, deps: [LanguageService],
-			multi: true
-		}
+		// {
+		// 	provide: APP_INITIALIZER,
+		// 	useFactory: preloadTranslation
+		// 	, deps: [LanguageService, VantageShellService],
+		// 	multi: true
+		// }
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

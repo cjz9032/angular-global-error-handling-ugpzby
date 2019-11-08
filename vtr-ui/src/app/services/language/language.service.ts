@@ -11,6 +11,7 @@ import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 })
 export class LanguageService {
 	public isLanguageLoaded = false;
+	public currentLanguage: string;
 	private readonly defaultLanguage = 'en';
 	private readonly supportedLanguages: Array<string> = [
 		'ar',
@@ -87,15 +88,15 @@ export class LanguageService {
 	public useLanguage(lang: string = this.defaultLanguage) {
 		if (lang) {
 			// don't load same language multiple times
-			if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
-				return;
-			}
+			// if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
+			// 	return;
+			// }
 			this.isLanguageLoaded = true;
 			let locale = lang.toLowerCase();
 			const isLanguageSupported = this.isLanguageSupported(locale);
 			locale = isLanguageSupported ? locale : this.defaultLanguage;
 			this.logger.debug('LanguageService.useLanguage load translation for ', locale);
-
+			this.currentLanguage = locale;
 			this.translate.use(locale).subscribe(() => {
 				// translation file loaded
 				this.logger.debug('LanguageService.useLanguage translation loaded', locale);

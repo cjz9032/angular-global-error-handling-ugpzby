@@ -79,7 +79,7 @@ export class SupportService {
 				url: this.warrantyNormalUrl
 			};
 
-			if (this.getMachineInfo() === undefined) { return; }
+			// if (this.getMachineInfo() === undefined) { return; } // duplicate MachineInfo call
 
 			this.getMachineInfo().then((machineInfo) => {
 				if (machineInfo) {

@@ -14,7 +14,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -75,16 +74,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private router: Router,
 	) {
-		this.fetchCMSArticles();
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});
 
-		// Evaluate the translations for QA on language Change
-		// this.qaService.setTranslationService(this.translate);
-		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 		const showPowerPage = this.commonService.getLocalStorageValue(LocalStorageKey.IsHidePowerPage);
 		if (showPowerPage) {
 			this.hidePowerPage();
@@ -105,13 +95,16 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		console.log('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 
-		// translate subheader menus
-		/*this.menuItems.forEach(m => {
-			//m.label = this.translate.instant(m.label);
-			this.translate.stream(m.label).subscribe((value) => {
-				m.label = value;
-			});
-		});*/  // VAN-5872, server switch feature
+		this.fetchCMSArticles();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+
+		// Evaluate the translations for QA on language Change
+		// this.qaService.setTranslationService(this.translate);
+		// this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
 		this.initInputAccessories();
 
 		this.isOnline = this.commonService.isOnline;
@@ -122,7 +115,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				this.getMicrophoneSettings();
 			}
 		} else {
-				this.getMicrophoneSettings();
+			this.getMicrophoneSettings();
 		}
 	}
 
