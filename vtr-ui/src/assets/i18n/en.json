@@ -2390,7 +2390,10 @@
 		"deviceStatistics": "Share statistic data with Lenovo",
 		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
 		"Note": "Note: ",
-		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
+		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect.",
+		"betaSettingTitle": "Beta program",
+		"betaProgram": "Beta Program",
+		"betaSettingDescription": "Try the latest features we're working on."
 	},
 	"modernPreload": {
 		"cancel": "Cancel",

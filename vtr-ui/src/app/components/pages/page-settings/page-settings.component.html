@@ -88,6 +88,34 @@
 							</div>
 						</div>
 
+						<div class="row py-5 beta-setting">
+							<div class="col-10 mx-auto ">
+								<vtr-container-collapsible
+									[tabIndex]="0"
+									name="SettingsOther"
+									[cardTitle]="'settings.betaSettingTitle' | translate "
+									[isCollapsed]="false">
+									<ul class="list-group list-group-flush">
+										<li>
+											<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
+												[name]="'settingsBetaStatisticsToggle'"
+												[switchId]="'settingsBetaStatisticsToggle'"
+												[vtrAppSearchScroller]="['search-preference-statistics']"
+												id="settings-betaStatisticsToggle"
+												aria-label="settings-bataStatisticsToggle"
+												[caption]="'settings.betaSettingDescription' | translate"
+												[isSwitchVisible]=true
+												[isLastChild]=true
+												[leftIcon]="betaSettings[0].leftImageSource"
+												[isSwitchChecked]="toggleBetaStatistics"
+												(toggleOnOff)="onToggleOfBetaStatistics($event)">
+											</vtr-ui-row-switch>
+										</li>
+									</ul>
+								</vtr-container-collapsible>
+							</div>
+						</div>
+
 						<div class="row py-5"
 							id="settings-other-settings">
 							<div class="col-10 mx-auto ">

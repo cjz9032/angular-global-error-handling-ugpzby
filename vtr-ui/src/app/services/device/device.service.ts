@@ -28,6 +28,7 @@ export class DeviceService {
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
 	public showSearch = false;
+	public machineType: number;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -186,7 +187,13 @@ export class DeviceService {
 
 	getMachineType(): Promise<number> {
 		if (this.sysInfo) {
-			return this.sysInfo.getMachineType();
+			if (this.machineType) {
+				return Promise.resolve(this.machineType);
+			}
+			return this.sysInfo.getMachineType((value) => {
+				this.machineType = value;
+				return value;
+			});
 		}
 		return undefined;
 	}

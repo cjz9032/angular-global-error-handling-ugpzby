@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -21,6 +22,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 	toggleDeviceStatistics = false;
+	toggleBetaStatistics = false;
 
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
@@ -51,11 +53,18 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			leftImageSource: ['fal', 'shoe-prints'],
 		}
 	];
+
+	betaSettings = [
+		{
+			leftImageSource: ['fal', 'flask'],
+		}
+	];
 	metrics: any;
 	metricsPreference: any;
 
 	constructor(
 		private shellService: VantageShellService,
+		public configService: ConfigService,
 		private settingsService: SettingsService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
@@ -64,7 +73,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
 		this.metricsPreference = shellService.getMetricPreferencePlugin();
-		shellService.getMetricsPolicy((result)=>{
+		shellService.getMetricsPolicy((result) => {
 			this.metrics.metricsEnabled = result;
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
 		});
@@ -105,6 +114,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.isToggleDeviceStatistics = this.settingsService.isDeviceStatisticsSupported;
 		} else {
 			this.getDeviceStatisticsPreference();
+		}
+		if (this.commonService) {
+			this.toggleBetaStatistics = this.commonService.getBetaUser();
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -228,6 +240,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.metrics.sendAsyncEx(settingUpdateMetrics, { forced: true });
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
+	}
+
+	onToggleOfBetaStatistics(event: any) {
+		this.toggleBetaStatistics = event.switchValue;
+		this.commonService.setBetaUser(this.toggleBetaStatistics);
+		this.configService.notifyMenuChange();
 	}
 
 	sendMetrics(data: any) {
