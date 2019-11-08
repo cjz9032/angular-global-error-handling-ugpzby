@@ -707,7 +707,7 @@
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniţi computerul.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
-		"userProfile": "Profil utilizator",
-		"Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
+        "userProfile": "Profil utilizator",
+        "Note": "Notă: ",
+        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Anulare",

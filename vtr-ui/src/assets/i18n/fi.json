@@ -707,7 +707,7 @@
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>. Käynnistä tietokone uudelleen asennuksen jälkeen.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "deviceStatistics": "Jaa tilastotiedot Lenovolle",
         "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
-		"userProfile": "Käyttäjäprofiili",
-		"Note": "Huomautus: ",
-        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
+        "userProfile": "Käyttäjäprofiili",
+        "Note": "Huomautus: ",
+        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Peruuta",

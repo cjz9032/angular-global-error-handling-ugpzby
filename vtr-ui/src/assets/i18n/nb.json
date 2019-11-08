@@ -707,7 +707,7 @@
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Etter installeringen må du starte datamaskinen på nytt.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
-		"userProfile": "Brukerprofil",
-		"Note": "Merk: ",
-        "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
+        "userProfile": "Brukerprofil",
+        "Note": "Merk: ",
+        "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Avbryt",

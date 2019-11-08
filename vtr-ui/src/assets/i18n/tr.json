@@ -707,7 +707,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
         "deviceStatistics": "İstatistik verilerini Lenovo ile paylaş",
         "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
-		"userProfile": "Kullanıcı profili",
-		"Note": "Not: ",
-        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
+        "userProfile": "Kullanıcı profili",
+        "Note": "Not: ",
+        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "İptal",

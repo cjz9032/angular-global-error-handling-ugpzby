@@ -707,7 +707,7 @@
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>. Al termine dell'installazione, riavviare il computer.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
         "deviceStatistics": "Condividi i dati statistici con Lenovo",
         "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
-		"userProfile": "Profilo utente",
-		"Note": "Nota: ",
-        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
+        "userProfile": "Profilo utente",
+        "Note": "Nota: ",
+        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Annulla",

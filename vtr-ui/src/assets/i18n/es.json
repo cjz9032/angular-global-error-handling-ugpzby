@@ -707,7 +707,7 @@
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
-                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>.",
+                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>. Reinicie el sistema después de la instalación.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
-		"userProfile": "Perfil de usuario",
-		"Note": "Nota: ",
-        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
+        "userProfile": "Perfil de usuario",
+        "Note": "Nota: ",
+        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Cancelar",

@@ -2273,7 +2273,10 @@
 		"deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
 		"userProfile": "用户概要文件",
         "Note": "注意：",
-        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
+        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "取消",

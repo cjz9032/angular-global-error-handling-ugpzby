@@ -707,7 +707,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko namestite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko dobite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
         "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
-		"userProfile": "Uporabniški profil",
-		"Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
+        "userProfile": "Uporabniški profil",
+        "Note": "Opomba: ",
+        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "Prekliči",

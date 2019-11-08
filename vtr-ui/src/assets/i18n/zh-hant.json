@@ -707,7 +707,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -2271,9 +2271,12 @@
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
         "deviceStatistics": "與 Lenovo 分享統計資料",
         "deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
-		"userProfile": "使用者設定檔",
-		"Note": "附註：",
-        "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
+        "userProfile": "使用者設定檔",
+        "Note": "附註：",
+        "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Try the latest features we're working on."
     },
     "modernPreload": {
         "cancel": "取消",
