@@ -10,7 +10,7 @@
 				<div class="row" *ngIf="isUpdateDownloading">
 					<div class="col title"
 						id="system-update-installing-title"
-						attr.aria-label="system-update-installing-title">{{'systemUpdates.banner.installingTitle' | translate}}</div>
+						attr.aria-label="system-update-installing-title">{{installingUpdateText}}</div>
 				</div>
 				<div class="row">
 					<div class="col row1"
@@ -87,7 +87,7 @@
 								class="success"
 								*ngIf="downloadingPercent === 100">
 							</fa-icon>
-							{{downloadingUpdateText | translate}}
+							{{downloadingUpdateText}}
 						</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">

@@ -62,6 +62,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private timeStartSearch;
 	private protocalAction: string;
 	private shouldCheckingUpdateByProtocal = false;
+	private updateStatusMessage: string[] = [];
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
@@ -619,7 +620,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		for (const key in SystemUpdateStatusMessage) {
 			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
 				if (SystemUpdateStatusMessage[key].code === status) {
-					message = SystemUpdateStatusMessage[key].message;
+					message = this.updateStatusMessage[SystemUpdateStatusMessage[key].code];
 				}
 			}
 		}
@@ -958,5 +959,19 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.translate.stream(this.neverCheckedText).subscribe((res) => {
 			this.neverCheckedText = res;
 		});
+
+		for (const key in SystemUpdateStatusMessage) {
+			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
+				const message = SystemUpdateStatusMessage[key].message;
+				const index = SystemUpdateStatusMessage[key].code;
+				if (message !== '') {
+					this.translate.stream(message).subscribe((res) => {
+						this.updateStatusMessage[index] = res;
+					});
+				} else {
+					this.updateStatusMessage[index] = '';
+				}
+			}
+		}
 	}
 }
