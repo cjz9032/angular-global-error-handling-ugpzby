@@ -136,8 +136,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private initFeatures() {
 		this.getMicrophoneStatus();
 		this.getCameraPrivacyStatus();
-		this.initEyecaremodeSettings();
-		this.startEyeCareMonitor();
+		setTimeout(() => {
+			this.initEyecaremodeSettings();
+			this.startEyeCareMonitor();
+		}, 5);
 	}
 
 	public getCameraPermission() {
@@ -166,27 +168,25 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	public initEyecaremodeSettings() {
 		try {
-				this.eyeCareModeStatus.isLoading = true;
-
-				this.displayService.initEyecaremodeSettings()
-					.then((result: boolean) => {
-						this.eyeCareModeStatus.isLoading = false;
-						console.log('initEyecaremodeSettings.then', result);
-						if (result === true) {
-							const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
-							if (eyeCare) {
-								this.eyeCareModeStatus = eyeCare;
-							} else {
-								this.getEyeCareModeStatus();
-							}
+			this.eyeCareModeStatus.isLoading = true;
+			this.logger.debug('WidgetQuicksettingsComponent.initEyecaremodeSettings: invoke Eye Care Mode');
+			this.displayService.initEyecaremodeSettings()
+				.then((result: boolean) => {
+					this.eyeCareModeStatus.isLoading = false;
+					this.logger.debug('WidgetQuicksettingsComponent.initEyecaremodeSettings: response Eye Care Mode', result);
+					if (result === true) {
+						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
+						if (eyeCare) {
+							this.eyeCareModeStatus = eyeCare;
+						} else {
+							this.getEyeCareModeStatus();
 						}
-					}).catch(error => {
-						this.logger.error('initEyecaremodeSettings', error.message);
-						return EMPTY;
-					});
+					}
+				}).catch(error => {
+					this.logger.error('WidgetQuicksettingsComponent.initEyecaremodeSettings: promise error');
+				});
 		} catch (error) {
-			this.logger.error('initEyecaremodeSettings', error.message);
-			return EMPTY;
+			this.logger.error('WidgetQuicksettingsComponent.initEyecaremodeSettings: exception', error.message);
 		}
 	}
 
@@ -197,11 +197,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				if (this.cameraStatus.permission) {
 					this.cameraStatus.isLoading = true;
 				}
+				this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: invoke Camera Privacy');
+
 				this.dashboardService
 					.getCameraStatus()
 					.then((featureStatus: FeatureStatus) => {
 						this.cameraStatus.isLoading = false;
-						console.log('getCameraStatus.then', featureStatus);
+						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
 						this.cameraStatus = featureStatus;
 						this.cameraStatus.available = featureStatus.available;
 						this.cameraStatus.status = featureStatus.status;
@@ -213,13 +215,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						}
 					})
 					.catch(error => {
-						this.logger.error('getCameraStatus', error.message);
-						return EMPTY;
+						this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: promise error', error.message);
 					});
 			}
 		} catch (error) {
 			this.cameraStatus.isLoading = false;
-			this.logger.error('getCameraPrivacyStatus', error.message);
+			this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: exception', error.message);
 			return EMPTY;
 		}
 	}
@@ -287,17 +288,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	private getEyeCareModeStatus() {
 		if (this.dashboardService.isShellAvailable) {
+			this.logger.debug('WidgetQuicksettingsComponent.getEyeCareModeStatus: invoke getEyeCareModeState');
 			this.dashboardService
 				.getEyeCareMode()
 				.then((featureStatus: FeatureStatus) => {
-					console.log('getEyeCareMode.then', featureStatus);
+					this.logger.debug('WidgetQuicksettingsComponent.getEyeCareModeStatus: response getEyeCareModeState', featureStatus);
 					this.eyeCareModeStatus.available = featureStatus.available;
 					this.eyeCareModeStatus.status = featureStatus.status;
 					this.eyeCareModeStatus.isLoading = featureStatus.isLoading;
 				})
 				.catch(error => {
-					this.logger.error('getEyeCareMode', error.message);
-					return EMPTY;
+					this.logger.error('WidgetQuicksettingsComponent.getEyeCareModeStatus: promise error');
 				});
 		}
 	}

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild, ViewRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -7,7 +7,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation, ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { ViewRef } from '@angular/core';
 import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
@@ -51,7 +50,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
-	isModalShown: boolean;
+	isModalShown = false;
 
 	constructor(
 		private modalService: NgbModal,
@@ -67,9 +66,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.isLoading = true;
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			console.log(params);
-			if (params.has('batterydetail') && this.isModalShown) {
-				this.isModalShown = false;
-				this.getBatteryDetails();
+			if (params.has('batterydetail') && !this.isModalShown) {
+				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
+				this.getBatteryDetails(showBatteryDetail);
 			}
 		});
 		this.getBatteryDetailOnCard();
@@ -117,11 +116,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public getBatteryDetailOnCard() {
 		try {
 			if (this.batteryService.isShellAvailable) {
-				this.getBatteryDetails();
+				this.getBatteryDetails(false);
 
 				this.batteryCardTimer = setInterval(() => {
 					console.log('Trying after 30 seconds');
-					this.getBatteryDetails();
+					this.getBatteryDetails(false);
 				}, 30000);
 			}
 		} catch (error) {
@@ -133,7 +132,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	/**
 	 * gets battery details from js bridge
 	 */
-	public getBatteryDetails() {
+	public getBatteryDetails(showBatteryDetail) {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
 				console.log('getBatteryDetails', response);
@@ -141,11 +140,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
-
-				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
-				if (showBatteryDetail && !this.isModalShown) {
+				if (showBatteryDetail) {
 					this.showDetailModal(this.batteryModal);
-					this.isModalShown = true;
 				}
 			}).catch(error => {
 				this.logger.error('getBatteryDetails error', error.message);
@@ -239,6 +235,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
+		this.isModalShown = true;
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
@@ -250,7 +247,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					// on open
 				},
 				reason => {
-					// on close
+					this.isModalShown = false;
 				}
 			);
 	}
@@ -393,6 +390,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
-		this.notificationSubscription.unsubscribe();
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 }

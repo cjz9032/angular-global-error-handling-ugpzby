@@ -26,6 +26,7 @@ export class UiListCheckboxComponent implements OnInit {
 	public manufacturer: string;
 	public version: string;
 	public installedVersion: string;
+	public installedVersionStatus = 0;
 	public downloadSize: string;
 	public diskSpaceNeeded: string;
 	public readMeUrl = '';
@@ -38,8 +39,8 @@ export class UiListCheckboxComponent implements OnInit {
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
-	private notInstalledText = 'systemUpdates.notInstalled';
-	private notAvailableText = 'systemUpdates.notAvailable';
+	public notInstalledText = 'systemUpdates.notInstalled';
+	public notAvailableText = 'systemUpdates.notAvailable';
 
 	constructor(
 		private commonService: CommonService,
@@ -71,15 +72,16 @@ export class UiListCheckboxComponent implements OnInit {
 			if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
 				this.isReadMeAvailable = true;
 			}
+			this.installedVersion = update.currentInstalledVersion;
 
 			if (update.currentInstalledVersion === null || update.currentInstalledVersion === undefined) {
-				this.installedVersion = this.notInstalledText;
+				this.installedVersionStatus = 1; // notInstalledText;
 			} else if (update.currentInstalledVersion.trim() === '' || update.currentInstalledVersion.trim().length === 0) {
-				this.installedVersion = this.notInstalledText;
+				this.installedVersionStatus = 1; // notInstalledText;
 			} else if (update.currentInstalledVersion === '0') {
-				this.installedVersion = this.notAvailableText;
+				this.installedVersionStatus = 2; // notAvailableText;
 			} else {
-				this.installedVersion = update.currentInstalledVersion;
+				this.installedVersionStatus = 0;
 			}
 		}
 	}

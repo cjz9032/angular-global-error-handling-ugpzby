@@ -14,6 +14,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -44,6 +45,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
 
 	constructor(
+		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,

@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LoggerService } from '../logger/logger.service';
 import { CommonService } from '../common/common.service';
+import { TranslationNotification } from 'src/app/data-models/translation/translation';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
-import { TranslationNotification } from 'src/app/data-models/translation/translation';
-import { EMPTY } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LanguageService {
 	public isLanguageLoaded = false;
+	public currentLanguage: string;
 	private readonly defaultLanguage = 'en';
 	private readonly supportedLanguages: Array<string> = [
 		'ar',
@@ -78,7 +78,6 @@ export class LanguageService {
 			this.useLanguage(langCode);
 		} catch (error) {
 			this.logger.error('LanguageService.useLanguageByLocale', error.message);
-			return EMPTY;
 		}
 	}
 
@@ -88,14 +87,20 @@ export class LanguageService {
 	 */
 	public useLanguage(lang: string = this.defaultLanguage) {
 		if (lang) {
-			this.isLanguageLoaded = true;
+			// don't load same language multiple times
+			// if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
+			// 	return;
+			// }
 			let locale = lang.toLowerCase();
 			const isLanguageSupported = this.isLanguageSupported(locale);
 			locale = isLanguageSupported ? locale : this.defaultLanguage;
+			this.logger.debug('LanguageService.useLanguage load translation for ', locale);
+			this.currentLanguage = locale;
 			this.translate.use(locale).subscribe(() => {
 				// translation file loaded
-				this.logger.error('LanguageService.useLanguage translation loaded', locale);
+				this.logger.debug('LanguageService.useLanguage translation loaded', locale);
 				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
+				this.isLanguageLoaded = true;
 			});
 		}
 	}

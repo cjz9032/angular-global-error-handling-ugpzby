@@ -1,27 +1,39 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { DeviceService } from '../device/device.service';
+import { SelfSelectService } from '../self-select/self-select.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LocalInfoService {
 
-	private sysInfo: any;
+	// private sysInfo: any;
 	private localInfo: any;
 	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-latn', 'sv', 'tr', 'uk', 'zh-hant'];
+	private readonly gamingTag = 'Gaming';
+	private selfSelectSegment = 'Consumer';
 
 	constructor(
 		private shellService: VantageShellService,
+		private deviceService: DeviceService,
+		private selfSelectService: SelfSelectService
 	) {
-		this.sysInfo = shellService.getSysinfo();
+		// this.sysInfo = shellService.getSysinfo();
 	}
 
 	async getLocalInfo() {
+		if (this.selfSelectSegment !== this.selfSelectService.usageType) {
+			this.selfSelectSegment = await this.selfSelectService.getSegment();
+		}
 		if (this.localInfo) {
+			if (this.localInfo.segment !== this.gamingTag) {
+				this.localInfo.segment = this.selfSelectSegment;
+			}
 			return this.localInfo;
 		} else {
-			if (this.sysInfo) {
-				return this.sysInfo.getMachineInfo().then(result => {
+			if (this.deviceService) {
+				return this.deviceService.getMachineInfo().then(result => {
 					let osName = 'Windows';
 					if (result.os &&
 						result.os.toLowerCase().indexOf('android') > -1) {
@@ -39,7 +51,7 @@ export class LocalInfoService {
 						GEO: result.country.toLowerCase() ? result.country.toLowerCase() : 'us',
 						OEM: result.manufacturer ? result.manufacturer : 'Lenovo',
 						OS: osName,
-						Segment: result.isGaming ? 'Gaming' : 'Consumer',
+						Segment: result.isGaming ? this.gamingTag : this.selfSelectSegment,
 						Brand: result.brand ? result.brand : 'Lenovo',
 					};
 					return this.localInfo;

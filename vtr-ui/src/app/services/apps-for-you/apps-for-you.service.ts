@@ -222,7 +222,13 @@ export class AppsForYouService {
 				const applicationGuid = appGuid;
 				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
 					(progressResponse) => {
-						this.updateCachedAppStatus(appGuid, 'InstallerRunning');
+						// SU plugin will launch installer after progress 85, so check status by the progerss;
+						//   for compatibility reasons, SU plugin will not add additonal status indicator
+						if (progressResponse < 85) {
+							this.updateCachedAppStatus(appGuid, 'Downloading');
+						} else {
+							this.updateCachedAppStatus(appGuid, 'InstallerRunning');
+						}
 						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
 					});
 				this.updateCachedAppStatus(appGuid, result);
@@ -272,7 +278,7 @@ export class AppsForYouService {
 
 	// Wether or not to show 'adobe redemption' in user drop down menu
 	public showAdobeMenu() {
-		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
+		if (!this.deviceService.isArm && this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1 &&
 			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1)) {
 			return true;

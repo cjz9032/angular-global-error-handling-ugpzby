@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nije otkrivena veza sa internetom",
             "subtitle": "Saznajte više kako da rešite probleme sa vezom u našem članku",
-            "buttonText": "Pronađite podršku"
+            "buttonText": "Pronađite podršku",
+            "welcomeToVantage": "Dobro došli u sledeću generaciju programa Vantage",
+            "systemHealth": "Ispravnost sistema"
         },
         "feedback": {
             "title": "Pružite povratne informacije",
@@ -705,7 +707,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -1838,8 +1840,21 @@
         "logout": "Odjava",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
-        "welcomeText": "Danas izgledate puni energije {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Danas izgledate puni energije {{firstName}}!",
+        "welcomeText2": "Drago mi je što vas opet vidim. {{firstName}}",
+        "welcomeText3": "Kakvo prijatno iznenađenje, {{firstName}}",
+        "welcomeText4": "{{firstName}}, osmehnite se, zarazno je :)",
+        "welcomeText5": "Kuc, kuc, {{firstName}}",
+        "welcomeText6": "Zaputili ste se ka sjajnim mestima!",
+        "welcomeText7": "Danas je vaš dan, {{firstName}}!",
+        "welcomeText8": "Ko voli srećno malo drveće?",
+        "welcomeText9": "Neka zabava počne, {{firstName}}!",
+        "welcomeText10": "Sam mirno i uz Vantage",
+        "welcomeText11": "Veći Vantage za vaš novac",
+        "welcomeText12": "Donesite Vantage",
+        "welcomeText13": "Jedite, spavajte, Vantage, ponovite",
+        "welcomeText14": "Svaki trenutak je novi Vantage",
+        "welcomeText15": "Vantage do maksimuma",
         "welcomeTextWithoutUserName": "Danas izgledate puni energije!",
         "helloUser": "Zdravo, {{firstName}}!",
         "ssoErrorTitle": "Greška",
@@ -2215,10 +2230,11 @@
         "bullets2": "Savetnik za bezbednost olakšava upravljanje bezbednošću (dostupno na određenim modelima).",
         "bullets3": "Automatska ažuriranja održavaju uređaj u najboljoj formi (dostupno na određenim sistemima).",
         "subtitle1": "Kako ćete koristiti uređaj?",
-        "subtitle2": "Ispričajte nam o vašim interesovanjima",
+        "subtitle2": "Ispričajte nam o vašim interesovanjima (opcionalno)",
         "personal": "Lična upotreba",
         "business": "Poslovna upotreba",
-        "custom": "Prilagođeno iskustvo",
+		"custom": "Prilagođeno iskustvo",
+		"professional": "Profesionalna upotreba",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
         "moreInterest": "+ više oblasti interesovanja",
         "title1": "Dobro došli u",
@@ -2255,8 +2271,12 @@
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
         "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
         "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
+        "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
-        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
+        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."
     },
     "modernPreload": {
         "cancel": "Otkaži",
@@ -2431,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliraj",
-                "installing": "Instaliranje",
+				"installing": "Instaliranje",
+				"downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokreni",
                 "seeMore": "Pogledajte još"

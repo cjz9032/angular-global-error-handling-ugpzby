@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nu s-a detectat nicio conexiune la internet",
             "subtitle": "Aflați cum puteți rezolva problemele de conexiune în",
-            "buttonText": "Obțineți asistență"
+            "buttonText": "Obțineți asistență",
+            "welcomeToVantage": "Bun venit la următoarea generaţie de Vantage",
+            "systemHealth": "Funcţionare sistem"
         },
         "feedback": {
             "title": "Oferiţi feedback",
@@ -705,7 +707,7 @@
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniţi computerul.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
@@ -1838,8 +1840,21 @@
         "logout": "Deconectare",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
-        "welcomeText": "Păreți plin de energie astăzi, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",
+        "welcomeText2": "Ne bucurăm să te revedem, {{firstName}}!",
+        "welcomeText3": "Ce surpriză plăcută, {{firstName}}!",
+        "welcomeText4": "Zâmbește, {{firstName}}! Zâmbetul este contagios. :)",
+        "welcomeText5": "Pregătește-te, {{firstName}}!",
+        "welcomeText6": "Te așteaptă o călătorie extraordinară!",
+        "welcomeText7": "Astăzi este ziua ta, {{firstName}}!",
+        "welcomeText8": "Cui îi plac copăceii fericiți?",
+        "welcomeText9": "Distracția continuă, {{firstName}}!",
+        "welcomeText10": "Păstrează-ți calmul și folosește Vantage",
+        "welcomeText11": "Un Vantage mai cuprinzător, la același cost",
+        "welcomeText12": "Adu acasă Vantage",
+        "welcomeText13": "Mănâncă, dormi, Vantage, repetă.",
+        "welcomeText14": "Vremea pentru Vantage e în fiecare clipă",
+        "welcomeText15": "Vantage cât cuprinde",
         "welcomeTextWithoutUserName": "Păreți plin de energie astăzi!",
         "helloUser": "Bună, {{firstName}}!",
         "ssoErrorTitle": "Eroare",
@@ -2215,10 +2230,11 @@
         "bullets2": "Consultatul de securitate simplifică gestionarea securității (caracteristică disponibilă pe anumite sisteme).",
         "bullets3": "Actualizările automate vă mențin dispozitivul în stare perfectă (caracteristică disponibilă pe anumite sisteme).",
         "subtitle1": "Cum veți utiliza dispozitivul?",
-        "subtitle2": "Spuneți-ne despre interesele dvs",
+        "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
-        "custom": "Experiență personalizată",
+		"custom": "Experiență personalizată",
+		"professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2255,8 +2271,12 @@
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
+        "userProfile": "Profil utilizator",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
+        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "betaSettingTitle": "Program beta",
+        "betaProgram": "Program beta",
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -2431,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalare",
-                "installing": "Instalare în curs",
+				"installing": "Instalare în curs",
+				"downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"

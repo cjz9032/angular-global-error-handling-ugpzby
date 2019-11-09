@@ -1,7 +1,9 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid p-40">
-		<div class="circleimage"><img class="img-fluid"
-				src="assets/images/device.png" /> </div>
+		<div class="circleimage p-40">
+			<img *ngIf="!deviceService.isGaming" [src]=" '/assets/icons/logo-lenovo-red.svg' | svgInline | async" alt="Lenovo logo">
+			<img *ngIf="deviceService.isGaming" [src]=" '/assets/icons/logo-lenovo-white.svg' | svgInline | async" alt="Lenovo logo">
+		</div>
 		<div class="row mt-20">
 			<div class="col">
 				<div class="family"

@@ -9,7 +9,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, EMPTY } from 'rxjs';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import {
 	FlipToBootCurrentModeEnum,
@@ -23,7 +23,7 @@ import { MetricService } from '../../../../../services/metric/metric.service';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 
 enum PowerMode {
@@ -207,12 +207,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	constructor(
+		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public powerService: PowerService,
 		private commonService: CommonService,
 		private logger: LoggerService,
 		public modalService: NgbModal,
 		public shellServices: VantageShellService,
-		private metrics: MetricService
+		private metrics: MetricService,
 	) {
 	}
 
@@ -228,6 +229,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
 			this.headerMenuItems.splice(0, 1);
+			this.checkMenuItemsEmpty();
 		}
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
@@ -240,6 +242,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	initDataFromCache() {
+		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
 		this.initExpressChargingFromCache();
@@ -383,6 +386,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	onSetSmartStandbyCapability(event: boolean) {
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
+			this.checkMenuItemsEmpty();
 		}
 	}
 
@@ -963,9 +967,23 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	// End Lenovo Vantage ToolBar
+	public initPowerSmartSettingFromCache() {
+		try {
+			const cache = this.commonService.getLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, undefined);
+			if (cache) {
+				const showIC = cache.showIC;
+				if (showIC === 0) {
+					this.hidePowerSmartSetting(true);
+				}
+			}
+		} catch (error) {
+			console.log('initPowerSmartSettingFromCache', error);
+		}
+	}
 
 	hidePowerSmartSetting(hide: boolean) {
 		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
+		this.checkMenuItemsEmpty();
 	}
 
 	// start battery threshold settings
@@ -1047,12 +1065,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case "ThresholdWarningNote":
+				case 'ThresholdWarningNote':
 					this.showWarningMsg = notification.payload;
 					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
 					break;
-				case "IsPowerDriverMissing":
+				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					this.checkPowerDriverMissing(this.isPowerDriverMissing);
 					break;
@@ -1066,8 +1084,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.machineType === 1 && status) {
 			this.showAirplanePowerModeSection = false;
 			this.isChargeThresholdAvailable = false;
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "battery");
-			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, "power");
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+			this.checkMenuItemsEmpty();
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
 	}
@@ -1156,18 +1175,29 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			(this.conservationModeStatus && this.conservationModeStatus.available) || (this.expressChargingStatus && this.expressChargingStatus.available) ||
 			this.isChargeThresholdAvailable)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.checkMenuItemsEmpty();
 		}
 	}
 
 	showPowerSettings() {
 		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+			this.checkMenuItemsEmpty();
 		}
 	}
 
 	hideOtherSettingsLink() {
 		if (this.vantageToolbarStatus && !this.vantageToolbarStatus.available) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'other');
+			this.checkMenuItemsEmpty();
+		}
+	}
+
+	checkMenuItemsEmpty() {
+		if (this.headerMenuItems.length === 0) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsHidePowerPage, true);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsHidePowerPage, false);
 		}
 	}
 

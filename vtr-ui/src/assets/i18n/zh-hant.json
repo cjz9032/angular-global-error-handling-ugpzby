@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "未偵測到網際網路連線",
             "subtitle": "進一步瞭解如何解決連線問題",
-            "buttonText": "獲得支援"
+            "buttonText": "獲得支援",
+            "welcomeToVantage": "歡迎使用新一代 Vantage",
+            "systemHealth": "系統性能狀態"
         },
         "feedback": {
             "title": "提供意見回饋",
@@ -705,7 +707,7 @@
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。安裝之後，重新啟動電腦。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
@@ -1838,8 +1840,21 @@
         "logout": "登出",
         "unlockExclusives": "解除鎖定獨家功能",
         "user": "使用者",
-        "welcomeText": "{{firstName}}，今天看起來充滿活力！",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "{{firstName}}，今天看起來充滿活力！",
+        "welcomeText2": "很高興再次見到你 {{firstName}}",
+        "welcomeText3": "令人感到驚喜 {{firstName}}",
+        "welcomeText4": "笑一個 {{firstName}}，一起開心吧 :)",
+        "welcomeText5": "敲敲門 {{firstName}} 在家嗎",
+        "welcomeText6": "前進好地方！",
+        "welcomeText7": "今天你很幸運 {{firstName}}！",
+        "welcomeText8": "誰喜歡快樂的小樹？",
+        "welcomeText9": "{{firstName}} 派對開始了！",
+        "welcomeText10": "保持冷靜，Vantage 就來了",
+        "welcomeText11": "Vantage 物美價廉最划算",
+        "welcomeText12": "把 Vantage 帶回家",
+        "welcomeText13": "吃好；睡好；Vantage；繼續加油",
+        "welcomeText14": "Vantage 每一刻都新鮮",
+        "welcomeText15": "Vantage 全速全進",
         "welcomeTextWithoutUserName": "今天看起來充滿活力！",
         "helloUser": "{{firstName}}，您好！",
         "ssoErrorTitle": "錯誤",
@@ -2215,10 +2230,11 @@
         "bullets2": "使用安全性顧問，安全管理更輕鬆 (適用於特定系統)。",
         "bullets3": "使用自動更新，讓裝置隨時保持為最佳狀態 (適用於特定系統)。",
         "subtitle1": "您要如何使用您的裝置？",
-        "subtitle2": "告訴我們您的興趣",
+        "subtitle2": "告訴我們您的興趣（選填）",
         "personal": "個人使用",
         "business": "業務使用",
-        "custom": "自訂",
+		"custom": "自訂",
+		"professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
@@ -2255,8 +2271,12 @@
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
         "deviceStatistics": "與 Lenovo 分享統計資料",
         "deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
+        "userProfile": "使用者設定檔",
         "Note": "附註：",
-        "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
+        "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。",
+        "betaSettingTitle": "Beta 程式",
+        "betaProgram": "Beta 程式",
+        "betaSettingDescription": "試試我們正在開發的最新功能。"
     },
     "modernPreload": {
         "cancel": "取消",
@@ -2431,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "安裝",
-                "installing": "安裝",
+				"installing": "安裝",
+				"downloading": "下載",
                 "installed": "已安裝",
                 "launch": "啟動",
                 "seeMore": "查看更多"

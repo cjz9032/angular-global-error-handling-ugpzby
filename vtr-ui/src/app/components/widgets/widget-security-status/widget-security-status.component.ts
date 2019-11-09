@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { Component, OnInit, Input, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
 import { AntivirusWidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/antivirus-widget-item.model';
@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -35,10 +35,11 @@ export class WidgetSecurityStatusComponent implements OnInit{
 		private guard: GuardService) {}
 
 	ngOnInit() {
-		this.items = [];
-		this.items.push(new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService));
-		this.items.push(new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone));
-		this.items.push(new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService));
+		this.items = [
+			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
+			new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone),
+			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService)
+		];
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.showVpn();
@@ -54,7 +55,7 @@ export class WidgetSecurityStatusComponent implements OnInit{
 		if (this.securityAdvisor) {
 			this.securityAdvisor.refresh();
 		}
-		if (!this.securityAdvisor.wifiSecurity.state || (this.commonService.getSessionStorageValue(SessionStorageKey.DashboardInDashboardPage) && !this.guard.previousPageName.startsWith('Security'))) {
+		if (!this.securityAdvisor.wifiSecurity.state) {
 			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
 		}
 		if (windowsHello.fingerPrintStatus) {

@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { DeviceService } from '../device/device.service';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable({
 	providedIn: 'root'
 })
@@ -22,11 +24,21 @@ export class DashboardService {
 	public cardContentPositionC: any = {};
 	public cardContentPositionD: any = {};
 	public cardContentPositionE: any = {};
+	public heroBannerItemsOnline = [];
 	public cardContentPositionF: any = {};
+	public cardContentPositionBOnline: any;
+	public cardContentPositionCOnline: any;
+	public cardContentPositionDOnline: any;
+	public cardContentPositionEOnline: any;
+	public cardContentPositionFOnline: any;
+	translateString: any;
 
 	constructor(
 		shellService: VantageShellService,
-		commonService: CommonService) {
+		commonService: CommonService,
+		private deviceService: DeviceService,
+		private translate: TranslateService,
+		) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
@@ -41,7 +53,17 @@ export class DashboardService {
 			this.isShellAvailable = true;
 		}
 
-		this.setDefaultCMSContent();
+		this.translate.stream([
+			'dashboard.offlineInfo.welcomeToVantage',
+			'common.menu.support',
+			'settings.settings',
+			'dashboard.offlineInfo.systemHealth',
+			'common.securityAdvisor.wifi',
+			'systemUpdates.title'
+		]).subscribe((result) => {
+			this.translateString = result;
+			this.setDefaultCMSContent();
+		});
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
@@ -212,7 +234,7 @@ export class DashboardService {
 					}
 					// first launch will not have data, below code will break
 					const result = { endDate: null, status: 2, startDate: null };
-					this.sysinfo.getMachineInfo().then((data) =>
+					this.deviceService.getMachineInfo().then((data) =>
 						this.warranty.getWarrantyInformation(data.serialnumber).then(
 							(warrantyRep) => {
 								if (warrantyRep && warrantyRep.status !== 2) {
@@ -239,26 +261,28 @@ export class DashboardService {
 		}
 	}
 
-	private setDefaultCMSContent() {
+	setDefaultCMSContent() {
+		if (!this.translateString) {
+			return;
+		}
 		this.heroBannerItems = [
 			{
 				albumId: 1,
 				id: 1,
 				source: 'Vantage',
-				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
+				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'] ,
+				url: '/assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null
 			}
 		];
-
 		this.cardContentPositionB = {
-			Title: '',
+			Title: this.translateString['common.menu.support'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/Alexa4x3-zone1.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Support.jpg',
 			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:support',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -270,13 +294,13 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionC = {
-			Title: '',
+			Title: this.translateString['settings.settings'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/Security4x3-zone2.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
 			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:device-settings',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -288,13 +312,13 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionD = {
-			Title: '',
+			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/Gamestore8x3-zone3.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-My-Device.jpg',
 			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:device',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -306,13 +330,13 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionE = {
-			Title: '',
+			Title: this.translateString['common.securityAdvisor.wifi'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/content-card-4x4-support.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Security-Advisor.jpg',
+			Action: 'systemUpdates.readMore',
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:wifi-security',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -324,13 +348,13 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionF = {
-			Title: '',
+			Title: this.translateString['systemUpdates.title'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/content-card-4x4-award.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-System-Update.jpg',
+			Action: 'systemUpdates.readMore',
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:system-updates',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -340,5 +364,6 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null
 		};
+
 	}
 }

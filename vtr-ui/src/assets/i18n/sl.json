@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Internetna povezava ni bila zaznana",
             "subtitle": "Naučite se, kako odpraviti težave s povezavo, v našem",
-            "buttonText": "Zagotovite si podporo"
+            "buttonText": "Zagotovite si podporo",
+            "welcomeToVantage": "Dobrodošli v naslednji generaciji programa Vantage",
+            "systemHealth": "Zdravje sistema"
         },
         "feedback": {
             "title": "Pošljite povratne informacije",
@@ -705,7 +707,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko namestite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko dobite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
@@ -1838,8 +1840,21 @@
         "logout": "Odjava",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
-        "welcomeText": "Danes ste videti polni energije, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",
+        "welcomeText2": "Veseli smo, da se zopet vidimo, {{firstName}}",
+        "welcomeText3": "Kakšno prijetno presenečenje, {{firstName}}",
+        "welcomeText4": "Nasmehnite se, {{firstName}}, saj je nalezljivo :)",
+        "welcomeText5": "Tok, tok, {{firstName}}",
+        "welcomeText6": "Obiskali boste odlična mesta!",
+        "welcomeText7": "Danes je vaš dan, {{firstName}}!",
+        "welcomeText8": "Kdo ima rad srečna majhna drevesa?",
+        "welcomeText9": "Še naprej se zabavajte, {{firstName}}!",
+        "welcomeText10": "Ostanite mirni in še naprej uporabljajte Vantage",
+        "welcomeText11": "Večja prednost s programom Vantage",
+        "welcomeText12": "Program Vantage uporabljajte tudi doma",
+        "welcomeText13": "Jejte, spite, uporabljajte Vantage, ponovite",
+        "welcomeText14": "Vsak trenutek je nova priložnost s programom Vantage",
+        "welcomeText15": "Izkoristite Vantage v največji možni meri",
         "welcomeTextWithoutUserName": "Danes ste videti polni energije!",
         "helloUser": "Pozdravljeni, {{firstName}}!",
         "ssoErrorTitle": "Napaka",
@@ -2215,10 +2230,11 @@
         "bullets2": "Varnostni svetovalec poenostavi upravljanje varnosti (na voljo v izbranih sistemih).",
         "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju (na voljo v izbranih sistemih).",
         "subtitle1": "Kako boste uporabljali napravo?",
-        "subtitle2": "Povejte nam, kaj vas zanima",
+        "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
-        "custom": "Izkušnja po meri",
+		"custom": "Izkušnja po meri",
+		"professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
         "title1": "Pozdravljeni v programu WRITEit,",
@@ -2255,8 +2271,12 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
         "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
+        "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
+        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "betaSettingTitle": "Program različice beta",
+        "betaProgram": "Program različice beta",
+        "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."
     },
     "modernPreload": {
         "cancel": "Prekliči",
@@ -2431,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Namestitev",
-                "installing": "Nameščanje",
+				"installing": "Nameščanje",
+				"downloading": "Prenašanje",
                 "installed": "Nameščeno",
                 "launch": "Zaženite",
                 "seeMore": "Več"

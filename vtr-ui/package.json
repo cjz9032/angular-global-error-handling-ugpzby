@@ -1,7 +1,11 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.233",
+	"version": "1.0.242",
 	"scripts": {
+		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
+		"build:qa": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=qa",
+		"build:stage": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=stage",
+		"build:prod": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod",
 		"ng": "ng",
 		"start": "ng serve",
 		"build-serve": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve --prod",
@@ -20,7 +24,6 @@
 		"analyze": "webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"dev-stats": "ng build -c=dev --stats-json & webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"source": "ng build -c=dev & source-map-explorer 'dist/vtr-ui/*.js'",
-		"build:dev": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng build -c=dev",
 		"mock-serve": "node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve --port 4300 -c=mock"
 	},
 	"private": true,
@@ -41,7 +44,7 @@
 		"@fortawesome/free-regular-svg-icons": "^5.9.0",
 		"@fortawesome/free-solid-svg-icons": "^5.9.0",
 		"@fortawesome/pro-light-svg-icons": "^5.9.0",
-		"@lenovo/tan-client-bridge": "10.1910.2",
+		"@lenovo/tan-client-bridge": "10.1910.3.unstablelatest",
 		"@ng-bootstrap/ng-bootstrap": "^5.1.0",
 		"@ngx-translate/core": "^11.0.1",
 		"@ngx-translate/http-loader": "^4.0.0",

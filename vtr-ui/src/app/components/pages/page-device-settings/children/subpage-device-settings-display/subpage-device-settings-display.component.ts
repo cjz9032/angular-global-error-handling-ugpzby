@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
@@ -16,6 +16,8 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import { ActivatedRoute } from '@angular/router';
+import { map, timeout, takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
@@ -35,7 +37,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public displayColorTempDataSource: any;
 	public displayColorTempCache: EyeCareModeResponse;
 	public eyeCareModeCache: EyeCareModeCapability;
-	public cameraDetails1: ICameraSettingsResponse;
+	public cameraDetails1: CameraSettingsResponse;
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
@@ -129,6 +131,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraBlur = new CameraBlur();
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
+	cameraSessionId: Subscription;
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -138,14 +141,17 @@ export class SubpageDeviceSettingsDisplayComponent
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
 		private cameraFeedService: CameraFeedService,
-		private logger: LoggerService) {
-
+		private logger: LoggerService,
+		private route: ActivatedRoute
+	) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
 		this.Windows = vantageShellService.getWindows();
-		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
-		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+		if (this.Windows) {
+			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+		}
 	}
 
 	ngOnInit() {
@@ -164,6 +170,20 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		);
 
+		this.cameraSessionId = this.route
+			.queryParamMap
+			.pipe(
+				takeWhile(par => {
+					return par.get('cameraSession_id') === 'camera';
+				}),
+			)
+			.subscribe(() => {
+				console.log(`get queryParamMap for navigation from smart assist`);
+				setTimeout(() => {
+					document.getElementById('camera').scrollIntoView();
+				}, 500);
+			});
+
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
@@ -172,7 +192,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.initFeatures();
 			}
 		} else {
-				this.initFeatures();
+			this.initFeatures();
 		}
 	}
 
@@ -235,14 +255,16 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	initFeatures()  {
-		this.startEyeCareMonitor();
-		this.initEyecaremodeSettings();
+	initFeatures() {
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.statusChangedLocationPermission();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
+		setTimeout(() => {
+			this.initEyecaremodeSettings();
+			this.startEyeCareMonitor();
+		}, 5);
 	}
 
 	async initCameraSection() {
@@ -325,6 +347,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.stopEyeCareMonitor();
 		this.stopMonitorForCamera();
 		clearTimeout(this.privacyGuardInterval);
+		if (this.cameraSessionId) {
+			this.cameraSessionId.unsubscribe();
+		}
 	}
 
 	/**
@@ -983,6 +1008,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	public setPrivacyGuardToggleStatus(event) {
+		this.privacyGuardToggleStatus = event.switchValue || !this.privacyGuardToggleStatus;
 		this.displayService.setPrivacyGuardStatus(event.switchValue).then((response: boolean) => {
 			// console.log('set privacy guard status here ------****-------.>', response);
 		})

@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nezistilo sa žiadne pripojenie k internetu",
             "subtitle": "Získajte ďalšie informácie o riešení problémov s pripojením v",
-            "buttonText": "Získajte technickú podporu"
+            "buttonText": "Získajte technickú podporu",
+            "welcomeToVantage": "Vitajte v novej generácii aplikácie Vantage",
+            "systemHealth": "Stav systému"
         },
         "feedback": {
             "title": "Spätná väzba",
@@ -705,7 +707,7 @@
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
@@ -1838,8 +1840,21 @@
         "logout": "Odhlásenie",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
-        "welcomeText": "Dnes máte veľa energie, {{firstName}}.",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",
+        "welcomeText2": "Rád vás opäť vidím, {{firstName}}",
+        "welcomeText3": "Aké príjemné prekvapenie, {{firstName}}",
+        "welcomeText4": "Usmievajte sa, {{firstName}}, je to nákazlivé :)",
+        "welcomeText5": "Klop, klop, {{firstName}}",
+        "welcomeText6": "Spoznáte skvelé miesta!",
+        "welcomeText7": "Dnes je váš deň, {{firstName}}!",
+        "welcomeText8": "Kto má rád šťastné stromčeky?",
+        "welcomeText9": "Zabávajte sa, {{firstName}}!",
+        "welcomeText10": "Zachovajte pokoj a používajte Vantage",
+        "welcomeText11": "Viac Vantage za vaše peniaze",
+        "welcomeText12": "Vezmite si Vantage domov",
+        "welcomeText13": "Jedzte, spite, Vantage, opakujte",
+        "welcomeText14": "Každý okamih je čerstvý Vantage",
+        "welcomeText15": "Vantage naplno",
         "welcomeTextWithoutUserName": "Dnes máte veľa energie.",
         "helloUser": "Dobrý deň, {{firstName}}!",
         "ssoErrorTitle": "Chyba",
@@ -2215,10 +2230,11 @@
         "bullets2": "Poradca zabezpečením zjednodušuje správu zabezpečenia (k dispozícii vo vybraných systémoch).",
         "bullets3": "Automatické aktualizácie udržujú vaše zariadenie v špičkovom stave (k dispozícii vo vybraných systémoch).",
         "subtitle1": "Ako budete používať svoje zariadenie?",
-        "subtitle2": "Povedzte nám o svojich záujmoch",
+        "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-        "custom": "Vlastné prostredie",
+		"custom": "Vlastné prostredie",
+		"professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2255,8 +2271,12 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
+        "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
-        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
+        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
+        "betaSettingTitle": "Program Beta",
+        "betaProgram": "Program Beta",
+        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
     },
     "modernPreload": {
         "cancel": "Zrušiť",
@@ -2431,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-                "installing": "Inštalácia",
+				"installing": "Inštalácia",
+				"downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"

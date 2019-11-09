@@ -24,6 +24,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -158,6 +159,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	};
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
@@ -297,14 +299,18 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
 				machineInfo = info;
-				if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
-					const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
-					this.supportLink = specificSupportLink;
-				}
+				this.adjustSupportLinkByMachineInfo(machineInfo);
 			});
-		} else if (machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
-			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
-			this.supportLink = specificSupportLink;
+		} else {
+			this.adjustSupportLinkByMachineInfo(machineInfo);
+		}
+	}
+
+	private adjustSupportLinkByMachineInfo(machineInfo) {
+		if (machineInfo && machineInfo.serialnumber) {
+			this.supportLink = `https://support.lenovo.com/contactus?sn=${machineInfo.serialnumber}`;
+		} else {
+			this.supportLink = 'https://support.lenovo.com/contactus';
 		}
 	}
 
@@ -459,10 +465,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public isUpdateListVisible() {
 		const isVisible = ((this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted)
-		&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
-		|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
-		|| (this.optionalUpdates && this.optionalUpdates.length > 0)
-		|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
+			&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
+				|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
+				|| (this.optionalUpdates && this.optionalUpdates.length > 0)
+				|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
 	}
 
@@ -485,7 +491,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		let removeDelayedUpdates = false;
 		let updatesToInstall = [];
 
-		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));;
+		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));
 		if (!isInstallAll) {
 			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
 		} else {
@@ -721,6 +727,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.InstallationComplete:
 					this.systemUpdateService.getUpdateHistory();
+					this.getLastUpdateScanDetail();
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
@@ -850,6 +857,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
+					this.getLastUpdateScanDetail();
 					this.systemUpdateService.getUpdateHistory();
 					// using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {

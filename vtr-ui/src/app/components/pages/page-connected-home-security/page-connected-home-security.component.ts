@@ -166,6 +166,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		const cacheLocation = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation);
 		if (this.wifiSecurity) {
+			this.wifiSecurity.getWifiSecurityState();
 			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
 		} else if (cacheLocation) {
@@ -192,6 +193,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
+		this.chs.on(EventTypes.wsPluginMissingEvent, () => {
+			this.handleResponseError(new PluginMissingError());
+		});
+
 		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
 			if (devicePosture && devicePosture.value.length > 0) {
 				cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
@@ -204,14 +209,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (location: boolean) => {
 			if (location) {
-				if (!this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
-					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
-					this.devicePosture.getDevicePosture()
-						.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						})
-						.catch((err: Error) => this.handleResponseError(err));
-				}
+				this.devicePosture.getDevicePosture();
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
 			} else if (!location
 				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
@@ -248,19 +246,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (this.chs) {
 			if (this.devicePosture && this.wifiSecurity) {
 				if (this.wifiSecurity.isLocationServiceOn) {
-					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
-					this.devicePosture.getDevicePosture()
-						.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						})
-						.catch((err: Error) => this.handleResponseError(err));
+					this.devicePosture.getDevicePosture();
 				}
 			}
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		}
 	}
@@ -278,8 +270,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		}
 		if (!this.showContentA || !this.showContentB) {
@@ -294,8 +285,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		} else if (visibility === 'hidden') {
 			window.clearInterval(this.intervalId);
@@ -310,10 +300,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.notificationSubscription.unsubscribe();
 		}
 		if (this.devicePosture) {
-			if (this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
-				this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, false);
-				this.devicePosture.cancelGetDevicePosture();
-			}
+			this.devicePosture.cancelGetDevicePosture();
+		}
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiSecurityState();
 		}
 	}
 
@@ -449,7 +439,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.intervalId = window.setInterval(() => {
 			this.chs.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}).catch((err: Error) => this.handleResponseError(err));
+			});
 		}, this.interval);
 	}
 }

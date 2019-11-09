@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter, NgZone } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
+import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -14,7 +14,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 })
 
 export class CameraControlComponent implements OnInit, OnDestroy {
-	@Input() cameraSettings: ICameraSettingsResponse;
+	@Input() cameraSettings: CameraSettingsResponse = new CameraSettingsResponse();
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
 	@Input() disabledAll = false;
@@ -56,8 +56,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private appLogger: LoggerService,
 		private ngZone: NgZone
-	) {
-		this.Windows = vantageShellService.getWindows();
+	) { }
+
+	ngOnInit() {
+		this.Windows = this.vantageShellService.getWindows();
 		this.Capture = this.Windows.Media.Capture;
 		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
 		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
@@ -69,9 +71,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.visibilityChange = this.onVisibilityChanged.bind(this);
 		document.addEventListener('visibilitychange', this.visibilityChange);
 		//#endregion
-	}
-
-	ngOnInit() {
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			(cameraDetail: CameraDetail) => {
 				this.cameraDetail = cameraDetail;
@@ -94,8 +93,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		let deviceInfo = null;
 		// Get available devices for capturing pictures
 		return this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture)
-			.then(function (devices) {
-				devices.forEach(function (cameraDeviceInfo) {
+			.then(function(devices) {
+				devices.forEach(function(cameraDeviceInfo) {
 					if (cameraDeviceInfo.enclosureLocation != null && cameraDeviceInfo.enclosureLocation.panel === panel) {
 						deviceInfo = cameraDeviceInfo;
 						return;
@@ -169,7 +168,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
-				}).then(function () {
+				}).then(function() {
 					return self.startPreviewAsync();
 				}).done();
 		} catch (error) {

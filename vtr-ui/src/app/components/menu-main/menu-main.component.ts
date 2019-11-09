@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, Optional } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -30,32 +30,35 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
+import { MenuItem } from 'src/app/enums/menuItem.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, AfterViewInit {
+export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('menuTarget', { static: false })
 	menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
 	public machineFamilyName: string;
 	public country: string;
-	// commonMenuSubscription: Subscription;
+	commonMenuSubscription: Subscription;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
 	region: string;
 	public isDashboard = false;
 	public countryCode: string;
 	public locale: string;
-	public items: any = [];
+	public items: Array<any> = [];
 	public showSearchBox = false;
 	public showSearchMenu = false;
 	public searchTips = '';
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
-
+	private subscription: Subscription;
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
@@ -80,8 +83,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		public userService: UserService,
 		public languageService: LanguageService,
 		public deviceService: DeviceService,
-		vantageShellService: VantageShellService,
-		localInfoService: LocalInfoService,
+		private vantageShellService: VantageShellService,
+		private localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
 		private securityAdvisorMockService: SecurityAdvisorMockService,
@@ -91,47 +94,79 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
-		private hardwareScanService: HardwareScanService,
+		// private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		searchService: AppSearchService
+		private searchService: AppSearchService
 	) {
-		localInfoService
-			.getLocalInfo()
-			.then((result) => {
-				this.region = result.GEO;
-				this.showVpn();
-				this.initUnreadMessage();
-			})
-			.catch((e) => {
-				this.region = 'us';
-				this.showVpn();
-			});
-		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+	}
+
+	ngOnInit() {
+		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		this.commonMenuSubscription = this.configService.menuItemNotification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
+		this.securityAdvisor.refresh();
+		this.initComponent();
+
+		this.isDashboard = true;
+
+		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
+		if (cacheMachineFamilyName) {
+			this.machineFamilyName = cacheMachineFamilyName;
+		}
+
+		// VAN-10950 hide HW scan from Vantage UI in 3.1.1
+		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+		// 	this.hardwareScanService.isAvailable()
+		// 		.then((isAvailable: any) => {
+		// 			this.showHWScanMenu = isAvailable;
+		// 		})
+		// 		.catch(() => {
+		// 			this.showHWScanMenu = false;
+		// 		});
+		// }
+	}
+
+	private initComponent() {
+		this.localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.initUnreadMessage();
+			});
 		this.getMenuItems().then((items) => {
-			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(
-				LocalStorageKey.SecurityShowWindowsHello
-			);
-			if (cacheShowWindowsHello) {
-				const securityItem = items.find((item) => item.id === 'security');
-				if (securityItem) {
-					securityItem.subitems.push({
-						id: 'windows-hello',
-						label: 'common.menu.security.sub6',
-						path: 'windows-hello',
-						icon: '',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.windowshello',
-						routerLinkActiveOptions: { exact: true },
-						subitems: []
-					});
+			const securityItem = items.find((item) => item.id === 'security');
+			if (securityItem) {
+				const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+				if (cacheShowWindowsHello) {
+
+					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
+					if (!windowsHelloItem) {
+						securityItem.subitems.push({
+							id: 'windows-hello',
+							label: 'common.menu.security.sub6',
+							path: 'windows-hello',
+							icon: '',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.windowshello',
+							routerLinkActiveOptions: { exact: true },
+							subitems: []
+						});
+					}
+
 				}
-			}
-			if (this.securityAdvisor) {
 				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
 				if (windowsHello.fingerPrintStatus) {
 					this.showWindowsHelloItem(windowsHello);
@@ -158,8 +193,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.showSearchMenu = true;
 			}
 		});
-
-		this.unsupportFeatureEvt = searchService.getUnsupportFeatureEvt();
+		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
 		this.unsupportFeatureEvt.subscribe(featureDesc => {
 			if (this.searchTipsTimeout) {
 				clearTimeout(this.searchTipsTimeout);
@@ -170,11 +204,17 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 				this.searchTipsTimeout = null;
 			}, 3000);
 		});
-	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.showVpn();
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
+		if (machineType) {
+			this.loadMenuOptions(machineType);
+		} else if (this.deviceService.isShellAvailable) {
+			this.deviceService
+				.getMachineType()
+				.then((value: number) => {
+					this.loadMenuOptions(value);
+				});
+		}
 	}
 
 	@HostListener('document:click', ['$event'])
@@ -197,43 +237,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	ngOnInit() {
-		this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
 
-		this.isDashboard = true;
-
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
-		if (machineType) {
-			this.loadMenuOptions(machineType);
-		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService
-				.getMachineType()
-				.then((value: number) => {
-					this.loadMenuOptions(value);
-				})
-				.catch((error) => { });
-		}
-
-		const cacheMachineFamilyName = this.commonService.getLocalStorageValue(
-			LocalStorageKey.MachineFamilyName,
-			undefined
-		);
-		if (cacheMachineFamilyName) {
-			this.machineFamilyName = cacheMachineFamilyName;
-		}
-
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.hardwareScanService.isAvailable()
-				.then((isAvailable: any) => {
-					this.showHWScanMenu = isAvailable;
-				})
-				.catch(() => {
-					this.showHWScanMenu = false;
-				});
-		}
-	}
 
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
@@ -254,7 +258,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
-		} else {
+		} else if (this.UnreadMessageCount.totalMessage === 0) {
 			if (this.appsForYouService.showLmaMenu()) {
 				this.UnreadMessageCount.totalMessage++;
 			}
@@ -304,11 +308,14 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		});
 	}
 
-	// ngOnDestroy() {
-	// 	if (this.commonMenuSubscription) {
-	// 		this.commonMenuSubscription.unsubscribe();
-	// 	}
-	// }
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+		if (this.commonMenuSubscription) {
+			this.commonMenuSubscription.unsubscribe();
+		}
+	}
 
 	toggleMenu(event) {
 		this.updateSearchBoxState(false);
@@ -415,6 +422,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 		if (notification) {
 			switch (notification.type) {
 				case 'MachineInfo':
+					// this.initComponent();
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.MachineFamilyName,
@@ -430,6 +438,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 					break;
 				case AdPolicyEvent.AdPolicyUpdatedEvent:
 					this.showSystemUpdates();
+					break;
+				case MenuItem.MenuItemChange:
+					this.initComponent();
 					break;
 				default:
 					break;
@@ -473,61 +484,34 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-
-			if (!this.windowsHelloService.showWindowsHello()) {
-				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-			} else {
-				const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-				if (!windowsHelloItem) {
-					securityItem.subitems.push({
-						id: 'windows-hello',
-						label: 'common.menu.security.sub6',
-						path: 'windows-hello',
-						icon: '',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.windowshello',
-						routerLinkActiveOptions: { exact: true },
-						subitems: []
-					});
-				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
-			}
-		});
-	}
-
-	showVpn() {
-		this.getMenuItems().then((items) => {
-			const securityItemForVpn = items.find((item) => item.id === 'security');
-			if (securityItemForVpn !== undefined) {
-				const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
-				if (this.region !== 'cn') {
-					if (!vpnItem) {
-						securityItemForVpn.subitems.splice(4, 0, {
-							id: 'internet-protection',
-							label: 'common.menu.security.sub5',
-							path: 'internet-protection',
+			if (!securityItem) {
+				if (!this.windowsHelloService.showWindowsHello()) {
+					securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
+				} else {
+					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
+					if (!windowsHelloItem) {
+						securityItem.subitems.push({
+							id: 'windows-hello',
+							label: 'common.menu.security.sub6',
+							path: 'windows-hello',
+							icon: '',
 							metricsEvent: 'itemClick',
 							metricsParent: 'navbar',
-							metricsItem: 'link.internetprotection',
+							metricsItem: 'link.windowshello',
 							routerLinkActiveOptions: { exact: true },
-							icon: '',
 							subitems: []
 						});
 					}
-				} else {
-					if (vpnItem) {
-						securityItemForVpn.subitems = securityItemForVpn.subitems.filter(
-							(item) => item.id !== 'internet-protection'
-						);
-					}
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 				}
 			}
 		});
 	}
 
 	getMenuItems(): Promise<any> {
+		// remove onfocus showVpn()
+		// need refresh menuItem from config service, don't need localStorage
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
@@ -607,18 +591,21 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 	}
 
 	private addSmartAssistMenu(myDeviceItem: any) {
-		myDeviceItem.subitems.splice(4, 0, {
-			id: 'smart-assist',
-			label: 'common.menu.device.sub4',
-			path: 'smart-assist',
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
-			metricsItem: 'link.smartassist',
-			routerLinkActiveOptions: { exact: true },
-			icon: '',
-			sMode: true,
-			subitems: []
-		});
+		const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
+		if (!smartAssistItem) {
+			myDeviceItem.subitems.splice(4, 0, {
+				id: 'smart-assist',
+				label: 'common.menu.device.sub4',
+				path: 'smart-assist',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.smartassist',
+				routerLinkActiveOptions: { exact: true },
+				icon: '',
+				sMode: true,
+				subitems: []
+			});
+		}
 	}
 
 	public openExternalLink(link) {
@@ -663,4 +650,5 @@ export class MenuMainComponent implements OnInit, AfterViewInit {
 			}
 		});
 	}
+
 }

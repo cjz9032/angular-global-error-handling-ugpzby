@@ -516,7 +516,9 @@
         "offlineInfo": {
             "title": "Nie wykryto połączenia z Internetem.",
             "subtitle": "Uzyskaj więcej informacji, jak rozwiązać problemy z połączeniem w naszym",
-            "buttonText": "Uzyskaj pomoc techniczną"
+            "buttonText": "Uzyskaj pomoc techniczną",
+            "welcomeToVantage": "Witamy w aplikacji Vantage nowej generacji",
+            "systemHealth": "Stan systemu"
         },
         "feedback": {
             "title": "Przekaż opinię",
@@ -705,7 +707,7 @@
                     "NotGood": "<b>Akumulator nie jest w dobrym stanie.</b>",
                     "NotSupportACAdapter": "<b>Zasilacz nie jest obsługiwany.</b>",
                     "LimitedACAdapterSupport": "<b>Zasilacz nie zapewnia wystarczającej mocy.</b>",
-                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>.",
+                    "MissingDriver": "<b>Sterownik Lenovo Power Manager</b> nie jest zainstalowany lub nie działa poprawnie. Uruchom usługę Windows Update, aby zainstalować najnowszy sterownik. Możesz także zainstalować sterownik <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">stąd</a>. Po zakończeniu instalacji, ponownie uruchom komputer.",
                     "StoreLimitation": "<b>Pojemność akumulatora to tylko {{value}}% pierwotnej pojemności</b> po pełnym naładowaniu.",
                     "HighTemperature": "<b>Rozładowywanie</b> zostało zatrzymane, ponieważ <b>temperatura akumulatora jest zbyt wysoka.</b>",
                     "TrickleCharge": "Akumulator <b>całkowicie się rozładował</b> i należy go ponownie naładować. Może to zająć dziesięć godzin lub więcej.",
@@ -1838,8 +1840,21 @@
         "logout": "Wyloguj",
         "unlockExclusives": "Odblokuj dodatki specjalne",
         "user": "Użytkownik",
-        "welcomeText": "Wygląda na pełnego energii {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
+        "welcomeText1": "Wygląda na pełnego energii {{firstName}}!",
+        "welcomeText2": "Dobrze cię znowu widzieć {{firstName}}",
+        "welcomeText3": "Co za miła niespodzianka {{firstName}}",
+        "welcomeText4": "Uśmiechnij się {{firstName}}, to zaraźliwe :)",
+        "welcomeText5": "Puk, puk {{firstName}}",
+        "welcomeText6": "Jesteś w świetnym miejscu!",
+        "welcomeText7": "Dziś jest twój dzień {{firstName}}!",
+        "welcomeText8": "Kto lubi świetne towarzystwo?",
+        "welcomeText9": "Zaczyna się zabawa {{firstName}}!",
+        "welcomeText10": "Wyluzuj się i włącz Vantage",
+        "welcomeText11": "Więcej funkcji Vantage bardziej się opłaca",
+        "welcomeText12": "Zabierz Vantage do domu",
+        "welcomeText13": "Jedz. Śpij. Vantage. Powtórz.",
+        "welcomeText14": "W każdej chwili otrzymujesz nowy Vantage",
+        "welcomeText15": "Wykorzystaj w pełni Vantage",
         "welcomeTextWithoutUserName": "Wygląda na pełnego energii!",
         "helloUser": "Witaj, {{firstName}}!",
         "ssoErrorTitle": "Błąd",
@@ -2215,10 +2230,11 @@
         "bullets2": "Doradca zabezpieczeń ułatwia zarządzanie bezpieczeństwem (dostępny w wybranych systemach).",
         "bullets3": "Automatyczne aktualizacje zapewniają doskonałą pracę urządzenia (dostępne w wybranych systemach).",
         "subtitle1": "Jak będziesz korzystać z urządzenia?",
-        "subtitle2": "Opowiedz nam o swoich zainteresowaniach",
+        "subtitle2": "Opowiedz nam o swoich zainteresowaniach (opcjonalnie)",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
-        "custom": "Niestandardowe zastosowanie",
+		"custom": "Niestandardowe zastosowanie",
+		"professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
         "title1": "Witamy w aplikacji",
@@ -2255,8 +2271,12 @@
         "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
         "deviceStatistics": "Udostępniaj dane statystyczne Lenovo",
         "deviceStatisticsDescription": "Udostępnia dane statystyczne firmie Lenovo w celu poprawy niezawodności i projektu, a także optymalizacji funkcji na komputerze użytkownika.",
+        "userProfile": "Profil użytkownika",
         "Note": "Uwaga: ",
-        "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane."
+        "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane.",
+        "betaSettingTitle": "Program Beta",
+        "betaProgram": "Program Beta",
+        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."
     },
     "modernPreload": {
         "cancel": "Anuluj",
@@ -2431,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Zainstaluj",
-                "installing": "Instalowanie",
+				"installing": "Instalowanie",
+				"downloading": "Pobieranie",
                 "installed": "Zainstalowane",
                 "launch": "Uruchom",
                 "seeMore": "Zobacz więcej"

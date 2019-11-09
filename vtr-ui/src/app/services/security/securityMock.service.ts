@@ -133,6 +133,9 @@ export class SecurityAdvisorMockService {
 				this.mitt.emit(EventTypes.wsStateEvent, this.state);
 				return Promise.resolve(true);
 			},
+			getWifiSecurityStateOnce(): Promise<any> {
+				return Promise.resolve();
+			},
 			updateWifiSecurityState(): void {},
 			getWifiSecurityState(): Promise<any> {
 				return Promise.resolve();
