@@ -10,10 +10,10 @@ import { GuardService } from 'src/app/services/guard/guardService.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { WindowsHelloGuardService } from 'src/app/services/guard/windows-hello-guardService.service';
 import { VpnGuardService } from 'src/app/services/guard/vpn-guardService.service';
-import { NoneThinkGuardService } from 'src/app/services/guard/none-think-guard';
-import { NoneSmodeGuardService } from 'src/app/services/guard/none-smode-guard';
-import { NoneArmGuardService } from 'src/app/services/guard/none-arm-guard';
-import { NoneGamingGuardService } from 'src/app/services/guard/none-gaming-guard';
+import { NoneThinkGuard } from 'src/app/services/guard/none-think-guard';
+import { NoneSmodeGuard } from 'src/app/services/guard/none-smode-guard';
+import { NoneArmGuard } from 'src/app/services/guard/none-arm-guard';
+import { NoneGamingGuard } from 'src/app/services/guard/none-gaming-guard';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
 		path: '',
 		component: PageSecurityComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NoneThinkGuardService, NoneSmodeGuardService, NoneArmGuardService, NoneGamingGuardService],
+		canActivate: [GuardService, NoneThinkGuard, NoneSmodeGuard, NoneArmGuard, NoneGamingGuard],
 		data: {
 			pageName: 'Security'
 		}
@@ -29,7 +29,7 @@ const routes: Routes = [
 		path: 'anti-virus',
 		component: PageSecurityAntivirusComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NoneThinkGuardService, NoneSmodeGuardService, NoneArmGuardService, NoneGamingGuardService],
+		canActivate: [GuardService, NoneThinkGuard, NoneSmodeGuard, NoneArmGuard, NoneGamingGuard],
 		data: {
 			pageName: 'Security.AntiVirus',
 			pageContent: LocalStorageKey.SecurityCurrentPage
@@ -38,7 +38,7 @@ const routes: Routes = [
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NoneSmodeGuardService, NoneArmGuardService, NoneGamingGuardService],
+		canActivate: [GuardService, NoneSmodeGuard, NoneArmGuard, NoneGamingGuard],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
@@ -46,7 +46,7 @@ const routes: Routes = [
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NoneThinkGuardService, NoneSmodeGuardService, NoneArmGuardService, NoneGamingGuardService],
+		canActivate: [GuardService, NoneThinkGuard, NoneSmodeGuard, NoneArmGuard, NoneGamingGuard],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
@@ -54,14 +54,14 @@ const routes: Routes = [
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, VpnGuardService, NoneThinkGuardService, NoneSmodeGuardService, NoneArmGuardService, NoneGamingGuardService],
+		canActivate: [GuardService, VpnGuardService, NoneThinkGuard, NoneSmodeGuard, NoneArmGuard, NoneGamingGuard],
 		data: {
 			pageName: 'Security.InternetProtection'
 		}
 	}, {
 		path: 'windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [GuardService, WindowsHelloGuardService, NoneThinkGuardService, NoneSmodeGuardService, NoneArmGuardService, NoneGamingGuardService],
+		canActivate: [GuardService, WindowsHelloGuardService, NoneThinkGuard, NoneSmodeGuard, NoneArmGuard, NoneGamingGuard],
 		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'

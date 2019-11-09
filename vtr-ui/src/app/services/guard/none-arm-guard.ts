@@ -5,7 +5,7 @@ import { DeviceService } from '../device/device.service';
 @Injectable({
 	providedIn: 'root',
 })
-export class NoneArmGuardService implements CanActivate {
+export class NoneArmGuard implements CanActivate {
 
 	constructor(
 		private deviceService: DeviceService,

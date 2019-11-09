@@ -9,52 +9,97 @@ import { RoutersName } from './privacy-routing-name';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { IsOnlineGuard } from './common/guards/is-online.guard';
-import { PrivacyGuardService } from 'src/app/services/guard/privacy-guardService.service';
+import { PrivacyGuard } from 'src/app/services/guard/privacy-guard';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NoneSmodeGuard } from 'src/app/services/guard/none-smode-guard';
+import { NoneArmGuard } from 'src/app/services/guard/none-arm-guard';
+import { NoneGamingGuard } from 'src/app/services/guard/none-gaming-guard';
+import { NoneThinkGuard } from 'src/app/services/guard/none-think-guard';
 
 const adminRoutes: Routes = [
 	{
 		path: RoutersName.MAIN,
 		component: MainLayoutComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, PrivacyGuardService],
+		canActivate: [GuardService,
+			NoneSmodeGuard,
+			NoneArmGuard,
+			NoneGamingGuard,
+			NoneThinkGuard,
+			PrivacyGuard],
 		pathMatch: 'prefix',
 		children: [
 			{
 				path: RoutersName.MAIN, // /privacy
 				redirectTo: RoutersName.BREACHES,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}, {
 				path: RoutersName.BREACHES,
 				component: BreachedAccountsComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}, {
 				path: RoutersName.TRACKERS,
 				component: TrackersComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}, {
 				path: RoutersName.BROWSERACCOUNTS,
 				component: BrowserAccountsComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}, {
 				path: RoutersName.LANDING,
 				component: LandingComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}, {
 				path: RoutersName.ARTICLES,
 				component: ArticlesComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService, IsOnlineGuard],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					IsOnlineGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}, {
 				path: `${RoutersName.ARTICLEDETAILS}`,
 				component: ArticleSingleComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, PrivacyGuardService],
+				canActivate: [GuardService,
+					NoneSmodeGuard,
+					NoneArmGuard,
+					NoneGamingGuard,
+					NoneThinkGuard,
+					PrivacyGuard],
 			}
 		]
 	},
