@@ -166,6 +166,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		const cacheLocation = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation);
 		if (this.wifiSecurity) {
+			this.wifiSecurity.getWifiSecurityState();
 			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
 		} else if (cacheLocation) {
@@ -300,6 +301,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		if (this.devicePosture) {
 			this.devicePosture.cancelGetDevicePosture();
+		}
+		if (this.wifiSecurity) {
+			this.wifiSecurity.cancelGetWifiSecurityState();
 		}
 	}
 
