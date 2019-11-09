@@ -256,7 +256,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
-		} else {
+		} else if (this.UnreadMessageCount.totalMessage === 0) {
 			if (this.appsForYouService.showLmaMenu()) {
 				this.UnreadMessageCount.totalMessage++;
 			}
