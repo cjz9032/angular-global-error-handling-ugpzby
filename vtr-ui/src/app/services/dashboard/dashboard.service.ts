@@ -6,6 +6,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable({
 	providedIn: 'root'
 })
@@ -30,11 +31,13 @@ export class DashboardService {
 	public cardContentPositionDOnline: any;
 	public cardContentPositionEOnline: any;
 	public cardContentPositionFOnline: any;
+	translateString: any;
 
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private translate: TranslateService,
 		) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
@@ -50,7 +53,17 @@ export class DashboardService {
 			this.isShellAvailable = true;
 		}
 
-		this.setDefaultCMSContent();
+		this.translate.stream([
+			'dashboard.offlineInfo.welcomeToVantage',
+			'common.menu.support',
+			'settings.settings',
+			'dashboard.offlineInfo.systemHealth',
+			'common.securityAdvisor.wifi',
+			'systemUpdates.title'
+		]).subscribe((result) => {
+			this.translateString = result;
+			this.setDefaultCMSContent();
+		});
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
@@ -249,19 +262,21 @@ export class DashboardService {
 	}
 
 	setDefaultCMSContent() {
+		if (!this.translateString) {
+			return;
+		}
 		this.heroBannerItems = [
 			{
 				albumId: 1,
 				id: 1,
 				source: 'Vantage',
-				title: 'dashboard.offlineInfo.welcomeToVantage',
+				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'] ,
 				url: '/assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null
 			}
 		];
-
 		this.cardContentPositionB = {
-			Title: 'common.menu.support',
+			Title: this.translateString['common.menu.support'],
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Support.jpg',
@@ -279,7 +294,7 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionC = {
-			Title: 'settings.settings',
+			Title: this.translateString['settings.settings'],
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
@@ -297,7 +312,7 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionD = {
-			Title: 'dashboard.offlineInfo.systemHealth',
+			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-My-Device.jpg',
@@ -315,7 +330,7 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionE = {
-			Title: 'common.securityAdvisor.wifi',
+			Title: this.translateString['common.securityAdvisor.wifi'],
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Security-Advisor.jpg',
@@ -333,7 +348,7 @@ export class DashboardService {
 		};
 
 		this.cardContentPositionF = {
-			Title: 'systemUpdates.title',
+			Title: this.translateString['systemUpdates.title'],
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-System-Update.jpg',
@@ -349,5 +364,6 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null
 		};
+
 	}
 }
