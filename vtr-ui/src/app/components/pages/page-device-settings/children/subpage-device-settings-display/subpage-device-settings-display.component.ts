@@ -149,8 +149,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.eyeCareDataSource = new EyeCareMode();
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
-		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
-		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 		}
 	}
 
@@ -256,13 +256,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	initFeatures() {
-		this.startEyeCareMonitor();
-		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.statusChangedLocationPermission();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
+		setTimeout(() => {
+			this.initEyecaremodeSettings();
+			this.startEyeCareMonitor();
+		}, 5);
 	}
 
 	async initCameraSection() {
