@@ -6,8 +6,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import {DeviceService}  from 'src/app/services/device/device.service';
-import { $ } from 'protractor';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 
@@ -37,7 +36,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChildren('interestChkboxs') interestChkboxs: any;
 	@ViewChildren('welcomepage2') welcomepage2: any;
 	shouldManuallyFocusPage2 = true;
-	shouldManuallyFocusMoreInterest =  false;
+	shouldManuallyFocusMoreInterest = false;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -115,7 +114,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			const usageData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'UsageType',
-				ItemValue: this.deviceService.isGaming? 'Gaming' : this.selfSelectService.usageType,
+				ItemValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
 				ItemParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(usageData);
@@ -174,7 +173,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	btnDoneOnKeyPress($event){
+	btnDoneOnKeyPress($event) {
 		if ($event.keyCode === 13) {
 			this.next(2);
 		}

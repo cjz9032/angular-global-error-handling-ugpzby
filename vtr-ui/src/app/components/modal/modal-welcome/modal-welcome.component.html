@@ -27,7 +27,8 @@
 							[innerHTML]="'welcometutorial.description'| translate">
 						</div>
 					</div>
-					<div class="row no-gutters justify-content-center align-items-center">
+					<div class="row no-gutters justify-content-center align-items-center"
+						*ngIf="!deviceService.isArm">
 						<div class="col-auto title2">
 							<ul>
 								<li>{{"welcometutorial.bullets1" | translate }}</li>
@@ -57,7 +58,9 @@
 	</div>
 	<!-- start of page 2-->
 	<!-- end of page1-->
-	<div *ngSwitchCase="2" #welcomepage2 tabindex="-1">
+	<div *ngSwitchCase="2"
+		#welcomepage2
+		tabindex="-1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.subtitle1' | translate">
@@ -65,7 +68,8 @@
 				</div>
 				<div class="content-page-2"
 					id="welcome-body-scroll">
-					<div class="row justify-content-center align-items-center font-14-bold mb-20" [ngClass]="{'hide-usage-selection': deviceService.isGaming}">
+					<div class="row justify-content-center align-items-center font-14-bold mb-20"
+						[ngClass]="{'hide-usage-selection': deviceService.isGaming}">
 						<div class="col-auto title2 uppercase">
 							{{ "welcometutorial.subtitle1" | translate }}
 						</div>
@@ -88,7 +92,9 @@
 									for="personalRadio"
 									src="assets/images/welcome/personal-use.jpg"
 									class="" />
-								<label for="personalRadio"  tabindex="1" (keypress)="onKeyPress($event)"
+								<label for="personalRadio"
+									tabindex="1"
+									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
@@ -107,7 +113,9 @@
 									for="businessRadio"
 									src="assets/images/welcome/business-use.jpg"
 									class="business" />
-								<label for="businessRadio"  tabindex="2" (keypress)="onKeyPress($event)"
+								<label for="businessRadio"
+									tabindex="2"
+									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
@@ -126,7 +134,9 @@
 									for="professionalRadio"
 									src="assets/images/welcome/custom-use.jpg"
 									class="custom" />
-								<label for="professionalRadio" tabindex="3	" (keypress)="onKeyPress($event)"
+								<label for="professionalRadio"
+									tabindex="3	"
+									(keypress)="onKeyPress($event)"
 									class="centered">{{ "welcometutorial.professional" | translate }} </label>
 							</div>
 						</div>
@@ -144,14 +154,20 @@
 								[id]="interest.label + 'checkbox'"
 								#checkbox1
 								(click)="toggle($event, interest.label)"
-								[checked]="interest.checked"/>
-							<label class="bludFocusBoder" [ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}" tabindex="4" (keypress)="onKeyPress($event)" #interestChkboxs
+								[checked]="interest.checked" />
+							<label class="bludFocusBoder"
+								[ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}"
+								tabindex="4"
+								(keypress)="onKeyPress($event)"
+								#interestChkboxs
 								[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
 						class="row justify-content-center align-items-center font-12-semi mb-4 col-12">
-						<div class="col-auto title2" tabindex="5" (keypress)="onKeyPress($event)"
+						<div class="col-auto title2"
+							tabindex="5"
+							(keypress)="onKeyPress($event)"
 							id="tutorial_hide_moreInterest"
 							attr.aria-label="tutorial_hide_moreInterest"
 							(click)="moreInterestClicked()">
@@ -161,7 +177,9 @@
 					</div>
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
+							<input type="checkbox"
+								tabindex="6"
+								(keypress)="onKeyPress($event)"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 								[checked]="privacyPolicy"
 								class="custom-control-input"
@@ -170,7 +188,8 @@
 							<label class="custom-control-label"
 								for="defaultUnchecked">
 								{{ "welcometutorial.privacytitle" | translate }}
-								<a class="linktext"  tabindex="7"
+								<a class="linktext"
+									tabindex="7"
 									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
 									href="https://www.lenovo.com/us/en/privacy"
 									target="_blank"
@@ -184,9 +203,11 @@
 				</div>
 
 				<div class="row justify-content-center align-items-center next-btn">
-					<div class="col-auto" (keypress)="btnDoneOnKeyPress($event)" >
+					<div class="col-auto"
+						(keypress)="btnDoneOnKeyPress($event)">
 						<vtr-ui-button metricsParent="WelcomePage"
-							metricsEvent="featureClick" [tabIndex]= '8'
+							metricsEvent="featureClick"
+							[tabIndex]='8'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"
