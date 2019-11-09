@@ -136,10 +136,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private initFeatures() {
 		this.getMicrophoneStatus();
 		this.getCameraPrivacyStatus();
-		setTimeout(() => {
-			this.initEyecaremodeSettings();
-			this.startEyeCareMonitor();
-		}, 5);
+		// setTimeout(() => {
+		// 	this.initEyecaremodeSettings();
+		// 	this.startEyeCareMonitor();
+		// }, 5);
 	}
 
 	public getCameraPermission() {
