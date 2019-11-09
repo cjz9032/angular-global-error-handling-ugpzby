@@ -141,6 +141,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
 				if (showBatteryDetail) {
+					window.history.replaceState([], '', '');
 					this.showDetailModal(this.batteryModal);
 				}
 			}).catch(error => {
