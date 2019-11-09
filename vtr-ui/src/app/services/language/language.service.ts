@@ -91,7 +91,6 @@ export class LanguageService {
 			// if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
 			// 	return;
 			// }
-			this.isLanguageLoaded = true;
 			let locale = lang.toLowerCase();
 			const isLanguageSupported = this.isLanguageSupported(locale);
 			locale = isLanguageSupported ? locale : this.defaultLanguage;
@@ -101,6 +100,7 @@ export class LanguageService {
 				// translation file loaded
 				this.logger.debug('LanguageService.useLanguage translation loaded', locale);
 				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
+				this.isLanguageLoaded = true;
 			});
 		}
 	}
