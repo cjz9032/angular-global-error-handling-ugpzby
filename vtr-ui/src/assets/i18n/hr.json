@@ -2230,11 +2230,11 @@
         "bullets2": "Savjetnik za sigurnost tvrtke olakšava upravljanje sigurnošću (dostupno na odabranim sustavima).",
         "bullets3": "Automatska ažuriranja održavaju vaš uređaj u savršenom stanju (dostupno na odabranim sustavima).",
         "subtitle1": "U koju svrhu ćete koristiti uređaj?",
-        "subtitle2": "Recite nam više o svojim interesima",
+        "subtitle2": "Recite nam više o svojim interesima (neobavezno)",
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
 		"custom": "Prilagodite iskustvo",
-		"professional": "Professional Use",
+		"professional": "Stručna uporaba",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",
@@ -2275,8 +2275,8 @@
         "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu.",
         "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaProgram": "Beta program",
+        "betaSettingDescription": "Isprobajte najnovije značajke na kojima radimo."
     },
     "modernPreload": {
         "cancel": "Odustani",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliranje",
-                "installing": "Instaliranje",
+				"installing": "Instaliranje",
+				"downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokretanje",
                 "seeMore": "Potražite više"

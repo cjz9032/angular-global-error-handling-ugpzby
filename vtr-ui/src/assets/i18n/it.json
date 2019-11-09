@@ -2230,11 +2230,11 @@
         "bullets2": "Assistente sicurezza semplifica la gestione della protezione facile (disponibile su alcuni sistemi).",
         "bullets3": "Gli aggiornamenti automatici assicurano il perfetto funzionamento del dispositivo (disponibili su alcuni sistemi).",
         "subtitle1": "Come utilizzerai il dispositivo?",
-        "subtitle2": "Raccontaci i tuoi interessi",
+        "subtitle2": "Raccontaci i tuoi interessi (facoltativo)",
         "personal": "Uso personale",
         "business": "Uso aziendale",
 		"custom": "Esperienza personalizzata",
-		"professional": "Professional Use",
+		"professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
         "title1": "Benvenuto in",
@@ -2274,9 +2274,9 @@
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Programma beta",
+        "betaProgram": "Programma beta",
+        "betaSettingDescription": "Prova le funzioni più recenti su cui stiamo lavorando."
     },
     "modernPreload": {
         "cancel": "Annulla",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installa",
-                "installing": "Installazione",
+				"installing": "Installazione",
+				"downloading": "Download in corso",
                 "installed": "Installato",
                 "launch": "Avvia",
                 "seeMore": "Visualizza altro"

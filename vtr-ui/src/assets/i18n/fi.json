@@ -2230,11 +2230,11 @@
         "bullets2": "Security Advisor -ohjelman avulla voit hallita tietoturvaa helposti (saatavilla tietyissä järjestelmissä).",
         "bullets3": "Automaattiset päivitykset pitävät laitteen moitteettomassa kunnossa (saatavilla tietyissä järjestelmissä).",
         "subtitle1": "Miten aiot käyttää laitetta?",
-        "subtitle2": "Kerro meille kiinnostuksen kohteistasi",
+        "subtitle2": "Kerro meille kiinnostuksen kohteistasi (valinnainen)",
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
 		"custom": "Mukautettu käyttökokemus",
-		"professional": "Professional Use",
+		"professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2274,9 +2274,9 @@
         "userProfile": "Käyttäjäprofiili",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Beta-ohjelma",
+        "betaProgram": "Beta-ohjelma",
+        "betaSettingDescription": "Kokeile uusimpia ominaisuuksia, joita työstämme."
     },
     "modernPreload": {
         "cancel": "Peruuta",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Asenna",
-                "installing": "Asentaminen",
+				"installing": "Asentaminen",
+				"downloading": "Ladataan",
                 "installed": "Asennettu",
                 "launch": "Aloita",
                 "seeMore": "Näytä lisää"

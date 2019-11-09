@@ -2230,11 +2230,11 @@
         "bullets2": "Consultatul de securitate simplifică gestionarea securității (caracteristică disponibilă pe anumite sisteme).",
         "bullets3": "Actualizările automate vă mențin dispozitivul în stare perfectă (caracteristică disponibilă pe anumite sisteme).",
         "subtitle1": "Cum veți utiliza dispozitivul?",
-        "subtitle2": "Spuneți-ne despre interesele dvs",
+        "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
 		"custom": "Experiență personalizată",
-		"professional": "Professional Use",
+		"professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2274,9 +2274,9 @@
         "userProfile": "Profil utilizator",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Program beta",
+        "betaProgram": "Program beta",
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalare",
-                "installing": "Instalare în curs",
+				"installing": "Instalare în curs",
+				"downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"
