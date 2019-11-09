@@ -2230,11 +2230,11 @@
         "bullets2": "使用安全性顧問，安全管理更輕鬆 (適用於特定系統)。",
         "bullets3": "使用自動更新，讓裝置隨時保持為最佳狀態 (適用於特定系統)。",
         "subtitle1": "您要如何使用您的裝置？",
-        "subtitle2": "告訴我們您的興趣",
+        "subtitle2": "告訴我們您的興趣（選填）",
         "personal": "個人使用",
         "business": "業務使用",
 		"custom": "自訂",
-		"professional": "Professional Use",
+		"professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料，協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
@@ -2274,9 +2274,9 @@
         "userProfile": "使用者設定檔",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Beta 程式",
+        "betaProgram": "Beta 程式",
+        "betaSettingDescription": "試試我們正在開發的最新功能。"
     },
     "modernPreload": {
         "cancel": "取消",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "安裝",
-                "installing": "安裝",
+				"installing": "安裝",
+				"downloading": "下載",
                 "installed": "已安裝",
                 "launch": "啟動",
                 "seeMore": "查看更多"

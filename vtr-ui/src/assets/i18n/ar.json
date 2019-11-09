@@ -2230,11 +2230,11 @@
         "bullets2": "يسهّل مستشار الأمان إدارة أمانك (متوفر في أنظمة محدد)ة",
         "bullets3": "تساعد التحديثات التلقائية في إبقاء جهازك في وضع ممتاز (متوفر في أنظمة محدد)ة",
         "subtitle1": "كيف ستستخدم جهازك؟",
-        "subtitle2": "أخبرنا عن اهتماماتك",
+        "subtitle2": "أخبرنا عن اهتماماتك (اختياري)",
         "personal": "استخدام شخصي",
         "business": "استخدام في العمل",
-		"custom": "تجربة مخصصة",
-		"professional": "Professional Use",
+        "custom": "تجربة مخصصة",
+        "professional": "استخدام مهني",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
         "moreInterest": "‏+ المزيد من الاهتمامات",
         "title1": "مرحبًا بك في",
@@ -2273,10 +2273,10 @@
         "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on.",
-		"userProfile": "ملف تعريف المستخدم"
+        "betaSettingTitle": "البرنامج التجريبي",
+        "betaProgram": "البرنامج التجريبي",
+        "betaSettingDescription": "جرّب أحدث الميزات التي نعمل عليها.",
+        "userProfile": "ملف تعريف المستخدم"
     },
     "modernPreload": {
         "cancel": "إلغاء",
@@ -2452,6 +2452,7 @@
             "installButton": {
                 "install": "تثبيت",
                 "installing": "جارِ التثبيت",
+                "downloading": "جارِ التنزيل",
                 "installed": "مثبت",
                 "launch": "اطلاق",
                 "seeMore": "رؤية المزيد"

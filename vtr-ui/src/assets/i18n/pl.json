@@ -2230,11 +2230,11 @@
         "bullets2": "Doradca zabezpieczeń ułatwia zarządzanie bezpieczeństwem (dostępny w wybranych systemach).",
         "bullets3": "Automatyczne aktualizacje zapewniają doskonałą pracę urządzenia (dostępne w wybranych systemach).",
         "subtitle1": "Jak będziesz korzystać z urządzenia?",
-        "subtitle2": "Opowiedz nam o swoich zainteresowaniach",
+        "subtitle2": "Opowiedz nam o swoich zainteresowaniach (opcjonalnie)",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
 		"custom": "Niestandardowe zastosowanie",
-		"professional": "Professional Use",
+		"professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
         "title1": "Witamy w aplikacji",
@@ -2274,9 +2274,9 @@
         "userProfile": "Profil użytkownika",
         "Note": "Uwaga: ",
         "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia aplikacji, aby zostały zastosowane.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Program Beta",
+        "betaProgram": "Program Beta",
+        "betaSettingDescription": "Wypróbuj najnowsze funkcje, nad którymi pracujemy."
     },
     "modernPreload": {
         "cancel": "Anuluj",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Zainstaluj",
-                "installing": "Instalowanie",
+				"installing": "Instalowanie",
+				"downloading": "Pobieranie",
                 "installed": "Zainstalowane",
                 "launch": "Uruchom",
                 "seeMore": "Zobacz więcej"

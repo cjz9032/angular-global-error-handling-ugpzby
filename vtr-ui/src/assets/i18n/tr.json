@@ -2230,11 +2230,11 @@
         "bullets2": "Güvenlik Danışmanı, güvenliğinizin yönetimini kolaylaştırır (seçili sistemlerde bulunur).",
         "bullets3": "Otomatik güncellemeler, cihazınızı en iyi durumda tutar (seçili sistemlerde bulunur).",
         "subtitle1": "Cihazınızı nasıl kullanacaksınız?",
-        "subtitle2": "Bize ilgi alanlarınızdan bahsedin",
+        "subtitle2": "Bize ilgi alanlarınızdan bahsedin (isteğe bağlı)",
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
 		"custom": "Özel Deneyim",
-		"professional": "Professional Use",
+		"professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",
@@ -2274,9 +2274,9 @@
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Beta Programı",
+        "betaProgram": "Beta Programı",
+        "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
     },
     "modernPreload": {
         "cancel": "İptal",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Kur",
-                "installing": "Kurma",
+				"installing": "Kurma",
+				"downloading": "Karşıdan yükleniyor",
                 "installed": "Kurulu",
                 "launch": "Başlat",
                 "seeMore": "Daha Fazla"

@@ -2230,11 +2230,11 @@
         "bullets2": "Sikkerhedsrådgiver gør administrationen af sikkerheden lettere (findes på udvalgte systemer).",
         "bullets3": "Automatiske opdateringer holder din enhed i topform (findes på udvalgte systemer).",
         "subtitle1": "Hvordan vil du bruge din enhed?",
-        "subtitle2": "Fortæl os om dine interesser",
+        "subtitle2": "Fortæl os om dine interesser (valgfrit)",
         "personal": "Personlig brug",
         "business": "På arbejde",
-		"custom": "Tilpasset oplevelse",
-		"professional": "Professional Use",
+        "custom": "Tilpasset oplevelse",
+        "professional": "Professionel brug",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2274,9 +2274,9 @@
         "userProfile": "Brugerprofil",
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Betaprogram",
+        "betaProgram": "Betaprogram",
+        "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på."
     },
     "modernPreload": {
         "cancel": "Annuller",
@@ -2452,6 +2452,7 @@
             "installButton": {
                 "install": "Installér",
                 "installing": "Installere",
+                "downloading": "Downloader",
                 "installed": "Installeret",
                 "launch": "Start",
                 "seeMore": "Se mere"

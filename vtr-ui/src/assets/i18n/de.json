@@ -2230,11 +2230,11 @@
         "bullets2": "Security Advisor macht die Verwaltung Ihrer Sicherheit einfach (verfügbar auf ausgewählten Systemen).",
         "bullets3": "Automatische Updates halten Ihre Einheit in Topform (verfügbar auf ausgewählten Systemen).",
         "subtitle1": "Wie werden Sie Ihre Einheit verwenden?",
-        "subtitle2": "Teilen Sie uns Ihre Interessen mit",
+        "subtitle2": "Teilen Sie uns Ihre Interessen mit (optional)",
         "personal": "Private Verwendung",
         "business": "Geschäftliche Nutzung",
-		"custom": "Benutzerdefinierte Erfahrung",
-		"professional": "Professional Use",
+        "custom": "Benutzerdefinierte Erfahrung",
+        "professional": "Berufliche Nutzung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
         "moreInterest": "+ mehr Interessen",
         "title1": "Willkommen bei",
@@ -2274,9 +2274,9 @@
         "userProfile": "Benutzerprofil",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Beta-Programm",
+        "betaProgram": "Beta-Programm",
+        "betaSettingDescription": "Testen Sie die neuesten Funktionen, an denen wir gerade arbeiten."
     },
     "modernPreload": {
         "cancel": "Abbrechen",
@@ -2452,6 +2452,7 @@
             "installButton": {
                 "install": "Installieren",
                 "installing": "Installation",
+                "downloading": "Herunterladen",
                 "installed": "Installiert",
                 "launch": "Starten",
                 "seeMore": "Weitere Informationen anzeigen"

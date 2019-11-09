@@ -2230,11 +2230,11 @@
         "bullets2": "Sikkerhetsrådgivning gjør det enkelt å håndtere sikkerheten (Tilgjengelig på utvalgte systemer).",
         "bullets3": "Automatiske oppdateringer holder enheten i toppform (Tilgjengelig på utvalgte systemer).",
         "subtitle1": "Hvordan kommer du til å bruke enheten?",
-        "subtitle2": "Fortell oss om interessene dine",
+        "subtitle2": "Fortell oss om interessene dine (valgfritt)",
         "personal": "Personlig bruk",
         "business": "Jobbrelatert bruk",
 		"custom": "Egendefinert brukeropplevelse",
-		"professional": "Professional Use",
+		"professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2274,9 +2274,9 @@
         "userProfile": "Brukerprofil",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Beta-program",
+        "betaProgram": "Beta-program",
+        "betaSettingDescription": "Prøv de nyeste funksjonene vi jobber med."
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installer",
-                "installing": "Installerer",
+				"installing": "Installerer",
+				"downloading": "Laster ned",
                 "installed": "Installert",
                 "launch": "Start",
                 "seeMore": "Se mer"

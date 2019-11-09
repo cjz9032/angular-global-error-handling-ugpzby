@@ -2230,11 +2230,11 @@
         "bullets2": "Poradca zabezpečením zjednodušuje správu zabezpečenia (k dispozícii vo vybraných systémoch).",
         "bullets3": "Automatické aktualizácie udržujú vaše zariadenie v špičkovom stave (k dispozícii vo vybraných systémoch).",
         "subtitle1": "Ako budete používať svoje zariadenie?",
-        "subtitle2": "Povedzte nám o svojich záujmoch",
+        "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
 		"custom": "Vlastné prostredie",
-		"professional": "Professional Use",
+		"professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2274,9 +2274,9 @@
         "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Program Beta",
+        "betaProgram": "Program Beta",
+        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
     },
     "modernPreload": {
         "cancel": "Zrušiť",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-                "installing": "Inštalácia",
+				"installing": "Inštalácia",
+				"downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"

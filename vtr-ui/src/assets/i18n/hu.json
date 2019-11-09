@@ -2230,11 +2230,11 @@
         "bullets2": "A Biztonsági Tanácsadóval könnyebben kezelhetők a biztonsági beállítások (a megadott rendszerekhez érhető el).",
         "bullets3": "Az automatikus frissítésekkel naprakész maradhat az eszköz (a megadott rendszerekhez érhető el).",
         "subtitle1": "Hogyan használja majd az eszközt?",
-        "subtitle2": "Adja meg az érdeklődési köreit",
+        "subtitle2": "Adja meg az érdeklődési köreit (opcionális)",
         "personal": "Személyes használat",
         "business": "Céges használat",
 		"custom": "Egyéni megoldások",
-		"professional": "Professional Use",
+		"professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
         "moreInterest": "+ további érdeklődési kör",
         "title1": "Üdvözli a",
@@ -2274,9 +2274,9 @@
         "userProfile": "Felhasználói profil",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Bétaprogram",
+        "betaProgram": "Bétaprogram",
+        "betaSettingDescription": "Próbálja ki a legújabb funkciókat, amelyeken dolgozunk."
     },
     "modernPreload": {
         "cancel": "Mégse",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Telepítse",
-                "installing": "Telepítés",
+				"installing": "Telepítés",
+				"downloading": "Letöltés folyamatban",
                 "installed": "Telepítve",
                 "launch": "Indítás",
                 "seeMore": "Továbbiak megtekintése"

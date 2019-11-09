@@ -2230,11 +2230,11 @@
         "bullets2": "Met Security Advisor kunt u uw beveiliging eenvoudig beheren (beschikbaar op geselecteerde systemen).",
         "bullets3": "Automatische updates houdt uw apparaat in optimale conditie (beschikbaar op geselecteerde systemen).",
         "subtitle1": "Hoe gaat u uw apparaat gebruiken?",
-        "subtitle2": "Vertel ons over uw interesses",
+        "subtitle2": "Vertel ons over uw interesses (optioneel)",
         "personal": "Persoonlijk gebruik",
         "business": "Zakelijk gebruik",
 		"custom": "Aangepaste ervaring",
-		"professional": "Professional Use",
+		"professional": "Beroepsmatig gebruik",
         "privacytitle": "Help ons de kwaliteit van de app te verbeteren door toe te staan dat anoniem gebruiksgegevens worden verzameld.",
         "moreInterest": "+ meer interesses",
         "title1": "Welkom bij",
@@ -2274,9 +2274,9 @@
         "userProfile": "Gebruikersprofiel",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Bètaprogramma",
+        "betaProgram": "Bètaprogramma",
+        "betaSettingDescription": "Probeer de nieuwste functies waaraan we werken."
     },
     "modernPreload": {
         "cancel": "Annuleren",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installeer",
-                "installing": "Installeren",
+				"installing": "Installeren",
+				"downloading": "Bezig met downloaden",
                 "installed": "Geïnstalleerd",
                 "launch": "Starten",
                 "seeMore": "Meer weergeven"
