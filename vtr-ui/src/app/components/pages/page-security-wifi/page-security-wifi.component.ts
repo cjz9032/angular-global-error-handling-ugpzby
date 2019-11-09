@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } fro
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { PluginMissingError } from '@lenovo/tan-client-bridge';
+import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -95,6 +95,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.fetchCMSArticles();
 
 		this.showChs = this.configService.showCHSMenu && this.brand !== 'think';
+		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+			this.handleError(new PluginMissingError());
+		});
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -102,10 +105,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
 		if (this.wifiSecurity) {
-			if (!this.guard.previousPageName.startsWith('Security')) {
-				this.wifiSecurity.refresh().catch((err) => this.handleError(err));
-				this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
-			}
+			this.wifiSecurity.refresh();
+			this.wifiSecurity.getWifiSecurityState();
 			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
 				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 			});
@@ -125,7 +126,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	@HostListener('window:focus')
 	onFocus(): void {
 		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+			this.wifiSecurity.refresh();
 		}
 		if (!this.intervalId) {
 			this.pullCHS();
@@ -239,7 +240,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.intervalId = window.setInterval(() => {
 			this.homeSecurity.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}).catch((err: Error) => this.handleError(err));
+			});
 		}, this.interval);
 	}
 }

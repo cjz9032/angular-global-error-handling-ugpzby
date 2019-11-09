@@ -128,12 +128,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		if (!this.guard.previousPageName.startsWith('Security')) {
-			this.refreshAll();
-		} else {
-			this.getScore();
-			this.getMaliciousWifi();
+		if (this.wifiSecurity) {
+			this.wifiSecurity.getWifiSecurityState();
 		}
+		this.refreshAll();
 
 		this.localInfoService.getLocalInfo().then(result => {
 			this.showVpn = true;
@@ -164,7 +162,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.securityAdvisor.wifiSecurity.refresh().then(() => {
 			this.getMaliciousWifi();
 		});
-		this.securityAdvisor.wifiSecurity.getWifiSecurityState().then(() => {
+		this.securityAdvisor.wifiSecurity.getWifiSecurityStateOnce().then(() => {
 			this.getScore();
 		});
 		this.securityAdvisor.passwordManager.refresh().then(() => {

@@ -192,6 +192,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			}
 		});
 
+		this.chs.on(EventTypes.wsPluginMissingEvent, () => {
+			this.handleResponseError(new PluginMissingError());
+		});
+
 		this.chs.on(EventTypes.devicePostureEvent, (devicePosture) => {
 			if (devicePosture && devicePosture.value.length > 0) {
 				cacheDevicePosture = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDevicePosture);
@@ -209,8 +213,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					this.devicePosture.getDevicePosture()
 						.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						})
-						.catch((err: Error) => this.handleResponseError(err));
+						});
 				}
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
 			} else if (!location
@@ -252,15 +255,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 					this.devicePosture.getDevicePosture()
 						.then(() => {
 							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						})
-						.catch((err: Error) => this.handleResponseError(err));
+						});
 				}
 			}
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		}
 	}
@@ -278,8 +279,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		}
 		if (!this.showContentA || !this.showContentB) {
@@ -294,8 +294,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.chs.refresh()
 				.then(() => {
 					this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-				})
-				.catch((err: Error) => this.handleResponseError(err));
+				});
 			this.pullCHS();
 		} else if (visibility === 'hidden') {
 			window.clearInterval(this.intervalId);
@@ -449,7 +448,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.intervalId = window.setInterval(() => {
 			this.chs.refresh().then(() => {
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-			}).catch((err: Error) => this.handleResponseError(err));
+			});
 		}, this.interval);
 	}
 }

@@ -55,7 +55,7 @@ export class WidgetSecurityStatusComponent implements OnInit{
 		if (this.securityAdvisor) {
 			this.securityAdvisor.refresh();
 		}
-		if (!this.securityAdvisor.wifiSecurity.state || (this.commonService.getSessionStorageValue(SessionStorageKey.DashboardInDashboardPage) && !this.guard.previousPageName.startsWith('Security'))) {
+		if (!this.securityAdvisor.wifiSecurity.state) {
 			this.securityAdvisor.wifiSecurity.getWifiSecurityState();
 		}
 		if (windowsHello.fingerPrintStatus) {
