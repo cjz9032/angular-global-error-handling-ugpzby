@@ -299,14 +299,18 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
 				machineInfo = info;
-				if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
-					const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
-					this.supportLink = specificSupportLink;
-				}
+				this.adjustSupportLinkByMachineInfo(machineInfo);
 			});
-		} else if (machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
-			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
-			this.supportLink = specificSupportLink;
+		} else {
+			this.adjustSupportLinkByMachineInfo(machineInfo);
+		}
+	}
+
+	private adjustSupportLinkByMachineInfo(machineInfo) {
+		if (machineInfo && machineInfo.serialnumber) {
+			this.supportLink = `https://support.lenovo.com/contactus?sn=${machineInfo.serialnumber}`;
+		} else {
+			this.supportLink = 'https://support.lenovo.com/contactus';
 		}
 	}
 

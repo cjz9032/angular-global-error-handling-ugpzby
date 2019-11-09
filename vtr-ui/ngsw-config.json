@@ -9,7 +9,9 @@
 					"/*.woff",
 					"/index.html",
 					"/*.css",
-					"/assets/cms-cache/**"
+					"/assets/cms-cache/**",
+					"/assets/images/keyboard-images/KeyboardMap_Images/**"
+
 				]
 			}
 		},

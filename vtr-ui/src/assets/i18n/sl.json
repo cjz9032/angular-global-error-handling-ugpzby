@@ -2230,11 +2230,11 @@
         "bullets2": "Varnostni svetovalec poenostavi upravljanje varnosti (na voljo v izbranih sistemih).",
         "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju (na voljo v izbranih sistemih).",
         "subtitle1": "Kako boste uporabljali napravo?",
-        "subtitle2": "Povejte nam, kaj vas zanima",
+        "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
 		"custom": "Izkušnja po meri",
-		"professional": "Professional Use",
+		"professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
         "title1": "Pozdravljeni v programu WRITEit,",
@@ -2274,9 +2274,9 @@
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Program različice beta",
+        "betaProgram": "Program različice beta",
+        "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."
     },
     "modernPreload": {
         "cancel": "Prekliči",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Namestitev",
-                "installing": "Nameščanje",
+				"installing": "Nameščanje",
+				"downloading": "Prenašanje",
                 "installed": "Nameščeno",
                 "launch": "Zaženite",
                 "seeMore": "Več"

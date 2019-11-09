@@ -2230,11 +2230,11 @@
         "bullets2": "セキュリティー・アドバイザーは、セキュリティーの管理を容易にします (一部のシステムで利用可能)。",
         "bullets3": "自動更新により、デバイスはいつでも最新の状態に維持されます (一部のシステムで利用可能)。",
         "subtitle1": "デバイスをどのように使用しますか?",
-        "subtitle2": "興味のあることを教えてください",
+        "subtitle2": "興味のあることを教えてください (任意)",
         "personal": "個人用",
         "business": "仕事用",
 		"custom": "カスタム・エクスペリエンス",
-		"professional": "Professional Use",
+		"professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",
@@ -2274,9 +2274,9 @@
         "userProfile": "ユーザー・プロフィール",
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "ベータ版プログラム",
+        "betaProgram": "ベータ版プログラム",
+        "betaSettingDescription": "現在開発中の最新機能をお試しください."
     },
     "modernPreload": {
         "cancel": "キャンセル",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "インストール",
-                "installing": "インストール",
+				"installing": "インストール",
+				"downloading": "ダウンロード中",
                 "installed": "インストール済み",
                 "launch": "起動",
                 "seeMore": "詳細を見る"

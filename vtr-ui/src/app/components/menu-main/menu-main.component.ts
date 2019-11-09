@@ -146,10 +146,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.initUnreadMessage();
 			});
 		this.getMenuItems().then((items) => {
-			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-			if (cacheShowWindowsHello) {
-				const securityItem = items.find((item) => item.id === 'security');
-				if (securityItem) {
+			const securityItem = items.find((item) => item.id === 'security');
+			if (securityItem) {
+				const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+				if (cacheShowWindowsHello) {
+
 					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
 					if (!windowsHelloItem) {
 						securityItem.subitems.push({
@@ -164,15 +165,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 							subitems: []
 						});
 					}
+
 				}
+				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
+				if (windowsHello.fingerPrintStatus) {
+					this.showWindowsHelloItem(windowsHello);
+				}
+				windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
+					this.showWindowsHelloItem(windowsHello);
+				});
 			}
-			const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
-			if (windowsHello.fingerPrintStatus) {
-				this.showWindowsHelloItem(windowsHello);
-			}
-			windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-				this.showWindowsHelloItem(windowsHello);
-			});
 		});
 
 		this.router.events.subscribe((ev) => {
@@ -482,25 +484,27 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-			if (!this.windowsHelloService.showWindowsHello()) {
-				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-			} else {
-				const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-				if (!windowsHelloItem) {
-					securityItem.subitems.push({
-						id: 'windows-hello',
-						label: 'common.menu.security.sub6',
-						path: 'windows-hello',
-						icon: '',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.windowshello',
-						routerLinkActiveOptions: { exact: true },
-						subitems: []
-					});
+			if (!securityItem) {
+				if (!this.windowsHelloService.showWindowsHello()) {
+					securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
+				} else {
+					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
+					if (!windowsHelloItem) {
+						securityItem.subitems.push({
+							id: 'windows-hello',
+							label: 'common.menu.security.sub6',
+							path: 'windows-hello',
+							icon: '',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.windowshello',
+							routerLinkActiveOptions: { exact: true },
+							subitems: []
+						});
+					}
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 				}
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			}
 		});
 	}
@@ -587,18 +591,21 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	private addSmartAssistMenu(myDeviceItem: any) {
-		myDeviceItem.subitems.splice(4, 0, {
-			id: 'smart-assist',
-			label: 'common.menu.device.sub4',
-			path: 'smart-assist',
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
-			metricsItem: 'link.smartassist',
-			routerLinkActiveOptions: { exact: true },
-			icon: '',
-			sMode: true,
-			subitems: []
-		});
+		const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
+		if (!smartAssistItem) {
+			myDeviceItem.subitems.splice(4, 0, {
+				id: 'smart-assist',
+				label: 'common.menu.device.sub4',
+				path: 'smart-assist',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.smartassist',
+				routerLinkActiveOptions: { exact: true },
+				icon: '',
+				sMode: true,
+				subitems: []
+			});
+		}
 	}
 
 	public openExternalLink(link) {

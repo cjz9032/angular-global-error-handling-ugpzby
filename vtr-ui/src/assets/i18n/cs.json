@@ -2230,11 +2230,11 @@
         "bullets2": "Bezpečnostní poradce usnadňuje správu zabezpečení (dostupný u vybraných systémů).",
         "bullets3": "Automatické aktualizace uchovávají vaše zařízení ve skvělém stavu (dostupné u vybraných systémů).",
         "subtitle1": "Jak budete zařízení používat?",
-        "subtitle2": "Povězte nám o svých zájmech",
+        "subtitle2": "Povězte nám o svých zájmech (nepovinné)",
         "personal": "Osobní použití",
         "business": "Obchodní použití",
-		"custom": "Vlastní zkušenost",
-		"professional": "Professional Use",
+        "custom": "Vlastní zkušenost",
+        "professional": "Určeno pro odborníky",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",
@@ -2275,8 +2275,8 @@
         "Note": "Poznámka: ",
         "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila.",
         "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaProgram": "Beta program",
+        "betaSettingDescription": "Vyzkoušejte nejnovější funkce, na kterých pracujeme."
     },
     "modernPreload": {
         "cancel": "Storno",
@@ -2452,6 +2452,7 @@
             "installButton": {
                 "install": "Nainstalujte si",
                 "installing": "Instalace",
+                "downloading": "Stahování",
                 "installed": "Nainstalováno",
                 "launch": "Spustit",
                 "seeMore": "Další informace"

@@ -2230,11 +2230,11 @@
         "bullets2": "Conseil sécurité vous permet de gérer votre sécurité facilement (disponible sur certains systèmes).",
         "bullets3": "Les mises à jour automatiques maintiennent votre périphérique en bonne santé (disponible sur certains systèmes).",
         "subtitle1": "Comment utiliserez-vous votre périphérique ?",
-        "subtitle2": "Parlez-nous de vos centres d'intérêt",
+        "subtitle2": "Parlez-nous de vos centres d'intérêt (facultatif)",
         "personal": "Usage personnel",
         "business": "Usage professionnel",
 		"custom": "Expérience personnalisée",
-		"professional": "Professional Use",
+		"professional": "Usage professionnel",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
         "title1": "Bienvenue",
@@ -2274,9 +2274,9 @@
         "userProfile": "Profil utilisateur",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "Programme bêta",
+        "betaProgram": "Programme bêta",
+        "betaSettingDescription": "Essayez les dernières fonctions sur lesquelles nous travaillons."
     },
     "modernPreload": {
         "cancel": "Annuler",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installer",
-                "installing": "Installation en cours",
+				"installing": "Installation en cours",
+				"downloading": "Téléchargement",
                 "installed": "Installé",
                 "launch": "Lancer",
                 "seeMore": "En savoir plus"

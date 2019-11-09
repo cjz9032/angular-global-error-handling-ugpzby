@@ -2230,11 +2230,11 @@
         "bullets2": "יועץ האבטחה הופך את ניהול האבטחה שלך לקל (זמין במערכות נבחרות)",
         "bullets3": "עדכונים אוטומטיים שומרים על המכשיר שלכם במצב מעולה (זמינים במערכות נבחרות).",
         "subtitle1": "כיצד תשתמשו במכשירכם?",
-        "subtitle2": "ספרו לנו על תחומי העניין שלכם",
+        "subtitle2": "ספרו לנו על תחומי העניין שלכם (אופציונלי)",
         "personal": "שימוש אישי",
         "business": "שימוש עסקי",
 		"custom": "חוויה מותאמת אישית",
-		"professional": "Professional Use",
+		"professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
         "title1": "ברוכים הבאים אל",
@@ -2274,9 +2274,9 @@
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
-        "betaSettingTitle": "Beta program",
-        "betaProgram": "Beta Program",
-        "betaSettingDescription": "Try the latest features we're working on."
+        "betaSettingTitle": "תוכנית בטא",
+        "betaProgram": "תוכנית בטא",
+        "betaSettingDescription": "נסו את התכונות האחרונות שאנו עובדים עליהן."
     },
     "modernPreload": {
         "cancel": "ביטול",
@@ -2451,7 +2451,8 @@
         "appDetails": {
             "installButton": {
                 "install": "התקן",
-                "installing": "התקנה",
+				"installing": "התקנה",
+				"downloading": "הורדה",
                 "installed": "מותקן",
                 "launch": "הפעלה",
                 "seeMore": "פרטים נוספים"
