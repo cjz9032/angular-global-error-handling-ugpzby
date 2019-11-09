@@ -110,7 +110,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.onNotification(notification);
 		});
 
-		// this.initComponent();
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
+		this.securityAdvisor.refresh();
+		this.initComponent();
 
 		this.isDashboard = true;
 
@@ -140,26 +145,25 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			.then((result) => {
 				this.initUnreadMessage();
 			});
-		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 			if (cacheShowWindowsHello) {
 				const securityItem = items.find((item) => item.id === 'security');
 				if (securityItem) {
-					securityItem.subitems.push({
-						id: 'windows-hello',
-						label: 'common.menu.security.sub6',
-						path: 'windows-hello',
-						icon: '',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.windowshello',
-						routerLinkActiveOptions: { exact: true },
-						subitems: []
-					});
+					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
+					if (!windowsHelloItem) {
+						securityItem.subitems.push({
+							id: 'windows-hello',
+							label: 'common.menu.security.sub6',
+							path: 'windows-hello',
+							icon: '',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.windowshello',
+							routerLinkActiveOptions: { exact: true },
+							subitems: []
+						});
+					}
 				}
 			}
 			const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
@@ -416,7 +420,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (notification) {
 			switch (notification.type) {
 				case 'MachineInfo':
-					this.initComponent();
+					// this.initComponent();
 					this.machineFamilyName = notification.payload.family;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.MachineFamilyName,
@@ -478,7 +482,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	showWindowsHelloItem(windowsHello: WindowsHello) {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-
 			if (!this.windowsHelloService.showWindowsHello()) {
 				securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
