@@ -290,12 +290,12 @@
 														top: 0;
 													}
 													.vtr-eye-care-mode {
-														.vtr-ui-range-slider{
+														.vtr-ui-range-slider {
 															.label {
 																color: $gaming_lightest;
 															}
 														}
-														.custom-control-label{
+														.custom-control-label {
 															.disabled {
 																color: $gaming_grey_lightest;
 															}
@@ -304,7 +304,7 @@
 													.hidden-keyboard-text {
 														color: $gaming_lightest;
 													}
-													
+
 													.inputSection {
 														.btn-block button.btn-outline-shadow {
 															border: none;
@@ -336,7 +336,7 @@
 												}
 											}
 										}
-										.top-row-key-block{
+										.top-row-key-block {
 											.title {
 												color: $gaming_lightest;
 											}
@@ -1232,7 +1232,7 @@
 			color: $gaming_lightest !important;
 		}
 	}
-	
+
 	.dark-dashline {
 		height: 1px;
 		background: $gaming_darkest;
@@ -1483,10 +1483,8 @@
 		@media #{$small-screen} {
 			max-width: 50rem;
 			position: relative;
-		}
-
-		@media #{$mediaquery_12} {
-			left: 9rem;
+			margin: auto;
+			width: 90%;
 		}
 	}
 }
