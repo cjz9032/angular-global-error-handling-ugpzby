@@ -259,7 +259,6 @@
 							class="nav-link {{item.id}}"
 							id="navbarDropdown"
 							attr.aria-label="navbarDropdown"
-							*ngIf="userService.isLenovoIdSupported()"
 							[ngClass]="{'dropdown-toggle': true}"
 							role="button"
 							tabindex="1"
@@ -268,7 +267,7 @@
 							aria-expanded="false"
 							(click)="onMenuItemClick(item)">
 							<div class="user-initials">
-								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
+								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}
 							</div>
 							<span class="unread-count-tag"
 								*ngIf="!deviceService.isArm && UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
