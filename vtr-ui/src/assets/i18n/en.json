@@ -526,7 +526,6 @@
 				"heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
 				"heading7": "Set to default",
 				"heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
-
 			}
 		},
 		"autoClose": {
@@ -1022,7 +1021,7 @@
 					"descriptionLink": "Modern Standby",
 					"subDescription1": "during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set or your computer usage time we get. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
-					"subTitle":"Schedule your computer",
+					"subTitle": "Schedule your computer",
 					"subNote": "Your computer is scheduled to Modern Standby based on your usage.",
 					"timer": {
 						"heading": "The time you typically use this computer:",
@@ -1126,11 +1125,11 @@
 							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
 						},
 						"popup": {
-							"description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The Battery charge threshold function will be disabled when resetting.",
-							"continue": "CONTINUE",
-							"cancel": "CANCEL",
-							"yes": "YES",
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
+							"continue": "Continue",
+							"cancel": "Cancel",
+							"yes": "Yes",
 							"description3": "Are you sure you want to stop the battery gauge reset?"
 						}
 					},
