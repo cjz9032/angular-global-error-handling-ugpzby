@@ -1,0 +1,448 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('icomoon.woff?15qvx9') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-Active-protection:before {
+  content: "\e900";
+}
+.icomoon-arrows-h:before {
+  content: "\e901";
+}
+.icomoon-auto-screen-off:before {
+  content: "\e902";
+}
+.icomoon-Camera:before {
+  content: "\e903";
+}
+.icomoon-Camera-slash:before {
+  content: "\e904";
+}
+.icomoon-ConditionACAdapterError:before {
+  content: "\e905";
+}
+.icomoon-ConditionBadBattery:before {
+  content: "\e906";
+}
+.icomoon-ConditionFairBattery:before {
+  content: "\e907";
+}
+.icomoon-ConditionGoodBattery:before {
+  content: "\e908";
+}
+.icomoon-dynamic:before {
+  content: "\e909";
+}
+.icomoon-F1-F12-funciton:before {
+  content: "\e90a";
+  color: #4a81fd;
+}
+.icomoon-FA-Battery-bolt2x:before {
+  content: "\e90b";
+}
+.icomoon-FA-Battery-three-quarters2x:before {
+  content: "\e90c";
+}
+.icomoon-FA-Bolt2x:before {
+  content: "\e90d";
+}
+.icomoon-FA-Briefcase2x:before {
+  content: "\e90e";
+}
+.icomoon-face-recognition:before {
+  content: "\e90f";
+}
+.icomoon-FA-Child2x:before {
+  content: "\e910";
+  color: #4a81fd;
+}
+.icomoon-FA-Connection2x:before {
+  content: "\e911";
+  color: #4a81fd;
+}
+.icomoon-FA-Download2x:before {
+  content: "\e912";
+  color: #4a81fd;
+}
+.icomoon-FA-Eye2x:before {
+  content: "\e913";
+}
+.icomoon-FA-Eye-Slash2x:before {
+  content: "\e914";
+}
+.icomoon-FA-Headset2x:before {
+  content: "\e915";
+  color: #4a81fd;
+}
+.icomoon-FA-Info-circle2x:before {
+  content: "\e916";
+  color: #4a81fd;
+}
+.icomoon-FA-keyboard2x:before {
+  content: "\e917";
+  color: #4a81fd;
+}
+.icomoon-FA-Lock2x:before {
+  content: "\e918";
+  color: #4a81fd;
+}
+.icomoon-FA-Mail2x:before {
+  content: "\e919";
+  color: #4a81fd;
+}
+.icomoon-FA-mask2x:before {
+  content: "\e91a";
+  color: #4a81fd;
+}
+.icomoon-FA-Microphone---slash2x:before {
+  content: "\e91b";
+}
+.icomoon-FA-Microphone2x:before {
+  content: "\e91c";
+}
+.icomoon-familyMembers:before {
+  content: "\e91d";
+  color: #4a81fd;
+}
+.icomoon-FA-Plane2x:before {
+  content: "\e91e";
+  color: #4a81fd;
+}
+.icomoon-FA-Plug2x:before {
+  content: "\e91f";
+}
+.icomoon-FA-Question-circle2x:before {
+  content: "\e920";
+  color: #4a81fd;
+}
+.icomoon-FA-Settings2x:before {
+  content: "\e921";
+  color: #4a81fd;
+}
+.icomoon-FA-Tasks2x:before {
+  content: "\e922";
+  color: #4a81fd;
+}
+.icomoon-FA-Tools2x:before {
+  content: "\e923";
+  color: #4a81fd;
+}
+.icomoon-FA-trophy2x:before {
+  content: "\e924";
+  color: #4a81fd;
+}
+.icomoon-FA-Umbrella2x:before {
+  content: "\e925";
+  color: #4a81fd;
+}
+.icomoon-FA-Unplugged2x:before {
+  content: "\e926";
+}
+.icomoon-FA-User-headset2x:before {
+  content: "\e927";
+  color: #4a81fd;
+}
+.icomoon-FA-Wheel2x:before {
+  content: "\e928";
+  color: #4a81fd;
+}
+.icomoon-Flip-to-boot:before {
+  content: "\e929";
+  color: #4a81fd;
+}
+.icomoon-Fn-key-Ctrol-swap:before {
+  content: "\e92a";
+  color: #418afd;
+}
+.icomoon-games:before {
+  content: "\e92b";
+  color: #4a81fd;
+}
+.icomoon-homeDevices:before {
+  content: "\e92d";
+  color: #4a81fd;
+}
+.icomoon-keep-my-display:before {
+  content: "\e92e";
+}
+.icomoon-LE-Acoustic-echo-cancellation2x:before {
+  content: "\e92f";
+  color: #4a81fd;
+}
+.icomoon-LE-Active-pen-battery2x:before {
+  content: "\e930";
+  color: #4a81fd;
+}
+.icomoon-LE-Airplanemode2x:before {
+  content: "\e931";
+}
+.icomoon-LE-AirplanemodeCharging2x:before {
+  content: "\e932";
+}
+.icomoon-LE-Always-on-usb2x:before {
+  content: "\e933";
+  color: #4a81fd;
+}
+.icomoon-LE-Battery-charge-treshold2x:before {
+  content: "\e934";
+  color: #4a81fd;
+}
+.icomoon-LE-Battery-gauge-reset2x:before {
+  content: "\e935";
+  color: #4a81fd;
+}
+.icomoon-LE-Battery-Life-mode2x:before {
+  content: "\e936";
+  color: #4a81fd;
+}
+.icomoon-LE-Breached-accounts2x:before {
+  content: "\e937";
+  color: #4a81fd;
+}
+.icomoon-LE-ChargeFromShutdown2x:before {
+  content: "\e938";
+  color: #4a81fd;
+}
+.icomoon-LE-Charging-USB---SS2x:before {
+  content: "\e939";
+  color: #4a81fd;
+}
+.icomoon-LE-Charging-USB2x:before {
+  content: "\e93a";
+  color: #4a81fd;
+}
+.icomoon-LE-ConservationCharging2x:before {
+  content: "\e93b";
+}
+.icomoon-LE-Conservation-mode2x:before {
+  content: "\e93c";
+  color: #4a81fd;
+}
+.icomoon-LE-CoolingDown2x:before {
+  content: "\e93d";
+  color: #4a81fd;
+}
+.icomoon-LE-Data-protection2x:before {
+  content: "\e93e";
+  color: #4a81fd;
+}
+.icomoon-LE-Display-priority-control2x:before {
+  content: "\e93f";
+  color: #4a81fd;
+}
+.icomoon-LE-Dolby2x:before {
+  content: "\e940";
+}
+.icomoon-LE-Easily-accessible-accounts2x:before {
+  content: "\e941";
+  color: #4a81fd;
+}
+.icomoon-LE-Easy-resume2x:before {
+  content: "\e942";
+  color: #4a81fd;
+}
+.icomoon-LE-Energy-star-logo2x:before {
+  content: "\e943";
+}
+.icomoon-LE-expressCharging2x:before {
+  content: "\e944";
+}
+.icomoon-LE-face-detection2x:before {
+  content: "\e945";
+  color: #4a81fd;
+}
+.icomoon-LE-face-recognition2x:before {
+  content: "\e946";
+  color: #4a81fd;
+}
+.icomoon-LE-Figleaf2x:before {
+  content: "\e947";
+  color: #4a81fd;
+}
+.icomoon-LE-Finger-Identification2x:before {
+  content: "\e948";
+  color: #4a81fd;
+}
+.icomoon-LE-Finger-recognition2x:before {
+  content: "\e949";
+  color: #4a81fd;
+}
+.icomoon-LE-Finger-Scanning2x:before {
+  content: "\e94a";
+  color: #4a81fd;
+}
+.icomoon-LE-Handwritting-identification2x:before {
+  content: "\e94b";
+  color: #4a81fd;
+}
+.icomoon-LE-Handwritting-recognition2x:before {
+  content: "\e94c";
+  color: #4a81fd;
+}
+.icomoon-LE-HDMI2x:before {
+  content: "\e94d";
+  color: #4a81fd;
+}
+.icomoon-LE-IntelligentCooling2x:before {
+  content: "\e94e";
+  color: #4a81fd;
+}
+.icomoon-LE-Intelligent-dual-fan-2x:before {
+  content: "\e94f";
+  color: #4a81fd;
+}
+.icomoon-LE-IR2x:before {
+  content: "\e950";
+  color: #4a81fd;
+}
+.icomoon-LE-Microphone-Optimize2x:before {
+  content: "\e951";
+  color: #4a81fd;
+}
+.icomoon-LE-Microphone-volume2x:before {
+  content: "\e952";
+}
+.icomoon-LE-Palm-recognition2x:before {
+  content: "\e953";
+  color: #4a81fd;
+}
+.icomoon-LE-Palm-Scanning2x:before {
+  content: "\e954";
+  color: #4a81fd;
+}
+.icomoon-LE-Power-agenda2x:before {
+  content: "\e955";
+  color: #4a81fd;
+}
+.icomoon-LE-Power-plan2x:before {
+  content: "\e956";
+  color: #4a81fd;
+}
+.icomoon-LE-Smart-Assist2x:before {
+  content: "\e957";
+  color: #4a81fd;
+}
+.icomoon-LE-USB-Type-C2x:before {
+  content: "\e958";
+  color: #4a81fd;
+}
+.icomoon-LE-USB2x:before {
+  content: "\e959";
+  color: #4a81fd;
+}
+.icomoon-LE-User-Detection2x:before {
+  content: "\e95a";
+  color: #4a81fd;
+}
+.icomoon-LE-Visible-to-online-trackers2x:before {
+  content: "\e95b";
+  color: #4a81fd;
+}
+.icomoon-LE-Voice2x:before {
+  content: "\e95c";
+  color: #4a81fd;
+}
+.icomoon-LE-VoiceRecognition2x:before {
+  content: "\e95d";
+  color: #4a81fd;
+}
+.icomoon-LE-Voice-recognition2x:before {
+  content: "\e95e";
+  color: #4a81fd;
+}
+.icomoon-movie:before {
+  content: "\e95f";
+  color: #4a81fd;
+}
+.icomoon-multiplevoices:before {
+  content: "\e960";
+  color: #4a81fd;
+}
+.icomoon-music:before {
+  content: "\e961";
+}
+.icomoon-NoBatteryError:before {
+  content: "\e962";
+}
+.icomoon-normal:before {
+  content: "\e963";
+}
+.icomoon-onlymyvoice:before {
+  content: "\e964";
+  color: #4a81fd;
+}
+.icomoon-performance:before {
+  content: "\e965";
+}
+.icomoon-personalDevice:before {
+  content: "\e966";
+  color: #4a81fd;
+}
+.icomoon-places:before {
+  content: "\e967";
+  color: #4a81fd;
+}
+.icomoon-privacy-guard:before {
+  content: "\e968";
+  color: #4a81fd;
+}
+.icomoon-Special-function:before {
+  content: "\e969";
+  color: #4a81fd;
+}
+.icomoon-star:before {
+  content: "\e96a";
+}
+.icomoon-translation:before {
+  content: "\e96c";
+}
+.icomoon-voicerecognition:before {
+  content: "\e96d";
+  color: #4a81fd;
+}
+.icomoon-voice-to-text:before {
+  content: "\e96e";
+}
+.icomoon-voip:before {
+  content: "\e96f";
+  color: #4a81fd;
+}
+.icomoon-VOIP-Hotkeys:before {
+  content: "\e970";
+  color: #4a81fd;
+}
+.icomoon-wifiNetworks:before {
+  content: "\e971";
+  color: #4a81fd;
+}
+.icomoon-zero-touch-lock:before {
+  content: "\e972";
+  color: #4a81fd;
+}
+.icomoon-zero-touch-login:before {
+  content: "\e973";
+  color: #4a81fd;
+}
+.icomoon-zero-touch-playback:before {
+  content: "\e974";
+  color: #4a81fd;
+}
