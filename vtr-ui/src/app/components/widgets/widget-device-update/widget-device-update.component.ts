@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 	templateUrl: './widget-device-update.component.html',
 	styleUrls: ['./widget-device-update.component.scss']
 })
-export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
+export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() title: string = this.title || '';
 	@Input() subTitle1: string = this.subTitle1 || '';
 	@Input() subTitle2: string = this.subTitle2 || '';
@@ -18,9 +18,7 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	@Input() showProgress = false;
 	@Input() isUpdateDownloading = false;
 	@Input() isCheckingPluginStatus = true;
-	@Input() downloadingUpdateText = '';
 	@Input() downloadingPercent = 0;
-	@Input() installingUpdateText = 'Installing updates';
 	@Input() installingPercent = 0;
 	@Output() checkForUpdate = new EventEmitter();
 	@Output() cancelUpdateCheck = new EventEmitter();
@@ -29,23 +27,14 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	public progressValue = 0;
 	public downloadingIcon = 'spinner';
 	public installingIcon = 'spinner';
-	private downloadingText = 'systemUpdates.banner.downloading';
+	public downloadingUpdateText = 'systemUpdates.banner.downloading';
+	public installingUpdateText = 'systemUpdates.banner.installing';
 
-	constructor(private translate: TranslateService) { 
+	constructor(private translate: TranslateService) {
 		this.translateString();
 	}
 
 	ngOnInit() { }
-
-	ngOnChanges(changes: SimpleChanges) {
-		if (changes && changes.downloadingPercent) {
-			if (changes.downloadingPercent.currentValue === 100) {
-				this.downloadingUpdateText = `${this.downloadingText}`;
-			} else {
-				this.downloadingUpdateText = this.downloadingText;
-			}
-		}
-	}
 
 	onCheckForUpdates() {
 		this.checkForUpdate.emit();
@@ -60,8 +49,11 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	}
 
 	private translateString() {
-		this.translate.stream(this.downloadingText).subscribe((res) => {
-			this.downloadingText = res;
+		this.translate.stream(this.downloadingUpdateText).subscribe((res) => {
+			this.downloadingUpdateText = res;
+		});
+		this.translate.stream(this.installingUpdateText).subscribe((res) => {
+			this.installingUpdateText = res;
 		});
 	}
 }

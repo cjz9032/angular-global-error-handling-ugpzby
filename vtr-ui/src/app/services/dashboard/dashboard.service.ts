@@ -59,7 +59,8 @@ export class DashboardService {
 			'settings.settings',
 			'dashboard.offlineInfo.systemHealth',
 			'common.securityAdvisor.wifi',
-			'systemUpdates.title'
+			'systemUpdates.title',
+			'systemUpdates.readMore'
 		]).subscribe((result) => {
 			this.translateString = result;
 			this.setDefaultCMSContent();
@@ -290,7 +291,8 @@ export class DashboardService {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-B',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionC = {
@@ -308,7 +310,8 @@ export class DashboardService {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-C',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionD = {
@@ -326,7 +329,8 @@ export class DashboardService {
 			Template: 'full-width-title-image-background',
 			Position: 'position-D',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionE = {
@@ -334,7 +338,7 @@ export class DashboardService {
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Security-Advisor.jpg',
-			Action: 'systemUpdates.readMore',
+			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:wifi-security',
 			BrandName: '',
@@ -344,7 +348,8 @@ export class DashboardService {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-E',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionF = {
@@ -352,7 +357,7 @@ export class DashboardService {
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: '/assets/cms-cache/offline/Default-SMB-System-Update.jpg',
-			Action: 'systemUpdates.readMore',
+			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: 'Internal',
 			ActionLink: 'lenovo-vantage3:system-updates',
 			BrandName: '',
@@ -362,7 +367,8 @@ export class DashboardService {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-F',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 	}

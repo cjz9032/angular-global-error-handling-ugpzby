@@ -192,12 +192,12 @@
 													<div class="device-image mx-auto"
 														id="tutorial_personalUse"
 														attr.aria-label="tutorial_personalUse"
-														(click)="saveUsageType(segmentConst.personal)">
+														(click)="saveUsageType(segmentConst.Consumer)">
 														<input type="radio"
 															name="radio"
 															id="radioPersonal"
 															value="personal"
-															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.personal"
+															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Consumer"
 															#radioPersonal />
 														<img for="radioPersonal"
 															alt="Personal Use"
@@ -211,12 +211,12 @@
 													<div class="device-image mx-auto"
 														id="tutorial_businessUse"
 														attr.aria-label="tutorial_businessUse"
-														(click)="saveUsageType(segmentConst.business)">
+														(click)="saveUsageType(segmentConst.SMB)">
 														<input type="radio"
 															name="radio"
 															id="radioBusiness"
 															value="business"
-															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.business"
+															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.SMB"
 															#radioBusiness />
 														<img alt="Business Use"
 															for="radioBusiness"
@@ -230,12 +230,12 @@
 													<div class="device-image mx-auto"
 														id="tutorial_professionalExp"
 														attr.aria-label="tutorial_professionalExp"
-														(click)="saveUsageType(segmentConst.professional)">
+														(click)="saveUsageType(segmentConst.Commercial)">
 														<input type="radio"
 															name="radio"
 															id="radioProfessional"
 															value="custom"
-															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.professional"
+															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Commercial"
 															#radioProfessional />
 														<img alt="Custom Experience"
 															for="radioProfessional"
@@ -269,7 +269,7 @@
 														#checkbox1
 														[checked]="interest.checked"
 														(click)="toggle($event, interest.label)" />
-													<label class="bludFocusBoder" tabindex="0" (keypress)="onKeyPress($event)" #interestChkboxs
+													<label tabindex="0" (keypress)="onKeyPress($event)" #interestChkboxs
 														[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 												</div>
 											</div>
@@ -280,8 +280,8 @@
 										<vtr-ui-button
 											id="settings-profile-save-button"
 											[label]="'hardwareScan.save' | translate"
-											(onClick)="saveUserProfile()"
-											tabindex="0">
+											[isDisabled]="!selfSelectService.userSelectionChanged"
+											(onClick)="saveUserProfile()">
 										</vtr-ui-button>
 									</div>
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
-import { SelfSelectService } from '../self-select/self-select.service';
+import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,8 +11,8 @@ export class LocalInfoService {
 	// private sysInfo: any;
 	private localInfo: any;
 	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-latn', 'sv', 'tr', 'uk', 'zh-hant'];
-	private readonly gamingTag = 'Gaming';
-	private selfSelectSegment = 'Consumer';
+	private readonly gamingTag = SegmentConst.Gaming;
+	private selfSelectSegment = SegmentConst.Consumer;
 
 	constructor(
 		private shellService: VantageShellService,
@@ -27,8 +27,8 @@ export class LocalInfoService {
 			this.selfSelectSegment = await this.selfSelectService.getSegment();
 		}
 		if (this.localInfo) {
-			if (this.localInfo.segment !== this.gamingTag) {
-				this.localInfo.segment = this.selfSelectSegment;
+			if (this.localInfo.Segment !== this.gamingTag) {
+				this.localInfo.Segment = this.selfSelectSegment;
 			}
 			return this.localInfo;
 		} else {
