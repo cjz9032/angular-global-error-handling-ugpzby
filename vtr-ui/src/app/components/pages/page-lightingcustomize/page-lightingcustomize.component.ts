@@ -13,7 +13,7 @@ import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-l
 @Component({
 	selector: 'vtr-page-lightingcustomize',
 	templateUrl: './page-lightingcustomize.component.html',
-	styleUrls: ['./page-lightingcustomize.component.scss']
+	styleUrls: [ './page-lightingcustomize.component.scss' ]
 })
 export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	isOnline = true;
@@ -32,7 +32,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService) {
+		private translate: TranslateService
+	) {
 		this.metrics = this.shellService.getMetrics();
 
 		this.route.params.subscribe((params) => {
@@ -47,10 +48,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 	}
 
-	ngOnInit() {
-	}
-	ngOnDestroy() {
-	}
+	ngOnInit() {}
+	ngOnDestroy() {}
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
@@ -61,7 +60,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			GEO: 'US',
 			OEM: 'Lenovo',
 			OS: 'Windows',
-			Brand: 'idea',
+			Brand: 'idea'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
@@ -85,6 +84,16 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 				}
 			}
 		});
+
+		if (!this.isOnline) {
+			this.cardContentPositionF = {
+				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+			};
+
+			this.cardContentPositionC = {
+				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+			};
+		}
 	}
 
 	sendMetricsAsync(data: any) {

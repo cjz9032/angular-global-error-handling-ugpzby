@@ -12,7 +12,7 @@ import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.servi
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
-	styleUrls: ['./page-macrokey.component.scss']
+	styleUrls: [ './page-macrokey.component.scss' ]
 })
 export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	isOnline = true;
@@ -30,7 +30,8 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService) {
+		private translate: TranslateService
+	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -40,8 +41,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
@@ -52,7 +52,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 			GEO: 'US',
 			OEM: 'Lenovo',
 			OS: 'Windows',
-			Brand: 'idea',
+			Brand: 'idea'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
@@ -76,10 +76,19 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 				}
 			}
 		});
+
+		if (!this.isOnline) {
+			this.cardContentPositionF = {
+				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+			};
+
+			this.cardContentPositionC = {
+				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+			};
+		}
 	}
 
-	ngOnDestroy() {
-	}
+	ngOnDestroy() {}
 
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
