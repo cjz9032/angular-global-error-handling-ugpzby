@@ -6,19 +6,27 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PunctuationRemoveSpacePipe implements PipeTransform {
 
 	transform(value: any, ...args: any[]): any {
-		return value
-			.replace(' ,', ',')
-			.replace(' .', '.')
-			.replace(' ?', '?')
-			.replace(' !', '!')
-			.replace(' ;', ';')
-			.replace(' ，', '，')
-			.replace(' 。', '。')
-			.replace(' ？', '？')
-			.replace(' ！', '！')
-			.replace(' ；', '；')
-			.replace(' 、', '、')
+		const text = value.replace(' ,', ',')
+			.replace(/( \.| \.)/gi, '.')
+			.replace(/( \?| \?)/gi, '?')
+			.replace(/( \!| \!)/gi, '!')
+			.replace(/( \;| \;)/gi, ';')
+			.replace(/( ，| ，)/gi, '，')
+			.replace(/( 。| 。)/gi, '。')
+			.replace(/( ？| ？)/gi, '？')
+			.replace(/( ！| ！)/gi, '！')
+			.replace(/( ；| ；)/gi, '；')
+			.replace(/( 、| 、)/gi, '、')
+			.replace(/(\,\!|\, \!|\, \!|\,  \!)/gi, '!')
+			.replace(/(，！|， ！|， ！|，  ！)/gi, '！')
+			.replace(/(\,\?|\, \?|\, \?|\,  \?)/gi, '?')
+			.replace(/(，？|， ？|， ？|，  ？)/gi, '？')
+			.replace(/(,|, ,|, ,)/gi, ',')
+			.replace(/(，，|， ，|， ，)/gi, '，')
+			.replace(/(\,$|\, $|\, $)/gi, '')
+			.replace(/(，$|， $|， $)/gi, '')
 			;
+		return text;
 	}
 
 }
