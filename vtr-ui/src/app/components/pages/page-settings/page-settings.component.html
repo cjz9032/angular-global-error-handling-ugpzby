@@ -163,7 +163,7 @@
 							</div>
 						</div>
 
-						<div class="row py-5" *ngIf="selfSelectService.userProfileEnabled"
+						<div class="row py-5 user-profile-section" *ngIf="selfSelectService.userProfileEnabled"
 							id="user-profile-setting" [ngClass]="{
 								'white-theme': !deviceService.isGaming,
 								'blue-theme': deviceService.isGaming
@@ -174,7 +174,7 @@
 									name="SettingsUserProfile"
 									[cardTitle]=" 'settings.userProfile' | translate "
 									[isCollapsed]="true">
-									<div class="row usage-selection">
+									<div class="row">
 										<div class="col-auto">
 											<div class="left-icon-block">
 												<fa-icon class="left-icon" [icon]="['fal','laptop']"></fa-icon>
@@ -187,7 +187,7 @@
 													</div>
 											</div>
 											<div class="row mb-2 d-flex"
-												[ngClass]="{'radio-is-selected' : selfSelectService.usageType !== null }">
+												[ngClass]="{'radio-is-selected' : selfSelectService.usageType !== null && selfSelectService.usageType !== segmentConst.Gaming }">
 												<div class="mb-3 mr-5">
 													<div class="device-image mx-auto"
 														id="tutorial_personalUse"
@@ -248,7 +248,7 @@
 											</div>
 										</div>
 									</div>
-									<hr class="split-line-for-usage">
+									<hr>
 									<div class="row">
 										<div class="col-auto">
 											<div class="left-icon-block">
@@ -268,7 +268,7 @@
 														[id]="interest.label + 'checkbox'"
 														#checkbox1
 														[checked]="interest.checked"
-														(click)="toggle($event, interest.label)" />
+														(click)="onInterestToggle($event, interest.label)" />
 													<label tabindex="0" (keypress)="onKeyPress($event)" #interestChkboxs
 														[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 												</div>

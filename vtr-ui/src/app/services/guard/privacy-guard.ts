@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { DeviceService } from '../device/device.service';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
@@ -9,7 +10,7 @@ export class PrivacyGuard implements CanActivate {
 
 	constructor(
 		private deviceService: DeviceService,
-		private router: Router
+		private guardConstants: GuardConstants,
 		) { }
 
 	getShowPrivacy(): boolean {
@@ -23,6 +24,6 @@ export class PrivacyGuard implements CanActivate {
 		if (this.getShowPrivacy()) {
 			return true;
 		}
-		return this.router.parseUrl('/dashboard');
+		return this.guardConstants.defaultRoute;
 	}
 }

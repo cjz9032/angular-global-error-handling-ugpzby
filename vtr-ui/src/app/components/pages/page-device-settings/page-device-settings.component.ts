@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { Router } from '@angular/router';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -112,10 +113,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.page === 2) {
-				this.getMicrophoneSettings();
+				this.getAudioPageSettings();
 			}
 		} else {
-			this.getMicrophoneSettings();
+			this.getAudioPageSettings();
 		}
 	}
 
@@ -130,7 +131,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
-						this.getMicrophoneSettings();
+						this.getAudioPageSettings();
 					}
 					break;
 				case LocalStorageKey.IsHidePowerPage:
@@ -157,23 +158,30 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getMicrophoneSettings() {
+	getAudioPageSettings() {
 		try {
 			if (this.audioService.isShellAvailable) {
-				this.audioService.getMicrophoneSettings()
-					.then((microphone: Microphone) => {
-						console.log('getMicrophoneSettings', microphone);
-						if (!microphone.available) {
-							this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
-						}
-					}).catch(error => {
-						this.logger.error('getMicrophoneSettings', error.message);
-						return EMPTY;
-					});
+				Promise.all([
+					this.audioService.getDolbyMode(),
+					this.audioService.getMicrophoneSettings(),
+				]).then((responses: any[]) => {
+					const dolbyModeResponse: DolbyModeResponse = responses[0];
+					const microphone: Microphone = responses[1];
+					this.logger.info('getAudioPageSettings.Promise.all', responses);
+					this.commonService.setLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
+					if (!microphone.available && !dolbyModeResponse.available) {
+						this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
+					} else {
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
+					}
+				}).catch(error => {
+					this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
+					return EMPTY;
+				});
 			}
 		} catch (error) {
-			this.logger.error('getMicrophoneSettings' + error.message);
-			return EMPTY;
+			this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
 		}
 	}
 

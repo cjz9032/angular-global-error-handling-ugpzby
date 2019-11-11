@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
+import { CommonService } from '../common/common.service';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,16 @@ export class SelfSelectService {
 		{label: 'music', checked: false},
 		{label: 'science', checked: false},
 	];
-	public usageType = null;
+	private _usageType = null;
+	public get usageType() {
+		return this._usageType;
+	}
+	public set usageType(value) {
+		if (this._usageType !== value) {
+			this._usageType = value;
+			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.usageType);
+		}
+	}
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
 	public userSelectionChanged = false;
@@ -29,11 +40,12 @@ export class SelfSelectService {
 		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.SMB},
 		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false} ,defaultSegment: SegmentConst.Consumer},
 		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true} , defaultSegment: SegmentConst.SMB},
-		{ brand: 'idea', familyPattern: {pattern: /^V/i, result: false}, defaultSegment: SegmentConst.Consumer},
-		{ brand: 'idea', familyPattern: {pattern: /^V/i, result: true}, defaultSegment: SegmentConst.SMB},
+		{ brand: 'idea', familyPattern: {pattern: /^V|ideapad v/i, result: false}, defaultSegment: SegmentConst.Consumer},
+		{ brand: 'idea', familyPattern: {pattern: /^V|ideapad v/i, result: true}, defaultSegment: SegmentConst.SMB},
 	]
 
 	constructor(private vantageShellService: VantageShellService,
+		private commonService: CommonService,
 		public deviceService: DeviceService) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.getConfig();
@@ -47,6 +59,7 @@ export class SelfSelectService {
 	}
 
 	public async getConfig() {
+		this.machineInfo = await this.deviceService.getMachineInfo();
 		if (this.selfSelect) {
 			this.userProfileEnabled = true;
 			try {
@@ -58,7 +71,7 @@ export class SelfSelectService {
 						item.checked = checkedTags && checkedTags.includes(item.label);
 					});
 				}
-				if (config && config.segment) {
+				if (config && config.segment && !this.machineInfo.isGaming) {
 					this.usageType = config.segment;
 				} else {
 					this.usageType = await this.getDefaultSegment();
@@ -66,12 +79,12 @@ export class SelfSelectService {
 				}
 			} catch (error) {
 				console.log('SelfSelectService.getConfig failed. ', error);
-				this.usageType = this.getDefaultSegment();
+				this.usageType = await this.getDefaultSegment();
 				// this.userProfileEnabled = false;
 			}
 		} else {
 			this.userProfileEnabled = false;
-			this.usageType = this.getDefaultSegment();
+			this.usageType = await this.getDefaultSegment();
 		}
 	}
 
@@ -84,10 +97,8 @@ export class SelfSelectService {
 	}
 
 	private async getDefaultSegment() {
-		this.machineInfo = this.deviceService.machineInfo;
 		if (!this.machineInfo) {
-			const info = await this.deviceService.getMachineInfo()
-			this.machineInfo = info;
+			this.machineInfo = await this.deviceService.getMachineInfo();
 			return this.calcDefaultSegment(this.machineInfo);
 		}
 		else {
@@ -132,9 +143,9 @@ export class SelfSelectConfig {
 	public smbRole?: string;
 }
 
-export class SegmentConst {
-	public static readonly Consumer = 'Consumer';
-	public static readonly SMB = 'SMB';
-	public static readonly Commercial = 'Commercial';
-	public static readonly Gaming = 'Gaming';
+export enum SegmentConst {
+	Consumer = 'Consumer',
+	SMB = 'SMB',
+	Commercial = 'Commercial',
+	Gaming = 'Gaming'
 }
