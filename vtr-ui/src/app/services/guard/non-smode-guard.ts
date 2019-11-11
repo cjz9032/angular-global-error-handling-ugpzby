@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { DeviceService } from '../device/device.service';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class NoneArmGuard implements CanActivate {
+export class NonSmodeGuard implements CanActivate {
 
 	constructor(
 		private deviceService: DeviceService,
-		private router: Router
+		private guardConstants: GuardConstants,
 		) { }
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): boolean | UrlTree {
-		if (!this.deviceService.isArm) {
+		if (!this.deviceService.isSMode) {
 			return true;
 		}
-		return this.router.parseUrl('/dashboard');
+		return this.guardConstants.defaultRoute;
 	}
 }

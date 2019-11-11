@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageConnectedHomeSecurityComponent } from '../../components/pages/page-connected-home-security/page-connected-home-security.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { HomeSecurityGuard } from 'src/app/services/guard/home-securiry-guard';
-import { NoneGamingGuard } from 'src/app/services/guard/none-gaming-guard';
-import { NoneArmGuard } from 'src/app/services/guard/none-arm-guard';
-import { NoneSmodeGuard } from 'src/app/services/guard/none-smode-guard';
-import { NoneThinkGuard } from 'src/app/services/guard/none-think-guard';
+import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
+import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
+import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
+import { NonCommercialGuard } from 'src/app/services/guard/non-commercial-guard';
 
 const routes: Routes = [
 	{
@@ -14,10 +14,10 @@ const routes: Routes = [
 		component: PageConnectedHomeSecurityComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService,
-			NoneGamingGuard,
-			NoneArmGuard,
-			NoneSmodeGuard,
-			NoneThinkGuard,
+			NonGamingGuard,
+			NonArmGuard,
+			NonSmodeGuard,
+			NonCommercialGuard,
 			HomeSecurityGuard],
 		data: {
 			pageName: 'HomeSecurity'

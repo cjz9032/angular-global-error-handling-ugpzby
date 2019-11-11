@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, UrlTree } from '@angular/router';
+import { CanActivate, UrlTree } from '@angular/router';
 import { ConfigService } from '../config/config.service';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
@@ -9,7 +10,7 @@ export class HomeSecurityGuard implements CanActivate {
 
 	constructor(
 		private configService: ConfigService,
-		private router: Router
+		private guardConstants: GuardConstants
 		) { }
 
 	getShowCHS(): boolean {
@@ -20,6 +21,6 @@ export class HomeSecurityGuard implements CanActivate {
 		if (this.getShowCHS()) {
 			return true;
 		}
-		return this.router.parseUrl('/dashboard');
+		return this.guardConstants.defaultRoute;
 	}
 }
