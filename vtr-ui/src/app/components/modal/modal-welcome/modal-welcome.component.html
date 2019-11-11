@@ -80,12 +80,12 @@
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
-								(click)="saveUsageType(segmentConst.personal)">
+								(click)="saveUsageType(segmentConst.Consumer)">
 								<input type="radio"
 									name="radio"
 									id="personalRadio"
 									value="personal"
-									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.personal"
+									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Consumer"
 									#personalRadio />
 								<img for="personalRadio"
 									alt="Personal Use"
@@ -102,12 +102,12 @@
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
-								(click)="saveUsageType(segmentConst.business)">
+								(click)="saveUsageType(segmentConst.SMB)">
 								<input type="radio"
 									name="radio"
 									id="businessRadio"
 									value="business"
-									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.business"
+									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.SMB"
 									#businessRadio />
 								<img alt="Business Use"
 									for="businessRadio"
@@ -123,12 +123,12 @@
 							<div class="device-image"
 								id="tutorial_professionalExp"
 								attr.aria-label="tutorial_professionalExp"
-								(click)="saveUsageType(segmentConst.professional)">
+								(click)="saveUsageType(segmentConst.Commercial)">
 								<input type="radio"
 									name="radio"
 									id="professionalRadio"
 									value="custom"
-									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.professional"
+									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Commercial"
 									#professionalRadio />
 								<img alt="Custom Experience"
 									for="professionalRadio"

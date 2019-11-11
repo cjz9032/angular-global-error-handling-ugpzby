@@ -86,7 +86,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.getAllToggles();
 		this.timerService.start();
+		this.getSelfSelectStatus();
+	}
+
+	private getSelfSelectStatus() {
 		this.selfSelectService.getConfig();
+		this.selfSelectService.userSelectionChanged = false;
 	}
 
 	ngOnDestroy() {
@@ -276,6 +281,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	saveUsageType(value) {
 		this.selfSelectService.usageType = value;
+		this.selfSelectService.userSelectionChanged = true;
 	}
 
 	toggle($event, value) {
@@ -284,10 +290,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
+		this.selfSelectService.userSelectionChanged = true;
 	}
 
 	saveUserProfile() {
 		this.selfSelectService.saveConfig();
+		this.selfSelectService.userSelectionChanged = false;
 		const usageData = {
 			ItemType: 'FeatureClick',
 			ItemName: 'UsageType',
@@ -308,5 +316,4 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		};
 		this.metrics.sendAsync(interestData);
 	}
-
 }

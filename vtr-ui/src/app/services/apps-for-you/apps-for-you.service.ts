@@ -281,7 +281,7 @@ export class AppsForYouService {
 	public showAdobeMenu() {
 		if (!this.deviceService.isArm && this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
 			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1 &&
-			(this.localInfo.Segment !== SegmentConst.business || this.localInfo.Segment !== SegmentConst.personal)) {
+			(this.localInfo.Segment !== SegmentConst.SMB || this.localInfo.Segment !== SegmentConst.Consumer)) {
 			return true;
 		} else {
 			return false;
@@ -290,7 +290,7 @@ export class AppsForYouService {
 
 	public showLmaMenu() {
 		if (!this.deviceService.isArm && !this.deviceService.isSMode &&
-			this.localInfo && this.localInfo.Segment !== SegmentConst.professional) {
+			this.localInfo && this.localInfo.Segment !== SegmentConst.Commercial) {
 			return true;
 		} else {
 			return false;
