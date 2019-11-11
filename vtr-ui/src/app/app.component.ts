@@ -27,7 +27,6 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
-import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 
 declare var Windows;
@@ -59,7 +58,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
-		private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -86,9 +84,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		// check for update and download it but it will be available in next launch
-		this.appUpdateService.checkForUpdatesNoPrompt();
-
 		if (this.deviceService.isAndroid) {
 			return;
 		}
