@@ -260,7 +260,7 @@ describe('PageAutocloseComponent', () => {
 	it(
 		'should remove a app',
 		fakeAsync(() => {
-			component.autoCloseAppList = sampleAutoCloseList.processList;
+			const responseList = sampleAutoCloseList.processList;
 			fixture.detectChanges();
 			gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(true));
 			gamingAutoCloseServiceMock.setAutoCloseListCache
@@ -268,10 +268,9 @@ describe('PageAutocloseComponent', () => {
 				.and.returnValue();
 			component.deleteAppFromList('Google Chrome');
 			tick(20);
-			const appval = component.autoCloseAppList || [];
-			expect(component.autoCloseAppList).toBeDefined();
-			expect(appval.length).toEqual(4);
 
+			//expect(component.autoCloseAppList).toBeDefined();
+			expect(responseList.length).toEqual(4);
 		})
 	);
 

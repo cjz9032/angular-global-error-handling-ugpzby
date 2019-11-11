@@ -68,7 +68,7 @@ export class PageAutocloseComponent implements OnInit {
 		// private translate: TranslateService,
 		// public deviceService: DeviceService
 	) {
-		// this.setPreviousContent();
+		//this.setPreviousContent();
 		//this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
 		// this.translate.onLangChange.subscribe((event: LangChangeEvent) => {

@@ -5,10 +5,16 @@
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 // import { AudioService } from 'src/app/services/audio/audio.service';
 // import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
+// import { RouterTestingModule } from '@angular/router/testing';
+// import { DeviceService } from 'src/app/services/device/device.service';
+// // import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+
 
 // const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 // const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
-
+// // const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellAvailable', 'getSecurityAdvisor', 'getGamingAllCapabilities', 'getVantageToolBar', 'unRegisterEvent', 'registerEvent', 'getSelfSelect', 'getVantageShell', 'getPowerIdeaNoteBook', 'getPowerThinkPad',
+// // 'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus']);
+// const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable']);
 // describe('WidgetQuicksettingsListComponent', () => {
 // 	let component: WidgetQuicksettingsListComponent;
 // 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
@@ -18,11 +24,16 @@
 // 		TestBed.configureTestingModule({
 // 			declarations: [WidgetQuicksettingsListComponent,
 // 				mockPipe({ name: 'translate' })],
+// 				imports: [RouterTestingModule],
 // 			schemas: [NO_ERRORS_SCHEMA],
 // 			providers: [
 // 				{ provide: HttpClient },
 // 				{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-// 				{ provide: AudioService, useValue: audioServiceMock }
+// 				{ provide: AudioService, useValue: audioServiceMock },
+// 				{ provide: DeviceService, useValue: deviceServiceMock }
+// 				// { provide: VantageShellService, useValue: shellServicesMock }
+
+
 // 			]
 // 		}).compileComponents();
 // 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
@@ -66,10 +77,10 @@
 // 		expect(cacheThermalModeValue).not.toEqual(PreCacheThermalModeValue);
 // 	}));
 
-// 	it('should give ischecked true after calling set dolby', fakeAsync(() => {
-// 		component.setDolbySettings(true);
-// 		expect(component.quickSettings[3].isChecked).toEqual(false);
-// 	}));
+// 	// it('should give ischecked true after calling set dolby', fakeAsync(() => {
+// 	// 	component.setDolbySettings(true);
+// 	// 	expect(component.quickSettings[3].isChecked).toEqual(false);
+// 	// }));
 
 // });
 
