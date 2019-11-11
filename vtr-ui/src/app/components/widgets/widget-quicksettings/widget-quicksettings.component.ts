@@ -21,6 +21,7 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { PowerService } from 'src/app/services/power/power.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -31,6 +32,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public cameraStatus = new FeatureStatus(true, false);
 	public microphoneStatus = new FeatureStatus(false, false);
 	public eyeCareModeStatus = new FeatureStatus(true, false);
+	public vantageToolbarStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
 	public isOnline: any = true;
 	public quickSettingsWidget = [
@@ -59,6 +61,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
+		public powerService: PowerService,
 		private vantageShellService: VantageShellService) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -136,6 +139,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private initFeatures() {
 		this.getMicrophoneStatus();
 		this.getCameraPrivacyStatus();
+		// this.getVantageToolBarStatus();
 		// setTimeout(() => {
 		// 	this.initEyecaremodeSettings();
 		// 	this.startEyeCareMonitor();
@@ -415,5 +419,36 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 	onClick(path) {
 		this.deviceService.launchUri(path);
+	}
+
+	public onToolbarStatusToggle($event: boolean) {
+		try {
+			this.logger.debug('WidgetQuicksettingsComponent.onToolbarStatusToggle: before API call', $event);
+			if (this.powerService.isShellAvailable) {
+				this.powerService.setVantageToolBarStatus($event)
+					.then((value: boolean) => {
+						this.logger.debug('WidgetQuicksettingsComponent.onToolbarStatusToggle: API response received', value);
+						this.getVantageToolBarStatus();
+					}).catch(error => {
+						this.logger.error('WidgetQuicksettingsComponent.onToolbarStatusToggle: promise error ', error.message);
+					});
+			}
+		} catch (error) {
+			this.logger.error('WidgetQuicksettingsComponent.onToolbarStatusToggle: exception', error.message);
+			return EMPTY;
+		}
+	}
+
+	private async getVantageToolBarStatus() {
+		try {
+			this.logger.debug('WidgetQuicksettingsComponent.getVantageToolBarStatus: before API call');
+			if (this.powerService.isShellAvailable) {
+				const featureStatus = await this.powerService.getVantageToolBarStatus();
+				this.vantageToolbarStatus = featureStatus;
+				this.logger.debug('WidgetQuicksettingsComponent.getVantageToolBarStatus: API response received', featureStatus);
+			}
+		} catch (error) {
+			this.logger.error('WidgetQuicksettingsComponent.getVantageToolBarStatus: promise error ', error.message);
+		}
 	}
 }

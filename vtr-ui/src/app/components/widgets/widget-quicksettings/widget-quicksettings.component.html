@@ -39,6 +39,23 @@
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
+					<!-- <div *ngIf="vantageToolbarStatus.available"
+						class="text-center">
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
+							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
+							[value]="!vantageToolbarStatus.status"
+							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
+							metricsItem="camera"
+							id="qs-switch-camera"
+							aria-label="qs-switch-camera"
+							[switchId]="'camera'"
+							[isBlocked]="vantageToolbarStatus.status"
+							[isCamera]="true"
+							(toggle)="onToolbarStatusToggle($event)"
+							[disable]="!vantageToolbarStatus.available"
+							[isLoading]="vantageToolbarStatus.isLoading">
+						</vtr-widget-switch-icon>
+					</div> -->
 					<!-- <div class="text-right">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
