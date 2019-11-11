@@ -96,7 +96,7 @@
 		color: $light-grey;		
 		cursor: not-allowed;
 	}
-	.custom-control-input:disabled ~ .custom-control-label {
+	 .custom-control-label-disabled:hover {
 		cursor: not-allowed;
 	  }
 	.privacy-guard-caption {
