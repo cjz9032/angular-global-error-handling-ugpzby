@@ -13,18 +13,14 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: ['./page-networkboost.component.scss']
+	styleUrls: [ './page-networkboost.component.scss' ]
 })
 export class PageNetworkboostComponent implements OnInit {
-
 	public showTurnOnModal = false;
 	public showAppsModal = false;
 	changeListNum = 0;
 	appsCount = 0;
-	toggleStatus: boolean =
-		this.commonService.getLocalStorageValue(
-			LocalStorageKey.NetworkBoostStatus
-		) || false;
+	toggleStatus: boolean = this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoostStatus) || false;
 	needToAsk: any;
 	autoCloseStatusObj: any = {};
 	needToAskStatusObj: any = {};
@@ -39,8 +35,10 @@ export class PageNetworkboostComponent implements OnInit {
 		private cmsService: CMSService,
 		private networkBoostService: NetworkBoostService,
 		private commonService: CommonService,
-		private upeService: UPEService, private loggerService: LoggerService,
-		private hypService: HypothesisService, private translate: TranslateService
+		private upeService: UPEService,
+		private loggerService: LoggerService,
+		private hypService: HypothesisService,
+		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -51,11 +49,9 @@ export class PageNetworkboostComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.commonService.notification.subscribe(
-			(notification: AppNotification) => {
-				this.onNotification(notification);
-			}
-		);
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
 		this.getNetworkBoostStatus();
@@ -64,16 +60,8 @@ export class PageNetworkboostComponent implements OnInit {
 	async openTargetModal() {
 		try {
 			this.needToAsk = this.networkBoostService.getNeedToAsk();
-			this.needToAsk =
-				this.needToAsk === undefined || isNaN(this.needToAsk)
-					? 0
-					: this.needToAsk;
-			console.log(
-				'NEED TO ASK FROM LOCAL =>',
-				this.needToAsk,
-				this.needToAsk === 1,
-				this.needToAsk === 2
-			);
+			this.needToAsk = this.needToAsk === undefined || isNaN(this.needToAsk) ? 0 : this.needToAsk;
+			console.log('NEED TO ASK FROM LOCAL =>', this.needToAsk, this.needToAsk === 1, this.needToAsk === 2);
 			console.log('TOGGLE STATUS =>', this.toggleStatus);
 			if (this.toggleStatus) {
 				this.showAppsModal = true;
@@ -93,8 +81,7 @@ export class PageNetworkboostComponent implements OnInit {
 	private onNotification(notification: AppNotification) {
 		if (
 			notification &&
-			(notification.type === NetworkStatus.Offline ||
-				notification.type === NetworkStatus.Online)
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
 		) {
 			this.isOnline = notification.payload.isOnline;
 		}
@@ -142,18 +129,13 @@ export class PageNetworkboostComponent implements OnInit {
 	async setNetworkBoostStatus(event: any) {
 		try {
 			this.toggleStatus = event.switchValue;
-			await this.networkBoostService.setNetworkBoostStatus(
-				event.switchValue
-			);
+			await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
 			if (!this.toggleStatus) {
 				if (this.commonService.getLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
 				}
 			}
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.NetworkBoostStatus,
-				this.toggleStatus
-			);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
 		}
@@ -170,10 +152,7 @@ export class PageNetworkboostComponent implements OnInit {
 	async getNetworkBoostStatus() {
 		try {
 			this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
-			this.commonService.setLocalStorageValue(
-				LocalStorageKey.NetworkBoostStatus,
-				this.toggleStatus
-			);
+			this.commonService.setLocalStorageValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
 		} catch (err) {
 			console.log(`ERROR in setNetworkBoostStatus()`, err);
 		}
@@ -196,7 +175,7 @@ export class PageNetworkboostComponent implements OnInit {
 			GEO: 'US',
 			OEM: 'Lenovo',
 			OS: 'Windows',
-			Brand: 'idea',
+			Brand: 'idea'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
@@ -220,6 +199,15 @@ export class PageNetworkboostComponent implements OnInit {
 				}
 			}
 		});
-	}
 
+		if (!this.isOnline) {
+			this.cardContentPositionF = {
+				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+			};
+
+			this.cardContentPositionC = {
+				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+			};
+		}
+	}
 }

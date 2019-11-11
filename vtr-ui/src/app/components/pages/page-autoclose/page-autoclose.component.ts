@@ -17,7 +17,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: ['./page-autoclose.component.scss']
+	styleUrls: [ './page-autoclose.component.scss' ]
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -40,8 +40,10 @@ export class PageAutocloseComponent implements OnInit {
 		private cmsService: CMSService,
 		private gamingAutoCloseService: GamingAutoCloseService,
 		private commonService: CommonService,
-		private upeService: UPEService, private loggerService: LoggerService,
-		private hypService: HypothesisService, private translate: TranslateService
+		private upeService: UPEService,
+		private loggerService: LoggerService,
+		private hypService: HypothesisService,
+		private translate: TranslateService
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -94,7 +96,7 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	initTurnOnAction() {
@@ -166,7 +168,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
-			} catch (error) { }
+			} catch (error) {}
 		} else {
 			const remApp = event.app;
 			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
@@ -187,7 +189,7 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	// Get the CMS content for the container card
@@ -199,7 +201,7 @@ export class PageAutocloseComponent implements OnInit {
 			GEO: 'US',
 			OEM: 'Lenovo',
 			OS: 'Windows',
-			Brand: 'idea',
+			Brand: 'idea'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
@@ -223,5 +225,15 @@ export class PageAutocloseComponent implements OnInit {
 				}
 			}
 		});
+
+		if (!this.isOnline) {
+			this.cardContentPositionF = {
+				FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+			};
+
+			this.cardContentPositionC = {
+				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
+			};
+		}
 	}
 }
