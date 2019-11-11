@@ -35,7 +35,7 @@
 						<div class="inner-content" *ngIf="!isOfflineArm">
 							<div *ngIf="title"
 								class="title" id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}" [innerHTML]="(title | translate) ? (title | translate) : title"></div>
+								attr.aria-label="{{containerCardId+'-title'}}" [innerHTML]="title"></div>
 							<div *ngIf="caption"
 								class="caption"
 								id="{{containerCardId+'-caption'}}"
@@ -226,7 +226,7 @@
 							<div *ngIf="title && !isOfflineArm"
 								class="title" id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"
-								[innerHtml]="(title | translate) ? (title | translate) : title"></div>
+								[innerHtml]="title"></div>
 						</div>
 					</a>
 				</div>
@@ -267,7 +267,7 @@
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
 								class="title"
-								[innerHtml]="(title | translate) ? (title | translate) : title"
+								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
 								[style.font-size.px]="containerCardArticle.clientWidth * 24 / 436"
@@ -279,7 +279,7 @@
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
-								<span class="link-label" [innerHTML]="(action | translate) ? (action | translate) : action"></span>
+								<span class="link-label" [innerHTML]="action"></span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</div>
 						</div>
