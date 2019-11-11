@@ -1573,7 +1573,7 @@
 			"welcomeTitle": "welcome to connected home security",
 			"welcomeSubTitle": "30 days of protection for free",
 			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
 			"locationTitle": "Enable location permissions",
 			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
 			"allow": "Allow",
