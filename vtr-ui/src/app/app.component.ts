@@ -154,14 +154,16 @@ export class AppComponent implements OnInit, OnDestroy {
 	} // end of addInternetListener
 
 	private launchWelcomeModal() {
-		this.deviceService
-			.getIsARM()
-			.then((status: boolean) => {
+		Promise.all([this.deviceService.getIsARM(),
+			this.deviceService.getMachineInfo()])
+			.then((responses) => {
+				const status = responses[0];
+				const machineInfo = responses[1];
 				if (!status || !this.deviceService.isAndroid) {
 					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 					if (tutorial === undefined && navigator.onLine) {
 						this.openWelcomeModal(1);
-					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+					} else if (tutorial && tutorial.page === 1 && navigator.onLine && !machineInfo.isGaming) {
 						this.openWelcomeModal(2);
 					}
 				}

@@ -284,7 +284,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.selfSelectService.userSelectionChanged = true;
 	}
 
-	toggle($event, value) {
+	onInterestToggle($event, value) {
 		if ($event.target.checked) {
 			this.selfSelectService.checkedArray.push(value);
 		} else {
