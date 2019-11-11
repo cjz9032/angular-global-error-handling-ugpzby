@@ -21,15 +21,16 @@ export class SelfSelectService {
 	public usageType = null;
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
+	public userSelectionChanged = false;
 	private selfSelect: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
-		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: false}, defaultSegment: SegmentConst.professional},
-		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.business},
-		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false} ,defaultSegment: SegmentConst.personal},
-		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true} , defaultSegment: SegmentConst.business},
-		// { brand: 'idea', familyPattern: {pattern: /lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false}, defaultSegment: SegmentConst.personal},
-		// { brand: 'idea', familyPattern: {pattern: /lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true}, defaultSegment: SegmentConst.business},
+		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: false}, defaultSegment: SegmentConst.Commercial},
+		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.SMB},
+		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false} ,defaultSegment: SegmentConst.Consumer},
+		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true} , defaultSegment: SegmentConst.SMB},
+		{ brand: 'idea', familyPattern: {pattern: /^V/i, result: false}, defaultSegment: SegmentConst.Consumer},
+		{ brand: 'idea', familyPattern: {pattern: /^V/i, result: true}, defaultSegment: SegmentConst.SMB},
 	]
 
 	constructor(private vantageShellService: VantageShellService,
@@ -39,12 +40,10 @@ export class SelfSelectService {
 	}
 
 	public async getSegment() {
-		if (this.usageType) {
-			return this.usageType;
-		} else {
+		if (!this.usageType) {
 			await this.getConfig();
-			return this.usageType;
 		}
+		return this.usageType;
 	}
 
 	public async getConfig() {
@@ -52,11 +51,6 @@ export class SelfSelectService {
 			this.userProfileEnabled = true;
 			try {
 				const config = await this.selfSelect.getConfig();
-				if (config && config.segment) {
-					this.usageType = config.segment;
-				} else if (!this.deviceService.isGaming) {
-					this.usageType = this.getDefaultSegment();
-				}
 				if (config && config.customtags) {
 					const checkedTags = config.customtags;
 					this.checkedArray = checkedTags.split(',');
@@ -64,11 +58,16 @@ export class SelfSelectService {
 						item.checked = checkedTags && checkedTags.includes(item.label);
 					});
 				}
-
+				if (config && config.segment) {
+					this.usageType = config.segment;
+				} else {
+					this.usageType = await this.getDefaultSegment();
+					this.saveConfig();
+				}
 			} catch (error) {
 				console.log('SelfSelectService.getConfig failed. ', error);
 				this.usageType = this.getDefaultSegment();
-				this.userProfileEnabled = false;
+				// this.userProfileEnabled = false;
 			}
 		} else {
 			this.userProfileEnabled = false;
@@ -77,9 +76,6 @@ export class SelfSelectService {
 	}
 
 	public saveConfig() {
-		if (this.deviceService.isGaming) {
-			this.usageType = null;
-		}
 		const config = {
 			customtags: this.checkedArray.join(','),
 			segment: this.usageType
@@ -87,13 +83,12 @@ export class SelfSelectService {
 		return this.selfSelect.updateConfig(config);
 	}
 
-	private getDefaultSegment() {
+	private async getDefaultSegment() {
 		this.machineInfo = this.deviceService.machineInfo;
 		if (!this.machineInfo) {
-			this.deviceService.getMachineInfo().then((info) => {
-				this.machineInfo = info;
-				return this.calcDefaultSegment(this.machineInfo);
-			});
+			const info = await this.deviceService.getMachineInfo()
+			this.machineInfo = info;
+			return this.calcDefaultSegment(this.machineInfo);
 		}
 		else {
 			return this.calcDefaultSegment(this.machineInfo);
@@ -101,7 +96,10 @@ export class SelfSelectService {
 	}
 
 	private calcDefaultSegment(machineInfo) {
-		let segment = SegmentConst.personal;
+		if (machineInfo.isGaming) {
+			return SegmentConst.Gaming;
+		}
+		let segment = SegmentConst.Consumer;
 		try	{
 			const brand = machineInfo.brand;
 			const family = machineInfo.family;
@@ -135,7 +133,8 @@ export class SelfSelectConfig {
 }
 
 export class SegmentConst {
-	public static readonly personal = 'Consumer';
-	public static readonly business = 'SMB';
-	public static readonly professional = 'Commercial';
+	public static readonly Consumer = 'Consumer';
+	public static readonly SMB = 'SMB';
+	public static readonly Commercial = 'Commercial';
+	public static readonly Gaming = 'Gaming';
 }
