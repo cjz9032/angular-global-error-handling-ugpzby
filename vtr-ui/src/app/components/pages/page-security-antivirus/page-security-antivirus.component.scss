@@ -32,6 +32,22 @@
 			}
 		}
 
+		.subheader{
+			::ng-deep {
+				.card-header {
+					padding: 1.25rem 3rem !important;
+					.header{
+						color: $screen_dark_70 !important;
+						font-weight: 400 !important;
+					}
+				}
+	
+				.card-body {
+					padding: 0.75rem 3rem !important;
+				}
+			}
+		}
+
 		.rounded-card-with-shadow {
 			box-shadow: $drop_shadow;
 			border-radius: $border_radius;
@@ -99,6 +115,7 @@
 			a {
 				text-decoration: underline;
 			}
+
 		}
 
 		.windows-logo {

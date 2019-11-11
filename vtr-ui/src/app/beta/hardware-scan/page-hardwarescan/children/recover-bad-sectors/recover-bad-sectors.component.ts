@@ -118,4 +118,7 @@ export class RecoverBadSectorsComponent implements OnInit, OnChanges, OnDestroy 
 		this.devices = devices;
 	}
 
+	public isSelectedItem() {
+		return this.hardwareScanService.getHasDevicesToRecover();
+	}
 }
