@@ -171,7 +171,8 @@
 					.vtr-subpage {
 						&.subpage-device-settings-power,
 						&.subpage-device-settings-audio,
-						&.subpage-device-settings-display {
+						&.subpage-device-settings-display,
+						&.subpage-device-settings-input-accessories {
 							.vtr-ui-header-subpage {
 								.title {
 									color: $gaming_lightest;
@@ -300,7 +301,26 @@
 															}
 														}
 													}
+													.hidden-keyboard-text {
+														color: $gaming_lightest;
+													}
 													
+													.inputSection {
+														.btn-block button.btn-outline-shadow {
+															border: none;
+															background: $gaming-Darkslate-blue;
+															.select-title {
+																color: $gaming_lightest;
+															}
+															.select-text {
+																color: $gaming_grey_lightest;
+															}
+														}
+													}
+													.row-seperator {
+														height: 0.1rem;
+														background-color: $screen_dark_20;
+													}
 												}
 											}
 										}
@@ -314,6 +334,21 @@
 														color: $shade_blue;
 													}
 												}
+											}
+										}
+										.top-row-key-block{
+											.title {
+												color: $gaming_lightest;
+											}
+											.caption {
+												.text {
+													color: $gaming_lightest;
+												}
+											}
+										}
+										.control-options-block {
+											p {
+												color: $gaming_lightest;
 											}
 										}
 									}
