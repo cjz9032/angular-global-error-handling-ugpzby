@@ -23,7 +23,7 @@ export class LocalInfoService {
 	}
 
 	async getLocalInfo() {
-		if (this.selfSelectSegment !== this.selfSelectService.usageType) {
+		if (this.selfSelectSegment !== this.selfSelectService.savedSegment) {
 			this.selfSelectSegment = await this.selfSelectService.getSegment();
 		}
 		if (this.localInfo) {

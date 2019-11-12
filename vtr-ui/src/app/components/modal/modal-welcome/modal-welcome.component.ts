@@ -99,9 +99,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, null, null);
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
-			if (this.deviceService.isGaming) {
-				this.activeModal.close(tutorialData);
-			}
 		} else {
 			const settingData = {
 				ItemType: 'SettingUpdate',
@@ -147,7 +144,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
 			this.activeModal.close(tutorialData);
-			this.selfSelectService.saveConfig();
+			this.selfSelectService.saveConfig(true);
 		}
 		this.page = ++page;
 	}

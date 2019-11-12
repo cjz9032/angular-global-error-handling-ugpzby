@@ -20,19 +20,21 @@ export class SelfSelectService {
 		{label: 'music', checked: false},
 		{label: 'science', checked: false},
 	];
-	private _usageType = null;
-	public get usageType() {
-		return this._usageType;
-	}
-	public set usageType(value) {
-		if (this._usageType !== value) {
-			this._usageType = value;
-			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.usageType);
-		}
-	}
+	public usageType = null;
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
 	public userSelectionChanged = false;
+
+	private _savedSegment = null;
+	public get savedSegment() {
+		return this._savedSegment;
+	}
+	public set savedSegment(value) {
+		if (this._savedSegment !== value) {
+			this._savedSegment = value;
+			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
+		}
+	}
 	private selfSelect: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
@@ -48,14 +50,13 @@ export class SelfSelectService {
 		private commonService: CommonService,
 		public deviceService: DeviceService) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
-		this.getConfig();
 	}
 
 	public async getSegment() {
-		if (!this.usageType) {
+		if (!this.savedSegment) {
 			await this.getConfig();
 		}
-		return this.usageType;
+		return this.savedSegment;
 	}
 
 	public async getConfig() {
@@ -73,27 +74,38 @@ export class SelfSelectService {
 				}
 				if (config && config.segment && !this.machineInfo.isGaming) {
 					this.usageType = config.segment;
+					this.savedSegment = this.usageType;
 				} else {
 					this.usageType = await this.getDefaultSegment();
+					this.savedSegment = this.usageType;
 					this.saveConfig();
 				}
 			} catch (error) {
 				console.log('SelfSelectService.getConfig failed. ', error);
 				this.usageType = await this.getDefaultSegment();
+				this.savedSegment = this.usageType;
 				// this.userProfileEnabled = false;
 			}
 		} else {
 			this.userProfileEnabled = false;
 			this.usageType = await this.getDefaultSegment();
+			this.savedSegment = this.usageType;
 		}
 	}
 
-	public saveConfig() {
+	public saveConfig(reloadRequired?) {
 		const config = {
 			customtags: this.checkedArray.join(','),
 			segment: this.usageType
 		}
-		return this.selfSelect.updateConfig(config);
+		const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
+		this.savedSegment = this.usageType;
+		return this.selfSelect.updateConfig(config).then((result) => {
+			if (reloadNecessary) {
+				window.open(window.location.origin, '_self');
+			}
+			return result;
+		}).catch((error) => { });
 	}
 
 	private async getDefaultSegment() {
