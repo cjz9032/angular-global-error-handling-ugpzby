@@ -25,7 +25,6 @@ import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -40,6 +39,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	private protocalAction: any;
 	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
 	public isWarrantyVisible = false;
+	public showQuickSettings = true;
 
 	heroBannerItems = [];   // tile A
 	cardContentPositionB: any = {};
@@ -110,7 +110,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		private hypService: HypothesisService,
 		public supportService: SupportService,
 		private adPolicyService: AdPolicyService,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -162,6 +163,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchContent();
 		});
+		this.getSelfSelectStatus();
 	}
 
 	ngDoCheck(): void {
@@ -815,5 +817,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 			}
 		}
+	}
+	private getSelfSelectStatus() {
+		this.dashboardService.getSelfSelectStatus().then(value => {
+			this.showQuickSettings = value;
+		});
 	}
 }

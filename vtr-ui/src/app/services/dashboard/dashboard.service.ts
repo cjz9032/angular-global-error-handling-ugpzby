@@ -7,6 +7,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
 import { TranslateService } from '@ngx-translate/core';
+import { SegmentConst } from '../self-select/self-select.service';
+import { LocalInfoService } from '../local-info/local-info.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -38,6 +40,7 @@ export class DashboardService {
 		commonService: CommonService,
 		private deviceService: DeviceService,
 		private translate: TranslateService,
+		private localInfoService: LocalInfoService
 		) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
@@ -371,5 +374,19 @@ export class DashboardService {
 			isLocal: true
 		};
 
+	}
+	public getSelfSelectStatus(): Promise<boolean> {
+		let response = false;
+		return this.localInfoService.getLocalInfo().then(result => {
+			const segmentVal = result.Segment.toLowerCase();
+			if (segmentVal === SegmentConst.Commercial.toLowerCase() ||
+				segmentVal === SegmentConst.SMB.toLowerCase() ||
+				segmentVal === SegmentConst.Consumer.toLowerCase()) {
+				response = true;
+			} else {
+				response = false;
+			}
+			return response;
+		});
 	}
 }

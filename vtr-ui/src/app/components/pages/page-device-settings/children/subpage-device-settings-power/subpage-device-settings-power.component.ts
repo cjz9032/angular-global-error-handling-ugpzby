@@ -999,7 +999,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const res = await this.powerService.getChargeThresholdInfo();
 				this.responseData = res || [];
 				if (this.responseData && this.responseData.length > 0) {
-					this.isChargeThresholdAvailable = this.responseData[0].isCapable;
+					this.isChargeThresholdAvailable = this.responseData[0].isCapable || this.responseData[1].isCapable;
 					this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 					this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
 					this.primaryCheckBox = this.responseData[0].checkBoxValue;
@@ -1017,6 +1017,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					}
 					if (this.responseData.length === 2) {
 						this.isSecondBatteryAvailable = true;
+						this.isChargeThresholdAvailable = this.responseData[1].isCapable;
 						this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 						this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
 						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
