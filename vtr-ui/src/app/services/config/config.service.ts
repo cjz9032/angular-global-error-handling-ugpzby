@@ -63,7 +63,6 @@ export class ConfigService {
 		return new Promise(async (resolve, reject) => {
 			const isBetaUser = this.commonService.getBetaUser();
 			const machineInfo = await this.deviceService.getMachineInfo();
-			const brand: string = machineInfo.brand;
 			const localInfo = await this.localInfoService.getLocalInfo();
 			const segment: string = localInfo.Segment ? localInfo.Segment.toLowerCase() : 'commercial';
 			let resultMenu = Object.assign([], this.menuItemsGaming);
@@ -75,7 +74,7 @@ export class ConfigService {
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			if (this.deviceService.showPrivacy && brand.toLowerCase() !== 'think') {
+			if (this.deviceService.showPrivacy) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
