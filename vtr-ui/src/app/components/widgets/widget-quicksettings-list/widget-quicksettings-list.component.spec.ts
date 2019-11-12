@@ -14,7 +14,7 @@
 // const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 // const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
 // const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellAvailable', 'getSecurityAdvisor', 'getGamingAllCapabilities', 'getVantageToolBar', 'unRegisterEvent', 'registerEvent', 'getSelfSelect', 'getVantageShell', 'getPowerIdeaNoteBook', 'getPowerThinkPad',
-// 'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus']);
+// 'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus', 'getImcHelper', 'getActiveProtectionSystem', 'getKeyboardManagerObject', 'getAdPolicy', 'getSystemUpdate', 'getMetrics']);
 // const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable']);
 // describe('WidgetQuicksettingsListComponent', () => {
 // 	let component: WidgetQuicksettingsListComponent;
@@ -77,10 +77,10 @@
 // 		expect(cacheThermalModeValue).not.toEqual(PreCacheThermalModeValue);
 // 	}));
 
-// 	// it('should give ischecked true after calling set dolby', fakeAsync(() => {
-// 	// 	component.setDolbySettings(true);
-// 	// 	expect(component.quickSettings[3].isChecked).toEqual(false);
-// 	// }));
+// 	it('should give ischecked true after calling set dolby', fakeAsync(() => {
+// 		component.setDolbySettings(true);
+// 		expect(component.quickSettings[3].isChecked).toEqual(false);
+// 	}));
 
 // });
 
