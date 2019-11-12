@@ -28,6 +28,7 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
+import { SegmentConst } from './services/self-select/self-select.service';
 
 declare var Windows;
 @Component({
@@ -153,23 +154,25 @@ export class AppComponent implements OnInit, OnDestroy {
 			.then((status: boolean) => {
 				if ((!status || !this.deviceService.isAndroid)) {
 					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-					if (tutorial === undefined && navigator.onLine) {
-						this.openWelcomeModal(1);
+					const newTutorialVersion = '3.1.2';
+					if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
+						this.openWelcomeModal(1, newTutorialVersion);
 					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
-						this.openWelcomeModal(2);
+						this.openWelcomeModal(2, newTutorialVersion);
 					}
 				}
 			})
 			.catch((error) => { });
 	}
 
-	openWelcomeModal(page: number) {
+	openWelcomeModal(page: number, tutorialVersion: string) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'welcome-modal-size'
 		});
 		modalRef.componentInstance.page = page;
+		modalRef.componentInstance.tutorialVersion = tutorialVersion;
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
 				// on open
@@ -371,8 +374,13 @@ export class AppComponent implements OnInit, OnDestroy {
 					// launch welcome modal once translation is loaded, meanwhile show spinner from home component
 					this.deviceService.getMachineInfo()
 					.then((info) => {
-						if (info && !info.isGaming) {
-							this.launchWelcomeModal();
+						if (info) {
+							if (info.isGaming) {
+								const gamingTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Gaming);
+								this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, gamingTutorialData);
+							} else {
+								this.launchWelcomeModal();
+							}
 						}
 					}).catch((error) => {});
 					break;
