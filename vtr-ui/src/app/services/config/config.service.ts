@@ -92,7 +92,7 @@ export class ConfigService {
 					}
 				});
 			}
-			this.showVpn(country.toLowerCase(), resultMenu, segment);
+			this.showVpn(country.toLowerCase(), resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (this.deviceService.showSearch) {
@@ -119,11 +119,11 @@ export class ConfigService {
 		packageVersion.build >= shellVersion.build;
 	}
 
-	showVpn(region, items, segment) {
+	showVpn(region, items) {
 		const securityItemForVpn = items.find((item) => item.id === 'security');
 		if (securityItemForVpn !== undefined) {
 			const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
-			if (region !== 'cn' && segment !== 'commercial') {
+			if (region !== 'cn') {
 				if (!vpnItem) {
 					securityItemForVpn.subitems.splice(4, 0, {
 						id: 'internet-protection',
@@ -134,6 +134,7 @@ export class ConfigService {
 						metricsItem: 'link.internetprotection',
 						routerLinkActiveOptions: { exact: true },
 						icon: '',
+						segment: '-[commercial]',
 						subitems: []
 					});
 				}
