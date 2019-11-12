@@ -101,29 +101,35 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		{
 			title: 'device.deviceSettings.power.powerSmartSettings.title',
 			path: 'smartSettings',
-			metricsItem: 'PowerSmartSettings'
+			metricsItem: 'PowerSmartSettings',
+			order: 1
 		},
 		{
 			title: 'device.deviceSettings.power.smartStandby.title',
 			path: 'smartStandby',
-			metricsItem: 'SmartStandby'
+			metricsItem: 'SmartStandby',
+			order: 2
 		},
 		{
 			title: 'device.deviceSettings.power.batterySettings.title',
 			path: 'battery',
-			metricsItem: 'BatterySettings'
+			metricsItem: 'BatterySettings',
+			order: 3
 		},
 		{
 			title: 'device.deviceSettings.power.powerSettings.title',
 			path: 'power',
-			metricsItem: 'PowerSettings'
+			metricsItem: 'PowerSettings',
+			order: 4
 		},
 		{
 			title: 'device.deviceSettings.power.otherSettings.title',
 			path: 'other',
-			metricsItem: 'OtherSettings'
+			metricsItem: 'OtherSettings',
+			order: 5
 		}
 	];
+
 	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
 	toggleFlipToBootStatus = true;
 	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
@@ -226,10 +232,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getVantageToolBarCapability();
 		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
-			this.headerMenuItems.splice(0, 1);
-			this.headerMenuItems.splice(0, 1);
-			this.headerMenuItems.splice(0, 1);
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			// this.headerMenuItems.splice(0, 1);
+			// this.headerMenuItems.splice(0, 1);
+			// this.headerMenuItems.splice(0, 1);
 			this.checkMenuItemsEmpty();
+			this.updateBatteryLinkStatus(false);
+		} else {
+			this.updateBatteryLinkStatus(true);
 		}
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
@@ -245,12 +257,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
+		this.initBatteryLinkFromCache();
 		this.initExpressChargingFromCache();
 		this.initConservationModeFromCache();
 		this.initPowerSettingsFromCache();
 		this.initOtherSettingsFromCache();
 		this.initEnergyStarFromCache();
 
+	}
+
+	initBatteryLinkFromCache() {
+		const status = this.commonService.getLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, true);
+		this.updateBatteryLinkStatus(status);
 	}
 
 	initExpressChargingFromCache() {
@@ -999,7 +1017,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const res = await this.powerService.getChargeThresholdInfo();
 				this.responseData = res || [];
 				if (this.responseData && this.responseData.length > 0) {
-					this.isChargeThresholdAvailable = this.responseData[0].isCapable;
+					this.isChargeThresholdAvailable = this.responseData[0].isCapable || this.responseData[1].isCapable;
 					this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 					this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
 					this.primaryCheckBox = this.responseData[0].checkBoxValue;
@@ -1017,6 +1035,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					}
 					if (this.responseData.length === 2) {
 						this.isSecondBatteryAvailable = true;
+						this.isChargeThresholdAvailable = this.responseData[1].isCapable;
 						this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 						this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
 						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
@@ -1086,9 +1105,28 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.isChargeThresholdAvailable = false;
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
+			this.updateBatteryLinkStatus(false);
 			this.checkMenuItemsEmpty();
 		}
-		this.commonService.setLocalStorageValue(LocalStorageKey.IsPowerDriverMissing, this.isPowerDriverMissing);
+	}
+
+	updateBatteryLinkStatus(addLink: boolean) {
+		const status = this.commonService.isPresent(this.headerMenuItems, 'battery');
+		if (addLink && !status) {
+			const powerObj  = {
+				title: 'device.deviceSettings.power.batterySettings.title',
+				path: 'battery',
+				metricsItem: 'BatterySettings',
+				order: 2
+			};
+			this.headerMenuItems.push(powerObj);
+			this.commonService.sortMenuItems(this.headerMenuItems);
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, true);
+		}
+		if (!addLink) {
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, false);
+		}
 	}
 
 	public showBatteryThresholdsettings(event) {
@@ -1175,7 +1213,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			(this.conservationModeStatus && this.conservationModeStatus.available) || (this.expressChargingStatus && this.expressChargingStatus.available) ||
 			this.isChargeThresholdAvailable)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+			this.commonService.setLocalStorageValue(LocalStorageKey.IsBatteryQuickSettingAvailable, false);
+			this.updateBatteryLinkStatus(false);
 			this.checkMenuItemsEmpty();
+		} else {
+			this.updateBatteryLinkStatus(true);
 		}
 	}
 

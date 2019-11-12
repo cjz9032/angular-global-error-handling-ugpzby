@@ -149,16 +149,13 @@ export class AppComponent implements OnInit, OnDestroy {
 	} // end of addInternetListener
 
 	private launchWelcomeModal() {
-		Promise.all([this.deviceService.getIsARM(),
-			this.deviceService.getMachineInfo()])
-			.then((responses) => {
-				const status = responses[0];
-				const machineInfo = responses[1];
-				if (!status || !this.deviceService.isAndroid) {
+		this.deviceService.getIsARM()
+			.then((status: boolean) => {
+				if ((!status || !this.deviceService.isAndroid)) {
 					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 					if (tutorial === undefined && navigator.onLine) {
 						this.openWelcomeModal(1);
-					} else if (tutorial && tutorial.page === 1 && navigator.onLine && !machineInfo.isGaming) {
+					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
 						this.openWelcomeModal(2);
 					}
 				}
@@ -372,7 +369,12 @@ export class AppComponent implements OnInit, OnDestroy {
 				case TranslationNotification.TranslationLoaded:
 					this.logger.info(`AppComponent.onNotification`, notification);
 					// launch welcome modal once translation is loaded, meanwhile show spinner from home component
-					this.launchWelcomeModal();
+					this.deviceService.getMachineInfo()
+					.then((info) => {
+						if (info && !info.isGaming) {
+							this.launchWelcomeModal();
+						}
+					}).catch((error) => {});
 					break;
 				default:
 					break;

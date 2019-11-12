@@ -189,5 +189,6 @@ export enum LocalStorageKey {
 	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
 	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
-	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable'
+	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
+	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable'
 }
