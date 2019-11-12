@@ -818,6 +818,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 	}
+	// checking self select status for HW Settings
 	private getSelfSelectStatus() {
 		this.dashboardService.getSelfSelectStatus().then(value => {
 			this.showQuickSettings = value;

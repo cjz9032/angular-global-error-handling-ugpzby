@@ -35,6 +35,7 @@ import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -99,7 +100,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		// private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		private searchService: AppSearchService
+		private searchService: AppSearchService,
+		public dashboardService: DashboardService,
+
 	) {
 	}
 
@@ -243,7 +246,12 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
-			this.showSmartAssist();
+			// checking self select status for HW Settings
+			this.dashboardService.getSelfSelectStatus().then(value => {
+				if (value === true) {
+					this.showSmartAssist();
+				}
+			});
 		}
 		if (machineType === 1) {
 			this.initInputAccessories();

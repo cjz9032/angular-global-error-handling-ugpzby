@@ -375,6 +375,7 @@ export class DashboardService {
 		};
 
 	}
+	// checking self select status for HW Settings
 	public getSelfSelectStatus(): Promise<boolean> {
 		let response = false;
 		return this.localInfoService.getLocalInfo().then(result => {
