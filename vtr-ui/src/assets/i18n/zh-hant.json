@@ -843,9 +843,9 @@
                             "cancel": "取消"
                         },
                         "options": {
-                            "start": "低於下列百分比時開始充電",
+                            "start": "低於以下電量時開始充電",
                             "checkboxText": "自動將開始充電臨界值設定為停止充電臨界值減 5%. ",
-                            "stop": "達到下列百分比時停止充電"
+                            "stop": "停止充電閾值"
                         }
                     },
                     "expressCharging": {

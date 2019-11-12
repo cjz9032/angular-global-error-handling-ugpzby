@@ -843,9 +843,9 @@
                             "cancel": "取消"
                         },
                         "options": {
-                            "start": "下面开始充电",
+                            "start": "低于以下电量时开始充电",
                             "checkboxText": "自动将启动充电阈值设置为低于停止充电阈值5个百分点. ",
-                            "stop": "停止充电"
+                            "stop": "停止充电阈值"
                         }
                     },
                     "expressCharging": {
