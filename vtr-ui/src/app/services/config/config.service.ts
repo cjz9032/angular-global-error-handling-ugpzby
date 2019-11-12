@@ -5,14 +5,14 @@ import {
 	DeviceService
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
+import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { SegmentConst } from '../self-select/self-select.service';
 
 declare var Windows;
 
@@ -31,7 +31,6 @@ export class ConfigService {
 	appName = 'Vantage';
 	menuItemsGaming = menuItemsGaming;
 	menuItems = menuItems;
-	menuItemsPrivacy = menuItemsPrivacy;
 	appSearch = appSearch;
 	betaItem = betaItem;
 	showCHSMenu = false;
@@ -64,7 +63,7 @@ export class ConfigService {
 			const isBetaUser = this.commonService.getBetaUser();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
-			const segment: string = localInfo.Segment ? localInfo.Segment.toLowerCase() : 'commercial';
+			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
 				if (isBetaUser && this.deviceService.showSearch) {
@@ -74,10 +73,9 @@ export class ConfigService {
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			if (this.deviceService.showPrivacy) {
-				resultMenu = Object.assign([], this.menuItemsPrivacy);
-			} else {
-				resultMenu = Object.assign([], this.menuItems);
+			resultMenu = Object.assign([], this.menuItems);
+			if (!this.deviceService.showPrivacy) {
+				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
 			}
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
@@ -100,7 +98,7 @@ export class ConfigService {
 				}
 			}
 			resultMenu = this.segmentFilter(resultMenu, segment);
-			resolve(resultMenu);
+			resolve(resultMenu.filter(item => !item.hide));
 		});
 	}
 
@@ -134,7 +132,7 @@ export class ConfigService {
 						metricsItem: 'link.internetprotection',
 						routerLinkActiveOptions: { exact: true },
 						icon: '',
-						segment: '-[commercial]',
+						segment: `-[${SegmentConst.Commercial}]`,
 						subitems: []
 					});
 				}

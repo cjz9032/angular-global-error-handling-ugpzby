@@ -34,6 +34,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -144,7 +145,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.localInfoService
 			.getLocalInfo()
 			.then((result) => {
-				this.segment = result.Segment ? result.Segment.toLowerCase() : 'commercial';
+				this.segment = result.Segment ? result.Segment : SegmentConst.Commercial;
 				this.initUnreadMessage();
 				this.getMenuItems().then((items) => {
 					const securityItem = items.find((item) => item.id === 'security');
@@ -152,7 +153,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 						if (cacheShowWindowsHello) {
 							const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-							if (!windowsHelloItem && this.segment !== 'commercial') {
+							if (!windowsHelloItem && this.segment !== SegmentConst.Commercial) {
 								securityItem.subitems.push({
 									id: 'windows-hello',
 									label: 'common.menu.security.sub6',
@@ -493,7 +494,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 				} else {
 					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-					if (!windowsHelloItem && this.segment !== 'commercial') {
+					if (!windowsHelloItem && this.segment !== SegmentConst.Commercial) {
 						securityItem.subitems.push({
 							id: 'windows-hello',
 							label: 'common.menu.security.sub6',
