@@ -1,4 +1,4 @@
-<div *ngIf="showedArticle" class="article-widget">
+<div *ngIf="showedArticle" class="article-widget" data-analyticsName="Article">
 	<div class="article-widget__top-description">
 		<p class="article-widget__title">Privacy hub</p>
 		<a class="article-widget__link"
@@ -18,11 +18,10 @@
 		<ng-container *ngIf="article">
 			<vtr-article-description
 				[article]="article"
-				data-analyticsName="ArticlePopup">
+				data-analyticsName="Article.ArticlePopup">
 			</vtr-article-description>
-			<div class="all-articles-block">
+			<div class="all-articles-block" data-analyticsName="Article.ArticlePopup">
 				<a class="all-articles-link"
-				   data-analyticsName="NewsPopup"
 				   vtrSendAnalytics
 				   [metricsEvent]="'ItemClick'"
 				   [metricsItem]="'ArticlesSeeAllButton'"

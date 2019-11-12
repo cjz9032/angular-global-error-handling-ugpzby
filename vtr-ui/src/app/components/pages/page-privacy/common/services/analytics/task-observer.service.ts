@@ -80,6 +80,7 @@ export class TaskObserverService {
 		).subscribe((result) => {
 			const taskActionData = {
 				...result,
+				TaskName: `Privacy.${result.TaskName}`,
 				TaskCount: 1,
 			};
 			this.analyticsService.sendTaskActionData(taskActionData);

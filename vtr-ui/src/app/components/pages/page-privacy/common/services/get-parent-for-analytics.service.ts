@@ -31,23 +31,6 @@ export class GetParentForAnalyticsService {
 	}
 
 	getPageName() {
-		switch (this.routerChangeHandlerService.currentRoute) {
-			case RoutersName.PRIVACY:
-				return 'Privacy';
-			case RoutersName.BREACHES:
-				return 'Privacy.BreachedAccounts';
-			case RoutersName.TRACKERS:
-				return 'Privacy.VisibleToOnlineTrackers';
-			case RoutersName.BROWSERACCOUNTS:
-				return 'Privacy.NonPrivatePassword';
-			case  RoutersName.LANDING:
-				return 'Privacy.Landing';
-			case RoutersName.ARTICLES:
-				return 'Privacy.ArticleAll';
-			case RoutersName.ARTICLEDETAILS:
-				return 'Privacy.Article';
-			default:
-				return '';
-		}
+		return 'Privacy';
 	}
 }

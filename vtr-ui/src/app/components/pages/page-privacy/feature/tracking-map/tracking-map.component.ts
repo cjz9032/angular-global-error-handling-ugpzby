@@ -64,7 +64,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	sendAnalytics() {
 		this.analyticsService.sendItemClickData({
 			ItemName: 'WebsiteTrackersDetailItem',
-			ItemParent: this.getParentForAnalyticsService.getPageName() + '.' + 'WebsiteTrackersBlock',
+			ItemParent: this.getParentForAnalyticsService.getPageName() + '.VisibleToOnlineTrackers.WebsiteTrackersBlock',
 		});
 	}
 

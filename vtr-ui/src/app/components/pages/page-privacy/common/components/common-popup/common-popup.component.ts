@@ -25,33 +25,29 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			ItemName: 'BreachedAccountsClosePopupButton',
 			ItemParent: 'ConfirmYourEmailPopup',
 		},
-		'low-privacy-popup': {
-			ItemName: 'ScorePopupCloseButton',
-			ItemParent: 'ScorePopup',
-		},
 		choseBrowserPopup: {
 			ItemName: 'WebsiteTrackersClosePopupButton',
 			ItemParent: 'WebsiteTrackersPopup',
 		},
 		'support-popup': {
 			ItemName: 'HelpPopupCloseButton',
-			ItemParent: 'HelpPopup',
+			ItemParent: 'Home.HelpPopup',
 		},
 		oneClickScan: {
 			ItemName: 'ScorePopupCloseButton',
-			ItemParent: 'ScorePopup',
+			ItemParent: 'Home.ScorePopup',
 		},
 		trackingMapSingle: {
 			ItemName: 'WebsiteTrackersDetailCloseButton',
-			ItemParent: 'DetailPopup',
+			ItemParent: 'VisibleToOnlineTrackers.DetailPopup',
 		},
 		removePassword: {
 			ItemName: 'NonPrivatePasswordsClosePopupButton',
-			ItemParent: 'HowToRemoveAccountsPopup',
+			ItemParent: 'NonPrivatePassword.HowToRemoveAccountsPopup',
 		},
 		[VIDEO_POPUP_ID]: {
 			ItemName: 'VideoCloseButton',
-			ItemParent: 'VideoPopup',
+			ItemParent: 'Home.VideoPopup',
 		}
 	};
 

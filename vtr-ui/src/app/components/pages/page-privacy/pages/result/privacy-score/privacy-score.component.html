@@ -1,4 +1,4 @@
-<div class="privacy-score" data-analyticsName="ScoreBlock" [vtrAppSearchScroller]="['search-privacy-score']">
+<div class="privacy-score" data-analyticsName="Home.ScoreBlock" [vtrAppSearchScroller]="['search-privacy-score']">
 	<div class="privacy-score__picture score-pic">
 		<div [class]="'score-pic__circle score-pic__circle--' + privacyLevel">
 			<div *ngIf="(isFirstTimeVisitor$ | async)" class="score-pic__symbol">
@@ -42,6 +42,6 @@
 </div>
 <vtr-common-popup popUpId="oneClickScan" size="big">
 	<ng-template>
-		<vtr-one-click-scan popupId="oneClickScan"></vtr-one-click-scan>
+		<vtr-one-click-scan popupId="oneClickScan" data-analyticsName="Home.ScorePopup"></vtr-one-click-scan>
 	</ng-template>
 </vtr-common-popup>
