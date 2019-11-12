@@ -168,7 +168,7 @@
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
 									(keyup.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a ngbDropdownItem
-									*ngIf="!subitem.externallink && subitem.path==='support'"
+									*ngIf="!subitem.externallink && subitem.path==='support' && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
@@ -185,7 +185,7 @@
 									href="javascript:void(0)"
 									role="menuitem">{{subitem.label | translate}}</a>
 								<a ngbDropdownItem
-									*ngIf="!subitem.externallink  && subitem.path!=='support'"
+									*ngIf="!subitem.externallink  && subitem.path!=='support' && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"

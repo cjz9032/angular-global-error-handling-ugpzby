@@ -149,16 +149,17 @@
 		"label": "common.menu.security.title",
 		"path": "security",
 		"icon": ["fal", "lock"],
+		"segment": "-[commercial]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
-		"brand": "-[think]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",
 			"label": "common.menu.security.sub1",
 			"path": null,
 			"icon": null,
+			"segment": "-[commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.mysecurity",
@@ -171,6 +172,7 @@
 			"label": "common.menu.security.sub2",
 			"path": "anti-virus",
 			"icon": null,
+			"segment": "-[commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.antivirus",
@@ -194,6 +196,7 @@
 			"id": "password-protection",
 			"label": "common.menu.security.sub4",
 			"path": "password-protection",
+			"segment": "-[commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.passwordprotection",
@@ -204,19 +207,28 @@
 			"subitems": []
 		}]
 	}, {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
+		"id": "security",
+		"label": "common.menu.security.title",
 		"path": "security/wifi-security",
 		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"forArm": false,
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"subitems": []
+		"metricsItem": "link.security",
+	    "segment": "+[commercial]",
+		"forArm": false,
+		"subitems": [{
+			"id": "wifi-security",
+			"label": "common.menu.security.sub3",
+			"path": null,
+			"icon": null,
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.wifisecurity",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"subitems": []
+		}]
 	}, {
 		"id": "support",
 		"label": "common.menu.support",
@@ -235,7 +247,7 @@
 		"id": "home-security",
 		"label": "common.menu.homeSecurity",
 		"path": "home-security",
-		"brand": "-[think]",
+		"segment": "-[commercial]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.homesecurity",
@@ -348,13 +360,14 @@
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
-		"brand": "-[think]",
+		"segment": "-[commercial]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",
 			"label": "common.menu.security.sub1",
 			"path": null,
 			"icon": null,
+			"segment": "-[commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.mysecurity",
@@ -367,6 +380,7 @@
 			"label": "common.menu.security.sub2",
 			"path": "anti-virus",
 			"icon": null,
+			"segment": "-[commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.antivirus",
@@ -390,6 +404,7 @@
 			"id": "password-protection",
 			"label": "common.menu.security.sub4",
 			"path": "password-protection",
+			"segment": "-[commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.passwordprotection",
@@ -400,20 +415,29 @@
 			"subitems": []
 		}]
 	}, {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
+		"id": "security",
+		"label": "common.menu.security.title",
 		"path": "security/wifi-security",
 		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"forArm": false,
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"subitems": []
-	}, {
+		"metricsItem": "link.security",
+	    "segment": "+[commercial]",
+		"forArm": false,
+		"subitems": [{
+			"id": "wifi-security",
+			"label": "common.menu.security.sub3",
+			"path": null,
+			"icon": null,
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.wifisecurity",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"subitems": []
+		}]
+	},{
 		"id": "support",
 		"label": "common.menu.support",
 		"path": "support",
@@ -431,7 +455,7 @@
 		"id": "home-security",
 		"label": "common.menu.homeSecurity",
 		"path": "home-security",
-		"brand": "-[think]",
+		"segment": "-[commercial]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.homesecurity",

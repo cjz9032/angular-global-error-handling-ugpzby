@@ -24,7 +24,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 	toggleDeviceStatistics = false;
-	toggleBetaStatistics = false;
+	toggleBetaProgram = false;
 
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
@@ -125,7 +125,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.getDeviceStatisticsPreference();
 		}
 		if (this.commonService) {
-			this.toggleBetaStatistics = this.commonService.getBetaUser();
+			this.toggleBetaProgram = this.commonService.getBetaUser();
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -251,9 +251,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
-	onToggleOfBetaStatistics(event: any) {
-		this.toggleBetaStatistics = event.switchValue;
-		this.commonService.setBetaUser(this.toggleBetaStatistics);
+	onToggleOfBetaProgram(event: any) {
+		this.toggleBetaProgram = event.switchValue;
+		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
+		this.commonService.setBetaUser(this.toggleBetaProgram);
 		this.configService.notifyMenuChange();
 	}
 

@@ -33,6 +33,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -67,7 +68,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
-
+	segment: string;
 	UnreadMessageCount = {
 		totalMessage: 0,
 		lmaMenuClicked: false,
@@ -143,39 +144,38 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.localInfoService
 			.getLocalInfo()
 			.then((result) => {
+				this.segment = result.Segment ? result.Segment.toLowerCase() : 'commercial';
 				this.initUnreadMessage();
-			});
-		this.getMenuItems().then((items) => {
-			const securityItem = items.find((item) => item.id === 'security');
-			if (securityItem) {
-				const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-				if (cacheShowWindowsHello) {
-
-					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-					if (!windowsHelloItem) {
-						securityItem.subitems.push({
-							id: 'windows-hello',
-							label: 'common.menu.security.sub6',
-							path: 'windows-hello',
-							icon: '',
-							metricsEvent: 'itemClick',
-							metricsParent: 'navbar',
-							metricsItem: 'link.windowshello',
-							routerLinkActiveOptions: { exact: true },
-							subitems: []
+				this.getMenuItems().then((items) => {
+					const securityItem = items.find((item) => item.id === 'security');
+					if (securityItem) {
+						const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+						if (cacheShowWindowsHello) {
+							const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
+							if (!windowsHelloItem && this.segment !== 'commercial') {
+								securityItem.subitems.push({
+									id: 'windows-hello',
+									label: 'common.menu.security.sub6',
+									path: 'windows-hello',
+									icon: '',
+									metricsEvent: 'itemClick',
+									metricsParent: 'navbar',
+									metricsItem: 'link.windowshello',
+									routerLinkActiveOptions: { exact: true },
+									subitems: []
+								});
+							}
+						}
+						const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
+						if (windowsHello.fingerPrintStatus) {
+							this.showWindowsHelloItem(windowsHello);
+						}
+						windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
+							this.showWindowsHelloItem(windowsHello);
 						});
 					}
-
-				}
-				const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
-				if (windowsHello.fingerPrintStatus) {
-					this.showWindowsHelloItem(windowsHello);
-				}
-				windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-					this.showWindowsHelloItem(windowsHello);
 				});
-			}
-		});
+			});
 
 		this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
@@ -442,6 +442,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				case MenuItem.MenuItemChange:
 					this.initComponent();
 					break;
+				// case SelfSelectEvent.SegmentChange: // When need immediately refresh menu use this code
+				// 	this.initComponent();
+				// 	break;
 				default:
 					break;
 			}
@@ -490,7 +493,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 				} else {
 					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-					if (!windowsHelloItem) {
+					if (!windowsHelloItem && this.segment !== 'commercial') {
 						securityItem.subitems.push({
 							id: 'windows-hello',
 							label: 'common.menu.security.sub6',

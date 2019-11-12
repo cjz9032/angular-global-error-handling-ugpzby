@@ -92,23 +92,22 @@
 							<div class="col-10 mx-auto ">
 								<vtr-container-collapsible
 									[tabIndex]="0"
-									name="SettingsOther"
+									name="SettingsBeta"
 									[cardTitle]="'settings.betaSettingTitle' | translate "
 									[isCollapsed]="false">
 									<ul class="list-group list-group-flush">
 										<li>
 											<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
-												[name]="'settingsBetaStatisticsToggle'"
-												[switchId]="'settingsBetaStatisticsToggle'"
-												[vtrAppSearchScroller]="['search-preference-statistics']"
-												id="settings-betaStatisticsToggle"
-												aria-label="settings-bataStatisticsToggle"
+												[name]="'settingsBetaProgramToggle'"
+												[switchId]="'settingsBetaProgramToggle'"
+												[vtrAppSearchScroller]="['search-preference-beta']"
+												id="settings-betaProgramToggle"
 												[caption]="'settings.betaSettingDescription' | translate"
 												[isSwitchVisible]=true
 												[isLastChild]=true
 												[leftIcon]="betaSettings[0].leftImageSource"
-												[isSwitchChecked]="toggleBetaStatistics"
-												(toggleOnOff)="onToggleOfBetaStatistics($event)">
+												[isSwitchChecked]="toggleBetaProgram"
+												(toggleOnOff)="onToggleOfBetaProgram($event)">
 											</vtr-ui-row-switch>
 										</li>
 									</ul>
