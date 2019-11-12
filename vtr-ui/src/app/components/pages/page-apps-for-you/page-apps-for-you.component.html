@@ -45,7 +45,7 @@
 								metricsItem="btn.Downloading"
 								[isDisabled]="true"
 								[isFullWidth]="true"
-								label="Downloading"></vtr-ui-button>
+								[label]="'appsForYou.appDetails.installButton.downloading' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
 								metricsItem="btn.Installing"

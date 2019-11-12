@@ -300,7 +300,7 @@ export class AppsForYouService {
 	cancelInstall() {
 		this.isCancelInstall = true;
 		if (this.cancelToken) {
-			this.cancelToken.cancel();
+			// this.cancelToken.cancel();
 		}
 	}
 
