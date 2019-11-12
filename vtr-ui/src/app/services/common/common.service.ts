@@ -194,6 +194,25 @@ export class CommonService {
 		return array.filter(e => e.id !== id);
 	}
 
+	public isPresent(array: any[], path: string) {
+		return array.some(e => e.path === path);
+	}
+
+	public sortMenuItems(menuItems) {
+		if (menuItems) {
+			return menuItems.sort((item1, item2) => {
+				let comparison = 0;
+				if (item1.order > item2.order) {
+					comparison = 1;
+				} else if (item1.order < item2.order) {
+					comparison = -1;
+				}
+				return comparison;
+			});
+		}
+		return undefined;
+	}
+
 	public getCapabalitiesNotification(): Observable<any> {
 		return this.gamingCapabalities.asObservable();
 	}
