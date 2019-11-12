@@ -144,7 +144,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
 			this.activeModal.close(tutorialData);
-			this.selfSelectService.saveConfig();
+			this.selfSelectService.saveConfig(true);
 		}
 		this.page = ++page;
 	}

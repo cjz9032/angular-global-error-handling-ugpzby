@@ -59,7 +59,7 @@ export class UPEService {
 		return new Promise((resolve, reject) => {
 			const win: any = window;
 			let cred = null;
-			if (win.VantageStub) {
+			if (win.VantageStub && win.VantageStub.getCredential) {
 				cred = win.VantageStub.getCredential(this.CredNameUPEAPIKey);
 			}
 
@@ -152,7 +152,7 @@ export class UPEService {
 	private getUPEUserID() {
 		const win: any = window;
 		let uuid;
-		if (win.VantageStub) {
+		if (win.VantageStub && win.VantageStub.getCredential) {
 			const cred = win.VantageStub.getCredential(this.CredNameUPEUserID);
 			if (cred) {
 				uuid = cred.password;

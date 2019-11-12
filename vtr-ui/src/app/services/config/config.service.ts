@@ -5,13 +5,14 @@ import {
 	DeviceService
 } from 'src/app/services/device/device.service';
 import { CommonService } from '../common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { menuItemsGaming, menuItems, menuItemsPrivacy, appSearch, betaItem } from 'src/assets/menu/menu.json';
+import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { LocalInfoService } from '../local-info/local-info.service';
+import { SegmentConst } from '../self-select/self-select.service';
 
 declare var Windows;
 
@@ -30,7 +31,6 @@ export class ConfigService {
 	appName = 'Vantage';
 	menuItemsGaming = menuItemsGaming;
 	menuItems = menuItems;
-	menuItemsPrivacy = menuItemsPrivacy;
 	appSearch = appSearch;
 	betaItem = betaItem;
 	showCHSMenu = false;
@@ -41,7 +41,8 @@ export class ConfigService {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private logger: LoggerService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private localInfoService: LocalInfoService) {
 			this.menuItemSubject = new BehaviorSubject<AppNotification>(
 				new AppNotification(MenuItem.MenuItemChange, 'init')
 			);
@@ -61,7 +62,8 @@ export class ConfigService {
 		return new Promise(async (resolve, reject) => {
 			const isBetaUser = this.commonService.getBetaUser();
 			const machineInfo = await this.deviceService.getMachineInfo();
-			const brand: string = machineInfo.brand;
+			const localInfo = await this.localInfoService.getLocalInfo();
+			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
 				if (isBetaUser && this.deviceService.showSearch) {
@@ -71,10 +73,9 @@ export class ConfigService {
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			if (this.deviceService.showPrivacy && brand.toLowerCase() !== 'think') {
-				resultMenu = Object.assign([], this.menuItemsPrivacy);
-			} else {
-				resultMenu = Object.assign([], this.menuItems);
+			resultMenu = Object.assign([], this.menuItems);
+			if (!this.deviceService.showPrivacy) {
+				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
 			}
 			if (this.hypSettings) {
 				await this.initShowCHSMenu().then((result) => {
@@ -96,7 +97,7 @@ export class ConfigService {
 					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
 				}
 			}
-			resultMenu = this.brandFilter(resultMenu);
+			resultMenu = this.segmentFilter(resultMenu, segment);
 			resolve(resultMenu.filter(item => !item.hide));
 		});
 	}
@@ -131,6 +132,7 @@ export class ConfigService {
 						metricsItem: 'link.internetprotection',
 						routerLinkActiveOptions: { exact: true },
 						icon: '',
+						segment: `-[${SegmentConst.Commercial}]`,
 						subitems: []
 					});
 				}
@@ -144,21 +146,20 @@ export class ConfigService {
 		}
 	}
 
-	brandFilter(menu: Array<any>) {
-		const machineInfo = this.deviceService.getMachineInfoSync();
-		if (!machineInfo) { return menu; }
-		const brand: string = machineInfo.brand;
-		if (!brand) { return menu; }
+	segmentFilter(menu: Array<any>, segment: string) {
+		if (!segment) { return menu; }
 		menu.forEach(element => {
-			if (element.hide) { return; }
-			if (element.brand) {
-				const mode = element.brand.charAt(0);
-				const brands = element.brand.substring(2, element.brand.length - 1).split(',');
+			if (element.segment) {
+				const mode = element.segment.charAt(0);
+				const segments = element.segment.substring(2, element.segment.length - 1).split(',');
 				if (mode === '+') {
-					element.hide = !brands.includes(brand);
+					element.hide = !segments.includes(segment);
 				} else if (mode === '-') {
-					element.hide = brands.includes(brand);
+					element.hide = segments.includes(segment);
 				}
+			}
+			if (element.subitems.length > 0) {
+				element.subitems = this.segmentFilter(element.subitems, segment);
 			}
 		});
 		return menu;

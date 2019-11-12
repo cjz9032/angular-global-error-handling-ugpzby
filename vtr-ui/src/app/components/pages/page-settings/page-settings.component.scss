@@ -23,11 +23,7 @@
 		letter-spacing: 0.05rem;
 
 		:host-context(.is-gaming) {
-			.usage-selection {
-				display: none;
-				visibility: hidden;
-			}
-			.split-line-for-usage {
+			.user-profile-section {
 				display: none;
 				visibility: hidden;
 			}

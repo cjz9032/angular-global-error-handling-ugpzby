@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
 import { DeviceService } from '../device/device.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
@@ -24,9 +25,9 @@ export class GuardService {
 	constructor(
 		shellService: VantageShellService,
 		private commonService: CommonService,
-		private router: Router,
 		private adPolicy: AdPolicyService,
 		private deviceService: DeviceService,
+		private guardConstants: GuardConstants,
 		private timerService: TimerServiceEx) {
 
 		this.metrics = shellService.getMetrics();
@@ -106,7 +107,7 @@ export class GuardService {
 		if (routerStateSnapshot.url.includes('system-updates') &&
 			(!this.adPolicy.IsSystemUpdateEnabled ||
 				this.deviceService.isSMode)) {
-			return this.router.parseUrl('/dashboard');
+			return this.guardConstants.defaultRoute;
 		}
 		return true;
 	}

@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
-import { CommonService } from '../common/common.service';
-import { DeviceService } from '../device/device.service';
-import { retry } from 'rxjs/operators';
+import { CanActivate } from '@angular/router';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class VpnGuardService implements CanActivate {
 	constructor(
-		private router: Router,
-		private localInfoService: LocalInfoService) { }
+		private localInfoService: LocalInfoService,
+		private guardConstants: GuardConstants
+	) { }
 
 	canActivate() {
 		let region;
@@ -29,7 +28,7 @@ export class VpnGuardService implements CanActivate {
 
 	getCanActivate(region) {
 		if (region === 'cn') {
-			return this.router.parseUrl('dashboard');
+			return this.guardConstants.defaultRoute;
 		}
 		return true;
 	}

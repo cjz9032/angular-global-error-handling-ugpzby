@@ -2567,6 +2567,7 @@
 			"installButton": {
 				"install": "Install",
 				"installing": "Installing",
+				"downloading": "Downloading",
 				"installed": "Installed",
 				"launch": "Launch",
 				"seeMore": "See More"

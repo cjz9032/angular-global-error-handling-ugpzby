@@ -174,11 +174,14 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					if (!this.isOnline) {
-						this.appsForYouService.cancelInstall();
-					} else {
-						this.appsForYouService.resetCancelInstall();
+					const currentOnline = notification.payload.isOnline;
+					if (this.isOnline !== currentOnline) {
+						this.isOnline = currentOnline;
+						if (!currentOnline) {
+							this.appsForYouService.cancelInstall();
+						} else {
+							this.appsForYouService.resetCancelInstall();
+						}
 					}
 					break;
 				case AppsForYouEnum.GetAppDetailsRespond:
@@ -216,6 +219,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 						}
 					}
+					break;
+				case AppsForYouEnum.InstallationCancelled:
+					this.appsForYouService.resetCancelInstall();
 					break;
 				case AppsForYouEnum.GetAppStatusResult:
 					this.updateInstallButtonStatus(notification.payload);

@@ -95,193 +95,11 @@
 		"sMode": true,
 		"subitems": []
 	}, {
-		"id": "device",
-		"label": "common.menu.device.title",
-		"path": "device",
-		"icon": ["fal", "laptop"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.device",
-		"forArm": false,
-		"sMode": true,
-		"subitems": [{
-			"id": "device",
-			"label": "common.menu.device.sub1",
-			"path": null,
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.mydevice",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"sMode": true,
-			"subitems": []
-		}, {
-			"id": "device-settings",
-			"label": "common.menu.device.sub2",
-			"path": "device-settings",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "device.navbar",
-			"metricsItem": "link.mydevicesettings",
-			"routerLinkActiveOptions": {
-				"exact": false
-			},
-			"sMode": true,
-			"subitems": []
-		}, {
-			"id": "system-updates",
-			"label": "common.menu.device.sub3",
-			"path": "system-updates",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.systemupdates",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
-			"subitems": []
-		}]
-	}, {
-		"id": "security",
-		"label": "common.menu.security.title",
-		"path": "security",
-		"icon": ["fal", "lock"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.security",
-		"brand": "-[think]",
-		"forArm": false,
-		"subitems": [{
-			"id": "security",
-			"label": "common.menu.security.sub1",
-			"path": null,
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.mysecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "anti-virus",
-			"label": "common.menu.security.sub2",
-			"path": "anti-virus",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.antivirus",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "wifi-security",
-			"label": "common.menu.security.sub3",
-			"path": "wifi-security",
-			"icon": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.wifisecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		}, {
-			"id": "password-protection",
-			"label": "common.menu.security.sub4",
-			"path": "password-protection",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.passwordprotection",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": null,
-			"subitems": []
-		}]
-	}, {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
-		"path": "security/wifi-security",
-		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"forArm": false,
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"subitems": []
-	}, {
-		"id": "support",
-		"label": "common.menu.support",
-		"path": "support",
-		"icon": ["fal", "wrench"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.support",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": false,
-		"sMode": true,
-		"subitems": []
-	},{
-		"id": "home-security",
-		"label": "common.menu.homeSecurity",
-		"path": "home-security",
-		"brand": "-[think]",
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.homesecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"icon": ["fal", "home-lg-alt"],
-		"forArm": false,
-		"subitems": [],
-		"pre": [
-			"assets/images/connected-home-security/welcome-slide1@2x.png"
-		]
-	},{
-		"id": "user",
-		"label": "User",
-		"path": "user",
-		"icon": "user",
-		"metricsEvent": "ItemClick",
-		"metricsParent": "NavigationLenovoAccount.Submenu",
-		"metricsItem": "link.user",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}],
-    "menuItemsPrivacy": [{
-		"id": "dashboard",
-		"label": "common.menu.dashboard",
-		"path": "dashboard",
-		"icon": ["fal", "columns"],
-		"metricsEvent": "itemClick",
-		"metricsParent": "navbar",
-		"metricsItem": "link.dashboard",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"forArm": true,
-		"sMode": true,
-		"subitems": []
-	}, {
 		"id": "privacy",
 		"label": "common.menu.privacy",
 		"path": "privacy",
 		"icon": ["fal", "user-shield"],
+		"segment": "-[Commercial]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.privacy",
@@ -345,16 +163,17 @@
 		"label": "common.menu.security.title",
 		"path": "security",
 		"icon": ["fal", "lock"],
+		"segment": "-[Commercial]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.security",
-		"brand": "-[think]",
 		"forArm": false,
 		"subitems": [{
 			"id": "security",
 			"label": "common.menu.security.sub1",
 			"path": null,
 			"icon": null,
+			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.mysecurity",
@@ -367,6 +186,7 @@
 			"label": "common.menu.security.sub2",
 			"path": "anti-virus",
 			"icon": null,
+			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.antivirus",
@@ -390,6 +210,7 @@
 			"id": "password-protection",
 			"label": "common.menu.security.sub4",
 			"path": "password-protection",
+			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.passwordprotection",
@@ -400,19 +221,28 @@
 			"subitems": []
 		}]
 	}, {
-		"id": "wifi-security",
-		"label": "common.menu.security.sub3",
+		"id": "security",
+		"label": "common.menu.security.title",
 		"path": "security/wifi-security",
 		"icon": ["fal", "lock"],
-		"brand": "+[think]",
-		"forArm": false,
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
-		"metricsItem": "link.wifisecurity",
-		"routerLinkActiveOptions": {
-			"exact": true
-		},
-		"subitems": []
+		"metricsItem": "link.security",
+	    "segment": "+[Commercial]",
+		"forArm": false,
+		"subitems": [{
+			"id": "wifi-security",
+			"label": "common.menu.security.sub3",
+			"path": null,
+			"icon": null,
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.wifisecurity",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"subitems": []
+		}]
 	}, {
 		"id": "support",
 		"label": "common.menu.support",
@@ -427,11 +257,11 @@
 		"forArm": false,
 		"sMode": true,
 		"subitems": []
-	}, {
+	},{
 		"id": "home-security",
 		"label": "common.menu.homeSecurity",
 		"path": "home-security",
-		"brand": "-[think]",
+		"segment": "-[Commercial]",
 		"metricsEvent": "itemClick",
 		"metricsParent": "navbar",
 		"metricsItem": "link.homesecurity",
@@ -444,7 +274,7 @@
 		"pre": [
 			"assets/images/connected-home-security/welcome-slide1@2x.png"
 		]
-	}, {
+	},{
 		"id": "user",
 		"label": "User",
 		"path": "user",

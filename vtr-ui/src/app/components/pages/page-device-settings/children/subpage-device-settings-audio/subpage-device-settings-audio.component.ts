@@ -92,6 +92,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	initDolbyAudioFromCache() {
 		try {
+			this.dolbyModeResponse.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, true);
 			this.dolbyAudioToggleCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
 			if (this.dolbyAudioToggleCache !== undefined) {
 				this.autoDolbyFeatureStatus.available = this.dolbyAudioToggleCache.available;
