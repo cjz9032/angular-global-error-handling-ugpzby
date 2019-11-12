@@ -14,6 +14,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -26,18 +27,33 @@ export class PageAutocloseComponent implements OnInit {
 	public autoCloseAppList: any;
 	// Toggle status
 	isOnline = true;
-	toggleStatus: boolean;
+	toggleStatus: boolean = this.gamingAutoCloseService.getAutoCloseStatusCache() || false;
 	needToAsk: any;
 	getNeedStatus: boolean;
 	autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
 	needToAskStatusObj: AutoCloseNeedToAsk = new AutoCloseNeedToAsk();
 
 	// CMS Content block
-	cardContentPositionA: any = {};
 	cardContentPositionB: any = {};
+	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
-	private isUPEFailed = false;
-	private isCmsLoaded = false;
+	cardContentPositionFCms: any = {};
+	dynamic_metricsItem: any = 'autoclose_cms_inner_content';
+
+	upeRequestResult = {
+		positionB: true,
+		positionF: true
+	};
+
+	cmsRequestResult = {
+		positionB: true,
+		positionF: true
+	};
+
+	tileSource = {
+		positionB: 'CMS',
+		positionF: 'CMS'
+	};
 	backId = 'vtr-gaming-autoclose-btn-back';
 
 	constructor(
@@ -49,11 +65,9 @@ export class PageAutocloseComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
-		this.titleService.setTitle('gaming.common.narrator.pageTitle.autoClose');
-		this.isUPEFailed = false; // init UPE request status
-		this.isCmsLoaded = false;
 		this.setPreviousContent();
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -64,14 +78,12 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// AutoClose Init
+		this.getAutoCloseStatus();
+		this.refreshAutoCloseList();
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
-		// AutoClose Init
-		this.refreshAutoCloseList();
-		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
-		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -84,103 +96,6 @@ export class PageAutocloseComponent implements OnInit {
 		if (this.isOnline === undefined) {
 			this.isOnline = true;
 		}
-	}
-	// Get the CMS content for the container card
-	fetchCMSArticles() {
-		this.isOnline = this.commonService.isOnline;
-		const queryOptions = {
-			Page: 'dashboard'
-		};
-		this.getTileBSource().then((source) => {
-			this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(
-					response,
-					'half-width-top-image-title-link',
-					'position-F'
-				)[0];
-				if (cardContentPositionA) {
-					this.cardContentPositionA = cardContentPositionA;
-					this.gamingAutoCloseService.cardContentPositionA = cardContentPositionA;
-				}
-
-				const cardContentPositionB = this.cmsService.getOneCMSContent(
-					response,
-					'half-width-title-description-link-image',
-					'position-B'
-				)[0];
-				if (cardContentPositionB) {
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-					}
-					cardContentPositionB.DataSource = 'cms';
-
-					this.cardContentPositionBCms = cardContentPositionB;
-					this.isCmsLoaded = true;
-					if (this.isUPEFailed || source === 'CMS') {
-						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
-					}
-				}
-			});
-			if (source === 'UPE') {
-				const upeParam = {
-					position: 'position-B'
-				};
-				this.upeService.fetchUPEContent(upeParam).subscribe(
-					(upeResp) => {
-						const cardContentPositionB = this.upeService.getOneUPEContent(
-							upeResp,
-							'half-width-title-description-link-image',
-							'position-B'
-						)[0];
-						if (cardContentPositionB) {
-							this.cardContentPositionB = cardContentPositionB;
-							if (this.cardContentPositionB.BrandName) {
-								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-							}
-							// 		cardContentPositionB.DataSource = 'upe';
-							// 		this.dashboardService.cardContentPositionB = cardContentPositionB;
-							// 		this.isUPEFailed = false;
-							// 	}
-							// },
-							// (err) => {
-							// 	this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-							// 	this.isUPEFailed = true;
-							// 	if (this.isCmsLoaded) {
-							// 		this.cardContentPositionB = this.cardContentPositionBCms;
-							// 		this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
-							// 	}
-							cardContentPositionB.DataSource = 'upe';
-							this.gamingAutoCloseService.cardContentPositionB = cardContentPositionB;
-							this.isUPEFailed = false;
-						}
-					}, (err) => {
-						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-						this.isUPEFailed = true;
-						if (this.isCmsLoaded) {
-							this.cardContentPositionB = this.cardContentPositionBCms;
-							this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
-						}
-					});
-			}
-		});
-	}
-
-	private getTileBSource() {
-		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then(
-				(source) => {
-					if (source === 'UPE') {
-						resolve('UPE');
-					} else {
-						resolve('CMS');
-					}
-				},
-				() => {
-					resolve('CMS');
-				}
-			);
-		});
 	}
 
 	openTargetModal() {
@@ -203,7 +118,7 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	initTurnOnAction() {
@@ -279,7 +194,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
-			} catch (error) { }
+			} catch (error) {}
 		} else {
 			const remApp = event.app;
 			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
@@ -300,11 +215,148 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) { }
+		} catch (err) {}
+	}
+
+	// Get the CMS content for the container card
+	fetchCMSArticles() {
+		this.upeRequestResult = {
+			positionB: true,
+			positionF: true
+		};
+
+		this.cmsRequestResult = {
+			positionB: false,
+			positionF: false
+		};
+		this.isOnline = this.commonService.isOnline;
+		const queryOptions = {
+			Page: 'dashboard'
+		};
+		this.getTileSource().then(() => {
+			this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
+				if (cardContentPositionF) {
+					this.cardContentPositionFCms = cardContentPositionF;
+					this.cardContentPositionFCms.DataSource = 'cms';
+					if (!this.upeRequestResult.positionF || this.tileSource.positionF === 'CMS') {
+						this.cardContentPositionF = this.cardContentPositionFCms;
+						this.gamingAutoCloseService.cardContentPositionF = this.cardContentPositionFCms;
+					}
+				}
+
+				const cardContentPositionB = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-B'
+				)[0];
+				if (cardContentPositionB) {
+					cardContentPositionB.DataSource = 'cms';
+					this.cardContentPositionBCms = cardContentPositionB;
+					if (this.cardContentPositionBCms.BrandName) {
+						this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split('|')[0];
+					}
+					this.cmsRequestResult.positionB = true;
+					if (!this.upeRequestResult.positionB || this.tileSource.positionB === 'CMS') {
+						this.cardContentPositionB = this.cardContentPositionBCms;
+						this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
+					}
+				}
+			});
+
+			if (this.tileSource.positionB === 'UPE') {
+				const upeParam = { position: 'position-B' };
+				this.upeService.fetchUPEContent(upeParam).subscribe(
+					(upeResp) => {
+						const cardContentPositionB = this.upeService.getOneUPEContent(
+							upeResp,
+							'half-width-title-description-link-image',
+							'position-B'
+						)[0];
+						if (cardContentPositionB) {
+							this.cardContentPositionB = cardContentPositionB;
+							if (this.cardContentPositionB.BrandName) {
+								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+							}
+							this.cardContentPositionB.DataSource = 'upe';
+							this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionB;
+							this.upeRequestResult.positionB = true;
+						}
+					},
+					(err) => {
+						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+						this.upeRequestResult.positionB = false;
+						if (this.cmsRequestResult.positionB) {
+							this.cardContentPositionB = this.cardContentPositionBCms;
+							this.gamingAutoCloseService.cardContentPositionB = this.cardContentPositionBCms;
+						}
+					}
+				);
+			}
+
+			if (this.tileSource.positionF === 'UPE') {
+				const upeParam = { position: 'position-F' };
+				this.upeService.fetchUPEContent(upeParam).subscribe(
+					(upeResp) => {
+						const cardContentPositionF = this.upeService.getOneUPEContent(
+							upeResp,
+							'half-width-top-image-title-link',
+							'position-F'
+						)[0];
+						if (cardContentPositionF) {
+							this.cardContentPositionF = cardContentPositionF;
+							this.cardContentPositionF.DataSource = 'upe';
+							this.gamingAutoCloseService.cardContentPositionF = this.cardContentPositionF;
+							this.upeRequestResult.positionF = true;
+						}
+					},
+					(err) => {
+						this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
+						this.upeRequestResult.positionF = false;
+						if (this.cmsRequestResult.positionF) {
+							this.cardContentPositionF = this.cardContentPositionFCms;
+							this.gamingAutoCloseService.cardContentPositionF = this.cardContentPositionFCms;
+						}
+					}
+				);
+			}
+		});
+	}
+
+	private getTileSource() {
+		return new Promise((resolve) => {
+			this.hypService.getAllSettings().then(
+				(hyp: any) => {
+					if (hyp) {
+						this.tileSource.positionB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.positionF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
+					}
+					resolve();
+				},
+				() => {
+					resolve();
+					console.log('get tile source failed.');
+				}
+			);
+		});
 	}
 
 	private setPreviousContent() {
-		this.cardContentPositionA = this.gamingAutoCloseService.cardContentPositionA;
+		this.cardContentPositionF = this.gamingAutoCloseService.cardContentPositionF;
 		this.cardContentPositionB = this.gamingAutoCloseService.cardContentPositionB;
+	}
+
+	async getAutoCloseStatus() {
+		try {
+			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+			this.toggleStatus = await this.gamingAutoCloseService.getAutoCloseStatus();
+			this.gamingAutoCloseService.setAutoCloseStatusCache(this.toggleStatus);
+		} catch (err) {
+			console.log(`ERROR in getAutoCloseStatus()`, err);
+		}
 	}
 }

@@ -55,7 +55,7 @@
     opacity: 0.9;
     font-size: 1.7rem;
     color: $light;
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
   .alignment {
     margin-top: 1rem;
@@ -81,6 +81,12 @@
       cursor: pointer;
       font-size: 1.6rem;
       font-weight: $weight_bold;
+      @media #{$black-on-white} {
+						color: $high-contrast-blue;
+				}
+			@media #{$white-on-black} {
+        color: $yellow;
+				}
       &:hover {
         list-style: none;
         color: $light;
@@ -92,5 +98,11 @@
     color: $light;
     text-decoration: underline;
     cursor: pointer;
+    @media #{$black-on-white} {
+      color: $high-contrast-blue;
+  }
+@media #{$white-on-black} {
+  color: $yellow;
+  }
   }
 }

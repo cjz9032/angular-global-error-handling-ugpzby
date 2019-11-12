@@ -1,7 +1,9 @@
 @import "../../app.theme";
 
-.pb-20 {
-	padding-bottom: 20rem !important;
+.padding-bottom-20 {
+	@media #{$mediaquery_X44} {
+		padding-bottom: 20rem !important;
+	}
 }
 
 .vtr-page-content {

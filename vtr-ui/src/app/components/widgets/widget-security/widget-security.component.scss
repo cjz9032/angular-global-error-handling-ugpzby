@@ -12,62 +12,11 @@
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 
 		.circle-container {
-			padding-left: 4rem;
 			padding-top: 5rem;
 
-			.circle {
+			img {
 				width: 16rem;
 				height: 16rem;
-				border-radius: 50%;
-				font-size: 5rem;
-				color: $light;
-				line-height: 16rem;
-				text-align: center;
-				font-weight: $weight_bold;
-				background: $main_darker;
-
-				img {
-					width: 60%
-				}
-
-				span.percent {
-					font-size: 2.5rem;
-				}
-			}
-			.circle{
-				&.percent-0{
-					background: linear-gradient(90deg, $percent_0_dark, $percent_0_light);
-				}
-				&.percent-20{
-					background: linear-gradient(90deg, $percent_20_dark, $percent_20_light);
-				}
-				&.percent-25{
-					background: linear-gradient(90deg, $percent_25_dark, $percent_25_light);
-				}
-				&.percent-33{
-					background: linear-gradient(90deg, $percent_33_dark, $percent_33_light);
-				}
-				&.percent-40{
-					background: linear-gradient(90deg, $percent_40_dark, $percent_40_light);
-				}
-				&.percent-50{
-					background: linear-gradient(90deg, $percent_50_dark, $percent_50_light);
-				}
-				&.percent-60{
-					background: linear-gradient(90deg, $percent_60_dark, $percent_60_light);
-				}
-				&.percent-66{
-					background: linear-gradient(90deg, $percent_66_dark, $percent_66_light);
-				}
-				&.percent-75{
-					background: linear-gradient(90deg, $percent_75_dark, $percent_75_light);
-				}
-				&.percent-80{
-					background: linear-gradient(90deg, $percent_80_dark, $percent_80_light);
-				}
-				&.percent-100{
-					background: linear-gradient(90deg, $percent_100_dark, $percent_100_light);
-				}
 			}
 		}
 		.title {
@@ -79,7 +28,7 @@
 			padding-top: 5rem;
 			padding-bottom: 2rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_X4} {
+			@media #{$mediaquery_X5} {
 				padding-left: 7rem;
 				span {
 					max-width: 33rem;
@@ -97,7 +46,7 @@
 			padding-left: 1rem;
 			padding-top: 0rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_X4} {
+			@media #{$mediaquery_X5} {
 				padding-left: 7rem;
 			}
 		}
@@ -106,7 +55,7 @@
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_X4} {
+			@media #{$mediaquery_X5} {
 				padding-left: 7rem;
 			}
 			vtr-ui-button {

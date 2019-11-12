@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Розгорнути",
             "loader": "Отримання <br> статусу",
             "loading": "Завантаження...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "з",
+            "to": "до",
+            "clickToChange": "натисніть, щоб змінити"
         },
         "app-update": {
             "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage не надано доступ до мікрофона.",
                 "cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Граничне значення",
+            "conservation": "Збереження"
         },
         "systemStatus": {
             "title": "Стан системи",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Установлений акумулятор <b>не підтримується</b> цією системою та не буде заряджатися. Замініть акумулятор акумулятором Lenovo, придатним для цієї системи.",
                     "Good": "<b>Акумулятор у доброму стані.</b>",
-                    "Exhaustion": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "Exhaustion": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
                     "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
                     "NotSupportACAdapter": "<b>Адаптер змінного струму не підтримується.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер змінного струму не може забезпечити достатню потужність.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не інстальовано, або він працює неправильно. Запустіть Windows Update, щоб інсталювати останній драйвер. Ви також можете інсталювати драйвер <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">звідси</a>.",
                     "StoreLimitation": "<b>Акумулятор може заряджатися лише на {{value}}%</b> від своєї початкової повної ємності.",
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
-                    "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "PermanentError": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
                     "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
@@ -956,7 +973,7 @@
                             "close": "закрити",
                             "coolingModesList": {
                                 "list1": "Натисніть піктограму акумулятора Windows на панелі інструментів",
-                                "list2": "З’явиться індикатор акумулятора Windows, перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
+                                "list2": "Відкриється режим живлення Windows: перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Скасувати",
                             "yes": "Так",
                             "description3": "Дійсно зупинити скидання даних акумуляторного вольтметра?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Розумне очікування",
                     "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
-                    "tooltip": "Коли розумне очікування ввімкнуто, комп’ютер переключається в сучасний режим очікування перед початком використання та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Цей час оптимізується згідно з розкладом, який ви вказали. Комп’ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
+                    "tooltip": "Коли розумне очікування ввімкнуто, комп'ютер переключається в сучасний режим очікування перед запланованим ПОЧАТКОМ роботи та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Ми оптимізуємо цей період залежно від встановленого вами розкладу або проаналізованого часу використання комп'ютера. Комп'ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
                     "timer": {
-                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп'ютером",
                         "subHeading1": "Початок використання",
                         "subHeading2": "Завершення використання",
                         "subHeading3": "Використовувати цей розклад",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Будні",
                         "weekends": "Вихідні дні"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
+                    "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ"
                         },
-						"note": {
-							"sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
-							"fnKey": "Щоб скористатися спеціальною функцією, натисніть клавішу Fn і потрібну клавішу з верхнього ряду."
-						}
+                        "note": {
+                            "sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
+                            "fnKey": "Щоб скористатися спеціальною функцією, натисніть клавішу Fn і потрібну клавішу з верхнього ряду."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Функції гарячих клавіш VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Зміна функцій клавіш Fn і Ctrl",
+                    "description": "Якщо ви зазвичай натискаєте клавішу Fn замість клавіші Ctrl, функції цих двох клавіш можна поміняти.",
+                    "restartNote": "Щоб переключити функції двох клавіш, потрібно перезавантажити комп'ютер. Справді перезавантажити?"
                 },
                 "controlOptions": {
                     "more": "ДОКЛАДНІШЕ",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Автоматичний вхід",
                     "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ця функція дає змогу автоматично входити в систему після розпізнавання обличчя, якщо ви перебуваєте перед комп'ютером або підходите до нього (на відстані до 1,2 метра). На відкритому просторі поза офісом вам потрібно бути ближче до комп'ютера, а пробудження триватиме довше."
                 },
                 "zeroTouchLock": {
                     "title": "Автоматичне блокування",
@@ -1483,14 +1509,14 @@
                         "medium": "Середній"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Якщо ввімкнути цю функцію, відстань розпізнавання регулюватиметься автоматично. Ви також можете вручну встановити відстань розпізнавання за допомогою повзунка. Доступні варіанти:",
+                        "context2": "Коли ви вручну встановлюєте відстань розпізнавання, зверніть увагу на наведене нижче:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Близька: 0–0,42 м",
+                            "line2": "Середня: 0–0,60 м",
+                            "line3": "Далека: 0–1,20 м",
+                            "line4": "Максимальна відстань розпізнавання – 1,2 метра. Якщо відстань перевищує 1,2 метра, датчик не зможе виявити вашу присутність.",
+                            "line5": "Рекомендована відстань розпізнавання – 0,60 метра."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
                     "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
-                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
+                    "description4": "2. Якщо комп'ютер перебуває в режимі глибокого сну або вимкнений, автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
                     "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
                     "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
@@ -1827,22 +1853,22 @@
             "good": "НАДІЙНА",
             "malicious": "ШКІДЛИВА",
             "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Ваша оцінка безпеки показує рівень вашої безпеки в мережі. Результат залежить від того, чи:",
+            "securityScoreDepends": "Ваша безпека залежить від того, чи ви:",
             "antivirus": "Захищені ви антивірусом;",
             "password": "Маєте складні паролі та безпечно керуєте ними;",
             "vpn": "Відстежуєте вразливість мережі до нападів;",
             "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
             "windowsHello": "Захищаєте пристрій безпечними способами входу.",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Що таке сповіщення UAC?",
+            "uacText": "Служба захисту користувачів – дуже важлива функція безпеки Windows, що запобігає внесенню змін у систему з боку потенційно шкідливих програм.",
+            "windowsTitle": "Чому мені потрібна активна операційна система Windows?",
+            "windowsText": "Використання контрафактної копії Windows підвищує ризик інфікування вірусом та інших загроз безпеці.",
+            "encryptionTitle": "Що таке шифрування жорсткого диска?",
+            "encryptionText": "Шифрування всього жорсткого диска від несанкціонованого доступу допомагає захистити ваші дані, навіть у разі встановлення в інші пристрої.",
+            "passwordTitle": "Як краще захистити пароль?",
+            "passwordText": "Використовуйте спеціалізовані програми для безпечного зберігання ваших паролів замість браузерів, до яких зловмисники можуть легко отримати доступ без вашого відома.",
+            "enhanceTitle": "Що мені робити для кращого захисту?",
+            "enhanceText": "Наполегливо радимо захистити пристрої антивірусними програмами та брандмауером, та як мінімум налаштувати сповіщення UAC. Для додаткового захисту даних, використовуйте надійні паролі та шифруйте свої дані під час використання загальнодоступних мереж."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} забезпечує базовий захист вашого пристрою",
                 "unknown": "Невідома",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Отримайте кращу пропозицію тут!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "На сторінці настройок параметрів можна ввімкнути або вимкнути певні категорії сповіщень у Vantage. Зверніть увагу: навіть якщо всі категорії повідомлень відключені, ви все одно можете час від часу отримувати від Vantage повідомлення про критичні помилки системи.",
         "messagesInLenovoVantage": "Повідомлення в Lenovo Vantage",
         "appFeatures": "Функції програми",
-        "appFeaturesDescription": "Повідомлення про System Update, статті та інші важливі функції.",
+        "appFeaturesDescription": "Повідомлення про Оновлення системи, статті та інші важливі функції.",
         "marketing": "Маркетинг",
         "marketingDescription": "Рекламні повідомлення, зокрема про спеціальні пропозиції Lenovo.",
         "actionTriggered": "Сповіщення про дії",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
         "deviceStatistics": "Поділіться статистичними даними з Lenovo",
         "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
+        "userProfile": "User profile",
         "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму."
     },

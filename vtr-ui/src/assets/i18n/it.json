@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Espandi",
             "loader": "Stato di<br> recupero",
             "loading": "Caricamento in corso...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "da",
+            "to": "a",
+            "clickToChange": "fare clic per modificare"
         },
         "app-update": {
             "message": "Ciao! È disponibile una versione più recente di Vantage. Caricarla?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage non ha accesso al microfono.",
                 "cameraPrivacyNote": "Lenovo Vantage non ha accesso alla fotocamera."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Soglia",
+            "conservation": "Conservazione"
         },
         "systemStatus": {
             "title": "Stato del sistema",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "La batteria installata <b>non è supportata</b> dal sistema e non verrà caricata. Sostituire la batteria con la batteria Lenovo corretta per questo sistema.",
                     "Good": "<b>La batteria è in buone condizioni.</b>",
-                    "Exhaustion": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria.",
+                    "Exhaustion": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "Bad": "<b>Si è verificato un errore della batteria.</b> La batteria non può essere caricata/scaricata. Sostituire la batteria.",
                     "NotDetected": "<b>Nessuna batteria rilevata o</b> collegata.",
                     "NotGood": "<b>La batteria non è in buone condizioni.</b>",
                     "NotSupportACAdapter": "<b>L'adattatore CA non è supportato.</b>",
                     "LimitedACAdapterSupport": "<b>L'adattatore CA non è in grado di fornire energia sufficiente.</b>",
-                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente.",
+                    "MissingDriver": "<b>Il driver Lenovo Power Manager</b> non è installato o non funziona correttamente. Eseguire Windows Update per installare il driver più recente. È anche possibile installare il driver da <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">qui</a>.",
                     "StoreLimitation": "<b>La batteria può mantenere solo il {{value}}% della</b> sua capacità di carica completa originale.",
                     "HighTemperature": "<b>Lo scaricamento</b> è stato interrotto poiché la <b>temperatura della batteria è troppo elevata.</b>",
                     "TrickleCharge": "La batteria è <b>completamente scarica</b> e deve essere ricaricata. Questa operazione potrebbe richiedere almeno dieci ore.",
                     "OverheatedBattery": "La batteria è <b>troppo calda</b>. Rimuoverla dal computer e lasciare che si raffreddi fino a temperatura ambiente.",
-                    "PermanentError": "La batteria si è <b>deteriorata a causa del normale utilizzo.</b> La batteria non può essere caricata. Sostituire la batteria.",
+                    "PermanentError": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
                     "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
@@ -956,7 +973,7 @@
                             "close": "chiudi",
                             "coolingModesList": {
                                 "list1": "Fai clic sull'icona della batteria di Windows nella barra degli strumenti",
-                                "list2": "Viene visualizzato l'indicatore della batteria di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
+                                "list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Annulla",
                             "yes": "Sì",
                             "description3": "Interrompere la reimpostazione dell'indicatore della batteria?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Standby intelligente",
                     "description": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di inizio pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Il periodo di tempo è ottimizzato in base al piano impostato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
+                    "tooltip": "Quando la funzione Standby intelligente è abilitata, il computer passa a Standby moderno prima dell'ora di INIZIO pianificata e attiva la modalità Ibernazione dopo un determinato periodo di inattività in alimentazione a batteria. Questo periodo di tempo è ottimizzato in base alla pianificazione impostata o al tempo di utilizzo del computer riscontrato. Il computer passa dalla modalità Ibernazione a Standby moderno solo nei giorni pianificati e non quando è inattivo per i giorni pianificati consecutivi.",
                     "timer": {
-                        "heading": "Impostare l'ora in cui generalmente si utilizza il computer",
+                        "heading": "L'ora in cui generalmente si utilizza il computer",
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Nei giorni feriali",
                         "weekends": "Fine settimana"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
+                    "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "RIAVVIA",
                             "cancel": "NON ORA"
                         },
-						"note": {
-							"sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
-							"fnKey": "Per accedere alla funzione speciale, premere Fn e i tasti sulla riga superiore."
-						}
+                        "note": {
+                            "sFunKey": "Per accedere alla funzione F1-F12, premere Fn e i tasti sulla riga superiore.",
+                            "fnKey": "Per accedere alla funzione speciale, premere Fn e i tasti sulla riga superiore."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funzioni dei tasti di scelta rapida per le chiamate VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Scambio tasto Fn e Ctrl",
+                    "description": "Se di solito si preme il tasto Fn quando invece si vuole premere il tasto Ctrl, è possibile scambiare le funzioni dei due tasti.",
+                    "restartNote": "Per commutare la funzione di due tasti, è necessario riavviare il computer. Riavviare?"
                 },
                 "controlOptions": {
                     "more": "ALTRO",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Accesso automatico",
                     "caption": "Questa funzione sblocca o attiva automaticamente il computer quando l'utente si avvicina o si siede di fronte al PC.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Quando si è davanti o ci si sta avvicinando al computer (entro una distanza di 1,2 metri), questa funzione consente di accedere automaticamente al sistema dopo il riconoscimento del volto. Se si è in un ambiente esterno anziché in ufficio, è necessario essere più vicini al computer e la riattivazione richiederà più tempo."
                 },
                 "zeroTouchLock": {
                     "title": "Blocco zero touch",
@@ -1483,14 +1509,14 @@
                         "medium": "Medio"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Quando abilitata, la distanza di rilevamento verrà regolata automaticamente. È anche possibile impostare manualmente la distanza di rilevamento tramite il dispositivo di scorrimento. Le opzioni sono:",
+                        "context2": "Quando si imposta manualmente la distanza di rilevamento, fare attenzione a quanto segue:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Vicina: 0 – 0,42 metri (17 pollici)",
+                            "line2": "Media: 0 – 0,6 metri (24 pollici)",
+                            "line3": "Lontana: 0 – 1,2 metri (47 pollici)",
+                            "line4": "La distanza di rilevamento massima è di 1,2 metri. Se superiore a 1,2 metri, il sensore non rileva la presenza dell'utente.",
+                            "line5": "La distanza di rilevamento consigliata è entro 0,6 metri."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Questa funzione si basa su Windows Hello. Verificare che il riconoscimento facciale sia attivo nelle impostazioni di Windows.",
                     "description2": "La funzione utilizza sensori e fotocamera per rilevare la presenza dell'utente. Tuttavia, non raccoglie alcun dato personale.",
                     "description3": "1. Se il computer è in modalità tenda, tablet o supporto, queste funzioni potrebbero non funzionare correttamente.",
-                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento. L'accesso automatico non funzionerà.",
+                    "description4": "2. Se il computer è in modalità Ibernazione o è stato spento, l'accesso automatico non funzionerà.",
                     "description5": "3. Regolare lo schermo del computer con un'angolazione appropriata in modo che la fotocamera IR riconosca il volto per l'accesso automatico.",
                     "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "L'accuratezza varia a seconda della corporatura, della postura e della frequenza del movimento. Se il computer si blocca in modo imprevisto, regolare la barra della sensibilità per migliorare la precisione."
@@ -1827,22 +1853,22 @@
             "good": "BUONA",
             "malicious": "DANNOSA",
             "suspicious": "SOSPETTA",
-            "securityScoreDepends": "Il tuo punteggio di sicurezza ti dà un'idea del livello di protezione del tuo ambiente; il risultato dipende da:",
+            "securityScoreDepends": "Il risultato della protezione dipende dalla scelta iniziale:",
             "antivirus": "La protezione con software antivirus",
             "password": "Password sicure e complesse che garantiscono la massima protezione",
             "vpn": "Monitoraggio dell'esposizione della rete contro i malintenzionati",
             "wifi": "Crittografia dei dati personali quando si utilizzano le reti WiFi pubbliche",
             "windowsHello": "Protezione del dispositivo con opzioni di accesso sicure",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Cos'è la notifica di controllo dell'account utente?",
+            "uacText": "Il controllo dell'account utente è una funzione di sicurezza di Windows molto importante, che impedisce ai programmi potenzialmente dannosi di apportare modifiche al sistema.",
+            "windowsTitle": "Perché devo attivare Windows?",
+            "windowsText": "L'esecuzione di una copia di Windows non originale può comportare rischi maggiori in termini di virus e altre minacce di sicurezza.",
+            "encryptionTitle": "Cos'è la crittografia dell'unità disco fisso?",
+            "encryptionText": "Consente di proteggere i dati fornendo la crittografia dell'intera unità disco fisso, impedendo l'accesso non autorizzato, anche se l'unità viene rimossa dal PC corrente e installata in altri dispositivi.",
+            "passwordTitle": "Come posso proteggere al meglio le password?",
+            "passwordText": "Memorizza e gestisci in modo sicuro tutte le tue password codificate da un'applicazione di protezione digitale professionale invece di archiviarle solo nel browser, rendendole facilmente accessibili da terzi senza il tuo consenso.",
+            "enhanceTitle": "Come posso migliorare la sicurezza?",
+            "enhanceText": "Ti consigliamo di proteggere i dispositivi con software antivirus e firewall e di configurare la notifica di controllo dell'account utente al livello di protezione minimo. Crea inoltre password complesse e gestiscile in modo sicuro, codifica i dati utilizzando la rete pubblica come protezione avanzata."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} offre la protezione di base per il tuo dispositivo",
                 "unknown": "Sconosciuto",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "La migliore offerta è qui!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Nella pagina di impostazione delle preferenze è possibile scegliere di attivare o disattivare la notifica del messaggio in base alle categorie del messaggio di Vantage. Tenere presente che anche se tutte le categorie di messaggi sono disabilitate, è possibile che occasionalmente si riceva un messaggio critico di sistema da Vantage, se necessario.",
         "messagesInLenovoVantage": "Messaggi in Lenovo Vantage",
         "appFeatures": "Funzioni app",
-        "appFeaturesDescription": "Messaggi relativi a System Update, articoli e altre funzioni importanti.",
+        "appFeaturesDescription": "Messaggi relativi all'Aggiornamento del sistema, articoli e altre funzioni importanti.",
         "marketing": "Marketing",
         "marketingDescription": "Messaggi promozionali che includono offerte speciali Lenovo.",
         "actionTriggered": "Azione attivata",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
         "deviceStatistics": "Condividi i dati statistici con Lenovo",
         "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
+        "userProfile": "User profile",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione."
     },

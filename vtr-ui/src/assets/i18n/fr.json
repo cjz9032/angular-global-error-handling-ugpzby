@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
             "loading": "Chargement...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "à partir de",
+            "to": "pour",
+            "clickToChange": "cliquez pour modifier"
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -723,7 +740,7 @@
                 "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
                 "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
             },
-            "threshold": "Threshold",
+            "threshold": "Seuil",
             "conservation": "Conservation"
         },
         "systemStatus": {
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
                     "Good": "<b>La batterie est en bon état.</b>",
-                    "Exhaustion": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
+                    "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
                     "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
                     "NotSupportACAdapter": "<b>L'adaptateur secteur n'est pas pris en charge.</b>",
                     "LimitedACAdapterSupport": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie.</b>",
-                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote.",
+                    "MissingDriver": "<b>Le pilote Lenovo Power Manager</b> n'est pas installé ou ne fonctionne pas correctement. Veuillez exécuter Windows Update pour installer la dernière version du pilote. Vous pouvez également installer le pilote à partir <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">d'ici</a>.",
                     "StoreLimitation": "<b>La batterie peut seulement stocker {{value}}% de</b> sa capacité de charge totale initiale.",
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
                     "OverheatedBattery": "La batterie est <b>trop chaude</b>. Retirez-la de l'ordinateur et laissez-la refroidir à la température ambiante.",
-                    "PermanentError": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
+                    "PermanentError": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>"
@@ -956,7 +973,7 @@
                             "close": "fermer",
                             "coolingModesList": {
                                 "list1": "Cliquez sur l'icône de la batterie Windows dans la barre d'outils",
-                                "list2": "La jauge de la batterie Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
+                                "list2": "La mode d'alimentation de Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Annuler",
                             "yes": "Oui",
                             "description3": "Voulez-vous vraiment arrêter la réinitialisation de la jauge de la batterie ?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Veille intelligente",
                     "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, votre ordinateur passe à la Veille moderne avant l'heure de début prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Jours de la semaine",
                         "weekends": "Fins de semaine"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
+                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
                         },
-						"note": {
-							"sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
-							"fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
-						}
+                        "note": {
+                            "sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
+                            "fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Fonctions des touches de raccourci VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Permutation touches Fn et Ctrl",
+                    "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
+                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?"
                 },
                 "controlOptions": {
                     "more": "PLUS",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Connexion sans pression tactile",
                     "caption": "Cette fonction déverrouille ou fait sortir l'ordinateur du mode veille automatiquement lorsque vous êtes assis devant ou que vous vous en approchez.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Lorsque vous vous trouvez devant votre ordinateur ou que vous l'approchez (dans les limites d'une distance de 1,2 mètres), cette fonction vous permet de vous connecter automatiquement au système une fois qu'il aura reconnu votre visage. Si vous êtes à l'extérieur plutôt qu'au bureau, vous devez vous situer plus près de l'ordinateur et le réveil sera plus long."
                 },
                 "zeroTouchLock": {
                     "title": "Verrouillage sans pression tactile",
@@ -1483,14 +1509,14 @@
                         "medium": "Moyenne"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Lorsque cette option est activée, la distance de détection est automatiquement ajustée. Vous pouvez également définir manuellement la distance de détection à l'aide du curseur. Les options sont les suivantes :",
+                        "context2": "Lorsque vous définissez manuellement la distance de détection, veuillez prendre en considération les éléments suivants :",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Distance proche : 0 à 0,42 mètres (17 pouces)",
+                            "line2": "Distance moyenne : 0 à 0,60 mètres (24 pouces)",
+                            "line3": "Distance éloignée : 0 à 1,20 mètres (47 pouces)",
+                            "line4": "La distance de détection maximale est de 1,2 mètres. En cas de dépassement d'une distance de 1,2 mètres, le capteur ne détectera pas votre présence.",
+                            "line5": "La distance de détection recommandée est de moins de 0,60 mètres."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
+                    "description4": "2. Si votre ordinateur est en mode hibernation ou a été mis hors tension, la connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
                     "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
                     "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
@@ -1827,22 +1853,22 @@
             "good": "BON",
             "malicious": "MALVEILLANT",
             "suspicious": "SUSPECT",
-            "securityScoreDepends": "Votre score de sécurité vous donne une idée de la manière dont votre navigation en ligne est sécurisée, le résultat dépend des éléments suivants :",
+            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
             "antivirus": "Protection par un logiciel anti-virus",
             "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
             "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
             "wifi": "Chiffrement de vos données personnelles lors de l'utilisation de WiFi public",
             "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Qu'est-ce qu'une notification UAC ?",
+            "uacText": "Le Contrôle de compte d'utilisateur (UAC) est une fonction de sécurité très importante de Windows qui permet d'éviter que des programmes potentiellement dangereux apportent des modifications à votre système.",
+            "windowsTitle": "Pourquoi dois-je activer Windows ?",
+            "windowsText": "L'exécution d'une copie non authentique de Windows peut vous exposer à un risque accru de menaces virales et autres menaces de la sécurité.",
+            "encryptionTitle": "Qu'est ce que le chiffrement de disque dur ?",
+            "encryptionText": "Il s'agit d'une méthode permettant de protéger vos données par le chiffrement de l'intégralité de l'unité de disque dur contre tout accès non autorisé, même si l'unité est retirée du PC actuel et placée dans d'autres périphériques.",
+            "passwordTitle": "Comment obtenir une meilleure protection par mot de passe ?",
+            "passwordText": "Stockez et gérez en toute sécurité tous vos mots de passe chiffrés à l'aide d'une application de protection numérique professionnelle au lieu de les stocker dans vos navigateurs qui sont facilement accessibles à des tiers à votre insu.",
+            "enhanceTitle": "Que dois-je faire pour améliorer la protection de la sécurité ?",
+            "enhanceText": "Comme protection minimum, nous vous recommandons vivement de protéger vos appareils à l'aide d'un logiciel anti-virus et d'un pare-feu et de configurer la protection UAC. Comme protection avancée, nous vous conseillons également de créer des mots de passe forts, de les gérer de manière sécurisée et de chiffrer vos données lorsque vous utilisez un réseau public."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vous offre une protection de base pour votre périphérique",
                 "unknown": "Inconnu",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Profitez d'une meilleure offre ici !"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
         "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
         "appFeatures": "Fonctionnalités des applications",
-        "appFeaturesDescription": "Messages concernant System Update, des articles et d'autres fonctionnalités utiles.",
+        "appFeaturesDescription": "Messages concernant la mise à jour du système, des articles et d'autres fonctionnalités utiles.",
         "marketing": "Marketing",
         "marketingDescription": "Messages de promotion, y compris les offres spéciales Lenovo.",
         "actionTriggered": "Action déclenchée",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
         "deviceStatistics": "Partager des données statistiques avec Lenovo",
         "deviceStatisticsDescription": "Partage des données statistiques avec Lenovo afin d'améliorer la fiabilité, le concept et l'optimisation des fonctionnalités de votre ordinateur.",
+        "userProfile": "User profile",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte."
     },

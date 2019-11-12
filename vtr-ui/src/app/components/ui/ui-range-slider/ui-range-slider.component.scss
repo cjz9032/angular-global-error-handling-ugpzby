@@ -16,28 +16,17 @@ but not to any other element on the page. using ::ng-deep
 				border: 0.1rem solid $shade_lighter;
 				height: 0.8rem;
 				border-radius: 0.5rem;
-				@media #{$white-on-black}{
-					background-color: $light;
-					border:none;
-					
-				}
-				@media #{$black-on-white}{
-					background-color: $dark;
-					border:none;
-					
-				}
-				
 			}
 			/* slider selected area*/
 			.ng5-slider-selection {
 				background: $main;
-				@media #{$white-on-black}{
+				@media #{$white-on-black} {
 					background-color: $highlight_bright;
-					border:none;
+					border: none;
 				}
-				@media #{$black-on-white}{
-					background-color: darkviolet;
-					border:none;
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-textselected;
+					border: none;
 				}
 			}
 			/* slider thumb */
@@ -49,14 +38,15 @@ but not to any other element on the page. using ::ng-deep
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
 
-					@media #{$white-on-black}{
-						background-color: $highlight_bright;
-						
-					}
-					@media #{$black-on-white}{
-						background-color: darkviolet;
-						
-					}
+				@media #{$white-on-black} {
+					border: 1px solid #fff;
+					background: grey;
+				}
+				@media #{$black-on-white} {
+					border: 1px solid #000;
+					background: grey;
+				}
+
 				&::after {
 					display: block;
 					text-align: center;
@@ -137,26 +127,19 @@ but not to any other element on the page. using ::ng-deep
 		}
 	}
 
-	[disabled].ng5-slider .ng5-slider-pointer {
-		background-color: initial;
-		// @media #{$white-on-black}{
-		// 	background-color: green;
-			
-		// }
-		// @media #{$black-on-white}{
-		// 	background-color: green;
-			
-		// }
-	}
-	[disabled].ng5-slider .ng5-slider-selection {
-		@media #{$white-on-black}{
-			background-color: $go_dark;
-			
-		}
-		@media #{$black-on-white}{
-			
-			background-color: $stop_dark;
-			
-		}
-	}
+	// [disabled].ng5-slider .ng5-slider-pointer {
+	// 	background-color: initial;
+	// }
+
+	// [disabled].ng5-slider .ng5-slider-selection {
+	// 	@media #{$white-on-black}{
+	// 		background-color: $go_dark;
+
+	// 	}
+	// 	@media #{$black-on-white}{
+
+	// 		background-color: $high-contrast-white-disabled;
+
+	// 	}
+	// }
 }

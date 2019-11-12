@@ -65,4 +65,23 @@ export class HypothesisService {
 			}
 		});
 	}
+
+	public getAllSettings() {
+		return new Promise((resolve, reject) => {
+			if (this.hypSettings) {
+				resolve(this.hypSettings);
+			} else {
+				this.getHypothesis().then(() => {
+					if (this.hypSettings) {
+						resolve(this.hypSettings);
+					} else {
+						reject('get all hypothesis settings failed.');
+					}
+				},
+				error => {
+					reject(error);
+				});
+			}
+		});
+	}
 }

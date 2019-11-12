@@ -3,6 +3,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { CommonService } from '../common/common.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
@@ -20,6 +21,7 @@ export class SupportService {
 	};
 	warrantyData: { info: any, cache: boolean };
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
+	warrantyDataCache: { info: any, cache: boolean };
 
 	constructor(
 		private shellService: VantageShellService,
@@ -31,13 +33,19 @@ export class SupportService {
 		this.metrics = shellService.getMetrics();
 		this.userGuide = shellService.getUserGuide();
 		this.commonService = commonService;
-		this.warrantyData = {
-			info: {
-				status: -1,
-				url: this.warrantyNormalUrl
-			},
-			cache: false
-		};
+		this.warrantyDataCache = this.commonService.getSessionStorageValue(SessionStorageKey.WarrantyDataCache, undefined);
+		if (this.warrantyDataCache) {
+			this.warrantyData = commonService.cloneObj(this.warrantyDataCache);
+		} else {
+			this.warrantyData = {
+				info: {
+					status: -1,
+					url: this.warrantyNormalUrl
+				},
+				cache: false
+			};
+			this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
+		}
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
@@ -84,24 +92,29 @@ export class SupportService {
 							this.warrantyData.info = result;
 							if (online) { this.warrantyData.cache = true; }
 							if (machineInfo.serialnumber) {
-								this.warrantyData.info.url =
-									`https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+								this.warrantyData.info.url = this.getWarrantyUrl(machineInfo.serialnumber);
 							} else {
 								this.warrantyData.info.url = this.warrantyNormalUrl;
 							}
 						} else {
 							this.warrantyData.info = defaultWarranty;
 						}
+						this.warrantyDataCache = this.commonService.cloneObj(this.warrantyData);
+						this.warrantyDataCache.info.url = this.warrantyNormalUrl;
+						this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyDataCache);
 					}).catch((err) => {
 						console.log(err);
 						this.warrantyData.info = defaultWarranty;
+						this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
 					});
 				} else {
 					this.warrantyData.info = defaultWarranty;
+					this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
 				}
 			}).catch((err) => {
 				console.log(err);
 				this.warrantyData.info = defaultWarranty;
+				this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
 			});
 		}
 	}
@@ -150,5 +163,12 @@ export class SupportService {
 		if (this.userGuide) {
 			this.userGuide.launchUg(this.commonService.isOnline, launchPDF);
 		}
+	}
+
+	public getWarrantyUrl(serialNumber: string): string {
+		if (serialNumber && serialNumber.length > 0) {
+			return `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${serialNumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+		}
+		return this.warrantyNormalUrl;
 	}
 }

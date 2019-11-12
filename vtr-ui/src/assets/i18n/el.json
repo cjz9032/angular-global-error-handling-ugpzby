@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Επέκταση",
             "loader": "Λήψη της κατάστασης <br>",
             "loading": "Φόρτωση...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "από",
+            "to": "σε",
+            "clickToChange": "κάντε κλικ για αλλαγή"
         },
         "app-update": {
             "message": "Γεια! Υπάρχει διαθέσιμη μια νεότερη έκδοση του Vantage, θέλετε να τη φορτώσετε;"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Το Lenovo Vantage δεν έχει πρόσβαση στο μικρόφωνο.",
                 "cameraPrivacyNote": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Κατώφλι",
+            "conservation": "Συντήρηση"
         },
         "systemStatus": {
             "title": "Κατάσταση συστήματος",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Η εγκατεστημένη μπαταρία <b>δεν υποστηρίζεται</b> από το σύστημα και δεν θα φορτιστεί. Αντικαταστήστε την μπαταρία με τη σωστή μπαταρία της Lenovo για αυτό το σύστημα.",
                     "Good": "<b>Η μπαταρία είναι σε καλή κατάσταση.</b>",
-                    "Exhaustion": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "Exhaustion": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "Bad": "<b>Παρουσιάστηκε σφάλμα μπαταρίας.</b> Δεν είναι δυνατή η φόρτιση/αποφόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
                     "NotDetected": "<b>Δεν εντοπίστηκε μπαταρία ή δεν</b> έχει συνδεθεί μπαταρία.",
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
                     "NotSupportACAdapter": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b>",
                     "LimitedACAdapterSupport": "<b>Ο μετασχηματιστής AC δεν μπορεί να παρέχει επαρκή ισχύ.</b>",
-                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης.",
+                    "MissingDriver": "<b>Το πρόγραμμα οδήγησης του Lenovo Power Manager</b> δεν είναι εγκατεστημένο ή δεν λειτουργεί σωστά. Εκτελέστε το Windows Update για να εγκαταστήσετε το πιο πρόσφατο πρόγραμμα οδήγησης. Μπορείτε επίσης να εγκαταστήσετε το πρόγραμμα οδήγησης από <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">εδώ</a>.",
                     "StoreLimitation": "<b>Η μπαταρία μπορεί να αποθηκεύσει μόνο το {{value}}% από</b> την αρχική της χωρητικότητα πλήρους φόρτισης.",
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
                     "OverheatedBattery": "Η μπαταρία είναι <b>πολύ ζεστή</b>. Αφαιρέστε την από τον υπολογιστή και αφήστε την να επανέλθει σε θερμοκρασία δωματίου.",
-                    "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "PermanentError": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "NotSupportACAdapterDetail": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
                     "LimitedACAdapterSupportDetail": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
                     "FullACAdapterSupport": "<b>Συνδέεται τροφοδοσία {{acWattage}} W {{acAdapterType}}.</b>"
@@ -956,7 +973,7 @@
                             "close": "κλείσιμο",
                             "coolingModesList": {
                                 "list1": "Κάντε κλικ στο εικονίδιο μπαταρίας των Windows στη γραμμή εργαλείων",
-                                "list2": "Θα εμφανιστεί ο μετρητής μπαταρίας των Windows. Σύρετε το ρυθμιστικό για να επιλέξετε μεταξύ βέλτιστου χρόνου ή βέλτιστης απόδοσης."
+                                "list2": "Θα εμφανιστεί η λειτουργία ενέργειας των Windows. Σύρετε το ρυθμιστικό για να επιλέξετε μεταξύ βέλτιστου χρόνου ή βέλτιστης απόδοσης."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Άκυρο",
                             "yes": "Ναι",
                             "description3": "Είστε βέβαιοι ότι θέλετε να διακόψετε την επαναφορά του μετρητή της μπαταρίας;"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Έξυπνη αναμονή",
                     "description": "Αυτή η δυνατότητα δημιουργεί χρονοδιαγράμματα στον υπολογιστή σας, ώστε να βελτιστοποιείται η εξοικονόμηση της μπαταρίας κατά τις ώρες αδράνειας χωρίς να επηρεάζεται η γρήγορη εκκίνηση κατά τις ώρες πιο εντατικής χρήσης.",
-                    "tooltip": "Όταν είναι ενεργοποιημένη η Έξυπνη αναμονή, ο υπολογιστής σας μεταβαίνει στη Σύγχρονη αναμονή πριν από την προγραμματισμένη ώρα Έναρξης και μεταβαίνει σε κατάσταση αδρανοποίησης εάν παραμείνει ανενεργός για ένα καθορισμένο χρονικό διάστημα ενώ λειτουργεί με μπαταρία. Αυτό το χρονικό διάστημα βελτιστοποιείται σύμφωνα με το χρονοδιάγραμμα που έχετε καθορίσει. Ο υπολογιστής αλλάζει από την κατάσταση αδρανοποίησης στη Σύγχρονη αναμονή μόνο κατά τις προγραμματισμένες ημέρες, ενώ δεν αλλάζει όταν είναι ανενεργός για συνεχόμενες προγραμματισμένες ημέρες.",
+                    "tooltip": "Όταν είναι ενεργοποιημένη η Έξυπνη αναμονή, ο υπολογιστής σας μεταβαίνει στη Σύγχρονη αναμονή πριν από την προγραμματισμένη ώρα ΕΝΑΡΞΗΣ και μεταβαίνει σε κατάσταση αδρανοποίησης εάν παραμείνει ανενεργός για ένα καθορισμένο χρονικό διάστημα ενώ λειτουργεί με μπαταρία. Αυτό το χρονικό διάστημα βελτιστοποιείται βάσει του χρονοδιαγράμματος που έχετε ορίσει ή του χρόνου χρήσης του υπολογιστή σας. Ο υπολογιστής μεταβαίνει από την κατάσταση αδρανοποίησης στη Σύγχρονη αναμονή μόνο κατά τις προγραμματισμένες ημέρες, ενώ δεν μεταβαίνει όταν είναι ανενεργός για συνεχόμενες προγραμματισμένες ημέρες.",
                     "timer": {
-                        "heading": "Ρυθμίστε την ώρα κατά την οποία χρησιμοποιείτε συνήθως αυτόν τον υπολογιστή",
+                        "heading": "Η ώρα κατά την οποία χρησιμοποιείτε συνήθως τον υπολογιστή σας",
                         "subHeading1": "αρχίσετε",
                         "subHeading2": "λήξη",
                         "subHeading3": "χρήση αυτού του χρονοδιαγράμματος για",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Εργάσιμες",
                         "weekends": "Σαββατοκύριακα"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Αυτόματη ρύθμιση του ενεργού χρόνου του υπολογιστή σας με βάση τη χρήση σας",
+                    "hyperlinkToGraph": "Κάντε κλικ για να δείτε τη δραστηριότητα και τον ενεργό χρόνο του πίνακα του υπολογιστή σας",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
                             "cancel": "ΟΧΙ ΤΩΡΑ"
                         },
-						"note": {
-							"sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
-							"fnKey": "Για να αποκτήσετε πρόσβαση σε ειδική λειτουργία, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά."
-						}
+                        "note": {
+                            "sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
+                            "fnKey": "Για να αποκτήσετε πρόσβαση σε ειδική λειτουργία, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Λειτουργίες πλήκτρων συντόμευσης VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Εναλλαγή πλήκτρου Fn και πλήκτρου Ctrl",
+                    "description": "Εάν πιέζατε συνήθως το πλήκτρο Fn όταν σκοπεύατε να πιέσετε το πλήκτρο Ctrl, μπορείτε να κάνετε εναλλαγή των λειτουργιών των δύο πλήκτρων.",
+                    "restartNote": "Η εναλλαγή της λειτουργίας δύο πλήκτρων απαιτεί την επανεκκίνηση του υπολογιστή σας, σίγουρα θέλετε να κάνετε επανεκκίνηση;"
                 },
                 "controlOptions": {
                     "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Είσοδος χωρίς αφή",
                     "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα, όταν καθίσετε μπροστά του ή πλησιάσετε σε αυτόν.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Όταν βρίσκεστε μπροστά στον υπολογιστή σας ή τον πλησιάζετε (σε απόσταση 1,2 μέτρων), αυτή η λειτουργία σάς επιτρέπει να συνδεθείτε αυτόματα στο σύστημα μετά από την αναγνώριση του προσώπου σας. Εάν βρίσκεστε σε εξωτερικό χώρο και όχι στο γραφείο, πρέπει να είστε πιο κοντά στον υπολογιστή και η επαναφορά θα απαιτήσει περισσότερο χρόνο."
                 },
                 "zeroTouchLock": {
                     "title": "Κλείδωμα χωρίς αφή",
@@ -1483,14 +1509,14 @@
                         "medium": "Μεσαία"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Όταν είναι ενεργοποιημένο, η απόσταση ανίχνευσης θα ρυθμίζεται αυτόματα. Μπορείτε επίσης να ρυθμίσετε την απόσταση ανίχνευσης μη αυτόματα με το ρυθμιστικό. Οι επιλογές είναι:",
+                        "context2": "Όταν ρυθμίζετε την απόσταση ανίχνευσης μη αυτόματα, να προσέχετε τα ακόλουθα:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Κοντινή: 0 – 0,42 μέτρα",
+                            "line2": "Ενδιάμεση: 0 – 0,60 μέτρα",
+                            "line3": "Μακρινή: 0 – 1,20 μέτρα",
+                            "line4": "Η μέγιστη απόσταση ανίχνευσης είναι 1,2 μέτρα. Εάν υπερβαίνει τα 1,2 μέτρα, ο αισθητήρας θα δεν μπορέσει να ανιχνεύσει την παρουσία σας.",
+                            "line5": "Η συνιστώμενη απόσταση ανίχνευσης είναι εντός 0,60 μέτρων."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello. Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
                     "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
                     "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
-                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
+                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί, η σύνδεση χωρίς αφή δεν θα λειτουργεί.",
                     "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο.",
                     "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
                     "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια."
@@ -1827,22 +1853,22 @@
             "good": "ΚΑΛΟ",
             "malicious": "ΚΑΚΟΒΟΥΛΟ",
             "suspicious": "ΥΠΟΠΤΟ",
-            "securityScoreDepends": "Η βαθμολογία ασφαλείας σάς δίνει μια ιδέα για το πόσο ασφαλής είστε στο διαδίκτυο, το αποτέλεσμα εξαρτάται από το εάν:",
+            "securityScoreDepends": "Το αποτέλεσμα ασφάλειας εξαρτάται από το αν είστε:",
             "antivirus": "Προστατεύεστε από λογισμικό προστασίας από ιούς",
             "password": "Έχετε ισχυρούς και περίπλοκους κωδικούς πρόσβασης, που διαχειρίζεστε με ασφαλή τρόπο",
             "vpn": "Παρακολουθείτε την έκθεση του δικτύου σας σε επιτιθέμενους",
             "wifi": "Κρυπτογραφείτε τα προσωπικά δεδομένα σας, όταν χρησιμοποιείτε δημόσιο WiFi",
             "windowsHello": "Προστατεύετε τη συσκευή σας χρησιμοποιώντας ασφαλείς επιλογές σύνδεσης",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Τι είναι η ειδοποίηση UAC;",
+            "uacText": "Ο έλεγχος λογαριασμού χρήστη είναι ένα πολύ σημαντικό χαρακτηριστικό ασφαλείας των Windows που βοηθά στην παρεμπόδιση ενδεχομένως επιβλαβών προγραμμάτων να κάνουν αλλαγές στο σύστημά σας.",
+            "windowsTitle": "Γιατί χρειάζεται ενεργοποιήσω τα Windows;",
+            "windowsText": "Η εκτέλεση ενός μη γνήσιου αντιγράφου των Windows μπορεί να σας θέσει σε μεγαλύτερο κίνδυνο για ιούς και άλλες απειλές για την ασφάλεια.",
+            "encryptionTitle": "Τι είναι η κρυπτογράφηση σκληρού δίσκου;",
+            "encryptionText": "Βοηθά στην προστασία των δεδομένων σας παρέχοντας κρυπτογράφηση για ολόκληρο τον σκληρό δίσκο από μη εξουσιοδοτημένη πρόσβαση ακόμη κι αν η μονάδα αφαιρεθεί από τον τρέχοντα Η/Υ και τοποθετηθεί σε άλλες συσκευές.",
+            "passwordTitle": "Πώς θα προστατεύσετε καλύτερα τον κωδικό πρόσβασης;",
+            "passwordText": "Αποθηκεύστε και διαχειριστείτε με ασφάλεια όλους τους κωδικούς πρόσβασης με κρυπτογράφηση από επαγγελματική εφαρμογή ψηφιακής προστασίας αντί για απλή αποθήκευση στα προγράμματα περιήγησής σας, τα οποία είναι εύκολα προσβάσιμα από τρίτα μέρη χωρίς να το γνωρίζετε.",
+            "enhanceTitle": "Τι θα πρέπει να κάνω για να βελτιώσω την προστασία της ασφάλειας;",
+            "enhanceText": "Συνιστάται ιδιαίτερα η προστασία των συσκευών σας με λογισμικό προστασίας από ιούς και τείχος προστασίας και η ρύθμιση της ειδοποίησης UAC στην ελάχιστη προστασία. Επιπλέον, δημιουργήστε ισχυρούς κωδικούς πρόσβασης και διαχειριστείτε με ασφαλή τρόπο. Κρυπτογραφήστε τα δεδομένα σας ενώ χρησιμοποιείτε το δημόσιο δίκτυο ως προηγμένη προστασία."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "Το {{protectedName}} σάς προσφέρει βασική προστασία για τη συσκευή σας",
                 "unknown": "Άγνωστη",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Απολαύστε μια καλύτερη προσφορά εδώ!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Στη σελίδα ρύθμισης προτιμήσεων, μπορείτε να επιλέξετε να ενεργοποιήσετε/απενεργοποιήσετε την ειδοποίησή σας με βάση τις κατηγορίες του μηνύματος Vantage, σημειώστε ότι ακόμη και αν όλες οι κατηγορίες μηνυμάτων είναι απενεργοποιημένες, ενδέχεται να λαμβάνετε περιστασιακά μήνυμα System Critical από Vantage, όταν είναι απαραίτητο.",
         "messagesInLenovoVantage": "Μηνύματα στο Lenovo Vantage",
         "appFeatures": "Δυνατότητες εφαρμογής",
-        "appFeaturesDescription": "Μηνύματα σχετικά με την System Update, άρθρα και άλλες αξιοσημείωτες δυνατότητες.",
+        "appFeaturesDescription": "Μηνύματα σχετικά με την ενημέρωση συστήματος, άρθρα και άλλες αξιοσημείωτες δυνατότητες.",
         "marketing": "Μάρκετινγκ",
         "marketingDescription": "Μηνύματα προώθησης, συμπεριλαμβανομένων των ειδικών προσφορών της Lenovo.",
         "actionTriggered": "Ενέργεια που ενεργοποιείται",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
         "deviceStatistics": "Κοινοποίηση στατιστικών δεδομένων στη Lenovo",
         "deviceStatisticsDescription": "Κάνει κοινή χρήση στατιστικών δεδομένων με τη Lenovo προκειμένου να βελτιωθεί η αξιοπιστία και ο σχεδιασμός και να βελτιστοποιηθούν οι δυνατότητες του υπολογιστή σας.",
+        "userProfile": "User profile",
         "Note": "Σημείωση: ",
         "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη."
     },

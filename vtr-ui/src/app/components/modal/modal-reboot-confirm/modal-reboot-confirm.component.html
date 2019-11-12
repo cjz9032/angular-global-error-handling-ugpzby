@@ -1,10 +1,12 @@
-<div class="modal-body vtr-modal-reboot-machine">
+<div class="modal-body vtr-modal-reboot-machine"
+	role="dialog"
+	aria-modal="true">
 	<div class="row justify-content-end">
 		<div class="btn-close">
 			<button type="button"
 				role="button"
 				class="close"
-				tabindex="1"
+				tabindex="0"
 				aria-hidden="true"
 				aria-label="ds-reboot-popup-close-button"
 				(click)="closeModal()"
@@ -13,20 +15,26 @@
 			</button>
 		</div>
 	</div>
-	<h1 id="ds-reboot-popup" git attr.aria-label="ds-reboot-popup"> {{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.title' | translate}}</h1>
-	<p id="ds-rebootpopup-description2" attr.aria-label="ds-rebootpopup-description2">{{description | translate}}</p>
+	<h1 id="ds-reboot-popup"
+		role="text"
+		tabindex="0"
+		ngbAutofocus>
+		{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.title' | translate}}
+	</h1>
+	<p id="ds-rebootpopup-description2"
+		role="text">{{description | translate}}</p>
 	<hr>
 	<div class="row">
 		<button id="reboot-popup-enable"
 			role="button"
 			attr.aria-label="reboot-popup-enable"
-			tabindex="1"
+			tabindex="0"
 			class="btn enable-button"
 			(click)="proceedToReboot()"
 			(keydown.enter)="proceedToReboot()">{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.reboot' | translate}}</button>
 		<a id="reboot-popup-cancel"
 			role="link"
-			tabindex="1"
+			tabindex="0"
 			attr.aria-label="reboot-popup-cancel"
 			(click)="closeModal()"
 			(keydown.enter)="closeModal()"

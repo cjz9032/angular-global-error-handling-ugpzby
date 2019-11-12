@@ -1,77 +1,82 @@
-<div class="vtr-page-lightingcustomize vtr-page container-fluid">
-		<div class="row" *ngIf="!isOnline">
-				<div class="col col-12 px-40 pb-40">
+<vtr-page-layout [title]="'gaming.lightingProfile.title' | translate"
+	[textId]="'lightingcustomize'"
+	[pageCssClass]="'lightingcustomize'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'lightingcustomize-back-btn'">
+
+	<left-content>
+		<div class="container-fluid">
+			<div class="row"
+				*ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
-						[isButtonVisible]="false" id="dashboard-btn-connectivity">
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						[isSubtitleVisible]="false"
+						[isButtonVisible]="false"
+						id="dashboard-btn-connectivity">
 					</vtr-widget-offline-info>
 				</div>
 			</div>
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
-				[ariaLabel]="'Back to dashboard'" [title]="'gaming.lightingProfile.title' | translate">
-			</vtr-header-main>
+			<div class="row mb-60">
+				<div class="col col-12 pt-0 pb-40 px-0">
+					<vtr-ui-lighting-profile [currentProfileId]="currentProfileId">
+					</vtr-ui-lighting-profile>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
-						<div class="vtr-page-shift-up nmx-40">
-							<div class="container-fluid">
-								<div class="row mb-60">
-									<div class="col col-12 px-40">
-										<vtr-ui-lighting-profile [currentProfileId]="currentProfileId">
-										</vtr-ui-lighting-profile>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<div class="tryMcAfee card">
-											<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
-												[img]="cardContentPositionA.FeatureImage"
-												[title]="cardContentPositionA.Title"
-												[logoText]="cardContentPositionA.BrandName"
-												[action]="cardContentPositionA.Action"
-												[actionType]="cardContentPositionA.ActionType"
-												[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
-												[ratioX]="4" [ratioY]="4" id="lighting_customize_crm_card_A"
-												aria-label="lighting_customize_crm_card_A">
-											</vtr-container-card>
-										</div>
-									</div>
+	</left-content>
 
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<div class="manage-pass card">
-											<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
-												[img]="cardContentPositionB.FeatureImage"
-												[caption]="cardContentPositionB.Description"
-												[title]="cardContentPositionB.Title"
-												[logoText]="cardContentPositionB.BrandName"
-												[action]="cardContentPositionB.Action"
-												[actionType]="cardContentPositionB.ActionType"
-												[actionLink]="cardContentPositionB.ActionLink" [type]="'corner'"
-												[ratioX]="4" [ratioY]="2" [cornerShift]="'large'"
-												id="lighting_customize_crm_card_B"
-												aria-label="lighting_customize_crm_card_B">
-											</vtr-container-card>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+	<right-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div *ngIf="!deviceService.isGaming"
+					class="col col-12 pt-0 pb-40 px-0">
+					<div class="tryMcAfee card">
+						<vtr-container-card order="1"
+							[itemID]="cardContentPositionF.Id"
+							[img]="cardContentPositionF.FeatureImage"
+							[title]="cardContentPositionF.Title"
+							[logoText]="cardContentPositionF.BrandName"
+							[action]="cardContentPositionF.Action"
+							[dataSource]="cardContentPositionF.DataSource"
+							[actionType]="cardContentPositionF.ActionType"
+							[actionLink]="cardContentPositionF.ActionLink"
+							[type]="'article'"
+							[ratioX]="4"
+							[ratioY]="4"
+							id="lighting_customize_crm_card_A"
+							aria-label="lighting_customize_crm_card_A">
+						</vtr-container-card>
+					</div>
+				</div>
+
+				<div class="col col-12 pt-0 pb-40 px-0">
+					<div class="manage-pass card">
+						<vtr-container-card order="2"
+							[itemID]="cardContentPositionB.id"
+							[dynamicmetricsItem]="dynamic_metricsItem"
+							[img]="cardContentPositionB.FeatureImage"
+							[caption]="cardContentPositionB.Description"
+							[title]="cardContentPositionB.Title"
+							[logoText]="cardContentPositionB.BrandName"
+							[action]="cardContentPositionB.Action"
+							[dataSource]="cardContentPositionB.DataSource"
+							[actionType]="cardContentPositionB.ActionType"
+							[actionLink]="cardContentPositionB.ActionLink"
+							[type]="'corner'"
+							[ratioX]="4"
+							[ratioY]="2"
+							[cornerShift]="'large'"
+							id="lighting_customize_crm_card_B"
+							aria-label="lighting_customize_crm_card_B">
+						</vtr-container-card>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</right-content>
+
+</vtr-page-layout>

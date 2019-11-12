@@ -29,9 +29,10 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		this.smartStandbyService.splitDays();
 	}
 
-	clearSettings() {
+	clearSettings(listbox: HTMLElement) {
 		this.smartStandbyService.splitDays();
 		this.sendToggleNotification(false);
+		listbox.focus();
 	}
 
 	onToggleDropDown() {
@@ -43,10 +44,11 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 		this.commonService.sendNotification('smartStandbyToggles', { id: 2, value: dropDown });
 	}
 
-	setOffDays() {
+	setOffDays(listbox: HTMLElement) {
 		const setSelectedDays = this.smartStandbyService.selectedDays.join();
 		this.setDays.emit(setSelectedDays);
 		this.sendToggleNotification(false);
+		listbox.focus();
 	}
 
 	selectDay(event) {

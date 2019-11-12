@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Rozbaliť",
             "loader": "Stav <br> načítania",
             "loading": "Načítava...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "od",
+            "to": "zmeňte na",
+            "clickToChange": "kliknutím zmeňte"
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage nemá prístup k mikrofónu.",
                 "cameraPrivacyNote": "Lenovo Vantage nemá prístup k fotoaparátu."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Hraničná úroveň",
+            "conservation": "Úspora"
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
                     "Good": "<b>Batéria je v dobrom stave.</b>",
-                    "Exhaustion": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
                     "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
                     "OverheatedBattery": "Batéria je <b>príliš horúca</b>. Vyberte ju z počítača a ochlaďte ju na izbovú teplotu.",
-                    "PermanentError": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "PermanentError": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "NotSupportACAdapterDetail": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>"
@@ -956,7 +973,7 @@
                             "close": "zatvoriť",
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi",
-                                "list2": "Zobrazí sa ukazovateľ batérie systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
+                                "list2": "Zobrazí sa režim výkonu systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Zrušiť",
                             "yes": "Áno",
                             "description3": "Naozaj chcete zastaviť vynulovanie ukazovateľa batérie?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
                     "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným začiatkom a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Nastavte čas, v ktorom zvyčajne používate počítač",
+                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Dni v týždni",
                         "weekends": "víkendy"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
                         },
-						"note": {
-							"sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
-							"fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
-						}
+                        "note": {
+                            "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
+                            "fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funkcie klávesových skratiek VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Výmena klávesov Fn a Ctrl",
+                    "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkcie týchto dvoch klávesov.",
+                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?"
                 },
                 "controlOptions": {
                     "more": "VIAC",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Bezdotykové prihlásenie",
                     "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ak ste pred počítačom alebo sa k nemu približujete (do vzdialenosti 1,2 metra), táto funkcia umožňuje automatické prihlásenie sa do systému po rozpoznaní tváre. Ak ste skôr v exteriéri než v kancelárii, musíte byť bližšie k počítaču a prebudenie bude trvať dlhšie."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
@@ -1483,14 +1509,14 @@
                         "medium": "Stredné"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Ak je funkcia povolená, detekčná vzdialenosť sa automaticky upraví. Detekčnú vzdialenosť môžete nastaviť aj manuálne pomocou posúvača. K dispozícii sú tieto možnosti:",
+                        "context2": "Ak detekčnú vzdialenosť nastavíte manuálne, venujte pozornosť týmto údajom:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Krátka: 0 – 0,42 metra (17 palcov)",
+                            "line2": "Stredná: 0 – 0,60 metra (24 palcov)",
+                            "line3": "Veľká: 0 – 1,20 metra (47 palcov)",
+                            "line4": "Maximálna detekčná vzdialenosť je 1,2 metra. Ak vzdialenosť presiahne 1,2 metra, senzor nedokáže zistiť vašu prítomnosť.",
+                            "line5": "Odporúčaná detekčná vzdialenosť je do 0,60 metra."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Táto funkcia využíva službu Windows Hello. Uistite sa, že v nastaveniach systému Windows je zapnuté rozpoznávanie tváre.",
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
-                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
+                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, funkcie Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
                     "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
                     "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
@@ -1827,22 +1853,22 @@
             "good": "DOBRÉ",
             "malicious": "ŠKODLIVÉ",
             "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Vaše skóre zabezpečenia poskytuje predstavu o vašom zabezpečení online. Výsledok závisí od toho, či:",
+            "securityScoreDepends": "Výsledok zabezpečenia závisí od toho, či ste:",
             "antivirus": "Ste chránení antivírusovým softvérom;",
             "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
             "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
             "wifi": "Šifrujete svoje osobné údaje pri používaní verejných sietí WiFi;",
             "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia.",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Čo je oznámenie kontroly používateľských kont (UAC)?",
+            "uacText": "Kontrola používateľských kont je veľmi dôležitá bezpečnostná funkcia systému Windows, ktorá pomáha zabrániť potenciálne škodlivým programom vykonávať zmeny v systéme.",
+            "windowsTitle": "Prečo potrebujem aktívny systém Windows?",
+            "windowsText": "Spustenie neoriginálnej kópie systému Windows vás môže vystaviť väčšiemu riziku ohrozenia vírusmi a ďalšími bezpečnostnými hrozbami.",
+            "encryptionTitle": "Čo je šifrovanie jednotky pevného disku?",
+            "encryptionText": "Táto funkcia pomáha chrániť vaše údaje šifrovaním celého pevného disku s cieľom zabezpečiť ich pred neoprávneným prístupom, aj keď sa jednotka odstráni z príslušného počítača a umiestni sa do iných zariadení.",
+            "passwordTitle": "Ako si lepšie chrániť heslo?",
+            "passwordText": "Bezpečne ukladajte a spravujte všetky svoje heslá šifrované profesionálnou aplikáciou digitálnej ochrany namiesto toho, aby ste ich jednoducho ukladali do prehliadačov, ku ktorým majú bez vášho vedomia prístup tretie strany.",
+            "enhanceTitle": "Čo mám urobiť na posilnenie bezpečnostnej ochrany?",
+            "enhanceText": "Dôrazne odporúčame, aby ste si svoje zariadenia chránili antivírusovým softvérom a bránou firewall, aby ste nastavili upozornenie UAC na minimálnu úroveň ochrany. Okrem toho vytvárajte silné heslá a bezpečne spravujte, pri používaní verejnej siete šifrujte svoje údaje v rámci rozšírenej ochrany."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} vám ponúka základnú ochranu zariadenia",
                 "unknown": "Neznáma",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Lepšiu ponuku využite tu!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
         "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",
         "appFeatures": "Funkcie aplikácie",
-        "appFeaturesDescription": "Správy týkajúce sa System Update, článkov a ďalších zaujímavých funkcií.",
+        "appFeaturesDescription": "Správy týkajúce sa aktualizácie systému, článkov a ďalších zaujímavých funkcií.",
         "marketing": "Marketing",
         "marketingDescription": "Propagačné správy vrátane špeciálnych ponúk spoločnosti Lenovo.",
         "actionTriggered": "Akcia bola spustená",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
+        "userProfile": "User profile",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
     },

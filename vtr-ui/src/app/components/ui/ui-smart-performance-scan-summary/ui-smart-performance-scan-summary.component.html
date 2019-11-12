@@ -69,7 +69,7 @@
 																		</div>
 																		<div class="status-text float-right pull-right pt-4 mt-2">
 																			<p>36 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
-	
+
 																		</div>
 																	</div>
 																	</ng-template>
@@ -114,14 +114,14 @@
 																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																													<p class="col">Applying registry and shortcut fixes</p>
 																											</div>
-	
+
 																									</div>
 																									<div class="col-6 px-0">
 																											<div class="row ">
 																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																													<p class="col">Removing unnecessary residual fies</p>
 																											</div>
-	
+
 																									</div>
 																								</div>
 																							</div>
@@ -136,14 +136,14 @@
 																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																													<p class="col">Scanning and fixing critical services</p>
 																											</div>
-	
+
 																									</div>
 																									<div class="col-6 px-0">
 																											<div class="row ">
 																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																													<p class="col">Removing OS and application log files</p>
 																											</div>
-	
+
 																									</div>
 																								</div>
 																							</div>
@@ -211,7 +211,7 @@
 																	</div>
 																	</ng-template>
 																</ngb-panel>
-	
+
 																<ngb-panel id="Malware & Security">
 																	<ng-template ngbPanelTitle>
 																	<div class="d-flex justify-content-between" accordion-heading>
@@ -265,14 +265,14 @@
 																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																														<p class="col">Applying registry and shortcut fixes</p>
 																												</div>
-	
+
 																										</div>
 																										<div class="col-6 px-0">
 																												<div class="row ">
 																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																														<p class="col">Removing unnecessary residual fies</p>
 																												</div>
-	
+
 																										</div>
 																									</div>
 																								</div>
@@ -287,26 +287,26 @@
 																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																														<p class="col">Scanning and fixing critical services</p>
 																												</div>
-	
+
 																										</div>
 																										<div class="col-6 px-0">
 																												<div class="row ">
 																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
 																														<p class="col">Removing OS and application log files</p>
 																												</div>
-	
+
 																										</div>
 																									</div>
 																								</div>
 																							</li>
 																						</ul>
 																					</ng-template>
-	
+
 																			</ngb-tab>
 																			<ngb-tab>
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-power-agenda"></div>
+																							<div class="icon icon-icon-zero-day"></div>
 																						<p>Zero-day Infections</p>
 																					</div>
 																				</ng-template>
@@ -320,7 +320,7 @@
 																			<ngb-tab>
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-malware-security"></div>
+																							<div class="icon icon-icon-security-settings"></div>
 																						<p>Security Settings</p>
 																					</div>
 																				</ng-template>
@@ -363,7 +363,7 @@
 																	</div>
 																	</ng-template>
 																</ngb-panel>
-	
+
 																<ngb-panel id="Internet performance">
 																	<ng-template ngbPanelTitle>
 																	<div class="d-flex justify-content-between" accordion-heading>
@@ -457,7 +457,7 @@
 																			<ngb-tab>
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-visible-to-online-trackers"></div>
+																							<div class="icon icon-icon-browser-settings"></div>
 																						<p>Browser Settings</p>
 																					</div>
 																				</ng-template>
@@ -471,7 +471,7 @@
 																			<ngb-tab>
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-visible-to-online-trackers"></div>
+																							<div class="icon icon-icon-browser-security"></div>
 																						<p>Browser Security</p>
 																					</div>
 																				</ng-template>
@@ -499,7 +499,7 @@
 																			<ngb-tab>
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
-																						<div class="icon icon-uninstall"></div>
+																						<div class="icon icon-icon-e-junk"></div>
 																						<p>E-Junk</p>
 																					</div>
 																				</ng-template>
@@ -561,13 +561,13 @@
 											</div> -->
 											<div class="row px-0">
 												<div class="navbar bkg-transparent justify-content-between w-100">
-								
+
 													<div class="title-block col">
 														<h3>Scan summary:</h3>
 														<p>we are constantly tuning your computer</p>
 													</div>
-								
-								
+
+
 													<div class="summary-period col-auto pr-0 py-0">
 														<ul class="list-group list-group-horizontal">
 															<li class="list-group-item" *ngFor="let item of menuItems;let ind=index"
@@ -590,7 +590,7 @@
 																	<fa-icon class="drop-down-icon" *ngIf="dropDownToggle && isDropDownOpen"
 																		(click)="openDropDown()" [icon]="['fas', 'chevron-up']">
 																	</fa-icon>
-																</li>					
+																</li>
 															</div>
 														</ul>
 														<div *ngIf="isDropDownOpen && tabIndex != 2"
@@ -607,7 +607,7 @@
 																	[ngClass]="{'link-active':menu == quarterlyMonth}">{{menu}}</a>
 															</div>
 														</div>
-								
+
 													</div>
 														<div *ngIf="isDropDownOpen && tabIndex === 2" class="calender-dropDown">
 															<div *ngIf="tabIndex === 2">
@@ -624,7 +624,7 @@
 																			<div class="col-1">To</div>
 																			<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
 																					(click)="selectToDate()" readonly /></div>
-								
+
 																		</div>
 																		<div class="row">
 																			<div class="col-3"></div>
@@ -633,9 +633,9 @@
 																		</div>
 																	</div>
 																	<div class="col date-picker">
-																		<ngb-datepicker  *ngIf="isFromDate" [(ngModel)]="selectedfromDate"
+																		<ngb-datepicker *ngIf="isFromDate" [(ngModel)]="selectedfromDate"
 																			(select)="onDateSelected()"></ngb-datepicker>
-																		<ngb-datepicker class="ml-4" *ngIf="!isFromDate" [(ngModel)]="selectedTodate"
+																		<ngb-datepicker *ngIf="!isFromDate" [(ngModel)]="selectedTodate"
 																			(select)="onDateSelected()"></ngb-datepicker>
 																	</div>
 																</div>
@@ -643,18 +643,18 @@
 														</div>
 													</div>
 												</div>
-								
+
 											</div>
 											<div class="row my-5 d-flex justify-content-between px-0">
 												<div class="tune">
 													<div class="d-flex justify-content-between">
 														<div class="flex-column">
 															<h5>Tune</h5>
-															<div class="value">65 <span>GB</span>
+															<div class="value">65<span>GB</span>
 															</div>
 															<p>Disk space reclaimed</p>
 														</div>
-														<fa-icon [icon]="['fal', 'tachometer-alt-fast']"></fa-icon>
+														<div class="icon icon-performance"></div>
 													</div>
 												</div>
 												<div class="boost">
@@ -664,7 +664,7 @@
 															<div class="value">84</div>
 															<p>Fixes to improve performance</p>
 														</div>
-														<fa-icon [icon]="['fal', 'wifi']"></fa-icon>
+														<div class="icon icon-internet-performance"></div>
 													</div>
 												</div>
 												<div class="secure">
@@ -674,10 +674,7 @@
 															<div class="value">11</div>
 															<p>fixes to improve security</p>
 														</div>
-														<fa-layers [fixedWidth]="true">
-															<fa-icon class="shield" [icon]="['fal', 'shield']"></fa-icon>
-															<fa-icon class="bug" [icon]="['fas', 'bug']"></fa-icon>
-														</fa-layers>
+														<div class="icon icon-malware-security"></div>
 													</div>
 												</div>
 											</div>
@@ -726,11 +723,62 @@
 																				</div>
 																			</div>
 																			<div class="row" *ngIf="toggleValue === ind">
-																				<div class="offset-1 col">
-													                               Tune : {{item.itemExpandValue.tune}}
-																					&nbsp; Boost : {{item.itemExpandValue.boost}}
-																				 &nbsp;Secure : {{item.itemExpandValue.secure}} 
-																				 </div> 
+																				<!-- <div class="offset-1 col-11">
+																					{{item.itemExpandValue.tune}}
+																				</div> -->
+
+																				<div class="offset-1 col-11">
+																					<div class="row py-2">
+																						<div class="scan-items col-9 pl-0">
+																							<div class="row">
+																									<div class="icon icon-performance"></div> Disk Space Reclaimed :
+																							</div>
+																						</div>
+																						<div class="scan-item-value col-2 pl-3">
+																								{{item.itemExpandValue.tune}}
+																						</div>
+																						<div class="scan-status col-1" *ngIf="item.itemstatus">
+																								<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+																						</div>
+																						<div class="scan-status col-1" *ngIf="!item.itemstatus">
+																								<fa-icon class="red-icon" [icon]="['fas', 'circle']"></fa-icon>
+																						</div>
+																					</div>
+
+																					<div class="row py-2">
+																							<div class="scan-items col-9 pl-0">
+																									<div class="row">
+																											<div class="icon icon-internet-performance"></div> Performance Improvements :
+																									</div>
+																							</div>
+																							<div class="scan-item-value col-2 pl-3">
+																									{{item.itemExpandValue.boost}}
+																							</div>
+																							<div class="scan-status col-1" *ngIf="item.itemstatus">
+																								<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+																							</div>
+																							<div class="scan-status col-1" *ngIf="!item.itemstatus">
+																									<fa-icon class="red-icon" [icon]="['fas', 'circle']"></fa-icon>
+																							</div>
+																						</div>
+																						<div class="row py-2">
+																								<div class="scan-items col-9 pl-0">
+																										<div class="row">
+																												<div class="icon icon-malware-security"></div> Security Improvements:
+																										</div>
+																								</div>
+																								<div class="scan-item-value col-2 pl-3">
+																										{{item.itemExpandValue.secure}}
+																								</div>
+																								<div class="scan-status col-1" *ngIf="item.itemstatus">
+																									<fa-icon [icon]="['fas', 'circle']"></fa-icon>
+																								</div>
+																								<div class="scan-status col-1" *ngIf="!item.itemstatus">
+																										<fa-icon class="red-icon" [icon]="['fas', 'circle']"></fa-icon>
+																								</div>
+																							</div>
+																			</div>
+
 																			</div>
 																		</div>
 																	</li>
@@ -750,7 +798,7 @@
 				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up" >
 						<div class="container-fluid">
-						 
+
 							<div class="row mb-40" *ngIf="!isSubscribed">
 								<div class="col col-12">
 									<div class="recommended-action sidebar-widget">
@@ -769,7 +817,7 @@
 								</div>
 							</div>
 							<div class="row mb-40" *ngIf="isSubscribed">
-									
+
 									<div class="col col-12">
 										<div class="subscription-details sidebar-widget">
 											<div class="title pb-3">
@@ -796,42 +844,162 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="row mb-40"  *ngIf="isSubscribed">
-									<div class="col col-12">
-										<div class="scan-settings sidebar-widget">
-											<div class="title pb-3">
-												Scan settings
+										<div class="col col-12">
+												<div class="scan-settings sidebar-widget">
+													<div *ngIf="!isChangeSchedule">
+														<div class="title pb-3">
+															Scan settings
+														</div>
+														<div class="card-info">
+															<p>Enable or disable the scan and set the scan schedule</p>
+														</div>
+														<ul class="chevron-list">
+															<li class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
+																	<strong>Enable Scan</strong>
+																</div>
+																<div class="status d-flex justify-content-end">
+																	<vtr-ui-switch-onoff [value]="scanToggleValue" (toggle)="setEnableScanStatus($event)"></vtr-ui-switch-onoff>
+								
+																</div>
+															</li>
+															<li class="d-flex justify-content-between calendar-list" [ngClass]="{'disable-list':!scanToggleValue}" (click)="changeScanSchedule()">
+																<div class="item d-flex">
+																	<fa-icon class="icon" [icon]="['far', 'calendar-alt']"></fa-icon>
+																	<strong>Once a week</strong>
+																</div>
+																<div class="status d-flex justify-content-end" >
+																	<p class="mr-3 text-uppercase"><strong>{{selectedDay | slice:0:3}}</strong> | {{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
+																	<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+																</div>
+															</li>
+														</ul>
+														<!-- <a href="#" class="link-text">Manage Subscription</a> -->
+													</div>
+								
+								
+								
+								
+								
+													<div *ngIf="isChangeSchedule" class="change-scan-schedule">
+														<div class="title pb-3">
+															Change scan schedule
+														</div>
+														<div class="card-info">
+															<p>Edit the scan schedule to run when you need it.</p>
+														</div>
+														<ul class="chevron-list">
+															<li class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<b>Frequency</b>
+																</div>
+																<div class="status d-flex justify-content-end">
+																	<p class="mr-3">{{selectedFrequency}}</p>
+																	<fa-icon  *ngIf="scheduleTab != 1" (click)="openScanScheduleDropDown(1)"
+																		[icon]="['fas', 'chevron-down']"></fa-icon>
+																		<fa-icon *ngIf="scheduleTab === 1" (click)="openScanScheduleDropDown(1)"
+																		[icon]="['fas', 'chevron-up']"></fa-icon>
+																	
+																	<!-- <div *ngIf="scheduleTab === 1" class="dropdown">
+																		<li>Every Day</li>
+																		<li>Every Day</li>
+																		<li>Every Day</li>
+																	</div> -->
+																</div>
+																<div *ngIf="scheduleTab === 1" class="freq-dropdown">
+																	<div *ngFor="let freq of scanFrequency;let ind=index" class="frequency-text"
+																		(click)="changeScanFrequency(ind)" [ngClass]="{'selected-frequency':frequencyValue === ind}">{{freq}}</div>
+																</div>
+															</li>
+								
+															<li *ngIf="frequencyValue === 3" class="d-flex justify-content-between">
+																	<div class="item d-flex">
+																		<b>Date</b>
+																	</div>
+																	<div class="status d-flex justify-content-end">
+																		<p class="mr-3">{{scanScheduleDate.day}}/{{scanScheduleDate.month}}/{{scanScheduleDate.year}}</p>
+																		<fa-icon *ngIf="scheduleTab != 4" [icon]="['fas', 'chevron-down']"
+																			(click)="openScanScheduleDropDown(4)"></fa-icon>
+																			<fa-icon *ngIf="scheduleTab === 4" (click)="openScanScheduleDropDown(4)"
+																			[icon]="['fas', 'chevron-up']"></fa-icon>
+									
+																	</div>
+																	<div *ngIf="scheduleTab === 4" class="day-dropdown date-picker">
+																				<ngb-datepicker [(ngModel)]="scanScheduleDate" (select)="changeScanScheduleDate()"></ngb-datepicker>
+																	</div>
+																</li>
+
+															<li *ngIf="frequencyValue === 1 || frequencyValue === 2" class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<b>Day</b>
+																</div>
+																<div class="status d-flex justify-content-end">
+																	<p class="mr-3">{{selectedDay}}</p>
+																	<fa-icon *ngIf="scheduleTab != 2" [icon]="['fas', 'chevron-down']"
+																		(click)="openScanScheduleDropDown(2)"></fa-icon>
+																		<fa-icon *ngIf="scheduleTab === 2" (click)="openScanScheduleDropDown(2)"
+																		[icon]="['fas', 'chevron-up']"></fa-icon>
+								
+																</div>
+																<div *ngIf="scheduleTab === 2" class="day-dropdown">
+																	<div *ngFor="let day of days;let ind=index"
+																		(click)="changeScanDay(ind)" class="days-text" [ngClass]="{'selected-day':dayValue === ind}">{{day}}</div>
+																</div>
+															</li>
+															<li class="d-flex justify-content-between">
+																<div class="item d-flex">
+																	<b>Time</b>
+																</div>
+																<div  class="icon" class="status d-flex justify-content-end">
+																	<!-- <p class="mr-3">12:00AM</p> -->
+																	<p class="mr-3">{{scanTime.hour}}:{{scanTime.min}} {{scanTime.amPm}}</p>
+																	<fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']" (click)="openScanScheduleDropDown(3)"></fa-icon>
+																	<fa-icon *ngIf="scheduleTab === 3" (click)="openScanScheduleDropDown(3)"
+																	[icon]="['fas', 'chevron-up']"></fa-icon>
+																</div>
+																<div *ngIf="scheduleTab === 3" class="time-dropdown">
+																	<div class="row">
+																		<div class="col hour-block">
+																				<div class="hour-text" *ngFor="let hour of hours;let ind=index" [ngClass]="{'selected-text':copyScanTime.hourId === ind}"
+																				(click)="changeHoursTime(ind)">{{hour}}</div>
+																			</div>
+																			<div class="col minutes-block">
+																					<div class="min-text" *ngFor="let min of mins;let ind=index" [ngClass]="{'selected-text':copyScanTime.minId === ind}"
+																					(click)="changeMinutesTime(ind)">{{min}}</div>
+																				</div>
+																				<div class="col amPm-block">
+																						<div class="amPm-text" *ngFor="let amPm of amPm;let ind=index" [ngClass]="{'selected-text':copyScanTime.amPmId === ind}"
+																						(click)="changeAmPm(ind)">{{amPm}}</div>
+																							
+																					</div>
+																		</div>
+																		
+																				<div class="row select-close py-2">
+																					<div class="col text-center"><fa-icon [icon]="['fal', 'check']"	(click)="saveChangeScanTime()"></fa-icon></div>
+																					<div class="col text-center"><fa-icon [icon]="['fal', 'times']" (click)="cancelChangeScanTime()"></fa-icon></div>
+																					
+																				
+																				
+																			</div>
+																</div>
+																
+															</li>
+														</ul>
+														<!-- <a href="#" class="link-text">Manage Subscription</a> -->
+														<div >
+																<button class="save-button" (click)="saveChangedScanSchedule()">save</button>
+																<a class="cancel-link active" (click)="cancelChangedScanSchedule()">cancel</a>
+															</div>
+														
+													</div>
+													
+								
+								
+												</div>
 											</div>
-											<div class="card-info">
-												<p>Enable or disable the scan and set the scan schedule</p>
-											</div>
-											<ul class="chevron-list">
-                                                <li class="d-flex justify-content-between">
-                                                    <div class="item d-flex">
-                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
-                                                        <strong>Enable Scan</strong>
-                                                    </div>
-                                                    <div class="status d-flex justify-content-end">
-                                                        <vtr-ui-switch-onoff [value]="true"
-                                                        [disabled]="false"></vtr-ui-switch-onoff>
-                                                        <!-- <fa-icon [icon]="['fas', 'laptop']"></fa-icon> -->
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex justify-content-between">
-                                                    <div class="item d-flex">
-                                                        <fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-                                                        <strong>Once a week</strong>
-                                                    </div>
-                                                    <div class="status d-flex justify-content-end">
-                                                        <p class="mr-3"><strong>SAT</strong> | 12:00AM</p>
-                                                        <fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
-                                                    </div>
-                                                </li>
-                                            </ul>
-											<!-- <a href="#" class="link-text">Manage Subscription</a> -->
-										</div>
-									</div>
 								</div>
 						</div>
 					</div>
@@ -839,3 +1007,18 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -32,5 +32,9 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.hardwareScanService.setIsViewingRecoverLog(false);
+		// Clearing the last response received from Scan/RBS to ensure that
+		// the Hardware Components page will be shown, since user just clicked
+		// in the back button from View Results page.
+		this.hardwareScanService.clearLastResponse();
 	}
 }

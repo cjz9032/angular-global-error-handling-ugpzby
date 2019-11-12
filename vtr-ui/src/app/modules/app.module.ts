@@ -41,6 +41,8 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
+import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons/faCaretRight';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
@@ -56,6 +58,7 @@ import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownloa
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonUiModule } from './common/common-ui.module';
+import { WebpackTranslateLoader } from './webpack-translate-loader.loader';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -74,7 +77,7 @@ import { CommonUiModule } from './common/common-ui.module';
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
+				useClass: WebpackTranslateLoader,
 				deps: [HttpClient]
 			},
 			isolate: false
@@ -143,5 +146,7 @@ export class AppModule {
 		library.add(faExclamationCircle);
 		library.add(faQuestionCircle);
 		library.add(faCloudDownload);
+		library.add(faLaptop);
+		library.add(faHeart);
 	}
 }

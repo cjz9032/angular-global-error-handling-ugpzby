@@ -481,7 +481,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 		this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
-		this.updatePowerMode();
+		setTimeout(() => {
+			this.updatePowerMode();
+		}, 100);
 	}
 
 	onToggleOfEasyResume(event) {
@@ -828,7 +830,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.setUSBChargingInBatteryModeStatusIdeaNoteBook(event)
 					.then((value: boolean) => {
 						console.log('setUSBChargingInBatteryModeStatusIdeaNoteBook.then', value);
-						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+						setTimeout(() => {
+							this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+						}, 50);
 					})
 					.catch(error => {
 						this.logger.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error.message);
@@ -848,7 +852,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.setAlwaysOnUSBStatusIdeaNoteBook(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
-						this.getAlwaysOnUSBStatusIdeaPad();
+						setTimeout(() => {
+							this.getAlwaysOnUSBStatusIdeaPad();
+						}, 50);
 					})
 					.catch(error => {
 						this.logger.error('getAlwaysOnUSBStatusIdeaNoteBook', error.message);
@@ -1096,12 +1102,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
 					}
 					break;
-				case 'BatteryInfoForGaugeReset':
-					if (notification.payload) {
-						this.remainingPercentages = notification.payload.remainingPercentages;
-						this.isACAttached = notification.payload.isACAttached;
-						break;
-					}
+				// case 'BatteryInfoForGaugeReset':
+				// 	if (notification.payload) {
+				// 		this.remainingPercentages = notification.payload.remainingPercentages;
+				// 		this.isACAttached = notification.payload.isACAttached;
+				// 		break;
+				// 	}
 			}
 
 		}

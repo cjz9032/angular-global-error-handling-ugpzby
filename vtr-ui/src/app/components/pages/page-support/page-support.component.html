@@ -1,240 +1,189 @@
-<div class="vtr-page-support vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="title | translate"
-				[isInnerBack]="isCategoryArticlesShow"
-				(innerBack)="onInnerBack()"
-				[backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[backId]="backId"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
+<vtr-page-layout [title]="'support.common.getSupport' | translate"
+	[textId]="'support'"
+	[pageCssClass]="'support'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'support-page-btn-back'"
+	[isInnerBack]="isCategoryArticlesShow"
+	(innerBack)="onInnerBack()">
 
-				<div class="row">
-					<div class="col-lg-8 col-sm-12 vtr-page-left-column">
-						<div class="vtr-page-shift-up nmx-40">
-
-							<div class="row"
-								*ngIf="!isOnline">
-								<div class="col col-12 px-40 pb-40">
-									<vtr-widget-offline-info [isButtonVisible]="false"
-										[isSubtitleVisible]="false"
-										[title]="'dashboard.offlineInfo.title' | translate"
-										[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-										[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
-									</vtr-widget-offline-info>
-								</div>
-							</div>
-							<div class="row pb-40"
-								*ngIf="!isOnline">
-								<div class="col-6 p-40"
-									*ngFor="let offlineImage of offlineImages">
-									<div class="offline-article-item">
-										<img class="w-100"
-											[src]="offlineImage" />
-									</div>
-								</div>
-							</div>
-
-							<div class="row"
-								*ngIf="articleCategories.length > 0 && isOnline">
-								<div class="col col-12 px-40 mb-80">
-									<div class="card quick-access">
-										<div class="quick-access-title">
-											{{ 'support.quickAccess.categories' | translate }}</div>
-										<div class="quick-access-desc">
-											{{ 'support.quickAccess.categoriesDesc' | translate }}</div>
-										<div class="quick-assess-categories row">
-											<a href="javascript:;"
-												class="quick-assess-item col col-6 col-sm-3"
-												*ngFor="let category of articleCategories"
-												tabindex="1"
-												vtrMetrics
-												metricsItem="Support.CategoryClicked"
-												metricsEvent="featureClick"
-												metricsParam="CategoryId: {{ category.Id }}"
-												metricsParent="Page.Support"
-												(click)="clickCategory(category.Id)">
-												<div class="item-con"
-													id="{{'support-category-'+category.Id}}"
-													attr.aria-label="{{'support-category-'+category.Id}}">
-													<fa-icon [icon]="['fal', 'bolt']"></fa-icon>
-													<div class="item-title">{{ category.Title }}</div>
-
-													<div class="item-button"
-														title="{{ 'support.quickAccess.seeArticles' | translate }}">
-														{{ 'support.quickAccess.seeArticles' | translate }}</div>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- <div class="row">
-								<div class="col col-12 px-40 pb-40">
-									<form action=""
-										class="card p-20">
-										<div class="input-group p-1">
-											<div class="input-group-prepend">
-												<div class="input-group-text pr-0">
-													<fa-icon [icon]="['fas', 'search']"></fa-icon>
-													<span class="search-pre pl-4">
-														Search:</span>
-												</div>
-											</div>
-											<input type="text"
-												class="form-control pr-3"
-												#searchInput
-												(keyup.enter)="search(searchInput.value)">
-											<div class="input-group-append">
-												<button class="btn button"
-													type="button"
-													(click)="search(searchInput.value)"
-													vtrMetrics
-													metricsItem="Support.SearchButton"
-													metricsEvent="featureClick"
-													metricsParent="Page.Support">SEARCH FOR HELP</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-							<div class="row"
-								*ngIf="searchWords"
-								class="search-result-text">
-								<div class="col px-40 pt-4">
-									<div class="title m-0"
-										*ngIf="searchCount > 0">
-										35 Results that match "<span class="special">{{searchWords}}</span>"
-									</div>
-									<div class="title m-0"
-										*ngIf="searchCount > 0">
-										<div>0 result found.</div>
-										<div>
-											<span class="mr-5">Would you like to go for more help?</span>
-											<a href="https://community.lenovo.com"
-												target="_blank"
-												class="btn button"
-												role="button"
-												vtrMetrics
-												metricsItem="Support.GoToForumButton"
-												metricsEvent="featureClick"
-												metricsParent="Page.Support">GO TO FORUM</a>
-										</div>
-									</div>
-								</div>
-							</div> -->
-							<div class="row" *ngIf="articlesType !== 'loading'">
-								<div class="col col-6 px-40 pt-40" *ngIf="articles.leftTop.length > 0">
-									<vtr-container-article [items]="articles.leftTop"
-										*ngIf="isOnline"
-										[startIndex]="1"
-										[indexTimes]="2"
-										[type]="articlesType">
-									</vtr-container-article>
-									<vtr-container-article class="d-none d-lg-block" [items]="articles.leftBottom"
-										*ngIf="isOnline"
-										[startIndex]="5"
-										[indexTimes]="2"
-										[type]="articlesType">
-									</vtr-container-article>
-									<vtr-container-article class="d-lg-none" [items]="articles.leftBottomSmall"
-										*ngIf="isOnline"
-										[startIndex]="5"
-										[indexTimes]="2"
-										[type]="articlesType">
-									</vtr-container-article>
-								</div>
-								<div class="col col-6 px-40 pt-40" *ngIf="articles.middleTop.length > 0">
-									<vtr-container-article [items]="articles.middleTop"
-										*ngIf="isOnline"
-										[startIndex]="2"
-										[indexTimes]="2"
-										[type]="articlesType">
-									</vtr-container-article>
-									<vtr-container-article class="d-none d-lg-block" [items]="articles.middleBottom"
-										*ngIf="isOnline"
-										[startIndex]="6"
-										[indexTimes]="2"
-										[type]="articlesType">
-									</vtr-container-article>
-									<vtr-container-article class="d-lg-none" [items]="articles.middleBottomSmall"
-										*ngIf="isOnline"
-										[startIndex]="6"
-										[indexTimes]="2"
-										[type]="articlesType">
-									</vtr-container-article>
-								</div>
-							</div>
-							<div class="spinner-content w-100 text-center"
-								*ngIf="articlesType === 'loading' && isOnline">
-								<div class="spinner-border text-primary progress-spinner"
-									role="status"></div>
-							</div>
-						</div>
+	<left-content>
+		<div class="container-fluid">
+			<div class="row"
+				*ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-offline-info [isButtonVisible]="false"
+						[isSubtitleVisible]="false"
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
+					</vtr-widget-offline-info>
+				</div>
+			</div>
+			<div class="row"
+				*ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-40"
+					*ngFor="let offlineImage of offlineImages">
+					<div class="offline-article-item">
+						<img class="w-100"
+							[src]="offlineImage" />
 					</div>
-					<div class="col-lg-4 col-sm-12 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
+				</div>
+			</div>
 
-								<div class="row"
-									[vtrAppSearchScroller]="['search-warranty']"
-									*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0 && deviceService.showWarranty">
-									<div class="col col-12 pb-60">
-										<vtr-widget-warranty [item]="warrantyData"
-											[isConnected]="isOnline"></vtr-widget-warranty>
+			<div class="row"
+				*ngIf="articleCategories.length > 0 && isOnline">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<div class="card quick-access">
+						<div class="quick-access-title">
+							{{ 'support.quickAccess.categories' | translate }}</div>
+						<div class="quick-access-desc">
+							{{ 'support.quickAccess.categoriesDesc' | translate }}</div>
+						<div class="quick-assess-categories row">
+							<div role="button"
+								class="quick-assess-item col col-6 col-sm-3"
+								*ngFor="let category of articleCategories, let i = index"
+								tabindex="1"
+								id="{{'support-category-'+category.Id}}"
+								attr.aria-label="{{'support-category-'+category.Title}}"
+								vtrMetrics
+								metricsItem="Support.CategoryClicked"
+								metricsEvent="featureClick"
+								metricsParam="CategoryId: {{ category.Id }}"
+								metricsParent="Page.Support"
+								(keyup.enter)="clickCategory(category.Id)"
+								(click)="clickCategory(category.Id)">
+								<div class="item-con">
+									<div class="item-icon">
+										<img [src]="category.Image ? category.Image : localCateIcons[i]" />
 									</div>
-								</div>
+									<div class="item-title">{{ category.Title }}</div>
 
-								<div class="row"
-									[vtrAppSearchScroller]="['search-user-guide']" >
-									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'support.documentation.title' | translate"
-											[description]="''"
-											[items]="supportDatas.documentation">
-										</vtr-widget-support>
-									</div>
-								</div>
-
-								<div class="row"
-									[vtrAppSearchScroller]="['search-lenovo-help']">
-									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'support.needHelp.title' | translate"
-											[description]="'support.needHelp.description' | translate"
-											[items]="supportDatas.needHelp"></vtr-widget-support>
-									</div>
-								</div>
-
-								<div class="row"
-									[vtrAppSearchScroller]="['search-lenovo-service']">
-									<div class="col col-12 pb-60">
-										<!-- 	[description]="'support.quicklinks.description' | translate" -->
-										<vtr-widget-support [title]="'support.quicklinks.title' | translate"
-											[description]="''"
-											[items]="supportDatas.quicklinks"></vtr-widget-support>
-									</div>
-								</div>
-								<div class="row d-none d-lg-block"
-								*ngIf="articlesType !== 'loading' && articles.right.length > 0">
-									<div class="col col-12 p-60">
-									<vtr-container-article [items]="articles.right"
-										*ngIf="isOnline"
-										[startIndex]="5"
-										[indexPreText]="'r'"
-										[indexTimes]="1"
-										[type]="articlesType">
-									</vtr-container-article>
-								</div>
+									<div class="item-button"
+										title="{{ 'support.quickAccess.seeArticles' | translate }}">
+										{{ 'support.quickAccess.seeArticles' | translate }}</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<div class="row"
+				*ngIf="articlesType !== 'loading'">
+				<div class="col-xl-6 py-20 card-left"
+					*ngIf="articles.leftTop.length > 0">
+					<vtr-container-article [items]="articles.leftTop"
+						*ngIf="isOnline"
+						[startIndex]="1"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+					<vtr-container-article class="d-none d-lg-block"
+						[items]="articles.leftBottom"
+						*ngIf="isOnline"
+						[startIndex]="5"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+					<vtr-container-article class="d-lg-none"
+						[items]="articles.leftBottomSmall"
+						*ngIf="isOnline"
+						[startIndex]="5"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+				</div>
+				<div class="col-xl-6 py-20 card-right"
+					*ngIf="articles.middleTop.length > 0">
+					<vtr-container-article [items]="articles.middleTop"
+						*ngIf="isOnline"
+						[startIndex]="2"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+					<vtr-container-article class="d-none d-lg-block"
+						[items]="articles.middleBottom"
+						*ngIf="isOnline"
+						[startIndex]="6"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+					<vtr-container-article class="d-lg-none"
+						[items]="articles.middleBottomSmall"
+						*ngIf="isOnline"
+						[startIndex]="6"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+				</div>
+			</div>
+			<div class="spinner-content w-100 text-center"
+				*ngIf="articlesType === 'loading' && isOnline">
+				<div class="spinner-border text-primary progress-spinner"
+					role="status"></div>
+			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+
+			<div class="row"
+				[vtrAppSearchScroller]="['search-warranty']"
+				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0 && deviceService.showWarranty">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-warranty [item]="warrantyData"
+						[isConnected]="isOnline"></vtr-widget-warranty>
+				</div>
+			</div>
+
+			<div class="row"
+				[vtrAppSearchScroller]="['search-user-guide']">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-support [title]="'support.documentation.title' | translate"
+						[description]="''"
+						[items]="supportDatas.documentation">
+					</vtr-widget-support>
+				</div>
+			</div>
+
+			<div class="row"
+				[vtrAppSearchScroller]="['search-lenovo-help']">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-support [title]="'support.needHelp.title' | translate"
+						[description]="'support.needHelp.description' | translate"
+						[items]="supportDatas.needHelp"></vtr-widget-support>
+				</div>
+			</div>
+
+			<div class="row"
+				[vtrAppSearchScroller]="['search-lenovo-service']">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<!-- 	[description]="'support.quicklinks.description' | translate" -->
+					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
+						[description]="''"
+						[items]="supportDatas.quicklinks"></vtr-widget-support>
+				</div>
+			</div>
+			<div class="row d-none d-lg-block"
+				*ngIf="articlesType !== 'loading' && articles.right.length > 0">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-container-article [items]="articles.right"
+						*ngIf="isOnline"
+						[startIndex]="5"
+						[indexPreText]="'r'"
+						[indexTimes]="1"
+						[type]="articlesType">
+					</vtr-container-article>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>
+
+
+
+

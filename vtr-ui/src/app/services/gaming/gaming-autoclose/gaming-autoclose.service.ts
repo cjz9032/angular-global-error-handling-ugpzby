@@ -11,7 +11,7 @@ import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-
 export class GamingAutoCloseService {
   private gamingAutoClose: any;
   public isShellAvailable = false;
-  public cardContentPositionA: any = {
+  public cardContentPositionF: any = {
 		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
 	};
 	public cardContentPositionB: any = {

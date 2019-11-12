@@ -140,7 +140,7 @@
 		}
 
 		.no-border-bottom {
-			::ng-deep .vtr-ui-switch-row {
+			 .vtr-ui-switch-row.white-theme {
 				border-bottom: none !important;
 			}
 		}
@@ -252,21 +252,24 @@
 	}
 
 	.permission-note {
-		width: 100%;
 		background-color: $shade_lightest;
-		font-size: 1.4rem;
-		border: 1px solid $shade_lighter;
-		justify-content: space-between;
-		.note-icon{
-			font-size: 20px;
-		}
+			border: 1px solid $shade_lighter;
+			padding-right: 1.4rem;
+			max-width: 60rem;
+			span {
+				font-size: $body;
+				color: $main_darker;
+			}
 		.privacy-button {
-			font-size: 1.4rem;
+			font-size: 2rem;
 			letter-spacing: 0.76px;
 			text-align: left;
+			text-decoration: underline;
+				&:hover {
+					text-decoration: underline;
+				}
 		}
 	}
-
 	.facial-recognition {
 		h3 {
 			font-weight: $weight_bold;

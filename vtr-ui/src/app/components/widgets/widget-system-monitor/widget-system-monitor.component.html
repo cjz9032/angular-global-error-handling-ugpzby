@@ -12,7 +12,7 @@
 								<fa-icon class="icon" [icon]="['fas', 'arrow-left']"></fa-icon>
 							</div>
 						</div>
-						<div class="col-sm-8 monitor-col left">
+						<div class="col-xl-8 monitor-col left">
 							<div class="monitor-section">
 								<div class="monitor-inner gpu" id="system_status_driver_gpu" attr.aria-label="system_status_driver_gpu">
 									<div class="gaming-tooltip">
@@ -91,7 +91,7 @@
 
 							</div>
 						</div>
-						<div class="col-sm-4 monitor-col right" vtrOutsideClick (clickOutside)="toggleHDs(true)">
+						<div class="col-xl-4 monitor-col right" vtrOutsideClick (clickOutside)="toggleHDs(true)">
 							<div class="monitor-section hds"
 								[ngClass]="{'expanded':showAllHDs,'onlyOne':hds.length===1}" (click)="toggleHDs()" (keydown.enter)="toggleHDs()" id="gaming_system_status_drives_list" 
 								[tabindex]="-1"  name="dropdown" role="combobox" [attr.aria-expanded]="showAllHDs" aria-haspopup="true">

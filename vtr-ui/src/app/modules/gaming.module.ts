@@ -34,6 +34,7 @@ import { ModalAddAppsComponent } from '../components/modal/modal-autoclose/modal
 import { NetworkboostAddAppsComponent } from '../components/modal/modal-network-boost/networkboost-add-apps/networkboost-add-apps.component';
 import { NetworkboostTurnOnComponent } from '../components/modal/modal-network-boost/networkboost-turn-on/networkboost-turn-on.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 // Load Icons for Gaming
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -93,7 +94,8 @@ library.add(faArrowAltToTop);
 		WidgetOfflineModule,
 		NgbModalModule,
 		NgbTooltipModule,
-		FeedbackModule
+		FeedbackModule,
+		PageLayoutModule
 	],
 	exports: [ ContainerCardModule, MetricsModule, WidgetOfflineModule ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

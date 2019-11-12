@@ -7,6 +7,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
 	providedIn: 'root'
@@ -140,7 +141,8 @@ export class AppSearchService {
 		const relevantTags = this.searchDB.features.relevantTags;
 
 
-		const dataSource = await this.http.get('./assets/i18n/app-search/en.json').toPromise() as any;
+		const dataSource = await this.http.get(`./assets/i18n/app-search/en.json&v=${environment.appVersion}`)
+			.toPromise() as any;
 		if (!dataSource.features) {
 			return;
 		}

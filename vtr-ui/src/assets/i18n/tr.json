@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Genişlet",
             "loader": "Durum <br> Alma",
             "loading": "Yükleniyor...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "başlangıç",
+            "to": "->",
+            "clickToChange": "değiştirmek için tıklatın"
         },
         "app-update": {
             "message": "Merhaba! Vantage'ın daha yeni bir sürümü var, yüklemek ister misiniz?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage, Mikrofon'a erişemiyor.",
                 "cameraPrivacyNote": "Lenovo Vantage, Kamera'ya erişemiyor."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Eşik",
+            "conservation": "Tasarruf"
         },
         "systemStatus": {
             "title": "Sistem Durumu",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Takılı pil, sistem tarafından <b>desteklenmiyor</b> ve doldurulmayacak. Lütfen yerine bu sistem için doğru olan Lenovo pilini takın.",
                     "Good": "<b>Pil iyi durumda.</b>",
-                    "Exhaustion": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
+                    "Exhaustion": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "Bad": "<b>Bir pil hatası oluştu.</b> Pil doldurulamıyor/boşaltılamıyor. Pili değiştirin.",
                     "NotDetected": "<b>Pil algılanmadı veya</b> pile takılı değil.",
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
                     "OverheatedBattery": "Pilin <b>çok ısındı</b>. Bilgisayardan çıkarın ve oda sıcaklığında soğumasını sağlayın.",
-                    "PermanentError": "Pil <b>normal aşınmaya bağlı olarak arızalandı</b>. Pil doldurulamıyor. Pili değiştirin.",
+                    "PermanentError": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
@@ -956,7 +973,7 @@
                             "close": "kapat",
                             "coolingModesList": {
                                 "list1": "Araç çubuğundaki Windows pil simgesine tıklayın",
-                                "list2": "Windows pil göstergesi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
+                                "list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "İptal",
                             "yes": "Evet",
                             "description3": "Pil göstergesi sıfırlama işlemini durdurmak istediğinizden emin misiniz?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Akıllı Bekleme",
                     "description": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
-                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan Başlangıç saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
+                    "tooltip": "Akıllı Bekleme özelliği etkin olduğunda bilgisayarınız zamanlanan BAŞLANGIÇ saatinden önce Modern Bekleme Durumu kipine geçer ve pil gücünde belirli bir süre etkin olmadan beklediğinde hazırda bekleme kipine geçer. Bu süre, ayarladığınız zamanlamaya veya aldığımız bilgisayar kullanım süresine göre iyileştirilir. Bilgisayar hazırda bekleme kipinden Modern Bekleme Durumu kipine yalnızca zamanlanan günlerde geçer ve zamanlanan günlerde art arda etkin olmadan beklediğinde kipi değiştirmez.",
                     "timer": {
-                        "heading": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
+                        "heading": "Bilgisayarınızı genelde kullandığınız saatleri ayarlayın",
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Hafta içi",
                         "weekends": "Hafta sonları"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
+                    "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "YENİDEN YÜKLE",
                             "cancel": "ŞİMDİ DEĞİL"
                         },
-						"note": {
-							"sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
-							"fnKey": "Özel işleve erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın."
-						}
+                        "note": {
+                            "sFunKey": "F1-F12 işlevlerine erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın.",
+                            "fnKey": "Özel işleve erişmek için Fn tuşuna ve en üst sıradaki tuşlara basın."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP Kısayol Tuşları İşlevleri",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Fn tuşu ve Ctrl tuşu arasında işlev değiş tokuşu",
+                    "description": "Ctrl tuşu yerine alışkanlıkla Fn tuşuna basıyorsanız bu iki tuşun işlevlerini değiştirebilirsiniz.",
+                    "restartNote": "İki tuşun işlevini değiştirmek için bilgisayarınızı yeniden başlatmanız gerekir, yeniden başlatmak istediğinizden emin misiniz?"
                 },
                 "controlOptions": {
                     "more": "DAHA FAZLA",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Sıfır Dokunma ile Oturum Açma",
                     "caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 metre mesafe içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer."
                 },
                 "zeroTouchLock": {
                     "title": "Sıfır Dokunma ile Kilitleme",
@@ -1483,14 +1509,14 @@
                         "medium": "Orta"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Etkinleştirildiğinde, algılama mesafesi otomatik olarak ayarlanır. Algılama mesafesini kaydırıcı ile manuel olarak da ayarlayabilirsiniz. Seçenekler şunlardır:",
+                        "context2": "Algılama mesafesini manuel olarak ayarladığınızda, lütfen aşağıdakilere dikkat edin:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Yakın: 0 - 0,42 metre (17 inç)",
+                            "line2": "Orta: 0 - 0,60 metre (24 inç)",
+                            "line3": "Uzak: 0 - 1,20 metre (47 inç)",
+                            "line4": "Maksimum algılama mesafesi 1,2 metredir. 1,2 metre geçilirse algılayıcı varlığınızı algılayamaz.",
+                            "line5": "Önerilen algılama mesafesi en fazla 0,60 metredir."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Bu özellik için Windows Hello gereklidir. Windows ayarlarında yüz tanımanın açık olduğundan emin olun.",
                     "description2": "Bu özellik, varlığınızı algılamak için sensörler ve kamera kullanır. Ancak, özellik hiçbir kişisel veriyi TOPLAMAZ.",
                     "description3": "1. Bilgisayarınız Çadır, Tablet veya Stant kipindeyse bu özellikler düzgün çalışmayabilir.",
-                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa. Sıfır Dokunma ile Oturum Açma kullanılamaz.",
+                    "description4": "2. Bilgisayarınız uyku kipindeyse veya kapalıysa Sıfır Dokunma ile Oturum Açma özelliği çalışmaz.",
                     "description5": "3. Lütfen bilgisayarınızın ekranını, kızılötesi kameranın otomatik oturum açma için yüzünüzü tanıyabileceği uygun bir açıya ayarlayın.",
                     "description6": "4. Bilgisayarınızda Uçak modu etkin durumdaysa bu özellikler devre dışı bırakılır.",
                     "description7": "Doğruluk vücut ölçüsü, duruş ve hareket sıklığına göre değişiklik gösterir. Bilgisayarınız beklenmedik bir şekilde kilitlenirse doğruluğu artırmak için hassasiyet çubuğunu ayarlayın."
@@ -1827,22 +1853,22 @@
             "good": "İYİ",
             "malicious": "KÖTÜ AMAÇLI",
             "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Güvenlik puanınız çevrimiçinde ne kadar güvende olduğunuza dair bir fikir verir; sonuç, aşağıdakilere bağlıdır:",
+            "securityScoreDepends": "Güvenlik sonucunuz aşağıdakilere bağlıdır:",
             "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
             "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
             "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
             "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
             "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC bildirimi nedir?",
+            "uacText": "Kullanıcı Hesabı Denetimi, zararlı olabilecek programların sisteminizde değişiklik yapmasını önlemeye yardımcı olan çok önemli bir Windows güvenlik özelliğidir.",
+            "windowsTitle": "Neden etkin bir Windows'a ihtiyacım var?",
+            "windowsText": "Orijinal olmayan bir Windows kopyası çalıştırmak sizi virüslere ve diğer güvenlik tehditlerine karşı daha büyük risk altında bırakabilir.",
+            "encryptionTitle": "Sabit Sürücü Şifrelemesi nedir?",
+            "encryptionText": "Sabit sürücünün tamamı için şifreleme sağlayarak sürücü geçerli bilgisayardan çıkarılıp başka cihazlara yerleştirilse bile verilerinizin yetkisiz erişime karşı korunmasına yardımcı olur.",
+            "passwordTitle": "Parolalar nasıl daha iyi korunur?",
+            "passwordText": "Tüm parolalarınızı 3. tarafların bilginiz olmadan kolayca erişebileceği tarayıcılarınızda saklamak yerine, profesyonel bir dijital koruma uygulamasıyla şifreleyerek güvenle saklayın ve yönetin.",
+            "enhanceTitle": "Güvenlik korumasını geliştirmek için ne yapmalıyım?",
+            "enhanceText": "Cihazlarınızı virüsten koruma yazılımı ve güvenlik duvarı ile korumanızı, UAC bildirimini minimum koruma düzeyine ayarlamanızı önemle tavsiye ederiz. Ayrıca, güçlü parolalar oluşturun ve bunları güvenli bir şekilde yönetin; gelişmiş koruma olarak genel ağları kullanırken verilerinizi şifreleyin."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} cihazınız için temel koruma sunar",
                 "unknown": "Bilinmiyor",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Burada daha iyi bir tekliften yararlanabilirsiniz!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Tercih ayarı sayfasında, ileti bildirimini Vantage'ın ileti kategorilerine göre açıp kapatabilirsiniz. Tüm ileti kategorileri devre dışı bırakılmış olsa bile Vantage uygulamasından gerektiğinde Sistem Kritik iletileri alabileceğinizi lütfen unutmayın.",
         "messagesInLenovoVantage": "Lenovo Vantage'da İletiler",
         "appFeatures": "Uygulama özellikleri",
-        "appFeaturesDescription": "System Update, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
+        "appFeaturesDescription": "Sistem Güncellemesi, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
         "marketing": "Pazarlama",
         "marketingDescription": "Lenovo özel teklifleri de dahil olmak üzere promosyon iletileri.",
         "actionTriggered": "Tetiklenen Eylem",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
         "deviceStatistics": "İstatistik verilerini Lenovo ile paylaş",
         "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
+        "userProfile": "User profile",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
     },

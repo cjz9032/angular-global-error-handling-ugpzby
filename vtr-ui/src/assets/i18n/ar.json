@@ -119,7 +119,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -509,6 +509,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -647,9 +664,9 @@
             "expand": "توسيع",
             "loader": "الجلب <br> الحالة",
             "loading": "...جار التحميل",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "من",
+            "to": "الى",
+            "clickToChange": "انقر للتغيير"
         },
         "app-update": {
             "message": "مرحبا! يتوفر إصدار أحدث من Vantage، هل تريد تحميله؟"
@@ -725,8 +742,8 @@
                 "microphoneNote": "لا يتمتع Lenovo Vantage بالوصول إلى الميكروفون.",
                 "cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "حد",
+            "conservation": "ترشيد الاستهلاك"
         },
         "systemStatus": {
             "title": "حالة النظام",
@@ -875,18 +892,18 @@
                 "condition": {
                     "Illegal": "البطارية المركّبة <b>غير مدعومة</b> بواسطة النظام ولن يتم شحنها. الرجاء استبدال البطارية ببطارية Lenovo المناسبة لهذا النظام.",
                     "Good": "<b>البطارية بحالة جيدة.</b>",
-                    "Exhaustion": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
+                    "Exhaustion": "لقد <b>تراجعت‏‎</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "Bad": "<b>حدث خطأ في البطارية.</b> لا يمكن شحن/تفريغ البطارية. استبدل البطارية.",
                     "NotDetected": "<b>لم يتم الكشف عن بطارية أو</b> البطارية غير موصولة.",
                     "NotGood": "<b>البطارية ليست بحالة جيدة.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b></span>",
                     "LimitedACAdapterSupport": "<b>لا يمكن أن يوفر محول التيار المتردد طاقة كافية.</b>",
-                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل.",
+                    "MissingDriver": "<b>برنامج تشغيل Lenovo Power Manager</b> غير مثبت أو لا يعمل بشكل صحيح. يرجى تشغيل Windows Update لتثبيت أحدث برنامج تشغيل. يمكنك أيضًا تثبيت برنامج التشغيل من <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">هنا</a>.",
                     "StoreLimitation": "<b>بإمكان البطارية تخزين فقط {{value}}% من</b> سعة شحنتها الأصلية.",
                     "HighTemperature": "<b>تم إيقاف التفريغ</b> لأن <b>درجة حرارة البطارية مرتفعة أكثر من اللازم.</b>",
                     "TrickleCharge": "تم <b>تفريغ البطارية بشكل كامل</b> ويجب إعادة شحنها. قد تستغرق هذه العملية 10 ساعات أو أكثر.",
                     "OverheatedBattery": "البطارية <b>ساخنة أكثر من اللازم</b>. اعمل على إخراجها من الكمبيوتر وتبريدها وصولاً إلى درجة حرارة الغرفة.",
-                    "PermanentError": "البطارية <b>تعطّلت بسبب تعرّضها للاستهلاك العادي.</b> لا يمكن شحن البطارية. استبدل البطارية.",
+                    "PermanentError": "لقد <b>تراجعت</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
                     "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
                     "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>"
@@ -958,7 +975,7 @@
                             "close": "إغلاق",
                             "coolingModesList": {
                                 "list1": "انقر على رمز بطارية Windows في شريط الأدوات",
-                                "list2": "سيظهر مقياس بطارية Windows، حرك شريط التمرير للاختيار بين الوقت الأمثل أو الأداء الأمثل."
+                                "list2": "سيظهر وضع الطاقة في Windows، حرك شريط التمرير للاختيار بين الوقت الأمثل أو الأداء الأمثل."
                             }
                         }
                     },
@@ -1078,7 +1095,8 @@
                             "cancel": "إلغاء",
                             "yes": "نعم",
                             "description3": "هل تريد بالتأكيد إيقاف عملية إعادة تعيين مقياس البطارية؟"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1088,9 +1106,9 @@
                 "smartStandby": {
                     "title": "وضع الاستعداد الذكي",
                     "description": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدل توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
-                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول زمنيًا ويدخل في الإسبات بعد عدم النشاط في طاقة البطارية لفترة زمنية محددة. يتم تحسين هذه المدة الزمنية استنادًا إلى الجدول الزمني الذي حددته. لا يتحول الكمبيوتر من الإسبات إلى الوضع الاحتياطي الحديث إلا في الأيام المجدولة زمنيًا ولا يتم التحول عند عدم النشاط لعدة أيام متتالية مجدولة زمنيًا.",
+                    "tooltip": "عند تمكين وضع الاستعداد الذكي، سيتحول الكمبيوتر إلى وضع الاستعداد الحديث قبل وقت البدء المجدول، ويدخل في وضع الإسبات بعد مرور فترة زمنية معينة لم يسجل خلالها أي نشاط أثناء عمله على طاقة البطارية. تم تحسين هذه الفترة الزمنية استنادًا إلى الجدول الذي تحدده أو وقت استخدام الكمبيوتر الذي نحصل عليه. ينتقل الكمبيوتر من الإسبات إلى وضع الاستعداد الحديث في الأيام المجدولة فقط، ولا تتم عملية الانتقال هذه عندما لا يسجل الكمبيوتر أي نشاط لعدة أيام مجدولة متتالية.",
                     "timer": {
-                        "heading": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
+                        "heading": "الوقت الذي تستخدم فيه الكمبيوتر عادة",
                         "subHeading1": "بدء",
                         "subHeading2": "إنهاء",
                         "subHeading3": "استخدم هذا الجدول الزمني لأجل",
@@ -1129,8 +1147,16 @@
                         "weekdays": "أيام الأسبوع",
                         "weekends": "عطلة نهاية الأسبوع"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
+                    "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1370,10 +1396,10 @@
                         },
                         "showAdvSettings": "إظهار الإعدادات المتقدمة",
                         "hideAdvSettings": "إخفاء الإعدادات المتقدمة",
-						"note": {
-							"sFunKey": "للوصول إلى وظيفة F1-F12، اضغط على المفتاح Fn والمفاتيح على الصف العلوي.",
-							"fnKey": "للوصول إلى وظيفة خاصة، اضغط على المفتاح Fn والمفاتيح على الصف العلوي."
-						}
+                        "note": {
+                            "sFunKey": "للوصول إلى وظيفة F1-F12، اضغط على المفتاح Fn والمفاتيح على الصف العلوي.",
+                            "fnKey": "للوصول إلى وظيفة خاصة، اضغط على المفتاح Fn والمفاتيح على الصف العلوي."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "وظائف مفتاح VoIP Hotkey",
@@ -1413,9 +1439,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "مبادلة المفتاح Fn والمفتاح Ctrl‬",
+                    "description": "إذا كنت تضغط عادةً على المفتاح Fn عندما تريد الضغط على المفتاح Ctrl، فيمكنك مبادلة وظائف المفتاحين.",
+                    "restartNote": "يتطلب تبديل وظيفة المفتاحين إعادة تشغيل الكمبيوتر. هل تريد بالتأكيد إعادة التشغيل؟"
                 },
                 "controlOptions": {
                     "more": "المزيد",
@@ -1450,7 +1476,7 @@
                 "zeroTouchLogin": {
                     "title": "تسجيل الدخول من دون لمس",
                     "caption": "تلغي هذه الميزة قفل الكمبيوتر أو تنبهه تلقائيًا عندما تجلس أمامه أو تقترب منه.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "عند تواجدك أمام الكمبيوتر أو أثناء اقترابك منه (على مسافة 1.2 متر)، تتيح لك هذه الميزة تسجيل الدخول تلقائيًا إلى النظام بعد التعرف على وجهك. إذا كنت في الخارج بدلاً من أن تكون في المكتب، فيجب أن تكون على مسافة أقرب من الكمبيوتر وستستغرق عملية التنبيه وقتًا أطول."
                 },
                 "zeroTouchLock": {
                     "title": "قفل من دون لمس",
@@ -1485,14 +1511,14 @@
                         "medium": "متوسط"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "عند تمكين هذا الخيار، سيتم ضبط مسافة الكشف تلقائيًا. يمكنك أيضًا تعيين مسافة الكشف يدويًا باستخدام شريط التمرير. الخيارات هي:",
+                        "context2": "عند تعيين مسافة الكشف يدويًا، يرجى الانتباه إلى ما يلي:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "مسافة قريبة: 0 – 0.42 متر (17 بوصة)",
+                            "line2": "مسافة متوسطة: 0 – 0.60 متر (24 بوصة)",
+                            "line3": "مسافة بعيدة: 0 – 1.20 متر (47 بوصة)",
+                            "line4": "الحد الأقصى لمسافة الكشف هو 1.2 متر. إذا تجاوزت 1.2 متر، فسيفشل المستشعر في الكشف عن وجودك.",
+                            "line5": "مسافة الكشف المستحسنة هي ضمن 0.60 متر."
                         }
                     }
                 },
@@ -1500,7 +1526,7 @@
                     "description1": "تعتمد هذه الميزة على Windows Hello. تأكد من تشغيل ميزة التعرف على الوجوه في إعدادات Windows.",
                     "description2": "تستخدم الميزة المستشعرات والكاميرا للكشف عن وجودك. ومع ذلك، فإن الميزة لا تجمع أي بيانات شخصية.",
                     "description3": "1. إذا كان الكمبيوتر الخاص بك في وضع خيمة أو وضع جهاز لوحي أو وضع حامل، فقد لا تعمل هذه الميزات بشكل صحيح.",
-                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو تم إيقاف تشغيله. لن تعمل ميزة تسجيل الدخول من دون لمس.",
+                    "description4": "2. إذا كان الكمبيوتر في وضع الإسبات أو متوقفًا عن التشغيل، فلن تعمل ميزة تسجيل الدخول من دون لمس‬.",
                     "description5": "3. يُرجى ضبط شاشه الكمبيوتر إلى الزاوية المناسبة مما يسمح للكاميرا التي تعمل بالأشعة تحت الحمراء من التعرف على وجهك لتمكين تسجيل الدخول التلقائي.",
                     "description6": "4. إذا تم تمكين وضع الطائرة على الكمبيوتر الخاص بك، فيتم تعطيل هذه الميزات.",
                     "description7": "تختلف الدقة بحسب حجم الجسم والوضعية ومدى تكرار الحركة. إذا تم تأمين جهاز الكمبيوتر بشكل غير متوقع، فاضبط شريط الحساسية لتحسين الدقة."
@@ -1829,22 +1855,22 @@
             "good": "جيد",
             "malicious": "ضار",
             "suspicious": "مشبوه",
-            "securityScoreDepends": "تمنحك درجة الأمان لديك فكرة عن مدى أمانك على الإنترنت، وتتوقف النتيجة على ما إذا كنت:",
+            "securityScoreDepends": "تتوقف نتيجة الأمان على ما إذا كنت:",
             "antivirus": "محميًا بواسطة برنامج مكافحة الفيروسات",
             "password": "تستخدم كلمات مرور قوية ومعقدة تدار بطريقة آمنة",
             "vpn": "تراقب تعرض الشبكة للمهاجمين",
             "wifi": "تشفر بياناتك الشخصية عند استخدام شبكة WiFi عامة",
             "windowsHello": "تحمي جهازك باستخدام خيارات تسجيل الدخول الآمنة",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "ما ميزة إعلام التحكم في حساب المستخدم (UAC)؟",
+            "uacText": "يعتبر التحكم في حساب المستخدم ميزة أمان شديدة الأهمية من Windows تساعد على الحؤول دون قيام البرامج التي من المحتمل أن تكون ضارة بإدخال تغييرات على نظامك.",
+            "windowsTitle": "لماذا أحتاج إلى نسخة Windows نشطة؟",
+            "windowsText": "قد يؤدي تشغيل نسخة غير أصلية من Windows إلى زيادة مستوى تعريضك لمخاطر الفيروسات والتهديدات الأمنية الأخرى.",
+            "encryptionTitle": "ما ميزة تشفير محرك الأقراص الثابتة‬؟",
+            "encryptionText": "تساعدك هذه الميزة على حماية بياناتك من خلال توفير التشفير لمحرك الأقراص الثابتة بكامله لمنع الوصول غير المخوّل على الرغم من إزالة محرك الأقراص من الكمبيوتر الحالي ووضعه في أجهزة أخرى.",
+            "passwordTitle": "كيفية حماية كلمة المرور بشكل أفضل؟",
+            "passwordText": "يمكنك تخزين جميع كلمات مرورك المشفرة وإدارتها بواسطة تطبيق احترافي للحماية الرقمية بدلاً من تخزينها في المستعرضات التي يمكن الوصول إليها بسهولة من قِبل أطراف ثالثة من دون علمك.",
+            "enhanceTitle": "ما الإجراء الذي عليّ اتخاذه لتعزيز الحماية الأمنية؟",
+            "enhanceText": "ننصحك بضرورة حماية أجهزة أجهزتك بواسطة برامج مكافحة الفيروسات وجدار الحماية وإعداد إعلام التحكم في حساب المستخدم (UAC) عند الحد الأدنى للحماية. وعليك أيضًا إنشاء كلمات مرور قوية وإدارتها بطريقة آمنة وتشفير بياناتك أثناء استخدام الشبكة العامة كإجراء حماية متقدمة."
         },
         "antivirus": {
             "common": {
@@ -1921,7 +1947,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} يقدم لك الحماية الأساسية لجهازك",
                 "unknown": "غير معروف",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "استمتع بعرض أفضل هنا!"
             }
         },
         "wifisecurity": {
@@ -2517,7 +2543,7 @@
         "settingsDescription": "في صفحة إعداد التفضيلات، يمكنك اختيار تشغيل/إيقاف تشغيل إخطار الرسائل الخاص بك استنادًا إلى فئات رسالة Vantage، يرجى ملاحظة أنه حتى إذا تم تعطيل جميع فئات الرسائل، فربما تظل تتلقى في بعض الأحيان رسالة هامة من نظام Vantage عند الضرورة.",
         "messagesInLenovoVantage": "الرسائل في Lenovo Vantage",
         "appFeatures": "ميزات التطبيق",
-        "appFeaturesDescription": "الرسائل المتعلقة System Update والمقالات وغيرها من الميزات المثيرة للاهتمام.",
+        "appFeaturesDescription": "الرسائل المتعلقة بتحديث النظام والمقالات وغيرها من الميزات المثيرة للاهتمام.",
         "marketing": "التسويق",
         "marketingDescription": "رسائل الترويج بما في ذلك العروض الخاصة من Lenovo.",
         "actionTriggered": "الرسائل التي تشغلها إجراءات",
@@ -2527,6 +2553,7 @@
         "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
         "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
         "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
+        "userProfile": "User profile",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول."
     },

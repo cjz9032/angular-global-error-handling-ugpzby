@@ -67,7 +67,7 @@
 							</a>
 						</li>
 
-						<li>
+						<li *ngIf="showHWScanMenu">
 							<a id="systemtools_hardware_scan" aria-label="hardware scan" vtrMetrics
 								[metricsItem]="'systemtools_hardware_scan'" metricsEvent="featureClick"
 								routerLink="/beta/hardware-scan" tabindex="1" role="link" aria-label="hardware scan">

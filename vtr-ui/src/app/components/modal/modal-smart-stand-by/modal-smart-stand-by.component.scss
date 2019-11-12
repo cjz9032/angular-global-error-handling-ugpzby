@@ -1,0 +1,22 @@
+@import "../../../app.theme.scss";
+
+.vtr-modal-smart-stand-by {
+	&.modal-body {
+		padding: 0;
+	}
+
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
+	}
+	.close-button {
+		background: $gradient_main;
+		border-radius: 3rem;
+		color: $light;
+		font-size: 1.5rem;
+		padding: 1rem 3rem;
+		font-weight: 500;
+		margin-top: 1rem;
+		font-weight: $weight_bold;
+	}
+}

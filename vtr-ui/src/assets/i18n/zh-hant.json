@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "展開",
             "loader": "獲取狀態",
             "loading": "載入中...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "從",
+            "to": "至",
+            "clickToChange": "按一下以變更"
         },
         "app-update": {
             "message": "嘿！已有更新版的 Vantage，您要載入嗎？"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage 沒有麥克風的存取權。",
                 "cameraPrivacyNote": "Lenovo Vantage 沒有攝影機的存取權。"
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "臨界值",
+            "conservation": "省電"
         },
         "systemStatus": {
             "title": "系統狀態",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "此系統<b>不支援</b>安裝的電池，因此無法充電。請使用此系統適用的正確 Lenovo 電池進行更換。",
                     "Good": "<b>電池狀況良好。</b>",
-                    "Exhaustion": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+                    "Exhaustion": "電池容量已<b>降級</b>。請更換新的電池。",
                     "Bad": "<b>發生電池錯誤。</b>電池無法充電/放電。更換電池。",
                     "NotDetected": "<b>未偵測到電池或未</b>插入電池。",
                     "NotGood": "<b>電池狀況不佳。</b>",
                     "NotSupportACAdapter": "<b>不支援 AC 整流器。</b>",
                     "LimitedACAdapterSupport": "<b>AC 整流器無法提供足夠的電力。</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。",
+                    "MissingDriver": "<b>Lenovo Power Manager 驅動程式</b>未安裝或無法正常運作。請執行 Windows Update 以安裝最新的驅動程式。您也可以從<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">這裡</a>安裝驅動程式。",
                     "StoreLimitation": "<b>電池只能儲存其原始充飽容量的 {{value}}%</b>。",
                     "HighTemperature": "因為<b>電池溫度過高</b>，已停止<b>放電。</b>",
                     "TrickleCharge": "電池已<b>完全放電</b>，而且必須重新充電。這可能需要十小時或更長的時間。",
                     "OverheatedBattery": "電池<b>過熱</b>。請將其從電腦中取出，並使其降至室溫。",
-                    "PermanentError": "電池<b>因正常損耗而發生故障。</b>電池無法充電。更換電池。",
+                    "PermanentError": "電池容量已<b>降級</b>。請更換新的電池。",
                     "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
                     "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源已連接。</b>"
@@ -956,7 +973,7 @@
                             "close": "關閉",
                             "coolingModesList": {
                                 "list1": "按一下工具列中的 Windows 電池圖示",
-                                "list2": "Windows 電池計量器隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
+                                "list2": "Windows 電源模式隨即顯示，滑動滑桿即可在最佳時間或最佳效能之間選擇。"
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "取消",
                             "yes": "是",
                             "description3": "您確定要停止電池計量器重設嗎？"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "智慧型待命",
                     "description": "此功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
+                    "tooltip": "當智慧型待命啟用時，電腦在排程的開始時間之前會切換到新式待命，並在使用電池電力閒置一段時間後進入休眠模式。這段時間會根據您設定的排程或我們取得的電腦使用情形最佳化。電腦只有在排程日會從休眠模式切換到新式待命，若是在連續的排程日處於閒置狀態就不會切換。",
                     "timer": {
-                        "heading": "設定您一般使用這部電腦的時間",
+                        "heading": "您一般使用您的電腦的時間",
                         "subHeading1": "開始",
                         "subHeading2": "結束",
                         "subHeading3": "將此排程用於",
@@ -1127,8 +1145,16 @@
                         "weekdays": "週間日",
                         "weekends": "週末"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
+                    "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "重新開機",
                             "cancel": "現在不要"
                         },
-						"note": {
-							"sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
-							"fnKey": "若要存取特殊功能，請按下 Fn 和最上面一排的按鍵。"
-						}
+                        "note": {
+                            "sFunKey": "若要存取 F1-F12 功能，請按下 Fn 和最上面一排的按鍵。",
+                            "fnKey": "若要存取特殊功能，請按下 Fn 和最上面一排的按鍵。"
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP 快速鍵功能",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Fn 與 Ctrl 鍵交換",
+                    "description": "如果您在想要按 Ctrl 鍵時卻習慣按下 Fn 鍵，可以交換這兩個鍵的功能。",
+                    "restartNote": "交換兩個鍵的功能需要重新啟動電腦，您確定要重新啟動嗎？"
                 },
                 "controlOptions": {
                     "more": "其他資訊",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "紅外線攝影機自動登入",
                     "caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。"
                 },
                 "zeroTouchLock": {
                     "title": "自動鎖定螢幕",
@@ -1483,14 +1509,14 @@
                         "medium": "中"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "啟用時，偵測距離將會自動調整。您也可以透過滑桿手動設定偵測距離。選項包括：",
+                        "context2": "當您手動設定偵測距離時，請注意下列事項：",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "近：0 – 0.42 公尺（17 吋）",
+                            "line2": "中：0 – 0.60 公尺（24 吋）",
+                            "line3": "遠：0 – 1.20 公尺（47 吋）",
+                            "line4": "最大偵測距離為 1.2 公尺。如果超過 1.2 公尺，感應器將無法偵測到您的存在。",
+                            "line5": "建議的偵測距離為 0.60 公尺內。"
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "此功能必須依賴 Windows Hello。確定 Windows 設定中已開啟臉部辨識。",
                     "description2": "該功能會使用感應器和攝影機來偵測您的存在。不過，這項功能不會收集任何個人資料。",
                     "description3": "1. 如果您的電腦處於帳篷、平板或直立模式，這些功能可能無法正常運作。",
-                    "description4": "2. 當您的電腦處於休眠模式或已關閉電源時。自動紅外線攝影機登入將不會運作。",
+                    "description4": "2. 如果您的電腦處於休眠模式或已關閉，零接觸登入將無法運作。",
                     "description5": "3. 請將電腦螢幕調整至適當的角度，讓紅外線攝影機可以辨識出您的臉部，進行自動登入。",
                     "description6": "4. 如果您的電腦上已啟用飛航模式，這些功能都會停用。",
                     "description7": "精確度會隨身體大小、姿勢和動作頻率有所變化。如果您的電腦意外遭到鎖定，請調整敏感度拉桿以改善精準度。"
@@ -1827,22 +1853,22 @@
             "good": "良好",
             "malicious": "惡意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全結果依下列條件而異：",
+            "securityScoreDepends": "您的安全分數結果將依下列條件而異：",
             "antivirus": "是否獲得防毒軟體的保護",
             "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
             "vpn": "是否監控網路遭受攻擊的風險",
             "wifi": "是否在使用公共 WiFi 時加密您的個人資料",
             "windowsHello": "是否使用安全登入選項來保護裝置",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "什麼是 UAC 通知？",
+			"uacText": "使用者帳戶控制是 Windows 非常重要的一項安全性功能，可協助防止潛在有害的程式對您的系統進行變更。",
+			"windowsTitle": "為什麼需要啟用 Windows？",
+			"windowsText": "執行非正版 Windows 會使得遭受病毒與其他安全性威脅攻擊的風險大幅提高。",
+			"encryptionTitle": "什麼是硬碟加密？",
+			"encryptionText": "此功能透過將整個硬碟加密保護您的資料，即使該硬碟從目前的 PC 卸下並放入其他裝置亦可避免遭到未經授權的存取。",
+			"passwordTitle": "如何能更妥善保護密碼？",
+			"passwordText": "安全地儲存及管理所有經由專業數位保護應用程式加密過的密碼，而不是逕行存放於瀏覽器使第三方可在您不知情的情況下輕易存取。",
+			"enhanceTitle": "應該採取哪些措施以強化安全保護？",
+			"enhanceText": "強烈建議您交由防毒軟體和防火牆保護您的裝置，設定 UAC 通知以提供最低限度的保護。此外，建立高保護性密碼並以安全的方式進行管理，使用公用網路時加密您的資料做為進階保護措施。"
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}為您的裝置提供基本保護",
                 "unknown": "不明",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "在此盡情享受更棒的優惠！"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "在喜好設定頁面中，您可以根據 Vantage 的訊息類別選擇開啟/關閉您的訊息通知，請注意即使所有訊息類別皆已停用，必要時您可能偶爾仍會收到 Vantage 的系統重要訊息。",
         "messagesInLenovoVantage": "Lenovo Vantage 中的訊息",
         "appFeatures": "應用程式功能",
-        "appFeaturesDescription": "與 System Update、文章和其他重要功能相關的訊息。",
+        "appFeaturesDescription": "與系統更新、文章和其他重要功能相關的訊息。",
         "marketing": "行銷",
         "marketingDescription": "促銷訊息包括 Lenovo 特別優惠。",
         "actionTriggered": "引發的動作",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
         "deviceStatistics": "與 Lenovo 分享統計資料",
         "deviceStatisticsDescription": "與 Lenovo 共用統計資料，協助我們提升您電腦功能的可靠性、設計和最佳化。",
+        "userProfile": "User profile",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式，此頁面中的所有設定才可生效。"
     },

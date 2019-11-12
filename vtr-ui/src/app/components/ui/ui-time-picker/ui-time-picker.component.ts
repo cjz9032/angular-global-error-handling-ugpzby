@@ -11,6 +11,7 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	@Input() time: string;
 	@Input() subHeadingText: string;
 	@Input() id: string;
+	@Input() label: string;
 	@Input() showDropDown: boolean;
 	@Output() setTime = new EventEmitter<string>();
 	@Input() linkId: string;

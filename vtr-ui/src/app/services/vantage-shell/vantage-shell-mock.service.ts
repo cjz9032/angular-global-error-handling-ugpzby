@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/beta/hardware-scan/mock/hardware-scan-shell-mock';
-import { WinRT, CHSAccountState, CHSAccountRole, EventTypes } from '@lenovo/tan-client-bridge';
+import { WinRT, CHSAccountState, EventTypes } from '@lenovo/tan-client-bridge';
 import { of } from 'rxjs';
 import { TopRowFunctionsIdeapad } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
@@ -21,6 +21,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
+	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -261,7 +262,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: this.isGamingDevice, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -316,7 +317,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: this.isGamingDevice, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -410,19 +411,15 @@ export class VantageShellService {
 				eventName = 'PageView';
 				break;
 			case 'featureclick':
-				eventName = 'FeatureClick';
-				break;
 			case 'itemclick':
-				eventName = 'ItemClick';
+				eventName = 'FeatureClick';
 				break;
 			case 'itemview':
 				eventName = 'ItemView';
 				break;
 			case 'articleclick':
-				eventName = 'ArticleClick';
-				break;
 			case 'docclick':
-				eventName = 'DocClick';
+				eventName = 'ArticleClick';
 				break;
 			case 'articleview':
 				eventName = 'ArticleView';
@@ -661,6 +658,9 @@ export class VantageShellService {
 					return Promise.resolve();
 				},
 				launch() {
+					return Promise.resolve(true);
+				},
+				openMcAfeeRegistry() {
 					return Promise.resolve(true);
 				}
 			},
@@ -1450,7 +1450,7 @@ export class VantageShellService {
 			enclosureType: 'notebook',
 			family: 'ThinkPad E480',
 			firstRunDate: '2019-06-18T00:54:24',
-			isGaming: true, // change value to true for gaming machine
+			isGaming: this.isGamingDevice, // change value to true for gaming machine
 			isSMode: false,
 			locale: 'en',
 			manufacturer: 'LENOVO',
@@ -2052,5 +2052,19 @@ export class VantageShellService {
 	}
 	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
 		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+	}
+
+	public getRegistryUtil(): Phoenix.RegistryFeature {
+		if (this.phoenix) {
+			return this.phoenix.registry;
+		}
+		return undefined;
+	}
+
+	public getSelfSelect() {
+		if (this.phoenix) {
+			return this.phoenix.selfSelect;
+		}
+		return undefined;
 	}
 }

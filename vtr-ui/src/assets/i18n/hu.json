@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Kibontás",
             "loader": "Állapot <br> lekérése",
             "loading": "Betöltés...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "ettől",
+            "to": "sort",
+            "clickToChange": "a módosításhoz kattintson ide"
         },
         "app-update": {
             "message": "Szia! Megjelent a Vantage legújabb verziója, szeretnéd letölteni?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "A Lenovo Vantage nem fér hozzá a mikrofonhoz.",
                 "cameraPrivacyNote": "A Lenovo Vantage nem fér hozzá a kamerához."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Küszöb",
+            "conservation": "Tárolás"
         },
         "systemStatus": {
             "title": "Rendszerállapot",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "A telepített akkumulátort a rendszer <b>nem támogatja</b> és nem tölti fel. Cserélje ki az akkumulátort egy a rendszerhez megfelelő Lenovo akkumulátorra.",
                     "Good": "<b>Az akkumulátor jó állapotban van.</b>",
-                    "Exhaustion": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
+                    "Exhaustion": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "Bad": "<b>Hiba történt az akkumulátorral.</b> Az akkumulátor nem tölthető/meríthető le. Cserélje ki az akkumulátort.",
                     "NotDetected": "<b>Nem található akkumulátor, vagy</b> az akkumulátor nincs megfelelően behelyezve.",
                     "NotGood": "<b>Az akkumulátor nincs jó állapotban.</b>",
                     "NotSupportACAdapter": "<b>A hálózati adapter nem támogatott.</b>",
                     "LimitedACAdapterSupport": "<b>A hálózati adapter nem képes elegendő energiát szolgáltatni.</b>",
-                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez.",
+                    "MissingDriver": "<b>A Lenovo Power Manager illesztőprogramja</b> nincs telepítve, vagy nem működik megfelelően. Futtassa a Windows Update programot a legújabb illesztőprogram telepítéséhez. A <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">helyről letöltött illesztőprogramot itt</a> is telepítheti.",
                     "StoreLimitation": "<b>Az akkumulátor csak az eredeti teljes töltési kapacitás {{value}}%-át</b> tudja tárolni.",
                     "HighTemperature": "A <b>lemerítés</b> leállt, mert az <b>akkumulátor túl meleg.</b>",
                     "TrickleCharge": "Az akkumulátor <b>teljesen lemerült</b>, fel kell tölteni. Ez akár 10 órán át vagy tovább is eltarthat.",
                     "OverheatedBattery": "Az akkumulátor <b>túl meleg</b>. Vegye ki a számítógépből, és hagyja lehűlni szobahőmérsékletre.",
-                    "PermanentError": "Az akkumulátor <b>elhasználódott</b>. Az akkumulátor nem tölthető. Cserélje ki az akkumulátort.",
+                    "PermanentError": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
                     "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>"
@@ -956,7 +973,7 @@
                             "close": "bezárás",
                             "coolingModesList": {
                                 "list1": "Kattintson az eszköztáron a Windows akkumulátorikonjára",
-                                "list2": "Megjelenik a Windows akkumulátormérője; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
+                                "list2": "Megjelenik a Windows Energiaséma módja; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Mégse",
                             "yes": "Igen",
                             "description3": "Biztosan leállítja az akkumulátormérő nullázását?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Intelligens készenlét",
                     "description": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
-                    "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett kezdési idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időszakot a megadott ütemezés alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre; ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
+                    "tooltip": "Amikor aktiválja az Intelligens készenlét funkciót, a számítógép az ütemezett KEZDÉSI idő előtt Modern készenlétre vált, és hibernált állapotba kerül, ha akkumulátorról üzemel, és egy adott ideig nem használják. Ezt az időtartamot az Ön által beállított munkarend vagy az érzékelt számítógép-használati séma alapján optimalizálja a rendszer. A számítógép csak az ütemezett napokon vált hibernált módról Modern készenlétre, és ha egymást követő ütemezett napokon nem használják, nem történik meg a váltás.",
                     "timer": {
-                        "heading": "Adja meg, hogy általában mikor használja a számítógépet",
+                        "heading": "A számítógép jellemző használati időszaka",
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Hétköznapok",
                         "weekends": "Hétvégén"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
+                    "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "ÚJRAINDÍTÁS",
                             "cancel": "NE MOST"
                         },
-						"note": {
-							"sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
-							"fnKey": "Adott funkciót az Fn és a fenti soron lévő billentyűk megnyomásával érhet el."
-						}
+                        "note": {
+                            "sFunKey": "Az F1–F12 funkcióbillentyűk funkcióit az Fn és a fenti soron lévő billentyűk megnyomásával érheti el.",
+                            "fnKey": "Adott funkciót az Fn és a fenti soron lévő billentyűk megnyomásával érhet el."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Gyorsbillentyűkhöz kapcsolódó VoIP-funkciók",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Az Fn és a Ctrl billentyű felcserélése",
+                    "description": "Ha rendszeresen az Fn billentyűt nyomja le, amikor a Ctrl billentyűt szeretné lenyomni, felcserélheti a két billentyű funkcióját.",
+                    "restartNote": "A két billentyű funkciójának felcseréléséhez újra kell indítania a számítógépet. Biztosan újraindítja?"
                 },
                 "controlOptions": {
                     "more": "TOVÁBBIAK",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Érintés nélküli bejelentkezés",
                     "caption": "Amikor a felhasználó a számítógép előtt ül vagy a közelében van, a funkció automatikusan feloldja vagy felébreszti a számítógépet.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ha a számítógéppel szemben áll vagy közeledik hozzá (1,2 méteres távolságon belül), ez a funkció lehetővé teszi, hogy az arcfelismerést követően a rendszer automatikusan beléptesse Önt. Ha a szabadban tartózkodik, nem pedig az irodában, közelebb kell mennie a számítógéphez, és az ébresztés hosszabb ideig tart."
                 },
                 "zeroTouchLock": {
                     "title": "Érintés nélküli zárolás",
@@ -1483,14 +1509,14 @@
                         "medium": "Közepes"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Ha engedélyezi, az érzékelési távolság beállítása automatikusan történik. A csúszkával kézileg is beállíthatja az érzékelési távolságot. A lehetőségek a következők:",
+                        "context2": "Az érzékelési távolság kézi beállításakor vegye figyelembe a következőket:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Közel: 0–0,42 méter (17 hüvelyk)",
+                            "line2": "Közepes: 0–0,60 méter (24 hüvelyk)",
+                            "line3": "Távol: 0–1,20 méter (47 hüvelyk)",
+                            "line4": "A maximális érzékelési távolság 1,2 méter. 1,2 méter meghaladása esetén az érzékelő nem észleli a jelenlétet.",
+                            "line5": "Az ajánlott érzékelési távolság 0,60 méteren belül van."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "A funkcióhoz a Windows Hello szükséges. Ellenőrizze, hogy az arcfelismerés be van-e kapcsolva a Windows beállításai között.",
                     "description2": "A funkció érzékelőkkel és kamerával észleli az Ön jelenlétét. A funkció azonban NEM gyűjt személyes adatokat.",
                     "description3": "1. Ha a számítógép sátor, táblagép vagy álló üzemmódban van, előfordulhat, hogy ezek a funkciók nem működnek megfelelően.",
-                    "description4": "2. Ha a számítógép hibernált módban van vagy ki van kapcsolva, Az érintés nélküli bejelentkezés nem fog működni.",
+                    "description4": "2. Ha a számítógép hibernált módban van, vagy ki van kapcsolva, az érintés nélküli bejelentkezés nem működik.",
                     "description5": "3. Állítsa megfelelő szögbe a számítógép képernyőjét, hogy az infravörös kamera felismerhesse az arcot az automatikus bejelentkeztetéshez.",
                     "description6": "4. Ha a számítógépen bekapcsolta a Repülőgép üzemmódot, ezek a funkciók nem használhatók.",
                     "description7": "A pontosság függ a testmérettől, a testtartástól és a mozgás gyakoriságától. Ha a számítógép váratlanul zárolódik, állítsa be az érzékenységi sávot a pontosság javítása érdekében."
@@ -1827,22 +1853,22 @@
             "good": "JÓ",
             "malicious": "ROSSZINDULATÚ",
             "suspicious": "GYANÚS",
-            "securityScoreDepends": "A biztonsági pontszám azt jelzi, hogy mennyire van biztonságban a rendszere az interneten. Az eredményt a következők befolyásolják:",
+            "securityScoreDepends": "Adatainak biztonsága attól függ, hogy Ön:",
             "antivirus": "Vírusirtó szoftver használata",
             "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
             "vpn": "A hálózat támadóknak való kitettségének mérése",
             "wifi": "A személyes adatok titkosítása nyilvános WiFi használata esetén",
             "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Mi az UAC-értesítés?",
+            "uacText": "A Felhasználói fiókok felügyelete a Windows nagyon fontos biztonsági funkciója, amely megakadályozza, hogy az esetlegesen káros programok a megváltoztassák a rendszert.",
+            "windowsTitle": "Miért kell aktiválnom a Windows rendszert?",
+            "windowsText": "Ha nem eredeti Windows-példányt futtat nagyobb a veszélye a vírusoknak és más biztonsági fenyegetéseknek.",
+            "encryptionTitle": "Mi a merevlemez-titkosítás?",
+            "encryptionText": "Segíti az adatok védelmét azáltal, hogy a teljes merevlemez-meghajtót titkosítja a jogosulatlan hozzáférés ellen, még akkor is, ha a meghajtót eltávolítják az aktuális számítógépből, és más eszközbe helyezik.",
+            "passwordTitle": "Hogyan lehet jobban megvédeni a jelszavakat?",
+            "passwordText": "Biztonságosan tárolja és kezeli az összes jelszavát, amelyet egy professzionális digitális védelmi alkalmazás titkosított, ahelyett, hogy csupán böngészőiben tárolja azokat, amelyhez harmadik felek könnyen hozzáférhetnek az Ön tudta nélkül.",
+            "enhanceTitle": "Mit kell tennem a biztonsági védelem fokozása érdekében?",
+            "enhanceText": "Ajánljuk, hogy vírusvédelmi szoftverrel és tűzfallal védje eszközét, és állítson be UAC-értesítést minimális védelmi szinten. Adjon meg erős jelszavakat, kezelje azokat biztonságosan, titkosítsa adatait miközben a nyilvános hálózatot használja fejlett védelemként."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "A(z) {{protectedName}} alapszintű védelmet biztosít az eszköz számára",
                 "unknown": "Ismeretlen",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Kedvezőbb ajánlatot kínálunk Önnek!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
         "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
         "appFeatures": "Az alkalmazás funkciói",
-        "appFeaturesDescription": "A System Update szolgáltatással kapcsolatos üzenetek, cikkek és további fontos funkciók.",
+        "appFeaturesDescription": "A Rendszerfrissítéssel kapcsolatos üzenetek, cikkek és további fontos tudnivalók.",
         "marketing": "Marketing",
         "marketingDescription": "Promóciós üzenetek, többek között a Lenovo különleges ajánlatai.",
         "actionTriggered": "Aktivált művelet",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
         "deviceStatistics": "Statisztikai adatok megosztása a Lenovóval",
         "deviceStatisticsDescription": "Statisztikai adatokat oszt meg a Lenovóval, így segíti a számítógép-funkciók tervezését, optimalizálását és megbízhatóbbá tételét.",
+        "userProfile": "User profile",
         "Note": "Megjegyzés: ",
         "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania az alkalmazást."
     },

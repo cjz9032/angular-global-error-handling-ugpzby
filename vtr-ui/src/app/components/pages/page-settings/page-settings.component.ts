@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -25,6 +26,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
+	usageRadioValue = null;
 
 	valueToBoolean = [false, true, false];
 
@@ -51,14 +53,18 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			leftImageSource: ['fal', 'shoe-prints'],
 		}
 	];
+
 	metrics: any;
 	metricsPreference: any;
+	checkedArray: string[] = [];
+	userProfileEnabled = true;
 
 	constructor(
 		private shellService: VantageShellService,
 		private settingsService: SettingsService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
+		public selfSelectService: SelfSelectService,
 		private timerService: TimerService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
@@ -73,7 +79,24 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.getAllToggles();
 		this.timerService.start();
+		this.initializeSelfSelectConfig();
+	}
 
+	initializeSelfSelectConfig() {
+		this.selfSelectService.getConfig().then((config) => {
+			if (config && config.segment) {
+				this.usageRadioValue = config.segment;
+			}
+			if (config && config.customtags) {
+				const checkedTags = config.customtags;
+				this.checkedArray = checkedTags.split(',');
+				this.selfSelectService.interests.forEach(item => {
+					item.checked = checkedTags && checkedTags.includes(item.label);
+				});
+			}
+		}).catch((error) => {
+			this.userProfileEnabled = false;
+		});
 	}
 
 	ngOnDestroy() {
@@ -244,6 +267,52 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.sendMetrics(settingUpdateMetrics);
+	}
+
+	onKeyPress($event) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+		}
+	}
+
+	saveUsageType(value) {
+		this.usageRadioValue = value;
+	}
+
+	toggle($event, value) {
+		if ($event.target.checked) {
+			this.checkedArray.push(value);
+		} else {
+			this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
+		}
+	}
+
+	saveUserProfile() {
+		const config = {
+			customtags: this.checkedArray.join(','),
+			segment: this.usageRadioValue
+		}
+		this.selfSelectService.updateConfig(config);
+
+		const usageData = {
+			ItemType: 'FeatureClick',
+			ItemName: 'UsageType',
+			ItemValue: this.usageRadioValue,
+			ItemParent: 'Page.Settings'
+		};
+		this.metrics.sendAsync(usageData);
+
+		const interestMetricValue = {};
+		this.checkedArray.forEach(item => {
+			interestMetricValue[item] = true;
+		});
+		const interestData = {
+			ItemType: 'FeatureClick',
+			ItemName: 'Interest',
+			ItemValue: interestMetricValue,
+			ItemParent: 'Page.Settings'
+		};
+		this.metrics.sendAsync(interestData);
 	}
 
 }

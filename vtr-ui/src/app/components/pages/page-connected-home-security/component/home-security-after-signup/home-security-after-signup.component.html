@@ -31,25 +31,25 @@
 				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a class="font-weight-bold" [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a class="font-weight-bold" [ngClass]="{'warning_red': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'trialExpired'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialExpiredPeriod' | translate">
-						<a class="warning font-weight-bold"></a>
+						<a class="warning_red font-weight-bold"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'standard'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionPeriod' | translate: {remainingDay: account?.expirationDay }">
-						<a class="font-weight-bold" [ngClass]="{'warning': !isMoreThen30Day(account?.expirationDay)}"></a>
+						<a class="font-weight-bold" [ngClass]="{'warning_red': !isMoreThen30Day(account?.expirationDay)}"></a>
 					</p>
 				</ng-container>
 				<ng-container *ngIf="account?.state === 'standardExpired'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.subscriptionExpiredPeriod' | translate">
-						<a class="warning font-weight-bold"></a>
+						<a class="warning_red font-weight-bold"></a>
 					</p>
 				</ng-container>
 				<p class="m-0 pl-0"><span>Lenovo ID: </span><span [innerHTML]="account?.lenovoId"></span></p>
@@ -107,7 +107,7 @@
 			</vtr-ui-button>
 		</div>
 	</div>
-	<div *ngIf="account?.role !== 'admin'" class="p-40 mt-5">
+	<div *ngIf="account?.role !== 'admin'" class="mt-5">
 		<div class="d-flex flex-column justify-content-center pb-3">
 			<p class="m-0" [innerHTML]="'homeSecurity.overview.disconnectDevice' | translate"></p>
 		</div>

@@ -338,6 +338,11 @@
 		top: 1.9rem;
 	}
 
+	.content-page-2 .interests .hideLabel {
+		display: none;
+		visibility: hidden;
+	}
+
 	.btn-close {
 		right: 1rem;
 		top: 1rem;
@@ -520,6 +525,7 @@
 		border-radius: 500px;
 		width: calc(100% + 0.8rem);
 		height: calc(100% + 0.8rem);
-		border: thin solid $menu_hover;
+		border: none;
+		// border: thin solid $menu_hover; // commented due to cause of VAN-10277
 	}
 }

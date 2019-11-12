@@ -78,7 +78,7 @@
 			@media #{$black-on-white}{
 				background-color: $light;
 				border: none;
-				color: darkviolet;
+				color: $high-contrast-white-textselected;
 			}
 	
 		}
@@ -117,7 +117,7 @@
 		border: 0.3rem solid $main;
 		// transition: all 50ms ease-in;
 		@media #{$black-on-white} {
-			border: 0.3rem solid darkviolet;
+			border: 0.3rem solid $high-contrast-white-textselected;
 		}
 
 	}

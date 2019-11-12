@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Utvid",
             "loader": "Henter <br> status",
             "loading": "Laster...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klikk for å endre"
         },
         "app-update": {
             "message": "Hei! Det finnes en nyere versjon av Vantage, vil du laste den?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage har ikke tilgang til mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage har ikke tilgang til kamera."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Terskel",
+            "conservation": "Oppbevaring"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Det installerte batteriet <b>støttes ikke</b> av dette systemet, og vil ikke kunne lades opp. Batteriet må bare byttes ut med korrekt Lenovo-batteri for dette systemet.",
                     "Good": "<b>Batteriet er i god stand.</b>",
-                    "Exhaustion": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
+                    "Exhaustion": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "Bad": "<b>Det har oppstått en batterifeil.</b> Batteriet kan ikke lades/utlades. Bytt batteri.",
                     "NotDetected": "<b>Kan ikke gjenkjenne batteri, eller</b> batteri ikke satt i.",
                     "NotGood": "<b>Batteriet er ikke i god stand.</b>",
                     "NotSupportACAdapter": "<b>Strømadapteret støttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>STRØM adapteren kan ikke gi nok strøm.</b>",
-                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren.",
+                    "MissingDriver": "<b>Driveren for Lenovo Power Manager</b> er ikke installert, eller virker ikke som den skal. Kjør Windows Update for å installere den nyeste driveren. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>.",
                     "StoreLimitation": "<b>Batteriet kan bare lagre {{value}}% av</b> opprinnelig full ladekapasitet.",
                     "HighTemperature": "<b>Utladingen</b> har stoppet fordi <b>batteritemperaturen er for høy.</b>",
                     "TrickleCharge": "Batteriet ble <b>helt utladet</b> og må lades opp på nytt. Dette kan ta ti timer eller mer.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Ta det ut av maskinen og avkjøl det til romtemperatur.",
-                    "PermanentError": "Batteriet er <b>utslitt på grunn av normal slitasje.</b> Batteriet kan ikke lades. Bytt batteri.",
+                    "PermanentError": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
@@ -956,7 +973,7 @@
                             "close": "Lukk",
                             "coolingModesList": {
                                 "list1": "Klikk på Windows batteri-ikonet på verktøylinjen",
-                                "list2": "Windows-batterimåler vises. Skyv glidebryteren for å velge mellom optimal tid eller optimal ytelse."
+                                "list2": "Strømmodus for Windows vises. Skyv glidebryteren for å velge mellom optimal tid eller optimal ytelse."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Avbryt",
                             "yes": "Ja",
                             "description3": "Er du sikker på at du vil stoppe tilbakestillingen av batterimåleren?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Smart hvilemodus",
                     "description": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt starttidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
+                    "tooltip": "Når Smart hvilemodus er aktivert, bytter datamaskinen til Moderne hvilemodus før planlagt START-tidspunkt og går i dvale når den har vært inaktiv en viss tid på batteristrøm. Dette tidsrommet er optimalisert basert på planen du angir, eller brukstiden vi mottar for datamaskinen. Datamaskinen går fra dvale til Moderne hvilemodus bare på planlagte dager, og den bytter ikke når den har vært inaktiv i flere planlagte dager på rad.",
                     "timer": {
-                        "heading": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                        "heading": "Tidspunkter du vanligvis bruker datamaskinen",
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Uke dager",
                         "weekends": "Helger"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
+                    "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "START PÅ NYTT",
                             "cancel": "IKKE NÅ"
                         },
-						"note": {
-							"sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
-							"fnKey": "Du får tilgang til spesialfunksjonen ved å trykke på Fn og tastene på den øverste raden."
-						}
+                        "note": {
+                            "sFunKey": "Du får tilgang til F1–F12-funksjonen ved å trykke på Fn og tastene på den øverste raden.",
+                            "fnKey": "Du får tilgang til spesialfunksjonen ved å trykke på Fn og tastene på den øverste raden."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Hurtigtastfunksjoner for VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Bytte av Fn- og Ctrl-tasten",
+                    "description": "Hvis du av vane trykket på Fn-tasten da du mente å trykke på Ctrl-tasten, kan du bytte funksjonen til de to tastene.",
+                    "restartNote": "Hvis du bytter funksjon for to taster, må du starte datamaskinen på nytt. Er du sikker på at du vil starte på nytt?"
                 },
                 "controlOptions": {
                     "more": "MER",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Pålogging uten berøring",
                     "caption": "Denne funksjonen låser opp eller aktiverer datamaskinen automatisk når du befinner deg foran den eller nærmer deg den.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Når du er foran datamaskinen eller nærmer deg den (innen avstanden på 1,2 meter), gjør denne funksjonen deg i stand til automatisk å logge deg på systemet etter at ansiktet ditt har blitt gjenkjent. Hvis du er utendørs i stedet for på kontoret, må du være nærmere datamaskinen, og det vil ta lengre tid å aktivere den."
                 },
                 "zeroTouchLock": {
                     "title": "Berøringsfri lås",
@@ -1483,14 +1509,14 @@
                         "medium": "Middels"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Når denne funksjonen er aktivert, blir deteksjonsavstanden justert automatisk. Du kan også angi deteksjonsavstanden manuelt ved hjelp av glidebryteren. Alternativer:",
+                        "context2": "Når du angir deteksjonsavstanden manuelt, må du være oppmerksom på følgende:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Kort avstand: 0–0,42 meter (17 tommer)",
+                            "line2": "Middels avstand: 0–0,60 meter (24 tommer)",
+                            "line3": "Lang avstand: 0–1,20 meter (47 tommer)",
+                            "line4": "Maksimal deteksjonsavstand er 1,2 meter. Hvis du overskrider 1,2 meter, vil ikke sensoren oppdage din tilstedeværelse.",
+                            "line5": "Anbefalt deteksjonsavstand er mindre enn 0,60 meter."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Denne funksjonen er avhengig av Windows Hello. Pass på at ansiktsgjenkjenning er aktivert i Windows-innstillingene.",
                     "description2": "Funksjonen bruker sensorer og kamera til å oppdage din tilstedeværelse. Funksjonen samler imidlertid IKKE inn noen personlige opplysninger.",
                     "description3": "1. Disse funksjonene fungerer kanskje ikke på riktig måte hvis datamaskinen er i telt-, nettbrett- eller stativmodus.",
-                    "description4": "2. Hvis datamaskinen er i dvalemodus eller er slått av. Pålogging uten berøring fungerer ikke.",
+                    "description4": "2. Pålogging uten berøring fungerer ikke hvis datamaskinen er i dvalemodus eller er slått av.",
                     "description5": "3. Juster dataskjermens vinkel slik at det infrarøde kameraet kan gjenkjenne ansiktet ditt og logge deg på automatisk.",
                     "description6": "4. Disse funksjonene deaktiveres hvis flymodus aktiveres på datamaskinen.",
                     "description7": "Nøyaktigheten varierer avhengig av kroppsstørrelse, sittestilling og bevegelseshyppighet. Hvis datamaskinen blir uventet låst, kan du justere følsomheten for å forbedre nøyaktigheten."
@@ -1827,22 +1853,22 @@
             "good": "GOD",
             "malicious": "SKADELIG",
             "suspicious": "MISTENKELIG",
-            "securityScoreDepends": "Sikkerhetsresultatet ditt gir deg en pekepinn på hvor sikker du er på nettet. Resultatet avhenger av følgende:",
+            "securityScoreDepends": "Sikkerhetsresultatet avhenger av om du er:",
             "antivirus": "Om du er beskyttet av antivirusprogramvare",
             "password": "Om du har sterke passord som du håndterer på en sikker måte",
             "vpn": "Om du overvåker nettverkets sårbarhet for angripere",
             "wifi": "Om du krypterer personlige data når du bruker offentlig WiFi",
             "windowsHello": "Om du beskytter enheten ved hjelp av sikre påloggingsmåter",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Hva er UAC-varsling?",
+            "uacText": "Brukerkontokontroll er en svært viktig sikkerhetsfunksjon i Windows som bidrar til å hindre at potensielt skadelige programmer gjør endringer på systemet.",
+            "windowsTitle": "Hvorfor må jeg aktive Windows?",
+            "windowsText": "Hvis du kjører en versjon av Windows som ikke er offisiell, er du mer utsatt for virus og andre sikkerhetstrusler.",
+            "encryptionTitle": "Hva er kryptering av harddisk?",
+            "encryptionText": "Det bidrar til å beskytte dataene dine ved å kryptere hele harddisken for å hindre uautorisert tilgang selv om stasjonen fjernes fra PC-en og settes inn i andre enheter.",
+            "passwordTitle": "Hvordan beskytter du passordene dine bedre?",
+            "passwordText": "Lagre og administrere alle passordene dine på en sikker måte ved å kryptere dem med en profesjonell digital beskyttelsesapp i stedet for bare å lagre dem i nettleserne, som tredjeparter enkelt kan få tilgang uten din viten.",
+            "enhanceTitle": "Hva bør jeg gjøre for å forbedre sikkerhetsbeskyttelsen?",
+            "enhanceText": "Vi anbefaler at du beskytter enhetene dine med antivirusprogramvare og brannmur, og konfigurerer UAC-varsling som minimumsbeskyttelse. I tillegg bør du opprette sterke passord og administrere dem på en sikker måte, og kryptere dataene dine som avansert beskyttelse når du bruker offentlige nettverk."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} gir deg grunnleggende beskyttelse av enheten din",
                 "unknown": "Ukjent",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Få et bedre tilbud her!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
         "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
         "appFeatures": "Appfunksjoner",
-        "appFeaturesDescription": "Meldinger relatert til System Update, artikler og andre viktige funksjoner.",
+        "appFeaturesDescription": "Meldinger relatert til Systemoppdatering, artikler og andre viktige funksjoner.",
         "marketing": "Markedsføring",
         "marketingDescription": "Markedsføringsrelaterte meldinger, inkludert spesialtilbud fra Lenovo.",
         "actionTriggered": "Utløst av handlinger",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
+        "userProfile": "User profile",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft."
     },

@@ -13,9 +13,6 @@ import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
 import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
-import { AppAction, GetEnvInfo, AppLoaded } from 'src/app/data-models/metrics/events.model';
-import * as MetricsConst from 'src/app/enums/metrics.enum';
-import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
@@ -28,26 +25,26 @@ import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
 import { AppUpdateService } from './services/app-update/app-update.service';
-import { Title } from '@angular/platform-browser';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
+import { MetricService } from './services/metric/metric.service';
+import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 
 declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService]
+	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
-	private metricsClient: any;
 	private beta;
 	private subscription: Subscription;
 	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
 	private totalDuration = 0; // itermittant app duratin will be added to it
+	private vantageFocusHelper = new VantageFocusHelper();
 
 	constructor(
 		private displayService: DisplayService,
@@ -60,12 +57,11 @@ export class AppComponent implements OnInit, OnDestroy {
 		private settingsService: SettingsService,
 		private vantageShellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
-		private timerService: TimerService,
 		private languageService: LanguageService,
 		private logger: LoggerService,
 		private appUpdateService: AppUpdateService,
-		private titleService: Title,
-		private appsForYouService: AppsForYouService
+		private appsForYouService: AppsForYouService,
+		private metricService: MetricService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -79,7 +75,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		});
 
 		this.initIsBeta();
-		this.metricsClient = this.vantageShellService.getMetrics();
 
 		//#endregion
 		window.addEventListener('online', (e) => {
@@ -90,61 +85,69 @@ export class AppComponent implements OnInit, OnDestroy {
 		}, false);
 		this.notifyNetworkState();
 		this.addInternetListener();
+		this.vantageFocusHelper.start();
 	}
 
-	// TESTING ACTIVE DURATION
-	private getDuration() {
-		const component = this; // value of this is null/undefined inside the funtions
-		let isVisible = true; // internal flag, defaults to true
-		function onVisible() {
-			// prevent double execution
-			if (isVisible) {
-				return;
-			}
-			// console.log(' APP is VISIBLE-------------------------------------------------------');
-			component.sendAppResumeMetric();
-			// change flag value
-			isVisible = true;
-		} // end of onVisible
-		function onHidden() {
-			// prevent double execution
-			if (!isVisible) {
-				return;
-			}
-			// console.log(' APP is HIDDEN-------------------------------------------------------');
-			component.sendAppSuspendMetric();
-			// change flag value
-			isVisible = false;
-		} // end of onHidden
-		function handleVisibilityChange(forcedFlag) {
-			// forcedFlag is a boolean when this event handler is triggered by a
-			// focus or blur eventotherwise it's an Event object
-			if (typeof forcedFlag === 'boolean') {
-				if (forcedFlag) {
-					return onVisible();
+	ngOnInit() {
+		// check for update and download it but it will be available in next launch
+		this.appUpdateService.checkForUpdatesNoPrompt();
+		// active duration
+		this.getDuration();
+		if (this.deviceService.isAndroid) {
+			return;
+		}
+		// session storage is not getting clear after vantage is close.
+		// forcefully clearing session storage
+		sessionStorage.clear();
+
+		this.getMachineInfo();
+		this.metricService.sendAppLaunchMetric();
+
+		// use when deviceService.isArm is set to true
+		// todo: enable below line when integrating ARM feature
+		// document.getElementById('html-root').classList.add('is-arm');
+
+		const self = this;
+		window.onresize = () => {
+			self.displayService.calcSize(self.displayService);
+		};
+		self.displayService.calcSize(self.displayService);
+
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
+			this.userService.loginSilently();
+		}
+
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
+		/********* add this for navigation within a page **************/
+		this.router.events.subscribe((s) => {
+			if (s instanceof NavigationEnd) {
+				const tree = this.router.parseUrl(this.router.url);
+				if (tree.fragment) {
+					const element = document.querySelector('#' + tree.fragment);
+					if (element) {
+						element.scrollIntoView(true);
+					}
 				}
-				return onHidden();
 			}
-			if (document.hidden) {
-				return onHidden();
-			}
-			return onVisible();
-		} // end of handleVisibilityChange
-		document.addEventListener('visibilitychange', handleVisibilityChange, false);
-		// extra event listeners for better behaviour
-		document.addEventListener('focus', () => {
-			handleVisibilityChange(true);
-		}, false);
-		document.addEventListener('blur', () => {
-			handleVisibilityChange(false);
-		}, false);
-		window.addEventListener('focus', () => {
-			handleVisibilityChange(true);
-		}, false);
-		window.addEventListener('blur', () => {
-			handleVisibilityChange(false);
-		}, false);
-	} // END OF DURATION
+		});
+
+		this.checkIsDesktopOrAllInOneMachine();
+		this.settingsService.getPreferenceSettingsValue();
+		// VAN-5872, server switch feature
+		this.serverSwitchThis();
+		this.setRunVersionToRegistry();
+	}
+
+	ngOnDestroy() {
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+	}
 
 	private addInternetListener() {
 		const win: any = window;
@@ -152,11 +155,8 @@ export class AppComponent implements OnInit, OnDestroy {
 			win.NetworkListener.onnetworkchanged = (state) => {
 				this.notifyNetworkState();
 			};
-			if (win.NetworkListener.isInternetAccess()) {
-				this.notifyNetworkState();
-			} else {
-				this.notifyNetworkState();
-			}
+			
+			this.notifyNetworkState();
 		} else {
 			window.addEventListener('online', (e) => {
 				this.notifyNetworkState();
@@ -165,11 +165,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				this.notifyNetworkState();
 			}, false);
 
-			if (navigator.onLine) {
-				this.notifyNetworkState();
-			} else {
-				this.notifyNetworkState();
-			}
+			this.notifyNetworkState();
 		}
 	} // end of addInternetListener
 
@@ -190,83 +186,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			})
 			.catch((error) => { });
 	}
-
-	private sendFirstRunEvent(machineInfo) {
-		let isGaming = null;
-		if (machineInfo) {
-			isGaming = machineInfo.isGaming;
-		}
-		this.metricsClient.sendAsyncEx(
-			{
-				ItemType: 'FirstRun',
-				IsGaming: isGaming
-			},
-			{
-				forced: true
-			}
-		);
-	}
-
-	private async sendEnvInfoMetric(isFirstLaunch) {
-		let imcVersion = null;
-		let hsaSrvInfo: any = {};
-		let shellVersion = null;
-
-		if (this.metricsClient.getImcVersion) {
-			imcVersion = await this.metricsClient.getImcVersion();
-		}
-
-		if (this.metricsClient.getHsaSrvInfo) {
-			hsaSrvInfo = await this.metricsClient.getHsaSrvInfo();
-		}
-
-		if (typeof Windows !== 'undefined') {
-			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
-			shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
-		}
-
-		const scale = window.devicePixelRatio || 1;
-		const displayWidth = window.screen.width;
-		const displayHeight = window.screen.height;
-		this.metricsClient.sendAsync(
-			new GetEnvInfo({
-				imcVersion,
-				srvVersion: hsaSrvInfo.vantageSvcVersion,
-				shellVersion,
-				windowSize: `${Math.floor(displayWidth / 100) * 100}x${Math.floor(displayHeight / 100) * 100}`,
-				displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(
-					displayHeight * scale / 100
-				) * 100}`,
-				scalingSize: scale, // this value would is accurate in edge
-				isFirstLaunch
-			})
-		);
-	}
-
-	private sendAppLoadedMetric() {
-		const vanStub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppLoaded(Date.now() - vanStub.navigateTime));
-	} // end of sendAppLoadedMetric
-
-	public sendAppLaunchMetric(lauchType: string) {
-		this.timerService.start();
-		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionOpen, stub.launchParms, stub.launchType, 0, this.totalDuration));
-	} // end of sendAppLaunchMetric
-
-	public sendAppResumeMetric() {
-		this.timerService.start(); // restart timer
-		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionResume, stub.launchParms, stub.launchType, 0, this.totalDuration));
-	} // enf of sendAppResumeMetric
-
-	public sendAppSuspendMetric() {
-		const duration = this.timerService.stop();
-		this.totalDuration = this.totalDuration + duration;
-		const stub = this.vantageShellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricsConst.MetricString.ActionSuspend, stub.launchParms, stub.launchType, duration, this.totalDuration));
-	} // end of sendAppSuspendMetric
 
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
@@ -324,67 +243,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnInit() {
-		// active duration
-		this.getDuration();
-		// session storage is not getting clear after vantage is close.
-		// forcefully clearing session storage
-		if (this.deviceService.isAndroid) {
-			return;
-		}
-		sessionStorage.clear();
-		this.checkIsDesktopOrAllInOneMachine();
-		this.getMachineInfo();
-
-		this.sendAppLaunchMetric('launch');
-
-		// use when deviceService.isArm is set to true
-		// todo: enable below line when integrating ARM feature
-		// document.getElementById('html-root').classList.add('is-arm');
-
-		const self = this;
-		window.onresize = () => {
-			self.displayService.calcSize(self.displayService);
-		};
-		self.displayService.calcSize(self.displayService);
-
-		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
-			this.userService.loginSilently();
-		}
-
-		if (this.appsForYouService.showLmaMenu()) {
-			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
-		}
-
-		/********* add this for navigation within a page **************/
-		this.router.events.subscribe((s) => {
-			if (s instanceof NavigationEnd) {
-				const tree = this.router.parseUrl(this.router.url);
-				if (tree.fragment) {
-					const element = document.querySelector('#' + tree.fragment);
-					if (element) {
-						element.scrollIntoView(true);
-					}
-				}
-				this.pageTitle = this.titleService.getTitle();
-				document.getElementById('main-wrapper').focus();
-			}
-		});
-
-		this.settingsService.getPreferenceSettingsValue();
-		// VAN-5872, server switch feature
-		this.serverSwitchThis();
-	}
-
-	ngOnDestroy() {
-		if (this.subscription) {
-			this.subscription.unsubscribe();
-		}
-	}
-
-
 	private getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
 			// this.isMachineInfoLoaded = this.isTranslationLoaded();
@@ -432,10 +290,10 @@ export class AppComponent implements OnInit, OnDestroy {
 			if (this.deviceService.isShellAvailable) {
 				if (appFirstRun) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-					this.sendFirstRunEvent(value);
+					this.metricService.sendFirstRunEvent(value);
 				}
 
-				this.sendEnvInfoMetric(appFirstRun);
+				this.metricService.sendEnvInfoMetric(appFirstRun);
 			}
 		} catch (e) {
 			this.vantageShellService.getLogger().error(JSON.stringify(e));
@@ -535,7 +393,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:load', ['$event'])
 	onLoad(event) {
-		this.sendAppLoadedMetric();
+		this.metricService.sendAppLoadedMetric();
 		const scale = 1 / (window.devicePixelRatio || 1);
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
@@ -568,4 +426,78 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
+	private setRunVersionToRegistry() {
+		setTimeout(() => {
+			const runVersion = this.vantageShellService.getShellVersion();
+			const regUtil = this.vantageShellService.getRegistryUtil();
+			if (runVersion && regUtil) {
+				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
+				regUtil.queryValue(regPath).then(val => {
+					if (!val || (val.keyList || []).length === 0) {
+						return;
+					}
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val => {
+						if (val !== true) {
+							this.logger.error('failed to write shell run version to registry');
+						}
+					});
+				});
+			}
+		}, 2000);
+	}
+
+	// TESTING ACTIVE DURATION
+	private getDuration() {
+		const component = this; // value of this is null/undefined inside the funtions
+		let isVisible = true; // internal flag, defaults to true
+		function onVisible() {
+			// prevent double execution
+			if (isVisible) {
+				return;
+			}
+			// console.log(' APP is VISIBLE-------------------------------------------------------');
+			component.metricService.sendAppResumeMetric();
+			// change flag value
+			isVisible = true;
+		} // end of onVisible
+		function onHidden() {
+			// prevent double execution
+			if (!isVisible) {
+				return;
+			}
+			// console.log(' APP is HIDDEN-------------------------------------------------------');
+			component.metricService.sendAppSuspendMetric();
+			// change flag value
+			isVisible = false;
+		} // end of onHidden
+		function handleVisibilityChange(forcedFlag) {
+			// forcedFlag is a boolean when this event handler is triggered by a
+			// focus or blur eventotherwise it's an Event object
+			if (typeof forcedFlag === 'boolean') {
+				if (forcedFlag) {
+					return onVisible();
+				}
+				return onHidden();
+			}
+			if (document.hidden) {
+				return onHidden();
+			}
+			return onVisible();
+		} // end of handleVisibilityChange
+		document.addEventListener('visibilitychange', handleVisibilityChange, false);
+		// extra event listeners for better behaviour
+		document.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		document.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+		window.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		window.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+	} // END OF DURATION
 }

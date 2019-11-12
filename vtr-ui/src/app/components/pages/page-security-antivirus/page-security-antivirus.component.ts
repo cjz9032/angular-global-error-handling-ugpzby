@@ -38,11 +38,11 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	antiSpam = 'security.antivirus.mcafee.antiSpam';
 	quickClean = 'security.antivirus.mcafee.quickClean';
 	vulnerability = 'security.antivirus.mcafee.vulnerability';
-	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
 	isOnline = true;
 	notificationSubscription: Subscription;
 	common: AntivirusCommon;
+	partyAvList = ['DeepArmor Endpoint Protection', 'DeepArmor Small Business'];
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -69,7 +69,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.translate);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService);
+		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.commonService, this.translate);
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = Object.assign({}, {
 				localName: this.antiVirus.mcafee.localName,
@@ -82,7 +82,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				features: this.antiVirus.mcafee.features,
 				expireAt: this.antiVirus.mcafee.expireAt,
 				metrics: this.antiVirus.mcafee.metrics,
-				launch(): Promise<boolean> { return new Promise(() => true); } // added to fix build error
+				additionalCapabilities: this.antiVirus.mcafee.additionalCapabilities,
 			});
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 			if (this.viewModel.mcafee.features) {
@@ -120,6 +120,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.viewModel.othersFirewallstatusList);
 			} else { this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, null); }
 			if (this.antiVirus.others.antiVirus && this.antiVirus.others.antiVirus.length > 0) {
+				this.getShowMcafee(this.antiVirus.others.antiVirus);
 				this.viewModel.otherAntiVirus = this.antiVirus.others.antiVirus[0];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus, this.viewModel.otherAntiVirus);
 				this.viewModel.othersAntistatusList = [{
@@ -151,6 +152,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, null);
 				}
 				if (data.antiVirus && data.antiVirus.length > 0) {
+					this.getShowMcafee(data.antiVirus);
 					this.viewModel.otherAntiVirus = data.antiVirus[0];
 					this.viewModel.othersAntistatusList = [{
 						status: this.viewModel.otherAntiVirus.status,
@@ -261,6 +263,24 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		});
 
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;
+	}
+
+	getShowMcafee(others: Array<phoenix.OtherInfo>) {
+		const show = this.findArray(others, this.partyAvList);
+		this.viewModel.showMcafee = show;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowMcafee, this.viewModel.showMcafee);
+	}
+
+	findArray(others: Array<phoenix.OtherInfo>, partyAvList) {
+		let show = true;
+		others.forEach((e) => {
+		  partyAvList.forEach((data) => {
+			if (e.name === data) {
+				show = false;
+			}
+		  });
+		});
+		return show;
 	}
 
 	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?) {

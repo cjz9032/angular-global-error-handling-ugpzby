@@ -77,7 +77,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	showVpn: boolean;
-	backId = 'sa-ov-btn-back';
 	isRS5OrLater: boolean;
 	itemStatusClass = {
 		0: 'good',
@@ -100,7 +99,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService
-	) {	}
+	) { }
 
 	@HostListener('window: focus')
 	onFocus(): void {
@@ -173,19 +172,27 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
-		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
-		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		}
+		if (cacheShowWifiSecurity) {
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
+		}
 		if (windowsHello.fingerPrintStatus) {
 			this.showWindowsHelloItem(windowsHello);
 		}
+		if (wifiSecurity.isSupported !== undefined) {
+			this.showWifiSecurityItem();
+		}
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHelloItem(windowsHello);
+		});
+		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
+			this.showWifiSecurityItem();
 		});
 		wifiSecurity.on(EventTypes.wsStateEvent, () => {
 			this.getScore();
@@ -239,7 +246,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
 			this.showVpn ? this.vpnLandingViewModel.subject.status : null,
-			this.wifiSecurityLandingViewModel.subject.status,
+			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.subject.status : null,
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
 		const antivirusScore = antivirusScoreInit.filter(current => {
@@ -277,6 +284,16 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
 			this.windowsHelloLandingViewModel = null;
+		}
+	}
+
+	showWifiSecurityItem() {
+		if (this.wifiSecurity.isSupported) {
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
+			this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
+		} else {
+			this.wifiSecurityLandingViewModel = null;
+			this.wifiHistory = null;
 		}
 	}
 

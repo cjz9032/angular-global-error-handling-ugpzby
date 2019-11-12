@@ -14,7 +14,7 @@
 		vtrMetrics
 		metricsItem="AppsForYouScreenshotCloseButton"
 		metricsEvent="FeatureClick"
-		metricsParent="Apps for you page"
+		[metricsParent]="metricsParent"
 	 (click)="closeModal()">
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</a>

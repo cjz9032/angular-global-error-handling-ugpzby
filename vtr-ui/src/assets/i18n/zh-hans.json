@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "展开",
             "loader": "获取状态",
             "loading": "载入中...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "从",
+            "to": "到",
+            "clickToChange": "单击以更改"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
                 "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "阈值",
+            "conservation": "节电"
         },
         "systemStatus": {
             "title": "系统状态",
@@ -874,18 +891,18 @@
                 "condition": {
                     "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
                     "Good": "<b>电池状况良好。</b>",
-                    "Exhaustion": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
+                    "Exhaustion": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
                     "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
                     "NotSupportACAdapter": "<b>不支持交流电源适配器。</b>",
                     "LimitedACAdapterSupport": "<b>交流电源适配器无法提供足够的电量。</b>",
-                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新以安装最新的驱动程序。",
+                    "MissingDriver": "未安装 <b>Lenovo Power Manager 驱动程序</b>，或其无法正常工作。请运行 Windows 更新或者点击<a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">这里</a>安装最新的驱动程序。安装后需要重启计算机。",
                     "StoreLimitation": "<b>电池仅能存储其原始完全充电电量的 {{value}}%</b>。",
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
-                    "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
+                    "PermanentError": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
@@ -957,7 +974,7 @@
                             "close": "关闭",
                             "coolingModesList": {
                                 "list1": "单击工具栏中的 Windows 电池图标",
-                                "list2": "将显示 Windows 电池量表，滑动滑块以在最佳时间或最佳性能之间进行选择。"
+                                "list2": "将显示 Windows 电源模式，滑动滑块以在最佳时间或最佳性能之间进行选择。"
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "取消",
                             "yes": "是",
                             "description3": "确定要停止电池量表重置吗？"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "智能待机",
                     "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划或我们获得的计算机使用时间而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "设置通常使用此计算机的时间",
+                        "heading": "通常使用计算机的时间",
                         "subHeading1": "开始",
                         "subHeading2": "结束",
                         "subHeading3": "将此计划用于",
@@ -1127,8 +1145,16 @@
                         "weekdays": "工作日",
                         "weekends": "周末"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "根据您的使用情况自动调整计算机的活动时间",
+                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "重新启动",
                             "cancel": "暂不"
                         },
-						"note": {
-							"sFunKey": "要实现 F1 - F12 键的功能，请按 Fn 键和首行按键。",
-							"fnKey": "要实现特殊功能，请按 Fn 键和首行按键。"
-						}
+                        "note": {
+                            "sFunKey": "要实现 F1 - F12 键的功能，请按 Fn 键和首行按键。",
+                            "fnKey": "要实现特殊功能，请按 Fn 键和首行按键。"
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP 热键功能",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "互换 Fn 键和 Ctrl 键",
+                    "description": "如果当您想要按 Ctrl 键时却习惯按下 Fn 键，则您可以互换这两个键的功能。",
+                    "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？"
                 },
                 "controlOptions": {
                     "more": "更多",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "红外摄像头自动登录",
                     "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 米的距离内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。"
                 },
                 "zeroTouchLock": {
                     "title": "自动锁定屏幕",
@@ -1483,14 +1509,14 @@
                         "medium": "中"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "启用后，检测距离将自动调整。您也可以通过滑块手动设置检测距离。选项包括：",
+                        "context2": "手动设置检测距离时，请注意以下几点：",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "近距离：0 - 0.42 米（17 英寸）",
+                            "line2": "中等距离：0 - 0.60 米（24 英寸）",
+                            "line3": "远距离：0 - 1.20 米（47 英寸）",
+                            "line4": "最大检测距离为 1.2 米。如果超过 1.2 米，传感器将无法检测到您的存在。",
+                            "line5": "建议的检测距离为不超过 0.60 米。"
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
-                    "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
+                    "description4": "2. 如果您的计算机处于休眠模式或已关闭，则零触摸登录功能将无法使用。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
                     "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
                     "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
@@ -1827,22 +1853,22 @@
             "good": "良好",
             "malicious": "恶意",
             "suspicious": "可疑",
-            "securityScoreDepends": "您的安全结果取决于您是否：",
+            "securityScoreDepends": "您的安全性结果取决于您是否：",
             "antivirus": "受到反病毒软件的保护",
             "password": "以安全的方式管理安全程度强且复杂的密码",
             "vpn": "监控您的网络以防暴露给攻击者",
             "wifi": "使用公共 WiFi 时加密您的个人数据",
             "windowsHello": "使用安全登录选项保护您的设备",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "什么是 UAC 通知？",
+			"uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
+			"windowsTitle": "为什么我需要激活 Windows？",
+			"windowsText": "运行非正版的 Windows 会让您面临更大的病毒和其他安全威胁的风险。",
+			"encryptionTitle": "什么是硬盘驱动器加密？",
+			"encryptionText": "通过对整个硬盘驱动器进行加密，它能够保护您的数据免遭未经授权的访问，即使驱动器已从当前 PC 移除并装入其他设备中。",
+			"passwordTitle": "如何更好地保护密码？",
+			"passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
+			"enhanceTitle": "我应该做什么以加强安全保护？",
+			"enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。"
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}}为您的设备提供基本保护",
                 "unknown": "未知",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "在这里享受更好的服务！"
             }
         },
         "wifisecurity": {
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
         "deviceStatistics": "与 Lenovo 共享统计数据",
         "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
+        "userProfile": "User profile",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
     },

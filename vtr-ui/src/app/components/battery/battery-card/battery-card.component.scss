@@ -61,6 +61,13 @@
 					.button {
 						background: #e6eaeb;
 						color: #34495e;
+						@media #{$black-on-white} {
+							border: 0.1rem solid;
+						}
+						@media #{$white-on-black} {
+							border: 0.1rem solid;
+						}
+				
 					}
 				}
 			}

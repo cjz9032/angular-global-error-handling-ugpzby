@@ -9,7 +9,8 @@
 							<div class="col-auto px-2 text-left mr-auto header"
 								id="{{collapseLinkId+'-collapse-card-title'}}"
 								tabindex="0"
-								attr.aria-label="{{ cardTitle + ',card' }}">
+								attr.aria-label="{{ cardTitle + ',card' }}"
+								role="text">
 								{{cardTitle}}
 							</div>
 							<div class="col-auto px-3"
@@ -20,11 +21,11 @@
 									id="{{collapseLinkId+'-collapse-link'}}"
 									attr.aria-label="{{collapseLinkId+'-collapse-link'}}"
 									metricsEvent="itemClick"
-									[metricsValue]="isCollapsed"
+									[metricsValue]="!isCollapsed"
 									[metricsItem]="'btn.collapse'"
 									[metricsParent]="metricsParent"
 									(click)="onToggle()"
-									(keydown.enter)="onToggle()"
+									(keyup.enter)="onToggle()"
 									role="region"
 									[attr.aria-expanded]="!isCollapsed"
 									[attr.aria-labelledby]="collapseLinkId+'-collapse-card-title'">

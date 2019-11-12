@@ -341,7 +341,7 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 	public getCacheLightingCapabilities(response) {
 		try {
-			if (response.LightPanelType.length > 0) {
+			if (response && response.LightPanelType && response.LightPanelType.length > 0) {
 				this.profileRGBFeature = response.RGBfeature;
 				this.lightingCapabilities = response;
 				if (response.BrightAdjustLevel === 0) {
@@ -488,7 +488,7 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 	public updateGetGamingLightingCapabilities(response: any) {
 		try {
-			if (response !== undefined) {
+			if (response) {
 				this.profileRGBFeature = response.RGBfeature;
 				this.lightingCapabilities = response;
 				if (response.BrightAdjustLevel === 0) {
@@ -1215,7 +1215,7 @@ export class UiLightingProfileComponent implements OnInit {
 							this.response =
 								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById) || 0;
 						}
-						if (response !== undefined) {
+						if (response) {
 							this.currentProfileId = response.profileId;
 							this.currentProfile = response.profileId;
 							this.profileBrightness = response.brightness;

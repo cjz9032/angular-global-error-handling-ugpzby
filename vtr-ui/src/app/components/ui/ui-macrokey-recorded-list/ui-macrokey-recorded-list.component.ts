@@ -18,8 +18,8 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	@Output() deleteRecords = new EventEmitter<any>();
 	@Output() clearAll = new EventEmitter<any>();
 	public clearRecordPopup: Boolean = false;
-	public showModal: Boolean = false;
 	public deleteCalled: Boolean = false;
+	public showModal: Boolean = false;
 	public ignoreInterval: Boolean = false;
 	public recordsList: any = [];
 	public pairCounter = {};

@@ -11,6 +11,7 @@ import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -31,9 +32,28 @@ export class PageNetworkboostComponent implements OnInit {
 	// CMS Content block
 	cardContentPositionA: any = {};
 	cardContentPositionB: any = {};
+	cardContentPositionF: any = {};
 	cardContentPositionBCms: any = {};
+	cardContentPositionFCms: any = {};
+	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
 	private isUPEFailed = false;
 	private isCmsLoaded = false;
+
+	upeRequestResult = {
+		positionB: true,
+		positionF: true,
+	};
+
+	cmsRequestResult = {
+		positionB: true,
+		positionF: true,
+	};
+
+	tileSource = {
+		positionB: 'CMS',
+		positionF: 'CMS',
+	};
+
 	backId = 'vtr-gaming-networkboost-btn-back';
 
 	constructor(
@@ -45,7 +65,8 @@ export class PageNetworkboostComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService,
 	) {
 		this.titleService.setTitle('gaming.common.narrator.pageTitle.networkBoost');
 		this.isUPEFailed = false; // init UPE request status
@@ -211,20 +232,33 @@ export class PageNetworkboostComponent implements OnInit {
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
+		this.upeRequestResult = {
+			positionB: true,
+			positionF: true,
+		};
+
+		this.cmsRequestResult = {
+			positionB: false,
+			positionF: false,
+		};
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
 			Page: 'dashboard'
 		};
-		this.getTileBSource().then((source) => {
+		this.getTileSource().then(() => {
 			this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
 					response,
 					'half-width-top-image-title-link',
 					'position-F'
 				)[0];
-				if (cardContentPositionA) {
-					this.cardContentPositionA = cardContentPositionA;
-					this.networkBoostService.cardContentPositionA = this.cardContentPositionA;
+				if (cardContentPositionF) {
+					this.cardContentPositionFCms = cardContentPositionF;
+					this.cardContentPositionFCms.DataSource = 'cms';
+					if (!this.upeRequestResult.positionF || this.tileSource.positionF === 'CMS') {
+						this.cardContentPositionF = this.cardContentPositionFCms;
+						this.networkBoostService.cardContentPositionF = this.cardContentPositionFCms;
+					}
 				}
 
 				const cardContentPositionB = this.cmsService.getOneCMSContent(
@@ -233,82 +267,92 @@ export class PageNetworkboostComponent implements OnInit {
 					'position-B'
 				)[0];
 				if (cardContentPositionB) {
-					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-					}
 					cardContentPositionB.DataSource = 'cms';
-
 					this.cardContentPositionBCms = cardContentPositionB;
-					this.isCmsLoaded = true;
-					if (this.isUPEFailed || source === 'CMS') {
+					if (this.cardContentPositionBCms.BrandName) {
+						this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split(
+							'|'
+						)[0];
+					}
+					this.cmsRequestResult.positionB = true;
+					if (!this.upeRequestResult.positionB || this.tileSource.positionB === 'CMS') {
 						this.cardContentPositionB = this.cardContentPositionBCms;
 						this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
 					}
 				}
 			});
-			if (source === 'UPE') {
-				const upeParam = {
-					position: 'position-B'
-				};
-				this.upeService.fetchUPEContent(upeParam).subscribe(
-					(upeResp) => {
-						const cardContentPositionB = this.upeService.getOneUPEContent(
-							upeResp,
-							'half-width-title-description-link-image',
-							'position-B'
-						)[0];
-						if (cardContentPositionB) {
-							this.cardContentPositionB = cardContentPositionB;
-							if (this.cardContentPositionB.BrandName) {
-								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-							}
-							// 		cardContentPositionB.DataSource = 'upe';
-							// 		this.dashboardService.cardContentPositionB = cardContentPositionB;
-							// 		this.isUPEFailed = false;
-							// 	}
-							// },
-							// (err) => {
-							// 	this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-							// 	this.isUPEFailed = true;
-							// 	if (this.isCmsLoaded) {
-							// 		this.cardContentPositionB = this.cardContentPositionBCms;
-							// 		this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
-							// 	}
-							cardContentPositionB.DataSource = 'upe';
-							this.networkBoostService.cardContentPositionB = cardContentPositionB;
-							this.isUPEFailed = false;
+
+			if (this.tileSource.positionB === 'UPE') {
+				const upeParam = { position: 'position-B' };
+				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
+					const cardContentPositionB = this.upeService.getOneUPEContent(
+						upeResp,
+						'half-width-title-description-link-image',
+						'position-B'
+					)[0];
+					if (cardContentPositionB) {
+						this.cardContentPositionB = cardContentPositionB;
+						if (this.cardContentPositionB.BrandName) {
+							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 						}
-					}, (err) => {
-						this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-						this.isUPEFailed = true;
-						if (this.isCmsLoaded) {
-							this.cardContentPositionB = this.cardContentPositionBCms;
-							this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
-						}
-					});
+						this.cardContentPositionB.DataSource = 'upe';
+						this.networkBoostService.cardContentPositionB = this.cardContentPositionB;
+						this.upeRequestResult.positionB = true;
+					}
+				}, (err) => {
+					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+					this.upeRequestResult.positionB = false;
+					if (this.cmsRequestResult.positionB) {
+						this.cardContentPositionB = this.cardContentPositionBCms;
+						this.networkBoostService.cardContentPositionB = this.cardContentPositionBCms;
+					}
+				});
 			}
+
+			if (this.tileSource.positionF === 'UPE') {
+				const upeParam = { position: 'position-F' };
+				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
+					const cardContentPositionF = this.upeService.getOneUPEContent(
+						upeResp,
+						'half-width-top-image-title-link',
+						'position-F'
+					)[0];
+					if (cardContentPositionF) {
+						this.cardContentPositionF = cardContentPositionF;
+						this.cardContentPositionF.DataSource = 'upe';
+						this.networkBoostService.cardContentPositionF = this.cardContentPositionF;
+						this.upeRequestResult.positionF = true;
+					}
+				}, (err) => {
+					this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
+					this.upeRequestResult.positionF = false;
+					if (this.cmsRequestResult.positionF) {
+						this.cardContentPositionF = this.cardContentPositionFCms;
+						this.networkBoostService.cardContentPositionF = this.cardContentPositionFCms;
+					}
+				});
+			}
+
 		});
 	}
 
-	private getTileBSource() {
+	private getTileSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then(
-				(source) => {
-					if (source === 'UPE') {
-						resolve('UPE');
-					} else {
-						resolve('CMS');
-					}
-				},
-				() => {
-					resolve('CMS');
+			this.hypService.getAllSettings().then((hyp: any) => {
+				if (hyp) {
+					this.tileSource.positionB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.positionF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
 				}
-			);
+				resolve();
+			}, () => {
+				resolve();
+				console.log('get tile source failed.');
+			});
 		});
 	}
 
 	private setPreviousContent() {
-		this.cardContentPositionA = this.networkBoostService.cardContentPositionA;
+		this.cardContentPositionF = this.networkBoostService.cardContentPositionF;
 		this.cardContentPositionB = this.networkBoostService.cardContentPositionB;
 	}
 

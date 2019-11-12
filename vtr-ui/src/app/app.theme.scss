@@ -92,6 +92,7 @@ $grey_darker: #34495e;
 $border_light: #f8d5d5;
 $text_light: #fef8f8;
 $button_disable: #808080;
+$button_disable_text: #8D9AA4;
 $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
 $button_red_start: #db221f;
@@ -155,9 +156,10 @@ $gradient_angle_reverse: 315deg;
 $border_radius: 0.9rem;
 $border_radius_sm: 0.6rem;
 
-$gaming_hd_diameter_lg: 11rem;
-$gaming_hd_diameter_md: 9rem;
-$gaming_hd_diameter_sm: 8rem;
+$gaming_hd_diameter_xl: 12rem;
+$gaming_hd_diameter_lg: 10rem;
+$gaming_hd_diameter_md: 8rem;
+$gaming_hd_diameter_sm: 7rem;
 $gaming_hd_diameter_xs: 6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
@@ -168,13 +170,15 @@ $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
 
 //RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
-$fontsize_xxl: 4rem;
-$fontsize_xl: 2.8rem;
+$fontsize_xl4: 4.6rem;
+$fontsize_xl3: 4rem;
+$fontsize_xl2: 3.4rem;
+$fontsize_xl: 2.4rem;
 $fontsize_lg: 2rem;
 $fontsize_md: 1.8rem;
 $fontsize_sm: 1.6rem;
 $fontsize_xs: 1.4rem;
-$fontsize_xxs: 1.2rem;
+$fontsize_xs2: 1.2rem;
 
 
 // RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
@@ -261,7 +265,7 @@ $mediaquery_X40: "only screen and (min-width: 770px) and (max-width: 991px)";
 $mediaquery_X41: "only screen and (min-width: 600px) and (max-width: 991px)";
 $mediaquery_X42: "only screen and (min-width: 992px) and (max-width: 1100px)";
 $mediaquery_X43: "only screen and (min-width: 1366px)";
-
+$mediaquery_X44: "all and (min-width: 992px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
@@ -345,3 +349,9 @@ $high-contrast-grey: #c0c0c0;
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
 $screen_dark_01: rgba(0, 0, 0, 0.01);
+$high-contrast-white-textselected:#37006E;
+$high-contrast-blue:#0007A4;
+$high-contrast-white-disabled:#600000;
+$high-contrast-grey:#767879;
+$high-contrast-black-textselected:#1AEBFF;
+$high-contrast-black-disabled: #3BE23B;

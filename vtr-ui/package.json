@@ -1,8 +1,9 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.230",
+	"version": "1.2.3",
 	"scripts": {
 		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
+		"build:beta": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
 		"build:qa": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=qa",
 		"build:stage": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=stage",
 		"build:prod": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod",
@@ -58,7 +59,7 @@
 		"js-sha256": "^0.9.0",
 		"lodash": "^4.17.15",
 		"mitt": "^1.1.3",
-		"ng5-slider": "^1.1.14",
+		"ng5-slider": "1.1.14",
 		"ngx-bootstrap": "^5.2.0",
 		"ngx-color-picker": "^8.0.0",
 		"ngx-cookie-service": "^2.1.0",

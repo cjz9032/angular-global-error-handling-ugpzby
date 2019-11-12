@@ -10,6 +10,7 @@ export class ModalAppsForYouScreenshotComponent implements OnInit, OnDestroy, Af
 
 	@Input() image: string;
 
+	public metricsParent = 'AppsForYou';
 
 	constructor(
 		public activeModal: NgbActiveModal,

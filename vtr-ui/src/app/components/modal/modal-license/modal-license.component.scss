@@ -7,9 +7,12 @@
 	height: calc(100vh - 5.5rem);
 	box-sizing: border-box;
 
+	.empty {
+		position: absolute;
+	}
+
 	.article-content{
 		width: 100%;
-		padding-right: 4rem;
 		overflow-x: hidden;
 		overflow-y: auto;
 		display: none;
@@ -19,7 +22,9 @@
 	}
 
 	.article-body {
+		padding-left: 4rem;
 		padding-bottom: 4rem;
+		padding-right: 4rem;
 	}
 
 	.iframe-content{
@@ -53,10 +58,10 @@
 
 .close-btn {
 	position: absolute;
-	right: 2rem;
-	top: -2rem;
-	width: 2.2rem;
-	height: 2.2rem;
+	right: 1rem;
+	top: -3rem;
+	width: 4.2rem;
+	height: 4.2rem;
 	cursor: pointer;
 
 	&:hover {
@@ -64,8 +69,9 @@
 	}
 
 	img {
-		width: 100%;
-		height: 100%;
+		width: 2.2rem;
+		height: 2.2rem;
+		margin: 1rem;
 	}
 }
 

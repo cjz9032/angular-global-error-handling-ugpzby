@@ -12,6 +12,10 @@
 			top: 2rem;
 			right: 2rem;
 			width: 20rem;
+			@media #{$breakpoint_sm} {
+				right: 0;
+			}
+
 		}
 	}
 
@@ -22,8 +26,11 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		max-width: 75%;
-		@media #{$mediaquery_12} {
+		@media #{$breakpoint_md} {
 			max-width: 65%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 60%;
 		}
 	}
 	.device-sub-header {

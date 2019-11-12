@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "확장",
             "loader": "페치 상태",
             "loading": "로드 중...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "백업 선택",
+            "to": "백업 위치 지정",
+            "clickToChange": "클릭하여 변경"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage가 마이크에 액세스할 수 없습니다.",
                 "cameraPrivacyNote": "Lenovo Vantage가 카메라에 액세스할 수 없습니다."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "임계값",
+            "conservation": "보존"
         },
         "systemStatus": {
             "title": "시스템 상태",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
-                    "Exhaustion": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
+                    "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
                     "NotSupportACAdapter": "<b>AC 어댑터가 지원되지 않습니다.</b>",
                     "LimitedACAdapterSupport": "<b>AC 어댑터는 충분한 전원을 공급하지 못합니다.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오.",
+                    "MissingDriver": "<b>Lenovo Power Manager 드라이버</b>가 설치되어 있지 않거나 올바르게 작동하지 않습니다. 최신 드라이버를 설치하려면 Windows 업데이트를 실행하십시오. <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">여기</a>에서 드라이버를 설치할 수도 있습니다.",
                     "StoreLimitation": "<b>배터리는 원래 완전 충전 용량의 {{value}}%만</b> 저장할 수 있습니다.",
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
                     "OverheatedBattery": "배터리가 <b>너무 뜨겁습니다</b>. 컴퓨터에서 배터리를 제거하여 상온 정도까지 식히십시오.",
-                    "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
+                    "PermanentError": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
                     "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>"
@@ -956,7 +973,7 @@
                             "close": "닫기",
                             "coolingModesList": {
                                 "list1": "도구 모음에서 Windows 배터리 아이콘을 클릭하십시오.",
-                                "list2": "Windows 배터리 게이지가 표시되면, 슬라이더를 밀어 최적의 시간이나 최적의 성능을 선택하십시오."
+                                "list2": "Windows 전원 모드가 표시되면, 슬라이더를 밀어 최적의 시간이나 최적의 성능을 선택하십시오."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "취소",
                             "yes": "예",
                             "description3": "배터리 게이지 리셋을 중단하시겠습니까?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "스마트 대기",
                     "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
-                    "tooltip": "스마트 대기를 사용할 경우 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며 배터리 전원이 일정 시간 동안 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
+                    "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간 설정",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -1127,8 +1145,16 @@
                         "weekdays": "평일",
                         "weekends": "주말"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
+                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "다시 부팅",
                             "cancel": "나중에"
                         },
-						"note": {
-							"sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
-							"fnKey": "특수 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오."
-						}
+                        "note": {
+                            "sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
+                            "fnKey": "특수 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP 단축키 기능",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Fn 키와 Ctrl 키 바꾸기",
+                    "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
+                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "제로 터치 로그인",
                     "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오는 경우 컴퓨터를 자동으로 잠금해제하거나 절전 모드에서 해제합니다.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2m 거리 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다."
                 },
                 "zeroTouchLock": {
                     "title": "제로 터치 잠금",
@@ -1483,14 +1509,14 @@
                         "medium": "중간"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "이 기능을 사용하면, 감지 거리가 자동으로 조정됩니다. 또한 슬라이더를 통해 감지 거리를 수동으로 설정할 수 있습니다. 옵션은 다음과 같습니다.",
+                        "context2": "감지 거리를 수동으로 설정하는 경우, 다음과 같은 사항에 주의하십시오.",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "근거리: 0~0.42m(17인치)",
+                            "line2": "중간: 0~0.60m(24인치)",
+                            "line3": "원거리: 0~1.20m(47인치)",
+                            "line4": "최대 감지 거리는 1.2m입니다. 1.2m를 초과하는 경우, 센서가 사용자의 현재 상태를 감지하지 못합니다.",
+                            "line5": "권장 감지 거리는 0.60m 내입니다."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
-                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
+                    "description4": "2. 컴퓨터가 최대 절전 모드에 있거나 꺼져 있으면, 제로 터치 로그인은 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
                     "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
                     "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
@@ -1827,22 +1853,22 @@
             "good": "좋음",
             "malicious": "악성",
             "suspicious": "의심스러움",
-            "securityScoreDepends": "사용자의 보안 점수를 보면 온라인에서 안전한 정도를 알 수 있으며, 결과는 다음과 같은 경우에 따라 달라집니다.",
+            "securityScoreDepends": "보안 결과는 다음 사항에 따릅니다.",
             "antivirus": "바이러스 백신 소프트웨어로 보호",
             "password": "강력하고 복잡한 암호를 안전하게 관리",
             "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
             "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
             "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC 알림이 무엇입니까?",
+            "uacText": "사용자 계정 컨트롤은 Windows의 매우 중요한 보안 기능으로, 잠재적으로 유해한 프로그램이 시스템을 변경하지 못하도록 방지하는 데 도움이 됩니다.",
+            "windowsTitle": "Windows를 활성화해야 하는 이유는 무엇입니까?",
+            "windowsText": "정품이 아닌 Windows의 복사본을 실행하면, 바이러스나 기타 보안 위험이 더욱 높아질 수 있습니다.",
+            "encryptionTitle": "하드 드라이브 암호화가 무엇입니까?",
+            "encryptionText": "드라이브를 현재 PC에서 제거하고 다른 장치에 저장하는 경우에도 무단 액세스에 대비해 전체 하드 드라이브에 대한 암호화를 제공하여 데이터를 보호하는 데 도움이 됩니다.",
+            "passwordTitle": "암호를 보다 잘 보호하는 방법은 무엇입니까?",
+            "passwordText": "제3자에서 사용자를 알지 못하는 상태에서 쉽게 액세스할 수 있는 브라우저에 저장하는 것으로 그치지 않고 전문 디지털 보호 앱으로 암호화된 모든 암호를 안전하게 저장 및 관리하십시오.",
+            "enhanceTitle": "보안 보호를 강화하려면 어떻게 해야 합니까?",
+            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "장치에 대한 기본적인 보호를 제공하는 {{protectedName}}",
                 "unknown": "알 수 없음",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "다음은 더 낳은 제안입니다!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "환경 설정 페이지에서 Vantage의 메시지 범주를 기반으로 메시지 알림을 켜거나 끌 수 있습니다. 모든 메시지 범주가 비활성화되어 있어도 필요에 따라 때때로 Vantage에서 시스템 중요 메시지를 받는 경우가 있습니다.",
         "messagesInLenovoVantage": "Lenovo Vantage 메시지",
         "appFeatures": "앱 기능",
-        "appFeaturesDescription": "System Update, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
+        "appFeaturesDescription": "시스템 업데이트, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
         "marketing": "판매",
         "marketingDescription": "Lenovo 특별제안을 포함한 프로모션 메시지.",
         "actionTriggered": "트리거된 작업",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
         "deviceStatistics": "Lenovo와 통계 데이터 공유",
         "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
+        "userProfile": "User profile",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다."
     },

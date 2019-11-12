@@ -1,104 +1,117 @@
-<div class="vtr-page-device-gaming vtr-page container-fluid">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="" [forwardLink]="">
-				<img class="gaming-header-image"
-					[src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
-			</vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div [ngClass]="'col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column'">
-						<div class="vtr-page-shift-up nmx-40">
-							<div class="container-fluid">
-								<div class="row" *ngIf="!isOnline">
-									<div class="col col-12 px-40 pb-40">
-										<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
-											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-											[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-											[isSubtitleVisible]="false" [isButtonVisible]="false"
-											(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
-									</div>
-								</div>
-								<div class="row mb-60">
-									<div class="col col-12 px-40">
-										<app-widget-system-monitor></app-widget-system-monitor>
-									</div>
-								</div>
-								<div class="row mb-100">
-									<div class="col col-12 px-40">
-										<vtr-widget-system-tools title=""></vtr-widget-system-tools>
-									</div>
-								</div>
-								<div class="row mb-60">
-									<div class="col col-12 px-40">
-										<vtr-container-card *ngIf="!isOnline" order="4" role="img" tabindex="1"
-											id="lenovo game store" aria-label="lenovo game store" vtrMetrics
-											[metricsItem]="'dashboard_gaming_banner'" metricsEvent="featureClick"
-											[metricsItem]="'dashboard_gaming_banner'" metricsEvent="featureClick"
-											[itemID]="cardContentPositionD.Id" [img]="cardContentPositionD.FeatureImage"
-											[title]="cardContentPositionD.Title"
-											[logoText]="cardContentPositionD.BrandName"
-											[action]="cardContentPositionD.Action"
-											[actionType]="cardContentPositionD.ActionType"
-											[actionLink]="cardContentPositionD.ActionLink" [type]="'highlight'"
-											[ratioX]="8" [ratioY]="2">
-										</vtr-container-card>
-										<a class="action-link-a" *ngIf="isOnline"
-											[href]="cardContentPositionD.ActionLink"
-											[target]="cardContentPositionD.ActionType">
-											<vtr-container-card order="4" role="img" tabindex="1" id="lenovo game store"
-												aria-label="lenovo game store" vtrMetrics
-												[metricsItem]="'dashboard_gaming_banner'" metricsEvent="featureClick"
-												[metricsItem]="'dashboard_gaming_banner'" metricsEvent="featureClick"
-												[itemID]="cardContentPositionD.Id"
-												[img]="cardContentPositionD.FeatureImage"
-												[title]="cardContentPositionD.Title"
-												[logoText]="cardContentPositionD.BrandName"
-												[action]="cardContentPositionD.Action"
-												[actionType]="cardContentPositionD.ActionType"
-												[actionLink]="cardContentPositionD.ActionLink" [type]="'highlight'"
-												[ratioX]="8" [ratioY]="2">
-											</vtr-container-card>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<div class="row no-gutters">
-									<div class="col-sm-12 col-lg-12 mb-60">
-										<vtr-widget-legion-edge></vtr-widget-legion-edge>
-									</div>
+<vtr-page-layout [title]=""
+	[textId]="'device-gaming'"
+	[pageCssClass]="'device-gaming'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true">
 
-									<div class="col-sm-12 col-lg-12 mb-60">
-										<vtr-widget-quicksettings-list
-											title="{{'gaming.dashboard.device.quickSettingstitle.title' | translate}}">
-										</vtr-widget-quicksettings-list>
-									</div>
+	<header-content>
+		<img class="gaming-header-image"
+			[src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
+	</header-content>
 
-									<div class="col-sm-12 col-lg-12 mb-60">
-										<vtr-widget-lighting title=""></vtr-widget-lighting>
-									</div>
-									<div class="col-sm-12 col-lg-12 mb-60">
-										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-											[description]="'dashboard.feedback.subtitle' | translate"
-											[actionName]="'dashboard.feedback.button' | translate" 
-											(feedBackClick)="onFeedbackModal()">
-										</vtr-widget-feedback>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+	<left-content>
+		<div class="container-fluid">
+			<div class="row"
+				*ngIf="!isOnline">
+				<div class="col-12 px-0 pt-0 pb-40">
+					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						[isSubtitleVisible]="false"
+						[isButtonVisible]="false"
+						(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 pt-0 pb-20 px-0">
+					<app-widget-system-monitor></app-widget-system-monitor>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 py-20 px-0">
+					<vtr-widget-system-tools title=""></vtr-widget-system-tools>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 py-20 px-0">
+					<vtr-container-card *ngIf="!isOnline"
+						order="4"
+						role="img"
+						tabindex="1"
+						id="lenovo game store"
+						aria-label="lenovo game store"
+						vtrMetrics
+						[metricsItem]="'dashboard_gaming_banner'"
+						metricsEvent="featureClick"
+						[metricsItem]="'dashboard_gaming_banner'"
+						metricsEvent="featureClick"
+						[itemID]="cardContentPositionD.Id"
+						[img]="cardContentPositionD.FeatureImage"
+						[title]="cardContentPositionD.Title"
+						[logoText]="cardContentPositionD.BrandName"
+						[action]="cardContentPositionD.Action"
+						[actionType]="cardContentPositionD.ActionType"
+						[actionLink]="cardContentPositionD.ActionLink"
+						[type]="'highlight'"
+						[ratioX]="8"
+						[ratioY]="2">
+					</vtr-container-card>
+					<a class="action-link-a"
+						*ngIf="isOnline"
+						[href]="cardContentPositionD.ActionLink"
+						[target]="cardContentPositionD.ActionType">
+						<vtr-container-card order="4"
+							role="img"
+							tabindex="1"
+							id="lenovo game store"
+							aria-label="lenovo game store"
+							vtrMetrics
+							[metricsItem]="'dashboard_gaming_banner'"
+							metricsEvent="featureClick"
+							[metricsItem]="'dashboard_gaming_banner'"
+							metricsEvent="featureClick"
+							[itemID]="cardContentPositionD.Id"
+							[img]="cardContentPositionD.FeatureImage"
+							[title]="cardContentPositionD.Title"
+							[logoText]="cardContentPositionD.BrandName"
+							[action]="cardContentPositionD.Action"
+							[actionType]="cardContentPositionD.ActionType"
+							[actionLink]="cardContentPositionD.ActionLink"
+							[type]="'highlight'"
+							[ratioX]="8"
+							[ratioY]="2">
+						</vtr-container-card>
+					</a>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row no-gutters">
+				<div class="col-sm-12 col-lg-12 mb-60">
+					<vtr-widget-legion-edge></vtr-widget-legion-edge>
+				</div>
+
+				<div class="col-sm-12 col-lg-12 mb-60">
+					<vtr-widget-quicksettings-list
+						title="{{'gaming.dashboard.device.quickSettingstitle.title' | translate}}">
+					</vtr-widget-quicksettings-list>
+				</div>
+
+				<div class="col-sm-12 col-lg-12 mb-60">
+					<vtr-widget-lighting title=""></vtr-widget-lighting>
+				</div>
+				<div class="col-sm-12 col-lg-12 mb-60">
+					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+						[description]="'dashboard.feedback.subtitle' | translate"
+						[actionName]="'dashboard.feedback.button' | translate"
+						(feedBackClick)="onFeedbackModal()">
+					</vtr-widget-feedback>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

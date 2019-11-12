@@ -10,7 +10,7 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Support'
+			pageName: 'Page.Support'
 		}
 	}
 ];

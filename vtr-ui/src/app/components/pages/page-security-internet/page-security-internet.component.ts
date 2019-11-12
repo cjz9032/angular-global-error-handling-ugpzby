@@ -21,7 +21,6 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-	backId = 'sa-vpn-btn-back';
 	isOnline = true;
 	notificationSubscription: Subscription;
 

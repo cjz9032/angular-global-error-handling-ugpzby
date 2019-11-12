@@ -6,6 +6,9 @@
 	cursor: pointer;
 	label {
 		cursor: pointer;
+		.switch-label, .switch {
+			cursor: pointer;
+		}
 	}
 	&.switch-disable {
 		pointer-events: none;
@@ -59,7 +62,7 @@ input.wifi-checked + .switch {
 	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
 	@media #{$black-on-white} {
-		background: darkviolet;
+		background: $high-contrast-white-textselected;
 	}
 	@media #{$white-on-black} {
 		background: $highlight_bright;
@@ -84,6 +87,12 @@ input.wifi-checked + .switch {
 	-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
+	@media #{$black-on-white} {
+		background-color: $light;
+	}
+	@media #{$white-on-black} {
+		background-color: $dark;
+	}
 }
 
 input.wifi-checked + .switch > small {
@@ -147,6 +156,13 @@ input.wifi-checked + .switch.switch-xs > small {
 	pointer-events: none;
 	.switch {
 		background: #e6eaeb !important;
+		@media #{$black-on-white} {
+			background: $high-contrast-black-disabled !important;
+		}
+		@media #{$white-on-black} {
+			background: $high-contrast-black-disabled !important;
+		}
+
 	}
 }
 
@@ -176,7 +192,7 @@ input.wifi-checked + .switch.switch-xs > small {
 	&.off-label {
 		left: 2rem;
 		color: $shade_darkest;
-	}
+		}
 }
 
 .spinner-text {

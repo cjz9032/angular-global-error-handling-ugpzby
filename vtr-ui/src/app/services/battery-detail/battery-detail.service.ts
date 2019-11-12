@@ -7,6 +7,9 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 export class BatteryDetailService {
 
 	private battery: any;
+	isAcAttached: boolean;
+	remainingPercentages: number[] = [];
+
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
 		this.battery = shellService.getBatteryInfo();

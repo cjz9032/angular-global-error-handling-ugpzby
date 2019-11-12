@@ -16,6 +16,7 @@ import { MetricsModule } from 'src/app/directives/metrics.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
+import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
 
 @NgModule({
 	declarations: [
@@ -32,7 +33,8 @@ import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/p
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalChsStartTrialContainerComponent,
-		ModalRebootConfirmComponent
+		ModalRebootConfirmComponent,
+		ModalSmartStandByComponent
 
 	],
 	imports: [
@@ -63,7 +65,8 @@ import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/p
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalChsStartTrialContainerComponent,
-		ModalRebootConfirmComponent
+		ModalRebootConfirmComponent,
+		ModalSmartStandByComponent
 
 	]
 })

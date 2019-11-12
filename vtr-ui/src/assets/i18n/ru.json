@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Развернуть",
             "loader": "Получение <br> статуса",
             "loading": "загрузка...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "с",
+            "to": "на",
+            "clickToChange": "щелкните для изменения"
         },
         "app-update": {
             "message": "Привет! Доступна более новая версия Vantage. Загрузить?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "У Lenovo Vantage нет доступа к микрофону.",
                 "cameraPrivacyNote": "У Lenovo Vantage нет доступа к камере."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Пороговое значение",
+            "conservation": "Сбережение"
         },
         "systemStatus": {
             "title": "Состояние системы",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Установленный аккумулятор <b>не поддерживается</b> данной системой и не будет заряжаться. Замените аккумулятор на соответствующий данной системе аккумулятор Lenovo.",
                     "Good": "<b>Аккумулятор в хорошем состоянии.</b>",
-                    "Exhaustion": "Неисправность аккумулятора, <b>вызванная большим сроком службы.</b> Не удается зарядить аккумулятор. Замените аккумулятор.",
+                    "Exhaustion": "Емкость аккумулятора <b>уменьшилась</b>. Замените аккумулятор на новый.",
                     "Bad": "<b>Произошла ошибка аккумулятора.</b> Не удается зарядить/разрядить аккумулятор. Замените аккумулятор.",
                     "NotDetected": "<b>Аккумулятор не найден</b> или не подключен.",
                     "NotGood": "<b>Аккумулятор не в хорошем состоянии.</b>",
                     "NotSupportACAdapter": "<b>Адаптер электропитания не поддерживается.</b>",
                     "LimitedACAdapterSupport": "<b>Адаптер электропитания не может обеспечить достаточное питание.</b>",
-                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows, чтобы установить последнюю версию драйвера.",
+                    "MissingDriver": "<b>Драйвер Lenovo Power Manager</b> не установлен или работает неправильно. Запустите Центр обновления Windows, чтобы установить последнюю версию драйвера. Также можно установить драйвер по <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">этой ссылке</a>.",
                     "StoreLimitation": "<b>Аккумулятор может хранить только {{value}}% от</b> своей исходной емкости полного заряда.",
                     "HighTemperature": "<b>Разрядка</b> остановлена из-за <b>слишком высокой температуры аккумулятора.</b>",
                     "TrickleCharge": "Аккумулятор <b>полностью разряжен,</b> требуется повторная зарядка. Для этого может потребоваться более десяти часов.",
                     "OverheatedBattery": "Аккумулятор <b>слишком горячий</b>. Извлеките его из компьютера и охладите до комнатной температуры.",
-                    "PermanentError": "Неисправность аккумулятора, <b>вызванная большим сроком службы.</b> Не удается зарядить аккумулятор. Замените аккумулятор.",
+                    "PermanentError": "Емкость аккумулятора <b>уменьшилась</b>. Замените аккумулятор на новый.",
                     "NotSupportACAdapterDetail": "<b>Адаптер электропитания не поддерживается.</b> Ваш компьютер Lenovo не поддерживает этот адаптер электропитания. Он может вызвать внезапное отключение. Подключите правильный адаптер электропитания.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер электропитания не может обеспечить достаточное питание</b> вашему компьютеру Lenovo, что отразится на производительности системы и скорости зарядки. Подключите правильный адаптер электропитания.",
                     "FullACAdapterSupport": "<b>Подключено питание мощностью {{acWattage}} W {{acAdapterType}}.</b>"
@@ -956,7 +973,7 @@
                             "close": "закрыть",
                             "coolingModesList": {
                                 "list1": "Нажмите на значок аккумулятора Windows на панели задач",
-                                "list2": "Появится индикатор аккумулятора Windows. Перемещайте ползунок, чтобы выбрать оптимальное время работы от аккумулятора или оптимальную производительность."
+                                "list2": "Появится экран Windows \"Режим питания\". Перемещайте ползунок, чтобы выбрать оптимальное время работы от аккумулятора или оптимальную производительность."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Отмена",
                             "yes": "Да",
                             "description3": "Остановить сброс индикатора аккумулятора?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Интеллектуальный режим ожидания",
                     "description": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
-                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени начала работы, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется на основе заданного расписания. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
+                    "tooltip": "Если функция интеллектуального режима ожидания включена, компьютер переключается в текущий режим ожидания до запланированного времени НАЧАЛА РАБОТЫ, а при неактивности в течение определенного периода времени при питании от аккумулятора переходит в режим гибернации. Этот период времени оптимизируется с учетом установленного пользователем графика или данных о времени использования компьютера, которые мы получаем. Компьютер переключается из режима гибернации в текущий режим ожидания только в запланированные дни и не переключается при неактивности в течение нескольких запланированных дней подряд.",
                     "timer": {
-                        "heading": "Укажите время, когда вы обычно используете этот компьютер",
+                        "heading": "Время, когда вы обычно используете компьютер",
                         "subHeading1": "начнете",
                         "subHeading2": "окончание",
                         "subHeading3": "использовать это расписание в",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Будние дни",
                         "weekends": "Выходные дни"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
+                    "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "ПЕРЕЗАГРУЗИТЬ",
                             "cancel": "НЕ СЕЙЧАС"
                         },
-						"note": {
-							"sFunKey": "Для получения доступа к функциям F1–F12 нажмите клавишу Fn и клавиши в верхнем ряду.",
-							"fnKey": "Для получения доступа к специальным функциям нажмите клавишу Fn и клавиши в верхнем ряду."
-						}
+                        "note": {
+                            "sFunKey": "Для получения доступа к функциям F1–F12 нажмите клавишу Fn и клавиши в верхнем ряду.",
+                            "fnKey": "Для получения доступа к специальным функциям нажмите клавишу Fn и клавиши в верхнем ряду."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Функции горячих клавиш VoIP",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Переключение функций клавиш Fn и Ctrl",
+                    "description": "Если вы по привычке нажали клавишу Fn, намереваясь нажать клавишу Ctrl, вы можете поменять функции этих клавиш.",
+                    "restartNote": "Для переключения функции двух клавших необходимо перезапустить компьютер. Выполнить перезапуск?"
                 },
                 "controlOptions": {
                     "more": "ДОПОЛНИТЕЛЬНО",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Бесконтактный вход",
                     "caption": "Эта функция автоматически разблокирует компьютер или выводит его из режима сна, когда вы оказываетесь перед ним.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Если вы находитесь перед компьютером или приближаетесь к нему (на расстоянии 1,2 метра), эта функция обеспечивает автоматический вход в систему после распознавания вашего лица. Если вы находитесь на улице, а не внутри помещения, вам потребуется подойти ближе к компьютеру, а пробуждение займет больше времени."
                 },
                 "zeroTouchLock": {
                     "title": "Бесконтактная блокировка",
@@ -1483,14 +1509,14 @@
                         "medium": "Средняя"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Если эта функция включена, расстояние обнаружения корректируется автоматически. Кроме того, можно вручную настроить расстояние обнаружения с помощью ползунка. Доступные варианты:",
+                        "context2": "При настройке расстояния обнаружения вручную обращайте внимание на следующие факторы:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Близко: 0–0,42 м (17 дюймов)",
+                            "line2": "Средне: 0–0,60 м (24 дюймов)",
+                            "line3": "Далеко: 0–1,20 м (47 дюймов)",
+                            "line4": "Максимальное расстояние обнаружения — 1,2 метра. На расстоянии более 1,2 метра датчик не сможет распознать ваше присутствие.",
+                            "line5": "Рекомендованное расстояние обнаружения — 0,6 метра."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Эта функция основана на технологии Windows Hello. Убедитесь, что функция распознавания лица включена в параметрах Windows.",
                     "description2": "Эта функция обнаруживает ваше присутствие с помощью датчиков и камеры. Тем не менее, она НЕ ОСУЩЕСТВЛЯЕТ сбор каких-либо личных данных.",
                     "description3": "1. Если компьютер находится в режиме тента, планшета или консоли, эти функции могут работать неправильно.",
-                    "description4": "2. Если компьютер находится в режиме гибернации или выключен. Функция бесконтактного входа не будет работать.",
+                    "description4": "2. Если компьютер находится в режиме гибернации или выключен, функция бесконтактного входа работать не будет.",
                     "description5": "3. Подберите угол наклона экрана вашего компьютера таким образом, чтобы ИК-камера могла распознавать ваше лицо для автоматического входа в систему.",
                     "description6": "4. Если в компьютере включен режим \"в самолете\", эти функции отключены.",
                     "description7": "Точность зависит от размера тела, осанки и частоты движения. Если компьютер неожиданно блокируется, отрегулируйте чувствительность, чтобы повысить точность."
@@ -1827,22 +1853,22 @@
             "good": "БЕЗОПАСНАЯ",
             "malicious": "ВРЕДОНОСНАЯ",
             "suspicious": "ПОДОЗРИТЕЛЬНАЯ",
-            "securityScoreDepends": "Ваша оценка безопасности дает вам представление о степени вашей безопасности в Интернете, и результат зависит от следующих факторов:",
+            "securityScoreDepends": "Ваша оценка безопасности зависит от следующего:",
             "antivirus": "Использование антивирусных программ",
             "password": "Использование надежных и сложных паролей с безопасной системой управления паролями",
             "vpn": "Мониторинг уязвимости сети к атакам",
             "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
             "windowsHello": "Защита устройства с помощью параметров безопасного входа",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Что такое уведомление функции контроля учетных записей пользователей?",
+            "uacText": "Контроль учетных записей пользователей — очень важная функция безопасности Windows, которая не дает потенциально вредоносным программам внести изменения в систему.",
+            "windowsTitle": "Зачем активировать Windows?",
+            "windowsText": "Использование неподлинной копии Windows повышает риск заражения системы вирусами и воздействия других угроз безопасности.",
+            "encryptionTitle": "Что такое шифрование жесткого диска?",
+            "encryptionText": "Эта функция помогает защитить данные путем шифрования всего жесткого диска, чтобы предотвратить несанкционированный доступ даже в случае извлечения диска из текущего компьютера и подключения к другим устройствам.",
+            "passwordTitle": "Как обеспечить надежную защиту пароля?",
+            "passwordText": "Используйте профессиональное приложение цифровой защиты для хранения и администрирования всех своих паролей в зашифрованном виде, вместо того чтобы хранить их в браузере, где к ним легко могут получить доступ третьи лица без вашего ведома.",
+            "enhanceTitle": "Как повысить безопасность системы?",
+            "enhanceText": "Настоятельно рекомендуем защитить устройства антивирусной программой и брандмауэром, а также настроить уведомление функции контроля учетных записей пользователей на минимальный уровень защиты. Кроме того, используйте надежные пароли и управляйте ими безопасным способом, а для дополнительной защиты шифруйте данные при использовании общедоступных сетей."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} обеспечивает базовую защиту вашего устройства",
                 "unknown": "Неизвестно",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Здесь вы найдете более выгодное предложение!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "На странице параметров предпочтений можно включить или отключить уведомления о сообщениях для тех или иных категорий сообщений Vantage. Обратите внимание, что даже если все категории сообщений отключены, вы по-прежнему можете получать сообщения Vantage о критическом состоянии системы в случае необходимости.",
         "messagesInLenovoVantage": "Сообщения в Lenovo Vantage",
         "appFeatures": "Функции приложения",
-        "appFeaturesDescription": "Сообщения, относящиеся к System Update, статьям и другим заслуживающим внимания функциям.",
+        "appFeaturesDescription": "Сообщения, относящиеся к Обновлению системы, статьям и другим заслуживающим внимания функциям.",
         "marketing": "Маркетинг",
         "marketingDescription": "Рекламные сообщения, включая спецпредложения Lenovo.",
         "actionTriggered": "Инициированное действие",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
         "deviceStatistics": "Поделиться статистическими данными с Lenovo",
         "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
+        "userProfile": "User profile",
         "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение."
     },

@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "הרחבה",
             "loader": "מאחזר <br> סטטוס",
             "loading": "...טעינה",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "מ:",
+            "to": "בשורה",
+            "clickToChange": "לחצו כדי לשנות"
         },
         "app-update": {
             "message": "היי! יש גרסה חדשה יותר של Vantage, האם ברצונכם לטעון אותה?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "ל-Lenovo Vantage אין גישה למיקרופון.",
                 "cameraPrivacyNote": "ל-Lenovo Vantage אין גישה למצלמה."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "סף",
+            "conservation": "חיסכון"
         },
         "systemStatus": {
             "title": "מצב המערכת",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "הסוללה המותקנת <b>אינה נתמכת</b> על-ידי המערכת ולא תיטען. החליפו אותה בסוללה של Lenovo המתאימה למערכת זו.",
                     "Good": "<b>הסוללה במצב תקין.</b>",
-                    "Exhaustion": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
+                    "Exhaustion": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "Bad": "<b>אירעה שגיאת סוללה.</b> לא ניתן לטעון/לפרוק את הסוללה. החליפו את הסוללה.",
                     "NotDetected": "<b>לא אותרה סוללה או שהיא</b> אינה מחוברת.",
                     "NotGood": "<b>הסוללה אינה במצב תקין.</b>",
                     "NotSupportACAdapter": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b></span>",
                     "LimitedACAdapterSupport": "<b>מתאם AC לא יכול לספק מספיק חשמל.</b>",
-                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר.",
+                    "MissingDriver": "<b>מנהל התקן Lenovo Power Manager</b> אינו מותקן או שאינו פועל כראוי. הפעילו את Windows Update כדי להתקין את מנהל ההתקן העדכני ביותר. ניתן גם להתקין את מנהל ההתקן מ <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">כאן</a>.",
                     "StoreLimitation": "<b>הסוללה יכולה לאחסן רק {{value}}% מתוך</b> קיבולת הטעינה המקורית שלה.",
                     "HighTemperature": "<b>הפריקה</b> נעצרה מכיוון <b>שטמפרטורת הסוללה גבוהה מדי.</b>",
                     "TrickleCharge": "הסוללה <b>התרוקנה לחלוטין</b> ויש לטעון אותה מחדש. התהליך עשוי לארוך עשר שעות או יותר.",
                     "OverheatedBattery": "הסוללה <b>חמה מדי</b>. הסירו אותה מהמחשב והניחו לה להתקרר לטמפרטורת החדר.",
-                    "PermanentError": "הסוללה <b>נכשלה בגלל בלאי רגיל.</b> לא ניתן לטעון את הסוללה. החליפו את הסוללה.",
+                    "PermanentError": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
                     "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
                     "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
@@ -956,7 +973,7 @@
                             "close": "סגירה",
                             "coolingModesList": {
                                 "list1": "לחץ על סמל הסוללה של Windows בסרגל הכלים",
-                                "list2": "מד הסוללה של Windows יופיע, החלק את המחוון כדי לבחור בין זמן אופטימלי לבין ביצועים מיטביים."
+                                "list2": "מצב Windows Power יופיע, החלק את המחוון כדי לבחור בין זמן אופטימלי לבין ביצועים אופטימליים."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "ביטול",
                             "yes": "כן",
                             "description3": "האם אתם בטוחים שברצונכם לעצור את איפוס מד הסוללה?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "המתנה חכמה",
                     "description": "תכונה זו מתזמנת את המחשב שלכם למיטוב חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, בלי לפגוע בזמן האתחול המהיר שנדרש בשעות שבהן נעשה שימוש במחשב.",
-                    "tooltip": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים במצב של חסכון בסוללה. פרק הזמן הזה עובר מיטוב לפי לוח הזמנים שקבעתם. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
+                    "tooltip": "כאשר תכונת 'המתנה חכמה' פועלת, המחשב עובר ל'המתנה מודרנית' לפני מועד ההתחלה שנקבע, והוא עובר למצב שינה אם הוא בלתי פעיל במשך פרק זמן מסוים כאשר הוא מופעל באמצעות סוללה. פרק זמן זה ממוטב בהתבסס על המועד שנקבע או זמן השימוש במחשב שאנחנו מקבלים. המחשב עובר ממצב שינה למצב 'המתנה מודרנית' רק בימים שנקבעו, ואינו עובר כאשר הוא במצב בלתי פעיל במשך כמה ימים ברצף, לפי מה שקבעתם.",
                     "timer": {
-                        "heading": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
+                        "heading": "הזמן שבו אתם בדרך כלל משתמשים במחשב",
                         "subHeading1": "הפעלה",
                         "subHeading2": "סיום",
                         "subHeading3": "השתמשו בלוח הזמנים הזה לצורך",
@@ -1127,8 +1145,16 @@
                         "weekdays": "ימי חול",
                         "weekends": "סופי שבוע"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "התאמה אוטומטית של הזמן הפעיל של המחשב בהתבסס על השימוש שלכם",
+                    "hyperlinkToGraph": "לחצו כדי לראות את הפעילות ואת הזמן הפעיל של טבלת המחשב שלכם",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "הפעלה מחדש",
                             "cancel": "לא עכשיו"
                         },
-						"note": {
-							"sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
-							"fnKey": "כדי לגשת לפונקציות המיוחדות, לחצו על המקש Fn ועל המקשים בשורה העליונה."
-						}
+                        "note": {
+                            "sFunKey": "כדי לגשת לפונקציות F1-F12, לחצו על המקש Fn ועל המקשים בשורה העליונה.",
+                            "fnKey": "כדי לגשת לפונקציות המיוחדות, לחצו על המקש Fn ועל המקשים בשורה העליונה."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "פונקציות VoIP Hotkey",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "‏‫החלפה בין מקש Fn למקש Ctrl‬",
+                    "description": "אם אתם לוחצים לעתים קרובות על מקש Fn במקום ללחוץ על מקש Ctrl, אפשר להחליף בין הפונקציות של שני המקשים.",
+                    "restartNote": "החלפת הפונקציה של שני מקשים מחייבת הפעלה מחדש של המחשב, האם אתם בטוחים שברצונכם להפעיל מחדש?"
                 },
                 "controlOptions": {
                     "more": "עוד",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "כניסה באפס מגע",
                     "caption": "תכונה זו מעוררת או מבטלת את נעילת המחשב באופן אוטומטי כשאתם יושבים מולו או מתקרבים אליו.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "כשאתם מול המחשב שלכם או מתקרבים אליו (במרחק של 1.2 מטר), תכונה זו מאפשרת להתחבר אוטומטית למערכת לאחר זיהוי הפנים שלכם. אם נמצאים בחוץ ולא במשרד, עליכם להיות קרובים יותר למחשב והיקיצה תימשך זמן רב יותר."
                 },
                 "zeroTouchLock": {
                     "title": "נעילה ללא מגע",
@@ -1483,14 +1509,14 @@
                         "medium": "בינוני"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "כאשר מופעל, מרחק הזיהוי יותאם אוטומטית. ניתן גם להגדיר ידנית את מרחק הזיהוי באמצעות המחוון. האפשרויות הן:",
+                        "context2": "כאשר מרחק הזיהוי מוגדר ידנית, יש לשים לב לדברים הבאים:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "קרוב: 0 - 0.42 מטר (17 אינץ')",
+                            "line2": "אמצע: 0 - 0.60 מטר (24 אינץ')",
+                            "line3": "רחוק: 0 - 1.20 מטר (47 אינץ')",
+                            "line4": "מרחק הזיהוי המרבי הוא 1.2 מטר. אם המרחק עולה על 1.2 מטר, החיישן לא יצליח לזהות את נוכחותכם.",
+                            "line5": "מרחק הזיהוי המומלץ הוא במסגרת 0.60 מטר."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "תכונה זו מסתמכת על Windows Hello. ודאו שזיהוי פנים מופעל בהגדרות Windows.",
                     "description2": "התכונה משתמשת בחיישנים ובמצלמה כדי לזהות את נוכחותכם. עם זאת, התכונה אינה אוספת נתונים אישיים כלל.",
                     "description3": "1. אם המחשב נמצא במצב אוהל, לוח או מעמד, ייתכן שתכונות אלה לא יפעלו כראוי.",
-                    "description4": "2. אם המחשב במצב שינה או כבוי. כניסה ללא מגע לא תעבוד.",
+                    "description4": "2. אם המחשב במצב שינה או כבוי, 'כניסה באפס מגע' לא תעבוד.",
                     "description5": "3. כווננו את מסך המחשב לזווית מתאימה כך שמצלמת ה-IR תוכל לזהות את הפנים שלכם לצורך כניסה אוטומטית.",
                     "description6": "4. אם מצב טיסה מופעל במחשב, כל התכונות האלה מושבתות.",
                     "description7": "הדיוק משתנה לפי גודל הגוף, היציבה ותדירות התנועה. אם המחשב שלכם ננעל באופן בלתי צפוי, התאימו את סרגל הרגישות כדי לשפר את הדיוק."
@@ -1827,22 +1853,22 @@
             "good": "טוב",
             "malicious": "זדוני",
             "suspicious": "חשוד",
-            "securityScoreDepends": "ציון האבטחה שלכם נותן לכם מושג לגבי רמת האבטחה שלכם ברשת. התוצאה תלויה בנתונים הבאים:",
+            "securityScoreDepends": "תוצאת האבטחה שלכם יכולה להשתנות אם:",
             "antivirus": "האם אתם מוגנים על-ידי תוכנת אנטי-וירוס",
             "password": "האם אתם מנהלים סיסמאות חזקות ומורכבות באופן בטוח",
             "vpn": "האם אתם מנטרים את החשיפה שלכם לתוקפים ברשת",
             "wifi": "האם אתם מצפינים את המידע האישי שלהם כשאתם משתמשים ב-WiFi ציבורי",
             "windowsHello": "האם אתם מגינים על המכשיר שלכם באמצעות אפשרויות כניסה בטוחות",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "מהי הודעת UAC?",
+            "uacText": "בקרת חשבון משתמש היא תכונת אבטחה חשובה מאוד של Windows, המסייעת למנוע מתוכניות שעלולות להזיק לבצע שינויים במערכת שלכם.",
+            "windowsTitle": "מדוע עלי להפעיל את Windows?",
+            "windowsText": "הפעלת עותק שאינו מקורי של Windows עלולה להעמיד אתכם בסיכון גדול יותר לאיומים של וירוסים ואיומי אבטחה אחרים.",
+            "encryptionTitle": "מהי הצפנת כונן קשיח?",
+            "encryptionText": "תכונה זו עוזרת להגן על הנתונים שלכם על ידי הצפנה של כל הכונן הקשיח מפני גישה לא מורשית, אפילו אם הכונן מוסר מהמחשב הנוכחי ומוכנס למכשירים אחרים.",
+            "passwordTitle": "כיצד להגן טוב יותר על סיסמאות?",
+            "passwordText": "אחסנו ונהלו בצורה מאובטחת את כל הסיסמאות המוצפנות שלכם בעזרת יישום הגנה דיגיטלי ומקצועי, במקום פשוט לאחסן את הסיסמאות בדפדפנים שלכם, שאליהם צד שלישי יכול לגשת בקלות ללא ידיעתכם.",
+            "enhanceTitle": "מה עלי לעשות כדי לשפר את ההגנה על האבטחה?",
+            "enhanceText": "אנו ממליצים מאוד שהמכשירים שלכם יהיו מוגנים על ידי תוכנת אנטי-וירוס וחומת אש, הגדירו את הודעת ה- UAC כהגנה מינימלית. וכדאי ליצור סיסמאות חזקות ולנהל אותן בצורה מאובטחת, ולהצפין את הנתונים שלכם תוך כדי שימוש ברשת הציבורית כהגנה מתקדמת."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} מציע הגנה בסיסית למכשיר שלכם",
                 "unknown": "לא ידוע",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "תיהנו מהצעה טובה יותר כאן!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "בדף הגדרת ההעדפות ניתן לבחור להפעיל או לבטל קבלת התראות על הודעות בהתאם לקטגוריות של הודעת Vantage. שימו לב שגם אם כל קטגוריות ההודעות מושבתות, ייתכן שתקבלו מדי פעם הודעה קריטית של המערכת מאת Vantage בעת הצורך.",
         "messagesInLenovoVantage": "הודעות ב-Lenovo Vantage",
         "appFeatures": "תכונות היישום",
-        "appFeaturesDescription": "הודעות המתייחסות ל-System Update, למאמרים ולתכונות חשובות אחרות.",
+        "appFeaturesDescription": "הודעות המתייחסות לעדכון המערכת, למאמרים ולתכונות חשובות אחרות.",
         "marketing": "שיווק",
         "marketingDescription": "הודעות קידום מכירות כולל הצעות מיוחדות של Lenovo.",
         "actionTriggered": "פעולה מבוצעת",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
         "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
         "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
+        "userProfile": "User profile",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה."
     },

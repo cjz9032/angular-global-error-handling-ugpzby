@@ -112,7 +112,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.showIntelligentCoolingModes = true;
 			this.enableIntelligentCoolingToggle = false;
-			isSetManualMode ? this.setManualModeSetting(IntelligentCoolingModes.Performance) : '';
+			if (isSetManualMode) {
+				this.setManualModeSetting(IntelligentCoolingModes.Performance);
+			}
 		}
 		this.cache.showIC = this.showIC;
 		this.cache.autoModeToggle.available = this.showIntelligentCoolingToggle;
@@ -639,8 +641,14 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	}
 
 
-	readMore() {
+	readMore(readMoreDiv: HTMLElement) {
 		this.onReadMoreClick = true;
+		readMoreDiv.style.display = 'block';
+		//readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		//const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
+		// Fix for Edge browser
+		//window.scrollBy(0, 0);
+		readMoreDiv.focus();
 	}
 
 	ngOnDestroy() {

@@ -105,7 +105,7 @@ export class AppsForYouService {
 		this.localInfoService.getLocalInfo().then(result => {
 			this.localInfo = result;
 		}).catch(e => {
-			this.logService.error('AppsForYouService.initialize getLocalInfo error.', JSON.stringify(e));
+			this.localInfo = undefined;
 		});
 	}
 
@@ -222,8 +222,10 @@ export class AppsForYouService {
 				const applicationGuid = appGuid;
 				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
 					(progressResponse) => {
+						this.updateCachedAppStatus(appGuid, 'InstallerRunning');
 						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
 					});
+				this.updateCachedAppStatus(appGuid, result);
 				this.commonService.sendNotification(AppsForYouEnum.InstallAppResult, result);
 			}
 		}
@@ -247,6 +249,13 @@ export class AppsForYouService {
 		}
 	}
 
+	private updateCachedAppStatus(appGuid, status) {
+		const index = this.cachedAppStatusArray.findIndex(i => i.key === appGuid);
+		if (index !== -1) {
+			this.cachedAppStatusArray[index].value = status;
+		}
+	}
+
 	public openSeeMoreUrl(appGuid: string, downloadlink: string) {
 		// Open new window with default browser to browse external link
 		if (appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
@@ -263,8 +272,8 @@ export class AppsForYouService {
 
 	// Wether or not to show 'adobe redemption' in user drop down menu
 	public showAdobeMenu() {
-		if (this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
-			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 &&
+		if (!this.deviceService.isArm && this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
+			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1 &&
 			(this.localInfo.Segment.indexOf('SMB') !== -1 || this.localInfo.Segment.indexOf('Consumer') !== -1)) {
 			return true;
 		} else {
@@ -283,8 +292,12 @@ export class AppsForYouService {
 	cancelInstall() {
 		this.isCancelInstall = true;
 		if (this.cancelToken) {
-			this.cancelToken.cancel();
+			// this.cancelToken.cancel();
 		}
+	}
+
+	resetCancelInstall() {
+		this.isCancelInstall = false;
 	}
 }
 

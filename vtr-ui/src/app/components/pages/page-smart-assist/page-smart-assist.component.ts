@@ -361,7 +361,7 @@ export class PageSmartAssistComponent
 
 	private getAutoScreenOffNoteStatusFunc() {
 		this.getAutoScreenOffNoteStatus = setInterval(() => {
-			console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
+			// console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
 			this.smartAssist.getAutoScreenOffNoteStatus().then((response) => {
 				this.intelligentScreen.isAutoScreenOffNoteVisible = response;
 			});

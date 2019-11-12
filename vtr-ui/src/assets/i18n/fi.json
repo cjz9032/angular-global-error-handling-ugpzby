@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Laajenna",
             "loader": "Noutaminen <br> Tila",
             "loading": "Ladataan...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "kohteesta",
+            "to": "kohteeseen",
+            "clickToChange": "muuta napsauttamalla tätä"
         },
         "app-update": {
             "message": "Hei! Vantage on saatavilla uudempi versio. Haluatko ladata sen?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage ei voi käyttää mikrofonia.",
                 "cameraPrivacyNote": "Lenovo Vantage ei voi käyttää kameraa."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Kynnys",
+            "conservation": "Säästö"
         },
         "systemStatus": {
             "title": "Järjestelmän tila",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Järjestelmä <b>ei tue</b> asennettua akkua, ja sitä ei ladata. Vaihda akku oikeaan, tälle järjestelmälle tarkoitettuun Lenovon akkuun.",
                     "Good": "<b>Akun toimintakunto on hyvä.</b>",
-                    "Exhaustion": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
+                    "Exhaustion": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "Bad": "<b>On tapahtunut akkuvirhe.</b> Akkua ei voi ladata tai sen varausta purkaa. Vaihda akku.",
                     "NotDetected": "<b>Akkua ei havaittu, tai sitä ei</b> ole liitetty.",
                     "NotGood": "<b>Akun toimintakunto on huono.</b>",
                     "NotSupportACAdapter": "<b>Verkkolaite ei ole tuettu.</b>",
                     "LimitedACAdapterSupport": "<b>Verkkolaite ei pysty tuottamaan riittävästi virtaa.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri.",
+                    "MissingDriver": "<b>Lenovo Power Manager -ajuria</b> ei ole asennettu, tai se ei toimi oikein. Suorita Windows Update ja asenna uusin ajuri. Voit myös asentaa ajurin <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">täältä</a>.",
                     "StoreLimitation": "<b>Akku voi tallentaa vain {{value}}%</b> sen alkuperäisestä täydestä varauskapasiteetista.",
                     "HighTemperature": "<b>Latauksen purkaminen</b> on keskeytetty <b>akun korkean lämpötilan vuoksi.</b>",
                     "TrickleCharge": "Akun lataus on <b>purettu kokonaan</b>, ja akku on ladattava uudelleen. Tämä saattaa kestää yli kymmenen tuntia.",
                     "OverheatedBattery": "Akun lämpötila on <b>liian korkea</b>. Poista akku tietokoneesta ja jäähdytä se huoneenlämpöiseksi.",
-                    "PermanentError": "Akussa on ilmennyt <b>vika normaalin kulumisen vuoksi.</b> Akkua ei voi ladata. Vaihda akku.",
+                    "PermanentError": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
@@ -956,7 +973,7 @@
                             "close": "sulje",
                             "coolingModesList": {
                                 "list1": "Napsauta Windowsin työkalurivillä näkyvää akun kuvaketta",
-                                "list2": "Windowsin akkumittari tulee näkyviin, ja voit valita optimaalisen ajankohdan tai optimaalisen suorituskyvyn liukusäätimen avulla."
+                                "list2": "Windowsin virtatila tulee näkyviin, ja voit valita optimaalisen ajankohdan tai optimaalisen suorituskyvyn liukusäätimen avulla."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Peruuta",
                             "yes": "Kyllä",
                             "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Älykäs valmiustila",
                     "description": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua aloitusaikaa ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso optimoidaan määritetyn aikataulun perusteella. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
+                    "tooltip": "Kun älykäs valmiustila on käytössä, tietokone vaihtaa moderniin valmiustilaan ennen ajoitettua ALOITUSAIKAA ja siirtyy horrostilaan sen jälkeen, kun tietokone on ollut käyttämättömänä tietyn ajanjakson ajan akkuvirtaa käytettäessä. Tämä ajanjakso on optimoitu määrittämäsi aikataulun tai tietokoneen käyttöajan mukaan. Tietokone vaihtaa horrostilasta moderniin valmiustilaan vain ajoitettuina päivinä eikä silloin, kun se on käyttämättömänä peräkkäisinä ajoitettuina päivinä.",
                     "timer": {
-                        "heading": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                        "heading": "Aika, jolloin yleensä käytät tätä tietokonetta",
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Arkisin",
                         "weekends": "Viikonloppuisin"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
+                    "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "KÄYNNISTÄ UUDELLEEN",
                             "cancel": "EI NYT"
                         },
-						"note": {
-							"sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
-							"fnKey": "Jos haluat käyttää erikoistoimintoa, paina Fn-näppäintä ja ylärivin näppäimiä."
-						}
+                        "note": {
+                            "sFunKey": "Jos haluat käyttää näppäinten F1–F12 toimintoja, paina Fn-näppäintä ja ylärivin näppäimiä.",
+                            "fnKey": "Jos haluat käyttää erikoistoimintoa, paina Fn-näppäintä ja ylärivin näppäimiä."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "VoIP-pikanäppäintoiminnot",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Fn- ja Ctrl-näppäimen vaihto",
+                    "description": "Jos painat usein Fn-näppäintä, kun aioit painaa Ctrl-näppäintä, voit vaihtaa näiden kahden näppäimen toimintoja.",
+                    "restartNote": "Kahden näppäimen toiminnon vaihtaminen edellyttää tietokoneen käynnistämistä uudelleen. Haluatko varmasti käynnistää tietokoneen uudelleen?"
                 },
                 "controlOptions": {
                     "more": "ENEMMÄN",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Zero Touch -kirjautuminen",
                     "caption": "Tämä ominaisuus avaa tietokoneen lukituksen tai herättää tietokoneen automaattisesti, kun olet tietokoneen edessä tai lähestyt tietokonetta.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Kun olet tietokoneen äärellä tai lähestyt sitä (1,2 metrin etäisyydellä), tämän toiminnon avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin."
                 },
                 "zeroTouchLock": {
                     "title": "Zero Touch -lukitus",
@@ -1483,14 +1509,14 @@
                         "medium": "Keskitaso"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Kun tunnistusetäisyys on otettu käyttöön, se säädetään automaattisesti. Voit myös manuaalisesti asettaa tunnistusetäisyyden liukusäätimen avulla. Vaihtoehdot ovat seuraavat:",
+                        "context2": "Kun määrität tunnistusetäisyyden manuaalisesti, kiinnitä huomiota seuraaviin:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Lähellä: 0-0,42 metriä (17 tuumaa)",
+                            "line2": "Keskitaso: 0-0,60 metriä (24 tuumaa)",
+                            "line3": "Kaukana: 0-1,20 metriä (47 tuumaa)",
+                            "line4": "Suurin tunnistusetäisyys on 1,2 metriä. Jos etäisyys on yli 1,2 metriä, tunnistin ei havaitse läsnäoloasi.",
+                            "line5": "Suositeltu tunnistusetäisyys on 0,60 metrin etäisyyden sisällä."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Tämä ominaisuus hyödyntää Windows Hellota. Varmista, että kasvojentunnistus on otettu käyttöön Windowsin asetuksista.",
                     "description2": "Tämä ominaisuus käyttää tunnistimia ja kameraa läsnäolon havaitsemiseksi. Toiminto EI kuitenkaan kerää henkilötietoja.",
                     "description3": "1. Jos tietokone on kolmio-, taitos- tai tauluasennossa, nämä ominaisuudet eivät ehkä toimi oikein.",
-                    "description4": "2. Jos tietokone on horrostilassa tai siitä on katkaistu virta. Zero Touch -kirjautuminen ei toimi.",
+                    "description4": "2. Jos tietokone on horrostilassa tai jos tietokoneesta on katkaistu virta, Zero Touch -kirjautuminen ei toimi.",
                     "description5": "3. Muuta tietokoneen näytön kulmaa niin, että infrapunakamera voi tunnistaa kasvosi automaattista sisäänkirjautumista varten.",
                     "description6": "4. Jos tietokoneen lentotila on käytössä, nämä langattomat ominaisuudet ovat poissa käytöstä.",
                     "description7": "Tarkkuus vaihtelee kehon koon, asennon ja liikkumisen tiheyden mukaan. Jos tietokone lukitaan odottamatta, paranna tarkkuutta säätämällä herkkyyspalkkia."
@@ -1827,22 +1853,22 @@
             "good": "HYVÄ",
             "malicious": "HAITALLINEN",
             "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvapisteet antavat käsityksen siitä, kuinka turvallista toimintasi verkossa on. Tulos riippuu vastauksista seuraaviin:",
+            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
             "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
             "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
             "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
             "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
             "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Mikä on käyttäjätilien valvontailmoitus?",
+            "uacText": "Käyttäjätilien valvonta on erittäin tärkeä Windowsin tietoturvaominaisuus, joka auttaa estämään mahdollisesti vahingollisten ohjelmien muutosten tekemisen järjestelmääsi.",
+            "windowsTitle": "Miksi minun täytyy aktivoida Windows?",
+            "windowsText": "Ei-aidon Windows-kopion käyttäminen saattaa lisätä virusten ja muiden tietoturvauhkien riskiä.",
+            "encryptionTitle": "Mitä on kiintolevyaseman salaus?",
+            "encryptionText": "Se auttaa suojaamaan tietosi tarjoamalla salauksen koko kovalevylle luvattomalta käytöltä, vaikka asema poistetaan nykyisestä tietokoneesta ja asennetaan muihin laitteisiin.",
+            "passwordTitle": "Miten suojata salasana paremmin?",
+            "passwordText": "Tallenna ja hallitse kaikkia salasanojasi ammattimaisen digitaalisen suojaussovelluksen avulla sen sijaan, että vain tallennat ne selaimissa, mistä kolmannet osapuolet pääsevät niihin helposti käsiksi tietämättäsi.",
+            "enhanceTitle": "Mitä minun pitäisi tehdä parantaakseni tietoturvasuojausta?",
+            "enhanceText": "Suosittelemme, että vähintään suojaat laitteesi virustentorjuntaohjelmistolla ja palomuurilla ja määrität käyttäjätilien valvontailmoitukset. Ja lisäsuojauksena luot vahvoja salasanoja ja hallitset niitä turvallisesti, ja salaat tietosi, kun käytät julkista verkkoa."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} tarjoaa laitteellesi perustason suojauksen",
                 "unknown": "Tuntematon",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Saat paremman tarjouksen täältä!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Oletusasetusten määrityssivulla voit ottaa käyttöön tai poistaa käytöstä viesti-ilmoitukset Vantagen viestiluokkien perusteella. Huomaa, että vaikka kaikki viestiluokat on poistettu käytöstä, voit silloin tällöin edelleen saada järjestelmälle tärkeitä viestejä Vantagelta, mikäli tarpeen.",
         "messagesInLenovoVantage": "Lenovo Vantage -sovelluksen viestit",
         "appFeatures": "Sovelluksen ominaisuudet",
-        "appFeaturesDescription": "System Update, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
+        "appFeaturesDescription": "Järjestelmäpäivityksiä, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
         "marketing": "Markkinointi",
         "marketingDescription": "Kampanjaviestit, mukaan lukien Lenovon erikoistarjoukset.",
         "actionTriggered": "Toiminto käynnistetty",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
         "deviceStatistics": "Jaa tilastotiedot Lenovolle",
         "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
+        "userProfile": "User profile",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen."
     },

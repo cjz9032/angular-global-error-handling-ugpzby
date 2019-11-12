@@ -40,20 +40,49 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	public isOnline = true;
 	public brand;
 	private protocalAction: any;
-	private isUPEFailed = false;
-	private isCmsLoaded = false;
+	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
+	public isWarrantyVisible = false;
 
-
-	warrantyData: { info: any; cache: boolean };
-
-	heroBannerItems = [];
-	cardContentPositionA: any = {};
+	heroBannerItems = [];   // tile A
 	cardContentPositionB: any = {};
-	cardContentPositionBCms: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
+
+	heroBannerItemsCms: [];   // tile A
+	cardContentPositionBCms: any = {};
+	cardContentPositionCCms: any = {};
+	cardContentPositionDCms: any = {};
+	cardContentPositionECms: any = {};
+	cardContentPositionFCms: any = {};
+
+	upeRequestResult = {
+		tileA: true,
+		tileB: true,
+		tileC: true,
+		tileD: true,
+		tileE: true,
+		tileF: true,
+	};
+
+	cmsRequestResult = {
+		tileA: false,
+		tileB: false,
+		tileC: false,
+		tileD: false,
+		tileE: false,
+		tileF: false
+	};
+
+	tileSource = {
+		tileA: 'CMS',
+		tileB: 'CMS',
+		tileC: 'CMS',
+		tileD: 'CMS',
+		tileE: 'CMS',
+		tileF: 'CMS'
+	};
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -98,15 +127,21 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		// Evaluate the translations for QA on language Change
 		// this.qaService.setTranslationService(this.translate);
 		// this.qaService.setCurrentLangTranslations();
-		this.isUPEFailed = false;  // init UPE request status
-		this.isCmsLoaded = false;
 		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.fetchContent();
 		});
 
 		this.isOnline = this.commonService.isOnline;
-		this.warrantyData = this.supportService.warrantyData;
+		this.isWarrantyVisible = deviceService.showWarranty;
+		// this.warrantyData = this.supportService.warrantyData;
+		const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus, undefined);
+		if (cacheWarranty) {
+			this.warrantyData = {
+				info: cacheWarranty,
+				cache: true
+			};
+		}
 	}
 
 	ngOnInit() {
@@ -155,6 +190,32 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private fetchContent(lang?: string) {
+		// reset upe request result
+		this.upeRequestResult = {
+			tileA: true,
+			tileB: true,
+			tileC: true,
+			tileD: true,
+			tileE: true,
+			tileF: true,
+		};
+		// reset cms request result
+		this.cmsRequestResult = {
+			tileA: false,
+			tileB: false,
+			tileC: false,
+			tileD: false,
+			tileE: false,
+			tileF: false
+		};
+
+		this.getTileSource().then(() => {
+			this.fetchCMSContent(lang);
+			this.fetchUPEContent();
+		});
+	}
+
+	private fetchCMSContent(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		let queryOptions: any = {
 			Page: 'dashboard'
@@ -166,132 +227,321 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				GEO: 'US'
 			};
 		}
-		this.getTileBSource().then((source) => {
-			this.cmsService.fetchCMSContent(queryOptions).subscribe(
-				(response: any) => {
-					const callCmsEndTime: any = new Date();
-					const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
-					if (response && response.length > 0) {
-						this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
-						const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-							return {
-								albumId: 1,
-								id: record.Id,
-								source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-								title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-								url: record.FeatureImage,
-								ActionLink: record.ActionLink
-							};
-						});
-						if (heroBannerItems && heroBannerItems.length) {
-							this.heroBannerItems = heroBannerItems;
-							this.dashboardService.heroBannerItems = heroBannerItems;
-						}
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+			(response: any) => {
+				const callCmsEndTime: any = new Date();
+				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
+				if (response && response.length > 0) {
+					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 
-						const cardContentPositionB = this.cmsService.getOneCMSContent(
-							response,
-							'half-width-title-description-link-image',
-							'position-B'
-						)[0];
-						if (cardContentPositionB) {
-							if (this.cardContentPositionB.BrandName) {
-								this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
-									'|'
-								)[0];
-							}
-							cardContentPositionB.DataSource = 'cms';
-
-							this.cardContentPositionBCms = cardContentPositionB;
-							this.isCmsLoaded = true;
-							if (this.isUPEFailed || source === 'CMS') {
-								this.cardContentPositionB = this.cardContentPositionBCms;
-								this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
-							}
-						}
-
-						const cardContentPositionC = this.cmsService.getOneCMSContent(
-							response,
-							'half-width-title-description-link-image',
-							'position-C'
-						)[0];
-						if (cardContentPositionC) {
-							this.cardContentPositionC = cardContentPositionC;
-							if (this.cardContentPositionC.BrandName) {
-								this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-							}
-							this.dashboardService.cardContentPositionC = cardContentPositionC;
-						}
-
-						const cardContentPositionD = this.cmsService.getOneCMSContent(
-							response,
-							'full-width-title-image-background',
-							'position-D'
-						)[0];
-						if (cardContentPositionD) {
-							this.cardContentPositionD = cardContentPositionD;
-							this.dashboardService.cardContentPositionD = cardContentPositionD;
-						}
-
-						const cardContentPositionE = this.cmsService.getOneCMSContent(
-							response,
-							'half-width-top-image-title-link',
-							'position-E'
-						)[0];
-						if (cardContentPositionE) {
-							this.cardContentPositionE = cardContentPositionE;
-							this.dashboardService.cardContentPositionE = cardContentPositionE;
-						}
-
-						const cardContentPositionF = this.cmsService.getOneCMSContent(
-							response,
-							'half-width-top-image-title-link',
-							'position-F'
-						)[0];
-						if (cardContentPositionF) {
-							this.cardContentPositionF = cardContentPositionF;
-							this.dashboardService.cardContentPositionF = cardContentPositionF;
-						}
-					} else {
-						const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
-						this.loggerService.info(msg);
-						this.fetchContent('en');
-					}
-				},
-				(error) => {
-					console.log('fetchCMSContent error', error);
+					this.getCMSHeroBannerItems(response);
+					this.getCMSCardContentB(response);
+					this.getCMSCardContentC(response);
+					this.getCMSCardContentD(response);
+					this.getCMSCardContentE(response);
+					this.getCMSCardContentF(response);
+				} else {
+					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
+					this.loggerService.info(msg);
+					this.fetchContent('en');
 				}
-			);
+			},
+			(error) => {
+				console.log('fetchCMSContent error', error);
+			});
+	}
 
-			if (source === 'UPE') {
-				const upeParam = {
-					position: 'position-B'
+	getCMSHeroBannerItems(response) {
+		const heroBannerItems = this.cmsService.getOneCMSContent(response,
+			'home-page-hero-banner',
+			'position-A').map((record, index) => {
+				return {
+					albumId: 1,
+					id: record.Id,
+					source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+					title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+					url: record.FeatureImage,
+					ActionLink: record.ActionLink,
+					ActionType: record.ActionType,
+					DataSource: 'cms',
 				};
-				this.upeService.fetchUPEContent(upeParam).subscribe((upeResp) => {
-					const cardContentPositionB = this.upeService.getOneUPEContent(
-						upeResp,
-						'half-width-title-description-link-image',
-						'position-B'
-					)[0];
-					if (cardContentPositionB) {
-						this.cardContentPositionB = cardContentPositionB;
-						if (this.cardContentPositionB.BrandName) {
-							this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-						}
-						cardContentPositionB.DataSource = 'upe';
-						this.dashboardService.cardContentPositionB = cardContentPositionB;
-						this.isUPEFailed = false;
-					}
-				}, (err) => {
-					this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-					this.isUPEFailed = true;
-					if (this.isCmsLoaded) {
-						this.cardContentPositionB = this.cardContentPositionBCms;
-						this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
-					}
+			});
+		if (heroBannerItems && heroBannerItems.length) {
+			this.heroBannerItemsCms = heroBannerItems;
+			this.cmsRequestResult.tileA = true;
+			if (!this.upeRequestResult.tileA || this.tileSource.tileA === 'CMS') {
+				this.heroBannerItems = this.heroBannerItemsCms;
+				this.dashboardService.heroBannerItems = this.heroBannerItemsCms;
+			}
+		}
+	}
+
+	getCMSCardContentB(response) {
+		const cardContentPositionB = this.cmsService.getOneCMSContent(
+			response,
+			'half-width-title-description-link-image',
+			'position-B'
+		)[0];
+		if (cardContentPositionB) {
+			this.cardContentPositionBCms = cardContentPositionB;
+			if (this.cardContentPositionBCms.BrandName) {
+				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split(
+					'|'
+				)[0];
+			}
+			this.cardContentPositionBCms.DataSource = 'cms';
+			this.cmsRequestResult.tileB = true;
+			if (!this.upeRequestResult.tileB || this.tileSource.tileB === 'CMS') {
+				this.cardContentPositionB = this.cardContentPositionBCms;
+				this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+			}
+		}
+	}
+
+	getCMSCardContentC(response) {
+		const cardContentPositionC = this.cmsService.getOneCMSContent(
+			response,
+			'half-width-title-description-link-image',
+			'position-C'
+		)[0];
+		if (cardContentPositionC) {
+			this.cardContentPositionCCms = cardContentPositionC;
+			if (this.cardContentPositionC.BrandName) {
+				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+			}
+			this.cardContentPositionCCms.DataSource = 'cms';
+			this.cmsRequestResult.tileC = true;
+			if (!this.upeRequestResult.tileC || this.tileSource.tileC === 'CMS') {
+				this.cardContentPositionC = this.cardContentPositionCCms;
+				this.dashboardService.cardContentPositionC = this.cardContentPositionCCms;
+			}
+		}
+	}
+
+	getCMSCardContentD(response) {
+		const cardContentPositionD = this.cmsService.getOneCMSContent(
+			response,
+			'full-width-title-image-background',
+			'position-D'
+		)[0];
+		if (cardContentPositionD) {
+			this.cardContentPositionDCms = cardContentPositionD;
+			this.cardContentPositionDCms.DataSource = 'cms';
+			this.cmsRequestResult.tileD = true;
+			if (!this.upeRequestResult.tileD || this.tileSource.tileD === 'CMS') {
+				this.cardContentPositionD = this.cardContentPositionDCms;
+				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
+			}
+		}
+	}
+
+	getCMSCardContentE(response) {
+		const cardContentPositionE = this.cmsService.getOneCMSContent(
+			response,
+			'half-width-top-image-title-link',
+			'position-E'
+		)[0];
+		if (cardContentPositionE) {
+			this.cardContentPositionECms = cardContentPositionE;
+			this.cardContentPositionECms.DataSource = 'cms';
+			this.cmsRequestResult.tileE = true;
+			if (!this.upeRequestResult.tileE || this.tileSource.tileE === 'CMS') {
+				this.cardContentPositionE = this.cardContentPositionECms;
+				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
+			}
+		}
+	}
+
+	getCMSCardContentF(response) {
+		const cardContentPositionF = this.cmsService.getOneCMSContent(
+			response,
+			'half-width-top-image-title-link',
+			'position-F'
+		)[0];
+		if (cardContentPositionF) {
+			this.cardContentPositionFCms = cardContentPositionF;
+			this.cardContentPositionFCms.DataSource = 'cms';
+			this.cmsRequestResult.tileF = true;
+			if (!this.upeRequestResult.tileF || this.tileSource.tileF === 'CMS') {
+				this.cardContentPositionF = this.cardContentPositionFCms;
+				this.dashboardService.cardContentPositionF = this.cardContentPositionFCms;
+			}
+		}
+	}
+
+	fetchUPEContent() {
+		if (this.tileSource.tileA === 'UPE') {
+			this.getUPEHeroBannerItems({ position: 'position-A' });
+		}
+		if (this.tileSource.tileB === 'UPE') {
+			this.getUPECardContentB({ position: 'position-B' });
+		}
+		if (this.tileSource.tileC === 'UPE') {
+			this.getUPECardContentC({ position: 'position-C' });
+		}
+		if (this.tileSource.tileD === 'UPE') {
+			this.getUPECardContentD({ position: 'position-D' });
+		}
+		if (this.tileSource.tileE === 'UPE') {
+			this.getUPECardContentE({ position: 'position-E' });
+		}
+		if (this.tileSource.tileF === 'UPE') {
+			this.getUPECardContentF({ position: 'position-F' });
+		}
+	}
+
+	getUPEHeroBannerItems(upeParam) {
+		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+			const heroBannerItems = this.upeService.getOneUPEContent(response,
+				'home-page-hero-banner',
+				'position-A').map((record, index) => {
+					return {
+						albumId: 1,
+						id: record.Id,
+						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+						url: record.FeatureImage,
+						ActionLink: record.ActionLink,
+						ActionType: record.ActionType,
+						DataSource: 'upe',
+					};
 				});
+			if (heroBannerItems && heroBannerItems.length) {
+				this.heroBannerItems = heroBannerItems;
+				this.dashboardService.heroBannerItems = heroBannerItems;
+				this.upeRequestResult.tileA = true;
+			}
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-A load CMS content.`);
+			this.upeRequestResult.tileA = false;
+			if (this.cmsRequestResult.tileA) {
+				this.heroBannerItems = this.heroBannerItemsCms;
+				this.dashboardService.heroBannerItems = this.heroBannerItemsCms;
 			}
 		});
 	}
+
+	getUPECardContentB(upeParam) {
+		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+			const cardContentPositionB = this.upeService.getOneUPEContent(
+				response,
+				'half-width-title-description-link-image',
+				'position-B'
+			)[0];
+			if (cardContentPositionB) {
+				if (cardContentPositionB.BrandName) {
+					cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
+				}
+				cardContentPositionB.DataSource = 'upe';
+				this.cardContentPositionB = cardContentPositionB;
+				this.dashboardService.cardContentPositionB = this.cardContentPositionB;
+				this.upeRequestResult.tileB = true;
+			}
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+			this.upeRequestResult.tileB = false;
+			if (this.cmsRequestResult.tileB) {
+				this.cardContentPositionB = this.cardContentPositionBCms;
+				this.dashboardService.cardContentPositionB = this.cardContentPositionBCms;
+			}
+		});
+	}
+
+	getUPECardContentC(upeParam) {
+		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+			const cardContentPositionC = this.upeService.getOneUPEContent(
+				response,
+				'half-width-title-description-link-image',
+				'position-C'
+			)[0];
+			if (cardContentPositionC) {
+				if (cardContentPositionC.BrandName) {
+					cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
+				}
+				cardContentPositionC.DataSource = 'upe';
+				this.cardContentPositionC = cardContentPositionC;
+				this.dashboardService.cardContentPositionC = this.cardContentPositionC;
+				this.upeRequestResult.tileC = true;
+			}
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-C load CMS content.`);
+			this.upeRequestResult.tileC = false;
+			if (this.cmsRequestResult.tileC) {
+				this.cardContentPositionC = this.cardContentPositionCCms;
+				this.dashboardService.cardContentPositionC = this.cardContentPositionCCms;
+			}
+		});
+	}
+
+	getUPECardContentD(upeParam) {
+		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+			const cardContentPositionD = this.upeService.getOneUPEContent(
+				response,
+				'full-width-title-image-background',
+				'position-D'
+			)[0];
+			if (cardContentPositionD) {
+				cardContentPositionD.DataSource = 'upe';
+				this.cardContentPositionD = cardContentPositionD;
+				this.dashboardService.cardContentPositionD = this.cardContentPositionD;
+				this.upeRequestResult.tileD = true;
+			}
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
+			this.upeRequestResult.tileD = false;
+			if (this.cmsRequestResult.tileD) {
+				this.cardContentPositionD = this.cardContentPositionDCms;
+				this.dashboardService.cardContentPositionD = this.cardContentPositionDCms;
+			}
+		});
+	}
+
+	getUPECardContentE(upeParam) {
+		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+			const cardContentPositionE = this.upeService.getOneUPEContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-E'
+			)[0];
+			if (cardContentPositionE) {
+				cardContentPositionE.DataSource = 'upe';
+				this.cardContentPositionE = cardContentPositionE;
+				this.dashboardService.cardContentPositionE = this.cardContentPositionE;
+				this.upeRequestResult.tileE = true;
+			}
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
+			this.upeRequestResult.tileE = false;
+			if (this.cmsRequestResult.tileE) {
+				this.cardContentPositionE = this.cardContentPositionECms;
+				this.dashboardService.cardContentPositionE = this.cardContentPositionECms;
+			}
+		});
+	}
+
+	getUPECardContentF(upeParam) {
+		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
+			const cardContentPositionF = this.upeService.getOneUPEContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionF) {
+				cardContentPositionF.DataSource = 'upe';
+				this.cardContentPositionF = cardContentPositionF;
+				this.dashboardService.cardContentPositionF = this.cardContentPositionF;
+				this.upeRequestResult.tileF = true;
+			}
+		}, (err) => {
+			this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
+			this.upeRequestResult.tileF = false;
+			if (this.cmsRequestResult.tileF) {
+				this.cardContentPositionF = this.cardContentPositionFCms;
+				this.dashboardService.cardContentPositionF = this.cardContentPositionFCms;
+			}
+		});
+	}
+
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
@@ -318,23 +568,27 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	private getTileBSource() {
+	private getTileSource() {
 		return new Promise((resolve) => {
-			this.hypService.getFeatureSetting('TileBSource').then((source) => {
-				if (source === 'UPE') {
-					resolve('UPE');
-				} else {
-					resolve('CMS');
+			this.hypService.getAllSettings().then((hyp: any) => {
+				if (hyp) {
+					this.tileSource.tileA = hyp.TileASource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileC = hyp.TileCSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileD = hyp.TileDSource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileE = hyp.TileESource === 'UPE' ? 'UPE' : 'CMS';
+					this.tileSource.tileF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
 				}
+				resolve();
 			}, () => {
-				resolve('CMS');
+				resolve();
+				console.log('get tile source failed.');
 			});
 		});
 	}
 
 	private getPreviousContent() {
 		this.heroBannerItems = this.dashboardService.heroBannerItems;
-		this.cardContentPositionA = this.dashboardService.cardContentPositionA;
 		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
 		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
 		this.cardContentPositionD = this.dashboardService.cardContentPositionD;
@@ -462,7 +716,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		this.dashboardService.getWarrantyInfo().subscribe((value) => {
 			if (value) {
 				const warranty = this.systemStatus[2];
-				const warrantyDate = this.commonService.formatDate(value.expired);
+				const warrantyDate = this.commonService.formatDate(value.endDate);
 				// in warranty
 				if (value.status === 0) {
 					this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
@@ -481,6 +735,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 					warranty.status = 1;
 				}
 				warranty.isHidden = !this.deviceService.showWarranty;
+				this.isWarrantyVisible = this.deviceService.showWarranty;
 			}
 		});
 
@@ -510,6 +765,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					break;
+				case LocalStorageKey.LastWarrantyStatus:
+					if (notification.payload) {
+						this.warrantyData = {
+							info: {
+								startDate: notification.payload.startDate,
+								endDate: notification.payload.endDate,
+								status: notification.payload.status,
+								url: this.supportService.getWarrantyUrl(this.supportService.sn)
+							},
+							cache: true
+						};
+					}
 					break;
 				default:
 					break;

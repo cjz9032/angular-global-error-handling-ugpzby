@@ -9,6 +9,15 @@
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		line-height: 1.3;
+		@media #{$black-on-white} {
+			background-color: $gray;
+			border: 0.1rem solid;
+		}
+		@media #{$white-on-black} {
+			background-color: $high-contrast-grey;
+			border: 0.1rem solid;
+		}
+
 
 		li {
 			height: auto;
@@ -131,6 +140,12 @@
 				display: inline-block;
 				height: 3rem;
 				width: 3rem;
+				@media #{$black-on-white} {
+					color: lightgray;
+				}
+				@media #{$white-on-black} {
+					color: lightgray;
+				}
 			}
 			.item-icon-class {
 				display: flex;
@@ -171,7 +186,7 @@
 					padding-top: 0.3rem;
 					float: right;
 					text-align: right;
-					font-size: $fontsize_xxs;
+					font-size: $fontsize_xs2;
 					color: $shade_dark;
 					font-weight: $weight_medium;
 					max-width: 50%;

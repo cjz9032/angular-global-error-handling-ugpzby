@@ -14,7 +14,6 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { GuardService } from '../../../services/guard/security-guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ConfigService } from 'src/app/services/config/config.service';
@@ -31,8 +30,6 @@ interface WifiSecurityState {
 	styleUrls: ['./page-security-wifi.component.scss']
 })
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
-	backarrow = '< ';
-	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
 	isShowHistory: boolean;
@@ -61,10 +58,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private cmsService: CMSService,
 		public translate: TranslateService,
 		private ngZone: NgZone,
-		private guard: GuardService,
 		private router: Router,
 		public deviceService: DeviceService,
-		public configService: ConfigService
+		private configService: ConfigService
 	) {	}
 
 	ngOnInit() {

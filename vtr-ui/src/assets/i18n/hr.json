@@ -117,7 +117,7 @@
                     "autoClose": "auto close page",
                     "lighting": "Lighting page"
                 },
-                "mainMenuLink": "Header main logo"
+                "mainMenuLink": "go back to home page"
             }
         },
         "macroKey": {
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -645,9 +662,9 @@
             "expand": "Proširi",
             "loader": "Preuzimanje <br>statusa",
             "loading": "Učitavam...",
-            "from": "from",
-            "to": "to",
-            "clickToChange": "click to change"
+            "from": "od",
+            "to": "do",
+            "clickToChange": "kliknite za izmjenu"
         },
         "app-update": {
             "message": "Hej! Dostupna je novija verzija programa Vantage, želite li je učitati?"
@@ -723,8 +740,8 @@
                 "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Prag",
+            "conservation": "Konzervacija"
         },
         "systemStatus": {
             "title": "Status sustava",
@@ -873,18 +890,18 @@
                 "condition": {
                     "Illegal": "Ovaj sustav <b>ne podržava</b> umetnutu bateriju te je neće puniti. Bateriju zamijenite odgovarajućom baterijom tvrtke Lenovo za ovaj sustav.",
                     "Good": "<b>Baterija je u dobrom stanju.</b>",
-                    "Exhaustion": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju.",
+                    "Exhaustion": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "Bad": "<b>Došlo je do pogreške baterije.</b> Bateriju nije moguće puniti/prazniti. Zamijenite bateriju.",
                     "NotDetected": "<b>Baterija nije pronađena</b> ili nije priključena.",
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Prilagodnik izmjeničnog napona nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Prilagodnik izmjeničnog napona ne može pružiti dovoljno energije.</b>",
-                    "MissingDriver": "<b>Upravljački program Lenovo Power Manager</b> nije instaliran ili ne radi pravilno. Pokrenite Windows Update za instalaciju najnovijeg upravljačkog programa.",
+                    "MissingDriver": "<b>Upravljački program Lenovo Power Manager</b> nije instaliran ili ne radi pravilno. Pokrenite Windows Update za instalaciju najnovijeg upravljačkog programa. Upravljački program za instalaciju također možete preuzeti <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovdje</a>.",
                     "StoreLimitation": "<b>Baterija može pohraniti samo {{value}}% od</b> svojeg punog izvornog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno jer je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>potpuno ispražnjena</b> i mora se napuniti. To možete potrajati više od deset sati.",
                     "OverheatedBattery": "Baterija je <b>prevruća</b>. Izvadite je iz računala i ohladite na sobnu temperaturu.",
-                    "PermanentError": "Baterija je <b>prestala raditi kao posljedica istrošenosti uslijed redovne uporabe.</b> Bateriju nije moguće puniti. Zamijenite bateriju.",
+                    "PermanentError": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
                     "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>"
@@ -956,7 +973,7 @@
                             "close": "zatvori",
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu baterije na alatnoj traci sustava Windows",
-                                "list2": "Pojavit će se prikaz napunjenosti baterije sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
+                                "list2": "Pojavit će se način napajanja sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
                             }
                         }
                     },
@@ -1076,7 +1093,8 @@
                             "cancel": "Odustani",
                             "yes": "Da",
                             "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
-                        }
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
@@ -1086,9 +1104,9 @@
                 "smartStandby": {
                     "title": "Pametno stanje mirovanja",
                     "description": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja brzog pokretanja tijekom rada s većim opterećenjem.",
-                    "tooltip": "Kada je pametno stanje mirovanja omogućeno, računalo će se prebaciti u moderno stanje mirovanja prije zakazanog vremena početka i pokrenuti hibernaciju nakon određenog vremena neaktivnosti uz napajanje putem baterije. To je vrijeme optimizirano na temelju rasporeda koji ste postavili. Računalo će se prebaciti iz hibernacije u moderno stanje mirovanja samo tijekom zakazanih dana i neće se prebaciti kada nije aktivno tijekom uzastopnih zakazanih dana.",
+                    "tooltip": "Kad je omogućeno Pametno stanje pripravnosti, vaše se računalo prebacuje na Suvremeno stanje pripravnosti prije zakazanog vremena POKRETANJA i prelazi u hibernaciju nakon što je određeno vrijeme neaktivno na baterijskom napajanju. Ovaj se vremenski interval optimizira na temelju rasporeda koji postavite ili vremena uporabe računala koje dobivamo. Računalo se prebacuje iz hibernacije u Suvremeno stanje pripravnosti samo zakazanim danima te se ne prebacuje kad je neaktivno tijekom uzastopnih zakazanih dana.",
                     "timer": {
-                        "heading": "Postavite vrijeme kada obično koristite računalo",
+                        "heading": "Vrijeme kada obično koristite računalo",
                         "subHeading1": "početak",
                         "subHeading2": "završetak",
                         "subHeading3": "koristi ovaj raspored za",
@@ -1127,8 +1145,16 @@
                         "weekdays": "Radnim danom",
                         "weekends": "Vikendi"
                     },
-                    "checkbox": "Auto adjusting your computer's active time based on your usage",
-                    "hyperlinkToGraph": "Click to see the activity and active time of your computer table"
+                    "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
+                    "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "descriptionLink": "Modern Standby",
+                    "subDescription1": "during hours of heavier use.",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph1Tittle": "The usage of your computer",
+                    "graph2Tittle": "The Modern Standby schedule for your computer"
                 }
             },
             "audio": {
@@ -1368,10 +1394,10 @@
                             "reboot": "PONOVNO POKRETANJE",
                             "cancel": "NE SADA"
                         },
-						"note": {
-							"sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
-							"fnKey": "Da biste pristupili posebnoj funkciji, pritisnite Fn i tipke u gornjem redu."
-						}
+                        "note": {
+                            "sFunKey": "Da biste pristupili funkcijama F1 – F12, pritisnite Fn i tipke u gornjem redu.",
+                            "fnKey": "Da biste pristupili posebnoj funkciji, pritisnite Fn i tipke u gornjem redu."
+                        }
                     },
                     "VoipHotkeys": {
                         "title": "Funkcije VoIP tipkovničkog prečaca",
@@ -1411,9 +1437,9 @@
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys.",
-                    "restartNote": "Swapping the function of two keys requires you to restart your computer, Are you sure to restart?"
+                    "title": "Zamjena tipki Fn i Ctrl",
+                    "description": "Ako obično pritisnete tipku Fn kada ste namjeravali pritisnuti tipku Ctrl, možete zamijeniti funkcije te dvije tipke.",
+                    "restartNote": "Zamjena funkcije dvije tipke zahtijeva ponovno pokretanje, jeste li sigurni da želite ponovno pokrenuti računalo?"
                 },
                 "controlOptions": {
                     "more": "DODATNO",
@@ -1448,7 +1474,7 @@
                 "zeroTouchLogin": {
                     "title": "Automatska prijava",
                     "caption": "Ta značajka automatski otključava računalo ili ga vraća iz stanja mirovanja kada dođete ispred njega ili mu se približite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Kad se nalazite ispred računala ili mu prilazite (na udaljenosti od 1,2 metra), ova značajka vam omogućuje automatsku prijavu u sustav nakon prepoznavanja vašeg lica. Ako ste na otvorenom, a ne u uredu, morate biti bliže računalu i buđenje će trajati duže."
                 },
                 "zeroTouchLock": {
                     "title": "Zaključavanje Zero Touch",
@@ -1483,14 +1509,14 @@
                         "medium": "Srednje"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Kada je omogućeno, udaljenost detekcije automatski će se prilagoditi. Također možete ručno postaviti udaljenost otkrivanja pomoću klizača. Mogućnosti su:",
+                        "context2": "Kad ručno postavite udaljenost otkrivanja, obratite pažnju na sljedeće:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Blizu: 0 - 0,42 metra (17 inča)",
+                            "line2": "Srednje: 0 - 0,60 metra (24 inča)",
+                            "line3": "Udaljeno: 0 - 1,20 metra (47 inča)",
+                            "line4": "Maksimalna udaljenost otkrivanja je 1,2 metra. Ako prijeđe 1,2 metra, senzor neće otkriti vašu prisutnost.",
+                            "line5": "Preporučena udaljenost otkrivanja je do 0,60 metra."
                         }
                     }
                 },
@@ -1498,7 +1524,7 @@
                     "description1": "Ta značajka oslanja se na Windows Hello. Pobrinite se da je prepoznavanje lica uključeno u postavkama sustava Windows.",
                     "description2": "Ta značajka koristi se senzorima i kamerom kako bi otkrila vašu prisutnost. Međutim, značajka NE prikuplja nikakve osobne podatke.",
                     "description3": "1. Ako je računalo u načinu rada šatora, tableta ili stalka, te značajke možda neće pravilno funkcionirati.",
-                    "description4": "2. Ako je računalo u stanju hibernacije ili je isključeno. Automatska prijava neće raditi.",
+                    "description4": "2. Ako je računalo u stanju hibernacije ili isključeno, Zero Touch Login neće funkcionirati.",
                     "description5": "3. Podesite zaslon računala tako da bude pod odgovarajućim kutom kako bi IC kamera mogla prepoznati vaše lice radi automatske prijave.",
                     "description6": "4. Ako je na vašem računalu omogućen način rada u zrakoplovu, te su značajke onemogućene.",
                     "description7": "Točnost se razlikuje u pogledu veličine tijela, držanje i učestalosti pokreta. Ako se vaše računalo neočekivano zaključa, podesite traku osjetljivosti da biste poboljšali točnost."
@@ -1827,22 +1853,22 @@
             "good": "DOBRO",
             "malicious": "ZLONAMJERNO",
             "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Vaš sigurnosni rezultat pruža vam predodžbu o tome koliko ste sigurni na mreži, rezultat ovisi o sljedećem:",
+            "securityScoreDepends": "Vaš sigurnosni rezultat ovisi o tome jeste li:",
             "antivirus": "Zaštita antivirusnim softverom",
             "password": "Snažne i složene lozinke kojima se upravlja na siguran način",
             "vpn": "Praćenje izloženosti vaše mreže napadačima",
             "wifi": "Šifriranje vaših osobnih podataka kada koristite javni WiFi",
             "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Što je to obavijest kontrole korisničkog računa (UAC)?",
+            "uacText": "Kontrola korisničkog računa vrlo je važna sigurnosna značajka sustava Windows i pomaže u sprečavanju promjena koje potencijalno štetni programi mogu nanijeti vašem sustavu.",
+            "windowsTitle": "Zašto mi je potreban aktiviran Windows?",
+            "windowsText": "Pokretanje neoriginalne kopije sustava Windows može vas dovesti u veću opasnost od virusa i drugih sigurnosnih prijetnji.",
+            "encryptionTitle": "Što je to šifriranje tvrdog diska?",
+            "encryptionText": "Pomaže u zaštiti vaših podataka omogućujući šifriranje za cijeli tvrdi disk, protiv neovlaštenog pristupa, iako je disk uklonjen s trenutnog računala i umetnut u druge uređaje.",
+            "passwordTitle": "Kako bolje zaštititi lozinku?",
+            "passwordText": "Sigurno pohranite i upravljajte svim svojim lozinkama šifriranim profesionalnom aplikacijom za digitalnu zaštitu, umjesto jednostavne pohrane u vašim preglednicima kojima treće strane mogu lako pristupiti bez vašeg znanja.",
+            "enhanceTitle": "Što trebam učiniti za poboljšanje zaštite sigurnosti?",
+            "enhanceText": "Toplo preporučujemo da svoje uređaje zaštitite antivirusnim softverom i vatrozidom te podesite obavijest kontrole korisničkog računa uz minimalnu zaštitu. Također, izradite snažne lozinke i upravljajte na siguran način te šifrirajte svoje podatke dok koristite javnu mrežu kao naprednu zaštitu."
         },
         "antivirus": {
             "common": {
@@ -1919,7 +1945,7 @@
             "others": {
                 "othersProtection": "{{protectedName}} pruža osnovnu zaštitu vašem uređaju",
                 "unknown": "Nepoznato",
-                "betterOffer": "Enjoy a better offer here!"
+                "betterOffer": "Uživajte u boljoj ponudi ovdje!"
             }
         },
         "wifisecurity": {
@@ -2515,7 +2541,7 @@
         "settingsDescription": "Na stranici postavki možete odabrati uključivanje / isključivanje obavijesti o porukama na temelju kategorija Vantageove poruke. Napominjemo da čak i ako su sve kategorije poruka onemogućene, još uvijek možete povremeno primati ključnu poruku sustava Vantage kada je to potrebno.",
         "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
         "appFeatures": "Značajke aplikacije",
-        "appFeaturesDescription": "Poruke koje se odnose na System Update, članke i ostale važne značajke.",
+        "appFeaturesDescription": "Poruke koje se odnose na Ažuriranje sustava, članke i ostale važne značajke.",
         "marketing": "Marketing",
         "marketingDescription": "Promotivne poruke uključujući posebne ponude tvrtke Lenovo.",
         "actionTriggered": "Akcija je pokrenuta",
@@ -2525,6 +2551,7 @@
         "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
         "deviceStatistics": "Podijelite statističke podatke s tvrtkom Lenovo",
         "deviceStatisticsDescription": "Šalje statističke podatke tvrtki Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije značajki na računalu.",
+        "userProfile": "User profile",
         "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu."
     },

@@ -13,7 +13,7 @@
 .vtr-menu-main {
 	position: fixed;
 	top: 0;
-	z-index: 100;
+	z-index: 100!important;
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
@@ -51,7 +51,6 @@
 			font-size: 5rem;
 			font-weight: $weight_bold;
 			width: $menu_height;
-			height: 100%;
 			border: none;
 			text-align: center;
 			color: $light;
@@ -72,6 +71,9 @@
 
 		.navbar-brand a {
 			border: none;
+			display: block;
+			width: 100%;
+			height: 100%;
 		}
 
 		.navbar-text {
@@ -349,6 +351,13 @@
 								transform: rotate(45deg);
 								right: 1.2rem;
 								top: 4rem;
+								@media #{$black-on-white} {
+									
+									background: $high-contrast-blue;
+								}
+								@media #{$white-on-black} {
+									background: $yellow;
+											}
 							}
 
 							&::before {
@@ -361,6 +370,13 @@
 								transform: rotate(135deg);
 								right: 2rem;
 								top: 4rem;
+								@media #{$black-on-white} {
+									background: $high-contrast-blue;
+								}
+								@media #{$white-on-black} {
+									background: $yellow;
+											}
+						
 							}
 
 							&.user {
