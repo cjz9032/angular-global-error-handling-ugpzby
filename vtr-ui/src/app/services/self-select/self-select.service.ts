@@ -42,8 +42,8 @@ export class SelfSelectService {
 		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.SMB},
 		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false} ,defaultSegment: SegmentConst.Consumer},
 		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true} , defaultSegment: SegmentConst.SMB},
-		{ brand: 'idea', familyPattern: {pattern: /^V|ideapad v/i, result: false}, defaultSegment: SegmentConst.Consumer},
-		{ brand: 'idea', familyPattern: {pattern: /^V|ideapad v/i, result: true}, defaultSegment: SegmentConst.SMB},
+		{ brand: 'idea', familyPattern: {pattern: /^V|thinkbook|ideapad v/i, result: false}, defaultSegment: SegmentConst.Consumer},
+		{ brand: 'idea', familyPattern: {pattern: /^V|thinkbook|ideapad v/i, result: true}, defaultSegment: SegmentConst.SMB},
 	]
 
 	constructor(private vantageShellService: VantageShellService,
