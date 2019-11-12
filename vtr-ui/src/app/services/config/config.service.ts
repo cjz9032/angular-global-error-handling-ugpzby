@@ -12,6 +12,7 @@ import { LoggerService } from '../logger/logger.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
+import { LocalInfoService } from '../local-info/local-info.service';
 
 declare var Windows;
 
@@ -41,7 +42,8 @@ export class ConfigService {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private logger: LoggerService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private localInfoService: LocalInfoService) {
 			this.menuItemSubject = new BehaviorSubject<AppNotification>(
 				new AppNotification(MenuItem.MenuItemChange, 'init')
 			);
@@ -62,6 +64,8 @@ export class ConfigService {
 			const isBetaUser = this.commonService.getBetaUser();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const brand: string = machineInfo.brand;
+			const localInfo = await this.localInfoService.getLocalInfo();
+			const segment: string = localInfo.Segment ? localInfo.Segment.toLowerCase() : 'commercial';
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
 				if (isBetaUser && this.deviceService.showSearch) {
@@ -89,15 +93,15 @@ export class ConfigService {
 					}
 				});
 			}
-			this.showVpn(country.toLowerCase(), resultMenu);
+			this.showVpn(country.toLowerCase(), resultMenu, segment);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (this.deviceService.showSearch) {
 					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
 				}
 			}
-			resultMenu = this.brandFilter(resultMenu);
-			resolve(resultMenu.filter(item => !item.hide));
+			resultMenu = this.segmentFilter(resultMenu, segment);
+			resolve(resultMenu);
 		});
 	}
 
@@ -116,11 +120,11 @@ export class ConfigService {
 		packageVersion.build >= shellVersion.build;
 	}
 
-	showVpn(region, items) {
+	showVpn(region, items, segment) {
 		const securityItemForVpn = items.find((item) => item.id === 'security');
 		if (securityItemForVpn !== undefined) {
 			const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
-			if (region !== 'cn') {
+			if (region !== 'cn' && segment !== 'commercial') {
 				if (!vpnItem) {
 					securityItemForVpn.subitems.splice(4, 0, {
 						id: 'internet-protection',
@@ -144,21 +148,20 @@ export class ConfigService {
 		}
 	}
 
-	brandFilter(menu: Array<any>) {
-		const machineInfo = this.deviceService.getMachineInfoSync();
-		if (!machineInfo) { return menu; }
-		const brand: string = machineInfo.brand;
-		if (!brand) { return menu; }
+	segmentFilter(menu: Array<any>, segment: string) {
+		if (!segment) { return menu; }
 		menu.forEach(element => {
-			if (element.hide) { return; }
-			if (element.brand) {
-				const mode = element.brand.charAt(0);
-				const brands = element.brand.substring(2, element.brand.length - 1).split(',');
+			if (element.segment) {
+				const mode = element.segment.charAt(0);
+				const segments = element.segment.substring(2, element.segment.length - 1).split(',');
 				if (mode === '+') {
-					element.hide = !brands.includes(brand);
+					element.hide = !segments.includes(segment);
 				} else if (mode === '-') {
-					element.hide = brands.includes(brand);
+					element.hide = segments.includes(segment);
 				}
+			}
+			if (element.subitems.length > 0) {
+				element.subitems = this.segmentFilter(element.subitems, segment);
 			}
 		});
 		return menu;
