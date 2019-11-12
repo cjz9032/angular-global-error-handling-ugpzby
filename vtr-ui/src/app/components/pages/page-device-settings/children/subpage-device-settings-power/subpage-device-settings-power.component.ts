@@ -1106,8 +1106,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.updateBatteryLinkStatus(false);
 			this.checkMenuItemsEmpty();
-		} else {
-			this.updateBatteryLinkStatus(true);
 		}
 	}
 
