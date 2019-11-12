@@ -256,22 +256,22 @@ describe('WidgetLegionEdgeComponent', () => {
 		expect(cacheAutoCloseStatusValue).toEqual(autoCloseStatusPromisedData);
 	}));
 
-	it('should update or have same Network Boost value on service and in Local storage and UI', fakeAsync((done: any) => {
-		let networkBoostStatusPromisedData: boolean;
-		const uiNetworkBoostStatusValue = component.legionUpdate[3].isChecked;
-		component.setNetworkBoostStatus(uiNetworkBoostStatusValue);
-		component.setNetworkBoostCacheStatus(uiNetworkBoostStatusValue);
-		const cacheNetworkBoostStatusValue = component.getNetworkBoostCacheStatus();
-		networkBoostServiceMock.getNetworkBoostStatus.and.returnValue(Promise.resolve(uiNetworkBoostStatusValue));
-		networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
-			networkBoostStatusPromisedData = response;
-		});
-		tick(10);
-		fixture.detectChanges();
-		expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
-		expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
-		expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
-	}));
+	// it('should update or have same Network Boost value on service and in Local storage and UI', fakeAsync((done: any) => {
+	// 	let networkBoostStatusPromisedData: boolean;
+	// 	const uiNetworkBoostStatusValue = component.legionUpdate[3].isChecked;
+	// 	component.setNetworkBoostStatus(uiNetworkBoostStatusValue);
+	// 	component.setNetworkBoostCacheStatus(uiNetworkBoostStatusValue);
+	// 	const cacheNetworkBoostStatusValue = component.getNetworkBoostCacheStatus();
+	// 	networkBoostServiceMock.getNetworkBoostStatus.and.returnValue(Promise.resolve(uiNetworkBoostStatusValue));
+	// 	networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
+	// 		networkBoostStatusPromisedData = response;
+	// 	});
+	// 	tick(10);
+	// 	fixture.detectChanges();
+	// 	expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
+	// 	expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+	// 	expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+	// }));
 
 
 	it('should able to mock Hybrid Mode service data ', fakeAsync((done: any) => {

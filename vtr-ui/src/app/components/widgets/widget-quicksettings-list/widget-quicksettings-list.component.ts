@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { isUndefined } from 'util';
 import { StatusTextPipe } from 'src/app/pipe/ui-security-statusbar/status-text.pipe';
-// import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PowerService } from './../../../services/power/power.service';
@@ -169,7 +169,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		private powerService: PowerService,
 		private dialogService: DialogService,
 		private ngZone: NgZone,
-		// public translate: TranslateService,
+		public translate: TranslateService,
 		public deviceService: DeviceService,
 		private guard: GuardService,
 		private router: Router

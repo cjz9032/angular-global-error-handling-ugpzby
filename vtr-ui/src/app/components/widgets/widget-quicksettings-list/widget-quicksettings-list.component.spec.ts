@@ -7,13 +7,14 @@
 // import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
 // import { RouterTestingModule } from '@angular/router/testing';
 // import { DeviceService } from 'src/app/services/device/device.service';
-// // import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+// import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+// import { TranslateService } from '@ngx-translate/core';
 
-
+// const translateServiceMock = jasmine.createSpyObj('TranslateService', ['isShellAvailable']);
 // const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 // const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
-// // const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellAvailable', 'getSecurityAdvisor', 'getGamingAllCapabilities', 'getVantageToolBar', 'unRegisterEvent', 'registerEvent', 'getSelfSelect', 'getVantageShell', 'getPowerIdeaNoteBook', 'getPowerThinkPad',
-// // 'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus']);
+// const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellAvailable', 'getSecurityAdvisor', 'getGamingAllCapabilities', 'getVantageToolBar', 'unRegisterEvent', 'registerEvent', 'getSelfSelect', 'getVantageShell', 'getPowerIdeaNoteBook', 'getPowerThinkPad',
+// 'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus']);
 // const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable']);
 // describe('WidgetQuicksettingsListComponent', () => {
 // 	let component: WidgetQuicksettingsListComponent;
@@ -30,10 +31,9 @@
 // 				{ provide: HttpClient },
 // 				{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 // 				{ provide: AudioService, useValue: audioServiceMock },
-// 				{ provide: DeviceService, useValue: deviceServiceMock }
-// 				// { provide: VantageShellService, useValue: shellServicesMock }
-
-
+// 				{ provide: DeviceService, useValue: deviceServiceMock },
+// 				{ provide: TranslateService, useValue: translateServiceMock },
+// 				{ provide: VantageShellService, useValue: shellServicesMock }
 // 			]
 // 		}).compileComponents();
 // 		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
