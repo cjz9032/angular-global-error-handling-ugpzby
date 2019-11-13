@@ -32,6 +32,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
 	usageRadioValue = null;
+	userSelectionChanged = false;
 
 	valueToBoolean = [false, true, false];
 
@@ -97,7 +98,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	private getSelfSelectStatus() {
 		this.selfSelectService.getConfig();
-		this.selfSelectService.userSelectionChanged = false;
+		this.userSelectionChanged = false;
 	}
 
 	private getSegment() {
@@ -141,7 +142,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.getDeviceStatisticsPreference();
 		}
 		if (this.betaService) {
-			this.toggleBetaProgram = this.betaService.getBetaStatus();
+			this.betaService.getBetaStatus().then((res) => {
+				this.toggleBetaProgram = res;
+			});
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -296,7 +299,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	saveUsageType(value) {
 		this.selfSelectService.usageType = value;
-		this.selfSelectService.userSelectionChanged = true;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 
 	onInterestToggle($event, value) {
@@ -305,12 +308,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
-		this.selfSelectService.userSelectionChanged = true;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 
 	saveUserProfile() {
 		this.selfSelectService.saveConfig();
-		this.selfSelectService.userSelectionChanged = false;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 		const usageData = {
 			ItemType: 'FeatureClick',
 			ItemName: 'UsageType',
