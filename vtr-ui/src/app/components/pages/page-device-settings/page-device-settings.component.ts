@@ -112,7 +112,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.page === 2) {
+			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.getAudioPageSettings();
 			}
 		} else {

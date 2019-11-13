@@ -147,7 +147,7 @@ export class CommonService {
 		return this.getWindowsVersion() >= this.RS5Version;
 	}
 
-	public getWindowsVersion(): Number {
+	public getWindowsVersion(): number {
 		let version = '0';
 		navigator.userAgent.split(' ').forEach((value) => {
 			if (value.indexOf('Edge') !== -1) {
@@ -218,14 +218,6 @@ export class CommonService {
 	}
 	public sendGamingCapabilitiesNotification(action, payload) {
 		this.gamingCapabalities.next({ type: action, payload });
-	}
-
-	public getBetaUser(): boolean {
-		return this.getLocalStorageValue(LocalStorageKey.BetaUser, false);
-	}
-
-	public setBetaUser(value: boolean) {
-		this.setLocalStorageValue(LocalStorageKey.BetaUser, value);
 	}
 
 	public cloneObj(obj) {
