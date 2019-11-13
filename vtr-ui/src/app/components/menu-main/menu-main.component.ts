@@ -62,6 +62,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	private searchTipsTimeout: any;
 	private unsupportFeatureEvt: Observable<string>;
 	private subscription: Subscription;
+	public selfSelectStatusVal: boolean;
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
@@ -248,7 +249,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
 			this.dashboardService.getSelfSelectStatus().then(value => {
-				if (value === true) {
+				this.selfSelectStatusVal = value;
+				if (this.selfSelectStatusVal === true) {
 					this.showSmartAssist();
 				}
 			});
@@ -526,10 +528,19 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		// need refresh menuItem from config service, don't need localStorage
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
+			if (!this.selfSelectStatusVal) {
+				this.removeDeviceSettings(this.items);
+			}
 			return this.items;
 		});
 	}
-
+	public removeDeviceSettings(items: any) {
+		const deviceSettingsItem = items.find((item) => item.id === this.constantDevice);
+		const id = 'device-settings';
+		if (deviceSettingsItem) {
+			deviceSettingsItem.subitems =  deviceSettingsItem.subitems.filter(item => item.id !== id);
+		}
+	}
 	private showSmartAssist() {
 		this.logger.info('MenuMainComponent.showSmartAssist : inside showSmartAssist');
 		this.getMenuItems().then((items) => {
