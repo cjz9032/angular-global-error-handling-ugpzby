@@ -18,7 +18,10 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
-	constructor(private commonService: CommonService, private http: HttpClient) {
+	constructor(
+		private commonService: CommonService,
+		private http: HttpClient
+	) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.isShellAvailable = true;
@@ -74,7 +77,7 @@ export class VantageShellService {
 		}
 	}
 
-	public getSelfSelect(){
+	public getSelfSelect() {
 		if (this.phoenix) {
 			return this.phoenix.selfSelect;
 		}
@@ -259,7 +262,15 @@ export class VantageShellService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getBetaUser();
+						let isBeta = false;
+						const beta = that.getBetaUser();
+						if (beta) {
+							await beta.getBetaUser().then((result) => {
+								isBeta = result;
+							}).catch(() => {
+								isBeta = false;
+							});
+						}
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}

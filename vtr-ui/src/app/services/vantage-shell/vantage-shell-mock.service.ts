@@ -18,7 +18,10 @@ export class VantageShellMockService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
-	constructor(private commonService: CommonService, private http: HttpClient) {
+	constructor(
+		private commonService: CommonService,
+		private http: HttpClient
+	) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
@@ -392,8 +395,15 @@ export class VantageShellMockService {
 						if (!data.OnlineStatus) {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
-
-						const isBeta = that.commonService.getBetaUser();
+						let isBeta = false;
+						const beta = that.getBetaUser();
+						if (beta) {
+							await beta.getBetaUser().then((result) => {
+								isBeta = result;
+							}).catch(() => {
+								isBeta = false;
+							});
+						}
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}

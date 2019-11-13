@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -32,6 +32,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
 	machineInfo: any;
+	@Input() tutorialVersion: string;
 
 	@ViewChildren('interestChkboxs') interestChkboxs: any;
 	@ViewChildren('welcomepage2') welcomepage2: any;
@@ -97,7 +98,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.timerService.start();
 			this.page = page;
 			this.progress = 49;
-			tutorialData = new WelcomeTutorial(1, null, null);
+			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
 			const settingData = {
@@ -140,9 +141,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
-			tutorialData = new WelcomeTutorial(2, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
+			tutorialData = new WelcomeTutorial( 2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
-			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
+			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
 			this.selfSelectService.saveConfig(true);
 		}
@@ -200,6 +201,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 	ngOnDestroy() {
 		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
-		this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
+		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 	}
 }

@@ -221,6 +221,7 @@ export class PageSupportComponent implements OnInit {
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
+				setTimeout(() => { this.fetchCMSContents(); }, 5000);
 			}
 		);
 	}
@@ -254,9 +255,7 @@ export class PageSupportComponent implements OnInit {
 			},
 			error => {
 				console.log('fetchCMSArticleCategories error', error);
-				if (lang.toLowerCase() !== 'en') {
-					this.fetchCMSArticleCategory('en');
-				}
+				setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
 			}
 		);
 	}

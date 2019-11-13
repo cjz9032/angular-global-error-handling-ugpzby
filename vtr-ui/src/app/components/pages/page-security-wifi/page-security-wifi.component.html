@@ -49,7 +49,7 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->
-								<div  *ngIf="brand !== 'think' && !deviceService.isGaming" class="row mb-40">
+								<div *ngIf="segment !== 'Commercial' && !deviceService.isGaming" class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
 											[linkId]="'wifi-security'">

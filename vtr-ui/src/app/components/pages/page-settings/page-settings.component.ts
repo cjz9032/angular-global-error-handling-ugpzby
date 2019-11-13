@@ -7,6 +7,8 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { BetaService } from 'src/app/services/beta/beta.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -30,11 +32,13 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
 	usageRadioValue = null;
+	userSelectionChanged = false;
 
 	valueToBoolean = [false, true, false];
 
 
 	preferenceSettings: any;
+	segmentTag = SegmentConst.Consumer;
 
 	messageSettings = [
 		{
@@ -72,7 +76,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public selfSelectService: SelfSelectService,
-		private timerService: TimerService
+		private timerService: TimerService,
+		private betaService: BetaService,
+		private localInfoService: LocalInfoService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
@@ -84,6 +90,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.getSegment();
 		this.getAllToggles();
 		this.timerService.start();
 		this.getSelfSelectStatus();
@@ -91,7 +98,17 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	private getSelfSelectStatus() {
 		this.selfSelectService.getConfig();
-		this.selfSelectService.userSelectionChanged = false;
+		this.userSelectionChanged = false;
+	}
+
+	private getSegment() {
+		if (this.localInfoService) {
+			this.localInfoService.getLocalInfo().then((result) => {
+				this.segmentTag = result.Segment;
+			}).catch(() => {
+				this.segmentTag = SegmentConst.Consumer;
+			});
+		}
 	}
 
 	ngOnDestroy() {
@@ -124,8 +141,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getDeviceStatisticsPreference();
 		}
-		if (this.commonService) {
-			this.toggleBetaProgram = this.commonService.getBetaUser();
+		if (this.betaService) {
+			this.betaService.getBetaStatus().then((res) => {
+				this.toggleBetaProgram = res;
+			});
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -134,12 +153,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				if (response && response.app && response.app.metricCollectionState === 'On') {
 					this.toggleDeviceStatistics = true;
 					this.isToggleDeviceStatistics = true;
-				}
-				else if (response && response.app && response.app.metricCollectionState === 'Off') {
+				} else if (response && response.app && response.app.metricCollectionState === 'Off') {
 					this.toggleDeviceStatistics = false;
 					this.isToggleDeviceStatistics = true;
-				}
-				else {
+				} else {
 					this.isToggleDeviceStatistics = false;
 				}
 			});
@@ -254,7 +271,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	onToggleOfBetaProgram(event: any) {
 		this.toggleBetaProgram = event.switchValue;
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
-		this.commonService.setBetaUser(this.toggleBetaProgram);
+		this.betaService.setBetaStatus(this.toggleBetaProgram);
 		this.configService.notifyMenuChange();
 	}
 
@@ -282,7 +299,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	saveUsageType(value) {
 		this.selfSelectService.usageType = value;
-		this.selfSelectService.userSelectionChanged = true;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 
 	onInterestToggle($event, value) {
@@ -291,16 +308,16 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
-		this.selfSelectService.userSelectionChanged = true;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 
 	saveUserProfile() {
 		this.selfSelectService.saveConfig();
-		this.selfSelectService.userSelectionChanged = false;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 		const usageData = {
 			ItemType: 'FeatureClick',
 			ItemName: 'UsageType',
-			ItemValue: this.deviceService.isGaming? 'Gaming' : this.selfSelectService.usageType,
+			ItemValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
 			ItemParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(usageData);
@@ -316,5 +333,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			ItemParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
+		this.segmentTag = this.selfSelectService.usageType;
 	}
 }

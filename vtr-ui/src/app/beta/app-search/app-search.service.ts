@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { BetaService } from 'src/app/services/beta/beta.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
@@ -46,7 +47,9 @@ export class AppSearchService {
 		private deviceService: DeviceService,
 		private configService: ConfigService,
 		private commonService: CommonService,
-		private localInfoService: LocalInfoService) {
+		private localInfoService: LocalInfoService,
+		private betaService: BetaService
+		) {
 		this.betaMenuMapPaths();
 		if (deviceService.showSearch) {
 			this.loadSearchIndex();
@@ -75,12 +78,12 @@ export class AppSearchService {
 		}
 	}
 
-	private betaVerification(item: any) {
+	private async betaVerification(item: any) {
 		if (!item.route) {
 			return true;
 		}
 
-		const isBetaUser = this.isBetaUserRes;
+		const isBetaUser = await this.isBetaUserRes;
 		if (!isBetaUser && this.betaRoutes.indexOf(item.route) !== -1) {
 			return false;
 		}
@@ -100,7 +103,7 @@ export class AppSearchService {
 			return false;
 		}
 
-		const matchBeta = this.betaVerification(item);
+		const matchBeta = await this.betaVerification(item);
 		if (!matchBeta) {
 			return false;
 		}
@@ -134,7 +137,7 @@ export class AppSearchService {
 			return;
 		}
 
-		this.isBetaUserRes = this.commonService.getBetaUser();
+		this.isBetaUserRes = this.betaService.getBetaStatus();
 		this.loaded = true;
 		const tags = this.searchDB.features.tags;
 		const relevantTags = this.searchDB.features.relevantTags;
