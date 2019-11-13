@@ -48,7 +48,7 @@ fdescribe('UiMacrokeyRecordedListComponent', () => {
 					mockPipe({ name: 'translate' }),
 					mockPipe({ name: 'sanitize' })
 				],
-				schemas: [ NO_ERRORS_SCHEMA ],
+				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: Router },
@@ -80,14 +80,12 @@ fdescribe('UiMacrokeyRecordedListComponent', () => {
 		expect(component.ignoreInterval).toEqual(false);
 	});
 
-	it(
-		'Record should be deleted',
-		fakeAsync(() => {
-			macrokeyServiceMock.setMacroKey.and.returnValue(Promise.resolve(true));
-			component.recordDelete(sampleInputData.macro.inputs[0], 0);
-			tick(20);
-			expect(component.recordsData.inputs.length).toEqual(4);
-		})
+	it('Record should be deleted', fakeAsync(() => {
+		macrokeyServiceMock.setMacroKey.and.returnValue(Promise.resolve(true));
+		component.recordDelete(sampleInputData.macro.inputs[0], 0);
+		tick(20);
+		expect(component.recordsData.inputs.length).toEqual(4);
+	})
 	);
 
 	it(
@@ -150,6 +148,15 @@ fdescribe('UiMacrokeyRecordedListComponent', () => {
 			expect(component.delaySelectedValue).toEqual(2);
 		})
 	);
+	it('Should clear records', fakeAsync(() => {
+		component.clearRecordPopup = false;
+		component.clearRecords();
+		tick(10);
+		fixture.detectChanges();
+		expect(component.clearRecordPopup).toEqual(true);
+	})
+	);
+
 });
 
 export function mockPipe(options: Pipe): Pipe {
