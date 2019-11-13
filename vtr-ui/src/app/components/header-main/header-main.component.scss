@@ -25,6 +25,11 @@
 		margin: 0;
 		position: relative;
 		z-index: 1;
+		::ng-deep {
+			span {
+				word-break: break-all;
+			}
+		}
 	}
 	.back {
 		color: $light;

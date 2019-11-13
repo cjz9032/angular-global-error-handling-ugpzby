@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PunctuationRemoveSpacePipe implements PipeTransform {
 
 	transform(value: any, ...args: any[]): any {
-		const text = value.replace(' ,', ',')
+		let text = value.replace(' \,', ',')
 			.replace(/( \.| \.)/gi, '.')
 			.replace(/( \?| \?)/gi, '?')
 			.replace(/( \!| \!)/gi, '!')
@@ -21,11 +21,12 @@ export class PunctuationRemoveSpacePipe implements PipeTransform {
 			.replace(/(，！|， ！|， ！|，  ！)/gi, '！')
 			.replace(/(\,\?|\, \?|\, \?|\,  \?)/gi, '?')
 			.replace(/(，？|， ？|， ？|，  ？)/gi, '？')
-			.replace(/(,|, ,|, ,)/gi, ',')
+			.replace(/(\,\,|\, \,|\, \,)/gi, ',')
 			.replace(/(，，|， ，|， ，)/gi, '，')
 			.replace(/(\,$|\, $|\, $)/gi, '')
 			.replace(/(，$|， $|， $)/gi, '')
 			;
+		if (text.substr(0, 1) === ',' || text.substr(0, 1) === '，') { text = text.substr(1); }
 		return text;
 	}
 
