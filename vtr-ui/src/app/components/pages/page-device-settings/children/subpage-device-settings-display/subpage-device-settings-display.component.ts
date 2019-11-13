@@ -1076,7 +1076,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	resetEyecaremodeAllSettings() {
-		if (!window.localStorage.getItem(LocalStorageKey.EyeCareModeResetStatus)) {
+		if (window.localStorage.getItem(LocalStorageKey.EyeCareModeResetStatus)) {
 			return;
 		}
 		this.displayService.resetEyecaremodeAllSettings()
