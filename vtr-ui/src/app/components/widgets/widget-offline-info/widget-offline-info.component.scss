@@ -55,5 +55,9 @@
 				cursor: pointer;
 			}
 		}
+
+		.hidden-if-overflow {
+			overflow: hidden;
+		}
 	}
 }
