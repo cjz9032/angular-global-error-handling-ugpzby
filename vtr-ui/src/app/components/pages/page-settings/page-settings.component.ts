@@ -142,7 +142,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.getDeviceStatisticsPreference();
 		}
 		if (this.betaService) {
-			this.toggleBetaProgram = this.betaService.getBetaStatus();
+			this.betaService.getBetaStatus().then((res) => {
+				this.toggleBetaProgram = res;
+			});
 		}
 	}
 	private getDeviceStatisticsPreference() {
