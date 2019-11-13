@@ -58,7 +58,7 @@ const sampleInputData = {
 	}
 };
 
-xdescribe('WidgetMacrokeySettingsComponent', () => {
+fdescribe('WidgetMacrokeySettingsComponent', () => {
 	let component: WidgetMacrokeySettingsComponent;
 	let fixture: ComponentFixture<WidgetMacrokeySettingsComponent>;
 	macrokeyServiceMock.isMacroKeyAvailable.and.returnValue(true);
