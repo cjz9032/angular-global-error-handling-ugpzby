@@ -211,6 +211,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 				}
 			} else {
 				textIndex = Math.floor(Math.random() * 15 + 1);
+				if (textIndex === 2) { textIndex = 3; } // Do not show again in first time
 			}
 			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
