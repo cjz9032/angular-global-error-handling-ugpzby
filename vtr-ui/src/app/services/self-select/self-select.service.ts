@@ -23,7 +23,6 @@ export class SelfSelectService {
 	public usageType = null;
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
-	public userSelectionChanged = false;
 
 	private _savedSegment = null;
 	public get savedSegment() {
@@ -35,6 +34,7 @@ export class SelfSelectService {
 			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
+	public savedInterests: string[] = [];
 	private selfSelect: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
@@ -68,6 +68,8 @@ export class SelfSelectService {
 				if (config && config.customtags) {
 					const checkedTags = config.customtags;
 					this.checkedArray = checkedTags.split(',');
+					this.savedInterests = [];
+					Object.assign(this.savedInterests, this.checkedArray);
 					this.interests.forEach(item => {
 						item.checked = checkedTags && checkedTags.includes(item.label);
 					});
@@ -100,6 +102,8 @@ export class SelfSelectService {
 		}
 		const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
 		this.savedSegment = this.usageType;
+		this.savedInterests = [];
+		Object.assign(this.savedInterests, this.checkedArray);
 		return this.selfSelect.updateConfig(config).then((result) => {
 			if (reloadNecessary) {
 				window.open(window.location.origin, '_self');
@@ -146,6 +150,12 @@ export class SelfSelectService {
 		const matchedResult = source.match(pattern);
 		result = matchedResult !== null;
 		return result;
+	}
+
+	public selectionChanged() {
+		const savedIs = JSON.stringify(this.savedInterests.sort());
+		const currentIs = JSON.stringify(this.checkedArray.sort());
+		return this.usageType !== this.savedSegment || savedIs !== currentIs;
 	}
 }
 

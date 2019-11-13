@@ -1841,7 +1841,7 @@
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
         "welcomeText1": "Danas izgledate puni energije {{firstName}}!",
-        "welcomeText2": "Drago mi je što vas opet vidim. {{firstName}}",
+        "welcomeText2": "Drago mi je što vas opet vidim, {{firstName}}",
         "welcomeText3": "Kakvo prijatno iznenađenje, {{firstName}}",
         "welcomeText4": "{{firstName}}, osmehnite se, zarazno je :)",
         "welcomeText5": "Kuc, kuc, {{firstName}}",

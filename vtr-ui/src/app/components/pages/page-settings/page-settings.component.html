@@ -278,8 +278,10 @@
 									<div class="row save-button">
 										<vtr-ui-button
 											id="settings-profile-save-button"
+											metricsEvent="featureClick"
+											[metricsItem]="'SAVE'"
 											[label]="'hardwareScan.save' | translate"
-											[isDisabled]="!selfSelectService.userSelectionChanged"
+											[isDisabled]="!userSelectionChanged"
 											(onClick)="saveUserProfile()">
 										</vtr-ui-button>
 									</div>
