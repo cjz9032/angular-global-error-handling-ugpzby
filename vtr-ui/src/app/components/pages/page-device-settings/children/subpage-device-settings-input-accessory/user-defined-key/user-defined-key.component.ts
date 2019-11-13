@@ -18,7 +18,7 @@ export class UserDefinedKeyComponent implements OnInit {
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	udkActionInfo: UDKActionInfo;
-	hasUDKCapability = true;
+	hasUDKCapability = false;
 	public machineType: number;
 	public description: string;
 	public url: string;
