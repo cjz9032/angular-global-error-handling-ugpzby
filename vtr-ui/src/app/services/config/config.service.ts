@@ -4,12 +4,12 @@ import {
 import {
 	DeviceService
 } from 'src/app/services/device/device.service';
-import { CommonService } from '../common/common.service';
 import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { BetaService } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
@@ -38,10 +38,10 @@ export class ConfigService {
 	public readonly menuItemNotification: Observable<AppNotification>;
 	private menuItemSubject: BehaviorSubject<AppNotification>;
 	constructor(
+		private betaService: BetaService,
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private logger: LoggerService,
-		private commonService: CommonService,
 		private localInfoService: LocalInfoService) {
 			this.menuItemSubject = new BehaviorSubject<AppNotification>(
 				new AppNotification(MenuItem.MenuItemChange, 'init')
@@ -60,7 +60,7 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise(async (resolve, reject) => {
-			const isBetaUser = this.commonService.getBetaUser();
+			const isBetaUser = await this.betaService.getBetaStatus();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
