@@ -93,7 +93,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-		// this.initIsBeta(); // its calling machine  info again
 		this.metricService.sendAppLaunchMetric();
 
 		/********* add this for navigation within a page **************/
@@ -213,7 +212,6 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
-		// this.initIsBeta();
 		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale.toLowerCase()) {
 			this.languageService.useLanguageByLocale(value.locale);
 		}
