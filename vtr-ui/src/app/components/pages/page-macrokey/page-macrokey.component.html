@@ -35,7 +35,7 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-container-card order="1"
+										<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1"
 											[itemID]="cardContentPositionF.Id"
 											[img]="cardContentPositionF.FeatureImage"
 											[title]="cardContentPositionF.Title"
@@ -50,7 +50,7 @@
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-container-card order="2"
+										<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2"
 											[itemID]="cardContentPositionC.id"
 											[img]="cardContentPositionC.FeatureImage"
 											[caption]="cardContentPositionC.Description"
