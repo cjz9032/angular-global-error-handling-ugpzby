@@ -18,6 +18,7 @@ const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeServ
 const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellAvailable', 'getSecurityAdvisor', 'getGamingAllCapabilities', 'getVantageToolBar', 'unRegisterEvent', 'registerEvent', 'getSelfSelect', 'getVantageShell', 'getPowerIdeaNoteBook', 'getPowerThinkPad',
 'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus', 'getImcHelper', 'getActiveProtectionSystem', 'getKeyboardManagerObject', 'getAdPolicy', 'getSystemUpdate', 'getMetrics']);
 
+
 const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable']);
 describe('WidgetQuicksettingsListComponent', () => {
 	let component: WidgetQuicksettingsListComponent;
