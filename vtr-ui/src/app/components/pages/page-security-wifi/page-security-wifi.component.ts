@@ -18,9 +18,10 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { DeviceService } from 'src/app/services/device/device.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -52,7 +53,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	notificationSubscription: Subscription;
 	region = 'us';
 	language = 'en';
-	brand;
+	segment;
 	showChs = false;
 	intervalId: number;
 	interval = 15000;
@@ -70,17 +71,18 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
-		public deviceService: DeviceService,
 		private hypSettings: HypothesisService,
-		private configService: ConfigService
+		private configService: ConfigService,
+		public deviceService: DeviceService
 	) {	}
 
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		if (this.deviceService.getMachineInfoSync()) {
-			this.brand = this.deviceService.getMachineInfoSync().brand;
-		}
+		this.localInfoService.getLocalInfo().then(result => {
+			this.segment = result.Segment ? result.Segment : SegmentConst.Commercial;
+			this.showChs = this.configService.showCHSMenu && this.segment !== SegmentConst.Commercial;
+		});
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
@@ -94,7 +96,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		});
 		this.fetchCMSArticles();
 
-		this.showChs = this.configService.showCHSMenu && this.brand !== 'think';
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
 			this.handleError(new PluginMissingError());
 		});
