@@ -9,27 +9,28 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { TranslateService } from '@ngx-translate/core';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { EventEmitter } from 'events';
 
 
 const translateServiceMock = jasmine.createSpyObj('TranslateService', ['isShellAvailable']);
 const audioServiceMock = jasmine.createSpyObj('AudioService', ['isShellAvailable', 'getDolbyFeatureStatus', 'setDolbyOnOff']);
 const gamingThermalModeServiceMock = jasmine.createSpyObj('GamingThermalModeService', ['isShellAvailable', 'getThermalModeStatus', 'setThermalModeStatus', 'regThermalModeEvent']);
 const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellAvailable', 'getSecurityAdvisor', 'getGamingAllCapabilities', 'getVantageToolBar', 'unRegisterEvent', 'registerEvent', 'getSelfSelect', 'getVantageShell', 'getPowerIdeaNoteBook', 'getPowerThinkPad',
-'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus', 'getImcHelper', 'getActiveProtectionSystem', 'getKeyboardManagerObject', 'getAdPolicy', 'getSystemUpdate', 'getMetrics']);
+	'getPowerItsIntelligentCooling', 'getIntelligentCoolingForIdeaPad', 'macroKeyInitializeEvent', 'macroKeySetApplyStatus', 'getImcHelper', 'getActiveProtectionSystem', 'getKeyboardManagerObject', 'getAdPolicy', 'getSystemUpdate', 'getMetrics']);
 
 
 const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable']);
-describe('WidgetQuicksettingsListComponent', () => {
+fdescribe('WidgetQuicksettingsListComponent', () => {
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
-
+	// tslint:disable-next-line: no-use-before-declare
+	shellServicesMock.getSecurityAdvisor.and.returnValue({ wifiSecurity: emitter() });
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetQuicksettingsListComponent,
 				mockPipe({ name: 'translate' })],
-				imports: [WifiHomeViewModel, RouterTestingModule],
+			imports: [RouterTestingModule],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
@@ -38,33 +39,29 @@ describe('WidgetQuicksettingsListComponent', () => {
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: TranslateService, useValue: translateServiceMock },
 				{ provide: VantageShellService, useValue: shellServicesMock }
+
 			]
 		}).compileComponents();
-		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-		component = fixture.debugElement.componentInstance;
-		fixture.detectChanges();
 	}));
 
+	beforeEach(() => {
+		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	})
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
 
 	it('should have default value Balance for thermal mode if localstorage not set', () => {
-		fixture = TestBed.createComponent(WidgetQuicksettingsListComponent);
-		component = fixture.debugElement.componentInstance;
-		fixture.detectChanges();
-		//Expected Default Behaviour
 		expect(component.drop.curSelected).toEqual(2);
 	});
 
 	it('should update the thermal mode value on service and in Local storage', fakeAsync((done: any) => {
-		let thermalModePromisedData: number;
+		const thermalModePromisedData = 2;
 		const uiThermalModeValue = component.drop.curSelected;
 		const cacheThermalModeValue = component.GetThermalModeCacheStatus();
 		gamingThermalModeServiceMock.getThermalModeStatus.and.returnValue(Promise.resolve(uiThermalModeValue));
-		gamingThermalModeServiceMock.getThermalModeStatus().then((response: any) => {
-			thermalModePromisedData = response;
-		});
 		component.renderThermalModeStatus();
 		tick(10);
 		fixture.detectChanges();
@@ -97,9 +94,33 @@ export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
 		name: options.name
 	};
-	return <any>Pipe(metadata)(class MockPipe {
+	return Pipe(metadata)(class MockPipe {
 		public transform(query: string, ...args: any[]): any {
 			return query;
 		}
 	});
 }
+
+export function emitter() {
+	class CustomEmitter extends EventEmitter {
+		constructor() {
+			super();
+			this.setMaxListeners(5);
+		}
+		getWifiState() {
+			return Promise.resolve(1);
+		}
+		refresh() {
+			return Promise.resolve();
+		}
+		getWifiSecurityState() {
+			return Promise.resolve();
+		}
+		cancelGetWifiSecurityState() {
+			return Promise.resolve();
+		}
+	}
+	return new CustomEmitter();
+
+}
+
