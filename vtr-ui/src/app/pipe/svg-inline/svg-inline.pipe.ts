@@ -33,7 +33,10 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 			return new Observable(observer => {
 				observer.next('');
 				const win:any = window;
-				if (value.substring(value.lastIndexOf('.')) === '.svg' && win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode === true) {
+				if (value.substring(value.lastIndexOf('.')) === '.svg' &&
+					((win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode === true) ||
+					!this.commonService.isOnline)
+				) {
 					this.getContent(value).then(val => {
 						val = `data:image/svg+xml;base64,${btoa(val + '')}`;
 						val = this.sanitizer.sanitize(SecurityContext.URL,val).replace('unsafe:','');
