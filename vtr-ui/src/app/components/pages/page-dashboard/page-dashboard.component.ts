@@ -156,12 +156,22 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
-
-		this.getPreviousContent();
-		this.fetchContent();
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.translate.stream([
+			'dashboard.offlineInfo.welcomeToVantage',
+			'common.menu.support',
+			'settings.settings',
+			'dashboard.offlineInfo.systemHealth',
+			'common.securityAdvisor.wifi',
+			'systemUpdates.title',
+			'systemUpdates.readMore'
+		]).subscribe((result) => {
+			this.dashboardService.translateString = result;
+			this.dashboardService.setDefaultCMSContent();
+			this.getPreviousContent();
 			this.fetchContent();
+			this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+				this.fetchContent();
+			});
 		});
 		this.getSelfSelectStatus();
 	}
