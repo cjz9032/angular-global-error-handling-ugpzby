@@ -496,7 +496,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	showWindowsHelloItem() {
 		this.getMenuItems().then((items) => {
 			const securityItem = items.find((item) => item.id === 'security');
-			if (!securityItem) {
+			if (securityItem) {
 				if (!this.windowsHelloService.showWindowsHello()) {
 					securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
