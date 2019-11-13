@@ -348,20 +348,6 @@ describe('PageAutocloseComponent', () => {
 		})
 	);
 
-
-	//commented by raghu
-	// it(
-	// 	'should show running app list',
-	// 	fakeAsync(() => {
-	// 		gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
-	// 			Promise.resolve(sampleRunningAppList)
-	// 		);
-	// 		component.refreshRunningList();
-	// 		tick(20);
-	// 		expect(component.runningList).toBeDefined();
-	// 		expect(component.runningList.length).toBeGreaterThan(0);
-	// 	})
-	// );
 });
 
 export function mockPipe(options: Pipe): Pipe {

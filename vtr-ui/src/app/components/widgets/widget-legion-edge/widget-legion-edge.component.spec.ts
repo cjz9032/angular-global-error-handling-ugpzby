@@ -54,12 +54,12 @@ describe('WidgetLegionEdgeComponent', () => {
 		expect(compiled.querySelector('div.justify-content-between>img').src).toContain('/assets/images/gaming/legionEdge.png');
 	}));
 
-	// it('should render the Question icon image on legion edge container', async(() => {
-	// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-	// 	fixture.detectChanges();
-	// 	const compiled = fixture.debugElement.nativeElement;
-	// 	expect(compiled.querySelector('div.help-box>a>fa-icon')).toBeTruthy();
-	// }));
+	it('should render the Question icon image on legion edge container', async(() => {
+		fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+		fixture.detectChanges();
+		const compiled = fixture.debugElement.nativeElement;
+		expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
+	}));
 
 	it('should have default isCustomizable legionUpdate object true for auto close, networkboost & false for all', () => {
 		fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
@@ -256,22 +256,22 @@ describe('WidgetLegionEdgeComponent', () => {
 		expect(cacheAutoCloseStatusValue).toEqual(autoCloseStatusPromisedData);
 	}));
 
-	// it('should update or have same Network Boost value on service and in Local storage and UI', fakeAsync((done: any) => {
-	// 	let networkBoostStatusPromisedData: boolean;
-	// 	const uiNetworkBoostStatusValue = component.legionUpdate[3].isChecked;
-	// 	component.setNetworkBoostStatus(uiNetworkBoostStatusValue);
-	// 	component.setNetworkBoostCacheStatus(uiNetworkBoostStatusValue);
-	// 	const cacheNetworkBoostStatusValue = component.getNetworkBoostCacheStatus();
-	// 	networkBoostServiceMock.getNetworkBoostStatus.and.returnValue(Promise.resolve(uiNetworkBoostStatusValue));
-	// 	networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
-	// 		networkBoostStatusPromisedData = response;
-	// 	});
-	// 	tick(10);
-	// 	fixture.detectChanges();
-	// 	expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
-	// 	expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
-	// 	expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
-	// }));
+	it('should update or have same Network Boost value on service and in Local storage and UI', fakeAsync((done: any) => {
+		let networkBoostStatusPromisedData: boolean;
+		const uiNetworkBoostStatusValue = component.legionUpdate[3].isChecked;
+		component.setNetworkBoostStatus(uiNetworkBoostStatusValue);
+		component.setNetworkBoostCacheStatus(uiNetworkBoostStatusValue);
+		const cacheNetworkBoostStatusValue = component.getNetworkBoostCacheStatus();
+		networkBoostServiceMock.getNetworkBoostStatus.and.returnValue(Promise.resolve(uiNetworkBoostStatusValue));
+		networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
+			networkBoostStatusPromisedData = response;
+		});
+		tick(10);
+		fixture.detectChanges();
+		expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
+		expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+		expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+	}));
 
 
 	it('should able to mock Hybrid Mode service data ', fakeAsync((done: any) => {
