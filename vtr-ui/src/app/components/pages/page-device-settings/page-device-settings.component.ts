@@ -15,6 +15,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { Router } from '@angular/router';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -33,6 +35,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
 			icon: 'power',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: true
 		}, {
@@ -40,6 +44,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
 			icon: 'audio',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false
 		}, {
@@ -47,6 +53,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
 			icon: 'display-camera',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false
 		}, {
@@ -54,6 +62,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
 			icon: 'input-accessories',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false
 		}

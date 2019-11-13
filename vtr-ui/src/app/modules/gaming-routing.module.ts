@@ -8,13 +8,16 @@ import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-ma
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
 import { PageAutocloseComponent } from './../components/pages/page-autoclose/page-autoclose.component';
 import { PageUserComponent } from '../components/pages/page-user/page-user.component';
+import { NonCommercialGuard } from '../services/guard/non-commercial-guard';
+import { NonSMBGuard } from '../services/guard/non-smb-guard';
+import { NonConsumerGuard } from '../services/guard/non-consumer-guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: PageDeviceGamingComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
 		data: {
 			pageName: 'Device',
 			pageContent: 'Device Status'
@@ -24,7 +27,7 @@ const routes: Routes = [
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
 		data: {
 			pageName: 'Gaming.Dashboard',
 			pageContent: 'Gaming Dashboard'
@@ -34,7 +37,7 @@ const routes: Routes = [
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
 		data: {
 			pageName: 'Gaming.Macrokey',
 			pageContent: 'Gaming Macrokey'
@@ -44,7 +47,7 @@ const routes: Routes = [
 		path: 'lightingcustomize/:id',
 		component: PageLightingcustomizeComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
 
 		data: {
 			pageName: 'Gaming.Lighting',
@@ -55,7 +58,7 @@ const routes: Routes = [
 		path: 'networkboost',
 		component: PageNetworkboostComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
 		data: {
 			pageName: 'Gaming.NetworkBoost',
 			pageContent: 'Gaming NetworkBoost'
@@ -66,7 +69,7 @@ const routes: Routes = [
 		path: 'autoclose',
 		component: PageAutocloseComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
 		data: {
 			pageName: 'Gaming.AutoClose',
 			pageContent: 'Gaming AutoClose'
@@ -76,7 +79,7 @@ const routes: Routes = [
 		path: 'user',
 		component: PageUserComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canActivate: [ GuardService, NonCommercialGuard],
 		data: {
 			pageName: 'User'
 		}

@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageAppsForYouComponent } from '../../components/pages/page-apps-for-you/page-apps-for-you.component';
+import { ModalModernPreloadComponent } from 'src/app/components/modal/modal-modern-preload/modal-modern-preload.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
+import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: PageAppsForYouComponent,
+		component: ModalModernPreloadComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard, NonSmodeGuard],
+		canActivate: [GuardService, NonGamingGuard, NonSmodeGuard, NonArmGuard],
 		data: {
-			pageName: 'AppsForYou'
+			pageName: 'Page.ModernPreload'
 		}
 	}
 ];
@@ -25,4 +26,4 @@ const routes: Routes = [
 		RouterModule
 	]
 })
-export class AppsForYouRoutingModule { }
+export class ModernPreloadRoutingModule { }
