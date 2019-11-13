@@ -36,9 +36,41 @@ fdescribe('UiMacrokeyDetailsComponent', () => {
 			console.log(e);
 		}
 		expect(component.recording).toEqual(true);
-
 	});
 
+	it('should delete records', async () => {
+		const result = await component.recordsDelete([1]);
+		expect(result).toEqual(undefined);
+	});
+
+
+	it('should call the toggleRecording function when start clicked', async () => {
+		await component.onStartClicked({});
+		expect(component.recording).toEqual(true);
+	});
+
+	it('should call the toggleRecording function when stop clicked', async () => {
+		await component.onStopClicked({});
+		expect(component.recording).toEqual(true);
+	});
+
+	it('should add the event listener', async () => {
+		const result = await component.ngOnInit();
+		expect(result).toEqual(undefined);
+	});
+
+	it('should call the ngOnchanges with timeout10', async () => {
+		const result = await component.ngOnChanges({ messageData: { currentValue: 'timeout10' } });
+		expect(result).toEqual(undefined);
+	});
+	it('should call the ngOnchanges with timeout20 ', async () => {
+		const result = await component.ngOnChanges({ messageData: { currentValue: 'timeout20' } });
+		expect(result).toEqual(undefined);
+	});
+	it('should call the ngOnchanges with maximum timeout', async () => {
+		const result = await component.ngOnChanges({ messageData: { currentValue: 'maximum' } });
+		expect(result).toEqual(undefined);
+	});
 });
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {

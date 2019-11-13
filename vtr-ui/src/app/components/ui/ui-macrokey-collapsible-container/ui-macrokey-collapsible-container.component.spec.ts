@@ -60,12 +60,50 @@ fdescribe('UiMacrokeyCollapsibleContainerComponent', () => {
 		expect(component.currentDescription).toEqual(option.description);
 	});
 
-	it('Show options should be false based on options', fakeAsync (() => {
+	it('Show options should be false based on options', fakeAsync(() => {
 		component.options = [1, 2, 3];
 		tick(10);
 		fixture.detectChanges();
 		component.keydownFn({ keyCode: 9 }, 2);
 		expect(component.showOptions).toEqual(false);
+	}));
+
+	it('Show options should be true based on general click', fakeAsync(() => {
+		component.showOptions = true;
+		tick(10);
+		fixture.detectChanges();
+		let event: Event;
+		try {
+			component.generalClick(event);
+		} catch (e) {
+
+		}
+		expect(component.showOptions).toEqual(true);
+	}));
+
+	it('Should reset the current description', fakeAsync(() => {
+		component.selectedDescription = 'this is the dummy description';
+		tick(10);
+		fixture.detectChanges();
+		component.resetDescription({});
+		expect(component.currentDescription).toEqual(component.selectedDescription);
+	}));
+
+	it('Shouldn\'t focus on the element', fakeAsync(() => {
+		component.showOptions = false;
+		component.isItemsFocused = false;
+		tick(10);
+		fixture.detectChanges();
+		component.itemsFocused();
+		expect(component.isItemsFocused).toEqual(false);
+	}));
+
+	it('Should call the ngOnChanges ', fakeAsync(() => {
+		component.options = [{value: 1}, {value: 2}];
+		tick(10);
+		fixture.detectChanges();
+		component.ngOnChanges({selectedValue: {currentValue: 1}});
+		expect(component.selectedOption).toEqual({value: 1});
 	}));
 });
 export function mockPipe(options: Pipe): Pipe {
