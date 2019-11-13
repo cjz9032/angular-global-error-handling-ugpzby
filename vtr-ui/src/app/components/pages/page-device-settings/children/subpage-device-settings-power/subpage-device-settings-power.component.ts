@@ -238,11 +238,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			// this.headerMenuItems.splice(0, 1);
 			// this.headerMenuItems.splice(0, 1);
 			// this.headerMenuItems.splice(0, 1);
-			this.checkMenuItemsEmpty();
 			this.updateBatteryLinkStatus(false);
-		} else {
-			this.updateBatteryLinkStatus(true);
 		}
+		this.checkMenuItemsEmpty();
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.startMonitor();
 
@@ -254,10 +252,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	initDataFromCache() {
+		this.initBatteryLinkFromCache();
 		this.initPowerSmartSettingFromCache();
 		this.initAirplanePowerFromCache();
 		this.initBatteryChargeThresholdFromCache();
-		this.initBatteryLinkFromCache();
 		this.initExpressChargingFromCache();
 		this.initConservationModeFromCache();
 		this.initPowerSettingsFromCache();
