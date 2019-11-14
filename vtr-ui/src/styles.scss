@@ -161,7 +161,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Segoe UI", Sans-serif;
+	font-family: "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Yu Gothic UI","Segoe UI", Sans-serif;
 	cursor: default;
 	// font-weight: 300;
 }
@@ -325,7 +325,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	font-family: "Segoe UI";
+	// font-family: "Segoe UI";
 	@media #{$mediaquery_xl} {
 		max-width: 20rem;
 	}
@@ -550,6 +550,20 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.update-read-more-modal-size {
+	.modal-dialog {
+		max-width: 60%;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		// background: none;
+		border: none;
+	}
+}
+
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -756,7 +770,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
-		font-family: "Segoe UI";
+		// font-family: "Segoe UI";
 
 		ul {
 			padding: 0;
@@ -779,7 +793,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
-		font-family: "Segoe UI";
+		// font-family: "Segoe UI";
 
 		span {
 			font-weight: bold;

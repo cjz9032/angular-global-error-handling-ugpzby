@@ -1,10 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
-import { WinRT } from '@lenovo/tan-client-bridge';
+import { CardService } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'beta-vtr-container-card',
@@ -40,7 +38,7 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 
 	constructor(
 		private commonService: CommonService,
-		public modalService: NgbModal,
+		private cardService: CardService,
 	) { }
 
 	ngOnInit() {
@@ -66,36 +64,9 @@ export class ContainerCardComponent implements OnInit, OnChanges {
 	}
 
 	linkClicked(actionType: string, actionLink: string) {
-		if (!actionType || actionType !== 'Internal') {
-			return;
-		}
-
-		if (actionLink.indexOf('lenovo-vantage3:') === 0) {
-			WinRT.launchUri(actionLink);
-		} else {
-			this.articleClicked(actionLink);
-		}
-
-		return false;
+		return this.cardService.linkClicked(actionType, actionLink);
 	}
 
-	articleClicked(articleId) {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true, /*'static',*/
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
-
-		articleDetailModal.componentInstance.articleId = articleId;
-	}
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {

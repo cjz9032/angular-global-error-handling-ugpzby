@@ -55,19 +55,6 @@ export class DashboardService {
 		if (this.eyeCareMode) {
 			this.isShellAvailable = true;
 		}
-
-		this.translate.stream([
-			'dashboard.offlineInfo.welcomeToVantage',
-			'common.menu.support',
-			'settings.settings',
-			'dashboard.offlineInfo.systemHealth',
-			'common.securityAdvisor.wifi',
-			'systemUpdates.title',
-			'systemUpdates.readMore'
-		]).subscribe((result) => {
-			this.translateString = result;
-			this.setDefaultCMSContent();
-		});
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {

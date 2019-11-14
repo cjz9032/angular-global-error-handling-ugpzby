@@ -110,7 +110,7 @@
 			}
 
 			label {
-				font-family: "Segoe UI Bold", Sans-serif;
+				// font-family: "Segoe UI Bold", Sans-serif;
 				font-size: 1.4rem;
 				width: 100%;
 				height: 100%;
@@ -455,6 +455,8 @@
 
 	.more-interests {
 		cursor: pointer;
+		color: black;
+		font-weight: bold;
 	}
 
 	.html-css {

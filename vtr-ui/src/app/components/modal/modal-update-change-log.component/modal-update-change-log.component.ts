@@ -1,7 +1,9 @@
-import { Component, OnInit, Output, OnDestroy } from '@angular/core';
-import { SafeUrl } from '@angular/platform-browser';
+import { Component, OnInit, Output, OnDestroy, SecurityContext } from '@angular/core';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+
+declare let Windows: any;
 
 @Component({
 	selector: 'vtr-modal-update-change-log.',
@@ -10,18 +12,38 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 
-	@Output() url: string;
+	url: string;
 	updateModalMetrics: any;
 	metrics: any;
+	iframeInterval: any;
+	articleBody: SafeHtml = '';
 
 	constructor(
 		public activeModal: NgbActiveModal,
+		private sanitizer: DomSanitizer,
 		private shellService: VantageShellService
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
 
 	ngOnInit() {
+		const uri = new Windows.Foundation.Uri(this.url);
+		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, uri);
+		const httpClient = new Windows.Web.Http.HttpClient();
+		(async () => {
+			try {
+				const response = await httpClient.sendRequestAsync(request);
+				const result = await response.content.readAsStringAsync();
+				if (result) {
+					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, result);
+				} else {
+					console.log('can not get log information');
+				}
+			} catch (e) {
+				console.log('can not get log information');
+			}
+			httpClient.close();
+		})();
 	}
 
 	ngOnDestroy() {
@@ -33,7 +55,6 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 			OnlineStatus: ''
 		};
 		this.sendMetricsAsync(pageViewMetrics);
-		console.log(pageViewMetrics);
 	}
 
 	sendMetricsAsync(data: any) {

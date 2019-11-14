@@ -1233,6 +1233,22 @@
 	}
 }
 
+vtr-container-card {
+	&.cursor-default {
+		.container-card {
+			a,
+			.card-image,
+			.content,
+			.title,
+			.caption,
+			.read-more,
+			.inner-content {
+				cursor: default !important;
+			}
+		}
+	}
+}
+
 .is-gaming,
 .gaming-help-popup,
 .battery-modal-size {

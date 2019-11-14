@@ -1,5 +1,5 @@
 <vtr-page-layout
-	[pageTitle]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? (welcomeText | translate:{firstName:''} | punctuationRemoveSpace) : (welcomeText | translate:{firstName:userService.firstName})"
+	[pageTitle]="deviceService.isArm || !commonService.isOnline || !userService.auth || !userService.hasFirstName || !userService.isLenovoIdSupported() ? (welcomeText | translate:{firstName:''} | punctuationRemoveSpace) : (welcomeText | translate:{firstName:'<span>' + userService.firstName + '</span>'})"
 	[textId]="'dashboard'"
 	[pageCssClass]="'dashboard'">
 

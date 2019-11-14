@@ -88,7 +88,7 @@
 							</div>
 						</div>
 
-						<div class="row py-5 beta-setting">
+						<div class="row py-5 beta-setting" *ngIf="segmentTag !== segmentConst.Commercial">
 							<div class="col-10 mx-auto ">
 								<vtr-container-collapsible
 									[tabIndex]="0"
@@ -173,11 +173,11 @@
 									name="SettingsUserProfile"
 									[cardTitle]=" 'settings.userProfile' | translate "
 									[isCollapsed]="true">
-									<div class="row">
-										<div class="col-auto">
-											<div class="left-icon-block">
-												<fa-icon class="left-icon" [icon]="['fal','laptop']"></fa-icon>
-											</div>
+									<div class="row m-0 vtr-col-pad">
+										<div class="col-auto left-icon-column">
+												<div class="left-icon-block">
+													<fa-icon class="left-icon" [icon]="['fal','laptop']"></fa-icon>
+												</div>
 										</div>
 										<div class="col">
 											<div class="row mb-3">
@@ -248,8 +248,8 @@
 										</div>
 									</div>
 									<hr>
-									<div class="row">
-										<div class="col-auto">
+									<div class="row m-0 vtr-col-pad">
+										<div class="col-auto left-icon-column">
 											<div class="left-icon-block">
 												<fa-icon class="left-icon" [icon]="['fal','heart']"></fa-icon>
 											</div>
@@ -278,8 +278,10 @@
 									<div class="row save-button">
 										<vtr-ui-button
 											id="settings-profile-save-button"
+											metricsEvent="featureClick"
+											[metricsItem]="'SAVE'"
 											[label]="'hardwareScan.save' | translate"
-											[isDisabled]="!selfSelectService.userSelectionChanged"
+											[isDisabled]="!userSelectionChanged"
 											(onClick)="saveUserProfile()">
 										</vtr-ui-button>
 									</div>

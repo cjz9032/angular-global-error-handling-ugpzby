@@ -23,7 +23,6 @@ export class SelfSelectService {
 	public usageType = null;
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
-	public userSelectionChanged = false;
 
 	private _savedSegment = null;
 	public get savedSegment() {
@@ -35,6 +34,7 @@ export class SelfSelectService {
 			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
+	public savedInterests: string[] = [];
 	private selfSelect: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
@@ -61,6 +61,7 @@ export class SelfSelectService {
 
 	public async getConfig() {
 		this.machineInfo = await this.deviceService.getMachineInfo();
+		const isArm = this.machineInfo && this.machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 		if (this.selfSelect) {
 			this.userProfileEnabled = true;
 			try {
@@ -68,11 +69,13 @@ export class SelfSelectService {
 				if (config && config.customtags) {
 					const checkedTags = config.customtags;
 					this.checkedArray = checkedTags.split(',');
+					this.savedInterests = [];
+					Object.assign(this.savedInterests, this.checkedArray);
 					this.interests.forEach(item => {
 						item.checked = checkedTags && checkedTags.includes(item.label);
 					});
 				}
-				if (config && config.segment && !this.machineInfo.isGaming) {
+				if (config && config.segment && !this.machineInfo.isGaming && !isArm) {
 					this.usageType = config.segment;
 					this.savedSegment = this.usageType;
 				} else {
@@ -100,6 +103,8 @@ export class SelfSelectService {
 		}
 		const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
 		this.savedSegment = this.usageType;
+		this.savedInterests = [];
+		Object.assign(this.savedInterests, this.checkedArray);
 		return this.selfSelect.updateConfig(config).then((result) => {
 			if (reloadNecessary) {
 				window.open(window.location.origin, '_self');
@@ -121,6 +126,10 @@ export class SelfSelectService {
 	private calcDefaultSegment(machineInfo) {
 		if (machineInfo.isGaming) {
 			return SegmentConst.Gaming;
+		}
+		if (machineInfo && machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+			this.userProfileEnabled = false;
+			return SegmentConst.Consumer;
 		}
 		let segment = SegmentConst.Consumer;
 		try	{
@@ -146,6 +155,12 @@ export class SelfSelectService {
 		const matchedResult = source.match(pattern);
 		result = matchedResult !== null;
 		return result;
+	}
+
+	public selectionChanged() {
+		const savedIs = JSON.stringify(this.savedInterests.sort());
+		const currentIs = JSON.stringify(this.checkedArray.sort());
+		return this.usageType !== this.savedSegment || savedIs !== currentIs;
 	}
 }
 
