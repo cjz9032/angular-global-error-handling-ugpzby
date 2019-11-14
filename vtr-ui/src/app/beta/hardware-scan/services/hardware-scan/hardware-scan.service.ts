@@ -49,10 +49,28 @@ export class HardwareScanService {
 	private lastResponse: any;
 	private workDone = new Subject<boolean>();
 	private hardwareScanAvailable: boolean;
+	private culture: any;
+	private itemsToScanResponse: any = undefined;
+	private ALL_MODULES = 2;
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 		this.hardwareScanAvailable = this.isAvailable();
+
+		// Retrive the hardware component list just once during
+		// the service initialization
+		if (this.itemsToScanResponse == undefined) {
+			this.culture = window.navigator.languages[0];
+			this.reloadItemsToScan();
+		}
+	}
+
+	public reloadItemsToScan() {
+		this.itemsToScanResponse = this.getItemsToScan(this.ALL_MODULES, this.culture);
+	}
+
+	public getCulture() {
+		return this.culture;
 	}
 
 	public getCategoryInformation() {
@@ -606,7 +624,7 @@ export class HardwareScanService {
 
 	private async getAllItems(culture) {
 		if (this.hardwareScanBridge) {
-			await this.getItemsToScan(2, culture)
+			await this.itemsToScanResponse
 				.then((response) => {
 					console.log('getAllItems(): ', response);
 					this.modulesRetrieved = response;
