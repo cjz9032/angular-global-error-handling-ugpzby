@@ -6,7 +6,7 @@ const file = path.resolve('./postbuild/Tangram.Client.Experience.nuspec');
 
 
 exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
-	version = `${version}.${new Date().toISOString().slice(0, 16).replace(/[-T:]/g, '')}`;
+	version = `${version}.${new Date().toISOString().slice(2, 16).replace(/[-T:]/g, '')}`;
 
 	fs.writeFileSync(file,
 		fs.readFileSync(file, 'utf-8')
