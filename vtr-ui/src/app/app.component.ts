@@ -212,7 +212,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
-		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale.toLowerCase()) {
+		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !==  value.locale ? value.locale.toLowerCase() : 'en') {
 			this.languageService.useLanguageByLocale(value.locale);
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
