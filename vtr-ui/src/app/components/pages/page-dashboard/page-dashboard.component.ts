@@ -28,7 +28,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
-	styleUrls: ['./page-dashboard.component.scss']
+	styleUrls: [ './page-dashboard.component.scss' ]
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
@@ -37,19 +37,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	public isOnline = true;
 	public brand;
 	private protocalAction: any;
-	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
+	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
 	dashboardStart: any = new Date();
 
-	heroBannerItems = [];   // tile A
+	heroBannerItems = []; // tile A
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
 
-	heroBannerItemsCms: [];   // tile A
+	heroBannerItemsCms: []; // tile A
 	cardContentPositionBCms: any = {};
 	cardContentPositionCCms: any = {};
 	cardContentPositionDCms: any = {};
@@ -62,7 +62,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		tileC: true,
 		tileD: true,
 		tileE: true,
-		tileF: true,
+		tileF: true
 	};
 
 	cmsRequestResult = {
@@ -111,8 +111,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		private hypService: HypothesisService,
 		public supportService: SupportService,
 		private adPolicyService: AdPolicyService,
-		private sanitizer: DomSanitizer,
-
+		private sanitizer: DomSanitizer
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -157,23 +156,25 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
 		}
-		this.translate.stream([
-			'dashboard.offlineInfo.welcomeToVantage',
-			'common.menu.support',
-			'settings.settings',
-			'dashboard.offlineInfo.systemHealth',
-			'common.securityAdvisor.wifi',
-			'systemUpdates.title',
-			'systemUpdates.readMore'
-		]).subscribe((result) => {
-			this.dashboardService.translateString = result;
-			this.dashboardService.setDefaultCMSContent();
-			this.getPreviousContent();
-			this.fetchContent();
-			this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+		this.translate
+			.stream([
+				'dashboard.offlineInfo.welcomeToVantage',
+				'common.menu.support',
+				'settings.settings',
+				'dashboard.offlineInfo.systemHealth',
+				'common.securityAdvisor.wifi',
+				'systemUpdates.title',
+				'systemUpdates.readMore'
+			])
+			.subscribe((result) => {
+				this.dashboardService.translateString = result;
+				this.dashboardService.setDefaultCMSContent();
+				this.getPreviousContent();
 				this.fetchContent();
+				this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+					this.fetchContent();
+				});
 			});
-		});
 		this.getSelfSelectStatus();
 	}
 
@@ -192,7 +193,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	ngAfterViewInit() {
 		const dashboardEnd: any = new Date();
 		const dashboardTime = dashboardEnd - this.dashboardStart;
-		console.log(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
+		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
 	}
 
 	ngOnDestroy() {
@@ -208,7 +209,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		} else {
 			let textIndex = 1;
 			const welcomeTextLength = 15;
-			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
+			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(
+				LocalStorageKey.DashboardLastWelcomeText
+			);
 			if (dashboardLastWelcomeText) {
 				const lastIndex = parseInt(dashboardLastWelcomeText.replace('lenovoId.welcomeText', ''), 10);
 				if (lastIndex === welcomeTextLength) {
@@ -218,7 +221,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				}
 			} else {
 				textIndex = Math.floor(Math.random() * 15 + 1);
-				if (textIndex === 2) { textIndex = 3; } // Do not show again in first time
+				if (textIndex === 2) {
+					textIndex = 3;
+				} // Do not show again in first time
 			}
 			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
@@ -234,7 +239,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			tileC: true,
 			tileD: true,
 			tileE: true,
-			tileF: true,
+			tileF: true
 		};
 		// reset cms request result
 		this.cmsRequestResult = {
@@ -247,12 +252,24 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		};
 
 		if (this.isOnline) {
-			if (this.dashboardService.heroBannerItemsOnline.length > 0) { this.heroBannerItems = this.dashboardService.heroBannerItemsOnline; }
-			if (this.dashboardService.cardContentPositionBOnline) { this.cardContentPositionB = this.dashboardService.cardContentPositionBOnline; }
-			if (this.dashboardService.cardContentPositionCOnline) { this.cardContentPositionC = this.dashboardService.cardContentPositionCOnline; }
-			if (this.dashboardService.cardContentPositionDOnline) { this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline; }
-			if (this.dashboardService.cardContentPositionEOnline) { this.cardContentPositionE = this.dashboardService.cardContentPositionEOnline; }
-			if (this.dashboardService.cardContentPositionFOnline) { this.cardContentPositionF = this.dashboardService.cardContentPositionFOnline; }
+			if (this.dashboardService.heroBannerItemsOnline.length > 0) {
+				this.heroBannerItems = this.dashboardService.heroBannerItemsOnline;
+			}
+			if (this.dashboardService.cardContentPositionBOnline) {
+				this.cardContentPositionB = this.dashboardService.cardContentPositionBOnline;
+			}
+			if (this.dashboardService.cardContentPositionCOnline) {
+				this.cardContentPositionC = this.dashboardService.cardContentPositionCOnline;
+			}
+			if (this.dashboardService.cardContentPositionDOnline) {
+				this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
+			}
+			if (this.dashboardService.cardContentPositionEOnline) {
+				this.cardContentPositionE = this.dashboardService.cardContentPositionEOnline;
+			}
+			if (this.dashboardService.cardContentPositionFOnline) {
+				this.cardContentPositionF = this.dashboardService.cardContentPositionFOnline;
+			}
 		}
 
 		this.getTileSource().then(() => {
@@ -280,12 +297,24 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				if (response && response.length > 0) {
 					this.loggerService.info(`Performance: Dashboard page get cms content, ${callCmsUsedTime}ms`);
 
-					if (this.dashboardService.heroBannerItemsOnline.length === 0) { this.getCMSHeroBannerItems(response); }
-					if (!this.dashboardService.cardContentPositionBOnline) { this.getCMSCardContentB(response); }
-					if (!this.dashboardService.cardContentPositionCOnline) { this.getCMSCardContentC(response); }
-					if (!this.dashboardService.cardContentPositionDOnline) { this.getCMSCardContentD(response); }
-					if (!this.dashboardService.cardContentPositionEOnline) { this.getCMSCardContentE(response); }
-					if (!this.dashboardService.cardContentPositionFOnline) { this.getCMSCardContentF(response); }
+					if (this.dashboardService.heroBannerItemsOnline.length === 0) {
+						this.getCMSHeroBannerItems(response);
+					}
+					if (!this.dashboardService.cardContentPositionBOnline) {
+						this.getCMSCardContentB(response);
+					}
+					if (!this.dashboardService.cardContentPositionCOnline) {
+						this.getCMSCardContentC(response);
+					}
+					if (!this.dashboardService.cardContentPositionDOnline) {
+						this.getCMSCardContentD(response);
+					}
+					if (!this.dashboardService.cardContentPositionEOnline) {
+						this.getCMSCardContentE(response);
+					}
+					if (!this.dashboardService.cardContentPositionFOnline) {
+						this.getCMSCardContentF(response);
+					}
 				} else {
 					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
@@ -294,13 +323,14 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			},
 			(error) => {
 				console.log('fetchCMSContent error', error);
-			});
+			}
+		);
 	}
 
 	getCMSHeroBannerItems(response) {
-		const heroBannerItems = this.cmsService.getOneCMSContent(response,
-			'home-page-hero-banner',
-			'position-A').map((record, index) => {
+		const heroBannerItems = this.cmsService
+			.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
+			.map((record, index) => {
 				return {
 					albumId: 1,
 					id: record.Id,
@@ -309,7 +339,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					DataSource: 'cms',
+					DataSource: 'cms'
 				};
 			});
 		if (heroBannerItems && heroBannerItems.length) {
@@ -331,9 +361,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		if (cardContentPositionB) {
 			this.cardContentPositionBCms = cardContentPositionB;
 			if (this.cardContentPositionBCms.BrandName) {
-				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split(
-					'|'
-				)[0];
+				this.cardContentPositionBCms.BrandName = this.cardContentPositionBCms.BrandName.split('|')[0];
 			}
 			this.cardContentPositionBCms.DataSource = 'cms';
 			this.cmsRequestResult.tileB = true;
@@ -437,157 +465,174 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 
 	getUPEHeroBannerItems(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const heroBannerItems = this.upeService.getOneUPEContent(response,
-				'home-page-hero-banner',
-				'position-A').map((record, index) => {
-					return {
-						albumId: 1,
-						id: record.Id,
-						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-						url: record.FeatureImage,
-						ActionLink: record.ActionLink,
-						ActionType: record.ActionType,
-						DataSource: 'upe',
-					};
-				});
-			if (heroBannerItems && heroBannerItems.length) {
-				this.heroBannerItems = heroBannerItems;
-				this.dashboardService.heroBannerItemsOnline = heroBannerItems;
-				this.upeRequestResult.tileA = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const heroBannerItems = this.upeService
+					.getOneUPEContent(response, 'home-page-hero-banner', 'position-A')
+					.map((record, index) => {
+						return {
+							albumId: 1,
+							id: record.Id,
+							source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+							title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+							url: record.FeatureImage,
+							ActionLink: record.ActionLink,
+							ActionType: record.ActionType,
+							DataSource: 'upe'
+						};
+					});
+				if (heroBannerItems && heroBannerItems.length) {
+					this.heroBannerItems = heroBannerItems;
+					this.dashboardService.heroBannerItemsOnline = heroBannerItems;
+					this.upeRequestResult.tileA = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-A load CMS content.`);
+				this.upeRequestResult.tileA = false;
+				if (this.cmsRequestResult.tileA) {
+					this.heroBannerItems = this.heroBannerItemsCms;
+					this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-A load CMS content.`);
-			this.upeRequestResult.tileA = false;
-			if (this.cmsRequestResult.tileA) {
-				this.heroBannerItems = this.heroBannerItemsCms;
-				this.dashboardService.heroBannerItemsOnline = this.heroBannerItemsCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentB(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionB = this.upeService.getOneUPEContent(
-				response,
-				'half-width-title-description-link-image',
-				'position-B'
-			)[0];
-			if (cardContentPositionB) {
-				if (cardContentPositionB.BrandName) {
-					cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionB = this.upeService.getOneUPEContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-B'
+				)[0];
+				if (cardContentPositionB) {
+					if (cardContentPositionB.BrandName) {
+						cardContentPositionB.BrandName = cardContentPositionB.BrandName.split('|')[0];
+					}
+					cardContentPositionB.DataSource = 'upe';
+					this.cardContentPositionB = cardContentPositionB;
+					this.dashboardService.cardContentPositionBOnline = this.cardContentPositionB;
+					this.upeRequestResult.tileB = true;
 				}
-				cardContentPositionB.DataSource = 'upe';
-				this.cardContentPositionB = cardContentPositionB;
-				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionB;
-				this.upeRequestResult.tileB = true;
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
+				this.upeRequestResult.tileB = false;
+				if (this.cmsRequestResult.tileB) {
+					this.cardContentPositionB = this.cardContentPositionBCms;
+					this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-B load CMS content.`);
-			this.upeRequestResult.tileB = false;
-			if (this.cmsRequestResult.tileB) {
-				this.cardContentPositionB = this.cardContentPositionBCms;
-				this.dashboardService.cardContentPositionBOnline = this.cardContentPositionBCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentC(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionC = this.upeService.getOneUPEContent(
-				response,
-				'half-width-title-description-link-image',
-				'position-C'
-			)[0];
-			if (cardContentPositionC) {
-				if (cardContentPositionC.BrandName) {
-					cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionC = this.upeService.getOneUPEContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
+				if (cardContentPositionC) {
+					if (cardContentPositionC.BrandName) {
+						cardContentPositionC.BrandName = cardContentPositionC.BrandName.split('|')[0];
+					}
+					cardContentPositionC.DataSource = 'upe';
+					this.cardContentPositionC = cardContentPositionC;
+					this.dashboardService.cardContentPositionCOnline = this.cardContentPositionC;
+					this.upeRequestResult.tileC = true;
 				}
-				cardContentPositionC.DataSource = 'upe';
-				this.cardContentPositionC = cardContentPositionC;
-				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionC;
-				this.upeRequestResult.tileC = true;
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-C load CMS content.`);
+				this.upeRequestResult.tileC = false;
+				if (this.cmsRequestResult.tileC) {
+					this.cardContentPositionC = this.cardContentPositionCCms;
+					this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-C load CMS content.`);
-			this.upeRequestResult.tileC = false;
-			if (this.cmsRequestResult.tileC) {
-				this.cardContentPositionC = this.cardContentPositionCCms;
-				this.dashboardService.cardContentPositionCOnline = this.cardContentPositionCCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentD(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionD = this.upeService.getOneUPEContent(
-				response,
-				'full-width-title-image-background',
-				'position-D'
-			)[0];
-			if (cardContentPositionD) {
-				cardContentPositionD.DataSource = 'upe';
-				this.cardContentPositionD = cardContentPositionD;
-				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionD;
-				this.upeRequestResult.tileD = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionD = this.upeService.getOneUPEContent(
+					response,
+					'full-width-title-image-background',
+					'position-D'
+				)[0];
+				if (cardContentPositionD) {
+					cardContentPositionD.DataSource = 'upe';
+					this.cardContentPositionD = cardContentPositionD;
+					this.dashboardService.cardContentPositionDOnline = this.cardContentPositionD;
+					this.upeRequestResult.tileD = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
+				this.upeRequestResult.tileD = false;
+				if (this.cmsRequestResult.tileD) {
+					this.cardContentPositionD = this.cardContentPositionDCms;
+					this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-D load CMS content.`);
-			this.upeRequestResult.tileD = false;
-			if (this.cmsRequestResult.tileD) {
-				this.cardContentPositionD = this.cardContentPositionDCms;
-				this.dashboardService.cardContentPositionDOnline = this.cardContentPositionDCms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentE(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionE = this.upeService.getOneUPEContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-E'
-			)[0];
-			if (cardContentPositionE) {
-				cardContentPositionE.DataSource = 'upe';
-				this.cardContentPositionE = cardContentPositionE;
-				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionE;
-				this.upeRequestResult.tileE = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionE = this.upeService.getOneUPEContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-E'
+				)[0];
+				if (cardContentPositionE) {
+					cardContentPositionE.DataSource = 'upe';
+					this.cardContentPositionE = cardContentPositionE;
+					this.dashboardService.cardContentPositionEOnline = this.cardContentPositionE;
+					this.upeRequestResult.tileE = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
+				this.upeRequestResult.tileE = false;
+				if (this.cmsRequestResult.tileE) {
+					this.cardContentPositionE = this.cardContentPositionECms;
+					this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-E load CMS content.`);
-			this.upeRequestResult.tileE = false;
-			if (this.cmsRequestResult.tileE) {
-				this.cardContentPositionE = this.cardContentPositionECms;
-				this.dashboardService.cardContentPositionEOnline = this.cardContentPositionECms;
-			}
-		});
+		);
 	}
 
 	getUPECardContentF(upeParam) {
-		this.upeService.fetchUPEContent(upeParam).subscribe((response) => {
-			const cardContentPositionF = this.upeService.getOneUPEContent(
-				response,
-				'half-width-top-image-title-link',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				cardContentPositionF.DataSource = 'upe';
-				this.cardContentPositionF = cardContentPositionF;
-				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionF;
-				this.upeRequestResult.tileF = true;
+		this.upeService.fetchUPEContent(upeParam).subscribe(
+			(response) => {
+				const cardContentPositionF = this.upeService.getOneUPEContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
+				if (cardContentPositionF) {
+					cardContentPositionF.DataSource = 'upe';
+					this.cardContentPositionF = cardContentPositionF;
+					this.dashboardService.cardContentPositionFOnline = this.cardContentPositionF;
+					this.upeRequestResult.tileF = true;
+				}
+			},
+			(err) => {
+				this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
+				this.upeRequestResult.tileF = false;
+				if (this.cmsRequestResult.tileF) {
+					this.cardContentPositionF = this.cardContentPositionFCms;
+					this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
+				}
 			}
-		}, (err) => {
-			this.loggerService.info(`Cause by error: ${err}, position-F load CMS content.`);
-			this.upeRequestResult.tileF = false;
-			if (this.cmsRequestResult.tileF) {
-				this.cardContentPositionF = this.cardContentPositionFCms;
-				this.dashboardService.cardContentPositionFOnline = this.cardContentPositionFCms;
-			}
-		});
+		);
 	}
-
 
 	onFeedbackModal() {
 		this.modalService.open(FeedbackFormComponent, {
@@ -616,20 +661,23 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 
 	private getTileSource() {
 		return new Promise((resolve) => {
-			this.hypService.getAllSettings().then((hyp: any) => {
-				if (hyp) {
-					this.tileSource.tileA = hyp.TileASource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileC = hyp.TileCSource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileD = hyp.TileDSource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileE = hyp.TileESource === 'UPE' ? 'UPE' : 'CMS';
-					this.tileSource.tileF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
+			this.hypService.getAllSettings().then(
+				(hyp: any) => {
+					if (hyp) {
+						this.tileSource.tileA = hyp.TileASource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileB = hyp.TileBSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileC = hyp.TileCSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileD = hyp.TileDSource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileE = hyp.TileESource === 'UPE' ? 'UPE' : 'CMS';
+						this.tileSource.tileF = hyp.TileFSource === 'UPE' ? 'UPE' : 'CMS';
+					}
+					resolve();
+				},
+				() => {
+					resolve();
+					console.log('get tile source failed.');
 				}
-				resolve();
-			}, () => {
-				resolve();
-				console.log('get tile source failed.');
-			});
+			);
 		});
 	}
 
@@ -701,7 +749,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		warranty.type = 'system';
 		this.systemStatus[2] = warranty;
 
-		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
+		if (
+			this.deviceService &&
+			!this.deviceService.isSMode &&
+			this.adPolicyService &&
+			this.adPolicyService.IsSystemUpdateEnabled
+		) {
 			const systemUpdate = new Status();
 			systemUpdate.status = 4;
 			systemUpdate.id = 'systemupdate';
@@ -786,8 +839,13 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		});
 
 		// system update
-		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
-			this.dashboardService.getRecentUpdateInfo().subscribe(value => {
+		if (
+			this.deviceService &&
+			!this.deviceService.isSMode &&
+			this.adPolicyService &&
+			this.adPolicyService.IsSystemUpdateEnabled
+		) {
+			this.dashboardService.getRecentUpdateInfo().subscribe((value) => {
 				if (value) {
 					const systemUpdate = this.systemStatus[3];
 					const diffInDays = this.systemUpdateService.dateDiffInDays(value.lastupdate);
@@ -838,7 +896,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 	// checking self select status for HW Settings
 	private getSelfSelectStatus() {
-		this.dashboardService.getSelfSelectStatus().then(value => {
+		this.dashboardService.getSelfSelectStatus().then((value) => {
 			this.showQuickSettings = value;
 		});
 	}

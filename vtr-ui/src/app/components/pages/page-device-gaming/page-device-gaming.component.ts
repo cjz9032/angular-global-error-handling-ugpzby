@@ -94,7 +94,7 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 	ngAfterViewInit() {
 		const dashboardEnd: any = new Date();
 		const dashboardTime = dashboardEnd - this.dashboardStart;
-		console.log(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
+		this.loggerService.info(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
 	}
 
 	fetchCmsContents(lang?: string) {
