@@ -17,18 +17,17 @@ export class BetaService {
 		}
 	}
 
-	public getBetaStatus(): Promise<boolean> {
-		if (this.betaUser) {
-			return this.betaUser.getBetaUser().then((result) => {
-				return result;
-			}).catch(() => {
-				return false;
-			});
+	public getBetaStatus(): boolean {
+		let isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, 'init');
+		if (isBetaUser === 'init') {
+			isBetaUser = false;
+			this.setBetaStatus(false);
 		}
-		return Promise.resolve(false);
+		return isBetaUser;
 	}
 
 	public setBetaStatus(value: boolean) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, value);
 		if (this.betaUser) {
 			this.betaUser.setBetaUser(value);
 		}

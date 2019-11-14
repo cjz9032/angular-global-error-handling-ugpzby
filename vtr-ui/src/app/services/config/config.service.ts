@@ -13,6 +13,12 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
+import { SecurityAdvisor, EventTypes, WindowsHello } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { SecurityAdvisorMockService } from '../security/securityMock.service';
+import { WindowsHelloService } from '../security/windowsHello.service';
+import { CommonService } from '../common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 declare var Windows;
 
@@ -34,6 +40,8 @@ export class ConfigService {
 	appSearch = appSearch;
 	betaItem = betaItem;
 	showCHSMenu = false;
+	securityAdvisor: SecurityAdvisor;
+	windowsHello: WindowsHello;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	public readonly menuItemNotification: Observable<AppNotification>;
 	private menuItemSubject: BehaviorSubject<AppNotification>;
@@ -42,11 +50,27 @@ export class ConfigService {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private logger: LoggerService,
-		private localInfoService: LocalInfoService) {
-			this.menuItemSubject = new BehaviorSubject<AppNotification>(
-				new AppNotification(MenuItem.MenuItemChange, 'init')
-			);
-			this.menuItemNotification = this.menuItemSubject;
+		private localInfoService: LocalInfoService,
+		private vantageShellService: VantageShellService,
+		private securityAdvisorMockService: SecurityAdvisorMockService,
+		private windowsHelloService: WindowsHelloService,
+		private commonService: CommonService) {
+		this.menuItemSubject = new BehaviorSubject<AppNotification>(
+			new AppNotification(MenuItem.MenuItemChange, 'init')
+		);
+		this.menuItemNotification = this.menuItemSubject;
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
+		if (!this.securityAdvisor) {
+			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
+		}
+		this.windowsHello = this.securityAdvisor.windowsHello;
+		if (!this.windowsHello.fingerPrintStatus) {
+			this.windowsHello.refresh();
+		}
+		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (result) => {
+			this.notifyMenuChange(result);
+		});
+
 	}
 
 
@@ -60,14 +84,14 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise(async (resolve, reject) => {
-			const isBetaUser = await this.betaService.getBetaStatus();
+			const isBetaUser = this.betaService.getBetaStatus();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			let resultMenu = Object.assign([], this.menuItemsGaming);
 			if (isGaming) {
 				if (isBetaUser && this.deviceService.showSearch) {
-					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 				resolve(resultMenu);
 			}
@@ -90,11 +114,11 @@ export class ConfigService {
 					}
 				});
 			}
-			this.showVpn(country.toLowerCase(), resultMenu);
+			this.showSecurityItem(country.toLowerCase(), resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
 				if (this.deviceService.showSearch) {
-					resultMenu.splice(resultMenu.length - 1, 0 , this.appSearch);
+					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
 			resultMenu = this.segmentFilter(resultMenu, segment);
@@ -113,43 +137,45 @@ export class ConfigService {
 	isShowCHSByShellVersion(shellVersion: ShellVersion) {
 		const packageVersion = Windows.ApplicationModel.Package.current.id.version;
 		return packageVersion.major !== shellVersion.major ? packageVersion.major > shellVersion.major :
-		packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
-		packageVersion.build >= shellVersion.build;
+			packageVersion.minor !== shellVersion.minor ? packageVersion.minor > shellVersion.minor :
+				packageVersion.build >= shellVersion.build;
 	}
 
-	showVpn(region, items) {
-		const securityItemForVpn = items.find((item) => item.id === 'security');
-		if (securityItemForVpn !== undefined) {
-			const vpnItem = securityItemForVpn.subitems.find((item) => item.id === 'internet-protection');
-			if (region !== 'cn') {
-				if (!vpnItem) {
-					securityItemForVpn.subitems.splice(4, 0, {
-						id: 'internet-protection',
-						label: 'common.menu.security.sub5',
-						path: 'internet-protection',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.internetprotection',
-						routerLinkActiveOptions: { exact: true },
-						icon: '',
-						segment: `-[${SegmentConst.Commercial}]`,
-						subitems: []
-					});
-				}
+	showSecurityItem(region, items) {
+		const securityItem = items.find((item) => item.id === 'security');
+		if (securityItem) {
+			if (region === 'cn') {
+				items = this.supportFilter(items, 'internet-protection', false);
 			} else {
-				if (vpnItem) {
-					securityItemForVpn.subitems = securityItemForVpn.subitems.filter(
-						(item) => item.id !== 'internet-protection'
-					);
-				}
+				items = this.supportFilter(items, 'internet-protection', true);
+			}
+			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
+			items = this.supportFilter(items, 'windows-hello', cacheShowWindowsHello);
+			if (this.windowsHello.fingerPrintStatus) {
+				items = this.supportFilter(items, 'windows-hello', this.windowsHelloService.showWindowsHello());
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, this.windowsHelloService.showWindowsHello());
 			}
 		}
+	}
+
+	supportFilter(menu: Array<any>,  id: string, isSupported: boolean) {
+		menu.forEach(item => {
+			if (item.id === id) {
+				item.isSupported = isSupported;
+				item.hide = !isSupported;
+			}
+			if (item.subitems.length > 0) {
+				item.subitems = this.supportFilter(item.subitems, id, isSupported);
+			}
+		});
+		return menu;
 	}
 
 	segmentFilter(menu: Array<any>, segment: string) {
 		if (!segment) { return menu; }
 		menu.forEach(element => {
 			if (element.segment) {
+				if (element.hide) { return; }
 				const mode = element.segment.charAt(0);
 				const segments = element.segment.substring(2, element.segment.length - 1).split(',');
 				if (mode === '+') {
