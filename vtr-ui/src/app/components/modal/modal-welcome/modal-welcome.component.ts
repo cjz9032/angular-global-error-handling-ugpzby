@@ -29,6 +29,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			subtitle: '',
 		}
 	};
+	usageType = null;
+	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
 	machineInfo: any;
@@ -61,6 +63,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	async ngOnInit() {
 		this.timerService.start();
 		await this.selfSelectService.getConfig();
+		this.usageType = this.selfSelectService.usageType;
+		this.interests = this.selfSelectService.interests;
 	}
 
 	ngAfterViewInit() {
@@ -184,7 +188,8 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (this.selfSelectService.usageType == null) {
 			this.progress += 16;
 		}
-		this.selfSelectService.usageType = value;
+		this.usageType = value;
+		this.selfSelectService.usageType = this.usageType;
 	}
 
 	savePrivacy($event, value) {

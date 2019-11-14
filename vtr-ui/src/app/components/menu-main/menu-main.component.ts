@@ -209,6 +209,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.selfSelectStatusVal = value;
 				if (this.selfSelectStatusVal === true) {
 					this.showSmartAssist();
+				} else {
+					this.removeDeviceSettings();
 				}
 			});
 		}
@@ -457,19 +459,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		// remove onfocus showVpn()
 		// need refresh menuItem from config service, don't need localStorage
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
-			this.items = items;
-			if (!this.selfSelectStatusVal) {
-				this.removeDeviceSettings(this.items);
-			}
-			return this.items;
+				this.items = items;
+				return this.items;
 		});
 	}
-	public removeDeviceSettings(items: any) {
-		const deviceSettingsItem = items.find((item) => item.id === this.constantDevice);
-		const id = 'device-settings';
-		if (deviceSettingsItem) {
-			deviceSettingsItem.subitems =  deviceSettingsItem.subitems.filter(item => item.id !== id);
-		}
+	public removeDeviceSettings() {
+		this.getMenuItems().then((items: any) => {
+			const deviceSettingsItem = items.find((item) => item.id === this.constantDevice);
+			const id = 'device-settings';
+			if (deviceSettingsItem) {
+				deviceSettingsItem.subitems =  deviceSettingsItem.subitems.filter(item => item.id !== id);
+			}
+		});
 	}
 	private showSmartAssist() {
 		this.logger.info('MenuMainComponent.showSmartAssist : inside showSmartAssist');
