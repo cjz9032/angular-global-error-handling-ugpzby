@@ -315,10 +315,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.selfSelectService.saveConfig();
 		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 		const usageData = {
-			ItemType: 'FeatureClick',
-			ItemName: 'UsageType',
-			ItemValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
-			ItemParent: 'Page.Settings'
+			ItemType: 'SettingUpdate',
+			SettingName: 'UsageType',
+			SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
+			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(usageData);
 
@@ -327,10 +327,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			interestMetricValue[item] = true;
 		});
 		const interestData = {
-			ItemType: 'FeatureClick',
-			ItemName: 'Interest',
-			ItemValue: interestMetricValue,
-			ItemParent: 'Page.Settings'
+			ItemType: 'SettingUpdate',
+			SettingName: 'Interest',
+			SettingValue: interestMetricValue,
+			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
 		this.segmentTag = this.selfSelectService.usageType;
