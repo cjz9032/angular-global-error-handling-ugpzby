@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -25,11 +25,12 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: [ './page-device-gaming.component.scss' ],
-	providers: [ NgbModalConfig, NgbModal ]
+	styleUrls: ['./page-device-gaming.component.scss'],
+	providers: [NgbModalConfig, NgbModal]
 })
-export class PageDeviceGamingComponent implements OnInit {
+export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 	public static allCapablitiyFlag = false;
+	dashboardStart: any = new Date();
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -79,7 +80,7 @@ export class PageDeviceGamingComponent implements OnInit {
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
 					PageDeviceGamingComponent.allCapablitiyFlag = true;
 				})
-				.catch((err) => {});
+				.catch((err) => { });
 		}
 		this.getPreviousContent();
 
@@ -88,6 +89,12 @@ export class PageDeviceGamingComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+	}
+
+	ngAfterViewInit() {
+		const dashboardEnd: any = new Date();
+		const dashboardTime = dashboardEnd - this.dashboardStart;
+		console.log(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
 	}
 
 	fetchCmsContents(lang?: string) {
@@ -185,11 +192,11 @@ export class PageDeviceGamingComponent implements OnInit {
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 	private getPreviousContent() {
 		this.dashboardService.setDefaultCMSContent();
@@ -207,7 +214,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	private getSecurityStatus() {
@@ -216,7 +223,7 @@ export class PageDeviceGamingComponent implements OnInit {
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	private mapSystemInfoResponse(response: any): Status[] {

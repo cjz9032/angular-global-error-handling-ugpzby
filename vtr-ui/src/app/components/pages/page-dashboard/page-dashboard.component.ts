@@ -1,5 +1,5 @@
 import { SupportService } from './../../../services/support/support.service';
-import { Component, OnInit, DoCheck, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -30,7 +30,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	templateUrl: './page-dashboard.component.html',
 	styleUrls: ['./page-dashboard.component.scss']
 })
-export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
+export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	public systemStatus: Status[] = [];
@@ -40,6 +40,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 	public warrantyData: { info: { endDate: null, status: 2, startDate: null, url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
+	dashboardStart: any = new Date();
 
 	heroBannerItems = [];   // tile A
 	cardContentPositionB: any = {};
@@ -188,13 +189,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
+	ngAfterViewInit() {
+		const dashboardEnd: any = new Date();
+		const dashboardTime = dashboardEnd - this.dashboardStart;
+		console.log(`Performance: Dashboard load time after view init. ${dashboardTime}ms`);
+	}
+
 	ngOnDestroy() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, false);
 		this.qaService.destroyChangeSubscribed();
 	}
 
 	private getWelcomeText() {
-	// dashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
+		// dashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
 		const dashboardWelcomeText = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardWelcomeText);
 		if (dashboardWelcomeText) {
 			this.welcomeText = dashboardWelcomeText;
