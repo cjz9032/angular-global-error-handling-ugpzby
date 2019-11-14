@@ -61,6 +61,7 @@ export class SelfSelectService {
 
 	public async getConfig() {
 		this.machineInfo = await this.deviceService.getMachineInfo();
+		const isArm = this.machineInfo && this.machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 		if (this.selfSelect) {
 			this.userProfileEnabled = true;
 			try {
@@ -74,7 +75,7 @@ export class SelfSelectService {
 						item.checked = checkedTags && checkedTags.includes(item.label);
 					});
 				}
-				if (config && config.segment && !this.machineInfo.isGaming) {
+				if (config && config.segment && !this.machineInfo.isGaming && !isArm) {
 					this.usageType = config.segment;
 					this.savedSegment = this.usageType;
 				} else {
@@ -125,6 +126,10 @@ export class SelfSelectService {
 	private calcDefaultSegment(machineInfo) {
 		if (machineInfo.isGaming) {
 			return SegmentConst.Gaming;
+		}
+		if (machineInfo && machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+			this.userProfileEnabled = false;
+			return SegmentConst.Consumer;
 		}
 		let segment = SegmentConst.Consumer;
 		try	{
