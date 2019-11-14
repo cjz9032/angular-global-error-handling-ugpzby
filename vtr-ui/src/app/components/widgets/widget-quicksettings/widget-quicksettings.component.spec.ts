@@ -14,44 +14,44 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { PowerService } from 'src/app/services/power/power.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { Router } from '@angular/router';
-import { RouterTestingModule} from '@angular/router/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('WidgetQuicksettingsComponent', () => {
+describe('WidgetQuicksettingsComponent', () => {
 	let component: WidgetQuicksettingsComponent;
-	let fixture: ComponentFixture < WidgetQuicksettingsComponent > ;
+	let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
 
-	beforeEach(async (() => {
+	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-				declarations: [WidgetQuicksettingsComponent],
-				imports: [HttpClientModule, TranslateModule.forRoot({
-						loader: {
-							provide: TranslateLoader,
-							useFactory: HttpLoaderFactory,
-							deps: [HttpClient]
-						},
-						isolate: false
-					}),
-					TranslationModule.forChild()
-				],
-				providers: [
-					DashboardService,
-					CommonService,
-					DisplayService,
-					DeviceService,
-					LoggerService,
-					VantageShellService,
-					PowerService,
-					DevService,
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy("navigate")
-						}
-					},
-					RouterTestingModule
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-			})
+			declarations: [WidgetQuicksettingsComponent],
+			imports: [HttpClientModule, TranslateModule.forRoot({
+				loader: {
+					provide: TranslateLoader,
+					useFactory: HttpLoaderFactory,
+					deps: [HttpClient]
+				},
+				isolate: false
+			}),
+				TranslationModule.forChild()
+			],
+			providers: [
+				DashboardService,
+				CommonService,
+				DisplayService,
+				DeviceService,
+				LoggerService,
+				VantageShellService,
+				PowerService,
+				DevService,
+				{
+					provide: Router,
+					useClass: class {
+						navigate = jasmine.createSpy("navigate")
+					}
+				},
+				RouterTestingModule
+			],
+			schemas: [NO_ERRORS_SCHEMA],
+		})
 			.compileComponents();
 	}));
 
