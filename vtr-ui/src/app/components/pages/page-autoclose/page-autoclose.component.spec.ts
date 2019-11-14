@@ -215,7 +215,7 @@ const queryOptions = {
 	Brand: 'Lenovo'
 };
 
-describe('PageAutocloseComponent', () => {
+fdescribe('PageAutocloseComponent', () => {
 	let component: PageAutocloseComponent;
 	let fixture: ComponentFixture<PageAutocloseComponent>;
 	gamingAutoCloseServiceMock.isShellAvailable.and.returnValue(true);

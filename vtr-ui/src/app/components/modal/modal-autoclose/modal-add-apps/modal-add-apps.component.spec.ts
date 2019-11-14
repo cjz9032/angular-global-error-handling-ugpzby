@@ -33,7 +33,7 @@ const sampleRunningAppList = {
 };
 
 
-describe('ModalAddAppsComponent', () => {
+fdescribe('ModalAddAppsComponent', () => {
 	let component: ModalAddAppsComponent;
 	let fixture: ComponentFixture<ModalAddAppsComponent>;
 	const dummyElement = document.createElement('div');

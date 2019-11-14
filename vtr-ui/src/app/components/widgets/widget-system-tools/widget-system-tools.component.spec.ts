@@ -15,7 +15,7 @@ const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabili
 	'isShellAvailable',
 	'getCapabilityFromCache'
 ]);
-describe('WidgetSystemToolsComponent', () => {
+fdescribe('WidgetSystemToolsComponent', () => {
 	let component: WidgetSystemToolsComponent;
 	let fixture: ComponentFixture<WidgetSystemToolsComponent>;
 
