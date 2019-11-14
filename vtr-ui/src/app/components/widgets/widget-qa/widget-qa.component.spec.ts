@@ -7,7 +7,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-describe('WidgetQaComponent', () => {
+fdescribe('WidgetQaComponent', () => {
 	let component: WidgetQaComponent;
 	let fixture: ComponentFixture < WidgetQaComponent > ;
 
