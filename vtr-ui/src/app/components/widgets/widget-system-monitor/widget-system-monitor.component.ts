@@ -5,11 +5,12 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'app-widget-system-monitor',
 	templateUrl: './widget-system-monitor.component.html',
-	styleUrls: ['./widget-system-monitor.component.scss']
+	styleUrls: [ './widget-system-monitor.component.scss' ]
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
@@ -60,9 +61,9 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	constructor(
 		private hwInfoService: HwInfoService,
 		private commonService: CommonService,
-		private gamingAllCapabilities: GamingAllCapabilitiesService,
-		private gamingCapabilityService: GamingAllCapabilitiesService
-	) { }
+		private gamingCapabilityService: GamingAllCapabilitiesService,
+		private logger: LoggerService
+	) {}
 
 	// CPU Panel Data
 	GetcpuBaseFrequencyCache(): any {
@@ -244,7 +245,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		try {
 			const hwInfo = await this.hwInfoService.getDynamicInformation();
 			this.formDynamicInformation(hwInfo);
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	public formDynamicInformation(hwInfo: any) {
@@ -256,8 +257,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.cpuUsage = hwInfo.cpuUsage / 100;
 			}
 			if (hwInfo.memoryUsage !== null) {
-				 this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
-				 console.log('UPDATED MEMORY USAGE => ', this.memoryUsage);
+				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
+				console.log('UPDATED MEMORY USAGE => ', this.memoryUsage);
 			}
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
@@ -278,7 +279,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
 			this.initialiseDisksList(hwInfo.diskList);
 			this.setFormDynamicInformationCache(hwInfo);
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	public initialiseDisksList(diskList: any[] = []) {
@@ -317,6 +318,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
+				this.logger.info('getMachineInfo Service: ', hwInfo);
 				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
 				}
@@ -345,7 +347,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.SystemStatusObj.ramOver = this.ramOver;
 				this.commonService.setLocalStorageValue(LocalStorageKey.ramOver, this.ramOver);
 			});
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	convertToBoolean(input: string): boolean | undefined {
