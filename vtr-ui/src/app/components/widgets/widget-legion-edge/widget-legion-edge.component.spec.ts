@@ -266,7 +266,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
 			networkBoostStatusPromisedData = response;
 		});
-		tick(10);
+		tick(20);
 		fixture.detectChanges();
 		expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
 		expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
