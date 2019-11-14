@@ -1080,8 +1080,8 @@ export class SubpageDeviceSettingsDisplayComponent
 			return;
 		}
 		this.displayService.resetEyecaremodeAllSettings()
-			.then(response => {
-				if (response.errorCode === 0) {
+			.then(errorCode => {
+				if (errorCode === 0) {
 					window.localStorage.setItem(LocalStorageKey.EyeCareModeResetStatus, 'true');
 				}
 			});
