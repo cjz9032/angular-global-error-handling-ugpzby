@@ -20,8 +20,11 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() backId: string;
 	@Input() ariaLabel: string;
 	@Input() isInnerBack = false;
-	@Output() innerBack = new EventEmitter();
 	@Input() textId: string;
+	@Input() hideBack = false;
+
+	@Output() innerBack = new EventEmitter();
+
 	constructor(private router: Router) { }
 
 	ngOnInit() {

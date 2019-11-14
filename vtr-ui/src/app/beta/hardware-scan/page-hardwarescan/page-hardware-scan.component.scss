@@ -1,24 +1,6 @@
 @import "../../../app.theme";
 
-.vtr-page-hardware-scan {
-	.vtr-page-right-column {
-		@media #{$mediaquery_X8} {
-			padding: 4rem 4rem 4rem 8.5rem;
-		}
-
-		background-color: $light;
-
-		.align-center {
-			padding: 0 6rem 0rem 6rem;
-		}
-	}
-
-	.vtr-device-information {
-		box-shadow: $drop_shadow;
-	}
-
-	.px-40 {
-		padding-left: 0rem !important;
-		padding-right: 0rem !important;
-	}
+.vtr-device-information {
+	box-shadow: $drop_shadow;
+	border-radius: $border_radius;
 }
