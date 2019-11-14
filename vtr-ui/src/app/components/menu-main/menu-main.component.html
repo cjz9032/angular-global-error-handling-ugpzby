@@ -108,7 +108,7 @@
 								class="beta">Beta</span>
 						</a>
 					</li>
-					<li ngbDropdown
+					<li ngbDropdown #menudropdown="ngbDropdown"
 						*ngIf="item.subitems.length>0
 						&&isCommomItem(item)
 						&&showItem(item)"
@@ -132,6 +132,7 @@
 							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
+							(mouseleave) = "menudropdown.close()"
 							(keyup.enter)="onMenuItemClick(item)"
 							role="menuitem"
 							*ngIf="item.label | translate">
