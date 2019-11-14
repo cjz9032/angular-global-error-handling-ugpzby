@@ -7,11 +7,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
@@ -33,8 +31,6 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
-import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 @Component({
@@ -66,7 +62,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
-	securityAdvisor: SecurityAdvisor;
 	isRS5OrLater: boolean;
 	isGamingHome: boolean;
 	currentUrl: string;
@@ -91,7 +86,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private dialogService: LenovoIdDialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
@@ -115,13 +109,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.commonMenuSubscription = this.configService.menuItemNotification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
-		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
-		this.securityAdvisor.refresh();
-		this.initComponent();
 
 		this.isDashboard = true;
 
@@ -149,39 +136,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.localInfoService
 			.getLocalInfo()
 			.then((result) => {
-				this.segment = result.Segment ? result.Segment : SegmentConst.Commercial;
 				this.initUnreadMessage();
-				this.getMenuItems().then((items) => {
-					const securityItem = items.find((item) => item.id === 'security');
-					if (securityItem) {
-						const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-						if (cacheShowWindowsHello) {
-							const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-							if (!windowsHelloItem && this.segment !== SegmentConst.Commercial) {
-								securityItem.subitems.push({
-									id: 'windows-hello',
-									label: 'common.menu.security.sub6',
-									path: 'windows-hello',
-									icon: '',
-									metricsEvent: 'itemClick',
-									metricsParent: 'navbar',
-									metricsItem: 'link.windowshello',
-									routerLinkActiveOptions: { exact: true },
-									subitems: []
-								});
-							}
-						}
-						const windowsHello: WindowsHello = this.securityAdvisor.windowsHello;
-						if (windowsHello.fingerPrintStatus) {
-							this.showWindowsHelloItem();
-						}
-						windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-							this.showWindowsHelloItem();
-						});
-					}
-				});
 			});
-
+		this.getMenuItems();
 		this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentUrl = ev.url;
@@ -377,6 +334,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}
+
 		if (!this.adPolicyService.IsSystemUpdateEnabled && item.id === 'device') {
 			item.subitems.forEach((subitem, index, object) => {
 				if (subitem.adPolicyId && subitem.adPolicyId === AdPolicyId.SystemUpdate) {
@@ -492,34 +450,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 							(item) => item.id !== 'system-updates'
 						);
 					}
-				}
-			}
-		});
-	}
-
-	showWindowsHelloItem() {
-		this.getMenuItems().then((items) => {
-			const securityItem = items.find((item) => item.id === 'security');
-			if (securityItem) {
-				if (!this.windowsHelloService.showWindowsHello()) {
-					securityItem.subitems = securityItem.subitems.filter((subitem) => subitem.id !== 'windows-hello');
-					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-				} else {
-					const windowsHelloItem = securityItem.subitems.find((item) => item.id === 'windows-hello');
-					if (!windowsHelloItem && this.segment !== SegmentConst.Commercial) {
-						securityItem.subitems.push({
-							id: 'windows-hello',
-							label: 'common.menu.security.sub6',
-							path: 'windows-hello',
-							icon: '',
-							metricsEvent: 'itemClick',
-							metricsParent: 'navbar',
-							metricsItem: 'link.windowshello',
-							routerLinkActiveOptions: { exact: true },
-							subitems: []
-						});
-					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 				}
 			}
 		});

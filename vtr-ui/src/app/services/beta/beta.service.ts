@@ -17,18 +17,25 @@ export class BetaService {
 		}
 	}
 
-	public getBetaStatus(): Promise<boolean> {
-		if (this.betaUser) {
+	public getBetaStatus(): boolean {
+		let isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser);
+		if (typeof isBetaUser === 'boolean') {
+			return isBetaUser;
+		} else if (this.betaUser) {
 			return this.betaUser.getBetaUser().then((result) => {
-				return result;
+				isBetaUser = result;
+				this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, isBetaUser);
+				return isBetaUser;
 			}).catch(() => {
 				return false;
 			});
 		}
-		return Promise.resolve(false);
+		return false;
 	}
 
 	public setBetaStatus(value: boolean) {
+		if (this.vantageShellService) {}
+		this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, value);
 		if (this.betaUser) {
 			this.betaUser.setBetaUser(value);
 		}

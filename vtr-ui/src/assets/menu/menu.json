@@ -219,6 +219,28 @@
 			},
 			"icon": null,
 			"subitems": []
+		}, {
+			"id": "internet-protection",
+			"label": "common.menu.security.sub5",
+			"path": "internet-protection",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.internetprotection",
+			"routerLinkActiveOptions": { "exact": true },
+			"icon":null,
+			"segment": "-[Commercial]",
+			"subitems": []
+		}, {
+			"id": "windows-hello",
+			"label": "common.menu.security.sub6",
+			"path": "windows-hello",
+			"segment": "-[Commercial]",
+			"icon":null,
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.windowshello",
+			"routerLinkActiveOptions": { "exact": true },
+			"subitems": []
 		}]
 	}, {
 		"id": "security",
