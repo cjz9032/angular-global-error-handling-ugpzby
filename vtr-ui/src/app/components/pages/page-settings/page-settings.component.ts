@@ -331,6 +331,5 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
-		this.segmentTag = this.selfSelectService.usageType;
 	}
 }

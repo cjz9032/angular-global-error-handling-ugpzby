@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, OnDestroy, AfterViewInit, SecurityContext } from '@angular/core';
-import { SafeUrl, SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit, Output, OnDestroy, SecurityContext } from '@angular/core';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
@@ -10,9 +10,9 @@ declare let Windows: any;
 	templateUrl: './modal-update-change-log.component.html',
 	styleUrls: ['./modal-update-change-log.component.scss']
 })
-export class ModalUpdateChangeLogComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 
-	@Output() url: string;
+	url: string;
 	updateModalMetrics: any;
 	metrics: any;
 	iframeInterval: any;
@@ -27,8 +27,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, AfterViewInit, OnD
 	}
 
 	ngOnInit() {
-		const warrantyUrl = `https://download.lenovo.com/pccbbs/mobiles/n2car17w.txt`;
-		const uri = new Windows.Foundation.Uri(warrantyUrl);
+		const uri = new Windows.Foundation.Uri(this.url);
 		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, uri);
 		const httpClient = new Windows.Web.Http.HttpClient();
 		(async () => {
@@ -37,20 +36,14 @@ export class ModalUpdateChangeLogComponent implements OnInit, AfterViewInit, OnD
 				const result = await response.content.readAsStringAsync();
 				if (result) {
 					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, result);
-					console.log(result);
-					// resolve(Warranty.getWarranty(result));
 				} else {
-					// reject(new Error('can not get warranty information'));
+					console.log('can not get log information');
 				}
 			} catch (e) {
-				// reject(new Error('can not get warranty information'));
+				console.log('can not get log information');
 			}
 			httpClient.close();
 		})();
-	}
-
-	ngAfterViewInit() {
-		this.disableZoom();
 	}
 
 	ngOnDestroy() {
@@ -62,7 +55,6 @@ export class ModalUpdateChangeLogComponent implements OnInit, AfterViewInit, OnD
 			OnlineStatus: ''
 		};
 		this.sendMetricsAsync(pageViewMetrics);
-		clearInterval(this.iframeInterval);
 	}
 
 	sendMetricsAsync(data: any) {
@@ -71,20 +63,6 @@ export class ModalUpdateChangeLogComponent implements OnInit, AfterViewInit, OnD
 		} else {
 			console.log('can not find metrics');
 		}
-	}
-
-	disableZoom() {
-		const iframe: any = document.querySelector('#modal-update-change-log-iframe');
-		this.iframeInterval = setInterval(() => {
-			if (iframe && iframe.contentWindow) {
-				iframe.contentWindow.addEventListener('mousewheel', (event: any) => {
-					if (event.ctrlKey === true || event.metaKey) {
-						event.preventDefault();
-					}
-				}, false);
-				clearInterval(this.iframeInterval);
-			}
-		}, 50);
 	}
 
 	closeModal() {
