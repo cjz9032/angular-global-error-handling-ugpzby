@@ -142,9 +142,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.getDeviceStatisticsPreference();
 		}
 		if (this.betaService) {
-			this.betaService.getBetaStatus().then((res) => {
-				this.toggleBetaProgram = res;
-			});
+			this.toggleBetaProgram = this.betaService.getBetaStatus();
 		}
 	}
 	private getDeviceStatisticsPreference() {
@@ -333,6 +331,5 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
-		this.segmentTag = this.selfSelectService.usageType;
 	}
 }

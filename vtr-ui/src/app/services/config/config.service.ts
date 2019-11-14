@@ -84,7 +84,7 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming): Promise<any> {
 		return new Promise(async (resolve, reject) => {
-			const isBetaUser = await this.betaService.getBetaStatus();
+			const isBetaUser = this.betaService.getBetaStatus();
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
