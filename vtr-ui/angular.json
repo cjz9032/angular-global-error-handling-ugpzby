@@ -261,7 +261,8 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/manifest.webmanifest"
-						]
+						],
+						"codeCoverage": true
 					}
 				},
 				"lint": {

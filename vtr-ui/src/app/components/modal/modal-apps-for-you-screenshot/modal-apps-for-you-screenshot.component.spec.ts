@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalAppsForYouScreenshot } from './modal-apps-for-you-screenshot.component';
+import { ModalAppsForYouScreenshotComponent as ModalAppsForYouScreenshot } from './modal-apps-for-you-screenshot.component';
 
 xdescribe('ModalAppsForYouScreenshot', () => {
 	let component: ModalAppsForYouScreenshot;

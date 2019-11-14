@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/* import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContainerCardComponent } from './container-card.component';
 
@@ -23,3 +23,4 @@ xdescribe('ContainerCardComponent', () => {
 		expect(component).toBeTruthy();
 	});
 });
+ */
