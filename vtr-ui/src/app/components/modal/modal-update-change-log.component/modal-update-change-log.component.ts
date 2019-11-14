@@ -13,6 +13,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	@Output() url: string;
 	updateModalMetrics: any;
 	metrics: any;
+	iframeInterval: any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -22,6 +23,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.disableWheel()
 	}
 
 	ngOnDestroy() {
@@ -33,7 +35,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 			OnlineStatus: ''
 		};
 		this.sendMetricsAsync(pageViewMetrics);
-		console.log(pageViewMetrics);
+		clearInterval(this.iframeInterval);
 	}
 
 	sendMetricsAsync(data: any) {
@@ -42,6 +44,20 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 		} else {
 			console.log('can not find metrics');
 		}
+	}
+
+	disableWheel() {
+		const iframe: any = document.querySelector('#modal-update-change-log-iframe');
+		this.iframeInterval = setInterval(() => {
+			if (iframe.contentWindow) {
+				iframe.contentWindow.addEventListener('mousewheel', (event: any) => {
+					if (event.ctrlKey === true || event.metaKey) {
+						event.preventDefault();
+					}
+				}, false);
+				clearInterval(this.iframeInterval);
+			}
+		}, 50);
 	}
 
 	closeModal() {
