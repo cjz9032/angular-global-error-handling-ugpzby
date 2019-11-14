@@ -186,17 +186,17 @@
 													</div>
 											</div>
 											<div class="row mb-2 d-flex"
-												[ngClass]="{'radio-is-selected' : selfSelectService.usageType !== null && selfSelectService.usageType !== segmentConst.Gaming }">
+												[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming }">
 												<div class="mb-3 mr-5">
 													<div class="device-image mx-auto"
-														id="tutorial_personalUse"
-														attr.aria-label="tutorial_personalUse"
+														id="settings_personalUse"
+														attr.aria-label="settings_personalUse"
 														(click)="saveUsageType(segmentConst.Consumer)">
 														<input type="radio"
 															name="radio"
 															id="radioPersonal"
 															value="personal"
-															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Consumer"
+															[checked]="segmentChecked(usageType,segmentConst.Consumer)"
 															#radioPersonal />
 														<img for="radioPersonal"
 															alt="Personal Use"
@@ -208,14 +208,14 @@
 												</div>
 												<div class="mb-3 mr-5">
 													<div class="device-image mx-auto"
-														id="tutorial_businessUse"
-														attr.aria-label="tutorial_businessUse"
+														id="settings_businessUse"
+														attr.aria-label="settings_businessUse"
 														(click)="saveUsageType(segmentConst.SMB)">
 														<input type="radio"
 															name="radio"
 															id="radioBusiness"
 															value="business"
-															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.SMB"
+															[checked]="segmentChecked(usageType,segmentConst.SMB)"
 															#radioBusiness />
 														<img alt="Business Use"
 															for="radioBusiness"
@@ -227,14 +227,14 @@
 												</div>
 												<div class="mb-3 mr-5">
 													<div class="device-image mx-auto"
-														id="tutorial_professionalExp"
-														attr.aria-label="tutorial_professionalExp"
+														id="settings_professionalExp"
+														attr.aria-label="settings_professionalExp"
 														(click)="saveUsageType(segmentConst.Commercial)">
 														<input type="radio"
 															name="radio"
 															id="radioProfessional"
 															value="custom"
-															[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Commercial"
+															[checked]="segmentChecked(usageType,segmentConst.Commercial)"
 															#radioProfessional />
 														<img alt="Custom Experience"
 															for="radioProfessional"
@@ -262,7 +262,7 @@
 											</div>
 											<div class="row d-flex interests">
 												<div class="inline-block"
-													*ngFor="let interest of selfSelectService.interests">
+													*ngFor="let interest of interests">
 													<input type="checkbox"
 														[id]="interest.label + 'checkbox'"
 														#checkbox1
