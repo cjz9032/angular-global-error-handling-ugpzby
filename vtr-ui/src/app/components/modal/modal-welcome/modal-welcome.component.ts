@@ -113,10 +113,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			});
 
 			const usageData = {
-				ItemType: 'FeatureClick',
-				ItemName: 'UsageType',
-				ItemValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
-				ItemParent: 'WelcomePage'
+				ItemType: 'SettingUpdate',
+				SettingName: 'UsageType',
+				SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
+				SettingParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(usageData);
 
@@ -125,10 +125,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				interestMetricValue[item] = true;
 			});
 			const interestData = {
-				ItemType: 'FeatureClick',
-				ItemName: 'Interest',
-				ItemValue: interestMetricValue,
-				ItemParent: 'WelcomePage'
+				ItemType: 'SettingUpdate',
+				SettingName: 'Interest',
+				SettingValue: interestMetricValue,
+				SettingParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(interestData);
 
