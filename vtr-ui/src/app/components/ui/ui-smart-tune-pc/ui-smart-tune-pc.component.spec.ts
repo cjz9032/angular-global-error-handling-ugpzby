@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiSmartTunePcComponent } from './ui-smart-tune-pc.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('UiSmartTunePcComponent', () => {
   let component: UiSmartTunePcComponent;
@@ -8,7 +9,8 @@ describe('UiSmartTunePcComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiSmartTunePcComponent ]
+      declarations: [ UiSmartTunePcComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));
