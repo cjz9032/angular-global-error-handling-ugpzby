@@ -21,7 +21,7 @@ export class VantageShellMockService {
 	constructor(
 		private commonService: CommonService,
 		private http: HttpClient
-	) {
+		) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
 		if (this.shell) {
@@ -396,18 +396,7 @@ export class VantageShellMockService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						let isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaUser);
-						if (typeof isBeta !== 'boolean') {
-							const beta = this.getBetaUser();
-							if (beta) {
-								await beta.getBetaUser().then((result) => {
-									isBeta = result;
-								}).catch(() => {
-									isBeta = false;
-								});
-							}
-							isBeta = false;
-						}
+						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}

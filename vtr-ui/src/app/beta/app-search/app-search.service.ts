@@ -78,12 +78,12 @@ export class AppSearchService {
 		}
 	}
 
-	private async betaVerification(item: any) {
+	private betaVerification(item: any) {
 		if (!item.route) {
 			return true;
 		}
 
-		const isBetaUser = await this.isBetaUserRes;
+		const isBetaUser = this.isBetaUserRes;
 		if (!isBetaUser && this.betaRoutes.indexOf(item.route) !== -1) {
 			return false;
 		}
@@ -103,7 +103,7 @@ export class AppSearchService {
 			return false;
 		}
 
-		const matchBeta = await this.betaVerification(item);
+		const matchBeta = this.betaVerification(item);
 		if (!matchBeta) {
 			return false;
 		}
