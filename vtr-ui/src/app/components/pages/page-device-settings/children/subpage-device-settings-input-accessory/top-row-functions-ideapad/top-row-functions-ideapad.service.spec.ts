@@ -4,6 +4,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('TopRowFunctionsIdeapadService', () => {
 	let component: TopRowFunctionsIdeapadService;
@@ -11,9 +14,17 @@ describe('TopRowFunctionsIdeapadService', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-            declarations: [TopRowFunctionsIdeapadService],
-            imports:[FontAwesomeModule],
-            schemas:[NO_ERRORS_SCHEMA]
+			declarations: [TopRowFunctionsIdeapadService],
+			imports: [FontAwesomeModule, TranslateModule.forRoot({
+				loader: {
+					provide: TranslateLoader,
+					useFactory: HttpLoaderFactory,
+					deps: [HttpClientModule]
+				},
+				isolate: false
+			}),
+				TranslationModule.forChild(), HttpClientModule],
+			schemas: [NO_ERRORS_SCHEMA]
 		})
 			.compileComponents();
 	}));
