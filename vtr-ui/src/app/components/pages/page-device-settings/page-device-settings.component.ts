@@ -173,18 +173,18 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				Promise.all([
 					this.audioService.getDolbyMode(),
-					this.audioService.getMicrophoneSettings(),
+					//this.audioService.getMicrophoneSettings(),
 				]).then((responses: any[]) => {
 					const dolbyModeResponse: DolbyModeResponse = responses[0];
-					const microphone: Microphone = responses[1];
+					//const microphone: Microphone = responses[1];
 					this.logger.info('getAudioPageSettings.Promise.all', responses);
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
-					if (!microphone.available && !dolbyModeResponse.available) {
-						this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
-					} else {
-						this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
-					}
+					// if (!microphone.available && !dolbyModeResponse.available) {
+					// 	this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
+					// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
+					// } else {
+					// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
+					// }
 				}).catch(error => {
 					this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
 					return EMPTY;
