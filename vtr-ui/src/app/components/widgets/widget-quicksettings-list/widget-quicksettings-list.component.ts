@@ -215,7 +215,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		});
 	}
-	private handleError(err) {
+	 handleError(err) {
 		if (err && err instanceof PluginMissingError) {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}

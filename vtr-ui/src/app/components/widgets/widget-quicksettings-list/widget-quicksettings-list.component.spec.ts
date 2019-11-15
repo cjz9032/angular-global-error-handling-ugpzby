@@ -1,3 +1,4 @@
+import { PluginMissingError } from '@lenovo/tan-client-bridge';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { WidgetQuicksettingsListComponent } from './widget-quicksettings-list.component';
 import { Pipe } from '@angular/core';
@@ -25,7 +26,7 @@ fdescribe('WidgetQuicksettingsListComponent', () => {
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
 	// tslint:disable-next-line: no-use-before-declare
-	shellServicesMock.getSecurityAdvisor.and.returnValue({ wifiSecurity: emitter() });
+	shellServicesMock.getSecurityAdvisor.and.returnValue({ wifiSecurity: emitter(), isLWSEnabled: true });
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetQuicksettingsListComponent,
@@ -83,6 +84,45 @@ fdescribe('WidgetQuicksettingsListComponent', () => {
 		expect(component.quickSettings[3].isChecked).toEqual(false);
 	}));
 
+	it('should handle the error', fakeAsync(() => {
+		const result = component.handleError({});
+		expect(result).toEqual(undefined);
+	}));
+
+	it('should register the thermal mode event', fakeAsync(() => {
+		component.gamingCapabilities = { smartFanFeature: true };
+		fixture.detectChanges();
+		tick(10);
+		const result = component.registerThermalModeEvent();
+		expect(result).toEqual(undefined);
+	}));
+
+	it('should call the onToggleStateChanged with dolby', fakeAsync(() => {
+		const event = { target: { name: 'gaming.dashboard.device.quickSettings.dolby', value: true } };
+		component.onToggleStateChanged(event);
+		fixture.detectChanges();
+		tick(10);
+		const result = component.registerThermalModeEvent();
+		expect(result).toEqual(undefined);
+	}));
+
+	it('should call the onToggleStateChanged with rapid charge', fakeAsync(() => {
+		const event = { target: { name: 'gaming.dashboard.device.quickSettings.rapidCharge', value: true } };
+		component.onToggleStateChanged(event);
+		fixture.detectChanges();
+		tick(10);
+		const result = component.registerThermalModeEvent();
+		expect(result).toEqual(undefined);
+	}));
+
+	it('should call the onToggleStateChanged with Wifi security', fakeAsync(() => {
+		const event = { target: { name: 'gaming.dashboard.device.quickSettings.wifiSecurity', value: true } };
+		component.onToggleStateChanged(event);
+		fixture.detectChanges();
+		tick(10);
+		const result = component.registerThermalModeEvent();
+		expect(result).toEqual(undefined);
+	}));
 });
 
 /**
@@ -101,7 +141,7 @@ export function mockPipe(options: Pipe): Pipe {
 	});
 }
 
-export function emitter() {
+export function emitter(enableStatus = false) {
 	class CustomEmitter extends EventEmitter {
 		constructor() {
 			super();
@@ -118,6 +158,12 @@ export function emitter() {
 		}
 		cancelGetWifiSecurityState() {
 			return Promise.resolve();
+		}
+		enableWifiSecurity() {
+			return Promise.resolve(true);
+		}
+		disableWifiSecurity() {
+			return Promise.resolve(true);
 		}
 	}
 	return new CustomEmitter();
