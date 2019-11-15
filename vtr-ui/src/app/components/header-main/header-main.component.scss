@@ -26,8 +26,14 @@
 		position: relative;
 		z-index: 1;
 		::ng-deep {
-			span {
+			pre {
+				width: 100%;
+				color: inherit;
+				font: inherit;
+				margin: 0;
+				white-space: pre-wrap;
 				word-break: break-all;
+				overflow: visible;
 			}
 		}
 	}
