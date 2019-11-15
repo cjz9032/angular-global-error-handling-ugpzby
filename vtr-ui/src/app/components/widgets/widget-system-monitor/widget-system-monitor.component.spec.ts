@@ -11,7 +11,7 @@ import { By } from '@angular/platform-browser';
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', ['isShellAvailable', 'getCapabilities', 'setCapabilityValuesGlobally', 'getCapabilityFromCache']);
 const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', ['isShellAvailable', 'getDynamicInformation', 'getMachineInfomation']);
 
-describe('WidgetSystemMonitorComponent', () => {
+fdescribe('WidgetSystemMonitorComponent', () => {
 	let component: WidgetSystemMonitorComponent;
 	let fixture: ComponentFixture<WidgetSystemMonitorComponent>;
 	let timerCallback;
