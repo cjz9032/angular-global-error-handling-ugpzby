@@ -278,17 +278,29 @@ fdescribe('NetworkboostAddAppsComponent', () => {
 	);
 
 
+	it('checkFocus', fakeAsync(() => {
+		const result = component.checkFocus(true);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+
+	it('onValueChange', fakeAsync(() => {
+		const result = component.onValueChange({target: {value: true}}, 1);
+		// expect(result).toBe(undefined);
+	})
+	);
+
+
 	it('focusClose', done => {
 		const p = new Promise((resolve, reject) =>
 			setTimeout(() => resolve(''), 2)
 		);
-
 		p.then(result => {
 			fakeAsync(() => {
-				const result = component.focusClose();
-
-				console.log('focusclose-----', result);
-				expect(result).toBe();
+				const results = component.focusClose();
+				expect(results).toBe(undefined);
 			});
 			done();
 		});
