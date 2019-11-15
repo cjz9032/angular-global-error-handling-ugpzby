@@ -6,7 +6,7 @@ import { CommonService } from '../services/common/common.service';
 import { CommonUiModule } from './common/common-ui.module';
 import { CommsService } from '../services/comms/comms.service';
 import { CookieService } from 'ngx-cookie-service';
-import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule, APP_INITIALIZER } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { environment } from 'src/environments/environment';
@@ -57,17 +57,7 @@ import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
-import { AppUpdateService } from '../services/app-update/app-update.service';
 
-
-export function preloadTranslation(
-	appUpdateService: AppUpdateService) {
-	if (appUpdateService) {
-		// check for update and download it but it will be available in next launch
-		appUpdateService.checkForUpdatesNoPrompt();
-	}
-	return function initFromCore() { /* called from angular code, don't remove */ };
-}
 
 @NgModule({
 	declarations: [
@@ -126,12 +116,6 @@ export function preloadTranslation(
 		{
 			provide: ErrorHandler,
 			useClass: GlobalErrorHandler
-		},
-		{
-			provide: APP_INITIALIZER,
-			useFactory: preloadTranslation
-			, deps: [AppUpdateService],
-			multi: true
 		}
 	],
 	entryComponents: [
