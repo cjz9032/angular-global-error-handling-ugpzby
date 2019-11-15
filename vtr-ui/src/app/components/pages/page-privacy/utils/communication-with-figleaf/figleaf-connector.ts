@@ -1,4 +1,5 @@
 import { MockWindows } from '../moked-api';
+import { throwError } from 'rxjs';
 
 const Windows = window['Windows'] || MockWindows; // this is mocked data for browser
 
@@ -37,8 +38,11 @@ class FigleafConnector {
 
 		const response = await currentConnection.sendMessageAsync(message);
 
-		if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
+		if (response && response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
 			return JSON.parse(response.message.result);
+		} else {
+			this.disconnect();
+			return throwError('Something went wrong with connection');
 		}
 	}
 
@@ -46,6 +50,7 @@ class FigleafConnector {
 		let newConnection = connection;
 
 		if (newConnection === null) {
+			console.log('create connection');
 			newConnection = new Windows.ApplicationModel.AppService.AppServiceConnection();
 			newConnection.appServiceName = APP_SERVICE_NAME;
 			newConnection.packageFamilyName = PACKAGE_FAMILY_NAME;
@@ -79,6 +84,7 @@ class FigleafConnector {
 	}
 
 	private serviceClosed() {
+		console.log('serviceClosed');
 		connection = null;
 		this.disconnectFromFigleaf();
 	}
