@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
 import { SelfSelectService, SegmentConst } from '../self-select/self-select.service';
+import { CommonService } from '../common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,10 +14,11 @@ export class LocalInfoService {
 	private localInfo: any;
 	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-latn', 'sv', 'tr', 'uk', 'zh-hant'];
 	private readonly gamingTag = SegmentConst.Gaming;
-	private selfSelectSegment = SegmentConst.Consumer;
+	private selfSelectSegment = null;
 
 	constructor(
 		private shellService: VantageShellService,
+		private commonService: CommonService,
 		private deviceService: DeviceService,
 		private selfSelectService: SelfSelectService
 	) {
@@ -23,8 +26,9 @@ export class LocalInfoService {
 	}
 
 	async getLocalInfo() {
-		if (this.selfSelectSegment !== this.selfSelectService.savedSegment) {
+		if (!this.selfSelectSegment) {
 			this.selfSelectSegment = await this.selfSelectService.getSegment();
+			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, this.selfSelectSegment);
 		}
 		if (this.localInfo) {
 			if (this.localInfo.Segment !== this.gamingTag) {

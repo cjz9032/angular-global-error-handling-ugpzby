@@ -4,6 +4,7 @@ import {
 import {
 	DeviceService
 } from 'src/app/services/device/device.service';
+import cloneDeep from 'lodash/cloneDeep';
 import { menuItemsGaming, menuItems, appSearch, betaItem } from 'src/assets/menu/menu.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService } from '../beta/beta.service';
@@ -88,7 +89,7 @@ export class ConfigService {
 			const machineInfo = await this.deviceService.getMachineInfo();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
-			let resultMenu = Object.assign([], this.menuItemsGaming);
+			let resultMenu = cloneDeep(this.menuItemsGaming);
 			if (isGaming) {
 				if (isBetaUser && this.deviceService.showSearch) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
@@ -97,7 +98,7 @@ export class ConfigService {
 			}
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
-			resultMenu = Object.assign([], this.menuItems);
+			resultMenu = cloneDeep(this.menuItems);
 			if (!this.deviceService.showPrivacy) {
 				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
 			}
