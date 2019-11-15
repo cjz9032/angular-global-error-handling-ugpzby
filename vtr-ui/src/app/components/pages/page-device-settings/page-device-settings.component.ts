@@ -156,8 +156,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
+
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		if (this.machineType !== 1) {
+		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		const familyName = machineFamily.replace(/\s+/g, '');
+		if (this.machineType !== 1 || (this.machineType === 1 && familyName === 'LenovoTablet10')) {
 			this.menuItems = this.commonService.removeObjById(this.menuItems, 'input-accessories');
 			return;
 		}
