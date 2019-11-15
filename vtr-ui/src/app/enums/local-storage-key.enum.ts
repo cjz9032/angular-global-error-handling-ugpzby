@@ -190,5 +190,7 @@ export enum LocalStorageKey {
 	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
 	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
-	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable'
+	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
+
+	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment'
 }

@@ -31,7 +31,7 @@ export class SelfSelectService {
 	public set savedSegment(value) {
 		if (this._savedSegment !== value) {
 			this._savedSegment = value;
-			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
+			// this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
 	public savedInterests: string[] = [];
