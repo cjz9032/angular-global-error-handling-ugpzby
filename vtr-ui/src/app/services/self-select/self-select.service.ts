@@ -36,6 +36,7 @@ export class SelfSelectService {
 	}
 	public savedInterests: string[] = [];
 	private selfSelect: any;
+	private vantageStub: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
 		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: false}, defaultSegment: SegmentConst.Commercial},
@@ -50,6 +51,7 @@ export class SelfSelectService {
 		private commonService: CommonService,
 		public deviceService: DeviceService) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
+		this.vantageStub = this.vantageShellService.getVantageStub();
 	}
 
 	public async getSegment() {
@@ -107,7 +109,11 @@ export class SelfSelectService {
 		Object.assign(this.savedInterests, this.checkedArray);
 		return this.selfSelect.updateConfig(config).then((result) => {
 			if (reloadNecessary) {
-				window.open(window.location.origin, '_self');
+				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
+					this.vantageStub.refresh();
+				} else {
+					window.open(window.location.origin, '_self');
+				}
 			}
 			return result;
 		}).catch((error) => { });
