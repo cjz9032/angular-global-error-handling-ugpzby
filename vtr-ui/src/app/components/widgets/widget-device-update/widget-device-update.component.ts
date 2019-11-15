@@ -28,7 +28,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	public downloadingIcon = 'spinner';
 	public installingIcon = 'spinner';
 	public downloadingUpdateText = 'systemUpdates.banner.downloading';
-	public installingUpdateText = 'systemUpdates.banner.installing';
+	public installingTitleText = 'systemUpdates.banner.installingTitle';
 
 	constructor(private translate: TranslateService) {
 		this.translateString();
@@ -52,8 +52,8 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 		this.translate.stream(this.downloadingUpdateText).subscribe((res) => {
 			this.downloadingUpdateText = res;
 		});
-		this.translate.stream(this.installingUpdateText).subscribe((res) => {
-			this.installingUpdateText = res;
+		this.translate.stream(this.installingTitleText).subscribe((res) => {
+			this.installingTitleText = res;
 		});
 	}
 }
