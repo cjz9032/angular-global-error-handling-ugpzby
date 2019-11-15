@@ -17,6 +17,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 
+declare var Windows;
+
 @Component({
 	selector: 'vtr-battery-card',
 	templateUrl: './battery-card.component.html',
@@ -62,8 +64,53 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private activatedRoute: ActivatedRoute) {
 	}
 
+	getMainBatteryInfo() {
+		if (typeof Windows !== 'undefined') {
+			const power = Windows.System.Power;
+			return {
+				percentage: power.PowerManager.remainingChargePercent,
+				remainingTime: Math.trunc(power.PowerManager.remainingDischargeTime / 60000),
+				status: power.PowerManager.batteryStatus
+			};
+		}
+		return {};
+	}
+
+	getAcAttachedStatus() {
+		if (typeof Windows !== 'undefined') {
+			const power = Windows.System.Power;
+			return power.PowerManager.powerSupplyStatus !== power.PowerSupplyStatus.notPresent;
+		}
+		return false;
+	}
+
+	updateMainBatteryTime() {
+		const maininfo = this.getMainBatteryInfo();
+		let time = 0;
+		let timetype = '';
+		if (maininfo.status === 1) { // BatteryStatus discharging
+			// check if value is within valid min range 525600 mins in 1 year
+			if (maininfo.remainingTime < 525600) {
+				time = maininfo.remainingTime;
+				timetype = 'timeRemaining';
+			}
+		}
+		this.batteryIndicator.convertMin(time);
+		this.batteryIndicator.timeText = timetype;
+
+		if (maininfo.percentage !== 0) {
+			this.batteryIndicator.percent = maininfo.percentage;
+		}
+	}
+
 	ngOnInit() {
-		this.isLoading = true;
+		// temp
+		this.updateMainBatteryTime();
+		this.batteryIndicator.charging = this.getAcAttachedStatus();
+		this.isLoading = false;
+
+
+		// temp
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			console.log(params);
 			if (params.has('batterydetail') && !this.isModalShown) {
