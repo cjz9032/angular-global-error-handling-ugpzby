@@ -241,7 +241,7 @@
 						</div>
 					</li>
 					<li ngbDropdown
-						*ngIf="item.id==='user'"
+						*ngIf="item.id==='user' && languageService.isLanguageLoaded"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"

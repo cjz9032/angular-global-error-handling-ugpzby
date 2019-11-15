@@ -92,7 +92,7 @@ export class FeedbackFormComponent implements OnInit {
 
 	public goToMailUtility() {
 		const email = 'vantageteam@lenovo.com';
-		const subject = 'vantage%203.0%20program%20feedback';
+		const subject = 'vantage%203%20program%20feedback';
 		const uriPath = 'mailto:' + email + '?subject=' + subject;
 		this.deviceService.launchUri(uriPath);
 	}

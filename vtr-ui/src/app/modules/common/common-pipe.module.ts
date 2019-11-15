@@ -12,7 +12,6 @@ import { TextClassPipe } from 'src/app/pipe/ui-security-statusbar/text-class.pip
 import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 import { DateFormatPipe } from 'src/app/pipe/date-format/date-format.pipe';
-import { PunctuationRemoveSpacePipe } from 'src/app/pipe/punctuation-remove-space/punctuation-remove-space.pipe';
 
 @NgModule({
 	declarations: [
@@ -28,7 +27,6 @@ import { PunctuationRemoveSpacePipe } from 'src/app/pipe/punctuation-remove-spac
 		StripTagsPipe,
 		DateFormatPipe,
 		RemoveSpacePipe,
-		PunctuationRemoveSpacePipe,
 	],
 	exports: [
 		CapitalizeFirstPipe,
@@ -45,7 +43,6 @@ import { PunctuationRemoveSpacePipe } from 'src/app/pipe/punctuation-remove-spac
 		SanitizeModule,
 		DateFormatPipe,
 		RemoveSpacePipe,
-		PunctuationRemoveSpacePipe,
 	],
 	imports: [
 		SanitizeModule,
