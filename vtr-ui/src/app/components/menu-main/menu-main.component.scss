@@ -401,6 +401,9 @@
 				background: $main_darker;
 
 				.navbar-nav {
+					max-height: calc(100vh - #{$menu_height});
+					overflow-y: auto;
+
 					.nav-item {
 						padding: 0 0 0.5rem 0;
 
