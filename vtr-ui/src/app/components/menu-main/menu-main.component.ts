@@ -203,6 +203,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 	private loadMenuOptions(machineType: number) {
+		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		const familyName = machineFamily.replace(/\s+/g, '');
+
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
@@ -215,7 +218,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				}
 			});
 		}
-		if (machineType === 1) {
+		if (machineType === 1 && familyName !== 'LenovoTablet10') {
 			this.initInputAccessories();
 		}
 	}
