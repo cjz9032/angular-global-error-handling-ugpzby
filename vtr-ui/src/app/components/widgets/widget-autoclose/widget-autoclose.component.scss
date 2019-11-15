@@ -39,11 +39,17 @@
 			position: relative;
 			margin-bottom: 3rem;
 			width: 20%;
-			@media #{$mediaquery_X22} {
-				width: 25%;
+			@media #{$breakpoint_xl} {
+				width: 33%;
 			}
-			@media #{$mediaquery_X3} {
-				width: 33.3%;
+			@media #{$breakpoint_lg} {
+				width: 20%;
+			}
+			@media #{$breakpoint_md} {
+				width: 33%;
+			}
+			@media #{$breakpoint_sm} {
+				width: 50%;
 			}
 			div:nth-child(1) {
 				width: 4.5rem;
@@ -52,7 +58,7 @@
 				margin: auto;
 			}
 			div:nth-child(2) {
-				font-size: 1.6rem;
+				font-size: $fontsize_xs;
 				margin-top: 0.5rem;
 				text-align: center;
 				height: 5rem;

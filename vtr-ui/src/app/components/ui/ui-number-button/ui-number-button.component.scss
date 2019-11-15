@@ -36,7 +36,13 @@
 		svg {
 			margin-right: 1rem;
 		}
-		@media #{$mediaquery_12} {
+		@media #{$mediaquery_xl} {
+			display: inline-block;
+		}
+		@media #{$mediaquery_lg} {
+			display: none;
+		}
+		@media #{$mediaquery_md} {
 			display: inline-block;
 		}
 	}
@@ -44,7 +50,23 @@
 	ul {
 		padding: 0;
 		&.numberpad-popup {
-			@media #{$mediaquery_12} {
+			@media #{$mediaquery_xl} {
+				display: none;
+				padding: 1.4rem;
+				background-color: $gaming_shade;
+				width: 19rem;
+				position: absolute;
+				border-radius: 0.6rem;
+				z-index: 1;
+				top: 5.8rem;
+			}
+			@media #{$mediaquery_lg} {
+				display: block;
+				background: none;
+				position: relative;
+				top: 0;
+			}
+			@media #{$mediaquery_md} {
 				display: none;
 				padding: 1.4rem;
 				background-color: $gaming_shade;
