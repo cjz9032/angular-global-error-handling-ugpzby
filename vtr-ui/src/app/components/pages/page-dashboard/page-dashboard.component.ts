@@ -84,6 +84,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	};
 
 	welcomeText = '';
+	welcomeTextWithoutUserName = '';
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -226,6 +227,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				} // Do not show again in first time
 			}
 			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
+			this.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
 			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
 			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.welcomeText);
 		}

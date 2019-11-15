@@ -32,6 +32,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -202,6 +203,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 	private loadMenuOptions(machineType: number) {
+		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		const familyName = machineFamily.replace(/\s+/g, '');
+
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
@@ -214,7 +218,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				}
 			});
 		}
-		if (machineType === 1) {
+		if (machineType === 1 && familyName !== 'LenovoTablet10') {
 			this.initInputAccessories();
 		}
 	}
@@ -413,9 +417,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				case MenuItem.MenuItemChange:
 					this.initComponent();
 					break;
-				// case SelfSelectEvent.SegmentChange: // When need immediately refresh menu use this code
-				// 	this.initComponent();
-				// 	break;
+				case SelfSelectEvent.SegmentChange:
+					this.initComponent();
+					break;
 				default:
 					break;
 			}

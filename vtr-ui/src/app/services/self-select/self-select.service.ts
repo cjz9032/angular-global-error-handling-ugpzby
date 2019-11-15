@@ -31,11 +31,12 @@ export class SelfSelectService {
 	public set savedSegment(value) {
 		if (this._savedSegment !== value) {
 			this._savedSegment = value;
-			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
+			// this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
 		}
 	}
 	public savedInterests: string[] = [];
 	private selfSelect: any;
+	private vantageStub: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
 		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: false}, defaultSegment: SegmentConst.Commercial},
@@ -50,6 +51,7 @@ export class SelfSelectService {
 		private commonService: CommonService,
 		public deviceService: DeviceService) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
+		this.vantageStub = this.vantageShellService.getVantageStub();
 	}
 
 	public async getSegment() {
@@ -60,11 +62,11 @@ export class SelfSelectService {
 	}
 
 	public async getConfig() {
-		this.machineInfo = await this.deviceService.getMachineInfo();
-		const isArm = this.machineInfo && this.machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-		if (this.selfSelect) {
-			this.userProfileEnabled = true;
-			try {
+		try {
+			this.machineInfo = await this.deviceService.getMachineInfo();
+			const isArm = this.machineInfo && this.machineInfo.cpuArchitecture && this.machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+			if (this.selfSelect) {
+				this.userProfileEnabled = true;
 				const config = await this.selfSelect.getConfig();
 				if (config && config.customtags) {
 					const checkedTags = config.customtags;
@@ -83,16 +85,16 @@ export class SelfSelectService {
 					this.savedSegment = this.usageType;
 					this.saveConfig();
 				}
-			} catch (error) {
-				console.log('SelfSelectService.getConfig failed. ', error);
+			} else {
+				this.userProfileEnabled = false;
 				this.usageType = await this.getDefaultSegment();
 				this.savedSegment = this.usageType;
-				// this.userProfileEnabled = false;
 			}
-		} else {
-			this.userProfileEnabled = false;
+		} catch (error) {
+			console.log('SelfSelectService.getConfig failed. ', error);
 			this.usageType = await this.getDefaultSegment();
 			this.savedSegment = this.usageType;
+			// this.userProfileEnabled = false;
 		}
 	}
 
@@ -107,47 +109,61 @@ export class SelfSelectService {
 		Object.assign(this.savedInterests, this.checkedArray);
 		return this.selfSelect.updateConfig(config).then((result) => {
 			if (reloadNecessary) {
-				window.open(window.location.origin, '_self');
+				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
+					this.vantageStub.refresh();
+				} else {
+					window.open(window.location.origin, '_self');
+				}
 			}
 			return result;
 		}).catch((error) => { });
 	}
 
 	private async getDefaultSegment() {
-		if (!this.machineInfo) {
-			this.machineInfo = await this.deviceService.getMachineInfo();
-			return this.calcDefaultSegment(this.machineInfo);
-		}
-		else {
-			return this.calcDefaultSegment(this.machineInfo);
+		try {
+			if (!this.machineInfo) {
+				this.machineInfo = await this.deviceService.getMachineInfo();
+				return this.calcDefaultSegment(this.machineInfo);
+			}
+			else {
+				return this.calcDefaultSegment(this.machineInfo);
+			}
+		} catch (error) {
+			console.log('SelfSelectService.getDefaultSegment exception: ', error);
+			return SegmentConst.Consumer;
 		}
 	}
 
 	private calcDefaultSegment(machineInfo) {
-		if (machineInfo.isGaming) {
-			return SegmentConst.Gaming;
-		}
-		if (machineInfo && machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-			this.userProfileEnabled = false;
-			return SegmentConst.Consumer;
-		}
-		let segment = SegmentConst.Consumer;
 		try	{
-			const brand = machineInfo.brand;
-			const family = machineInfo.family;
-			for (var i = 0; i < this.DefaultSelectSegmentMap.length; i++) {
-				const rule = this.DefaultSelectSegmentMap[i];
-				if (brand && brand.toLowerCase() === rule.brand
-				&& family && this.IsMatch(rule.familyPattern.pattern, family) === rule.familyPattern.result)
-				{
-					segment = rule.defaultSegment;
-					break;
+			let segment = SegmentConst.Consumer;
+			if (!machineInfo) {
+				console.log('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
+			}
+			else if (machineInfo.isGaming) {
+				segment = SegmentConst.Gaming;
+			} else if (machineInfo.cpuArchitecture
+				&& machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+				this.userProfileEnabled = false;
+				segment = SegmentConst.Consumer;
+			} else {
+				const brand = machineInfo.brand;
+				const family = machineInfo.family;
+				for (var i = 0; i < this.DefaultSelectSegmentMap.length; i++) {
+					const rule = this.DefaultSelectSegmentMap[i];
+					if (brand && brand.toLowerCase() === rule.brand
+					&& family && this.IsMatch(rule.familyPattern.pattern, family) === rule.familyPattern.result)
+					{
+						segment = rule.defaultSegment;
+						break;
+					}
 				}
 			}
+			return segment;
 		} catch(e){
 			console.log('SelfSelectService.calcDefaultSegment exception: ', e);
+			return SegmentConst.Consumer;
 		}
-		return segment;
 	}
 
 	public IsMatch(pattern, source) {

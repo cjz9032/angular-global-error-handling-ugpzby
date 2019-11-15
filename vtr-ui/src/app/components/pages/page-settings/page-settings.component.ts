@@ -9,6 +9,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { BetaService } from 'src/app/services/beta/beta.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -36,7 +37,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	valueToBoolean = [false, true, false];
 
-
+	usageType = null;
+	interests = [];
 	preferenceSettings: any;
 	segmentTag = SegmentConst.Consumer;
 
@@ -68,6 +70,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	];
 	metrics: any;
 	metricsPreference: any;
+	notificationSubscription: any;
 
 	constructor(
 		private shellService: VantageShellService,
@@ -94,10 +97,51 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.getAllToggles();
 		this.timerService.start();
 		this.getSelfSelectStatus();
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
+	}
+
+	onNotification(response: AppNotification) {
+		const {type, payload} = response;
+		switch (type) {
+			case LocalStorageKey.WelcomeTutorial:
+				try {
+					this.usageType = this.selfSelectService.usageType;
+					this.interests.forEach(item => {
+						item.checked = this.selfSelectService.checkedArray && this.selfSelectService.checkedArray.includes(item.label);
+					});
+					let radioId = '';
+					switch(this.usageType) {
+						case this.segmentConst.Consumer:
+							radioId = 'radioPersonal';
+							break;
+						case this.segmentConst.SMB:
+							radioId = 'radioBusiness';
+							break;
+						case this.segmentConst.Commercial:
+							radioId = 'radioProfessional';
+							break;
+					}
+					if (radioId) {
+						document.getElementById(radioId).click();
+					}
+				} catch (error) {}
+				break;
+			default:
+				break;
+		}
+	}
+
+	segmentChecked(current, expected) {
+		return current && current === expected;
 	}
 
 	private getSelfSelectStatus() {
-		this.selfSelectService.getConfig();
+		this.selfSelectService.getConfig().then(() => {
+			this.usageType = this.selfSelectService.savedSegment;
+			this.interests = this.selfSelectService.interests;
+		});
 		this.userSelectionChanged = false;
 	}
 
@@ -296,7 +340,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	saveUsageType(value) {
-		this.selfSelectService.usageType = value;
+		this.usageType = value;
+		this.selfSelectService.usageType = this.usageType;
 		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 

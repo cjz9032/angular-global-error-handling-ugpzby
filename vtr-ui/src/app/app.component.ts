@@ -27,6 +27,7 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+// import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
 
@@ -59,6 +60,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
+		// private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
@@ -85,6 +87,8 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		// check for update and download it but it will be available in next launch
+		// this.appUpdateService.checkForUpdatesNoPrompt();
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -212,7 +216,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
-		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale.toLowerCase()) {
+		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !==  value.locale ? value.locale.toLowerCase() : 'en') {
 			this.languageService.useLanguageByLocale(value.locale);
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);

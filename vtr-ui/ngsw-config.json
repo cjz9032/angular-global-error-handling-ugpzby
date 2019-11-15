@@ -22,8 +22,7 @@
 				"files": [
 					"!/assets/i18n/**",
 					"!/assets/privacy-json/trackers.json",
-					"/assets/**",
-					"/*.js"
+					"/assets/**"
 				],
 				"urls": [
 					"https://qa.csw.lenovo.com/**",

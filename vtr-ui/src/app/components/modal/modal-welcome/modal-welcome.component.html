@@ -74,7 +74,7 @@
 						</div>
 					</div>
 					<div class="row mb-5"
-						[ngClass]="{'radio-is-selected' : selfSelectService.usageType !== null && selfSelectService.usageType !== segmentConst.Gaming}">
+						[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming}">
 						<div class="col-4 device-image-content">
 							<div class="device-image"
 								id="tutorial_personalUse"
@@ -84,7 +84,7 @@
 									name="radio"
 									id="personalRadio"
 									value="personal"
-									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Consumer"
+									[checked]="usageType && usageType === segmentConst.Consumer"
 									#personalRadio />
 								<img for="personalRadio"
 									alt="Personal Use"
@@ -106,7 +106,7 @@
 									name="radio"
 									id="businessRadio"
 									value="business"
-									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.SMB"
+									[checked]="usageType && usageType === segmentConst.SMB"
 									#businessRadio />
 								<img alt="Business Use"
 									for="businessRadio"
@@ -127,7 +127,7 @@
 									name="radio"
 									id="professionalRadio"
 									value="custom"
-									[checked]="selfSelectService.usageType && selfSelectService.usageType === segmentConst.Commercial"
+									[checked]="usageType && usageType === segmentConst.Commercial"
 									#professionalRadio />
 								<img alt="Custom Experience"
 									for="professionalRadio"
@@ -148,9 +148,9 @@
 					</div>
 					<div class="row d-flex justify-content-center interests">
 						<div class="col-auto inline-block"
-							*ngFor="let interest of selfSelectService.interests; index as i">
+							*ngFor="let interest of interests; index as i">
 							<input type="checkbox"
-								[id]="interest.label + 'checkbox'"
+								[id]="interest.label + 'checkbox-welcome'"
 								#checkbox1
 								(click)="toggle($event, interest.label)"
 								[checked]="interest.checked" />
@@ -159,7 +159,7 @@
 								tabindex="4"
 								(keypress)="onKeyPress($event)"
 								#interestChkboxs
-								[for]="interest.label + 'checkbox'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
+								[for]="interest.label + 'checkbox-welcome'">{{ "welcometutorial.interests." + interest.label | translate }}</label>
 						</div>
 					</div>
 					<div *ngIf="!hideMoreInterestBtn"
