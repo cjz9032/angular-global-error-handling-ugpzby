@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopRowFunctionsIdeapadComponent } from './top-row-functions-ideapad.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('TopRowFunctionsIdeapadComponent', () => {
 	let component: TopRowFunctionsIdeapadComponent;
