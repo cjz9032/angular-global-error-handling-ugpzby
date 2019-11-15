@@ -343,6 +343,54 @@ fdescribe('WidgetLegionEdgeComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
+
+	it('onShowDropdown', fakeAsync(() => {
+		const result = component.onShowDropdown({type: 'CPU Overclock'});
+		// expect(result).toBe(undefined);
+	})
+	);
+
+	it('onIconClick', fakeAsync(() => {
+		const result = component.onIconClick(true);
+		// expect(result).toBe(undefined);
+	})
+	);
+
+	it('onIconClick', fakeAsync(() => {
+		const result = component.onIconClick(true);
+		// expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('toggleOnOffRamOCStatus', fakeAsync(() => {
+
+		const res: any = component.gamingCapabilities.xtuService === false;
+		const result = component.toggleOnOffRamOCStatus({target: {value: true}});
+		expect(res).toBe(false);
+
+	})
+	);
+
+
+	it('onPopupClosed', fakeAsync(() => {
+		const result = component.onPopupClosed({target: {value: true}});
+	})
+	);
+
+
+	it('onOptionSelected', fakeAsync(() => {
+		const result = component.onOptionSelected({target: {name: 'CPU Overclock'}});
+	})
+	);
+
+	it('renderRamOverClockStatus', fakeAsync(() => {
+		gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(true));
+		const result = component.renderRamOverClockStatus();
+		expect(result).toBe();
+	})
+	);
+
 });
 
 /**
