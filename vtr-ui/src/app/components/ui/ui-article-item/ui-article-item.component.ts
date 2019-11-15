@@ -1,8 +1,6 @@
 import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { SupportService } from '../../../services/support/support.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
-import { WinRT } from '@lenovo/tan-client-bridge';
+import { CardService } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -27,7 +25,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private supportService: SupportService,
-		public modalService: NgbModal
+		public cardService: CardService,
 	) {
 		this.metricsDatas = this.supportService.metricsDatas;
 	}
@@ -60,36 +58,11 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 	clickContent() {
 		this.metricsDatas.viewOrder++;
 		if (this.articleType === 'content') {
-			if (!this.item.ActionType || this.item.ActionType !== 'Internal') {
-				return;
-			}
-			if (this.item.ActionLink.indexOf('lenovo-vantage3:') === 0) {
-				WinRT.launchUri(this.item.ActionLink);
-			} else {
-				this.showArticleDetails(this.item.ActionLink);
-			}
-
-			return false;
+			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink);
 		} else {
-			this.showArticleDetails(this.item.Id);
+			this.cardService.openArticleModal(this.item.Id);
 			return false;
 		}
 	}
 
-	showArticleDetails(actionLink: string) {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
-		articleDetailModal.componentInstance.articleId = actionLink;
-	}
 }
