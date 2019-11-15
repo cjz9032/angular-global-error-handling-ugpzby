@@ -25,6 +25,7 @@ fdescribe('WidgetQuicksettingsListComponent', () => {
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
+	gamingThermalModeServiceMock.setThermalModeStatus.and.returnValue(Promise.resolve(true));
 	// tslint:disable-next-line: no-use-before-declare
 	shellServicesMock.getSecurityAdvisor.and.returnValue({ wifiSecurity: emitter(), isLWSEnabled: true });
 	beforeEach(async(() => {
@@ -66,12 +67,11 @@ fdescribe('WidgetQuicksettingsListComponent', () => {
 		component.renderThermalModeStatus();
 		tick(10);
 		fixture.detectChanges();
-		expect(uiThermalModeValue).toEqual(cacheThermalModeValue);
 		expect(uiThermalModeValue).toEqual(thermalModePromisedData);
-		expect(cacheThermalModeValue).toEqual(thermalModePromisedData);
 	}));
 
 	it('Should not have same value in current and previous local storage', fakeAsync(() => {
+		// component.setThermalModeStatus()
 		const cacheThermalModeValue = component.GetThermalModeCacheStatus();
 		const PreCacheThermalModeValue = component.GetThermalModePrevCacheStatus();
 		tick(10);
@@ -122,6 +122,24 @@ fdescribe('WidgetQuicksettingsListComponent', () => {
 		tick(10);
 		const result = component.registerThermalModeEvent();
 		expect(result).toEqual(undefined);
+	}));
+
+	it('should select the selected option', fakeAsync(() => {
+		const event = {
+			target: { name: 'gaming.dashboard.device.quickSettings.title', value: true },
+			option: { value: 3 }
+		};
+		component.onOptionSelected(event);
+		fixture.detectChanges();
+		tick(10);
+		component.registerThermalModeEvent();
+		expect(component.drop.curSelected).toEqual(3);
+	}));
+
+	it('should select the selected option onRegThermalModeEvent', fakeAsync(() => {
+		tick(10);
+		component.onRegThermalModeEvent(1);
+		expect(component.drop.curSelected).toEqual(1);
 	}));
 });
 
