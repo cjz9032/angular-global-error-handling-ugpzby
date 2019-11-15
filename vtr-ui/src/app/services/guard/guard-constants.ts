@@ -6,12 +6,14 @@ import { DeviceService } from '../device/device.service';
 	providedIn: 'root',
 })
 export class GuardConstants {
-	defaultRoute: UrlTree;
+	defaultRoute: UrlTree | boolean;
 
 	constructor(
 		private router: Router,
 		private deviceService: DeviceService
 	) {
-		this.defaultRoute = this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
+		this.defaultRoute = this.router.url === '/dashboard' || this.router.url === '/gaming/dashboard' ?
+							false :
+							this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
 	}
 }
