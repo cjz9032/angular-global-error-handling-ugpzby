@@ -256,6 +256,46 @@ fdescribe('NetworkboostAddAppsComponent', () => {
 		})
 	);
 
+
+	it('closed model', fakeAsync(() => {
+		const result = component.closeModal(false);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('runappKeyup', fakeAsync(() => {
+		const result = component.runappKeyup(true, 1);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('checkApps', fakeAsync(() => {
+		const result = component.checkApps(1);
+		expect(result).toBe(false);
+	})
+	);
+
+
+	it('focusClose', done => {
+		const p = new Promise((resolve, reject) =>
+			setTimeout(() => resolve(''), 2)
+		);
+
+		p.then(result => {
+			fakeAsync(() => {
+				const result = component.focusClose();
+
+				console.log('focusclose-----', result);
+				expect(result).toBe();
+			});
+			done();
+		});
+	});
+
+
+
 });
 
 

@@ -107,6 +107,27 @@ fdescribe('ModalAddAppsComponent', () => {
 		 done();
 		});
 	  });
+
+	it('runappKeyup', fakeAsync(() => {
+		const result = component.runappKeyup(true, 1);
+		expect(result).toBe(undefined);
+	})
+	);
+
+	it('closemodal', fakeAsync(() => {
+		const result = component.closeModal(true);
+		expect(result).toBe(undefined);
+	})
+	);
+
+	it('addAppData', fakeAsync(() => {
+		const result = component.runappKeyup(true, 1);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+
 });
 
 export function mockPipe(options: Pipe): Pipe {
