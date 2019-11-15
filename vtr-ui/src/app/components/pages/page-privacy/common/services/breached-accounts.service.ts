@@ -145,7 +145,6 @@ export class BreachedAccountsService implements OnDestroy {
 		return this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 			take(1),
 			switchMap((isFigleafInstalled) => {
-				console.log('isFigleafInstalled', isFigleafInstalled);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => breachedAccounts.filter(x => !x.isFixed)),

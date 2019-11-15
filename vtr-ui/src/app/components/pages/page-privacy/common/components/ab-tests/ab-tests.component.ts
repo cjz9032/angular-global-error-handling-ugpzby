@@ -34,7 +34,6 @@ export class AbTestsComponent implements AfterContentInit {
 				}
 
 				if (!currentTemplate) {
-					console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', this.templates)
 					this.templates.first.display();
 					this.abTestsBackendService.sendError(`wrong option name in ${this.testName}`);
 				}

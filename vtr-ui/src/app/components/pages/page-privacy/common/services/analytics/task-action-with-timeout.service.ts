@@ -4,7 +4,7 @@ import { catchError, debounceTime, map, switchMap, take, tap, timeout } from 'rx
 
 export enum TasksName {
 	scoreScanAction = 'scoreScanAction',
-	privacyAppInstallationAction = 'privacyAppInstallationAction',
+	privacyAppInstallationAction = 'AppInstallationAction',
 	scanBreachesAction = 'scanBreachesAction',
 	getNonPrivateStoragesAction = 'getNonPrivateStoragesAction',
 	getTrackingDataAction = 'getTrackingDataAction'

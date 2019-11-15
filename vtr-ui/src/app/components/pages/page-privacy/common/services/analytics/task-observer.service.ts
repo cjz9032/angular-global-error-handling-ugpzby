@@ -28,7 +28,7 @@ export class TaskObserverService {
 				map((value) => {
 					return {
 						...value,
-						TaskName: 'PrivacyAppInstallation',
+						TaskName: TasksName.privacyAppInstallationAction,
 						TaskResult: value.TaskResult === 'Timeout' ? 'Timeout' : 'Installed',
 					};
 				})

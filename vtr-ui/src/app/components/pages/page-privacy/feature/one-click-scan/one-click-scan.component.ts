@@ -61,7 +61,6 @@ export class OneClickScanComponent implements OnDestroy {
 	private resetScan() {
 		this.permitService.clearPermits();
 		this.oneClickScanStepsService.resetStep();
-		console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>resetScan', this.popupId);
 		this.commonPopupService.close(this.popupId);
 	}
 

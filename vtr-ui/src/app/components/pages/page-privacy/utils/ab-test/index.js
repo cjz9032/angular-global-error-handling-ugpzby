@@ -18,8 +18,6 @@ async function generate() {
 		additionalProperties: false,
 	};
 
-	console.log(abTestsConfig.properties);
-
 	fs.writeFileSync(path.join(__dirname, 'abTestsConfig.json'), JSON.stringify(abTestsConfig))
 }
 
