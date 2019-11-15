@@ -155,7 +155,7 @@
 .is-gaming {
 	width: 100%;
 	height: 100%;
-	background-color: $gaming_darkest;
+	background-color: $gaming_darkest;	
 	vtr-container-collapsible {
 		.vtr-container-collapsible.white-theme {
 			background: $dark_cell !important;
@@ -164,6 +164,61 @@
 			}
 		}
 	}
+
+	.container-fluid{
+		vtr-widget-device{
+			.vtr-widget-device {
+				background: $dark_cell !important;
+				.family {
+					color: $gaming_lightest;
+				}
+				.device-sub-header {
+					color: $gaming_grey_lightest;
+				}			
+				.sub-header-separator {
+					color: $gaming_grey_lightest;
+				}			
+				.subheader {
+					color: $gaming_lightest;
+				}
+				.status-list {
+					background-color:  $gaming-slate-blue!important;
+					border: none;
+					li {
+						border-bottom: 1px solid $gaming-Darkslate-blue!important;
+						.title {
+							color: $gaming_lightest!important;			
+							.systemDetails {
+								color: $gaming_lightest!important;
+							}
+						}						
+						&:hover {
+							background-color: $gaming-Darkslate-blue!important;
+						}
+						&.good {
+							.title {
+								color: $gaming_lightest;
+							}			
+							.systemDetails {
+								color: $gaming_lightest;
+							}
+							.detail {
+								color: $gaming_lightest!important;
+							}
+						}
+						.description {
+							color: $shade;
+						}			
+						.arrow {
+							color: $gaming_lightest;
+						}
+					}
+		
+				}
+			}
+		}
+	
+}
 	.vtr-page {
 		.vtr-page-columns {
 			.vtr-page-column {
@@ -1283,6 +1338,7 @@
 			}
 		}
 	}
+
 	// changes to be done from here
 	.vtr-home-security-content {
 		background-color: $gaming_dark !important;
