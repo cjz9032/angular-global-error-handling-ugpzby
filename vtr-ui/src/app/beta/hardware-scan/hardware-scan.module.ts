@@ -28,6 +28,7 @@ import { HeaderMainModule } from 'src/app/components/header-main/header-main.mod
 import { UiButtonModule } from './ui/ui-button/ui-button.module';
 import { ContainerCardModule } from './container-card/container-card.module';
 import { MetricsModule } from 'src/app/directives/metrics.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp';
@@ -87,7 +88,8 @@ library.add(faBan);
 		NgbTooltipModule,
 		NgbProgressbarModule,
 		ContainerCardModule,
-		MetricsModule
+		MetricsModule,
+		PageLayoutModule
 	],
 	exports: [
 		NgbCollapseModule
