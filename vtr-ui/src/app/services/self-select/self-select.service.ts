@@ -3,6 +3,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
 import { CommonService } from '../common/common.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,9 @@ export class SelfSelectService {
 		return this._savedSegment;
 	}
 	public set savedSegment(value) {
+		if (!this._savedSegment && value) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, value);
+		}
 		if (this._savedSegment !== value) {
 			this._savedSegment = value;
 			// this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
@@ -52,6 +56,14 @@ export class SelfSelectService {
 		public deviceService: DeviceService) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.vantageStub = this.vantageShellService.getVantageStub();
+		const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
+		if (changedConfig && changedConfig.segment) {
+			console.log(`SelfSelectService update segment. ${changedConfig.segment}`);
+			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
+		} else {
+			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
+		}
+		this.getConfig();
 	}
 
 	public async getSegment() {
@@ -65,49 +77,47 @@ export class SelfSelectService {
 		try {
 			this.machineInfo = await this.deviceService.getMachineInfo();
 			const isArm = this.machineInfo && this.machineInfo.cpuArchitecture && this.machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-			if (this.selfSelect) {
-				this.userProfileEnabled = true;
-				const config = await this.selfSelect.getConfig();
-				if (config && config.customtags) {
-					const checkedTags = config.customtags;
-					this.checkedArray = checkedTags.split(',');
-					this.savedInterests = [];
-					Object.assign(this.savedInterests, this.checkedArray);
-					this.interests.forEach(item => {
-						item.checked = checkedTags && checkedTags.includes(item.label);
-					});
-				}
-				if (config && config.segment && !this.machineInfo.isGaming && !isArm) {
-					this.usageType = config.segment;
-					this.savedSegment = this.usageType;
-				} else {
-					this.usageType = await this.getDefaultSegment();
-					this.savedSegment = this.usageType;
-					this.saveConfig();
-				}
+			this.userProfileEnabled = true;
+			const config = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
+			if (config && config.customtags) {
+				const checkedTags = config.customtags;
+				this.checkedArray = checkedTags.split(',');
+				this.savedInterests = [];
+				Object.assign(this.savedInterests, this.checkedArray);
+				this.interests.forEach(item => {
+					item.checked = checkedTags && checkedTags.includes(item.label);
+				});
+			}
+			if (config && config.segment && !this.machineInfo.isGaming && !isArm) {
+				this.usageType = config.segment;
+				this.savedSegment = this.usageType;
 			} else {
-				this.userProfileEnabled = false;
 				this.usageType = await this.getDefaultSegment();
 				this.savedSegment = this.usageType;
+				this.saveConfig();
 			}
 		} catch (error) {
 			console.log('SelfSelectService.getConfig failed. ', error);
 			this.usageType = await this.getDefaultSegment();
 			this.savedSegment = this.usageType;
-			// this.userProfileEnabled = false;
+			this.saveConfig();
 		}
 	}
 
 	public saveConfig(reloadRequired?) {
-		const config = {
-			customtags: this.checkedArray.join(','),
-			segment: this.usageType
-		}
-		const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
-		this.savedSegment = this.usageType;
-		this.savedInterests = [];
-		Object.assign(this.savedInterests, this.checkedArray);
-		return this.selfSelect.updateConfig(config).then((result) => {
+		try {
+			const config = {
+				customtags: this.checkedArray.join(','),
+				segment: this.usageType
+			}
+			const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
+			this.savedSegment = this.usageType;
+			this.savedInterests = [];
+			Object.assign(this.savedInterests, this.checkedArray);
+			this.commonService.setLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+			if (this.selfSelect) {
+				this.selfSelect.updateConfig(config).catch((error) => {});
+			}
 			if (reloadNecessary) {
 				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
 					this.vantageStub.refresh();
@@ -115,8 +125,7 @@ export class SelfSelectService {
 					window.open(window.location.origin, '_self');
 				}
 			}
-			return result;
-		}).catch((error) => { });
+		} catch (error) { }
 	}
 
 	private async getDefaultSegment() {
