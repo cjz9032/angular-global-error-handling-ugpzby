@@ -16,7 +16,7 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('WidgetQuicksettingsComponent', () => {
+describe('WidgetQuicksettingsComponent', () => {
 	let component: WidgetQuicksettingsComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
 
