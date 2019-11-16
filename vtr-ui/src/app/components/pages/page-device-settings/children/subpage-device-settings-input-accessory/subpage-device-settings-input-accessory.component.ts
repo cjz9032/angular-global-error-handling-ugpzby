@@ -65,6 +65,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				}
 				if (this.inputAccessoriesCapability.additionalCapabilitiesObj) {
 					this.additionalCapabilitiesObj = this.inputAccessoriesCapability.additionalCapabilitiesObj;
+					if (this.keyboardCompatibility && this.inputAccessoriesCapability.keyboardLayoutName) {
+						this.getAdditionalCapabilitiesFromCache();
+					}
+
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
@@ -74,11 +78,32 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 		}
 	}
 
+	getAdditionalCapabilitiesFromCache() {
+		this.shortcutKeys = [];
+		if (this.additionalCapabilitiesObj.performance) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+		}
+
+		this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+
+		if (this.additionalCapabilitiesObj.privacy) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+		}
+		if (this.additionalCapabilitiesObj.magnifier) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+		}
+		if (this.additionalCapabilitiesObj.backLight) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
+		}
+	}
+
 	// To get Keyboard Layout Name
 	public getKBDLayoutName() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDLayoutName().then((value: any) => {
+					this.inputAccessoriesCapability.keyboardLayoutName = value;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
 					}
