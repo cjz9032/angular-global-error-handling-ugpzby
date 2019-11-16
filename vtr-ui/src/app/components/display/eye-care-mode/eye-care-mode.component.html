@@ -63,7 +63,9 @@
 				id="cb-eye-care-schedule-text"
 				attr.aria-label="cb-eye-care-schedule-text">
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
-				{{sunriseToSunsetText}}
+				<!-- Commented  below line due to VAN-1654-->
+				<!-- {{sunriseToSunsetText}} -->
+				<span *ngIf="sunsetToSunriseStatus">{{sunsetToSunriseStatus.sunsettime}} - {{this.sunsetToSunriseStatus.sunrisetime}})</span>
 			</span>
 		</label>
 	</div>
