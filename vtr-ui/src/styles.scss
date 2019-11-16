@@ -14,8 +14,8 @@ reference : https://fonts.google.com/specimen/Rubik
 @import "app/app.theme";
 
 /************************* hw-settings icomoon icons ****************/
-@import "icomoon-hw-settings.css";
-// @import "./icomoon-style.scss";
+// @import "icomoon-hw-settings.css";
+@import "./icomoon-style.scss";
 @import "./app/beta/beta-styles.scss";
 
 @font-face {
@@ -66,10 +66,10 @@ li {
 	cursor: default;
 }
 
-body a>*,
-.no-pointer>*,
-.no-pointer>div,
-a>div {
+body a > *,
+.no-pointer > *,
+.no-pointer > div,
+a > div {
 	cursor: pointer;
 }
 a.disabled {
@@ -161,7 +161,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Yu Gothic UI","Segoe UI", Sans-serif;
+	font-family: "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Yu Gothic UI", "Segoe UI", Sans-serif;
 	cursor: default;
 	// font-weight: 300;
 }
@@ -182,10 +182,9 @@ button {
 }
 
 // for bootstrap hamburger menu touch input
-.dropdown-backdrop{
+.dropdown-backdrop {
 	z-index: 0;
 }
-
 
 .vtr-page {
 	height: 100%;
@@ -881,8 +880,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
 
-
-
 /* ngb-modal-window overriding the class fade  =========== */
 .fade {
 	transition: none;
@@ -899,7 +896,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		box-shadow: none;
 	}
 	&:focus::after {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		left: -0.4rem;
