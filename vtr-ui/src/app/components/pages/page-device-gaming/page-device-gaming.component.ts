@@ -82,9 +82,22 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 				})
 				.catch((err) => { });
 		}
-		this.getPreviousContent();
-
-		this.fetchCmsContents();
+		this.translate
+			.stream([
+				'dashboard.offlineInfo.welcomeToVantage',
+				'common.menu.support',
+				'settings.settings',
+				'dashboard.offlineInfo.systemHealth',
+				'common.securityAdvisor.wifi',
+				'systemUpdates.title',
+				'systemUpdates.readMore'
+			])
+			.subscribe((result) => {
+				this.dashboardService.translateString = result;
+				this.dashboardService.setDefaultCMSContent();
+				this.getPreviousContent();
+				this.fetchCmsContents();
+			});
 
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -157,14 +170,18 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 						this.dashboardService.cardContentPositionC = cardContentPositionC;
 					}
 
-					const cardContentPositionD = this.cmsService.getOneCMSContent(
-						response,
-						'full-width-title-image-background',
-						'position-D'
-					)[0];
-					if (cardContentPositionD) {
-						this.cardContentPositionD = cardContentPositionD;
-						this.dashboardService.cardContentPositionD = cardContentPositionD;
+					if (!this.dashboardService.cardContentPositionDOnline) {
+						const cardContentPositionD = this.cmsService.getOneCMSContent(
+							response,
+							'full-width-title-image-background',
+							'position-D'
+						)[0];
+						if (cardContentPositionD) {
+							this.cardContentPositionD = cardContentPositionD;
+							this.dashboardService.cardContentPositionDOnline = cardContentPositionD;
+						}
+					} else {
+						this.cardContentPositionD = this.dashboardService.cardContentPositionDOnline;
 					}
 
 					const cardContentPositionE = this.cmsService.getOneCMSContent(
@@ -199,7 +216,6 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 	public onConnectivityClick($event: any) { }
 
 	private getPreviousContent() {
-		this.dashboardService.setDefaultCMSContent();
 		this.heroBannerItems = this.dashboardService.heroBannerItems;
 		this.cardContentPositionB = this.dashboardService.cardContentPositionB;
 		this.cardContentPositionC = this.dashboardService.cardContentPositionC;
