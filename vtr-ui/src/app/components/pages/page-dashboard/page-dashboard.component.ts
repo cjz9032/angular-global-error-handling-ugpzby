@@ -83,9 +83,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		tileF: 'CMS'
 	};
 
-	welcomeText = '';
-	welcomeTextWithoutUserName = '';
-
 	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
@@ -203,11 +200,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 
 	private getWelcomeText() {
-		// dashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
-		const dashboardWelcomeText = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardWelcomeText);
-		if (dashboardWelcomeText) {
-			this.welcomeText = dashboardWelcomeText;
-		} else {
+		if (!this.dashboardService.welcomeText) {
 			let textIndex = 1;
 			const welcomeTextLength = 15;
 			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(
@@ -226,10 +219,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					textIndex = 3;
 				} // Do not show again in first time
 			}
-			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
-			this.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
-			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
-			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.welcomeText);
+			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
+			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.dashboardService.welcomeText);
 		}
 	}
 
