@@ -250,13 +250,13 @@ export class DialogService {
 				return modal.result;
 			}
 		} else {
-			this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
+			this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
 		}
 	}
 
 	openModernPreloadModal() {
-		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
-		if (segment && segment !== SegmentConst.Gaming && !this.deviceService.isSMode) {
+		// const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
+		// if (segment && segment !== SegmentConst.Gaming && !this.deviceService.isSMode) {
 			const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
 				backdrop: 'static',
 				size: 'lg',
@@ -270,8 +270,8 @@ export class DialogService {
 					return true;
 				}
 			});
-		} else {
-			this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
-		}
+		// } else {
+		// 	this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
+		// }
 	}
 }
