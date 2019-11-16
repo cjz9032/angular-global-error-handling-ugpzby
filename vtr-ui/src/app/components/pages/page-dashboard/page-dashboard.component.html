@@ -91,7 +91,7 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 card-left" *ngIf="!deviceService.isSMode">
+				<div class="col-xl-6 card-left" [hidden]="deviceService.isSMode">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
 						[img]="cardContentPositionE.FeatureImage"
@@ -109,7 +109,7 @@
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 card-right" *ngIf="!deviceService.isSMode">
+				<div class="col-xl-6 card-right" [hidden]="deviceService.isSMode">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage"
