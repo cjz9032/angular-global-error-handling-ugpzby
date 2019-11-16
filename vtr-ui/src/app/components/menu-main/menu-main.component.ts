@@ -10,7 +10,6 @@ import { VantageShellService } from '../../services/vantage-shell/vantage-shell.
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
-import { LenovoIdDialogService } from '../../services/dialog/lenovoIdDialog.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
@@ -33,6 +32,7 @@ import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -87,7 +87,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private localInfoService: LocalInfoService,
 		private smartAssist: SmartAssistService,
 		private logger: LoggerService,
-		private dialogService: LenovoIdDialogService,
+		private dialogService: DialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
 		private windowsHelloService: WindowsHelloService,
@@ -417,9 +417,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				case MenuItem.MenuItemChange:
 					this.initComponent();
 					break;
-				case SelfSelectEvent.SegmentChange:
-					this.initComponent();
-					break;
 				default:
 					break;
 			}
@@ -594,19 +591,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	openModernPreloadModal() {
 		this.showMenu = false;
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'modern-preload-modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
+		this.dialogService.openModernPreloadModal();
 	}
 
 }

@@ -109,6 +109,9 @@ export class GuardService {
 				this.deviceService.isSMode)) {
 			return this.guardConstants.defaultRoute;
 		}
+		if (routerStateSnapshot.url.includes('dashboard')) {
+			console.log( `Enter Dashboard page time :: ${new Date()}`);
+		}
 		return true;
 	}
 

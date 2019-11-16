@@ -17,7 +17,7 @@ const routes: Routes = [
 		path: '',
 		component: PageDeviceGamingComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Device',
 			pageContent: 'Device Status'
@@ -27,7 +27,7 @@ const routes: Routes = [
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Gaming.Dashboard',
 			pageContent: 'Gaming Dashboard'

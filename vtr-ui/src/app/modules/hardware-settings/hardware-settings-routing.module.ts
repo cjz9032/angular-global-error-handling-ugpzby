@@ -29,7 +29,7 @@ const routes: Routes = [
 		path: 'device',
 		component: PageDeviceComponent,
 		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonGamingGuard, NonArmGuard ],
+		canActivate: [ GuardService, NonArmGuard ],
 		data: {
 			pageName: 'Device.MyDevice',
 			pageContent: 'My Device Status'
