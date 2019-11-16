@@ -65,7 +65,7 @@
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				<!-- Commented  below line due to VAN-1654-->
 				<!-- {{sunriseToSunsetText}} -->
-				<span *ngIf="sunsetToSunriseStatus">{{sunsetToSunriseStatus.sunsettime}} - {{this.sunsetToSunriseStatus.sunrisetime}})</span>
+				<span *ngIf="sunsetToSunriseStatus && !sunsetToSunriseStatus.firstChange">({{sunsetToSunriseStatus.sunsettime}} - {{this.sunsetToSunriseStatus.sunrisetime}})</span>
 			</span>
 		</label>
 	</div>
