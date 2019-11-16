@@ -13,7 +13,7 @@
 			padding-right: 0;
 			display: flex;
 			@media #{$mediaquery_X42}{
-			padding-left: 0
+				padding-left: 0
 			}
 			> div.right-align {
 				float: right;
@@ -76,6 +76,12 @@
 		.left-icon-block {
 			width: 2rem;
 			color: $icon_color;
+		}
+		.pad-top-05 {
+			padding-top: 0.6rem;
+		}
+		.pad-top-03 {
+			padding-top: 0.3rem;
 		}
 
 		.right-icon {

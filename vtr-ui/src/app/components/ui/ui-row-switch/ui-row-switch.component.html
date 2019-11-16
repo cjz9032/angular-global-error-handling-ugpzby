@@ -14,7 +14,9 @@
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block">
+							<div class="left-icon-block"
+								[class.pad-top-03]="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
+								[class.pad-top-05]="leftIcon[0]=='icomoon'">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
 									[icon]="leftIcon"></fa-icon>
@@ -30,10 +32,10 @@
 						</div>
 						<div class="col">
 							<div class="title" id="{{switchId}}-title"
-							attr.aria-label="{{switchId}}-title">{{ title }}</div>
+								attr.aria-label="{{switchId}}-title">{{ title }}</div>
 							<span>
 								<div class="caption" id="{{switchId}}-caption"
-								attr.aria-label="{{switchId}}-caption"
+									attr.aria-label="{{switchId}}-caption"
 									[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								</div>
 							</span>
@@ -193,7 +195,7 @@
 </div>
 <ng-template #tooltipRef>
 	<div [innerHTML]='tooltipText' id="{{switchId}}-toolTip"
-	attr.aria-label="{{switchId}}-toolTip"></div>
+		attr.aria-label="{{switchId}}-toolTip"></div>
 </ng-template>
 
 <!-- Intelligent-security distance sensitivity adjusting tooltip content -->

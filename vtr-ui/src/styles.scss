@@ -11,12 +11,12 @@ reference : https://fonts.google.com/specimen/Rubik
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
 // @import "~bootstrap/dist/css/bootstrap.css";
-@import "./app/beta/beta-styles.scss";
 @import "app/app.theme";
 
 /************************* hw-settings icomoon icons ****************/
-// @import "icomoon-hw-settings.css";
-@import "./icomoon-style.scss";
+@import "icomoon-hw-settings.css";
+// @import "./icomoon-style.scss";
+@import "./app/beta/beta-styles.scss";
 
 @font-face {
 	font-family: "icomoon";
@@ -32,7 +32,7 @@ reference : https://fonts.google.com/specimen/Rubik
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	font-size: 2.2rem;
+	font-size: 2rem;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
