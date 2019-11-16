@@ -28,7 +28,6 @@ export class HypothesisService {
 					setTimeout(() => reject(new Error('not support in beta')), 2000);
 				}
 				const filter = this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}');
-				this.devService.writeLog('getHypothesis filter: ', JSON.stringify(filter));
 				if (filter) {
 					filter.then((hyp) => {
 						this.hypSettings = hyp;
