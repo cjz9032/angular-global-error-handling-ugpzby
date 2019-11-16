@@ -35,6 +35,9 @@ export class DashboardService {
 	public cardContentPositionFOnline: any;
 	translateString: any;
 
+	welcomeText = '';
+	welcomeTextWithoutUserName = '';
+
 	constructor(
 		shellService: VantageShellService,
 		commonService: CommonService,

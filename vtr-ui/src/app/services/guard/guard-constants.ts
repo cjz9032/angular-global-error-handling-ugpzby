@@ -12,8 +12,8 @@ export class GuardConstants {
 		private router: Router,
 		private deviceService: DeviceService
 	) {
-		this.defaultRoute = this.router.url === '/dashboard' || this.router.url === '/gaming/dashboard' ?
+		this.defaultRoute = this.router.url === '/dashboard' || this.router.url === '/device-gaming' ?
 							false :
-							this.router.parseUrl(this.deviceService.isGaming ? '/gaming/dashboard' : '/dashboard');
+							this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
 	}
 }

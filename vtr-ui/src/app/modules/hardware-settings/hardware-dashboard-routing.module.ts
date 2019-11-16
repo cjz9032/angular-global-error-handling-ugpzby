@@ -2,14 +2,13 @@ import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NgModule } from '@angular/core';
 import { PageDashboardComponent } from 'src/app/components/pages/page-dashboard/page-dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: PageDashboardComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonGamingGuard],
+		canActivate: [ GuardService ],
 		data: {
 			pageName: 'Dashboard'
 		}

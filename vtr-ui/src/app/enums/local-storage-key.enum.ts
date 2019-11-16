@@ -192,5 +192,6 @@ export enum LocalStorageKey {
 	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
 	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
 
-	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment'
+	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
+	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig'
 }

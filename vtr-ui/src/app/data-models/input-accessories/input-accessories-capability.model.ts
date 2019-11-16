@@ -3,4 +3,5 @@ export class InputAccessoriesCapability {
 	isUdkAvailable: boolean;
 	image = '';
 	additionalCapabilitiesObj: any;
+	keyboardLayoutName: any;
 }

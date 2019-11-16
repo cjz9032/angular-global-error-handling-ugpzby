@@ -7,7 +7,6 @@ import { SharedModule } from '../shared.module';
 
 import { ModalModernPreloadComponent } from 'src/app/components/modal/modal-modern-preload/modal-modern-preload.component';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
-import { ModernPreloadRoutingModule } from './modern-preload-routing.module';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { ModernPreloadRoutingModule } from './modern-preload-routing.module';
 		CommonPipeModule,
 		CommonWidgetModule,
 		SharedModule,
-		ModernPreloadRoutingModule
 	],
 	providers: [
 		ModernPreloadService,

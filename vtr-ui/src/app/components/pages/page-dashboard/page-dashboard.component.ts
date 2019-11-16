@@ -16,15 +16,14 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { UserService } from 'src/app/services/user/user.service';
 import { AndroidService } from 'src/app/services/android/android.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
-import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { ModalModernPreloadComponent } from '../../modal/modal-modern-preload/modal-modern-preload.component';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -36,7 +35,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	public brand;
-	private protocalAction: any;
+	private protocolAction: any;
 	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
@@ -83,9 +82,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		tileF: 'CMS'
 	};
 
-	welcomeText = '';
-	welcomeTextWithoutUserName = '';
-
 	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
@@ -107,7 +103,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		private vantageShellService: VantageShellService,
 		public androidService: AndroidService,
 		private activatedRoute: ActivatedRoute,
-		private lenovoIdDialogService: LenovoIdDialogService,
+		private dialogService: DialogService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		public supportService: SupportService,
@@ -180,13 +176,13 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 
 	ngDoCheck(): void {
-		const lastAction = this.protocalAction;
-		this.protocalAction = this.activatedRoute.snapshot.queryParams.action;
-		if (lastAction !== this.protocalAction) {
-			if (this.protocalAction.toLowerCase() === 'lenovoid') {
-				this.lenovoIdDialogService.openLenovoIdDialog();
-			} else if (this.protocalAction.toLowerCase() === 'modernpreload') {
-				this.openModernPreloadModal();
+		const lastAction = this.protocolAction;
+		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
+		if (lastAction !== this.protocolAction) {
+			if (this.protocolAction.toLowerCase() === 'lenovoid') {
+				this.dialogService.openLenovoIdDialog();
+			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+				this.dialogService.openModernPreloadModal();
 			}
 		}
 	}
@@ -203,11 +199,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	}
 
 	private getWelcomeText() {
-		// dashboardWelcomeText = '[SessionStorageKey] DashboardWelcomeText',
-		const dashboardWelcomeText = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardWelcomeText);
-		if (dashboardWelcomeText) {
-			this.welcomeText = dashboardWelcomeText;
-		} else {
+		if (!this.dashboardService.welcomeText) {
 			let textIndex = 1;
 			const welcomeTextLength = 15;
 			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(
@@ -226,10 +218,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					textIndex = 3;
 				} // Do not show again in first time
 			}
-			this.welcomeText = `lenovoId.welcomeText${textIndex}`;
-			this.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
-			this.commonService.setSessionStorageValue(SessionStorageKey.DashboardWelcomeText, this.welcomeText);
-			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.welcomeText);
+			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
+			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.dashboardService.welcomeText);
 		}
 	}
 
@@ -642,22 +633,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			size: 'lg',
 			centered: true,
 			windowClass: 'feedback-modal'
-		});
-	}
-
-	openModernPreloadModal() {
-		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'modern-preload-modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-					modernPreloadModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
 		});
 	}
 

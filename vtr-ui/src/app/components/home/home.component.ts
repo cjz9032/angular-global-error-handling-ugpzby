@@ -73,16 +73,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	private vantageLaunch(isGaming: boolean) {
 		this.logger.info(`HomeComponent.vantageLaunch isGamingDevice: `, isGaming);
-		try {
-			if (isGaming) {
-				this.router.navigate(['/device-gaming']);
-			} else {
-				this.router.navigate(['/dashboard']);
+		this.route.queryParams.subscribe(params => {
+			try {
+				this.router.navigate([isGaming ? '/device-gaming' : '/dashboard'], { queryParams : params});
+			} catch (error) {
+				this.logger.error(`HomeComponent.vantageLaunch`, error.message);
+				return EMPTY;
 			}
-		} catch (error) {
-			this.logger.error(`HomeComponent.vantageLaunch`, error.message);
-			return EMPTY;
-		}
+		});
 	}
 
 	private onNotification(notification: AppNotification) {
