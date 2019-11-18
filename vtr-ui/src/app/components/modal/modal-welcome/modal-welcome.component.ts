@@ -62,9 +62,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	async ngOnInit() {
 		this.timerService.start();
-		await this.selfSelectService.getConfig();
-		this.usageType = this.selfSelectService.usageType;
-		this.interests = this.selfSelectService.interests;
+		const config = await this.selfSelectService.getConfig();
+		this.usageType = config.usageType;
+		this.interests = config.interests;
 	}
 
 	ngAfterViewInit() {
