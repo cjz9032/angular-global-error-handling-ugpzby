@@ -32,7 +32,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	batteryConditions: BatteryConditionModel[];
+	batteryConditions: BatteryConditionModel[] = [new BatteryConditionModel(BatteryConditionsEnum.Good, BatteryQuality.Good)];
 	batteryConditionsEnum = BatteryConditionsEnum;
 	batteryConditionNotes: string[];
 	batteryQuality = BatteryQuality;
@@ -108,7 +108,18 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.updateMainBatteryTime();
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
 		this.isLoading = false;
-
+		try {
+			const conditions = window.localStorage.getItem('batteryCondition');
+			if (Array.isArray(conditions) && conditions.length > 0) {
+				conditions.forEach((condition: BatteryConditionModel, index) => {
+					conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
+				});
+				this.batteryConditions = conditions;
+			}
+		} catch (e) {
+			console.log(e);
+		}
+		this.setConditionTips();
 
 		// temp
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
@@ -380,6 +391,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
+
+		// temp cache battery condition
+		window.localStorage.setItem('batteryCondition', JSON.stringify(this.batteryConditions));
 	}
 
 	setConditionTips() {
