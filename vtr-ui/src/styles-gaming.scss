@@ -155,7 +155,7 @@
 .is-gaming {
 	width: 100%;
 	height: 100%;
-	background-color: $gaming_darkest;
+	background-color: $gaming_darkest;	
 	vtr-container-collapsible {
 		.vtr-container-collapsible.white-theme {
 			background: $dark_cell !important;
@@ -164,6 +164,61 @@
 			}
 		}
 	}
+//styles added for my device page 
+	.container-fluid{
+		vtr-widget-device{
+			.vtr-widget-device {
+				background: $dark_cell !important;
+				.family {
+					color: $gaming_lightest;
+				}
+				.device-sub-header {
+					color: $gaming_grey_lightest;
+				}			
+				.sub-header-separator {
+					color: $gaming_grey_lightest;
+				}			
+				.subheader {
+					color: $gaming_lightest;
+				}
+				.status-list {
+					background-color:  $gaming-slate-blue!important;
+					border: none;
+					li {
+						border-bottom: 1px solid $gaming-Darkslate-blue!important;
+						.title {
+							color: $gaming_lightest!important;			
+							.systemDetails {
+								color: $gaming_lightest!important;
+							}
+						}						
+						&:hover {
+							background-color: $gaming-Darkslate-blue!important;
+						}
+						&.good {
+							.title {
+								color: $gaming_lightest;
+							}			
+							.systemDetails {
+								color: $gaming_lightest;
+							}
+							.detail {
+								color: $gaming_lightest!important;
+							}
+						}
+						.description {
+							color: $shade;
+						}			
+						.arrow {
+							color: $gaming_lightest;
+						}
+					}
+		
+				}
+			}
+		}	
+	}
+//styles added till here for my device page 
 	.vtr-page {
 		.vtr-page-columns {
 			.vtr-page-column {
@@ -290,12 +345,12 @@
 														top: 0;
 													}
 													.vtr-eye-care-mode {
-														.vtr-ui-range-slider{
+														.vtr-ui-range-slider {
 															.label {
 																color: $gaming_lightest;
 															}
 														}
-														.custom-control-label{
+														.custom-control-label {
 															.disabled {
 																color: $gaming_grey_lightest;
 															}
@@ -304,7 +359,7 @@
 													.hidden-keyboard-text {
 														color: $gaming_lightest;
 													}
-													
+
 													.inputSection {
 														.btn-block button.btn-outline-shadow {
 															border: none;
@@ -336,7 +391,7 @@
 												}
 											}
 										}
-										.top-row-key-block{
+										.top-row-key-block {
 											.title {
 												color: $gaming_lightest;
 											}
@@ -1232,7 +1287,7 @@
 			color: $gaming_lightest !important;
 		}
 	}
-	
+
 	.dark-dashline {
 		height: 1px;
 		background: $gaming_darkest;
@@ -1283,6 +1338,7 @@
 			}
 		}
 	}
+
 	// changes to be done from here
 	.vtr-home-security-content {
 		background-color: $gaming_dark !important;
@@ -1483,10 +1539,8 @@
 		@media #{$small-screen} {
 			max-width: 50rem;
 			position: relative;
-		}
-
-		@media #{$mediaquery_12} {
-			left: 9rem;
+			margin: auto;
+			width: 90%;
 		}
 	}
 }

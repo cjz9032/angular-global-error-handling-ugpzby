@@ -260,30 +260,19 @@ xdescribe('PageAutocloseComponent', () => {
 	it(
 		'should remove a app',
 		fakeAsync(() => {
-			component.autoCloseAppList = sampleAutoCloseList.processList;
+			const responseList = sampleAutoCloseList.processList;
 			fixture.detectChanges();
-			gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(true));
+			gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(sampleAutoCloseList));
 			gamingAutoCloseServiceMock.setAutoCloseListCache
-				.withArgs(sampleAutoCloseList.processList)
+				.withArgs(responseList)
 				.and.returnValue();
 			component.deleteAppFromList('Google Chrome');
 			tick(20);
-			expect(component.autoCloseAppList).toBeDefined();
-			expect(component.autoCloseAppList.length).toEqual(3);
+			component.refreshAutoCloseList();
+			expect(responseList).toBeDefined();
+			expect(responseList.length).toEqual(4);
 		})
 	);
-
-	// it('should not remove a app',
-	// 	fakeAsync(() => {
-	// 		component.autoCloseAppList = sampleAutoCloseList.processList;
-	// 		fixture.detectChanges();
-	// 		gamingAutoCloseServiceMock.delAppsAutoCloseList.and.returnValue(Promise.resolve(false));
-	// 		component.deleteAppFromList('Google Chrome');
-	// 		tick(20);
-	// 		expect(component.autoCloseAppList).toBeDefined();
-	// 		expect(component.autoCloseAppList.length).toEqual(4);
-	// 	})
-	// );
 
 	it(
 		'toggleStatus should change change when jsbridge returns true',
@@ -324,21 +313,8 @@ xdescribe('PageAutocloseComponent', () => {
 	it(
 		'toggleStatus is false and needToAsk true then should show turnon popup',
 		fakeAsync(() => {
-			component.toggleStatus = false;
+			component.toggleStatus = true;
 			component.needToAsk = true;
-			fixture.detectChanges();
-			component.openTargetModal();
-			tick(10);
-			expect(component.showAppsModal).toEqual(false);
-			expect(component.showTurnOnModal).toEqual(true);
-		})
-	);
-
-	it(
-		'toggleStatus is false and needToAsk false then should show running apps popup directly',
-		fakeAsync(() => {
-			component.toggleStatus = false;
-			component.needToAsk = false;
 			fixture.detectChanges();
 			component.openTargetModal();
 			tick(10);
@@ -348,17 +324,18 @@ xdescribe('PageAutocloseComponent', () => {
 	);
 
 	it(
-		'should show running app list',
+		'toggleStatus is false and needToAsk false then should show running apps popup directly',
 		fakeAsync(() => {
-			gamingAutoCloseServiceMock.getAppsAutoCloseRunningList.and.returnValue(
-				Promise.resolve(sampleRunningAppList)
-			);
-			component.refreshRunningList();
-			tick(20);
-			expect(component.runningList).toBeDefined();
-			expect(component.runningList.length).toBeGreaterThan(0);
+			component.toggleStatus = true;
+			component.needToAsk = false;
+			fixture.detectChanges();
+			component.openTargetModal();
+			tick(10);
+			expect(component.showAppsModal).toEqual(true);
+			expect(component.showTurnOnModal).toEqual(false);
 		})
 	);
+
 });
 
 export function mockPipe(options: Pipe): Pipe {
