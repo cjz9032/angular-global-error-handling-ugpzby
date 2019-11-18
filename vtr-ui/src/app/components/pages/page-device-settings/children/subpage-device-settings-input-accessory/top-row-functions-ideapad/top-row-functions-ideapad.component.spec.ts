@@ -7,7 +7,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('TopRowFunctionsIdeapadComponent', () => {
+xdescribe('TopRowFunctionsIdeapadComponent', () => {
 	let component: TopRowFunctionsIdeapadComponent;
 	let fixture: ComponentFixture<TopRowFunctionsIdeapadComponent>;
 
