@@ -15,106 +15,106 @@ import { error } from 'util';
 
 describe('ModalSmartStandByComponent', () => {
 
-    const activities: SmartStandbyActivityModel[] = [
-        {
-            day: 'sunday',
-            activities: [
-                {
-                    hour: 1,
-                    usage: [20, 30, 10]
-                }
-            ]
-        }
-    ];
+	const activities: SmartStandbyActivityModel[] = [
+		{
+			day: 'sunday',
+			activities: [
+				{
+					hour: 1,
+					usage: [20, 30, 10]
+				}
+			]
+		}
+	];
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            declarations: [ModalSmartStandByComponent],
-            imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
-            providers: [NgbActiveModal, TranslateStore]
-        }).compileComponents();
-    }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [ModalSmartStandByComponent],
+			imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
+			providers: [NgbActiveModal, TranslateStore]
+		}).compileComponents();
+	}));
 
-    describe(':', () => {
+	describe(':', () => {
 
-        function setup() {
-            const fixture = TestBed.createComponent(ModalSmartStandByComponent);
-            const component = fixture.debugElement.componentInstance;
-            const powerService = fixture.debugElement.injector.get(PowerService);
+		function setup() {
+			const fixture = TestBed.createComponent(ModalSmartStandByComponent);
+			const component = fixture.debugElement.componentInstance;
+			const powerService = fixture.debugElement.injector.get(PowerService);
 
-            const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
+			const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
 
-            return { fixture, component, powerService, httpTestingController };
-        }
+			return { fixture, component, powerService, httpTestingController };
+		}
 
-        it('should create the app', (() => {
-            const { component } = setup();
-            expect(component).toBeTruthy();
-        }));
+		it('should create the app', (() => {
+			const { component } = setup();
+			expect(component).toBeTruthy();
+		}));
 
-        it('getActiviesData calling powerService', async(() => {
-            const { fixture, component, powerService } = setup();
-            spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-            spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+		it('getActiviesData calling powerService', async(() => {
+			const { fixture, component, powerService } = setup();
+			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
+			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
-            component.getActiviesData();
-            fixture.detectChanges();
+			component.getActiviesData();
+			fixture.detectChanges();
 
-            expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-            expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
-        }));
+			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
+			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+		}));
 
-        it('getSmartStandbyActiveHours calling powerService', async(() => {
-            const { fixture, component, powerService } = setup();
-            spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-            spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+		it('getSmartStandbyActiveHours calling powerService', async(() => {
+			const { fixture, component, powerService } = setup();
+			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
+			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
-            component.getSmartStandbyActiveHours();
-            fixture.detectChanges();
+			component.getSmartStandbyActiveHours();
+			fixture.detectChanges();
 
-            expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-            expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
-        }));
+			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
+			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+		}));
 
-        //Testing exceptions
-        it('Testing exception', async(() => {
-            const { fixture, component, powerService } = setup();
-            spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(new TypeError("caught exception")));
-            spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(new TypeError("caught exception")));
+		//Testing exceptions
+		it('Testing exception', async(() => {
+			const { fixture, component, powerService } = setup();
+			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(new TypeError("caught exception")));
+			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(new TypeError("caught exception")));
 
-            fixture.detectChanges();// onInit() 
-            let excp = function() {
-                component.getActivities();
-                component.getSmartStandbyActiveHours();
-                component.closeModal();
-                throw new TypeError("caught exception");
-            };
-            expect(excp).toThrowError(TypeError);
-        }));
-
-
+			fixture.detectChanges();// onInit()
+			let excp = function () {
+				component.getActivities();
+				component.getSmartStandbyActiveHours();
+				component.closeModal();
+				throw new TypeError("caught exception");
+			};
+			expect(excp).toThrowError(TypeError);
+		}));
 
 
-        //testing http.get
-        it('should call getActivities', (() => {
-            const { fixture, component, httpTestingController } = setup();
-            let mockActivities = activities;
 
-            component.getActivities().subscribe(data => {
-                expect(data).toEqual(mockActivities);
-            });
 
-            const req = httpTestingController.expectOne('/assets/activities.json');
+		//testing http.get
+		it('should call getActivities', (() => {
+			const { fixture, component, httpTestingController } = setup();
+			let mockActivities = activities;
 
-            expect(req.request.method).toBe('GET');
+			component.getActivities().subscribe(data => {
+				expect(data).toEqual(mockActivities);
+			});
 
-            req.flush(mockActivities);
-        }));
+			const req = httpTestingController.expectOne('/assets/activities.json');
 
-        afterEach(() => {
-            const { httpTestingController } = setup();
-            httpTestingController.verify();
-        });
+			expect(req.request.method).toBe('GET');
 
-    });
+			req.flush(mockActivities);
+		}));
+
+		afterEach(() => {
+			const { httpTestingController } = setup();
+			httpTestingController.verify();
+		});
+
+	});
 });

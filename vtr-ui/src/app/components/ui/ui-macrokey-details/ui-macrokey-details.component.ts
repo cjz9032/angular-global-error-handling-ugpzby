@@ -53,7 +53,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		this.toggleRecording();
 	}
 
-	toggleRecording(isAbnormalStop: Boolean = false) {
+	toggleRecording(isAbnormalStop: boolean = false) {
 		this.recording = !this.recording;
 		const recordingChangeData = {
 			recordingStatus: this.recording,

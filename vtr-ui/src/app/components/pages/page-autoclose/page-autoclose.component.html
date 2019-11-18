@@ -1,22 +1,15 @@
-<vtr-page-layout [title]="'gaming.autoClose.title' | translate"
-	[textId]="'autoclose'"
-	[pageCssClass]="'autoclose'"
-	[shiftLeftUp]="true"
-	[shiftRightUp]="true"
-	[back]="'common.ui.back' | translate"
+<vtr-page-layout [title]="'gaming.autoClose.title' | translate" [textId]="'autoclose'" [pageCssClass]="'autoclose'"
+	[shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate"
 	[backId]="'vtr-gaming-autoclose-btn-back'">
 
 	<left-content>
 		<div class="container-fluid">
-			<div class="row"
-				*ngIf="!isOnline">
+			<div class="row" *ngIf="!isOnline">
 				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-						[isSubtitleVisible]="false"
-						[isButtonVisible]="false"
-						id="dashboard-btn-connectivity">
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+						[isButtonVisible]="false" id="dashboard-btn-connectivity">
 					</vtr-widget-offline-info>
 				</div>
 			</div>
@@ -27,10 +20,8 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-sm-12">
-										<vtr-ui-toggle *ngIf='toggleStatus !== undefined'
-											[toggleId]="'Auto close '"
-											(toggle)="toggleAutoClose($event)"
-											[value]="toggleStatus">
+										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [toggleId]="'Auto close '"
+											(toggle)="toggleAutoClose($event)" [value]="toggleStatus">
 										</vtr-ui-toggle>
 										<p class="intro-text">
 											{{'gaming.autoClose.introLine' | translate}}</p>
@@ -52,39 +43,24 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div *ngIf="!deviceService.isGaming"
-					class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card order="1"
-						[itemID]="cardContentPositionF.Id"
-						[img]="cardContentPositionF.FeatureImage"
-						[title]="cardContentPositionF.Title"
-						[logoText]="cardContentPositionF.BrandName"
-						[action]="cardContentPositionF.Action"
-						[dataSource]="cardContentPositionF.DataSource"
-						[actionType]="cardContentPositionF.ActionType"
-						[actionLink]="cardContentPositionF.ActionLink"
-						[type]="'article'"
-						[ratioX]="4"
+				<div *ngIf="!deviceService.isGaming" class="col col-12 px-0 pt-0 pb-40">
+					<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
+						[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
+						[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
+						[dataSource]="cardContentPositionF.DataSource" [actionType]="cardContentPositionF.ActionType"
+						[actionLink]="cardContentPositionF.ActionLink" [type]="'corner-article'" [ratioX]="4"
 						[ratioY]="4">
 					</vtr-container-card>
 				</div>
 
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card order="2"
-						[itemID]="cardContentPositionB.id"
-						[dynamicmetricsItem]="dynamic_metricsItem"
-						[img]="cardContentPositionB.FeatureImage"
-						[caption]="cardContentPositionB.Description"
-						[title]="cardContentPositionB.Title"
-						[logoText]="cardContentPositionB.BrandName"
-						[action]="cardContentPositionB.Action"
-						[dataSource]="cardContentPositionB.DataSource"
-						[actionType]="cardContentPositionB.ActionType"
-						[actionLink]="cardContentPositionB.ActionLink"
-						[type]="'corner'"
-						[ratioX]="4"
-						[ratioY]="2"
-						[cornerShift]="'large'">
+					<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+						[dynamicmetricsItem]="dynamic_metricsItem" [img]="cardContentPositionB.FeatureImage"
+						[caption]="cardContentPositionB.Description" [title]="cardContentPositionB.Title"
+						[logoText]="cardContentPositionB.BrandName" [action]="cardContentPositionB.Action"
+						[dataSource]="cardContentPositionB.DataSource" [actionType]="cardContentPositionB.ActionType"
+						[actionLink]="cardContentPositionB.ActionLink" [type]="'corner-article'" [ratioX]="4"
+						[ratioY]="2" [cornerShift]="'large'">
 					</vtr-container-card>
 				</div>
 			</div>
@@ -93,14 +69,11 @@
 
 </vtr-page-layout>
 
-<vtr-modal-turn-on *ngIf="showTurnOnModal"
-	(actionNeedAsk)="doNotShowAction($event)"
-	(closeTurnOnModal)="modalCloseTurnOn($event)"
-	(actionNotNow)="showTurnOnModal=false;initNotNowAction($event)"
+<vtr-modal-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
+	(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="showTurnOnModal=false;initNotNowAction($event)"
 	(actionTurnOn)="showTurnOnModal=false;initTurnOnAction()">
 </vtr-modal-turn-on>
 
-<vtr-modal-add-apps *ngIf="showAppsModal"
-	(addAppToList)="addAppDataToList($event)"
+<vtr-modal-add-apps *ngIf="showAppsModal" (addAppToList)="addAppDataToList($event)"
 	(closeAddAppsModal)="modalCloseAddApps($event)">
 </vtr-modal-add-apps>

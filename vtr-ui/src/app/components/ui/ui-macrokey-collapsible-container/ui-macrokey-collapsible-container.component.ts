@@ -20,7 +20,7 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChange
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
-	public selectedOption: any;
+	public selectedOption: any = {};
 	public currentDescription: string;
 	public selectedDescription: string;
 	defaultLanguage: any;

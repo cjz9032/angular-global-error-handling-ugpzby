@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BatteryCardComponent } from './battery-card.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateStore } from '@ngx-translate/core';
@@ -11,7 +10,6 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
-import { BatteryConditionsEnum as BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 import { BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -137,7 +135,7 @@ describe('BatteryCardComponent', () => {
 		});
 
 		it('#ngOnInit should call getBatteryDetailOnCard', () => {
-			const { fixture,component } = setup();
+			const { fixture, component } = setup();
 			spyOn(component, 'getBatteryDetailOnCard');
 			fixture.detectChanges();
 			component.ngOnInit();
@@ -257,7 +255,7 @@ describe('BatteryCardComponent', () => {
 			component.remainingPercentages = [85];
 			component.chargeThresholdInfo = thresholdNotification.payload;
 			spyOn(commonService, 'sendNotification');
-			fixture.detectChanges(); 
+			fixture.detectChanges();
 			component.sendThresholdWarning();
 			expect(commonService.sendNotification).toHaveBeenCalledWith('ThresholdWarningNote', true);
 		});
@@ -265,7 +263,7 @@ describe('BatteryCardComponent', () => {
 		it('#showDetailModal should call modalService open method', () => {
 			const { fixture, component, modalService } = setup();
 			spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve() });
-			fixture.detectChanges(); 
+			fixture.detectChanges();
 			component.showDetailModal(component.batteryModal);
 			expect(modalService.open).toHaveBeenCalledWith(component.batteryModal, {
 				backdrop: 'static',
@@ -320,36 +318,36 @@ describe('BatteryCardComponent', () => {
 			component.batteryGauge = info.batteryIndicatorInfo;
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
 			spyOn(component, 'setConditionTips');
-			fixture.detectChanges(); 
+			fixture.detectChanges();
 
 			component.getBatteryCondition();
 			expect(commonService.getLocalStorageValue).toHaveBeenCalledWith(LocalStorageKey.MachineType);
 			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0)]);
 			expect(component.setConditionTips).toHaveBeenCalled();
-	
+
 			component.batteryHealth = 1;
 			component.getBatteryCondition();
 			//	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
-	
+
 			// Limited AC adapter status
 			component.batteryHealth = 0;
 			component.batteryGauge.acAdapterStatus = 'Limited';
 			component.getBatteryCondition();
-			//expect(component.batteryConditions).toEqual([new BatteryConditionModel(16, 3), new BatteryConditionModel(0, 0)]);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0),new BatteryConditionModel(16, 3)]);
-	
+			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(16, 3), new BatteryConditionModel(0, 0)]);
+			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(16, 3)]);
+
 			// Not Supported AC adapter status
 			component.batteryGauge.acAdapterStatus = 'NotSupported';
 			component.getBatteryCondition();
-			//expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
-			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0),new BatteryConditionModel(15, 3)]);
-	
+			// expect(component.batteryConditions).toEqual([new BatteryConditionModel(15, 3), new BatteryConditionModel(0, 0)]);
+			expect(component.batteryConditions).toEqual([new BatteryConditionModel(0, 0), new BatteryConditionModel(15, 3)]);
+
 			// all thinkPad conditions
 			component.batteryGauge.acAdapterStatus = 'Supported';
 			component.batteryInfo[0].batteryCondition = ['HardwareAuthenticationError', 'HighTemperature', 'TrickleCharge', 'OverheatedBattery', 'PermanentError'];
 			component.getBatteryCondition();
 			expect(component.batteryConditions.length).toEqual(5);
-	
+
 			// power driver missing
 			component.batteryInfo = undefined;
 			component.batteryGauge.isPowerDriverMissing = true;
@@ -362,7 +360,7 @@ describe('BatteryCardComponent', () => {
 			const { component } = setup();
 			component.batteryConditions = conditions;
 			component.setConditionTips();
-	
+
 			expect(component.batteryConditionNotes.length).toBe(3);
 		});
 
@@ -494,7 +492,7 @@ describe('BatteryCardComponent', () => {
 	// 	component.sendThresholdWarning();
 	// 	expect(commonService.sendNotification).toHaveBeenCalledWith('ThresholdWarningNote', false);
 	// });
-	
+
 	// it('#sendThresholdWarning should call commonService sendNotification with true', () => {
 	// 	component.remainingPercentages = [85];
 	// 	component.chargeThresholdInfo = thresholdNotification.payload;
