@@ -178,11 +178,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	ngDoCheck(): void {
 		const lastAction = this.protocolAction;
 		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		if (lastAction !== this.protocolAction) {
+		if (this.protocolAction && (lastAction !== this.protocolAction)) {
 			if (this.protocolAction.toLowerCase() === 'lenovoid') {
-				this.dialogService.openLenovoIdDialog();
+				setTimeout(() => this.dialogService.openLenovoIdDialog());
 			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
-				this.dialogService.openModernPreloadModal();
+				setTimeout(() => this.dialogService.openModernPreloadModal());
 			}
 		}
 	}

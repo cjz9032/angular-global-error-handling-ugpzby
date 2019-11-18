@@ -14,9 +14,7 @@
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block"
-								[class.pad-top-02]="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
-								[class.pad-top-07]="leftIcon[0]=='icomoon'">
+							<div class="left-icon-block top-pad-03">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
 									[icon]="leftIcon"></fa-icon>

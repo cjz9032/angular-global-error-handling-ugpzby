@@ -295,13 +295,13 @@ export class PageSupportComponent implements OnInit {
 					this.sliceArticles(response);
 					this.articlesType = 'articles';
 				} else {
-					this.fetchCMSArticles(categoryId, 'en');
+					setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
 			},
 			error => {
 				console.log('fetchCMSArticles error', error);
 				if (lang.toLowerCase() !== 'en') {
-					this.fetchCMSArticles(categoryId, 'en');
+					setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
 			}
 		);

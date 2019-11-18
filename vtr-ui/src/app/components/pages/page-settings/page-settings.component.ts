@@ -138,9 +138,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	private getSelfSelectStatus() {
-		this.selfSelectService.getConfig().then(() => {
-			this.usageType = this.selfSelectService.savedSegment;
-			this.interests = this.selfSelectService.interests;
+		this.selfSelectService.getConfig().then((result) => {
+			this.usageType = result.usageType;
+			this.interests = result.interests;
 		});
 		this.userSelectionChanged = false;
 	}

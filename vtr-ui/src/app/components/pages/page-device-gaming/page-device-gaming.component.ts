@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -21,6 +21,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -28,7 +29,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	styleUrls: ['./page-device-gaming.component.scss'],
 	providers: [NgbModalConfig, NgbModal]
 })
-export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
+export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit {
 	public static allCapablitiyFlag = false;
 	dashboardStart: any = new Date();
 	submit = 'Submit';
@@ -37,6 +38,7 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
+	private protocolAction: any;
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
@@ -59,6 +61,8 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 		public userService: UserService,
 		private translate: TranslateService,
 		private loggerService: LoggerService,
+		private activatedRoute: ActivatedRoute,
+		private dialogService: DialogService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		vantageShellService: VantageShellService
 	) {
@@ -102,6 +106,18 @@ export class PageDeviceGamingComponent implements OnInit, AfterViewInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+	}
+
+	ngDoCheck(): void {
+		const lastAction = this.protocolAction;
+		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
+		if (this.protocolAction && (lastAction !== this.protocolAction)) {
+			if (this.protocolAction.toLowerCase() === 'lenovoid') {
+				setTimeout(() => this.dialogService.openLenovoIdDialog());
+			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+				setTimeout(() => this.dialogService.openModernPreloadModal());
+			}
+		}
 	}
 
 	ngAfterViewInit() {

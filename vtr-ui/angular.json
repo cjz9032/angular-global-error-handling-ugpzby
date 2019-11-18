@@ -28,7 +28,6 @@
 						"aot": true,
 						"assets": [
 							"src/favicon.ico",
-							"src/assets/fonts/icomoon.woff",
 							"src/assets",
 							"src/mock-api",
 							"src/manifest.webmanifest",
@@ -90,7 +89,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -123,7 +126,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -156,7 +163,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,

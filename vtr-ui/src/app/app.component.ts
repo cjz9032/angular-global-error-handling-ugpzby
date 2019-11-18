@@ -384,7 +384,9 @@ export class AppComponent implements OnInit, OnDestroy {
 								const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
 								this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
 							} else {
-								this.launchWelcomeModal();
+								setTimeout(() => {
+									this.launchWelcomeModal();
+								}, 0);
 							}
 						}
 					}).catch((error) => {});
