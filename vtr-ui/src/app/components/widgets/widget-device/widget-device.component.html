@@ -11,7 +11,7 @@
 					attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" dir={{direction}}>
 			<div class="col-12 px-0">
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
@@ -36,8 +36,8 @@
 				</span>
 				<span class="device-sub-header text-wrap"
 					id="myDevice-bios-version"
-					attr.aria-label="myDevice-bios-version">{{'device.myDevice.biosVersion'|translate}}:
-					{{myDevice.bios}}</span>
+					attr.aria-label="myDevice-bios-version" dir={{direction}}>{{'device.myDevice.biosVersion'|translate}}</span>
+					<span class="device-sub-header text-wrap" >:{{myDevice.bios}}</span>
 
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 										attr.aria-label="myDevice-system-details-{{item.id}}">
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
-											class='systemDetails'>({{item.systemDetails}})</span>
+											class='systemDetails' dir={{direction}}>({{item.systemDetails}})</span>
 									</div>
 
 
