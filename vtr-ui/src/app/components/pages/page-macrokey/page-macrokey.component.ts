@@ -57,7 +57,7 @@ export class PageMacrokeyComponent implements OnInit {
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
 		private translate: TranslateService,
-		public deviceService: DeviceService,) {
+		public deviceService: DeviceService) {
 		this.metrics = this.shellService.getMetrics();
 		this.titleService.setTitle('gaming.common.narrator.pageTitle.macroKey');
 		this.metrics = this.shellService.getMetrics();
