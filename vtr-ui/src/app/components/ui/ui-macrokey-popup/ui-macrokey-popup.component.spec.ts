@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiMacrokeyPopupComponent } from './ui-macrokey-popup.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('UiMacrokeyPopupComponent', () => {
+describe('UiMacrokeyPopupComponent', () => {
 	let component: UiMacrokeyPopupComponent;
 	let fixture: ComponentFixture<UiMacrokeyPopupComponent>;
 

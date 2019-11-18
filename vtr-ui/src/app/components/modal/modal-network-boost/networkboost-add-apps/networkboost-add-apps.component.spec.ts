@@ -190,7 +190,7 @@ const sampleNetworkBoostList = {
 	]
 };
 
-fdescribe('NetworkboostAddAppsComponent', () => {
+describe('NetworkboostAddAppsComponent', () => {
 	let component: NetworkboostAddAppsComponent;
 	let fixture: ComponentFixture<NetworkboostAddAppsComponent>;
 	gamingNetworkBoostMock.isShellAvailable.and.returnValue(true);

@@ -7,7 +7,7 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { UiMacrokeyCollapsibleContainerComponent } from './ui-macrokey-collapsible-container.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('UiMacrokeyCollapsibleContainerComponent', () => {
+describe('UiMacrokeyCollapsibleContainerComponent', () => {
 	let component: UiMacrokeyCollapsibleContainerComponent;
 	let fixture: ComponentFixture<UiMacrokeyCollapsibleContainerComponent>;
 	const mockLanguageService = {};

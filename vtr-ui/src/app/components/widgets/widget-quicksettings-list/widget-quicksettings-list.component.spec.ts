@@ -21,7 +21,7 @@ const shellServicesMock = jasmine.createSpyObj('VantageShellService', ['isShellA
 
 
 const deviceServiceMock = jasmine.createSpyObj('DeviceService', ['isShellAvailable']);
-fdescribe('WidgetQuicksettingsListComponent', () => {
+describe('WidgetQuicksettingsListComponent', () => {
 	let component: WidgetQuicksettingsListComponent;
 	let fixture: ComponentFixture<WidgetQuicksettingsListComponent>;
 	gamingThermalModeServiceMock.isShellAvailable.and.returnValue(true);
