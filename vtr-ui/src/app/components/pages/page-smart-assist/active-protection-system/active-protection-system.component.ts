@@ -72,9 +72,10 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	constructor(private smartAssist: SmartAssistService, private translate: TranslateService) { }
 
 	ngOnInit() {
+		console.log("OnInit Called-------");
 		this.advancedToggle = false;
 		this.populateIntervals();
-		this.initAPS(); // get Default or set APS values
+		// this.initAPS(); // get Default or set APS values
 		this.checkAdvance(); // checking advanced features
 	}
 
