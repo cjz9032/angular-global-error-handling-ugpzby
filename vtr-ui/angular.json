@@ -156,7 +156,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,
