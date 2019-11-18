@@ -73,6 +73,7 @@
 	&__button {
 		@extend %theme-btn;
 		max-width: 35%;
+		min-width: 22rem;
 		align-self: center;
 		cursor: pointer;
 
