@@ -5,7 +5,7 @@ import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { CommonService } from '../common/common.service';
 
-fdescribe('SmartStandbyService', () => {
+describe('SmartStandbyService', () => {
 	beforeEach(() => TestBed.configureTestingModule({
 		providers: [TranslateStore, CommonService],
 		imports: [TranslationModule.forChild()]

@@ -5,6 +5,7 @@ import * as d3 from 'd3';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
 import { PowerService } from 'src/app/services/power/power.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'vtr-modal-smart-stand-by',
@@ -224,6 +225,9 @@ public renderToChart(data: SmartStandbyActivityModel[]) {
 	this.activities = data;
 	console.log(data);
 	this.renderChart(data);
+	}).catch(error => {
+		console.log('getBatteryDetails error', error.message);
+		return EMPTY;
 	});
 	console.log('=================== RES END ===================');
   }
@@ -234,6 +238,9 @@ public renderToChart(data: SmartStandbyActivityModel[]) {
 		this.activities = data;
 		console.log(data);
 		this.renderToChart(data);
+	}).catch(error => {
+		console.log('getBatteryDetails error', error.message);
+		return EMPTY;
 	});
 	console.log('===================  second RES END ===================');
   }

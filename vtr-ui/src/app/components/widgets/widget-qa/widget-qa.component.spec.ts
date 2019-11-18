@@ -7,26 +7,26 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-fdescribe('WidgetQaComponent', () => {
+describe('WidgetQaComponent', () => {
 	let component: WidgetQaComponent;
-	let fixture: ComponentFixture < WidgetQaComponent > ;
+	let fixture: ComponentFixture<WidgetQaComponent>;
 
-	beforeEach(async (() => {
+	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-				declarations: [WidgetQaComponent],
-				imports: [HttpClientModule, TranslateModule.forRoot({
-						loader: {
-							provide: TranslateLoader,
-							useFactory: HttpLoaderFactory,
-							deps: [HttpClient]
-						},
-						isolate: false
-					}),
-					TranslationModule.forChild()
-				],
-				providers: [SecurityQaService],
-				schemas: [NO_ERRORS_SCHEMA],
-			})
+			declarations: [WidgetQaComponent],
+			imports: [HttpClientModule, TranslateModule.forRoot({
+				loader: {
+					provide: TranslateLoader,
+					useFactory: HttpLoaderFactory,
+					deps: [HttpClient]
+				},
+				isolate: false
+			}),
+				TranslationModule.forChild()
+			],
+			providers: [SecurityQaService],
+			schemas: [NO_ERRORS_SCHEMA],
+		})
 			.compileComponents();
 	}));
 
