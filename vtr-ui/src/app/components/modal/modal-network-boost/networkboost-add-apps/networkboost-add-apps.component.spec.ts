@@ -190,7 +190,7 @@ const sampleNetworkBoostList = {
 	]
 };
 
-describe('NetworkboostAddAppsComponent', () => {
+fdescribe('NetworkboostAddAppsComponent', () => {
 	let component: NetworkboostAddAppsComponent;
 	let fixture: ComponentFixture<NetworkboostAddAppsComponent>;
 	gamingNetworkBoostMock.isShellAvailable.and.returnValue(true);
@@ -255,6 +255,58 @@ describe('NetworkboostAddAppsComponent', () => {
 			expect(component.addedApps).not.toEqual(0);
 		})
 	);
+
+
+	it('closed model', fakeAsync(() => {
+		const result = component.closeModal(false);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('runappKeyup', fakeAsync(() => {
+		const result = component.runappKeyup(true, 1);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('checkApps', fakeAsync(() => {
+		const result = component.checkApps(1);
+		expect(result).toBe(false);
+	})
+	);
+
+
+	it('checkFocus', fakeAsync(() => {
+		const result = component.checkFocus(true);
+		expect(result).toBe(undefined);
+	})
+	);
+
+
+
+	it('onValueChange', fakeAsync(() => {
+		const result = component.onValueChange({target: {value: true}}, 1);
+		// expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('focusClose', done => {
+		const p = new Promise((resolve, reject) =>
+			setTimeout(() => resolve(''), 2)
+		);
+		p.then(result => {
+			fakeAsync(() => {
+				const results = component.focusClose();
+				expect(results).toBe(undefined);
+			});
+			done();
+		});
+	});
+
+
 
 });
 

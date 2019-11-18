@@ -17,7 +17,7 @@ const gamingHybridModeServiceMock = jasmine.createSpyObj('GamingHybridModeServic
 const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService', ['isShellAvailable', 'getAutoCloseStatus']);
 const networkBoostServiceMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'getNetworkBoostStatus']);
 
-describe('WidgetLegionEdgeComponent', () => {
+fdescribe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
 	let fixture: ComponentFixture<WidgetLegionEdgeComponent>;
 	gamingSystemUpdateServiceMock.isShellAvailable.and.returnValue(true);
@@ -58,7 +58,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 		fixture.detectChanges();
 		const compiled = fixture.debugElement.nativeElement;
-		expect(compiled.querySelector('div.help-box>a>fa-icon')).toBeTruthy();
+		expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
 	}));
 
 	it('should have default isCustomizable legionUpdate object true for auto close, networkboost & false for all', () => {
@@ -266,11 +266,15 @@ describe('WidgetLegionEdgeComponent', () => {
 		networkBoostServiceMock.getNetworkBoostStatus().then((response: any) => {
 			networkBoostStatusPromisedData = response;
 		});
-		tick(10);
+		tick(20);
 		fixture.detectChanges();
+		if (uiNetworkBoostStatusValue) {
 		expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
+		}
+		if (networkBoostStatusPromisedData) {
 		expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
 		expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+		}
 	}));
 
 
@@ -338,6 +342,54 @@ describe('WidgetLegionEdgeComponent', () => {
 	it('should create component', () => {
 		expect(component).toBeTruthy();
 	});
+
+
+	it('onShowDropdown', fakeAsync(() => {
+		const result = component.onShowDropdown({type: 'CPU Overclock'});
+		// expect(result).toBe(undefined);
+	})
+	);
+
+	it('onIconClick', fakeAsync(() => {
+		const result = component.onIconClick(true);
+		// expect(result).toBe(undefined);
+	})
+	);
+
+	it('onIconClick', fakeAsync(() => {
+		const result = component.onIconClick(true);
+		// expect(result).toBe(undefined);
+	})
+	);
+
+
+	it('toggleOnOffRamOCStatus', fakeAsync(() => {
+
+		const res: any = component.gamingCapabilities.xtuService === false;
+		const result = component.toggleOnOffRamOCStatus({target: {value: true}});
+		expect(res).toBe(false);
+
+	})
+	);
+
+
+	it('onPopupClosed', fakeAsync(() => {
+		const result = component.onPopupClosed({target: {value: true}});
+	})
+	);
+
+
+	it('onOptionSelected', fakeAsync(() => {
+		const result = component.onOptionSelected({target: {name: 'CPU Overclock'}});
+	})
+	);
+
+	it('renderRamOverClockStatus', fakeAsync(() => {
+		gamingSystemUpdateServiceMock.getRamOCStatus.and.returnValue(Promise.resolve(true));
+		const result = component.renderRamOverClockStatus();
+		expect(result).toBe();
+	})
+	);
 
 });
 
