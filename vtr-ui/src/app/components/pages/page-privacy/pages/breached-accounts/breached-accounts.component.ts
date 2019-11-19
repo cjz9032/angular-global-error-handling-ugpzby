@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { filter, map, startWith, take, takeUntil } from 'rxjs/operators';
-import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
+import { BreachedAccountsService } from '../../feature/check-breached-accounts/services/breached-accounts.service';
 import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';

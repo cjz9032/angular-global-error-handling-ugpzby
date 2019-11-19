@@ -3,7 +3,7 @@ import { combineLatest } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, share, shareReplay, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
+import { BreachedAccountsService } from '../../feature/check-breached-accounts/services/breached-accounts.service';
 import { AccessTokenService } from '../../common/services/access-token.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BreachedAccount, BreachedAccountsService } from '../../../../common/services/breached-accounts.service';
+import { BreachedAccount, BreachedAccountsService } from '../../../../feature/check-breached-accounts/services/breached-accounts.service';
 import { combineLatest, of } from 'rxjs';
 import { catchError, filter, map, startWith } from 'rxjs/operators';
 import { coefficients } from './coefficients';

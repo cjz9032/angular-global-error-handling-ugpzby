@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ClearData } from './clear-data';
-import { BreachedAccountsService } from '../../../services/breached-accounts.service';
-import { HASH_FOR_TOKEN_NAME, StorageService, USER_EMAIL_HASH } from '../../../services/storage.service';
-import { AccessTokenService } from '../../../services/access-token.service';
-import { EmailVerifyService } from '../../../../feature/check-breached-accounts/services/email-verify.service';
-import { UserEmailService } from '../../../../feature/check-breached-accounts/services/user-email.service';
+import { ClearData } from '../../../common/components/clear-data-tooltip/clear-data-strategy/clear-data';
+import { BreachedAccountsService } from './breached-accounts.service';
+import { HASH_FOR_TOKEN_NAME, StorageService, USER_EMAIL_HASH } from '../../../common/services/storage.service';
+import { AccessTokenService } from '../../../common/services/access-token.service';
+import { UserEmailService } from './user-email.service';
 
 @Injectable({
 	providedIn: 'root'

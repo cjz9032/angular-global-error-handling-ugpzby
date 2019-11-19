@@ -22,9 +22,6 @@ export class EmailVerifyService {
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
 	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
-	private scanNotifier = new BehaviorSubject<boolean>(false);
-	scanNotifier$ = this.scanNotifier.asObservable();
-
 	private loading = new Subject<boolean>();
 	loading$ = this.loading.asObservable();
 
@@ -34,15 +31,6 @@ export class EmailVerifyService {
 		private http: HttpClient,
 		@Inject(PRIVACY_ENVIRONMENT) private environment
 	) {}
-
-	scanNotifierEmit() {
-		this.userEmailService.saveUser();
-		this.scanNotifier.next(true);
-	}
-
-	cancelVerification() {
-		this.loading.next(false);
-	}
 
 	sendConfirmationCode() {
 		this.loading.next(true);

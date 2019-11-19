@@ -7,7 +7,7 @@ import { combineLatest, from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateAllFormFields, validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
-import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
+import { BreachedAccountsService } from '../services/breached-accounts.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
@@ -137,7 +137,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	}
 
 	private setScanBreachedAccounts() {
-		this.emailScannerService.scanNotifierEmit();
+		this.breachedAccountsService.scanNotifierEmit();
 		this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction);
 	}
 

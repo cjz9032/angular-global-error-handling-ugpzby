@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { EMPTY, merge, Observable, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, EMPTY, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import {
 	catchError,
 	debounceTime,
@@ -11,15 +11,16 @@ import {
 	takeUntil,
 	tap
 } from 'rxjs/operators';
-import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { EmailVerifyService, ErrorNames } from '../../feature/check-breached-accounts/services/email-verify.service';
-import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
-import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
-import { UpdateTriggersService } from './update-triggers.service';
-import { ScanCounterService } from './scan-counter.service';
-import { NetworkStatus } from '../../../../../enums/network-status.enum';
-import { CommonService } from '../../../../../services/common/common.service';
-import { GetBreachesService } from '../../feature/check-breached-accounts/services/get-breaches.service';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { EmailVerifyService, ErrorNames } from './email-verify.service';
+import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { TaskActionWithTimeoutService, TasksName } from '../../../common/services/analytics/task-action-with-timeout.service';
+import { UpdateTriggersService } from '../../../common/services/update-triggers.service';
+import { ScanCounterService } from '../../../common/services/scan-counter.service';
+import { NetworkStatus } from '../../../../../../enums/network-status.enum';
+import { CommonService } from '../../../../../../services/common/common.service';
+import { GetBreachesService } from './get-breaches.service';
+import { UserEmailService } from './user-email.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -55,6 +56,9 @@ export class BreachedAccountsService implements OnDestroy {
 	private onGetBreachedAccounts = new ReplaySubject<GetBreachedAccountsState>(1);
 	onGetBreachedAccounts$ = this.onGetBreachedAccounts.asObservable();
 
+	private scanNotifier = new BehaviorSubject<boolean>(false);
+	scanNotifier$ = this.scanNotifier.asObservable();
+
 	private getNewBreachedAccounts$ = new Subject<boolean>();
 
 	constructor(
@@ -63,6 +67,7 @@ export class BreachedAccountsService implements OnDestroy {
 		private updateTriggersService: UpdateTriggersService,
 		private scanCounterService: ScanCounterService,
 		private commonService: CommonService,
+		private userEmailService: UserEmailService,
 		private getBreachesService: GetBreachesService,
 		private emailScannerService: EmailVerifyService) {
 		this.getBreachedAccounts();
@@ -74,7 +79,7 @@ export class BreachedAccountsService implements OnDestroy {
 
 	private getBreachedAccounts() {
 		return merge(
-			this.emailScannerService.scanNotifier$.pipe(map(() => ({type: 'scanNotifier'}))),
+			this.scanNotifier$.pipe(map(() => ({type: 'scanNotifier'}))),
 			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
@@ -141,6 +146,11 @@ export class BreachedAccountsService implements OnDestroy {
 		if (!isFigleafReadyForCommunication) {
 			this.onGetBreachedAccounts.next({breaches: [], error: null, reset: true});
 		}
+	}
+
+	scanNotifierEmit() {
+		this.userEmailService.saveUser();
+		this.scanNotifier.next(true);
 	}
 
 	private getBreachedAccountsFromDifferentSource(): Observable<BreachedAccount[]> {

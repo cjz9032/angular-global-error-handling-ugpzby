@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Features } from '../nav-tabs/nav-tabs.service';
-import { ClearBreachesService } from './clear-data-strategy/clear-breaches.service';
+import { ClearBreachesService } from '../../../feature/check-breached-accounts/services/clear-breaches.service';
 import { ClearTrackersService } from './clear-data-strategy/clear-trackers.service';
 import { ClearPasswordService } from './clear-data-strategy/clear-password.service';
 import { ScanFeatures, WidgetDataService } from '../../services/widget-data.service';

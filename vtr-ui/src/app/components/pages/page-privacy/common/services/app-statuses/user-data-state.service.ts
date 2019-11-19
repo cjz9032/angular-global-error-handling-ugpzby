@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, of, Subject } from 'rxjs';
-import { BreachedAccountsService } from '../breached-accounts.service';
+import { BreachedAccountsService } from '../../../feature/check-breached-accounts/services/breached-accounts.service';
 import { BrowserAccountsService } from '../browser-accounts.service';
 import { TrackingMapService } from '../../../feature/tracking-map/services/tracking-map.service';
 import { catchError, map } from 'rxjs/operators';
