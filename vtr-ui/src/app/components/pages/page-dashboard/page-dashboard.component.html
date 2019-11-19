@@ -133,7 +133,7 @@
 
 	<right-content>
 		<div class="container-fluid">
-			<div class="row no-gutters" *ngIf="warrantyData && isWarrantyVisible">
+			<div class="row no-gutters" *ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">

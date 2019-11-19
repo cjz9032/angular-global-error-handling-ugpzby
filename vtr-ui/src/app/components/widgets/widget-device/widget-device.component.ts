@@ -11,6 +11,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { map, mergeMap } from 'rxjs/operators';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { LanguageService } from 'src/app/services/language/language.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 @Component({
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
@@ -34,6 +35,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private timer: TimerService,
 		private metrics: MetricService,
 		private dashboardService: DashboardService,
+		private warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
 		private languageService: LanguageService
 	) {
@@ -242,7 +244,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		}
 
 		// warranty
-		this.dashboardService.getWarrantyInfo().subscribe(data => {
+		this.warrantyService.getWarrantyInfo().subscribe(data => {
 			if (data) {
 				let warranty;
 				if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SupportService } from 'src/app/services/support/support.service';
-import { CommonService } from 'src/app/services/common/common.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 
 @Component({
 	selector: 'vtr-ui-header-warranty',
@@ -14,18 +13,29 @@ export class UiHeaderWarrantyComponent implements OnInit {
 	warrantyData: any;
 
 	constructor(
-		private supportService: SupportService,
-		private commonService: CommonService,
+		private warrantyService: WarrantyService,
 	) {
-		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
-		this.getWarrantyInfo(true);
+		this.getWarrantyInfo();
 	}
 
-	getWarrantyInfo(online: boolean) {
-		this.supportService.getWarrantyInfo(online);
+	getWarrantyInfo() {
+		this.warrantyService.getWarrantyInfo().subscribe((value) => {
+			if (value) {
+				this.warrantyData = {
+					info: {
+						startDate: value.startDate,
+						endDate: value.endDate,
+						status: value.status,
+						dayDiff: value.dayDiff,
+						url: this.warrantyService.getWarrantyUrl()
+					},
+					cache: true
+				};
+			}
+		});
 	}
 
 }

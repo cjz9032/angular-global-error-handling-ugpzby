@@ -262,7 +262,7 @@ export class VantageShellService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false);
+						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}
