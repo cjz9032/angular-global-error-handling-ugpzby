@@ -10,10 +10,11 @@ import {
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { EmailScannerService } from '../services/email-scanner.service';
+import { EmailVerifyService } from '../services/email-verify.service';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { SafeStorageService } from '../../../common/services/safe-storage.service';
+import { UserEmailService } from '../services/user-email.service';
 
 @Component({
 	selector: 'vtr-confirmation',
@@ -40,7 +41,8 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 	constructor(
 		private formBuilder: FormBuilder,
 		private safeStorageService: SafeStorageService,
-		private emailScannerService: EmailScannerService) {
+		private userEmailService: UserEmailService,
+		private emailScannerService: EmailVerifyService) {
 	}
 
 	ngOnInit() {
@@ -55,7 +57,7 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 				this.updateIsShowError();
 			});
 
-		this.emailScannerService.userEmail$
+		this.userEmailService.userEmail$
 			.pipe(
 				filter(Boolean),
 				takeUntil(instanceDestroyed(this))

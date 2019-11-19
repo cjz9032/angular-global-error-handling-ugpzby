@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delayWhen, filter, first, map, skip, startWith, take, takeUntil } from 'rxjs/operators';
+import { filter, map, startWith, take, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
-import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
@@ -46,7 +46,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
-		private emailScannerService: EmailScannerService,
+		private emailScannerService: EmailVerifyService,
 		private commonPopupService: CommonPopupService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private breachedAccountsFacadeService: BreachedAccountsFacadeService,
@@ -59,7 +59,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 		combineLatest([
 			this.userEmail$,
-			this.emailScannerService.loadingStatusChanged$.pipe(startWith(false))
+			this.emailScannerService.loading$.pipe(startWith(false))
 		]).pipe(
 			filter(([_, isLoad]) => !isLoad),
 			takeUntil(instanceDestroyed(this))

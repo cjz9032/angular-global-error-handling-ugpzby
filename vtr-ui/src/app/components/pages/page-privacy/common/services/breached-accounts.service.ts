@@ -12,13 +12,14 @@ import {
 	tap
 } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { EmailVerifyService, ErrorNames } from '../../feature/check-breached-accounts/services/email-verify.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TaskActionWithTimeoutService, TasksName } from './analytics/task-action-with-timeout.service';
 import { UpdateTriggersService } from './update-triggers.service';
 import { ScanCounterService } from './scan-counter.service';
 import { NetworkStatus } from '../../../../../enums/network-status.enum';
 import { CommonService } from '../../../../../services/common/common.service';
+import { GetBreachesService } from '../../feature/check-breached-accounts/services/get-breaches.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -62,7 +63,8 @@ export class BreachedAccountsService implements OnDestroy {
 		private updateTriggersService: UpdateTriggersService,
 		private scanCounterService: ScanCounterService,
 		private commonService: CommonService,
-		private emailScannerService: EmailScannerService) {
+		private getBreachesService: GetBreachesService,
+		private emailScannerService: EmailVerifyService) {
 		this.getBreachedAccounts();
 	}
 
@@ -121,7 +123,7 @@ export class BreachedAccountsService implements OnDestroy {
 	}
 
 	private getBreachedAccountsFromBackend() {
-		return this.emailScannerService.getBreachedAccounts().pipe(
+		return this.getBreachesService.getBreachedAccounts().pipe(
 			catchError((error) => this.handleError(error))
 		);
 	}

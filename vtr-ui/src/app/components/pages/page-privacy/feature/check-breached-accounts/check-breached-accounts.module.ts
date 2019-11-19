@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailScannerComponent } from './email-scanner/email-scanner.component';
 import { CheckBreachesFormComponent } from './check-breaches/check-breaches-form.component';
-import { ScanStepsComponent } from './scan-steps/scan-steps.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VtrCommonModule } from '../../common/vtr-common.module';
 import { BreachedAccountComponent } from './breached-account/breached-account.component';
@@ -18,7 +17,6 @@ import { RouterModule } from '@angular/router';
 	declarations: [
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
-		ScanStepsComponent,
 		ConfirmationComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
@@ -30,7 +28,6 @@ import { RouterModule } from '@angular/router';
 	exports: [
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
-		ScanStepsComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,

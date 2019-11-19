@@ -2,8 +2,8 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, O
 import { FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { EmailScannerService } from '../services/email-scanner.service';
-import { from, merge } from 'rxjs';
+import { EmailVerifyService } from '../services/email-verify.service';
+import { combineLatest, from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateAllFormFields, validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
@@ -13,6 +13,8 @@ import {
 	TasksName
 } from '../../../common/services/analytics/task-action-with-timeout.service';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
+import { UserEmailService } from '../services/user-email.service';
+import { GetBreachesService } from '../services/get-breaches.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -41,7 +43,12 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	});
 	emailWasSubmitted = false;
 	serverError$ = this.listenError();
-	isLoading$ = this.emailScannerService.loadingStatusChanged$;
+
+	isLoading$ = combineLatest([
+		this.emailScannerService.loading$,
+		this.getBreachesService.loading$
+	]).pipe(map(([emailVerifyLoading, getBreachesLoading]) => emailVerifyLoading && getBreachesLoading));
+
 	lenovoId = '';
 	islenovoIdOpen = false;
 	isFormFocused = false;
@@ -49,9 +56,11 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private emailScannerService: EmailScannerService,
+		private emailScannerService: EmailVerifyService,
 		private userService: UserService,
 		private breachedAccountsService: BreachedAccountsService,
+		private userEmailService: UserEmailService,
+		private getBreachesService: GetBreachesService,
 		private cdr: ChangeDetectorRef,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
@@ -101,7 +110,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 		const userEmail = this.emailForm.value.email;
 
-		this.emailScannerService.setUserEmail(userEmail);
+		this.userEmailService.setUserEmail(userEmail);
 
 		this.userEmail.emit(userEmail);
 

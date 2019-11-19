@@ -6,10 +6,11 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { AccessTokenService } from '../../common/services/access-token.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
-import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
 import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
 import { ScanCounterService } from '../../common/services/scan-counter.service';
+import { UserEmailService } from '../../feature/check-breached-accounts/services/user-email.service';
 
 const SCAN_COUNTER_LIMIT = 2;
 
@@ -47,7 +48,7 @@ export class BreachedAccountsFacadeService {
 	);
 	breachedAccountsCount$ = this.countNumberOfIssuesService.breachedAccountsCount;
 
-	userEmail$ = this.emailScannerService.userEmail$;
+	userEmail$ = this.userEmailService.userEmail$;
 
 	scanCounter$ = this.scanCounterService.getScanCounter();
 	scanCounterLimit = SCAN_COUNTER_LIMIT;
@@ -58,7 +59,8 @@ export class BreachedAccountsFacadeService {
 		private accessTokenService: AccessTokenService,
 		private appStatusesService: AppStatusesService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private emailScannerService: EmailScannerService,
+		private emailScannerService: EmailVerifyService,
+		private userEmailService: UserEmailService,
 		private safeStorageService: SafeStorageService,
 		private scanCounterService: ScanCounterService
 	) {
