@@ -18,7 +18,8 @@ export class BetaService {
 	}
 
 	public getBetaStatus(): boolean {
-		let isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, 'init');
+		this.commonService.removeLocalStorageValue(LocalStorageKey.BetaUser);
+		let isBetaUser = this.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, 'init');
 		if (isBetaUser === 'init') {
 			isBetaUser = false;
 			this.setBetaStatus(false);
@@ -27,7 +28,7 @@ export class BetaService {
 	}
 
 	public setBetaStatus(value: boolean) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, value);
+		this.commonService.setLocalStorageValue(LocalStorageKey.BetaTag, value);
 		if (this.betaUser) {
 			this.betaUser.setBetaUser(value);
 		}
