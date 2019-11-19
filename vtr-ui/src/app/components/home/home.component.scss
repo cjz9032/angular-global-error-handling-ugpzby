@@ -6,6 +6,17 @@
 	height: 100%;
 	.spinner {
 		font-size: 10rem;
-		color: $main;
+		color: $main; 
 	}
 }
+
+.vtr-home-gaming {
+	width: 100%;
+	min-height: 80vh;
+	height: 100%;
+	background-color: #1f2a42;
+	.spinner {
+		font-size: 10rem;
+		color: $main;
+	}
+} 
