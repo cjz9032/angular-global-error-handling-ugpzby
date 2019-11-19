@@ -51,7 +51,6 @@ export class SupportService {
 		if (this.userGuide) {
 			this.userGuide.refresh();
 		}
-		this.getWarrantyInfo(this.commonService.isOnline);
 	}
 
 	public getMachineInfo(): Promise<any> {
@@ -69,52 +68,6 @@ export class SupportService {
 	public getWarranty(serialnumber: string): Promise<any> {
 		if (this.warranty) {
 			return this.warranty.getWarrantyInformation(serialnumber);
-		}
-	}
-
-	getWarrantyInfo(online: boolean) {
-		if (this.shellService) {
-			const defaultWarranty = {
-				status: 2,
-				url: this.warrantyNormalUrl
-			};
-
-			// if (this.getMachineInfo() === undefined) { return; } // duplicate MachineInfo call
-
-			this.getMachineInfo().then((machineInfo) => {
-				if (machineInfo) {
-					// machineInfo.serialnumber = 'R90HTPEU';
-					// 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' machineInfo.serialnumber
-					if (machineInfo.serialnumber) { this.sn = machineInfo.serialnumber; }
-					this.getWarranty(machineInfo.serialnumber).then((result) => {
-						if (result) {
-							this.warrantyData.info = result;
-							if (online) { this.warrantyData.cache = true; }
-							if (machineInfo.serialnumber) {
-								this.warrantyData.info.url = this.getWarrantyUrl(machineInfo.serialnumber);
-							} else {
-								this.warrantyData.info.url = this.warrantyNormalUrl;
-							}
-						} else {
-							this.warrantyData.info = defaultWarranty;
-						}
-						this.warrantyDataCache = this.commonService.cloneObj(this.warrantyData);
-						this.warrantyDataCache.info.url = this.warrantyNormalUrl;
-						this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyDataCache);
-					}).catch((err) => {
-						console.log(err);
-						this.warrantyData.info = defaultWarranty;
-						this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
-					});
-				} else {
-					this.warrantyData.info = defaultWarranty;
-					this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
-				}
-			}).catch((err) => {
-				console.log(err);
-				this.warrantyData.info = defaultWarranty;
-				this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
-			});
 		}
 	}
 

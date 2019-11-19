@@ -135,6 +135,7 @@
 									*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0 && deviceService.showWarranty">
 									<div class="col col-12 pb-60">
 										<vtr-widget-warranty [item]="warrantyData"
+											[year]="warrantyYear"
 											[isConnected]="isOnline"></vtr-widget-warranty>
 									</div>
 								</div>
