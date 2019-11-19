@@ -141,7 +141,7 @@
 													*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 													<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 														metricsItem="link.subscribe" metricsParent="security.antivirus"
-														href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
+														href="{{antiVirus.mcafee?.trialUrl}}" target="_blank"></a>
 												</p>
 											</div>
 											<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'">
@@ -173,7 +173,7 @@
 														btnHeight=true
 														[isDisabled]="isOnline === false"
 														[label]="'security.antivirus.mcafee.trialSubscribe' | translate:{remainingDays: viewModel.mcafee.expireAt}"
-														[href]="viewModel.mcafee?.trialUrl"></vtr-ui-button>
+														[href]="antiVirus.mcafee?.trialUrl"></vtr-ui-button>
 													<vtr-ui-button *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
 														class="px-4"
 														linkId="sa-av-link-subscribe"
@@ -212,7 +212,7 @@
 												*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 												<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
 													metricsItem="link.subscribe500" metricsParent="security.antivirus"
-													href="{{viewModel.mcafee?.trialUrl}}" target="_blank"></a>
+													href="{{antiVirus.mcafee?.trialUrl}}" target="_blank"></a>
 											</p>
 										</div>
 										<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
