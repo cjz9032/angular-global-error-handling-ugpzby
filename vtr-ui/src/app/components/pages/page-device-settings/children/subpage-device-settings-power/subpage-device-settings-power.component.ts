@@ -67,7 +67,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	selectedStartAtChargeVal1;
 
 	public responseData: any[] = [];
-	isSecondBatteryAvailable = false;
+	public isSecondBatteryAvailable = false;
+	public isPrimaryBatteryAvailable = false;
 	public machineType: any;
 	private batteryCountStatusEventRef: any;
 
@@ -1016,6 +1017,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.responseData = res || [];
 				if (this.responseData && this.responseData.length > 0) {
 					this.isChargeThresholdAvailable = this.responseData[0].isCapable || this.responseData[1].isCapable;
+					this.isPrimaryBatteryAvailable = this.responseData[0].isCapable;
 					this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 					this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
 					this.primaryCheckBox = this.responseData[0].checkBoxValue;
@@ -1032,8 +1034,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						);
 					}
 					if (this.responseData.length === 2) {
-						this.isSecondBatteryAvailable = true;
-						this.isChargeThresholdAvailable = this.responseData[1].isCapable;
+						this.isSecondBatteryAvailable = this.responseData[1].isCapable;
+						// this.isChargeThresholdAvailable = this.responseData[1].isCapable;
 						this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 						this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
 						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
@@ -1069,6 +1071,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
 					this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
+					this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
 				}
 				this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);

@@ -12,4 +12,5 @@ export class BatteryChargeThresholdCapability {
 
 	public showWarningMsg: boolean;
 	public isSecondBatteryAvailable = false;
+	public isPrimaryBatteryAvailable = false;
 }
