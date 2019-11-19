@@ -154,7 +154,7 @@
 								#checkbox1
 								(click)="toggle($event, interest.label)"
 								[checked]="interest.checked" />
-							<label class="bludFocusBoder"
+							<label 
 								[ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}"
 								tabindex="4"
 								(keypress)="onKeyPress($event)"
