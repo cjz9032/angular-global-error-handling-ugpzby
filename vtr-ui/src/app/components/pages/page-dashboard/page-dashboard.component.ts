@@ -192,17 +192,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 
 	private getWelcomeText() {
 		if (!this.dashboardService.welcomeText) {
+			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
 			let textIndex = 1;
 			const welcomeTextLength = 15;
-			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(
-				LocalStorageKey.DashboardLastWelcomeText
-			);
-			if (dashboardLastWelcomeText) {
-				const lastIndex = parseInt(dashboardLastWelcomeText.replace('lenovoId.welcomeText', ''), 10);
-				if (lastIndex === welcomeTextLength) {
-					textIndex = 1;
+			if (dashboardLastWelcomeText && dashboardLastWelcomeText.welcomeText) {
+				const lastIndex = this.getWelcomeTextIndex(dashboardLastWelcomeText.welcomeText);
+				if (!dashboardLastWelcomeText.isOnline && this.commonService.isOnline) {
+					textIndex = lastIndex;
 				} else {
-					textIndex = lastIndex + 1;
+					if (lastIndex === welcomeTextLength) {
+						textIndex = 1;
+					} else {
+						textIndex = lastIndex + 1;
+					}
 				}
 			} else {
 				textIndex = Math.floor(Math.random() * 15 + 1);
@@ -212,8 +214,18 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			}
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
-			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.dashboardService.welcomeText);
+			this.commonService.setLocalStorageValue(
+				LocalStorageKey.DashboardLastWelcomeText,
+				{
+					welcomeText: this.dashboardService.welcomeText,
+					isOnline: this.commonService.isOnline
+				}
+			);
 		}
+	}
+
+	private getWelcomeTextIndex(key: string) {
+		return parseInt(key.replace('lenovoId.welcomeText', ''), 10);
 	}
 
 	private fetchContent(lang?: string) {
