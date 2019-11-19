@@ -17,7 +17,7 @@ const gamingHybridModeServiceMock = jasmine.createSpyObj('GamingHybridModeServic
 const gamingAutoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService', ['isShellAvailable', 'getAutoCloseStatus']);
 const networkBoostServiceMock = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'getNetworkBoostStatus']);
 
-fdescribe('WidgetLegionEdgeComponent', () => {
+describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
 	let fixture: ComponentFixture<WidgetLegionEdgeComponent>;
 	gamingSystemUpdateServiceMock.isShellAvailable.and.returnValue(true);
@@ -269,11 +269,11 @@ fdescribe('WidgetLegionEdgeComponent', () => {
 		tick(20);
 		fixture.detectChanges();
 		if (uiNetworkBoostStatusValue) {
-		expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
+			expect(uiNetworkBoostStatusValue).toEqual(cacheNetworkBoostStatusValue);
 		}
 		if (networkBoostStatusPromisedData) {
-		expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
-		expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+			expect(uiNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
+			expect(cacheNetworkBoostStatusValue).toEqual(networkBoostStatusPromisedData);
 		}
 	}));
 
@@ -345,7 +345,7 @@ fdescribe('WidgetLegionEdgeComponent', () => {
 
 
 	it('onShowDropdown', fakeAsync(() => {
-		const result = component.onShowDropdown({type: 'CPU Overclock'});
+		const result = component.onShowDropdown({ type: 'CPU Overclock' });
 		// expect(result).toBe(undefined);
 	})
 	);
@@ -366,7 +366,7 @@ fdescribe('WidgetLegionEdgeComponent', () => {
 	it('toggleOnOffRamOCStatus', fakeAsync(() => {
 
 		const res: any = component.gamingCapabilities.xtuService === false;
-		const result = component.toggleOnOffRamOCStatus({target: {value: true}});
+		const result = component.toggleOnOffRamOCStatus({ target: { value: true } });
 		expect(res).toBe(false);
 
 	})
@@ -374,13 +374,13 @@ fdescribe('WidgetLegionEdgeComponent', () => {
 
 
 	it('onPopupClosed', fakeAsync(() => {
-		const result = component.onPopupClosed({target: {value: true}});
+		const result = component.onPopupClosed({ target: { value: true } });
 	})
 	);
 
 
 	it('onOptionSelected', fakeAsync(() => {
-		const result = component.onOptionSelected({target: {name: 'CPU Overclock'}});
+		const result = component.onOptionSelected({ target: { name: 'CPU Overclock' } });
 	})
 	);
 
