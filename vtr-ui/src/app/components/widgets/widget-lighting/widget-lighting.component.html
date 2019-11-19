@@ -65,7 +65,8 @@
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
 									id="lighting customize" attr.aria-label="lighting customize" tabindex="1"
 									role="link">
-									   <i class="icon icon-gear"></i>
+									<!--    <i class="icon icon-gear"></i> -->
+									<fa-icon class="icon" [icon]="['fal', 'cog']"></fa-icon>
 									   {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 
 								<a  *ngIf="!isPopupVisible" [routerLink]="['/gaming/lightingcustomize/'+setprofId]"
@@ -73,7 +74,8 @@
 									metricsParam="lightingcustomize" metricsValue="{{setprofId}}"
 									id="lighting customize" attr.aria-label="lighting customize" tabindex="1"
 									role="link">
-									   <i class="icon icon-gear"></i>
+									<!--    <i class="icon icon-gear"></i> -->
+									<fa-icon class="icon" [icon]="['fal', 'cog']"></fa-icon>
 									  {{'gaming.lightingProfile.lightingProfileHeading.Customize.title' | translate}}</a>
 							</li>
 						</ul>

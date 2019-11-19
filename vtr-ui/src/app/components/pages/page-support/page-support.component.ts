@@ -9,6 +9,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -36,6 +37,7 @@ export class PageSupportComponent implements OnInit {
 	articleCategories: any = [];
 	isCategoryArticlesShow = false;
 	warrantyData: { info: any, cache: boolean };
+	warrantyYear = 0;
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'support-page-btn-back';
@@ -112,6 +114,7 @@ export class PageSupportComponent implements OnInit {
 	constructor(
 		public mockService: MockService,
 		public supportService: SupportService,
+		public warrantyService: WarrantyService,
 		public deviceService: DeviceService,
 		public localInfoService: LocalInfoService,
 		private cmsService: CMSService,
@@ -119,14 +122,13 @@ export class PageSupportComponent implements OnInit {
 		private loggerService: LoggerService,
 	) {
 		this.isOnline = this.commonService.isOnline;
-		this.warrantyData = this.supportService.warrantyData;
 	}
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		this.getWarrantyInfo(this.isOnline);
+		this.getWarrantyInfo();
 
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
@@ -142,12 +144,9 @@ export class PageSupportComponent implements OnInit {
 					if (notification.payload.isOnline !== this.isOnline) {
 						this.isOnline = notification.payload.isOnline;
 						if (this.isOnline) {
-							sessionStorage.removeItem('warrantyCache');
 							const retryInterval = setInterval(() => {
-								const cacheWarranty = sessionStorage.getItem('warrantyCache');
 								if (this.articleCategories.length > 0 &&
-									this.articles.leftTop.length > 0 &&
-									cacheWarranty) {
+									this.articles.leftTop.length > 0) {
 									clearInterval(retryInterval);
 									return;
 								}
@@ -157,10 +156,8 @@ export class PageSupportComponent implements OnInit {
 								if (this.articles.leftTop.length === 0) {
 									this.fetchCMSContents();
 								}
-								if (!cacheWarranty) {
-									this.getWarrantyInfo(this.isOnline);
-								}
 							}, 2500);
+							this.getWarrantyInfo();
 						}
 					}
 					break;
@@ -182,8 +179,22 @@ export class PageSupportComponent implements OnInit {
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 	}
 
-	getWarrantyInfo(online: boolean) {
-		this.supportService.getWarrantyInfo(online);
+	getWarrantyInfo() {
+		this.warrantyService.getWarrantyInfo().subscribe((value) => {
+			if (value) {
+				this.warrantyData = {
+					info: {
+						startDate: value.startDate,
+						endDate: value.endDate,
+						status: value.status,
+						dayDiff: value.dayDiff,
+						url: this.warrantyService.getWarrantyUrl()
+					},
+					cache: true
+				};
+				this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
+			}
+		});
 	}
 
 	fetchCMSContents(lang?: string) {

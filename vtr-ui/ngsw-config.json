@@ -19,9 +19,9 @@
 			"updateMode": "prefetch",
 			"resources": {
 				"files": [
+					"/assets/**",
 					"!/assets/i18n/**",
-					"!/assets/privacy-json/trackers.json",
-					"/assets/**"
+					"!/assets/privacy-json/trackers.json"
 				],
 				"urls": [
 					"https://qa.csw.lenovo.com/**",
