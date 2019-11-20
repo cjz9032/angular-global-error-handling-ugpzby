@@ -36,7 +36,13 @@
 		svg {
 			margin-right: 1rem;
 		}
-		@media #{$mediaquery_12} {
+		@media #{$mediaquery_xl} {
+			display: inline-block;
+		}
+		@media #{$mediaquery_lg} {
+			display: none;
+		}
+		@media #{$mediaquery_md} {
 			display: inline-block;
 		}
 	}
@@ -44,7 +50,23 @@
 	ul {
 		padding: 0;
 		&.numberpad-popup {
-			@media #{$mediaquery_12} {
+			@media #{$mediaquery_xl} {
+				display: none;
+				padding: 1.4rem;
+				background-color: $gaming_shade;
+				width: 19rem;
+				position: absolute;
+				border-radius: 0.6rem;
+				z-index: 1;
+				top: 5.8rem;
+			}
+			@media #{$mediaquery_lg} {
+				display: block;
+				background: none;
+				position: relative;
+				top: 0;
+			}
+			@media #{$mediaquery_md} {
 				display: none;
 				padding: 1.4rem;
 				background-color: $gaming_shade;
@@ -86,36 +108,39 @@
 			&:nth-child(9) {
 				margin-right: 0;
 			}
-			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
+			div {
+				cursor: pointer !important;
+			}
+			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover !important;
 			&.selected {
-				a{
+				a {
 					color: $gaming_lightest;
 				}
 				opacity: 1;
 				color: $gaming_lightest;
-				@media #{$black-on-white}{	
-					background-color: $gaming_light_blue;				
-					border:0.1rem solid $dark;
+				@media #{$black-on-white} {
+					background-color: $gaming_light_blue;
+					border: 0.1rem solid $dark;
 				}
-				@media #{$white-on-black}{	
-					background-color: $gaming_light_blue;				
-					border:0.1rem solid $light;
-				}				
+				@media #{$white-on-black} {
+					background-color: $gaming_light_blue;
+					border: 0.1rem solid $light;
+				}
 				background-color: $gaming_light_blue;
-				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;
+				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart !important;
 				&.macro-exists {
 					div {
 						position: relative;
 						&:after {
 							background-color: $gaming_lightest;
-							@media #{$black-on-white}{								
+							@media #{$black-on-white} {
 								background-color: $light;
 								bottom: 0.4rem;
 							}
-							@media #{$white-on-black}{
+							@media #{$white-on-black} {
 								background-color: $dark;
 								bottom: 0.4rem;
-							}	
+							}
 						}
 					}
 				}
@@ -133,15 +158,15 @@
 						border-radius: 0.5rem;
 						margin: auto;
 						left: 0px;
-						right: 0px;	
-						@media #{$black-on-white}{								
+						right: 0px;
+						@media #{$black-on-white} {
 							background-color: $dark;
 							bottom: 0.4rem;
 						}
-						@media #{$white-on-black}{
+						@media #{$white-on-black} {
 							background-color: $light;
 							bottom: 0.4rem;
-						}					
+						}
 					}
 				}
 			}

@@ -659,6 +659,9 @@ export class VantageShellService {
 				},
 				launch() {
 					return Promise.resolve(true);
+				},
+				openMcAfeeRegistry() {
+					return Promise.resolve(true);
 				}
 			},
 			passwordManager: {
@@ -1197,6 +1200,7 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
+			PrivacyTab: 'enabled',
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});

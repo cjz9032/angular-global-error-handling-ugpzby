@@ -24,19 +24,23 @@ ui-popover-apps {
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	touch-action: none;
-	@media #{$medium-screen} {
+	@media #{$breakpoint_xl} {
 		max-width: 80%;
 	}
-	@media #{$small-screen} {
-		max-width: 80%;
-	}
-	@media #{$large-screen} {
-		min-width: 110rem;
+	@media #{$breakpoint_sm} {
+		max-width: 90%;
+		left: 3%;
 	}
 }
 ::ng-deep .vtr-modal-add-apps {
+	padding: 0;
 	.top-header {
 		border: 0;
+		.close {
+			position: relative;
+			top: 1.5rem;
+			right: 1.5rem;
+		}
 	}
 	.modal-content {
 		border-radius: 1rem;
@@ -44,21 +48,22 @@ ui-popover-apps {
 		min-height: 60rem;
 	}
 	.modal-body {
-		@media #{$large-screen} {
-			min-width: 91.4rem;
-		}
-		@media #{$mediaquery_X7} {
-			min-width: 91.4rem;
-		}
-		@media #{$mediaquery_X5} {
-			min-width: 70rem;
-		}
+		padding: 0;
+		// @media #{$large-screen} {
+		// 	min-width: 91.4rem;
+		// }
+		// @media #{$mediaquery_X7} {
+		// 	min-width: 91.4rem;
+		// }
 		.main-content-body {
-			padding: 1rem 4rem;
+			padding: 4rem;
+			@media #{$breakpoint_sm} {
+				padding: 3rem 2rem;
+			}
 			.running-apps {
 				padding-bottom: 1rem;
 				touch-action: none;
-				overflow-x:hidden;
+				overflow-x: hidden;
 			}
 		}
 		.title-content {
@@ -91,10 +96,13 @@ ui-popover-apps {
 			@media #{$mediaquery_7} {
 				max-height: 50rem;
 			}
+			@media #{$breakpoint_sm} {
+				padding: 2rem 1rem;
+			}
 			.app-list {
 				padding: 0;
 				max-height: 100%;
-				overflow-x:hidden;
+				overflow-x: hidden;
 				touch-action: none;
 				li {
 					list-style-type: none;
@@ -105,10 +113,14 @@ ui-popover-apps {
 					width: 20%;
 					padding-left: 0.5rem;
 					padding-right: 0.5rem;
-					@media #{$mediaquery_md} {
-						width: 33.3% !important;
-						padding-left: 2rem;
-						padding-right: 2rem;
+					@media #{$breakpoint_lg} {
+						width: 25%;
+					}
+					@media #{$breakpoint_md} {
+						width: 33%;
+					}
+					@media #{$breakpoint_sm} {
+						width: 50%;
 					}
 					div.app-text-title {
 						margin: 0 auto;
@@ -125,7 +137,7 @@ ui-popover-apps {
 					div:nth-child(2) {
 						text-align: center;
 						padding: 1rem 0.5rem 1.5rem 0.5rem;
-						font-size: 1.6rem;
+						font-size: $fontsize_xs;
 						color: rgba(255, 255, 255, 0.8);
 					}
 				}
@@ -141,51 +153,6 @@ ui-popover-apps {
 				&:hover {
 					cursor: pointer;
 				}
-				// input {
-				// 	opacity: 0;
-				// 	position: absolute;
-				// 	width: 8rem;
-				// 	height: 4rem;
-				// 	& + .action {
-				// 		background: $gaming_white60;
-				// 		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255,255,255,0.6)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='%231c2238' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-				// 		background-repeat: no-repeat;
-				// 		background-position: center center;
-				// 		width: 8rem;
-				// 		height: 4rem;
-				// 		border-radius: 2rem;
-				// 		border: none;
-				// 	}
-				// 	& + .isDisabled {
-				// 		background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255,255,255,0.6)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='%231c2238' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-				// 		background-color: $gaming_darker !important;
-				// 		border: none;
-				// 	}
-				// 	&:checked + .action {
-				// 		border: none !important;
-				// 		background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-				// 		background-color: $btn_secondary_color;
-				// 	}
-				// 	&:hover {
-				// 		cursor: pointer;
-				// 		& + .action {
-				// 			background: $gaming_white80;
-				// 			background-repeat: no-repeat;
-				// 			background-position: center center;
-				// 			border: none !important;
-				// 			background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255,255,255,0.6)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='%231c2238' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-				// 		}
-				// 		&:checked + .action {
-				// 			border: none !important;
-				// 			background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-				// 			background-color: $btn_primary_color;
-				// 		}
-				// 		&:active {
-				// 			border: none !important;
-				// 			transform: scale(0.95);
-				// 		}
-				// 	}
-				// }
 				button {
 					width: 8rem;
 					height: 4rem;
@@ -200,7 +167,7 @@ ui-popover-apps {
 						background-color: $gaming_darker !important;
 						border: none;
 					}
-					&.checked{
+					&.checked {
 						border: none !important;
 						background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 						background-color: $btn_secondary_color !important;
@@ -214,7 +181,7 @@ ui-popover-apps {
 						background-position: center center;
 						border: none !important;
 						background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E6.20pxIcon/add%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='6.20pxIcon/add' stroke='none' stroke-width='1' fill='rgba(255,255,255,0.6)' fill-rule='evenodd'%3E%3Cpath d='M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z' id='Shape' fill='%231c2238' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-						&.checked{
+						&.checked {
 							border: none !important;
 							background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
 							background-color: $btn_primary_color;
