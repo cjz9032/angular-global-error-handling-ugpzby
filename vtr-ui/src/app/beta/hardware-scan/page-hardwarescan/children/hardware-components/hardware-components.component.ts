@@ -79,6 +79,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public isOnline = true;
 	completeStatusToken: string;
+	public startScanClicked = false;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -340,7 +341,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				})
 				.finally(() => {
 					let metricsResult = this.getMetricsTaskResult();
-					this.sendActionTaskMetrics(this.currentScanType, metricsResult.countSuccesses, 
+					this.sendTaskActionMetrics(this.currentScanType, metricsResult.countSuccesses, 
 						"", metricsResult.scanResultJson, this.timerService.stop());
 					this.cleaningUpScan(undefined);
 				});			
@@ -468,6 +469,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCustomizeScan() {
 		if (this.isLoadingDone()) {
+			this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 			const modalRef = this.modalService.open(this.customizeModal, {
 				size: 'lg',
 				centered: true,
@@ -479,11 +481,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.hardwareScanService.filterCustomTests(this.culture);
 				this.checkPreScanInfo(1); // custom scan
 			});
+
+			modalRef.componentInstance.modalClosing.subscribe(success => {
+				// Re-enabling the button, once the modal has been closed in a way
+				// the user didn't started the Scan proccess.
+				if (!success) {
+					this.startScanClicked = false;
+				}
+			});
 		}
 	}
 
 	public checkPreScanInfo(scanType: number) {
-
+		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 		this.hardwareScanService.cleanResponses();
 
 		this.currentScanType = scanType;
@@ -548,8 +558,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				modal.result.then((result) => {
 					this.getDoScan(scanType, requests);
+
+					// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
+					this.startScanClicked = false;
 				}, (reason) => {
 					this.hardwareScanService.cleanCustomTests();
+
+					// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
+					this.startScanClicked = false;
 				});
 			} else {
 				this.getDoScan(scanType, requests);
@@ -773,8 +789,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private getMetricsTaskResult() {
 
 		let scanResult = new ScanResult();
-		let scanResultJson = {};
 		let countSuccesses = 0;
+		let overalTestResult = HardwareScanTestResult.Pass;
 
 		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
 		// because of that, I'm creating a map with the best order to determine the scan overall status
@@ -787,19 +803,29 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
 		resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
 
-		let overalTestResult = HardwareScanTestResult.Pass;
+		let resultJson = {
+			Result: "",
+			Reason: "",
+			TestsList: {}
+		}
 
-		scanResultJson["TestsList"] = [];
+		//scanResultJson["TestsList"] = {};
 		if (this.modules) {
 			for (const module of this.modules) {
 				for (const test of module.listTest) {
-					let testList = {};
+
 					let testName = test.id.split(":::")[0];
-					testList["Name"] = testName;
-					testList["Result"] = HardwareScanTestResult[test.status];
-					// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
-					testList["Reason"] = "NA"; 
-					
+					if (!(testName in resultJson.TestsList)) {
+						resultJson.TestsList[testName] = []
+					}
+	
+					const testObj = {
+						Id: module.groupId,
+						Result: HardwareScanTestResult[test.status],
+						// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
+						Reason: "NA", 
+					}
+
 					if (test.status === HardwareScanTestResult.Pass) {
 						countSuccesses = countSuccesses + 1;
 					} 
@@ -809,25 +835,24 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						overalTestResult = test.status;
 					}
 					
-					scanResultJson["TestsList"].push(testList);
-
+					resultJson.TestsList[testName].push(testObj);
 				}
 			}
 		}
 	
-		scanResultJson["Result"] = HardwareScanTestResult[overalTestResult];
-		scanResultJson["Reason"] = "NA";
+		resultJson.Result = HardwareScanTestResult[overalTestResult];
+		resultJson.Reason = "NA";
 
-		scanResult.scanResultJson = scanResultJson;
+		scanResult.scanResultJson = resultJson;
 		scanResult.countSuccesses = countSuccesses;
 
 		return scanResult;
 	}	
 
-	private sendActionTaskMetrics(taskName: ScanType , taskCount: number, taskParam: string, 
+	private sendTaskActionMetrics(taskName: ScanType , taskCount: number, taskParam: string, 
 		taskResult: any, taskDuration: number){
 		const data = {
-			ItemType: 'ActionTask',
+			ItemType: 'TaskAction',
 			TaskName: ScanType[taskName],
 			TaskCount: taskCount,
 			TaskResult: taskResult,

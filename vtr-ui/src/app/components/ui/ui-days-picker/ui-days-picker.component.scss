@@ -101,39 +101,8 @@
 			transition-property: none;
 		}
 
-		.custom-checkbox {
-			@media #{$black-on-white}{  
-			  .custom-control-input~.custom-control-label::after {
-				content: "";
-				position: absolute;
-				height: 1.8rem;
-				width: 1.8rem;
-				border: 1px solid $main_darker;
-				background: none;
-				left: -1.8rem;
-				background: $main_lightest;
-				z-index: 0;
-				border-radius: 2px;
-			  }
 		
-			  .custom-control-input:checked~.custom-control-label::before {
-				content: "";
-				position: absolute;
-				border-radius: 0;
-				height: 5px;
-				width: 8px;
-				border: 2px solid $main_darker;
-				border-top: none;
-				border-right: none;
-				transform: rotate(-45deg);
-				background: none;
-				left: -1.5rem;
-				top: 4px;
-				z-index: 1;
-			  }
-			}
-		  }
-	}
+	
 	.dropbtn {
 		box-shadow: 0px 0px 1.5rem 0px rgba(0, 0, 0, 0.15);
 		border-radius: 0.5rem;
