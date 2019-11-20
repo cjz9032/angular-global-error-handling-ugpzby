@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FigleafDashboard } from '../../services/figleaf-overview.service';
+import { FigleafDashboard } from '../../common/services/figleaf-overview.service';
 
 @Component({
 	selector: 'vtr-stat',

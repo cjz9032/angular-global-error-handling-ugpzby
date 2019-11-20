@@ -7,9 +7,19 @@ import { CheckBreachedAccountsModule } from '../check-breached-accounts/check-br
 import { ScanningComponent } from './scanning/scanning.component';
 import { VtrCommonModule } from '../../common/vtr-common.module';
 import { RouterModule } from '@angular/router';
+import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passwords/permit-trackers-and-passwords.component';
+import { ProgressBarComponent } from './scanning/progress-bar/progress-bar.component';
+import { StepsViewComponent } from './steps-view/steps-view.component';
 
 @NgModule({
-	declarations: [OneClickScanComponent, EnterEmailComponent, ScanningComponent],
+	declarations: [
+		OneClickScanComponent,
+		EnterEmailComponent,
+		ScanningComponent,
+		PermitTrackersAndPasswordsComponent,
+		ProgressBarComponent,
+		StepsViewComponent
+	],
 	imports: [
 		CommonModule,
 		RouterModule,

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Permit } from '../../../feature/one-click-scan/services/one-click-scan-steps.service';
+import { Permit } from '../services/one-click-scan-steps.service';
 
 @Component({
 	selector: 'vtr-permit-trackers-and-passwords',

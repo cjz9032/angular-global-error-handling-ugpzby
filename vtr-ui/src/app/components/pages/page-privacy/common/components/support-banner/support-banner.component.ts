@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonPopupService } from '../../services/popups/common-popup.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { CommonPopupService } from '../../services/popups/common-popup.service';
 	templateUrl: './support-banner.component.html',
 	styleUrls: ['./support-banner.component.scss'],
 })
-export class SupportBannerComponent implements OnInit {
+export class SupportBannerComponent {
 
 	constructor(
 		private commonPopupService: CommonPopupService) {
-	}
-
-	ngOnInit() {
 	}
 
 	openPopup(id) {

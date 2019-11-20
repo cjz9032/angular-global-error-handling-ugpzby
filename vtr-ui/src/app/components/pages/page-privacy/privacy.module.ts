@@ -36,6 +36,7 @@ import { OfflineWidgetComponent } from './main-layout/sidebar/offline-widget/off
 import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-widget.component';
 import { CustomFontAwesomeModule } from './custom-font-awesome.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { VideoComponent } from './main-layout/sidebar/video-widget/video/video.component';
 
 @NgModule({
 	imports: [
@@ -75,6 +76,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		TrialExpiredWidgetComponent,
 		OfflineWidgetComponent,
 		VideoWidgetComponent,
+		VideoComponent
 	],
 	providers: [
 		httpInterceptorProviders
