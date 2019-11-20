@@ -5,14 +5,11 @@ import { CommonPopupComponent } from './common-popup/common-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TryProductBlockComponent } from './try-product-block/try-product-block.component';
 import { InlineSvgComponent } from './inline-svg/inline-svg.component';
-import { SupportBannerComponent } from './support-banner/support-banner.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { SanitizeModule } from 'src/app/modules/sanitize.module';
 import { RouterModule } from '@angular/router';
 import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
-import { SupportWidgetComponent } from './support-widget/support-widget.component';
-import { SupportPopupComponent } from './support-popup/support-popup.component';
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 import { FeatureHeaderComponent } from './feature-header/feature-header.component';
 import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
@@ -34,10 +31,7 @@ import { AbTestsComponent } from './ab-tests/ab-tests.component';
 		CommonPopupComponent,
 		TryProductBlockComponent,
 		InlineSvgComponent,
-		SupportBannerComponent,
 		BigLoaderComponent,
-		SupportWidgetComponent,
-		SupportPopupComponent,
 		NavTabsComponent,
 		FeatureHeaderComponent,
 		AccountsStoredComponent,
@@ -56,11 +50,8 @@ import { AbTestsComponent } from './ab-tests/ab-tests.component';
 		CommonPopupComponent,
 		TryProductBlockComponent,
 		InlineSvgComponent,
-		SupportBannerComponent,
 		BigLoaderComponent,
-		SupportWidgetComponent,
 		NavTabsComponent,
-		SupportWidgetComponent,
 		FeatureHeaderComponent,
 		AccountsStoredComponent,
 		DidYouKnowComponent,

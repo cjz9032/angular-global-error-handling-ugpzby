@@ -37,6 +37,10 @@ import { VideoWidgetComponent } from './main-layout/sidebar/video-widget/video-w
 import { CustomFontAwesomeModule } from './custom-font-awesome.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { VideoComponent } from './main-layout/sidebar/video-widget/video/video.component';
+import { StatComponent } from './main-layout/privacy-dashboard-list/stat.component';
+import { SupportPopupComponent } from './main-layout/support-popup/support-popup.component';
+import { SupportBannerComponent } from './main-layout/support-banner/support-banner.component';
+import { SupportWidgetComponent } from './main-layout/sidebar/support-widget/support-widget.component';
 
 @NgModule({
 	imports: [
@@ -76,7 +80,11 @@ import { VideoComponent } from './main-layout/sidebar/video-widget/video/video.c
 		TrialExpiredWidgetComponent,
 		OfflineWidgetComponent,
 		VideoWidgetComponent,
-		VideoComponent
+		VideoComponent,
+		StatComponent,
+		SupportPopupComponent,
+		SupportBannerComponent,
+		SupportWidgetComponent
 	],
 	providers: [
 		httpInterceptorProviders

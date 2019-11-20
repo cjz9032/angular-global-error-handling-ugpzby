@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonPopupService } from '../../services/popups/common-popup.service';
+import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 
 @Component({
 	selector: 'vtr-support-banner',
