@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
-import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
+import { BrowserAccountsService } from '../../feature/non-private-password/services/browser-accounts.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';

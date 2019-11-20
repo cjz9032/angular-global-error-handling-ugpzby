@@ -1,33 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Features } from '../nav-tabs/nav-tabs.service';
 import { ClearBreachesService } from '../../../feature/check-breached-accounts/services/clear-breaches.service';
-import { ClearTrackersService } from './clear-data-strategy/clear-trackers.service';
-import { ClearPasswordService } from './clear-data-strategy/clear-password.service';
+import { ClearTrackersService } from '../../../feature/tracking-map/services/clear-trackers.service';
+import { ClearPasswordService } from '../../../feature/non-private-password/services/clear-password.service';
 import { ScanFeatures, WidgetDataService } from '../../services/widget-data.service';
+import { ClearData } from './clear-data';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ClearDataService {
-	private strategy: { [feature in Features]: () => void } = {
-		[Features.breaches]: this.clearBreachesService.clearData.bind(this.clearBreachesService),
-		[Features.passwords]: this.clearPasswordService.clearData.bind(this.clearPasswordService),
-		[Features.trackers]: this.clearTrackersService.clearData.bind(this.clearTrackersService),
-	};
-
-	private texts: { [feature in Features]: {text: string, content: string} } = {
-		[Features.breaches]: {
-			text: 'Clear my breach results',
-			content: 'Are you sure you want to clear the information about found breaches?'
-		},
-		[Features.trackers]: {
-			text: 'Clear my tracking tools results',
-			content: 'Are you sure you want to clear the information about found tracking tools?'
-		},
-		[Features.passwords]: {
-			text: 'Clear my vulnerable passwords results',
-			content: 'Are you sure you want to clear the information about found vulnerable passwords?'
-		},
+	private clearDataServices: { [feature in Features]: ClearData } = {
+		[Features.breaches]: this.clearBreachesService,
+		[Features.passwords]: this.clearPasswordService,
+		[Features.trackers]: this.clearTrackersService,
 	};
 
 	private featuresNames = {
@@ -45,15 +31,15 @@ export class ClearDataService {
 	}
 
 	clearData(feature: Features) {
-		this.strategy[feature]();
+		this.clearDataServices[feature].clearData();
 		this.widgetDataService.updateWidgetCounters({[this.getFeatureName(feature)]: null});
 	}
 
-	getFeatureName(feature: Features): ScanFeatures {
-		return this.featuresNames[feature];
+	getText(feature: Features) {
+		return this.clearDataServices[feature].getText();
 	}
 
-	getText(feature: Features) {
-		return this.texts[feature];
+	private getFeatureName(feature: Features): ScanFeatures {
+		return this.featuresNames[feature];
 	}
 }

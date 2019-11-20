@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
-import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
+import { BrowserAccountsService } from './services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';

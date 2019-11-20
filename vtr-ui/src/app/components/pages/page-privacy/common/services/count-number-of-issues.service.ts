@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BreachedAccountsService } from '../../feature/check-breached-accounts/services/breached-accounts.service';
-import { BrowserAccountsService } from './browser-accounts.service';
+import { BrowserAccountsService } from '../../feature/non-private-password/services/browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
 import { filter, map, shareReplay, startWith, tap } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';

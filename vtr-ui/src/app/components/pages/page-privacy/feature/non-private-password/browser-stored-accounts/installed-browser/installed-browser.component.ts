@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { InstalledBrowser } from '../../../../common/services/browser-accounts.service';
+import { InstalledBrowser } from '../../services/browser-accounts.service';
 import { DEFAULT_SITES_FAVICON } from '../../../../common/services/data-knowledge.service';
 
 @Component({

@@ -5,7 +5,6 @@ import { CommonPopupComponent } from './common-popup/common-popup.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TryProductBlockComponent } from './try-product-block/try-product-block.component';
-import { ChoseBrowserComponent } from './chose-browser/chose-browser.component';
 import { CommonTextComponent } from './common-text/common-text.component';
 import { InlineSvgComponent } from './inline-svg/inline-svg.component';
 import { LowPrivacyComponent } from './low-privacy/low-privacy.component';
@@ -43,7 +42,6 @@ import { AbTestsComponent } from './ab-tests/ab-tests.component';
 		CommonPopupComponent,
 		ToggleButtonComponent,
 		TryProductBlockComponent,
-		ChoseBrowserComponent,
 		CommonTextComponent,
 		InlineSvgComponent,
 		LowPrivacyComponent,
@@ -74,7 +72,6 @@ import { AbTestsComponent } from './ab-tests/ab-tests.component';
 		CommonPopupComponent,
 		ToggleButtonComponent,
 		TryProductBlockComponent,
-		ChoseBrowserComponent,
 		CommonTextComponent,
 		InlineSvgComponent,
 		LowPrivacyComponent,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OneClickScanSteps } from './one-click-scan-steps.service';
 import { UserAllowService } from '../../../common/services/user-allow.service';
-import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
+import { BrowserAccountsService } from '../../non-private-password/services/browser-accounts.service';
 import { BreachedAccountsService } from '../../check-breached-accounts/services/breached-accounts.service';
 
 @Injectable({
