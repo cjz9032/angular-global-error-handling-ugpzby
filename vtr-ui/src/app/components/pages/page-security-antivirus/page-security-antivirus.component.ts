@@ -272,7 +272,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?) {
 		const featureList = [{
-			status: mcafee.registered,
+			status: this.antiVirus.mcafee.registered,
 			title: this.register,
 			installed: true
 		}];
@@ -402,12 +402,13 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	updateRegister(list: Array<any>, data) {
-		const featureList = list.slice(1, 5);
 		const registerList = {
 			status: data,
+			installed: true,
 			title: this.register
 		};
-		return featureList.splice(0, 0, registerList);
+		list.splice(0, 1, registerList);
+		return list;
 	}
 
 	getMcafeeMetric(metrics: Array<phoenix.McafeeMetricsList>, data?) {
