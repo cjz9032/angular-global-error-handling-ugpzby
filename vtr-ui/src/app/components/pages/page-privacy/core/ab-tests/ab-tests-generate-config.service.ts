@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import * as config from '../../../utils/ab-test/config.json';
-import { StorageService } from '../../services/storage.service';
+import * as config from '../../utils/ab-test/config.json';
+import { StorageService } from '../services/storage.service';
 import { AbTestsBackendService, ShuffleTests, Test } from './ab-tests-backend.service';
-import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 import { AB_TESTS_CONFIG, AbTestsService, BACKEND_CONFIG_VERSION } from './ab-tests.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';

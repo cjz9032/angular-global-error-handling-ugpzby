@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
-import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 import { AbTestsService } from './ab-tests.service';
-import { TestOptionDirective } from '../../directives/test-option.directive';
+import { TestOptionDirective } from './test-option.directive';
 import { AbTestsBackendService } from './ab-tests-backend.service';
 
 @Component({

@@ -8,7 +8,7 @@ import { OpenSeePlansDirective } from './open-see-plans.directive';
 import { OpenLinkInBrowserDirective } from './open-link-in-browser.directive';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { ImagePreloadDirective } from './image-preload.directive';
-import { TestOptionDirective } from './test-option.directive';
+import { TestOptionDirective } from '../ab-tests/test-option.directive';
 
 @NgModule({
 	declarations: [
@@ -19,8 +19,7 @@ import { TestOptionDirective } from './test-option.directive';
 		OpenSeePlansDirective,
 		OpenLinkInBrowserDirective,
 		ClickOutsideDirective,
-		ImagePreloadDirective,
-		TestOptionDirective
+		ImagePreloadDirective
 	],
 	exports: [
 		NumbersOnlyDirective,
@@ -30,8 +29,7 @@ import { TestOptionDirective } from './test-option.directive';
 		CutMultilineTextWithDotsDirective,
 		OpenSeePlansDirective,
 		ClickOutsideDirective,
-		ImagePreloadDirective,
-		TestOptionDirective
+		ImagePreloadDirective
 	],
 	imports: [
 		CommonModule

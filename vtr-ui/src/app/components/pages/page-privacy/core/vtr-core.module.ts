@@ -4,6 +4,7 @@ import { PipesModule } from './pipes/pipes.module';
 import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
 import { GuardsModule } from './guards/guards.module';
+import { AbTestsModule } from './ab-tests/ab-tests.module';
 
 @NgModule({
 	declarations: [],
@@ -12,13 +13,15 @@ import { GuardsModule } from './guards/guards.module';
 		PipesModule,
 		ComponentsModule,
 		DirectivesModule,
-		GuardsModule
+		GuardsModule,
+		AbTestsModule
 	],
 	exports: [
 		PipesModule,
 		ComponentsModule,
 		DirectivesModule,
-		GuardsModule
+		GuardsModule,
+		AbTestsModule
 	]
 })
 export class VtrCoreModule {

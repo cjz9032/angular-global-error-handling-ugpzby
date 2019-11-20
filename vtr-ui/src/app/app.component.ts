@@ -29,7 +29,7 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
-import { AbTestsGenerateConfigService } from './components/pages/page-privacy/core/components/ab-tests/ab-tests-generate-config.service';
+import { AbTestsGenerateConfigService } from './components/pages/page-privacy/core/ab-tests/ab-tests-generate-config.service';
 
 declare var Windows;
 @Component({

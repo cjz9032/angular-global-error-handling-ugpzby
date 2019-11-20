@@ -1,12 +1,12 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
-import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
+import { PRIVACY_ENVIRONMENT } from '../../utils/injection-tokens';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BACKEND_CONFIG_VERSION } from './ab-tests.service';
-import { StorageService } from '../../services/storage.service';
-import * as config from '../../../utils/ab-test/config.json';
+import { StorageService } from '../services/storage.service';
+import * as config from '../../utils/ab-test/config.json';
 
 export interface Test {
 	key: AbTestsName;

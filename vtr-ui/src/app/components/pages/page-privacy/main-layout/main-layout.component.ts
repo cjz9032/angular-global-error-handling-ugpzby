@@ -9,7 +9,7 @@ import { FigleafOverviewService } from '../core/services/figleaf-overview.servic
 import { UpdateTriggersService } from '../core/services/update-triggers.service';
 import { TaskObserverService } from '../core/services/analytics/task-observer.service';
 import { WidgetDataService } from '../core/services/widget-data.service';
-import { AbTestsGenerateConfigService } from '../core/components/ab-tests/ab-tests-generate-config.service';
+import { AbTestsGenerateConfigService } from '../core/ab-tests/ab-tests-generate-config.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
