@@ -49,12 +49,12 @@ ui-popover-apps {
 	}
 	.modal-body {
 		padding: 0;
-		@media #{$large-screen} {
-			min-width: 91.4rem;
-		}
-		@media #{$mediaquery_X7} {
-			min-width: 91.4rem;
-		}
+		// @media #{$large-screen} {
+		// 	min-width: 91.4rem;
+		// }
+		// @media #{$mediaquery_X7} {
+		// 	min-width: 91.4rem;
+		// }
 		.main-content-body {
 			padding: 4rem;
 			@media #{$breakpoint_sm} {

@@ -257,7 +257,6 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
-						"codeCoverage": true,
 						"styles": [
 							"src/styles.scss"
 						],
@@ -266,7 +265,8 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/manifest.webmanifest"
-						]
+						],
+						"codeCoverage": true
 					}
 				},
 				"lint": {

@@ -1,123 +1,125 @@
-@import '../../../../../app.theme';
+@import "../../../../../app.theme";
 
 .vtr-header-main {
 	// TEMP STYLING TO BE REPLACED WHEN WE HAVE ACTUAL BACKGROUND SPECS
-	background: #289cd0;
-	background: -moz-linear-gradient(left, #72d0bb 0%, #289cd0 100%);
-	background: -webkit-linear-gradient(left, #72d0bb 0%, #289cd0 100%);
-	background: linear-gradient(to right, #72d0bb 0%, #289cd0 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72d0bb', endColorstr='#289cd0',GradientType=1 );
-
-	position: relative;
-	padding: 5rem $padding_side 8rem $padding_side;
-	height: 100%;
-	@media #{$mediaquery_X4} {
-		padding-left: 5rem;
-	}
-	@media #{$mediaquery_xl} {
-		//	padding-top: 13rem;
-	}
-	&::before {
-		content: "";
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		position: absolute;
-		width: 100%;
-		background: url(/assets/images/gaming/GamingTopImage.jpg) center center no-repeat;
-		background-size: 100%;
-		opacity: 0.15;
-	}
-	&--navigation-block {
-		padding: 5rem $padding_side 2rem $padding_side;
-	}
-	.title {
-		color: $light;
-		font-size: 4.6rem;
-		font-weight: $weight_light;
-		display: inline-block;
-		margin: 1.5rem 0 0 0;
+	// background: #289cd0;
+	// background: -moz-linear-gradient(left, #72d0bb 0%, #289cd0 100%);
+	// background: -webkit-linear-gradient(left, #72d0bb 0%, #289cd0 100%);
+	// background: linear-gradient(to right, #72d0bb 0%, #289cd0 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72d0bb', endColorstr='#289cd0',GradientType=1 );
+	.vtr-header-main-inner {
+		max-width: $max_page_width;
+		margin: 0 auto;
 		position: relative;
-
-    &--icon {
-      &:before {
-        content: '';
-        position: absolute;
-        left: 100%;
-        top: 0;
-        margin-left: 2rem;
-        width: 9.7rem;
-        height: 2.4rem;
-        background: url("src/assets/icons/privacy-tab/icon-figleaf-logo@2x.png") center no-repeat;
-        background-size: cover;
-
-        @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min--moz-device-pixel-ratio: 2),
-        only screen and (-o-min-device-pixel-ratio: 2/1),
-        only screen and (min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
-          background: url("src/assets/icons/privacy-tab/icon-figleaf-logo@2x.png") center no-repeat;
-          background-size: cover;
-        }
-      }
-    }
-	}
-	.forward-link {
-		float: right;
-		margin-top: 3.5rem;
-		text-transform: uppercase;
-		font-size: 1.2rem;
-		a {
+		padding: 5rem $padding_side 8rem $padding_side;
+		height: 100%;
+		@media #{$mediaquery_X4} {
+			padding-left: 5rem;
+		}
+		@media #{$mediaquery_xl} {
+			//	padding-top: 13rem;
+		}
+		// &::before {
+		// 	content: "";
+		// 	top: 0;
+		// 	bottom: 0;
+		// 	left: 0;
+		// 	right: 0;
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	background: url(/assets/images/gaming/GamingTopImage.jpg) center center no-repeat;
+		// 	background-size: 100%;
+		// 	opacity: 0.15;
+		// }
+		&--navigation-block {
+			padding: 5rem $padding_side 2rem $padding_side;
+		}
+		.title {
 			color: $light;
-			text-decoration: none;
-			&:hover {
-				text-decoration: none;
-				.forward-link-label {
-					border-bottom: .2rem solid transparent;
+			font-size: 5.75rem;
+			font-weight: $weight_light;
+			display: inline-block;
+			margin: 0;
+			position: relative;
+
+			&--icon {
+				&:before {
+					content: "";
+					position: absolute;
+					left: 100%;
+					top: 0;
+					margin-left: 2rem;
+					width: 9.7rem;
+					height: 2.4rem;
+					background: url("src/assets/icons/privacy-tab/icon-figleaf-logo.png") center no-repeat;
+					background-size: cover;
+
+					@media only screen and (-webkit-min-device-pixel-ratio: 2),
+						only screen and (min--moz-device-pixel-ratio: 2),
+						only screen and (-o-min-device-pixel-ratio: 2/1),
+						only screen and (min-device-pixel-ratio: 2),
+						only screen and (min-resolution: 192dpi),
+						only screen and (min-resolution: 2dppx) {
+						background: url("src/assets/icons/privacy-tab/icon-figleaf-logo@2x.png") center no-repeat;
+						background-size: cover;
+					}
 				}
 			}
-			.forward-link-label {
-				padding-bottom: .4rem;
-				border-bottom: .2rem solid $light;
-			}
-			.forward-link-icon {
-				padding-left: 1rem;
+		}
+		.forward-link {
+			float: right;
+			margin-top: 3.5rem;
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			a {
+				color: $light;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+					.forward-link-label {
+						border-bottom: 0.2rem solid transparent;
+					}
+				}
+				.forward-link-label {
+					padding-bottom: 0.4rem;
+					border-bottom: 0.2rem solid $light;
+				}
+				.forward-link-icon {
+					padding-left: 1rem;
+				}
 			}
 		}
-	}
-	.menu {
-		position: absolute;
-		bottom: 0;
-		left: $padding_side;
-	}
-	.back-button {
-		color: #fff;
-		font-weight: bold;
-		font-size: 1.4rem;
-		letter-spacing: 0;
-		border: none;
-		background: none;
-		padding: 0;
-		border-bottom: 1px solid #fff;
-		text-transform: uppercase;
-		position: absolute;
-		bottom: 100%;
-		left: 0;
-		margin: 0 0 0 1.5rem;
-
-		&:before {
+		.menu {
 			position: absolute;
-			right: 100%;
-			top: 50%;
-			transform: translateY(-50%);
-			content: '<';
-			margin-right: 1.5rem - .7rem;
-			width: .7rem;
-			//height: 1.1rem;
-			//background: url("src/assets/icons/privacy-tab/icon-white-back.svg") center no-repeat;
-			//background-size: cover;
+			bottom: 0;
+			left: $padding_side;
+		}
+		.back-button {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.1rem;
+			border: none;
+			background: none;
+			padding: 0;
+			border-bottom: 1px solid #fff;
+			text-transform: uppercase;
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			margin: 0 0 0.5rem 1.5rem;
+
+			&:before {
+				position: absolute;
+				right: 100%;
+				top: 50%;
+				transform: translateY(-50%);
+				content: "";
+				margin-right: 1.5rem - 0.7rem;
+				width: 0.7rem;
+				height: 1.1rem;
+				background: url("src/assets/icons/privacy-tab/icon-white-back.svg") center no-repeat;
+				background-size: cover;
+			}
 		}
 	}
 }
@@ -138,7 +140,7 @@
 	}
 
 	&__link {
-		color: rgba(255,255,255,0.6);
+		color: rgba(255, 255, 255, 0.6);
 		font-size: 2rem;
 		line-height: 2.5rem;
 		letter-spacing: 0.5px;
@@ -146,7 +148,7 @@
 		&.active {
 			display: flex;
 			position: relative;
-			color: #FFFFFF;
+			color: #ffffff;
 			font-weight: bold;
 			height: 100%;
 
