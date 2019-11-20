@@ -10,8 +10,21 @@
                 </div>
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
-                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" [disabled]="disableQuickScan" (click)="onQuickScan()">{{buttonText}}</button>
-                        <a [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}</a>
+                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" 
+                            vtrMetrics 
+                            metricsEvent="FeatureClick" 
+                            metricsParent="HardwareScan"
+                            metricsItem="HardwareScan.QuickScan" 
+                            [disabled]="disableQuickScan" 
+                            (click)="onQuickScan()">{{buttonText}}</button>
+                        <a 
+                            vtrMetrics 
+                            metricsEvent="FeatureClick" 
+                            metricsParent="HardwareScan"
+                            metricsItem="HardwareScan.CustomizeScan" 
+                            [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
+                            {{anchorText}}
+                        </a>
                     </div>
                 </div>
                 <div *ngIf="showProgress" class="col row hwscan-header">

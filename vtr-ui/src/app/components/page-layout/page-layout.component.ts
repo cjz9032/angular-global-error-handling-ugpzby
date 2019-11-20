@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'vtr-page-layout',
@@ -13,13 +13,21 @@ export class PageLayoutComponent implements OnInit {
 	@Input() parentPath: string;
 	@Input() back: string;
 	@Input() backId: string;
+	@Input() isInnerBack = false;
 	@Input() menuItems: any[];
 	@Input() shiftLeftUp: boolean = false;
 	@Input() shiftRightUp: boolean = false;
+	@Input() hideBack = false;
+
+	@Output() innerBack = new EventEmitter();
 
 	constructor() { }
 
 	ngOnInit() {
+	}
+
+	onInnerBack() {
+		this.innerBack.emit();
 	}
 
 }

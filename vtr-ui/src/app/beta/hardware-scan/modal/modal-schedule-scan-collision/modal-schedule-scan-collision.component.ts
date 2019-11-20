@@ -13,6 +13,10 @@ export class ModalScheduleScanCollisionComponent implements OnInit {
 	@Input() error = this.translate.instant('hardwareScan.scheduledScan.error');
 	@Input() description = this.translate.instant('hardwareScan.scheduledScan.scheduleIntervalLimit');
 
+	@Input() ItemParent: string;
+	@Input() CancelItemName: string;
+	@Input() ConfirmItemName: string;
+
 	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) { }
 
 	ngOnInit() {

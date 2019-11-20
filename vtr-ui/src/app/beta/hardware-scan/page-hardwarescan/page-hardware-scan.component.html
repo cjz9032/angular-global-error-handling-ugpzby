@@ -1,77 +1,71 @@
-<div class="vtr-page-hardware-scan vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<beta-vtr-header-main [backarrow]="backarrow"
-				[hide]="(!isScanDoneExecuting() && isScanExecuting()) || (!isScanDoneExecuting() && isRecoverExecuting())"
-				[isInnerBack]="isScanDoneExecuting()" (innerBack)="redirectBack()"
-				[back]="'hardwareScan.back' | translate" [title]="setTitle()">
-			</beta-vtr-header-main>
+<vtr-page-layout [title]="setTitle()"
+	[textId]="'hardware-scan'"
+	[pageCssClass]="'hardware-scan'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[hideBack]="(!isScanDoneExecuting() && isScanExecuting()) || (!isScanDoneExecuting() && isRecoverExecuting())"
+	[back]="'common.ui.back' | translate"
+	[backId]="'myDevice-back-btn'"
+	[isInnerBack]="isScanDoneExecuting()"
+	(innerBack)="redirectBack()">
+
+	<left-content>
+		<div class="vtr-device-information">
+			<div class="container-fluid">
+				<router-outlet></router-outlet>
+			</div>
 		</div>
-	</div>
+	</left-content>
 
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
+	<right-content>
+		<div class="container-fluid">
+			<!-- Schedule Scan feature will be implemented and fixed on Release 3.2 -->
+			<!-- <div class="row">
+						<div class="col col-12 cont mb-40" *ngIf="((isLoadingDone() || isScanDoneExecuting()) && !isRecoverInProgress() && !isRecoverExecuting()) && !getIsViewingRecoverLog()">
+							<vtr-widget-schedule-scan>
+							</vtr-widget-schedule-scan>
+						</div>
+					</div> -->
+
 			<div class="row">
-				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
-					<div class="vtr-page-shift-up">
-						<div class="vtr-device-information">
-							<div class="container-fluid">
-								<router-outlet></router-outlet>
-							</div>
-						</div>
-					</div>
+				<div class="col col-12 mb-40">
+					<beta-vtr-container-card vtrMetrics
+						order="1"
+						sideFlag='r'
+						itemID='HardwareScan.DiagnosticsTools'
+						[img]="'assets/images/support.jpg'"
+						[title]="supportTitle"
+						[action]="'Read More'"
+						[caption]="'hardwareScan.support.subtitle' | translate"
+						[actionLink]="'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads'"
+						[type]="'partnerarticle'"
+						[ratioX]="4"
+						[ratioY]="2">
+					</beta-vtr-container-card>
 				</div>
-				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-					<div class="vtr-page-shift-up">
-						<div class="container-fluid">
-							<!-- Schedule Scan feature will be implemented and fixed on Release 3.2 -->
-							<!-- <div class="row">
-								<div class="col col-12 cont mb-40" *ngIf="((isLoadingDone() || isScanDoneExecuting()) && !isRecoverInProgress() && !isRecoverExecuting()) && !getIsViewingRecoverLog()">
-									<vtr-widget-schedule-scan>
-									</vtr-widget-schedule-scan>
-								</div>
-							</div> -->
+			</div>
 
-							<div class="row">
-								<div class="col col-12 mb-40">
-									<beta-vtr-container-card
-										vtrMetrics
-										order="1"
-										sideFlag='r'
-									    [img]="'assets/images/support.jpg'" [title]="supportTitle"
-										[action]="'Read More'"
-										[caption]="'hardwareScan.support.subtitle' | translate"
-										[actionLink]="'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads'"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2">
-									</beta-vtr-container-card>
-								</div>
-							</div>
+			<div class="row">
+				<div class="col col-12 cont mb-40"
+					*ngIf="(hasDevicesToRecoverBadSectors() && !isRecoverInProgress() && isLoadingDone()) && !getIsViewingRecoverLog()">
+					<vtr-widget-recover-bad-sectors [title]="'hardwareScan.recoverBadSectors.title' | translate"
+						[description]="'hardwareScan.recoverBadSectors.description' | translate"
+						[textButton]="'hardwareScan.recoverBadSectors.title' | translate"
+						[recoverPath]="'/beta/hardware-scan/recover-bad-sectors'"
+						[disable]="disable()">
+					</vtr-widget-recover-bad-sectors>
+				</div>
+			</div>
 
-							<div class="row">
-								<div class="col col-12 cont mb-40"
-									*ngIf="(hasDevicesToRecoverBadSectors() && !isRecoverInProgress() && isLoadingDone()) && !getIsViewingRecoverLog()">
-									<vtr-widget-recover-bad-sectors
-										[title]="'hardwareScan.recoverBadSectors.title' | translate"
-										[description]="'hardwareScan.recoverBadSectors.description' | translate"
-										[textButton]="'hardwareScan.recoverBadSectors.title' | translate"
-										[recoverPath]="'/beta/hardware-scan/recover-bad-sectors'" [disable]="disable()">
-									</vtr-widget-recover-bad-sectors>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col col-12 mb-40">
-									<vtr-widget-hardware-scan-status
-										*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult && !isRecoverInProgress()">
-									</vtr-widget-hardware-scan-status>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col col-12 mb-40">
+					<vtr-widget-hardware-scan-status
+						*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult && !isRecoverInProgress()">
+					</vtr-widget-hardware-scan-status>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</right-content>
+
+</vtr-page-layout>
+
