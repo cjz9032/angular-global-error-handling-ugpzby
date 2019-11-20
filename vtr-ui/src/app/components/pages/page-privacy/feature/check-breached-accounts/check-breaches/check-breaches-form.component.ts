@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, mapTo, startWith, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailVerifyService } from '../services/email-verify.service';
 import { combineLatest, from, merge } from 'rxjs';
@@ -45,9 +45,9 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	serverError$ = this.listenError();
 
 	isLoading$ = combineLatest([
-		this.emailScannerService.loading$,
-		this.getBreachesService.loading$
-	]).pipe(map(([emailVerifyLoading, getBreachesLoading]) => emailVerifyLoading && getBreachesLoading));
+		this.emailScannerService.loading$.pipe(startWith(false)),
+		this.getBreachesService.loading$.pipe(startWith(false)),
+	]).pipe(map(([emailVerifyLoading, getBreachesLoading]) => emailVerifyLoading || getBreachesLoading));
 
 	lenovoId = '';
 	islenovoIdOpen = false;

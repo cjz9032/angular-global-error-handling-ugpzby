@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { StorageService } from './storage.service';
+import { StorageService } from '../../../common/services/storage.service';
 
 const SCAN_STORAGE_NAME = 'scanCounter';
 

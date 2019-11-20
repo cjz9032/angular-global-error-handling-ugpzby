@@ -16,7 +16,7 @@ import { EmailVerifyService, ErrorNames } from './email-verify.service';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { TaskActionWithTimeoutService, TasksName } from '../../../common/services/analytics/task-action-with-timeout.service';
 import { UpdateTriggersService } from '../../../common/services/update-triggers.service';
-import { ScanCounterService } from '../../../common/services/scan-counter.service';
+import { ScanCounterService } from './scan-counter.service';
 import { NetworkStatus } from '../../../../../../enums/network-status.enum';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { GetBreachesService } from './get-breaches.service';

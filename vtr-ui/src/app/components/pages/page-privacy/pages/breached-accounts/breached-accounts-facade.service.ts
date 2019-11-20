@@ -9,7 +9,7 @@ import { CountNumberOfIssuesService } from '../../common/services/count-number-o
 import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
 import { SafeStorageService } from '../../common/services/safe-storage.service';
 import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
-import { ScanCounterService } from '../../common/services/scan-counter.service';
+import { ScanCounterService } from '../../feature/check-breached-accounts/services/scan-counter.service';
 import { UserEmailService } from '../../feature/check-breached-accounts/services/user-email.service';
 
 const SCAN_COUNTER_LIMIT = 2;
