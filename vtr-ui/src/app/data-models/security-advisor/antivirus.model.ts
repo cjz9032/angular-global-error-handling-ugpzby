@@ -16,7 +16,8 @@ export class AntiVirusViewModel {
 		firewallStatus: false,
 		status: false,
 		enabled: false,
-		metrics: []
+		metrics: [],
+		additionalCapabilities: '',
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
@@ -41,6 +42,7 @@ export class AntiVirusViewModel {
 	othersFirewallstatusList: Array<any> = [];
 	showMetricsList = true;
 	showMetricButton = true;
+	showMcafee = true;
 
 	constructor(antiVirus: Antivirus, private commonService: CommonService, private translate: TranslateService, ) {
 		translate.stream(this.otherAntiVirus.name).subscribe((res) => {
@@ -77,6 +79,10 @@ export class AntiVirusViewModel {
 		const cacheShowMetricList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMetricList);
 		if (typeof cacheShowMetricList === 'boolean') {
 			this.showMetricsList = cacheShowMetricList;
+		}
+		const cacheShowMcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMcafee);
+		if (typeof cacheShowMcafee === 'boolean') {
+			this.showMcafee = cacheShowMcafee;
 		}
 		const cacheMcafeeMetricsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList);
 		if (cacheMcafeeMetricsList) {

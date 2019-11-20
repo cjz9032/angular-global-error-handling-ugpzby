@@ -10,20 +10,25 @@
 		<div class="row">
 			<div class="col">
 				<beta-vtr-ui-button
-				[metricsEvent]="'FeatureClick'" [metricsItem]="'btn.Collision'" [metricsParent]="'Page.HardwareScan'"
-				[label]="buttonText" (onClick)="onClosing()"></beta-vtr-ui-button>
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="{{ItemParent}}"
+					metricsItem="{{ConfirmItemName}}"
+					[label]="buttonText"
+					(onClick)="onClosing()">
+				</beta-vtr-ui-button>
 			</div>
 		</div>
 		<a role="button"
-				href="javascript:;"
-				class="close-btn"
-				vtrMetrics
-				metricsItem="btn.Close.Collision"
-				metricsEvent="FeatureClick"
-				metricsParent="Page.HardwareScan"
-				(click)="activeModal.dismiss('Cross click')">
-				<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
-					alt=""
-					srcset="">
-			</a>
+			href="javascript:;"
+			class="close-btn"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="{{ItemParent}}"
+			metricsItem="{{CancelItemName}}"
+			(click)="activeModal.dismiss('Cross click')">
+			<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+				alt=""
+				srcset="">
+		</a>
 </div>

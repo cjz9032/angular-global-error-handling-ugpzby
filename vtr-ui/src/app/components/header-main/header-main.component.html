@@ -9,7 +9,7 @@
 			href="javascript:void();"
 			[attr.aria-label]="back"
 			tabindex="0"
-			*ngIf="back && back.length > 0">
+			*ngIf="back && back.length > 0 && !hideBack">
 			{{backarrow}}
 			<span>
 				{{back}}
