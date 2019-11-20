@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AccessTokenService } from '../../../common/services/access-token.service';
+import { AccessTokenService } from '../../../core/services/access-token.service';
 import { UserEmailService } from './user-email.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 

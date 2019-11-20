@@ -13,7 +13,7 @@ import { BehaviorSubject } from 'rxjs';
 import { EmailVerifyService } from '../services/email-verify.service';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { SafeStorageService } from '../../../common/services/safe-storage.service';
+import { SafeStorageService } from '../../../core/services/safe-storage.service';
 import { UserEmailService } from '../services/user-email.service';
 
 @Component({

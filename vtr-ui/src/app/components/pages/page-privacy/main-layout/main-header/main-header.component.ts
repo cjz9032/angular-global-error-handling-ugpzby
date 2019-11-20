@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../../core/services/router-change-handler.service';
 
 import { RoutersName } from '../../privacy-routing-name';
 import { AbTestsName } from '../../utils/ab-test/ab-tests.type';

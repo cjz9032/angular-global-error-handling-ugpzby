@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, merge, of, Subject } from 'rxjs';
 import { catchError, distinctUntilChanged, map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { StorageService } from '../../../common/services/storage.service';
-import { MaskedPasswordsInfo, VantageCommunicationService } from '../../../common/services/vantage-communication.service';
+import { StorageService } from '../../../core/services/storage.service';
+import { MaskedPasswordsInfo, VantageCommunicationService } from '../../../core/services/vantage-communication.service';
 import { convertBrowserNameToBrowserData } from '../../../utils/helpers';
-import { TaskActionWithTimeoutService, TasksName } from '../../../common/services/analytics/task-action-with-timeout.service';
-import { UpdateTriggersService } from '../../../common/services/update-triggers.service';
-import { UserAllowService } from '../../../common/services/user-allow.service';
+import { TaskActionWithTimeoutService, TasksName } from '../../../core/services/analytics/task-action-with-timeout.service';
+import { UpdateTriggersService } from '../../../core/services/update-triggers.service';
+import { UserAllowService } from '../../../core/services/user-allow.service';
 
 export interface InstalledBrowser {
 	name: string;

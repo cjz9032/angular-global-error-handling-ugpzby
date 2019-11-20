@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
+import { VantageCommunicationService } from '../../../core/services/vantage-communication.service';
 import { map } from 'rxjs/operators';
-import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
+import { FigleafOverviewService } from '../../../core/services/figleaf-overview.service';
 import { DifferenceInDays } from '../../../utils/helpers';
-import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { AppStatusesService } from '../../../core/services/app-statuses/app-statuses.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { Router } from '@angular/router';
 import { RoutersName } from '../../../privacy-routing-name';

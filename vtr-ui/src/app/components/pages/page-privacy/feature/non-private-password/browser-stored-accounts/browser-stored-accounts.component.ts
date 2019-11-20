@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Features } from '../../../common/components/nav-tabs/nav-tabs.service';
+import { Features } from '../../../core/components/nav-tabs/nav-tabs.service';
 import { InstalledBrowserDataState } from '../services/browser-accounts.service';
 
 @Component({

@@ -1,10 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CommonPopupService } from '../../common/services/popups/common-popup.service';
+import { CommonPopupService } from '../../core/services/popups/common-popup.service';
 import { map, tap } from 'rxjs/operators';
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
-import { AnalyticsService } from '../../common/services/analytics/analytics.service';
-import { GetParentForAnalyticsService } from '../../common/services/get-parent-for-analytics.service';
+import { AnalyticsService } from '../../core/services/analytics/analytics.service';
+import { GetParentForAnalyticsService } from '../../core/services/get-parent-for-analytics.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 export const DEFAULT_ICON = {

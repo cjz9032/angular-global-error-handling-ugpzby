@@ -22,7 +22,7 @@ import { SidebarInstallWidgetComponent } from './main-layout/sidebar/sidebar-ben
 import { CheckBreachedAccountsModule } from './feature/check-breached-accounts/check-breached-accounts.module';
 import { TrackingMapModule } from './feature/tracking-map/tracking-map.module';
 import { NonPrivatePasswordModule } from './feature/non-private-password/non-private-password.module';
-import { VtrCommonModule } from './common/vtr-common.module';
+import { VtrCoreModule } from './core/vtr-core.module';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
@@ -53,7 +53,7 @@ import { SupportWidgetComponent } from './main-layout/sidebar/support-widget/sup
 		CheckBreachedAccountsModule,
 		TrackingMapModule,
 		NonPrivatePasswordModule,
-		VtrCommonModule,
+		VtrCoreModule,
 		OneClickScanModule,
 		AppSearchModule
 	],

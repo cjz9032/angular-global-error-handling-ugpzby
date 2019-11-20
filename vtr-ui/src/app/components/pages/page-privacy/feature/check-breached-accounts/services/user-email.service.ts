@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { StorageService, USER_EMAIL_HASH } from '../../../common/services/storage.service';
+import { StorageService, USER_EMAIL_HASH } from '../../../core/services/storage.service';
 import { getSha1Hash } from '../../../utils/helpers';
-import { AccessTokenService } from '../../../common/services/access-token.service';
+import { AccessTokenService } from '../../../core/services/access-token.service';
 import { HttpClient } from '@angular/common/http';
-import { SafeStorageService } from '../../../common/services/safe-storage.service';
+import { SafeStorageService } from '../../../core/services/safe-storage.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

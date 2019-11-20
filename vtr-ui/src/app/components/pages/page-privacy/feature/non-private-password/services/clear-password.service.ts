@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ClearData } from '../../../common/components/clear-data-tooltip/clear-data';
-import { UserAllowService } from '../../../common/services/user-allow.service';
+import { ClearData } from '../../../core/components/clear-data-tooltip/clear-data';
+import { UserAllowService } from '../../../core/services/user-allow.service';
 
 @Injectable({
 	providedIn: 'root'

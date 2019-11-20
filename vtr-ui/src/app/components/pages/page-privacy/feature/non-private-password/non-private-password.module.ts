@@ -4,7 +4,7 @@ import { NonPrivatePasswordComponent } from './non-private-password.component';
 import { BrowserStoredAccountsComponent } from './browser-stored-accounts/browser-stored-accounts.component';
 import { InstalledBrowserComponent } from './browser-stored-accounts/installed-browser/installed-browser.component';
 import { RouterModule } from '@angular/router';
-import { VtrCommonModule } from '../../common/vtr-common.module';
+import { VtrCoreModule } from '../../core/vtr-core.module';
 import { RemovePasswordComponent } from './browser-stored-accounts/remove-password/remove-password.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 @NgModule({
@@ -21,7 +21,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 	imports: [
 		CommonModule,
 		RouterModule,
-		VtrCommonModule,
+		VtrCoreModule,
 		AppSearchModule
 	]
 })

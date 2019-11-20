@@ -5,7 +5,7 @@ import { FeaturesStatuses } from '../../../../userDataStatuses';
 import { coefficients } from './coefficients';
 import { combineLatest, of } from 'rxjs';
 import { BrowserAccountsService } from '../../../../feature/non-private-password/services/browser-accounts.service';
-import { AppStatusesService } from '../../../../common/services/app-statuses/app-statuses.service';
+import { AppStatusesService } from '../../../../core/services/app-statuses/app-statuses.service';
 
 @Injectable({
 	providedIn: 'root'

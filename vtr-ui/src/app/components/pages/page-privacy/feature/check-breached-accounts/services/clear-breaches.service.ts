@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ClearData } from '../../../common/components/clear-data-tooltip/clear-data';
+import { ClearData } from '../../../core/components/clear-data-tooltip/clear-data';
 import { BreachedAccountsService } from './breached-accounts.service';
-import { HASH_FOR_TOKEN_NAME, StorageService, USER_EMAIL_HASH } from '../../../common/services/storage.service';
-import { AccessTokenService } from '../../../common/services/access-token.service';
+import { HASH_FOR_TOKEN_NAME, StorageService, USER_EMAIL_HASH } from '../../../core/services/storage.service';
+import { AccessTokenService } from '../../../core/services/access-token.service';
 import { UserEmailService } from './user-email.service';
 
 @Injectable({

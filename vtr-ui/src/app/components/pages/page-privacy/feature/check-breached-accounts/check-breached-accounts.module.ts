@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EmailScannerComponent } from './email-scanner/email-scanner.component';
 import { CheckBreachesFormComponent } from './check-breaches/check-breaches-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VtrCommonModule } from '../../common/vtr-common.module';
+import { VtrCoreModule } from '../../core/vtr-core.module';
 import { BreachedAccountComponent } from './breached-account/breached-account.component';
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
@@ -38,7 +38,7 @@ import { RouterModule } from '@angular/router';
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
-		VtrCommonModule,
+		VtrCoreModule,
 		AppSearchModule,
 		RouterModule
 	],

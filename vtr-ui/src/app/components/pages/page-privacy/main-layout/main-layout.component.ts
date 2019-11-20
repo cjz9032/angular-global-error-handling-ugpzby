@@ -1,15 +1,15 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommunicationWithFigleafService } from '../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { RouterChangeHandlerService } from '../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../core/services/router-change-handler.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../utils/custom-rxjs-operators/instance-destroyed';
 import { RoutersName } from '../privacy-routing-name';
-import { FigleafOverviewService } from '../common/services/figleaf-overview.service';
-import { UpdateTriggersService } from '../common/services/update-triggers.service';
-import { TaskObserverService } from '../common/services/analytics/task-observer.service';
-import { WidgetDataService } from '../common/services/widget-data.service';
-import { AbTestsGenerateConfigService } from '../common/components/ab-tests/ab-tests-generate-config.service';
+import { FigleafOverviewService } from '../core/services/figleaf-overview.service';
+import { UpdateTriggersService } from '../core/services/update-triggers.service';
+import { TaskObserverService } from '../core/services/analytics/task-observer.service';
+import { WidgetDataService } from '../core/services/widget-data.service';
+import { AbTestsGenerateConfigService } from '../core/components/ab-tests/ab-tests-generate-config.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;

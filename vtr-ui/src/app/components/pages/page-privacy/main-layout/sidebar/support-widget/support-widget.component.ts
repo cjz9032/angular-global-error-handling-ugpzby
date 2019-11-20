@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
-import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
+import { CommonPopupService } from '../../../core/services/popups/common-popup.service';
+import { RouterChangeHandlerService } from '../../../core/services/router-change-handler.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RoutersName } from '../../../privacy-routing-name';

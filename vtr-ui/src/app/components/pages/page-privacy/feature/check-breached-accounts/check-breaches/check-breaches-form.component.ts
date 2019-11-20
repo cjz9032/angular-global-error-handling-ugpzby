@@ -11,7 +11,7 @@ import { BreachedAccountsService } from '../services/breached-accounts.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../../common/services/analytics/task-action-with-timeout.service';
+} from '../../../core/services/analytics/task-action-with-timeout.service';
 import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import { UserEmailService } from '../services/user-email.service';
 import { GetBreachesService } from '../services/get-breaches.service';

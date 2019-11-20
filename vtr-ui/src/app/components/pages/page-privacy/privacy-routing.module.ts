@@ -8,7 +8,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { RoutersName } from './privacy-routing-name';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
-import { IsOnlineGuard } from './common/guards/is-online.guard';
+import { IsOnlineGuard } from './core/guards/is-online.guard';
 
 const adminRoutes: Routes = [
 	{

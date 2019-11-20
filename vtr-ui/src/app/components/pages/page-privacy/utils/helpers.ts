@@ -1,4 +1,4 @@
-import { BrowserListType } from '../common/services/vantage-communication.service';
+import { BrowserListType } from '../core/services/vantage-communication.service';
 import { AppStatuses, FeaturesStatuses } from '../userDataStatuses';
 import SHA256 from 'crypto-js/sha256';
 import SHA1 from 'crypto-js/sha1';

@@ -3,15 +3,15 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { BrowserAccountsService } from '../../feature/non-private-password/services/browser-accounts.service';
-import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
-import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
-import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
+import { CountNumberOfIssuesService } from '../../core/services/count-number-of-issues.service';
+import { VantageCommunicationService } from '../../core/services/vantage-communication.service';
+import { FigleafOverviewService } from '../../core/services/figleaf-overview.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../common/services/analytics/task-action-with-timeout.service';
-import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
-import { UserAllowService } from '../../common/services/user-allow.service';
+} from '../../core/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../core/services/app-statuses/app-statuses.service';
+import { UserAllowService } from '../../core/services/user-allow.service';
 import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 
 @Component({

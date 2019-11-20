@@ -21,5 +21,5 @@ import { GuardsModule } from './guards/guards.module';
 		GuardsModule
 	]
 })
-export class VtrCommonModule {
+export class VtrCoreModule {
 }

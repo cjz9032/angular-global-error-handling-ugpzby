@@ -4,7 +4,7 @@ import { INVALID_TOKEN } from '../../../utils/error-codes';
 import { EMPTY, Observable, of, Subject, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ErrorNames } from './email-verify.service';
-import { AccessTokenService } from '../../../common/services/access-token.service';
+import { AccessTokenService } from '../../../core/services/access-token.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { UserEmailService } from './user-email.service';
 

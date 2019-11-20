@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { BrowserListType } from '../../../../common/services/vantage-communication.service';
+import { BrowserListType } from '../../../../core/services/vantage-communication.service';
 
 @Component({
 	selector: 'vtr-remove-password',

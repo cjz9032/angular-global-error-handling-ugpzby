@@ -2,12 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { filter, map, startWith, take, takeUntil } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../feature/check-breached-accounts/services/breached-accounts.service';
 import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
-import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { CommonPopupService } from '../../core/services/popups/common-popup.service';
+import { VantageCommunicationService } from '../../core/services/vantage-communication.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { BreachedAccountsFacadeService } from './breached-accounts-facade.service';
 import { combineLatest } from 'rxjs';
-import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
+import { Features } from '../../core/components/nav-tabs/nav-tabs.service';
 import { CommonService } from '../../../../../services/common/common.service';
 import { NetworkStatus } from '../../../../../enums/network-status.enum';
 

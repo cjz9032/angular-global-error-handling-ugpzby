@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
-import { FigleafOverviewService, licenseTypes } from '../../common/services/figleaf-overview.service';
+import { VantageCommunicationService } from '../../core/services/vantage-communication.service';
+import { FigleafOverviewService, licenseTypes } from '../../core/services/figleaf-overview.service';
 import { switchMap, take } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { from, of } from 'rxjs';

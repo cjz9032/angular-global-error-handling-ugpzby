@@ -5,7 +5,7 @@ import { catchError, concatMap, delay, distinctUntilChanged, retryWhen, switchMa
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../common/services/analytics/task-action-with-timeout.service';
+} from '../../core/services/analytics/task-action-with-timeout.service';
 
 export interface MessageFromFigleaf {
 	type: string;

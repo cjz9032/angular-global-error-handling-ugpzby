@@ -4,11 +4,11 @@ import { debounceTime, distinctUntilChanged, filter, map, share, shareReplay, st
 import { FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../feature/check-breached-accounts/services/breached-accounts.service';
-import { AccessTokenService } from '../../common/services/access-token.service';
-import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
+import { AccessTokenService } from '../../core/services/access-token.service';
+import { CountNumberOfIssuesService } from '../../core/services/count-number-of-issues.service';
 import { EmailVerifyService } from '../../feature/check-breached-accounts/services/email-verify.service';
-import { SafeStorageService } from '../../common/services/safe-storage.service';
-import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
+import { SafeStorageService } from '../../core/services/safe-storage.service';
+import { AppStatusesService } from '../../core/services/app-statuses/app-statuses.service';
 import { ScanCounterService } from '../../feature/check-breached-accounts/services/scan-counter.service';
 import { UserEmailService } from '../../feature/check-breached-accounts/services/user-email.service';
 
