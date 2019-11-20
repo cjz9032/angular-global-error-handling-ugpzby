@@ -1891,12 +1891,22 @@
 			"startDate": "Start date",
 			"endDate": "End date",
 			"status": "Status",
+			"activeStatus": "ACTIVE",
+			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION"
 		},
 		"scanSettings":{
 			"title": "Scan settings",
 			"description": "Enable or disable the scan and set the scan schedule",
-			"enableScan": "Enable Scan"
+			"enableScan": "Enable Scan",
+			"changeScanTitle": "Change scan schedule",
+			"changeScanDescription": "Edit the scan schedule to run when you need it.",
+			"frequency": "Frequency",
+			"txtDate": "Date",
+			"txtDay": "Day",
+			"txtTime": "Time",
+			"txtSave": "save",
+			"txtCancel": "cancel"
 		},
 		"scanningPage":{
 			"title": "Performance & security check",
@@ -1925,7 +1935,7 @@
 			"summary": "Summary",
 			"summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
 			"signupRepairButton": "SIGN UP & REPAIR NOW",
-			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter",
+			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
 			"scannedAreas": "SCANNED AREAS",
 			"recommendedAction":{
@@ -1939,7 +1949,7 @@
 		},
 		"subscriberScanHomePage":{
 			"title": "All is well with your Ideapad 720s",
-			"serialNumber": "Serial number",
+			"serialNumber": "Serial number: ",
 			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
 			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
 			"scanNow": "SCAN NOW",
@@ -1947,7 +1957,7 @@
 			"mostRecent": "MOST RECENT SCAN:",
 			"nextScheduled": "NEXT SCHEDULED SCAN:",
 			"scanSummary": {
-				"title": "Scan summary",
+				"title": "Scan summary:",
 				"description": "We are constantly tuning your computer",
 				"tune": "Tune",
 				"tuneSummary": "Disk space reclaimed",
@@ -1964,8 +1974,8 @@
 			},
 			"lastScanResults":{
 				"title": "Last 5 scan results:",
-				"scanDate": "Scan date",
-				"results": "Results",
+				"scanDate": "Scan date:",
+				"results": "Results:",
 				"status": "Status"
 			}
 			

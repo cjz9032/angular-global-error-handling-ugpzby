@@ -31,6 +31,8 @@ import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-s
 import { FormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
 import { TranslationModule } from '../translation.module';
+import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
+import { WidgetScansettingsComponent } from '../../components/widgets/widget-scansettings/widget-scansettings.component';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -53,7 +55,8 @@ library.add(faCircle);
     ModalSmartPerformanceSubscribeComponent,
     WidgetSpeedometerComponent,
     UiSmartPerformanceScanSummaryComponent,
-
+    WidgetSubscriptiondetailsComponent,
+    WidgetScansettingsComponent
 
 	],
   imports: [ CommonModule,

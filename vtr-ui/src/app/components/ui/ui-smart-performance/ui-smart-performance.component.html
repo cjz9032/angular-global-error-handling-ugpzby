@@ -278,7 +278,7 @@
 										<div class="col col-12 free-scan">
 											<div class="row">
 												<div class="contents">
-													<button class="action-button">{{'smartPerformance.scanButton' |translate }}</button>
+													<button class="action-button" (click)="isScanning=!isScanning">{{'smartPerformance.scanButton' |translate }}</button>
 													<div class="description">
 														<p [innerHTML]="'smartPerformance.startScan' |translate"></p>
 													</div>
@@ -359,27 +359,8 @@
 								<div class="row mb-40" *ngIf="!isScanning && !isScanningCompleted">
 									
 									<div class="col col-12">
-										<div class="subscription-details sidebar-widget">
-											<div class="title pb-3">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
-											<div class="card-info">
-												<p>{{'smartPerformance.subscriptionDetails.description' |translate }}<a href="#" class="para-link">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a></p>
-											</div>
-											<ul class="status-list">
-												<li class="d-flex justify-content-between">
-													<div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
-													<div class="status">{{startDate}}</div>
-												</li>
-												<li class="d-flex justify-content-between">
-													<div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
-													<div class="status">{{endDate}}</div>
-												</li>
-												<li class="d-flex justify-content-between">
-													<div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
-													<div class="status"><div [ngClass]="{'badge-danger': status==='INACTIVE', 'badge-success': status==='ACTIVE' }" class="badge badge-pill">{{status}}</div></div>
-												</li>
-											</ul>
-											<a href="#" class="link-text">{{'smartPerformance.subscriptionDetails.manageSubscription' |translate }}</a>
-										</div>
+										<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
+										
 									</div>
 								</div>
 								
