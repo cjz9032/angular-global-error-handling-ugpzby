@@ -59,6 +59,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@Input() isRebootRequired = false;
 	@Input() captionLink = '';
 	@Input() subDescription = '';
+	@Input() label = '';
 	public contentExpand = false;
 
 

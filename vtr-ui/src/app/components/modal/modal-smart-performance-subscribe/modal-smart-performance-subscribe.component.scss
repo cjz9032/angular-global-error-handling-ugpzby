@@ -35,46 +35,24 @@ textarea:focus {
 		color: $main_shade;
 	}
 	.pricing-tables{
+		list-style: none;
+		padding-left: 0;
+		position: relative;
 		@media #{$medium-screen} {
 			justify-content: space-around !important;
 		}
 		@media #{$small-screen} {
 			justify-content: space-around !important;
 		}
-		.pricing-table-card {
-			background: $shade_lighter;
-			border-radius: 0.6rem;
-			width: calc(20% - 2rem);
-			box-sizing: border-box;
-			text-align: center;
-			padding: 2rem 0.5rem;
-			position: relative;
-			@media #{$medium-screen} {
-				width: calc(33.33% - 2rem);
-				margin: 1rem 0;
-			}
-			@media #{$small-screen} {
-				width: calc(50% - 2rem);
-				margin: 1rem 0;
-			}
-			&.popular {
+		input[type=radio]{
+			position: absolute;
+			opacity: 0;
+			&:checked + .pricing-table-card {
 				background: $main;
-				width: 20%;
-				@media #{$medium-screen} {
-					width: calc(33.33% - 2rem);
-					margin: 1rem 0;
-				}
-				@media #{$small-screen} {
-					width: calc(50% - 2rem);
-					margin: 1rem 0;
-				}
-				.popular-text{
-					display: block;
-					text-align: center;
+				transform: scale(1.1);
+				box-shadow: 0 1rem 1.5rem $screen_dark_30;
+				.popular-text {
 					color: $light;
-					font-size: 1.6rem;
-					margin-top: -1rem;
-					padding: 0rem 0rem 1rem;
 				}
 				.duration {
 					color: $light;
@@ -85,6 +63,9 @@ textarea:focus {
 				.price {
 					color: $light;
 					font-size: 4rem;
+					small{
+						color: $light;
+					}
 				}
 				.value, .billing-duration {
 					color: $light;
@@ -93,6 +74,38 @@ textarea:focus {
 					color: $main;
 					background: $light;
 				}
+			}
+		}
+		li {
+			width: calc(20% - 1.2rem);
+		}
+		.pricing-table-card {
+			background: $shade_lighter;
+			border-radius: 0.6rem;
+			width: 100%;
+			box-sizing: border-box;
+			text-align: center;
+			padding: 2rem 0.5rem;
+			position: relative;
+			cursor: pointer;
+			box-shadow: 0 0.5rem 1rem $screen_dark_05;
+			transition: transform .2s ease-in-out;
+			@media #{$medium-screen} {
+				width: calc(33.33% - 2rem);
+				margin: 1rem 0;
+			}
+			@media #{$small-screen} {
+				width: calc(50% - 2rem);
+				margin: 1rem 0;
+			}
+			.popular-text{
+				display: block;
+				text-align: center;
+				font-size: 1rem;
+				padding: 0rem 0rem 1rem;
+				width: 100%;
+				position: absolute;
+				top: 0.8rem;
 			}
 			.duration{
 				font-weight: $weight_bold;
@@ -112,7 +125,7 @@ textarea:focus {
 				}
 			}
 			.price {
-				font-size: 3.5rem;
+				font-size: 3rem;
 				font-weight: $weight_black;
 				color: $main;
 				display: block;
@@ -141,13 +154,14 @@ textarea:focus {
 			}
 			.btn-rounded {
 				height: 3rem;
-				padding: 0rem 3rem;
-				background: $main;
+				padding: 0rem 3.5rem;
+				background: transparent;
+				border: 0.1rem solid $main;
 				border-radius: 3rem;
 				text-align: center;
 				font-size: 1.6rem;
-				color: $light;
-				border: none;
+				color: $main;
+				letter-spacing: 0;
 			}
 		}
 	}
