@@ -3,10 +3,10 @@
 	color: $shade_blue;
 	font-size: 1.8rem;
 	.content-container {
-        box-shadow: $drop_shadow;
+		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
 		background-color: $light;
-        padding: 1.5rem;
+		padding: 1.5rem;
 		width: 100%;
 		.subscription-title {
 			font-size: 2.5rem;
@@ -18,7 +18,7 @@
 		.detail-container {
 			color: $shade_blue;
 			.subscription-btn {
-				vtr-ui-button ::ng-deep .button-box{
+				vtr-ui-button ::ng-deep .button-box {
 					.button {
 						max-width: 25rem;
 					}
@@ -35,7 +35,7 @@
 			border: 0.1rem solid $grey_light;
 		}
 	}
-	.common-btn{
+	.common-btn {
 		::ng-deep {
 			.button-box {
 				@media #{$mediaquery_7} {
