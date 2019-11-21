@@ -11,19 +11,23 @@
 										<div class="col col-12 offline-info-background">
 											<div class="w-100">
 												<div class="row d-flex justify-content-between">
-													<div class="mt-5">
-														<h1>System scan is now complete</h1>
-														<h3>Here is what we found on your Lenovo Vantage 720s</h3>
+													<div class="mt-5" *ngIf="!isSubscribed">
+														<h1>{{'smartPerformance.scanCompletePage.title' |translate }}</h1>
+														<h3>{{'smartPerformance.scanCompletePage.description' |translate }}</h3>
+													</div>
+													<div class="mt-5" *ngIf="isSubscribed">
+														<h1>{{'smartPerformance.subscriberScanHomePage.title' |translate }}</h1>
+														<h3>{{'smartPerformance.subscriberScanHomePage.serialNumber' |translate }} PF18LYCE</h3>
 													</div>
 													<div class="icon icon-computer-scan-756353"></div>
 												</div>
 												<hr class="light-dashline" />
 											</div>
 											<div class="performance-slider-block scan-results">
-												<h3 class="recomendation-text">Our scan rates PC at: <span>4</span></h3>
+												<h3 class="recomendation-text">{{'smartPerformance.scanCompletePage.scanRates' |translate }}<span>4</span></h3>
 												<div class="slider">
 													<div class="verticle-lines">
-														<div class="scan-pointer">&#9660;</div>
+														<div class="scan-pointer" [ngStyle]="{'left': leftAnimator}">&#9660;</div>
 														<div class="line"></div>
 														<div class="line"></div>
 														<div class="line"></div>
@@ -37,8 +41,8 @@
 														<div class="line"></div>
 													</div>
 													<div class="condition">
-														<div class="critical">critical</div>
-														<div class="well">all is well</div>
+														<div class="critical">{{'smartPerformance.critical' |translate }}</div>
+														<div class="well">{{'smartPerformance.allisWell' |translate }}</div>
 													</div>
 												</div>
 											</div>
@@ -46,14 +50,12 @@
 									</div>
 									<div class="row">
 										<div class="summary-block" *ngIf="!isSubscribed">
-											<h2 class="title-big mb-3">Summary</h2>
-											<p>Our scan found <span>54 issues</span> in following areas below. Sign up now to fix this problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.</p>
+											<h2 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h2>
+											<p [innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }"></p>
 											<div class="d-flex justify-content-between my-5">
-												<button class="action-button">Sign up and repair now</button>
+												<button class="action-button" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>
 												<div class="desc col pl-5">
-													<p><b>Only $2 per month.</b> We will automatically fix these issues.
-														<br>Once today and every week thereafter. <a href="#" class="para-link">Learn more</a>
-													</p>
+													<p [innerHTML]="'smartPerformance.scanCompletePage.monthlyPricing' |translate"></p>
 												</div>
 											</div>
 											<div class="row">
@@ -65,10 +67,10 @@
 																	<div class="d-flex justify-content-between" accordion-heading>
 																		<div class="heading">
 																			<div class="icon icon-performance"></div>
-																			<h2>Tune PC performance</h2>
+																			<h2>{{'smartPerformance.tunePCPerformance.title' |translate }}e</h2>
 																		</div>
 																		<div class="status-text float-right pull-right pt-4 mt-2">
-																			<p>36 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
+																			<p>{{'smartPerformance.scanCompletePage.issueCount' |translate:{individualIssueCount: individualIssueCount } }} <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
 
 																		</div>
 																	</div>
@@ -80,11 +82,11 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																						<div class="icon icon-recycling-2025397"></div>
-																						<p>Accumulated Junk</p>
+																						<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
-																					<p class="py-4">Scanned areas</p>
+																					<p class="py-4">{{'smartPerformance.scanCompletePage.scannedAreas' |translate }}</p>
 																					<ul class="scanned-list">
 																						<li class=" list-item list-heading">
 																							<div class="container-fluid">
@@ -155,7 +157,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																						<div class="icon icon-noun-touch-200038"></div>
-																						<p>Usability Issues</p>
+																						<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -169,7 +171,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																						<div class="icon icon-microsoft-windows-22"></div>
-																						<p>Windows Settings</p>
+																						<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -183,7 +185,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																						<div class="icon icon-error-1582584"></div>
-																						<p>System Errors</p>
+																						<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -197,7 +199,158 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																						<div class="icon icon-noun-registery-key-1581151"></div>
-																						<p>Registry Errors</p>
+																						<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																		</ngb-tabset>
+																	</div>
+																	</ng-template>
+																</ngb-panel>
+
+																<ngb-panel id="Internet performance">
+																	<ng-template ngbPanelTitle>
+																	<div class="d-flex justify-content-between" accordion-heading>
+																		<div class="heading">
+																				<div class="icon icon-internet-performance"></div>
+																			<h2>{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h2>
+																		</div>
+																		<div class="status-text float-right pull-right pt-4 mt-2">
+																			<p>{{'smartPerformance.scanCompletePage.issueCount' |translate:{individualIssueCount: individualIssueCount } }} <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
+																		</div>
+																	</div>
+																	</ng-template>
+																	<ng-template ngbPanelContent>
+																	<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+																		<ngb-tabset class="scan-result-tabs w-100">
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																							<div class="icon icon-router"></div>
+																						<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																						<p class="py-4">{{'smartPerformance.scanCompletePage.scannedAreas' |translate }}</p>
+																						<ul class="scanned-list">
+																							<li class=" list-item list-heading">
+																								<div class="container-fluid">
+																									<div class="row align-items-center">
+																										<div class="col-6 px-0">
+																											<div class="row ">
+																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																													<p class="col">Optimizing Windows settings</p>
+																											</div>
+																										</div>
+																										<div class="col-6 px-0">
+																												<div class="row">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Preventing non-essential service from running</p>
+																												</div>
+																										</div>
+																									</div>
+																								</div>
+																							</li>
+																						</ul>
+																						<ul class="scanned-list">
+																							<li class=" list-item list-heading">
+																								<div class="container-fluid">
+																									<div class="row align-items-center">
+																										<div class="col-6 px-0">
+																												<div class="row ">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Applying registry and shortcut fixes</p>
+																												</div>
+
+																										</div>
+																										<div class="col-6 px-0">
+																												<div class="row ">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Removing unnecessary residual fies</p>
+																												</div>
+
+																										</div>
+																									</div>
+																								</div>
+																							</li>
+																						</ul>
+																						<ul class="scanned-list">
+																							<li class=" list-item list-heading">
+																								<div class="container-fluid">
+																									<div class="row align-items-center">
+																										<div class="col-6 px-0">
+																												<div class="row">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Scanning and fixing critical services</p>
+																												</div>
+
+																										</div>
+																										<div class="col-6 px-0">
+																												<div class="row ">
+																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
+																														<p class="col">Removing OS and application log files</p>
+																												</div>
+
+																										</div>
+																									</div>
+																								</div>
+																							</li>
+																						</ul>
+																					</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																							<div class="icon icon-icon-browser-settings"></div>
+																						<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																							<div class="icon icon-icon-browser-security"></div>
+																						<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																						<div class="icon icon-wifi"></div>
+																						<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+																					</div>
+																				</ng-template>
+																				<ng-template ngbTabContent>
+																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+																				</ng-template>
+																			</ngb-tab>
+																			<ngb-tab>
+																				<ng-template ngbTabTitle>
+																					<div class="icon-box d-flex justify-content-center">
+																						<div class="icon icon-icon-e-junk"></div>
+																						<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -217,10 +370,10 @@
 																	<div class="d-flex justify-content-between" accordion-heading>
 																		<div class="heading">
 																			<div class="icon icon-malware-security"></div>
-																			<h2>Malware &amp; Security</h2>
+																			<h2>{{'smartPerformance.malwareSecurity.title' |translate }}</h2>
 																		</div>
 																		<div class="status-text float-right pull-right pt-4 mt-2">
-																			<p>18 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
+																			<p>{{'smartPerformance.scanCompletePage.issueCount' |translate:{individualIssueCount: individualIssueCount } }} <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
 																		</div>
 																	</div>
 																	</ng-template>
@@ -231,11 +384,11 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																							<div class="icon icon-virus"></div>
-																						<p>Malware Scan</p>
+																						<p>{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
-																						<p class="py-4">Scanned areas</p>
+																						<p class="py-4">{{'smartPerformance.scanCompletePage.scannedAreas' |translate }}</p>
 																						<ul class="scanned-list">
 																							<li class=" list-item list-heading">
 																								<div class="container-fluid">
@@ -307,7 +460,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																							<div class="icon icon-icon-zero-day"></div>
-																						<p>Zero-day Infections</p>
+																						<p>{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -321,7 +474,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																							<div class="icon icon-icon-security-settings"></div>
-																						<p>Security Settings</p>
+																						<p>{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -335,7 +488,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																							<div class="icon icon-uninstall-375971"></div>
-																						<p>Errant Programs</p>
+																						<p>{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -349,158 +502,7 @@
 																				<ng-template ngbTabTitle>
 																					<div class="icon-box d-flex justify-content-center">
 																							<div class="icon icon-multitasking"></div>
-																						<p>Annoying adware</p>
-																					</div>
-																				</ng-template>
-																				<ng-template ngbTabContent>
-																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																				</ng-template>
-																			</ngb-tab>
-																		</ngb-tabset>
-																	</div>
-																	</ng-template>
-																</ngb-panel>
-
-																<ngb-panel id="Internet performance">
-																	<ng-template ngbPanelTitle>
-																	<div class="d-flex justify-content-between" accordion-heading>
-																		<div class="heading">
-																				<div class="icon icon-internet-performance"></div>
-																			<h2>Internet performance</h2>
-																		</div>
-																		<div class="status-text float-right pull-right pt-4 mt-2">
-																			<p>18 ISSUES <span><fa-icon [icon]="['fal', 'chevron-down']"></fa-icon></span></p>
-																		</div>
-																	</div>
-																	</ng-template>
-																	<ng-template ngbPanelContent>
-																	<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
-																		<ngb-tabset class="scan-result-tabs w-100">
-																			<ngb-tab>
-																				<ng-template ngbTabTitle>
-																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-router"></div>
-																						<p>Network Settings</p>
-																					</div>
-																				</ng-template>
-																				<ng-template ngbTabContent>
-																						<p class="py-4">Scanned areas</p>
-																						<ul class="scanned-list">
-																							<li class=" list-item list-heading">
-																								<div class="container-fluid">
-																									<div class="row align-items-center">
-																										<div class="col-6 px-0">
-																											<div class="row ">
-																													<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																													<p class="col">Optimizing Windows settings</p>
-																											</div>
-																										</div>
-																										<div class="col-6 px-0">
-																												<div class="row">
-																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																														<p class="col">Preventing non-essential service from running</p>
-																												</div>
-																										</div>
-																									</div>
-																								</div>
-																							</li>
-																						</ul>
-																						<ul class="scanned-list">
-																							<li class=" list-item list-heading">
-																								<div class="container-fluid">
-																									<div class="row align-items-center">
-																										<div class="col-6 px-0">
-																												<div class="row ">
-																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																														<p class="col">Applying registry and shortcut fixes</p>
-																												</div>
-
-																										</div>
-																										<div class="col-6 px-0">
-																												<div class="row ">
-																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																														<p class="col">Removing unnecessary residual fies</p>
-																												</div>
-
-																										</div>
-																									</div>
-																								</div>
-																							</li>
-																						</ul>
-																						<ul class="scanned-list">
-																							<li class=" list-item list-heading">
-																								<div class="container-fluid">
-																									<div class="row align-items-center">
-																										<div class="col-6 px-0">
-																												<div class="row">
-																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																														<p class="col">Scanning and fixing critical services</p>
-																												</div>
-
-																										</div>
-																										<div class="col-6 px-0">
-																												<div class="row ">
-																														<fa-icon class="col-1" [icon]="['fal', 'check']"></fa-icon>
-																														<p class="col">Removing OS and application log files</p>
-																												</div>
-
-																										</div>
-																									</div>
-																								</div>
-																							</li>
-																						</ul>
-																					</ng-template>
-																			</ngb-tab>
-																			<ngb-tab>
-																				<ng-template ngbTabTitle>
-																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-icon-browser-settings"></div>
-																						<p>Browser Settings</p>
-																					</div>
-																				</ng-template>
-																				<ng-template ngbTabContent>
-																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																				</ng-template>
-																			</ngb-tab>
-																			<ngb-tab>
-																				<ng-template ngbTabTitle>
-																					<div class="icon-box d-flex justify-content-center">
-																							<div class="icon icon-icon-browser-security"></div>
-																						<p>Browser Security</p>
-																					</div>
-																				</ng-template>
-																				<ng-template ngbTabContent>
-																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																				</ng-template>
-																			</ngb-tab>
-																			<ngb-tab>
-																				<ng-template ngbTabTitle>
-																					<div class="icon-box d-flex justify-content-center">
-																						<div class="icon icon-wifi"></div>
-																						<p>Wi-Fi Performance</p>
-																					</div>
-																				</ng-template>
-																				<ng-template ngbTabContent>
-																					<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-																					master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-																					dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-																					iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-																				</ng-template>
-																			</ngb-tab>
-																			<ngb-tab>
-																				<ng-template ngbTabTitle>
-																					<div class="icon-box d-flex justify-content-center">
-																						<div class="icon icon-icon-e-junk"></div>
-																						<p>E-Junk</p>
+																						<p>{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
 																					</div>
 																				</ng-template>
 																				<ng-template ngbTabContent>
@@ -520,17 +522,15 @@
 												</div>
 										</div>
 										<div class="summary-block" *ngIf="isSubscribed">
-											<h3>You are subscribed to Lenovo Smart Performance Service</h3>
-											<p>
-												We are frequently scanning and fixing your computer for PC performance, internet performance an malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.
-											</p>
+											<h3>{{'smartPerformance.subscriberScanHomePage.subTitle' |translate }}</h3>
+											<p>{{'smartPerformance.subscriberScanHomePage.description' |translate }}</p>
 											<div class="d-flex justify-content-between my-5 w-75">
-												<button class="action-button" (click)="ScanNowSummary()">SCAN NOW</button>
+												<button class="action-button" (click)="ScanNowSummary()">{{'smartPerformance.subscriberScanHomePage.scanNow' |translate }}</button>
 												<div class="desc desc1">
-													<b>MOST RECENT SCAN:</b><br> 10/23 at 06:56pm
+													<b>{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br> 10/23 at 06:56pm
 												</div>
 												<div class="desc">
-													<b>NEXT SCHEDULED SCAN:</b><br> 07/25 at 12:00am
+													<b>{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br> 07/25 at 12:00am
 												</div>
 											</div>
 										</div>
@@ -563,8 +563,8 @@
 												<div class="navbar bkg-transparent justify-content-between w-100">
 
 													<div class="title-block col">
-														<h3>Scan summary:</h3>
-														<p>we are constantly tuning your computer</p>
+														<h3>{{'smartPerformance.subscriberScanHomePage.scanSummary.title' |translate }}</h3>
+														<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.description' |translate }}</p>
 													</div>
 
 
@@ -615,20 +615,20 @@
 																	<div class="col">
 																		<div class="row custom-from-date py-3"
 																			[ngClass]="{'selected-custom-date':isFromDate}">
-																			<div class="col-1">From</div>
+																			<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtFrom' |translate }}</div>
 																			<div class="col-auto"><input type='text' [ngModel]="displayFromDate"
 																					(click)="selectFromDate()" readonly /></div>
 																		</div>
 																		<div class="row custom-to-date mt-3 py-3"
 																			[ngClass]="{'selected-custom-date':!isFromDate}">
-																			<div class="col-1">To</div>
+																			<div class="col-1">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtTo' |translate }}</div>
 																			<div class="col-auto"><input type='text'  [ngModel]="displayToDate"
 																					(click)="selectToDate()" readonly /></div>
 
 																		</div>
 																		<div class="row">
 																			<div class="col-3"></div>
-																			<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">Go</button>
+																			<div class="col-9"><button class="custom-go-btn mt-3" (click)="customDateScanSummary()">{{'smartPerformance.subscriberScanHomePage.scanSummary.txtGo' |translate }}</button>
 																			</div>
 																		</div>
 																	</div>
@@ -649,10 +649,10 @@
 												<div class="tune">
 													<div class="d-flex justify-content-between">
 														<div class="flex-column">
-															<h5>Tune</h5>
+															<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.tune' |translate }}</h5>
 															<div class="value">65<span>GB</span>
 															</div>
-															<p>Disk space reclaimed</p>
+															<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.tuneSummary' |translate }}</p>
 														</div>
 														<div class="icon icon-performance"></div>
 													</div>
@@ -660,9 +660,9 @@
 												<div class="boost">
 													<div class="d-flex justify-content-between">
 														<div class="flex-column">
-															<h5>Boost</h5>
+															<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.boost' |translate }}</h5>
 															<div class="value">84</div>
-															<p>Fixes to improve performance</p>
+															<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.boostSummary' |translate }}</p>
 														</div>
 														<div class="icon icon-internet-performance"></div>
 													</div>
@@ -670,9 +670,9 @@
 												<div class="secure">
 													<div class="d-flex justify-content-between">
 														<div class="flex-column">
-															<h5>Secure</h5>
+															<h5>{{'smartPerformance.subscriberScanHomePage.scanSummary.secure' |translate }}</h5>
 															<div class="value">11</div>
-															<p>fixes to improve security</p>
+															<p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p>
 														</div>
 														<div class="icon icon-malware-security"></div>
 													</div>
@@ -680,7 +680,7 @@
 											</div>
 											<div class="row px-0">
 												<div class="title-block">
-													<h3>Last 5 scan results:</h3>
+													<h3>{{'smartPerformance.subscriberScanHomePage.lastScanResults.title' |translate }}</h3>
 												</div>
 											</div>
 											<div class="row px-0">
@@ -692,9 +692,9 @@
 																	<li class=" list-item list-heading">
 																		<div class="container-fluid">
 																			<div class="row align-items-center">
-																				<div class="offset-1 col-8">Scan date:</div>
-																				<div class="col-2">Results:</div>
-																				<div class="col-1 px-0">Status</div>
+																				<div class="offset-1 col-8">{{'smartPerformance.subscriberScanHomePage.lastScanResults.scanDate' |translate }}</div>
+																				<div class="col-2">{{'smartPerformance.subscriberScanHomePage.lastScanResults.results' |translate }}</div>
+																				<div class="col-1 px-0">{{'smartPerformance.subscriberScanHomePage.lastScanResults.status' |translate }}</div>
 																			</div>
 																		</div>
 																	</li>
@@ -802,46 +802,24 @@
 							<div class="row mb-40" *ngIf="!isSubscribed">
 								<div class="col col-12">
 									<div class="recommended-action sidebar-widget">
-										<div class="title pb-3">Recommended Action</div>
+										<div class="title pb-3">{{'smartPerformance.scanCompletePage.recommendedAction.title' |translate }}</div>
 										<div class="card-info">
-											<p>We will automatically fix these issues. Once today and every thereafter <a href="#" class="link-text">Learn more</a>
+											<p>{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }} <a href="#" class="link-text">{{'smartPerformance.subscriptionDetails.learnMore' |translate }}</a>
 											</p>
 										</div>
 										<div class="pricing">
-											<h2 class="big-text">$19.99 / Yr</h2>
-											<small>less than $2 per month</small>
+											<h2 class="big-text">{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate }}</h2>
+											<small>{{'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate }}</small>
 										</div>
-										<p>Longer term? Even more savings!</p>
-										<button class="action-button mt-2" (click)=openSubscribeModal()>Sign up</button>
+										<p>{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}</p>
+										<button class="action-button mt-2" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.recommendedAction.signupButton' |translate }}</button>
 									</div>
 								</div>
 							</div>
 							<div class="row mb-40" *ngIf="isSubscribed">
 
 									<div class="col col-12">
-										<div class="subscription-details sidebar-widget">
-											<div class="title pb-3">
-												Subscription details
-											</div>
-											<div class="card-info">
-												<p>You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly. <a href="#" class="para-link">Learn more</a></p>
-											</div>
-											<ul class="status-list">
-												<li class="d-flex justify-content-between">
-													<div class="item">Star date</div>
-													<div class="status">{{startDate}}</div>
-												</li>
-												<li class="d-flex justify-content-between">
-													<div class="item">End date</div>
-													<div class="status">{{endDate}}</div>
-												</li>
-												<li class="d-flex justify-content-between">
-													<div class="item">Status</div>
-													<div class="status"><div [ngClass]="{'badge-danger': status==='INACTIVE', 'badge-success': status==='ACTIVE' }" class="badge badge-pill">{{status}}</div></div>
-												</li>
-											</ul>
-											<a href="#" class="link-text">Manage Subscription</a>
-										</div>
+										<vtr-widget-subscriptiondetails></vtr-widget-subscriptiondetails>
 									</div>
 								</div>
 
@@ -849,17 +827,15 @@
 										<div class="col col-12">
 												<div class="scan-settings sidebar-widget">
 													<div *ngIf="!isChangeSchedule">
-														<div class="title pb-3">
-															Scan settings
-														</div>
+														<div class="title pb-3">{{'smartPerformance.scanSettings.title' |translate }}</div>
 														<div class="card-info">
-															<p>Enable or disable the scan and set the scan schedule</p>
+															<p>{{'smartPerformance.scanSettings.description' |translate }}</p>
 														</div>
 														<ul class="chevron-list">
 															<li class="d-flex justify-content-between">
 																<div class="item d-flex">
 																	<fa-icon [icon]="['fas', 'laptop']"></fa-icon>
-																	<strong>Enable Scan</strong>
+																	<strong>{{'smartPerformance.scanSettings.enableScan' |translate }}</strong>
 																</div>
 																<div class="status d-flex justify-content-end">
 																	<vtr-ui-switch-onoff [value]="scanToggleValue" (toggle)="setEnableScanStatus($event)"></vtr-ui-switch-onoff>
@@ -885,16 +861,14 @@
 								
 								
 													<div *ngIf="isChangeSchedule" class="change-scan-schedule">
-														<div class="title pb-3">
-															Change scan schedule
-														</div>
+														<div class="title pb-3">{{'smartPerformance.scanSettings.changeScanTitle' |translate }}</div>
 														<div class="card-info">
-															<p>Edit the scan schedule to run when you need it.</p>
+															<p>{{'smartPerformance.scanSettings.changeScanDescription' |translate }}</p>
 														</div>
 														<ul class="chevron-list">
 															<li class="d-flex justify-content-between">
 																<div class="item d-flex">
-																	<b>Frequency</b>
+																	<b>{{'smartPerformance.scanSettings.frequency' |translate }}</b>
 																</div>
 																<div class="status d-flex justify-content-end">
 																	<p class="mr-3">{{selectedFrequency}}</p>
@@ -917,7 +891,7 @@
 								
 															<li *ngIf="frequencyValue === 3" class="d-flex justify-content-between">
 																	<div class="item d-flex">
-																		<b>Date</b>
+																		<b>{{'smartPerformance.scanSettings.txtDate' |translate }}</b>
 																	</div>
 																	<div class="status d-flex justify-content-end">
 																		<p class="mr-3">{{scanScheduleDate.day}}/{{scanScheduleDate.month}}/{{scanScheduleDate.year}}</p>
@@ -934,7 +908,7 @@
 
 															<li *ngIf="frequencyValue === 1 || frequencyValue === 2" class="d-flex justify-content-between">
 																<div class="item d-flex">
-																	<b>Day</b>
+																	<b>{{'smartPerformance.scanSettings.txtDay' |translate }}</b>
 																</div>
 																<div class="status d-flex justify-content-end">
 																	<p class="mr-3">{{selectedDay}}</p>
@@ -951,7 +925,7 @@
 															</li>
 															<li class="d-flex justify-content-between">
 																<div class="item d-flex">
-																	<b>Time</b>
+																	<b>{{'smartPerformance.scanSettings.txtTime' |translate }}</b>
 																</div>
 																<div  class="icon" class="status d-flex justify-content-end">
 																	<!-- <p class="mr-3">12:00AM</p> -->
@@ -990,8 +964,8 @@
 														</ul>
 														<!-- <a href="#" class="link-text">Manage Subscription</a> -->
 														<div >
-																<button class="save-button" (click)="saveChangedScanSchedule()">save</button>
-																<a class="cancel-link active" (click)="cancelChangedScanSchedule()">cancel</a>
+																<button class="save-button" (click)="saveChangedScanSchedule()">{{'smartPerformance.scanSettings.txtSave' |translate }}</button>
+																<a class="cancel-link active" (click)="cancelChangedScanSchedule()">{{'smartPerformance.scanSettings.txtCancel' |translate }}</a>
 															</div>
 														
 													</div>

@@ -1,7 +1,7 @@
 <div class="row py-5" id="smartStandby" *ngIf="smartStandby?.isCapable">
 	<div class="col-12 mx-auto container-border">
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
-			[isCollapsed]="false" [collapseLinkId]="'smartrStandby'">
+			[isCollapsed]="false" [collapseLinkId]="'smartrStandby'" [tabIndex]="0">
 			<ul class="list-group list-group-flush">
 				<li class="pl-5">
 					<vtr-ui-row-switch [caption]="'device.deviceSettings.power.smartStandby.description' | translate"
