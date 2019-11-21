@@ -58,8 +58,10 @@
 		background-clip: padding-box;
 		border-radius: 0.9rem;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-		width: 29rem;
-
+		width: 30rem;
+		@media #{$breakpoint_xl}{
+			width: 29rem;
+		}
 		&.in-warranty {
 			background: linear-gradient(to left bottom, #4980FC, #2E62D9);
 
