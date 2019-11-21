@@ -5,7 +5,7 @@
 				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="!isLoadingDone()"
+				[disableQuickScan]="!isLoadingDone() || startScanClicked"
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
