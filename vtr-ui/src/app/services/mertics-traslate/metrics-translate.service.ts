@@ -65,20 +65,7 @@ export class MetricsTranslateService {
 	}
 
 	private expand(object, str) {
-		if (object) {
-			const items = str.split('.'); // split on dot notation
-
-			//  loop through all nodes, except the last one
-			for (const i of items) {
-				if (i) {
-					object = object[i]; // create a new element inside the reference
-					// shift the reference to the newly created object
-				}
-			}
-		}
-		// apply the final value
-
-		return object; // return the full object
+		return str; // return the full object
 	}
 
 	loadBaseAndTargetFile() {
