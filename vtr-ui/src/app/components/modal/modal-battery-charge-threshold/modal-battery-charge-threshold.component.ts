@@ -16,6 +16,8 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 	constructor(public activeModal: NgbActiveModal) { }
 
 	ngOnInit() {
+		const modal = document.querySelector('.modal-title') as HTMLElement;
+		modal.focus();
 	}
 
 	enableBatteryChargeThreshold() {
@@ -30,9 +32,4 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 		this.closeModal();
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.Battery-Charge-Threshold-Modal') as HTMLElement;
-		modal.focus();
-	}
 }
