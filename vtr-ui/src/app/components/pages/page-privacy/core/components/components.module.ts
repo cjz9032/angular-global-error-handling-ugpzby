@@ -12,7 +12,6 @@ import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 import { FeatureHeaderComponent } from './feature-header/feature-header.component';
-import { AccountsStoredComponent } from './accounts-stored/accounts-stored.component';
 import { DidYouKnowComponent } from './did-you-know/did-you-know.component';
 import { BigPitchComponent } from './big-pitch/big-pitch.component';
 import { SpinnerComponent } from './spinner/spinner.component';
@@ -23,7 +22,6 @@ import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-tooltip.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
-import { AbTestsComponent } from '../ab-tests/ab-tests.component';
 
 @NgModule({
 	declarations: [
@@ -34,7 +32,6 @@ import { AbTestsComponent } from '../ab-tests/ab-tests.component';
 		BigLoaderComponent,
 		NavTabsComponent,
 		FeatureHeaderComponent,
-		AccountsStoredComponent,
 		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
@@ -52,7 +49,6 @@ import { AbTestsComponent } from '../ab-tests/ab-tests.component';
 		BigLoaderComponent,
 		NavTabsComponent,
 		FeatureHeaderComponent,
-		AccountsStoredComponent,
 		DidYouKnowComponent,
 		BigPitchComponent,
 		SpinnerComponent,
