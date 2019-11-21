@@ -88,11 +88,11 @@
 			color: $light;
 			font-size: 2rem;
 			@media #{$black-on-white} {
-				border: 0.1rem solid $dark;
+				//border: 0.1rem solid $dark;
 				color:$light;
 			}
 			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
+				//border: 0.1rem solid $light;
 				color:$dark;
 			}
 	
