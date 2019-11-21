@@ -1295,15 +1295,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 
 /* override bootstrap custom check box in high contrast mode*/
-.custom-control-label::before {
+
+.custom-control-label:before{
 	@media #{$white-on-black} {
-		color: #fff;
-		border-color: aqua;
-		background-color: aqua;
+	background-color: $dark;
 	}
 	@media #{$black-on-white} {
-		color: #fff;
-		border-color: aqua;
-		background-color: aqua;
-	}
+		background-color: $light;
+  }
 }
+  .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+	@media #{$white-on-black} {
+	background-color:$high-contrast-black-textselected;
+	}
+	@media #{$black-on-white} {
+		background-color:$high-contrast-white-textselected;
+
+	}
+  }
+
+
