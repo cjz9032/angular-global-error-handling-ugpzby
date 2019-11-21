@@ -13,11 +13,8 @@
 		position: relative;
 		padding: 5rem $padding_side 8rem $padding_side;
 		height: 100%;
-		@media #{$mediaquery_X4} {
-			padding-left: 5rem;
-		}
-		@media #{$mediaquery_xl} {
-			//	padding-top: 13rem;
+		@media #{$breakpoint_xl} {
+			padding-left: $padding_side_sm;
 		}
 		// &::before {
 		// 	content: "";
@@ -31,9 +28,9 @@
 		// 	background-size: 100%;
 		// 	opacity: 0.15;
 		// }
-		&--navigation-block {
-			padding: 5rem $padding_side 2rem $padding_side;
-		}
+		// &--navigation-block {
+		// 	padding: 5rem $padding_side 2rem $padding_side;
+		// }
 		.title {
 			color: $light;
 			font-size: 5.75rem;
@@ -62,6 +59,12 @@
 						only screen and (min-resolution: 2dppx) {
 						background: url("src/assets/icons/privacy-tab/icon-figleaf-logo@2x.png") center no-repeat;
 						background-size: cover;
+					}
+
+					@media #{$breakpoint_lg} {
+						left: 0;
+						top: -1rem;
+						margin-left: 0
 					}
 				}
 			}

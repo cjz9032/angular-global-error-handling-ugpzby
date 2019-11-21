@@ -46,6 +46,23 @@ describe('WidgetAutocloseComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
+
+	it('openAutoCloseModal', () => {
+		const resp = component.openAutoCloseModal();
+		expect(resp).toBe();
+	});
+
+	it('removeApp', () => {
+		const resp = component.removeApp('Microsoft.MicrosoftEdge', 1);
+		expect(resp).toBe();
+	});
+
+	it('ngOnChanges', () => {
+		let changeval: any;
+		const resp = component.ngOnChanges(changeval);
+		expect(resp).toBe();
+	});
+
 });
 
 export function mockPipe(options: Pipe): Pipe {
