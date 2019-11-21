@@ -341,7 +341,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				})
 				.finally(() => {
 					let metricsResult = this.getMetricsTaskResult();
-					this.sendActionTaskMetrics(this.currentScanType, metricsResult.countSuccesses, 
+					this.sendTaskActionMetrics(this.currentScanType, metricsResult.countSuccesses, 
 						"", metricsResult.scanResultJson, this.timerService.stop());
 					this.cleaningUpScan(undefined);
 				});			
@@ -851,10 +851,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return scanResult;
 	}	
 
-	private sendActionTaskMetrics(taskName: ScanType , taskCount: number, taskParam: string, 
+	private sendTaskActionMetrics(taskName: ScanType , taskCount: number, taskParam: string, 
 		taskResult: any, taskDuration: number){
 		const data = {
-			ItemType: 'ActionTask',
+			ItemType: 'TaskAction',
 			TaskName: ScanType[taskName],
 			TaskCount: taskCount,
 			TaskResult: taskResult,

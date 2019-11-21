@@ -149,9 +149,9 @@ export class PageAutocloseComponent implements OnInit {
 
 	hiddenScroll(action: boolean) {
 		if (action) {
-			document.body.style.overflow = 'hidden';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
 		} else {
-			document.body.style.overflow = '';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
 		}
 	}
 
