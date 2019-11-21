@@ -229,9 +229,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			undefined
 		);
 		if (cacheUnreadMessageCount) {
-			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+			let totalMessage = 0;
+			if (this.appsForYouService.showLmaMenu() && !this.UnreadMessageCount.lmaMenuClicked) {
+				totalMessage++;
+			}
+			if (this.appsForYouService.showAdobeMenu() && !this.UnreadMessageCount.adobeMenuClicked) {
+				totalMessage++;
+			}
+			this.UnreadMessageCount.totalMessage = totalMessage;
 		} else if (this.UnreadMessageCount.totalMessage === 0) {
 			if (this.appsForYouService.showLmaMenu()) {
 				this.UnreadMessageCount.totalMessage++;
