@@ -118,12 +118,11 @@
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['fal', 'microphone']"
-							[rightIcon]="helpIcon"
+							[rightIcon]=""
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
 							[disabled]="!microphoneProperties.permission"
-							[tooltipText]="'device.deviceSettings.audio.microphone.microphone.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
 							[isSwitchChecked]="microphoneProperties.muteDisabled"
 							[showLoaderState]="microphoneLoader"
