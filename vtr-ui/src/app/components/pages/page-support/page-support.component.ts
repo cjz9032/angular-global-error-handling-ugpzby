@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
@@ -16,7 +16,7 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 	templateUrl: './page-support.component.html',
 	styleUrls: ['./page-support.component.scss']
 })
-export class PageSupportComponent implements OnInit {
+export class PageSupportComponent implements OnInit, OnDestroy {
 
 	title = 'support.common.getSupport';
 	searchWords = '';
@@ -41,6 +41,7 @@ export class PageSupportComponent implements OnInit {
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	backId = 'support-page-btn-back';
+	getArticlesTimeout: any;
 	supportDatas = {
 		documentation: [
 			{
@@ -133,6 +134,10 @@ export class PageSupportComponent implements OnInit {
 		this.fetchCMSArticleCategory();
 		this.fetchCMSContents();
 		this.setShowList();
+	}
+
+	ngOnDestroy() {
+		clearTimeout(this.getArticlesTimeout);
 	}
 
 	onNotification(notification: AppNotification) {
@@ -273,6 +278,7 @@ export class PageSupportComponent implements OnInit {
 
 	clickCategory(categoryId: string) {
 		this.isCategoryArticlesShow = true;
+		clearTimeout(this.getArticlesTimeout);
 		this.fetchCMSArticles(categoryId);
 	}
 
@@ -306,13 +312,13 @@ export class PageSupportComponent implements OnInit {
 					this.sliceArticles(response);
 					this.articlesType = 'articles';
 				} else {
-					setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
+					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
 			},
 			error => {
 				console.log('fetchCMSArticles error', error);
 				if (lang.toLowerCase() !== 'en') {
-					setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
+					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
 				}
 			}
 		);
