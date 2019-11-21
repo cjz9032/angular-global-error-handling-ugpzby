@@ -1,6 +1,7 @@
 @import "../../../app.theme.scss";
 
 .vtr-ui-days-picker {
+<<<<<<< HEAD
 	.sub-heading {
 		font-size: 1.2rem;
 		color: rgba(66, 78, 123, 0.4);
@@ -191,4 +192,194 @@
 		flex: 1;
 	  }
 	}
+=======
+  .sub-heading {
+    font-size: 1.2rem;
+    color: rgba(66, 78, 123, 0.4);
+    font-weight: $weight_bold;
+    letter-spacing: 0.7px;
+    line-height: 13px;
+    padding-top: 1rem;
+  }
+  .main-block {
+    border-bottom: 1px solid $shade_light;
+    .timer-block {
+      width: 90%;
+      margin: 0;
+      padding: 0;
+    }
+    .hours-block,
+    .minutes-block,
+    .am-pm {
+      .toggle-icon {
+        fa-icon {
+          font-size: 3rem;
+          color: #4579f0;
+        }
+      }
+      span {
+        color: $shade_light;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 13px;
+        text-align: center;
+        display: block;
+      }
+      .highlight {
+        color: $shade_blue;
+      }
+    }
+    .minutes-block {
+      border-left: 1px solid $shade_light;
+      border-right: 1px solid $shade_light;
+      padding: 0 5rem;
+
+      @media #{$mediaquery_12} {
+        padding: 0 3rem;
+      }
+    }
+  }
+  .select-close {
+    fa-icon {
+      color: #4579f0;
+      font-size: 2rem;
+      padding: 0 2.5rem;
+    }
+    color: #f12e2e;
+    font-size: 2rem;
+    padding: 0 2.5rem;
+  }
+  .weekdays-block {
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+
+    .toggle-icon {
+      fa-icon {
+        color: #4579f0;
+        font-size: 2rem;
+      }
+    }
+
+    .custom-control-label {
+      font-size: 1.6rem;
+      padding-left: 0.8rem;
+      line-height: 1.2;
+    }
+    .custom-control-label::before {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+    .custom-control-label::after {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+      border-color: #4579f0;
+      background-color: #4579f0;
+      box-shadow: none;
+    }
+    .custom-checkbox .custom-control-label::before {
+      border-radius: 0%;
+      box-shadow: none;
+      border: 1px solid $shade_light;
+    }
+
+    .custom-control-label::before,
+    .custom-file-label,
+    .custom-select {
+      transition-property: none;
+    }
+
+    .dropbtn {
+      box-shadow: 0px 0px 1.5rem 0px rgba(0, 0, 0, 0.15);
+      border-radius: 0.5rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.1);
+      color: $shade_blue;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      border: none;
+      position: relative;
+      display: block;
+      cursor: pointer;
+      margin-bottom: 0rem;
+      @media #{$black-on-white} {
+        border: 0.1rem solid $dark;
+      }
+      @media #{$white-on-black} {
+        border: 0.1rem solid $light;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      h5 {
+        color: $shade_blue;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 13px;
+      }
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: $light;
+      border: 0.1rem solid rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      width: 100%;
+    }
+
+    .dropcheck {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .dropcheck:checked ~ .dropdown-content {
+      display: block;
+    }
+
+    .dropcheck:checked + .dropbtn {
+      background-color: transparent;
+    }
+
+    .time-headings {
+      margin: 0 1rem;
+
+      p {
+        color: rgba(66, 78, 123, 0.4);
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 13px;
+      }
+
+      span {
+        color: $shade_blue;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 13px;
+        text-align: center;
+        display: block;
+      }
+    }
+
+    .toggle-icon {
+      fa-icon {
+        color: #4579f0;
+        font-size: 2rem;
+      }
+    }
+
+    .disabled {
+      opacity: 0.5;
+    }
+    .banner-middle {
+      flex: 1;
+    }
+  }
+>>>>>>> develop
 }
