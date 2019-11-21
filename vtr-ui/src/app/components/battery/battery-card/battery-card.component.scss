@@ -61,15 +61,22 @@
 					.button {
 						background: #e6eaeb;
 						color: #34495e;
-						@media #{$black-on-white} {
-							border: 0.1rem solid;
-						}
-						@media #{$white-on-black} {
-							border: 0.1rem solid;
-						}
+						
 				
 					}
 				}
+			}
+		}
+		.btn-disabled{
+			@media #{$black-on-white} {
+				border: 0.1rem brown;
+				border-radius: 5rem;
+				padding-top: 25px;
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem green;
+				border-radius: 5rem;
+				padding-top: 25px;
 			}
 		}
 	
