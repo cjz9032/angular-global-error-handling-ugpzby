@@ -293,6 +293,13 @@ describe('NetworkboostAddAppsComponent', () => {
 	);
 
 
+	it('ngOnChanges', () => {
+		let changeval: any;
+		const resp = component.ngOnChanges(changeval);
+		expect(resp).toBe();
+	});
+
+
 	it('focusClose', done => {
 		const p = new Promise((resolve, reject) =>
 			setTimeout(() => resolve(''), 2)

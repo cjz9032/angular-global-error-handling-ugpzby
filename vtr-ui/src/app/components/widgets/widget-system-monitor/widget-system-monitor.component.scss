@@ -277,6 +277,20 @@
 							left: 50%;
 							transform: translate(-50%);
 							top: -4rem;
+							@media #{$breakpoint_sm}{
+								top: 50%;
+								transform: translateY(-50%) translateX(0);
+								left: calc(-200% - 1rem);
+								padding: 2rem;
+								min-width: 15rem;
+								&::after {
+									border-bottom: 2rem solid $gaming_lightest;
+									border-left: 2rem solid transparent;
+									left: calc(100% - 1rem);
+									transform: rotate(-45deg);
+									bottom: calc(50% - 1rem);
+								}
+							}
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -290,6 +304,23 @@
 							min-width: 20rem;
 							left: 50%;
 							transform: translate(-50%);
+							top: -4rem;
+							@media #{$breakpoint_sm}{
+								top: 50%;
+								transform: translateY(-50%) translateX(0);
+								left: 7rem;
+								padding: 2rem;
+								min-width: 15rem;
+								&::after {
+									border-top: 2rem solid $gaming_lightest;
+									border-right: 2rem solid transparent;
+									border-bottom: none;
+									border-left: none;
+									left: -1rem;
+									transform: rotate(-45deg);
+									bottom: calc(50% - 1rem);
+								}
+							}
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -425,6 +456,14 @@
 						top: -2.5rem;
 						left: 50%;
 						transform: translate(-50%);
+						@media #{$breakpoint_sm}{
+							transform: translate(0);
+							left: 0;
+							right: 0;
+							margin-left: auto;
+							margin-right: auto;
+							min-width: 20rem;
+						}
 					}
 					&:hover {
 						.gaming-tooltip {
@@ -783,6 +822,13 @@
 								top: -5rem;
 								left: 50%;
 								transform: translate(-50%);
+								@media #{$breakpoint_sm}{
+									transform: translate(0);
+									left: 0;
+									right: 0;
+									margin-left: auto;
+									margin-right: auto;
+								}
 							}
 
 							&:hover {
@@ -901,6 +947,10 @@
 							top: -6rem;
 							left: 50%;
 							transform: translate(-50%);
+							@media #{$breakpoint_sm}{
+								transform: translate(0);
+								left: 50%;
+							}
 						}
 						&:hover {
 							.gaming-tooltip {
