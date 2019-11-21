@@ -74,18 +74,16 @@
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox" *ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
 		<input id="cb-eye-care-schedule"
-			tabindex="0"
-			attr.aria-label="cb-eye-care-schedule"
 			type="checkbox"
+			tabindex="-1"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
-			attr.aria-checked="sunsetToSunriseStatus.status"
-			attr.aria-hidden="sunsetToSunriseStatus.available && !enableSunsetToSunrise"
+			
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
-		<label class="custom-control-label" 
-			for="cb-eye-care-schedule">
-			<span class=""
-				id="cb-eye-care-schedule-text">
+		<label role="checkbox" class="custom-control-label"	for="cb-eye-care-schedule" tabindex="0" attr.aria-checked="sunsetToSunriseStatus.status"
+		attr.aria-hidden="sunsetToSunriseStatus.available && !enableSunsetToSunrise" attr.aria-label="{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
+		{{sunriseToSunsetText}}">
+			<span id="cb-eye-care-schedule-text" role="none">
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}
