@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Σίγουρα θέλετε να ακυρώσετε τη διαδικασία;",
         "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
         "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
-        "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση"
+        "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

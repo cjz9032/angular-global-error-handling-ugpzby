@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Tem certeza de que gostaria de cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
         "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a.",
-        "testNotApplicable": "Não aplicável em verificação personalizada"
+        "testNotApplicable": "Não aplicável em verificação personalizada",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Скасувати?",
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
-        "testNotApplicable": "Не застосовується для настроюваного сканування"
+        "testNotApplicable": "Не застосовується для настроюваного сканування",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

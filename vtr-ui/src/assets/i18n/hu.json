@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
         "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
-        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

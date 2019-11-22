@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Annullare l'operazione?",
         "cancelTextProgress": "Attendere l'annullamento dell'operazione",
         "pluginNotUpdate": "La scansione hardware non è disponibile perché è obsoleta. Eseguire l'aggiornamento.",
-        "testNotApplicable": "Non applicabile alla scansione personalizzata"
+        "testNotApplicable": "Non applicabile alla scansione personalizzata",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
         "cancelTextProgress": "Vent mens avbrytingen pågår",
         "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
-        "testNotApplicable": "Ikke aktuelt for egendefinert skanning"
+        "testNotApplicable": "Ikke aktuelt for egendefinert skanning",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

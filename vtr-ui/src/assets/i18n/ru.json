@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "Действительно отменить?",
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
-        "testNotApplicable": "При настраиваемом сканировании неприменимо"
+        "testNotApplicable": "При настраиваемом сканировании неприменимо",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

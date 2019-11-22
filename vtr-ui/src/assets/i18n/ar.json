@@ -2709,7 +2709,15 @@
         "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
         "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
         "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
-        "testNotApplicable": "لا ينطبق على الفحص المخصص"
+        "testNotApplicable": "لا ينطبق على الفحص المخصص",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

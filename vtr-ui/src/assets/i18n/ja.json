@@ -2707,7 +2707,15 @@
         "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
-        "testNotApplicable": "カスタム・スキャンには適用されません"
+        "testNotApplicable": "カスタム・スキャンには適用されません",
+        "pluginTokens": {
+            "cpu": "",
+            "memory": "",
+            "motherboard": "",
+            "pci_express": "",
+            "storage": "",
+            "wireless": ""
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
