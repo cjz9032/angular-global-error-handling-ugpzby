@@ -3,21 +3,26 @@
 	<div class="col page-header-bg">
 		<vtr-main-header></vtr-main-header>
 	</div>
-	<div class="privacy-wrapper__content">
-		<div class="privacy-wrapper__main-col">
-			<div [ngClass]="[currentPageSettings?.moveBlockToTop ? 'privacy-wrapper__inner-page' : '']">
-				<vtr-privacy-score *ngIf="currentPageSettings?.showPrivacyScore"></vtr-privacy-score>
-				<vtr-nav-tabs *ngIf="currentPageSettings?.showNavigationBlock"></vtr-nav-tabs>
-				<router-outlet></router-outlet>
+	<div class="privacy-wrapper__content row">
+		<div class="privacy-wrapper__main-col col-lg-7 col-xl-8">
+			<div class="vtr-page-column-shift-up">
+				<div [ngClass]="[currentPageSettings?.moveBlockToTop ? 'privacy-wrapper__inner-page' : '']">
+					<vtr-privacy-score *ngIf="currentPageSettings?.showPrivacyScore"></vtr-privacy-score>
+					<vtr-nav-tabs *ngIf="currentPageSettings?.showNavigationBlock"></vtr-nav-tabs>
+					<router-outlet></router-outlet>
+				</div>
+				<vtr-did-you-know></vtr-did-you-know>
+				<vtr-stat *ngIf="(isFigleafReadyForCommunication$ | async) && currentPageSettings?.isShowStat"
+					[dashboardData]="dashboardData$ | async">
+				</vtr-stat>
+				<vtr-support-banner *ngIf="currentPageSettings?.showSupportBanner"></vtr-support-banner>
 			</div>
-			<vtr-did-you-know></vtr-did-you-know>
-			<vtr-stat *ngIf="(isFigleafReadyForCommunication$ | async) && currentPageSettings?.isShowStat"
-				[dashboardData]="dashboardData$ | async">
-			</vtr-stat>
-			<vtr-support-banner *ngIf="currentPageSettings?.showSupportBanner"></vtr-support-banner>
+
 		</div>
-		<div class="privacy-wrapper__side-col">
-			<vtr-side-bar></vtr-side-bar>
+		<div class="privacy-wrapper__side-col col-lg-5 col-xl-4">
+			<div class="vtr-page-column-shift-up">
+				<vtr-side-bar></vtr-side-bar>
+			</div>
 		</div>
 	</div>
 </div>

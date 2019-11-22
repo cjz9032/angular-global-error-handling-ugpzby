@@ -1,8 +1,10 @@
 @import "../../../styles/common-blocks";
+@import "../../../../../../app.theme";
+
 
 .sidebar-install-widget {
 	@extend %common-block-wrapper;
-	margin: $topIndent 0 8.6rem 0;
+	margin: 0 0 8.6rem 0;
 	letter-spacing: 0;
 	padding: 0 0 3.5rem 0;
 
@@ -58,14 +60,17 @@
 		flex-flow: row;
 		justify-content: center;
 		align-items: center;
+		padding: 0 2rem;
 	}
 
 	&__button-link {
-		margin-left: 4rem;
+		margin-left: 1rem;
 	}
 
 	&__button {
 		@extend %theme-btn;
+		padding-left: 1rem;
+		padding-right: 1rem;
 
 		&--transparent {
 			@extend %theme-btn--transparent;
@@ -76,6 +81,10 @@
 		@extend %button-link;
 		@extend %button-link--to-right;
 		color: #4A81FD;
+			padding: 0;
+		&:before {
+				display: none;
+		}
 	}
 
 	&__show-more-text {
