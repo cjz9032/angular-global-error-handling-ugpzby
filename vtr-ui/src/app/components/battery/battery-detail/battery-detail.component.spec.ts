@@ -10,6 +10,7 @@ import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { BatteryInformation } from 'src/app/enums/battery-information.enum';
+import { BatteryConditionsEnum } from 'src/app/enums/battery-conditions.enum';
 
 describe('BatteryDetailComponent', () => {
 	let component: BatteryDetailComponent;
@@ -61,7 +62,7 @@ describe('BatteryDetailComponent', () => {
 		}
 	};
 
-	const dataConditions: BatteryConditionModel[] = [{
+	const dataConditionsGood: BatteryConditionModel[] = [{
 		condition: 0,
 		conditionStatus: 0,
 
@@ -70,10 +71,141 @@ describe('BatteryDetailComponent', () => {
 		}
 	}];
 
+	const dataConditionsBad: BatteryConditionModel[] = [{
+		condition: BatteryConditionsEnum.Bad,
+		conditionStatus: 1,
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.Bad';
+		}
+	}];
+
+	/* {
+		condition: BatteryConditionsEnum.Bad,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.Bad';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.Illegal,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.Illegal';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.Exhaustion,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.Exhaustion';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.NotDetected,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.NotDetected';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.MissingDriver,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.MissingDriver';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.NotSupportACAdapter,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.FullACAdapterSupport,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.FullACAdapterSupport';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.LimitedACAdapterSupport,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.LimitedACAdapterSupport';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.StoreLimitation,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.StoreLimitation';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.HighTemperature,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.HighTemperature';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.OverheatedBattery,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.OverheatedBattery';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.TrickleCharge,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.TrickleCharge';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.PermanentError,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.PermanentError';
+		}
+	},
+	{
+		condition: BatteryConditionsEnum.UnsupportedBattery,
+		conditionStatus: 0,
+
+		getBatteryConditionTip(condition: number): string {
+			return 'device.deviceSettings.batteryGauge.condition.Illegal';
+		}
+	} */
+
 	const notification: AppNotification = {
 		type: BatteryInformation.BatteryInfo,
-		payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditions }
+		payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsGood }
 	};
+
+	const notificationBad: AppNotification = {
+		type: BatteryInformation.BatteryInfo,
+		payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsBad }
+	};
+	/*
+		const notificationIllegal: AppNotification = {
+			type: BatteryInformation.BatteryInfo,
+			payload: { detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsBad }
+		}; */
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -89,7 +221,7 @@ describe('BatteryDetailComponent', () => {
 		component = fixture.componentInstance;
 		component.dataInfo = dataInfo;
 		component.dataIndicator = dataIndicator;
-		component.dataConditions = dataConditions;
+		component.dataConditions = dataConditionsGood;
 		fixture.detectChanges();
 
 		component.batteryIndicator = new BatteryIndicator();
@@ -102,7 +234,7 @@ describe('BatteryDetailComponent', () => {
 	it('#ngOnInit should call preProcessBatteryDetailResponse', () => {
 		spyOn(component, 'preProcessBatteryDetailResponse');
 		component.ngOnInit();
-		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith({ detail: dataInfo, indicator: dataIndicator, conditions: dataConditions });
+		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith({ detail: dataInfo, indicator: dataIndicator, conditions: dataConditionsGood });
 	});
 
 	it('#onNotification should call preProcessBatteryDetailResponse', () => {
@@ -121,4 +253,25 @@ describe('BatteryDetailComponent', () => {
 		expect(component.isValid(23)).toBeTruthy();
 		expect(component.isValid('Discharging')).toBeTruthy();
 	});
+
+
+	it('#onNotification should call preProcessBatteryDetailResponse with battery conditon good ', () => {
+		spyOn(component, 'preProcessBatteryDetailResponse');
+		// component.dataConditions = dataConditionsBad;
+		// notification.payload.dataConditions = dataConditionsGood;
+		component.onNotification(notification);
+		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith(notification.payload);
+	});
+
+	it('#onNotification should call preProcessBatteryDetailResponse with battery conditon bad ', () => {
+		spyOn(component, 'preProcessBatteryDetailResponse');
+		// component.dataConditions = dataConditionsBad;
+		// notification.payload.dataConditions = dataConditionsBad;
+		component.onNotification(notificationBad);
+		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith(notificationBad.payload);
+	});
+
+
+
+
 });
