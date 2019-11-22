@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
 import { BehaviorSubject, EMPTY, from, Observable, ReplaySubject, Subscription, throwError, timer } from 'rxjs';
-import { catchError, concatMap, delay, distinctUntilChanged, retryWhen, switchMap, take } from 'rxjs/operators';
+import { catchError, concatMap, delay, distinctUntilChanged, map, retryWhen, switchMap, take } from 'rxjs/operators';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
@@ -53,7 +53,7 @@ export class CommunicationWithFigleafService {
 	}
 
 	private receiveFigleafReadyForCommunicationState() {
-		const figleafConnectSubscription = timer(0, 10000).pipe(
+		const figleafConnectSubscription = timer(0, 3000).pipe(
 			switchMap(() => this.sendTestMessage().pipe(catchError(() => EMPTY))),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
@@ -80,7 +80,14 @@ export class CommunicationWithFigleafService {
 	}
 
 	private sendTestMessage() {
-		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}));
+		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
+			.pipe(
+				catchError(() => {
+					return from(FigleafConnector.checkIfFigleafInstalled()).pipe(
+						map((res) => res > 0 ? {type: 'testfigleafStatus', status: 1} : throwError('ooops'))
+					);
+				})
+			);
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {
