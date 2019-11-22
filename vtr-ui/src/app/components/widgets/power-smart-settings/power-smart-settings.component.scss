@@ -5,13 +5,13 @@
       width: 100%;
 
         h3 {
-        //opacity: 0.8;
-        color: $light;
-        font-size: 1.8rem;
-        line-height: 2.8rem;
-        margin-top: 1.5rem;
-        text-transform: capitalize;
-        font-weight: 600;
+			margin-top: 1.5rem;
+			text-transform: capitalize;
+			color: $light;
+			font-size: $section_header;
+			font-weight: $weight_light;
+			letter-spacing: 0.05rem;
+			text-transform: none;
         }
         p {
             //opacity: 0.8;
@@ -75,7 +75,7 @@
 }
 
 .read-more-link {
-color: $light;
-text-decoration: underline;
-cursor: pointer;
+	color: $light;
+	text-decoration: underline;
+	cursor: pointer;
 }
