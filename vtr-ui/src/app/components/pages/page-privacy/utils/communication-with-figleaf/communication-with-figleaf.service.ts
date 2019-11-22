@@ -1,7 +1,18 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { BehaviorSubject, EMPTY, from, Observable, ReplaySubject, Subscription, throwError, timer } from 'rxjs';
-import { catchError, concatMap, delay, distinctUntilChanged, map, retryWhen, switchMap, take } from 'rxjs/operators';
+import { BehaviorSubject, EMPTY, from, Observable, Subscription, throwError, timer } from 'rxjs';
+import {
+	catchError,
+	concatMap,
+	delay,
+	distinctUntilChanged,
+	filter,
+	first,
+	map,
+	retryWhen,
+	switchMap,
+	take
+} from 'rxjs/operators';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
@@ -13,17 +24,21 @@ export interface MessageFromFigleaf {
 	payload?: string;
 }
 
+enum FigleafState {
+	ready,
+	notOnboarded,
+	exit
+}
+
 @Injectable({
 	providedIn: 'root'
 })
 
 export class CommunicationWithFigleafService {
-	isFigleafInstalled$ = new ReplaySubject(1);
-	private isFigleafReadyForCommunication = new BehaviorSubject<boolean>(false);
-	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.pipe(distinctUntilChanged());
+	private figleafState$ = new BehaviorSubject<FigleafState | null>(null);
 
-	private isFigleafNotOnboarded = new BehaviorSubject<boolean>(false);
-	isFigleafNotOnboarded$ = this.isFigleafNotOnboarded.pipe(distinctUntilChanged());
+	isFigleafReadyForCommunication$ = this.isStateEqual(FigleafState.ready);
+	isFigleafNotOnboarded$ = this.isStateEqual(FigleafState.notOnboarded);
 
 	subscription: Subscription[] = [];
 
@@ -32,7 +47,7 @@ export class CommunicationWithFigleafService {
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
 		FigleafConnector.onConnect(() => {
-			this.ngZone.run(() => this.isFigleafInstalled$.next(true));
+			// this.ngZone.run(() => this.isFigleafInstalled$.next(true));
 		});
 
 		FigleafConnector.onDisconnect(() => {
@@ -41,15 +56,18 @@ export class CommunicationWithFigleafService {
 					retryWhen((errors) => errors.pipe(delay(1000), take(5), concatMap(() => throwError(new Error('oops!'))))),
 				).subscribe(() => {},
 					(err) => {
-						this.isFigleafInstalled$.next(false);
-						this.isFigleafReadyForCommunication.next(false);
-						this.isFigleafNotOnboarded.next(false);
+						this.figleafState$.next(null);
 					}
 				);
 			});
 		});
 
 		this.receiveFigleafReadyForCommunicationState();
+
+		this.isFigleafNotOnboarded$.pipe(
+			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
+			first()
+		).subscribe((res) => this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction))
 	}
 
 	private receiveFigleafReadyForCommunicationState() {
@@ -57,18 +75,10 @@ export class CommunicationWithFigleafService {
 			switchMap(() => this.sendTestMessage().pipe(catchError(() => EMPTY))),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
-			const isFigleafReady = figleafStatus.status === 0;
-			this.isFigleafReadyForCommunication.next(isFigleafReady);
-
-			const isFigleafNotOnboarded = figleafStatus.status === 1;
-			this.isFigleafNotOnboarded.next(isFigleafNotOnboarded);
-
-			if (isFigleafNotOnboarded) {
-				this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction);
-			}
+			this.figleafState$.next(figleafStatus.status);
 		}, (error) => {
 			console.error('send test message error: ', error);
-			this.isFigleafReadyForCommunication.next(false);
+			this.figleafState$.next(null);
 		});
 
 		this.subscription.push(figleafConnectSubscription);
@@ -81,26 +91,14 @@ export class CommunicationWithFigleafService {
 
 	private sendTestMessage() {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
-			.pipe(
-				catchError(() => {
-					return from(FigleafConnector.checkIfFigleafInstalled()).pipe(
-						map((res) => res > 0 ? {type: 'testfigleafStatus', status: 1} : throwError('ooops'))
-					);
-				})
-			);
+			.pipe(catchError(() => this.checkIfFigleafInstalled()));
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {
-		return this.isFigleafReadyForCommunication.pipe(
+		return this.isFigleafReadyForCommunication$.pipe(
 			take(1),
-			switchMap(isFigleafInstalled => {
-				if (isFigleafInstalled) {
-					return from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T>;
-				} else {
-					console.error('figLeaf not installed');
-					return EMPTY;
-				}
-			}),
+			filter((isFigleafInstalled) => isFigleafInstalled),
+			switchMap(() => from(FigleafConnector.sendMessageToFigleaf(message)) as Observable<T>),
 			catchError((error) => {
 				console.error('sendMessageToFigleaf error: ', error);
 				return EMPTY;
@@ -109,6 +107,16 @@ export class CommunicationWithFigleafService {
 	}
 
 	get isFigleafInstalled() {
-		return this.isFigleafReadyForCommunication.getValue();
+		return this.figleafState$.getValue() === FigleafState.ready;
+	}
+
+	private isStateEqual(state: FigleafState) {
+		return this.figleafState$.pipe(map((figleafState) => figleafState === state), distinctUntilChanged());
+	}
+
+	private checkIfFigleafInstalled() {
+		return from(FigleafConnector.checkIfFigleafInstalled()).pipe(
+			map((res) => res > 0 ? {type: 'testfigleafStatus', status: FigleafState.exit} : throwError('ooops'))
+		);
 	}
 }
