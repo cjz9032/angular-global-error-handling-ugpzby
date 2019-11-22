@@ -1,36 +1,48 @@
 @import "../../../styles/common-blocks";
 @import "../../../styles/variables";
+@import "../../../../../../app.theme";
+
 
 .privacy-score {
 	@extend %common-block-wrapper;
 	border-radius: 1rem 1rem 0 0;
 	background: linear-gradient(131.24deg, #191C28 0%, #2F3447 100%);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	// display: flex;
+	// justify-content: space-between;
+	// align-items: center;
 	padding: 2.5rem 4rem;
 	@media (max-width: $responsive_s) {
-		flex-direction: column;
+		// flex-direction: column;
 	}
 
 	&__title-wrapper {
-		display: flex;
-		flex-flow: row;
-		align-items: center;
-		align-content: center;
+		// display: flex;
+		// flex-flow: row;
+		// align-items: center;
+		// align-content: center;
 	}
 
 	&__description-col {
-		display: flex;
-		flex-grow: 1;
-		align-items: center;
-		justify-content: space-between;
-		@media (max-width: $responsive_m) {
-			flex-direction: column;
-		}
-		@media (max-width: $responsive_s) {
+		// display: flex;
+		// flex-grow: 1;
+		// align-items: center;
+		// justify-content: space-between;
+		// @media (max-width: $responsive_m) {
+		// 	flex-direction: column;
+		// }
+		// @media (max-width: $responsive_s) {
+		// 	text-align: center;
+		// 	margin-top: 3rem;
+		// }
+		text-align: left;
+		@media #{$breakpoint_xl} {
 			text-align: center;
-			margin-top: 3rem;
+		}
+		@media #{$breakpoint_lg} {
+			text-align: left;
+		}
+		@media #{$breakpoint_md} {
+			text-align: center;
 		}
 	}
 
@@ -59,6 +71,13 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			margin-bottom: 2rem;
+		}
+		@media #{$breakpoint_sm} {
+			margin-bottom: 2rem;
+		}
 
 		&--undefined {
 			background: linear-gradient(136.04deg, #CB7BD9 0%, #5854D6 100%);
@@ -103,7 +122,8 @@
 }
 
 .score-description {
-	padding: 0 7rem 0 4rem;
+	//padding: 0 7rem 0 4rem;
+	padding: 0;
 	color: #FFFFFF;
 
 	&__title {
@@ -112,6 +132,7 @@
 		font-weight: 600;
 		line-height: 2.9rem;
 		margin: 0 1rem 0.8rem 0;
+		display: inline-block;
 	}
 
 	&__text {
