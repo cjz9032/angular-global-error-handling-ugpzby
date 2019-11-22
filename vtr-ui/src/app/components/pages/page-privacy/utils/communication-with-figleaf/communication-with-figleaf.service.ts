@@ -39,6 +39,7 @@ export class CommunicationWithFigleafService {
 
 	isFigleafReadyForCommunication$ = this.isStateEqual(FigleafState.ready);
 	isFigleafNotOnboarded$ = this.isStateEqual(FigleafState.notOnboarded);
+	isFigleafInExit$ = this.isStateEqual(FigleafState.exit);
 
 	subscription: Subscription[] = [];
 
@@ -67,7 +68,7 @@ export class CommunicationWithFigleafService {
 		this.isFigleafNotOnboarded$.pipe(
 			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
 			first()
-		).subscribe((res) => this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction))
+		).subscribe((res) => this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction));
 	}
 
 	private receiveFigleafReadyForCommunicationState() {
@@ -91,7 +92,7 @@ export class CommunicationWithFigleafService {
 
 	private sendTestMessage() {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
-			.pipe(catchError(() => this.checkIfFigleafInstalled()));
+			.pipe(switchMap(() => this.checkIfFigleafInstalled()));
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {

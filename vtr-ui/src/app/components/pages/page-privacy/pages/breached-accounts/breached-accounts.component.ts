@@ -24,15 +24,17 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
 	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
 	isFigleafReadyForCommunication$ = this.breachedAccountsFacadeService.isFigleafReadyForCommunication$;
+	isShowExitPitch$ = this.breachedAccountsFacadeService.isShowExitPitch$;
 	isUserAuthorized$ = this.breachedAccountsFacadeService.isUserAuthorized$;
 	breachedAccountsCount$ = this.breachedAccountsFacadeService.breachedAccountsCount$;
 	userEmail$ = this.breachedAccountsFacadeService.userEmail$;
 	breachedAccountWasScanned$ = this.breachedAccountsFacadeService.breachedAccountWasScanned$;
-	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
+	isShowEmailScanner = this.breachedAccountsFacadeService.isShowEmailScanner$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
-	scanCounterLimit = this.breachedAccountsFacadeService.scanCounterLimit;
+	isShowBreachedAccount$ = this.breachedAccountsFacadeService.isShowBreachedAccount$;
 
+	scanCounterLimit = this.breachedAccountsFacadeService.scanCounterLimit;
 	textForFeatureHeader = {
 		title: 'Check email for breaches',
 		figleafTitle: 'Lenovo Privacy Essentials by FigLeaf watches out for breaches',
