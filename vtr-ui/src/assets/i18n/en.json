@@ -1017,9 +1017,7 @@
 				},
 				"smartStandby": {
 					"title": "Smart Standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of",
-					"descriptionLink": "Modern Standby",
-					"subDescription1": "during hours of heavier use.",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
 					"subTitle":"Schedule your computer",
 					"subNote": "Your computer is scheduled for quicker resume based on the usage.",

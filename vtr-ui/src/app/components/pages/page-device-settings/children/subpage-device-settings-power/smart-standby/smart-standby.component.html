@@ -118,7 +118,7 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div [disabled]="!smartStandby.isEnabled" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
+					<div *ngIf="isAutonomicCapability" [disabled]="!smartStandby.isEnabled" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
 						attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 						{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>
