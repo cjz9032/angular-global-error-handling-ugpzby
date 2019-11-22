@@ -62,25 +62,25 @@ class MockAPS {
 }
 
 
-fdescribe('ActiveProtectionSystemComponent', () => {
+describe('ActiveProtectionSystemComponent', () => {
 	let component: ActiveProtectionSystemComponent;
-	let fixture: ComponentFixture < ActiveProtectionSystemComponent > ;
+	let fixture: ComponentFixture<ActiveProtectionSystemComponent>;
 	let debugElement;
 	let smartAssist;
 
-	beforeEach(async (() => {
+	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [ActiveProtectionSystemComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslateModule.forRoot({
-					loader: {
-						provide: TranslateLoader,
-						useFactory: HttpLoaderFactory,
-						deps: [HttpClient]
-					},
-					isolate: false
-				}),
-				TranslationModule.forChild(), HttpClientModule
+				loader: {
+					provide: TranslateLoader,
+					useFactory: HttpLoaderFactory,
+					deps: [HttpClient]
+				},
+				isolate: false
+			}),
+			TranslationModule.forChild(), HttpClientModule
 			],
 			providers: [TranslateService, {
 				provide: SmartAssistService,
@@ -89,7 +89,7 @@ fdescribe('ActiveProtectionSystemComponent', () => {
 		}).compileComponents();
 	}));
 
-	beforeEach(async (() => {
+	beforeEach(async(() => {
 		fixture = TestBed.createComponent(ActiveProtectionSystemComponent);
 		debugElement = fixture.debugElement;
 		component = fixture.componentInstance;
