@@ -266,7 +266,13 @@
 							"src/assets",
 							"src/manifest.webmanifest"
 						],
-						"codeCoverage": true
+						"codeCoverage": true,
+						"fileReplacements": [
+							{
+								"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
+								"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+							}
+						]
 					}
 				},
 				"lint": {
