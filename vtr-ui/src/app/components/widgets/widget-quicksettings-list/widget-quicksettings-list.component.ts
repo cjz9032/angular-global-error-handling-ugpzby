@@ -176,6 +176,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	) { }
 
 	ngOnInit() {
+		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+			this.handleError(new PluginMissingError());
+		});
 		this.initializeWifiSecCache();
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
@@ -403,7 +406,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			if (this.wifiSecurity) {
 				if (this.guard.previousPageName !== 'device-gaming' && !this.guard.previousPageName.startsWith('Security')) {
 					await this.wifiSecurity.refresh().catch((err) => this.handleError(err));
-					await this.wifiSecurity.getWifiSecurityState().catch((err) => this.handleError(err));
+					this.wifiSecurity.getWifiSecurityState();
 				}
 			}
 		}
