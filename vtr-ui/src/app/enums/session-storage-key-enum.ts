@@ -14,6 +14,5 @@ export enum SessionStorageKey {
 	HomeSecurityShowLocationPermisisonDialog = '[SessionStorageKey] HomeSecurityShowLocationPermisisonDialog',
 	WidgetWifiStatus = '[SessionStorageKey] WidgetWifiStatus',
 	ChsLocationDialogNextShowFlag = '[SessionStorageKey] ChsLocationDialogNextShowFlag',
-	ChsIsGetDevicePosture = '[SessionStorageKey] ChsIsGetDevicePosture',
 	WarrantyDataCache = '[SessionStorageKey] WarrantyDataCache'
 }
