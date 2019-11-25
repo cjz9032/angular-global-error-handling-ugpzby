@@ -1016,7 +1016,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				const res = await this.powerService.getChargeThresholdInfo();
 				this.responseData = res || [];
 				if (this.responseData && this.responseData.length > 0) {
-					this.isChargeThresholdAvailable = this.responseData[0].isCapable || this.responseData[1].isCapable;
+					this.isChargeThresholdAvailable = this.responseData[0].isCapable;
 					this.isPrimaryBatteryAvailable = this.responseData[0].isCapable;
 					this.selectedStartAtChargeVal = this.responseData[0].startValue - (this.responseData[0].startValue % 5);
 					this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
@@ -1034,8 +1034,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						);
 					}
 					if (this.responseData.length === 2) {
+						this.isChargeThresholdAvailable = this.responseData[0].isCapable || this.responseData[1].isCapable;
 						this.isSecondBatteryAvailable = this.responseData[1].isCapable;
-						// this.isChargeThresholdAvailable = this.responseData[1].isCapable;
+						this.showBatteryThreshold = this.responseData[0].isOn || this.responseData[1].isOn;
 						this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 						this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
 						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
@@ -1052,7 +1053,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						}
 					}
 					notification = {
-						isOn: this.responseData[0].isOn,
+						isOn: this.responseData[0].isCapable && this.responseData[0].isOn,
 						stopValue1: this.selectedStopAtChargeVal,
 						stopValue2: this.selectedStopAtChargeVal1
 					};
@@ -1114,7 +1115,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	updateBatteryLinkStatus(addLink: boolean) {
 		const status = this.commonService.isPresent(this.headerMenuItems, 'battery');
 		if (addLink && !status) {
-			const powerObj  = {
+			const powerObj = {
 				title: 'device.deviceSettings.power.batterySettings.title',
 				path: 'battery',
 				metricsItem: 'BatterySettings',
