@@ -1,0 +1,39 @@
+@import "../../../styles/common-blocks";
+
+.exit-pitch {
+	position: relative;
+
+	&__title {
+		@extend %subtitle;
+		margin-top: 6rem;
+	}
+
+	&__text {
+		@extend %text-common;
+		margin-top: 3rem;
+	}
+
+	&__img {
+		width: 100%;
+		max-width: 29rem;
+	}
+
+	&__block-wrapper {
+		position: absolute;
+		width: 80%;
+		left: 50%;
+		top: 5%;
+		transform: translate(-50%, 0);
+		border-radius: 10px;
+		box-shadow: 0 7px 31px 0 rgba(52,73,94,0.18);
+		background: #fff;
+		overflow: hidden;
+		text-align: center;
+		padding: 5rem 6rem 4rem;
+	}
+
+	&__button {
+		@extend %theme-btn;
+		margin-top: 2.5rem;
+	}
+}
