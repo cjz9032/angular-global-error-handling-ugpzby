@@ -10,6 +10,7 @@ import {
 	first,
 	map,
 	retryWhen,
+	shareReplay,
 	switchMap,
 	take
 } from 'rxjs/operators';
@@ -112,7 +113,11 @@ export class CommunicationWithFigleafService {
 	}
 
 	private isStateEqual(state: FigleafState) {
-		return this.figleafState$.pipe(map((figleafState) => figleafState === state), distinctUntilChanged());
+		return this.figleafState$.pipe(
+			map((figleafState) => figleafState === state),
+			distinctUntilChanged(),
+			shareReplay(1)
+		);
 	}
 
 	private checkIfFigleafInstalled() {

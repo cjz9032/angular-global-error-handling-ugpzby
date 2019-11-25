@@ -21,7 +21,6 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	isOnline = this.commonService.isOnline;
 
 	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
-	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
 	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
 	isFigleafReadyForCommunication$ = this.breachedAccountsFacadeService.isFigleafReadyForCommunication$;
 	isShowExitPitch$ = this.breachedAccountsFacadeService.isShowExitPitch$;

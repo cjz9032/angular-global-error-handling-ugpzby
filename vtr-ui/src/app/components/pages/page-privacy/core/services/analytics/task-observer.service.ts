@@ -36,7 +36,7 @@ export class TaskObserverService {
 			this.taskActionWithTimeoutService.taskTimeWatcher(TasksName.scoreScanAction).pipe(
 				withLatestFrom(this.privacyScoreService.newPrivacyScore$),
 				map(([ value, score ]) => {
-					const { privacyLevel } = this.privacyScoreService.getStaticDataAccordingToScore(score);
+					const { privacyLevel } = this.privacyScoreService.getStaticDataAccordingToScore(score, this.appStatusesService.getGlobalStatus().appState);
 					const taskResult = value.TaskResult === null ? snake2PascalCase(privacyLevel) : value.TaskResult;
 
 					const isHasError = Object.values(this.appStatusesService.getGlobalStatus())
