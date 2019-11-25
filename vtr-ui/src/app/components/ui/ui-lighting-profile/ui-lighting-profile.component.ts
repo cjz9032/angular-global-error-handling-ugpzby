@@ -656,8 +656,25 @@ export class UiLightingProfileComponent implements OnInit {
 				$event.value === LightEffectComplexType.CPU_frequency
 			) {
 				this.showHideOverlay = true;
+				this.frontSelectedValue = $event.value;
+				this.sideSelectedValue = $event.value;
 			} else {
 				this.showHideOverlay = false;
+				let res:any;
+				if (LocalStorageKey.LightingProfileById !== undefined) {
+					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+				}
+				if(res.lightInfo.length>0){
+					if (
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.Wave ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.Smooth ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.CPU_thermal ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.CPU_frequency
+					) {
+						this.frontSelectedValue = $event.value;
+						this.sideSelectedValue = $event.value;
+					}
+				}
 			}
 			if ($event.value === LightEffectComplexType.Breath || $event.value === LightEffectComplexType.Wave) {
 				this.enableBrightCondition = true;
