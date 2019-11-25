@@ -21,7 +21,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
-	private isGamingDevice = true;
+	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -778,6 +778,51 @@ export class VantageShellService {
 					return Promise.all([p1, p2]);
 				},
 				cancelGetWifiSecurityState() { }
+			},
+			windowsActivation: {
+				mitt: null,
+				status: 'disable',
+				windowsActivationProtocol: '',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			uac: {
+				mitt: null,
+				status: 'disable',
+				uacProtocol: '',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			hardDiskEncryption: {
+				mitt: null,
+				status: 'disable',
+				hdeProtocol: '',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
 			},
 			setScoreRegistry() {
 				return Promise.resolve(true);
