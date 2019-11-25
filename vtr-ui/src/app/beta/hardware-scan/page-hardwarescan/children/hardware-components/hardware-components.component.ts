@@ -289,6 +289,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	getItemToDisplay() {
+		// Shows a default component list
+		if (!this.hardwareScanService.isShowComponentList()) {
+			return this.hardwareScanService.getInitialHardwareComponentList();
+		}
+
+		// Shows the real component list, retrieved after a Quick/Custom scan
 		const devices = [];
 		const modules = this.hardwareScanService.getModulesRetrieved();
 		if (modules !== undefined) {

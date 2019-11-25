@@ -52,6 +52,7 @@ export class HardwareScanService {
 	private culture: any;
 	private itemsToScanResponse: any = undefined;
 	private ALL_MODULES = 2;
+	private showComponentList: boolean = false;
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
@@ -1154,5 +1155,51 @@ export class HardwareScanService {
 	public cleanCustomTests() {
 		this.filteredCustomScanRequest = [];
 		this.filteredCustomScanResponse = [];
+	}
+
+	/**
+	 * This method is responsible for provide the default hardware component list
+	 * which will be displayed in the Hardware Scan's home page until the real
+	 * one is retrieved through either a Quick/Custom Scan or refreshing modules.
+	 */
+	public getInitialHardwareComponentList() {
+		const iconsBasePath = '/assets/icons/hardware-scan/';
+
+		return [
+			{
+				name: this.translate.instant('hardwareScan.pluginTokens.cpu'),
+				subname: "",
+				icon: iconsBasePath + 'icon_hardware_processor.svg'
+			},
+			{
+				name: this.translate.instant('hardwareScan.pluginTokens.memory'),
+				subname: "",
+				icon: iconsBasePath + 'icon_hardware_memory.svg'
+			},
+			{
+				name: this.translate.instant('hardwareScan.pluginTokens.motherboard'),
+				subname: "",
+				icon: iconsBasePath + 'icon_hardware_motherboard.svg'
+			},
+			{
+				name: this.translate.instant('hardwareScan.pluginTokens.pci_express'),
+				subname: "",
+				icon: iconsBasePath + 'icon_hardware_pci-desktop.svg'
+			},
+			{
+				name: this.translate.instant('hardwareScan.pluginTokens.storage'),
+				subname: "",
+				icon: iconsBasePath + 'icon_hardware_hdd.svg'
+			},
+			{
+				name: this.translate.instant('hardwareScan.pluginTokens.wireless'),
+				subname: "",
+				icon: iconsBasePath + 'icon_hardware_wireless.svg'
+			}
+		];
+	}
+
+	public isShowComponentList() {
+		return this.showComponentList;
 	}
 }
