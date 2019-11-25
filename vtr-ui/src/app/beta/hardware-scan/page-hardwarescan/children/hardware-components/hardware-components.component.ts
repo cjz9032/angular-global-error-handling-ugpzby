@@ -284,7 +284,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public refreshModules() {
 		this.hardwareScanService.setLoadingStatus(false);
-		this.hardwareScanService.reloadItemsToScan();
+		this.hardwareScanService.reloadItemsToScan(true);
 		this.hardwareScanService.initLoadingModules(this.culture);
 	}
 
@@ -306,7 +306,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					devices.push({
 						name: info,
 						subname: group.name,
-						status: HardwareScanTestResult.Pass,
+						icon: this.hardwareScanService.getHardwareComponentIcon(categoryInfo.id),
 					});
 				}
 			}
@@ -869,6 +869,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
 		}
-	}	
+	}
+	
+	public isRefreshingModules() {
+		return this.hardwareScanService.isRefreshingModules();
+	}
 
 }
