@@ -677,13 +677,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				case UpdateProgress.UpdateCheckInProgress:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = true;
-						this.percentCompleted = this.systemUpdateService.percentCompleted;
+						this.percentCompleted = payload;
 					});
 					break;
 				case UpdateProgress.UpdateCheckCompleted:
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
-
 					let messageKey = 'unknown';
 					if (this.isUserCancelledUpdateCheck) {
 						// when user cancels update check its throwing unknown exception
