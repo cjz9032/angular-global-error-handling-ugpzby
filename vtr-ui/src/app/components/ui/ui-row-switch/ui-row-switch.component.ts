@@ -90,7 +90,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 			if (this.isSwitchChecked) {
 				const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
 					backdrop: 'static',
-					size: 'sm',
 					centered: true,
 					windowClass: 'Battery-Charge-Threshold-Modal'
 				});

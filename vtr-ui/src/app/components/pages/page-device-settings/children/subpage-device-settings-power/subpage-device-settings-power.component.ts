@@ -23,9 +23,7 @@ import { MetricService } from '../../../../../services/metric/metric.service';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
-import { GaugeResetInfoCache } from 'src/app/data-models/device/gauge-reset-info-cache.model';
-
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -97,12 +95,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 	public isPowerDriverMissing = false;
-
-	gaugeResetInfo: BatteryGaugeReset[];
-	gaugeResetInfoCache: GaugeResetInfoCache = undefined;
-	remainingPercentages: number[];
-	isACAttached: boolean;
-	isGaugeResetRunning: boolean[] = [false, false];
 
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
@@ -219,6 +211,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public powerService: PowerService,
+		public batteryService: BatteryDetailService,
 		private commonService: CommonService,
 		private logger: LoggerService,
 		public modalService: NgbModal,
@@ -321,13 +314,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initGaugeResetInfoFromCache() {
 		try {
-			this.gaugeResetInfoCache = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetInformation, undefined);
-			if (this.gaugeResetInfoCache !== undefined) {
-				this.gaugeResetCapability = this.gaugeResetInfoCache.isAvailable;
-				this.gaugeResetInfo = this.gaugeResetInfoCache.gaugeResetInfo;
-			} else {
-				this.gaugeResetInfoCache = new GaugeResetInfoCache();
-			}
+			this.gaugeResetCapability = this.commonService.getLocalStorageValue(LocalStorageKey.GaugeResetInformation, undefined);
 		} catch (error) {
 			console.log('initAirplanePowerFromCache', error);
 		}
@@ -1088,26 +1075,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					break;
-				case 'GaugeResetInfo':
-					if (notification.payload) {
-						this.gaugeResetInfo = notification.payload;
-						if (this.gaugeResetInfo && this.gaugeResetInfo.length > 0) {
-							this.isGaugeResetRunning[0] = this.gaugeResetInfo[0].isResetRunning;
-							if (this.gaugeResetInfo.length > 1) {
-								this.isGaugeResetRunning[0] = this.gaugeResetInfo[1].isResetRunning;
-							}
-						}
-						this.gaugeResetInfoCache = new GaugeResetInfoCache();
-						this.gaugeResetInfoCache.gaugeResetInfo = this.gaugeResetInfo;
-						this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
-					}
-					break;
-				// case 'BatteryInfoForGaugeReset':
-				// 	if (notification.payload) {
-				// 		this.remainingPercentages = notification.payload.remainingPercentages;
-				// 		this.isACAttached = notification.payload.isACAttached;
-				// 		break;
-				// 	}
 			}
 
 		}
@@ -1281,8 +1248,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.powerService.getGaugeResetCapability().then((response) => {
 			console.log('Battery Gauge Reset', this.gaugeResetCapability);
 			this.gaugeResetCapability = response;
-			this.gaugeResetInfoCache.isAvailable = response;
-			this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
+			this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetCapability);
 		}).catch((err) => {
 			console.log('Battery Gauge Reset', err);
 		});
