@@ -62,7 +62,7 @@ class MockAPS {
 }
 
 
-fdescribe('ActiveProtectionSystemComponent', () => {
+describe('ActiveProtectionSystemComponent', () => {
 	let component: ActiveProtectionSystemComponent;
 	let fixture: ComponentFixture < ActiveProtectionSystemComponent > ;
 	let debugElement;

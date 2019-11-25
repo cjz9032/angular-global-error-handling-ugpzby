@@ -448,7 +448,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
+		padding: 2rem;
 		@media #{$black-on-white} {
 			border: 0.1rem solid;
 			border-radius: 1rem;
@@ -1295,15 +1295,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 
 /* override bootstrap custom check box in high contrast mode*/
-.custom-control-label::before {
+
+.custom-control-label:before{
 	@media #{$white-on-black} {
-		color: #fff;
-		border-color: aqua;
-		background-color: aqua;
+	background-color: $dark;
 	}
 	@media #{$black-on-white} {
-		color: #fff;
-		border-color: aqua;
-		background-color: aqua;
-	}
+		background-color: $light;
+  }
 }
+  .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+	@media #{$white-on-black} {
+	background-color:$high-contrast-black-textselected;
+	}
+	@media #{$black-on-white} {
+		background-color:$high-contrast-white-textselected;
+
+	}
+  }
+
+
