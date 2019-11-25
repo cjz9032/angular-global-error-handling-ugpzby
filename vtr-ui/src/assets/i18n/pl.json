@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować.",
         "testNotApplicable": "Nie dotyczy skanowania niestandardowego",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Procesor",
+            "memory": "Pamięć",
+            "motherboard": "Płyta główna",
+            "pci_express": "PCI Express",
+            "storage": "Pamięć masowa",
+            "wireless": "Bezprzewodowe"
         }
     },
     "smartPerformance": {

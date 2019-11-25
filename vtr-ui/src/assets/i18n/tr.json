@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
         "testNotApplicable": "Özel tarama için geçerli değildir",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "İşlemci",
+            "memory": "Bellek",
+            "motherboard": "Ana kart",
+            "pci_express": "PCI Express",
+            "storage": "Depolama alanı",
+            "wireless": "Kablosuz"
         }
     },
     "smartPerformance": {

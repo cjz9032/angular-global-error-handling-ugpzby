@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
         "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Procesor",
+            "memory": "Pamäť",
+            "motherboard": "Základná doska",
+            "pci_express": "PCI Express",
+            "storage": "Ukladací priestor",
+            "wireless": "Bezdrôtové"
         }
     },
     "smartPerformance": {

@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
         "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Επεξεργαστής",
+            "memory": "Μνήμη",
+            "motherboard": "Μητρική πλακέτα",
+            "pci_express": "PCI Express",
+            "storage": "Χώρος αποθήκευσης",
+            "wireless": "Ασύρματο"
         }
     },
     "smartPerformance": {

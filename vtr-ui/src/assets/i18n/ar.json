@@ -2711,12 +2711,12 @@
         "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
         "testNotApplicable": "لا ينطبق على الفحص المخصص",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "المعالج",
+            "memory": "الذاكرة",
+            "motherboard": "اللوحة الأم",
+            "pci_express": "PCI Express",
+            "storage": "السعة التخزينية",
+            "wireless": "اللاسلكية"
         }
     },
     "smartPerformance": {

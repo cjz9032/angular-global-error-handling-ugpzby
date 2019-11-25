@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
         "testNotApplicable": "Ei sovellu mukautettu tarkistus",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Suoritin",
+            "memory": "Muisti",
+            "motherboard": "Emolevy",
+            "pci_express": "PCI Express",
+            "storage": "Tallennus",
+            "wireless": "Langattomat yhteydet"
         }
     },
     "smartPerformance": {

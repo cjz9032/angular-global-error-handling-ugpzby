@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
         "testNotApplicable": "사용자 정의 스캔에 적용되지 않음",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "프로세서",
+            "memory": "메모리",
+            "motherboard": "마더보드",
+            "pci_express": "PCI Express",
+            "storage": "저장 장치",
+            "wireless": "무선"
         }
     },
     "smartPerformance": {

@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
         "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Processor",
+            "memory": "Hukommelse",
+            "motherboard": "Systemkort",
+            "pci_express": "PCI Express",
+            "storage": "Lager",
+            "wireless": "Trådløs"
         }
     },
     "smartPerformance": {

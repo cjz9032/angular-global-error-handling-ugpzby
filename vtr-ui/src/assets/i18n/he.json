@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה.",
         "testNotApplicable": "לא ישים בסריקה מותאמת אישית",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "מעבד",
+            "memory": "זיכרון",
+            "motherboard": "לוח אם",
+            "pci_express": "PCI Express",
+            "storage": "אחסון",
+            "wireless": "אלחוטי"
         }
     },
     "smartPerformance": {

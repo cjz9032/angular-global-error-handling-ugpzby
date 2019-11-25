@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a.",
         "testNotApplicable": "Não aplicável na verificação personalizada",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Processador",
+            "memory": "Memória",
+            "motherboard": "Motherboard",
+            "pci_express": "PCI Express",
+            "storage": "Memória",
+            "wireless": "Sem fios"
         }
     },
     "smartPerformance": {

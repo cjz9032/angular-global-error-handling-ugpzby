@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je.",
         "testNotApplicable": "Nepoužitelné u vlastních kontrol",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Procesor",
+            "memory": "Paměť",
+            "motherboard": "Základní deska",
+            "pci_express": "PCI Express",
+            "storage": "Úložiště",
+            "wireless": "Bezdrátové"
         }
     },
     "smartPerformance": {

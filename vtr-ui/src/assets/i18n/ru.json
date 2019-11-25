@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
         "testNotApplicable": "При настраиваемом сканировании неприменимо",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Процессор",
+            "memory": "Оперативная память",
+            "motherboard": "Материнская плата",
+            "pci_express": "PCI Express",
+            "storage": "Хранение",
+            "wireless": "Беспроводная связь"
         }
     },
     "smartPerformance": {

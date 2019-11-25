@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
         "testNotApplicable": "No se aplica a personalizar exploración",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Procesador",
+            "memory": "Memoria",
+            "motherboard": "Placa madre",
+            "pci_express": "PCI Express",
+            "storage": "Almacenamiento",
+            "wireless": "Inalámbrica"
         }
     },
     "smartPerformance": {

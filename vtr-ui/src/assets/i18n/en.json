@@ -3036,12 +3036,12 @@
 			"enable": "Enable"
 		},
 		"pluginTokens": {
-			"cpu": "",
-			"memory": "",
-			"motherboard": "",
-			"pci_express": "",
-			"storage": "",
-			"wireless": ""
+			"cpu": "Processor",
+			"memory": "Memory",
+			"motherboard": "Motherboard",
+			"pci_express": "PCI Express",
+			"storage": "Storage",
+			"wireless": "Wireless"
 		}
 	},
 	"appsForYou": {

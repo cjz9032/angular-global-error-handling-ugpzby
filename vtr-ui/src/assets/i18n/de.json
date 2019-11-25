@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn.",
         "testNotApplicable": "Nicht zutreffend bei benutzerdefinierter scan",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Prozessor",
+            "memory": "Arbeitsspeicher",
+            "motherboard": "Steuerplatine",
+            "pci_express": "PCI Express",
+            "storage": "Speicher",
+            "wireless": "Drahtlos"
         }
     },
     "smartPerformance": {

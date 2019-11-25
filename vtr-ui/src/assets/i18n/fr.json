@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
         "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Processeur",
+            "memory": "Mémoire",
+            "motherboard": "Carte mère",
+            "pci_express": "PCI Express",
+            "storage": "Stockage",
+            "wireless": "Sans fil"
         }
     },
     "smartPerformance": {

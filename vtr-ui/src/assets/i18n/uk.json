@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
         "testNotApplicable": "Не застосовується для настроюваного сканування",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Процесор",
+            "memory": "Пам'ять",
+            "motherboard": "Материнська плата",
+            "pci_express": "PCI Express",
+            "storage": "Пам'ять",
+            "wireless": "Безпровідні підключення"
         }
     },
     "smartPerformance": {

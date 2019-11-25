@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
         "testNotApplicable": "カスタム・スキャンには適用されません",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "プロセッサー",
+            "memory": "メモリー",
+            "motherboard": "マザーボード",
+            "pci_express": "PCI Express",
+            "storage": "ストレージ",
+            "wireless": "ワイヤレス"
         }
     },
     "smartPerformance": {

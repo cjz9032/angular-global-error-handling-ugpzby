@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
         "testNotApplicable": "Ikke aktuelt for egendefinert skanning",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Prosessor",
+            "memory": "Minne",
+            "motherboard": "Hovedkort",
+            "pci_express": "PCI Express",
+            "storage": "Lagring",
+            "wireless": "Trådløs"
         }
     },
     "smartPerformance": {

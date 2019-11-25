@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
         "testNotApplicable": "Kan inte användas på anpassad sökning",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Processor",
+            "memory": "Minne",
+            "motherboard": "Moderkort",
+            "pci_express": "PCI Express",
+            "storage": "Lagring",
+            "wireless": "Radio"
         }
     },
     "smartPerformance": {

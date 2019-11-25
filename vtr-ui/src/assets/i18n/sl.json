@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga.",
         "testNotApplicable": "Ni upoštevno pri pregledu po meri",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Procesor",
+            "memory": "Pomnilnik",
+            "motherboard": "Matična plošča",
+            "pci_express": "PCI Express",
+            "storage": "Pomnilnik",
+            "wireless": "Brezžično"
         }
     },
     "smartPerformance": {

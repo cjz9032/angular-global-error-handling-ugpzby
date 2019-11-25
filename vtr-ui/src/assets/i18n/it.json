@@ -2709,12 +2709,12 @@
         "pluginNotUpdate": "La scansione hardware non è disponibile perché è obsoleta. Eseguire l'aggiornamento.",
         "testNotApplicable": "Non applicabile alla scansione personalizzata",
         "pluginTokens": {
-            "cpu": "",
-            "memory": "",
-            "motherboard": "",
-            "pci_express": "",
-            "storage": "",
-            "wireless": ""
+            "cpu": "Processore",
+            "memory": "Memoria",
+            "motherboard": "Scheda madre",
+            "pci_express": "PCI Express",
+            "storage": "Memorizzazione",
+            "wireless": "Wireless"
         }
     },
     "smartPerformance": {
