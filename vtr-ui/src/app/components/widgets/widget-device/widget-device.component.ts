@@ -40,7 +40,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private languageService: LanguageService
 	) {
 		this.myDevice = new MyDevice();
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar') {
+		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
 			this.direction = 'rtl';
 		}
 	}
