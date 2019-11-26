@@ -785,7 +785,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case HardwareScanProgress.ScanProgress:
 					this.ngZone.run(() => {
-						this.progress = payload;
+						if(!this.hardwareScanService.isCancelRequested()){
+							this.progress = payload;
+						}
 					});
 					break;
 				case HardwareScanProgress.ScanResponse:
