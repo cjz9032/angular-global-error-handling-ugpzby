@@ -255,6 +255,14 @@
 				cursor: pointer;
 				&.blue-arrow {
 					color: $main;
+					@media #{$black-on-white} {
+						color: $dark;
+					}
+					@media #{$white-on-black} {
+						color: $light;
+					}
+			
+
 				}
 			}
 

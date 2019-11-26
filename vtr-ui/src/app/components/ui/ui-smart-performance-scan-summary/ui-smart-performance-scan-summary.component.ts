@@ -13,14 +13,15 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   constructor(private modalService: NgbModal,private commonService: CommonService,private calendar: NgbCalendar) { }
   public today = new Date();
   public items: any = [];
-  isSubscribed:any;
+   isSubscribed:any;
  public menuItems: any = [{ itemName: 'Annual' }, { itemName: 'Quarterly' }, { itemName: 'Custom' }]
-  subscriptionDetails:any;
-  startDate:any;
-  endDate:any;
-  status:any;
-  givenDate:Date
-
+  // subscriptionDetails:any;
+  // startDate:any;
+  // endDate:any;
+  // status:any;
+  // givenDate:Date;
+  leftAnimator:any;
+  
 
   // tslint:disable-next-line:max-line-length
 @Input() isScanning = false;
@@ -65,6 +66,8 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
 	scanTime: any = { 'hour': this.hours[11],'hourId': 11,'min': this.mins[0],'minId': 0,'amPm': this.amPm[0],'amPmId': 0};
   copyScanTime: any = {'hour': this.hours[11], 'hourId': 11, 'min': this.mins[0], 'minId': 0, 'amPm': this.amPm[0], 'amPmId': 0 };
   scanScheduleDate:any;
+  issueCount: any = 54;
+  individualIssueCount: any = 18;
   ngOnInit() {
 this.currentDate = new Date();
     this.selectedDate=this.calendar.getToday();
@@ -73,30 +76,36 @@ this.currentDate = new Date();
 	 	this.items = [ { itemValue : '16 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today},
 	{ itemValue : '0 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : false, itemDate : this.today},
 	{ itemValue : '8 fixes', itemExpandValue : {tune:'10 GB',boost:'12',secure:'14'}, itemstatus : true, itemDate : this.today} ];
-  this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
-  if(this.isSubscribed)
-  {
-    this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
-    this.startDate = this.subscriptionDetails[0].StartDate;
-    this.endDate = this.subscriptionDetails[0].EndDate;
-    this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
+   this.isSubscribed=this.commonService.getLocalStorageValue(LocalStorageKey.IsSubscribed);
+  // if(this.isSubscribed)
+  // {
+  //   this.subscriptionDetails = this.commonService.getLocalStorageValue(LocalStorageKey.SubscribtionDetails);
+  //   this.startDate = this.subscriptionDetails[0].StartDate;
+  //   this.endDate = this.subscriptionDetails[0].EndDate;
+  //   this.givenDate = new Date(this.subscriptionDetails[0].EndDate);
 
-    if(this.givenDate > this.today)
-      this.status = "ACTIVE";
-    else
-      this.status = "INACTIVE";
-  }
-  else
-  {
-	this.startDate="---";
-	this.endDate="---";
-	this.status="INACTIVE";
-  }
+  //   if(this.givenDate > this.today)
+  //     this.status = "ACTIVE";
+  //   else
+  //     this.status = "INACTIVE";
+  // }
+  // else
+  // {
+	// this.startDate="---";
+	// this.endDate="---";
+	// this.status="INACTIVE";
+  // }
   //scan settings
   this.selectedFrequency = this.scanFrequency[1];
 		this.selectedDay = this.days[0];
     this.isDaySelectionEnable = false;
     this.scanScheduleDate=this.selectedDate;
+    this.leftAnimator="0%";
+  }
+  ngAfterViewInit()
+  {
+    this.leftAnimator = "39%"; 
+    //console.log("Left Animator======================================", this.leftAnimator);
   }
   expandRow(value) {
 	if (this.toggleValue === value) {

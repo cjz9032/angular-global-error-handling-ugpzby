@@ -30,6 +30,9 @@ import { WidgetSpeedometerComponent } from '../../components/widgets/widget-spee
 import { UiSmartPerformanceScanSummaryComponent } from '../../components/ui/ui-smart-performance-scan-summary/ui-smart-performance-scan-summary.component';
 import { FormsModule } from '@angular/forms';
 import { CommonUiModule } from '../common/common-ui.module';
+import { TranslationModule } from '../translation.module';
+import { WidgetSubscriptiondetailsComponent } from 'src/app/components/widgets/widget-subscriptiondetails/widget-subscriptiondetails.component';
+import { WidgetScansettingsComponent } from '../../components/widgets/widget-scansettings/widget-scansettings.component';
 library.add(faLaptop);
 library.add(faTrashAlt);
 library.add(faExclamationTriangle);
@@ -52,7 +55,8 @@ library.add(faCircle);
     ModalSmartPerformanceSubscribeComponent,
     WidgetSpeedometerComponent,
     UiSmartPerformanceScanSummaryComponent,
-
+    WidgetSubscriptiondetailsComponent,
+    WidgetScansettingsComponent
 
 	],
   imports: [ CommonModule,
@@ -62,7 +66,8 @@ library.add(faCircle);
   NgbDatepickerModule ,
   HeaderMainModule,
   FontAwesomeModule,
-  CommonUiModule
+  CommonUiModule,
+  TranslationModule.forChild()
   ],
   exports: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent,CommonUiModule],
   bootstrap: [UiSmartPerformanceComponent,UiSmartPerformanceScanningComponent,ModalSmartPerformanceCancelComponent, ModalSmartPerformanceSubscribeComponent, WidgetSpeedometerComponent,UiSmartPerformanceScanSummaryComponent]

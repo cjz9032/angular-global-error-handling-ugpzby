@@ -21,7 +21,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
-	private isGamingDevice = false;
+	private isGamingDevice = true;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
@@ -1200,6 +1200,7 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
+			PrivacyTab: 'enabled',
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});

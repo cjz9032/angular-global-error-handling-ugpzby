@@ -19,7 +19,7 @@
 			</a>
 		</div>
 		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
-			class="navbar-brand pt-0">
+			class="navbar-brand pt-0 logo-y">
 
 			<img *ngIf="isGamingHome"
 				src="../../../assets/images/gaming/gaming-logo-small.png"
@@ -131,7 +131,9 @@
 							attr.aria-haspopup="true"
 							attr.aria-expanded="false"
 							href="javascript:void(0)"
-							(click)="onMenuItemClick(item);"
+							(click)="onMenuItemClick(item);hideDropDown=true"
+							(mouseover)="hideDropDown=false"
+							(mouseout)="hideDropDown=true"
 							(keydown.enter)="onMenuItemClick(item)"
 							role="button"
 							*ngIf="item.label | translate">
@@ -144,8 +146,11 @@
 								class="beta">Beta</span>
 						</a>
 						<div ngbDropdownMenu
+							(mouseover)="hideDropDown=false"
+							(mouseout)="hideDropDown=true"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
+							[ngClass]="{'d-none': hideDropDown}"
 							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
@@ -218,7 +223,7 @@
 									[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
 							</div>
 
-							{{item.label | translate}}
+							{{item.label | translate}} 
 							<span *ngIf="item.beta"
 								class="beta">Beta</span>
 						</a>
@@ -256,6 +261,7 @@
 							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
+				
 							(keydown.enter)="onMenuItemClick(item)">
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
@@ -263,8 +269,9 @@
 							<span class="unread-count-tag"
 								*ngIf="!deviceService.isArm && UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
 						</a>
-						<div ngbDropdownMenu
+						<div ngbDropdownMenu							
 							class="dropdown-menu {{item.id}} dropdown-menu-id"
+							[ngClass]="{'d-none': !hideDropDown}"
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"

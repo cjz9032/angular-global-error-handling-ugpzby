@@ -143,8 +143,7 @@
 								</vtr-battery-gauge-reset>
 							</li>
 
-							<li class=""
-								*ngIf="expressChargingStatus.available">
+							<li class="" *ngIf="expressChargingStatus.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 									[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
@@ -157,6 +156,7 @@
 									[disabled]="expressChargingLock"
 									[showLoaderState]="conservationModeLock"
 									[switchId]="'ds-power-battery-expressCharging'"
+									[label]="'rapid charging, toggle button'"
 									(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 								</vtr-ui-row-switch>
 							</li>
