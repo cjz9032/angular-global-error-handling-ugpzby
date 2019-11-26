@@ -310,7 +310,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((value: any) => {
-			this.defaultLanguage = value.locale;
+			//this.defaultLanguage = value.locale;
 		});
 		this.isProfileOff = false;
 		if (LocalStorageKey.LightingCapabilities !== undefined) {
