@@ -9,8 +9,8 @@
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
-				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="checkPreScanInfo(0)"
-				(checkCancel)="onCancelScan()" (checkAnchor)="onCustomizeScan()" [statusText]="finalStatusToken()">
+				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(scanTypeEnum.QuickScan)"
+				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(scanTypeEnum.CustomScan)" [statusText]="finalStatusToken()">
 			</vtr-widget-hardware-scan>
 		</div>
 	</div>

@@ -17,6 +17,7 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { ModalWaitComponent } from '../../../modal/modal-wait/modal-wait.component';
 
 enum ScanType {
 	QuickScan,
@@ -80,6 +81,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public isOnline = true;
 	completeStatusToken: string;
 	public startScanClicked = false;
+
+	// "Wrapper" value to be accessed from the HTML
+	public scanTypeEnum = ScanType;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -479,35 +483,70 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onCustomizeScan() {
-		if (this.isLoadingDone()) {
-			this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
-			const modalRef = this.modalService.open(this.customizeModal, {
-				size: 'lg',
-				centered: true,
-				windowClass: 'custom-modal-size'
-			});
-			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
-			console.log('[MODAL] ', modalRef.componentInstance.items);
-			modalRef.componentInstance.passEntry.subscribe(() => {
-				this.hardwareScanService.filterCustomTests(this.culture);
-				this.checkPreScanInfo(1); // custom scan
-			});
+	private onCustomizeScan() {
+		const modalRef = this.modalService.open(this.customizeModal, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'custom-modal-size'
+		});
+		modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
+		console.log('[MODAL] ', modalRef.componentInstance.items);
+		modalRef.componentInstance.passEntry.subscribe(() => {
+			this.hardwareScanService.filterCustomTests(this.culture);
+			this.checkPreScanInfo(ScanType.CustomScan); // custom scan
+		});
 
-			modalRef.componentInstance.modalClosing.subscribe(success => {
-				// Re-enabling the button, once the modal has been closed in a way
-				// the user didn't started the Scan proccess.
-				if (!success) {
-					this.startScanClicked = false;
+		modalRef.componentInstance.modalClosing.subscribe(success => {
+			// Re-enabling the button, once the modal has been closed in a way
+			// the user didn't started the Scan proccess.
+			if (!success) {
+				this.startScanClicked = false;
+			}
+		});
+	}
+
+	private openWaitHardwareComponentsModal() {
+		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true
+		});
+
+		(<ModalWaitComponent>modal.componentInstance).modalTitle = this.translate.instant('hardwareScan.loadingComponents');
+		(<ModalWaitComponent>modal.componentInstance).modalDescription = 'Retrieving hardware information...';
+		(<ModalWaitComponent>modal.componentInstance).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
+
+		return modal;
+	}
+
+	public startScanWaitingModules(scanType: number) {
+		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
+
+		if (!this.hardwareScanService.isLoadingDone()) {
+			const modalWait = this.openWaitHardwareComponentsModal();
+			modalWait.result.then((result) => {
+				// Hardware modules have been retrieved, so let's continue with the Scan process
+				if (scanType === ScanType.QuickScan) {
+					this.checkPreScanInfo(scanType);
+				} else if (scanType === ScanType.CustomScan) {
+					this.onCustomizeScan();
 				}
+			}, (reason) => {
+				// User has clicked in the 'X' button, so we need to re-enable the Quick/Custom scan button here.
+				this.startScanClicked = false;
 			});
+		} else {
+			// Hardware modules is already retrieved, so let's continue with the Scan process
+			if (scanType === ScanType.QuickScan) {
+				this.checkPreScanInfo(scanType);
+			} else if (scanType === ScanType.CustomScan) {
+				this.onCustomizeScan();
+			}
 		}
 	}
 
 	public checkPreScanInfo(scanType: number) {
-		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 		this.hardwareScanService.cleanResponses();
-
 		this.currentScanType = scanType;
 
 		let requests;

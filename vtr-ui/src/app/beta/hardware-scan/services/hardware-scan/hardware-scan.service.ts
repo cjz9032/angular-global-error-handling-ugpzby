@@ -55,6 +55,7 @@ export class HardwareScanService {
 	private refreshingModules: boolean = false;
 	private showComponentList: boolean = false;
 	private previousResultsResponse: any = undefined;
+	private hardwareModulesLoaded = new Subject<boolean>();
 
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
@@ -84,6 +85,7 @@ export class HardwareScanService {
 	}
 
 	public reloadItemsToScan(refreshing: boolean) {
+		this.hardwareModulesLoaded.next(false);
 		this.itemsToScanResponse = this.getItemsToScan(this.ALL_MODULES, this.culture);
 		this.refreshingModules = refreshing;
 		this.showComponentList = refreshing;
@@ -670,6 +672,9 @@ export class HardwareScanService {
 					console.log('this.quickScanResponse: ', this.quickScanResponse);
 
 					this.refreshingModules = false;
+
+					// Signalizes that the hardware list has been retrieved
+					this.hardwareModulesLoaded.next(true);
 				});
 		}
 	}
@@ -1222,5 +1227,12 @@ export class HardwareScanService {
 
 	public isShowComponentList() {
 		return this.showComponentList;
+	}
+
+	/**
+	 * This can be observed to know when the hardware component list is retrived
+	 */
+	public isHardwareModulesLoaded(): Observable<boolean> {
+		return this.hardwareModulesLoaded.pipe(first())
 	}
 }
