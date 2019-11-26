@@ -49,4 +49,12 @@ export class BatteryDetailService {
 			});
 		}
 	}
+
+	checkIsGaugeResetRunning() {
+		if (this.gaugeResetInfo) {
+			return (this.gaugeResetInfo.length > 0 && this.gaugeResetInfo[0].isResetRunning) || (this.gaugeResetInfo.length > 1 && this.gaugeResetInfo[1].isResetRunning);
+		} else {
+			return false;
+		}
+	}
 }
