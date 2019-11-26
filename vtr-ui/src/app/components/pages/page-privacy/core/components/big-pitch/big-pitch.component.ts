@@ -18,7 +18,13 @@ export class BigPitchComponent {
 	@Input() articleId: number;
 	@Input() isLanding = false;
 	@Input() isTrackerPitch = false;
+	@Input() isFigleafInExit = false;
 	@Output() clickMore = new EventEmitter();
+
+	isFigleafInExitTexts = {
+		title: 'Can’t sync your information',
+		text: 'To see the most recent information about breaches and tracking tools, launch Lenovo Privacy Essentials by FigLeaf.'
+	};
 
 	appStatusesEnum = AppStatuses;
 }

@@ -1,7 +1,7 @@
 <div class="pitch" *ngIf="!isShowExpiredPitch">
 	<div class="pitch__description">
-		<p class="pitch__title">{{texts.title}}</p>
-		<p class="pitch__text">{{texts.text}}</p>
+		<p class="pitch__title">{{isFigleafInExit ? isFigleafInExitTexts.title : texts.title}}</p>
+		<p class="pitch__text">{{isFigleafInExit ? isFigleafInExitTexts.text : texts.text}}</p>
 		<div class="pitch__group-button">
 			<button class="pitch__button"
 					vtrOpenFigleafInstaller
@@ -27,14 +27,19 @@
 	</div>
 	<div class="pitch__image-wrapper">
 		<img class="pitch__image"
-			 *ngIf="!isTrackerPitch"
+			 *ngIf="!isTrackerPitch && !isFigleafInExit"
 			 src="assets/images/privacy-tab/pitch-block/Img_pitch_artic.png"
 			 srcset="assets/images/privacy-tab/pitch-block/Img_pitch_artic@2x.png 2x"
 			 alt="Try FigLeaf">
 		<img class="pitch__image"
-			 *ngIf="isTrackerPitch"
+			 *ngIf="isTrackerPitch && !isFigleafInExit"
 			 src="assets/images/privacy-tab/pitch-block/block-tracking.png"
 			 srcset="assets/images/privacy-tab/pitch-block/block-tracking@2x.png 2x"
+			 alt="Try FigLeaf">
+		<img class="pitch__image"
+			 *ngIf="isFigleafInExit"
+			 src="assets/images/privacy-tab/main-exit-logo-mini.png"
+			 srcset="assets/images/privacy-tab/main-exit-logo-mini@2x.png 2x"
 			 alt="Try FigLeaf">
 	</div>
 </div>
