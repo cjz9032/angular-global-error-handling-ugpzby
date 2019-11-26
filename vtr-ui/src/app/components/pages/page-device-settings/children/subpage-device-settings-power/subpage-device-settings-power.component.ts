@@ -97,6 +97,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 	public isPowerDriverMissing = false;
+	public isEMDriverMissing = false;
 
 	gaugeResetInfo: BatteryGaugeReset[];
 	gaugeResetInfoCache: GaugeResetInfoCache = undefined;
@@ -1102,6 +1103,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
 					}
 					break;
+				case 'IsEMDriverMissing':
+					this.checkEMDriverMissing(notification.payload);
 				// case 'BatteryInfoForGaugeReset':
 				// 	if (notification.payload) {
 				// 		this.remainingPercentages = notification.payload.remainingPercentages;
@@ -1118,6 +1121,19 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (!status) {
 			this.headerMenuItems = this.tempHeaderMenuItems;
 		}
+		this.updatePowerPageSettings();
+	}
+
+	public checkEMDriverMissing(status) {
+		this.isEMDriverMissing = status;
+		if (!status) {
+			this.headerMenuItems = this.tempHeaderMenuItems;
+		}
+		this.updatePowerPageSettings();
+	}
+
+	// the common funciton can be used to update the power page feature's status when the PM and EM driver is installed or uninstalled.
+	public updatePowerPageSettings() {
 		this.getBatteryAndPowerSettings(this.machineType);
 		this.getFlipToBootCapability();
 		this.getVantageToolBarCapability();

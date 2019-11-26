@@ -38,6 +38,8 @@ export class BatteryConditionModel {
 				return 'device.deviceSettings.batteryGauge.condition.PermanentError';
 			case BatteryConditionsEnum.UnsupportedBattery:
 				return 'device.deviceSettings.batteryGauge.condition.Illegal';
+			case BatteryConditionsEnum.EMDriverMissing:
+				return 'device.deviceSettings.batteryGauge.condition.EMDriverMissing';
 		}
 	}
 }

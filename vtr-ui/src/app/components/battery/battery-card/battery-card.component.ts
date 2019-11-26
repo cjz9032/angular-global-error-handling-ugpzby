@@ -241,8 +241,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
 
-		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
+		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing || this.batteryGauge.isEMDriverMissing;
 		this.commonService.sendNotification('IsPowerDriverMissing', this.isBatteryDetailsBtnDisabled);
+		this.commonService.sendNotification('IsEMDriverMissing', this.isBatteryDetailsBtnDisabled);
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
@@ -314,6 +315,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor));
 		}
 
+		if (this.batteryGauge.isEMDriverMissing) {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.EMDriverMissing, BatteryStatus.Poor));
+		}
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 
 			healthCondition = this.batteryHealth;

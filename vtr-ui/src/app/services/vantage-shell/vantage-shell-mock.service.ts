@@ -1015,6 +1015,7 @@ export class VantageShellService {
 				isAttached: false,
 				isExpressCharging: false,
 				isPowerDriverMissing: false,
+				isEMDriverMissing: false,
 				percentage: 61,
 				time: 111,
 				timeType: 'timeRemaining'

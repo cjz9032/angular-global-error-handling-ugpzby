@@ -911,7 +911,8 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
+					"EMDriverMissing": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller driver</b>."
 				}
 			},
 			"power": {
