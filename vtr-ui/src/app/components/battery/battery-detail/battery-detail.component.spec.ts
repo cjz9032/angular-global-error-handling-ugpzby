@@ -73,7 +73,7 @@ describe('BatteryDetailComponent', () => {
 
 	const dataConditionsBad: BatteryConditionModel[] = [{
 		condition: BatteryConditionsEnum.Bad,
-		conditionStatus: 1,
+		conditionStatus: 2,
 		getBatteryConditionTip(condition: number): string {
 			return 'device.deviceSettings.batteryGauge.condition.Bad';
 		}
@@ -265,8 +265,8 @@ describe('BatteryDetailComponent', () => {
 
 	it('#onNotification should call preProcessBatteryDetailResponse with battery conditon bad ', () => {
 		spyOn(component, 'preProcessBatteryDetailResponse');
-		// component.dataConditions = dataConditionsBad;
-		// notification.payload.dataConditions = dataConditionsBad;
+		component.dataConditions = dataConditionsBad;
+		notification.payload.dataConditions = dataConditionsBad;
 		component.onNotification(notificationBad);
 		expect(component.preProcessBatteryDetailResponse).toHaveBeenCalledWith(notificationBad.payload);
 	});
