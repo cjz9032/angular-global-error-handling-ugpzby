@@ -545,7 +545,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					}
 					// lenovo voice  capability check
 					try {
-						// assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+						assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
 					} catch (error) {
 						this.logger.exception('showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 					}
