@@ -1,4 +1,3 @@
-import { SupportService } from './../../../services/support/support.service';
 import { Component, OnInit, DoCheck, OnDestroy, SecurityContext, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +23,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -106,7 +106,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		private dialogService: DialogService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		public supportService: SupportService,
+		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
 		private sanitizer: DomSanitizer
 	) {
@@ -131,14 +131,6 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 
 		this.isOnline = this.commonService.isOnline;
 		this.isWarrantyVisible = deviceService.showWarranty;
-		// this.warrantyData = this.supportService.warrantyData;
-		const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus, undefined);
-		if (cacheWarranty) {
-			this.warrantyData = {
-				info: cacheWarranty,
-				cache: true
-			};
-		}
 	}
 
 	ngOnInit() {
@@ -178,11 +170,11 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	ngDoCheck(): void {
 		const lastAction = this.protocolAction;
 		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		if (lastAction !== this.protocolAction) {
+		if (this.protocolAction && (lastAction !== this.protocolAction)) {
 			if (this.protocolAction.toLowerCase() === 'lenovoid') {
-				this.dialogService.openLenovoIdDialog();
+				setTimeout(() => this.dialogService.openLenovoIdDialog());
 			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
-				this.dialogService.openModernPreloadModal();
+				setTimeout(() => this.dialogService.openModernPreloadModal());
 			}
 		}
 	}
@@ -200,17 +192,19 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 
 	private getWelcomeText() {
 		if (!this.dashboardService.welcomeText) {
+			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
 			let textIndex = 1;
 			const welcomeTextLength = 15;
-			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(
-				LocalStorageKey.DashboardLastWelcomeText
-			);
-			if (dashboardLastWelcomeText) {
-				const lastIndex = parseInt(dashboardLastWelcomeText.replace('lenovoId.welcomeText', ''), 10);
-				if (lastIndex === welcomeTextLength) {
-					textIndex = 1;
+			if (dashboardLastWelcomeText && dashboardLastWelcomeText.welcomeText) {
+				const lastIndex = this.getWelcomeTextIndex(dashboardLastWelcomeText.welcomeText);
+				if (!dashboardLastWelcomeText.isOnline && this.commonService.isOnline) {
+					textIndex = lastIndex;
 				} else {
-					textIndex = lastIndex + 1;
+					if (lastIndex === welcomeTextLength) {
+						textIndex = 1;
+					} else {
+						textIndex = lastIndex + 1;
+					}
 				}
 			} else {
 				textIndex = Math.floor(Math.random() * 15 + 1);
@@ -220,8 +214,18 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			}
 			this.dashboardService.welcomeText = `lenovoId.welcomeText${textIndex}`;
 			this.dashboardService.welcomeTextWithoutUserName = `lenovoId.welcomeTextWithoutUserName${textIndex}`;
-			this.commonService.setLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText, this.dashboardService.welcomeText);
+			this.commonService.setLocalStorageValue(
+				LocalStorageKey.DashboardLastWelcomeText,
+				{
+					welcomeText: this.dashboardService.welcomeText,
+					isOnline: this.commonService.isOnline
+				}
+			);
 		}
+	}
+
+	private getWelcomeTextIndex(key: string) {
+		return parseInt(key.replace('lenovoId.welcomeText', ''), 10);
 	}
 
 	private fetchContent(lang?: string) {
@@ -789,31 +793,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		});
 
 		// warranty
-		this.dashboardService.getWarrantyInfo().subscribe((value) => {
-			if (value) {
-				const warranty = this.systemStatus[2];
-				const warrantyDate = this.commonService.formatDate(value.endDate);
-				// in warranty
-				if (value.status === 0) {
-					this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
-						warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
-					});
-					warranty.status = 0;
-				} else if (value.status === 1) {
-					this.translate.stream('dashboard.systemStatus.warranty.detail.expiredOn').subscribe((re) => {
-						warranty.detail = `${re} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
-					});
-					warranty.status = 1;
-				} else {
-					this.translate.stream('dashboard.systemStatus.warranty.detail.notAvailable').subscribe((re) => {
-						warranty.detail = `${re}`; //  'Warranty not available';
-					});
-					warranty.status = 1;
-				}
-				warranty.isHidden = !this.deviceService.showWarranty;
-				this.isWarrantyVisible = this.deviceService.showWarranty;
-			}
-		});
+		this.getWarrantyInfo();
 
 		// system update
 		if (
@@ -840,6 +820,47 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		}
 	}
 
+	getWarrantyInfo() {
+		this.warrantyService.getWarrantyInfo().subscribe((value) => {
+			if (value) {
+				this.setWarrantyInfo(value);
+			}
+		});
+	}
+
+	setWarrantyInfo(value: any) {
+		this.warrantyData = {
+			info: {
+				startDate: value.startDate,
+				endDate: value.endDate,
+				status: value.status,
+				url: this.warrantyService.getWarrantyUrl()
+			},
+			cache: true
+		};
+		const warranty = this.systemStatus[2];
+		const warrantyDate = this.commonService.formatDate(value.endDate);
+		// in warranty
+		if (value.status === 0) {
+			this.translate.stream('dashboard.systemStatus.warranty.detail.until').subscribe((re) => {
+				warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
+			});
+			warranty.status = 0;
+		} else if (value.status === 1) {
+			this.translate.stream('dashboard.systemStatus.warranty.detail.expiredOn').subscribe((re) => {
+				warranty.detail = `${re} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
+			});
+			warranty.status = 1;
+		} else {
+			this.translate.stream('dashboard.systemStatus.warranty.detail.notAvailable').subscribe((re) => {
+				warranty.detail = `${re}`; //  'Warranty not available';
+			});
+			warranty.status = 1;
+		}
+		warranty.isHidden = !this.deviceService.showWarranty;
+		this.isWarrantyVisible = this.deviceService.showWarranty;
+	}
+
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
@@ -851,19 +872,12 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					} else {
 						this.fetchContent();
 						this.fetchUPEContent();
+						this.getWarrantyInfo();
 					}
 					break;
 				case LocalStorageKey.LastWarrantyStatus:
 					if (notification.payload) {
-						this.warrantyData = {
-							info: {
-								startDate: notification.payload.startDate,
-								endDate: notification.payload.endDate,
-								status: notification.payload.status,
-								url: this.supportService.getWarrantyUrl(this.supportService.sn)
-							},
-							cache: true
-						};
+						this.setWarrantyInfo(notification.payload);
 					}
 					break;
 				default:

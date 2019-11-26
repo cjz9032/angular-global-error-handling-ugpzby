@@ -102,6 +102,7 @@ export class SelfSelectService {
 			this.savedSegment = this.usageType;
 			this.saveConfig();
 		}
+		return {usageType: this.usageType, interests: this.interests};
 	}
 
 	public saveConfig(reloadRequired?) {

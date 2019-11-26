@@ -140,6 +140,14 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
+	/**
+	 * Removes the key/value pair with the given key
+	 * @param key key use to removes the key/value pair in local storage
+	 */
+	public removeLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey) {
+		window.localStorage.removeItem(key);
+	}
+
 	public sendNotification(action: string, payload?: any) {
 		this.notificationSubject.next(new AppNotification(action, payload));
 	}

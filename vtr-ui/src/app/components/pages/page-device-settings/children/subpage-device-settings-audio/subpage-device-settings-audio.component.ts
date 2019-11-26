@@ -77,7 +77,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getMicrophoneSettings();
 		this.getDolbyFeatureStatus();
 		this.getDolbyModesStatus();
-		this.getSupportedModes();
+		// this.getSupportedModes();
 		this.startMonitor();
 		this.startMonitorForDolby();
 	}
@@ -168,6 +168,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
+						this.getSupportedModes();
 						this.microphoneProperties = microphone;
 						const status = new FeatureStatus(microphone.available, microphone.muteDisabled, microphone.permission);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);

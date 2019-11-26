@@ -1,7 +1,7 @@
 <div ngbDropdown
 	#warrantyDrop="ngbDropdown"
 	class="d-inline-block dropdown-content"
-	*ngIf="warrantyData.info.status === 0 || warrantyData.info.status === 1">
+	*ngIf="warrantyData && warrantyData.info && (warrantyData.info.status === 0 || warrantyData.info.status === 1)">
 	<div class="dropdown-btn"
 		id="header-warranty-icon"
 		tabindex="1"

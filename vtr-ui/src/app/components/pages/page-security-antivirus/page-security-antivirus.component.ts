@@ -69,6 +69,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		if (!this.securityAdvisor) {
 			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
 		}
+		this.securityAdvisor.antivirus.refresh();
 		this.antiVirus = this.securityAdvisor.antivirus;
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;

@@ -217,44 +217,6 @@ export class DashboardService {
 		}
 	}
 
-	public getWarrantyInfo(): Observable<any> {
-		try {
-			if (this.sysinfo && this.warranty) {
-				return new Observable((observer) => {
-					// from local storage
-					const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
-					if (cacheWarranty) {
-						observer.next(cacheWarranty);
-					}
-					// first launch will not have data, below code will break
-					const result = { endDate: null, status: 2, startDate: null };
-					this.deviceService.getMachineInfo().then((data) =>
-						this.warranty.getWarrantyInformation(data.serialnumber).then(
-							(warrantyRep) => {
-								if (warrantyRep && warrantyRep.status !== 2) {
-									result.endDate = new Date(warrantyRep.endDate);
-									result.status = warrantyRep.status;
-									result.startDate = new Date(warrantyRep.startDate);
-								}
-								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
-								observer.next(result);
-								observer.complete();
-							},
-							() => {
-								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
-								observer.next(result);
-								observer.complete();
-							}
-						)
-					);
-				});
-			}
-			return undefined;
-		} catch (error) {
-			throw Error(error.message);
-		}
-	}
-
 	setDefaultCMSContent() {
 		if (!this.translateString) {
 			return;

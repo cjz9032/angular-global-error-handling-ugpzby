@@ -225,6 +225,9 @@ export class DialogService {
 	}
 
 	openLenovoIdDialog(appFeature = null) {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
 		if (segment && segment !== SegmentConst.Commercial) {
 			if (!navigator.onLine) {
