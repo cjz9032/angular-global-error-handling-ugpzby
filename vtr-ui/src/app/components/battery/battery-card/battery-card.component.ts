@@ -95,6 +95,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				timetype = 'timeRemaining';
 			}
 		}
+		// battery not detected
+		if (maininfo.status === 0) {
+			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryQuality.Poor);
+			maininfo.percentage = 0;
+			this.batteryIndicator.percent = 0;
+		}
 		this.batteryIndicator.convertMin(time);
 		this.batteryIndicator.timeText = timetype;
 
