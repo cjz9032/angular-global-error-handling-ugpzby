@@ -66,4 +66,17 @@ fdescribe('DisplayService', () => {
 		expect(available).toBeTruthy();
 		// expect(displayService.loading).toBe(0);
 	});
+
+	it('should get Camera Privacy mode state', async () => {
+		const privacyMode = mockShellService.getCameraPrivacy();
+		let status = false;
+		let available = false;
+		await privacyMode.getCameraPrivacyStatus().then((item: any) => {
+			status = item.status;
+			available = item.available;
+		});
+		expect(status).toBeTruthy();
+		expect(available).toBeTruthy();
+
+	})
 });
