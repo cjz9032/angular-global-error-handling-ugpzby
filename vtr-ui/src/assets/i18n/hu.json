@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Egyéni ellenőrzésnél nem használható",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processzor",
+            "memory": "Memória",
+            "motherboard": "Alaplap",
+            "pci_express": "PCI Express",
+            "storage": "Tárolás",
+            "wireless": "Vezeték nélküli"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

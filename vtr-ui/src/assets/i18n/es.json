@@ -2716,7 +2716,15 @@
         "testNotApplicable": "No se aplica a personalizar exploración",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesador",
+            "memory": "Memoria",
+            "motherboard": "Placa madre",
+            "pci_express": "PCI Express",
+            "storage": "Almacenamiento",
+            "wireless": "Inalámbrica"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

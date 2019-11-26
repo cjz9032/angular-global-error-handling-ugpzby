@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Ei sovellu mukautettu tarkistus",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Suoritin",
+            "memory": "Muisti",
+            "motherboard": "Emolevy",
+            "pci_express": "PCI Express",
+            "storage": "Tallennus",
+            "wireless": "Langattomat yhteydet"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2716,7 +2716,15 @@
         "testNotApplicable": "При настраиваемом сканировании неприменимо",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Процессор",
+            "memory": "Оперативная память",
+            "motherboard": "Материнская плата",
+            "pci_express": "PCI Express",
+            "storage": "Хранение",
+            "wireless": "Беспроводная связь"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

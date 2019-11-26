@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Nicht zutreffend bei benutzerdefinierter scan",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Prozessor",
+            "memory": "Arbeitsspeicher",
+            "motherboard": "Steuerplatine",
+            "pci_express": "PCI Express",
+            "storage": "Speicher",
+            "wireless": "Drahtlos"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

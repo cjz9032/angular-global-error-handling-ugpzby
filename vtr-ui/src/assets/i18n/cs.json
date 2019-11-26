@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Nepoužitelné u vlastních kontrol",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Paměť",
+            "motherboard": "Základní deska",
+            "pci_express": "PCI Express",
+            "storage": "Úložiště",
+            "wireless": "Bezdrátové"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Memorija",
+            "motherboard": "Matična ploča",
+            "pci_express": "PCI Express",
+            "storage": "Skladištenje",
+            "wireless": "Bežični"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

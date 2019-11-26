@@ -2718,7 +2718,15 @@
         "testNotApplicable": "لا ينطبق على الفحص المخصص",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "المعالج",
+            "memory": "الذاكرة",
+            "motherboard": "اللوحة الأم",
+            "pci_express": "PCI Express",
+            "storage": "السعة التخزينية",
+            "wireless": "اللاسلكية"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Hukommelse",
+            "motherboard": "Systemkort",
+            "pci_express": "PCI Express",
+            "storage": "Lager",
+            "wireless": "Trådløs"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

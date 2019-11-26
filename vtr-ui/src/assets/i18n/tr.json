@@ -2716,7 +2716,15 @@
         "testNotApplicable": "Özel tarama için geçerli değildir",
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "İşlemci",
+            "memory": "Bellek",
+            "motherboard": "Ana kart",
+            "pci_express": "PCI Express",
+            "storage": "Depolama alanı",
+            "wireless": "Kablosuz"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

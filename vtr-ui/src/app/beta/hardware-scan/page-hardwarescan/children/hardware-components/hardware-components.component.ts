@@ -99,7 +99,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.culture = window.navigator.languages[0];
+		this.culture = this.hardwareScanService.getCulture();
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -284,6 +284,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public refreshModules() {
 		this.hardwareScanService.setLoadingStatus(false);
+		this.hardwareScanService.reloadItemsToScan();
 		this.hardwareScanService.initLoadingModules(this.culture);
 	}
 
