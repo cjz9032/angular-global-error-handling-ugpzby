@@ -1,0 +1,70 @@
+@import "../../../styles/common-blocks";
+
+.exit-widget {
+	@extend %common-block-wrapper;
+	margin: $topIndent 0 10.6rem 0;
+	letter-spacing: 0;
+	padding: 2.6rem 2rem;
+	background: linear-gradient(270deg, #2D344B 0%, #667481 100%);
+	color: #FFFFFF;
+
+	&__inner {
+		text-align: center;
+		font-size: 1.6rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	&__main-image {
+		max-width: 8rem;
+	}
+
+	&__text-block {
+		text-align: left;
+		margin-left: 2rem;
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		font-weight: bold;
+		line-height: 20px;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		@extend %text-common;
+		color: inherit;
+	}
+
+
+	&__button-link {
+		margin-top: 2.5rem;
+		cursor: pointer;
+
+		a {
+			@extend %button-link;
+			@extend %button-link--to-right;
+			@extend %button-link--to-right-white;
+			padding-right: 0;
+			position: relative;
+			border-bottom: 1px solid;
+			color: #FFFFFF;
+			cursor: pointer;
+
+			&:before {
+				right: -25px;
+			}
+		}
+
+		&.offline-active {
+			a {
+				color: #D8D8D8;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+}

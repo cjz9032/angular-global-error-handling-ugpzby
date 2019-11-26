@@ -18,7 +18,7 @@ export class ChangeActionButtonTextPipe implements PipeTransform {
 		]).pipe(
 			map(([isFigleafNotOnboarded, isFigleafInExit]) => {
 				let newValue = !isFigleafNotOnboarded ? value : this.changeText(value, 'open', 'install');
-				newValue = !isFigleafInExit ? newValue : this.changeText(value, 'launch app', 'install now');
+				newValue = !isFigleafInExit ? newValue : this.changeText(value, 'launch', 'install');
 
 				return newValue;
 			})

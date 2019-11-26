@@ -1,5 +1,6 @@
 <aside class="sidebar">
-	<vtr-offline-widget></vtr-offline-widget>
+	<vtr-offline-widget [style.display]="(isOnline$ | async) ? 'none' : 'block'"></vtr-offline-widget>
+	<vtr-exit-widget *ngIf="isFigleafInExit$ | async"></vtr-exit-widget>
 	<vtr-sidebar-install-widget></vtr-sidebar-install-widget>
 	<vtr-trial-expired-widget></vtr-trial-expired-widget>
 	<vtr-video-widget [margin]="'top'"></vtr-video-widget>
