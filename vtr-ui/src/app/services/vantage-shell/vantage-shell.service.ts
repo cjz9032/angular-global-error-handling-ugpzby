@@ -68,7 +68,7 @@ export class VantageShellService {
 		}
 	}
 
-	public getSelfSelect(){
+	public getSelfSelect() {
 		if (this.phoenix) {
 			return this.phoenix.selfSelect;
 		}
