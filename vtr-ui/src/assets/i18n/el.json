@@ -2714,11 +2714,9 @@
         "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
         "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
         "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση",
-<<<<<<< HEAD
         "waitScanStarts": "Wait until the scan starts",
         "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information..."
-=======
+        "retrievingHardwareInformation": "Retrieving hardware information...",
         "pluginTokens": {
             "cpu": "Επεξεργαστής",
             "memory": "Μνήμη",
@@ -2727,7 +2725,6 @@
             "storage": "Χώρος αποθήκευσης",
             "wireless": "Ασύρματο"
         }
->>>>>>> HWScan_VAN-11451_Hardware-Scan-Performance-improvement
     },
     "smartPerformance": {
         "title": "Health & Support",
