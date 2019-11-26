@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
-        "testNotApplicable": "Kan inte användas på anpassad sökning"
+        "testNotApplicable": "Kan inte användas på anpassad sökning",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

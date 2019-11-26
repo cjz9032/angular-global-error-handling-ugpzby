@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Действительно отменить?",
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
-        "testNotApplicable": "При настраиваемом сканировании неприменимо"
+        "testNotApplicable": "При настраиваемом сканировании неприменимо",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
         "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
-        "testNotApplicable": "不适用于定制扫描"
+        "testNotApplicable": "不适用于定制扫描",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

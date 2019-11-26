@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Biztosan megszakítja a műveletet?",
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
         "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
-        "testNotApplicable": "Egyéni ellenőrzésnél nem használható"
+        "testNotApplicable": "Egyéni ellenőrzésnél nem használható",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

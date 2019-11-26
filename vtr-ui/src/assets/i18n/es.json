@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
-        "testNotApplicable": "No se aplica a personalizar exploración"
+        "testNotApplicable": "No se aplica a personalizar exploración",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

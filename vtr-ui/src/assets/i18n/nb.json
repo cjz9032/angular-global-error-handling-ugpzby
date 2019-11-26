@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
         "cancelTextProgress": "Vent mens avbrytingen pågår",
         "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
-        "testNotApplicable": "Ikke aktuelt for egendefinert skanning"
+        "testNotApplicable": "Ikke aktuelt for egendefinert skanning",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

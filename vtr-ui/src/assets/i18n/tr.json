@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
-        "testNotApplicable": "Özel tarama için geçerli değildir"
+        "testNotApplicable": "Özel tarama için geçerli değildir",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

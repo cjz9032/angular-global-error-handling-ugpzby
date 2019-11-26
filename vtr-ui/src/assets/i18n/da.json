@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
-        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning"
+        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

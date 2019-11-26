@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "정말 취소하시겠습니까?",
         "cancelTextProgress": "취소 진행을 기다리십시오",
         "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
-        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음"
+        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

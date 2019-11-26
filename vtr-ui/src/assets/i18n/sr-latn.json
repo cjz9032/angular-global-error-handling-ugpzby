@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
         "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga.",
-        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje"
+        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

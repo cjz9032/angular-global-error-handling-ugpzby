@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Haluatko varmasti peruuttaa?",
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
         "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
-        "testNotApplicable": "Ei sovellu mukautettu tarkistus"
+        "testNotApplicable": "Ei sovellu mukautettu tarkistus",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",

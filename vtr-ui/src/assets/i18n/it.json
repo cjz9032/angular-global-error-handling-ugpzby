@@ -2713,7 +2713,10 @@
         "cancelTextPrompt": "Annullare l'operazione?",
         "cancelTextProgress": "Attendere l'annullamento dell'operazione",
         "pluginNotUpdate": "La scansione hardware non è disponibile perché è obsoleta. Eseguire l'aggiornamento.",
-        "testNotApplicable": "Non applicabile alla scansione personalizzata"
+        "testNotApplicable": "Non applicabile alla scansione personalizzata",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information..."
     },
     "smartPerformance": {
         "title": "Health & Support",
