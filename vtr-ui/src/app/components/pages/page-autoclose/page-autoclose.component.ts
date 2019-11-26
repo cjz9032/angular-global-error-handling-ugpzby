@@ -166,6 +166,8 @@ export class PageAutocloseComponent implements OnInit {
 					if (success) {
 						this.refreshAutoCloseList();
 						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+					} else {
+						this.loggerService.error('Got failure from JS Bridge while adding apps to AutoClose', addApp);
 					}
 				});
 			} catch (error) {}

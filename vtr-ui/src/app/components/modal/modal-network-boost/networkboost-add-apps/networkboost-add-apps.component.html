@@ -53,13 +53,13 @@
 											{{item.processDescription}}</div>
 										<div class="btn-add-app mx-auto">
 											<button value="{{item.processPath}}"
-												[disabled]="addedApps>=5 && !isChecked[i]"
-												 [ngClass]="{'checked': isChecked[i],'disabled':addedApps>=5 && !item.isChecked}"
-												[ngClass]="{'checked': isChecked[i]}" (click)="onValueChange($event,i)"
+												[disabled]="addedApps>=5 && !item.isChecked"
+												 [ngClass]="{'checked': item.isChecked,'disabled':addedApps>=5 && !item.isChecked}"
+												[ngClass]="{'checked': item.isChecked}" (click)="onValueChange($event,i, item)"
 												[id]="'addApps'+i" vtrMetrics [metricsItem]="item.processDescription"
 												metricsEvent="featureClick" tabindex="1"
 												(keydown)="runappKeyup($event,i)" role="checkbox"
-												[attr.aria-checked]="isChecked[i]"
+												[attr.aria-checked]="item.isChecked"
 												[attr.aria-label]="'Add '+item.processDescription">
 											</button>
 										</div>
