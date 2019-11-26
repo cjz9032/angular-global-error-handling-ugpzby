@@ -52,21 +52,41 @@ export class HardwareScanService {
 	private culture: any;
 	private itemsToScanResponse: any = undefined;
 	private ALL_MODULES = 2;
+	private refreshingModules: boolean = false;
+	private showComponentList: boolean = false;
+	private previousResultsResponse: any = undefined;
+
+	private iconByModule = {
+		'cpu': 'icon_hardware_processor.svg',
+		'memory': 'icon_hardware_memory.svg',
+		'motherboard': 'icon_hardware_motherboard.svg',
+		'pci_express': 'icon_hardware_pci-desktop.svg',
+		'wireless': 'icon_hardware_wireless.svg',
+		'storage': 'icon_hardware_hdd.svg'
+	};
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 		this.hardwareScanAvailable = this.isAvailable();
 
+		// Retrive the last Scan's results just once during
+		// the service initialization
+		if (this.previousResultsResponse == undefined) {
+			this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+		}
+
 		// Retrive the hardware component list just once during
 		// the service initialization
 		if (this.itemsToScanResponse == undefined) {
 			this.culture = window.navigator.languages[0];
-			this.reloadItemsToScan();
+			this.reloadItemsToScan(false);
 		}
 	}
 
-	public reloadItemsToScan() {
+	public reloadItemsToScan(refreshing: boolean) {
 		this.itemsToScanResponse = this.getItemsToScan(this.ALL_MODULES, this.culture);
+		this.refreshingModules = refreshing;
+		this.showComponentList = refreshing;
 	}
 
 	public getCulture() {
@@ -404,6 +424,12 @@ export class HardwareScanService {
 			this.scanExecution = true;
 			this.workDone.next(false);
 			this.clearLastResponse();
+
+			// As user has started either a Quick or Custom Scan, it means that the actual
+			// hardware component list is already been retrieved, so let's show it in the
+			// next times the Main page is shown.
+			this.showComponentList = true;
+
 			return this.hardwareScanBridge.getDoScan(payload, (response: any) => {
 				console.log('response', response);
 				// Keeping track of the latest response allows the right render when user
@@ -433,6 +459,9 @@ export class HardwareScanService {
 					}
 
 					this.workDone.next(true);
+
+					// Retrieve an updated version of Scan's last results
+					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
 				});
 		}
 		return undefined;
@@ -639,6 +668,8 @@ export class HardwareScanService {
 					this.quickScanResponse = this.filterQuickResponse(this.customScanResponse);
 					console.log('this.customScanResponse: ', this.customScanResponse);
 					console.log('this.quickScanResponse: ', this.quickScanResponse);
+
+					this.refreshingModules = false;
 				});
 		}
 	}
@@ -978,7 +1009,7 @@ export class HardwareScanService {
 	public getLastResults() {
 		console.log('[Start]: getPreviousResults() on service');
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getPreviousResults()
+			return this.previousResultsResponse
 				.then((response) => {
 					console.log(response);
 					this.buildPreviousResults(response);
@@ -1154,5 +1185,42 @@ export class HardwareScanService {
 	public cleanCustomTests() {
 		this.filteredCustomScanRequest = [];
 		this.filteredCustomScanResponse = [];
+	}
+
+	public getHardwareComponentIcon(moduleName: string) {
+		const iconsBasePath = '/assets/icons/hardware-scan/';
+
+		if (moduleName in this.iconByModule) {
+			return iconsBasePath + this.iconByModule[moduleName];
+		}
+
+		return undefined;
+	}
+
+	/**
+	 * This method is responsible for provide the default hardware component list
+	 * which will be displayed in the Hardware Scan's home page until the real
+	 * one is retrieved through either a Quick/Custom Scan or refreshing modules.
+	 */
+	public getInitialHardwareComponentList() {
+		const result = [];
+
+		for (const module in this.iconByModule) {
+			result.push({
+				name: this.translate.instant('hardwareScan.pluginTokens.' + module),
+				subname: '',
+				icon: this.getHardwareComponentIcon(module)
+			});
+		}
+
+		return result;
+	}
+
+	public isRefreshingModules() {
+		return this.refreshingModules;
+	}
+
+	public isShowComponentList() {
+		return this.showComponentList;
 	}
 }

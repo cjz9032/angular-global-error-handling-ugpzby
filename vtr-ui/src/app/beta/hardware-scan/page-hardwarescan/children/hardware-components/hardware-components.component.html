@@ -5,7 +5,7 @@
 				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="!isLoadingDone() || startScanClicked"
+				[disableQuickScan]="startScanClicked"
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
@@ -28,7 +28,7 @@
 					</a>
 
 					<a class="refresh-button" 
-						*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+						*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
 						vtrMetrics 
 						metricsEvent="FeatureClick" 
 						metricsParent="HardwareScan"
@@ -48,11 +48,11 @@
 		<div class="row">
 			<div class="col">
 				<div class="hardware-lists-container">
-					<vtr-ui-hardware-list *ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+					<vtr-ui-hardware-list *ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
 						[items]="getItemToDisplay()">
 					</vtr-ui-hardware-list>
 
-					<div class="loading-components" *ngIf="!isLoadingDone() && !isRecoverExecuting()">
+					<div class="loading-components" *ngIf="isRefreshingModules() && !isRecoverExecuting()">
 						<fa-icon placement="auto" spin="true" [icon]="['fal', 'circle-notch']" container="body">
 						</fa-icon>
 					</div>

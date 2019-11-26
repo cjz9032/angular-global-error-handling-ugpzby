@@ -194,13 +194,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public getComponentsTitle() {
 		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isRecoverExecuting()) {
-				return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
-			} else if (this.hardwareScanService.isLoadingDone()) {
-				return this.translate.instant('hardwareScan.hardwareComponents');
-			} else {
+			// Component List title when refreshing components
+			if (this.hardwareScanService.isRefreshingModules()) {
 				return this.translate.instant('hardwareScan.loadingComponents');
 			}
+
+			// Component List title when executing a RBS operation
+			if (this.hardwareScanService.isRecoverExecuting()) {
+				return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
+			}
+
+			// Component List title used for all other cases
+			return this.translate.instant('hardwareScan.hardwareComponents');
 		}
 	}
 
@@ -284,11 +289,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public refreshModules() {
 		this.hardwareScanService.setLoadingStatus(false);
-		this.hardwareScanService.reloadItemsToScan();
+		this.hardwareScanService.reloadItemsToScan(true);
 		this.hardwareScanService.initLoadingModules(this.culture);
 	}
 
 	getItemToDisplay() {
+		// Shows a default component list
+		if (!this.hardwareScanService.isShowComponentList()) {
+			return this.hardwareScanService.getInitialHardwareComponentList();
+		}
+
+		// Shows the real component list, retrieved after a Quick/Custom scan
 		const devices = [];
 		const modules = this.hardwareScanService.getModulesRetrieved();
 		if (modules !== undefined) {
@@ -300,7 +311,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					devices.push({
 						name: info,
 						subname: group.name,
-						status: HardwareScanTestResult.Pass,
+						icon: this.hardwareScanService.getHardwareComponentIcon(categoryInfo.id),
 					});
 				}
 			}
@@ -863,6 +874,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
 		}
-	}	
+	}
+	
+	public isRefreshingModules() {
+		return this.hardwareScanService.isRefreshingModules();
+	}
 
 }
