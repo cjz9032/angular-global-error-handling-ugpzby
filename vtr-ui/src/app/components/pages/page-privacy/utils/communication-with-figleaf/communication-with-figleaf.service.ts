@@ -18,6 +18,7 @@ import {
 	TaskActionWithTimeoutService,
 	TasksName
 } from '../../core/services/analytics/task-action-with-timeout.service';
+import { CommunicationSwitcherService } from './communication-switcher.service';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -46,7 +47,8 @@ export class CommunicationWithFigleafService {
 
 	constructor(
 		private ngZone: NgZone,
-		private taskActionWithTimeoutService: TaskActionWithTimeoutService
+		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
+		private communicationSwitcherService: CommunicationSwitcherService
 	) {
 		FigleafConnector.onConnect(() => {
 			// this.ngZone.run(() => this.isFigleafInstalled$.next(true));
@@ -59,12 +61,11 @@ export class CommunicationWithFigleafService {
 				).subscribe(() => {},
 					(err) => {
 						this.figleafState$.next(null);
+						this.communicationSwitcherService.startPulling();
 					}
 				);
 			});
 		});
-
-		this.receiveFigleafReadyForCommunicationState();
 
 		this.isFigleafNotOnboarded$.pipe(
 			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
@@ -73,8 +74,9 @@ export class CommunicationWithFigleafService {
 	}
 
 	private receiveFigleafReadyForCommunicationState() {
-		const figleafConnectSubscription = timer(0, 3000).pipe(
-			switchMap(() => this.sendTestMessage().pipe(catchError(() => EMPTY))),
+		const figleafConnectSubscription = timer(0, 6000).pipe(
+			switchMap(() => this.communicationSwitcherService.isPullingActive$.pipe(take(1))),
+			switchMap((res) => res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			this.figleafState$.next(figleafStatus.status);
@@ -91,9 +93,20 @@ export class CommunicationWithFigleafService {
 		this.subscription.forEach((subs) => subs.unsubscribe());
 	}
 
+	connect() {
+		this.receiveFigleafReadyForCommunicationState();
+	}
+
 	private sendTestMessage() {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
-			.pipe(switchMap(() => this.checkIfFigleafInstalled()));
+			.pipe(catchError((e) => {
+				if (e.message === 'App in exit state') {
+					this.communicationSwitcherService.stopPulling();
+					return this.checkIfFigleafInstalled();
+				}
+
+				return throwError(e);
+			}));
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {

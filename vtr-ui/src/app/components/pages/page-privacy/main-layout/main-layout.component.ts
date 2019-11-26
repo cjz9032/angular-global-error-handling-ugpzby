@@ -10,6 +10,7 @@ import { UpdateTriggersService } from '../core/services/update-triggers.service'
 import { TaskObserverService } from '../core/services/analytics/task-observer.service';
 import { WidgetDataService } from '../core/services/widget-data.service';
 import { AbTestsGenerateConfigService } from '../core/ab-tests/ab-tests-generate-config.service';
+import { CommunicationSwitcherService } from '../utils/communication-with-figleaf/communication-switcher.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -64,7 +65,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private updateTriggersService: UpdateTriggersService,
 		private taskObserverService: TaskObserverService,
 		private widgetDataService: WidgetDataService,
-		private abTestsGenerateConfigService: AbTestsGenerateConfigService
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
+		private communicationSwitcherService: CommunicationSwitcherService
 	) {
 	}
 
@@ -76,6 +78,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.taskObserverService.start();
 		this.widgetDataService.startWrite();
+		this.communicationSwitcherService.startPulling();
+		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),

@@ -1,4 +1,5 @@
 import { MockWindows } from '../moked-api';
+import { throwError } from 'rxjs';
 
 const Windows = window['Windows'] || MockWindows; // this is mocked data for browser
 
@@ -40,6 +41,9 @@ class FigleafConnector {
 
 		if (response && response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
 			return JSON.parse(response.message.result);
+		} else {
+			this.disconnect();
+			throw new Error('App in exit state');
 		}
 	}
 
