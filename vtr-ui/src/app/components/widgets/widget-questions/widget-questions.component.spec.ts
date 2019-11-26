@@ -1,20 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetQaComponent } from './widget-qa.component';
+
 import { SecurityQaService } from 'src/app/services/security/securityQa.service';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { QaService } from 'src/app/services/qa/qa.service';
+import { WidgetQuestionsComponent } from './widget-questions.component';
+import { WidgetQaComponent } from '../widget-qa/widget-qa.component';
 
-describe('WidgetQaComponent', () => {
-	let component: WidgetQaComponent;
-	let fixture: ComponentFixture<WidgetQaComponent>;
+describe('WidgetQuestionsComponent', () => {
+	let component: WidgetQuestionsComponent;
+	let fixture: ComponentFixture<WidgetQuestionsComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetQaComponent],
+			declarations: [WidgetQuestionsComponent],
 			imports: [HttpClientModule, TranslateModule.forRoot({
 				loader: {
 					provide: TranslateLoader,
@@ -32,7 +34,7 @@ describe('WidgetQaComponent', () => {
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(WidgetQaComponent);
+		fixture = TestBed.createComponent(WidgetQuestionsComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
