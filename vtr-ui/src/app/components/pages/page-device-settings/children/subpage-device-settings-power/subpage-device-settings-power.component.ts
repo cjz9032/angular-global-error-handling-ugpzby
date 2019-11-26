@@ -1053,7 +1053,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						}
 					}
 					notification = {
-						isOn: this.responseData[0].isCapable && this.responseData[0].isOn,
+						isOn: (this.responseData[0].isCapable && this.responseData[0].isOn) || (this.responseData.length > 1 && this.responseData[1].isCapable && this.responseData[1].isOn),
 						stopValue1: this.selectedStopAtChargeVal,
 						stopValue2: this.selectedStopAtChargeVal1
 					};

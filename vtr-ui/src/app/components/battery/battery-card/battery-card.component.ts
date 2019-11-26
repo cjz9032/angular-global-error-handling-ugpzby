@@ -45,8 +45,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private remainingPercentageEventRef: any;
 	private remainingTimeEventRef: any;
 	public isLoading = true;
-	public param1: any;
-	public param2: any;
+	public param: any;
 	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
@@ -158,9 +157,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (notification) {
 			if (notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
 				this.chargeThresholdInfo = notification.payload;
-				if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
-					this.param1 = { value: this.chargeThresholdInfo.stopValue1 };
-				}
 				this.sendThresholdWarning();
 			}
 			if (notification.type === 'AirplaneModeStatus') {
@@ -290,7 +286,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			if (isThinkPad && (this.batteryHealth === 1 || this.batteryHealth === 2)) {
 				healthCondition = BatteryConditionsEnum.StoreLimitation;
 				const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-				this.param2 = { value: parseFloat(percentLimit.toFixed(1)) };
+				this.param = { value: parseFloat(percentLimit.toFixed(1)) };
 			}
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
 				switch (condition.toLocaleLowerCase()) {

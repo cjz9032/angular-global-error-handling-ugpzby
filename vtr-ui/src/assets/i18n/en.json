@@ -650,7 +650,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
-				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
