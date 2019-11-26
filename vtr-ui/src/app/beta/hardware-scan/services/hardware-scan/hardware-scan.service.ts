@@ -54,6 +54,7 @@ export class HardwareScanService {
 	private ALL_MODULES = 2;
 	private refreshingModules: boolean = false;
 	private showComponentList: boolean = false;
+	private previousResultsResponse: any = undefined;
 
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
@@ -67,6 +68,12 @@ export class HardwareScanService {
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 		this.hardwareScanAvailable = this.isAvailable();
+
+		// Retrive the last Scan's results just once during
+		// the service initialization
+		if (this.previousResultsResponse == undefined) {
+			this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+		}
 
 		// Retrive the hardware component list just once during
 		// the service initialization
@@ -417,6 +424,12 @@ export class HardwareScanService {
 			this.scanExecution = true;
 			this.workDone.next(false);
 			this.clearLastResponse();
+
+			// As user has started either a Quick or Custom Scan, it means that the actual
+			// hardware component list is already been retrieved, so let's show it in the
+			// next times the Main page is shown.
+			this.showComponentList = true;
+
 			return this.hardwareScanBridge.getDoScan(payload, (response: any) => {
 				console.log('response', response);
 				// Keeping track of the latest response allows the right render when user
@@ -446,6 +459,9 @@ export class HardwareScanService {
 					}
 
 					this.workDone.next(true);
+
+					// Retrieve an updated version of Scan's last results
+					this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
 				});
 		}
 		return undefined;
@@ -993,7 +1009,7 @@ export class HardwareScanService {
 	public getLastResults() {
 		console.log('[Start]: getPreviousResults() on service');
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getPreviousResults()
+			return this.previousResultsResponse
 				.then((response) => {
 					console.log(response);
 					this.buildPreviousResults(response);

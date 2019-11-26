@@ -194,13 +194,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public getComponentsTitle() {
 		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isRecoverExecuting()) {
-				return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
-			} else if (this.hardwareScanService.isLoadingDone()) {
-				return this.translate.instant('hardwareScan.hardwareComponents');
-			} else {
+			// Component List title when refreshing components
+			if (this.hardwareScanService.isRefreshingModules()) {
 				return this.translate.instant('hardwareScan.loadingComponents');
 			}
+
+			// Component List title when executing a RBS operation
+			if (this.hardwareScanService.isRecoverExecuting()) {
+				return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
+			}
+
+			// Component List title used for all other cases
+			return this.translate.instant('hardwareScan.hardwareComponents');
 		}
 	}
 

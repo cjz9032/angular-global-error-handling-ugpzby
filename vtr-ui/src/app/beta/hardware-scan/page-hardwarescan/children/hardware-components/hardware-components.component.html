@@ -5,7 +5,7 @@
 				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="!isLoadingDone() || startScanClicked"
+				[disableQuickScan]="startScanClicked"
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
@@ -28,7 +28,7 @@
 					</a>
 
 					<a class="refresh-button" 
-						*ngIf="isLoadingDone() && !isScanExecuting() && !isRecoverExecuting()"
+						*ngIf="!isRefreshingModules() && !isScanExecuting() && !isRecoverExecuting()"
 						vtrMetrics 
 						metricsEvent="FeatureClick" 
 						metricsParent="HardwareScan"
