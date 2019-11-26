@@ -269,8 +269,20 @@
 						"codeCoverage": true,
 						"fileReplacements": [
 							{
+								"replace": "src/environments/environment.ts",
+								"with": "src/environments/environment.mock.ts"
+							},
+							{
+								"replace": "src/app/services/mock/mock.service.ts",
+								"with": "src/app/services/mock/mock.service.prod.ts"
+							},
+							{
 								"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
 								"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+							},
+							{
+								"replace": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector.ts",
+								"with": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector-mock.ts"
 							}
 						]
 					}
