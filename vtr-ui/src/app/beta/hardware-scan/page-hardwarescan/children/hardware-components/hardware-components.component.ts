@@ -513,7 +513,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		(<ModalWaitComponent>modal.componentInstance).modalTitle = this.translate.instant('hardwareScan.loadingComponents');
-		(<ModalWaitComponent>modal.componentInstance).modalDescription = 'Retrieving hardware information...';
+		(<ModalWaitComponent>modal.componentInstance).modalDescription = this.translate.instant('hardwareScan.retrievingHardwareInformation');
 		(<ModalWaitComponent>modal.componentInstance).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
 
 		return modal;
