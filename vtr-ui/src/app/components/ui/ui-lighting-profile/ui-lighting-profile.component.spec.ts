@@ -78,7 +78,7 @@ describe('UiLightingProfileComponent', () => {
 		expect(Object.keys(component.lightingCapabilities).length).toBeGreaterThanOrEqual(1);
 	}));
 
-	/* it('should set the lighting profile to default', fakeAsync(() => {
+	it('should set the lighting profile to default', fakeAsync(() => {
 		component.currentProfileId = 1;
 		fixture.detectChanges();
 		gamingLightingServiceMock.setLightingDefaultProfileById.and.returnValue(Promise.resolve(
@@ -104,7 +104,7 @@ describe('UiLightingProfileComponent', () => {
 		tick(10);
 		expect(component.profileBrightness).toEqual(3);
 		tick(10);
-	})); */
+	}));
 
 	it('should set the lighting profile', fakeAsync(() => {
 		component.currentProfileId = 1;
