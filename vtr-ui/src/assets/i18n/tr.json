@@ -17,7 +17,7 @@
                         "balText": "Normal CPU ve fan hızı",
                         "quietText": "Düşük CPU kullanımı Düşük fan hızı"
                     },
-                    "wifiSecurity": "Wifi Güvenliği",
+                    "wifiSecurity": "WiFi Güvenliği",
                     "dolby": "Dolby",
                     "rapidCharge": "Hızlı Şarj"
                 },
@@ -1660,7 +1660,7 @@
                 "back": "GERİ"
             },
             "container": {
-                "title": "Lenovo Wifi Güvenliği",
+                "title": "Lenovo WiFi Güvenliği",
                 "name": "WIFI GÜVENLİĞİ",
                 "enable": "ETKİN",
                 "disable": "DEVRE DIŞI",
@@ -1670,7 +1670,7 @@
                 "connect": "Son bağlantı",
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
-                "button": "Wifi güvenliğini etkinleştirin",
+                "button": "WiFi güvenliğini etkinleştirin",
                 "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
             },
             "threatlocator": {
@@ -1745,7 +1745,7 @@
                 "pass": "BAŞARILI OLDU",
                 "learnMoreAboutSecurityHealth": "Bu bileşenlerin her biri hakkında daha fazla bilgiyi <tag>burada</tag> bulabilirsiniz.",
                 "peaceOfMind": "Daha huzurlu olmak ister misiniz?",
-                "button": "Wifi güvenliğini etkinleştirin"
+                "button": "WiFi güvenliğini etkinleştirin"
             },
             "homeStatus": {
                 "protected": "Protected",

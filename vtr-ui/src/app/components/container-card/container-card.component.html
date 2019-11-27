@@ -31,15 +31,21 @@
 						target="_blank"
 						rel="noopener"
 						class="card-image"
-						[style.background-image]="'url(' + img + ')'">
+						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardCorner.clientWidth * ratio - 1">
 						<div class="inner-content" *ngIf="!isOfflineArm">
 							<div *ngIf="title"
 								class="title" id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}" [innerHTML]="title"></div>
+								attr.aria-label="{{containerCardId+'-title'}}"
+								#cornerTitle
+								[title]="cornerTitle.innerText"
+								[innerHTML]="title"></div>
 							<div *ngIf="caption"
 								class="caption"
 								id="{{containerCardId+'-caption'}}"
 								attr.aria-label="{{containerCardId+'-caption'}}"
+								#cornerCaption
+								[title]="cornerCaption.innerText"
 								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -77,7 +83,8 @@
 							target="_blank"
 							rel="noopener"
 							class="card-image"
-							[style.background-image]="'url(' + img + ')'">
+							[style.background-image]="'url(' + img + ')'"
+							[style.height.px]="containerCardAndroid.clientWidth * ratio * 2">
 						</a>
 						<div class="inner-content">
 							<div *ngIf="title"
@@ -149,16 +156,22 @@
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
 						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardCornerArticle.clientWidth * ratio"
 						id="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
+								#cornerArticleTitle
+								[title]="cornerArticleTitle.innerText"
 								[innerHtml]="title" id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
-								attr.aria-label="{{containerCardId+'-caption'}}"></div>
+								<div #cornerArticleCaption
+									[title]="cornerArticleCaption.innerText"
+									[innerHtml]="caption"
+									id="{{containerCardId+'-caption'}}"
+									attr.aria-label="{{containerCardId+'-caption'}}"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -176,11 +189,15 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
+								#cornerArticleTitle
+								[title]="cornerArticleTitle.innerText"
 								[innerHtml]="title" id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
+								<div #cornerArticleCaption
+									[title]="cornerArticleCaption.innerText"
+									[innerHtml]="caption" id="{{containerCardId+'-caption'}}"
 								attr.aria-label="{{containerCardId+'-caption'}}"></div>
 							</div>
 							<div *ngIf="logo || logoText"
@@ -221,9 +238,12 @@
 						rel="noopener"
 						class="card-image"
 						[class.default-cursor]="isOfflineArm"
-						[style.background-image]="'url(' + img + ')'">
+						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardHighlight.clientWidth * ratio">
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
+								#highlightTitle
+								[title]="highlightTitle.innerText"
 								class="title" id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"
 								[innerHtml]="title"></div>
@@ -267,6 +287,8 @@
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
 								class="title"
+								#articleTitle
+								[title]="articleTitle.innerText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
@@ -296,7 +318,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 image"
-					[style.background-image]="'url('+img+')'">
+					[style.background-image]="'url('+img+')'"
+					[style.height.px]="containerCardPartnerArticle.clientWidth * ratio">
 					<div *ngIf="logo || logoText"
 						class="logo">
 						<span class="logo-img">

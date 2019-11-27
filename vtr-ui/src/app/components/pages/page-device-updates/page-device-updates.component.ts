@@ -220,7 +220,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.onNotification(response);
 		});
 
-		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
+		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.updateInfo) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
@@ -309,7 +309,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private adjustSupportLinkByMachineInfo(machineInfo) {
 		if (machineInfo && machineInfo.serialnumber) {
-			this.supportLink = `https://support.lenovo.com/contactus?sn=${machineInfo.serialnumber}`;
+			this.supportLink = `https://support.lenovo.com/contactus?serialnumber=${machineInfo.serialnumber}`;
 		} else {
 			this.supportLink = 'https://support.lenovo.com/contactus';
 		}
@@ -714,9 +714,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 
 					break;
-				case UpdateProgress.InstallationStarted:
-					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
-					break;
 				case UpdateProgress.InstallingUpdate:
 					this.isUpdateCheckInProgress = false;
 					this.ngZone.run(() => {
@@ -772,7 +769,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
-					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					if (this.systemUpdateService && this.systemUpdateService.updateInfo) {
+						this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					}
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);

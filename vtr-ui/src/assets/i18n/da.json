@@ -1660,8 +1660,8 @@
                 "back": "TILBAGE"
             },
             "container": {
-                "title": "Lenovo Wi-Fi-sikkerhed",
-                "name": "WI-FI-SIKKERHED",
+                "title": "Lenovo WiFi-sikkerhed",
+                "name": "WIFI-SIKKERHED",
                 "enable": "AKTIVERET",
                 "disable": "DEAKTIVERET",
                 "less": "Færre oplysninger",
@@ -1670,8 +1670,8 @@
                 "connect": "Senest tilsluttet",
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
-                "button": "Aktivér Wi-Fi-sikkerhed",
-                "disableDecribe": "Lenovo Wi-Fi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "button": "Aktivér WiFi-sikkerhed",
+                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -1681,7 +1681,7 @@
             },
             "locationmodal": {
                 "title": "Aktivér placeringstjenester",
-                "describe1": "Hvis du vil bruge Lenovo Wi-Fi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
+                "describe1": "Hvis du vil bruge Lenovo WiFi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
                 "describe2": "Hvis du vil bruge Tilsluttet Home Security, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
                 "agree": "ACCEPTÉR",
                 "cancel": "ANNULLER"
@@ -1745,7 +1745,7 @@
                 "pass": "BESTÅET",
                 "learnMoreAboutSecurityHealth": "Få flere oplysninger om hver af disse komponenter <tag>her</tag>.",
                 "peaceOfMind": "Vil du have ro i sindet?",
-                "button": "Aktivér Wi-Fi-sikkerhed"
+                "button": "Aktivér WiFi-sikkerhed"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -1807,7 +1807,7 @@
             "allowsYou": "Med Dashlane kan du",
             "allowsYou1": "Logge på med det samme overalt og få problemfri søgning på internettet - Synkronisere på tværs af enheder, så du altid kan få adgang til vigtige konti",
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
-            "allowsYou3": "Forblive sikret på ikke-sikre Wi-Fi-netværk med indbygget VPN",
+            "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
             "poweredByDashLane": "Udarbejdet af Dashlane",
             "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"

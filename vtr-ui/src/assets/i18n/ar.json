@@ -17,7 +17,7 @@
                         "balText": "استخدام CPU عادي، سرعة مروحة عادية",
                         "quietText": "استخدام CPU أقل، سرعة مروحة أقل"
                     },
-                    "wifiSecurity": "‏أمان Wifi",
+                    "wifiSecurity": "‏أمان WiFi",
                     "dolby": "‏Dolby",
                     "rapidCharge": "الشحن السريع"
                 },
@@ -1670,7 +1670,7 @@
                 "connect": "الاتصال الأخير",
                 "showmore": "إظهار المزيد",
                 "showless": "إظهار أقل",
-                "button": "تمكين أمان شبكة Wifi",
+                "button": "تمكين أمان شبكة WiFi",
                 "disableDecribe": "ميزة أمان Lenovo WiFi هي عبارة عن خدمة برمجية متقدمة تستند إلى السحابة والتي تساعد جهازك في تمييز الشبكات اللاسلكية الآمنة عن الشبكات الضارة المحتملة."
             },
             "threatlocator": {
@@ -1745,7 +1745,7 @@
                 "pass": "نجاح",
                 "learnMoreAboutSecurityHealth": "اعرف المزيد حول كل واحد من هذه المكونات <tag>هنا</tag>.",
                 "peaceOfMind": "هل تريد المزيد من راحة البال؟",
-                "button": "تمكين أمان شبكة Wifi"
+                "button": "تمكين أمان شبكة WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

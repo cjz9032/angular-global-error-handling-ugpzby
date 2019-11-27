@@ -17,7 +17,7 @@
                         "balText": "Normální CPU a otáčky ventilátoru",
                         "quietText": "Nižší zátěž CPU a otáčky ventilátoru"
                     },
-                    "wifiSecurity": "Zabezpečení Wi-Fi",
+                    "wifiSecurity": "Zabezpečení WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Rych-lé nabíjení"
                 },
@@ -427,7 +427,7 @@
                 "title": "Zabezpečení",
                 "sub1": "Moje zabezpečení",
                 "sub2": "Antivirus",
-                "sub3": "Zabezpečení Wi-Fi",
+                "sub3": "Zabezpečení WiFi",
                 "sub4": "Stav hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
@@ -443,7 +443,7 @@
             "title": "Bezpečnostního rádce",
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
-            "wifi": "Zabezpečení Wi-Fi",
+            "wifi": "Zabezpečení WiFi",
             "pswdMgr": "Správce hesel",
             "vpn": "Síť VPN",
             "windowsHello": "Windows Dobrý den",
@@ -1660,8 +1660,8 @@
                 "back": "ZPĚT"
             },
             "container": {
-                "title": "Zabezpečení Wifi Lenovo",
-                "name": "ZABEZPEČENÍ WI-FI",
+                "title": "Zabezpečení WiFi Lenovo",
+                "name": "ZABEZPEČENÍ WIFI",
                 "enable": "POVOLENO",
                 "disable": "ZAKÁZÁNO",
                 "less": "Méně informací",
@@ -1670,7 +1670,7 @@
                 "connect": "Poslední připojení",
                 "showmore": "Zobrazit více",
                 "showless": "Zobrazit méně",
-                "button": "Zapnout zabezpečení Wi-Fi",
+                "button": "Zapnout zabezpečení WiFi",
                 "disableDecribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých."
             },
             "threatlocator": {
@@ -1745,7 +1745,7 @@
                 "pass": "ÚSPĚCH",
                 "learnMoreAboutSecurityHealth": "Další informace o jednotlivých součástech <tag>získáte zde</tag>.",
                 "peaceOfMind": "Toužíte po větším klidu?",
-                "button": "Zapnout zabezpečení Wi-Fi"
+                "button": "Zapnout zabezpečení WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
