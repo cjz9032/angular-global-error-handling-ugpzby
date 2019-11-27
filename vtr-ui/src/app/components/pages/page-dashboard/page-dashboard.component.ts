@@ -869,7 +869,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 						this.getPreviousContent();
 					} else {
 						this.fetchContent();
-						this.fetchUPEContent();
+						// this.fetchUPEContent();
 						this.getWarrantyInfo();
 					}
 					break;
