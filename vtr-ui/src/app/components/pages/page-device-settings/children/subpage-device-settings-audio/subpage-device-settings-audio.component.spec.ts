@@ -14,7 +14,7 @@ import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 import { CommonService } from 'src/app/services/common/common.service';
 
-fdescribe('SubpageDeviceSettingsAudioComponent', () => {
+describe('SubpageDeviceSettingsAudioComponent', () => {
 	
 	let autoDolbyFeatureStatus: FeatureStatus= new FeatureStatus(true,true);
 	let  microOptimizeModeResponse: MicrophoneOptimizeModes= new MicrophoneOptimizeModes([],null) ;
