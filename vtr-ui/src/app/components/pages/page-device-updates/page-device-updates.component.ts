@@ -315,6 +315,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private setUpdateTitle(titleStatusCode: number = 0) {
+		if (titleStatusCode < 0 || titleStatusCode > SystemUpdateStatusMessage.StatusMessageMap.length - 1) {
+			titleStatusCode = 1; // For unknown status code, display common failure error message
+		}
 		this.translate.stream(SystemUpdateStatusMessage.StatusMessageMap[titleStatusCode].message).subscribe((res) => {
 			this.updateTitle = res;
 		});
