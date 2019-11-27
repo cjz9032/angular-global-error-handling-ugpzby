@@ -53,6 +53,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
 	isModalShown = false;
+	isWinRTLoading = true;
 
 	constructor(
 		private modalService: NgbModal,
@@ -115,7 +116,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
 		this.isLoading = false;
 		try {
-			const conditions = window.localStorage.getItem('batteryCondition');
+			const conditions = JSON.parse(window.localStorage.getItem('batteryCondition'));
 			if (Array.isArray(conditions) && conditions.length > 0) {
 				conditions.forEach((condition: BatteryConditionModel, index) => {
 					conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
@@ -126,6 +127,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			console.log(e);
 		}
 		this.setConditionTips();
+		this.isWinRTLoading = false;
 
 		// temp
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
