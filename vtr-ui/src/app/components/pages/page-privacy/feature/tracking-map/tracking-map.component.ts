@@ -31,6 +31,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 
 	trackingMapSingleData$ = this.trackingMapService.getTrackingSingleData$;
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
+	isFigleafInExit$ = this.communicationWithFigleafService.isFigleafInExit$;
 
 	constructor(
 		private trackingMapService: TrackingMapService,

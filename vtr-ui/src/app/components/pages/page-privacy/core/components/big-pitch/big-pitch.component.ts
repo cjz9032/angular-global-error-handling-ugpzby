@@ -22,8 +22,8 @@ export class BigPitchComponent {
 	@Output() clickMore = new EventEmitter();
 
 	isFigleafInExitTexts = {
-		title: 'Can’t sync your information',
-		text: 'To see the most recent information about breaches and tracking tools, launch Lenovo Privacy Essentials by FigLeaf.'
+		title: 'Relaunch Lenovo Privacy Essentials',
+		text: 'Get the most recent information about breaches and tracking tools.'
 	};
 
 	appStatusesEnum = AppStatuses;
