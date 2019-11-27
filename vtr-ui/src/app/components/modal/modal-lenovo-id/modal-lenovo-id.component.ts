@@ -10,79 +10,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-
-enum ssoErroType {
-
-	SSO_ErrorType_NoErr = 0,
-
-	//
-	// server error type
-	//
-
-	// Invalid request parameters, some parameters may be empty
-	SSO_ErrorType_InvalidParam,
-
-	// Sign error
-	SSO_ErrorType_SignInFailed,
-
-	// Invalid aid
-	SSO_ErrorType_InvalidAID,
-
-	SSO_ErrorType_InvalidDidByServer,
-
-	// Invalid UAD
-	SSO_ErrorType_InvalidUAD,
-
-	// Invalid UD
-	SSO_ErrorType_InvalidUD,
-
-	// Invalid UAD type
-	SSO_ErrorType_InvalidUADType,
-
-	// ClientTimeStamp is incorrect
-	SSO_ErrorType_TimeStampIncorrect,
-
-	// Server Error
-	SSO_ErrorType_ServerError = -99,
-
-	//
-	// sso client error type
-	//
-
-	// Unknown/Undefined client error
-	SSO_ErrorType_Unknown = 1000,
-
-	// Error communicating with server
-	SSO_ErrorType_Conmmunicating,
-
-	// Invalid response from server
-	SSO_ErrorTyoe_InvalidResponse,
-
-	// Invalid response logon URL returned from server
-	SSO_ErrorType_InvalidURL,
-
-	// Invalid dId returned from server
-	SSO_ErrorType_InvalidDID,
-
-	// Error accessing Windows credential manager
-	SSO_ErrorType_CannotAccessCredential,
-
-	// Problem obtaining MTM/serial number
-	SSO_ErrorType_MTMORSerialNumber,
-
-	// custom
-	// the user was not signed in yet,
-	SSO_ErrorType_NotSignedIn = 2000,
-
-	SSO_ErrorType_UnknownCrashed = 2001,
-
-	SSO_ErrorType_DisConnect = 2002,
-
-	SSO_ErrorType_SSORequestTimeOut = 2003,
-
-	SSO_ErrorType_AccountPluginDoesnotExist = 2004,
-}
+import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -131,45 +59,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				sendAsync() { }
 			};
 		}
-	}
-
-	// error is come from response status of LID contact request
-	popupErrorMessage(error: number) {
-		const modalRef = this.modalService
-			.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'common-confirmation-modal'
-			});
-
-		const header = 'lenovoId.ssoErrorTitle';
-		let description = 'lenovoId.ssoErrorCommonEx';
-
-		switch (error) {
-			case ssoErroType.SSO_ErrorType_TimeStampIncorrect:
-				description = 'lenovoId.ssoErrorTimeStampIncorrect';
-				break;
-
-			case ssoErroType.SSO_ErrorType_DisConnect:
-				description = 'lenovoId.ssoErrorNetworkDisconnected';
-				break;
-
-			case ssoErroType.SSO_ErrorType_Conmmunicating:
-				description = 'lenovoId.ssoErrorCommunicating';
-				break;
-
-			case ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist:
-				description = 'lenovoId.ssoErrorAccountPluginNotExist';
-				break;
-
-			default:
-				description = 'lenovoId.ssoErrorCommonEx';
-				break;
-		}
-		modalRef.componentInstance.CancelText = '';
-		modalRef.componentInstance.header = header;
-		modalRef.componentInstance.description = description;
 	}
 
 	ngOnInit() {
@@ -292,7 +181,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			}
 		} else {
 			// Handle error
-			self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
 			self.devService.writeLog('onNavigationCompleted: navigation completed unsuccessfully!');
 			self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
 			self.activeModal.dismiss();
@@ -414,12 +303,12 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					});
 				}
 			} else {
-				self.popupErrorMessage(result.status);
+				self.userService.popupErrorMessage(result.status);
 				self.devService.writeLog('getLoginUrl() failed ' + result.status);
 				self.activeModal.dismiss();
 			}
 		}).catch((error) => {
-			self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			self.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
 			self.activeModal.dismiss();
 		});
 
@@ -433,7 +322,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					this.devService.writeLog('onNotification() NetworkStatus: ' + notification.type);
 					const currentIsOnline = notification.payload.isOnline;
 					if (!currentIsOnline && this.isOnline !== currentIsOnline) {
-						this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
+						this.userService.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
 						this.activeModal.dismiss();
 					}
 					this.isOnline = currentIsOnline;
