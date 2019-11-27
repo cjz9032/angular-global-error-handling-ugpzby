@@ -583,4 +583,39 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+
+	public getGaugeResetCapability(): Promise<boolean> {
+		console.log('Battery Gauge Reset Capability');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.getGaugeResetCapability();
+			}
+		} catch (error) {
+			console.log('Battery Gauge Reset Error', error);
+		}
+	}
+
+	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('start Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
+		console.log('stop Battery Gauge Reset');
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

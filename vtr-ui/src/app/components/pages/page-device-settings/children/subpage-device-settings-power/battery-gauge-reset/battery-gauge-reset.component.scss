@@ -1,0 +1,68 @@
+@import "../../../../../../app.theme.scss";
+@import "../../../../../../font-styles.scss";
+
+.vtr-battery-gauge-reset {
+	.battery-text {
+		color: $main_darker;
+		font-size: 1.5rem;
+		font-weight: $weight_bold;
+		text-transform: uppercase;
+		margin: 1rem 0 0.5rem 0;
+	}
+	.no-max-width {
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.caption {
+				max-width: none;
+			}
+		}
+	}
+	.note {
+		font-weight: $weight_light;
+		font-size: $body;
+	}
+	.warning-note {
+		color: $stop;
+	}
+
+	.battery-gauge-info {
+		font-size: $body;
+		max-width: 75rem;
+		background-color: $grey_lighter;
+		border: 1px solid #ecf0f1;
+
+		.label-text {
+			color: $shade_light;
+			margin: 0.2rem 0;
+		}
+		.label-value {
+			color: #34495e;
+			margin: 0.2rem 0;
+		}
+		.battery-gauge-btn {
+			margin: 1.5rem 0;
+			padding-left: 1.5rem;
+		}
+
+		.stop-btn {
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: linear-gradient(102deg, #e74c3c 0%, #ff7d70 100%);
+						color: $light;
+					}
+				}
+			}
+		}
+		.disabled-btn {
+			pointer-events: none;
+			::ng-deep .vtr-ui-button {
+				.button-box {
+					.button {
+						background: $grey_light;
+						color: $button_disable_text;
+					}
+				}
+			}
+		}
+	}
+}

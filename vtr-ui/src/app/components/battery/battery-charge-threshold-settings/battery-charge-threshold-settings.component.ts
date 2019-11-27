@@ -22,6 +22,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Output() sendBatteryDetails = new EventEmitter();
 	@Output() autoChecked = new EventEmitter<boolean>();
 	@Input() textId = '';
+	@Input() isGaugeResetRunning = false;
 
 
 

@@ -651,6 +651,7 @@
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
+				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
 				"details": {
@@ -891,6 +892,43 @@
 							"start": "Start charging when below",
 							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
+						}
+					},
+					"gaugeReset": {
+						"title": "Battery gauge reset",
+						"description": "This feature enables your computer to estimate the full charge capacity more accurately.",
+						"barCode": "Barcode",
+						"progress": "Progress",
+						"remaining": "Remaining",
+						"startTime": "Start time",
+						"lastReset": "Last reset",
+						"fullChargeCapacity": "Full charge capacity",
+						"btnLabel": {
+							"reset": "Reset",
+							"stop": "Stop"
+						},
+						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
+						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"FCCText": "From {{before}} Wh to {{after}} Wh",
+						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
+						"dual_note": "Note: Only one battery can be reset at a time",
+						"resetLog": {
+							"ERROR_SUCCESS": "Complete. Successful reset.",
+							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
+							"ERROR_LOGOFF": "Incomplete. User logged off.",
+							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
+							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
+							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+						},
+						"popup": {
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
+							"continue": "Continue",
+							"cancel": "Cancel",
+							"yes": "Yes",
+							"description3": "Are you sure you want to stop the battery gauge reset?"
 						}
 					},
 					"expressCharging": {

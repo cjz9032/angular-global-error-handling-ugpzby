@@ -1,0 +1,147 @@
+<div class="vtr-battery-gauge-reset">
+	<div class="no-max-width">
+		<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.gaugeReset.title' | translate"
+			[name]="'battery-gauge-reset-title'"
+			[caption]="'device.deviceSettings.power.batterySettings.gaugeReset.description' | translate"
+			[isSwitchVisible]="false"
+			[showChildContent]="true"
+			[leftIcon]="['fal', 'battery-full']"
+			[isLastChild]='true'
+			[switchId]="'ds-power-battery-batteryGaugeReset'">
+			<div class="container-fluid">
+				<div *ngIf="batteryService.gaugeResetInfo?.length>0">
+					<div class="row pt-1"
+						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index"
+						tabindex="0"
+						role="text">
+						<div class="col px-20">
+							<div class="battery-text"
+								id=""
+								role="text">
+								<span *ngIf="batteryService.gaugeResetInfo?.length==1">
+									{{'device.deviceSettings.batteryGauge.subtitle'| translate}}
+								</span>
+								<span *ngIf="batteryService.gaugeResetInfo?.length>1">
+									{{ headings[i] | translate }}
+								</span>
+							</div>
+							<div class="battery-gauge-info py-3">
+
+								<!-- Initial State Battery Gauge Reset -->
+								<div>
+									<div class="row">
+										<div class="col-4 label-text"
+											role="text">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.barCode' | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text">{{battery.barCode}}</div>
+									</div>
+								</div>
+
+								<!-- Battery Gauge Reset Progress -->
+								<div *ngIf="battery.isResetRunning">
+									<div class="row"
+										*ngIf="isValid(battery.stage) && isValid(battery.stageNum)">
+										<div class="col-4 label-text"
+											role="text">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.progress' | translate}}
+										</div>
+										<div class="col-8 label-value"
+											*ngIf="battery.stage==1||battery.stage==3"
+											role="text">
+											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText1' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
+										</div>
+										<div class="col-8 label-value"
+											*ngIf="battery.stage==2"
+											role="text">
+											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText2' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
+										</div>
+									</div>
+									<div class="row"
+										*ngIf="isValid(batteryService.remainingPercentages[i])">
+										<div class="col-4 label-text"
+											role="text">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.remaining' | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text">
+											{{batteryService.remainingPercentages[i]}}<span>%</span></div>
+									</div>
+									<div class="row"
+										*ngIf="isValid(battery.startTime)">
+										<div class="col-4 label-text"
+											role="text">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.startTime' | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text">
+											{{battery.startTime | date : 'M/d/yyyy h:mm:ss a'}}</div>
+									</div>
+								</div>
+
+								<!-- Last Battery Gauge reset result -->
+								<div *ngIf="!battery.isResetRunning">
+									<div class="row"
+										*ngIf="isValid(battery.lastResetTime) && isValid(battery.resetErrorLog)">
+										<div class="col-4 label-text"
+											role="text">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.lastReset' | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text">
+											{{battery.lastResetTime | date : 'M/d/yyyy h:mm:ss a'}}
+											<br *ngIf="isValid(battery.lastResetTime)">
+											{{'device.deviceSettings.power.batterySettings.gaugeReset.resetLog.' + battery.resetErrorLog | translate}}
+										</div>
+									</div>
+									<div class="row"
+										*ngIf="isValid(battery.FCCBefore) && isValid(battery.FCCAfter)">
+										<div class="col-4 label-text"
+											role="text">
+											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.fullChargeCapacity' | translate}}
+										</div>
+										<div class="col-8 label-value"
+											role="text"
+											[innerHTML]="'device.deviceSettings.power.batterySettings.gaugeReset.FCCText' | translate: { before: battery.FCCBefore, after: battery.FCCAfter } ">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-8 col-md-8 col-sm-12 battery-gauge-btn"
+									[class.stop-btn]="battery.isResetRunning"
+									[class.disabled-btn]="isResetBtnDisabled(i) || !batteryService.isAcAttached">
+									<vtr-ui-button metricsItem="Battery.Gauge.RESET"
+										metricsParent="Page.Settings"
+										metricsEvent="FeatureClick"
+										[isFullWidth]="true"
+										[disabled]="isResetBtnDisabled(i) || !batteryService.isAcAttached"
+										[tabIndex]="(isResetBtnDisabled(i) || !batteryService.isAcAttached)?-1:0"
+										id="myDevice-settings-battery-gauge-reset-stop-btn"
+										[linkId]="'myDevice-settings-battery-gauge-reset-stop-btn'"
+										[label]="battery.isResetRunning? ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.stop'|translate): ('device.deviceSettings.power.batterySettings.gaugeReset.btnLabel.reset' | translate)"
+										aria-label="myDevice-settings-battery-details-btn"
+										(click)="onBatteryGaugeReset(i)"></vtr-ui-button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row px-20 pt-3">
+						<span *ngIf="!batteryService.isAcAttached"
+							class="note warning-note"
+							tabindex="0"
+							role="text">
+							{{'device.deviceSettings.power.batterySettings.gaugeReset.note' | translate}}
+						</span>
+						<span *ngIf="batteryService.isAcAttached && batteryService.gaugeResetInfo?.length>1"
+							class="note"
+							tabindex="0"
+							role="text">
+							{{'device.deviceSettings.power.batterySettings.gaugeReset.dual_note' | translate}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</vtr-ui-row-switch>
+	</div>
+</div>

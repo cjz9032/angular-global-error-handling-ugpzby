@@ -29,6 +29,27 @@
 			font-size: 1.8rem;
 			font-weight: $weight_light;
 		}
+
+		.disabled {
+			.btn-block {
+				pointer-events: none;
+				button {
+					&.btn-outline-shadow {
+						background-color: #f5f7f8 !important;
+					}
+					.dropdown-icon {
+						fa-icon {
+							color: #667481 !important;
+						}
+					}
+				}
+			}
+			.auto-set-checkbox {
+				opacity: 0.3;
+				pointer-events: none;
+			}
+		}
+
 		.btn-block {
 			button {
 				padding: 0.5rem 1rem;
@@ -53,6 +74,7 @@
 				background: $main_lightest;
 			}
 			&.disabled {
+				pointer-events: none;
 				background: $shade_lightest;
 				color: $shade;
 			}
