@@ -236,4 +236,8 @@ export class CommonService {
 		// It will not copy reference. It is for assigning object pass by reference.
 		return JSON.parse(JSON.stringify(obj));
 	}
+
+	public scrollTop() {
+		document.querySelector('.vtr-app.container-fluid').scrollTop = 0;
+	}
 }
