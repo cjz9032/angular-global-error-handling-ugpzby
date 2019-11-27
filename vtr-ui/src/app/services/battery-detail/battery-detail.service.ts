@@ -44,9 +44,7 @@ export class BatteryDetailService {
 
 	public stopMonitor() {
 		if (this.isShellAvailable) {
-			this.battery.stopBatteryMonitor((response: boolean) => {
-				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
-			});
+			this.battery.stopBatteryMonitor((response: boolean) => { });
 		}
 	}
 
