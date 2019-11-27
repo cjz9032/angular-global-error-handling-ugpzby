@@ -461,15 +461,27 @@
 		}
 
 		.content {
-			padding: 3rem 4rem;
+			padding: 2rem;
 			cursor: pointer;
+			@media #{$mediaquery_X1} {
+				padding: 2rem;
+			}
+
+			@media #{$mediaquery_10} {
+				padding: 1.5rem 2rem;
+			}
+
+			@media #{$mediaquery_X7} {
+				padding: 1.5rem;
+			}
+
+			@media #{$mediaquery_18} {
+				padding: 1.5rem;
+			}
 
 			.title {
-				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $sub_header;
-				line-height: 4.6rem;
 				cursor: pointer;
 			}
 

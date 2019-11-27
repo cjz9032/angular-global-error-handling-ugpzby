@@ -318,7 +318,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 image"
-					[style.background-image]="'url('+img+')'">
+					[style.background-image]="'url('+img+')'"
+					[style.height.px]="containerCardPartnerArticle.clientWidth * ratio">
 					<div *ngIf="logo || logoText"
 						class="logo">
 						<span class="logo-img">
