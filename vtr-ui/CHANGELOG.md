@@ -2,11 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-
-
-### Features
-
-* QA/DEV -> QA CMS, STAGE/PROD -> PROD CMS ([b8e11bc](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b8e11bc))
+## [1.0.262](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.1.0...v1.0.262) (2019-11-27)
 
 
 
