@@ -51,14 +51,11 @@
     .gaming-device-image {
 	  width: 40%;
 	  min-height: 34rem;//44rem
-      @media #{$small-screen}{
-        //justify-content: flex-end;
-        width: 100%;
-        //align-items: flex-end !important;
+      @media #{$small-screen}{        
+        width: 100%;        
         align-items: center;
       }
       @media #{$below-large-screen}{
-        //justify-content: flex-end;
         width: 100%;
         align-items: center !important;
       }
