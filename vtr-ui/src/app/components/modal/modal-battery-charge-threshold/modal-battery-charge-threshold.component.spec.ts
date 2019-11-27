@@ -6,7 +6,7 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
 
-xdescribe('ModalBatteryChargeThresholdComponent', () => {
+describe('ModalBatteryChargeThresholdComponent', () => {
 
 	let title: string;
 	let description1: string;
@@ -65,18 +65,18 @@ xdescribe('ModalBatteryChargeThresholdComponent', () => {
 			expect(component.closeModal).toHaveBeenCalled();
 		}));
 
-		it('onFocus calling modal focus', (() => {
-			const { fixture, component } = setup();
+		// it('onFocus calling modal focus', (() => {
+		// 	const { fixture, component } = setup();
 
-			fixture.detectChanges();//ngOnInit
+		// 	fixture.detectChanges();//ngOnInit
 
-			let modal = document.createElement('div');
-			modal.setAttribute('class', 'Battery-Charge-Threshold-Modal');
-			fixture.debugElement.nativeElement.append(modal);
-			component.onFocus();
+		// 	let modal = document.createElement('div');
+		// 	modal.setAttribute('class', 'Battery-Charge-Threshold-Modal');
+		// 	fixture.debugElement.nativeElement.append(modal);
+		// 	component.onFocus();
 
-			expect(modal).toBeTruthy();
-		}));
+		// 	expect(modal).toBeTruthy();
+		// }));
 
 		it('button clicked called closeModal', async(() => {
 			const { fixture, component } = setup();
