@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
-                "seeDetailsLink": "Lisätietoja on seuraavissa"
+				"seeDetailsLink": "Lisätietoja on seuraavissa",
+				"gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
             },
             "power": {
                 "title": "Virta",
@@ -867,6 +868,43 @@
                         "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä.",
                         "checkBoxDesc": "Automaattinen tunnistus",
                         "note": "Jos automaattinen tunnistus on valittu, tietokone ottaa lentokonevirtatilan käyttöön automaattisesti, kun se havaitsee olevansa lentokoneessa, ja poistaa sen käytöstä, kun poistut."
+					},
+					"gaugeReset": {
+                        "title": "Akkumittarin nollaus",
+                        "description": "Tämän toiminnon avulla tietokone voi arvioida täyden varauskapasiteetin aiempaa tarkemmin.",
+                        "barCode": "Viivakoodi",
+                        "progress": "Edistyminen",
+                        "remaining": "jäljellä",
+                        "startTime": "Aloitusaika",
+                        "lastReset": "Edellinen nollaus",
+                        "fullChargeCapacity": "Täyteen ladatun kapasiteetti",
+                        "btnLabel": {
+                            "reset": "Uudelleenasetus",
+                            "stop": "Pysäytä"
+                        },
+                        "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
+                        "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+                        "FCCText": "{{before}}Wh- {{after}} Wh",
+                        "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Valmis. Nollaus onnistui.",
+                            "ERROR_SHUTDOWN": "Vaillinainen. Järjestelmä sammui.",
+                            "ERROR_LOGOFF": "Vaillinainen. Käyttäjä kirjautui ulos.",
+                            "ERROR_BATTERY_REMOVE": "Vaillinainen. Akku poistettiin.",
+                            "ERROR_BATTERY_REPLACE": "Vaillinainen. Akku vaihdettiin.",
+                            "ERROR_AC_DETTACH": "Vaillinainen. Verkkolaite irrotettiin.",
+                            "ERROR_USER_CANCEL": "Vaillinainen. Käyttäjä peruutti toiminnon.",
+                            "ERROR_UNEXPECTED": "Vaillinainen. On tapahtunut odottamaton virhe."
+                        },
+                        "popup": {
+                            "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
+                            "description2": "Huomautuset: <br>1. Prosessi saattaa kestää useita tunteja. Vältä tietokoneen käyttöä tämän ajanjakson aikana.<br>2. Sulje kaikki avoimet sovellukset ja liitä tietokone verkkovirtaan.<br>3. Prosessin aikana akun varauksen kynnysarvo -toiminto ei ole käytössä.",
+                            "continue": "Jatka",
+                            "cancel": "Peruuta",
+                            "yes": "Kyllä",
+                            "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

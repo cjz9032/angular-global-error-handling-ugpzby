@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
-                "seeDetailsLink": "Pogledajte detalje"
+				"seeDetailsLink": "Pogledajte detalje",
+				"gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -867,6 +868,43 @@
                         "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema.",
                         "checkBoxDesc": "Automatska detekcija",
                         "note": "Ako je označena Automatska detekcija, vaš računar će automatski uključiti režim napajanja u avionu kada otkrije okruženje unutar aviona i isključiti ga kada napustite okruženje."
+					},
+					"gaugeReset": {
+                        "title": "Resetovanje pokazivača napunjenosti baterije",
+                        "description": "Ova funkcija omogućava računaru da preciznije proceni pun kapacitet punjenja.",
+                        "barCode": "Bar-kod",
+                        "progress": "Napredovanje",
+                        "remaining": "Ostalo",
+                        "startTime": "Vreme početka",
+                        "lastReset": "Poslednje resetovanje",
+                        "fullChargeCapacity": "Pun kapacitet punjenja",
+                        "btnLabel": {
+                            "reset": "Poništi",
+                            "stop": "Zaustavi"
+                        },
+                        "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
+                        "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+                        "FCCText": "Sa {{before}} Wh na {{after}} Wh",
+                        "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Završeno. Uspešan reset.",
+                            "ERROR_SHUTDOWN": "Nije završeno. Sistem se isključio.",
+                            "ERROR_LOGOFF": "Nije završeno. Korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Nije završeno. Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nije završeno. Baterija je zamenjena.",
+                            "ERROR_AC_DETTACH": "Nije završeno. Adapter za naizmeničnu struju je otkačen.",
+                            "ERROR_USER_CANCEL": "Nije završeno. Otkazano od strane korisnika.",
+                            "ERROR_UNEXPECTED": "Nije završeno. Došlo je do neočekivane greške."
+                        },
+                        "popup": {
+                            "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
+                            "description2": "Napomene: <br>1. Ovaj proces može da traje nekoliko sati. Izbegavajte korišćenje računara tokom ovog perioda.<br>2. Zatvorite sve otvorene aplikacije i povežite računar sa napajanjem naizmeničnom strujom.<br>3. Tokom procesa, funkcija za prag punjenja baterije je onemogućena.",
+                            "continue": "Nastavi",
+                            "cancel": "Otkaži",
+                            "yes": "Da",
+                            "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

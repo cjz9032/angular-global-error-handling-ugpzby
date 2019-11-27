@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
-                "seeDetailsLink": "Visualizza dettagli"
+				"seeDetailsLink": "Visualizza dettagli",
+				"gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
             },
             "power": {
                 "title": "Alimentazione",
@@ -867,6 +868,43 @@
                         "description": "Proteggere la presa elettrica CA aereo controllando il consumo di energia del sistema.Quando è abilitata la funzione Modalità alimentazione in aereo, il computer riduce il consumo di energia limitando la velocità di ricarica della batteria e le prestazioni del sistema.",
                         "checkBoxDesc": "Rilevamento automatico",
                         "note": "Se è abilitato il Rilevamento automatico, il computer attiverà automaticamente Modalità alimentazione in aereo quando rileva un ambiente a bordo dell'aeromobile e la disattiverà quando si scende."
+					},
+					"gaugeReset": {
+                        "title": "Reimpostazione indicatore batteria",
+                        "description": "Questa funzione consente al computer di stimare la capacità di carica completa con più precisione.",
+                        "barCode": "Codice a barre",
+                        "progress": "Stato",
+                        "remaining": "Rimanente",
+                        "startTime": "Ora di inizio",
+                        "lastReset": "Ultima reimpostazione",
+                        "fullChargeCapacity": "Capacità carica completa",
+                        "btnLabel": {
+                            "reset": "Reimposta",
+                            "stop": "Interrompi"
+                        },
+                        "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
+                        "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
+                        "FCCText": "Da {{before}} Wh a {{after}} Wh",
+                        "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Operazione completata. Reimpostazione riuscita.",
+                            "ERROR_SHUTDOWN": "Operazione non completata. Arresto del sistema.",
+                            "ERROR_LOGOFF": "Operazione non completata. Utente scollegato.",
+                            "ERROR_BATTERY_REMOVE": "Operazione non completata. La batteria è stata rimossa.",
+                            "ERROR_BATTERY_REPLACE": "Operazione non completata. La batteria è stata sostituita.",
+                            "ERROR_AC_DETTACH": "Operazione non completata. L'adattatore di alimentazione CA è stato scollegato.",
+                            "ERROR_USER_CANCEL": "Operazione non completata. Operazione annullata dall'utente.",
+                            "ERROR_UNEXPECTED": "Operazione non completata. Si è verificato un errore imprevisto."
+                        },
+                        "popup": {
+                            "description1": "Il processo di reimpostazione è il seguente:<br>caricare completamente la batteria  -->  scaricare completamente la batteria  -->  ricaricare completamente la batteria",
+                            "description2": "Note: <br>1. Il processo potrebbe richiedere diverse ore. Evitare di utilizzare il computer durante questo periodo.<br>2. Chiudere tutte le applicazioni aperte e collegare il computer all'alimentazione CA.<br>3. Durante il processo, la funzione soglia di carica della batteria è disabilitata.",
+                            "continue": "Continua",
+                            "cancel": "Annulla",
+                            "yes": "Sì",
+                            "description3": "Interrompere la reimpostazione dell'indicatore della batteria?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

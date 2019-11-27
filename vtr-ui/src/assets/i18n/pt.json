@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-                "seeDetailsLink": "Ver detalhes"
+				"seeDetailsLink": "Ver detalhes",
+				"gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
             },
             "power": {
                 "title": "Alimentação",
@@ -867,6 +868,43 @@
                         "description": "Proteja a tomada CA do avião controlando o consumo de energia do sistema.Quando o Modo de Alimentação em Avião está ativado, o computador diminui o consumo de energia limitando a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Deteção automática",
                         "note": "Se a Deteção automática estiver marcada, o computador ativa automaticamente o Modo de alimentação em avião quando deteta um ambiente a bordo de um avião e desativa-o quando deixa o avião."
+					},
+					"gaugeReset": {
+                        "title": "Reposição do indicador de bateria",
+                        "description": "Esta funcionalidade permite ao computador efetuar uma estimativa da capacidade de carga total com maior precisão.",
+                        "barCode": "Código de barras",
+                        "progress": "Progresso",
+                        "remaining": "Restante",
+                        "startTime": "Hora de início",
+                        "lastReset": "Última reposição",
+                        "fullChargeCapacity": "Capacidade de carga total",
+                        "btnLabel": {
+                            "reset": "Redefinir",
+                            "stop": "Parar"
+                        },
+                        "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
+                        "FCCText": "De {{before}} Wh até {{after}} Wh",
+                        "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Concluído. Reposição com êxito.",
+                            "ERROR_SHUTDOWN": "Incompleto. Encerramento do sistema.",
+                            "ERROR_LOGOFF": "Incompleto. Utilizador com sessão terminada.",
+                            "ERROR_BATTERY_REMOVE": "Incompleto. Bateria removida.",
+                            "ERROR_BATTERY_REPLACE": "Incompleto. Bateria substituída.",
+                            "ERROR_AC_DETTACH": "Incompleto. Transformador CA desligado.",
+                            "ERROR_USER_CANCEL": "Incompleto. Cancelado pelo utilizador.",
+                            "ERROR_UNEXPECTED": "Incompleto. Ocorreu um erro inesperado."
+                        },
+                        "popup": {
+                            "description1": "O processo de reposição é o seguinte:<br>Carregar totalmente a bateria  -->  Descarregar totalmente a bateria  -->  Voltar a carregar totalmente a bateria",
+                            "description2": "Notas: <br>1. O processo poderá demorar várias horas. Evite utilizar o computador durante este período.<br>2. Feche todas as aplicações abertas e ligue o computador à alimentação CA.<br>3. Durante o processo, a função de limiar de carregamento da bateria é desativada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sim",
+                            "description3": "Tem a certeza de que pretende parar a reposição do indicador de bateria?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

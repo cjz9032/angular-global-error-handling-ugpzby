@@ -718,7 +718,8 @@
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
-                "seeDetailsLink": "查看详细信息"
+				"seeDetailsLink": "查看详细信息",
+				"gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
             },
             "power": {
                 "title": "电源管理",
@@ -867,6 +868,43 @@
                         "description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。",
                         "checkBoxDesc": "自动检测",
                         "note": "如果已勾选自动检测功能，计算机将在其检测到机上环境后自动打开飞行电源模式，并在您离开时将其关闭。"
+					},
+					"gaugeReset": {
+                        "title": "电池量表重置",
+                        "description": "此功能可让计算机更加准确地估计完全充电电量。",
+                        "barCode": "条码",
+                        "progress": "进度",
+                        "remaining": "剩余",
+                        "startTime": "开始时间",
+                        "lastReset": "上次重置时间",
+                        "fullChargeCapacity": "完全充电电量",
+                        "btnLabel": {
+                            "reset": "重置",
+                            "stop": "停止"
+                        },
+                        "progressText1": "{{stageNum}} 的 {{stage}}：校准为完全充电",
+                        "progressText2": "{{stageNum}} 的 {{stage}}：校准为电池电量不足",
+                        "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
+                        "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "已完成。已成功重置。",
+                            "ERROR_SHUTDOWN": "未完成。系统已关闭。",
+                            "ERROR_LOGOFF": "未完成。用户已注销。",
+                            "ERROR_BATTERY_REMOVE": "未完成。已卸下电池。",
+                            "ERROR_BATTERY_REPLACE": "未完成。已更换电池。",
+                            "ERROR_AC_DETTACH": "未完成。已拔下交流电源适配器。",
+                            "ERROR_USER_CANCEL": "未完成。已被用户取消。",
+                            "ERROR_UNEXPECTED": "未完成。发生意外错误。"
+                        },
+                        "popup": {
+                            "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
+                            "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2.关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3.在此过程中，将禁用电池充电阈值功能。",
+                            "continue": "继续",
+                            "cancel": "取消",
+                            "yes": "是",
+                            "description3": "确定要停止电池量表重置吗？"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

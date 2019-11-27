@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
-                "seeDetailsLink": "Ver detalhes"
+				"seeDetailsLink": "Ver detalhes",
+				"gaugeResetWarning": "<b>Nota:</b> A redefinição do medidor de bateria está em andamento. Mantenha o adaptador de energia CA conectado."
             },
             "power": {
                 "title": "Energia",
@@ -867,6 +868,43 @@
                         "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Detecção automática",
                         "note": "Se a Detecção automática for marcada, seu computador ativará o Modo de energia de avião automaticamente quando detectar um ambiente a bordo de uma aeronave e será desativado quando você sair."
+					},
+					"gaugeReset": {
+                        "title": "Redefinição do medidor da bateria",
+                        "description": "Esse recurso permite que seu computador estime a capacidade de carga completa mais precisamente.",
+                        "barCode": "Código de barras",
+                        "progress": "Em andamento",
+                        "remaining": "Restantes",
+                        "startTime": "Hora de início",
+                        "lastReset": "Última redefinição",
+                        "fullChargeCapacity": "Capacidade da carga máxima",
+                        "btnLabel": {
+                            "reset": "Reconfigurar",
+                            "stop": "Parar"
+                        },
+                        "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
+                        "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
+                        "FCCText": "De {{before}} Wh para {{after}} Wh",
+                        "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Concluído. Êxito na redefinição.",
+                            "ERROR_SHUTDOWN": "Não concluído. Desligamento do sistema.",
+                            "ERROR_LOGOFF": "Não concluído. O usuário fez logoff.",
+                            "ERROR_BATTERY_REMOVE": "Não concluído. A bateria foi removida.",
+                            "ERROR_BATTERY_REPLACE": "Não concluído. A bateria foi substituída.",
+                            "ERROR_AC_DETTACH": "Não concluído. O adaptador de energia CA foi desconectado.",
+                            "ERROR_USER_CANCEL": "Não concluído. Cancelada pelo usuário.",
+                            "ERROR_UNEXPECTED": "Não concluído. Erro inesperado."
+                        },
+                        "popup": {
+                            "description1": "O processo de redefinição é o seguinte:<br>Carregue totalmente a bateria  -->  Descarregue totalmente a bateria  -->  Recarregue totalmente a bateria",
+                            "description2": "Notas: <br>1. O processo pode levar várias horas. Evite usar o computador durante este período.<br>2. Feche todos os aplicativos abertos e conecte o computador à energia CA.<br>3. Durante o processo, a função de limite de carga da bateria será desativada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sim",
+                            "description3": "Tem certeza de que deseja parar a redefinição do medidor da bateria?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

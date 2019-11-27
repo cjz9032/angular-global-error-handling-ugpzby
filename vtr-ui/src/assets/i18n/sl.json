@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti.",
-                "seeDetailsLink": "Prikaži podrobnosti"
+				"seeDetailsLink": "Prikaži podrobnosti",
+				"gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -867,6 +868,43 @@
                         "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema.",
                         "checkBoxDesc": "Samodejno zaznavanje",
                         "note": "Če je označeno potrditveno polje za samodejno zaznavanje, bo računalnik samodejno vklopil način porabe za letalo, ko zazna, da ste v letalu, in ga izklopil, ko se izkrcate."
+					},
+					"gaugeReset": {
+                        "title": "Ponastavitev merilnika za baterijo",
+                        "description": "S to funkcijo lahko računalnik natančneje oceni zmogljivost pri polni napolnjenosti baterije.",
+                        "barCode": "Črtna koda",
+                        "progress": "Napredek",
+                        "remaining": "Preostane",
+                        "startTime": "Ura začetka",
+                        "lastReset": "Zadnja ponastavitev",
+                        "fullChargeCapacity": "Polna zmogljivost polnjenja",
+                        "btnLabel": {
+                            "reset": "Ponastavitev",
+                            "stop": "Ustavi"
+                        },
+                        "progressText1": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
+                        "progressText2": "{{stage}} od {{stageNum}}: umerjanje do skoraj prazne baterije",
+                        "FCCText": "Od {{before}} Wh do {{after}} Wh",
+                        "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Končano. Uspešna ponastavitev",
+                            "ERROR_SHUTDOWN": "Nedokončano. Zaustavitev sistema",
+                            "ERROR_LOGOFF": "Nedokončano. Uporabnik se je odjavil",
+                            "ERROR_BATTERY_REMOVE": "Nedokončano. Baterija je bila odstranjena",
+                            "ERROR_BATTERY_REPLACE": "Nedokončano. Baterija je bila zamenjana",
+                            "ERROR_AC_DETTACH": "Nedokončano. Napajalnik je bil odklopljen",
+                            "ERROR_USER_CANCEL": "Nedokončano. Preklical uporabnik",
+                            "ERROR_UNEXPECTED": "Nedokončano. Nepričakovana napaka"
+                        },
+                        "popup": {
+                            "description1": "Postopek ponastavitve je naslednji:<br>povsem napolnite baterijo  -->  popolnoma izpraznite baterijo  -->  popolnoma napolnite baterijo",
+                            "description2": "Opombe: <br>1. Ta postopek lahko traja več ur. Računalnika v tem času ne uporabljajte.<br>2. Zaprite vse odprte programe in računalnik priključite na električno vtičnico.<br>3. Med postopkom je funkcija praga polnjenja baterije onemogočena.",
+                            "continue": "Nadaljuj",
+                            "cancel": "Prekliči",
+                            "yes": "Da",
+                            "description3": "Ali ste prepričani, da želite ustaviti ponastavitev merilnika za baterijo?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

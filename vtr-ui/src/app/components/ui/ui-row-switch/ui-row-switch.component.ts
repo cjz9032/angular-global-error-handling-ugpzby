@@ -80,16 +80,23 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 		if (this.title === this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.title')) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			if (this.isSwitchChecked) {
-				this.modalService.open(ModalBatteryChargeThresholdComponent, {
+				const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
 					backdrop: 'static',
-					size: 'sm',
 					centered: true,
 					windowClass: 'Battery-Charge-Threshold-Modal'
-				}).result.then(
+				});
+
+				modalRef.componentInstance.title = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title';
+				modalRef.componentInstance.description1 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1';
+				modalRef.componentInstance.description2 = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2';
+				modalRef.componentInstance.positiveResponseText = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.enable';
+				modalRef.componentInstance.negativeResponseText = 'device.deviceSettings.power.batterySettings.batteryThreshold.popup.cancel';
+
+				modalRef.result.then(
 					result => {
-						if (result === 'enable') {
+						if (result === 'positive') {
 							this.toggleOnOff.emit($event);
-						} else if (result === 'close') {
+						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
 						}
 					},
