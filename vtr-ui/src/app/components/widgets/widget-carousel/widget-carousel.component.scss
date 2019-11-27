@@ -41,9 +41,10 @@
 
 		.title {
 			padding: 0;
-			font-size: 2.4rem;//3rem
+			font-size: 2.2rem;//3rem
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+			line-height: 1.4;
 			//max-width: 60%;
 			/*@media #{$mediaquery_X31} {
 				max-width: 80%;
@@ -55,9 +56,10 @@
 			padding: 0;
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-			font-size: 2rem;//1.4rem
-			font-weight: $weight_medium;
-			text-transform: uppercase;
+			font-size: 2.5rem;
+			font-weight: $weight_bold;
+			line-height: 1.4;
+			// text-transform: uppercase;
 		}
 	}
 

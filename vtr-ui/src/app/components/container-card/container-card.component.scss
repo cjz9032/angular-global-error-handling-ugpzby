@@ -521,6 +521,7 @@
 			color: $main_dark;
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
+			line-height: 1.4;
 
 		/*	@media #{$mediaquery_X4} {
 				font-size: 2rem;
@@ -546,11 +547,13 @@
 		.description {
 			color: $main_dark;
 			font-size: 1.1rem;
+			line-height: 1.4;
 		}
 
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
+			line-height: 1.4;
 
 			/*@media #{$mediaquery_X4} {
 				font-size: 1.8rem;
