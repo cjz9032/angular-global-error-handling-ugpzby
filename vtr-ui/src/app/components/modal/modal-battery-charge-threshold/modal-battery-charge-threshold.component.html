@@ -10,11 +10,14 @@
 		</div>
 	</div>
 	<h1 id="ds-threshold-popup"
-		attr.aria-label="ds-threshold-popup">{{title | translate}}</h1>
+		attr.aria-label="ds-threshold-popup"
+		[innerHTML]="title | translate"></h1>
 	<p id="ds-thresholdpopup-description1"
-		attr.aria-label="ds-thresholdpopup-description1">{{ description1 | translate }}</p>
+		attr.aria-label="ds-thresholdpopup-description1"
+		[innerHTML]="description1 | translate"></p>
 	<p id="ds-thresholdpopup-description2"
-		attr.aria-label="ds-thresholdpopup-description2">{{ description2 | translate }}</p>
+		attr.aria-label="ds-thresholdpopup-description2"
+		[innerHTML]="description2 | translate"></p>
 	<hr>
 	<div class="row">
 		<button id="battery-threshold-popup-enable"
