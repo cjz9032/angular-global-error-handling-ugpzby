@@ -17,7 +17,7 @@
                         "balText": "일반 CPU 및 팬 속도",
                         "quietText": "CPU사용량 낮을수록 팬속도 낮음"
                     },
-                    "wifiSecurity": "Wifi 보안",
+                    "wifiSecurity": "WiFi 보안",
                     "dolby": "Dolby",
                     "rapidCharge": "급속 충전"
                 },
@@ -1660,7 +1660,7 @@
                 "back": "뒤로"
             },
             "container": {
-                "title": "Lenovo Wifi 보안",
+                "title": "Lenovo WiFi 보안",
                 "name": "WIFI 보안",
                 "enable": "사용",
                 "disable": "사용 안 함",

@@ -17,7 +17,7 @@
                         "balText": "Normálne CPU a otáčky ventilátora",
                         "quietText": "Nižšie využitie CPU a otáčky vent."
                     },
-                    "wifiSecurity": "Zabezpečenie Wifi",
+                    "wifiSecurity": "Zabezpečenie WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Rýchle nabíjanie"
                 },
@@ -1660,7 +1660,7 @@
                 "back": "SPÄŤ"
             },
             "container": {
-                "title": "Zabezpečenie Wi-Fi od spoločnosti Lenovo",
+                "title": "Zabezpečenie WiFi od spoločnosti Lenovo",
                 "name": "ZABEZPEČENIE WIFI",
                 "enable": "ZAPNUTÉ",
                 "disable": "VYPNUTÉ",
@@ -1671,7 +1671,7 @@
                 "showmore": "Zobraziť viac",
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
-                "disableDecribe": "Zabezpečenie Wi-Fi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
+                "disableDecribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",

@@ -17,7 +17,7 @@
                         "balText": "Normalna brzina procesora i ventilatora",
                         "quietText": "Niža potrošnja procesora, niža brzina ventilatora"
                     },
-                    "wifiSecurity": "Wi-Fi sigurnost",
+                    "wifiSecurity": "WiFi sigurnost",
                     "dolby": "Dolby",
                     "rapidCharge": "Brzo punjenje"
                 },
@@ -1670,7 +1670,7 @@
                 "connect": "Posljednje povezano",
                 "showmore": "Više detalja",
                 "showless": "Pokaži manje",
-                "button": "Omogući sigurnost Wifi mreže",
+                "button": "Omogući sigurnost WiFi mreže",
                 "disableDecribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih."
             },
             "threatlocator": {
@@ -1745,7 +1745,7 @@
                 "pass": "PROŠLO",
                 "learnMoreAboutSecurityHealth": "Saznajte više o svakoj od tih stavki <tag>ovdje</tag>.",
                 "peaceOfMind": "Želite li više mira?",
-                "button": "Omogući sigurnost Wifi mreže"
+                "button": "Omogući sigurnost WiFi mreže"
             },
             "homeStatus": {
                 "protected": "Protected",

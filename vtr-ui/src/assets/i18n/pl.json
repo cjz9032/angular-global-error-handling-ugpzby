@@ -17,7 +17,7 @@
                         "balText": "Normalna prędkość CPU i wentylatora",
                         "quietText": "Mniejsza prędkość CPU i wentylatora"
                     },
-                    "wifiSecurity": "Bezp. Wi-Fi",
+                    "wifiSecurity": "Bezp. WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Szybkie ładowanie"
                 },
@@ -427,7 +427,7 @@
                 "title": "Ochrona",
                 "sub1": "Moje zabezpieczenie",
                 "sub2": "Antywirus",
-                "sub3": "Bezpieczeństwo Wi-Fi",
+                "sub3": "Bezpieczeństwo WiFi",
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Ochrona internetowa",
                 "sub6": "Windows Hello"
@@ -443,7 +443,7 @@
             "title": "Doradca zabezpieczeń",
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
-            "wifi": "Bezpieczeństwo Wi-Fi",
+            "wifi": "Bezpieczeństwo WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
             "windowsHello": "Windows Hello",
@@ -1660,7 +1660,7 @@
                 "back": "WSTECZ"
             },
             "container": {
-                "title": "Bezpieczeństwo Wi-Fi Lenovo",
+                "title": "Bezpieczeństwo WiFi Lenovo",
                 "name": "BEZPIECZEŃSTWO WIFI",
                 "enable": "WŁĄCZONO",
                 "disable": "WYŁĄCZONO",
@@ -1670,8 +1670,8 @@
                 "connect": "Połączony jako ostatni",
                 "showmore": "Pokaż więcej",
                 "showless": "Pokaż mniej",
-                "button": "Włącz funkcję Bezpieczeństwo Wi-Fi",
-                "disableDecribe": "Bezpieczeństwo Wi-Fi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
+                "button": "Włącz funkcję Bezpieczeństwo WiFi",
+                "disableDecribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
@@ -1745,7 +1745,7 @@
                 "pass": "POWIODŁO SIĘ",
                 "learnMoreAboutSecurityHealth": "Dowiedz się więcej o każdym z tych <tag>komponentów</tag>tutaj.",
                 "peaceOfMind": "Chcesz więcej spokoju?",
-                "button": "Włącz funkcję Bezpieczeństwo Wi-Fi"
+                "button": "Włącz funkcję Bezpieczeństwo WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

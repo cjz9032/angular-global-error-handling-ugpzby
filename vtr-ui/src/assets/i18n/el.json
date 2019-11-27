@@ -17,7 +17,7 @@
                         "balText": "Κανονική ταχύτητα CPU και ανεμιστήρα",
                         "quietText": "Χαμηλή χρήση CPU, χαμηλή ταχύτητα ανεμιστήρα"
                     },
-                    "wifiSecurity": "Ασφάλεια Wifi",
+                    "wifiSecurity": "Ασφάλεια WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Γρήγορη φόρτιση"
                 },
@@ -1660,7 +1660,7 @@
                 "back": "ΠΙΣΩ"
             },
             "container": {
-                "title": "Ασφάλεια Lenovo Wifi",
+                "title": "Ασφάλεια Lenovo WiFi",
                 "name": "ΑΣΦΑΛΕΙΑ WIFI",
                 "enable": "ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
                 "disable": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
@@ -1745,7 +1745,7 @@
                 "pass": "ΕΠΙΤΥΧΗΣ",
                 "learnMoreAboutSecurityHealth": "Μάθετε περισσότερα για καθένα από αυτά τα στοιχεία, <tag>εδώ</tag>.",
                 "peaceOfMind": "Θέλεις περισσότερη ηρεμία;",
-                "button": "Ενεργοποίηση Ασφαλείας Wifi"
+                "button": "Ενεργοποίηση Ασφαλείας WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

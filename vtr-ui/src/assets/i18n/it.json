@@ -1670,7 +1670,7 @@
                 "connect": "Ultima connessione",
                 "showmore": "Mostra di più",
                 "showless": "Mostra meno",
-                "button": "Abilita sicurezza Wifi",
+                "button": "Abilita sicurezza WiFi",
                 "disableDecribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose."
             },
             "threatlocator": {
@@ -1745,7 +1745,7 @@
                 "pass": "SUPERATO",
                 "learnMoreAboutSecurityHealth": "Ulteriori informazioni su questi componenti sono disponibili <tag>qui</tag>.",
                 "peaceOfMind": "Vuoi maggiore sicurezza e tranquillità?",
-                "button": "Abilita sicurezza Wifi"
+                "button": "Abilita sicurezza WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

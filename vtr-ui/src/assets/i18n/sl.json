@@ -1660,8 +1660,8 @@
                 "back": "NAZAJ"
             },
             "container": {
-                "title": "Program družbe Lenovo za varnost Wifi-ja",
-                "name": "VARNOST WI-FI-ja",
+                "title": "Program družbe Lenovo za varnost WiFi-ja",
+                "name": "VARNOST WIFI-ja",
                 "enable": "OMOGOČEN",
                 "disable": "ONEMOGOČEN",
                 "less": "Manj informacij",

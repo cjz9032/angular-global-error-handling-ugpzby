@@ -1561,7 +1561,7 @@
             "pwdHealth": "Estado de la contraseña",
             "vpnSecurity": "Seguridad VPN",
             "vpnVirtual": "Red privada virtual",
-            "wifiConnected": "Wi-Fi y seguridad de hogar conectado",
+            "wifiConnected": "WiFi y seguridad de hogar conectado",
             "connectedHomeSecurity": "Seguridad de hogar conectado",
             "fingerprint": "Lector de huellas dactilares",
             "seeAllNetwork": "Ver todas las redes conectadas",
@@ -1656,12 +1656,12 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Wi-Fi y seguridad de hogar conectado",
+                "title": "WiFi y seguridad de hogar conectado",
                 "back": "ATRÁS"
             },
             "container": {
-                "title": "Seguridad de Lenovo Wifi",
-                "name": "SEGURIDAD DE Wi-Fi",
+                "title": "Seguridad de Lenovo WiFi",
+                "name": "SEGURIDAD DE WiFi",
                 "enable": "HABILITADO",
                 "disable": "DESHABILITADO",
                 "less": "Menos información",
@@ -1670,7 +1670,7 @@
                 "connect": "Último conectado",
                 "showmore": "Mostrar más",
                 "showless": "Mostrar menos",
-                "button": "Habilitar seguridad de Wi-Fi",
+                "button": "Habilitar seguridad de WiFi",
                 "disableDecribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas."
             },
             "threatlocator": {
@@ -1681,7 +1681,7 @@
             },
             "locationmodal": {
                 "title": "Habilitar servicios de ubicación",
-                "describe1": "Para utilizar la Seguridad de Wi-Fi de Lenovo, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
+                "describe1": "Para utilizar la Seguridad de WiFi de Lenovo, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
                 "describe2": "Para utilizar la Seguridad de hogar conectado, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
                 "agree": "ACEPTO",
                 "cancel": "CANCELAR"
@@ -1745,7 +1745,7 @@
                 "pass": "APROBADO",
                 "learnMoreAboutSecurityHealth": "Obtener más información acerca de cada uno de estos componentes <tag>aquí</tag>.",
                 "peaceOfMind": "¿Desea más tranquilidad?",
-                "button": "Habilitar seguridad de Wi-Fi"
+                "button": "Habilitar seguridad de WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -1807,7 +1807,7 @@
             "allowsYou": "Dashlane le permite",
             "allowsYou1": "Iniciar sesión instantáneamente en cualquier lugar para una exploración perfecta - Sincronizar entre dispositivos para que nunca quede sin acceso a cuentas importantes",
             "allowsYou2": "Monitoree la web oscura para detectar sus datos personales",
-            "allowsYou3": "Permanezca seguro en las redes Wi-Fi no seguras con VPN integrado",
+            "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
             "poweredByDashLane": "Con tecnología Dashlane",
             "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"

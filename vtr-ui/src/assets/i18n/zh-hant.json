@@ -17,7 +17,7 @@
                         "balText": "正常 CPU 和風扇速度",
                         "quietText": "CPU 使用量越低，風扇速度越慢"
                     },
-                    "wifiSecurity": "Wifi 安全性",
+                    "wifiSecurity": "WiFi 安全性",
                     "dolby": "Dolby",
                     "rapidCharge": "快速充電"
                 },
@@ -1660,7 +1660,7 @@
                 "back": "上一步"
             },
             "container": {
-                "title": "Lenovo Wifi 安全性",
+                "title": "Lenovo WiFi 安全性",
                 "name": "WIFI 安全性",
                 "enable": "已啟用",
                 "disable": "已停用",

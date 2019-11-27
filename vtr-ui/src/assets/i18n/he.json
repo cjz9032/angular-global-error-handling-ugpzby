@@ -1670,7 +1670,7 @@
                 "connect": "חובר לאחרונה",
                 "showmore": "הצג יותר",
                 "showless": "הצג פחות",
-                "button": "הפעלת אבטחת Wifi",
+                "button": "הפעלת אבטחת WiFi",
                 "disableDecribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
             },
             "threatlocator": {
@@ -1745,7 +1745,7 @@
                 "pass": "עבר",
                 "learnMoreAboutSecurityHealth": "קבלו מידע נוסף על כל אחד מרכיבים אלה <tag>כאן</tag>.",
                 "peaceOfMind": "מעוניינים ביותר שקט נפשי?",
-                "button": "הפעלת אבטחת Wifi"
+                "button": "הפעלת אבטחת WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

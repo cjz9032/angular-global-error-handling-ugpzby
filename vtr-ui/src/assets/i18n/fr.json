@@ -17,7 +17,7 @@
                         "balText": "Vitesse norm. de l'UC et du vent.",
                         "quietText": "Usage inf de l'UC et vit inf du vent"
                     },
-                    "wifiSecurity": "Sécurité Wi-Fi",
+                    "wifiSecurity": "Sécurité WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Charge rapide"
                 },
@@ -427,7 +427,7 @@
                 "title": "Sécurité",
                 "sub1": "Ma sécurité",
                 "sub2": "Antivirus",
-                "sub3": "Sécurité Wi-Fi",
+                "sub3": "Sécurité WiFi",
                 "sub4": "État de santé du mot de passe",
                 "sub5": "Protection Internet",
                 "sub6": "Windows Hello"
@@ -443,7 +443,7 @@
             "title": "Conseil sécurité",
             "subtitle": "VÉRIFIEZ SI VOTRE PÉRIPHÉRIQUE EST SÉCURISÉ.",
             "antiVirus": "Antivirus",
-            "wifi": "Sécurité Wi-Fi",
+            "wifi": "Sécurité WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
             "windowsHello": "Windows Hello",
@@ -1660,7 +1660,7 @@
                 "back": "RETOUR"
             },
             "container": {
-                "title": "Sécurité Wi-Fi Lenovo",
+                "title": "Sécurité WiFi Lenovo",
                 "name": "SÉCURITÉ WIFI",
                 "enable": "ACTIVÉ",
                 "disable": "DÉSACTIVÉ",

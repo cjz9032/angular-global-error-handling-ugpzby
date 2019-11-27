@@ -17,7 +17,7 @@
 						"balText": "Normal CPU and fan speed",
 						"quietText": "Lower CPU usage, Lower fan speed"
 					},
-					"wifiSecurity": "Wifi Security",
+					"wifiSecurity": "WiFi Security",
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
 				},
@@ -1779,8 +1779,8 @@
 				"back": "BACK"
 			},
 			"container": {
-				"title": "Lenovo Wi-fi Security",
-				"name": "WI-FI SECURITY",
+				"title": "Lenovo WiFi Security",
+				"name": "WIFI SECURITY",
 				"enable": "ENABLED",
 				"disable": "DISABLED",
 				"less": "Less info",
@@ -1789,7 +1789,7 @@
 				"connect": "Connected last",
 				"showmore": "Show more",
 				"showless": "Show less",
-				"button": "Enable Wifi security",
+				"button": "Enable WiFi security",
 				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
 			},
 			"threatlocator": {
