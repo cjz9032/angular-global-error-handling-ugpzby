@@ -2,8 +2,8 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
-	<div class="breaches-page__header" *ngIf="!(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async) || (isFigleafReadyForCommunication$ | async)))">
-		<vtr-feature-header
+	<div class="breaches-page__header" *ngIf="!(isShowExitPitch$ | async) && !(isShowVerifyBlock$ | async) && (isOnline || (!isOnline && !(userEmail$ | async) || (isFigleafReadyForCommunication$ | async)))">
+	<vtr-feature-header
 			class="breaches-page__feature-header"
 			[texts]="textForFeatureHeader"
 			[isFeatureWasScanned]="breachedAccountWasScanned$ | async"
@@ -43,13 +43,12 @@
 		<ng-container *ngIf="isOnline || (!isOnline && !(userEmail$ | async)) || (isFigleafReadyForCommunication$ | async); else offlineBlock" >
 			<vtr-email-scanner
 				class="breached-accounts__email-scanner"
-				*ngIf="(isUndefinedWithoutFigleafState$ | async)"
+				*ngIf="(isShowEmailScanner | async)"
 				[scanCounter]="scanCounter$ | async"
 				[emailWasScanned]="breachedAccountWasScanned$ | async">
 			</vtr-email-scanner>
 			<vtr-breached-account
-				*ngIf="(((isAccountVerify$ | async) && (isFigleafReadyForCommunication$ | async))
-					|| ((isUserAuthorized$ | async) && !(isFigleafReadyForCommunication$ | async)) && (breachedAccounts$ | async)?.length)"
+				*ngIf="isShowBreachedAccount$ | async"
 				[breachedAccounts]="(breachedAccounts$ | async)"
 				[isUserAuthorized]="isUserAuthorized$ | async"
 				[isFigleafReadyForCommunication]="isFigleafReadyForCommunication$ | async"
@@ -63,6 +62,10 @@
 				[breachedAccountsLength]="(breachedAccounts$ | async)?.length"
 				(verifyEmailEmit)="startVerify()">
 			</vtr-verify-email>
+
+			<vtr-exit-pitch *ngIf="isShowExitPitch$ | async">
+
+			</vtr-exit-pitch>
 
 			<div class="breached-accounts__clear-data-wrapper"
 				 *ngIf="(userEmail$ | async) && !(isFigleafReadyForCommunication$ | async)">

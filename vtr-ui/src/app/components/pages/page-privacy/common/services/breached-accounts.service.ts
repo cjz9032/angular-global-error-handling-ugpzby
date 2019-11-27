@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { EMPTY, merge, Observable, ReplaySubject, Subject } from 'rxjs';
+import { combineLatest, EMPTY, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import {
 	catchError,
 	debounceTime,
@@ -74,10 +74,7 @@ export class BreachedAccountsService implements OnDestroy {
 		return merge(
 			this.emailScannerService.scanNotifier$.pipe(map(() => ({type: 'scanNotifier'}))),
 			this.emailScannerService.validationStatusChanged$.pipe(distinctUntilChanged()),
-			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
-				tap((isFigleafReadyForCommunication) => this.resetBreachedAccounts(isFigleafReadyForCommunication)),
-				distinctUntilChanged()
-			),
+			this.figleafState(),
 			this.getNewBreachedAccounts$,
 			this.updateTriggersService.shouldUpdate$.pipe(
 				switchMap(() => this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
@@ -142,11 +139,13 @@ export class BreachedAccountsService implements OnDestroy {
 	}
 
 	private getBreachedAccountsFromDifferentSource(): Observable<BreachedAccount[]> {
-		return this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
+		return combineLatest([
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$,
+			this.communicationWithFigleafService.isFigleafInExit$
+		]).pipe(
 			take(1),
-			switchMap((isFigleafInstalled) => {
-				console.log('isFigleafInstalled', isFigleafInstalled);
-				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
+			switchMap(([isFigleafReadyForCommunication, isFigleafInExit]) => {
+				return isFigleafReadyForCommunication || isFigleafInExit ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => breachedAccounts.filter(x => !x.isFixed)),
 			map((breachedAccounts) => {
@@ -154,6 +153,18 @@ export class BreachedAccountsService implements OnDestroy {
 				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
 				return [...breaches, ...unknownBreaches];
 			})
+		);
+	}
+
+	private figleafState() {
+		return combineLatest([
+			this.communicationWithFigleafService.isFigleafReadyForCommunication$,
+			this.communicationWithFigleafService.isFigleafInExit$
+		]).pipe(
+			tap(([isFigleafReadyForCommunication, isFigleafInExit]) =>
+				this.resetBreachedAccounts(isFigleafReadyForCommunication || isFigleafInExit)
+			),
+			distinctUntilChanged()
 		);
 	}
 }

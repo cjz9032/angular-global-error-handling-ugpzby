@@ -34,6 +34,7 @@ import { OfflineModeComponent } from './offline-mode/offline-mode.component';
 import { AppSearchModule} from 'src/app/beta/app-search/app-search.module';
 import { VideoComponent } from './video/video.component';
 import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-tooltip.component';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
 @NgModule({
 	declarations: [
@@ -63,7 +64,8 @@ import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-toolt
 		WhySeeingTooltipComponent,
 		OfflineModeComponent,
 		VideoComponent,
-		ClearDataTooltipComponent
+		ClearDataTooltipComponent,
+		InfiniteScrollComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -92,7 +94,8 @@ import { ClearDataTooltipComponent } from './clear-data-tooltip/clear-data-toolt
 		WhySeeingTooltipComponent,
 		OfflineModeComponent,
 		VideoComponent,
-		ClearDataTooltipComponent
+		ClearDataTooltipComponent,
+		InfiniteScrollComponent
 	],
 	imports: [
 		CommonModule,
