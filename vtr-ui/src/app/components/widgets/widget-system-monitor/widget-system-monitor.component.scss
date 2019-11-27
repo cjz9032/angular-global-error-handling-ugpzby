@@ -49,6 +49,9 @@
 				@media #{$breakpoint_lg} {
 					padding-right: 2rem;
 				}
+				@media #{$breakpoint_md} {
+					padding-right: 0;
+				}
 				@media #{$breakpoint_sm} {
 					padding-right: 0;
 				}
@@ -865,8 +868,8 @@
 									height: $gaming_hd_diameter_xl;
 								}
 								@media #{$breakpoint_md} {
-									width: $gaming_hd_diameter_lg;
-									height: $gaming_hd_diameter_lg;
+									width: $gaming_hd_diameter_md;
+									height: $gaming_hd_diameter_md;
 								}
 								// @media #{$mediaquery_6} {
 								// 	width: $gaming_hd_diameter_md;
