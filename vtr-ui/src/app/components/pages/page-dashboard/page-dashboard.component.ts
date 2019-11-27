@@ -764,8 +764,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				const memory = this.systemStatus[0];
 				const totalRam = value.memory.total;
 				const usedRam = value.memory.used;
-				const percentRam = parseInt((usedRam / totalRam * 100).toFixed(0), 10);
-				if (percentRam > 70) {
+				if (usedRam === totalRam) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -783,8 +782,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 						1
 					)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
 				});
-				const percent = parseInt((usedDisk / totalDisk * 100).toFixed(0), 10);
-				if (percent > 90) {
+				if (usedDisk === totalDisk) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;

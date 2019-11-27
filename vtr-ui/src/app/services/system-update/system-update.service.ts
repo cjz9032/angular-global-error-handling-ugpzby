@@ -138,7 +138,7 @@ export class SystemUpdateService {
 				console.log('checkForUpdates callback', progressPercentage);
 				this.percentCompleted = progressPercentage;
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
-			}).then((response) => {
+			}).then(async (response) => {
 				console.log('checkForUpdates response', response, typeof response.status);
 				this.isCheckForUpdateComplete = true;
 				const status = parseInt(response.status, 10);
@@ -150,6 +150,17 @@ export class SystemUpdateService {
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
+					while (this.percentCompleted < 100) {
+						const percent = this.percentCompleted + 10;
+						if (percent <= 100 ) {
+							this.percentCompleted = percent;
+						} else {
+							this.percentCompleted = 100;
+						}
+						this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
+						const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+						await sleep(80);
+					}
 					this.percentCompleted = 0;
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
