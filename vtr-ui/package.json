@@ -1,8 +1,8 @@
 {
 	"name": "vtr-ui",
-	"version": "1.2.7",
+	"version": "1.2.9",
 	"scripts": {
-		"build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage && echo \"Wait for 4min...\" && sleep 240",
+		"build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
 		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev  && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --code-coverage",
 		"build:beta": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=mock",
 		"build:qa": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=qa",
