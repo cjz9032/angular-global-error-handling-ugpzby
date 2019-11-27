@@ -1,6 +1,5 @@
 @import "icomoon-variables";
 
-
 .icomoon-Active-protection {
 	&:before {
 	  content: $icomoon-Active-protection; 
@@ -259,6 +258,60 @@
   .icomoon-keep-my-display {
 	&:before {
 	  content: $icomoon-keep-my-display; 
+	}
+  }
+  .icomoon-landing_antivirus {
+	&:before {
+	  content: $icomoon-landing_antivirus;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_disk {
+	&:before {
+	  content: $icomoon-landing_disk;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_finger {
+	&:before {
+	  content: $icomoon-landing_finger;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_firewall {
+	&:before {
+	  content: $icomoon-landing_firewall;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_password {
+	&:before {
+	  content: $icomoon-landing_password;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_uac {
+	&:before {
+	  content: $icomoon-landing_uac;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_vpn {
+	&:before {
+	  content: $icomoon-landing_vpn;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_wifi {
+	&:before {
+	  content: $icomoon-landing_wifi;     
+	  color: #4a81fd;
+	}
+  }
+  .icomoon-landing_windows {
+	&:before {
+	  content: $icomoon-landing_windows;     
+	  color: #4a81fd;
 	}
   }
   .icomoon-LE-Acoustic-echo-cancellation2x {
@@ -614,6 +667,12 @@
 	  content: $icomoon-star; 
 	}
   }
+  .icomoon-superResolution {
+	&:before {
+	  content: $icomoon-superResolution;     
+	  color: #4a81fd;
+	}
+  }
   .icomoon-Top-row-keys {
 	&:before {
 	  content: $icomoon-Top-row-keys;     
@@ -672,10 +731,3 @@
 	  color: #4a81fd;
 	}
   }
-  .icomoon-superResolution {
-	&:before {
-		content: $icomoon-superResolution;
-		color: #4a81fd;
-	}
-  }
-  

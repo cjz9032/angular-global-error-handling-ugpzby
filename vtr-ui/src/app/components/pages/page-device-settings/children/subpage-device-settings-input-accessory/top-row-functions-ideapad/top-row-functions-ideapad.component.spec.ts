@@ -4,7 +4,7 @@
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-// fdescribe('TopRowFunctionsIdeapadComponent', () => {
+// describe('TopRowFunctionsIdeapadComponent', () => {
 // 	let component: TopRowFunctionsIdeapadComponent;
 // 	let fixture: ComponentFixture<TopRowFunctionsIdeapadComponent>;
 
