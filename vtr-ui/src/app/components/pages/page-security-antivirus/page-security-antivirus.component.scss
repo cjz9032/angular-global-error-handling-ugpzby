@@ -364,6 +364,7 @@
 	.button {
 		::ng-deep {
 			.button-box {
+				padding: 0 !important;
 				.button {
 					font-size: 1.5rem !important;
 					font-weight: $weight_600 !important;
