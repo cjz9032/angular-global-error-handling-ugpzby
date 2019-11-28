@@ -1586,7 +1586,12 @@ export class VantageShellService {
 			GetBrowsingTime: this.getPromise(30),
 			SetWalkingMode: this.getPromise(true),
 			setBrowsingMode: this.getPromise(true),
-			SetBrowsingTime: this.getPromise(true)
+			SetBrowsingTime: this.getPromise(true),
+			GetHPDLeaveSensitivityVisibility: this.getPromise(true),
+			GetHPDLeaveSensitivity: this.getPromise(true),
+			SetHPDLeaveSensitivitySetting: this.getPromise(true),
+			getLockFacialRecognitionSettings: this.getPromise(true),
+			setLockFacialRecognitionSettings: this.getPromise(true)
 		};
 		return intelligentSensing;
 	}
@@ -2106,7 +2111,8 @@ export class VantageShellService {
 
 	public getSuperResolution(): any {
 		const inputControlLinks: any = {
-			getSuperResolutionStatus: this.getPromise({ available: true, status: false })
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false }),
+			setSuperResolutionStatus: this.getPromise(true)
 		};
 
 		return inputControlLinks;

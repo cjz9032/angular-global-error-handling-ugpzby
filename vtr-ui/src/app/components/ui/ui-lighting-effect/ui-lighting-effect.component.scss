@@ -140,23 +140,27 @@
 		background: $gaming_hover;
 	}
 }
-::ng-deep ngb-tooltip-window.tooltip {
-	top: 1.5rem !important;
-	.arrow {
-		height: 0.5rem;
-		&::before {
-			top: 0px;
-			border-width: 1.2rem 1.2rem 0;
-			border-top-color: $gaming_lightest;
+::ng-deep vtr-ui-lighting-effect {
+	.select-box {
+		ngb-tooltip-window.tooltip {
+			top: 1.5rem !important;
+			.arrow {
+				height: 0.5rem;
+				&::before {
+					top: 0px;
+					border-width: 1.2rem 1.2rem 0;
+					border-top-color: $gaming_lightest;
+				}
+			}
+			.tooltip-inner {
+				padding: 2.4rem;
+				min-width: 45rem;
+				text-align: center;
+				background-color: #fff;
+				border-radius: 0.4rem;
+				font-size: 1.4rem;
+				color: $gaming_dark;
+			}
 		}
-	}
-	.tooltip-inner {
-		padding: 2.4rem;
-		min-width: 45rem;
-		text-align: center;
-		background-color: #fff;
-		border-radius: 0.4rem;
-		font-size: 1.4rem;
-		color: $gaming_dark;
 	}
 }
