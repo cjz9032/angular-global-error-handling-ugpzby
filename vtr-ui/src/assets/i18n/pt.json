@@ -1094,7 +1094,7 @@
                             "yes": "Sim",
                             "description3": "Tem a certeza de que pretende parar a reposição do indicador de bateria?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez."
                     }
                 },
                 "energyStar": {
@@ -1150,8 +1150,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
