@@ -1117,7 +1117,7 @@
 						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
 						"FCCText": "From {{before}} Wh to {{after}} Wh",
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
-						"dual_note": "Note: Only one battery can be reset at a time",
+						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
 							"ERROR_SUCCESS": "Complete. Successful reset.",
 							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
@@ -1346,7 +1346,7 @@
 					},
 					"firstKeyObj": {
 						"tittle": "Fn + Tab",
-						"description": "enable zoom feature on high resolution displays",
+						"description": "enable zooming feature on high resolution displays",
 						"image": ""
 					},
 					"secondKeyObj": {

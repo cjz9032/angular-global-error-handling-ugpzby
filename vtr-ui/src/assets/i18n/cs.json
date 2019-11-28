@@ -1094,7 +1094,7 @@
                             "yes": "Ano",
                             "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Poznámka: Resetovat lze vždy jen jednu baterii."
                     }
                 },
                 "energyStar": {
@@ -1150,8 +1150,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",

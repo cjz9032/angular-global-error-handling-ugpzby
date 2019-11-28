@@ -1094,7 +1094,7 @@
                             "yes": "Tak",
                             "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz."
                     }
                 },
                 "energyStar": {
@@ -1150,8 +1150,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
