@@ -30,34 +30,14 @@ If you are adding any new icon to icommon font file, don't forget to copy SVG fi
 14. Copy all content from line no 29 to eof of icomoon/style.scss to icomoon-style.scss.
 
 
-# Hot to convert WOFF font file to base64 string. I will try to automate this process in future.
+# How to convert WOFF font file to base64 string. I will try to automate this process in future.
 
-visit https://www.fontsquirrel.com/tools/webfont-generator and upload WOFF font file, select all file from upload dialog to select WOFF file.
+visit https://transfonter.org/ and upload WOFF font file.
 
-> Font Formats: WOFF
+> Formats: WOFF
 
-> Truetype Hinting:  Keep Existing
+> Base64 encode :  On
 
-> Rendering: Fix GASP Table
-
-> Vertical Metrics: Auto-Adjust Vertical Metrics
-
-> Fix Missing Glyphs: Select both options
-
-> X-height Matching: None
-
-> Protection: None
-
-> Subsetting: Basic Subsetting
-
-> OpenType Features: None
-
-> OpenType Flattening: None
-
-> CSS:  Base64 Encode
-
-> Advanced Options: None
-
-Once all of the above setting are set, check Agreement and click on DOWNLOAD YOUR KIT button.
+Keep other options to its default value.
 
 From downloaded zip file open **stylesheet.css** and copy ` src:url` part and replace it in `src\hw-settings-icomoon\icomoon-base64.scss` file `src:url` part.
