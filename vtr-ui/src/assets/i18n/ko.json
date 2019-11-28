@@ -1094,7 +1094,7 @@
                             "yes": "예",
                             "description3": "배터리 게이지 리셋을 중단하시겠습니까?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "참고: 한 번에 한 배터리만 리셋할 수 있습니다."
                     }
                 },
                 "energyStar": {
@@ -1150,8 +1150,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
