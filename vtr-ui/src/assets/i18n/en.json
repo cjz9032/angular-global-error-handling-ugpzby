@@ -1045,7 +1045,8 @@
 							"wed": "Wed",
 							"thurs": "Thurs",
 							"fri": "Fri",
-							"sat": "Sat"
+							"sat": "Sat",
+							"thu": "Thu"
 						},
 						"name": {
 							"sun": "Sunday",
@@ -1059,20 +1060,48 @@
 						"everyday": "Everyday",
 						"weekdays": "Weekdays",
 						"weekends": "Weekends"
-					},
-					"legends": {
-						"none": "None",
-						"frequent": "Frequent"
-					},
+					},					
 					"warningtip": "Please select at least one day.",
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
 					"hyperlinkToGraph": "Click to see the usage and applied active time",
 					"automaticMode": "Automatic mode",
 					"manualMode": "Manual mode",
-					"graph1Tittle": "Usage of this computer",
-					"graph2Tittle": "Applied active time",
-					"graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-					"graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+					"graph": {
+						"graph1Tittle": "Usage of this computer",
+						"graph2Tittle": "Applied active time",
+						"graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+						"graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+						"legends": {
+							"none": "None",
+							"frequent": "Frequent"
+						},				
+						"hours": {
+							"zero": "0",
+							"one": "1",
+							"two": "2",
+							"three": "3",
+							"four": "4",
+							"five": "5",
+							"six": "6",
+							"seven": "7",
+							"eight": "8",
+							"nine": "9",
+							"ten": "10",
+							"eleven": "11",
+							"twele": "12",
+							"thirteen": "13",
+							"fourteen": "14",
+							"fifteen": "15",
+							"sixteen": "16",
+							"seventeen": "17",
+							"eighteen": "18",
+							"nineteen": "19",
+							"twenty": "20",
+							"twentyOne": "21",
+							"twentyTwo": "22",
+							"twentythree": "23"
+						}
+					}					
 				},
 				"batterySettings": {
 					"title": "Battery settings",
