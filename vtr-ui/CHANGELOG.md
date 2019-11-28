@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.0.263](http://git-codecommit.us-east-1.amazonaws.com///compare/v1.0.262...v1.0.263) (2019-11-28)
+
+
+### Features
+
+* battery condition based on windows api. ([557b370](http://git-codecommit.us-east-1.amazonaws.com///commit/557b37095692a666b6ac9d46ac85dbafc1f16102))
 
 ## [1.0.262](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.1.0...v1.0.262) (2019-11-27)
 
