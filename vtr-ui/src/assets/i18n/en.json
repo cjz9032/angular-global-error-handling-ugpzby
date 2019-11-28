@@ -1346,7 +1346,7 @@
 					},
 					"firstKeyObj": {
 						"tittle": "Fn + Tab",
-						"description": "enable zoom feature on high resolution displays",
+						"description": "enable zooming feature on high resolution displays",
 						"image": ""
 					},
 					"secondKeyObj": {
