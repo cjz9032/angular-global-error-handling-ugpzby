@@ -20,10 +20,10 @@
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4">
+						<div class="col-8 px-20 pb-4"
+							[class.disabled]="isCheckedAuto || isGaugeResetRunning">
 							<div class="btn-group btn-block dropdown-left"
 								ngbDropdown
-								[class.disabled]="isCheckedAuto || isGaugeResetRunning"
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
 									ngbDropdownToggle

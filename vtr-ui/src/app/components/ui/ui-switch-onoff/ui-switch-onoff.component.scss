@@ -6,13 +6,13 @@
 	cursor: pointer;
 	label {
 		cursor: pointer;
-		.switch-label, .switch {
+		.switch-label,
+		.switch {
 			cursor: pointer;
 		}
 	}
 	&.switch-disable {
-		opacity: 0.3;
-		cursor: pointer;
+		pointer-events: none;
 
 		.switch {
 			cursor: pointer;
@@ -23,11 +23,17 @@
 		}
 	}
 }
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
+	}
+}
 
 .checkbox input {
 	position: absolute;
 	opacity: 0;
-	top: .4rem;
+	top: 0.4rem;
 	height: 2.6rem;
 	width: 5.4rem;
 }
