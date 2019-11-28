@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
-				"seeDetailsLink": "Lisätietoja on seuraavissa",
-				"gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
+                "seeDetailsLink": "Lisätietoja on seuraavissa",
+                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
             },
             "power": {
                 "title": "Virta",
@@ -868,8 +868,8 @@
                         "description": "Suojaa lentokoneen pistorasiaa rajoittamalla tietokoneesi virrankulutusta.Kun lentokonevirtatila on käytössä, tietokone vähentää virrankulutusta rajoittamalla akun latausta ja järjestelmän suorituskykyä.",
                         "checkBoxDesc": "Automaattinen tunnistus",
                         "note": "Jos automaattinen tunnistus on valittu, tietokone ottaa lentokonevirtatilan käyttöön automaattisesti, kun se havaitsee olevansa lentokoneessa, ja poistaa sen käytöstä, kun poistut."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Akkumittarin nollaus",
                         "description": "Tämän toiminnon avulla tietokone voi arvioida täyden varauskapasiteetin aiempaa tarkemmin.",
                         "barCode": "Viivakoodi",
@@ -904,7 +904,7 @@
                             "yes": "Kyllä",
                             "description3": "Haluatko varmasti lopettaa akkumittarin nollauksen?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Huomautus: Voit nollata vain yhden akun kerrallaan."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi (valinnainen)",
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
-		"custom": "Mukautettu käyttökokemus",
-		"professional": "Ammattikäyttö",
+        "custom": "Mukautettu käyttökokemus",
+        "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Asenna",
-				"installing": "Asentaminen",
-				"downloading": "Ladataan",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
                 "installed": "Asennettu",
                 "launch": "Aloita",
                 "seeMore": "Näytä lisää"

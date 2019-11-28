@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
-				"seeDetailsLink": "Details anzeigen",
-				"gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen."
+                "seeDetailsLink": "Details anzeigen",
+                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen."
             },
             "power": {
                 "title": "Stromversorgung",
@@ -868,8 +868,8 @@
                         "description": "Schützen Sie das Netzteil im Flugzeug, indem Sie den Stromverbrauch des Systems steuern.Wenn die Funktion Flugzeug-Energiemodus aktiviert ist, verringert der Computer den Stromverbrauch durch Beschränkung der Akkuladerate und der Systemleistung.",
                         "checkBoxDesc": "Automatische Erkennung",
                         "note": "Ist die Funktion für automatische Erkennung aktiviert, schaltet der Computer den Flugzeug-Energiemodus automatisch ein, sobald er eine Umgebung erkennt, die dem Inneren einer Flugzeugkabine entspricht, und schaltet ihn beim Verlassen dieser Umgebung wieder aus."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Akkuzustandsanzeiger zurücksetzen",
                         "description": "Mit dieser Funktion kann Ihr Computer die volle Ladekapazität genauer berechnen.",
                         "barCode": "Barcode",
@@ -904,7 +904,7 @@
                             "yes": "Ja",
                             "description3": "Möchten Sie das Zurücksetzen des Akkustandsanzeigers wirklich anhalten?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Hinweis: Es kann jeweils nur eine Batterie zurückgesetzt werden."
                     }
                 },
                 "energyStar": {

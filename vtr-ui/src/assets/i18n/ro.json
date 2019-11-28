@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
-				"seeDetailsLink": "Vedeți detaliile",
-				"gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
+                "seeDetailsLink": "Vedeți detaliile",
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
             },
             "power": {
                 "title": "Alimentare",
@@ -868,8 +868,8 @@
                         "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului.",
                         "checkBoxDesc": "Autodetecție",
                         "note": "Dacă detectarea automată este activată, calculatorul va porni automat modul de alimentare Avion când detectează un mediu de bord de avion și îl va opri când părăsiți acel mediu."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Resetare indicator baterie",
                         "description": "Această caracteristică permite computerului să estimeze mai exact capacitatea de încărcare completă.",
                         "barCode": "Cod de bare",
@@ -904,7 +904,7 @@
                             "yes": "Da",
                             "description3": "Sigur opriţi resetarea indicatorului bateriei?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Notă: numai o singură baterie poate fi resetată la un moment dat."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
-		"custom": "Experiență personalizată",
-		"professional": "Utilizare la nivel profesionist",
+        "custom": "Experiență personalizată",
+        "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalare",
-				"installing": "Instalare în curs",
-				"downloading": "Descărcare în curs",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"

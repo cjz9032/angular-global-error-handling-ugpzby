@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
-				"seeDetailsLink": "Zobacz szczegóły",
-				"gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
+                "seeDetailsLink": "Zobacz szczegóły",
+                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
             },
             "power": {
                 "title": "Zasilanie",
@@ -868,8 +868,8 @@
                         "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
                         "checkBoxDesc": "Autowykrywanie",
                         "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Resetowanie wskaźnika stanu akumulatora",
                         "description": "Funkcja umożliwia komputerowi dokładniejsze szacowanie pojemności ładowania.",
                         "barCode": "Kod kreskowy",
@@ -904,7 +904,7 @@
                             "yes": "Tak",
                             "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Uwaga: Można zresetować tylko jeden akumulator naraz."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Opowiedz nam o swoich zainteresowaniach (opcjonalnie)",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
-		"custom": "Niestandardowe zastosowanie",
-		"professional": "Zastosowania profesjonalne",
+        "custom": "Niestandardowe zastosowanie",
+        "professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
         "title1": "Witamy w aplikacji",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Zainstaluj",
-				"installing": "Instalowanie",
-				"downloading": "Pobieranie",
+                "installing": "Instalowanie",
+                "downloading": "Pobieranie",
                 "installed": "Zainstalowane",
                 "launch": "Uruchom",
                 "seeMore": "Zobacz więcej"

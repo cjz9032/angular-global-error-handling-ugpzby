@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
-				"seeDetailsLink": "Zobrazit podrobnosti",
-				"gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
+                "seeDetailsLink": "Zobrazit podrobnosti",
+                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
             },
             "power": {
                 "title": "Napájení",
@@ -868,8 +868,8 @@
                         "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače.Je-li aktivní napájecí režim Letadlo, omezí počítač spotřebu elektrické energie zpomalením nabíjení baterie a snížením výkonu systému.",
                         "checkBoxDesc": "Automatická detekce",
                         "note": "Je li zaškrtnuta automatická detekce, aktivuje počítač automaticky napájecí schéma Letadlo, když detekuje prostředí letadla a vypne jej, když prostředí letadla opustíte."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Reset ukazatele stavu baterie",
                         "description": "Tato funkce umožňuje počítači přesněji odhadnout maximální kapacitu baterie.",
                         "barCode": "Čárový kód",
@@ -904,7 +904,7 @@
                             "yes": "Ano",
                             "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Poznámka: Resetovat lze vždy jen jednu baterii."
                     }
                 },
                 "energyStar": {

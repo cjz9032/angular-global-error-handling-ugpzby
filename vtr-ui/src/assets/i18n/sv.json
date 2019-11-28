@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
-				"seeDetailsLink": "Visa information",
-				"gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
+                "seeDetailsLink": "Visa information",
+                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
             "power": {
                 "title": "Ström",
@@ -868,8 +868,8 @@
                         "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
                         "checkBoxDesc": "Aktivera automatisk upptäckt",
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Återställning av batterimätare",
                         "description": "Med denna funktion kan datorn beräkna fulladdningskapaciteten mer exakt.",
                         "barCode": "Streckkod",
@@ -904,7 +904,7 @@
                             "yes": "Ja",
                             "description3": "Vill du stoppa återställning av batterimätaren?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Obs: Endast ett batteri kan återställas i taget."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Berätta om dina intressen (valfritt)",
         "personal": "Privat",
         "business": "Arbete",
-		"custom": "Skräddarsydd upplevelse",
-		"professional": "Användning i arbetet",
+        "custom": "Skräddarsydd upplevelse",
+        "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installera",
-				"installing": "Installerar",
-				"downloading": "Hämtar",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
                 "installed": "Installerad",
                 "launch": "Starta",
                 "seeMore": "Mer information"
