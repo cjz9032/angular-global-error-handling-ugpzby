@@ -4,7 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -75,7 +75,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
 	public isInstallFailedMessageToasted = false;
-	private subscriberForQueryParam: Subscription;
 
 	public isOnline = true;
 	public offlineSubtitle: string;
@@ -221,14 +220,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		this.subscriberForQueryParam = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-			if (params.has('start')) {
-				const startUpdate = this.activatedRoute.snapshot.queryParams.start;
-				if (startUpdate) {
-					this.onCheckForUpdates();
-				}
-			}
-		});
 
 		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.updateInfo) {
 			this.systemUpdateService.isUpdatesAvailable = true;
@@ -303,9 +294,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		try {
 			if (this.notificationSubscription) {
 				this.notificationSubscription.unsubscribe();
-			}
-			if (this.subscriberForQueryParam) {
-				this.subscriberForQueryParam.unsubscribe();
 			}
 		} catch (error) {
 			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
