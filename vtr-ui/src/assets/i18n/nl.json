@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
-                "seeDetailsLink": "Bekijk meer informatie"
+				"seeDetailsLink": "Bekijk meer informatie",
+				"gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -867,6 +868,43 @@
                         "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
+					},
+					"gaugeReset": {
+                        "title": "Batterijmeter opnieuw instellen",
+                        "description": "Met deze functie kan de computer nauwkeuriger schatten wat de volledige laadcapaciteit is.",
+                        "barCode": "Barcode",
+                        "progress": "Voortgang",
+                        "remaining": "Resterend",
+                        "startTime": "Begintijd",
+                        "lastReset": "Laatste reset",
+                        "fullChargeCapacity": "Capaciteit bij volledig geladen",
+                        "btnLabel": {
+                            "reset": "Resetten",
+                            "stop": "Stoppen"
+                        },
+                        "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
+                        "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
+                        "FCCText": "Van {{before}} Wh tot {{after}} Wh",
+                        "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Voltooid. Opnieuw ingesteld.",
+                            "ERROR_SHUTDOWN": "Niet voltooid. Systeem is uitgeschakeld.",
+                            "ERROR_LOGOFF": "Niet voltooid. Gebruiker is afgemeld.",
+                            "ERROR_BATTERY_REMOVE": "Niet voltooid. Batterij is verwijderd.",
+                            "ERROR_BATTERY_REPLACE": "Niet voltooid. Batterij is vervangen.",
+                            "ERROR_AC_DETTACH": "Niet voltooid. Netvoedingsadapter is ontkoppeld.",
+                            "ERROR_USER_CANCEL": "Niet voltooid. Geannuleerd door gebruiker.",
+                            "ERROR_UNEXPECTED": "Niet voltooid. Er is een onverwachte fout opgetreden."
+                        },
+                        "popup": {
+                            "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
+                            "description2": "Opmerkingen: <br>1. Dit proces kan enkele uren duren. Gebruik de computer in deze periode niet.<br>2. Sluit alle open apps en sluit de computer aan op de netvoeding.<br>3. Tijdens het proces is de functie drempelwaarde voor batterijlading uitgeschakeld.",
+                            "continue": "Doorgaan",
+                            "cancel": "Annuleren",
+                            "yes": "Ja",
+                            "description3": "Weet u zeker dat u wilt stoppen met het opnieuw instellen van de batterijmeter?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
-                "seeDetailsLink": "Prikaži pojedinosti"
+				"seeDetailsLink": "Prikaži pojedinosti",
+				"gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -867,6 +868,43 @@
                         "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava.",
                         "checkBoxDesc": "Automatsko otkrivanje",
                         "note": "Ako je označeno Automatsko otkrivanje, računalo će automatski uključiti Način napajanja u zrakoplovu kada otkrije okruženje unutar zrakoplova i isključiti ga po napuštanju okruženja."
+					},
+					"gaugeReset": {
+                        "title": "Ponovno postavljanje mjerača napunjenosti baterije",
+                        "description": "Ova značajka omogućuje računalu da preciznije procijeni kapacitet potpuno napunjene baterije.",
+                        "barCode": "Crtični kod",
+                        "progress": "Tijek",
+                        "remaining": "Preostalo",
+                        "startTime": "Vrijeme pokretanja",
+                        "lastReset": "Najnovije ponovno postavljanje",
+                        "fullChargeCapacity": "Kapacitet potpuno napunjene baterije",
+                        "btnLabel": {
+                            "reset": "Ponovno postavljanje",
+                            "stop": "Zaustavi"
+                        },
+                        "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
+                        "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
+                        "FCCText": "Od {{before}} Wh do {{after}} Wh",
+                        "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Dovršeno. Ponovno je postavljanje uspjelo.",
+                            "ERROR_SHUTDOWN": "Nedovršeno. Isključenje sustava",
+                            "ERROR_LOGOFF": "Nedovršeno. Korisnik je odjavljen.",
+                            "ERROR_BATTERY_REMOVE": "Nedovršeno. Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nedovršeno. Baterija je zamijenjena.",
+                            "ERROR_AC_DETTACH": "Nedovršeno. Prilagodnik napajanja odspojen je.",
+                            "ERROR_USER_CANCEL": "Nedovršeno. Korisnik je odustao.",
+                            "ERROR_UNEXPECTED": "Nedovršeno. Došlo je do neočekivane pogreške."
+                        },
+                        "popup": {
+                            "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
+                            "description2": "Napomene: <br>1. Postupak može potrajati nekoliko sati. Izbjegavajte korištenje računala tijekom ovog postupka.<br>2. Zatvorite sve otvorene aplikacije i povežite računalo na napajanje izmjeničnom strujom.<br>3. Tijekom postupka je onemogućena funkcija praga punjenja baterije.",
+                            "continue": "Nastavi",
+                            "cancel": "Odustani",
+                            "yes": "Da",
+                            "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
-                "seeDetailsLink": "Vedeți detaliile"
+				"seeDetailsLink": "Vedeți detaliile",
+				"gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
             },
             "power": {
                 "title": "Alimentare",
@@ -867,6 +868,43 @@
                         "description": "Protejaţi priza de c.a. din avion controlând consumul de energie al sistemului.Când modul de alimentare avion este activat, calculatorul reduce consumul de energie prin limitarea ratei de încărcare a bateriei și a performanței sistemului.",
                         "checkBoxDesc": "Autodetecție",
                         "note": "Dacă detectarea automată este activată, calculatorul va porni automat modul de alimentare Avion când detectează un mediu de bord de avion și îl va opri când părăsiți acel mediu."
+					},
+					"gaugeReset": {
+                        "title": "Resetare indicator baterie",
+                        "description": "Această caracteristică permite computerului să estimeze mai exact capacitatea de încărcare completă.",
+                        "barCode": "Cod de bare",
+                        "progress": "Progres",
+                        "remaining": "Au mai rămas",
+                        "startTime": "Oră pornire",
+                        "lastReset": "Ultima resetare",
+                        "fullChargeCapacity": "Capacitate de încărcare completă",
+                        "btnLabel": {
+                            "reset": "Resetare",
+                            "stop": "Stop"
+                        },
+                        "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
+                        "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+                        "FCCText": "De la {{before}} Wh la {{after}} Wh",
+                        "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
+                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
+                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                        },
+                        "popup": {
+                            "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
+                            "description2": "Note: <br>1. Procesul poate dura câteva ore. Evitaţi utilizarea computerului în această perioadă.<br>2. Închideţi toate aplicaţiile deschise şi conectaţi computerul la o sursă de c.a.<br>3. În timpul procesului, funcţia Prag încărcare baterie este dezactivată.",
+                            "continue": "Contin.",
+                            "cancel": "Anulare",
+                            "yes": "Da",
+                            "description3": "Sigur opriţi resetarea indicatorului bateriei?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

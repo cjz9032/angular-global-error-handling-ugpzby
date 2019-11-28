@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
-                "seeDetailsLink": "For detaljer se"
+				"seeDetailsLink": "For detaljer se",
+				"gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
             },
             "power": {
                 "title": "Strøm",
@@ -867,6 +868,43 @@
                         "description": "Beskytt flyets strømuttak ved å kontrollere systemets strømforbruk.Når Strømmodus for fly er aktivert, reduserer datamaskinen strømforbruket ved å begrense batteriladehastigheten og systemytelsen.",
                         "checkBoxDesc": "Automatisk oppdagelse",
                         "note": "Hvis automatisk oppdaging er sjekket, slår datamaskinen automatisk på strømmodusen for fly når den registrerer at du er om bord i et fly og slå av den når du drar."
+					},
+					"gaugeReset": {
+                        "title": "Tilbakestilling av batterimåler",
+                        "description": "Denne funksjonen gjør at datamaskinen kan beregne full ladekapasitet mer nøyaktig.",
+                        "barCode": "Strekkode",
+                        "progress": "Fremdrift",
+                        "remaining": "Gjenstår",
+                        "startTime": "Starttidspunkt",
+                        "lastReset": "Siste tilbakestilling",
+                        "fullChargeCapacity": "Kapasitet fulladet",
+                        "btnLabel": {
+                            "reset": "Tilbakestill",
+                            "stop": "Stopp"
+                        },
+                        "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
+                        "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+                        "FCCText": "Fra {{before}} Wh til {{after}} Wh",
+                        "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Fullfør. Vellykket tilbakestilling.",
+                            "ERROR_SHUTDOWN": "Ikke fullført. Systemet slås av.",
+                            "ERROR_LOGOFF": "Ikke fullført. Bruker logget av.",
+                            "ERROR_BATTERY_REMOVE": "Ikke fullført. Batteriet ble tatt ut.",
+                            "ERROR_BATTERY_REPLACE": "Ikke fullført. Batteriet ble byttet ut.",
+                            "ERROR_AC_DETTACH": "Ikke fullført. Strømadapteren ble koblet fra.",
+                            "ERROR_USER_CANCEL": "Ikke fullført. Avbrutt av bruker.",
+                            "ERROR_UNEXPECTED": "Ikke fullført. Det oppstod en uventet feil."
+                        },
+                        "popup": {
+                            "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
+                            "description2": "Merk: <br>1. Denne prosessen kan ta flere timer. Unngå å bruke datamaskinen i løpet av denne tiden.<br>2. Lukk alle åpne apper, og koble datamaskinen til strømnettet.<br>3. Batteriladeterskelen er deaktivert under prosessen.",
+                            "continue": "Fortsett",
+                            "cancel": "Avbryt",
+                            "yes": "Ja",
+                            "description3": "Er du sikker på at du vil stoppe tilbakestillingen av batterimåleren?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

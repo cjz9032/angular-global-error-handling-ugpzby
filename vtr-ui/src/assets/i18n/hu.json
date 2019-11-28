@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-                "seeDetailsLink": "Részletek megtekintése"
+				"seeDetailsLink": "Részletek megtekintése",
+				"gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
             },
             "power": {
                 "title": "Tápellátás",
@@ -867,6 +868,43 @@
                         "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
+					},
+					"gaugeReset": {
+                        "title": "Akkumulátormérő nullázása",
+                        "description": "Ezzel a funkcióval a számítógép pontosabban meg tudja határozni a teljes töltési kapacitást.",
+                        "barCode": "Vonalkód",
+                        "progress": "Állapot",
+                        "remaining": "Fennmaradó",
+                        "startTime": "Indítás időpontja",
+                        "lastReset": "Legutóbbi nullázás",
+                        "fullChargeCapacity": "Teljes töltési kapacitás",
+                        "btnLabel": {
+                            "reset": "Visszaállítás",
+                            "stop": "Leállítás"
+                        },
+                        "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
+                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+                        "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
+                        "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Kész. Sikeres nullázás",
+                            "ERROR_SHUTDOWN": "Befejezetlen. Rendszer bezárása.",
+                            "ERROR_LOGOFF": "Befejezetlen. A felhasználó kilépett.",
+                            "ERROR_BATTERY_REMOVE": "Befejezetlen. Akkumulátor eltávolítva.",
+                            "ERROR_BATTERY_REPLACE": "Befejezetlen. Akkumulátor kicserélve.",
+                            "ERROR_AC_DETTACH": "Befejezetlen. A hálózati adapter lecsatlakoztatva.",
+                            "ERROR_USER_CANCEL": "Befejezetlen. A felhasználó megszakította.",
+                            "ERROR_UNEXPECTED": "Befejezetlen. Váratlan hiba történt."
+                        },
+                        "popup": {
+                            "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
+                            "description2": "Megjegyzések: <br>1. A folyamat több órát is igénybe vehet. A számítógépet ezen idő alatt ne használja.<br>2. Zárja be az összes nyitott alkalmazást, és csatlakoztassa a számítógépet hálózati tápellátáshoz.<br>3. A folyamat során az akkumulátortöltési küszöbérték funkció le van tiltva.",
+                            "continue": "Folytatás",
+                            "cancel": "Mégse",
+                            "yes": "Igen",
+                            "description3": "Biztosan leállítja az akkumulátormérő nullázását?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

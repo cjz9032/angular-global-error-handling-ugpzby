@@ -86,6 +86,7 @@ import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircl
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
 
 library.add(faCheck);
 library.add(faCheckCircle);
@@ -149,6 +150,7 @@ library.add(faCalendarAlt);
 		PageSupportDetailComponent,
 		PowerSmartSettingsComponent,
 		SmartStandbyComponent,
+		BatteryGaugeResetComponent,
 		SpinnerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,

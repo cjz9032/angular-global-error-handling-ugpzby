@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
-                "seeDetailsLink": "Zobacz szczegóły"
+				"seeDetailsLink": "Zobacz szczegóły",
+				"gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
             },
             "power": {
                 "title": "Zasilanie",
@@ -867,6 +868,43 @@
                         "description": "Chroń samolotowe gniazdko elektryczne, kontrolując ilość energii zużywanej przez system.Gdy Tryb samolotowy jest włączony, komputer zmniejsza zużycie energii, ograniczając szybkość ładowania akumulatora i wydajność systemu.",
                         "checkBoxDesc": "Autowykrywanie",
                         "note": "Jeśli automatyczne wykrywanie jest włączone, komputer przełączy się do samolotowego trybu zasilania, gdy wykryje, że znajduje się na pokładzie samolotu i wyłączy go po opuszczeniu samolotu."
+					},
+					"gaugeReset": {
+                        "title": "Resetowanie wskaźnika stanu akumulatora",
+                        "description": "Funkcja umożliwia komputerowi dokładniejsze szacowanie pojemności ładowania.",
+                        "barCode": "Kod kreskowy",
+                        "progress": "Postęp",
+                        "remaining": "Pozostało",
+                        "startTime": "Godzina rozpoczęcia",
+                        "lastReset": "Ostatni reset",
+                        "fullChargeCapacity": "Pojemność po pełnym naładowaniu",
+                        "btnLabel": {
+                            "reset": "Resetuj",
+                            "stop": "Zatrzymaj"
+                        },
+                        "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
+                        "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
+                        "FCCText": "Od {{before}} Wh do {{after}} Wh",
+                        "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Ukończono. Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SHUTDOWN": "Nie zakończono. System zostanie zamknięty.",
+                            "ERROR_LOGOFF": "Nie zakończono. Wylogowano użytkownika.",
+                            "ERROR_BATTERY_REMOVE": "Nie zakończono. Wyjęto akumulator.",
+                            "ERROR_BATTERY_REPLACE": "Nie zakończono. Wymieniono akumulator.",
+                            "ERROR_AC_DETTACH": "Nie zakończono. Odłączono zasilacz.",
+                            "ERROR_USER_CANCEL": "Nie zakończono. Zadanie anulowane przez użytkownika.",
+                            "ERROR_UNEXPECTED": "Nie zakończono. Wystąpił nieoczekiwany błąd."
+                        },
+                        "popup": {
+                            "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
+                            "description2": "Uwaga: <br>1. Ten proces może zająć wiele godzin. W tym czasie należy unikać używania komputera.<br>2. Zamknij wszystkie otwarte aplikacje i podłącz komputer do zasilania sieciowego.<br>3. Podczas tego procesu funkcja progu ładowania akumulatora jest wyłączona.",
+                            "continue": "Kontynuuj",
+                            "cancel": "Anuluj",
+                            "yes": "Tak",
+                            "description3": "Czy na pewno chcesz zatrzymać resetowanie wskaźnika stanu akumulatora?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

@@ -9,16 +9,27 @@
 			</button>
 		</div>
 	</div>
-	<h1 id="ds-threshold-popup" attr.aria-label="ds-threshold-popup">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title' | translate}}</h1>
-	<p id="ds-thresholdpopup-description1" attr.aria-label="ds-thresholdpopup-description1">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1' | translate}}</p>
-	<p id="ds-thresholdpopup-description2" attr.aria-label="ds-thresholdpopup-description2">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2' | translate}}</p>
+	<h1 id="ds-threshold-popup"
+		attr.aria-label="ds-threshold-popup"
+		[innerHTML]="title | translate"></h1>
+	<p id="ds-thresholdpopup-description1"
+		attr.aria-label="ds-thresholdpopup-description1"
+		[innerHTML]="description1 | translate"></p>
+	<p id="ds-thresholdpopup-description2"
+		attr.aria-label="ds-thresholdpopup-description2"
+		[innerHTML]="description2 | translate"></p>
 	<hr>
 	<div class="row">
-		<button id="battery-threshold-popup-enable"  attr.aria-label="battery-threshold-popup-enable" class="btn enable-button"
-			(click)="enableBatteryChargeThreshold()">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.enable' | translate}}</button>
-		<a  id="battery-threshold-popup-cancel"  attr.aria-label="battery-threshold-popup-cancel"(click)="closeModal()"
-			class="cancel-link active"
-			>{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.cancel' | translate}}</a>
+		<button id="battery-threshold-popup-enable"
+			attr.aria-label="battery-threshold-popup-enable"
+			class="btn enable-button"
+			(click)="enableBatteryChargeThreshold()">
+			{{positiveResponseText | translate}}
+		</button>
+		<a id="battery-threshold-popup-cancel"
+			attr.aria-label="battery-threshold-popup-cancel"
+			(click)="closeModal()"
+			class="cancel-link active">{{negativeResponseText | translate}}</a>
 	</div>
 
 </div>

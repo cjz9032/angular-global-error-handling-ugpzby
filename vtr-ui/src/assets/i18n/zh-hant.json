@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
-                "seeDetailsLink": "查看詳細資料"
+				"seeDetailsLink": "查看詳細資料",
+				"gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
             },
             "power": {
                 "title": "電源",
@@ -867,6 +868,43 @@
                         "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
                         "checkBoxDesc": "自動偵測",
                         "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
+					},
+					"gaugeReset": {
+                        "title": "電池計量器重設",
+                        "description": "此功能可讓您的電腦更精確地預估充飽容量。",
+                        "barCode": "條碼",
+                        "progress": "進度",
+                        "remaining": "剩餘",
+                        "startTime": "開始時間",
+                        "lastReset": "前次重設",
+                        "fullChargeCapacity": "充飽容量",
+                        "btnLabel": {
+                            "reset": "重設",
+                            "stop": "停止"
+                        },
+                        "progressText1": "{{stageNum}} 的 {{stage}}：充飽校準",
+                        "progressText2": "{{stageNum}} 的 {{stage}}：電池電力不足校準",
+                        "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
+                        "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "完成，已成功重設。",
+                            "ERROR_SHUTDOWN": "未完成。系統已關閉。",
+                            "ERROR_LOGOFF": "未完成。使用者已登出。",
+                            "ERROR_BATTERY_REMOVE": "未完成。電池已取出。",
+                            "ERROR_BATTERY_REPLACE": "未完成。電池已更換。",
+                            "ERROR_AC_DETTACH": "未完成。AC 電源整流器已卸下。",
+                            "ERROR_USER_CANCEL": "未完成。已由使用者取消。",
+                            "ERROR_UNEXPECTED": "未完成。發生非預期的錯誤。"
+                        },
+                        "popup": {
+                            "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
+                            "description2": "附註：<br>1. 這個程序可能需費時數小時。請避免在此期間使用電腦。<br>2.關閉所有已開啟的應用程式，然後將電腦連接到 AC 電源。<br>3.在此程序期間，會停用電池充電臨界值功能。",
+                            "continue": "繼續",
+                            "cancel": "取消",
+                            "yes": "是",
+                            "description3": "您確定要停止電池計量器重設嗎？"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

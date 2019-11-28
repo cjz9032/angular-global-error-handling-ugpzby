@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
-                "seeDetailsLink": "Visa information"
+				"seeDetailsLink": "Visa information",
+				"gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
             "power": {
                 "title": "Ström",
@@ -867,6 +868,43 @@
                         "description": "Skydda flygplanets eluttag genom att kontrollera systemets strömförbrukning.När Flygenergiläge är aktiverat minskas strömförbrukningen genom att batteriladdningstakten och systemprestanda begränsas.",
                         "checkBoxDesc": "Aktivera automatisk upptäckt",
                         "note": "Om funktionen Autodetektering är markerad slås flygläget på automatiskt när datorn upptäcker en flygplansmiljö och stänger av det när du lämnar miljön."
+					},
+					"gaugeReset": {
+                        "title": "Återställning av batterimätare",
+                        "description": "Med denna funktion kan datorn beräkna fulladdningskapaciteten mer exakt.",
+                        "barCode": "Streckkod",
+                        "progress": "Status",
+                        "remaining": "Återstår",
+                        "startTime": "Starttid",
+                        "lastReset": "Senaste återställning",
+                        "fullChargeCapacity": "Fulladdningskapacitet",
+                        "btnLabel": {
+                            "reset": "Återställ",
+                            "stop": "Stopp"
+                        },
+                        "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
+                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+                        "FCCText": "Från {{before}} Wh till {{after}} Wh",
+                        "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Klart. Återställningen lyckades.",
+                            "ERROR_SHUTDOWN": "Ofullständig. Systemavstängning.",
+                            "ERROR_LOGOFF": "Ofullständig. Användare loggade ut.",
+                            "ERROR_BATTERY_REMOVE": "Ofullständig. Batteriet togs bort.",
+                            "ERROR_BATTERY_REPLACE": "Ofullständig. Batteriet byttes ut.",
+                            "ERROR_AC_DETTACH": "Ofullständig. Nätadaptern kopplades bort.",
+                            "ERROR_USER_CANCEL": "Ofullständig. Avbröts av användaren.",
+                            "ERROR_UNEXPECTED": "Ofullständig. Ett oväntat fel inträffade."
+                        },
+                        "popup": {
+                            "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
+                            "description2": "Obs! <br>1. Åtgärden kan ta flera timmar. Undvik att använda datorn under tiden.<br>2. Stäng alla öppna program och anslut datorn till nätström.<br>3. Funktionen Gränsvärde för batteriladdning är inaktiverad medan processen pågår.",
+                            "continue": "Fortsätt",
+                            "cancel": "Avbryt",
+                            "yes": "Ja",
+                            "description3": "Vill du stoppa återställning av batterimätaren?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

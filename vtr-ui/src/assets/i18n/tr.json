@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
-                "seeDetailsLink": "Ayrıntıları görün"
+				"seeDetailsLink": "Ayrıntıları görün",
+				"gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
             },
             "power": {
                 "title": "Güç",
@@ -867,6 +868,43 @@
                         "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
                         "checkBoxDesc": "Otomatik algılama",
                         "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
+					},
+					"gaugeReset": {
+                        "title": "Pil göstergesi sıfırlama",
+                        "description": "Bu özellik, bilgisayarınızın tam şarj kapasitesini daha doğru tahmin etmesini sağlar.",
+                        "barCode": "Barkod",
+                        "progress": "Sürüyor",
+                        "remaining": "Kalan",
+                        "startTime": "Başlangıç zamanı",
+                        "lastReset": "Son sıfırlama",
+                        "fullChargeCapacity": "Tam şarj kapasitesi",
+                        "btnLabel": {
+                            "reset": "Sıfırla",
+                            "stop": "Durdur"
+                        },
+                        "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
+                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "FCCText": "{{before}} Wh - {{after}} Wh",
+                        "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Tamamlandı. Başarılı sıfırlama.",
+                            "ERROR_SHUTDOWN": "Tamamlanmadı. Sistemi kapat.",
+                            "ERROR_LOGOFF": "Tamamlanmadı. Kullanıcı oturumunu kapat.",
+                            "ERROR_BATTERY_REMOVE": "Tamamlanmadı. Pil çıkarıldı.",
+                            "ERROR_BATTERY_REPLACE": "Tamamlanmadı. Pil değiştirildi.",
+                            "ERROR_AC_DETTACH": "Tamamlanmadı. AC güç bağdaştırıcısı çıkarıldı.",
+                            "ERROR_USER_CANCEL": "Tamamlanmadı. Kullanıcı tarafından iptal edildi.",
+                            "ERROR_UNEXPECTED": "Tamamlanmadı. Beklenmedik bir hata oluştu."
+                        },
+                        "popup": {
+                            "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
+                            "description2": "Notlar: <br>1. Bu işlem birkaç saat sürebilir. Bu sırada lütfen bilgisayarınızı kullanmaktan kaçının.<br>2. Tüm açık uygulamaları kapatın ve bilgisayarınızı AC gücüne bağlayın.<br>3. İşlem sırasında pil şarj eşiği işlevi devre dışı bırakılır.",
+                            "continue": "Devam",
+                            "cancel": "İptal",
+                            "yes": "Evet",
+                            "description3": "Pil göstergesi sıfırlama işlemini durdurmak istediğinizden emin misiniz?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {

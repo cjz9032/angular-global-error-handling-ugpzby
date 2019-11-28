@@ -62,7 +62,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private timeStartSearch;
 	private protocalAction: string;
 	private shouldCheckingUpdateByProtocal = false;
-	private updateStatusMessage: string[] = [];
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
@@ -315,12 +314,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private setUpdateTitle(title?: string) {
-		if (title) {
-			this.updateTitle = title;
-		} else {
-			this.updateTitle = this.updateToDateTitle;
+	private setUpdateTitle(titleStatusCode: number = 0) {
+		if (titleStatusCode < 0 || titleStatusCode > SystemUpdateStatusMessage.StatusMessageMap.length - 1) {
+			titleStatusCode = 1; // For unknown status code, display common failure error message
 		}
+		this.translate.stream(SystemUpdateStatusMessage.StatusMessageMap[titleStatusCode].message).subscribe((res) => {
+			this.updateTitle = res;
+		});
 	}
 
 	private getLastUpdateScanDetail() {
@@ -615,26 +615,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		return updateList.map(item => item.packageID).join(',');
 	}
 
-	private mapStatusToMessage(status: number, defaultValue = 'unknown') {
-		let message = defaultValue;
-		for (const key in SystemUpdateStatusMessage) {
-			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
-				if (SystemUpdateStatusMessage[key].code === status) {
-					message = this.updateStatusMessage[SystemUpdateStatusMessage[key].code];
-				}
-			}
-		}
-		return message;
-	}
-
 	private mapStatusToMessageKey(status: number, defaultValue = 'unknown') {
 		let messageKey = defaultValue;
-		for (const key in SystemUpdateStatusMessage) {
-			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
-				if (SystemUpdateStatusMessage[key].code === status) {
-					messageKey = key;
-				}
-			}
+		if (status >= 0 && status < SystemUpdateStatusMessage.StatusMessageMap.length) {
+			messageKey = SystemUpdateStatusMessage.StatusMessageMap[status].statusKey;
 		}
 		return messageKey;
 	}
@@ -672,7 +656,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
-
 			switch (type) {
 				case UpdateProgress.UpdateCheckInProgress:
 					this.ngZone.run(() => {
@@ -688,10 +671,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						// when user cancels update check its throwing unknown exception
 						messageKey = 'user cancel';
 					} else {
-						let metricMessage;
-						metricMessage = this.mapStatusToMessage(payload.status);
 						messageKey = this.mapStatusToMessageKey(payload.status);
-						this.setUpdateTitle(metricMessage);
+						this.setUpdateTitle(payload.status);
 					}
 
 					this.metricHelper.sendSystemUpdateMetric(
@@ -809,9 +790,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isCheckingPluginStatus = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 					this.isCheckingStatus = false;
-					let message;
-					message = this.mapStatusToMessage(payload);
-					this.setUpdateTitle(message);
+					this.setUpdateTitle(payload);
 					break;
 				case UpdateProgress.ScheduleUpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -957,19 +936,5 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.translate.stream(this.neverCheckedText).subscribe((res) => {
 			this.neverCheckedText = res;
 		});
-
-		for (const key in SystemUpdateStatusMessage) {
-			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
-				const message = SystemUpdateStatusMessage[key].message;
-				const index = SystemUpdateStatusMessage[key].code;
-				if (message !== '') {
-					this.translate.stream(message).subscribe((res) => {
-						this.updateStatusMessage[index] = res;
-					});
-				} else {
-					this.updateStatusMessage[index] = '';
-				}
-			}
-		}
 	}
 }

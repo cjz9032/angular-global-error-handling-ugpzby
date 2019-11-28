@@ -718,7 +718,8 @@
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
-                "seeDetailsLink": "Ver detalles"
+				"seeDetailsLink": "Ver detalles",
+				"gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
             "power": {
                 "title": "Energía",
@@ -867,6 +868,43 @@
                         "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema.",
                         "checkBoxDesc": "Autodetección",
                         "note": "Si se la detección está marcada, su sistema se encenderá automáticamente en la modalidad de energía Avión cuando detecte que está en un entorno a bordo de un avión y la desactivará cuando salga de ese entorno."
+					},
+					"gaugeReset": {
+                        "title": "Restablecimiento del indicador de batería",
+                        "description": "Esta característica permite que su sistema calcule de forma más precisa la capacidad de carga completa.",
+                        "barCode": "Código de barras",
+                        "progress": "Progreso",
+                        "remaining": "Restante",
+                        "startTime": "Hora de inicio",
+                        "lastReset": "Último restablecimiento",
+                        "fullChargeCapacity": "Capacidad de carga completa",
+                        "btnLabel": {
+                            "reset": "Restablecer",
+                            "stop": "Detener"
+                        },
+                        "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+                        "FCCText": "De {{before}} Wh a {{after}} Wh",
+                        "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
+                        "resetLog": {
+                            "ERROR_SUCCESS": "Completo. Restablecimiento satisfactorio.",
+                            "ERROR_SHUTDOWN": "Incompleto. Se apagó el sistema.",
+                            "ERROR_LOGOFF": "Incompleto. Se cerró la sesión del usuario.",
+                            "ERROR_BATTERY_REMOVE": "Incompleto. Se extrajo la batería.",
+                            "ERROR_BATTERY_REPLACE": "Incompleto. Se reemplazó la batería.",
+                            "ERROR_AC_DETTACH": "Incompleto. Se desconectó el adaptador de alimentación de CA.",
+                            "ERROR_USER_CANCEL": "Incompleto. Cancelado por el usuario.",
+                            "ERROR_UNEXPECTED": "Incompleto. Ha ocurrido un error inesperado."
+                        },
+                        "popup": {
+                            "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
+                            "description2": "Notas: <br>1. El proceso podría tomar varias horas. Evite utilizar el sistema durante este periodo.<br>2. Cierre todas las aplicaciones abiertas y conecte el sistema a la alimentación de CA.<br>3. Durante el proceso, la función de umbral de carga de la batería está inhabilitada.",
+                            "continue": "Continuar",
+                            "cancel": "Cancelar",
+                            "yes": "Sí",
+                            "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
+                        },
+                        "dual_note": "Note: Only one battery can be reset at a time"
                     }
                 },
                 "energyStar": {
