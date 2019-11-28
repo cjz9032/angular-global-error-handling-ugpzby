@@ -883,7 +883,8 @@
                             "stop": "Zastaviť"
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
+						"progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
+						"progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {

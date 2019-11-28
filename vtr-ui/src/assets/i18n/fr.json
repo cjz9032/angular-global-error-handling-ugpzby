@@ -883,7 +883,8 @@
                             "stop": "Arrêt"
                         },
                         "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
-                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
+						"progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
+						"progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {

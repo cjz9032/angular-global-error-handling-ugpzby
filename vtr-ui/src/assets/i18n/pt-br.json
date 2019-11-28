@@ -883,7 +883,8 @@
                             "stop": "Parar"
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
-                        "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
+						"progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
+						"progressText3": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {

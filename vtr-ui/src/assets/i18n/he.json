@@ -883,7 +883,8 @@
                             "stop": "עצירה"
                         },
                         "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
-                        "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
+						"progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
+						"progressText3": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {

@@ -883,7 +883,8 @@
                             "stop": "중지"
                         },
                         "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
-                        "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
+						"progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
+						"progressText3": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {

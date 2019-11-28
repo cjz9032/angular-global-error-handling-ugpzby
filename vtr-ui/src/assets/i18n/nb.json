@@ -883,7 +883,8 @@
                             "stop": "Stopp"
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
-                        "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+						"progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+						"progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {

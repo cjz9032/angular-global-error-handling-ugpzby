@@ -883,7 +883,8 @@
                             "stop": "Zaustavi"
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
-                        "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
+						"progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
+						"progressText3": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {

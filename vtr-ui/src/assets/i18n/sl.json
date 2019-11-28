@@ -883,7 +883,8 @@
                             "stop": "Ustavi"
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
-                        "progressText2": "{{stage}} od {{stageNum}}: umerjanje do skoraj prazne baterije",
+						"progressText2": "{{stage}} od {{stageNum}}: umerjanje do skoraj prazne baterije",
+						"progressText3": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {

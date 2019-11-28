@@ -883,7 +883,8 @@
                             "stop": "Pysäytä"
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
-                        "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+						"progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+						"progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {

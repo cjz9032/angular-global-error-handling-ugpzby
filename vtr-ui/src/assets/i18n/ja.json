@@ -883,7 +883,8 @@
                             "stop": "停止"
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
-                        "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
+						"progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
+						"progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {

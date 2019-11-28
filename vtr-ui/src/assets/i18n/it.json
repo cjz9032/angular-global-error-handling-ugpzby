@@ -883,7 +883,8 @@
                             "stop": "Interrompi"
                         },
                         "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
-                        "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
+						"progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
+						"progressText3": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {

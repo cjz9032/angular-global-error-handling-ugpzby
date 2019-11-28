@@ -882,8 +882,9 @@
                             "reset": "重置",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stageNum}} 的 {{stage}}：校准为完全充电",
-                        "progressText2": "{{stageNum}} 的 {{stage}}：校准为电池电量不足",
+                        "progressText1": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为完全充电",
+						"progressText2": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为放电到低电量",
+						"progressText3":  "步骤{{stage}}（共{{stageNum}}个步骤）：校准为充电到高电量",
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {

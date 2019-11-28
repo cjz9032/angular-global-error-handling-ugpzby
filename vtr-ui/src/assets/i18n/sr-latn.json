@@ -883,7 +883,8 @@
                             "stop": "Zaustavi"
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
-                        "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+						"progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+						"progressText3": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {

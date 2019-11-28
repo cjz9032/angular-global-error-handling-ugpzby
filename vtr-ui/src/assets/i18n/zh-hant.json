@@ -882,8 +882,9 @@
                             "reset": "重設",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stageNum}} 的 {{stage}}：充飽校準",
-                        "progressText2": "{{stageNum}} 的 {{stage}}：電池電力不足校準",
+                        "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
+						"progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
+						"progressText3": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為充電到高電量",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {

@@ -883,7 +883,8 @@
                             "stop": "Stop"
                         },
                         "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
-                        "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+						"progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+						"progressText3": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {

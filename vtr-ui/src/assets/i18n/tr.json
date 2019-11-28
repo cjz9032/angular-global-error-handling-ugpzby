@@ -883,7 +883,8 @@
                             "stop": "Durdur"
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
-                        "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+						"progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+						"progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {

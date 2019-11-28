@@ -883,7 +883,8 @@
                             "stop": "Parar"
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
-                        "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
+						"progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
+						"progressText3": "{{stage}} de {{stageNum}}: calibrar até carga completa",
                         "FCCText": "De {{before}} Wh até {{after}} Wh",
                         "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {

@@ -883,7 +883,8 @@
                             "stop": "Detener"
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
-                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+						"progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+						"progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {

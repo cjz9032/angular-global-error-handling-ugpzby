@@ -883,7 +883,8 @@
                             "stop": "Zatrzymaj"
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
-                        "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
+						"progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
+						"progressText3": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {

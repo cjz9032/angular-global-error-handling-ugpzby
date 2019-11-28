@@ -883,7 +883,8 @@
                             "stop": "Stopp"
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
-                        "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+						"progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+						"progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {

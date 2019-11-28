@@ -883,7 +883,8 @@
                             "stop": "Stoppen"
                         },
                         "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
-                        "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
+						"progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
+						"progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {

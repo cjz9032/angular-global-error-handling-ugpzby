@@ -883,7 +883,8 @@
                             "stop": "Leállítás"
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
-                        "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+						"progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+						"progressText3": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
