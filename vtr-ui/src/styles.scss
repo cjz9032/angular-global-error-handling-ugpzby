@@ -11,8 +11,33 @@ reference : https://fonts.google.com/specimen/Rubik
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
 // @import "~bootstrap/dist/css/bootstrap.css";
-@import "./app/beta/beta-styles.scss";
 @import "app/app.theme";
+
+/************************* hw-settings icomoon icons ****************/
+// @import "icomoon-hw-settings.css";
+@import "./icomoon-style.scss";
+@import "./app/beta/beta-styles.scss";
+
+@font-face {
+	font-family: "icomoon";
+	src: url("./assets/fonts/icomoon.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icomoon {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "icomoon" !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-size: 2rem;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 html {
 	margin: 0;
@@ -49,7 +74,7 @@ body a > *,
 .no-pointer > *,
 .no-pointer > div,
 a > div {
-	cursor: pointer !important;
+	cursor: pointer;
 }
 a.disabled {
 	pointer-events: none;
@@ -140,7 +165,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Segoe UI", Sans-serif;
+	font-family: "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Yu Gothic UI", "Segoe UI", Sans-serif;
 	cursor: default;
 	// font-weight: 300;
 }
@@ -572,6 +597,21 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow: hidden;
 	}
 }
+
+.update-read-more-modal-size {
+	.modal-dialog {
+		max-width: 60%;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		// background: none;
+		border: none;
+	}
+}
+
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
@@ -645,6 +685,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		iframe {
 			max-width: 100%;
 			margin-bottom: 3rem;
+			border: none;
 		}
 
 		p,
@@ -793,7 +834,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
-		font-family: "Segoe UI";
+		// font-family: "Segoe UI";
 
 		ul {
 			padding: 0;
@@ -816,7 +857,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
-		font-family: "Segoe UI";
+		// font-family: "Segoe UI";
 
 		span {
 			font-weight: bold;
@@ -903,34 +944,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
-
-/************************* icomoon icons ****************/
-@import "./icomoon-style.scss";
-
-@font-face {
-	font-family: "icomoon";
-	src: url("./assets/fonts/icomoon.woff?30mqwk") format("woff");
-	// src: url("./assets/fonts/icomoon.eot?30mqwk#iefix") format("embedded-opentype"),
-	// 	url("./assets/fonts/icomoon.ttf?30mqwk") format("truetype"),
-	// 	url("./assets/fonts/icomoon.woff?30mqwk") format("woff");
-	// url("./assets/fonts/icomoon.svg?30mqwk#icomoon") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-.icomoon {
-	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: "icomoon" !important;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	font-size: 2.2rem;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 /* ngb-modal-window overriding the class fade  =========== */
 .fade {

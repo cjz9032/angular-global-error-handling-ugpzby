@@ -166,8 +166,10 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
+					</li> -->
+					<li *ngIf="machineType === 1">
+						<vtr-user-defined-key></vtr-user-defined-key>
 					</li>
-					<vtr-user-defined-key></vtr-user-defined-key>
 				</ul>
 				<div class="control-options-block" *ngIf="isTouchPadVisible || isMouseVisible">
 					<div class="row">

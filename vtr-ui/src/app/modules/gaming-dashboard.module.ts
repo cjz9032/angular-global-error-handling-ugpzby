@@ -11,8 +11,7 @@ import { SharedModule } from './shared.module';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GamingDashboardRoutingModule } from './gaming-dashboard-routing.module';
 import { MockService } from '../services/mock/mock.service';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpLoaderFactory } from './translation.module';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -41,6 +40,8 @@ import { DialogService } from '../services/dialog/dialog.service';
 import { FeedbackModule } from './feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { ModalGamingLightingComponent } from '../components/modal/modal-gaming-lighting/modal-gaming-lighting.component';
+import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
+import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
 
 library.add(faKeyboard);
 library.add(faQuestionCircle);
@@ -73,9 +74,13 @@ library.add(faCheck);
 		TranslateModule.forChild({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
-				deps: [HttpClient]
-			}
+				useClass: WebpackTranslateLoader,
+				deps: [ HttpClient ]
+			},
+			missingTranslationHandler: {
+				provide: MissingTranslationHandler,
+				useClass: MissingTranslationDefaultHandler
+			},
 		}),
 		FontAwesomeModule,
 		ContainerCardModule,

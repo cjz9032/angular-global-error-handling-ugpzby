@@ -44,22 +44,22 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div *ngIf="!deviceService.isGaming" class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card order="1" [itemID]="cardContentPositionF.Id"
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1" [itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
 						[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
 						[dataSource]="cardContentPositionF.DataSource" [actionType]="cardContentPositionF.ActionType"
-						[actionLink]="cardContentPositionF.ActionLink" [type]="'corner-article'" [ratioX]="4"
+						[actionLink]="cardContentPositionF.ActionLink" [type]="'article'" [ratioX]="4"
 						[ratioY]="4">
 					</vtr-container-card>
 				</div>
 
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card order="2" [itemID]="cardContentPositionB.id"
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2" [itemID]="cardContentPositionB.id"
 						[dynamicmetricsItem]="dynamic_metricsItem" [img]="cardContentPositionB.FeatureImage"
 						[caption]="cardContentPositionB.Description" [title]="cardContentPositionB.Title"
 						[logoText]="cardContentPositionB.BrandName" [action]="cardContentPositionB.Action"
 						[dataSource]="cardContentPositionB.DataSource" [actionType]="cardContentPositionB.ActionType"
-						[actionLink]="cardContentPositionB.ActionLink" [type]="'corner-article'" [ratioX]="4"
+						[actionLink]="cardContentPositionB.ActionLink" [type]="'corner'" [ratioX]="4"
 						[ratioY]="2" [cornerShift]="'large'">
 					</vtr-container-card>
 				</div>
