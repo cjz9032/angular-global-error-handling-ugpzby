@@ -85,6 +85,7 @@ export class BreachedAccountsService implements OnDestroy {
 			)
 		).pipe(
 			debounceTime(200),
+			tap((res) => console.log('getBreachedAccounts', res)),
 			switchMap((mergeValue) => this.getBreachedAccountsFromDifferentSource().pipe(
 				map((response) => ([mergeValue, response])))
 			),
@@ -162,7 +163,7 @@ export class BreachedAccountsService implements OnDestroy {
 			this.communicationWithFigleafService.isFigleafInExit$
 		]).pipe(
 			tap(([isFigleafReadyForCommunication, isFigleafInExit]) =>
-				this.resetBreachedAccounts(isFigleafReadyForCommunication || isFigleafInExit)
+				this.resetBreachedAccounts(isFigleafReadyForCommunication)
 			),
 			distinctUntilChanged()
 		);
