@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
-				"seeDetailsLink": "Voir les détails",
-				"gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
+                "seeDetailsLink": "Voir les détails",
+                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
             },
             "power": {
                 "title": "Alimentation",
@@ -868,8 +868,8 @@
                         "description": "Protégez la prise avion en contrôlant la consommation d'énergie de votre système.Lorsque le mode d'alimentation pour avion est activé, l'ordinateur réduit la consommation d'énergie en limitant la vitesse de chargement de la batterie et les performances du système.",
                         "checkBoxDesc": "Détection automatique",
                         "note": "Si la détection automatique est cochée, votre ordinateur passe automatiquement en mode d'alimentation pour avion dès qu'il détecte que vous embarquez dans un avion et le désactive quand vous le quittez."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Réinitialisation de la jauge de la batterie",
                         "description": "Cette fonction permet à votre ordinateur d'estimer plus précisément la capacité de charge totale.",
                         "barCode": "Code-barres",
@@ -904,7 +904,7 @@
                             "yes": "Oui",
                             "description3": "Voulez-vous vraiment arrêter la réinitialisation de la jauge de la batterie ?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Remarque : seulement une batterie à la fois peut être réinitialisée."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Parlez-nous de vos centres d'intérêt (facultatif)",
         "personal": "Usage Personnel",
         "business": "Usage Commercial",
-		"custom": "Expérience Personnalisée",
-		"professional": "Usage Professionnel",
+        "custom": "Expérience Personnalisée",
+        "professional": "Usage Professionnel",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
         "title1": "Bienvenue",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installer",
-				"installing": "Installation en cours",
-				"downloading": "Téléchargement",
+                "installing": "Installation en cours",
+                "downloading": "Téléchargement",
                 "installed": "Installé",
                 "launch": "Lancer",
                 "seeMore": "En savoir plus"

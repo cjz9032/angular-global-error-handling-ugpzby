@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti.",
-				"seeDetailsLink": "Prikaži podrobnosti",
-				"gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen."
+                "seeDetailsLink": "Prikaži podrobnosti",
+                "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -868,8 +868,8 @@
                         "description": "Zaščitite letalski napajalni priključek za izmenični tok z nadzorom porabe sistema.Če je omogočen način porabe za letalo, računalnik zmanjša porabo energije z omejevanjem hitrosti polnjenja baterije in učinkovitosti delovanja sistema.",
                         "checkBoxDesc": "Samodejno zaznavanje",
                         "note": "Če je označeno potrditveno polje za samodejno zaznavanje, bo računalnik samodejno vklopil način porabe za letalo, ko zazna, da ste v letalu, in ga izklopil, ko se izkrcate."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Ponastavitev merilnika za baterijo",
                         "description": "S to funkcijo lahko računalnik natančneje oceni zmogljivost pri polni napolnjenosti baterije.",
                         "barCode": "Črtna koda",
@@ -904,7 +904,7 @@
                             "yes": "Da",
                             "description3": "Ali ste prepričani, da želite ustaviti ponastavitev merilnika za baterijo?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Opomba: hkrati lahko ponastavite samo eno baterijo."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
-		"custom": "Izkušnja po meri",
-		"professional": "Profesionalna uporaba",
+        "custom": "Izkušnja po meri",
+        "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
         "title1": "Pozdravljeni v programu WRITEit,",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Namestitev",
-				"installing": "Nameščanje",
-				"downloading": "Prenašanje",
+                "installing": "Nameščanje",
+                "downloading": "Prenašanje",
                 "installed": "Nameščeno",
                 "launch": "Zaženite",
                 "seeMore": "Več"
