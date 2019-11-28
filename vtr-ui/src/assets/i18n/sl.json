@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
         "cancelTextProgress": "Počakajte na potek preklica",
         "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga.",
-        "testNotApplicable": "Ni upoštevno pri pregledu po meri"
+        "testNotApplicable": "Ni upoštevno pri pregledu po meri",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Pomnilnik",
+            "motherboard": "Matična plošča",
+            "pci_express": "PCI Express",
+            "storage": "Pomnilnik",
+            "wireless": "Brezžično"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

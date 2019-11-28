@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
         "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
         "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn.",
-        "testNotApplicable": "Nicht zutreffend bei benutzerdefinierter scan"
+        "testNotApplicable": "Nicht zutreffend bei benutzerdefinierter scan",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Prozessor",
+            "memory": "Arbeitsspeicher",
+            "motherboard": "Steuerplatine",
+            "pci_express": "PCI Express",
+            "storage": "Speicher",
+            "wireless": "Drahtlos"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

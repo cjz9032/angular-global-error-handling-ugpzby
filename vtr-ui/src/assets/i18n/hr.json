@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Želite li zaista odustati?",
         "cancelTextProgress": "Pričekajte napredak otkazivanja",
         "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju.",
-        "testNotApplicable": "Nije primjenjivo za prilagođeni pregled"
+        "testNotApplicable": "Nije primjenjivo za prilagođeni pregled",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Memorija",
+            "motherboard": "Matična ploča",
+            "pci_express": "PCI Express",
+            "storage": "Pohrana",
+            "wireless": "Bežična veza"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

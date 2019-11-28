@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
         "cancelTextProgress": "המתינו לביצוע הביטול",
         "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה.",
-        "testNotApplicable": "לא ישים בסריקה מותאמת אישית"
+        "testNotApplicable": "לא ישים בסריקה מותאמת אישית",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "מעבד",
+            "memory": "זיכרון",
+            "motherboard": "לוח אם",
+            "pci_express": "PCI Express",
+            "storage": "אחסון",
+            "wireless": "אלחוטי"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

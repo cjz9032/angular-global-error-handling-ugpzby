@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
         "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
-        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée"
+        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processeur",
+            "memory": "Mémoire",
+            "motherboard": "Carte mère",
+            "pci_express": "PCI Express",
+            "storage": "Stockage",
+            "wireless": "Sans fil"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

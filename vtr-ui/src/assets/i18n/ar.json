@@ -2713,7 +2713,18 @@
         "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
         "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
         "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
-        "testNotApplicable": "لا ينطبق على الفحص المخصص"
+        "testNotApplicable": "لا ينطبق على الفحص المخصص",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "المعالج",
+            "memory": "الذاكرة",
+            "motherboard": "اللوحة الأم",
+            "pci_express": "PCI Express",
+            "storage": "السعة التخزينية",
+            "wireless": "اللاسلكية"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

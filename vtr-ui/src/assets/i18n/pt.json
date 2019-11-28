@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
         "pluginNotUpdate": "A Verificação de Hardware não se encontra disponível porque está desatualizada. Atualize-a.",
-        "testNotApplicable": "Não aplicável na verificação personalizada"
+        "testNotApplicable": "Não aplicável na verificação personalizada",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processador",
+            "memory": "Memória",
+            "motherboard": "Motherboard",
+            "pci_express": "PCI Express",
+            "storage": "Memória",
+            "wireless": "Sem fios"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

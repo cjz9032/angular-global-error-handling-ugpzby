@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
-        "testNotApplicable": "Niet van toepassing op aangepaste scan"
+        "testNotApplicable": "Niet van toepassing op aangepaste scan",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Geheugen",
+            "motherboard": "Moederbord",
+            "pci_express": "PCI Express",
+            "storage": "Opslag",
+            "wireless": "Draadloos"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "Скасувати?",
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
-        "testNotApplicable": "Не застосовується для настроюваного сканування"
+        "testNotApplicable": "Не застосовується для настроюваного сканування",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Процесор",
+            "memory": "Пам'ять",
+            "motherboard": "Материнська плата",
+            "pci_express": "PCI Express",
+            "storage": "Пам'ять",
+            "wireless": "Безпровідні підключення"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

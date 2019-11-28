@@ -16,6 +16,10 @@
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
+						<div class="test-status" *ngIf="item.icon !== undefined">
+							<img class="qr-img" src={{item.icon}} />
+						</div>
+
 						<div class="test-status" *ngIf="item.status >= 0">
 							<div [ngSwitch]="item.status">
 								<fa-icon [icon]="['fas', 'circle-notch']" [spin]="true" class="loading"

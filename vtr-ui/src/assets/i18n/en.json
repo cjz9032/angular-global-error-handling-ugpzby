@@ -3059,6 +3059,17 @@
 			"title": "Enable Battery Charge Threshold",
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
+		},
+		"waitScanStarts": "Wait until the scan starts",
+		"reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+		"retrievingHardwareInformation": "Retrieving hardware information...",
+		"pluginTokens": {
+			"cpu": "Processor",
+			"memory": "Memory",
+			"motherboard": "Motherboard",
+			"pci_express": "PCI Express",
+			"storage": "Storage",
+			"wireless": "Wireless"
 		}
 	},
 	"appsForYou": {

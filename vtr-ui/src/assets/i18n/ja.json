@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
-        "testNotApplicable": "カスタム・スキャンには適用されません"
+        "testNotApplicable": "カスタム・スキャンには適用されません",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "プロセッサー",
+            "memory": "メモリー",
+            "motherboard": "マザーボード",
+            "pci_express": "PCI Express",
+            "storage": "ストレージ",
+            "wireless": "ワイヤレス"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -2711,7 +2711,18 @@
         "cancelTextPrompt": "您確定要取消嗎？",
         "cancelTextProgress": "請等待取消進度",
         "pluginNotUpdate": "硬體掃描是舊版的，因此無法使用。請升級。",
-        "testNotApplicable": "不適用於自訂掃描"
+        "testNotApplicable": "不適用於自訂掃描",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "處理器",
+            "memory": "記憶體",
+            "motherboard": "主機板",
+            "pci_express": "PCI Express",
+            "storage": "儲存裝置",
+            "wireless": "無線"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
