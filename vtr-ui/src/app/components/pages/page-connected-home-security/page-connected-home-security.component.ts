@@ -286,9 +286,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (this.devicePosture) {
 			this.devicePosture.cancelGetDevicePosture();
 		}
-		if (this.wifiSecurity) {
-			this.wifiSecurity.cancelGetWifiSecurityState();
-		}
 	}
 
 	showWelcomeDialog() {

@@ -50,24 +50,22 @@
     }
     .gaming-device-image {
 	  width: 40%;
-	  min-height: 44rem;
-      @media #{$small-screen}{
-        justify-content: flex-end;
-        width: 100%;
-        align-items: flex-end !important;
+	  min-height: 34rem;//44rem
+      @media #{$small-screen}{        
+        width: 100%;        
+        align-items: center;
       }
       @media #{$below-large-screen}{
-        justify-content: flex-end;
         width: 100%;
-        align-items: flex-end !important;
+        align-items: center !important;
       }
       .img-responsive {
         width: 100%;
         max-width: 40rem;
         height: auto;
-        @media #{$small-screen}{
-          max-width: 20rem;
-        }
+       // @media #{$small-screen}{ commented as per zeyu updates in spreadsheet
+        //  max-width: 20rem;
+       // }
       }
     }
   }

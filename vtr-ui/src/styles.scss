@@ -437,7 +437,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
-		max-width: 35%;
+		width: 49rem;
 
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
@@ -783,7 +783,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .Find-Us-Modal {
 	.modal-dialog {
-		width: 55rem;
+		width: 47.8rem;
 		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
@@ -798,7 +798,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .feedback-modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
-		width: 52rem;
+		width: 47.8rem;
 	}
 
 	.modal-content {
@@ -1309,22 +1309,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /* override bootstrap custom check box in high contrast mode*/
 
-.custom-control-label:before{
+.custom-control-label:before {
 	@media #{$white-on-black} {
-	background-color: $dark;
+		background-color: $dark;
 	}
 	@media #{$black-on-white} {
 		background-color: $light;
-  }
+	}
 }
-  .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
 	@media #{$white-on-black} {
-	background-color:$high-contrast-black-textselected;
+		background-color: $high-contrast-black-textselected;
 	}
 	@media #{$black-on-white} {
-		background-color:$high-contrast-white-textselected;
-
+		background-color: $high-contrast-white-textselected;
 	}
-  }
-
-
+}

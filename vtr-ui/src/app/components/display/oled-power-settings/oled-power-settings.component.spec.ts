@@ -72,6 +72,23 @@ it('should test ngOnChange method', () => {
 	let obj: any = ['hasOLEDPowerControlCapability'].toString().trim(); 
 	component.ngOnChanges(obj);
 	expect(obj).toString();
-	expect(obj).toBe('hasOLEDPowerControlCapability');
+    expect(obj).toBe('hasOLEDPowerControlCapability');
 });
+
+it('#setDisplayDimmerSetting should call', async() => {
+    const myPrivateSpy = spyOn<any>(component, 'setDisplayDimmerSetting').and.callThrough();
+    fixture.detectChanges();
+    myPrivateSpy.call(component);
+});
+it('#setTaskbarDimmerSetting should call', async() => {
+    const myPrivateSpy = spyOn<any>(component, 'setTaskbarDimmerSetting').and.callThrough();
+    fixture.detectChanges();
+    myPrivateSpy.call(component);
+});
+it('#setBackgroundDimmerSetting should call', async() => {
+    const myPrivateSpy = spyOn<any>(component, 'setBackgroundDimmerSetting').and.callThrough();
+    fixture.detectChanges();
+    myPrivateSpy.call(component);
+});
+
 });

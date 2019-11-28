@@ -778,6 +778,51 @@ export class VantageShellService {
 				},
 				cancelGetWifiSecurityState() { }
 			},
+			windowsActivation: {
+				mitt: null,
+				status: 'disable',
+				windowsActivationProtocol: '',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			uac: {
+				mitt: null,
+				status: 'disable',
+				uacProtocol: '',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			hardDiskEncryption: {
+				mitt: null,
+				status: 'disable',
+				hdeProtocol: '',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
 			setScoreRegistry() {
 				return Promise.resolve(true);
 			},

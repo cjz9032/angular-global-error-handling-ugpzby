@@ -79,8 +79,16 @@ export class UPEService {
 		});
 	}
 
+	private getUpeShareKey() {
+		if (!environment.upeSharedKey) {
+			throw new Error('upe key is empty');
+		}
+		const factor = environment.upeSharedKey.concat('S00MzU3LTkxOGYtYmNjODZkZjgyNmY5');
+		return window.atob(factor);
+	}
+
 	private generateAPIKey() {
-		const salt = window.atob(environment.upeSharedKey);
+		const salt = this.getUpeShareKey();
 		const anonUserID = this.upeUserID;
 		const anonDeviceId = this.deviceService.getMachineInfoSync().deviceId;
 		const clientAgentId = environment.upeClientID;

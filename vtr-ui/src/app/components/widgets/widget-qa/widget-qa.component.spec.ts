@@ -6,6 +6,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { QaService } from 'src/app/services/qa/qa.service';
 
 describe('WidgetQaComponent', () => {
 	let component: WidgetQaComponent;
@@ -24,7 +25,7 @@ describe('WidgetQaComponent', () => {
 			}),
 				TranslationModule.forChild()
 			],
-			providers: [SecurityQaService],
+			providers: [SecurityQaService, QaService],
 			schemas: [NO_ERRORS_SCHEMA],
 		})
 			.compileComponents();

@@ -103,15 +103,15 @@
 
 		</div>
 		<div class="feature-note p-3 mt-2"
-			*ngIf="chargeThresholdInfo?.isOn || isGaugeResetRunning">
+			*ngIf="chargeThresholdInfo?.isOn || batteryService.checkIsGaugeResetRunning()">
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
 					role="text">
 					<span role="text"
-						*ngIf="!isGaugeResetRunning"
+						*ngIf="!batteryService.checkIsGaugeResetRunning()"
 						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:thresholdNoteParam"></span>
 					<span role="text"
-						*ngIf="isGaugeResetRunning"
+						*ngIf="batteryService.checkIsGaugeResetRunning()"
 						[innerHTML]="'device.deviceSettings.batteryGauge.gaugeResetWarning' | translate"></span>
 				</p>
 			</div>

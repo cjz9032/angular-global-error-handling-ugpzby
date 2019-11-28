@@ -50,7 +50,7 @@
 							{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
 						</h5>
 					</div>
-					<div *ngIf="checkbox" class="schedule">
+					<div *ngIf="checkbox && smartStandby?.isEnabled" class="schedule">
 						<h5>
 							{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 						</h5>
@@ -63,7 +63,7 @@
 							{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
 						</span>
 					</div>
-					<div *ngIf="checkbox" class="click-to-change-collapse">
+					<div *ngIf="checkbox && smartStandby?.isEnabled" class="click-to-change-collapse">
 						<!-- header -->
 						<div class="collapse-header" (click)="onToggle(timeToggle)"
 							(keydown.enter)="onToggle(timeToggle)" [attr.aria-expanded]="!isCollapsed" #timeToggle
@@ -118,7 +118,7 @@
 						</div>
 						<!-- content end -->
 					</div>
-					<div [disabled]="!smartStandby.isEnabled" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
+					<div *ngIf="isAutonomicCapability" [disabled]="!smartStandby.isEnabled" class="hyperlink-to-graph" (click)="showUsageGraph()" tabindex="0"
 						attr.aria-label="{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}">
 						{{'device.deviceSettings.power.smartStandby.hyperlinkToGraph' | translate}}
 					</div>
