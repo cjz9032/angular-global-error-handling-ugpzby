@@ -9,7 +9,6 @@ import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
@@ -57,7 +56,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		public cmsService: CMSService,
 		public commonService: CommonService,
 		public modalService: NgbModal,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guard: GuardService,
 		private router: Router,
 		private localInfoService: LocalInfoService,
@@ -66,9 +64,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.securityAdvisor.antivirus.refresh();
 		this.antiVirus = this.securityAdvisor.antivirus;
 		this.fetchCMSArticles();

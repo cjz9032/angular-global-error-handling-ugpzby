@@ -4,7 +4,6 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityAdvisor, WindowsHello } from '@lenovo/tan-client-bridge';
-import { SecurityAdvisorMockService } from '../security/securityMock.service';
 import { GuardConstants } from './guard-constants';
 
 @Injectable({
@@ -17,15 +16,11 @@ export class WindowsHelloGuardService implements CanActivate {
 	constructor(
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guardConstants: GuardConstants
 	) { }
 
 	canActivate() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.windowsHello = this.securityAdvisor.windowsHello;
 		const showWhPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		const version = this.commonService.getWindowsVersion();

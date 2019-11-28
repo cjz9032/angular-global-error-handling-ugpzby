@@ -16,7 +16,6 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
 import { SecurityAdvisor, EventTypes, WindowsHello } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { SecurityAdvisorMockService } from '../security/securityMock.service';
 import { WindowsHelloService } from '../security/windowsHello.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -53,7 +52,6 @@ export class ConfigService {
 		private logger: LoggerService,
 		private localInfoService: LocalInfoService,
 		private vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private windowsHelloService: WindowsHelloService,
 		private commonService: CommonService) {
 		this.menuItemSubject = new BehaviorSubject<AppNotification>(
@@ -61,9 +59,6 @@ export class ConfigService {
 		);
 		this.menuItemNotification = this.menuItemSubject;
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		if (!this.securityAdvisor) {
-			this.securityAdvisor = this.securityAdvisorMockService.getSecurityAdvisor();
-		}
 		this.windowsHello = this.securityAdvisor.windowsHello;
 		if (!this.windowsHello.fingerPrintStatus) {
 			this.windowsHello.refresh();

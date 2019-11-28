@@ -26,7 +26,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-security-overview-allDevice.model';
 import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-security-common.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { SecurityAdvisorMockService } from 'src/app/services/security/securityMock.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DevicePostureMockService } from 'src/app/services/device-posture/device-posture-mock.service';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
@@ -76,7 +75,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		public homeSecurityMockService: HomeSecurityMockService,
 		public devicePostureMockService: DevicePostureMockService,
 		public dialogService: DialogService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -89,8 +87,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		this.devicePosture = this.vantageShellService.getDevicePosture();
 		if (this.vantageShellService.getSecurityAdvisor()) {
 			this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
-		} else {
-			this.wifiSecurity = this.securityAdvisorMockService.getSecurityAdvisor().wifiSecurity;
 		}
 		if (!this.chs) {
 			this.chs = this.homeSecurityMockService.getConnectedHomeSecurity();
