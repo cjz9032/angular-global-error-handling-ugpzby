@@ -25,6 +25,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -169,7 +170,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private translate: TranslateService,
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
-		private router: Router
+		private router: Router,
+		private logger: LoggerService,
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -289,8 +291,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
+		try {
+			if (this.notificationSubscription) {
+				this.notificationSubscription.unsubscribe();
+			}
+		} catch (error) {
+			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}
 	}
 

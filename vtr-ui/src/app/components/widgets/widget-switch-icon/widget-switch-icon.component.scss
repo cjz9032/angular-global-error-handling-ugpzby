@@ -137,6 +137,10 @@
 				color: $light;
 			}
 		}
+
+		.is-visible {
+			visibility: hidden;
+		}
 	}
 }
 .disable-state {

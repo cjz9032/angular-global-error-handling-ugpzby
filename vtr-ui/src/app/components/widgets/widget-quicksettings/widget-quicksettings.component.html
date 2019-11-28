@@ -39,6 +39,23 @@
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
+					<div *ngIf="!deviceService.isSMode"
+						class="text-center">
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-quick-setting-system-update'"
+							[offIconDefinition]="'icomoon icomoon-quick-setting-system-update'"
+							[value]="true"
+							[title]="'dashboard.systemStatus.systemUpdate.detail.update' | translate"
+							metricsItem="system-update"
+							id="qs-switch-system-update"
+							aria-label="qs-switch-system-update"
+							[switchId]="'system-update'"
+							[isBlocked]="false"
+							(toggle)="onSystemUpdateToggle($event)"
+							[disable]="false"
+							[isLoading]="false"
+							[hideOnOffLabel]="true">
+						</vtr-widget-switch-icon>
+					</div>
 					<!-- <div *ngIf="vantageToolbarStatus.available"
 						class="text-center">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
