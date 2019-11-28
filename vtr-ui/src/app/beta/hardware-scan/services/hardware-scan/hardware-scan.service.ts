@@ -542,6 +542,7 @@ export class HardwareScanService {
 		this.disableCancel = true;
 		if (this.hardwareScanBridge) {
 			this.clearLastResponse();
+			this.cancelRequested = false;
 			return this.hardwareScanBridge.getRecoverBadSectors(payload, (response: any) => {
 				// Keeping track of the latest response allows the right render when user
 				// navigates to another page and then come back to the Hardware Scan page
@@ -621,7 +622,7 @@ export class HardwareScanService {
 		}
 
 		console.log('[Recover Progress] ' + this.progress);
-		this.commonService.sendNotification(HardwareScanProgress.ScanProgress, this.progress);
+		this.commonService.sendNotification(HardwareScanProgress.RecoverProgress, this.progress);
 		console.log('[End] Update Progress Recover');
 	}
 

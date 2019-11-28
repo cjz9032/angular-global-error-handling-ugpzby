@@ -798,6 +798,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						this.completeStatusToken = this.translate.instant('hardwareScan.completed');
 					}
 					break;
+				case HardwareScanProgress.RecoverProgress:
+					this.ngZone.run(() => {
+						this.progress = payload;
+					});
+					break;
 				case HardwareScanProgress.RecoverResponse:
 					this.devicesRecoverBadSectors = payload.devices;
 					if (payload.deviceInRecover) {
