@@ -1860,15 +1860,15 @@
             "wifi": "是否在使用公共 WiFi 時加密您的個人資料",
             "windowsHello": "是否使用安全登入選項來保護裝置",
             "uacTitle": "什麼是 UAC 通知？",
-			"uacText": "使用者帳戶控制是 Windows 非常重要的一項安全性功能，可協助防止潛在有害的程式對您的系統進行變更。",
-			"windowsTitle": "為什麼需要啟用 Windows？",
-			"windowsText": "執行非正版 Windows 會使得遭受病毒與其他安全性威脅攻擊的風險大幅提高。",
-			"encryptionTitle": "什麼是硬碟加密？",
-			"encryptionText": "此功能透過將整個硬碟加密保護您的資料，即使該硬碟從目前的 PC 卸下並放入其他裝置亦可避免遭到未經授權的存取。",
-			"passwordTitle": "如何能更妥善保護密碼？",
-			"passwordText": "安全地儲存及管理所有經由專業數位保護應用程式加密過的密碼，而不是逕行存放於瀏覽器使第三方可在您不知情的情況下輕易存取。",
-			"enhanceTitle": "應該採取哪些措施以強化安全保護？",
-			"enhanceText": "強烈建議您交由防毒軟體和防火牆保護您的裝置，設定 UAC 通知以提供最低限度的保護。此外，建立高保護性密碼並以安全的方式進行管理，使用公用網路時加密您的資料做為進階保護措施。"
+            "uacText": "使用者帳戶控制是 Windows 非常重要的一項安全性功能，可協助防止潛在有害的程式對您的系統進行變更。",
+            "windowsTitle": "為什麼需要啟用 Windows？",
+            "windowsText": "執行非正版 Windows 會使得遭受病毒與其他安全性威脅攻擊的風險大幅提高。",
+            "encryptionTitle": "什麼是硬碟加密？",
+            "encryptionText": "此功能透過將整個硬碟加密保護您的資料，即使該硬碟從目前的 PC 卸下並放入其他裝置亦可避免遭到未經授權的存取。",
+            "passwordTitle": "如何能更妥善保護密碼？",
+            "passwordText": "安全地儲存及管理所有經由專業數位保護應用程式加密過的密碼，而不是逕行存放於瀏覽器使第三方可在您不知情的情況下輕易存取。",
+            "enhanceTitle": "應該採取哪些措施以強化安全保護？",
+            "enhanceText": "強烈建議您交由防毒軟體和防火牆保護您的裝置，設定 UAC 通知以提供最低限度的保護。此外，建立高保護性密碼並以安全的方式進行管理，使用公用網路時加密您的資料做為進階保護措施。"
         },
         "antivirus": {
             "common": {
@@ -2682,7 +2682,8 @@
                 "description": "執行掃描和修復可能會導致資料遺失。建議您在執行此作業之前先備份。您確定要繼續嗎？",
                 "yes": "是",
                 "no": "否"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "下載專業診斷工具",

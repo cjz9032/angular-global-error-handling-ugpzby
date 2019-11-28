@@ -2682,7 +2682,8 @@
                 "description": "Wykonanie skanowania i naprawy może spowodować utratę danych. Zaleca się wykonanie kopii zapasowej przed wykonaniem tej operacji. Czy na pewno chcesz przejść dalej?",
                 "yes": "Tak",
                 "no": "Nie"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",

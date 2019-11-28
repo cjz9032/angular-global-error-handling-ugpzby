@@ -2682,7 +2682,8 @@
                 "description": "Executarea scanării și a reparării poate duce la pierderea datelor. Se recomandă efectuarea unei copii de siguranță înainte de a executa această operație. Sigur doriți să continuați?",
                 "yes": "Da",
                 "no": "Nu"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",

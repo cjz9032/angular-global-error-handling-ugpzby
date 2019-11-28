@@ -2682,7 +2682,8 @@
                 "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
                 "yes": "Ja",
                 "no": "Nej"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",

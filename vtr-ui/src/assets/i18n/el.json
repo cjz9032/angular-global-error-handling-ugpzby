@@ -2682,7 +2682,8 @@
                 "description": "Η εκτέλεση της σάρωσης και της επισκευής ενδέχεται να προκαλέσει απώλεια δεδομένων. Συνιστάται η δημιουργία αντιγράφου ασφαλείας πριν από την εκτέλεση αυτής της λειτουργίας. Σίγουρα θέλετε να συνεχίσετε;",
                 "yes": "Ναι",
                 "no": "Όχι"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",

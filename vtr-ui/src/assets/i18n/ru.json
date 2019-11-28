@@ -2682,7 +2682,8 @@
                 "description": "Выполнение сканирования и восстановления может привести к потере данных. Перед выполнением этой операции рекомендуется создать резервную копию. Продолжить?",
                 "yes": "Да",
                 "no": "Нет"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",

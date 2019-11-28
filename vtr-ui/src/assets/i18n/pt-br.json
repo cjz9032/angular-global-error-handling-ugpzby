@@ -1860,15 +1860,15 @@
             "wifi": "Criptografa seus dados pessoais ao usar WiFi público",
             "windowsHello": "Protege seu dispositivo usando opções de login seguras",
             "uacTitle": "O que é a notificação de UAC?",
-			"uacText": "O Controle de Conta do Usuário é um recurso de segurança muito importante do Windows que ajuda a impedir que programas potencialmente perigosos façam alterações no sistema.",
-			"windowsTitle": "Por que preciso ativar o Windows?",
-			"windowsText": "A execução de uma cópia não original do Windows pode aumentar o risco de vírus e outras ameaças à segurança.",
-			"encryptionTitle": "O que é Criptografia de disco rígido?",
-			"encryptionText": "Ela ajuda a proteger seus dados, fornecendo criptografia para todo o disco rígido contra acesso não autorizado, mesmo que a unidade seja removida do PC atual e colocada em outros dispositivos.",
-			"passwordTitle": "Como proteger a senha melhor?",
-			"passwordText": "Armazene e gerencie com segurança todas suas senhas criptografadas por um aplicativo profissional de proteção digital, em vez de simplesmente armazenar nos seus navegadores, que podem ser facilmente acessados por terceiros sem o seu conhecimento.",
-			"enhanceTitle": "O que devo fazer para aprimorar a proteção de segurança?",
-			"enhanceText": "É altamente recomendável que você tenha seus dispositivos protegidos por software antivírus e firewall, configure a notificação de UAC com proteção mínima. E crie senhas fortes e gerencie de maneira segura, criptografe seus dados enquanto usa a rede pública como proteção avançada."
+            "uacText": "O Controle de Conta do Usuário é um recurso de segurança muito importante do Windows que ajuda a impedir que programas potencialmente perigosos façam alterações no sistema.",
+            "windowsTitle": "Por que preciso ativar o Windows?",
+            "windowsText": "A execução de uma cópia não original do Windows pode aumentar o risco de vírus e outras ameaças à segurança.",
+            "encryptionTitle": "O que é Criptografia de disco rígido?",
+            "encryptionText": "Ela ajuda a proteger seus dados, fornecendo criptografia para todo o disco rígido contra acesso não autorizado, mesmo que a unidade seja removida do PC atual e colocada em outros dispositivos.",
+            "passwordTitle": "Como proteger a senha melhor?",
+            "passwordText": "Armazene e gerencie com segurança todas suas senhas criptografadas por um aplicativo profissional de proteção digital, em vez de simplesmente armazenar nos seus navegadores, que podem ser facilmente acessados por terceiros sem o seu conhecimento.",
+            "enhanceTitle": "O que devo fazer para aprimorar a proteção de segurança?",
+            "enhanceText": "É altamente recomendável que você tenha seus dispositivos protegidos por software antivírus e firewall, configure a notificação de UAC com proteção mínima. E crie senhas fortes e gerencie de maneira segura, criptografe seus dados enquanto usa a rede pública como proteção avançada."
         },
         "antivirus": {
             "common": {
@@ -2682,7 +2682,8 @@
                 "description": "A execução de verificação e de reparo pode causar perda de dados. Recomenda-se fazer um backup antes de executar esta operação. Tem certeza que deseja continuar?",
                 "yes": "Sim",
                 "no": "Não"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Baixar ferramentas de diagnóstico profissional",

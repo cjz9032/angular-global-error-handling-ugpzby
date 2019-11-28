@@ -1860,15 +1860,15 @@
             "wifi": "Da li šifrujete svoje lične podatke kada koristite javni WiFi",
             "windowsHello": "Da li štitite uređaj korišćenjem opcije za bezbedno prijavljivanje",
             "uacTitle": "Šta je to UAC obaveštenje?",
-			"uacText": "Kontrola korisničkog naloga je veoma važna bezbednosna funkcija operativnog sistema Windows koja pomaže u sprečavanju potencijalno štetnih programa da menjaju vaš sistem.",
-			"windowsTitle": "Zašto treba da aktiviram Windows?",
-			"windowsText": "Korišćenjem neoriginalne kopije operativnog sistema Windows izloženi ste većem riziku od virusa i drugih bezbednosnih pretnji.",
-			"encryptionTitle": "Šta je šifrovanje hard diska?",
-			"encryptionText": "Ono vam pomaže da zaštitite podatke šifrovanjem čitavog hard diska protiv neovlašćenog pristupa, čak i kada se disk ukloni iz postojećeg računara i stavi u neki drugi uređaj.",
-			"passwordTitle": "Kako da bolje zaštitim lozinku?",
-			"passwordText": "Bezbedno smestite sve svoje lozinke i upravljajte njima tako što ćete ih šifrovati pomoću aplikacije za profesionalnu digitalnu zaštitu umesto da ih samo sačuvate u pregledaču gde im treće strane mogu lako pristupiti bez vašeg znanja.",
-			"enhanceTitle": "Šta treba da uradim da bih poboljšao zaštitu bezbednosti?",
-			"enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu."
+            "uacText": "Kontrola korisničkog naloga je veoma važna bezbednosna funkcija operativnog sistema Windows koja pomaže u sprečavanju potencijalno štetnih programa da menjaju vaš sistem.",
+            "windowsTitle": "Zašto treba da aktiviram Windows?",
+            "windowsText": "Korišćenjem neoriginalne kopije operativnog sistema Windows izloženi ste većem riziku od virusa i drugih bezbednosnih pretnji.",
+            "encryptionTitle": "Šta je šifrovanje hard diska?",
+            "encryptionText": "Ono vam pomaže da zaštitite podatke šifrovanjem čitavog hard diska protiv neovlašćenog pristupa, čak i kada se disk ukloni iz postojećeg računara i stavi u neki drugi uređaj.",
+            "passwordTitle": "Kako da bolje zaštitim lozinku?",
+            "passwordText": "Bezbedno smestite sve svoje lozinke i upravljajte njima tako što ćete ih šifrovati pomoću aplikacije za profesionalnu digitalnu zaštitu umesto da ih samo sačuvate u pregledaču gde im treće strane mogu lako pristupiti bez vašeg znanja.",
+            "enhanceTitle": "Šta treba da uradim da bih poboljšao zaštitu bezbednosti?",
+            "enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu."
         },
         "antivirus": {
             "common": {
@@ -2682,7 +2682,8 @@
                 "description": "Izvršenje skeniranja i popravke može da prouzrokuje gubitak podataka. Preporučujemo da napravite rezervnu kopiju pre izvršavanja ove operacije. Želite li zaista da nastavite?",
                 "yes": "Da",
                 "no": "Ne"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",

@@ -1860,15 +1860,15 @@
             "wifi": "使用公共 WiFi 时加密您的个人数据",
             "windowsHello": "使用安全登录选项保护您的设备",
             "uacTitle": "什么是 UAC 通知？",
-			"uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
-			"windowsTitle": "为什么我需要激活 Windows？",
-			"windowsText": "运行非正版的 Windows 会让您面临更大的病毒和其他安全威胁的风险。",
-			"encryptionTitle": "什么是硬盘驱动器加密？",
-			"encryptionText": "通过对整个硬盘驱动器进行加密，它能够保护您的数据免遭未经授权的访问，即使驱动器已从当前 PC 移除并装入其他设备中。",
-			"passwordTitle": "如何更好地保护密码？",
-			"passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
-			"enhanceTitle": "我应该做什么以加强安全保护？",
-			"enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。"
+            "uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
+            "windowsTitle": "为什么我需要激活 Windows？",
+            "windowsText": "运行非正版的 Windows 会让您面临更大的病毒和其他安全威胁的风险。",
+            "encryptionTitle": "什么是硬盘驱动器加密？",
+            "encryptionText": "通过对整个硬盘驱动器进行加密，它能够保护您的数据免遭未经授权的访问，即使驱动器已从当前 PC 移除并装入其他设备中。",
+            "passwordTitle": "如何更好地保护密码？",
+            "passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
+            "enhanceTitle": "我应该做什么以加强安全保护？",
+            "enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。"
         },
         "antivirus": {
             "common": {
@@ -2682,7 +2682,8 @@
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
                 "no": "否"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "下载专业诊断工具",

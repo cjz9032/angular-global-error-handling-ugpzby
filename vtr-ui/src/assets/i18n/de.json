@@ -2682,7 +2682,8 @@
                 "description": "Die Durchführung von Scans und Reparaturen kann zu Datenverlust führen. Es wird empfohlen, eine Sicherungskopie zu erstellen, bevor Sie diesen Vorgang ausführen. Möchten Sie wirklich fortfahren?",
                 "yes": "Ja",
                 "no": "Nein"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",

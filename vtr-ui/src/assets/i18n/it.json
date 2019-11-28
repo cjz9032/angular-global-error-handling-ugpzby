@@ -2682,7 +2682,8 @@
                 "description": "L'esecuzione della scansione e del ripristino può causare la perdita dei dati. Si consiglia di effettuare una copia di backup prima di eseguire questa operazione. Procedere?",
                 "yes": "Sì",
                 "no": "No"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",

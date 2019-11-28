@@ -2682,7 +2682,8 @@
                 "description": "ביצוע פעולת סריקה ותיקון עלול לגרום לאובדן נתונים. מומלץ ליצור עותק גיבוי לפני ביצוע הפעולה. האם אתם בטוחים שברצונכם להמשיך?",
                 "yes": "כן",
                 "no": "לא"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",

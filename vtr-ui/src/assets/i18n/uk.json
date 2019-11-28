@@ -2682,7 +2682,8 @@
                 "description": "Сканування й виправлення може призвести до втрати даних. Рекомендуємо зробити резервну копію, перш ніж виконувати цю операцію. Справді продовжити?",
                 "yes": "Так",
                 "no": "Ні"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",

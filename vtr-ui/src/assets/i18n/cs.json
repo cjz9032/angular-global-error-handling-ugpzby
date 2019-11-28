@@ -2682,7 +2682,8 @@
                 "description": "Během procesu kontroly a opravy může dojít ke ztrátě dat. Před spuštěním této operace proto doporučujeme provést zálohu. Opravdu chcete pokračovat?",
                 "yes": "Ano",
                 "no": "Ne"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Stáhnout profesionální diagnostické nástroje",

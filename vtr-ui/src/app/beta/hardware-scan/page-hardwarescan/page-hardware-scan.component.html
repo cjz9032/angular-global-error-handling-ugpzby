@@ -46,14 +46,17 @@
 			</div>
 
 			<div class="row">
-				<div class="col col-12 cont mb-40"
+				<div class="col col-12 cont mb-40" 
 					*ngIf="!isRecoverInProgress() && !getIsViewingRecoverLog()">
 					<vtr-widget-recover-bad-sectors
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
 						[description]="'hardwareScan.recoverBadSectors.description' | translate"
 						[textButton]="'hardwareScan.recoverBadSectors.title' | translate"
 						[recoverPath]="'/beta/hardware-scan/recover-bad-sectors'"
-						[disable]="!hasDevicesToRecoverBadSectors() || disable()">
+						[disable]="!hasDevicesToRecoverBadSectors() || disable()"
+						[tooltipText]="((!hasDevicesToRecoverBadSectors() || disable())
+										?('hardwareScan.recoverBadSectors.waitAvailability' | translate)
+										:('hardwareScan.recoverBadSectors.title' | translate))">
 					</vtr-widget-recover-bad-sectors>
 				</div>
 			</div>

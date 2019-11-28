@@ -2682,7 +2682,8 @@
                 "description": "Tarama ve onarım işleminin yürütülmesi veri kaybına neden olabilir. Bu işlemi yürütmeden önce yedekleme yapmanız önerilir. Devam etmek istediğinizden emin misiniz?",
                 "yes": "Evet",
                 "no": "Hayır"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
