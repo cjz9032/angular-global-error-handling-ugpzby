@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
-				"seeDetailsLink": "Flere oplysninger",
-				"gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
+                "seeDetailsLink": "Flere oplysninger",
+                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
             },
             "power": {
                 "title": "Strøm",
@@ -868,8 +868,8 @@
                         "description": "Beskyt flyets vekselstrømskontakt ved at styre systemets strømforbrug.Når Flytilstand er aktiveret, reducerer computeren strømforbruget ved at begrænse batteriopladningshastigheden og systemets ydeevne.",
                         "checkBoxDesc": "Automatisk registrering",
                         "note": "Hvis den automatiske søgefunktion er markeret, slår computeren automatisk Flytilstand til, når den registrerer et miljø om bord på et fly, og slår den fra, når du forlader flyet."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Nulstilling af batterimåler",
                         "description": "Denne funktion gør det muligt for computeren at estimere kapaciteten ved fuld opladning mere præcist.",
                         "barCode": "Stregkode",
@@ -905,7 +905,7 @@
                             "yes": "Ja",
                             "description3": "Er du sikker på, at du vil stoppe nulstillingen af batterimåleren?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Bemærk: Kun ét batteri kan nulstilles ad gangen."
                     }
                 },
                 "energyStar": {

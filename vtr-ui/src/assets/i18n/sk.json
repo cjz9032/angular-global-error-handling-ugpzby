@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%.",
-				"seeDetailsLink": "Zobraziť podrobnosti",
-				"gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér."
+                "seeDetailsLink": "Zobraziť podrobnosti",
+                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér."
             },
             "power": {
                 "title": "Napájanie",
@@ -868,8 +868,8 @@
                         "description": "Ochrana elektrickej zásuvky lietadla ovládaním spotreby energie systémom.Keď je režim napájania Lietadlo zapnutý, počítač zníži spotrebu energie obmedzením intenzity nabíjania batérie a výkonu systému.",
                         "checkBoxDesc": "Automatické zisťovanie",
                         "note": "Ak je začiarknuté automatické zisťovanie a počítač zistí prostredie na palube lietadla, automaticky zapne režim napájania V lietadle, ktorý sa vypne, keď palubu lietadla opustíte."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Vynulovanie ukazovateľa batérie",
                         "description": "Táto funkcia umožní počítaču presnejšie odhadnúť kapacitu pri úplnom nabití.",
                         "barCode": "Čiarový kód",
@@ -905,7 +905,7 @@
                             "yes": "Áno",
                             "description3": "Naozaj chcete zastaviť vynulovanie ukazovateľa batérie?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Poznámka: Resetovať možno vždy len jednu batériu."
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-		"custom": "Vlastné prostredie",
-		"professional": "Určené pre odborníkov",
+        "custom": "Vlastné prostredie",
+        "professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-				"installing": "Inštalácia",
-				"downloading": "Sťahuje sa",
+                "installing": "Inštalácia",
+                "downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"

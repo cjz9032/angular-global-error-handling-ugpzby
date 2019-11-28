@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
-				"seeDetailsLink": "Ver detalles",
-				"gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
+                "seeDetailsLink": "Ver detalles",
+                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
             "power": {
                 "title": "Energía",
@@ -868,8 +868,8 @@
                         "description": "Proteja la toma de aliment. de CA del avión controlando el consumo de energía de su sist.Cuando está habilitada la modalidad de energía Avión, el sistema reduce el consumo de energía limitando la frecuencia de carga de la batería y el rendimiento del sistema.",
                         "checkBoxDesc": "Autodetección",
                         "note": "Si se la detección está marcada, su sistema se encenderá automáticamente en la modalidad de energía Avión cuando detecte que está en un entorno a bordo de un avión y la desactivará cuando salga de ese entorno."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Restablecimiento del indicador de batería",
                         "description": "Esta característica permite que su sistema calcule de forma más precisa la capacidad de carga completa.",
                         "barCode": "Código de barras",
@@ -905,7 +905,7 @@
                             "yes": "Sí",
                             "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: solo se puede restablecer una batería a la vez."
                     }
                 },
                 "energyStar": {

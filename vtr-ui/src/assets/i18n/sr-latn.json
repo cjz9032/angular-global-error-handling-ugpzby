@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
-				"seeDetailsLink": "Pogledajte detalje",
-				"gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
+                "seeDetailsLink": "Pogledajte detalje",
+                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -868,8 +868,8 @@
                         "description": "Zaštitite utičnicu za napajanje naizmeničnom strujom u avionu kontrolom potrošnje vašeg sistema.Kada je omogućen režim korišćenja u avionu, računar smanjuje potrošnju napajanja ograničavanjem brzine punjenja i performansi sistema.",
                         "checkBoxDesc": "Automatska detekcija",
                         "note": "Ako je označena Automatska detekcija, vaš računar će automatski uključiti režim napajanja u avionu kada otkrije okruženje unutar aviona i isključiti ga kada napustite okruženje."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Resetovanje pokazivača napunjenosti baterije",
                         "description": "Ova funkcija omogućava računaru da preciznije proceni pun kapacitet punjenja.",
                         "barCode": "Bar-kod",
@@ -905,7 +905,7 @@
                             "yes": "Da",
                             "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju."
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "Ispričajte nam o vašim interesovanjima (opcionalno)",
         "personal": "Lična upotreba",
         "business": "Poslovna upotreba",
-		"custom": "Prilagođeno iskustvo",
-		"professional": "Profesionalna upotreba",
+        "custom": "Prilagođeno iskustvo",
+        "professional": "Profesionalna upotreba",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
         "moreInterest": "+ više oblasti interesovanja",
         "title1": "Dobro došli u",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliraj",
-				"installing": "Instaliranje",
-				"downloading": "Preuzimanje",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokreni",
                 "seeMore": "Pogledajte još"

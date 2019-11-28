@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
-				"seeDetailsLink": "Ver detalhes",
-				"gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
+                "seeDetailsLink": "Ver detalhes",
+                "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
             },
             "power": {
                 "title": "Alimentação",
@@ -868,8 +868,8 @@
                         "description": "Proteja a tomada CA do avião controlando o consumo de energia do sistema.Quando o Modo de Alimentação em Avião está ativado, o computador diminui o consumo de energia limitando a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Deteção automática",
                         "note": "Se a Deteção automática estiver marcada, o computador ativa automaticamente o Modo de alimentação em avião quando deteta um ambiente a bordo de um avião e desativa-o quando deixa o avião."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Reposição do indicador de bateria",
                         "description": "Esta funcionalidade permite ao computador efetuar uma estimativa da capacidade de carga total com maior precisão.",
                         "barCode": "Código de barras",
@@ -905,7 +905,7 @@
                             "yes": "Sim",
                             "description3": "Tem a certeza de que pretende parar a reposição do indicador de bateria?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez."
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "Diga-nos os seus interesses (opcional)",
         "personal": "Utilização pessoal",
         "business": "Utilização comercial",
-		"custom": "Experiência personalizada",
-		"professional": "Utilização profissional",
+        "custom": "Experiência personalizada",
+        "professional": "Utilização profissional",
         "privacytitle": "Ajude-nos a melhorar a qualidade da aplicação, permitindo a recolha de estatísticas de utilização anónimas.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo a",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalar",
-				"installing": "Instalar",
-				"downloading": "A descarregar",
+                "installing": "Instalar",
+                "downloading": "A descarregar",
                 "installed": "Instalado",
                 "launch": "Iniciar",
                 "seeMore": "Ver Mais"

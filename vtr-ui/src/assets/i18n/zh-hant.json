@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
-				"seeDetailsLink": "查看詳細資料",
-				"gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
+                "seeDetailsLink": "查看詳細資料",
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
             },
             "power": {
                 "title": "電源",
@@ -868,8 +868,8 @@
                         "description": "藉由控制您系統的耗電量，保護飛機上的 AC 電源插座。當機艙電源模式啟用時，電腦會限制電池充電率和系統效能，藉此降低耗電量。",
                         "checkBoxDesc": "自動偵測",
                         "note": "如果勾選自動偵測，當電腦偵測到機上環境時，將自動開啟機艙電源模式，並在您下機時將其關閉。"
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "電池計量器重設",
                         "description": "此功能可讓您的電腦更精確地預估充飽容量。",
                         "barCode": "條碼",
@@ -905,7 +905,7 @@
                             "yes": "是",
                             "description3": "您確定要停止電池計量器重設嗎？"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "附註：一次只能重設一個電池。"
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "告訴我們您的興趣（選填）",
         "personal": "個人使用",
         "business": "業務使用",
-		"custom": "自訂",
-		"professional": "專業使用",
+        "custom": "自訂",
+        "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "安裝",
-				"installing": "安裝",
-				"downloading": "下載",
+                "installing": "安裝",
+                "downloading": "下載",
                 "installed": "已安裝",
                 "launch": "啟動",
                 "seeMore": "查看更多"

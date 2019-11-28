@@ -54,6 +54,7 @@ export class SystemUpdateService {
 	public isDownloadingCancel = false;
 	public isImcErrorOrEmptyResponse = false;
 	public isRebootRequiredDialogNeeded = false;
+	public isCheckingCancel = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -150,7 +151,7 @@ export class SystemUpdateService {
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
-					while (this.percentCompleted < 100) {
+					while (this.percentCompleted < 100 && !this.isCheckingCancel) {
 						const percent = this.percentCompleted + 10;
 						if (percent <= 100 ) {
 							this.percentCompleted = percent;
@@ -193,6 +194,7 @@ export class SystemUpdateService {
 				.then((status: boolean) => {
 					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
+					this.isCheckingCancel = true;
 				});
 		}
 	}

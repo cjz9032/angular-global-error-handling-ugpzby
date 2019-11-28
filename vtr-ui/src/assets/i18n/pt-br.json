@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
-				"seeDetailsLink": "Ver detalhes",
-				"gaugeResetWarning": "<b>Nota:</b> A redefinição do medidor de bateria está em andamento. Mantenha o adaptador de energia CA conectado."
+                "seeDetailsLink": "Ver detalhes",
+                "gaugeResetWarning": "<b>Nota:</b> A redefinição do medidor de bateria está em andamento. Mantenha o adaptador de energia CA conectado."
             },
             "power": {
                 "title": "Energia",
@@ -868,8 +868,8 @@
                         "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema.Quando o Modo de Energia de Voo estiver ativado, o computador reduzirá o consumo de energia ao limitar a taxa de carregamento da bateria e o desempenho do sistema.",
                         "checkBoxDesc": "Detecção automática",
                         "note": "Se a Detecção automática for marcada, seu computador ativará o Modo de energia de avião automaticamente quando detectar um ambiente a bordo de uma aeronave e será desativado quando você sair."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Redefinição do medidor da bateria",
                         "description": "Esse recurso permite que seu computador estime a capacidade de carga completa mais precisamente.",
                         "barCode": "Código de barras",
@@ -905,7 +905,7 @@
                             "yes": "Sim",
                             "description3": "Tem certeza de que deseja parar a redefinição do medidor da bateria?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: somente uma bateria pode ser redefinida por vez."
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "Conte-nos sobre seus interesses (opcional)",
         "personal": "Uso pessoal",
         "business": "Uso comercial",
-		"custom": "Personalizar a experiência",
-		"professional": "Uso profissional",
+        "custom": "Personalizar a experiência",
+        "professional": "Uso profissional",
         "privacytitle": "Ajude-nos a melhorar a qualidade do aplicativo permitindo a coleta anônima de estatísticas de uso.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo ao",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalar",
-				"installing": "Instalando",
-				"downloading": "Fazendo o download",
+                "installing": "Instalando",
+                "downloading": "Fazendo o download",
                 "installed": "Instalado",
                 "launch": "Iniciar",
                 "seeMore": "Ver mais"

@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
-				"seeDetailsLink": "詳細を見る",
-				"gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
+                "seeDetailsLink": "詳細を見る",
+                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
             },
             "power": {
                 "title": "電源",
@@ -868,8 +868,8 @@
                         "description": "システムの消費電力量を制御することで飛行機の AC 電源コンセントを保護します。飛行機電源モードを有効にすると、コンピューターはバッテリー充電率とシステム・パフォーマンスを制限して電力消費量を抑えます。",
                         "checkBoxDesc": "自動検出",
                         "note": "自動検出が選択されている場合は、コンピューターは飛行機に搭乗している環境を検出すると自動的に飛行機電源モードをオンにし、飛行機を離れると飛行機電源モードをオフにします。"
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "バッテリー・ゲージのリセット",
                         "description": "この機能でコンピューターは完全充電時の容量をより正確に推定できます。",
                         "barCode": "バーコード",
@@ -905,7 +905,7 @@
                             "yes": "はい",
                             "description3": "バッテリー・ゲージのリセットを中止してよろしいですか?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "注: 同時にリセットできるのは 1 つのバッテリーのみです。"
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "興味のあることを教えてください (任意)",
         "personal": "個人用",
         "business": "仕事用",
-		"custom": "カスタム・エクスペリエンス",
-		"professional": "業務用",
+        "custom": "カスタム・エクスペリエンス",
+        "professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "インストール",
-				"installing": "インストール",
-				"downloading": "ダウンロード中",
+                "installing": "インストール",
+                "downloading": "ダウンロード中",
                 "installed": "インストール済み",
                 "launch": "起動",
                 "seeMore": "詳細を見る"

@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
-				"seeDetailsLink": "Ayrıntıları görün",
-				"gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
+                "seeDetailsLink": "Ayrıntıları görün",
+                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
             },
             "power": {
                 "title": "Güç",
@@ -868,8 +868,8 @@
                         "description": "Sisteminizin güç tüketimini denetleyerek uçak AC güç çıkışını koruyun.Uçak Güç Kipi etkinleştirildiğinde bilgisayar, pil şarj oranını ve sistem performansını sınırlayarak güç tüketimini azaltır.",
                         "checkBoxDesc": "Otomatik algılama",
                         "note": "Otomatik algılama işaretlenirse bilgisayarınız uçak kabini ortamını algıladığında otomatik olarak Uçak güç kipini açar ve kullanmadığınızda kapanır."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Pil göstergesi sıfırlama",
                         "description": "Bu özellik, bilgisayarınızın tam şarj kapasitesini daha doğru tahmin etmesini sağlar.",
                         "barCode": "Barkod",
@@ -905,7 +905,7 @@
                             "yes": "Evet",
                             "description3": "Pil göstergesi sıfırlama işlemini durdurmak istediğinizden emin misiniz?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Not: Aynı anda yalnızca bir pil sıfırlanabilir."
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "Bize ilgi alanlarınızdan bahsedin (isteğe bağlı)",
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
-		"custom": "Özel Deneyim",
-		"professional": "Profesyonel Kullanım",
+        "custom": "Özel Deneyim",
+        "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Kur",
-				"installing": "Kurma",
-				"downloading": "Karşıdan yükleniyor",
+                "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
                 "installed": "Kurulu",
                 "launch": "Başlat",
                 "seeMore": "Daha Fazla"

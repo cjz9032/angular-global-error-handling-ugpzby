@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
-				"seeDetailsLink": "Részletek megtekintése",
-				"gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
+                "seeDetailsLink": "Részletek megtekintése",
+                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
             },
             "power": {
                 "title": "Tápellátás",
@@ -868,8 +868,8 @@
                         "description": "A repülő elektromos csatlakozójának védelme a rendszer energiafogyasztásának szabályozásával.A Repülőgépes energiaséma engedélyezése esetén a számítógép az akkumulátortöltési ráta és a rendszerteljesítémény korlátozásával csökkenti az energiafogyasztást.",
                         "checkBoxDesc": "Automatikus észlelés",
                         "note": "Az automatikus észlelés bejelölésekor a számítógép automatikusan bekapcsolja a Repülőgépes energiamódot, amikor egy repülőgép fedélzeti környezetét észleli, és kikapcsolja, amikor Ön távozik onnan."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Akkumulátormérő nullázása",
                         "description": "Ezzel a funkcióval a számítógép pontosabban meg tudja határozni a teljes töltési kapacitást.",
                         "barCode": "Vonalkód",
@@ -905,7 +905,7 @@
                             "yes": "Igen",
                             "description3": "Biztosan leállítja az akkumulátormérő nullázását?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Megjegyzés: Egyszerre csak egy elem állítható vissza."
                     }
                 },
                 "energyStar": {
@@ -2286,8 +2286,8 @@
         "subtitle2": "Adja meg az érdeklődési köreit (opcionális)",
         "personal": "Személyes használat",
         "business": "Céges használat",
-		"custom": "Egyéni megoldások",
-		"professional": "Professzionális célú felhasználás",
+        "custom": "Egyéni megoldások",
+        "professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
         "moreInterest": "+ további érdeklődési kör",
         "title1": "Üdvözli a",
@@ -2504,8 +2504,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Telepítse",
-				"installing": "Telepítés",
-				"downloading": "Letöltés folyamatban",
+                "installing": "Telepítés",
+                "downloading": "Letöltés folyamatban",
                 "installed": "Telepítve",
                 "launch": "Indítás",
                 "seeMore": "Továbbiak megtekintése"
