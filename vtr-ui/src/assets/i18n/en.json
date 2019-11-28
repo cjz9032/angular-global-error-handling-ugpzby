@@ -3043,7 +3043,8 @@
 				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
 				"yes": "Yes",
 				"no": "No"
-			}
+			},
+			"waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
 		},
 		"support": {
 			"title": "Download professional diagnostic tools",

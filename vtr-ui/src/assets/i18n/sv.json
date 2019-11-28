@@ -2686,7 +2686,8 @@
                 "description": "Genomsökningen och reparationen kan resultera i att data går förlorade. Vi rekommenderar att du skapar en säkerhetskopia innan du utför denna åtgärd. Vill du fortsätta?",
                 "yes": "Ja",
                 "no": "Nej"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",

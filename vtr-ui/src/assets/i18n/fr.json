@@ -2686,7 +2686,8 @@
                 "description": "L'exécution d'une analyse et d'une réparation peut entraîner la perte de données. Il est recommandé d'effectuer une sauvegarde avant d'exécuter cette opération. Souhaitez-vous vraiment poursuivre ?",
                 "yes": "Oui",
                 "no": "Non"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Télécharger les outils de diagnostic professionnels",

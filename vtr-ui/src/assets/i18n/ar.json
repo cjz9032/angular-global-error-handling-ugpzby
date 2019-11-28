@@ -2688,7 +2688,8 @@
                 "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
                 "yes": "نعم",
                 "no": "لا"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",

@@ -2686,7 +2686,8 @@
                 "description": "執行掃描和修復可能會導致資料遺失。建議您在執行此作業之前先備份。您確定要繼續嗎？",
                 "yes": "是",
                 "no": "否"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "下載專業診斷工具",

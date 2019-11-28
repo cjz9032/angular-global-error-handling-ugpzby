@@ -2686,7 +2686,8 @@
                 "description": "A keresés és javítás adatvesztést okozhat. Javasoljuk, hogy a művelet végrehajtása előtt készítsen biztonsági másolatot. Biztosan folytatja?",
                 "yes": "Igen",
                 "no": "Nem"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",

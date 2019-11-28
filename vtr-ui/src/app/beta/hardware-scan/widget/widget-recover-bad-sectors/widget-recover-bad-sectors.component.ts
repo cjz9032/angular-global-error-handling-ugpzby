@@ -12,6 +12,7 @@ export class WidgetRecoverBadSectorsComponent implements OnInit {
 	@Input() textButton: '';
 	@Input() recoverPath: string;
 	@Input() disable = false;
+	@Input() tooltipText: string;
 
 	constructor() { }
 

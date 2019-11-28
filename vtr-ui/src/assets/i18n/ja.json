@@ -2686,7 +2686,8 @@
                 "description": "スキャンと修復を実行すると、データが失われる可能性があります。この操作を実行する前にバックアップを作成することをお勧めします。続行してもよろしいですか",
                 "yes": "はい",
                 "no": "いいえ"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",

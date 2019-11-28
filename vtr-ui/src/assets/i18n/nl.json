@@ -2686,7 +2686,8 @@
                 "description": "Het uitvoeren van scans en herstel kan gegevensverlies tot gevolg hebben. Het verdient aanbeveling een back-up te maken voordat u deze bewerking uitvoert. Weet u zeker dat u wilt doorgaan?",
                 "yes": "Ja",
                 "no": "Nee"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",
