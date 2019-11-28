@@ -151,13 +151,13 @@
 				</div>
 			</div>
 			<!-- Hide in 3.1.1 due to performance issue -->
-			<!-- <div class="row no-gutters" *ngIf="!deviceService.isArm && showQuickSettings">
+			<div class="row no-gutters" *ngIf="!deviceService.isArm && showQuickSettings">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-quicksettings
 						[vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
 					</vtr-widget-quicksettings>
 				</div>
-			</div> -->
+			</div>
 			<div class="row no-gutters" *ngIf="!deviceService.isArm">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-status componentName="system status"

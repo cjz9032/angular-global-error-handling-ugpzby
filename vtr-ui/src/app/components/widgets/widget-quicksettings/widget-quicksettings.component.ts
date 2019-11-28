@@ -22,6 +22,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PowerService } from 'src/app/services/power/power.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -59,10 +60,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		public displayService: DisplayService,
 		private commonService: CommonService,
 		private logger: LoggerService,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private ngZone: NgZone,
 		public powerService: PowerService,
-		private vantageShellService: VantageShellService) {
+		private vantageShellService: VantageShellService,
+		private router: Router) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -389,6 +391,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			console.log('onEyeCareModeToggle', error.message);
 			return EMPTY;
 		}
+	}
+
+	public onSystemUpdateToggle($event: boolean) {
+		this.router.navigate(['device/system-updates'], { queryParams: {start: true}});
 	}
 
 	private getEyeCareModeCallback(response: any) {

@@ -4,7 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -25,6 +25,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -74,6 +75,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
 	public isInstallFailedMessageToasted = false;
+	private subscriberForQueryParam: Subscription;
 
 	public isOnline = true;
 	public offlineSubtitle: string;
@@ -169,7 +171,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private translate: TranslateService,
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
-		private router: Router
+		private router: Router,
+		private logger: LoggerService,
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -217,6 +220,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
+		});
+		this.subscriberForQueryParam = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('start')) {
+				const startUpdate = this.activatedRoute.snapshot.queryParams.start;
+				if (startUpdate) {
+					this.onCheckForUpdates();
+				}
+			}
 		});
 
 		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.updateInfo) {
@@ -289,8 +300,15 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
+		try {
+			if (this.notificationSubscription) {
+				this.notificationSubscription.unsubscribe();
+			}
+			if (this.subscriberForQueryParam) {
+				this.subscriberForQueryParam.unsubscribe();
+			}
+		} catch (error) {
+			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}
 	}
 
