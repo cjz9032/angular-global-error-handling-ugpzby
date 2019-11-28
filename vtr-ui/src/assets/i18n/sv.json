@@ -1094,7 +1094,7 @@
                             "yes": "Ja",
                             "description3": "Vill du stoppa återställning av batterimätaren?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Obs: Endast ett batteri kan återställas i taget."
                     }
                 },
                 "energyStar": {
@@ -1150,8 +1150,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
