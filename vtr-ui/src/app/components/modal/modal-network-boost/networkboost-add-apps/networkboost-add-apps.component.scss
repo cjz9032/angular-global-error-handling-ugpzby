@@ -126,6 +126,7 @@ ui-popover-apps {
 						max-width: 15rem;
 						text-overflow: ellipsis;
 						overflow: hidden;
+						white-space: nowrap;
 					}
 					div:nth-child(1) {
 						width: 5rem;
