@@ -131,6 +131,9 @@
 			&.show {
 				display: block;
 				// overflow-y: auto;
+				.navbar-nav .nav-item .dropdown-menu .dropdown-item.link {
+					line-height: 4rem;
+				}
 			}
 
 			.navbar-nav {
@@ -296,7 +299,7 @@
 							color: $main_shade;
 							padding: 0.25rem 0.9rem;
 							font-size: 1.5rem;
-							line-height: 2.2rem;
+							line-height: 3.2rem;
 							font-weight: $weight_medium;
 
 							&.link {
