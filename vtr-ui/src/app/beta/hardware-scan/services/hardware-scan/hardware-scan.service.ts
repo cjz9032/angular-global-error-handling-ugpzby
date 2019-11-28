@@ -424,6 +424,7 @@ export class HardwareScanService {
 			this.cancelRequested = false;
 			this.modules = modules;
 			this.scanExecution = true;
+			this.disableCancel = true;
 			this.workDone.next(false);
 			this.clearLastResponse();
 
@@ -439,6 +440,7 @@ export class HardwareScanService {
 				this.lastResponse = response;
 				this.updateProgress(response);
 				this.updateScanResponse(response);
+				this.disableCancel = false;
 			}, cancelHandler)
 				.then((response) => {
 					console.log('[End]: getDoScan() on service');
