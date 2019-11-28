@@ -650,6 +650,9 @@ export class HardwareScanService {
 			});
 			this.isLoadingModulesDone = true;
 			this.loadCustomModal();
+
+			// Signalizes that the hardware list has been retrieved
+			this.hardwareModulesLoaded.next(true);
 		});
 	}
 
@@ -672,9 +675,6 @@ export class HardwareScanService {
 					console.log('this.quickScanResponse: ', this.quickScanResponse);
 
 					this.refreshingModules = false;
-
-					// Signalizes that the hardware list has been retrieved
-					this.hardwareModulesLoaded.next(true);
 				});
 		}
 	}

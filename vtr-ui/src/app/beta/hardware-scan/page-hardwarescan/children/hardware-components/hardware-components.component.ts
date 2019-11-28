@@ -513,7 +513,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		(<ModalWaitComponent>modal.componentInstance).modalTitle = this.translate.instant('hardwareScan.loadingComponents');
-		(<ModalWaitComponent>modal.componentInstance).modalDescription = 'Retrieving hardware information...';
+		(<ModalWaitComponent>modal.componentInstance).modalDescription = this.translate.instant('hardwareScan.retrievingHardwareInformation');
 		(<ModalWaitComponent>modal.componentInstance).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
 
 		return modal;
@@ -785,7 +785,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case HardwareScanProgress.ScanProgress:
 					this.ngZone.run(() => {
-						this.progress = payload;
+						if(!this.hardwareScanService.isCancelRequested()){
+							this.progress = payload;
+						}
 					});
 					break;
 				case HardwareScanProgress.ScanResponse:

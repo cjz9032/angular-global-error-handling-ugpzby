@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import * as d3 from 'd3';
@@ -14,14 +14,17 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrls: ['./modal-smart-stand-by.component.scss']
 })
 export class ModalSmartStandByComponent implements OnInit {
-
-	@ViewChild('activityChart', { static: false })
-	@ViewChild('scheduleChart', { static: false })
-	private chartContainer: ElementRef;
+	// @ViewChild('activityChart', { static: false })
+	@ViewChildren('chartContainer') chartContainer: QueryList<ElementRef>;
+	// @ViewChild('scheduleChart', { static: false })
 	public activities: SmartStandbyActivityModel[] = [];
 	public scheduleList: SmartStandbyActivityModel[] = [];
 	public firstTittle = '';
 	public secondTittle = '';
+	public items: any = [
+		{ tittle: 'device.deviceSettings.power.smartStandby.graph1Tittle', subTittle: '' },
+		{ tittle: 'device.deviceSettings.power.smartStandby.graph2Tittle', subTittle: 'device.deviceSettings.power.smartStandby.graphSubtittle' }
+	];
 
 	private colors = {
 		first: ['#FFFFFF', '#d1d0ff', '#918fff', '#413DFF', '#0602CA'],
@@ -34,8 +37,8 @@ export class ModalSmartStandByComponent implements OnInit {
 		private powerService: PowerService,
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService) {
-		this.firstTittle = this.translate.instant('device.deviceSettings.power.smartStandby.graph1Tittle');
-		this.secondTittle = this.translate.instant('device.deviceSettings.power.smartStandby.graph2Tittle');
+		// this.firstTittle = this.translate.instant('device.deviceSettings.power.smartStandby.graph1Tittle');
+		// this.secondTittle = this.translate.instant('device.deviceSettings.power.smartStandby.graph2Tittle');
 
 	}
 
@@ -45,8 +48,6 @@ export class ModalSmartStandByComponent implements OnInit {
 		// this.getActivities().subscribe(
 		// 	(data: SmartStandbyActivityModel[]) => {
 		// 		this.activities = data;
-		// 		// this.scheduleList = data;
-		// 		console.log('++++++++++++++++++', data);
 		// 		this.renderToFirstChart(data);
 		// 		this.renderToSecondChart(data);
 		// 	}
@@ -57,7 +58,12 @@ export class ModalSmartStandByComponent implements OnInit {
 	}
 
 	public renderToFirstChart(data: SmartStandbyActivityModel[]) {
-		const element = this.chartContainer.nativeElement;
+		// console.log('+++++++++++++++++++++');
+		// console.log(this.chartContainer);
+		// console.log(this.chartContainer.first);
+		// console.log(this.chartContainer.last);
+		// console.log('+++++++++++++++++++++');
+		const element = this.chartContainer.first.nativeElement;
 		const margin: any = { top: 40, bottom: 30, left: 30, right: 30 };
 		const width = element.offsetWidth - (margin.left - margin.right);
 		const height = element.offsetHeight - (margin.top - margin.bottom);
@@ -75,13 +81,13 @@ export class ModalSmartStandByComponent implements OnInit {
 		// chart plot area
 		const chart = svg.append('g')
 			.attr('transform', `translate(${margin.left}, ${margin.top})`);
-		svg.append('text')
-			.attr('x', 10)
-			.attr('y', 10)
-			.attr('text-anchor', 'left')
-			.attr('font-size', 14)
-			.attr('font-weight', 500)
-			.text(this.firstTittle);
+		// svg.append('text')
+		// 	.attr('x', 10)
+		// 	.attr('y', 10)
+		// 	.attr('text-anchor', 'left')
+		// 	.attr('font-size', 14)
+		// 	.attr('font-weight', 500)
+		// 	.text(this.firstTittle);
 		// x-axis labels
 		chart.selectAll('g')
 			.data(hours)
@@ -145,7 +151,7 @@ export class ModalSmartStandByComponent implements OnInit {
 	}
 
 	public renderToSecondChart(data: SmartStandbyActivityModel[]) {
-		const element = this.chartContainer.nativeElement;
+		const element = this.chartContainer.last.nativeElement;
 		const margin: any = { top: 30, bottom: 30, left: 30, right: 30 };
 		const width = element.offsetWidth - (margin.left - margin.right);
 		const height = element.offsetHeight - (margin.top - margin.bottom);
@@ -163,13 +169,13 @@ export class ModalSmartStandByComponent implements OnInit {
 		// chart plot area
 		const chart = svg.append('g')
 			.attr('transform', `translate(${margin.left}, ${margin.top})`);
-		svg.append('text')
-			.attr('x', 10)
-			.attr('y', 10)
-			.attr('text-anchor', 'left')
-			.attr('font-size', 13)
-			.attr('font-weight', 500)
-			.text(this.secondTittle);
+		// svg.append('text')
+		// 	.attr('x', 10)
+		// 	.attr('y', 10)
+		// 	.attr('text-anchor', 'left')
+		// 	.attr('font-size', 13)
+		// 	.attr('font-weight', 500)
+		// 	.text(this.secondTittle);
 		// x-axis labels
 		chart.selectAll('g')
 			.data(hours)

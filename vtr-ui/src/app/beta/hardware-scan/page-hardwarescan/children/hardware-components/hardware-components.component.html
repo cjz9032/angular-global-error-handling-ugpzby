@@ -5,7 +5,7 @@
 				[subTitle]="getDeviceSubTitle()" [buttonText]="'hardwareScan.quickScan' | translate"
 				[anchorText]="'hardwareScan.customize.name' | translate" [percent]="progress"
 				[finalResultCodeText]="'hardwareScan.finalResultCode' | translate"
-				[disableQuickScan]="startScanClicked || isRefreshingModules()"
+				[disableQuickScan]="startScanClicked"
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
@@ -33,6 +33,7 @@
 						metricsEvent="FeatureClick" 
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules" 
+						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
 						(click)="refreshModules()">{{refreshText}} 
 						<fa-icon class="refresh-icon" 
 							placement="auto" 

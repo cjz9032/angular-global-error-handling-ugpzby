@@ -1016,12 +1016,10 @@
 					}
 				},
 				"smartStandby": {
-					"title": "Smart Standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of",
-					"descriptionLink": "Modern Standby",
-					"subDescription1": "during hours of heavier use.",
+					"title": "Smart standby",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
-					"subTitle":"Schedule your computer",
+					"subTitle": "Schedule your computer",
 					"subNote": "Your computer is scheduled for quicker resume based on the usage.",
 					"timer": {
 						"heading": "The time you typically use this computer:",
@@ -1064,7 +1062,7 @@
 					},
 					"legends": {
 						"none": "None",
-						"frequent":"Frequent"
+						"frequent": "Frequent"
 					},
 					"warningtip": "Please select at least one day.",
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
@@ -1889,7 +1887,7 @@
 			}
 		},
 		"startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
-		"subscriptionDetails":{
+		"subscriptionDetails": {
 			"title": "Subscription details",
 			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
 			"learnMore": "Learn more",
@@ -1900,7 +1898,7 @@
 			"inactiveStatus": "INACTIVE",
 			"manageSubscription": "MANAGE SUBSCRIPTION"
 		},
-		"scanSettings":{
+		"scanSettings": {
 			"title": "Scan settings",
 			"description": "Enable or disable the scan and set the scan schedule",
 			"enableScan": "Enable Scan",
@@ -1913,12 +1911,12 @@
 			"txtSave": "save",
 			"txtCancel": "cancel"
 		},
-		"scanningPage":{
+		"scanningPage": {
 			"title": "Performance & security check",
 			"description": "Please wait while we scan your system for potential problems and threats.",
 			"scanningSystem": "Scanning system",
 			"complete": "complete",
-			"cancelScan":{
+			"cancelScan": {
 				"button": "CANCEL SCAN",
 				"title": "Cacel the scan?",
 				"description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
@@ -1927,13 +1925,13 @@
 			},
 			"waiting": "WAITING TO SCAN",
 			"completed": "COMPLETED",
-			"nowScanningDetail":{
+			"nowScanningDetail": {
 				"cardTitle": "NOW SCANNING DETAIL",
 				"current": "CURRENT: ",
 				"upNext": "UP NEXT"
 			}
 		},
-		"scanCompletePage":{
+		"scanCompletePage": {
 			"title": "System scan is complete",
 			"description": "Here is what we found on your Lenovo Vantage 720s.",
 			"scanRates": "Our scan rates your PC at: ",
@@ -1943,7 +1941,7 @@
 			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
 			"issueCount": "{{individualIssueCount}} ISSUES",
 			"scannedAreas": "SCANNED AREAS",
-			"recommendedAction":{
+			"recommendedAction": {
 				"title": "RECOMMENDED ACTION",
 				"description": "We will automatically fix these issues. Once today and every week thereafter",
 				"yearlyPricing": "$19.99 / Yr",
@@ -1952,7 +1950,7 @@
 				"signupButton": "SIGN UP"
 			}
 		},
-		"subscriberScanHomePage":{
+		"subscriberScanHomePage": {
 			"title": "All is well with your Ideapad 720s",
 			"serialNumber": "Serial number: ",
 			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
@@ -1977,15 +1975,13 @@
 				"txtTo": "To",
 				"txtGo": "Go"
 			},
-			"lastScanResults":{
+			"lastScanResults": {
 				"title": "Last 5 scan results:",
 				"scanDate": "Scan date:",
 				"results": "Results:",
 				"status": "Status"
 			}
-			
 		}
-
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
@@ -3036,6 +3032,9 @@
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
 		},
+		"waitScanStarts": "Wait until the scan starts",
+		"reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+		"retrievingHardwareInformation": "Retrieving hardware information...",
 		"pluginTokens": {
 			"cpu": "Processor",
 			"memory": "Memory",
