@@ -1,6 +1,4 @@
 import { Router } from '@angular/router';
-import { isUndefined } from 'util';
-import { StatusTextPipe } from 'src/app/pipe/ui-security-statusbar/status-text.pipe';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -14,15 +12,12 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
-import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, PluginMissingError, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',

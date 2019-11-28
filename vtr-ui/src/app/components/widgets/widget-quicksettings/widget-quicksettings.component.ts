@@ -67,7 +67,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private deviceService: DeviceService,
 		private ngZone: NgZone,
-		public powerService: PowerService,
 		private vantageShellService: VantageShellService) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {

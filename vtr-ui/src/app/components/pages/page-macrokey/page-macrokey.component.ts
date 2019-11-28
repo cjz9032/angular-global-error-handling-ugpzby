@@ -9,6 +9,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -22,6 +23,7 @@ export class PageMacrokeyComponent implements OnInit {
 	metrics: any;
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
+	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
 
 	constructor(
 		private titleService: Title,
@@ -33,7 +35,8 @@ export class PageMacrokeyComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();

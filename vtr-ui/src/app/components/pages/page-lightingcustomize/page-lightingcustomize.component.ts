@@ -28,6 +28,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	cardContentPositionF: any = {};
 	startDateTime: any = new Date();
 	metrics: any;
+	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 
 	constructor(
 		private modalService: NgbModal,
@@ -41,7 +42,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.metrics = this.shellService.getMetrics();
 

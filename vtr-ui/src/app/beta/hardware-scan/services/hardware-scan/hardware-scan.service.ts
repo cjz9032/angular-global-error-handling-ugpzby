@@ -345,8 +345,8 @@ export class HardwareScanService {
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
 				this.hardwareScanAvailable = hwscanPluginInfo !== undefined &&
-					   hwscanPluginInfo.LegacyPlugin === false &&
-					   hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
+					hwscanPluginInfo.LegacyPlugin === false &&
+					hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
 			})
 			.catch(() => {
 				this.hardwareScanAvailable = false;
@@ -463,13 +463,13 @@ export class HardwareScanService {
 			return this.hardwareScanBridge.cancelScan((response: any) => {
 				console.log('[cancelScanExecution][Progress]: ', response);
 			})
-			.then((response) => {
-				this.cancelRequested = true;
-				this.clearLastResponse();
-			})
-			.finally(() => {
-				this.cleanUp();
-			});
+				.then((response) => {
+					this.cancelRequested = true;
+					this.clearLastResponse();
+				})
+				.finally(() => {
+					this.cleanUp();
+				});
 		}
 		return undefined;
 	}
@@ -972,7 +972,7 @@ export class HardwareScanService {
 	}
 
 	private buildPreviousResults(response: any) {
-		const previousResults = {};
+		const previousResults: any = {};
 		let moduleId = 0;
 		let hasFailed = false;
 		let hasWarning = false;
@@ -997,7 +997,7 @@ export class HardwareScanService {
 				const groupsResultMeta = module.categoryInformation.groupList;
 
 				for (let i = 0; i < module.response.groupResults.length; i++) {
-					const item = {};
+					const item: any = {};
 					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
 
 					item.id = moduleId;
@@ -1021,7 +1021,7 @@ export class HardwareScanService {
 					const testMeta = groupResultMeta.testList;
 
 					for (let j = 0; j < groupResult[i].testResultList.length; j++) {
-						const testInfo = {};
+						const testInfo: any = {};
 						testInfo.id = test[j].id;
 						testInfo.name = testMeta.find(x => x.id === test[j].id).name;
 						testInfo.information = testMeta.find(x => x.id === test[j].id).description;
@@ -1064,11 +1064,11 @@ export class HardwareScanService {
 	}
 
 	private buildPreviousResultsWidget(previousResults: any) {
-		const previousItems = {};
+		const previousItems: any = {};
 		previousItems.date = previousResults.date;
 		previousItems.modules = [];
 		for (const item of previousResults.items) {
-			const module = {};
+			const module: any = {};
 			module.name = item.module;
 			module.subname = item.name;
 			module.result = HardwareScanTestResult[HardwareScanTestResult.Pass];

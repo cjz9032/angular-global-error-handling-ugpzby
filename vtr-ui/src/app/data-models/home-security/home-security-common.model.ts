@@ -1,6 +1,5 @@
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
-import { AppNotification } from '../common/app-notification.model';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 export class HomeSecurityCommon {
 	connectedHomeSecurity: ConnectedHomeSecurity;
@@ -10,6 +9,7 @@ export class HomeSecurityCommon {
 	constructor(
 		connectedHomeSecurity: ConnectedHomeSecurity,
 		isOnline: boolean,
+		private dialogService: DialogService
 		) {
 			if (connectedHomeSecurity) {
 				this.connectedHomeSecurity = connectedHomeSecurity;
@@ -27,19 +27,6 @@ export class HomeSecurityCommon {
 
 	upgrade() {
 		this.connectedHomeSecurity.purchase();
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case NetworkStatus.Online:
-				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					break;
-				default:
-					break;
-			}
-		}
 	}
 
 }

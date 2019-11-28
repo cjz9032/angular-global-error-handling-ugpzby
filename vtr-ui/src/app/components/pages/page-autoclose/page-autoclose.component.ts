@@ -19,7 +19,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: [ './page-autoclose.component.scss' ]
+	styleUrls: ['./page-autoclose.component.scss']
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -37,6 +37,7 @@ export class PageAutocloseComponent implements OnInit {
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	backId = 'vtr-gaming-autoclose-btn-back';
+	dynamic_metricsItem: any = 'autoclose_cms_inner_content';
 
 	constructor(
 		private cmsService: CMSService,
@@ -45,7 +46,8 @@ export class PageAutocloseComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -96,7 +98,7 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	initTurnOnAction() {
@@ -172,7 +174,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 					}
 				});
-			} catch (error) {}
+			} catch (error) { }
 		} else {
 			const remApp = event.app;
 			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
@@ -193,7 +195,7 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	// Get the CMS content for the container card

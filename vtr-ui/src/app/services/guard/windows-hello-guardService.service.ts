@@ -4,7 +4,6 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityAdvisor, WindowsHello } from '@lenovo/tan-client-bridge';
-import { SecurityAdvisorMockService } from '../security/securityMock.service';
 import { GuardConstants } from './guard-constants';
 
 @Injectable({
@@ -17,7 +16,6 @@ export class WindowsHelloGuardService implements CanActivate {
 	constructor(
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private securityAdvisorMockService: SecurityAdvisorMockService,
 		private guardConstants: GuardConstants
 	) { }
 
