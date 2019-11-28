@@ -192,12 +192,17 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 
 	private getWelcomeText() {
 		if (!this.dashboardService.welcomeText) {
+			const win: any = window;
+			let isShellOnline = true;
+			if (win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode) {
+				isShellOnline = false;
+			}
 			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
 			let textIndex = 1;
 			const welcomeTextLength = 15;
 			if (dashboardLastWelcomeText && dashboardLastWelcomeText.welcomeText) {
 				const lastIndex = this.getWelcomeTextIndex(dashboardLastWelcomeText.welcomeText);
-				if (!dashboardLastWelcomeText.isOnline && this.commonService.isOnline) {
+				if (!dashboardLastWelcomeText.isOnline && isShellOnline) {
 					textIndex = lastIndex;
 				} else {
 					if (lastIndex === welcomeTextLength) {
@@ -218,7 +223,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				LocalStorageKey.DashboardLastWelcomeText,
 				{
 					welcomeText: this.dashboardService.welcomeText,
-					isOnline: this.commonService.isOnline
+					isOnline: isShellOnline
 				}
 			);
 		}

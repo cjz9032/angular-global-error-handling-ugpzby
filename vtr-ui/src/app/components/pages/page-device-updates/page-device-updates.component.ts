@@ -871,6 +871,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.systemUpdateService.isInstallationSuccess = false;
 		this.systemUpdateService.isInstallationCompleted = false;
 		this.systemUpdateService.isDownloadingCancel = false;
+		this.systemUpdateService.isCheckingCancel = false;
 	}
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {

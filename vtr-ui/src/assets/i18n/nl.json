@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
-				"seeDetailsLink": "Bekijk meer informatie",
-				"gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
+                "seeDetailsLink": "Bekijk meer informatie",
+                "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
             },
             "power": {
                 "title": "Energiebeheer",
@@ -868,8 +868,8 @@
                         "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren.Als het energieschema voor voeding aan boord van een vliegtuig is ingeschakeld, reduceert de computer het energieverbruik door de batterijlaadsnelheid en de systeemprestaties te verlagen.",
                         "checkBoxDesc": "Automatische detectie",
                         "note": "Als automatische detectie is aangevinkt, wordt het energieschema voor voeding aan boord van een vliegtuig automatisch ingeschakeld wanneer de computer een vliegtuigomgeving detecteert. Dit wordt weer uitgeschakeld wanneer u het vliegtuig verlaat."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Batterijmeter opnieuw instellen",
                         "description": "Met deze functie kan de computer nauwkeuriger schatten wat de volledige laadcapaciteit is.",
                         "barCode": "Barcode",
@@ -904,7 +904,7 @@
                             "yes": "Ja",
                             "description3": "Weet u zeker dat u wilt stoppen met het opnieuw instellen van de batterijmeter?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Opmerking: er kan slechts één batterij tegelijk worden gereset."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Vertel ons over uw interesses (optioneel)",
         "personal": "Persoonlijk gebruik",
         "business": "Zakelijk gebruik",
-		"custom": "Aangepaste ervaring",
-		"professional": "Beroepsmatig gebruik",
+        "custom": "Aangepaste ervaring",
+        "professional": "Beroepsmatig gebruik",
         "privacytitle": "Help ons de kwaliteit van de app te verbeteren door toe te staan dat anoniem gebruiksgegevens worden verzameld.",
         "moreInterest": "+ meer interesses",
         "title1": "Welkom bij",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installeer",
-				"installing": "Installeren",
-				"downloading": "Bezig met downloaden",
+                "installing": "Installeren",
+                "downloading": "Bezig met downloaden",
                 "installed": "Geïnstalleerd",
                 "launch": "Starten",
                 "seeMore": "Meer weergeven"

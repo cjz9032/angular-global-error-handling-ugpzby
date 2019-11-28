@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
-				"seeDetailsLink": "Prikaži pojedinosti",
-				"gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
+                "seeDetailsLink": "Prikaži pojedinosti",
+                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
             },
             "power": {
                 "title": "Napajanje",
@@ -868,8 +868,8 @@
                         "description": "Kontrolom utroška energije sustava štitite naponsku utičnicu u zrakoplovu.Kada je omogućen način napajanja u zrakoplovu, računalo smanjuje potrošnju energije tako da ograničava brzinu punjenja baterije i performanse sustava.",
                         "checkBoxDesc": "Automatsko otkrivanje",
                         "note": "Ako je označeno Automatsko otkrivanje, računalo će automatski uključiti Način napajanja u zrakoplovu kada otkrije okruženje unutar zrakoplova i isključiti ga po napuštanju okruženja."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Ponovno postavljanje mjerača napunjenosti baterije",
                         "description": "Ova značajka omogućuje računalu da preciznije procijeni kapacitet potpuno napunjene baterije.",
                         "barCode": "Crtični kod",
@@ -904,7 +904,7 @@
                             "yes": "Da",
                             "description3": "Jeste li sigurni da želite zaustaviti ponovno postavljanje mjerača baterije?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Napomena: istodobno se može ponovno postaviti samo jedna baterija."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Recite nam više o svojim interesima (neobavezno)",
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
-		"custom": "Prilagodite iskustvo",
-		"professional": "Stručna uporaba",
+        "custom": "Prilagodite iskustvo",
+        "professional": "Stručna uporaba",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliranje",
-				"installing": "Instaliranje",
-				"downloading": "Preuzimanje",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokretanje",
                 "seeMore": "Potražite više"

@@ -718,8 +718,8 @@
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
-				"seeDetailsLink": "Visualizza dettagli",
-				"gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
+                "seeDetailsLink": "Visualizza dettagli",
+                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
             },
             "power": {
                 "title": "Alimentazione",
@@ -868,8 +868,8 @@
                         "description": "Proteggere la presa elettrica CA aereo controllando il consumo di energia del sistema.Quando è abilitata la funzione Modalità alimentazione in aereo, il computer riduce il consumo di energia limitando la velocità di ricarica della batteria e le prestazioni del sistema.",
                         "checkBoxDesc": "Rilevamento automatico",
                         "note": "Se è abilitato il Rilevamento automatico, il computer attiverà automaticamente Modalità alimentazione in aereo quando rileva un ambiente a bordo dell'aeromobile e la disattiverà quando si scende."
-					},
-					"gaugeReset": {
+                    },
+                    "gaugeReset": {
                         "title": "Reimpostazione indicatore batteria",
                         "description": "Questa funzione consente al computer di stimare la capacità di carica completa con più precisione.",
                         "barCode": "Codice a barre",
@@ -904,7 +904,7 @@
                             "yes": "Sì",
                             "description3": "Interrompere la reimpostazione dell'indicatore della batteria?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: è possibile reimpostare solo una batteria alla volta."
                     }
                 },
                 "energyStar": {
@@ -2285,8 +2285,8 @@
         "subtitle2": "Raccontaci i tuoi interessi (facoltativo)",
         "personal": "Uso personale",
         "business": "Uso aziendale",
-		"custom": "Esperienza personalizzata",
-		"professional": "Uso professionale",
+        "custom": "Esperienza personalizzata",
+        "professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
         "title1": "Benvenuto in",
@@ -2503,8 +2503,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installa",
-				"installing": "Installazione",
-				"downloading": "Download in corso",
+                "installing": "Installazione",
+                "downloading": "Download in corso",
                 "installed": "Installato",
                 "launch": "Avvia",
                 "seeMore": "Visualizza altro"
