@@ -30,8 +30,7 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/mock-api",
-							"src/manifest.webmanifest",
-							"src/pre-load.js"
+							"src/manifest.webmanifest"
 						],
 						"styles": [
 							"src/styles.scss"
@@ -53,7 +52,7 @@
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
-							"extractCss": true,
+							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,
 							"extractLicenses": false,
@@ -81,7 +80,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": true,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -110,7 +113,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -139,8 +146,12 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
-							"extractCss": true,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
+							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,
 							"extractLicenses": false,

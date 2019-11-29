@@ -5,4 +5,5 @@ export class InputAccessoriesCapability {
 	image = '';
 	additionalCapabilitiesObj: any;
 	keyboardVersion: string;
+	keyboardLayoutName: any;
 }

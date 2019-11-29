@@ -55,7 +55,7 @@ xdescribe('PageMacrokeyComponent', () => {
 		component = fixture.debugElement.componentInstance;
 		fixture.detectChanges();
 		component.cardContentPositionF = {Id: 1, FeatureImage: 'TEST'};
-		component.cardContentPositionB = {Id: 1, FeatureImage: 'TEST'};
+		component.cardContentPositionC = {Id: 1, FeatureImage: 'TEST'};
 		tick(10);
 		fixture.detectChanges();
 	}

@@ -1,9 +1,9 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { NgbCarouselConfig, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit, SimpleChanges, OnChanges } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { CardService } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -12,7 +12,7 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 	providers: [NgbCarouselConfig]
 })
 
-export class WidgetCarouselComponent implements OnInit {
+export class WidgetCarouselComponent implements OnInit, OnChanges {
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: CarouselModel[] = [];
 	@Input() cardTitle: string;
@@ -32,8 +32,11 @@ export class WidgetCarouselComponent implements OnInit {
 
 	isOnline = true;
 
-	constructor(private config: NgbCarouselConfig, private commonService: CommonService,public modalService: NgbModal) {
-
+	constructor(
+		private config: NgbCarouselConfig,
+		private commonService: CommonService,
+		private cardService: CardService,
+		) {
 	}
 
 	ngOnInit() {
@@ -79,48 +82,24 @@ export class WidgetCarouselComponent implements OnInit {
 	parseToCarouselModel() {
 		this.carouselModel = [];
 
-		for (let i = 0; i < this.data.length; i++) {
+		for (const carousel of this.data) {
 			this.carouselModel.push({
-				id: this.data[i].id,
-				source: this.data[i].source,
-				cardTitle: this.data[i].title,
-				image: this.data[i].url,
-				link: this.data[i].ActionLink ? this.data[i].ActionLink : '',
-				linkType: this.data[i].ActionType || ''
+				id: carousel.id,
+				source: carousel.source,
+				cardTitle: carousel.title,
+				image: carousel.url,
+				link: carousel.ActionLink ? carousel.ActionLink : '',
+				linkType: carousel.ActionType || '',
+				dataSource: carousel.DataSource || ''
 			});
 		}
 	}
 
 	linkClicked($event, actionType: string, actionLink: string) {
-
 		if (!actionLink) {
 			$event.preventDefault();
 		}
-
-		if (!actionType || actionType !== 'Internal') {
-			return;
-		}
-
-		this.articleClicked(actionLink);
-		return false;
-	}
-
-	articleClicked(articleId) {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true, /*'static',*/
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
-
-		articleDetailModal.componentInstance.articleId = articleId;
+		return this.cardService.linkClicked(actionType, actionLink);
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -145,6 +124,7 @@ interface CarouselModel {
 	link: string;
 	id: string;
 	linkType: string;
+	dataSource: string;
 }
 
 

@@ -18,8 +18,8 @@
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
-			@media #{$mediaquery_X42}{
-			padding-left: 0
+			@media #{$mediaquery_X42} {
+				padding-left: 0;
 			}
 			> div.right-align {
 				float: right;
@@ -84,6 +84,9 @@
 			color: $icon_color;
 			position: relative;
 			top: .7em;
+		}
+		.top-pad-03 {
+			padding-top: 0.3rem;
 		}
 
 		.right-icon {

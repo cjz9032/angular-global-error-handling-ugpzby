@@ -1,5 +1,5 @@
 <li class="pt-3 user-defined-key-block"
-	*ngIf="hasUDKCapability">
+	*ngIf="hasUDKCapability && machineType === 1">
 	<vtr-ui-row-switch [title]="'device.deviceSettings.inputAccessories.userDefinedKey.title' | translate"
 		componentName="User defined key"
 		[caption]="'device.deviceSettings.inputAccessories.userDefinedKey.caption' | translate"
@@ -132,12 +132,15 @@
 												required></textarea>
 										</div>
 										<div class="col-12">
+											<div *ngIf="isUDFSetSuccessVisible"
+												class="select-text pt-3 udf-set-success">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
+										| translate}}
+											</div>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
-												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
-												[disabled]="form2.invalid || udkFormSubmitted"
 												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
 												{{
 											'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate
