@@ -1426,7 +1426,10 @@ export class VantageShellService {
 			errorCode: 0,
 			supportedModes: ['Blur', 'Comic', 'Sketch']
 		};
-		const cameraBlur: any = { getCameraBlurSettings: this.getPromise(obj) };
+		const cameraBlur: any = { 
+			getCameraBlurSettings: this.getPromise(obj) ,
+			setCameraBlurSettings: this.getPromise(obj) 
+		};
 		return cameraBlur;
 	}
 
