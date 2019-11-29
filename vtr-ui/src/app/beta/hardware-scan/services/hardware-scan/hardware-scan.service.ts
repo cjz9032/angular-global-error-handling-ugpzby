@@ -14,6 +14,7 @@ import { first } from 'rxjs/operators';
 export class HardwareScanService {
 
 	private hardwareScanBridge: any;
+	available: boolean;
 	private modulesRetrieved: any; // modules retrieve from get items [object from ItemToScanResponse]
 	private isLoadingModulesDone = false;
 	private isScanDone = false;
@@ -384,8 +385,8 @@ export class HardwareScanService {
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
 				this.hardwareScanAvailable = hwscanPluginInfo !== undefined &&
-					   hwscanPluginInfo.LegacyPlugin === false &&
-					   hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
+					hwscanPluginInfo.LegacyPlugin === false &&
+					hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
 			})
 			.catch(() => {
 				this.hardwareScanAvailable = false;
@@ -504,7 +505,7 @@ export class HardwareScanService {
 	 * This can be observed to know when a Scan/RBS work has done (successfully or canceled)
 	 */
 	public isWorkDone(): Observable<boolean> {
-		return this.workDone.pipe(first())
+		return this.workDone.pipe(first());
 	}
 
 	public cancelScanExecution() {
@@ -513,13 +514,13 @@ export class HardwareScanService {
 			return this.hardwareScanBridge.cancelScan((response: any) => {
 				console.log('[cancelScanExecution][Progress]: ', response);
 			})
-			.then((response) => {
-				this.cancelRequested = true;
-				this.clearLastResponse();
-			})
-			.finally(() => {
-				this.cleanUp();
-			});
+				.then((response) => {
+					this.cancelRequested = true;
+					this.clearLastResponse();
+				})
+				.finally(() => {
+					this.cleanUp();
+				});
 		}
 		return undefined;
 	}
@@ -788,7 +789,7 @@ export class HardwareScanService {
 					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
-					testRequestList: testRequestList,
+					testRequestList,
 					metaData: undefined,
 					moduleId: categoryInfo.id,
 				});
@@ -1028,88 +1029,88 @@ export class HardwareScanService {
 	}
 
 	private buildPreviousResults(response: any) {
-		const previousResults = {};
+		const previousResults: any = {};
 		let moduleId = 0;
 		let hasFailed = false;
 		let hasWarning = false;
 		console.log('buildPreviousResults: ', response);
 		if (response.hasPreviousResults) {
 			this.hasLastResults = response.hasPreviousResults;
-			previousResults['finalResultCode'] = response.scanSummary.finalResultCode;
-			previousResults['status'] = HardwareScanTestResult[HardwareScanTestResult.Pass];
-			previousResults['statusValue'] = HardwareScanTestResult.Pass;
-			previousResults['statusToken'] = this.statusToken(HardwareScanTestResult.Pass);
+			previousResults.finalResultCode = response.scanSummary.finalResultCode;
+			previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Pass];
+			previousResults.statusValue = HardwareScanTestResult.Pass;
+			previousResults.statusToken = this.statusToken(HardwareScanTestResult.Pass);
 
 			console.log('date before: ', response.scanSummary.ScanDate);
 			const date = response.scanSummary.ScanDate.toString().replace(/-/g, '/').split('T');
 			console.log('date: ', date);
-			previousResults['date'] = date[0] + ' ' + date[1].slice(0, 8);
+			previousResults.date = date[0] + ' ' + date[1].slice(0, 8);
 
-			previousResults['information'] = response.scanSummary.finalResultCodeDescription;
-			previousResults['items'] = [];
+			previousResults.information = response.scanSummary.finalResultCodeDescription;
+			previousResults.items = [];
 
 			for (const module of response.modulesResults) {
 				const groupResult = module.response.groupResults;
 				const groupsResultMeta = module.categoryInformation.groupList;
 
 				for (let i = 0; i < module.response.groupResults.length; i++) {
-					const item = {};
+					const item: any = {};
 					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
 
-					item['id'] = moduleId;
-					item['module'] = module.categoryInformation.name;
-					item['name'] = groupResultMeta.name;
-					item['resultCode'] = groupResult[i].resultCode;
-					item['information'] = groupResult[i].resultDescription;
-					item['collapsed'] = false;
-					item['details'] = [];
+					item.id = moduleId;
+					item.module = module.categoryInformation.name;
+					item.name = groupResultMeta.name;
+					item.resultCode = groupResult[i].resultCode;
+					item.information = groupResult[i].resultDescription;
+					item.collapsed = false;
+					item.details = [];
 
 					for (let j = 0; j < groupResultMeta.metaInformation.length; j++) {
 						const meta = groupResultMeta.metaInformation[j];
 						const detail = {};
 						detail[meta.name] = meta.value;
-						item['details'].push(detail);
+						item.details.push(detail);
 					}
 
-					item['listTest'] = [];
+					item.listTest = [];
 					const test = groupResult[i].testResultList;
 					console.log('test: ', test);
 					const testMeta = groupResultMeta.testList;
 
 					for (let j = 0; j < groupResult[i].testResultList.length; j++) {
-						const testInfo = {};
-						testInfo['id'] = test[j].id;
-						testInfo['name'] = testMeta.find(x => x.id === test[j].id).name;
-						testInfo['information'] = testMeta.find(x => x.id === test[j].id).description;
-						testInfo['status'] = test[j].result;
-						testInfo['statusToken'] = this.statusToken(test[j].result);
+						const testInfo: any = {};
+						testInfo.id = test[j].id;
+						testInfo.name = testMeta.find(x => x.id === test[j].id).name;
+						testInfo.information = testMeta.find(x => x.id === test[j].id).description;
+						testInfo.status = test[j].result;
+						testInfo.statusToken = this.statusToken(test[j].result);
 
-						if (testInfo['status'] === HardwareScanTestResult.NotStarted ||
-							testInfo['status'] === HardwareScanTestResult.InProgress) {
-							testInfo['status'] = HardwareScanOverallResult.Cancelled;
-							testInfo['statusToken'] = this.statusToken(HardwareScanOverallResult.Cancelled);
+						if (testInfo.status === HardwareScanTestResult.NotStarted ||
+							testInfo.status === HardwareScanTestResult.InProgress) {
+							testInfo.status = HardwareScanOverallResult.Cancelled;
+							testInfo.statusToken = this.statusToken(HardwareScanOverallResult.Cancelled);
 						}
 
 						if ((test[j].result === HardwareScanTestResult.Cancelled ||
 							test[j].result === HardwareScanTestResult.NotStarted) && !hasFailed && !hasWarning) {
-							previousResults['status'] = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-							previousResults['statusValue'] = HardwareScanTestResult.Cancelled;
-							previousResults['statusToken'] = this.statusToken(HardwareScanTestResult.Cancelled);
+							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
+							previousResults.statusValue = HardwareScanTestResult.Cancelled;
+							previousResults.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
 						} else if (test[j].result === HardwareScanTestResult.Fail) {
-							previousResults['status'] = HardwareScanTestResult[HardwareScanTestResult.Fail];
-							previousResults['statusValue'] = HardwareScanTestResult.Fail;
-							previousResults['statusToken'] = this.statusToken(HardwareScanTestResult.Fail);
+							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Fail];
+							previousResults.statusValue = HardwareScanTestResult.Fail;
+							previousResults.statusToken = this.statusToken(HardwareScanTestResult.Fail);
 							hasFailed = true;
 						} else if (test[j].result === HardwareScanTestResult.Warning && !hasFailed) {
-							previousResults['status'] = HardwareScanTestResult[HardwareScanTestResult.Warning];
-							previousResults['statusValue'] = HardwareScanTestResult.Warning;
-							previousResults['statusToken'] = this.statusToken(HardwareScanTestResult.Warning);
+							previousResults.status = HardwareScanTestResult[HardwareScanTestResult.Warning];
+							previousResults.statusValue = HardwareScanTestResult.Warning;
+							previousResults.statusToken = this.statusToken(HardwareScanTestResult.Warning);
 							hasWarning = true;
 						}
-						item['listTest'].push(testInfo);
+						item.listTest.push(testInfo);
 					}
 
-					previousResults['items'].push(item);
+					previousResults.items.push(item);
 				}
 
 				moduleId++;
@@ -1120,36 +1121,36 @@ export class HardwareScanService {
 	}
 
 	private buildPreviousResultsWidget(previousResults: any) {
-		const previousItems = {};
-		previousItems['date'] = previousResults.date;
-		previousItems['modules'] = [];
+		const previousItems: any = {};
+		previousItems.date = previousResults.date;
+		previousItems.modules = [];
 		for (const item of previousResults.items) {
-			const module = {};
-			module['name'] = item.module;
-			module['subname'] = item.name;
-			module['result'] = HardwareScanTestResult[HardwareScanTestResult.Pass];
-			module['resultIcon'] = HardwareScanTestResult.Pass;
-			module['statusToken'] = this.statusToken(HardwareScanTestResult.Pass);
+			const module: any = {};
+			module.name = item.module;
+			module.subname = item.name;
+			module.result = HardwareScanTestResult[HardwareScanTestResult.Pass];
+			module.resultIcon = HardwareScanTestResult.Pass;
+			module.statusToken = this.statusToken(HardwareScanTestResult.Pass);
 
 			for (const test of item.listTest) {
 				if ((test.status === HardwareScanTestResult.Cancelled ||
 					test.status === HardwareScanTestResult.NotStarted) &&
-					module['result'] !== HardwareScanTestResult[HardwareScanTestResult.Warning]) {
-					module['result'] = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
-					module['resultIcon'] = HardwareScanTestResult.Cancelled;
-					module['statusToken'] = this.statusToken(HardwareScanTestResult.Cancelled);
+					module.result !== HardwareScanTestResult[HardwareScanTestResult.Warning]) {
+					module.result = HardwareScanTestResult[HardwareScanTestResult.Cancelled];
+					module.resultIcon = HardwareScanTestResult.Cancelled;
+					module.statusToken = this.statusToken(HardwareScanTestResult.Cancelled);
 				} else if (test.status === HardwareScanTestResult.Fail) {
-					module['result'] = HardwareScanTestResult[HardwareScanTestResult.Fail];
-					module['resultIcon'] = HardwareScanTestResult.Fail;
-					module['statusToken'] = this.statusToken(HardwareScanTestResult.Fail);
+					module.result = HardwareScanTestResult[HardwareScanTestResult.Fail];
+					module.resultIcon = HardwareScanTestResult.Fail;
+					module.statusToken = this.statusToken(HardwareScanTestResult.Fail);
 					break;
 				} else if (test.status === HardwareScanTestResult.Warning) {
-					module['result'] = HardwareScanTestResult[HardwareScanTestResult.Warning];
-					module['resultIcon'] = HardwareScanTestResult.Warning;
-					module['statusToken'] = this.statusToken(HardwareScanTestResult.Warning);
+					module.result = HardwareScanTestResult[HardwareScanTestResult.Warning];
+					module.resultIcon = HardwareScanTestResult.Warning;
+					module.statusToken = this.statusToken(HardwareScanTestResult.Warning);
 				}
 			}
-			previousItems['modules'].push(module);
+			previousItems.modules.push(module);
 		}
 		this.previousItemsWidget = previousItems;
 	}

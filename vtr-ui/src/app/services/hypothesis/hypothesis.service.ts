@@ -22,8 +22,12 @@ export class HypothesisService {
 	private getHypothesis() {
 		return new Promise((resolve, reject) => {
 			try {
+				const win: any = window;
+				if (win.Windows && win.Windows.ApplicationModel.Package.current.id.familyName === 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8') {
+					// beta may not support the hypothesis config filter key, and it would block here, if not return immediately, we can treat it as not supported.
+					setTimeout(() => reject(new Error('not support in beta')), 2000);
+				}
 				const filter = this.shellService.calcDeviceFilter('{"var":"HypothesisGroups"}');
-				this.devService.writeLog('getHypothesis filter: ', JSON.stringify(filter));
 				if (filter) {
 					filter.then((hyp) => {
 						this.hypSettings = hyp;

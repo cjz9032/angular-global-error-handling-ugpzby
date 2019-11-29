@@ -16,7 +16,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetSecurityComponent } from 'src/app/components/widgets/widget-security/widget-security.component';
 import { UiLandingFeatureComponent } from 'src/app/components/ui/ui-landing-feature/ui-landing-feature.component';
-import { UiObjectTitleComponent } from 'src/app/components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from 'src/app/components/ui/ui-security-statusbar/ui-security-statusbar.component';
 import { PipeInstallPipe } from 'src/app/pipe/security-antivirus/pipe-install.pipe';
 import { StatusTransformPipe } from 'src/app/pipe/ui-security-statusbar/status-transform.pipe';
@@ -92,7 +91,6 @@ library.add(
 		WidgetQaComponent,
 		// UI
 		UiLandingFeatureComponent,
-		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
 		// Pipe
 		SubTransformPipe,
