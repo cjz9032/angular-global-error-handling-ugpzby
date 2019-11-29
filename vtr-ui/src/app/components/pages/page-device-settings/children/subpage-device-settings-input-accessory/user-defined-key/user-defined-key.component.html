@@ -79,6 +79,8 @@
 											<textarea class="form-control"
 												spellcheck="false"
 												[(ngModel)]="url"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder'
+										| translate"
 												name="url"
 												required></textarea>
 										</div>
@@ -128,16 +130,20 @@
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
 												(keydown)="onKeydown($event)"
 												required></textarea>
 										</div>
 										<div class="col-12">
+											<div *ngIf="isUDFSetSuccessVisible"
+												class="select-text pt-3 udf-set-success">
+												{{'device.deviceSettings.inputAccessories.userDefinedKey.website.successMessage'
+										| translate}}
+											</div>
 											<button id="ip-userdefined-key-applybtn"
 												attr.aria-label="ip-userdefined-key-applybtn"
 												type="submit"
 												class="button"
-												[ngClass]="{'submittedButton':udkFormSubmitted, 'button':!udkFormSubmitted}"
-												[disabled]="form2.invalid || udkFormSubmitted"
 												title="{{'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate}}">
 												{{
 											'device.deviceSettings.inputAccessories.userDefinedKey.apply.title' | translate
