@@ -270,144 +270,6 @@
 					},
 					"icon": null,
 					"subitems": []
-				}
-			]
-		},
-		{
-			"id": "wifi-security",
-			"label": "common.menu.security.sub3",
-			"path": "security/wifi-security",
-			"icon": [
-				"fal",
-				"lock"
-			],
-			"brand": "+[think]",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.wifisecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
-		},
-		{
-			"id": "support",
-			"label": "common.menu.support",
-			"path": "support",
-			"icon": [
-				"fal",
-				"wrench"
-			],
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.support",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"forArm": false,
-			"sMode": true,
-			"subitems": []
-		},
-		{
-			"id": "home-security",
-			"label": "common.menu.homeSecurity",
-			"path": "home-security",
-			"brand": "-[think]",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.homesecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": [
-				"fal",
-				"home-lg-alt"
-			],
-			"forArm": false,
-			"subitems": [],
-			"pre": [
-				"assets/images/connected-home-security/welcome-slide1@2x.png"
-			]
-		},
-		{
-			"id": "user",
-			"label": "User",
-			"path": "user",
-			"icon": "user",
-			"metricsEvent": "ItemClick",
-			"metricsParent": "NavigationLenovoAccount.Submenu",
-			"metricsItem": "link.user",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"forArm": true,
-			"sMode": true,
-			"subitems": []
-		}
-	],
-	"menuItemsPrivacy": [
-		{
-			"id": "dashboard",
-			"label": "common.menu.dashboard",
-			"path": "dashboard",
-			"icon": [
-				"fal",
-				"columns"
-			],
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.dashboard",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"forArm": true,
-			"sMode": true,
-			"subitems": []
-		},
-		{
-			"id": "privacy",
-			"label": "common.menu.privacy",
-			"path": "privacy",
-			"icon": [
-				"fal",
-				"user-shield"
-			],
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.privacy",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"forArm": false,
-			"subitems": []
-		},
-		{
-			"id": "device",
-			"label": "common.menu.device.title",
-			"path": "device",
-			"icon": [
-				"fal",
-				"laptop"
-			],
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.device",
-			"forArm": false,
-			"sMode": true,
-			"subitems": [
-				{
-					"id": "device",
-					"label": "common.menu.device.sub1",
-					"path": null,
-					"icon": null,
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.mydevice",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"sMode": true,
-					"subitems": []
 				},
 				{
 					"id": "internet-protection",
@@ -454,36 +316,19 @@
 			"forArm": false,
 			"subitems": [
 				{
-					"id": "wifi-security",
-					"label": "common.menu.security.sub3",
-					"path": null,
-					"icon": null,
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.wifisecurity",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"subitems": []
-				}
-			]
-		},
-		{
-			"id": "wifi-security",
-			"label": "common.menu.security.sub3",
-			"path": "security/wifi-security",
-			"icon": [
-				"fal",
-				"lock"
-			],
-			"brand": "+[think]",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.wifisecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"subitems": []
+				"id": "wifi-security",
+				"label": "common.menu.security.sub3",
+				"path": null,
+				"icon": null,
+				"metricsEvent": "itemClick",
+				"metricsParent": "navbar",
+				"metricsItem": "link.wifisecurity",
+				"routerLinkActiveOptions": {
+					"exact": true
+				},
+				"subitems": []
+			}
+		]
 		},
 		{
 			"id": "support",
