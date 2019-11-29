@@ -15,8 +15,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 describe('BatteryCardComponent', () => {
-	//let component: BatteryCardComponent;
-	//let fixture: ComponentFixture<BatteryCardComponent>;
+	// let component: BatteryCardComponent;
+	// let fixture: ComponentFixture<BatteryCardComponent>;
 	let commonService: CommonService;
 	let debugElement;
 	let batteryService;
@@ -172,7 +172,7 @@ describe('BatteryCardComponent', () => {
 		it('#getBatteryDetails should get battery information', async () => {
 			const { fixture, component, batteryService } = setup();
 			spyOn(batteryService, 'getBatteryDetail').and.returnValue(Promise.resolve(info));
-			await component.getBatteryDetails();
+			await component.getBatteryDetails(false);
 			fixture.detectChanges();
 			expect(batteryService.getBatteryDetail).toHaveBeenCalled();
 			expect(component.batteryInfo).toEqual(info.batteryInformation);
@@ -327,7 +327,7 @@ describe('BatteryCardComponent', () => {
 
 			component.batteryHealth = 1;
 			component.getBatteryCondition();
-			//	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
+			// 	expect(component.batteryConditions).toEqual([new BatteryConditionModel(17, 1)]);
 
 			// Limited AC adapter status
 			component.batteryHealth = 0;

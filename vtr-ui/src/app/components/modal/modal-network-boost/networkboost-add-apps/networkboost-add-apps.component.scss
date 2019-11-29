@@ -126,6 +126,9 @@ ui-popover-apps {
 						max-width: 15rem;
 						text-overflow: ellipsis;
 						overflow: hidden;
+						@media #{$breakpoint_xl} {
+						white-space: nowrap;
+						}
 					}
 					div:nth-child(1) {
 						width: 5rem;
