@@ -160,14 +160,17 @@
 							<div class="row">
 								<div class="col-auto pt-3">
 									<img *ngIf="fnCtrlSwapStatus === true"
-										src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
+										src="assets/images/Fn-Ctrl-key.PNG">
 									<img *ngIf="fnCtrlSwapStatus === false"
-										src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
+										src="assets/images/Fn-Ctrl-key.PNG">
 								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-					<vtr-user-defined-key></vtr-user-defined-key>
+
+					<li *ngIf="machineType === 1">
+						<vtr-user-defined-key></vtr-user-defined-key>
+					</li>
 				</ul>
 				<div class="control-options-block" *ngIf="isTouchPadVisible || isMouseVisible">
 					<div class="row">

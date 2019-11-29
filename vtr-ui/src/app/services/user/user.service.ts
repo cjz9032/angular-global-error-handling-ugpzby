@@ -9,6 +9,8 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { DeviceService } from '../../services/device/device.service';
 import { LIDStarterHelper } from './stater.helper';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalInfoService } from '../local-info/local-info.service';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 
 declare var Windows;
@@ -42,7 +44,8 @@ export class UserService {
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private localInfoService: LocalInfoService
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
 			if (!this.auth && firstName !== 'lenovoId.user') {
@@ -68,6 +71,12 @@ export class UserService {
 				this.lidSupported = false;
 			}
 		}
+
+		this.localInfoService.getLocalInfo().then(localInfo => {
+			if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
+				this.lidSupported = false;
+			}
+		});
 
 		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
 	}

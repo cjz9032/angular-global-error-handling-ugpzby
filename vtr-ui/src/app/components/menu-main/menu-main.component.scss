@@ -17,7 +17,7 @@
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
-		position: absolute;
+		position: fixed;
 		left: 0%;
 		right: 0%;
 	}
@@ -336,7 +336,7 @@
 					&:last-child {
 						.dropdown-menu {
 							min-width: 20rem;
-							max-width: 50rem;
+							max-width: 60rem;
 						}
 					}
 
@@ -416,6 +416,9 @@
 				background: $main_darker;
 
 				.navbar-nav {
+					max-height: calc(100vh - #{$menu_height});
+					overflow-y: auto;
+
 					.nav-item {
 						padding: 0 0 0.5rem 0;
 

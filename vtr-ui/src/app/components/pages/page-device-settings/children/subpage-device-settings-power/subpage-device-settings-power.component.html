@@ -75,6 +75,41 @@
 								</vtr-ui-row-switch>
 							</li>
 
+							<!-- MVP 2 feature -->
+							<li class=""
+								*ngIf="machineType == 1 && isChargeThresholdAvailable && !isPowerDriverMissing">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
+									[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
+									[isSwitchVisible]=true
+									[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
+									[leftIcon]="['fal', 'battery-half']"
+									[rightIcon]="['far', 'question-circle']"
+									[showChildContent]="true"
+									[isSwitchChecked]="showBatteryThreshold"
+									(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
+									[switchId]="'ds-power-battery-threshold'"
+									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
+									<div *ngIf="showBatteryThreshold">
+										<vtr-battery-charge-threshold-settings *ngIf="isPrimaryBatteryAvailable"
+											[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title1' | translate"
+											[type]="'primary'"
+											[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
+											[stop]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate"
+											[checkboxText]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate "
+											[noteInfo]="'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate"
+											[startAtChargeOptions]="startAtChargeOptions"
+											[stopAtChargeOptions]="stopAtChargeOptions"
+											[selectedStopAtCharge]="selectedStopAtChargeVal"
+											[selectedStartAtCharge]="selectedStartAtChargeVal"
+											[isCheckedAuto]="primaryCheckBox"
+											(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
+											(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
+											[textId]="'threshold-primary-battery'">
+										</vtr-battery-charge-threshold-settings>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
 
 							<li class=""
 								*ngIf="machineType == 1 && isChargeThresholdAvailable && !isPowerDriverMissing">
@@ -89,7 +124,7 @@
 									[isSwitchChecked]="showBatteryThreshold"
 									(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
 									[switchId]="'ds-power-battery-threshold'"
-									[isDisabled]="isGaugeResetRunning[0] || isGaugeResetRunning[1]"
+									[isDisabled]="batteryService.checkIsGaugeResetRunning()"
 									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 									<div *ngIf="showBatteryThreshold">
 										<vtr-battery-charge-threshold-settings
@@ -104,7 +139,7 @@
 											[selectedStopAtCharge]="selectedStopAtChargeVal"
 											[selectedStartAtCharge]="selectedStartAtChargeVal"
 											[isCheckedAuto]="primaryCheckBox"
-											[isGaugeResetRunning]="isGaugeResetRunning[0]"
+											[isGaugeResetRunning]="batteryService.checkIsGaugeResetRunning()"
 											(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
 											(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
 											[textId]="'threshold-primary-battery'">
@@ -122,7 +157,7 @@
 											[selectedStopAtCharge]="selectedStopAtChargeVal1"
 											[selectedStartAtCharge]="selectedStartAtChargeVal1"
 											[isCheckedAuto]="secondaryCheckBox"
-											[isGaugeResetRunning]="isGaugeResetRunning[1]"
+											[isGaugeResetRunning]="batteryService.checkIsGaugeResetRunning()"
 											(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
 											(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')"
 											[textId]="'threshold-secondary-battery'">
@@ -136,14 +171,12 @@
 							</li>
 
 							<li class=""
-								*ngIf="gaugeResetCapability && gaugeResetInfo && gaugeResetInfo.length>0">
-								<vtr-battery-gauge-reset [batteryGaugeResetInfo]="gaugeResetInfo"
-									[isACAttached]="isACAttached"
-									[remainingPercentages]="remainingPercentages">
-								</vtr-battery-gauge-reset>
+								*ngIf="gaugeResetCapability && batteryService.gaugeResetInfo?.length>0">
+								<vtr-battery-gauge-reset></vtr-battery-gauge-reset>
 							</li>
 
-							<li class="" *ngIf="expressChargingStatus.available">
+							<li class=""
+								*ngIf="expressChargingStatus.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 									[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"

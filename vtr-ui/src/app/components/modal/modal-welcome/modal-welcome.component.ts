@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -6,10 +6,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { UserService } from 'src/app/services/user/user.service';
-import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -18,38 +17,38 @@ import { SelfSelectService } from 'src/app/services/self-select/self-select.serv
 	providers: [ TimerService ]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
+	public segmentConst = SegmentConst;
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
 	privacyPolicy = true;
-	checkedArray: string[] = [];
 	metrics: any;
 	data: any = {
 		page2: {
 			title: '',
 			subtitle: '',
-			radioValue: null
 		}
 	};
-
-	// to show small list. on click of More Interest show all.
+	usageType = null;
+	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
 	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
 	machineInfo: any;
 
+	@Input() tutorialVersion: string;
+
 	@ViewChildren('interestChkboxs') interestChkboxs: any;
 	@ViewChildren('welcomepage2') welcomepage2: any;
 	shouldManuallyFocusPage2 = true;
-	shouldManuallyFocusMoreInterest =  false;
+	shouldManuallyFocusMoreInterest = false;
 
 	constructor(
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService,
 		public selfSelectService: SelfSelectService,
-		private configService: ConfigService,
 		private timerService: TimerService,
 		private userService: UserService) {
 		this.metrics = shellService.getMetrics();
@@ -63,27 +62,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.timerService.start();
-		this.configService.getPrivacyPolicyLink().then((policyLink) => {
-			this.privacyPolicyLink = policyLink;
-		});
-		this.initializeSelfSelectConfig();
-	}
-
-	private initializeSelfSelectConfig() {
-		this.selfSelectService.getConfig().then((config) => {
-			if (config && config.segment) {
-				this.data.page2.radioValue = config.segment;
-			}
-			if (config && config.customtags) {
-				const checkedTags = config.customtags;
-				this.checkedArray = checkedTags.split(',');
-				this.selfSelectService.interests.forEach(item => {
-					item.checked = checkedTags && checkedTags.includes(item.label);
-				});
-			}
-		});
+		const config = await this.selfSelectService.getConfig();
+		this.usageType = config.usageType;
+		this.interests = config.interests;
 	}
 
 	ngAfterViewInit() {
@@ -121,7 +104,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.timerService.start();
 			this.page = page;
 			this.progress = 49;
-			tutorialData = new WelcomeTutorial(1, null, null);
+			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
 			const settingData = {
@@ -136,22 +119,22 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			});
 
 			const usageData = {
-				ItemType: 'FeatureClick',
-				ItemName: 'UsageType',
-				ItemValue: this.data.page2.radioValue,
-				ItemParent: 'WelcomePage'
+				ItemType: 'SettingUpdate',
+				SettingName: 'UsageType',
+				SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
+				SettingParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(usageData);
 
 			const interestMetricValue = {};
-			this.checkedArray.forEach(item => {
+			this.selfSelectService.checkedArray.forEach(item => {
 				interestMetricValue[item] = true;
 			});
 			const interestData = {
-				ItemType: 'FeatureClick',
-				ItemName: 'Interest',
-				ItemValue: interestMetricValue,
-				ItemParent: 'WelcomePage'
+				ItemType: 'SettingUpdate',
+				SettingName: 'Interest',
+				SettingValue: interestMetricValue,
+				SettingParent: 'WelcomePage'
 			};
 			this.metrics.sendAsync(interestData);
 
@@ -164,35 +147,27 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			console.log('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
-			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
+			tutorialData = new WelcomeTutorial( 2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
 			// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
-			this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
+			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
-			this.saveSelfSelectConfig();
+			this.selfSelectService.saveConfig(true);
 		}
 		this.page = ++page;
 	}
 
-	private saveSelfSelectConfig() {
-		const selfSelectConfig = {
-			customtags: this.checkedArray.join(','),
-			segment: this.data.page2.radioValue
-		};
-		this.selfSelectService.updateConfig(selfSelectConfig);
-	}
-
 	toggle($event, value) {
 		if ($event.target.checked) {
-			this.checkedArray.push(value);
+			this.selfSelectService.checkedArray.push(value);
 		} else {
-			this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
+			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
-		console.log(this.checkedArray);
-		console.log(this.checkedArray.length);
+		console.log(this.selfSelectService.checkedArray);
+		console.log(this.selfSelectService.checkedArray.length);
 		if (!this.isInterestProgressChanged) {
 			this.progress += 16;
 			this.isInterestProgressChanged = true;
-		} else if (this.checkedArray.length === 0) {
+		} else if (this.selfSelectService.checkedArray.length === 0) {
 			this.progress -= 16;
 			this.isInterestProgressChanged = false;
 		}
@@ -212,10 +187,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	saveUsageType(value) {
-		if (this.data.page2.radioValue == null) {
+		if (this.selfSelectService.usageType == null) {
 			this.progress += 16;
 		}
-		this.data.page2.radioValue = value;
+		this.usageType = value;
+		this.selfSelectService.usageType = this.usageType;
 	}
 
 	savePrivacy($event, value) {
@@ -232,7 +208,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 	ngOnDestroy() {
 		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
-		this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true);
+		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 	}
 
 

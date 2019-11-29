@@ -64,6 +64,9 @@
 				height: 5rem;
 				overflow: hidden;
 				text-overflow: ellipsis;
+				@media #{$breakpoint_xl} {
+					white-space: nowrap;
+				}
 			}
 			.remove-app {
 				opacity: 0;

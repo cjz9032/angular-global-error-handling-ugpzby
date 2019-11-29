@@ -118,8 +118,13 @@
 	}
 	.disabled {
 		opacity: 0.5;
-		pointer-events: none;
+		pointer-events: none;	
+		color: $light-grey;		
+		cursor: not-allowed;
 	}
+	 .custom-control-label-disabled:hover {
+		cursor: not-allowed;
+	  }
 	.privacy-guard-caption {
 		font-size: 1.5rem;
 		color: $main_darker;

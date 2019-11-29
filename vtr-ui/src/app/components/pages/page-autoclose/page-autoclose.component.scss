@@ -143,23 +143,3 @@
 	}
 }
 
-::ng-deep ngb-tooltip-window.tooltip {
-	.arrow {
-		left: calc(-1rem + 50%) !important;
-		height: 0.5rem !important;
-		&::before {
-			border-width: 0 1.2rem 1.2rem;
-			border-bottom-color: $gaming_lightest;
-		}
-	}
-	.tooltip-inner {
-		padding: 2.4rem !important;
-		text-align: center;
-		background-color: #fff;
-		font-size: 1.5rem !important;
-		border-radius: 0.4rem;
-		color: $gaming_dark !important;
-		white-space: nowrap;
-		display: table;
-	}
-}

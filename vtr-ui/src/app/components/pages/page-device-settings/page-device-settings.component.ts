@@ -14,6 +14,9 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -34,6 +37,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.power.title',
 			path: 'device-settings/power',
 			icon: 'power',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: true
 		}, {
@@ -41,6 +46,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
 			icon: 'audio',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false
 		}, {
@@ -48,6 +55,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
 			icon: 'display-camera',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false
 		}, {
@@ -55,6 +64,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
 			icon: 'input-accessories',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false
 		}
@@ -76,17 +87,11 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private router: Router
 	) {
-		this.fetchCMSArticles();
-		// VAN-5872, server switch feature on language change
-		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.fetchCMSArticles();
-		});
 
-		// Evaluate the translations for QA on language Change
-		// this.qaService.setTranslationService(this.translate);
-		// this.qaService.setCurrentLangTranslations();
-		this.qaService.getQATranslation(translate); // VAN-5872, server switch feature
-
+		const showPowerPage = this.commonService.getLocalStorageValue(LocalStorageKey.IsHidePowerPage);
+		if (showPowerPage) {
+			this.hidePowerPage();
+		}
 		// translate subheader menus
 		this.menuItems.forEach(m => {
 			// m.label = this.translate.instant(m.label);//VAN-5872, server switch feature
@@ -102,24 +107,28 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});
 		console.log('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		// translate subheader menus
-		/*this.menuItems.forEach(m => {
-			//m.label = this.translate.instant(m.label);
-			this.translate.stream(m.label).subscribe((value) => {
-				m.label = value;
-			});
-		});*/  // VAN-5872, server switch feature
+
+		this.fetchCMSArticles();
+		// VAN-5872, server switch feature on language change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.fetchCMSArticles();
+		});
+
+		// Evaluate the translations for QA on language Change
+		// this.qaService.setTranslationService(this.translate);
+		// this.qaService.setCurrentLangTranslations();
+		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
 		this.initInputAccessories();
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.page === 2) {
-				this.getMicrophoneSettings();
+			if (welcomeTutorial && welcomeTutorial.isDone) {
+				this.getAudioPageSettings();
 			}
 		} else {
-			this.getMicrophoneSettings();
+			this.getAudioPageSettings();
 		}
 
 		this.routerSubscription = this.router.events.subscribe((evt) => {
@@ -131,7 +140,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				this.activeElement.focus();
 			}
 
-			//window.scrollTo(0, 0);
+			// window.scrollTo(0, 0);
 			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
 			if (focusParentElement) {
 				focusParentElement.focus();
@@ -141,8 +150,13 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
 			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
 			element.focus(); */
-			//vtr - subpage
+			// vtr - subpage
 		});
+	}
+
+	hidePowerPage() {
+		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
+		this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -151,7 +165,12 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
-						this.getMicrophoneSettings();
+						this.getAudioPageSettings();
+					}
+					break;
+				case LocalStorageKey.IsHidePowerPage:
+					if (payload) {
+						this.hidePowerPage();
 					}
 					break;
 				default:
@@ -161,7 +180,16 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
+
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		const familyName = machineFamily.replace(/\s+/g, '');
+
+		if (this.machineType !== 1 || (this.machineType === 1 && familyName === 'LenovoTablet10')) {
+			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+			return;
+		}
+
 		if (this.machineType !== 1 && this.machineType !== 0) {
 			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 			return;
@@ -179,23 +207,30 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getMicrophoneSettings() {
+	getAudioPageSettings() {
 		try {
 			if (this.audioService.isShellAvailable) {
-				this.audioService.getMicrophoneSettings()
-					.then((microphone: Microphone) => {
-						console.log('getMicrophoneSettings', microphone);
-						if (!microphone.available) {
-							this.menuItems.splice(1, 1);
-						}
-					}).catch(error => {
-						this.logger.error('getMicrophoneSettings', error.message);
-						return EMPTY;
-					});
+				Promise.all([
+					this.audioService.getDolbyMode(),
+					// this.audioService.getMicrophoneSettings(),
+				]).then((responses: any[]) => {
+					const dolbyModeResponse: DolbyModeResponse = responses[0];
+					// const microphone: Microphone = responses[1];
+					this.logger.info('getAudioPageSettings.Promise.all', responses);
+					this.commonService.setLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
+					// if (!microphone.available && !dolbyModeResponse.available) {
+					// 	this.menuItems = this.commonService.removeObjById(this.menuItems, 'audio');
+					// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, false);
+					// } else {
+					// 	this.commonService.setLocalStorageValue(LocalStorageKey.IsAudioPageAvailable, true);
+					// }
+				}).catch(error => {
+					this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
+					return EMPTY;
+				});
 			}
 		} catch (error) {
-			this.logger.error('getMicrophoneSettings' + error.message);
-			return EMPTY;
+			this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
 		}
 	}
 
