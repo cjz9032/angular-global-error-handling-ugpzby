@@ -1098,7 +1098,7 @@
                             "yes": "نعم",
                             "description3": "هل تريد بالتأكيد إيقاف عملية إعادة تعيين مقياس البطارية؟"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "ملاحظة: يمكن إعادة تعيين بطارية واحدة فقط في كل مرة."
                     }
                 },
                 "energyStar": {
@@ -1154,8 +1154,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
@@ -2724,7 +2722,8 @@
                 "description": "يمكن أن يؤدي تنفيذ الفحص والإصلاح إلى فقد البيانات. يوصى بعمل نسخة احتياطية قبل تنفيذ هذه العملية. هل تريد بالتأكيد المتابعة؟",
                 "yes": "نعم",
                 "no": "لا"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -2749,7 +2748,18 @@
         "cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
         "cancelTextProgress": "يرجى انتظار تقدم عملية الإلغاء",
         "pluginNotUpdate": "فحص الأجهزة غير متاح لأنه قديم. يرجى ترقيته.",
-        "testNotApplicable": "لا ينطبق على الفحص المخصص"
+        "testNotApplicable": "لا ينطبق على الفحص المخصص",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "المعالج",
+            "memory": "الذاكرة",
+            "motherboard": "اللوحة الأم",
+            "pci_express": "PCI Express",
+            "storage": "السعة التخزينية",
+            "wireless": "اللاسلكية"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

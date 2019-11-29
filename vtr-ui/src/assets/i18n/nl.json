@@ -1096,7 +1096,7 @@
                             "yes": "Ja",
                             "description3": "Weet u zeker dat u wilt stoppen met het opnieuw instellen van de batterijmeter?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Opmerking: er kan slechts één batterij tegelijk worden gereset."
                     }
                 },
                 "energyStar": {
@@ -1152,8 +1152,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
@@ -2721,7 +2719,8 @@
                 "description": "Het uitvoeren van scans en herstel kan gegevensverlies tot gevolg hebben. Het verdient aanbeveling een back-up te maken voordat u deze bewerking uitvoert. Weet u zeker dat u wilt doorgaan?",
                 "yes": "Ja",
                 "no": "Nee"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",
@@ -2746,7 +2745,18 @@
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
-        "testNotApplicable": "Niet van toepassing op aangepaste scan"
+        "testNotApplicable": "Niet van toepassing op aangepaste scan",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Geheugen",
+            "motherboard": "Moederbord",
+            "pci_express": "PCI Express",
+            "storage": "Opslag",
+            "wireless": "Draadloos"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

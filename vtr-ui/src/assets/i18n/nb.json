@@ -1096,7 +1096,7 @@
                             "yes": "Ja",
                             "description3": "Er du sikker på at du vil stoppe tilbakestillingen av batterimåleren?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Merk: Bare ett batteri kan tilbakestilles om gangen."
                     }
                 },
                 "energyStar": {
@@ -1152,8 +1152,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
@@ -2726,7 +2724,8 @@
                 "yes": "Ja",
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -2746,7 +2745,18 @@
         "cancelTextPrompt": "Er du sikker på at du vil avbryte?",
         "cancelTextProgress": "Vent mens avbrytingen pågår",
         "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
-        "testNotApplicable": "Ikke aktuelt for egendefinert skanning"
+        "testNotApplicable": "Ikke aktuelt for egendefinert skanning",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Prosessor",
+            "memory": "Minne",
+            "motherboard": "Hovedkort",
+            "pci_express": "PCI Express",
+            "storage": "Lagring",
+            "wireless": "Trådløs"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

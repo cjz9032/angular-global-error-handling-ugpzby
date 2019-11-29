@@ -33,6 +33,14 @@
 		font-weight: $weight_light;
 	}
 
+	.udf-set-success {
+		color: $shade_blue;
+	}
+
+	.udf-set-failed {
+		color: $button_red_start;
+	}
+
 	.button {
 		text-transform: uppercase;
 		height: 5rem;

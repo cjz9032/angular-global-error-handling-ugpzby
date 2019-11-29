@@ -1096,7 +1096,7 @@
                             "yes": "Sí",
                             "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: solo se puede restablecer una batería a la vez."
                     }
                 },
                 "energyStar": {
@@ -1152,8 +1152,6 @@
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
                     "graph1Tittle": "The usage of your computer",
                     "graph2Tittle": "The Modern Standby schedule for your computer",
@@ -2721,7 +2719,8 @@
                 "description": "La ejecución del examen y la reparación pueden producir la pérdida de datos. Se recomienda realizar una copia de seguridad antes de ejecutar esta operación. ¿Seguro que desea continuar?",
                 "yes": "Sí",
                 "no": "No"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -2746,7 +2745,18 @@
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
-        "testNotApplicable": "No se aplica a personalizar exploración"
+        "testNotApplicable": "No se aplica a personalizar exploración",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesador",
+            "memory": "Memoria",
+            "motherboard": "Placa madre",
+            "pci_express": "PCI Express",
+            "storage": "Almacenamiento",
+            "wireless": "Inalámbrica"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",

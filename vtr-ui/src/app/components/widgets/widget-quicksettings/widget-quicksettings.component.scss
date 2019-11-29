@@ -3,9 +3,9 @@
 .vtr-widget-quicksettings {
 	.heading {
 		color: $main_darker;
-		font-size: 3.5rem;
+		font-size: $fontsize_xl2;
 		line-height: 1.1em;
-		font-weight: $weight-medium;
+		font-weight: $weight_light;
 	}
 	.widget-icon-3 {
 		display: flex;

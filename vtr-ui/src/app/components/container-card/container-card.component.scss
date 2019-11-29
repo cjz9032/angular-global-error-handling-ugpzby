@@ -90,6 +90,8 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
+						font-weight: $weight_light;
 					}
 
 					.description {
@@ -101,10 +103,11 @@
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-						cursor: pointer;
 						div {
 							cursor: pointer;
 						}
+						font-size: $fontsize_md;
+						font-weight: $weight_light;
 					}
 
 					.logo {
@@ -421,7 +424,7 @@
 					// position: absolute;
 					// margin-top: 2rem;
 					// left: 4rem;
-					font-size: 1.4rem;
+					font-size: $fontsize_xs;
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
@@ -477,7 +480,7 @@
 				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $sub_header;
+				font-size: $fontsize_xl;
 				line-height: 4.6rem;
 				cursor: pointer;
 			}
@@ -547,9 +550,9 @@
 
 		.title {
 			color: $main_dark;
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 			line-height: 1.1em;
-			font-weight: $weight_bold;
+			font-weight: $weight_light;
 
 		/*	@media #{$mediaquery_X4} {
 				font-size: 2rem;
