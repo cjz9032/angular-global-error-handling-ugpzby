@@ -152,7 +152,9 @@ export class UserDefinedKeyComponent implements OnInit {
 				}
 				break;
 			case 3:
-				this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
+				if (this.description && this.description.length > 0) {
+					this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
+				}
 		}
 	}
 
@@ -173,10 +175,8 @@ export class UserDefinedKeyComponent implements OnInit {
 	}
 
 	private showUDFSetSuccessMessage(action: string) {
-		if (action === OPEN_WEB.str) {
-			this.isUDFSetSuccessVisible = true;
-			this.hideUDFMessage();
-		}
+		this.isUDFSetSuccessVisible = true;
+		this.hideUDFMessage();
 	}
 
 	private showUDFSetFailedMessage(action: string) {
