@@ -1097,24 +1097,34 @@ export class VantageShellService {
 		};
 		const displayEyeCareMode: any = {
 			getDaytimeColorTemperature: this.getPromise(dayTimeObj),
+			setDaytimeColorTemperature: this.getPromise(true),
+			resetDaytimeColorTemperature: this.getPromise(true),
 			getDisplayColortemperature: this.getPromise(eyeCareObj),
+			setDisplayColortemperature: this.getPromise(true),
 			getEyeCareModeState: this.getPromise(obj),
+			getEyeCareAutoModeState: this.getPromise(obj),
 			initEyecaremodeSettings: this.getPromise(true),
 			startMonitor: this.getPromise(true),
 			stopMonitor: this.getPromise(true),
+			setEyeCareMode: this.getPromise(true),
+			setEyeCareAutoMode: this.getPromise(true),
+			resetEyeCareMode: this.getPromise(true),
 			statusChangedLocationPermission: this.getPromise(true)
 		};
-
 		return displayEyeCareMode;
 	}
-
 	/**
 	 * returns Privacy Guard object from VantageShellService of JS Bridge
 	 */
 	public getPrivacyGuardObject(): any {
 		const privacyGuardSettings: any = {
 			getPrivacyGuardCapability: this.getPromise(true),
-			getPrivacyGuardOnPasswordCapability: this.getPromise(true)
+			getPrivacyGuardOnPasswordCapability: this.getPromise(true),
+			getPrivacyGuardStatus: this.getPromise(true),
+			getPrivacyGuardOnPasswordStatus: this.getPromise(true),
+			setPrivacyGuardStatus: this.getPromise(true),
+			setPrivacyGuardOnPasswordStatus: this.getPromise(true),
+
 		};
 
 		return privacyGuardSettings;
@@ -1126,7 +1136,18 @@ export class VantageShellService {
 	public getCameraPrivacy(): any {
 		const cameraPrivacyStatus: any = {
 			getCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
-			startMonitor: this.getPromise(true)
+			setCameraPrivacyStatus: this.getPromise(true),
+			startMonitor: this.getPromise(true),
+			stopMonitor: this.getPromise(true),
+		};
+		return cameraPrivacyStatus;
+	}
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public setCameraPrivacy(): any {
+		const cameraPrivacyStatus: any = {
+			setCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
 		};
 		return cameraPrivacyStatus;
 	}
@@ -1135,8 +1156,15 @@ export class VantageShellService {
 	 */
 	public getCameraSettings(): any {
 		const cameraSettings: any = {
+			getCameraSettings: this.getPromise(true),
+			setCameraBrightness: this.getPromise(true),
+			setCameraContrast: this.getPromise(true),
+			setCameraAutoExposure: this.getPromise(true),
+			setCameraExposure: this.getPromise(true),
+			setCameraAutoFocus: this.getPromise(true),
+			resetCameraSettings: this.getPromise(true),
 			startMonitor: this.getPromise(true),
-			getCameraSettings: this.getPromise(true)
+			stopMonitor: this.getPromise(true),
 		};
 
 		return cameraSettings;
@@ -2015,7 +2043,16 @@ export class VantageShellService {
 
 	/** returns OledSettings object from VantageShellService of JS Bridge */
 	public getOledSettings(): any {
-		const oledSettings = { getOLEDPowerControlCapability: this.getPromise(true) };
+		const oledSettings = {
+			getOLEDPowerControlCapability: this.getPromise(true),
+			getTaskbarDimmerSetting: this.getPromise(true),
+			getBackgroundDimmerSetting: this.getPromise(true),
+			getDisplayDimmerSetting: this.getPromise(true),
+			setTaskbarDimmerSetting: this.getPromise(true),
+			setBackgroundDimmerSetting: this.getPromise(true),
+			setDisplayDimmerSetting: this.getPromise(true),
+
+		};
 
 		return oledSettings;
 	}
