@@ -6,11 +6,10 @@
 			"installMode": "prefetch",
 			"resources": {
 				"files": [
-					"/index.html",
-					"assets/fonts/**",
+					"/*.woff",
 					"/*.css",
-					"assets/i18n/**",
-					"assets/cms-cache/**"
+					"/assets/cms-cache/**",
+					"/assets/images/keyboard-images/KeyboardMap_Images/**"
 				]
 			}
 		},
@@ -20,12 +19,14 @@
 			"updateMode": "prefetch",
 			"resources": {
 				"files": [
-					"assets/**",
+					"/assets/**",
+					"!/assets/i18n/**",
 					"!/assets/privacy-json/trackers.json"
 				],
 				"urls": [
 					"https://qa.csw.lenovo.com/**",
 					"https://vantage-qa.csw.lenovo.com/**",
+					"https://vantage-stage.csw.lenovo.com/**",
 					"https://vantage.csw.lenovo.com/**",
 					"https://cms.csw.lenovo.com/**"
 				]
@@ -37,6 +38,7 @@
 			"name": "cms",
 			"urls": [
 				"https://vantage-qa.csw.lenovo.com/**",
+				"https://vantage-stage.csw.lenovo.com/**",
 				"https://vantage.csw.lenovo.com/**",
 				"https://cms.csw.lenovo.com/**"
 			],

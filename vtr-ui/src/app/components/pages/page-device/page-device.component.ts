@@ -3,6 +3,7 @@ import { DeviceService } from '../../../services/device/device.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -17,6 +18,7 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public deviceService: DeviceService,
 		public qaService: QaService,
 		private cmsService: CMSService,

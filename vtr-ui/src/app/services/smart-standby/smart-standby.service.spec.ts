@@ -19,8 +19,6 @@ describe('SmartStandbyService', () => {
 	describe(':', () => {
 
 		function setup() {
-			//const fixture = TestBed.createComponent(ModalBatteryChargeThresholdComponent);
-			//const component = fixture.debugElement.componentInstance;
 			const smartStandbyService = TestBed.get(SmartStandbyService);
         	const commonService = TestBed.get(CommonService);
 
@@ -49,6 +47,10 @@ describe('SmartStandbyService', () => {
 			expect(smartStandbyService.selectedDays).not.toBe([]);
 
 			smartStandbyService.days = 'fri,sat,sun';
+			smartStandbyService.splitDays();
+			expect(smartStandbyService.selectedDays).not.toBe([]);
+
+			smartStandbyService.days = 'fri,sat';
 			smartStandbyService.splitDays();
 			expect(smartStandbyService.selectedDays).not.toBe([]);
 
@@ -83,7 +85,7 @@ describe('SmartStandbyService', () => {
 			smartStandbyService.days = 'sun,mon';
 			smartStandbyService.splitDays();
 			smartStandbyService.getSelectedDays(2);
-			expect(smartStandbyService.selectedDays).not.toBe([]);
+			expect(smartStandbyService.selectedDays).not.toBe([]);			
 
 			smartStandbyService.days = 'mon,tue';
 			smartStandbyService.splitDays();

@@ -64,48 +64,48 @@ export class EyeCareModeResponse {
 	default: number; // current value
 	status: boolean;
 }
-export interface ICameraSettingsResponse {
-	brightness: {
-		autoModeSupported: boolean,
-		autoValue: boolean,
-		supported: boolean,
-		min: number, // slider bar min value
-		max: number, // slider bar max value
-		step: number,
-		default: number, //
-		value: number // current value
+export class CameraSettingsResponse {
+	brightness = {
+		autoModeSupported: false,
+		autoValue: false,
+		supported: false,
+		min: 0, // slider bar min value
+		max: 100, // slider bar max value
+		step: 0,
+		default: 0, //
+		value: 0 // current value
 	};
-	contrast: {
-		autoModeSupported: boolean,
-		autoValue: boolean,
-		supported: boolean,
-		min: number,
-		max: number,
-		step: number,
-		default: number,
-		value: number
+	contrast = {
+		autoModeSupported: false,
+		autoValue: false,
+		supported: false,
+		min: 0,
+		max: 100,
+		step: 0,
+		default: 0,
+		value: 0,
 	};
-	exposure: {
-		autoModeSupported: boolean, // true means auto exposure mode toggle button can be shown
-		autoValue: boolean, // true means auto exposure mode enabled
-		supported: boolean, // true means exposure slider bar can be shown
-		min: number,
-		max: number,
-		step: number,
-		default: number,
-		value: number
+	exposure = {
+		autoModeSupported: false, // true means auto exposure mode toggle button can be shown
+		autoValue: false, // true means auto exposure mode enabled
+		supported: false, // true means exposure slider bar can be shown
+		min: 0,
+		max: 100,
+		step: 0,
+		default: 0,
+		value: 0,
 	};
-	focus: {
-		autoModeSupported: boolean,
-		autoValue: boolean,
-		supported: boolean,
-		min: number, // slider bar min value
-		max: number, // slider bar max value
-		step: number,
-		default: number, //
-		value: number // current value
+	focus = {
+		autoModeSupported: false,
+		autoValue: false,
+		supported: false,
+		min: 0, // slider bar min value
+		max: 100, // slider bar max value
+		step: 0,
+		default: 0, //
+		value: 0, // current value
 	};
-	permission: boolean;
+	permission = false;
 
 }
 export class CameraFeatureAccess {

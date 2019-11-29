@@ -165,6 +165,7 @@ export enum LocalStorageKey {
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	BetaUser = '[LocalStorageKey] BetaUser',
+	BetaTag = '[LocalStorageKey] BetaTag',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
 	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
@@ -191,5 +192,14 @@ export enum LocalStorageKey {
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
-	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails'
+	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
+	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing',
+	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
+	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
+	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
+	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
+	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
+
+	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
+	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig'
 }

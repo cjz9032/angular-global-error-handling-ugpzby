@@ -157,6 +157,10 @@
 				display: inline-block;
 				line-height: 0;
 				border-radius: 50%;
+				@media screen and (max-width: 993px) and (min-width: 992px)	{			
+					transform: scale(0.7);
+					transform-origin: 0% 100%;
+				}
 				@media #{$mediaquery_XL100X} {
 					transform: scale(1.4);
 					transform-origin: 0% 100%;

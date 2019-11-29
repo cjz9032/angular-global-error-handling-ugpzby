@@ -20,7 +20,7 @@
 				metricsItemPosition="{{ index }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				(click)="showArticleDetails()">
+				(click)="clickContent()">
 				<div *ngIf="item.Thumbnail"
 					class="image"
 					[style.background-image]="'url('+item.Thumbnail+')'">
@@ -67,7 +67,8 @@
 	[style.height.px]="articleItemDiv.clientWidth * ratio">
 	<div class="container-fluid">
 		<div class="row">
-			<a href="javascript:;"
+			<a [attr.href]="item.ActionLink"
+				target="_blank"
 				class="article-conetnt"
 				vtrMetrics
 				id="{{'article-item-card-' + index}}"
@@ -79,7 +80,7 @@
 				metricsItemPosition="{{index}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				(click)="showArticleDetails()">
+				(click)="clickContent()">
 				<div *ngIf="item.FeatureImage"
 					class="image"
 					[style.background-image]="'url('+item.FeatureImage+')'">
