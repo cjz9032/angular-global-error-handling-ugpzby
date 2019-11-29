@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato."
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
-                "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
             },
@@ -883,8 +883,8 @@
                             "stop": "Interrompi"
                         },
                         "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
-						"progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
-						"progressText3": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
+                        "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
+                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {

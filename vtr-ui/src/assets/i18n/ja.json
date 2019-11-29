@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。"
                 },
                 "batteryNotDetected": "バッテリーが検出されませんでした",
-                "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
+                "thresholdNote": "<b>注:</b>バッテリー充電のしきい値が有効な場合は、バッテリーを完全に充電することはできません。",
                 "seeDetailsLink": "詳細を見る",
                 "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
             },
@@ -883,8 +883,8 @@
                             "stop": "停止"
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
-						"progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
-						"progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
+                        "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
+                        "progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {

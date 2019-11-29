@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt."
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
-                "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
+                "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
             },
@@ -883,8 +883,8 @@
                             "stop": "Stopp"
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
-						"progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
-						"progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
+                        "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+                        "progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {

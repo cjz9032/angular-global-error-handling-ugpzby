@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
-                "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
+                "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
                 "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
             },
@@ -883,8 +883,8 @@
                             "stop": "Stop"
                         },
                         "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
-						"progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
-						"progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
+                        "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
+                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {

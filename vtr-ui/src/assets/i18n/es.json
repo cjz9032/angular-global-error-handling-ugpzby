@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto."
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
-                "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
                 "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
@@ -883,8 +883,8 @@
                             "stop": "Detener"
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
-						"progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
-						"progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {

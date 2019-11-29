@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto."
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
-                "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> A bateria não pode estar totalmente carregada quando o Limiar de Carregamento da Bateria está ativado.",
                 "seeDetailsLink": "Ver detalhes",
                 "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
             },
@@ -883,8 +883,8 @@
                             "stop": "Parar"
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: calibrar até carga completa",
-						"progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
-						"progressText3": "{{stage}} de {{stageNum}}: calibrar até carga completa",
+                        "progressText2": "{{stage}} de {{stageNum}}: calibrar até bateria fraca",
+                        "progressText3": "{{stage}} de {{stageNum}}: calibrar até carga completa",
                         "FCCText": "De {{before}} Wh até {{after}} Wh",
                         "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {

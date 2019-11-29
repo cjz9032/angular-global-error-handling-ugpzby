@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。"
                 },
                 "batteryNotDetected": "未偵測到電池",
-                "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
+                "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
                 "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
             },
@@ -883,8 +883,8 @@
                             "stop": "停止"
                         },
                         "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
-						"progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
-						"progressText3": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為充電到高電量",
+                        "progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
+                        "progressText3": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為充電到高電量",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {

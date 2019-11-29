@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat."
                 },
                 "batteryNotDetected": "Aucune batterie détectée",
-                "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",
+                "thresholdNote": "<b>Remarque :</b> La batterie ne peut pas être complètement chargée lorsque Seuil de chargement de la batterie est activé.",
                 "seeDetailsLink": "Voir les détails",
                 "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
             },
@@ -883,8 +883,8 @@
                             "stop": "Arrêt"
                         },
                         "progressText1": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
-						"progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
-						"progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
+                        "progressText2": "{{stage}} sur {{stageNum}} : Étalonnage sur charge de batterie faible",
+                        "progressText3": "{{stage}} sur {{stageNum}} : Étalonnage sur charge complète",
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {

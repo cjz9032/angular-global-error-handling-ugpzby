@@ -717,7 +717,7 @@
                     "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér."
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
-                "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
+                "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
             },
@@ -883,8 +883,8 @@
                             "stop": "Zastavit"
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
-						"progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
-						"progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
+                        "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
