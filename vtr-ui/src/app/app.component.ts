@@ -16,7 +16,7 @@ import { ModalServerSwitchComponent } from './components/modal/modal-server-swit
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
-import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
+import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 import { AppNotification } from './data-models/common/app-notification.model';
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		const win: any = window;
 		win.webAppVersion = {
 			web: environment.appVersion,
-			bridge: bridgeVersion.version
+			bridge: version
 		};
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -155,7 +155,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			win.NetworkListener.onnetworkchanged = (state) => {
 				this.notifyNetworkState();
 			};
-			
+
 			this.notifyNetworkState();
 		} else {
 			window.addEventListener('online', (e) => {
