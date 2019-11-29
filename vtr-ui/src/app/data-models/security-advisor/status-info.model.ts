@@ -4,4 +4,5 @@ export interface StatusInfo {
 	path: string;
 	title: string;
 	type: string;
+	id: string;
 }

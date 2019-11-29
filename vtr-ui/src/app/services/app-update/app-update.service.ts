@@ -2,8 +2,8 @@ import { Injectable, ApplicationRef } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { interval } from 'rxjs/internal/observable/interval';
 import { LoggerService } from '../logger/logger.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalAppUpdateAvailableComponent } from 'src/app/components/modal/modal-app-update-available/modal-app-update-available.component';
+// import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+// import { ModalAppUpdateAvailableComponent } from 'src/app/components/modal/modal-app-update-available/modal-app-update-available.component';
 import { first } from 'rxjs/internal/operators/first';
 import { concat } from 'rxjs/internal/observable/concat';
 
@@ -14,7 +14,7 @@ export class AppUpdateService {
 
 	constructor(
 		private updates: SwUpdate,
-		private modalService: NgbModal,
+		// private modalService: NgbModal,
 		appRef: ApplicationRef,
 		private logger: LoggerService
 	) {
@@ -45,35 +45,35 @@ export class AppUpdateService {
 		});
 	}
 
-	public checkForUpdates(): void {
-		this.logger.info('AppUpdateService: app launch, checking for update');
-		// this.promptUser();
-		this.updates.available.subscribe(() => this.promptUser());
-	}
+	// public checkForUpdates(): void {
+	// 	this.logger.info('AppUpdateService: app launch, checking for update');
+	// 	// this.promptUser();
+	// 	this.updates.available.subscribe(() => this.promptUser());
+	// }
 
-	private promptUser(): void {
-		this.logger.info('AppUpdateService: new version available, waiting for user confirmation');
-		const modalRef: NgbModalRef = this.modalService.open(ModalAppUpdateAvailableComponent, {
-			size: 'lg',
-			backdrop: 'static',
-			windowClass: 'confirmation-modal',
-			centered: true,
-			keyboard: false	// disable escape key
-		});
-		modalRef.result.then(
-			(reason: boolean) => {
-				// on close
-				if (reason) {
-					this.logger.info('AppUpdateService: updating to latest version');
-					// show spinner on modal
-					this.updates.activateUpdate().then(() => {
-						// hide spinner and modal. reload app
-						document.location.reload();
-					});
-				} else {
-					this.logger.info('AppUpdateService: update aborted by user');
-				}
-			}
-		);
-	}
+	// private promptUser(): void {
+	// 	this.logger.info('AppUpdateService: new version available, waiting for user confirmation');
+	// 	const modalRef: NgbModalRef = this.modalService.open(ModalAppUpdateAvailableComponent, {
+	// 		size: 'lg',
+	// 		backdrop: 'static',
+	// 		windowClass: 'confirmation-modal',
+	// 		centered: true,
+	// 		keyboard: false	// disable escape key
+	// 	});
+	// 	modalRef.result.then(
+	// 		(reason: boolean) => {
+	// 			// on close
+	// 			if (reason) {
+	// 				this.logger.info('AppUpdateService: updating to latest version');
+	// 				// show spinner on modal
+	// 				this.updates.activateUpdate().then(() => {
+	// 					// hide spinner and modal. reload app
+	// 					document.location.reload();
+	// 				});
+	// 			} else {
+	// 				this.logger.info('AppUpdateService: update aborted by user');
+	// 			}
+	// 		}
+	// 	);
+	// }
 }

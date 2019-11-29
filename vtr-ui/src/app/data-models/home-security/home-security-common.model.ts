@@ -1,9 +1,5 @@
-import { EventTypes, ConnectedHomeSecurity, LocationPermissionOffError } from '@lenovo/tan-client-bridge';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AppNotification } from '../common/app-notification.model';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 
 export class HomeSecurityCommon {
 	connectedHomeSecurity: ConnectedHomeSecurity;
@@ -13,9 +9,7 @@ export class HomeSecurityCommon {
 	constructor(
 		connectedHomeSecurity: ConnectedHomeSecurity,
 		isOnline: boolean,
-		private modalService: NgbModal,
-		private dialogService: DialogService,
-		private lenovoIdDialogService: LenovoIdDialogService,
+		private dialogService: DialogService
 		) {
 			if (connectedHomeSecurity) {
 				this.connectedHomeSecurity = connectedHomeSecurity;
@@ -33,19 +27,6 @@ export class HomeSecurityCommon {
 
 	upgrade() {
 		this.connectedHomeSecurity.purchase();
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case NetworkStatus.Online:
-				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					break;
-				default:
-					break;
-			}
-		}
 	}
 
 }

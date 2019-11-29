@@ -75,6 +75,41 @@
 								</vtr-ui-row-switch>
 							</li>
 
+							<!-- MVP 2 feature -->
+							<li class=""
+								*ngIf="machineType == 1 && isChargeThresholdAvailable && !isPowerDriverMissing">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
+									[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
+									[isSwitchVisible]=true
+									[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
+									[leftIcon]="['fal', 'battery-half']"
+									[rightIcon]="['far', 'question-circle']"
+									[showChildContent]="true"
+									[isSwitchChecked]="showBatteryThreshold"
+									(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
+									[switchId]="'ds-power-battery-threshold'"
+									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
+									<div *ngIf="showBatteryThreshold">
+										<vtr-battery-charge-threshold-settings *ngIf="isPrimaryBatteryAvailable"
+											[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title1' | translate"
+											[type]="'primary'"
+											[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
+											[stop]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate"
+											[checkboxText]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate "
+											[noteInfo]="'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate"
+											[startAtChargeOptions]="startAtChargeOptions"
+											[stopAtChargeOptions]="stopAtChargeOptions"
+											[selectedStopAtCharge]="selectedStopAtChargeVal"
+											[selectedStartAtCharge]="selectedStartAtChargeVal"
+											[isCheckedAuto]="primaryCheckBox"
+											(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
+											(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
+											[textId]="'threshold-primary-battery'">
+										</vtr-battery-charge-threshold-settings>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
 
 							<li class=""
 								*ngIf="machineType == 1 && isChargeThresholdAvailable && !isPowerDriverMissing">

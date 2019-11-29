@@ -6,6 +6,12 @@
 	background-color: $light;
 	position: relative;
 	// overflow: hidden;
+	.default-cursor {
+		cursor: default !important;
+		* {
+			cursor: default !important;
+		}
+	}
 
 	.container-fluid {
 		height: 100%;
@@ -31,7 +37,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -97,7 +103,9 @@
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-						cursor: pointer;
+						div {
+							cursor: pointer;
+						}
 						font-size: $fontsize_md;
 						font-weight: $weight_light;
 					}
@@ -113,15 +121,7 @@
 							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						}
 					}
-
-					.default-cursor {
-						cursor: default;
-					}
 				}
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 		}
 	}
@@ -140,7 +140,7 @@
 				border-radius: $border_radius;
 				display: block;
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -219,7 +219,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -287,6 +287,9 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						div {
+							cursor: pointer;
+						}
 					}
 
 					.logo {
@@ -317,7 +320,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -331,10 +334,11 @@
 					position: relative;
 					z-index: 1;
 					height: 100%;
-					padding: 2rem;
-					// display: flex;
+					display: flex;
+					padding: 2.5rem;
 					// justify-content: flex-end;
-					align-items: center;
+					// align-items: center;
+
 					.title {
 						color: $light;
 						max-width: 60%;
@@ -344,10 +348,6 @@
 						margin-right: 10%;
 					}
 				}
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 			.highlight-offline {
 				.inner-content{
@@ -390,16 +390,12 @@
 			.card-image {
 				display: block;
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				width: 100%;
 				height: 60%;
 				cursor: pointer;
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 
 			.content {
@@ -458,7 +454,7 @@
 		.image {
 			// height: 60%;
 			background-size: cover;
-			background-position: 50% 50%;
+			background-position: center center;
 			background-repeat: no-repeat;
 			border-radius: $border_radius;
 
@@ -645,6 +641,7 @@
 
 .offline-icon {
 	font-size: 10rem;
+	border-radius: $border_radius;
 
 	@media #{$mediaquery_X41} {
 		font-size: 16rem;

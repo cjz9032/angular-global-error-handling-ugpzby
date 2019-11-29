@@ -26,8 +26,9 @@ export class DeviceService {
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
-	private machineInfo: any;
+	public machineInfo: any;
 	public showSearch = false;
+	public machineType: number;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -110,9 +111,19 @@ export class DeviceService {
 
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
+		this.logger.debug('DeviceService.getMachineInfo: pre API call');
+		if (this.machineInfo) {
+			this.logger.debug('DeviceService.getMachineInfo: found cached response');
+			this.commonService.sendNotification('MachineInfo', this.machineInfo);
+			return Promise.resolve(this.machineInfo);
+		}
+
 		if (this.isShellAvailable && this.sysInfo) {
+			this.logger.debug('DeviceService.getMachineInfo: no cache, invoking API');
+
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
+					this.logger.debug('DeviceService.getMachineInfo: response received from API');
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
@@ -127,6 +138,7 @@ export class DeviceService {
 						}
 					}
 					this.commonService.sendNotification('MachineInfo', this.machineInfo);
+					this.logger.debug('DeviceService.getMachineInfo: returning response from API');
 					return info;
 				});
 		}
@@ -175,7 +187,13 @@ export class DeviceService {
 
 	getMachineType(): Promise<number> {
 		if (this.sysInfo) {
-			return this.sysInfo.getMachineType();
+			if (this.machineType) {
+				return Promise.resolve(this.machineType);
+			}
+			return this.sysInfo.getMachineType((value) => {
+				this.machineType = value;
+				return value;
+			});
 		}
 		return undefined;
 	}

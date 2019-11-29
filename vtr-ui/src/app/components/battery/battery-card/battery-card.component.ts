@@ -68,10 +68,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.isLoading = true;
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-			this.logger.info('Query Params', params);
-			if (params.has('batterydetail') && this.isModalShown) {
-				this.isModalShown = false;
-				this.getBatteryDetails();
+			this.logger.info('BatteryCardComponent.ngOnInit: Query Params', params);
+			if (params.has('batterydetail') && !this.isModalShown) {
+				const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
+				this.getBatteryDetails(showBatteryDetail);
 			}
 		});
 		this.powerSupplyStatusEventRef = this.onPowerSupplyStatusEvent.bind(this);
@@ -125,7 +125,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public getBatteryDetailOnCard() {
 		try {
 			if (this.batteryService.isShellAvailable) {
-				this.getBatteryDetails();
+				this.getBatteryDetails(false);
 				this.getBatteryDetailsMonitor();
 			}
 		} catch (error) {
@@ -153,24 +153,23 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryInfo = response.batteryInformation;
 		this.batteryGauge = response.batteryIndicatorInfo;
 		this.updateBatteryDetails();
-
-		const showBatteryDetail = this.activatedRoute.snapshot.queryParams.batterydetail;
-		if (showBatteryDetail && !this.isModalShown) {
-			this.showDetailModal(this.batteryModal);
-			this.isModalShown = true;
-		}
 	}
 
 	/**
 	 * gets battery details from js bridge
 	 */
-	public getBatteryDetails() {
+	public getBatteryDetails(showBatteryDetail) {
 		this.logger.info('BatteryCardComponent: getBatteryDetails ==> Before API call');
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
 				this.logger.info('BatteryCardComponent: getBatteryDetails ==> After API call', response);
 				this.isLoading = false;
 				this.setBatteryCard(response);
+
+				if (showBatteryDetail) {
+					window.history.replaceState([], '', '');
+					this.showDetailModal(this.batteryModal);
+				}
 			}).catch(error => {
 				this.logger.error('getBatteryDetails error', error.message);
 				return EMPTY;
@@ -270,6 +269,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
+		this.isModalShown = true;
 		this.modalService
 			.open(content, {
 				backdrop: 'static',
@@ -281,7 +281,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					// on open
 				},
 				reason => {
-					// on close
+					this.isModalShown = false;
 				}
 			);
 	}
@@ -438,8 +438,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
-		this.notificationSubscription.unsubscribe();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryGaugeResetEvent, this.powerBatteryGaugeResetEventRef);
+
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 	/*
 		@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {

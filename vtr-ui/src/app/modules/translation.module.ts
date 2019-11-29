@@ -1,9 +1,11 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslatePipe, MissingTranslationHandler } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
+import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
+import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
 
 @NgModule({
 	imports: [
@@ -11,8 +13,12 @@ import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptor
 		TranslateModule.forChild({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
+				useClass: WebpackTranslateLoader,
 				deps: [HttpClient]
+			},
+			missingTranslationHandler: {
+				provide: MissingTranslationHandler,
+				useClass: MissingTranslationDefaultHandler
 			},
 			isolate: false
 		})

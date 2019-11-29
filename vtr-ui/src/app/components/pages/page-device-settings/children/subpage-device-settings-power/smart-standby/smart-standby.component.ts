@@ -330,7 +330,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.toggleSubscription.unsubscribe();
+		if (this.toggleSubscription) {
+			this.toggleSubscription.unsubscribe();
+		}
 	}
 
 }
