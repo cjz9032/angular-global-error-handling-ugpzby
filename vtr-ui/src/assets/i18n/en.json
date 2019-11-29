@@ -1060,7 +1060,7 @@
 						"everyday": "Everyday",
 						"weekdays": "Weekdays",
 						"weekends": "Weekends"
-					},					
+					},
 					"warningtip": "Please select at least one day.",
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
 					"hyperlinkToGraph": "Click to see the usage and applied active time",
@@ -1074,7 +1074,7 @@
 						"legends": {
 							"none": "None",
 							"frequent": "Frequent"
-						},				
+						},
 						"hours": {
 							"zero": "0",
 							"one": "1",
@@ -1101,7 +1101,7 @@
 							"twentyTwo": "22",
 							"twentythree": "23"
 						}
-					}					
+					}
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1456,7 +1456,9 @@
 						"title": "APPLY"
 					},
 					"website": {
-						"url": "WEBSITE URL"
+						"url": "WEBSITE URL",
+						"successMessage": "The setting is applied successfully.",
+						"invalidURLMessage": "Please input a valid URL."
 					},
 					"enterText": {
 						"title": "TEXT TO BE ENTERED"
