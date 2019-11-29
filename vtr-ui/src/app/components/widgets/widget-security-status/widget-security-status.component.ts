@@ -34,13 +34,12 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	ngOnInit() {
 		this.items = [
 			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
-			new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone),
 			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService)
 		];
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.showVpn();
-		}).catch(e => {
+		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
 		});
@@ -64,17 +63,17 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.showWifiSecurityItem();
 		}
 		if (windowsHello.fingerPrintStatus) {
-			this.showWindowsHelloItem(windowsHello);
+			this.showWindowsHelloItem();
 		}
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHelloItem(windowsHello);
+			this.showWindowsHelloItem();
 		});
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 		});
 	}
 
-	showWindowsHelloItem(windowsHello: WindowsHello) {
+	showWindowsHelloItem() {
 		const windowsHelloItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-wh'));
 		if (this.windowsHelloService.showWindowsHello()) {
 			if (!windowsHelloItem) {
