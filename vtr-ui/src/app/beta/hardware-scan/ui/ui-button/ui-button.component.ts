@@ -31,6 +31,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() title: string;
 	@Input() linkId:any;
 	@Input() routerPath: string;
+	@Input() tooltipText: string;
 
 	constructor() { }
 

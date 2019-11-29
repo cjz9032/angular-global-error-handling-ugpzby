@@ -3,75 +3,75 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { StatusInfo } from './status-info.model';
 
 export class PasswordManagerLandingViewModel {
-	statusList: Array<any>;
-	subject: any;
+	statusList: Array<StatusInfo>;
 	type = 'security';
 	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal_Web.png';
 
-	constructor(translate: TranslateService, pmModel: phoenix.PasswordManager, commonService: CommonService, ) {
-		const pmStatus = {
-			status: 4,
-			detail: 'common.securityAdvisor.loading',
-			path: 'security/password-protection',
-			title: 'common.securityAdvisor.pswdMgr',
-			type: 'security',
-			id: 'sa-ov-link-passwordManager'
-		};
-		const subjectStatus = {
-			status: 2,
-			title: 'security.landing.pwdHealth',
-			type: 'security',
-		};
-		translate.stream(pmStatus.detail).subscribe((res) => {
-			pmStatus.detail = res;
-		});
-		translate.stream(pmStatus.title).subscribe((res) => {
-			pmStatus.title = res;
-		});
-		translate.stream(subjectStatus.title).subscribe((res) => {
-			subjectStatus.title = res;
-		});
-		const setPmStatus = (status: string) => {
-			switch (status) {
-				case 'installed':
-					pmStatus.detail = 'common.securityAdvisor.installed';
-					pmStatus.status = 5;
-					subjectStatus.status = 2;
-					break;
-				case 'installing':
-					pmStatus.detail = 'common.securityAdvisor.installing';
-					pmStatus.status = 4;
-					subjectStatus.status = 1;
-					break;
-				default:
-					pmStatus.detail = 'common.securityAdvisor.notInstalled';
-					pmStatus.status = 5;
-					subjectStatus.status = 1;
-			}
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
-			translate.stream(pmStatus.detail).subscribe((res) => {
-				pmStatus.detail = res;
-			});
-			translate.stream(pmStatus.title).subscribe((res) => {
-				pmStatus.title = res;
-			});
-			translate.stream(subjectStatus.title).subscribe((res) => {
-				subjectStatus.title = res;
-			});
-		};
+	pmStatus: StatusInfo = {
+		status: 4,
+		detail: '',
+		path: 'security/password-protection',
+		title: '',
+		type: 'security',
+		id: 'sa-ov-link-passwordManager'
+	};
+	subject = {
+		status: 2,
+		title: '',
+		type: 'security',
+	};
+	translateString: any;
+	constructor(public translate: TranslateService, pmModel: phoenix.PasswordManager, public commonService: CommonService, ) {
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
-		if (cacheStatus) {
-			setPmStatus(cacheStatus);
-		}
-		if (pmModel.status) {
-			setPmStatus(pmModel.status);
-		}
-		pmModel.on(EventTypes.pmStatusEvent, (data) => {
-			setPmStatus(pmModel.status);
+		translate.stream([
+			'common.securityAdvisor.installed',
+			'common.securityAdvisor.installing',
+			'common.securityAdvisor.notInstalled',
+			'common.securityAdvisor.pswdMgr',
+			'security.landing.pwdHealth',
+			'common.securityAdvisor.loading'
+		]).subscribe((res: any) => {
+			if (!this.pmStatus.detail) {
+				this.pmStatus.detail = res['common.securityAdvisor.loading'];
+			}
+			this.translateString = res;
+			this.pmStatus.title = res['common.securityAdvisor.pswdMgr'];
+			this.subject.title = res['security.landing.pwdHealth'];
+			if (pmModel.status) {
+				this.setPmStatus(pmModel.status);
+			} else if (cacheStatus) {
+				this.setPmStatus(cacheStatus);
+			}
+			this.statusList = new Array(this.pmStatus);
 		});
-		this.statusList = new Array(pmStatus);
-		this.subject = subjectStatus;
+		pmModel.on(EventTypes.pmStatusEvent, (data) => {
+			this.setPmStatus(data);
+		});
+	}
+
+	setPmStatus(status: string) {
+		if (!this.translateString) {
+			return;
+		}
+		switch (status) {
+			case 'installed':
+				this.pmStatus.detail = this.translateString['common.securityAdvisor.installed'];
+				this.pmStatus.status = 5;
+				this.subject.status = 2;
+				break;
+			case 'installing':
+				this.pmStatus.detail = this.translateString['common.securityAdvisor.installing'];
+				this.pmStatus.status = 4;
+				this.subject.status = 1;
+				break;
+			default:
+				this.pmStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
+				this.pmStatus.status = 5;
+				this.subject.status = 1;
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
 	}
 }

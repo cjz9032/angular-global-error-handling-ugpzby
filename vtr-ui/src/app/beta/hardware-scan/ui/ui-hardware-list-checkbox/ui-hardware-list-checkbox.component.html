@@ -5,7 +5,7 @@
 				<div class="row align-items-center">
 					<div class="custom-control form-control-lg custom-checkbox">
 						<input id="{{ i }}" type="checkbox" class="custom-control-input"
-							[(ngModel)]="device.isSelected" (click)="onSelectDevice()" />
+							[(ngModel)]="device.isSelected" (change)="onSelectDevice()" />
 						<label class="custom-control-label name" for="{{ i }}">
 							<span class="title">{{ device.title }}</span>
 						</label>

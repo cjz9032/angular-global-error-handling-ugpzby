@@ -5,6 +5,10 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { DeviceService } from '../device/device.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SegmentConst } from '../self-select/self-select.service';
+import { LocalInfoService } from '../local-info/local-info.service';
 @Injectable({
 	providedIn: 'root'
 })
@@ -22,11 +26,25 @@ export class DashboardService {
 	public cardContentPositionC: any = {};
 	public cardContentPositionD: any = {};
 	public cardContentPositionE: any = {};
+	public heroBannerItemsOnline = [];
 	public cardContentPositionF: any = {};
+	public cardContentPositionBOnline: any;
+	public cardContentPositionCOnline: any;
+	public cardContentPositionDOnline: any;
+	public cardContentPositionEOnline: any;
+	public cardContentPositionFOnline: any;
+	translateString: any;
+
+	welcomeText = '';
+	welcomeTextWithoutUserName = '';
 
 	constructor(
 		shellService: VantageShellService,
-		commonService: CommonService) {
+		commonService: CommonService,
+		private deviceService: DeviceService,
+		private translate: TranslateService,
+		private localInfoService: LocalInfoService
+		) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
@@ -40,8 +58,6 @@ export class DashboardService {
 		if (this.eyeCareMode) {
 			this.isShellAvailable = true;
 		}
-
-		this.setDefaultCMSContent();
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
@@ -201,64 +217,28 @@ export class DashboardService {
 		}
 	}
 
-	public getWarrantyInfo(): Observable<any> {
-		try {
-			if (this.sysinfo && this.warranty) {
-				return new Observable((observer) => {
-					// from local storage
-					const cacheWarranty = this.commonService.getLocalStorageValue(LocalStorageKey.LastWarrantyStatus);
-					if (cacheWarranty) {
-						observer.next(cacheWarranty);
-					}
-					// first launch will not have data, below code will break
-					const result = { endDate: null, status: 2, startDate: null };
-					this.sysinfo.getMachineInfo().then((data) =>
-						this.warranty.getWarrantyInformation(data.serialnumber).then(
-							(warrantyRep) => {
-								if (warrantyRep && warrantyRep.status !== 2) {
-									result.endDate = new Date(warrantyRep.endDate);
-									result.status = warrantyRep.status;
-									result.startDate = new Date(warrantyRep.startDate);
-								}
-								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
-								observer.next(result);
-								observer.complete();
-							},
-							() => {
-								this.commonService.setLocalStorageValue(LocalStorageKey.LastWarrantyStatus, result);
-								observer.next(result);
-								observer.complete();
-							}
-						)
-					);
-				});
-			}
-			return undefined;
-		} catch (error) {
-			throw Error(error.message);
+	setDefaultCMSContent() {
+		if (!this.translateString) {
+			return;
 		}
-	}
-
-	private setDefaultCMSContent() {
 		this.heroBannerItems = [
 			{
 				albumId: 1,
 				id: 1,
 				source: 'Vantage',
-				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: '/assets/cms-cache/Vantage3Hero-zone0.jpg',
+				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'] ,
+				url: '/assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null
 			}
 		];
-
 		this.cardContentPositionB = {
-			Title: '',
+			Title: this.translateString['common.menu.support'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/Alexa4x3-zone1.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Support.jpg',
 			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:support',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -266,17 +246,18 @@ export class DashboardService {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-B',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionC = {
-			Title: '',
+			Title: this.translateString['settings.settings'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/Security4x3-zone2.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
 			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:device-settings',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -284,17 +265,18 @@ export class DashboardService {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-C',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionD = {
-			Title: '',
+			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/Gamestore8x3-zone3.jpg',
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-My-Device.jpg',
 			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:device',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -302,17 +284,18 @@ export class DashboardService {
 			Template: 'full-width-title-image-background',
 			Position: 'position-D',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionE = {
-			Title: '',
+			Title: this.translateString['common.securityAdvisor.wifi'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/content-card-4x4-support.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-Security-Advisor.jpg',
+			Action: this.translateString['systemUpdates.readMore'],
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:wifi-security',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -320,17 +303,18 @@ export class DashboardService {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-E',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
 
 		this.cardContentPositionF = {
-			Title: '',
+			Title: this.translateString['systemUpdates.title'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: '/assets/cms-cache/content-card-4x4-award.jpg',
-			Action: '',
-			ActionType: 'External',
-			ActionLink: null,
+			FeatureImage: '/assets/cms-cache/offline/Default-SMB-System-Update.jpg',
+			Action: this.translateString['systemUpdates.readMore'],
+			ActionType: 'Internal',
+			ActionLink: 'lenovo-vantage3:system-updates',
 			BrandName: '',
 			BrandImage: '',
 			Priority: 'P1',
@@ -338,7 +322,24 @@ export class DashboardService {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-F',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
+			isLocal: true
 		};
+
+	}
+	// checking self select status for HW Settings
+	public getSelfSelectStatus(): Promise<boolean> {
+		let response = false;
+		return this.localInfoService.getLocalInfo().then(result => {
+			const segmentVal = result.Segment.toLowerCase();
+			if (segmentVal === SegmentConst.Commercial.toLowerCase() ||
+				segmentVal === SegmentConst.SMB.toLowerCase() ||
+				segmentVal === SegmentConst.Consumer.toLowerCase()) {
+				response = true;
+			} else {
+				response = false;
+			}
+			return response;
+		});
 	}
 }

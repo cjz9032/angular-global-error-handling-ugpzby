@@ -13,8 +13,8 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	@Input() url: string;
 	// @Input() okHandler: Function;
 	@Input() packages: string[];
-	@Input() OkText = 'Okay';
-	@Input() CancelText = 'Cancel';
+	@Input() OkText = 'systemUpdates.popup.okayButton';
+	@Input() CancelText = 'systemUpdates.popup.cancelButton';
 
 	@Input() metricsParent;
 

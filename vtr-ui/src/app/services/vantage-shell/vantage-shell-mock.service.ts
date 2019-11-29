@@ -61,7 +61,6 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
@@ -468,7 +467,7 @@ export class VantageShellService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaUser);
+						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}
@@ -1571,7 +1570,12 @@ export class VantageShellService {
 			GetBrowsingTime: this.getPromise(30),
 			SetWalkingMode: this.getPromise(true),
 			setBrowsingMode: this.getPromise(true),
-			SetBrowsingTime: this.getPromise(true)
+			SetBrowsingTime: this.getPromise(true),
+			GetHPDLeaveSensitivityVisibility: this.getPromise(true),
+			GetHPDLeaveSensitivity: this.getPromise(true),
+			SetHPDLeaveSensitivitySetting: this.getPromise(true),
+			getLockFacialRecognitionSettings: this.getPromise(true),
+			setLockFacialRecognitionSettings: this.getPromise(true)
 		};
 		return intelligentSensing;
 	}
@@ -2091,7 +2095,8 @@ export class VantageShellService {
 
 	public getSuperResolution(): any {
 		const inputControlLinks: any = {
-			getSuperResolutionStatus: this.getPromise({ available: true, status: false })
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false }),
+			setSuperResolutionStatus: this.getPromise(true)
 		};
 
 		return inputControlLinks;
