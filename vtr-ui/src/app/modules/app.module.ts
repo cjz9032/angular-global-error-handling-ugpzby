@@ -38,7 +38,6 @@ import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GlobalErrorHandler } from '../services/error-handler/global.service';
-import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
@@ -62,7 +61,6 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 @NgModule({
 	declarations: [
 		AppComponent,
-		HomeComponent,
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
 		ModalServerSwitchComponent,

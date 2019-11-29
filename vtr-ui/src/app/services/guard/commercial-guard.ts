@@ -29,6 +29,10 @@ export class CommercialGuard implements CanActivate {
 		state: RouterStateSnapshot
 	): Promise<boolean | UrlTree> | boolean | UrlTree {
 		const segment: SegmentConst = this.commonService.getLocalStorageValue(LocalStorageKey.LocalInfoSegment);
-		if (segment) { return this.getCanActivate(segment); }
+		if (segment) {
+			return this.getCanActivate(segment);
+		} else {
+			return this.guardConstants.defaultRoute;
+		}
 	}
 }
