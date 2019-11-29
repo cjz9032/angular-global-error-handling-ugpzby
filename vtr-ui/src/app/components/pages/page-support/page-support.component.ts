@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -18,6 +19,7 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 })
 export class PageSupportComponent implements OnInit, OnDestroy {
 
+	SupportContentStatus = SupportContentStatus;
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
@@ -32,8 +34,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 	backupContentArticles = this.copyObjectArray(this.emptyArticles);
 	articles = this.copyObjectArray(this.emptyArticles);
-	/** content | articles */
-	articlesType = 'loading';
+	articlesType = '';
 	articleCategories: any = [];
 	isCategoryArticlesShow = false;
 	warrantyData: { info: any, cache: boolean };
@@ -204,7 +205,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	fetchCMSContents(lang?: string) {
 		this.contentStartTime = new Date();
-		this.articlesType = 'loading';
+		this.articlesType = SupportContentStatus.Loading;
 
 		const queryOptions = {
 			Page: 'support'
@@ -226,29 +227,27 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					this.sliceArticles(response);
 					this.backupContentArticles = this.copyObjectArray(this.articles);
 					// console.log(this.articles);
-					this.articlesType = 'content';
+					this.articlesType = SupportContentStatus.Content;
 					const msg = `Performance: Support page get content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
 				} else {
 					const msg = `Performance: Support page not have this Language content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCMSContents('en');
+					this.sliceArticles([]);
+					this.articlesType = SupportContentStatus.Empty;
 				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
-				setTimeout(() => { this.fetchCMSContents(); }, 5000);
+				this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
 			}
 		);
 	}
 
-	fetchCMSArticleCategory(lang?: string) {
+	fetchCMSArticleCategory() {
 		this.cateStartTime = new Date();
 
 		const queryOptions = {};
-		if (lang) {
-			Object.assign(queryOptions, { Lang: lang });
-		}
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
@@ -266,7 +265,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				} else {
 					const msg = `Performance: Support page not have this Language article category, ${cateUseTime}ms`;
 					this.loggerService.info(msg);
-					this.fetchCMSArticleCategory('en');
 				}
 			},
 			error => {
@@ -283,9 +281,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	onInnerBack() {
+		clearTimeout(this.getArticlesTimeout);
 		this.isCategoryArticlesShow = false;
 		if (this.backupContentArticles.leftTop.length > 0) {
-			this.articlesType = 'content';
+			this.articlesType = SupportContentStatus.Content;
 			this.articles = this.copyObjectArray(this.backupContentArticles);
 		} else {
 			this.fetchCMSContents();
@@ -293,12 +292,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	fetchCMSArticles(categoryId: string, lang?: string) {
-		this.articlesType = 'loading';
+		this.articlesType = SupportContentStatus.Loading;
 		const queryOptions = {
 			category: categoryId,
 		};
 		if (lang) {
-			Object.assign(queryOptions, { Lang: lang });
+			Object.assign(queryOptions, { Lang: lang, GEO: 'us' });
 		}
 
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
@@ -310,9 +309,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 						}
 					});
 					this.sliceArticles(response);
-					this.articlesType = 'articles';
+					this.articlesType = SupportContentStatus.Articles;
 				} else {
-					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
+					this.sliceArticles([]);
+					this.articlesType = SupportContentStatus.Empty;
 				}
 			},
 			error => {

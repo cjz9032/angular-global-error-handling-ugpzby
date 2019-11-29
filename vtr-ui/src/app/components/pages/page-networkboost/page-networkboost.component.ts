@@ -84,6 +84,7 @@ export class PageNetworkboostComponent implements OnInit {
 			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
 		) {
 			this.isOnline = notification.payload.isOnline;
+			this.fetchCMSArticles();
 		}
 		if (this.isOnline === undefined) {
 			this.isOnline = true;

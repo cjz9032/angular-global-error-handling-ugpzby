@@ -1,7 +1,7 @@
+import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
-import { NonGamingGuard } from '../services/guard/non-gaming-guard';
 
 const routes: Routes = [
 
@@ -62,15 +62,15 @@ const routes: Routes = [
 	// },
 	{
 		path: '',
-		canActivate: [ NonGamingGuard ],
-		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule',
+		component: HomeComponent,
 		pathMatch: 'full'
 	},
 	{
 		path: '**',
-		canActivate: [ NonGamingGuard ],
-		loadChildren: './hardware-settings/hardware-dashboard.module#HardwareDashboardModule',
+		component: HomeComponent
 	}
+
+
 ];
 
 
