@@ -176,7 +176,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 
 		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.showHWScanMenu = this.hardwareScanService.isHardwareScanAvailable();
+			this.hardwareScanService.isAvailable().then((available) => {
+				this.showHWScanMenu = available;
+			});
 		}
 	}
 
@@ -700,19 +702,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			});
 			}
 		});
-
-		if (this.hardwareScanService && this.hardwareScanService.getPluginInfo()) {
-			this.hardwareScanService.getPluginInfo()
-				.then((hwscanPluginInfo: any) => {
-					// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-					this.showHWScanMenu = hwscanPluginInfo !== undefined &&
-						hwscanPluginInfo.LegacyPlugin === false &&
-						hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
-				})
-				.catch(() => {
-					this.showHWScanMenu = false;
-				});
-		}
 
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType, undefined);
 		if (machineType) {
