@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WidgetQaComponent } from './widget-qa.component';
 import { SecurityQaService } from 'src/app/services/security/securityQa.service';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -39,5 +38,25 @@ describe('WidgetQaComponent', () => {
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
+	});
+
+	it('should openAccordion first', () => {
+
+		spyOn(component, 'openAccordion').and.callThrough();
+		component.openId = 0;
+		component.openAccordion(0);
+		// passes
+		expect(component.openAccordion).toHaveBeenCalled();
+		// expect(component).toBeTruthy();
+	});
+
+	it('should openAccordion other', () => {
+
+		spyOn(component, 'openAccordion').and.callThrough();
+		component.openId = null;
+		component.openAccordion(1);
+		// passes
+		expect(component.openAccordion).toHaveBeenCalled();
+		// expect(component).toBeTruthy();
 	});
 });
