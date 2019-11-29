@@ -961,7 +961,9 @@ export class VantageShellService {
 		};
 
 		dolby.getDolbyMode = this.getPromise(obj);
-
+		dolby.setDolbyMode = this.getPromise(true);
+		dolby.stopMonitor = this.getPromise(true);
+		dolby.startMonitor = this.getPromise(true);
 		return dolby;
 	}
 
@@ -988,6 +990,14 @@ export class VantageShellService {
 		};
 		microphone.getSupportedModes = this.getPromise(micSupportedModes);
 		microphone.getMicrophoneSettings = this.getPromise(micSettings);
+		microphone.setMicrophoneVolume = this.getPromise(true);
+		microphone.setMicophoneMute = this.getPromise(true);
+		microphone.setMicrophoneAutoOptimization=this.getPromise(true);
+		microphone.setMicrophoneKeyboardNoiseSuppression=this.getPromise(true);
+		microphone.setMicrophoneAEC=this.getPromise(true);
+		microphone.setMicrophoneOpitimaztion=this.getPromise(true);
+		microphone.startMonitor=this.getPromise(true);
+		microphone.stopMonitor=this.getPromise(true);
 
 		return microphone;
 	}
@@ -997,7 +1007,11 @@ export class VantageShellService {
 	 */
 	public getSmartSettings(): any {
 		const smartSettings: any = {
-			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: false }) }
+			absFeature: { 
+				getDolbyFeatureStatus: this.getPromise({ available: true, status: false }),
+				setDolbyFeatureStatus: this.getPromise(true)
+							
+		}
 		};
 
 		return smartSettings;
@@ -1065,6 +1079,7 @@ export class VantageShellService {
 			}
 		};
 		battery.getBatteryInformation = this.getPromise(battery);
+		battery.startBatteryMonitor=this.getPromise(true);
 		battery.stopBatteryMonitor = this.getPromise(true);
 		return battery;
 	}
