@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "Internetna povezava ni bila zaznana",
             "subtitle": "Naučite se, kako odpraviti težave s povezavo, v našem",
-            "buttonText": "Zagotovite si podporo"
+            "buttonText": "Zagotovite si podporo",
+            "welcomeToVantage": "Dobrodošli v naslednji generaciji programa Vantage",
+            "systemHealth": "Zdravje sistema"
         },
         "feedback": {
             "title": "Pošljite povratne informacije",
@@ -896,7 +898,7 @@
                     "NotGood": "<b>Baterija ni v dobrem stanju.</b>",
                     "NotSupportACAdapter": "<b>Napajalnik ni podprt.</b>",
                     "LimitedACAdapterSupport": "<b>Napajalnik ni dovolj zmogljiv.</b>",
-                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager driver</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko namestite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>.",
+                    "MissingDriver": "<b>Gonilnik za Lenovo Power Manager</b> ni nameščen ali ne deluje pravilno. Zaženite Windows Update, da namestite najnovejši gonilnik. Gonilnik lahko dobite tudi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">tukaj</a>. Po končani namestitvi znova zaženite računalnik.",
                     "StoreLimitation": "<b>Baterija lahko shrani samo do {{value}}%</b> svoje prvotne polne zmogljivosti polnjenja.",
                     "HighTemperature": "<b>Praznjenje</b> je ustavljeno, ker je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je <b>popolnoma izpraznjena</b> in jo je treba znova napolniti. To lahko traja deset ali več ur.",
@@ -2138,9 +2140,36 @@
         "logout": "Odjava",
         "unlockExclusives": "Odklenite ekskluzivne ponudbe",
         "user": "Uporabnik",
-        "welcomeText": "Danes ste videti polni energije, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Danes ste videti polni energije!",
+        "welcomeText1": "Danes ste videti polni energije, {{firstName}}!",
+        "welcomeText2": "Veseli smo, da se zopet vidimo, {{firstName}}",
+        "welcomeText3": "Kakšno prijetno presenečenje, {{firstName}}",
+        "welcomeText4": "Nasmehnite se, {{firstName}}, saj je nalezljivo :)",
+        "welcomeText5": "Tok, tok, {{firstName}}",
+        "welcomeText6": "Obiskali boste odlična mesta!",
+        "welcomeText7": "Danes je vaš dan, {{firstName}}!",
+        "welcomeText8": "Kdo ima rad srečna majhna drevesa?",
+        "welcomeText9": "Še naprej se zabavajte, {{firstName}}!",
+        "welcomeText10": "Ostanite mirni in še naprej uporabljajte Vantage",
+        "welcomeText11": "Večja prednost s programom Vantage",
+        "welcomeText12": "Program Vantage uporabljajte tudi doma",
+        "welcomeText13": "Jejte, spite, uporabljajte Vantage, ponovite",
+        "welcomeText14": "Vsak trenutek je nova priložnost s programom Vantage",
+        "welcomeText15": "Izkoristite Vantage v največji možni meri",
+        "welcomeTextWithoutUserName1": "Danes ste videti polni energije!",
+        "welcomeTextWithoutUserName2": "Veseli smo, da se zopet vidimo",
+        "welcomeTextWithoutUserName3": "Kakšno prijetno presenečenje",
+        "welcomeTextWithoutUserName4": "Nasmehnite se, saj je nalezljivo :)",
+        "welcomeTextWithoutUserName5": "Tok, tok",
+        "welcomeTextWithoutUserName6": "Obiskali boste odlična mesta!",
+        "welcomeTextWithoutUserName7": "Danes je vaš dan!",
+        "welcomeTextWithoutUserName8": "Kdo ima rad srečna majhna drevesa?",
+        "welcomeTextWithoutUserName9": "Še naprej se zabavajte!",
+        "welcomeTextWithoutUserName10": "Ostanite mirni in še naprej uporabljajte Vantage",
+        "welcomeTextWithoutUserName11": "Večja prednost s programom Vantage",
+        "welcomeTextWithoutUserName12": "Program Vantage uporabljajte tudi doma",
+        "welcomeTextWithoutUserName13": "Jejte, spite, uporabljajte Vantage, ponovite",
+        "welcomeTextWithoutUserName14": "Vsak trenutek je nova priložnost s programom Vantage",
+        "welcomeTextWithoutUserName15": "Izkoristite Vantage v največji možni meri",
         "helloUser": "Pozdravljeni, {{firstName}}!",
         "ssoErrorTitle": "Napaka",
         "ssoErrorCommon": "Naleteli smo na težavo. Prosimo, poskusite znova.",
@@ -2515,10 +2544,11 @@
         "bullets2": "Varnostni svetovalec poenostavi upravljanje varnosti (na voljo v izbranih sistemih).",
         "bullets3": "Samodejne posodobitve zagotovijo, da je vaša naprava vedno v optimalnem stanju (na voljo v izbranih sistemih).",
         "subtitle1": "Kako boste uporabljali napravo?",
-        "subtitle2": "Povejte nam, kaj vas zanima",
+        "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
-        "custom": "Izkušnja po meri",
+		"custom": "Izkušnja po meri",
+		"professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
         "title1": "Pozdravljeni v programu WRITEit,",
@@ -2555,9 +2585,12 @@
         "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
         "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
         "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
-        "userProfile": "User profile",
+        "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
-        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo."
+        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
+        "betaSettingTitle": "Program različice beta",
+        "betaProgram": "Program različice beta",
+        "betaSettingDescription": "Preizkusite najnovejše funkcije, na katerih delamo."
     },
     "modernPreload": {
         "cancel": "Prekliči",
@@ -2686,7 +2719,8 @@
                 "description": "Izvajanje pregleda in popravila lahko povzroči izgubo podatkov. Priporočamo, da pred začetkom tega postopka izdelate varnostno kopijo. Ali ste prepričani, da želite nadaljevati?",
                 "yes": "Da",
                 "no": "Ne"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Prenos profesionalnih diagnostičnih orodij",
@@ -2711,7 +2745,18 @@
         "cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
         "cancelTextProgress": "Počakajte na potek preklica",
         "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga.",
-        "testNotApplicable": "Ni upoštevno pri pregledu po meri"
+        "testNotApplicable": "Ni upoštevno pri pregledu po meri",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Pomnilnik",
+            "motherboard": "Matična plošča",
+            "pci_express": "PCI Express",
+            "storage": "Pomnilnik",
+            "wireless": "Brezžično"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2930,7 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Namestitev",
-                "installing": "Nameščanje",
+				"installing": "Nameščanje",
+				"downloading": "Prenašanje",
                 "installed": "Nameščeno",
                 "launch": "Zaženite",
                 "seeMore": "Več"
@@ -3027,7 +3073,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

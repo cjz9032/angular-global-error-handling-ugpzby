@@ -53,12 +53,6 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 		}
 	}
 
-	public isLoadingDone() {
-		if (this.hardwareScanService) {
-			return this.hardwareScanService.isLoadingDone();
-		}
-	}
-
 	public hasPreviousResults() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.hasPreviousResults();

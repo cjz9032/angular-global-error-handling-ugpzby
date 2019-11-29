@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "Ingen internetforbindelse fundet",
             "subtitle": "Læs mere om, hvordan du løser forbindelsesproblemer, i vores",
-            "buttonText": "Få support"
+            "buttonText": "Få support",
+            "welcomeToVantage": "Velkommen til den næste generation af Vantage",
+            "systemHealth": "Systemsundhed"
         },
         "feedback": {
             "title": "Giv feedback",
@@ -896,7 +898,7 @@
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
                     "NotSupportACAdapter": "<b>Vekselstrømsadapter understøttes ikke.</b>",
                     "LimitedACAdapterSupport": "<b>Vekselstrømsadapteren kan ikke levere nok strøm.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>.",
+                    "MissingDriver": "<b>Lenovo Power Manager-driveren</b> er ikke installeret eller fungerer ikke korrekt. Kør Windows Update for at installere den sidste nye driver. Du kan også installere driveren <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">herfra</a>. Genstart computeren efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan kun lagre {{value}}% af</b> dets oprindelige kapacitet ved fuld opladning.",
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
@@ -2138,9 +2140,36 @@
         "logout": "Log af",
         "unlockExclusives": "Lås Eksklusive op",
         "user": "Bruger",
-        "welcomeText": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Du ser ud til at være fuld af energi i dag!",
+        "welcomeText1": "Du ser ud til at være fuld af energi i dag, {{firstName}}!",
+        "welcomeText2": "Jeg er glad for at se dig igen, {{firstName}}",
+        "welcomeText3": "Sikke en behagelig overraskelse, {{firstName}}",
+        "welcomeText4": "Smil, {{firstName}}, det smitter :)",
+        "welcomeText5": "Bank, bank, {{firstName}}",
+        "welcomeText6": "Du er på vej ud til fantastiske steder!",
+        "welcomeText7": "Det er bare din dag i dag, {{firstName}}!",
+        "welcomeText8": "Hvem kan godt lide \"happy little trees\"?",
+        "welcomeText9": "Så er der fest, {{firstName}}!",
+        "welcomeText10": "Bevar roen og Vantage på",
+        "welcomeText11": "En større Vantage til din pengepung",
+        "welcomeText12": "Tag Vantage med hjem",
+        "welcomeText13": "Spis, sov, Vantage, gentag",
+        "welcomeText14": "Ethvert øjeblik er et friskt Vantage-øjeblik",
+        "welcomeText15": "Vantage over det hele",
+        "welcomeTextWithoutUserName1": "Du ser ud til at være fuld af energi i dag!",
+        "welcomeTextWithoutUserName2": "Jeg er glad for at se dig igen",
+        "welcomeTextWithoutUserName3": "Sikke en behagelig overraskelse",
+        "welcomeTextWithoutUserName4": "Smil, det smitter :)",
+        "welcomeTextWithoutUserName5": "Bank, bank",
+        "welcomeTextWithoutUserName6": "Du er på vej ud til fantastiske steder!",
+        "welcomeTextWithoutUserName7": "Det er bare din dag i dag!",
+        "welcomeTextWithoutUserName8": "Hvem kan godt lide \"happy little trees\"?",
+        "welcomeTextWithoutUserName9": "Så er der fest!",
+        "welcomeTextWithoutUserName10": "Bevar roen og Vantage på",
+        "welcomeTextWithoutUserName11": "En større Vantage til din pengepung",
+        "welcomeTextWithoutUserName12": "Tag Vantage med hjem",
+        "welcomeTextWithoutUserName13": "Spis, sov, Vantage, gentag",
+        "welcomeTextWithoutUserName14": "Ethvert øjeblik er et friskt Vantage-øjeblik",
+        "welcomeTextWithoutUserName15": "Vantage over det hele",
         "helloUser": "Hej, {{firstName}}!",
         "ssoErrorTitle": "Fejl",
         "ssoErrorCommon": "Ups, vi er stødt på en fejl. Prøv igen.",
@@ -2471,7 +2500,7 @@
         },
         "question6": {
             "title": "Lær Cortana, din personlige assistent, at kende",
-            "description": "<div class='faqInFs4Fb'>    Lær Cortana, din personlige assistent, at kende</div><hr><h3 class='faqInFs25FbP10'>Hvad er Cortana?</h3><hr /><p>Cortana er din digitale agent. Hun hjælper dig med at få tingene udført.</p><p>Jo mere du bruger Cortana, jo mere personlig bliver din oplevelse.</p><p>For at komme i gang skal du skrive et spørgsmål i søgefeltet eller vælge mikrofonen for at tale med Cortana. (Du kan også skrive på alle typer af computere, men du skal have en mikrofon for at kunne tale sammen.)</p><p>Hvis du ikke er sikker på, hvad du skal sige, får du vist forslag på låseskærmen og på startsiden for Cortana, når du har valgt søgefeltet på proceslinjen.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Startside 2. Notebook 3. Indstillinger 4. Feedback</li></ol><p>Her er nogle af de ting, som Cortana kan gøre for dig:</p><ul>    <li>Give dig påmindelser baseret på tidspunkter, steder eller personer.</li>    <li>Spore pakker, teams, interesser og flyvninger.</li>    <li>Sende e-mails og beskeder.</li>    <li>Administrere din kalender og holde dig opdateret.</li>    <li>Oprette og administrere lister.</li>    <li>Snakke og spille spil.</li>    <li>Finde fakta, filer, steder og oplysninger.</li>    <li>Åbne alle apps på systemet.</li></ul><h3 class='faqInFs25FbP10'>Prøv følgende: Angiv en påmindelse</h3><hr /><p>En af de ting, Cortana kan gøre, er at give dig påmindelser. Hun kan minde dig om ting baseret på tidspunkter, steder eller endda personer.</p><p>Du kan f.eks. skrive eller sige \\\"Mind mig om at ønske Tanya tillykke, næste gang hun ringer\\\".</p><p>Påmindelsen vises, når du får et opkald fra Tanya.</p><p>Ekstra bonus: Hvis du har en Windows Phone eller Cortana til iPhone eller Android, kan du indstille Cortana til at synkronisere påmindelser mellem computeren og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Indstil Cortana til at høre dig, hver gang du siger \\\"Hej Cortana\\\". Vælg søgefeltet på proceslinjen for at åbne startsiden for Cortana. Vælg derefter<strong>Indstillinger</strong>, og aktivér <strong>Lad Cortana reagere på \\\"Hej Cortana\\\"</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Bemærk</p><p>Cortana er kun tilgængelig i visse lande/områder, og nogle Cortana-funktioner er måske ikke tilgængelige alle steder.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Lær Cortana, din personlige assistent, at kende</div><hr><h3 class='faqInFs25FbP10'>Hvad er Cortana?</h3><hr /><p>Cortana er din digitale agent. Hun hjælper dig med at få tingene udført.</p><p>Jo mere du bruger Cortana, jo mere personlig bliver din oplevelse.</p><p>For at komme i gang skal du skrive et spørgsmål i søgefeltet eller vælge mikrofonen for at tale med Cortana. (Du kan også skrive på alle typer af computere, men du skal have en mikrofon for at kunne tale sammen.)</p><p>Hvis du ikke er sikker på, hvad du skal sige, får du vist forslag på låseskærmen og på startsiden for Cortana, når du har valgt søgefeltet på proceslinjen.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Startside 2. Notebook 3. Indstillinger 4. Feedback</li></ol><p>Her er nogle af de ting, som Cortana kan gøre for dig:</p><ul>    <li>Give dig påmindelser baseret på tidspunkter, steder eller personer.</li>    <li>Spore pakker, teams, interesser og flyvninger.</li>    <li>Sende e-mails og beskeder.</li>    <li>Administrere din kalender og holde dig opdateret.</li>    <li>Oprette og administrere lister.</li>    <li>Snakke og spille spil.</li>    <li>Finde fakta, filer, steder og oplysninger.</li>    <li>Åbne alle apps på systemet.</li></ul><h3 class='faqInFs25FbP10'>Prøv følgende: Angiv en påmindelse</h3><hr /><p>En af de ting, Cortana kan gøre, er at give dig påmindelser. Hun kan minde dig om ting baseret på tidspunkter, steder eller endda personer.</p><p>Du kan f.eks. skrive eller sige \"Mind mig om at ønske Tanya tillykke, næste gang hun ringer\".</p><p>Påmindelsen vises, når du får et opkald fra Tanya.</p><p>Ekstra bonus: Hvis du har en Windows Phone eller Cortana til iPhone eller Android, kan du indstille Cortana til at synkronisere påmindelser mellem computeren og telefonen.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Indstil Cortana til at høre dig, hver gang du siger \"Hej Cortana\". Vælg søgefeltet på proceslinjen for at åbne startsiden for Cortana. Vælg derefter<strong>Indstillinger</strong>, og aktivér <strong>Lad Cortana reagere på \"Hej Cortana\"</strong>.</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Bemærk</p><p>Cortana er kun tilgængelig i visse lande/områder, og nogle Cortana-funktioner er måske ikke tilgængelige alle steder.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2515,10 +2544,11 @@
         "bullets2": "Sikkerhedsrådgiver gør administrationen af sikkerheden lettere (findes på udvalgte systemer).",
         "bullets3": "Automatiske opdateringer holder din enhed i topform (findes på udvalgte systemer).",
         "subtitle1": "Hvordan vil du bruge din enhed?",
-        "subtitle2": "Fortæl os om dine interesser",
+        "subtitle2": "Fortæl os om dine interesser (valgfrit)",
         "personal": "Personlig brug",
         "business": "På arbejde",
         "custom": "Tilpasset oplevelse",
+        "professional": "Professionel brug",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2555,9 +2585,12 @@
         "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
         "deviceStatistics": "Del statistiske data med Lenovo",
         "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
-        "userProfile": "User profile",
+        "userProfile": "Brugerprofil",
         "Note": "Bemærk: ",
-        "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft."
+        "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft.",
+        "betaSettingTitle": "Betaprogram",
+        "betaProgram": "Betaprogram",
+        "betaSettingDescription": "Prøv de nyeste funktioner, vi arbejder på."
     },
     "modernPreload": {
         "cancel": "Annuller",
@@ -2686,7 +2719,8 @@
                 "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
                 "yes": "Ja",
                 "no": "Nej"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -2711,7 +2745,18 @@
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
-        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning"
+        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Hukommelse",
+            "motherboard": "Systemkort",
+            "pci_express": "PCI Express",
+            "storage": "Lager",
+            "wireless": "Trådløs"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2931,6 +2976,7 @@
             "installButton": {
                 "install": "Installér",
                 "installing": "Installere",
+                "downloading": "Downloader",
                 "installed": "Installeret",
                 "launch": "Start",
                 "seeMore": "Se mere"
@@ -3027,7 +3073,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

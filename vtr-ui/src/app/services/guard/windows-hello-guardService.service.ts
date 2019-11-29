@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate } from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityAdvisor, WindowsHello } from '@lenovo/tan-client-bridge';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
@@ -15,7 +16,8 @@ export class WindowsHelloGuardService implements CanActivate {
 	constructor(
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private router: Router) { }
+		private guardConstants: GuardConstants
+	) { }
 
 	canActivate() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -27,11 +29,11 @@ export class WindowsHelloGuardService implements CanActivate {
 		} else {
 			this.isRS5OrLater = this.commonService.isRS5OrLater();
 		}
-		const result =  this.isRS5OrLater
+		const result = this.isRS5OrLater
 			&& (typeof this.windowsHello.fingerPrintStatus === 'string' || showWhPage);
 
 		if (!result) {
-			return this.router.parseUrl('dashboard');
+			return this.guardConstants.defaultRoute;
 		}
 		return result;
 	}

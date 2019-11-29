@@ -14,7 +14,7 @@
 		<wifi-security [data]="wifiHomeViewModel"
 			[vtrAppSearchScroller]="['search-wifi-security']"
 			[isShowHistory]="isShowHistory"
-			[brand]="brand"></wifi-security>
+			></wifi-security>
 		<div class="connected-home-status"
 			*ngIf="showChs">
 			<vtr-connected-home-status [homeSecurity]="homeSecurity"></vtr-connected-home-status>
@@ -40,7 +40,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<!--Start of Security Card Advisor-->
-			<div *ngIf="brand !== 'think' && !deviceService.isGaming"
+			<div *ngIf="showChs && !deviceService.isGaming"
 				class="row mb-40">
 				<div class="col col-12">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"

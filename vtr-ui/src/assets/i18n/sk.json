@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "Nezistilo sa žiadne pripojenie k internetu",
             "subtitle": "Získajte ďalšie informácie o riešení problémov s pripojením v",
-            "buttonText": "Získajte technickú podporu"
+            "buttonText": "Získajte technickú podporu",
+            "welcomeToVantage": "Vitajte v novej generácii aplikácie Vantage",
+            "systemHealth": "Stav systému"
         },
         "feedback": {
             "title": "Spätná väzba",
@@ -896,7 +898,7 @@
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
                     "NotSupportACAdapter": "<b>Napájací adaptér nie je podporovaný.</b>",
                     "LimitedACAdapterSupport": "<b>Sieťový adaptér nedokáže poskytnúť dostatok energie na napájanie.</b>",
-                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>.",
+                    "MissingDriver": "<b>Ovládač Lenovo Power Manager</b> nie je nainštalovaný alebo nefunguje správne. Spustite službu Windows Update a nainštalujte najnovší ovládač. Ovládač môžete nainštalovať aj <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtiaľto</a>. Po inštalácii reštartujte počítač.",
                     "StoreLimitation": "<b>Batéria má kapacitu len {{value}}%</b> zo svojej pôvodnej kapacity pri úplnom nabití.",
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
@@ -2138,9 +2140,36 @@
         "logout": "Odhlásenie",
         "unlockExclusives": "Odomknúť exkluzívne možnosti od spoločnosti Lenovo",
         "user": "Používateľ",
-        "welcomeText": "Dnes máte veľa energie, {{firstName}}.",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Dnes máte veľa energie.",
+        "welcomeText1": "Dnes máte veľa energie, {{firstName}}.",
+        "welcomeText2": "Rád vás opäť vidím, {{firstName}}",
+        "welcomeText3": "Aké príjemné prekvapenie, {{firstName}}",
+        "welcomeText4": "Usmievajte sa, {{firstName}}, je to nákazlivé :)",
+        "welcomeText5": "Klop, klop, {{firstName}}",
+        "welcomeText6": "Spoznáte skvelé miesta!",
+        "welcomeText7": "Dnes je váš deň, {{firstName}}!",
+        "welcomeText8": "Kto má rád šťastné stromčeky?",
+        "welcomeText9": "Zabávajte sa, {{firstName}}!",
+        "welcomeText10": "Zachovajte pokoj a používajte Vantage",
+        "welcomeText11": "Viac Vantage za vaše peniaze",
+        "welcomeText12": "Vezmite si Vantage domov",
+        "welcomeText13": "Jedzte, spite, Vantage, opakujte",
+        "welcomeText14": "Každý okamih je čerstvý Vantage",
+        "welcomeText15": "Vantage naplno",
+        "welcomeTextWithoutUserName1": "Dnes máte veľa energie.",
+        "welcomeTextWithoutUserName2": "Rád vás opäť vidím",
+        "welcomeTextWithoutUserName3": "Aké príjemné prekvapenie",
+        "welcomeTextWithoutUserName4": "Usmievajte sa, je to nákazlivé :)",
+        "welcomeTextWithoutUserName5": "Klop, klop",
+        "welcomeTextWithoutUserName6": "Spoznáte skvelé miesta!",
+        "welcomeTextWithoutUserName7": "Dnes je váš deň!",
+        "welcomeTextWithoutUserName8": "Kto má rád šťastné stromčeky?",
+        "welcomeTextWithoutUserName9": "Zabávajte sa!",
+        "welcomeTextWithoutUserName10": "Zachovajte pokoj a používajte Vantage",
+        "welcomeTextWithoutUserName11": "Viac Vantage za vaše peniaze",
+        "welcomeTextWithoutUserName12": "Vezmite si Vantage domov",
+        "welcomeTextWithoutUserName13": "Jedzte, spite, Vantage, opakujte",
+        "welcomeTextWithoutUserName14": "Každý okamih je čerstvý Vantage",
+        "welcomeTextWithoutUserName15": "Vantage naplno",
         "helloUser": "Dobrý deň, {{firstName}}!",
         "ssoErrorTitle": "Chyba",
         "ssoErrorCommon": "Pozor, vyskytla sa chyba. Skúste znova.",
@@ -2515,10 +2544,11 @@
         "bullets2": "Poradca zabezpečením zjednodušuje správu zabezpečenia (k dispozícii vo vybraných systémoch).",
         "bullets3": "Automatické aktualizácie udržujú vaše zariadenie v špičkovom stave (k dispozícii vo vybraných systémoch).",
         "subtitle1": "Ako budete používať svoje zariadenie?",
-        "subtitle2": "Povedzte nám o svojich záujmoch",
+        "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-        "custom": "Vlastné prostredie",
+		"custom": "Vlastné prostredie",
+		"professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2555,9 +2585,12 @@
         "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
         "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
         "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
-        "userProfile": "User profile",
+        "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
-        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie."
+        "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
+        "betaSettingTitle": "Program Beta",
+        "betaProgram": "Program Beta",
+        "betaSettingDescription": "Vyskúšajte najnovšie funkcie, na ktorých pracujeme."
     },
     "modernPreload": {
         "cancel": "Zrušiť",
@@ -2686,7 +2719,8 @@
                 "description": "Vykonanie kontroly a opravy môže spôsobiť stratu údajov. Pred vykonaním tejto operácie sa odporúča vytvorenie zálohy. Naozaj to chcete pokračovať?",
                 "yes": "Áno",
                 "no": "Nie"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",
@@ -2711,7 +2745,18 @@
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
-        "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu"
+        "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Pamäť",
+            "motherboard": "Základná doska",
+            "pci_express": "PCI Express",
+            "storage": "Ukladací priestor",
+            "wireless": "Bezdrôtové"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2930,7 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-                "installing": "Inštalácia",
+				"installing": "Inštalácia",
+				"downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"
@@ -3027,7 +3073,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

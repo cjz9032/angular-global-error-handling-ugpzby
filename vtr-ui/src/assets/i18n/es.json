@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "No se ha detectado ninguna conexión a Internet",
             "subtitle": "Obtenga más información sobre cómo resolver problemas de conexión en nuestro",
-            "buttonText": "Obtenga soporte"
+            "buttonText": "Obtenga soporte",
+            "welcomeToVantage": "Bienvenido a la próxima generación de Vantage",
+            "systemHealth": "Estado del sistema"
         },
         "feedback": {
             "title": "Proporcionar comentarios",
@@ -896,7 +898,7 @@
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
-                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>.",
+                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>. Reinicie el sistema después de la instalación.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
@@ -2138,9 +2140,36 @@
         "logout": "Cerrar sesión",
         "unlockExclusives": "Desbloquear contenido exclusivo",
         "user": "Usuario",
-        "welcomeText": "¡Energícese hoy, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "¡Energícese hoy!",
+        "welcomeText1": "¡Energícese hoy, {{firstName}}!",
+        "welcomeText2": "Feliz volver a verlo, {{firstName}}",
+        "welcomeText3": "Qué agradable sorpresa, {{firstName}}",
+        "welcomeText4": "Sonría, {{firstName}}, es contagioso :)",
+        "welcomeText5": "Toc, toc, {{firstName}}",
+        "welcomeText6": "¡Lo esperan grandes destinos!",
+        "welcomeText7": "Hoy es su día, {{firstName}}.",
+        "welcomeText8": "¿A quién le gustan los arbolitos?",
+        "welcomeText9": "¡Fiesta, {{firstName}}!",
+        "welcomeText10": "Mantenga la calma y Vantage",
+        "welcomeText11": "Más Vantage por su dinero",
+        "welcomeText12": "Traiga Vantage a su hogar",
+        "welcomeText13": "Comer, dormir, Vantage, repetir",
+        "welcomeText14": "Cada vez es una nueva oportunidad Vantage",
+        "welcomeText15": "Vantage al máximo",
+        "welcomeTextWithoutUserName1": "¡Energícese hoy!",
+        "welcomeTextWithoutUserName2": "Feliz volver a verlo",
+        "welcomeTextWithoutUserName3": "Qué agradable sorpresa",
+        "welcomeTextWithoutUserName4": "Sonría, es contagioso :)",
+        "welcomeTextWithoutUserName5": "Toc, toc",
+        "welcomeTextWithoutUserName6": "¡Lo esperan grandes destinos!",
+        "welcomeTextWithoutUserName7": "Hoy es su día.",
+        "welcomeTextWithoutUserName8": "¿A quién le gustan los arbolitos?",
+        "welcomeTextWithoutUserName9": "¡Fiesta!",
+        "welcomeTextWithoutUserName10": "Mantenga la calma y Vantage",
+        "welcomeTextWithoutUserName11": "Más Vantage por su dinero",
+        "welcomeTextWithoutUserName12": "Traiga Vantage a su hogar",
+        "welcomeTextWithoutUserName13": "Comer, dormir, Vantage, repetir",
+        "welcomeTextWithoutUserName14": "Cada vez es una nueva oportunidad Vantage",
+        "welcomeTextWithoutUserName15": "Vantage al máximo",
         "helloUser": "¡Hola, {{firstName}}!",
         "ssoErrorTitle": "Error",
         "ssoErrorCommon": "¡Ups! Hemos encontrado un error. Inténtelo de nuevo.",
@@ -2515,10 +2544,11 @@
         "bullets2": "Security Advisor facilita la gestión de su seguridad (disponible en los sistemas seleccionados).",
         "bullets3": "Las actualizaciones automáticas mantienen el dispositivo en excelentes condiciones (disponible en los sistemas seleccionados).",
         "subtitle1": "¿Cómo va a utilizar su dispositivo?",
-        "subtitle2": "Cuéntenos sus intereses",
+        "subtitle2": "Cuéntenos sus intereses (opcional)",
         "personal": "Uso personal",
         "business": "Uso empresarial",
         "custom": "Experiencia personalizada",
+        "professional": "Uso profesional",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
         "moreInterest": "+ más intereses",
         "title1": "Bienvenido a",
@@ -2555,9 +2585,12 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
-        "userProfile": "User profile",
+        "userProfile": "Perfil de usuario",
         "Note": "Nota: ",
-        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
+        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",
+        "betaSettingTitle": "Programa Beta",
+        "betaProgram": "Programa Beta",
+        "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando."
     },
     "modernPreload": {
         "cancel": "Cancelar",
@@ -2686,7 +2719,8 @@
                 "description": "La ejecución del examen y la reparación pueden producir la pérdida de datos. Se recomienda realizar una copia de seguridad antes de ejecutar esta operación. ¿Seguro que desea continuar?",
                 "yes": "Sí",
                 "no": "No"
-            }
+            },
+            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -2711,7 +2745,18 @@
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
-        "testNotApplicable": "No se aplica a personalizar exploración"
+        "testNotApplicable": "No se aplica a personalizar exploración",
+        "waitScanStarts": "Wait until the scan starts",
+        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "pluginTokens": {
+            "cpu": "Procesador",
+            "memory": "Memoria",
+            "motherboard": "Placa madre",
+            "pci_express": "PCI Express",
+            "storage": "Almacenamiento",
+            "wireless": "Inalámbrica"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -2931,6 +2976,7 @@
             "installButton": {
                 "install": "Instalar",
                 "installing": "Instalación",
+                "downloading": "Descargando",
                 "installed": "Instalado",
                 "launch": "Inicie",
                 "seeMore": "Ver más"
@@ -3027,7 +3073,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

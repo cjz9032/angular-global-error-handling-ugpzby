@@ -70,43 +70,51 @@
 }
 
 .aps-checkbox {
-    margin: 1rem 0rem 1rem 0rem;
+	margin: 1rem 0rem 1rem 0rem;
 	font-size: 1.4rem;
 	padding-left: 5rem;
-  }
-  .custom-control-input:disabled ~ .custom-control-label {
-    cursor: not-allowed;
-  }
+}
 
-  .custom-control-label {
-    padding-left: 0.5rem;
+.aps-disabled {
+	.custom-control-input ~ .custom-control-label {
+		cursor: not-allowed;
+	}
+	.custom-control-input:checked ~ .custom-control-label::before {
+		background-color: #8b91a2;
+		box-shadow: none;
+		border-color: #8b91a2;
+	}
+}
+
+.custom-control-label {
+	padding-left: 0.5rem;
 	line-height: 1.15;
 	color: $main_shade;
-    @media #{$mediaquery_14} {
-      line-height: 1.3;
-    }
-    @media #{$mediaquery_19} {
-      line-height: 1.3;
-    }
-    @media #{$mediaquery_X15} {
-      line-height: 1.3;
-    }
+	@media #{$mediaquery_14} {
+		line-height: 1.3;
+	}
+	@media #{$mediaquery_19} {
+		line-height: 1.3;
+	}
+	@media #{$mediaquery_X15} {
+		line-height: 1.3;
+	}
 
-    .disabled {
-      color: $light-grey;
-    }
-    // rounded square-box background
-    &::before {
-      top: 0.2rem;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+	.disabled {
+		color: $light-grey;
+	}
+	// rounded square-box background
+	&::before {
+		top: 0.2rem;
+		width: 1.5rem;
+		height: 1.5rem;
+	}
 
-    // tick mark
-    &::after {
-      top: 0rem;
-      width: 2rem;
-      height: 2rem;
-      left: -1.7rem;
-    }
-  }
+	// tick mark
+	&::after {
+		top: 0rem;
+		width: 2rem;
+		height: 2rem;
+		left: -1.7rem;
+	}
+}

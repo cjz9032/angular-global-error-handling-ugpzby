@@ -112,6 +112,27 @@
 								}
 							}
 						}
+
+					}
+				}
+			}
+			.security-widget.wifi-connected-home {
+				.security-widget-inner {
+					.coronet-logo {
+						width: 9rem;
+						padding-top: 1rem;
+					}
+				}
+			}
+			.security-widget.windows-hello {
+				border-bottom: none;
+				.security-widget-inner {
+					.title {
+						color: $go_dark;
+					}
+					.windows-logo {
+						width: 9rem;
+						padding-top: 1rem;
 					}
 				}
 			}
