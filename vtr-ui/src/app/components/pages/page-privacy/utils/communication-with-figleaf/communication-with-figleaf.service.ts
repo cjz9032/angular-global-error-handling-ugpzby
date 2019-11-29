@@ -100,7 +100,9 @@ export class CommunicationWithFigleafService {
 
 	private sendTestMessage() {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
-			.pipe(catchError((e) => {
+			.pipe(
+				retryWhen((errors) => errors.pipe(delay(200), take(5), concatMap(() => throwError(new Error('App in exit state'))))),
+				catchError((e) => {
 				if (e.message === 'App in exit state') {
 					this.communicationSwitcherService.stopPulling();
 					return this.checkIfFigleafInstalled();
