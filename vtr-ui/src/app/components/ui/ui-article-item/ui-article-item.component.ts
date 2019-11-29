@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { SupportService } from '../../../services/support/support.service';
 import { CardService } from 'src/app/services/card/card.service';
+import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -9,6 +10,7 @@ import { CardService } from 'src/app/services/card/card.service';
 })
 export class UIArticleItemComponent implements OnInit, AfterViewInit {
 
+	SupportContentStatus = SupportContentStatus;
 	@Input() item: any;
 	@Input() index: any;
 	@Input() tabIndex: number;
@@ -57,7 +59,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 
 	clickContent() {
 		this.metricsDatas.viewOrder++;
-		if (this.articleType === 'content') {
+		if (this.articleType === SupportContentStatus.Content) {
 			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink);
 		} else {
 			this.cardService.openArticleModal(this.item.Id);

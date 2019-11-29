@@ -1,5 +1,5 @@
 <div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'articles'"
+	*ngIf="articleType === SupportContentStatus.Articles"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -62,7 +62,7 @@
 	</div>
 </div>
 <div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'content'"
+	*ngIf="articleType === SupportContentStatus.Content"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"

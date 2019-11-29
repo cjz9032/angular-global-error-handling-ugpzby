@@ -77,22 +77,19 @@
 								</div>
 							</div>
 
-							<div class="row" *ngIf="articlesType !== 'loading'">
+							<div class="row" *ngIf="(articlesType === SupportContentStatus.Articles || articlesType === SupportContentStatus.Content) && isOnline">
 								<div class="col col-6 px-40 pt-40" *ngIf="articles.leftTop.length > 0">
 									<vtr-container-article [items]="articles.leftTop"
-										*ngIf="isOnline"
 										[startIndex]="1"
 										[indexTimes]="2"
 										[type]="articlesType">
 									</vtr-container-article>
 									<vtr-container-article class="d-none d-lg-block" [items]="articles.leftBottom"
-										*ngIf="isOnline"
 										[startIndex]="5"
 										[indexTimes]="2"
 										[type]="articlesType">
 									</vtr-container-article>
 									<vtr-container-article class="d-lg-none" [items]="articles.leftBottomSmall"
-										*ngIf="isOnline"
 										[startIndex]="5"
 										[indexTimes]="2"
 										[type]="articlesType">
@@ -100,19 +97,16 @@
 								</div>
 								<div class="col col-6 px-40 pt-40" *ngIf="articles.middleTop.length > 0">
 									<vtr-container-article [items]="articles.middleTop"
-										*ngIf="isOnline"
 										[startIndex]="2"
 										[indexTimes]="2"
 										[type]="articlesType">
 									</vtr-container-article>
 									<vtr-container-article class="d-none d-lg-block" [items]="articles.middleBottom"
-										*ngIf="isOnline"
 										[startIndex]="6"
 										[indexTimes]="2"
 										[type]="articlesType">
 									</vtr-container-article>
 									<vtr-container-article class="d-lg-none" [items]="articles.middleBottomSmall"
-										*ngIf="isOnline"
 										[startIndex]="6"
 										[indexTimes]="2"
 										[type]="articlesType">
@@ -120,9 +114,13 @@
 								</div>
 							</div>
 							<div class="spinner-content w-100 text-center"
-								*ngIf="articlesType === 'loading' && isOnline">
+								*ngIf="articlesType === SupportContentStatus.Loading && isOnline">
 								<div class="spinner-border text-primary progress-spinner"
 									role="status"></div>
+							</div>
+							<div class="spinner-content w-100 text-center"
+								*ngIf="articlesType === SupportContentStatus.Empty && isOnline">
+								<img src="/assets/images/support/empty.png" />
 							</div>
 						</div>
 					</div>
@@ -170,10 +168,9 @@
 								</div>
 
 								<div class="row d-none d-lg-block"
-								*ngIf="articlesType !== 'loading' && articles.right.length > 0">
+								*ngIf="(articlesType === SupportContentStatus.Articles || articlesType === SupportContentStatus.Content) && articles.right.length > 0 && isOnline">
 									<div class="col col-12 p-60">
 									<vtr-container-article [items]="articles.right"
-										*ngIf="isOnline"
 										[startIndex]="5"
 										[indexPreText]="'r'"
 										[indexTimes]="1"
