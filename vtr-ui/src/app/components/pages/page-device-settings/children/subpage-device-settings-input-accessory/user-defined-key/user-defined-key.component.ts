@@ -22,15 +22,13 @@ export class UserDefinedKeyComponent implements OnInit {
 	public machineType: number;
 	public description: string;
 	public url: string;
-	public hyperLinkPatterns = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
-	// public enterTextPatterns = '[a-zA-Z0-9][A-Za-z0-9._-]*';
 	public hideApplyForDefault = false;
 	public udkFormSubmitted = false;
 	userDefinedKeyOptions: any[] = [];
 	public selectedValue: any;
 	public isUDFSetSuccessVisible = false;
 	public isUDFSetFailedVisible = false;
-	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -152,7 +150,9 @@ export class UserDefinedKeyComponent implements OnInit {
 				}
 				break;
 			case 3:
-				this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
+				if (this.description && this.description.length > 0) {
+					this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
+				}
 		}
 	}
 
@@ -173,10 +173,8 @@ export class UserDefinedKeyComponent implements OnInit {
 	}
 
 	private showUDFSetSuccessMessage(action: string) {
-		if (action === OPEN_WEB.str) {
-			this.isUDFSetSuccessVisible = true;
-			this.hideUDFMessage();
-		}
+		this.isUDFSetSuccessVisible = true;
+		this.hideUDFMessage();
 	}
 
 	private showUDFSetFailedMessage(action: string) {
