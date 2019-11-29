@@ -30,7 +30,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	@ViewChild('batteryDetail', { static: false }) batteryModal: ElementRef<HTMLElement>;
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
-	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
 	batteryConditions: BatteryConditionModel[] = [new BatteryConditionModel(BatteryConditionsEnum.Good, BatteryQuality.Good)];
@@ -183,7 +182,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: BatteryGaugeReset[]) {
-		this.logger.info('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
+		console.log('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
 		this.batteryService.gaugeResetInfo = batteryGaugeResetInfo;
 	}
 
@@ -191,7 +190,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		try {
 			if (this.batteryService.isShellAvailable) {
 				this.getBatteryDetails(false);
-				this.getBatteryDetailsMonitor();
+				this.batteryService.startMonitor(this.setBatteryCard.bind(this));
 			}
 		} catch (error) {
 			this.logger.error('getBatteryDetailOnCard: ' + error.message);
@@ -199,22 +198,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getBatteryDetailsMonitor() {
-		this.logger.info('start battery details monitor');
-		if (this.batteryService.isShellAvailable) {
-			this.batteryService
-				.startMonitor(this.setBatteryCard.bind(this))
-				.then((value: any) => {
-					this.logger.info('battery details response', value);
-				}).catch(error => {
-					this.logger.error('battery details error', error.message);
-					return EMPTY;
-				});
-		}
-	}
-
 	setBatteryCard(response) {
-		this.logger.info('Battery Info', response);
+		console.log('Battery Info', response);
 		this.batteryInfo = response.batteryInformation;
 		this.batteryGauge = response.batteryIndicatorInfo;
 		this.updateBatteryDetails();
@@ -224,10 +209,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	 * gets battery details from js bridge
 	 */
 	public getBatteryDetails(showBatteryDetail) {
-		this.logger.info('BatteryCardComponent: getBatteryDetails ==> Before API call');
+		console.log('BatteryCardComponent: getBatteryDetails ==> Before API call');
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
-				this.logger.info('BatteryCardComponent: getBatteryDetails ==> After API call', response);
+				console.log('BatteryCardComponent: getBatteryDetails ==> After API call', response);
 				this.isLoading = false;
 				this.setBatteryCard(response);
 				if (showBatteryDetail) {
@@ -481,7 +466,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		clearTimeout(this.batteryCardTimer);
+		this.batteryService.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.powerSupplyStatusEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.remainingPercentageEventRef);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.remainingTimeEventRef);
