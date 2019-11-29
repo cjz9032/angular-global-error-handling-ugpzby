@@ -75,7 +75,7 @@ export class CommunicationWithFigleafService {
 	}
 
 	private receiveFigleafReadyForCommunicationState() {
-		const figleafConnectSubscription = timer(0, 6000).pipe(
+		const figleafConnectSubscription = timer(0, 3000).pipe(
 			switchMap(() => this.communicationSwitcherService.isPullingActive$.pipe(take(1))),
 			switchMap((res) => res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))),
 			distinctUntilChanged()
