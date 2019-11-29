@@ -62,6 +62,7 @@ import { faChevronCircleUp } from '@fortawesome/pro-light-svg-icons/faChevronCir
 import { faPlane } from '@fortawesome/pro-light-svg-icons/faPlane';
 import { faThumbtack } from '@fortawesome/pro-light-svg-icons/faThumbtack';
 import { faBatteryHalf } from '@fortawesome/pro-light-svg-icons/faBatteryHalf';
+import { faBatteryFull } from '@fortawesome/pro-light-svg-icons/faBatteryFull';
 import { faBatteryBolt } from '@fortawesome/pro-light-svg-icons/faBatteryBolt';
 import { faQuestionCircle, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faBatteryQuarter } from '@fortawesome/pro-light-svg-icons/faBatteryQuarter';
@@ -95,6 +96,7 @@ library.add(faPlane);
 library.add(faThumbtack);
 library.add(faQuestionCircle);
 library.add(faBatteryHalf);
+library.add(faBatteryFull);
 library.add(faBatteryBolt);
 library.add(faBatteryQuarter);
 library.add(faUsb);
