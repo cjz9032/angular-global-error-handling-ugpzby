@@ -59,8 +59,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 				this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
 			}
 		});
-
-		this.setDataAccordingToScore(0, this.appStatuses.firstTimeVisitor);
 	}
 
 	ngOnDestroy() {
