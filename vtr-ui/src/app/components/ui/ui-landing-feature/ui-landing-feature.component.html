@@ -1,15 +1,13 @@
-<div class="landing-widget">
-	<div class="landing-widget-inner">
-		<vtr-ui-object-title [objects]="feature.subject">
-		</vtr-ui-object-title>
-		<vtr-ui-list-chevron [items]="feature.statusList"
-			metricsEvent="featureClick"
-			[linkId]="'security'">
-		</vtr-ui-list-chevron>
-		<div class="pull"
-			*ngIf="feature.imgUrl">
-			<img class="logo"
-				[src]="feature.imgUrl |svgInline|async" />
-		</div>
+<div class="security-widget">
+  <div class="security-widget-inner">
+	<div class="title row no-gutters">
+		<span class="col-11 text-break pl-1" [innerHTML]="feature.subject.title"></span>
 	</div>
+    <vtr-ui-list-chevron [items]="feature.statusList" metricsEvent="featureClick"
+    	[linkId]="'security'">
+    </vtr-ui-list-chevron>
+    <div class="pull" *ngIf="feature.imgUrl">
+      <img class="windows-logo" [src]="feature.imgUrl |svgInline|async" />
+    </div>
+  </div>
 </div>

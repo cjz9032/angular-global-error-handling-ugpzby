@@ -67,7 +67,7 @@
 		<div class="col buttons">
 			<beta-vtr-ui-button [label]="scheduleNewScanButtonText" [isDisabled]="disable"
 				[metricsEvent]="'FeatureClick'" [metricsItem]="'btn.New.Schedule'" [metricsParent]="'Page.HardwareScan'"
-				(onClick)="onNewScanScheduling()"></beta-vtr-ui-button>
+				(onClick)="onNewScanScheduling()" [tooltipText]="scheduleNewScanButtonText"></beta-vtr-ui-button>
 
 			<a *ngIf="editMode" class="action-anchor" (click)="onDeleteScan()" vtrMetrics metricsEvent="FeatureClick"
 				metricsItem="btn.Delete.Schedule" metricsParent="Page.HardwareScan">{{ delete }}</a>

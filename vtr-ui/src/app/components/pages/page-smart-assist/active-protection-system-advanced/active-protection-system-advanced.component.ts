@@ -100,14 +100,32 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 		this.penStatus = !this.penStatus;
 		this.smartAssist
 			.setPenSetting(value)
-			.then(res => console.log('PEN STATUS SET --------------------------------- ', res))
+			.then(res => {
+				console.log('PEN STATUS SET --------------------------------- ', res);
+				this.smartAssist
+					.getPenDelayTime()
+					.then(res => {
+						this.penDelay = res;
+						console.log('PEN DELAY --------------------------------- ', res, typeof res);
+					})
+					.catch(error => console.log(error));
+			})
 			.catch(err => console.log(err));
 	}
 	setPenDelayTime(event) {
 		const value = event.value;
 		this.smartAssist
 			.setPenDelayTime(value)
-			.then(res => console.log('PEN DELAY TIME --------------------------------- ', value, res))
+			.then(res => {
+				console.log('PEN DELAY TIME --------------------------------- ', value, res)
+				this.smartAssist
+					.getPenDelayTime()
+					.then(res => {
+						this.penDelay = res;
+						console.log('PEN DELAY --------------------------------- ', res, typeof res);
+					})
+					.catch(error => console.log(error));
+			})
 			.catch(err => console.log(err));
 	}
 	setTouchInputSetting(event) {

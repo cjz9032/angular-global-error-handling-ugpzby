@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
 import { DeviceService } from '../device/device.service';
 import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+import { GuardConstants } from './guard-constants';
 
 @Injectable({
 	providedIn: 'root',
@@ -18,14 +19,15 @@ export class GuardService {
 	duration = 0;
 	timer = 0;
 	activeTime = 0;
-	activeDurationCounter = null;
+	focusDurationCounter = null;
+	blurDurationCounter = null;
 
 	constructor(
 		shellService: VantageShellService,
 		private commonService: CommonService,
-		private router: Router,
 		private adPolicy: AdPolicyService,
 		private deviceService: DeviceService,
+		private guardConstants: GuardConstants,
 		private timerService: TimerServiceEx) {
 
 		this.metrics = shellService.getMetrics();
@@ -99,11 +101,16 @@ export class GuardService {
 	// } // END OF DURATION
 	canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | UrlTree{
 		// this.interTime = Date.now();
-		this.activeDurationCounter = this.timerService.getActiveCounter();
+		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
+		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
+
 		if (routerStateSnapshot.url.includes('system-updates') &&
 			(!this.adPolicy.IsSystemUpdateEnabled ||
 				this.deviceService.isSMode)) {
-			return this.router.parseUrl('/dashboard');
+			return this.guardConstants.defaultRoute;
+		}
+		if (routerStateSnapshot.url.includes('dashboard')) {
+			console.log( `Enter Dashboard page time :: ${new Date()}`);
 		}
 		return true;
 	}
@@ -114,11 +121,14 @@ export class GuardService {
 			this.pageContext = this.commonService.getLocalStorageValue(this.pageContext);
 		}
 		//const time = this.timerService.stop();
-		const duration = this.activeDurationCounter !== null ? this.activeDurationCounter.getDuration() : 0;
+		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
+		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
+
 		const data = {
 			ItemType: 'PageView',
 			PageName: activatedRouteSnapshot.data.pageName,
-			PageDuration: duration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
+			PageDuration: focusDuration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
+			PageDurationBlur: blurDuration
 			// PageContext: this.pageContext, // value coming as undefined
 		};
 		console.log('------: Deactivate :------ ' + activatedRouteSnapshot.data.pageName, ' >>>>>>>>>> ', data);

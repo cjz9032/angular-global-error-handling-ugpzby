@@ -707,7 +707,9 @@
 		"offlineInfo": {
 			"title": "No internet connection detected",
 			"subtitle": "Learn more on how to solve connection issues in our",
-			"buttonText": "Get Support"
+			"buttonText": "Get Support",
+			"welcomeToVantage": "Welcome to the next generation of Vantage",
+			"systemHealth": "System Health"
 		},
 		"feedback": {
 			"title": "Give Feedback",
@@ -1045,7 +1047,8 @@
 							"wed": "Wed",
 							"thurs": "Thurs",
 							"fri": "Fri",
-							"sat": "Sat"
+							"sat": "Sat",
+							"thu": "Thu"
 						},
 						"name": {
 							"sun": "Sunday",
@@ -1060,19 +1063,47 @@
 						"weekdays": "Weekdays",
 						"weekends": "Weekends"
 					},
-					"legends": {
-						"none": "None",
-						"frequent": "Frequent"
-					},
 					"warningtip": "Please select at least one day.",
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
 					"hyperlinkToGraph": "Click to see the usage and applied active time",
 					"automaticMode": "Automatic mode",
 					"manualMode": "Manual mode",
-					"graph1Tittle": "Usage of this computer",
-					"graph2Tittle": "Applied active time",
-					"graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-					"graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+					"graph": {
+						"graph1Tittle": "Usage of this computer",
+						"graph2Tittle": "Applied active time",
+						"graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+						"graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+						"legends": {
+							"none": "None",
+							"frequent": "Frequent"
+						},
+						"hours": {
+							"zero": "0",
+							"one": "1",
+							"two": "2",
+							"three": "3",
+							"four": "4",
+							"five": "5",
+							"six": "6",
+							"seven": "7",
+							"eight": "8",
+							"nine": "9",
+							"ten": "10",
+							"eleven": "11",
+							"twele": "12",
+							"thirteen": "13",
+							"fourteen": "14",
+							"fifteen": "15",
+							"sixteen": "16",
+							"seventeen": "17",
+							"eighteen": "18",
+							"nineteen": "19",
+							"twenty": "20",
+							"twentyOne": "21",
+							"twentyTwo": "22",
+							"twentythree": "23"
+						}
+					}
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1117,7 +1148,7 @@
 						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
 						"FCCText": "From {{before}} Wh to {{after}} Wh",
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
-						"dual_note": "Note: Only one battery can be reset at a time",
+						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
 							"ERROR_SUCCESS": "Complete. Successful reset.",
 							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
@@ -1346,7 +1377,7 @@
 					},
 					"firstKeyObj": {
 						"tittle": "Fn + Tab",
-						"description": "enable zoom feature on high resolution displays",
+						"description": "enable zooming feature on high resolution displays",
 						"image": ""
 					},
 					"secondKeyObj": {
@@ -1427,7 +1458,9 @@
 						"title": "APPLY"
 					},
 					"website": {
-						"url": "WEBSITE URL"
+						"url": "WEBSITE URL",
+						"successMessage": "The setting is applied successfully.",
+						"invalidURLMessage": "Please input a valid URL."
 					},
 					"enterText": {
 						"title": "TEXT TO BE ENTERED"
@@ -2061,7 +2094,7 @@
 			"welcomeTitle": "welcome to connected home security",
 			"welcomeSubTitle": "30 days of protection for free",
 			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
 			"locationTitle": "Enable location permissions",
 			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
 			"allow": "Allow",
@@ -2457,9 +2490,36 @@
 		"logout": "Logout",
 		"unlockExclusives": "Unlock Exclusives",
 		"user": "User",
-		"welcomeText": "Looking energized today {{firstName}}!",
-		"welcomeTextWithouUserName": "Looking energized today!",
-		"welcomeTextWithoutUserName": "Looking energized today!",
+		"welcomeText1": "Looking energized today, {{firstName}}!",
+		"welcomeText2": "Happy to see you again, {{firstName}}",
+		"welcomeText3": "What a pleasant surprise, {{firstName}}",
+		"welcomeText4": "Smile, {{firstName}}, it's contagious :)",
+		"welcomeText5": "Knock, knock, {{firstName}}",
+		"welcomeText6": "You're off to great places!",
+		"welcomeText7": "Today is your day, {{firstName}}!",
+		"welcomeText8": "Who likes happy little trees?",
+		"welcomeText9": "Party on, {{firstName}}!",
+		"welcomeText10": "Keep calm and Vantage on",
+		"welcomeText11": "A bigger Vantage for your buck",
+		"welcomeText12": "Bring home the Vantage",
+		"welcomeText13": "Eat, sleep, Vantage, repeat",
+		"welcomeText14": "Every moment is a fresh Vantage",
+		"welcomeText15": "Vantage to the fullest",
+		"welcomeTextWithoutUserName1": "Looking energized today!",
+		"welcomeTextWithoutUserName2": "Happy to see you again",
+		"welcomeTextWithoutUserName3": "What a pleasant surprise",
+		"welcomeTextWithoutUserName4": "Smile, it's contagious :)",
+		"welcomeTextWithoutUserName5": "Knock, knock",
+		"welcomeTextWithoutUserName6": "You're off to great places!",
+		"welcomeTextWithoutUserName7": "Today is your day!",
+		"welcomeTextWithoutUserName8": "Who likes happy little trees?",
+		"welcomeTextWithoutUserName9": "Party on!",
+		"welcomeTextWithoutUserName10": "Keep calm and Vantage on",
+		"welcomeTextWithoutUserName11": "A bigger Vantage for your buck",
+		"welcomeTextWithoutUserName12": "Bring home the Vantage",
+		"welcomeTextWithoutUserName13": "Eat, sleep, Vantage, repeat",
+		"welcomeTextWithoutUserName14": "Every moment is a fresh Vantage",
+		"welcomeTextWithoutUserName15": "Vantage to the fullest",
 		"helloUser": "Hello, {{firstName}}!",
 		"ssoErrorTitle": "Error",
 		"ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
@@ -2790,8 +2850,8 @@
 			}
 		},
 		"question6": {
-			"title": "Get to know Cortona, your personal assistant",
-			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
+			"title": "Get to know Cortana, your personal assistant",
+			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphoneand talk to Cortana. (Typingworks for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when youselect the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, oreven people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to syncnotifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong>and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
 			"heading1": "What is Cortana?",
 			"para1": "Cortana is your digital agent. She'll help you get things done.",
 			"para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2834,12 +2894,13 @@
 		"bullets2": "Security Advisor makes managing your security easy. (Available on selected systems)",
 		"bullets3": "Automatic updates keep your device in tip top shape. (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
-		"subtitle2": "Tell us about your interests",
+		"subtitle2": "Tell us about your interests (optional)",
 		"personal": "Personal Use",
 		"business": "Business Use",
+		"professional": "Professional Use",
 		"custom": "Custom Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
-		"moreInterest": "+ more interests",
+		"moreInterest": "+ More interests",
 		"title1": "Welcome to",
 		"title2": "Lenovo",
 		"title3": "Vantage",
@@ -2876,7 +2937,10 @@
 		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
 		"userProfile": "User profile",
 		"Note": "Note: ",
-		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
+		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect.",
+		"betaSettingTitle": "Beta program",
+		"betaProgram": "Beta Program",
+		"betaSettingDescription": "Try the latest features we're working on."
 	},
 	"modernPreload": {
 		"cancel": "Cancel",
@@ -3014,7 +3078,8 @@
 				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
 				"yes": "Yes",
 				"no": "No"
-			}
+			},
+			"waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
 		},
 		"support": {
 			"title": "Download professional diagnostic tools",
@@ -3030,6 +3095,17 @@
 			"title": "Enable Battery Charge Threshold",
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
+		},
+		"waitScanStarts": "Wait until the scan starts",
+		"reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+		"retrievingHardwareInformation": "Retrieving hardware information...",
+		"pluginTokens": {
+			"cpu": "Processor",
+			"memory": "Memory",
+			"motherboard": "Motherboard",
+			"pci_express": "PCI Express",
+			"storage": "Storage",
+			"wireless": "Wireless"
 		}
 	},
 	"appsForYou": {
@@ -3048,6 +3124,7 @@
 			"installButton": {
 				"install": "Install",
 				"installing": "Installing",
+				"downloading": "Downloading",
 				"installed": "Installed",
 				"launch": "Launch",
 				"seeMore": "See More"

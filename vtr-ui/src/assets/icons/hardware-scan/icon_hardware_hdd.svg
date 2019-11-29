@@ -1,0 +1,11 @@
+<svg id="icon_hardware_hdd" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect id="footprint" width="48" height="48" fill="#4a81fd" opacity="0"/>
+  <g id="icon" transform="translate(2 11)">
+    <path id="Path_281" data-name="Path 281" d="M43.2,11H4.8A2.862,2.862,0,0,0,2,13.8V34.2A2.862,2.862,0,0,0,4.8,37H43.2A2.8,2.8,0,0,0,46,34.2V13.8A2.862,2.862,0,0,0,43.2,11Zm1.1,23.2a1.11,1.11,0,0,1-1.1,1.1H4.8a1.11,1.11,0,0,1-1.1-1.1V30.4H4.9a1,1,0,1,0,0-2H3.8V27H5a1,1,0,0,0,0-2H3.8V23.5H5a1,1,0,0,0,0-2H3.8V20H5a1,1,0,0,0,0-2H3.8V13.8a1.11,1.11,0,0,1,1.1-1.1H43.3a1.11,1.11,0,0,1,1.1,1.1V34.2Z" transform="translate(-2 -11)" fill="#4a81fd"/>
+    <path id="Path_282" data-name="Path 282" d="M40.7,14.7a.945.945,0,0,0-1,1,1,1,0,1,0,2,0A.945.945,0,0,0,40.7,14.7Z" transform="translate(-2 -11)" fill="#4a81fd"/>
+    <path id="Path_283" data-name="Path 283" d="M40.7,31.6a.945.945,0,0,0-1,1,1,1,0,1,0,2,0A.945.945,0,0,0,40.7,31.6Z" transform="translate(-2 -11)" fill="#4a81fd"/>
+    <path id="Path_284" data-name="Path 284" d="M7,14.7a.945.945,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,0-2Z" transform="translate(-2 -11)" fill="#4a81fd"/>
+    <path id="Path_285" data-name="Path 285" d="M7,31.6a.945.945,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,1,0,0-2Z" transform="translate(-2 -11)" fill="#4a81fd"/>
+    <path id="Path_286" data-name="Path 286" d="M31.7,18.6H16.8a.945.945,0,0,0-1,1v8.8a.945.945,0,0,0,1,1H31.7a.945.945,0,0,0,1-1V19.6A.945.945,0,0,0,31.7,18.6Zm-1,8.8H17.8V20.6H30.7Z" transform="translate(-2 -11)" fill="#4a81fd"/>
+  </g>
+</svg>

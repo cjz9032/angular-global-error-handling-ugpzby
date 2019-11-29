@@ -1,6 +1,4 @@
 import { Router } from '@angular/router';
-import { isUndefined } from 'util';
-import { StatusTextPipe } from 'src/app/pipe/ui-security-statusbar/status-text.pipe';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from './../../../services/dialog/dialog.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -25,10 +23,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { WifiHomeViewModel, SecurityHealthViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { GuardService } from 'src/app/services/guard/guardService.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',

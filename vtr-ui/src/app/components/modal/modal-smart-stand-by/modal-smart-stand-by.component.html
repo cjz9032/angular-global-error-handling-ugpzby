@@ -19,13 +19,13 @@
         </div>
         <div class="col-12 mt-3">  
              <div class="text-danger pl-4">
-                <h4> {{'device.deviceSettings.power.smartStandby.graphNote' | translate}} </h4>
+                <h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
              </div>
         </div>       
         <div>
             <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
                 class="btn close-button" (click)="closeModal()"
-                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}
+                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate | uppercase}}
             </button>
         </div>
     </div>

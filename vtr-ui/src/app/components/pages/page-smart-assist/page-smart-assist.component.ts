@@ -20,6 +20,7 @@ import {  throttleTime } from 'rxjs/operators';
 import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -101,6 +102,7 @@ export class PageSmartAssistComponent
 	private smartAssistCapability: SmartAssistCapability = undefined;
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private smartAssist: SmartAssistService,
 		private deviceService: DeviceService,
 		public qaService: QaService,

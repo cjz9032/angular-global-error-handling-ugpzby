@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { SupportService } from '../../../services/support/support.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { CardService } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'vtr-ui-article-item',
@@ -26,7 +25,7 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private supportService: SupportService,
-		public modalService: NgbModal
+		public cardService: CardService,
 	) {
 		this.metricsDatas = this.supportService.metricsDatas;
 	}
@@ -56,26 +55,14 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	showArticleDetails() {
+	clickContent() {
 		this.metricsDatas.viewOrder++;
-
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			}
-		});
 		if (this.articleType === 'content') {
-			articleDetailModal.componentInstance.articleId = this.item.ActionLink;
+			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink);
 		} else {
-			articleDetailModal.componentInstance.articleId = this.item.Id;
+			this.cardService.openArticleModal(this.item.Id);
+			return false;
 		}
 	}
+
 }
