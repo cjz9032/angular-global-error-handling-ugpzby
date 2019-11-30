@@ -8,20 +8,37 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">       
+        <div class="col-12">
             <div *ngFor="let item of items">
                 <div class="pl-2">
-                        <h2>{{item.tittle | translate}}</h2>
-                        <h3>{{item.subTittle | translate}}</h3>
-                </div>               
-                 <div #chartContainer  [id]="'chartContainer-' + item"></div>
+                    <div class="tittle">{{item.tittle | translate}}</div>
+                    <div class="sub-tittle">{{item.subTittle | translate}}</div>
+                </div>
+                <div #chartContainer [id]="'chartContainer-' + item"></div>
+                <div *ngIf="item && item.legends" class="d-flex justify-content-end legends-row">
+                    <span class="mr-1">
+                        {{'device.deviceSettings.power.smartStandby.graph.legends.none' | translate}}
+                    </span>
+                    <!-- <span *ngFor="let bgcolor of item.colors.first" class="graph-legend" [innerHtml]="item.legends" [style.backgroundColor]="bgcolor"></span> -->
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[0]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[1]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[2]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[3]"></span>
+                    <span class="ml-1">
+                        {{'device.deviceSettings.power.smartStandby.graph.legends.frequent' | translate}}
+                    </span>
+                </div>
             </div>
         </div>
-        <div class="col-12 mt-3">  
-             <div class="text-danger pl-4">
+        <div class="col-12 mt-3">
+            <div class="note pl-4">
                 <h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
-             </div>
-        </div>       
+            </div>
+        </div>
         <div>
             <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
                 class="btn close-button" (click)="closeModal()"
