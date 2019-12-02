@@ -136,176 +136,26 @@
 	white-space: nowrap;
 }
 
-// RESPONSIVE EFFORT
-@media #{$breakpoint_xl2} {
-	.p-40 {
-		padding: 2rem !important;
-	}
-
-	.px-40 {
-		padding-left: 2rem !important;
-		padding-right: 2rem !important;
-	}
-
-	.py-40 {
-		padding-top: 2rem !important;
-		padding-bottom: 2rem !important;
-	}
-
-	.pt-40 {
-		padding-top: 2rem !important;
-	}
-
-	.pb-40 {
-		padding-bottom: 2rem !important;
-	}
-
-	.pl-40 {
-		padding-left: 2rem !important;
-	}
-
-	.pr-40 {
-		padding-right: 2rem !important;
-	}
-
+.text-two-ellipsis {
+	display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
+.text-three-ellipsis {
+	display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 
-
-
-
-
-
-
-
-
-// @media #{$mediaquery_4} {
-// 	.nmx-40 {
-// 		margin-left: -3.5rem !important;
-// 		margin-right: -3.5rem !important;
-// 	}
-
-// 	.px-40 {
-// 		padding-left: 3.5rem !important;
-// 		padding-right: 3.5rem !important;
-// 	}
-
-// 	.pb-40 {
-// 		padding-bottom: 3.5rem !important;
-// 	}
-
-// 	.p-40 {
-// 		padding: 3.5rem !important;
-// 	}
-
-// 	.mb-60 {
-// 		margin-bottom: 5.5rem !important;
-// 	}
-
-// 	.mb-80 {
-// 		margin-bottom: 7rem !important;
-// 	}
-
-// 	.mb-100 {
-// 		margin-bottom: 9rem !important;
-// 	}
-// }
-
-// @media #{$mediaquery_5} {
-// 	.nmx-40 {
-// 		margin-left: -3rem !important;
-// 		margin-right: -3rem !important;
-// 	}
-
-// 	.px-40 {
-// 		padding-left: 3rem !important;
-// 		padding-right: 3rem !important;
-// 	}
-
-// 	.pb-40 {
-// 		padding-bottom: 3rem !important;
-// 	}
-
-// 	.p-40 {
-// 		padding: 3rem !important;
-// 	}
-
-// 	.mb-60 {
-// 		margin-bottom: 5rem !important;
-// 	}
-
-// 	.mb-80 {
-// 		margin-bottom: 6rem !important;
-// 	}
-
-// 	.mb-100 {
-// 		margin-bottom: 8rem !important;
-// 	}
-// }
-
-// @media #{$mediaquery_6} {
-// 	.nmx-40 {
-// 		margin-left: -2.5rem !important;
-// 		margin-right: -2.5rem !important;
-// 	}
-
-// 	.px-40 {
-// 		padding-left: 2.5rem !important;
-// 		padding-right: 2.5rem !important;
-// 	}
-
-// 	.pb-40 {
-// 		padding-bottom: 2.5rem !important;
-// 	}
-
-// 	.p-40 {
-// 		padding: 2.5rem !important;
-// 	}
-
-// 	.mb-60 {
-// 		margin-bottom: 4.5rem !important;
-// 	}
-
-// 	.mb-80 {
-// 		margin-bottom: 5rem !important;
-// 	}
-
-// 	.mb-100 {
-// 		margin-bottom: 7.5rem !important;
-// 	}
-// }
-
-// @media #{$mediaquery_7} {
-// 	.nmx-40 {
-// 		margin-left: -2rem !important;
-// 		margin-right: -2rem !important;
-// 	}
-
-// 	.px-40 {
-// 		padding-left: 2rem !important;
-// 		padding-right: 2rem !important;
-// 	}
-
-// 	.pb-40 {
-// 		padding-bottom: 2rem !important;
-// 	}
-
-// 	.p-40 {
-// 		padding: 2rem !important;
-// 	}
-
-// 	.mb-60 {
-// 		margin-bottom: 3rem !important;
-// 	}
-
-// 	.mb-80 {
-// 		margin-bottom: 4rem !important;
-// 	}
-
-// 	.mb-100 {
-// 		margin-bottom: 7rem !important;
-// 	}
-// }
 
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
@@ -391,11 +241,4 @@
 	padding-right: 2rem;
 	overflow: hidden;
 	min-height: 640px !important;
-}
-
-.update-read-more-modal-size .modal-dialog {
-	margin: 0 auto;
-	overflow: auto;
-	font-size: 1.4rem;
-	font-weight: 500;
 }

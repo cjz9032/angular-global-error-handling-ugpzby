@@ -106,7 +106,7 @@ ui-popover {
 
 ::ng-deep {
 	.vtr-menu-main {
-		z-index: 1 !important;
+		z-index: 100 !important;
 	}
 	.vtr-page-content {
 		z-index: unset !important;

@@ -17,6 +17,7 @@ export class PageLayoutComponent implements OnInit {
 	@Input() menuItems: any[];
 	@Input() shiftLeftUp: boolean = false;
 	@Input() shiftRightUp: boolean = false;
+	@Input() hideBack = false;
 
 	@Output() innerBack = new EventEmitter();
 

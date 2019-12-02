@@ -1,14 +1,5 @@
-import {
-	Component,
-	OnInit,
-	OnDestroy,
-	ChangeDetectionStrategy,
-	ChangeDetectorRef,
-	EventEmitter,
-	NgZone,
-	AfterViewInit
-} from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
+import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
@@ -47,7 +38,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public displayColorTempDataSource: any;
 	public displayColorTempCache: EyeCareModeResponse;
 	public eyeCareModeCache: EyeCareModeCapability;
-	public cameraDetails1: ICameraSettingsResponse;
+	public cameraDetails1: CameraSettingsResponse;
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
@@ -198,7 +189,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.page === 2) {
+			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();
 			}
 		} else {
@@ -266,13 +257,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	initFeatures() {
-		this.startEyeCareMonitor();
-		this.initEyecaremodeSettings();
 		this.getPrivacyGuardCapabilityStatus();
 		this.getPrivacyGuardOnPasswordCapabilityStatus();
 		this.statusChangedLocationPermission();
 		this.initCameraSection();
 		this.getOLEDPowerControlCapability();
+		setTimeout(() => {
+			this.initEyecaremodeSettings();
+			this.startEyeCareMonitor();
+		}, 5);
 	}
 
 	async initCameraSection() {
@@ -1016,6 +1009,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	public setPrivacyGuardToggleStatus(event) {
+		this.privacyGuardToggleStatus = event.switchValue || !this.privacyGuardToggleStatus;
 		this.displayService.setPrivacyGuardStatus(event.switchValue).then((response: boolean) => {
 			// console.log('set privacy guard status here ------****-------.>', response);
 		})

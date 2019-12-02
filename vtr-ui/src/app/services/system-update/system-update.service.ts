@@ -569,7 +569,7 @@ export class SystemUpdateService {
 					this.isInstallationCompleted = false;
 					return;
 				}
-			} else {
+			} else if (!this.isDownloadingCancel) { // cancel download will also cause empty UpdateTaskList, no need to get status
 				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
 				setTimeout(() => {
 					this.getScheduleUpdateStatus(true);

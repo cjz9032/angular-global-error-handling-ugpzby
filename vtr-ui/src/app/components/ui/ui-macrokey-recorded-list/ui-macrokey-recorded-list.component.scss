@@ -16,29 +16,10 @@
 }
 
 .col-6 {
-	min-width: 30rem;
-	@media #{$mediaquery_X6} {
-		min-width: 35rem;
-	}
-
-	@media #{$mediaquery_16} {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
-
-	@media #{$mediaquery_X3} {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
+	min-width: 22rem;
 }
 
 .select-wrapper {
-	@media #{$mediaquery_16} {
-		width: auto;
-	}
-	@media #{$mediaquery_X3} {
-		width: auto;
-	}
 }
 
 .record-list-wrapper {
@@ -112,49 +93,49 @@
 			position: relative;
 			svg {
 				vertical-align: text-bottom;
-				path {								
-					@media #{$black-on-white}{
+				path {
+					@media #{$black-on-white} {
 						fill: $dark;
-						}
-					@media #{$white-on-black}{
+					}
+					@media #{$white-on-black} {
 						fill: $light;
-						}					
-				}	
+					}
+				}
 			}
 			&:nth-child(odd) {
 				background-color: $gaming_hover;
-				@media #{$black-on-white}{
-					background-color:$high-contrast-grey;
-					}
-				@media #{$white-on-black}{
-					background-color:$high-contrast-grey;
-					}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-grey;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-grey;
+				}
 				border-radius: 0.3rem;
 				.key {
 					svg {
 						opacity: 0.8;
-						path {								
-							@media #{$black-on-white}{
+						path {
+							@media #{$black-on-white} {
 								fill: $dark;
-								}
-							@media #{$white-on-black}{
+							}
+							@media #{$white-on-black} {
 								fill: $light;
-								}					
-						}						
+							}
+						}
 					}
 				}
 			}
 			&:hover {
-				color: $gaming_light_blue;				
+				color: $gaming_light_blue;
 				svg {
 					path {
-						fill: $gaming_light_blue;	
-						@media #{$black-on-white}{
+						fill: $gaming_light_blue;
+						@media #{$black-on-white} {
 							fill: $dark;
-							}
-						@media #{$white-on-black}{
+						}
+						@media #{$white-on-black} {
 							fill: $light;
-							}					
+						}
 					}
 				}
 				.interval {

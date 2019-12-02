@@ -132,3 +132,10 @@
 		font-size: $svg_icon
 	}
 }
+:host-context(.top-row-key-block) {
+	.vtr-ui-rectangle-radio {
+		.label {
+			word-break: break-all!important;
+		}
+	}
+}

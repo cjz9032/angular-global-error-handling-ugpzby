@@ -338,7 +338,7 @@ export class DisplayService {
 
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
-			this.displayEyeCareMode.stopMonitor((response: boolean) => {
+			return this.displayEyeCareMode.stopMonitor((response: boolean) => {
 				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}

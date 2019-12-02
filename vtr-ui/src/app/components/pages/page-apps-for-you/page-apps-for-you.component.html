@@ -31,7 +31,7 @@
 						<div class="app-title">{{ appDetails.title }}</div>
 					</div>
 					<div class="col-6 btn-content" [ngSwitch]="installButtonStatus">
-						<div class="spinner-content app-spinner" *ngIf="appDetails.showStatus == statusEnum.INSTALLING">
+						<div class="spinner-content app-spinner" *ngIf="appDetails.showStatus == statusEnum.DOWNLOADING || appDetails.showStatus == statusEnum.INSTALLING">
 							<div class="spinner-border text-primary progress-spinner" role="status"></div>
 						</div>
 						<div class="btn-box">
@@ -40,6 +40,12 @@
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
 								metricsItem="btn.Install" [isFullWidth]="true"
 								[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
+							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.DOWNLOADING"
+								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
+								metricsItem="btn.Downloading"
+								[isDisabled]="true"
+								[isFullWidth]="true"
+								[label]="'appsForYou.appDetails.installButton.downloading' | translate"></vtr-ui-button>
 							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
 								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
 								metricsItem="btn.Installing"

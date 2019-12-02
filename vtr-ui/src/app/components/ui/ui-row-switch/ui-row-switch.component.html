@@ -6,9 +6,9 @@
 	}">
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
-		<div class="row m-0">
+		<div class="row m-0 d-flex justify-content-between">
 			<div class="vtr-col-pad"
-				[ngClass]="{'col-md-10 col-9': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
+				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),'col-md-7': (resetTextAsButton && !isSwitchVisible)}"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0"
@@ -16,7 +16,7 @@
 						tabindex="0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block">
+							<div class="left-icon-block top-pad-03">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
 									[icon]="leftIcon"></fa-icon>
@@ -62,7 +62,7 @@
 			</div>
 
 			<div class="vtr-row-switch"
-				[ngClass]="{'col-md-2 d-flex col-3 justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}">
+				[ngClass]="{'flex-grow-0 d-flex justify-content-end': (isSwitchVisible && !resetTextAsButton),'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}">
 				<!-- <div class="row"> -->
 				<div class="p-0"
 					[ngClass]="{'ml-auto': type!=='Camera'}"
@@ -85,6 +85,7 @@
 					*ngIf="isSwitchVisible">
 					<vtr-ui-switch-onoff [onOffSwitchId]="switchId"
 						[value]="isSwitchChecked"
+						[ariaLabel]="label"
 						[disabled]="disabled || isDisabled"
 						(toggle)="onOnOffChange($event)"
 						[showLoader]="showLoaderState"
@@ -92,7 +93,7 @@
 						[isSwitchDisable]="isDisabled"
 						[tabIndex]="0"
 						id="{{switchId}}-onOffButton"
-						attr.aria-label="{{switchId}}-onOffButton"></vtr-ui-switch-onoff>
+						></vtr-ui-switch-onoff>
 				</div>
 				<div *ngIf="!isSwitchVisible && linkText"
 					class="p-0 link-text">

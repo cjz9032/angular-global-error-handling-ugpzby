@@ -23,7 +23,7 @@ xdescribe('UiLightingProfileComponent', () => {
 	let fixture: ComponentFixture<UiLightingProfileComponent>;
 	gamingLightingServiceMock.isShellAvailable.and.returnValue(true);
 	deviceServiceMock.isShellAvailable.and.returnValue(true);
-
+	deviceServiceMock.getMachineInfo.and.returnValue(Promise.resolve(undefined));
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiLightingProfileComponent,

@@ -12,47 +12,62 @@
     <div class="row justify-content-center pb-3">
         <div class="pricing-table-container w-100">
             <!-- <a class="back" href="#">&lsaquo; <span>BACK</span></a> -->
-            <h3 class="page-heading pb-5">Placeholder for sign-up page</h3>
-            <p class="pl-2">Thanks for your interest but there is nothing to there's nothing to see here yet.</p>
+            <h3 class="page-heading pb-5">Choose your plan</h3>
+            <p>Select your plan that fits your needs and then hit continue.</p>
 
-            <section class="pricing-tables d-flex justify-content-between flex-wrap align-items-center my-5">
-                <div class="pricing-table-card popular">
-                    <div class="popular-text">MOST POPULAR</div>
-                    <div class="duration">3 Months</div>
-                    <div class="price pt-3">Free</div>
-                    <div class="value">Less than $0 per month</div>
-                    <div class="billing-duration">Billed Monthly</div>
-                    <button class="btn-rounded" (click)="selectBilledMonthly()">Select</button>
-                </div>
-                <div class="pricing-table-card">
-                    <div class="duration">1 Year</div>
-                    <div class="price pt-3">$19.99<small>per year</small></div>
-                    <div class="value">Less than $2 per month</div>
-                    <div class="billing-duration">Billed Anually</div>
-                    <button class="btn-rounded">Select</button>
-                </div>
-                <div class="pricing-table-card">
-                    <div class="duration">2 Years</div>
-                    <div class="price pt-3">$38.99<small>per year</small></div>
-                    <div class="value">Less than $2 per month</div>
-                    <div class="billing-duration">Billed Every 2 Years</div>
-                    <button class="btn-rounded">Select</button>
-                </div>
-                <div class="pricing-table-card">
-                    <div class="duration">3 Years</div>
-                    <div class="price pt-3">$54.99<small>per year</small></div>
-                    <div class="value">Less than $2 per month</div>
-                    <div class="billing-duration">Billed Every 3 Years</div>
-                    <button class="btn-rounded">Select</button>
-                </div>
-                <div class="pricing-table-card">
-                    <div class="duration">4 Year</div>
-                    <div class="price pt-3">$74.99<small>per year</small></div>
-                    <div class="value">Less than $2 per month</div>
-                    <div class="billing-duration">Billed Every 4 Years</div>
-                    <button class="btn-rounded">Select</button>
-                </div>
-            </section>
+            <ul class="pricing-tables d-flex justify-content-between flex-wrap align-items-center my-5">
+                <li>
+                    <input type="radio" name="priceOption" id="free">
+                    <label class="pricing-table-card" for="free">
+                        <div class="popular-text">MOST POPULAR</div>
+                        <div class="duration">3 Months</div>
+                        <div class="price pt-3">Free</div>
+                        <div class="value">Less than $0 per month</div>
+                        <div class="billing-duration">Billed Monthly</div>
+                        <button class="btn-rounded">Select</button>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="priceOption" id="1year">
+                    <label class="pricing-table-card" for="1year">
+                        <div class="duration">1 Year</div>
+                        <div class="price pt-3">$19.99<small>per year</small></div>
+                        <div class="value">Less than $2 per month</div>
+                        <div class="billing-duration">Billed Anually</div>
+                        <button class="btn-rounded">Select</button>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="priceOption" id="2years">
+                    <label class="pricing-table-card" for="2years">
+                        <div class="duration">2 Years</div>
+                        <div class="price pt-3">$38.99<small>per year</small></div>
+                        <div class="value">Less than $2 per month</div>
+                        <div class="billing-duration">Billed Every 2 Years</div>
+                        <button class="btn-rounded">Select</button>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="priceOption" id="3years">
+                    <label class="pricing-table-card" for="3years">
+                        <div class="duration">3 Years</div>
+                        <div class="price pt-3">$54.99<small>per year</small></div>
+                        <div class="value">Less than $2 per month</div>
+                        <div class="billing-duration">Billed Every 3 Years</div>
+                        <button class="btn-rounded">Select</button>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="priceOption" id="4years"> 
+                    <label class="pricing-table-card" for=4years>
+                        <div class="duration">4 Year</div>
+                        <div class="price pt-3">$74.99<small>per year</small></div>
+                        <div class="value">Less than $2 per month</div>
+                        <div class="billing-duration">Billed Every 4 Years</div>
+                        <button class="btn-rounded">Select</button>
+                    </label>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

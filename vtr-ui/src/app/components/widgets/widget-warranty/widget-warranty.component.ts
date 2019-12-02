@@ -10,6 +10,7 @@ export class WidgetWarrantyComponent implements OnInit {
 
 	@Input() item: any;
 	@Input() isConnected: boolean;
+	@Input() year: number;
 
 	status = {
 		title: [
@@ -27,9 +28,5 @@ export class WidgetWarrantyComponent implements OnInit {
 	constructor(private commonService: CommonService) { }
 
 	ngOnInit() {
-	}
-
-	getRoundYear(dayDiff: number) {
-		return dayDiff > 0 ? Math.round(dayDiff / 365) : 0;
 	}
 }

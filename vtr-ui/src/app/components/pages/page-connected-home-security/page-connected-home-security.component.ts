@@ -18,7 +18,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { LenovoIdDialogService } from 'src/app/services/dialog/lenovoIdDialog.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { HomeSecurityWelcome } from 'src/app/data-models/home-security/home-security-welcome.model';
@@ -75,9 +74,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
-		private lenovoIdDialogService: LenovoIdDialogService,
 		private cmsService: CMSService,
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture();
@@ -124,12 +122,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (cacheAccount) {
 			this.account = cacheAccount;
 			if (this.chs.account) {
-				this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
+				this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
 				this.account = new HomeSecurityAccount(this.chs, this.common);
 			}
 		}
 		if (this.chs.account && this.chs.account.state) {
-			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
+			this.common = new HomeSecurityCommon(this.chs, this.isOnline, this.dialogService);
 			this.account = new HomeSecurityAccount(this.chs, this.common);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 				state: this.account.state,
@@ -152,6 +150,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		}
 		const cacheLocation = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation);
 		if (this.wifiSecurity) {
+			this.wifiSecurity.getWifiSecurityState();
 			this.homeSecurityLocation = new HomeSecurityLocation(this.wifiSecurity);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityLocation, this.homeSecurityLocation);
 		} else if (cacheLocation) {
@@ -160,7 +159,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.chsEvent, (chs: ConnectedHomeSecurity) => {
 			if (chs.account) {
-				this.common = new HomeSecurityCommon(chs, this.isOnline, this.modalService, this.dialogService, this.lenovoIdDialogService);
+				this.common = new HomeSecurityCommon(chs, this.isOnline, this.dialogService);
 				this.account = new HomeSecurityAccount(chs, this.common);
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityAccount, {
 					state: this.account.state,
@@ -194,13 +193,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (location: boolean) => {
 			if (location) {
-				if (!this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
-					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
-					this.devicePosture.getDevicePosture()
-						.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						});
-				}
+				this.devicePosture.getDevicePosture();
 				this.commonService.setSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, true);
 			} else if (!location
 				&& this.commonService.getSessionStorageValue(SessionStorageKey.ChsLocationDialogNextShowFlag, false)
@@ -237,11 +230,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		if (this.chs) {
 			if (this.devicePosture && this.wifiSecurity) {
 				if (this.wifiSecurity.isLocationServiceOn) {
-					this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, true);
-					this.devicePosture.getDevicePosture()
-						.then(() => {
-							this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
-						});
+					this.devicePosture.getDevicePosture();
 				}
 			}
 			this.chs.refresh()
@@ -295,10 +284,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			this.notificationSubscription.unsubscribe();
 		}
 		if (this.devicePosture) {
-			if (this.commonService.getSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture)) {
-				this.commonService.setSessionStorageValue(SessionStorageKey.ChsIsGetDevicePosture, false);
-				this.devicePosture.cancelGetDevicePosture();
-			}
+			this.devicePosture.cancelGetDevicePosture();
 		}
 	}
 

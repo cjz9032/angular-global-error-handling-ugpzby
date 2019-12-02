@@ -1,7 +1,14 @@
 export interface StatusInfo {
-	status: number;
-	detail: string;
-	path: string;
-	title: string;
-	type: string;
+	status: string;
+	levelTitle: string;
+	levelDesc: string;
+	btnText: string;
+	icon: string;
+}
+
+export enum SecurityTypeConst {
+	NoProtection = 'no protection',
+	Basic = 'basic',
+	Intermediate = 'intermediate',
+	Advanced = 'advanced'
 }

@@ -6,6 +6,12 @@
 	background-color: $light;
 	position: relative;
 	// overflow: hidden;
+	.default-cursor {
+		cursor: default !important;
+		* {
+			cursor: default !important;
+		}
+	}
 
 	.container-fluid {
 		height: 100%;
@@ -31,7 +37,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -84,6 +90,8 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
+						font-weight: $weight_light;
 					}
 
 					.description {
@@ -95,7 +103,11 @@
 					.caption {
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-						cursor: pointer;
+						div {
+							cursor: pointer;
+						}
+						font-size: $fontsize_md;
+						font-weight: $weight_light;
 					}
 
 					.logo {
@@ -109,15 +121,7 @@
 							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						}
 					}
-
-					.default-cursor {
-						cursor: default;
-					}
 				}
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 		}
 	}
@@ -136,7 +140,7 @@
 				border-radius: $border_radius;
 				display: block;
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -215,7 +219,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -283,6 +287,9 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						div {
+							cursor: pointer;
+						}
 					}
 
 					.logo {
@@ -313,7 +320,7 @@
 
 			.card-image {
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				cursor: pointer;
@@ -327,10 +334,11 @@
 					position: relative;
 					z-index: 1;
 					height: 100%;
-					padding: 2rem;
-					// display: flex;
+					display: flex;
+					padding: 2.5rem;
 					// justify-content: flex-end;
-					align-items: center;
+					// align-items: center;
+
 					.title {
 						color: $light;
 						max-width: 60%;
@@ -340,10 +348,6 @@
 						margin-right: 10%;
 					}
 				}
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 			.highlight-offline {
 				.inner-content{
@@ -386,16 +390,12 @@
 			.card-image {
 				display: block;
 				background-size: cover;
-				background-position: 0 0%;
+				background-position: center center;
 				background-repeat: no-repeat;
 				text-decoration: none;
 				width: 100%;
 				height: 60%;
 				cursor: pointer;
-			}
-
-			.default-cursor {
-				cursor: default;
 			}
 
 			.content {
@@ -424,7 +424,7 @@
 					// position: absolute;
 					// margin-top: 2rem;
 					// left: 4rem;
-					font-size: 1.4rem;
+					font-size: $fontsize_xs;
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
@@ -454,7 +454,7 @@
 		.image {
 			// height: 60%;
 			background-size: cover;
-			background-position: 50% 50%;
+			background-position: center center;
 			background-repeat: no-repeat;
 			border-radius: $border_radius;
 
@@ -473,14 +473,14 @@
 		}
 
 		.content {
-			padding: 3rem 4rem;
+			//padding: 3rem 4rem;
 			cursor: pointer;
 
 			.title {
 				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $sub_header;
+				font-size: $fontsize_xl;
 				line-height: 4.6rem;
 				cursor: pointer;
 			}
@@ -550,9 +550,9 @@
 
 		.title {
 			color: $main_dark;
-			font-size: 2.5rem;
+			font-size: $fontsize_xl;
 			line-height: 1.1em;
-			font-weight: $weight_bold;
+			font-weight: $weight_light;
 
 		/*	@media #{$mediaquery_X4} {
 				font-size: 2rem;
@@ -641,6 +641,7 @@
 
 .offline-icon {
 	font-size: 10rem;
+	border-radius: $border_radius;
 
 	@media #{$mediaquery_X41} {
 		font-size: 16rem;

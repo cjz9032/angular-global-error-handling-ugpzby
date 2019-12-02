@@ -61,7 +61,6 @@ export class VantageShellService {
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
-				Phoenix.Features.BetaUser,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy
 			]);
@@ -468,7 +467,7 @@ export class VantageShellService {
 							data.OnlineStatus = that.commonService.isOnline ? 1 : 0;
 						}
 
-						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaUser);
+						const isBeta = that.commonService.getLocalStorageValue(LocalStorageKey.BetaTag, false);
 						if (isBeta) {
 							data.IsBetaUser = true;
 						}
@@ -779,6 +778,51 @@ export class VantageShellService {
 				},
 				cancelGetWifiSecurityState() { }
 			},
+			windowsActivation: {
+				mitt: null,
+				status: 'disable',
+				windowsActivationProtocol: '',
+				launch() {
+					return Promise.resolve(true);
+				},
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			uac: {
+				mitt: null,
+				status: 'disable',
+				uacProtocol: '',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
+			hardDiskEncryption: {
+				mitt: null,
+				status: 'disable',
+				hdeProtocol: '',
+				on(type, handler) {
+					return this;
+				},
+				off() {
+					return this;
+				},
+				refresh() {
+					return Promise.resolve();
+				}
+			},
 			setScoreRegistry() {
 				return Promise.resolve(true);
 			},
@@ -917,7 +961,9 @@ export class VantageShellService {
 		};
 
 		dolby.getDolbyMode = this.getPromise(obj);
-
+		dolby.setDolbyMode = this.getPromise(true);
+		dolby.stopMonitor = this.getPromise(true);
+		dolby.startMonitor = this.getPromise(true);
 		return dolby;
 	}
 
@@ -944,6 +990,14 @@ export class VantageShellService {
 		};
 		microphone.getSupportedModes = this.getPromise(micSupportedModes);
 		microphone.getMicrophoneSettings = this.getPromise(micSettings);
+		microphone.setMicrophoneVolume = this.getPromise(true);
+		microphone.setMicophoneMute = this.getPromise(true);
+		microphone.setMicrophoneAutoOptimization=this.getPromise(true);
+		microphone.setMicrophoneKeyboardNoiseSuppression=this.getPromise(true);
+		microphone.setMicrophoneAEC=this.getPromise(true);
+		microphone.setMicrophoneOpitimaztion=this.getPromise(true);
+		microphone.startMonitor=this.getPromise(true);
+		microphone.stopMonitor=this.getPromise(true);
 
 		return microphone;
 	}
@@ -953,7 +1007,11 @@ export class VantageShellService {
 	 */
 	public getSmartSettings(): any {
 		const smartSettings: any = {
-			absFeature: { getDolbyFeatureStatus: this.getPromise({ available: true, status: false }) }
+			absFeature: { 
+				getDolbyFeatureStatus: this.getPromise({ available: true, status: false }),
+				setDolbyFeatureStatus: this.getPromise(true)
+							
+		}
 		};
 
 		return smartSettings;
@@ -1021,6 +1079,7 @@ export class VantageShellService {
 			}
 		};
 		battery.getBatteryInformation = this.getPromise(battery);
+		battery.startBatteryMonitor=this.getPromise(true);
 		battery.stopBatteryMonitor = this.getPromise(true);
 		return battery;
 	}
@@ -1052,24 +1111,34 @@ export class VantageShellService {
 		};
 		const displayEyeCareMode: any = {
 			getDaytimeColorTemperature: this.getPromise(dayTimeObj),
+			setDaytimeColorTemperature: this.getPromise(true),
+			resetDaytimeColorTemperature: this.getPromise(true),
 			getDisplayColortemperature: this.getPromise(eyeCareObj),
+			setDisplayColortemperature: this.getPromise(true),
 			getEyeCareModeState: this.getPromise(obj),
+			getEyeCareAutoModeState: this.getPromise(obj),
 			initEyecaremodeSettings: this.getPromise(true),
 			startMonitor: this.getPromise(true),
 			stopMonitor: this.getPromise(true),
+			setEyeCareMode: this.getPromise(true),
+			setEyeCareAutoMode: this.getPromise(true),
+			resetEyeCareMode: this.getPromise(true),
 			statusChangedLocationPermission: this.getPromise(true)
 		};
-
 		return displayEyeCareMode;
 	}
-
 	/**
 	 * returns Privacy Guard object from VantageShellService of JS Bridge
 	 */
 	public getPrivacyGuardObject(): any {
 		const privacyGuardSettings: any = {
 			getPrivacyGuardCapability: this.getPromise(true),
-			getPrivacyGuardOnPasswordCapability: this.getPromise(true)
+			getPrivacyGuardOnPasswordCapability: this.getPromise(true),
+			getPrivacyGuardStatus: this.getPromise(true),
+			getPrivacyGuardOnPasswordStatus: this.getPromise(true),
+			setPrivacyGuardStatus: this.getPromise(true),
+			setPrivacyGuardOnPasswordStatus: this.getPromise(true),
+
 		};
 
 		return privacyGuardSettings;
@@ -1081,7 +1150,18 @@ export class VantageShellService {
 	public getCameraPrivacy(): any {
 		const cameraPrivacyStatus: any = {
 			getCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
-			startMonitor: this.getPromise(true)
+			setCameraPrivacyStatus: this.getPromise(true),
+			startMonitor: this.getPromise(true),
+			stopMonitor: this.getPromise(true),
+		};
+		return cameraPrivacyStatus;
+	}
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public setCameraPrivacy(): any {
+		const cameraPrivacyStatus: any = {
+			setCameraPrivacyStatus: this.getPromise({ available: true, status: true }),
 		};
 		return cameraPrivacyStatus;
 	}
@@ -1090,8 +1170,15 @@ export class VantageShellService {
 	 */
 	public getCameraSettings(): any {
 		const cameraSettings: any = {
+			getCameraSettings: this.getPromise(true),
+			setCameraBrightness: this.getPromise(true),
+			setCameraContrast: this.getPromise(true),
+			setCameraAutoExposure: this.getPromise(true),
+			setCameraExposure: this.getPromise(true),
+			setCameraAutoFocus: this.getPromise(true),
+			resetCameraSettings: this.getPromise(true),
 			startMonitor: this.getPromise(true),
-			getCameraSettings: this.getPromise(true)
+			stopMonitor: this.getPromise(true),
 		};
 
 		return cameraSettings;
@@ -1200,6 +1287,7 @@ export class VantageShellService {
 	public calcDeviceFilter(filter) {
 		return Promise.resolve({
 			ConnectedHomeSecurity: true,
+			PrivacyTab: 'enabled',
 			FeatureSearch: null,
 			TileBSource: 'UPE'
 		});
@@ -1366,7 +1454,10 @@ export class VantageShellService {
 			errorCode: 0,
 			supportedModes: ['Blur', 'Comic', 'Sketch']
 		};
-		const cameraBlur: any = { getCameraBlurSettings: this.getPromise(obj) };
+		const cameraBlur: any = { 
+			getCameraBlurSettings: this.getPromise(obj) ,
+			setCameraBlurSettings: this.getPromise(obj) 
+		};
 		return cameraBlur;
 	}
 
@@ -1525,7 +1616,12 @@ export class VantageShellService {
 			GetBrowsingTime: this.getPromise(30),
 			SetWalkingMode: this.getPromise(true),
 			setBrowsingMode: this.getPromise(true),
-			SetBrowsingTime: this.getPromise(true)
+			SetBrowsingTime: this.getPromise(true),
+			GetHPDLeaveSensitivityVisibility: this.getPromise(true),
+			GetHPDLeaveSensitivity: this.getPromise(true),
+			SetHPDLeaveSensitivitySetting: this.getPromise(true),
+			getLockFacialRecognitionSettings: this.getPromise(true),
+			setLockFacialRecognitionSettings: this.getPromise(true)
 		};
 		return intelligentSensing;
 	}
@@ -1969,7 +2065,16 @@ export class VantageShellService {
 
 	/** returns OledSettings object from VantageShellService of JS Bridge */
 	public getOledSettings(): any {
-		const oledSettings = { getOLEDPowerControlCapability: this.getPromise(true) };
+		const oledSettings = {
+			getOLEDPowerControlCapability: this.getPromise(true),
+			getTaskbarDimmerSetting: this.getPromise(true),
+			getBackgroundDimmerSetting: this.getPromise(true),
+			getDisplayDimmerSetting: this.getPromise(true),
+			setTaskbarDimmerSetting: this.getPromise(true),
+			setBackgroundDimmerSetting: this.getPromise(true),
+			setDisplayDimmerSetting: this.getPromise(true),
+
+		};
 
 		return oledSettings;
 	}
@@ -2045,7 +2150,8 @@ export class VantageShellService {
 
 	public getSuperResolution(): any {
 		const inputControlLinks: any = {
-			getSuperResolutionStatus: this.getPromise({ available: true, status: false })
+			getSuperResolutionStatus: this.getPromise({ available: true, status: false }),
+			setSuperResolutionStatus: this.getPromise(true)
 		};
 
 		return inputControlLinks;
