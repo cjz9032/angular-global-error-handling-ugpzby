@@ -113,6 +113,7 @@
 						&&isCommomItem(item)
 						&&showItem(item)"
 						class="nav-item dropdown"
+						(mouseleave)="menudropdown.close()"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a ngbDropdownToggle
 							class="nav-link dropdown-toggle {{item.id}}"
@@ -132,7 +133,6 @@
 							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
-							(mouseleave) = "menudropdown.close()"
 							(keyup.enter)="onMenuItemClick(item)"
 							role="menuitem"
 							*ngIf="item.label | translate">
