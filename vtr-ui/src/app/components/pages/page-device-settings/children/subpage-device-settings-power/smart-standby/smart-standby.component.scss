@@ -102,7 +102,15 @@ ul.list-group {
 	margin-top: 3rem;
 	cursor: pointer;
 }
-
+.disabled {
+	margin-left: 1rem;
+	font-size: $body;
+	font-weight: $weight_light;
+	color: black;
+	text-decoration: none;
+	margin-top: 3rem;
+	cursor: pointer;
+}
 .container-border {
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;

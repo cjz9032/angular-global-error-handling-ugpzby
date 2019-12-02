@@ -324,9 +324,13 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.manualmodeBtnVal = manualMode;
 	}
 	public showUsageGraph() {
-		this.modalService.open(ModalSmartStandByComponent, { backdrop: 'static',
-		centered: true,
-		windowClass: 'smart-standBy-modal'});
+		if (this.smartStandby.isEnabled) {
+			this.modalService.open(ModalSmartStandByComponent, {
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'smart-standBy-modal'
+			});
+		}
 	}
 
 	ngOnDestroy() {
