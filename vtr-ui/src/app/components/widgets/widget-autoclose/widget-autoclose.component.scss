@@ -61,12 +61,9 @@
 				font-size: $fontsize_xs;
 				margin-top: 0.5rem;
 				text-align: center;
-				height: 5rem;
 				overflow: hidden;
+				white-space: nowrap;
 				text-overflow: ellipsis;
-				@media #{$breakpoint_xl} {
-					white-space: nowrap;
-				}
 			}
 			.remove-app {
 				opacity: 0;

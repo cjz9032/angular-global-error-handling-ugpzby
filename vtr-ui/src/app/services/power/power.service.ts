@@ -646,6 +646,12 @@ export class PowerService {
 		}
 		return undefined;
 	}
+	public getIsPresenceDataSufficient(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getIsPresenceDataSufficient();
+		}
+		return undefined;
+	}
 
 	public getGaugeResetCapability(): Promise<boolean> {
 		console.log('Battery Gauge Reset Capability');
