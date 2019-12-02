@@ -41,6 +41,7 @@ import { StatComponent } from './main-layout/privacy-dashboard-list/stat.compone
 import { SupportPopupComponent } from './main-layout/support-popup/support-popup.component';
 import { SupportBannerComponent } from './main-layout/support-banner/support-banner.component';
 import { SupportWidgetComponent } from './main-layout/sidebar/support-widget/support-widget.component';
+import { ExitWidgetComponent } from './main-layout/sidebar/exit-widget/exit-widget.component';
 
 @NgModule({
 	imports: [
@@ -79,6 +80,7 @@ import { SupportWidgetComponent } from './main-layout/sidebar/support-widget/sup
 		ArticleDescriptionComponent,
 		TrialExpiredWidgetComponent,
 		OfflineWidgetComponent,
+		ExitWidgetComponent,
 		VideoWidgetComponent,
 		VideoComponent,
 		StatComponent,

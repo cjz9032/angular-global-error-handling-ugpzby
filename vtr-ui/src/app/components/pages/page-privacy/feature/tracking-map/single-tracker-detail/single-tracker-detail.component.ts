@@ -13,6 +13,7 @@ export class SingleTrackerDetailComponent {
 	@Input() trackingMapSingleData: SingleTrackersInfo;
 	@Input() isTrackersBlocked: boolean;
 	@Input() isFigleafReadyForCommunication: boolean;
+	@Input() isFigleafInExit: boolean;
 
 	defaultIcon = DEFAULT_ICON;
 

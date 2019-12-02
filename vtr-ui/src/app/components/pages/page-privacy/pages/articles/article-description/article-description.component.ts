@@ -7,6 +7,7 @@ import { AppStatusesService } from '../../../core/services/app-statuses/app-stat
 import { AppStatuses } from '../../../userDataStatuses';
 import { Router } from '@angular/router';
 import { RoutersName } from '../../../privacy-routing-name';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -28,6 +29,8 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 		map((globalStatus) => globalStatus.appState)
 	);
 
+	isFigleafInExit$ = this.communicationWithFigleafService.isFigleafInExit$;
+
 	isFigleafInstalled$ = this.appStatusesService.isAppStatusesEqual([AppStatuses.figLeafInstalled]);
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
@@ -40,6 +43,7 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 		private vantageCommunicationService: VantageCommunicationService,
 		private appStatusesService: AppStatusesService,
 		private figleafOverviewService: FigleafOverviewService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private router: Router
 	) {}
 

@@ -2,7 +2,7 @@
 @import "fonts";
 @import "mixins";
 
-$topIndent: -5.6rem;
+$topIndent: -4rem;
 
 %common-block-wrapper {
 	background: #fff;
@@ -190,12 +190,14 @@ $topIndent: -5.6rem;
 		}
 
 		&:hover {
+			color: #FFFFFF;
 			&:before {
 				background-image: url("/assets/icons/privacy-tab/blue-arrow-right-long-hover.svg");
 			}
 		}
 
 		&:active {
+			color: #FFFFFF;
 			&:before {
 				background-image: url("/assets/icons/privacy-tab/blue-arrow-right-long-active.svg");
 			}
@@ -208,6 +210,18 @@ $topIndent: -5.6rem;
 			width: 1.4rem;
 			height: 1.4rem;
 			background-image: url("src/assets/icons/privacy-tab/white-arrow-right-long.svg");
+		}
+
+		&:hover {
+			&:before {
+				background-image: url("/assets/icons/privacy-tab/white-arrow-right-long.svg");
+			}
+		}
+
+		&:active {
+			&:before {
+				background-image: url("/assets/icons/privacy-tab/white-arrow-right-long.svg");
+			}
 		}
 	}
 
