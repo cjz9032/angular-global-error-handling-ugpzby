@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-layout',
@@ -14,7 +15,7 @@ export class PageLayoutComponent implements OnInit {
 	@Input() backLinkText: string;
 	@Input() menuItems: any[];
 
-	constructor() { }
+	constructor(public deviceService: DeviceService) { }
 
 	ngOnInit() {
 	}

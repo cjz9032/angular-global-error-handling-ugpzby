@@ -17,8 +17,24 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 px-40 pb-20">
+				<div class="col-sm-12 px-40 pb-20" *ngIf="!deviceService.showDemo">
 					<vtr-widget-carousel [data]="heroBannerItems"
+						order="1"
+						source="title"
+						[interval]="5000"
+						cardTitle="title"
+						pauseOnHover="true"
+						image="url"
+						[showNavigationArrows]="true"
+						[showNavigationIndicators]="true"
+						[carouselId]="'dashboard-lnk-hero-banner'"
+						id="dashboard-lnk-hero-banner"
+						aria-label="dashboard-lnk-hero-banner"
+						link="thumbnailUrl">
+					</vtr-widget-carousel>
+				</div>
+				<div class="col-sm-12 px-40 pb-20" *ngIf="deviceService.showDemo">
+					<vtr-widget-carousel [data]="heroBannerDemoItems"
 						order="1"
 						source="title"
 						[interval]="5000"
