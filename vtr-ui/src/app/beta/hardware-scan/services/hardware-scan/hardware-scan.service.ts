@@ -14,7 +14,6 @@ import { first } from 'rxjs/operators';
 export class HardwareScanService {
 
 	private hardwareScanBridge: any;
-	available: boolean;
 	private modulesRetrieved: any; // modules retrieve from get items [object from ItemToScanResponse]
 	private isLoadingModulesDone = false;
 	private isScanDone = false;
@@ -49,7 +48,6 @@ export class HardwareScanService {
 	private enableViewResults = false;
 	private lastResponse: any;
 	private workDone = new Subject<boolean>();
-	private hardwareScanAvailable: boolean;
 	private culture: any;
 	private itemsToScanResponse: any = undefined;
 	private ALL_MODULES = 2;
@@ -57,6 +55,7 @@ export class HardwareScanService {
 	private showComponentList: boolean = false;
 	private previousResultsResponse: any = undefined;
 	private hardwareModulesLoaded = new Subject<boolean>();
+	private pluginInfoPromise: any = undefined;
 
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
@@ -69,16 +68,28 @@ export class HardwareScanService {
 
 	constructor(shellService: VantageShellService, private commonService: CommonService, private ngZone: NgZone, private translate: TranslateService) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
-		this.hardwareScanAvailable = this.isAvailable();
 
-		// Retrive the last Scan's results just once during
-		// the service initialization
+		// Starts all priority requests as soon as possible when this service starts.
+		this.doPriorityRequests();
+	}
+
+	/**
+	 * This method sends the requests of all information which should be available
+	 * when Hardware Scan starts.
+	 * [NOTICE] You mustn't send more than one request which uses the CLI here, since it doesn't handle
+	 *          concurrent requests.
+	 */
+	private doPriorityRequests() {
+		// Retrive the Plugin's information (it does not use the CLI)
+		if (this.pluginInfoPromise == undefined) {
+			this.pluginInfoPromise = this.getPluginInfo();
+		}
+		// Retrive the last Scan's results (it does not use the CLI)
 		if (this.previousResultsResponse == undefined) {
 			this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
 		}
 
-		// Retrive the hardware component list just once during
-		// the service initialization
+		// Retrive the hardware component list (it does use the CLI)
 		if (this.itemsToScanResponse == undefined) {
 			this.culture = window.navigator.languages[0];
 			this.reloadItemsToScan(false);
@@ -289,14 +300,6 @@ export class HardwareScanService {
 		this.hasDevicesToRecover = status;
 	}
 
-	public getHardwareScanAvailable() {
-		return this.hardwareScanAvailable;
-	}
-
-	public setHardwareScanAvailable(status: boolean) {
-		this.hardwareScanAvailable = status;
-	}
-
 	public deleteScan(payload) {
 		console.log('[Start] DeleteScan (hwscanService)!');
 		if (this.hardwareScanBridge) {
@@ -376,21 +379,21 @@ export class HardwareScanService {
 		return undefined;
 	}
 
-	public isHardwareScanAvailable() {
-		return this.hardwareScanAvailable;
-	}
+	public async isAvailable() {
+		let hardwareScanAvailable = false;
 
-	public isAvailable() {
-		return this.getPluginInfo()
+		await this.pluginInfoPromise
 			.then((hwscanPluginInfo: any) => {
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
-				this.hardwareScanAvailable = hwscanPluginInfo !== undefined &&
-					hwscanPluginInfo.LegacyPlugin === false &&
-					hwscanPluginInfo.PluginVersion !== '1.0.39'; // This version is not compatible with current version
+				hardwareScanAvailable = hwscanPluginInfo !== undefined &&
+					   hwscanPluginInfo.LegacyPlugin === false &&
+					   hwscanPluginInfo.PluginVersion !== "1.0.39"; // This version is not compatible with current version
 			})
 			.catch(() => {
-				this.hardwareScanAvailable = false;
+				hardwareScanAvailable = false;
 			});
+
+		return hardwareScanAvailable;
 	}
 
 	public getItemsToScan(scanType: number, culture: string) {
@@ -514,13 +517,13 @@ export class HardwareScanService {
 			return this.hardwareScanBridge.cancelScan((response: any) => {
 				console.log('[cancelScanExecution][Progress]: ', response);
 			})
-				.then((response) => {
-					this.cancelRequested = true;
-					this.clearLastResponse();
-				})
-				.finally(() => {
-					this.cleanUp();
-				});
+			.then((response) => {
+				this.cancelRequested = true;
+				this.clearLastResponse();
+			})
+			.finally(() => {
+				this.cleanUp();
+			});
 		}
 		return undefined;
 	}
@@ -789,7 +792,7 @@ export class HardwareScanService {
 					lang: culture,
 					loopCount: 0,
 					loopRepeatMinutes: 0,
-					testRequestList,
+					testRequestList: testRequestList,
 					metaData: undefined,
 					moduleId: categoryInfo.id,
 				});

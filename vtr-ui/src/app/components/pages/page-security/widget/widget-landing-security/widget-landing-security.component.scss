@@ -1,0 +1,94 @@
+@import "../../../../../app.theme.scss";
+
+.vtr-widget-landing-security {
+  .icomoon {
+    font-size: 2rem;
+    color: blue;
+    margin-right: 1.5rem;
+  }
+
+  .landing-content {
+    vtr-ui-button {
+      ::ng-deep .vtr-ui-button {
+        margin: 1.5rem 0 1rem 0;
+        .button-box {
+          padding-left: 0;
+          button {
+            min-height: 2.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .white-button {
+    ::ng-deep {
+      .button-box {
+        .button {
+          border: 1px solid #667481 !important;
+          color: #34495e !important;
+          background: linear-gradient(90deg, #f5f7f8 0%, #ffffff 100%) !important;
+        }
+      }
+    }
+  }
+
+  .badge {
+    height: 1.5rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+    justify-self: end;
+  }
+
+  .status-enabled {
+    background: #008035;
+  }
+
+  .status-haveOwn {
+    background: #424b6c;
+  }
+
+  .status-loading {
+    background: #424b6c;
+  }
+
+  .status-disabled {
+    color: #667481;
+  }
+
+  .custom-control-label {
+    cursor: pointer;
+
+    &::before {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    &::after {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+
+  label {
+    padding: 0.2rem 0 0 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .item:last-of-type {
+    hr {
+      display: none;
+    }
+  }
+
+  .landing-content {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
