@@ -960,7 +960,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.powerService.setVantageToolBarStatus(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setVantageToolBarStatus.then', event.switchValue);
-						this.getVantageToolBarStatus();
+						setTimeout(() => {
+							this.getVantageToolBarStatus();
+						}, 80);
 					}).catch(error => {
 						this.logger.error('setVantageToolBarStatus', error.message);
 						return EMPTY;
