@@ -11,29 +11,22 @@ import {
 import {
 	TranslateService
 } from '@ngx-translate/core';
-import { StatusInfo } from './status-info.model';
 
-export class WindowsHelloLandingViewModel {
-	statusList: Array<StatusInfo>;
-	type = 'security';
-	imgUrl = '../../../../assets/images/windows-logo.svg';
-
+export class FingerPrintLandingViewModel {
 	whStatus = {
-		status: 4,
-		detail: '', // active or inactive
-		path: 'security/windows-hello',
-		title: '',
-		type: 'security',
-		id: 'sa-ov-link-windowsHello'
-	};
-	subject = {
-		status: 2,
-		title: '',
-		type: 'security',
+		status: 'loading',
+		icon: 'landing-finger',
+		title: 'security.landing.fingerprint',
+		content: 'security.landing.fingerprintContent',
+		buttonLabel: 'security.landing.visitFingerprint',
+		buttonHref: 'ms-settings:signinoptions',
+		noneCheck: true,
+		id: 'sa-ov-link-windowsHello',
+		detail: '',
 	};
 	translateString: any;
 	constructor(
-		public translate: TranslateService,
+		translate: TranslateService,
 		whModel: phoenix.WindowsHello,
 		public commonService: CommonService,
 	) {
@@ -43,24 +36,25 @@ export class WindowsHelloLandingViewModel {
 
 		translate.stream([
 			'common.securityAdvisor.loading',
-			'common.securityAdvisor.windowsHello',
 			'common.securityAdvisor.registered',
 			'common.securityAdvisor.notRegistered',
-			'security.landing.fingerprint'
+			'security.landing.fingerprint',
+			'security.landing.fingerprintContent',
+			'security.landing.visitFingerprint',
 		]).subscribe((res: any) => {
 			this.translateString = res;
 			if (!this.whStatus.detail) {
 				this.whStatus.detail = res['common.securityAdvisor.loading'];
 			}
 			this.whStatus.title = res['security.landing.fingerprint'];
-			this.subject.title = res['common.securityAdvisor.windowsHello'];
-			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
+			this.whStatus.content = res['security.landing.fingerprintContent'];
+			this.whStatus.buttonLabel = res['security.landing.visitFingerprint'];
+			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
 			if (whModel && whModel.fingerPrintStatus) {
 				this.setWhStatus(whModel.fingerPrintStatus);
 			} else if (cacheStatus) {
-				this.setWhStatus(whModel.fingerPrintStatus);
+				this.setWhStatus(cacheStatus);
 			}
-			this.statusList = new Array(this.whStatus);
 		});
 	}
 
@@ -69,8 +63,7 @@ export class WindowsHelloLandingViewModel {
 			return;
 		}
 		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'registered' : 'notRegistered'}`];
-		this.whStatus.status = finger === 'active' ? 0 : 1;
-		this.subject.status = finger === 'active' ? 0 : 1;
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.subject.status === 0 ? 'enabled' : 'disabled');
+		this.whStatus.status = finger === 'active' ? 'enabled' : 'disabled';
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, this.whStatus.status);
 	}
 }
