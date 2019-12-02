@@ -602,18 +602,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onResetTemparature($event: any) {
 		try {
-			this.logger.debug('temparature reset in display', $event);
+			this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: before api call', $event);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.resetEyeCareMode().then((resetData: any) => {
-						this.logger.debug('temparature reset data', resetData);
+						this.logger.debug('SubpageDeviceSettingsDisplayComponent.onResetTemparature: on api reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
-						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
-						this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
-						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
-						this.logger.debug('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
-						// this.getDisplayColorTemperature();
-
+						this.eyeCareModeStatus.status = resetData.eyecaremodeState;
+						this.enableSlider = resetData.eyecaremodeState;
+						this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 						this.eyeCareModeCache.toggleStatus = this.eyeCareModeStatus.status;
 						this.eyeCareModeCache.enableSlider = this.enableSlider;
 						this.eyeCareModeCache.eyeCareDataSource = this.eyeCareDataSource;
