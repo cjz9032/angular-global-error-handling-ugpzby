@@ -601,10 +601,10 @@
                 "title": "Mise à jour du système",
                 "notFound": "Mise à jour du système introuvable",
                 "detail": {
-                    "uptoDate": "Logiciel à jour",
-                    "updatedOn": "mis à jour le",
-                    "outdated": "Logiciel obsolète",
-                    "neverRanUpdate": "n'a jamais été mis à jour"
+                    "uptoDate": "Mises à jour vérifiées ",
+					"updatedOn": "vérification effectuée le ",
+					"outdated": "Mises à jour non vérifiées récemment ",
+					"neverRanUpdate": "mises à jour jamais vérifiées"
                 }
             },
             "extendedWarranty": "Garantie prolongée",

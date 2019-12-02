@@ -601,10 +601,10 @@
                 "title": "Actualizare sistem",
                 "notFound": "Actualizarea sistemului a fost găsită",
                 "detail": {
-                    "uptoDate": "Software actualizat",
-                    "updatedOn": "actualizat pe",
-                    "outdated": "Software învechit",
-                    "neverRanUpdate": "nu a fost actualizat niciodată"
+                    "uptoDate": "S-a verificat dacă există actualizări ",
+					"updatedOn": "s-a verificat la ",
+					"outdated": "Nu s-a verificat recent dacă există actualizări ",
+					"neverRanUpdate": "nu s-a verificat niciodată dacă există actualizări"
                 }
             },
             "extendedWarranty": "Extindere garanție",

@@ -601,10 +601,10 @@
                 "title": "システム アップデート",
                 "notFound": "システム更新が見つかりません",
                 "detail": {
-                    "uptoDate": "ソフトウェアは最新です",
-                    "updatedOn": "更新日",
-                    "outdated": "古いソフトウェア",
-                    "neverRanUpdate": "更新を実行したことがありません"
+                    "uptoDate": "更新を確認しました",
+					"updatedOn": "確認日",
+					"outdated": "更新を最近確認していません",
+					"neverRanUpdate": "更新を確認したことはありません"
                 }
             },
             "extendedWarranty": "保証の延長",

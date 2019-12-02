@@ -601,10 +601,10 @@
                 "title": "Systeemupdate",
                 "notFound": "Systeemupdate niet gevonden",
                 "detail": {
-                    "uptoDate": "Software bijgewerkt",
-                    "updatedOn": "bijgewerkt op",
-                    "outdated": "Software verouderd",
-                    "neverRanUpdate": "update nooit uitgevoerd"
+                    "uptoDate": "Updates gecontroleerd ",
+					"updatedOn": "gecontroleerd op ",
+					"outdated": "Updates niet recent gecontroleerd ",
+					"neverRanUpdate": "updates nooit gecontroleerd"
                 }
             },
             "extendedWarranty": "Garantie uitbreiden",

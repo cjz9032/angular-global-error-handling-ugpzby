@@ -601,10 +601,10 @@
                 "title": "Rendszerfrissítés",
                 "notFound": "A rendszerfrissítés nem található",
                 "detail": {
-                    "uptoDate": "A szoftverek naprakészek",
-                    "updatedOn": "frissítve",
-                    "outdated": "A szoftverek elavultak",
-                    "neverRanUpdate": "még nem lett frissítve"
+                    "uptoDate": "Frissítés keresése ",
+					"updatedOn": "keresés ekkor: ",
+					"outdated": "Nem keresett frissítéseket mostanában ",
+					"neverRanUpdate": "soha nem keresett frissítéseket"
                 }
             },
             "extendedWarranty": "Jótállás kiterjesztése",

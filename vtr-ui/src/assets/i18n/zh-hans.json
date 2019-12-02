@@ -601,10 +601,10 @@
                 "title": "系统更新",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件已更新",
-                    "updatedOn": "更新时间",
-                    "outdated": "软件已过时",
-                    "neverRanUpdate": "从未运行更新"
+                    "uptoDate": "已检查更新",
+					"updatedOn": "检查时间",
+					"outdated": "最近未检查更新",
+					"neverRanUpdate": "从未检查过更新"
                 }
             },
             "extendedWarranty": "延长保修",

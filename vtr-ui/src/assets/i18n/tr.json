@@ -601,10 +601,10 @@
                 "title": "Sistem Güncellemesi",
                 "notFound": "Sistem güncellemesi bulunamadı",
                 "detail": {
-                    "uptoDate": "Yazılım güncel",
-                    "updatedOn": "güncelleme",
-                    "outdated": "Yazılım güncel değil",
-                    "neverRanUpdate": "hiç güncelleme çalıştırılmadı"
+                    "uptoDate": "Güncellemeler denetlendi ",
+					"updatedOn": "denetlenme tarihi ",
+					"outdated": "Güncellemeler yakın zamanda denetlenmedi ",
+					"neverRanUpdate": "güncellemeler hiç denetlenmedi"
                 }
             },
             "extendedWarranty": "Garantiyi uzat",

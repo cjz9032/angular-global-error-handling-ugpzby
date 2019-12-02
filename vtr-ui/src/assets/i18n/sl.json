@@ -601,10 +601,10 @@
                 "title": "Posodobitev sistema",
                 "notFound": "Posodobitve sistema ni bilo mogoče najti",
                 "detail": {
-                    "uptoDate": "Programska oprema je posodobljena",
-                    "updatedOn": "posodobljeno dne",
-                    "outdated": "Programska oprema je zastarela",
-                    "neverRanUpdate": "nikoli izvedena posodobitev"
+                    "uptoDate": "Posodobitve preverjene ",
+					"updatedOn": "preverjene ",
+					"outdated": "Posodobitve v zadnjem času niso bile preverjene ",
+					"neverRanUpdate": "posodobitve niso bile nikoli preverjene"
                 }
             },
             "extendedWarranty": "Podaljšanje garancije",

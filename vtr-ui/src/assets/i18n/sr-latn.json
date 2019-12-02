@@ -601,10 +601,10 @@
                 "title": "Ažuriranje sistema",
                 "notFound": "Ažuriranje sistema nije pronađeno",
                 "detail": {
-                    "uptoDate": "Softver je ažuran",
-                    "updatedOn": "ažurirano",
-                    "outdated": "Softver je zastareo",
-                    "neverRanUpdate": "nikada nije pokrenuto ažuriranje"
+                    "uptoDate": "Ispravke su proverene ",
+					"updatedOn": "provereno ",
+					"outdated": "Ispravke nisu nedavno proverene ",
+					"neverRanUpdate": "ispravke nikada nisu proverene"
                 }
             },
             "extendedWarranty": "Proširenje garancije",

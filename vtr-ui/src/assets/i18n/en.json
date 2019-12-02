@@ -601,10 +601,10 @@
 				"title": "System Update",
 				"notFound": "System Update not found",
 				"detail": {
-					"uptoDate": "Software up to date ",
-					"updatedOn": "updated on ",
-					"outdated": "Software outdated ",
-					"neverRanUpdate": "never ran update"
+					"uptoDate": "Updates checked ",
+					"updatedOn": "checked on ",
+					"outdated": "Updates not checked recently ",
+					"neverRanUpdate": "updates never checked"
 				}
 			},
 			"extendedWarranty": "Extend warranty",

@@ -601,10 +601,10 @@
                 "title": "Systemaktualisierung",
                 "notFound": "System Update nicht gefunden",
                 "detail": {
-                    "uptoDate": "Die Software ist aktuell",
-                    "updatedOn": "aktualisiert am",
-                    "outdated": "Software veraltet",
-                    "neverRanUpdate": "Aktualisierung nie ausgeführt"
+                    "uptoDate": "Updates geprüft ",
+					"updatedOn": "geprüft am ",
+					"outdated": "Updates wurden zuletzt nicht geprüft ",
+					"neverRanUpdate": "updates wurden nie geprüft"
                 }
             },
             "extendedWarranty": "Garantieverlängerung",
