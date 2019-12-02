@@ -632,7 +632,6 @@
             "wifi": "WiFi 安全",
             "pswdMgr": "密码管理器",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -642,7 +641,8 @@
             "loading": "正在加载",
             "notFound": "未找到",
             "registered": "已注册",
-            "notRegistered": "未注册"
+            "notRegistered": "未注册",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -1132,7 +1132,8 @@
                             "wed": "星期三",
                             "thurs": "星期四",
                             "fri": "星期五",
-                            "sat": "星期六"
+                            "sat": "星期六",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "应用"
                     },
                     "website": {
-                        "url": "Web 站点 URL"
+                        "url": "Web 站点 URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "要输入的文本"
+                        "title": "要输入的文本",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "受全面保护",
-            "fullyDesc": "恭喜您！您受到良好保护。",
             "notFully": "未受全面保护",
-            "notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
             "security101": "安全建议入门",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi 和互联家庭网络安全顾问",
             "connectedHomeSecurity": "互联家庭网络安全顾问",
             "fingerprint": "指纹读取器",
-            "seeAllNetwork": "请查看所有加入的网络",
-            "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
-            "good": "良好",
-            "malicious": "恶意",
-            "suspicious": "可疑",
-            "securityScoreDepends": "您的安全性结果取决于您是否：",
-            "antivirus": "受到反病毒软件的保护",
-            "password": "以安全的方式管理安全程度强且复杂的密码",
-            "vpn": "监控您的网络以防暴露给攻击者",
-            "wifi": "使用公共 WiFi 时加密您的个人数据",
-            "windowsHello": "使用安全登录选项保护您的设备",
             "uacTitle": "什么是 UAC 通知？",
             "uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
             "windowsTitle": "为什么我需要激活 Windows？",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "如何更好地保护密码？",
             "passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
             "enhanceTitle": "我应该做什么以加强安全保护？",
-            "enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。"
+            "enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "告诉我们您的兴趣（选填）",
         "personal": "个人使用",
         "business": "商业用途",
-		"custom": "自定义",
-		"professional": "专业使用",
+        "custom": "自定义",
+        "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",
@@ -2584,8 +2640,8 @@
         "usageStatistics": "使用情况统计信息",
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
         "deviceStatistics": "与 Lenovo 共享统计数据",
-		"deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
-		"userProfile": "用户概要文件",
+        "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
+        "userProfile": "用户概要文件",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
         "betaSettingTitle": "Beta 程序",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "安装",
-				"installing": "正在安装",
-				"downloading": "正在下载",
+                "installing": "正在安装",
+                "downloading": "正在下载",
                 "installed": "已安装",
                 "launch": "启动",
                 "seeMore": "查看更多"

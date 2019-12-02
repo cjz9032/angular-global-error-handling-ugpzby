@@ -632,7 +632,6 @@
             "wifi": "Sigurnost WiFi mreže",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DJELOMIČNO ZAŠTIĆEN",
@@ -642,7 +641,8 @@
             "installing": "INSTALACIJA",
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
-            "notRegistered": "NIJE REGISTRIRAN"
+            "notRegistered": "NIJE REGISTRIRAN",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -1132,7 +1132,8 @@
                             "wed": "Srijeda",
                             "thurs": "četvrtak",
                             "fri": "Petak",
-                            "sat": "Subota"
+                            "sat": "Subota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Nedjelja",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "PRIMIJENI"
                     },
                     "website": {
-                        "url": "URL WEB-MJESTA"
+                        "url": "URL WEB-MJESTA",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEKST ZA UNOS"
+                        "title": "TEKST ZA UNOS",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "U potpunosti zaštićen",
-            "fullyDesc": "Čestitamo! Dobro ste zaštićeni.",
             "notFully": "Nije u potpunosti zaštićen",
-            "notFullyDesc": "Niste u potpunosti zaštićeni. Saznajte kako se bolje zaštititi.",
             "security101": "SAVJETNIK ZA SIGURNOST TVRTKE 101",
             "firewall": "Vatrozid",
             "pwdHealth": "Jačina lozinke",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi & povezana sigurnost doma",
             "connectedHomeSecurity": "Povezana sigurnost doma",
             "fingerprint": "Čitač otiska prsta",
-            "seeAllNetwork": "Pogledajte sve spojene mreže",
-            "maliciousNetwork": "Vaše računalo ovaj je mjesec spriječeno pri priključivanju {{maliciousWifi}} zlonamjernim mrežama.",
-            "good": "DOBRO",
-            "malicious": "ZLONAMJERNO",
-            "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Vaš sigurnosni rezultat ovisi o tome jeste li:",
-            "antivirus": "Zaštita antivirusnim softverom",
-            "password": "Snažne i složene lozinke kojima se upravlja na siguran način",
-            "vpn": "Praćenje izloženosti vaše mreže napadačima",
-            "wifi": "Šifriranje vaših osobnih podataka kada koristite javni WiFi",
-            "windowsHello": "Zaštita uređaja pomoću opcija sigurnog prijavljivanja",
             "uacTitle": "Što je to obavijest kontrole korisničkog računa (UAC)?",
             "uacText": "Kontrola korisničkog računa vrlo je važna sigurnosna značajka sustava Windows i pomaže u sprečavanju promjena koje potencijalno štetni programi mogu nanijeti vašem sustavu.",
             "windowsTitle": "Zašto mi je potreban aktiviran Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Kako bolje zaštititi lozinku?",
             "passwordText": "Sigurno pohranite i upravljajte svim svojim lozinkama šifriranim profesionalnom aplikacijom za digitalnu zaštitu, umjesto jednostavne pohrane u vašim preglednicima kojima treće strane mogu lako pristupiti bez vašeg znanja.",
             "enhanceTitle": "Što trebam učiniti za poboljšanje zaštite sigurnosti?",
-            "enhanceText": "Toplo preporučujemo da svoje uređaje zaštitite antivirusnim softverom i vatrozidom te podesite obavijest kontrole korisničkog računa uz minimalnu zaštitu. Također, izradite snažne lozinke i upravljajte na siguran način te šifrirajte svoje podatke dok koristite javnu mrežu kao naprednu zaštitu."
+            "enhanceText": "Toplo preporučujemo da svoje uređaje zaštitite antivirusnim softverom i vatrozidom te podesite obavijest kontrole korisničkog računa uz minimalnu zaštitu. Također, izradite snažne lozinke i upravljajte na siguran način te šifrirajte svoje podatke dok koristite javnu mrežu kao naprednu zaštitu.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "Recite nam više o svojim interesima (neobavezno)",
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
-		"custom": "Prilagodite iskustvo",
-		"professional": "Stručna uporaba",
+        "custom": "Prilagodite iskustvo",
+        "professional": "Stručna uporaba",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliranje",
-				"installing": "Instaliranje",
-				"downloading": "Preuzimanje",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokretanje",
                 "seeMore": "Potražite više"

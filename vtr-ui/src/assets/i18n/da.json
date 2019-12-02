@@ -632,7 +632,6 @@
             "wifi": "WiFi-sikkerhed",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "AKTIVERET",
             "disabled": "DEAKTIVERET",
             "partiallyProtected": "DELVIST BESKYTTET",
@@ -642,7 +641,8 @@
             "installing": "INSTALLATION",
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
-            "notRegistered": "IKKE REGISTRERET"
+            "notRegistered": "IKKE REGISTRERET",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -1132,7 +1132,8 @@
                             "wed": "Onsdag",
                             "thurs": "Torsdag",
                             "fri": "Fredag",
-                            "sat": "Lørdag"
+                            "sat": "Lørdag",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Søndag",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "ANVEND"
                     },
                     "website": {
-                        "url": "URL TIL WEBSTED"
+                        "url": "URL TIL WEBSTED",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEKST, DER SKAL SKRIVES"
+                        "title": "TEKST, DER SKAL SKRIVES",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "Fuldt beskyttet",
-            "fullyDesc": "Tillykke. Du er godt beskyttet.",
             "notFully": "Ikke fuldt beskyttet",
-            "notFullyDesc": "Du er ikke fuldt beskyttet. Lær, hvordan du beskytter dig selv nu.",
             "security101": "SIKKERHEDSVEJLEDNING 101",
             "firewall": "Firewall",
             "pwdHealth": "Adgangskodesundhed",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi & Tilsluttet Home Security",
             "connectedHomeSecurity": "Tilsluttet Home Security",
             "fingerprint": "Fingeraftrykslæser",
-            "seeAllNetwork": "Se alle tilsluttede netværk",
-            "maliciousNetwork": "Forhindrer computeren i at blive tilsluttet {{maliciousWifi}}skadelige netværk denne måned.",
-            "good": "GODT",
-            "malicious": "SKADELIGT",
-            "suspicious": "MISTÆNKELIGT",
-            "securityScoreDepends": "Dit sikkerhedsresultat afhænger af, om du er:",
-            "antivirus": "Er beskyttet af antivirussoftware",
-            "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
-            "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
-            "wifi": "Krypterer dine personlige data, når du bruger offentligt WiFi",
-            "windowsHello": "Beskytter din enhed med indstillinger til sikker login",
             "uacTitle": "Hvad er Kontrol af brugerkonti (UAC-meddelelse)?",
             "uacText": "Kontrol af brugerkonti er en meget vigtig sikkerhedsfunktion i Windows, der forhindrer, at potentielt skadelige programmer kan foretage ændringer af systemet.",
             "windowsTitle": "Hvorfor skal jeg aktivere Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Hvordan beskytter jeg min adgangskode bedre?",
             "passwordText": "Du kan gemme og administrere alle dine adgangskoder sikkert ved at kryptere dem med en professionel, digital beskyttelsesapp i stedet for at gemme dem i webbrowseren, der nemt kan tilgås af en tredjepart, uden at du ved det.",
             "enhanceTitle": "Hvad skal jeg gøre for at forbedre sikkerheden?",
-            "enhanceText": "Vi anbefaler, at du beskytter dine enheder med antivirussoftware og en firewall og konfigurerer Kontrol af brugerkonti (UAC-meddelelse) til minimumsbeskyttelse. Opret desuden stærke adgangskoder, som du opbevarer på en sikker måde, og krypter dine data, når du bruger offentlige netværk, som udvidet beskyttelse."
+            "enhanceText": "Vi anbefaler, at du beskytter dine enheder med antivirussoftware og en firewall og konfigurerer Kontrol af brugerkonti (UAC-meddelelse) til minimumsbeskyttelse. Opret desuden stærke adgangskoder, som du opbevarer på en sikker måde, og krypter dine data, når du bruger offentlige netværk, som udvidet beskyttelse.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {

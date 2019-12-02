@@ -632,7 +632,6 @@
             "wifi": "WiFi 보안",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "사용",
             "disabled": "사용 안 함",
             "partiallyProtected": "부분적으로 보호",
@@ -642,7 +641,8 @@
             "installing": "설치하기",
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
-            "notRegistered": "등록되지 않음"
+            "notRegistered": "등록되지 않음",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -1132,7 +1132,8 @@
                             "wed": "수요일",
                             "thurs": "목요일",
                             "fri": "금요일",
-                            "sat": "토요일"
+                            "sat": "토요일",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "일요일",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "적용"
                     },
                     "website": {
-                        "url": "웹 사이트 URL"
+                        "url": "웹 사이트 URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "입력할 텍스트"
+                        "title": "입력할 텍스트",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "완전히 보호됨",
-            "fullyDesc": "축하합니다! 잘 보호됩니다.",
             "notFully": "완전히 보호되지 않음",
-            "notFullyDesc": "완전히 보호되지 않습니다. 지금 자신을 더욱 적절하게 보호하는 방법을 알아보십시오.",
             "security101": "보안 어드바이저 101",
             "firewall": "방화벽",
             "pwdHealth": "암호 상태",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi 및 홈 보안 연결",
             "connectedHomeSecurity": "홈 보안 연결",
             "fingerprint": "지문 인식 장치",
-            "seeAllNetwork": "모든 결합 네트워크 참조",
-            "maliciousNetwork": "이 달에 컴퓨터를 {{maliciousWifi}} 악성 테트워크와 연결할 수 없습니다.",
-            "good": "좋음",
-            "malicious": "악성",
-            "suspicious": "의심스러움",
-            "securityScoreDepends": "보안 결과는 다음 사항에 따릅니다.",
-            "antivirus": "바이러스 백신 소프트웨어로 보호",
-            "password": "강력하고 복잡한 암호를 안전하게 관리",
-            "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
-            "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
-            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호",
             "uacTitle": "UAC 알림이 무엇입니까?",
             "uacText": "사용자 계정 컨트롤은 Windows의 매우 중요한 보안 기능으로, 잠재적으로 유해한 프로그램이 시스템을 변경하지 못하도록 방지하는 데 도움이 됩니다.",
             "windowsTitle": "Windows를 활성화해야 하는 이유는 무엇입니까?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "암호를 보다 잘 보호하는 방법은 무엇입니까?",
             "passwordText": "제3자에서 사용자를 알지 못하는 상태에서 쉽게 액세스할 수 있는 브라우저에 저장하는 것으로 그치지 않고 전문 디지털 보호 앱으로 암호화된 모든 암호를 안전하게 저장 및 관리하십시오.",
             "enhanceTitle": "보안 보호를 강화하려면 어떻게 해야 합니까?",
-            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오."
+            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "관심 사항을 말해 주십시오(옵션)",
         "personal": "개인용",
         "business": "비즈니스용",
-		"custom": "사용 환경의 개인 설정",
-		"professional": "전문적 용도",
+        "custom": "사용 환경의 개인 설정",
+        "professional": "전문적 용도",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
         "title1": "에 오신 것을 환영합니다",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "설치",
-				"installing": "설치",
-				"downloading": "다운로드 중",
+                "installing": "설치",
+                "downloading": "다운로드 중",
                 "installed": "설치됨",
                 "launch": "시작",
                 "seeMore": "자세한 정보"
