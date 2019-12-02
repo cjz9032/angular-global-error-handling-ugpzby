@@ -79,6 +79,8 @@
 											<textarea class="form-control"
 												spellcheck="false"
 												[(ngModel)]="url"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.website.placeholder'
+										| translate"
 												name="url"
 												required></textarea>
 										</div>
@@ -128,6 +130,7 @@
 											<textarea class="form-control"
 												[(ngModel)]="description"
 												name="description"
+												[placeholder]="'device.deviceSettings.inputAccessories.userDefinedKey.enterText.placeholder' | translate"
 												(keydown)="onKeydown($event)"
 												required></textarea>
 										</div>

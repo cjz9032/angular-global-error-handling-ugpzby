@@ -97,7 +97,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
-		// private hardwareScanService: HardwareScanService,
+		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
@@ -124,16 +124,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 
-		// VAN-10950 hide HW scan from Vantage UI in 3.1.1
-		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-		// 	this.hardwareScanService.isAvailable()
-		// 		.then((isAvailable: any) => {
-		// 			this.showHWScanMenu = isAvailable;
-		// 		})
-		// 		.catch(() => {
-		// 			this.showHWScanMenu = false;
-		// 		});
-		// }
+		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+			this.hardwareScanService.isAvailable().then((available) => {
+				this.showHWScanMenu = available;
+			});
+		}
 	}
 
 	private initComponent() {

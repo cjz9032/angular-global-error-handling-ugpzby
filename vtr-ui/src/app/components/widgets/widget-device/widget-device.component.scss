@@ -41,6 +41,9 @@
 	.device-sub-header {
 		color: $shade_darkest;
 		font-size: $body;
+		@media #{$breakpoint_sm} {
+			font-size: 1.25rem!important;
+		}
 	}
 
 	.sub-header-separator {

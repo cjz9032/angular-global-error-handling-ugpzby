@@ -12,38 +12,28 @@ import {
 	TranslateService
 } from '@ngx-translate/core';
 import { NgZone } from '@angular/core';
-import { StatusInfo } from './status-info.model';
 
 export class WifiSecurityLandingViewModel {
-	statusList: Array < StatusInfo > ;
-	type = 'security';
-	wifiHistory: Array < phoenix.WifiDetail > ;
-	imgUrl = '../../../../assets/images/coronet-logo.svg';
-
-	wfStatus = {
-		status: 4,
+	wfStatus  = {
+		status: 'loading',
+		icon: 'landing-wifi',
+		title: 'common.securityAdvisor.wifi',
+		buttonLabel: 'security.landing.goWifi',
+		buttonLink: '/security/wifi-security',
+		content: 'security.landing.wifiContent',
+		showOwn: false,
+		ownTitle: 'security.landing.haveOwnWifi',
+		id: 'sa-ov-link-wifiSecurity',
 		detail: '',
-		path: 'security/wifi-security',
-		title: '',
-		type: 'security',
-		id: 'sa-ov-link-wifiSecurity'
-	};
-	subject = {
-		title: '',
-		status: 1,
-		type: 'security',
 	};
 	translateString: any;
+
 	constructor(
-		public translate: TranslateService,
+		translate: TranslateService,
 		wfModel: phoenix.WifiSecurity,
 		public commonService: CommonService,
-        ngZone: NgZone
+		ngZone: NgZone
 	) {
-		wfModel.on(EventTypes.wsWifiHistoryEvent, (data) => {
-			this.wifiHistory = data;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, data);
-		});
 		wfModel.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			ngZone.run(() => {
 				this.setWiFiSecurityState(wfModel.state, data);
@@ -57,16 +47,20 @@ export class WifiSecurityLandingViewModel {
 			'common.securityAdvisor.loading',
 			'common.securityAdvisor.enabled',
 			'common.securityAdvisor.disabled',
-			'common.securityAdvisor.wifi'
+			'common.securityAdvisor.wifi',
+			'security.landing.goWifi',
+			'security.landing.wifiContent',
+			'security.landing.haveOwnWifi'
 		]).subscribe((res) => {
 			this.translateString = res;
 			if (!this.wfStatus.detail) {
 				this.wfStatus.detail = res['common.securityAdvisor.loading'];
 			}
 			this.wfStatus.title = res['common.securityAdvisor.wifi'];
-			this.subject.title = res['common.securityAdvisor.wifi'];
+			this.wfStatus.content = res['security.landing.wifiContent'];
+			this.wfStatus.ownTitle = res['security.landing.haveOwnWifi'];
+			this.wfStatus.buttonLabel = res['security.landing.goWifi'];
 			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-			const cacheWifiHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 			if (wfModel && wfModel.state) {
 				if (wfModel.isLocationServiceOn !== undefined) {
 					this.setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
@@ -76,13 +70,6 @@ export class WifiSecurityLandingViewModel {
 					this.setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
 				}
 			}
-			if (wfModel.wifiHistory && wfModel.wifiHistory.length > 0) {
-				this.wifiHistory = wfModel.wifiHistory;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wfModel.wifiHistory);
-			} else if (cacheWifiHistory) {
-				this.wifiHistory = cacheWifiHistory;
-			}
-			this.statusList = new Array(this.wfStatus);
 		});
 	}
 
@@ -90,14 +77,14 @@ export class WifiSecurityLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
+		const cacheShowOwn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+		this.wfStatus.showOwn = typeof cacheShowOwn === 'boolean' ? cacheShowOwn : false;
 		if (location) {
-			this.wfStatus.status = state === 'enabled' ? 0 : 1;
+			this.wfStatus.status = state === 'enabled' ? 'enabled' : 'disabled';
 			this.wfStatus.detail = this.translateString[`common.securityAdvisor.${state === 'enabled' ? 'enabled' : 'disabled'}`];
-			this.subject.status = state === 'enabled' ? 0 : 1;
 		} else {
-			this.wfStatus.status = 1;
+			this.wfStatus.status = 'disabled';
 			this.wfStatus.detail = this.translateString['common.securityAdvisor.disabled'];
-			this.subject.status = 1;
 		}
 		if (state) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, state);
