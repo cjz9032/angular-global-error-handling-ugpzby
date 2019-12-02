@@ -105,9 +105,7 @@
 
 			.icomoon {
 				font-size: 3rem;
-				@media #{$mediaquery_XXL350X} {
-					line-height: 6rem;
-				}
+				line-height: 6rem;
 				@media #{$mediaquery_6} {
 					line-height: 5rem;
 				}
