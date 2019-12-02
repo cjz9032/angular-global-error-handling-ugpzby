@@ -26,11 +26,12 @@
 
 	.family {
 		color: $main_dark;
-		font-size: $sub_header;
+		font-size: $fontsize_xl2;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		max-width: 70%;
+		font-weight: $weight_light;
 		@media #{$breakpoint_md} {
 			max-width: 65%;
 		}
@@ -40,7 +41,8 @@
 	}
 	.device-sub-header {
 		color: $shade_darkest;
-		font-size: $body;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		@media #{$breakpoint_sm} {
 			font-size: 1.25rem!important;
 		}
@@ -89,7 +91,7 @@
 				}
 
 				.detail {
-					color: $shade_darkest;
+					color: $shade_blue;
 					/*  &.highlight {
 						color: $shade_darkest;
 					} */
@@ -134,15 +136,15 @@
 				}
 			}
 			.title {
-				font-size: $body;
-				font-weight: $weight_medium;
+				font-size: $fontsize_sm;
+				font-weight: $weight_light;
 				margin-bottom: 0.5rem;
-				color: $main_darker;
+				color: $charcoal;
 
 				.systemDetails {
-					font-size: $caption;
+					font-size: $fontsize_xs;
 					font-weight: $weight_light;
-					color: $shade_darkest;
+					color: $grey_dark;
 				}
 			}
 			.description {
@@ -150,8 +152,9 @@
 				color: $shade;
 			}
 			.detail {
-				font-size: $fontsize_lg;
+				font-size: $fontsize_xs;
 				text-decoration: underline;
+				font-weight: $weight_light;
 				&.highlight {
 					text-decoration: underline;
 					&:hover {
@@ -162,6 +165,7 @@
 					margin-left: .5em;
 					position: relative;
 					top: .1em;
+					color: $menu_hover;
 				}
 			}
 			.arrow {
