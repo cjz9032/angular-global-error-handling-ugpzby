@@ -1,5 +1,5 @@
 <vtr-page-layout
-	[title]="deviceService.isArm || !commonService.isOnline ||!userService.auth ||!userService.hasFirstName? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:userService.firstName})"
+	[pageTitle]="deviceService.isArm || !commonService.isOnline || !userService.auth || !userService.hasFirstName || !userService.isLenovoIdSupported() ? (dashboardService.welcomeTextWithoutUserName | translate) : '<pre>' + (dashboardService.welcomeText | translate:{firstName:userService.firstName}) + '</pre>'"
 	[textId]="'dashboard'"
 	[pageCssClass]="'dashboard'"
 	[shiftLeftUp]="true"
@@ -46,6 +46,7 @@
 						[actionType]="cardContentPositionB.ActionType"
 						[actionLink]="cardContentPositionB.ActionLink"
 						[dataSource]="cardContentPositionB.DataSource"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionB.isLocal)"
 						[type]="'corner'"
 						[ratioX]="4"
 						[ratioY]="2"
@@ -65,6 +66,7 @@
 						[action]="cardContentPositionC.Action"
 						[actionType]="cardContentPositionC.ActionType"
 						[actionLink]="cardContentPositionC.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionC.isLocal)"
 						[type]="'corner'"
 						[ratioX]="4"
 						[ratioY]="2"
@@ -82,6 +84,7 @@
 						[action]="cardContentPositionD.Action"
 						[actionType]="cardContentPositionD.ActionType"
 						[actionLink]="cardContentPositionD.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionD.isLocal)"
 						[type]="'highlight'"
 						[ratioX]="8"
 						[ratioY]="2"
@@ -90,7 +93,8 @@
 						aria-label="dashboard-card-d">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-left">
+				<div class="col-xl-6 py-20 card-left"
+					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="5"
 						[itemID]="cardContentPositionE.Id"
 						[img]="cardContentPositionE.FeatureImage"
@@ -99,6 +103,7 @@
 						[action]="cardContentPositionE.Action"
 						[actionType]="cardContentPositionE.ActionType"
 						[actionLink]="cardContentPositionE.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionE.isLocal)"
 						[type]="'article'"
 						[ratioX]="4"
 						[ratioY]="4"
@@ -107,7 +112,8 @@
 						aria-label="dashboard-card-e">
 					</vtr-container-card>
 				</div>
-				<div class="col-xl-6 py-20 card-right">
+				<div class="col-xl-6 py-20 card-right"
+					[hidden]="deviceService.isSMode">
 					<vtr-container-card order="6"
 						[itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage"
@@ -116,6 +122,7 @@
 						[action]="cardContentPositionF.Action"
 						[actionType]="cardContentPositionF.ActionType"
 						[actionLink]="cardContentPositionF.ActionLink"
+						[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && cardContentPositionF.isLocal)"
 						[type]="'article'"
 						[ratioX]="4"
 						[ratioY]="4"
@@ -131,8 +138,8 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row"
-				*ngIf="warrantyData && deviceService.showWarranty">
-				<div class="col-sm-12 px-0 pb-20">
+				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
+				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-dashboard-warranty [item]="warrantyData"
 						[isConnected]="isOnline">
 					</vtr-widget-dashboard-warranty>
@@ -149,6 +156,7 @@
 					</vtr-widget-feedback>
 				</div>
 			</div>
+
 			<div class="row"
 				*ngIf="!deviceService.isArm">
 				<div class="col-sm-12 px-0 py-20">
@@ -180,14 +188,14 @@
 				</div>
 			</div>
 
-			<div class="row"
+			<!-- <div class="row"
 				*ngIf="!deviceService.isArm && !deviceService.isSMode && brand !== 1 && !deviceService.isGaming">
 				<div class="col-sm-12 px-0 py-20">
 					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
 						[linkId]="'dashboard'">
 					</vtr-widget-security-status>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="row"
 				*ngIf="deviceService.showWarranty"

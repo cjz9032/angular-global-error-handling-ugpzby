@@ -4,6 +4,7 @@
 	border-radius: $border_radius;
 	background-color:$light;
 	box-shadow: $drop_shadow;
+	padding: $fontsize_xl;
 	.title {
 		color: $main_darker;
 		font-size: $fontsize_xl;
@@ -17,7 +18,7 @@
 	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;
-		
+
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid $light;

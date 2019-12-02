@@ -17,6 +17,7 @@ import { HardwareScanService } from '../../../services/hardware-scan/hardware-sc
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { ModalWaitComponent } from '../../../modal/modal-wait/modal-wait.component';
 
 enum ScanType {
 	QuickScan,
@@ -81,6 +82,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	completeStatusToken: string;
 	public startScanClicked = false;
 
+	// "Wrapper" value to be accessed from the HTML
+	public scanTypeEnum = ScanType;
+
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
@@ -99,7 +103,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.culture = window.navigator.languages[0];
+		this.culture = this.hardwareScanService.getCulture();
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
@@ -194,13 +198,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public getComponentsTitle() {
 		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isRecoverExecuting()) {
-				return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
-			} else if (this.hardwareScanService.isLoadingDone()) {
-				return this.translate.instant('hardwareScan.hardwareComponents');
-			} else {
+			// Component List title when refreshing components
+			if (this.hardwareScanService.isRefreshingModules()) {
 				return this.translate.instant('hardwareScan.loadingComponents');
 			}
+
+			// Component List title when executing a RBS operation
+			if (this.hardwareScanService.isRecoverExecuting()) {
+				return this.translate.instant('hardwareScan.recoverBadSectors.localDevices');
+			}
+
+			// Component List title used for all other cases
+			return this.translate.instant('hardwareScan.hardwareComponents');
 		}
 	}
 
@@ -284,10 +293,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public refreshModules() {
 		this.hardwareScanService.setLoadingStatus(false);
+		this.hardwareScanService.reloadItemsToScan(true);
 		this.hardwareScanService.initLoadingModules(this.culture);
 	}
 
 	getItemToDisplay() {
+		// Shows a default component list
+		if (!this.hardwareScanService.isShowComponentList()) {
+			return this.hardwareScanService.getInitialHardwareComponentList();
+		}
+
+		// Shows the real component list, retrieved after a Quick/Custom scan
 		const devices = [];
 		const modules = this.hardwareScanService.getModulesRetrieved();
 		if (modules !== undefined) {
@@ -299,7 +315,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					devices.push({
 						name: info,
 						subname: group.name,
-						status: HardwareScanTestResult.Pass,
+						icon: this.hardwareScanService.getHardwareComponentIcon(categoryInfo.id),
 					});
 				}
 			}
@@ -467,35 +483,70 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onCustomizeScan() {
-		if (this.isLoadingDone()) {
-			this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
-			const modalRef = this.modalService.open(this.customizeModal, {
-				size: 'lg',
-				centered: true,
-				windowClass: 'custom-modal-size'
-			});
-			modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
-			console.log('[MODAL] ', modalRef.componentInstance.items);
-			modalRef.componentInstance.passEntry.subscribe(() => {
-				this.hardwareScanService.filterCustomTests(this.culture);
-				this.checkPreScanInfo(1); // custom scan
-			});
+	private onCustomizeScan() {
+		const modalRef = this.modalService.open(this.customizeModal, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'custom-modal-size'
+		});
+		modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
+		console.log('[MODAL] ', modalRef.componentInstance.items);
+		modalRef.componentInstance.passEntry.subscribe(() => {
+			this.hardwareScanService.filterCustomTests(this.culture);
+			this.checkPreScanInfo(ScanType.CustomScan); // custom scan
+		});
 
-			modalRef.componentInstance.modalClosing.subscribe(success => {
-				// Re-enabling the button, once the modal has been closed in a way
-				// the user didn't started the Scan proccess.
-				if (!success) {
-					this.startScanClicked = false;
+		modalRef.componentInstance.modalClosing.subscribe(success => {
+			// Re-enabling the button, once the modal has been closed in a way
+			// the user didn't started the Scan proccess.
+			if (!success) {
+				this.startScanClicked = false;
+			}
+		});
+	}
+
+	private openWaitHardwareComponentsModal() {
+		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true
+		});
+
+		(<ModalWaitComponent>modal.componentInstance).modalTitle = this.translate.instant('hardwareScan.loadingComponents');
+		(<ModalWaitComponent>modal.componentInstance).modalDescription = this.translate.instant('hardwareScan.retrievingHardwareInformation');
+		(<ModalWaitComponent>modal.componentInstance).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
+
+		return modal;
+	}
+
+	public startScanWaitingModules(scanType: number) {
+		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
+
+		if (!this.hardwareScanService.isLoadingDone()) {
+			const modalWait = this.openWaitHardwareComponentsModal();
+			modalWait.result.then((result) => {
+				// Hardware modules have been retrieved, so let's continue with the Scan process
+				if (scanType === ScanType.QuickScan) {
+					this.checkPreScanInfo(scanType);
+				} else if (scanType === ScanType.CustomScan) {
+					this.onCustomizeScan();
 				}
+			}, (reason) => {
+				// User has clicked in the 'X' button, so we need to re-enable the Quick/Custom scan button here.
+				this.startScanClicked = false;
 			});
+		} else {
+			// Hardware modules is already retrieved, so let's continue with the Scan process
+			if (scanType === ScanType.QuickScan) {
+				this.checkPreScanInfo(scanType);
+			} else if (scanType === ScanType.CustomScan) {
+				this.onCustomizeScan();
+			}
 		}
 	}
 
 	public checkPreScanInfo(scanType: number) {
-		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 		this.hardwareScanService.cleanResponses();
-
 		this.currentScanType = scanType;
 
 		let requests;
@@ -734,7 +785,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case HardwareScanProgress.ScanProgress:
 					this.ngZone.run(() => {
-						this.progress = payload;
+						if(!this.hardwareScanService.isCancelRequested()){
+							this.progress = payload;
+						}
 					});
 					break;
 				case HardwareScanProgress.ScanResponse:
@@ -744,6 +797,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					} else {
 						this.completeStatusToken = this.translate.instant('hardwareScan.completed');
 					}
+					break;
+				case HardwareScanProgress.RecoverProgress:
+					this.ngZone.run(() => {
+						this.progress = payload;
+					});
 					break;
 				case HardwareScanProgress.RecoverResponse:
 					this.devicesRecoverBadSectors = payload.devices;
@@ -862,6 +920,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
 		}
-	}	
+	}
+	
+	public isRefreshingModules() {
+		return this.hardwareScanService.isRefreshingModules();
+	}
 
 }

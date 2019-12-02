@@ -16,7 +16,7 @@ import { ModalServerSwitchComponent } from './components/modal/modal-server-swit
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
-import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
+import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 import { AppNotification } from './data-models/common/app-notification.model';
@@ -28,7 +28,10 @@ import { AppUpdateService } from './services/app-update/app-update.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
+import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service';
+// import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
+import { SegmentConst } from './services/self-select/self-select.service';
 import { AbTestsGenerateConfigService } from './components/pages/page-privacy/core/ab-tests/ab-tests-generate-config.service';
 
 declare var Windows;
@@ -41,7 +44,6 @@ export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
-	private beta;
 	private subscription: Subscription;
 	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
 	private totalDuration = 0; // itermittant app duratin will be added to it
@@ -63,20 +65,20 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
-		private abTestsGenerateConfigService: AbTestsGenerateConfigService
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
+		// private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
 		const win: any = window;
 		win.webAppVersion = {
 			web: environment.appVersion,
-			bridge: bridgeVersion.version
+			bridge: version
 		};
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
-		this.initIsBeta();
 
 		//#endregion
 		window.addEventListener('online', (e) => {
@@ -92,7 +94,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		// check for update and download it but it will be available in next launch
-		this.appUpdateService.checkForUpdatesNoPrompt();
+		// this.appUpdateService.checkForUpdatesNoPrompt();
 		// active duration
 		this.getDuration();
 		if (this.deviceService.isAndroid) {
@@ -101,29 +103,9 @@ export class AppComponent implements OnInit, OnDestroy {
 		// session storage is not getting clear after vantage is close.
 		// forcefully clearing session storage
 		sessionStorage.clear();
-
 		this.getMachineInfo();
+
 		this.metricService.sendAppLaunchMetric();
-
-		// use when deviceService.isArm is set to true
-		// todo: enable below line when integrating ARM feature
-		// document.getElementById('html-root').classList.add('is-arm');
-
-		const self = this;
-		window.onresize = () => {
-			self.displayService.calcSize(self.displayService);
-		};
-		self.displayService.calcSize(self.displayService);
-
-		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
-			this.userService.loginSilently();
-		}
-
-		if (this.appsForYouService.showLmaMenu()) {
-			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
-		}
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
@@ -173,30 +155,29 @@ export class AppComponent implements OnInit, OnDestroy {
 	} // end of addInternetListener
 
 	private launchWelcomeModal() {
-		this.deviceService
-			.getIsARM()
+		this.deviceService.getIsARM()
 			.then((status: boolean) => {
-				if (!status || !this.deviceService.isAndroid) {
-					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(
-						LocalStorageKey.WelcomeTutorial
-					);
-					if (tutorial === undefined && navigator.onLine) {
-						this.openWelcomeModal(1);
+				if ((!status || !this.deviceService.isAndroid)) {
+					const tutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+					const newTutorialVersion = '3.1.2';
+					if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
+						this.openWelcomeModal(1, newTutorialVersion);
 					} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
-						this.openWelcomeModal(2);
+						this.openWelcomeModal(2, newTutorialVersion);
 					}
 				}
 			})
 			.catch((error) => { });
 	}
 
-	openWelcomeModal(page: number) {
+	openWelcomeModal(page: number, tutorialVersion: string) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'welcome-modal-size'
 		});
 		modalRef.componentInstance.page = page;
+		modalRef.componentInstance.tutorialVersion = tutorialVersion;
 		modalRef.result.then(
 			(result: WelcomeTutorial) => {
 				// on open
@@ -214,67 +195,13 @@ export class AppComponent implements OnInit, OnDestroy {
 		}, 0);
 	}
 
-	private initIsBeta() {
-		if (this.vantageShellService.isShellAvailable) {
-			this.beta = this.vantageShellService.getBetaUser();
-			this.deviceService.getIsARM().then((status) => {
-				if (!status) {
-					this.beta.getBetaUser().then((result) => {
-						if (!result) {
-							if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-								this.commonService.isBetaUser().then((data) => {
-									if (data === 0 || data === 3) {
-										this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-										this.beta.setBetaUser();
-									}
-								});
-							} else {
-								this.beta.setBetaUser();
-							}
-						} else {
-							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-						}
-					});
-				} else if (!this.commonService.getLocalStorageValue(LocalStorageKey.BetaUser, false)) {
-					this.commonService.isBetaUser().then((data) => {
-						if (data === 0 || data === 3) {
-							this.commonService.setLocalStorageValue(LocalStorageKey.BetaUser, true);
-						}
-					});
-				}
-			});
-		}
-	}
-
-	private getMachineInfo() {
+	private async getMachineInfo() {
 		if (this.deviceService.isShellAvailable) {
-			// this.isMachineInfoLoaded = this.isTranslationLoaded();
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
-					this.commonService.sendNotification('MachineInfo', this.machineInfo);
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
-					this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
-
-					this.isMachineInfoLoaded = true;
-					this.machineInfo = value;
-					this.isGaming = value.isGaming;
-
-					// const isLocaleSame = this.languageService.isLocaleSame(value.locale);
-
-					if (!this.languageService.isLanguageLoaded) {
-						this.languageService.useLanguageByLocale(value.locale);
-						const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
-						// // update DeviceInfo values in case user switched language
-						this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
-					}
-
-					this.setFirstRun(value);
-
-					// if u want to see machineinfo in localstorage
-					// just add a key "machineinfo-cache-enable" and set it true
-					// then relaunch app you will see the machineinfo in localstorage.
-					return value;
+					this.logger.debug('AppComponent.getMachineInfo received getMachineInfo. is lang loaded: ', this.languageService.isLanguageLoaded);
+					this.onMachineInfoReceived(value);
 				})
 				.catch((error) => { });
 		} else {
@@ -283,6 +210,31 @@ export class AppComponent implements OnInit, OnDestroy {
 			if (!this.languageService.isLanguageLoaded) {
 				this.languageService.useLanguage();
 			}
+		}
+	}
+
+	private onMachineInfoReceived(value: any) {
+		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
+		this.machineInfo = value;
+		this.isMachineInfoLoaded = true;
+		this.isGaming = value.isGaming;
+		this.commonService.sendNotification('MachineInfo', this.machineInfo);
+		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale ? value.locale.toLowerCase() : 'en') {
+			this.languageService.useLanguageByLocale(value.locale);
+		}
+		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+		this.setFirstRun(value);
+
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
+			this.userService.loginSilently();
+		}
+
+		if (this.appsForYouService.showLmaMenu()) {
+			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
 		}
 	}
 
@@ -422,7 +374,22 @@ export class AppComponent implements OnInit, OnDestroy {
 				case TranslationNotification.TranslationLoaded:
 					this.logger.info(`AppComponent.onNotification`, notification);
 					// launch welcome modal once translation is loaded, meanwhile show spinner from home component
-					this.launchWelcomeModal();
+					this.deviceService.getMachineInfo()
+						.then((info) => {
+							if (info) {
+								if (info.isGaming) {
+									const gamingTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Gaming);
+									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, gamingTutorialData);
+								} else if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+									const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
+									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
+								} else {
+									setTimeout(() => {
+										this.launchWelcomeModal();
+									}, 0);
+								}
+							}
+						}).catch((error) => { });
 					break;
 				default:
 					break;
@@ -440,8 +407,8 @@ export class AppComponent implements OnInit, OnDestroy {
 					if (!val || (val.keyList || []).length === 0) {
 						return;
 					}
-					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val => {
-						if (val !== true) {
+					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val2 => {
+						if (val2 !== true) {
 							this.logger.error('failed to write shell run version to registry');
 						}
 					});
@@ -452,7 +419,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	// TESTING ACTIVE DURATION
 	private getDuration() {
-		const component = this; // value of this is null/undefined inside the funtions
+		const component = this; // value of this is null/undefined inside the functions
 		let isVisible = true; // internal flag, defaults to true
 		function onVisible() {
 			// prevent double execution
@@ -503,4 +470,17 @@ export class AppComponent implements OnInit, OnDestroy {
 			handleVisibilityChange(false);
 		}, false);
 	} // END OF DURATION
+	// private registerWebWorker() {
+	// 	if (typeof Worker !== 'undefined') {
+	// 		// Create a new
+	// 		const worker = new Worker('./web-worker/app-worker.worker', { type: 'module' });
+	// 		worker.onmessage = ({ data }) => {
+	// 			console.log(`page got message: ${data}`);
+	// 		};
+	// 		worker.postMessage('hello');
+	// 	} else {
+	// 		// Web Workers are not supported in this environment.
+	// 		// You should add a fallback so that your program still executes correctly.
+	// 	}
+	// }
 }

@@ -14,14 +14,16 @@
                             vtrMetrics 
                             metricsEvent="FeatureClick" 
                             metricsParent="HardwareScan"
-                            metricsItem="HardwareScan.QuickScan" 
+                            metricsItem="HardwareScan.QuickScan"
+                            [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
                             [disabled]="disableQuickScan" 
                             (click)="onQuickScan()">{{buttonText}}</button>
                         <a 
                             vtrMetrics 
                             metricsEvent="FeatureClick" 
                             metricsParent="HardwareScan"
-                            metricsItem="HardwareScan.CustomizeScan" 
+                            metricsItem="HardwareScan.CustomizeScan"
+                            [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
                             [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
                             {{anchorText}}
                         </a>
@@ -45,7 +47,7 @@
 
 
                     <div class="col col-12 row">
-                        <div class="cancel-check" *ngIf="!(percent === 100)">
+                        <div class="cancel-check" *ngIf="!(percent === 100)" title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
                             <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" (click)="onCancel()">{{cancelText}}</button>
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">

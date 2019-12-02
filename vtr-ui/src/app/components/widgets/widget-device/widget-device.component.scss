@@ -7,15 +7,20 @@
 	overflow: hidden;
 	position: relative;
 	.circleimage {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 25rem;
+		max-width: 36%;
 		img {
 			position: absolute;
 			top: 2rem;
 			right: 2rem;
-			width: 20rem;
 			@media #{$breakpoint_sm} {
 				right: 0;
 			}
 
+			width: 100%;
 		}
 	}
 
@@ -25,7 +30,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		max-width: 75%;
+		max-width: 70%;
 		@media #{$breakpoint_md} {
 			max-width: 65%;
 		}
@@ -36,6 +41,9 @@
 	.device-sub-header {
 		color: $shade_darkest;
 		font-size: $body;
+		@media #{$breakpoint_sm} {
+			font-size: 1.25rem!important;
+		}
 	}
 
 	.sub-header-separator {

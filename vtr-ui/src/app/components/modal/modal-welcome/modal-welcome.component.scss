@@ -110,9 +110,9 @@
 			}
 
 			label {
-				font-family: "Segoe UI Bold", Sans-serif;
+				// font-family: "Segoe UI Bold", Sans-serif;
 				font-size: 1.4rem;
-				width: 100%;
+				width: 94%;
 				height: 100%;
 				line-height: 2rem;
 				align-items: center;
@@ -455,6 +455,8 @@
 
 	.more-interests {
 		cursor: pointer;
+		color: black;
+		font-weight: bold;
 	}
 
 	.html-css {
@@ -509,23 +511,5 @@
 	.lang-he-privacy-link{
 		float: left;
 		margin-right: 10px;
-	}
-
-	.bludFocusBoder:focus {
-		outline: 0;
-		box-shadow: none;
-	}
-
-	.bludFocusBoder:focus::after {
-		content: '';
-		display: block;
-		position: absolute;
-		left: -0.4rem;
-		top: -0.4rem;
-		border-radius: 500px;
-		width: calc(100% + 0.8rem);
-		height: calc(100% + 0.8rem);
-		border: none;
-		// border: thin solid $menu_hover; // commented due to cause of VAN-10277
 	}
 }

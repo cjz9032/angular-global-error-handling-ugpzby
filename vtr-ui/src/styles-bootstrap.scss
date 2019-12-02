@@ -136,6 +136,26 @@
 	white-space: nowrap;
 }
 
+.text-two-ellipsis {
+	display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.text-three-ellipsis {
+	display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
@@ -221,11 +241,4 @@
 	padding-right: 2rem;
 	overflow: hidden;
 	min-height: 640px !important;
-}
-
-.update-read-more-modal-size .modal-dialog {
-	margin: 0 auto;
-	overflow: auto;
-	font-size: 1.4rem;
-	font-weight: 500;
 }

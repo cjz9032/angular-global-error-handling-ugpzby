@@ -49,9 +49,6 @@
 				@media #{$breakpoint_lg} {
 					padding-right: 2rem;
 				}
-				@media #{$breakpoint_md} {
-					padding-right: 0;
-				}
 				@media #{$breakpoint_sm} {
 					padding-right: 0;
 				}
@@ -832,6 +829,23 @@
 									margin-left: auto;
 									margin-right: auto;
 								}
+								@media #{$breakpoint_md}{
+									min-width: 30rem;
+									transform: translate(0);
+									left: 0;
+									right: 0;
+									margin-left: auto;
+									margin-right: auto;
+								}
+								@media #{$breakpoint_lg}{
+									min-width: 20rem;
+									transform: translate(0);
+									left: 0;
+									right: 0;
+									margin-left: auto;
+									margin-right: auto;
+									padding: 1.4rem;
+								}
 							}
 
 							&:hover {
@@ -864,12 +878,12 @@
 									height: $gaming_hd_diameter_lg;
 								}
 								@media #{$breakpoint_lg} {
-									width: $gaming_hd_diameter_xl;
-									height: $gaming_hd_diameter_xl;
+									width: $gaming_hd_diameter_lg;
+									height: $gaming_hd_diameter_lg;
 								}
 								@media #{$breakpoint_md} {
-									width: $gaming_hd_diameter_md;
-									height: $gaming_hd_diameter_md;
+									width: $gaming_hd_diameter_lg;
+									height: $gaming_hd_diameter_lg;
 								}
 								// @media #{$mediaquery_6} {
 								// 	width: $gaming_hd_diameter_md;

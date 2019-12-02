@@ -10,16 +10,19 @@ ui-gaming-driver-popup {
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 8rem;
 	top: -13rem;
-	@media #{$small-screen} {
-		width: 35rem;
-		top: -17rem;
+	@media #{$breakpoint_xl} {
+		width: 50rem;
 	}
-	@media #{$medium-screen} {
+	@media #{$breakpoint_lg} {
 		width: 45rem;
 		top: -14rem;
 	}
-	@media #{$mediaquery_X31} {
-		width: 38rem;
+	@media #{$breakpoint_md} {
+		width: 40rem;
+	}
+	@media #{$breakpoint_sm} {
+		width: 35rem;
+		padding: 3rem 3rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;

@@ -16,7 +16,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetSecurityComponent } from 'src/app/components/widgets/widget-security/widget-security.component';
 import { UiLandingFeatureComponent } from 'src/app/components/ui/ui-landing-feature/ui-landing-feature.component';
-import { UiObjectTitleComponent } from 'src/app/components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from 'src/app/components/ui/ui-security-statusbar/ui-security-statusbar.component';
 import { PipeInstallPipe } from 'src/app/pipe/security-antivirus/pipe-install.pipe';
 import { StatusTransformPipe } from 'src/app/pipe/ui-security-statusbar/status-transform.pipe';
@@ -57,7 +56,8 @@ import { WidgetCommonAntivirusComponent } from '../../components/pages/page-secu
 import { PercentIconPipe } from 'src/app/pipe/widget-security/percent-icon.pipe';
 import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-qa.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
-
+import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
+import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
 library.add(
 	faLockAlt,
 	faQuestionCircle,
@@ -92,7 +92,6 @@ library.add(
 		WidgetQaComponent,
 		// UI
 		UiLandingFeatureComponent,
-		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
 		// Pipe
 		SubTransformPipe,
@@ -106,6 +105,8 @@ library.add(
 		WidgetMcafeeStateComponent,
 		WidgetMcafeeMetricComponent,
 		WidgetCommonAntivirusComponent,
+		WidgetLandingSecurityComponent,
+		WidgetLandingNavComponent,
 	],
 	imports: [
 		CommonModule,

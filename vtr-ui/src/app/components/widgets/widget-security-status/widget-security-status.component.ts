@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
 import { AntivirusWidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/antivirus-widget-item.model';
@@ -11,7 +11,6 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { GuardService } from 'src/app/services/guard/security-guardService.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -30,16 +29,17 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		private translateService: TranslateService,
 		private localInfoService: LocalInfoService,
 		private ngZone: NgZone,
-		private windowsHelloService: WindowsHelloService) {}
+		private windowsHelloService: WindowsHelloService) { }
 
 	ngOnInit() {
-		this.items = [];
-		this.items.push(new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService));
-		this.items.push(new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService));
+		this.items = [
+			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
+			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService)
+		];
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
 			this.showVpn();
-		}).catch(e => {
+		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
 		});
@@ -63,17 +63,17 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.showWifiSecurityItem();
 		}
 		if (windowsHello.fingerPrintStatus) {
-			this.showWindowsHelloItem(windowsHello);
+			this.showWindowsHelloItem();
 		}
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHelloItem(windowsHello);
+			this.showWindowsHelloItem();
 		});
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 		});
 	}
 
-	showWindowsHelloItem(windowsHello: WindowsHello) {
+	showWindowsHelloItem() {
 		const windowsHelloItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-wh'));
 		if (this.windowsHelloService.showWindowsHello()) {
 			if (!windowsHelloItem) {
