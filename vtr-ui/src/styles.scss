@@ -608,6 +608,29 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.Dcc-Detail-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+
+		@media #{$mediaquery_15} {
+			max-width: 90% !important;
+			margin: 1rem auto !important;
+		}
+	}
+
+	.modal-dialog-centered {
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		overflow: hidden;
+	}
+}
+
 .Threat-Locator-Modal {
 	.modal-dialog {
 		max-width: 70%;

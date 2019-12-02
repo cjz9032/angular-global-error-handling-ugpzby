@@ -50,6 +50,15 @@
 		background-size: cover;
 		opacity: 0.15;
 	}
+	
+	&.dcc {
+		background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185d73", endColorstr="#1e7390", GradientType=1);
+	
+		&::before {
+			background: url(/assets/images/dcc/top-image-dcc.jpg) center center no-repeat;
+		}
+	}
 }
 
 .page-content-bg {

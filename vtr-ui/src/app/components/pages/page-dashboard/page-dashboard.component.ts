@@ -48,6 +48,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
 
+	heroBannerDemoItems = [];
+
 	heroBannerItemsCms: []; // tile A
 	cardContentPositionBCms: any = {};
 	cardContentPositionCCms: any = {};
@@ -278,6 +280,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			this.fetchCMSContent(lang);
 			this.fetchUPEContent();
 		});
+
+		if (this.deviceService.showDemo) {
+			this.getHeroBannerDemoItems();
+		}
 	}
 
 	private fetchCMSContent(lang?: string) {
@@ -327,6 +333,20 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	getHeroBannerDemoItems() {
+		this.cmsRequestResult.tileA = true;
+		this.heroBannerDemoItems = [{
+			albumId: 1,
+			id: '',
+			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
+			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
+			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			ActionLink: 'dcc-demo',
+			ActionType: 'Internal',
+			DataSource: 'cms'
+		}];
 	}
 
 	getCMSHeroBannerItems(response) {
