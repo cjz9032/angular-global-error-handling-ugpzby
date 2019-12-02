@@ -24,6 +24,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { SecureMath } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -214,7 +215,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					}
 				}
 			} else {
-				textIndex = Math.floor(Math.random() * 15 + 1);
+				textIndex = Math.floor(SecureMath.random() * 15 + 1);
 				if (textIndex === 2) {
 					textIndex = 3;
 				} // Do not show again in first time
