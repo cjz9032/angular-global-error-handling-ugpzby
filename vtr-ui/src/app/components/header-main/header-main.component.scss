@@ -14,6 +14,11 @@
 		position: relative;
 		padding: 5rem $padding_side 8rem $padding_side;
 		height: 100%;
+
+		&.show-back-btn {
+			padding-top: 2.6rem;
+		}
+
 		@media #{$breakpoint_xl} {
 			padding-left: $padding_side_sm;
 		}

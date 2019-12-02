@@ -19,7 +19,7 @@ declare var Windows;
 })
 export class VantageShellService {
 	public readonly isShellAvailable: boolean;
-	private phoenix: any;
+	public phoenix: any;
 	private shell: any;
 	private isGamingDevice = false;
 	constructor(private commonService: CommonService, private http: HttpClient) {
@@ -932,7 +932,7 @@ export class VantageShellService {
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
-	private getHwSettings(): any {
+	public getHwSettings(): any {
 		if (this.phoenix && this.phoenix.hwsettings) {
 			return this.phoenix.hwsettings;
 		}
@@ -1190,7 +1190,9 @@ export class VantageShellService {
 			status: true
 		};
 
-		devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
+        devicePower.getVantageToolBarStatus = this.getPromise(toolbarObj);
+        devicePower.setVantageToolBarStatus = this.getPromise(toolbarObj);
+        devicePower.startMonitor = this.getPromise(toolbarObj);
 		devicePower.stopMonitor = this.getPromise(true);
 		return devicePower;
 	}
@@ -1200,14 +1202,24 @@ export class VantageShellService {
 			status: true
 		};
 		const devicePowerIdeaNoteBook = {
-			rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj) },
-			conservationMode: { getConservationModeStatus: this.getPromise(obj) },
+            rapidChargeMode: { getRapidChargeModeStatus: this.getPromise(obj),
+                setRapidChargeModeStatus: this.getPromise(obj)},
+            conservationMode: { getConservationModeStatus: this.getPromise(obj),
+                setConservationModeStatus: this.getPromise(obj)  },
+            intelligentCoolingForIdeaPad:{ getITSSettings:this.getPromise(true),
+                setITSSettings:this.getPromise(true),
+                startMonitor:this.getPromise(true),
+                stopMonitor:this.getPromise(true)},
+
 			alwaysOnUSB: {
 				getAlwaysOnUSBStatus: this.getPromise(obj),
-				getUSBChargingInBatteryModeStatus: this.getPromise(obj)
+                getUSBChargingInBatteryModeStatus: this.getPromise(obj),
+                setAlwaysOnUSBStatus: this.getPromise(obj),
+                setUSBChargingInBatteryModeStatus: this.getPromise(obj)
 			},
-			flipToBoot: { getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }) }
-		};
+            flipToBoot: { getFlipToBootCapability: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }),
+            setFlipToBootSettings: this.getPromise({ ErrorCode: 0, Supported: 1, CurrentMode: 1 }) }
+        };
 		return devicePowerIdeaNoteBook;
 	}
 	// public getPowerThinkPad(): any {
@@ -1220,7 +1232,7 @@ export class VantageShellService {
 	public getPowerThinkPad(): any {
 		const batteryThresholdInfo: any = [
 			{
-				batteryNum: 1,
+				batteryNumber: 1,
 				checkBoxValue: false,
 				isCapable: true,
 				isOn: false,
@@ -1228,7 +1240,7 @@ export class VantageShellService {
 				stopValue: 80
 			},
 			{
-				batteryNum: 2,
+				batteryNumber: 2,
 				checkBoxValue: false,
 				isCapable: true,
 				isOn: false,
@@ -1237,13 +1249,40 @@ export class VantageShellService {
 			}
 		];
 		const devicePowerThinkPad: any = {
-			sectionChargeThreshold: { getChargeThresholdInfo: this.getPromise(batteryThresholdInfo) },
-			sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true) },
-			sectionAlwaysOnUsb: { getAlwaysOnUsbCapability: this.getPromise(true) },
-			sectionEasyResume: { getEasyResumeCapability: this.getPromise(true) },
+            sectionBatteryGaugeReset:{getGaugeResetCapability:this.getPromise(true),
+                startBatteryGaugeReset:this.getPromise(true),
+                stopBatteryGaugeReset:this.getPromise(true)
+            },
+            sectionChargeThreshold: { getChargeThresholdInfo: this.getPromise(batteryThresholdInfo),
+                setChargeThresholdValue: this.getPromise(batteryThresholdInfo),
+                setCtAutoCheckbox: this.getPromise(batteryThresholdInfo),
+                setToggleOff: this.getPromise(batteryThresholdInfo)},
+            sectionAirplaneMode: { getAirplaneModeCapability: this.getPromise(true),
+                getAirplaneMode: this.getPromise(true),
+                setAirplaneMode: this.getPromise(true),
+                setAirplaneModeAutoDetection: this.getPromise(true),
+                getAirplaneModeAutoDetection: this.getPromise(true)
+             },
+            sectionAlwaysOnUsb: { getAlwaysOnUsbCapability: this.getPromise(true),
+                setAlwaysOnUsb: this.getPromise(true),
+                getAlwaysOnUsb: this.getPromise(true) },
+            sectionEasyResume: { getEasyResumeCapability: this.getPromise(true),
+                getEasyResume: this.getPromise(true),
+                setEasyResume: this.getPromise(true)
+             },
 			sectionSmartStandby: {
 				getSmartStandbyCapability: this.getPromise(true),
-				getSmartStandbyEnabled: this.getPromise(true)
+                getSmartStandbyEnabled: this.getPromise(true),
+                getSmartStandbyActiveStartEnd:this.getPromise(true),
+                getSmartStandbyDaysOfWeekOff:this.getPromise(true),
+                setSmartStandbyEnabled:this.getPromise(true),
+                setSmartStandbyActiveStartEnd:this.getPromise(true),
+                setSmartStandbyDaysOfWeekOff:this.getPromise(true),
+                getIsAutonomicCapability:this.getPromise(true),
+                getSmartStandbyIsAutonomic:this.getPromise(true),
+                getSmartStandbyPresenceData:this.getPromise(true),
+                getSmartStandbyActiveHours:this.getPromise(true),
+                setSmartStandbyIsAutonomic:this.getPromise(true)
 			}
 		};
 		return devicePowerThinkPad;
@@ -1255,10 +1294,32 @@ export class VantageShellService {
 	// 	}
 	// }
 	public getPowerItsIntelligentCooling(): any {
-		if (this.getPowerSettings() && this.getPowerSettings().its) {
-			return this.getPowerSettings().its;
-		}
-		return undefined;
+        const devicePowerItsIntelligentCooling = { 
+                intelligentCooling: { 
+                    getPMDriverStatus: this.getPromise(true),
+                    getITSServiceStatus: this.getPromise(true),
+                    getDYTCRevision:this.getPromise(true),
+                    getCQLCapability:this.getPromise(true),
+                    getTIOCapability:this.getPromise(true),
+                    setAutoModeSetting:this.getPromise(true),
+                    setManualModeSetting:this.getPromise(true),
+                    getManualModeSetting:this.getPromise(true),
+                    getAPSState:this.getPromise(true),
+                    getLegacyCQLCapability:this.getPromise(true),
+                    getLegacyTIOCapability:this.getPromise(true),
+                    getLegacyManualModeCapability:this.getPromise(true),
+                    getLegacyAutoModeState:this.getPromise(true),
+                    getLegacyManualModeState:this.getPromise(true),
+                    setLegacyAutoModeState:this.getPromise(true),
+                    setLegacyManualModeState:this.getPromise(true)
+
+                 } 
+                }             
+		// if (this.getPowerSettings() && this.getPowerSettings().its) {
+		// 	return this.getPowerSettings().its;
+		// }
+        // return undefined;
+        return devicePowerItsIntelligentCooling;
 	}
 
 	public getSmartPerformance() {
@@ -1890,7 +1951,7 @@ export class VantageShellService {
 	public getIntelligentCoolingForIdeaPad(): any {
 		if (this.getPowerIdeaNoteBook()) {
 			return this.getPowerIdeaNoteBook().its;
-		}
+        }
 		return undefined;
 	}
 
@@ -2144,8 +2205,11 @@ export class VantageShellService {
 		return inputControlLinks;
 	}
 
-	public getVoipHotkeysObject() {
-		throw new Error('Method not implemented.');
+	public getVoipHotkeysObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
 	}
 
 	public getSuperResolution(): any {
