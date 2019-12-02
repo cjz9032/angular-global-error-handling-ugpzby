@@ -27,8 +27,9 @@ export class ModalSmartStandByComponent implements OnInit {
 		first: ['#FFFFFF', '#d1d0ff', '#918fff', '#413DFF', '#0602CA'],
 		second: ['#FFFFFF', '#EAB029', '#EAB029', '#EAB029', '#EAB029']
 	};
-	private weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+	public weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 	public days = [];
+	public isSufficient = true;
 	// private legends = [0, 1, 2, 3, 4];
 	constructor(
 		private http: HttpClient,
@@ -239,10 +240,16 @@ export class ModalSmartStandByComponent implements OnInit {
 			this.activities = data;
 			console.log(data);
 			this.renderToSecondChart(data);
+			this.getIsPresenceDataSufficientStatus()
 		}).catch(error => {
 			console.log('getSmartStandbyActiveHours error', error.message);
 			return EMPTY;
 		});
+	}
+	public getIsPresenceDataSufficientStatus(){
+		this.powerService.getIsPresenceDataSufficient().then(value =>{
+			this.isSufficient = value;
+		})
 	}
 	closeModal() {
 		this.activeModal.close('close');

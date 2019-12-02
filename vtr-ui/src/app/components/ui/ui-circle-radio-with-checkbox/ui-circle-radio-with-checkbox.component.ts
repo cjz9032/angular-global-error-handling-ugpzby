@@ -42,9 +42,9 @@ export class UiCircleRadioWithCheckboxComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.translate.stream(this.label).subscribe((result: string) => {
-			this.label = result;
-		});
+		// this.translate.stream(this.label).subscribe((result: string) => {
+		// 	this.label = result;
+		// });
 	}
 
 	onChange(event) {

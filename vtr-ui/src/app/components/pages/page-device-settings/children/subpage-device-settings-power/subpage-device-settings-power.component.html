@@ -128,7 +128,7 @@
 									[isDisabled]="batteryService.checkIsGaugeResetRunning()"
 									[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 									<div *ngIf="showBatteryThreshold">
-										<vtr-battery-charge-threshold-settings
+										<vtr-battery-charge-threshold-settings *ngIf="isPrimaryBatteryAvailable"
 											[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title1' | translate"
 											[type]="'primary'"
 											[start]="'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"

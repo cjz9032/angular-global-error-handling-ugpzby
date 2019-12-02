@@ -15,7 +15,7 @@ export class HardwareScanGuard implements CanActivate, CanActivateChild {
 	constructor(private router: Router) {}
 
 	private available(): boolean {
-		return false;
+		return true;
 	}
 
 	canActivate(
