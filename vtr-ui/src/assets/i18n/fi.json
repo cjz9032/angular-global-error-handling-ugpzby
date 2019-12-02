@@ -2547,8 +2547,8 @@
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi (valinnainen)",
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
-		"custom": "Mukautettu käyttökokemus",
-		"professional": "Ammattikäyttö",
+        "custom": "Mukautettu käyttökokemus",
+        "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
         "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
         "testNotApplicable": "Ei sovellu mukautettu tarkistus",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Odota, kunnes tarkistus alkaa",
+        "reminderTimeRetrieveHardwareInformation": "Laitteiston tietojen noutamisprosessi saattaa kestää jonkin aikaa",
+        "retrievingHardwareInformation": "Noudetaan laitteistotietoja...",
         "pluginTokens": {
             "cpu": "Suoritin",
             "memory": "Muisti",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Asenna",
-				"installing": "Asentaminen",
-				"downloading": "Ladataan",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
                 "installed": "Asennettu",
                 "launch": "Aloita",
                 "seeMore": "Näytä lisää"

@@ -2547,8 +2547,8 @@
         "subtitle2": "Vertel ons over uw interesses (optioneel)",
         "personal": "Persoonlijk gebruik",
         "business": "Zakelijk gebruik",
-		"custom": "Aangepaste ervaring",
-		"professional": "Beroepsmatig gebruik",
+        "custom": "Aangepaste ervaring",
+        "professional": "Beroepsmatig gebruik",
         "privacytitle": "Help ons de kwaliteit van de app te verbeteren door toe te staan dat anoniem gebruiksgegevens worden verzameld.",
         "moreInterest": "+ meer interesses",
         "title1": "Welkom bij",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
         "testNotApplicable": "Niet van toepassing op aangepaste scan",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Wacht totdat het scannen start",
+        "reminderTimeRetrieveHardwareInformation": "Het ophalen van uw hardwaregegevens kan even duren",
+        "retrievingHardwareInformation": "Bezig met ophalen van hardwaregegevens...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Geheugen",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installeer",
-				"installing": "Installeren",
-				"downloading": "Bezig met downloaden",
+                "installing": "Installeren",
+                "downloading": "Bezig met downloaden",
                 "installed": "Geïnstalleerd",
                 "launch": "Starten",
                 "seeMore": "Meer weergeven"

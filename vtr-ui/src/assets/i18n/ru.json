@@ -2547,8 +2547,8 @@
         "subtitle2": "Расскажите нам о своих интересах (необязательно)",
         "personal": "Личное пользование",
         "business": "Использование для работы или бизнеса",
-		"custom": "Особое использование",
-		"professional": "Профессиональное использование",
+        "custom": "Особое использование",
+        "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
         "moreInterest": "+ другие интересы",
         "title1": "Добро пожаловать в",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
         "testNotApplicable": "При настраиваемом сканировании неприменимо",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Дождитесь начала проверки",
+        "reminderTimeRetrieveHardwareInformation": "Процедура получения информации об оборудовании может занять некоторое время",
+        "retrievingHardwareInformation": "Получение информации об оборудовании...",
         "pluginTokens": {
             "cpu": "Процессор",
             "memory": "Оперативная память",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Установить",
-				"installing": "Идет установка",
-				"downloading": "Скачивание",
+                "installing": "Идет установка",
+                "downloading": "Скачивание",
                 "installed": "Установлено",
                 "launch": "Запустить",
                 "seeMore": "Дополнительная информация"

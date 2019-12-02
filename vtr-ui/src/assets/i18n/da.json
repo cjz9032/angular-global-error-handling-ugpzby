@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
         "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Vent, indtil scanningen starter",
+        "reminderTimeRetrieveHardwareInformation": "Det kan tage lidt tid at hente dine hardwareoplysninger",
+        "retrievingHardwareInformation": "Henter hardwareoplysninger...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Hukommelse",

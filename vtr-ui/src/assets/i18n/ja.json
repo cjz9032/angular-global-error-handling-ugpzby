@@ -2547,8 +2547,8 @@
         "subtitle2": "興味のあることを教えてください (任意)",
         "personal": "個人用",
         "business": "仕事用",
-		"custom": "カスタム・エクスペリエンス",
-		"professional": "業務用",
+        "custom": "カスタム・エクスペリエンス",
+        "professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
         "testNotApplicable": "カスタム・スキャンには適用されません",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "スキャンが開始されるまで待ちます",
+        "reminderTimeRetrieveHardwareInformation": "この処理には、ハードウェア情報の取得に多少時間がかかる場合があります",
+        "retrievingHardwareInformation": "ハードウェア情報を取得しています...",
         "pluginTokens": {
             "cpu": "プロセッサー",
             "memory": "メモリー",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "インストール",
-				"installing": "インストール",
-				"downloading": "ダウンロード中",
+                "installing": "インストール",
+                "downloading": "ダウンロード中",
                 "installed": "インストール済み",
                 "launch": "起動",
                 "seeMore": "詳細を見る"

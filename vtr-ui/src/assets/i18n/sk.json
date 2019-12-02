@@ -2547,8 +2547,8 @@
         "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-		"custom": "Vlastné prostredie",
-		"professional": "Určené pre odborníkov",
+        "custom": "Vlastné prostredie",
+        "professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
         "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Čakajte na spustenie kontroly",
+        "reminderTimeRetrieveHardwareInformation": "Proces získania informácií o hardvéri môže chvíľu trvať",
+        "retrievingHardwareInformation": "Načítavajú sa informácie o hardvéri...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Pamäť",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-				"installing": "Inštalácia",
-				"downloading": "Sťahuje sa",
+                "installing": "Inštalácia",
+                "downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"

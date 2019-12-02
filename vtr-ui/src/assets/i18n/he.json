@@ -2547,8 +2547,8 @@
         "subtitle2": "ספרו לנו על תחומי העניין שלכם (אופציונלי)",
         "personal": "שימוש אישי",
         "business": "שימוש עסקי",
-		"custom": "חוויה מותאמת אישית",
-		"professional": "שימוש מקצועי",
+        "custom": "חוויה מותאמת אישית",
+        "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
         "title1": "ברוכים הבאים אל",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "המתינו לביצוע הביטול",
         "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה.",
         "testNotApplicable": "לא ישים בסריקה מותאמת אישית",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "יש להמתין עד שתתחיל הסריקה",
+        "reminderTimeRetrieveHardwareInformation": "תהליך אחזור מידע החומרה עשוי לארוך זמן מה",
+        "retrievingHardwareInformation": "מאחזר מידע מהחומרה...",
         "pluginTokens": {
             "cpu": "מעבד",
             "memory": "זיכרון",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "התקן",
-				"installing": "התקנה",
-				"downloading": "הורדה",
+                "installing": "התקנה",
+                "downloading": "הורדה",
                 "installed": "מותקן",
                 "launch": "הפעלה",
                 "seeMore": "פרטים נוספים"

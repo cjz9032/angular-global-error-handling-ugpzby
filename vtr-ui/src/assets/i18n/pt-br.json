@@ -2547,8 +2547,8 @@
         "subtitle2": "Conte-nos sobre seus interesses (opcional)",
         "personal": "Uso pessoal",
         "business": "Uso comercial",
-		"custom": "Personalizar a experiência",
-		"professional": "Uso profissional",
+        "custom": "Personalizar a experiência",
+        "professional": "Uso profissional",
         "privacytitle": "Ajude-nos a melhorar a qualidade do aplicativo permitindo a coleta anônima de estatísticas de uso.",
         "moreInterest": "+ mais interesses",
         "title1": "Bem-vindo ao",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
         "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a.",
         "testNotApplicable": "Não aplicável em verificação personalizada",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Aguarde até o início da verificação",
+        "reminderTimeRetrieveHardwareInformation": "Esse processo pode demorar um pouco para recuperar suas informações de hardware",
+        "retrievingHardwareInformation": "Recuperando informações de hardware...",
         "pluginTokens": {
             "cpu": "Processador",
             "memory": "Memória",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalar",
-				"installing": "Instalando",
-				"downloading": "Fazendo o download",
+                "installing": "Instalando",
+                "downloading": "Fazendo o download",
                 "installed": "Instalado",
                 "launch": "Iniciar",
                 "seeMore": "Ver mais"

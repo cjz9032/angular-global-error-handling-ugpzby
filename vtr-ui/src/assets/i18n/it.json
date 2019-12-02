@@ -2547,8 +2547,8 @@
         "subtitle2": "Raccontaci i tuoi interessi (facoltativo)",
         "personal": "Uso personale",
         "business": "Uso aziendale",
-		"custom": "Esperienza personalizzata",
-		"professional": "Uso professionale",
+        "custom": "Esperienza personalizzata",
+        "professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
         "title1": "Benvenuto in",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Attendere l'annullamento dell'operazione",
         "pluginNotUpdate": "La scansione hardware non è disponibile perché è obsoleta. Eseguire l'aggiornamento.",
         "testNotApplicable": "Non applicabile alla scansione personalizzata",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Attendere l'avvio della scansione",
+        "reminderTimeRetrieveHardwareInformation": "Questo processo potrebbe richiedere qualche minuto per recuperare le informazioni sull'hardware",
+        "retrievingHardwareInformation": "Recupero delle informazioni sull'hardware in corso...",
         "pluginTokens": {
             "cpu": "Processore",
             "memory": "Memoria",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installa",
-				"installing": "Installazione",
-				"downloading": "Download in corso",
+                "installing": "Installazione",
+                "downloading": "Download in corso",
                 "installed": "Installato",
                 "launch": "Avvia",
                 "seeMore": "Visualizza altro"

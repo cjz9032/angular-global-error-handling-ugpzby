@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
         "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
         "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Περιμένετε έως ότου ξεκινήσει η σάρωση",
+        "reminderTimeRetrieveHardwareInformation": "Αυτή η διαδικασία ενδέχεται να χρειαστεί λίγο χρόνο για να ανακτήσετε τις πληροφορίες του υλικού σας",
+        "retrievingHardwareInformation": "Ανάκτηση πληροφοριών υλικού...",
         "pluginTokens": {
             "cpu": "Επεξεργαστής",
             "memory": "Μνήμη",

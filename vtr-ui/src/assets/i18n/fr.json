@@ -2547,8 +2547,8 @@
         "subtitle2": "Parlez-nous de vos centres d'intérêt (facultatif)",
         "personal": "Usage Personnel",
         "business": "Usage Commercial",
-		"custom": "Expérience Personnalisée",
-		"professional": "Usage Professionnel",
+        "custom": "Expérience Personnalisée",
+        "professional": "Usage Professionnel",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
         "title1": "Bienvenue",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
         "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
         "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Attendez que l'analyse démarre",
+        "reminderTimeRetrieveHardwareInformation": "Ce processus peut prendre un certain temps pour récupérer vos informations matérielles",
+        "retrievingHardwareInformation": "Récupération des informations matérielles...",
         "pluginTokens": {
             "cpu": "Processeur",
             "memory": "Mémoire",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installer",
-				"installing": "Installation en cours",
-				"downloading": "Téléchargement",
+                "installing": "Installation en cours",
+                "downloading": "Téléchargement",
                 "installed": "Installé",
                 "launch": "Lancer",
                 "seeMore": "En savoir plus"

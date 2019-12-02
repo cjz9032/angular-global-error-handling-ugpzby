@@ -2547,8 +2547,8 @@
         "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
-		"custom": "Experiență personalizată",
-		"professional": "Utilizare la nivel profesionist",
+        "custom": "Experiență personalizată",
+        "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
         "testNotApplicable": "Nu se aplică la scanarea personalizată",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Aşteptaţi până când începe scanarea",
+        "reminderTimeRetrieveHardwareInformation": "Acest proces poate dura un timp cât timp se preiau informaţiile despre hardware",
+        "retrievingHardwareInformation": "Se preiau informaţiile despre hardware...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorie",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalare",
-				"installing": "Instalare în curs",
-				"downloading": "Descărcare în curs",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"

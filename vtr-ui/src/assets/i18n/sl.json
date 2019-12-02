@@ -2547,8 +2547,8 @@
         "subtitle2": "Povejte nam, kaj vas zanima (izbirno)",
         "personal": "Osebna uporaba",
         "business": "Poslovna uporaba",
-		"custom": "Izkušnja po meri",
-		"professional": "Profesionalna uporaba",
+        "custom": "Izkušnja po meri",
+        "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
         "title1": "Pozdravljeni v programu WRITEit,",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Počakajte na potek preklica",
         "pluginNotUpdate": "Pregled strojne opreme ni na voljo, ker je zastarel. Nadgradite ga.",
         "testNotApplicable": "Ni upoštevno pri pregledu po meri",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Počakajte, da se pregledovanje začne",
+        "reminderTimeRetrieveHardwareInformation": "Ta postopek lahko traja nekaj časa, da se pridobijo podatki o strojni opremi",
+        "retrievingHardwareInformation": "Pridobivanje podatkov o strojni opremi...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Pomnilnik",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Namestitev",
-				"installing": "Nameščanje",
-				"downloading": "Prenašanje",
+                "installing": "Nameščanje",
+                "downloading": "Prenašanje",
                 "installed": "Nameščeno",
                 "launch": "Zaženite",
                 "seeMore": "Več"

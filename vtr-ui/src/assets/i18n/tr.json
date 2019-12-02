@@ -2547,8 +2547,8 @@
         "subtitle2": "Bize ilgi alanlarınızdan bahsedin (isteğe bağlı)",
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
-		"custom": "Özel Deneyim",
-		"professional": "Profesyonel Kullanım",
+        "custom": "Özel Deneyim",
+        "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
         "testNotApplicable": "Özel tarama için geçerli değildir",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Tarama başlayana kadar bekleyin",
+        "reminderTimeRetrieveHardwareInformation": "Bu işlemin donanım bilgilerinizi toplaması biraz zaman alabilir",
+        "retrievingHardwareInformation": "Donanım bilgileri alınıyor...",
         "pluginTokens": {
             "cpu": "İşlemci",
             "memory": "Bellek",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Kur",
-				"installing": "Kurma",
-				"downloading": "Karşıdan yükleniyor",
+                "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
                 "installed": "Kurulu",
                 "launch": "Başlat",
                 "seeMore": "Daha Fazla"

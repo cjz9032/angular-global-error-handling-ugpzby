@@ -2547,8 +2547,8 @@
         "subtitle2": "관심 사항을 말해 주십시오(옵션)",
         "personal": "개인용",
         "business": "비즈니스용",
-		"custom": "사용 환경의 개인 설정",
-		"professional": "전문적 용도",
+        "custom": "사용 환경의 개인 설정",
+        "professional": "전문적 용도",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
         "title1": "에 오신 것을 환영합니다",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "취소 진행을 기다리십시오",
         "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
         "testNotApplicable": "사용자 정의 스캔에 적용되지 않음",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "스캔 시작까지 기다려 주십시오",
+        "reminderTimeRetrieveHardwareInformation": "이 프로세스는 하드웨어 정보 검색에 시간이 다소 소요될 수 있습니다",
+        "retrievingHardwareInformation": "하드웨어 정보 검색 중...",
         "pluginTokens": {
             "cpu": "프로세서",
             "memory": "메모리",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "설치",
-				"installing": "설치",
-				"downloading": "다운로드 중",
+                "installing": "설치",
+                "downloading": "다운로드 중",
                 "installed": "설치됨",
                 "launch": "시작",
                 "seeMore": "자세한 정보"

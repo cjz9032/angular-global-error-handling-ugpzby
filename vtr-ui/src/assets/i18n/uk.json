@@ -2547,8 +2547,8 @@
         "subtitle2": "Розкажіть нам про свої вподобання (необов’язково)",
         "personal": "Для особистих потреб",
         "business": "Для роботи",
-		"custom": "Користувацький досвід",
-		"professional": "Професійне використання",
+        "custom": "Користувацький досвід",
+        "professional": "Професійне використання",
         "privacytitle": "Допоможіть удосконалити цю програму — дозвольте нам збирати анонімну статистику використання.",
         "moreInterest": "+ більше вподобань",
         "title1": "Вітаємо в",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
         "testNotApplicable": "Не застосовується для настроюваного сканування",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Зачекайте, доки сканування не почнеться",
+        "reminderTimeRetrieveHardwareInformation": "Отримується інформація про апаратне забезпечення – цей процес може тривати деякий час",
+        "retrievingHardwareInformation": "Отримання інформації про апаратне забезпечення...",
         "pluginTokens": {
             "cpu": "Процесор",
             "memory": "Пам'ять",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Встановити",
-				"installing": "Інсталяція",
-				"downloading": "Завантаження",
+                "installing": "Інсталяція",
+                "downloading": "Завантаження",
                 "installed": "Установлено",
                 "launch": "Запустити",
                 "seeMore": "Додаткова інформація"

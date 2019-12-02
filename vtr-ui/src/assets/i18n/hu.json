@@ -2547,8 +2547,8 @@
         "subtitle2": "Adja meg az érdeklődési köreit (opcionális)",
         "personal": "Személyes használat",
         "business": "Céges használat",
-		"custom": "Egyéni megoldások",
-		"professional": "Professzionális célú felhasználás",
+        "custom": "Egyéni megoldások",
+        "professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
         "moreInterest": "+ további érdeklődési kör",
         "title1": "Üdvözli a",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
         "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
         "testNotApplicable": "Egyéni ellenőrzésnél nem használható",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Várjon, amíg a szkennelés elkezdődik",
+        "reminderTimeRetrieveHardwareInformation": "E folyamat számára eltarthat egy ideig a hardverinformációk beolvasása",
+        "retrievingHardwareInformation": "Hardverinformációk lekérése...",
         "pluginTokens": {
             "cpu": "Processzor",
             "memory": "Memória",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Telepítse",
-				"installing": "Telepítés",
-				"downloading": "Letöltés folyamatban",
+                "installing": "Telepítés",
+                "downloading": "Letöltés folyamatban",
                 "installed": "Telepítve",
                 "launch": "Indítás",
                 "seeMore": "Továbbiak megtekintése"

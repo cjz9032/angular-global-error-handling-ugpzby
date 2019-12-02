@@ -2547,8 +2547,8 @@
         "subtitle2": "告訴我們您的興趣（選填）",
         "personal": "個人使用",
         "business": "業務使用",
-		"custom": "自訂",
-		"professional": "專業使用",
+        "custom": "自訂",
+        "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "請等待取消進度",
         "pluginNotUpdate": "硬體掃描是舊版的因此無法使用。請升級。",
         "testNotApplicable": "不適用於自訂掃描",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "等待掃描開始",
+        "reminderTimeRetrieveHardwareInformation": "此程序可能需要一段時間才能擷取您的硬體資訊",
+        "retrievingHardwareInformation": "正在擷取硬體資訊...",
         "pluginTokens": {
             "cpu": "處理器",
             "memory": "記憶體",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "安裝",
-				"installing": "安裝",
-				"downloading": "下載",
+                "installing": "安裝",
+                "downloading": "下載",
                 "installed": "已安裝",
                 "launch": "啟動",
                 "seeMore": "查看更多"

@@ -2547,8 +2547,8 @@
         "subtitle2": "Recite nam više o svojim interesima (neobavezno)",
         "personal": "Osobna upotreba",
         "business": "Upotreba u poslovne svrhe",
-		"custom": "Prilagodite iskustvo",
-		"professional": "Stručna uporaba",
+        "custom": "Prilagodite iskustvo",
+        "professional": "Stručna uporaba",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
         "title1": "Dobrodošli u",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Pričekajte napredak otkazivanja",
         "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju.",
         "testNotApplicable": "Nije primjenjivo za prilagođeni pregled",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Pričekajte dok se skeniranje ne pokrene",
+        "reminderTimeRetrieveHardwareInformation": "Ovaj bi postupak mogao potrajati neko vrijeme dok ne dobijete podatke o hardveru",
+        "retrievingHardwareInformation": "Dohvaćanje podataka o hardveru...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorija",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliranje",
-				"installing": "Instaliranje",
-				"downloading": "Preuzimanje",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokretanje",
                 "seeMore": "Potražite više"

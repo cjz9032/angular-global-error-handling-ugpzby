@@ -2547,8 +2547,8 @@
         "subtitle2": "Opowiedz nam o swoich zainteresowaniach (opcjonalnie)",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
-		"custom": "Niestandardowe zastosowanie",
-		"professional": "Zastosowania profesjonalne",
+        "custom": "Niestandardowe zastosowanie",
+        "professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
         "title1": "Witamy w aplikacji",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
         "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować.",
         "testNotApplicable": "Nie dotyczy skanowania niestandardowego",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Poczekaj aż rozpocznie się skanowanie",
+        "reminderTimeRetrieveHardwareInformation": "Proces pobierania informacji o sprzęcie może chwilę potrwać",
+        "retrievingHardwareInformation": "Pobieranie informacji o sprzęcie...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Pamięć",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Zainstaluj",
-				"installing": "Instalowanie",
-				"downloading": "Pobieranie",
+                "installing": "Instalowanie",
+                "downloading": "Pobieranie",
                 "installed": "Zainstalowane",
                 "launch": "Uruchom",
                 "seeMore": "Zobacz więcej"

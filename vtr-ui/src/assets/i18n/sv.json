@@ -2547,8 +2547,8 @@
         "subtitle2": "Berätta om dina intressen (valfritt)",
         "personal": "Privat",
         "business": "Arbete",
-		"custom": "Skräddarsydd upplevelse",
-		"professional": "Användning i arbetet",
+        "custom": "Skräddarsydd upplevelse",
+        "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2746,9 +2746,9 @@
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
         "testNotApplicable": "Kan inte användas på anpassad sökning",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Vänta tills genomsökningen startar",
+        "reminderTimeRetrieveHardwareInformation": "Den här processen med att hämta information om maskinvaran kan ta en stund",
+        "retrievingHardwareInformation": "Hämtar information om maskinvaran...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Minne",
@@ -2975,8 +2975,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installera",
-				"installing": "Installerar",
-				"downloading": "Hämtar",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
                 "installed": "Installerad",
                 "launch": "Starta",
                 "seeMore": "Mer information"
