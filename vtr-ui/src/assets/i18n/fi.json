@@ -601,10 +601,10 @@
                 "title": "Järjestelmäpäivitys",
                 "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
-                    "uptoDate": "Ohjelmisto ajan tasalla",
-                    "updatedOn": "päivitetty",
-                    "outdated": "Vanhentunut ohjelmisto",
-                    "neverRanUpdate": "päivitystä ei ole koskaan tehty"
+                    "uptoDate": "Päivitykset tarkistettu ",
+					"updatedOn": "tarkistuspäivä ",
+					"outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
+					"neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
                 }
             },
             "extendedWarranty": "Laajenna takuu",

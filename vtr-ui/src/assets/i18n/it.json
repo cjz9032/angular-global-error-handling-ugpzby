@@ -601,10 +601,10 @@
                 "title": "Aggiornamento del sistema",
                 "notFound": "Aggiornamento sistema non rilevato",
                 "detail": {
-                    "uptoDate": "Software aggiornato",
-                    "updatedOn": "aggiornato in data",
-                    "outdated": "Software obsoleto",
-                    "neverRanUpdate": "aggiornamento mai eseguito"
+                    "uptoDate": "Aggiornamenti controllati ",
+					"updatedOn": "controllati in data ",
+					"outdated": "Aggiornamenti non controllati di recente ",
+					"neverRanUpdate": "aggiornamenti mai controllati"
                 }
             },
             "extendedWarranty": "Garanzia estesa",

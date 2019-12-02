@@ -601,10 +601,10 @@
                 "title": "Systemuppdatering",
                 "notFound": "Systemuppdatering hittades inte",
                 "detail": {
-                    "uptoDate": "Programvaran är uppdaterad",
-                    "updatedOn": "uppdaterad den",
-                    "outdated": "Programvaran är inaktuell",
-                    "neverRanUpdate": "uppdatering har inte skett"
+                    "uptoDate": "Uppdateringar kontrollerade ",
+					"updatedOn": "kontrollerades den ",
+					"outdated": "Uppdateringar har inte kontrollerats nyligen ",
+					"neverRanUpdate": "uppdateringar har aldrig kontrollerats"
                 }
             },
             "extendedWarranty": "Förläng garantin",

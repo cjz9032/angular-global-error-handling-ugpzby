@@ -601,10 +601,10 @@
                 "title": "Systemoppdateringer",
                 "notFound": "Finner ikke systemoppdatering",
                 "detail": {
-                    "uptoDate": "Programvare er oppdatert",
-                    "updatedOn": "oppdatert",
-                    "outdated": "Programvare er utdatert",
-                    "neverRanUpdate": "kjørte aldri oppdatering"
+                    "uptoDate": "Oppdateringer sjekket ",
+					"updatedOn": "sjekket den ",
+					"outdated": "Oppdateringer ikke sjekket nylig ",
+					"neverRanUpdate": "oppdateringer aldri sjekket"
                 }
             },
             "extendedWarranty": "Utvide garantien",

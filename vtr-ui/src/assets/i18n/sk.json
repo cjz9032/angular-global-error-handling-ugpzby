@@ -601,10 +601,10 @@
                 "title": "Aktualizácia systému",
                 "notFound": "Aktualizácia systému sa nenašla",
                 "detail": {
-                    "uptoDate": "Softvér je aktualizovaný",
-                    "updatedOn": "aktualizovaný",
-                    "outdated": "Zastaraný softvér",
-                    "neverRanUpdate": "nikdy nebola spustená aktualizácia"
+                    "uptoDate": "Aktualizácie boli skontrolované ",
+					"updatedOn": "skontrolované ",
+					"outdated": "Aktualizácie neboli dlho kontrolované ",
+					"neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
                 }
             },
             "extendedWarranty": "Rozšíriť záruku",
