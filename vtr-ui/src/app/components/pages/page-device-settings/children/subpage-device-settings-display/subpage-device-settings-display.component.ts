@@ -466,9 +466,9 @@ export class SubpageDeviceSettingsDisplayComponent
 						return EMPTY;
 					});
 
-				if (!this.eyeCareModeStatus.status) {
-					this.onSetChangeDisplayColorTemp({ value: this.displayColorTempDataSource.current });
-				}
+				// if (!this.eyeCareModeStatus.status) {
+				// 	this.onSetChangeDisplayColorTemp({ value: this.displayColorTempDataSource.current });
+				// }
 
 				// if(this.isEyeCareMode){
 				// 	this.setToEyeCareMode();
