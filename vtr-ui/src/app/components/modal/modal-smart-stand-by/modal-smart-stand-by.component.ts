@@ -23,7 +23,7 @@ export class ModalSmartStandByComponent implements OnInit {
 		{ tittle: this.device + 'graph.graph2Tittle', subTittle: this.device + 'graph.graphSubtittle', legends: '' }
 	];
 
-	private colors = {
+	public colors = {
 		first: ['#FFFFFF', '#d1d0ff', '#918fff', '#413DFF', '#0602CA'],
 		second: ['#FFFFFF', '#EAB029', '#EAB029', '#EAB029', '#EAB029']
 	};
@@ -40,17 +40,17 @@ export class ModalSmartStandByComponent implements OnInit {
 	ngOnInit() {
 		this.getActiviesData();
 		this.getSmartStandbyActiveHours();
-		this.getDays()
+		this.getDays();
 		// this.items[0].colors = this.colors.first
 	}
 	public getDays() {
 		this.days = [];
 		let day: any;
-		let week: any = [];
+		const week: any = [];
 		this.weekDays.forEach(d => {
 			day = this.device + 'days.shortName.' + d;
 			week.push(day);
-		})
+		});
 		this.days = week;
 	}
 
