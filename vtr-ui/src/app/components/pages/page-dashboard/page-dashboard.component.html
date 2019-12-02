@@ -156,7 +156,7 @@
 					</vtr-widget-dashboard-warranty>
 				</div>
 			</div>
-			<div class="row no-gutters" *ngIf="!deviceService.showWarranty">
+			<div class="row no-gutters" *ngIf="!(warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible)">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
@@ -196,7 +196,7 @@
 			</div>
 
 			<div class="row no-gutters"
-				*ngIf="deviceService.showWarranty"
+				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible"
 				[vtrAppSearchScroller]="['search-feedback']">
 				<div class="col-sm-12 col-md-12 pb-60">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
