@@ -403,7 +403,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			title: this.register
 		};
 		if (list.length > 0) {
-			list = list.splice(0, 1, registerList);
+			list.splice(0, 1, registerList);
 		} else {
 			list.push(registerList);
 		}
