@@ -9,6 +9,24 @@
 		font-size: 3rem;
 		color: $main;
 	}
+	.tittle{
+		font-family: 'Segoe UI', sans-serif;
+		font-weight: $weight_600;
+		letter-spacing: 0;
+		color: #34495E;
+		opacity: 1;
+		font-size: 1.8rem;
+	}
+	.sub-tittle, .note{
+		font-family: "Segoe UI Semilight";
+		letter-spacing: 0;
+		color: #667481;
+		opacity: 1;
+		font-size: 1.4rem;
+	}
+	.note{
+		color: #DB221F;
+	}
 	.close-button {
 		background: $gradient_main;
 		border-radius: 3rem;
@@ -19,4 +37,16 @@
 		margin-top: 1rem;
 		font-weight: $weight_bold;
 	}
+	.legends-row {
+		max-width: 96rem;
+		.graph-legend{
+			display: block;
+			border: 0.1rem solid $dark;
+			width: 0.8rem;
+			height: 1.2rem;
+			margin-top: 0.2rem;
+			border-width: thin;	
+		}
+	}
+
 }

@@ -56,7 +56,8 @@ import { WidgetCommonAntivirusComponent } from '../../components/pages/page-secu
 import { PercentIconPipe } from 'src/app/pipe/widget-security/percent-icon.pipe';
 import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-qa.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
-
+import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
+import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
 library.add(
 	faLockAlt,
 	faQuestionCircle,
@@ -104,6 +105,8 @@ library.add(
 		WidgetMcafeeStateComponent,
 		WidgetMcafeeMetricComponent,
 		WidgetCommonAntivirusComponent,
+		WidgetLandingSecurityComponent,
+		WidgetLandingNavComponent,
 	],
 	imports: [
 		CommonModule,

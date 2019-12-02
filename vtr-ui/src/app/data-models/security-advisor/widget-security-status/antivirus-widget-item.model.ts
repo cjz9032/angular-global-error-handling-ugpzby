@@ -11,6 +11,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 			id: 'sa-widget-lnk-av',
 			path: 'security/anti-virus',
 			type: 'security',
+			isSystemLink: false,
 			metricsItemName: 'Anti-Virus'
 		}, translateService);
 		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {

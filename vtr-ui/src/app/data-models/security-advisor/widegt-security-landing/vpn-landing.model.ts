@@ -3,52 +3,50 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
-import { StatusInfo } from './status-info.model';
 
 export class VpnLandingViewModel {
-	statusList: Array<StatusInfo>;
-	type = 'security';
-	imgUrl = '../../../../assets/images/surfeasy-logo.svg';
-
-	vpnStatus: StatusInfo = {
-		status: 4,
-		detail: '',
-		path: 'security/internet-protection',
-		title: '',
-		type: 'security',
-		id: 'sa-ov-link-vpn'
-	};
-	subject = {
-		status: 2,
-		title: '',
-		type: 'security',
+	vpnStatus = {
+		status: 'loading',
+		icon: 'landing-vpn',
+		title: 'security.landing.vpnVirtual',
+		buttonLabel: 'security.landing.goVpn',
+		buttonLink: '/security/internet-protection',
+		content: 'security.landing.vpnContent',
+		showOwn: false,
+		ownTitle: 'security.landing.haveOwnVpn',
+		id: 'sa-ov-link-vpn',
+		detail: ''
 	};
 	translateString: any;
-	constructor(public translate: TranslateService, vpnModel: phoenix.Vpn, public commonService: CommonService) {
+	constructor(translate: TranslateService, vpnModel: phoenix.Vpn, public commonService: CommonService) {
+		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
+			this.setVpnStatus(data);
+		});
+
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		translate.stream([
 			'common.securityAdvisor.loading',
 			'security.landing.vpnVirtual',
-			'security.landing.vpnSecurity',
 			'common.securityAdvisor.installed',
 			'common.securityAdvisor.installing',
-			'common.securityAdvisor.notInstalled'
+			'common.securityAdvisor.notInstalled',
+			'security.landing.haveOwnVpn',
+			'security.landing.vpnContent',
+			'security.landing.goVpn'
 		]).subscribe((res: any) => {
 			this.translateString = res;
 			if (!this.vpnStatus.detail) {
 				this.vpnStatus.detail = res['common.securityAdvisor.loading'];
 			}
 			this.vpnStatus.title = res['security.landing.vpnVirtual'];
-			this.subject.title = res['security.landing.vpnSecurity'];
+			this.vpnStatus.buttonLabel = res['security.landing.goVpn'];
+			this.vpnStatus.content = res['security.landing.vpnContent'];
+			this.vpnStatus.ownTitle = res['security.landing.haveOwnVpn'];
 			if (vpnModel.status) {
 				this.setVpnStatus(vpnModel.status);
 			} else if (cacheStatus) {
 				this.setVpnStatus(cacheStatus);
 			}
-			this.statusList = new Array(this.vpnStatus);
-		});
-		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
-			this.setVpnStatus(data);
 		});
 	}
 
@@ -56,21 +54,20 @@ export class VpnLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
+		const cacheShowOwn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
+		this.vpnStatus.showOwn = typeof cacheShowOwn === 'boolean' ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
 				this.vpnStatus.detail = this.translateString['common.securityAdvisor.installed'];
-				this.vpnStatus.status = 5;
-				this.subject.status = 2;
+				this.vpnStatus.status = 'installed';
 				break;
 			case 'installing':
 				this.vpnStatus.detail = this.translateString['common.securityAdvisor.installing'];
-				this.vpnStatus.status = 4;
-				this.subject.status = 1;
+				this.vpnStatus.status = 'installing';
 				break;
 			default:
 				this.vpnStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
-				this.vpnStatus.status = 5;
-				this.subject.status = 1;
+				this.vpnStatus.status = 'not-installed';
 		}
 
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);

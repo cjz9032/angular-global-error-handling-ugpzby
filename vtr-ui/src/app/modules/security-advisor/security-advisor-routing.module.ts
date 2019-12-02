@@ -35,20 +35,20 @@ const routes: Routes = [
 			pageContent: LocalStorageKey.SecurityCurrentPage
 		}
 	}, {
-		path: 'wifi-security',
-		component: PageSecurityWifiComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonSmodeGuard, NonArmGuard, NonGamingGuard],
-		data: {
-			pageName: 'Security.WifiSecurity'
-		}
-	}, {
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.PasswordProtection'
+		}
+	}, {
+		path: 'wifi-security',
+		component: PageSecurityWifiComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		data: {
+			pageName: 'Security.WifiSecurity'
 		}
 	}, {
 		path: 'internet-protection',
