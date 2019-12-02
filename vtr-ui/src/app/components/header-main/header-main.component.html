@@ -1,29 +1,18 @@
 <div class="vtr-header-main">
-	<div class="vtr-header-main-inner">
-		<a class="back"
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsItem="back"
-			(click)="goBack()"
-			id="{{backId}}"
-			href="javascript:void();"
-			[attr.aria-label]="back"
-			tabindex="0"
+	<div class="vtr-header-main-inner" [ngClass]="{'show-back-btn':back && back.length > 0 && !hideBack}">
+		<a class="back" vtrMetrics metricsEvent="FeatureClick" metricsItem="back" (click)="goBack()" id="{{backId}}"
+			href="javascript:void();" [attr.aria-label]="back" tabindex="0"
 			*ngIf="back && back.length > 0 && !hideBack">
 			{{backarrow}}
 			<span>
 				{{back}}
 			</span>
 		</a>
-		<h1 class="title"
-			id="{{textId}}-header-title"
-			attr.aria-label="{{textId}}-header-title">{{title}}</h1>
+		<h1 class="title" id="{{textId}}-header-title" attr.aria-label="{{textId}}-header-title">{{title}}</h1>
 		<ng-content></ng-content>
-		<div *ngIf="forwardLink"
-			class="forward-link">
+		<div *ngIf="forwardLink" class="forward-link">
 			<a routerLink="/{{forwardLink.path}}"><span class="forward-link-label">{{forwardLink.label}}</span>
-				<fa-icon [icon]="['fas', 'arrow-right']"
-					class="forward-link-icon"></fa-icon>
+				<fa-icon [icon]="['fas', 'arrow-right']" class="forward-link-icon"></fa-icon>
 			</a>
 		</div>
 		<div class="menu">
