@@ -102,15 +102,16 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		)[0];
 
 
-		let tipid = 2;
-		console.log(this.macroKeyTypeStatus.MacroKeyStatus, 'lkwdfj');
-		if (this.macroKeyTypeStatus.MacroKeyStatus == tipid) {
-			this.macroKeyOptions.dropOptions.forEach((option) => {
-				console.log( option, 'zakiritpeople')
-				if (option.value == tipid) {
-					this.tooltips_value = this.translate.instant(option.name);
-				}
-			});
+		// let tipid = 2;
+		// if (this.macroKeyTypeStatus.MacroKeyStatus == tipid) {
+		// 	this.macroKeyOptions.dropOptions.forEach((option) => {
+		// 		if (option.value == tipid) {
+		// 			this.tooltips_value = this.translate.instant(option.name);
+		// 		}
+		// 	});
+		// }
+		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
+			this.tooltips_value = this.translate.instant('gaming.macroKey.status.whileGaming.title');
 		}
 
 	}
