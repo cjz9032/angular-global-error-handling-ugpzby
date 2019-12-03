@@ -9,7 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { stat } from 'fs';
 
-fdescribe('DisplayService', () => {
+describe('DisplayService', () => {
 	beforeEach(() => TestBed.configureTestingModule({
 		schemas: [NO_ERRORS_SCHEMA],
 		imports: [HttpClientModule],

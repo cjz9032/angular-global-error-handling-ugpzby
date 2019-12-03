@@ -632,7 +632,6 @@
             "wifi": "WiFi-säkerhet",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -642,7 +641,8 @@
             "installing": "INSTALLERAR",
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
-            "notRegistered": "INTE REGISTRERAD"
+            "notRegistered": "INTE REGISTRERAD",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -1132,7 +1132,8 @@
                             "wed": "ons",
                             "thurs": "tors",
                             "fri": "fre",
-                            "sat": "lör"
+                            "sat": "lör",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "söndag",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "VERKSTÄLL"
                     },
                     "website": {
-                        "url": "WEBBADRESS"
+                        "url": "WEBBADRESS",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "PLATSHÅLLARE FÖR TEXT"
+                        "title": "PLATSHÅLLARE FÖR TEXT",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "Helt skyddad",
-            "fullyDesc": "Du har tur! Du är helt skyddad.",
             "notFully": "Inte helt skyddad",
-            "notFullyDesc": "Du är inte helt skyddad. Läs om hur du skyddar dig själv bättre nu.",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
             "pwdHealth": "Lösenordstillstånd",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
             "connectedHomeSecurity": "Säkerhet för uppkopplat hem",
             "fingerprint": "Fingeravtrycksläsare",
-            "seeAllNetwork": "Se alla ingående nätverk",
-            "maliciousNetwork": "Förhindrade att datorn gick med i {{maliciousWifi}} skadliga nätverk denna månad.",
-            "good": "BRA",
-            "malicious": "SKADLIGT",
-            "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Säkerhetsresultatet beror på om du:",
-            "antivirus": "Skyddas av ett antivirusprogram",
-            "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
-            "vpn": "Övervakar nätverkets exponering för angripare",
-            "wifi": "Krypterar dina personliga data när du använder offentlig WiFi",
-            "windowsHello": "Skyddar din enhet med alternativ för säker inloggning.",
             "uacTitle": "Vad är UAC-meddelanden?",
             "uacText": "User Account Control är en viktig säkerhetsfunktion i Windows som bidrar till att förhindra att potentiellt skadliga program gör ändringar i systemet.",
             "windowsTitle": "Varför behöver jag aktivera Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Hur skyddar jag mina lösenord bättre?",
             "passwordText": "Lagra och hantera alla dina lösenord krypterade med en professionell onlineskyddsapp i stället för att bara lagra dem i webbläsaren där de är lättåtkomliga för obehöriga.",
             "enhanceTitle": "Vad ska jag göra för att öka säkerheten?",
-            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd."
+            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "Berätta om dina intressen (valfritt)",
         "personal": "Privat",
         "business": "Arbete",
-		"custom": "Skräddarsydd upplevelse",
-		"professional": "Användning i arbetet",
+        "custom": "Skräddarsydd upplevelse",
+        "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
         "testNotApplicable": "Kan inte användas på anpassad sökning",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Vänta tills genomsökningen startar",
+        "reminderTimeRetrieveHardwareInformation": "Den här processen med att hämta information om maskinvaran kan ta en stund",
+        "retrievingHardwareInformation": "Hämtar information om maskinvaran...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Minne",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installera",
-				"installing": "Installerar",
-				"downloading": "Hämtar",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
                 "installed": "Installerad",
                 "launch": "Starta",
                 "seeMore": "Mer information"

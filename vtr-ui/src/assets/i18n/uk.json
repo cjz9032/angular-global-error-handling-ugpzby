@@ -632,7 +632,6 @@
             "wifi": "Безпека WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "УВІМКНУТО",
             "disabled": "ВИМКНУТО",
             "partiallyProtected": "ЧАСТКОВО ЗАХИЩЕНО",
@@ -642,7 +641,8 @@
             "installing": "ІНСТАЛЯЦІЯ",
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
-            "notRegistered": "НЕ ЗАРЕЄСТРОВАНО"
+            "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -1132,7 +1132,8 @@
                             "wed": "Середа",
                             "thurs": "Четвер",
                             "fri": "П'ятниця",
-                            "sat": "Субота"
+                            "sat": "Субота",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Неділя",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "ЗАСТОСУВАТИ"
                     },
                     "website": {
-                        "url": "URL-АДРЕСА ВЕБСАЙТУ"
+                        "url": "URL-АДРЕСА ВЕБСАЙТУ",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ"
+                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "Повністю захищено",
-            "fullyDesc": "Вітаємо! Пристрій надійно захищено.",
             "notFully": "Не повністю захищено",
-            "notFullyDesc": "Пристрій захищено не повністю. Дізнайтеся, як підвищити рівень безпеки.",
             "security101": "ПОРАДНИК З БЕЗПЕКИ 101",
             "firewall": "Брандмауер",
             "pwdHealth": "Надійність паролю",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "Безпека WiFi і Безпека підключеного дому",
             "connectedHomeSecurity": "Безпека підключеного дому",
             "fingerprint": "Сканер відбитків пальців",
-            "seeAllNetwork": "Переглянути всі підключені мережі",
-            "maliciousNetwork": "Цього місяця попереджено підключень комп'ютера до потенційно шкідливих мереж: {{maliciousWifi}}.",
-            "good": "НАДІЙНА",
-            "malicious": "ШКІДЛИВА",
-            "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Ваша безпека залежить від того, чи ви:",
-            "antivirus": "Захищені ви антивірусом;",
-            "password": "Маєте складні паролі та безпечно керуєте ними;",
-            "vpn": "Відстежуєте вразливість мережі до нападів;",
-            "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
-            "windowsHello": "Захищаєте пристрій безпечними способами входу.",
             "uacTitle": "Що таке сповіщення UAC?",
             "uacText": "Служба захисту користувачів – дуже важлива функція безпеки Windows, що запобігає внесенню змін у систему з боку потенційно шкідливих програм.",
             "windowsTitle": "Чому мені потрібна активна операційна система Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Як краще захистити пароль?",
             "passwordText": "Використовуйте спеціалізовані програми для безпечного зберігання ваших паролів замість браузерів, до яких зловмисники можуть легко отримати доступ без вашого відома.",
             "enhanceTitle": "Що мені робити для кращого захисту?",
-            "enhanceText": "Наполегливо радимо захистити пристрої антивірусними програмами та брандмауером, та як мінімум налаштувати сповіщення UAC. Для додаткового захисту даних, використовуйте надійні паролі та шифруйте свої дані під час використання загальнодоступних мереж."
+            "enhanceText": "Наполегливо радимо захистити пристрої антивірусними програмами та брандмауером, та як мінімум налаштувати сповіщення UAC. Для додаткового захисту даних, використовуйте надійні паролі та шифруйте свої дані під час використання загальнодоступних мереж.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "Розкажіть нам про свої вподобання (необов’язково)",
         "personal": "Для особистих потреб",
         "business": "Для роботи",
-		"custom": "Користувацький досвід",
-		"professional": "Професійне використання",
+        "custom": "Користувацький досвід",
+        "professional": "Професійне використання",
         "privacytitle": "Допоможіть удосконалити цю програму — дозвольте нам збирати анонімну статистику використання.",
         "moreInterest": "+ більше вподобань",
         "title1": "Вітаємо в",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
         "testNotApplicable": "Не застосовується для настроюваного сканування",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Зачекайте, доки сканування не почнеться",
+        "reminderTimeRetrieveHardwareInformation": "Отримується інформація про апаратне забезпечення – цей процес може тривати деякий час",
+        "retrievingHardwareInformation": "Отримання інформації про апаратне забезпечення...",
         "pluginTokens": {
             "cpu": "Процесор",
             "memory": "Пам'ять",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Встановити",
-				"installing": "Інсталяція",
-				"downloading": "Завантаження",
+                "installing": "Інсталяція",
+                "downloading": "Завантаження",
                 "installed": "Установлено",
                 "launch": "Запустити",
                 "seeMore": "Додаткова інформація"
