@@ -31,7 +31,8 @@ Use your browser to view websites, and come back here later, then we can show wh
 		<ng-template>
 			<vtr-single-tracker-detail
 				[percentOfTrack]="percentOfTrack"
-				[popUpId]="trackingMapSinglePopupId">
+				[popUpId]="trackingMapSinglePopupId"
+				[isFigleafInExit]="isFigleafInExit$ | async">
 			</vtr-single-tracker-detail>
 		</ng-template>
 	</vtr-common-popup>

@@ -5,6 +5,7 @@ import { FigleafOverviewService } from '../../../common/services/figleaf-overvie
 import { DifferenceInDays } from '../../../utils/helpers';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
 import { AppStatuses } from '../../../userDataStatuses';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	selector: 'vtr-article-description',
@@ -26,6 +27,8 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 		map((globalStatus) => globalStatus.appState)
 	);
 
+	isFigleafInExit$ = this.communicationWithFigleafService.isFigleafInExit$;
+
 	isFigleafInstalled$ = this.appStatusesService.isAppStatusesEqual([AppStatuses.figLeafInstalled]);
 
 	timeToExpires$ = this.figleafOverviewService.figleafStatus$.pipe(
@@ -35,7 +38,8 @@ export class ArticleDescriptionComponent implements AfterViewInit {
 	constructor(
 		private vantageCommunicationService: VantageCommunicationService,
 		private appStatusesService: AppStatusesService,
-		private figleafOverviewService: FigleafOverviewService
+		private figleafOverviewService: FigleafOverviewService,
+		private communicationWithFigleafService: CommunicationWithFigleafService
 	) {}
 
 	ngAfterViewInit() {

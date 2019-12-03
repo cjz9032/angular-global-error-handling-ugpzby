@@ -1,6 +1,6 @@
 <div class="sidebar-install-widget"
 	 data-analyticsName="PromotionBlock"
-	 *ngIf="installWidgetSettings.visible && !isFigleafInstalled">
+	 *ngIf="installWidgetSettings.visible && !isFigleafInstalled  && !(isFigleafInExit$ | async)">
 	<div class="sidebar-install-widget__inner">
 		<div>
 			<img class="sidebar-install-widget__main-image"
