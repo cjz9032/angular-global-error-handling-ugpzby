@@ -59,9 +59,12 @@ export class CommunicationWithFigleafService {
 
 		FigleafConnector.onDisconnect(() => {
 			this.ngZone.run(() => {
-				this.sendTestMessage().pipe(
-					retryWhen((errors) => errors.pipe(delay(1000), take(5), concatMap(() => throwError(new Error('oops!'))))),
-				).subscribe(() => {},
+				this.communicationSwitcherService.isPullingActive$.pipe(take(1)).pipe(
+					switchMap((res) => {
+						return res ? this.sendTestMessage().pipe(
+								retryWhen((errors) => errors.pipe(delay(200), take(5), concatMap(() => throwError(new Error('oops!')))))
+						) : EMPTY;
+					})).subscribe(() => {},
 					(err) => {
 						this.figleafState$.next(null);
 						this.communicationSwitcherService.startPulling();
@@ -108,13 +111,13 @@ export class CommunicationWithFigleafService {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
 			.pipe(
 				catchError((e) => {
-				if (e.message === 'App in exit state') {
-					this.communicationSwitcherService.stopPulling();
-					return this.checkIfFigleafInstalled();
-				}
+					if (e.message === 'App in exit state') {
+						this.communicationSwitcherService.stopPulling();
+						return this.checkIfFigleafInstalled();
+					}
 
-				return throwError(e);
-			}));
+					return throwError(e);
+				}));
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {
