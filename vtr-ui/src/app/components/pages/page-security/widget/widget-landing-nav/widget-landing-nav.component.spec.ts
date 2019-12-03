@@ -8,7 +8,7 @@ import { UiButtonComponent } from 'src/app/components/ui/ui-button/ui-button.com
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('WidgetLandingNavComponent', () => {
+describe('WidgetLandingNavComponent', () => {
 	let component: WidgetLandingNavComponent;
 	let fixture: ComponentFixture<WidgetLandingNavComponent>;
 

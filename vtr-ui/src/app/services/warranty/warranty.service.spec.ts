@@ -14,7 +14,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell-mock.service
 describe('WarrantyService', () => {
 	beforeEach(() => TestBed.configureTestingModule({
 		imports: [RouterTestingModule, TranslationModule, HttpClientModule, MetricsModule],
-		providers: [TranslateStore, CommonService, DeviceService, VantageShellService]
+		providers: [TranslateStore, CommonService, DeviceService, VantageShellService, MetricsDirective]
 	}));
 
 	it('should be created', () => {
