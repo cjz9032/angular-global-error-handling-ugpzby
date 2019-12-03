@@ -358,6 +358,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	ngOnDestroy(): void {
-		this.topRowFunctionsIdeapadSubscription.unsubscribe();
+		if (this.topRowFunctionsIdeapadSubscription) {
+			this.topRowFunctionsIdeapadSubscription.unsubscribe();
+		}
 	}
 }

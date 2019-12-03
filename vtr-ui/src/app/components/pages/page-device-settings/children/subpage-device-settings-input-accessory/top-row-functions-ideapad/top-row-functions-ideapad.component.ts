@@ -96,7 +96,9 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.setSubscription.unsubscribe();
+		if (this.setSubscription) {
+			this.setSubscription.unsubscribe();
+		}
 	}
 
 }
