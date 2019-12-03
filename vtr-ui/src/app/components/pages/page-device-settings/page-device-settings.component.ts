@@ -282,8 +282,12 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		this.qaService.destroyChangeSubscribed();
-		this.routerSubscription.unsubscribe();
+		if (this.qaService) {
+			this.qaService.destroyChangeSubscribed();
+		}
+		if (this.routerSubscription) {
+			this.routerSubscription.unsubscribe();
+		}
 	}
 
 }
