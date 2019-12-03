@@ -632,7 +632,6 @@
             "wifi": "Securitate WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -642,7 +641,8 @@
             "installing": "SE INSTALEAZĂ",
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
-            "notRegistered": "NEÎNREGISTRAT"
+            "notRegistered": "NEÎNREGISTRAT",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -1132,7 +1132,8 @@
                             "wed": "miercuri",
                             "thurs": "joi",
                             "fri": "vineri",
-                            "sat": "sâmbătă"
+                            "sat": "sâmbătă",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "duminică",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "APLICARE"
                     },
                     "website": {
-                        "url": "ADRESĂ URL SITE"
+                        "url": "ADRESĂ URL SITE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXT DE INTRODUS"
+                        "title": "TEXT DE INTRODUS",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "Complet protejat",
-            "fullyDesc": "Felicitări! Sunteți bine protejat.",
             "notFully": "Neprotejat complet",
-            "notFullyDesc": "Nu sunteți complet protejat. Aflați acum ce puteți face ca să vă protejați mai bine.",
             "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
             "firewall": "Paravan de protecție",
             "pwdHealth": "Sănătatea parolei",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi și securitate conectată, la domiciliu",
             "connectedHomeSecurity": "Securitate conectată, la domiciliu",
             "fingerprint": "Cititor de amprentă",
-            "seeAllNetwork": "Vizualizați toate rețelele asociate",
-            "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
-            "good": "BUN",
-            "malicious": "RĂU-INTENȚIONAT",
-            "suspicious": "SUSPECTED",
-            "securityScoreDepends": "Rezultatul dvs. de securitate depinde dacă sunteţi:",
-            "antivirus": "Dacă sunteți protejat de software antivirus",
-            "password": "Dacă aveți parole puternice și complexe gestionate într-un mod sigur",
-            "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
-            "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
-            "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure",
             "uacTitle": "Ce este notificarea UAC?",
             "uacText": "Control cont utilizator (User Account Control – UAC) este o caracteristică de securitate foarte importantă din Windows, care împiedică efectuarea de modificări în sistemul dvs. de programe potenţial dăunătoare.",
             "windowsTitle": "De ce trebuie să activez Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Cum să vă protejaţi mai bine parola?",
             "passwordText": "Stocaţi şi gestionaţi în mod securizat toate parolele criptate cu o aplicaţie profesională de protecţie digitală, în loc să le stocaţi pur şi simplu în browserele dvs., care pot fi accesate cu uşurinţă de către terţe părţi, fără cunoştinţa dvs.",
             "enhanceTitle": "Ce ar trebui să fac pentru a îmbunătăţi protecţia de securitate?",
-            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice."
+            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
-		"custom": "Experiență personalizată",
-		"professional": "Utilizare la nivel profesionist",
+        "custom": "Experiență personalizată",
+        "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
         "testNotApplicable": "Nu se aplică la scanarea personalizată",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Aşteptaţi până când începe scanarea",
+        "reminderTimeRetrieveHardwareInformation": "Acest proces poate dura un timp cât timp se preiau informaţiile despre hardware",
+        "retrievingHardwareInformation": "Se preiau informaţiile despre hardware...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorie",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalare",
-				"installing": "Instalare în curs",
-				"downloading": "Descărcare în curs",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"
