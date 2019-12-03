@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription, EMPTY } from 'rxjs';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { ChangeContext } from 'ng5-slider';
@@ -17,10 +17,9 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { ActivatedRoute } from '@angular/router';
-import { map, timeout, takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
+import { takeWhile } from 'rxjs/operators';
 
 
 @Component({

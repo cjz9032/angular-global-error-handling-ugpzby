@@ -9,10 +9,9 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription, EMPTY } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 

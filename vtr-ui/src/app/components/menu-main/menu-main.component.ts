@@ -26,13 +26,10 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
-import { Observable } from 'rxjs/internal/Observable';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
 	selector: 'vtr-menu-main',

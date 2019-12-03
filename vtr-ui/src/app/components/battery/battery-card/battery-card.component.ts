@@ -11,11 +11,10 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription, EMPTY } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
 
 declare var Windows;

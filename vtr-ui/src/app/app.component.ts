@@ -15,7 +15,7 @@ import { SettingsService } from './services/settings.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { environment } from 'src/environments/environment';
 import { LanguageService } from './services/language/language.service';
-import * as bridgeVersion from '@lenovo/tan-client-bridge/package.json';
+import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { DashboardLocalStorageKey } from './enums/dashboard-local-storage-key.enum';
 import { AppNotification } from './data-models/common/app-notification.model';
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		const win: any = window;
 		win.webAppVersion = {
 			web: environment.appVersion,
-			bridge: bridgeVersion.version
+			bridge: version
 		};
 
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
