@@ -85,6 +85,9 @@
 		li {
 			list-style: none;
 			.dropdown-item {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 				color: $gaming_lightest;
 				font-size: 1.6rem;
 				height: 5.5rem;
