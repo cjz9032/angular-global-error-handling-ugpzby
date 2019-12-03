@@ -913,6 +913,9 @@
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
 					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+				},
+				"dualConditions": {
+					"NotDetected": "Primary battery not Detected"
 				}
 			},
 			"power": {
