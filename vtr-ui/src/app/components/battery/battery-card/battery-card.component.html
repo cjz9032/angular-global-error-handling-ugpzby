@@ -110,7 +110,7 @@
 					role="text">
 					<span role="text"
 						*ngIf="!batteryService.checkIsGaugeResetRunning()"
-						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:thresholdNoteParam"></span>
+						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate"></span>
 					<span role="text"
 						*ngIf="batteryService.checkIsGaugeResetRunning()"
 						[innerHTML]="'device.deviceSettings.batteryGauge.gaugeResetWarning' | translate"></span>

@@ -11,6 +11,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -36,7 +37,8 @@ export class PageMacrokeyComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();

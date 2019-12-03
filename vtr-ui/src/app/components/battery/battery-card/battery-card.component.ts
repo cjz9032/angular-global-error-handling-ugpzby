@@ -31,7 +31,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryGauge: BatteryGaugeDetail;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	batteryConditions: BatteryConditionModel[] = [new BatteryConditionModel(BatteryConditionsEnum.Good, BatteryQuality.Good)];
+	batteryConditions: BatteryConditionModel[] = [new BatteryConditionModel(BatteryConditionsEnum.Good, BatteryStatus.Good)];
 	batteryConditionsEnum = BatteryConditionsEnum;
 	batteryConditionNotes: string[];
 	batteryStatus = BatteryStatus;
@@ -98,7 +98,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 		// battery not detected
 		if (maininfo.status === 0) {
-			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryQuality.Poor);
+			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryStatus.Poor);
 			maininfo.percentage = 0;
 			this.batteryIndicator.percent = 0;
 		}
