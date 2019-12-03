@@ -80,8 +80,13 @@ export class CommunicationWithFigleafService {
 
 	private receiveFigleafReadyForCommunicationState() {
 		const figleafConnectSubscription = timer(0, 3000).pipe(
+			tap((res) => console.log(res)),
 			switchMap(() => this.communicationSwitcherService.isPullingActive$.pipe(take(1))),
-			switchMap((res) => res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))),
+			tap((res) => console.log(res)),
+			switchMap((res) => {
+				console.log('receiveFigleafReadyForCommunicationState', res);
+				return res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))
+			}),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			this.figleafState$.next(figleafStatus.status);
