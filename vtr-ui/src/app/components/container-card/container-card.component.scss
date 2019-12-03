@@ -5,9 +5,11 @@
 	border-radius: $border_radius;
 	background-color: $light;
 	position: relative;
+
 	// overflow: hidden;
 	.default-cursor {
 		cursor: default !important;
+
 		* {
 			cursor: default !important;
 		}
@@ -63,7 +65,7 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					padding: 2.5rem;
+					padding: 2rem 2.5rem;
 					height: 100%;
 
 					// @media #{$mediaquery_X9} {
@@ -102,6 +104,7 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+
 						div {
 							cursor: pointer;
 						}
@@ -276,6 +279,7 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+
 						div {
 							cursor: pointer;
 						}
@@ -324,7 +328,7 @@
 					z-index: 1;
 					height: 100%;
 					display: flex;
-					padding: 2.5rem;
+					padding: 2rem 2.5rem;
 					// justify-content: flex-end;
 					// align-items: center;
 
@@ -333,12 +337,12 @@
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						text-overflow: ellipsis;
 						cursor: pointer;
-						margin-right: 10%;
 					}
 				}
 			}
+
 			.highlight-offline {
-				.inner-content{
+				.inner-content {
 					.title {
 						cursor: default;
 					}
@@ -463,6 +467,7 @@
 		.content {
 			padding: 2rem;
 			cursor: pointer;
+
 			@media #{$mediaquery_X1} {
 				padding: 2rem;
 			}
@@ -483,6 +488,7 @@
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 				cursor: pointer;
+				white-space: normal !important;
 			}
 
 			.read-more {
@@ -534,8 +540,12 @@
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
 			line-height: 1.4;
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 
-		/*	@media #{$mediaquery_X4} {
+			/*	@media #{$mediaquery_X4} {
 				font-size: 2rem;
 			}
 
@@ -566,6 +576,13 @@
 			color: $main_shade;
 			font-size: 2.2rem;
 			line-height: 1.4;
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			/* autoprefixer: off */
+			-webkit-box-orient: vertical;
 
 			/*@media #{$mediaquery_X4} {
 				font-size: 1.8rem;
