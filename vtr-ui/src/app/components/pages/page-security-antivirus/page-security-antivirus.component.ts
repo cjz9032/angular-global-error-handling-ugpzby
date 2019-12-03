@@ -399,7 +399,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	updateRegister(list: Array<any>, data) {
 		this.viewModel.mcafee.registered = data;
 		const registerList = {
-			status: data,
+			status: data ? 'enabled' : 'disabled',
 			title: this.register
 		};
 		if (list.length > 0) {
