@@ -632,7 +632,6 @@
             "wifi": "WiFi-suojaus",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "KÄYTÖSSÄ",
             "disabled": "POISSA KÄYTÖSTÄ",
             "partiallyProtected": "OSITTAIN SUOJATTU",
@@ -642,7 +641,8 @@
             "installing": "ASENNETAAN",
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
-            "notRegistered": "EI REKISTERÖITY"
+            "notRegistered": "EI REKISTERÖITY",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -1132,7 +1132,8 @@
                             "wed": "Weskiviikko",
                             "thurs": "Torstai",
                             "fri": "Perjantai",
-                            "sat": "Lauantai"
+                            "sat": "Lauantai",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Sunnuntai",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "KÄYTÄ"
                     },
                     "website": {
-                        "url": "VERKKOSIVUSTON URL-OSOITE"
+                        "url": "VERKKOSIVUSTON URL-OSOITE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "KIRJOITETTAVA TEKSTI"
+                        "title": "KIRJOITETTAVA TEKSTI",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "Täysin suojattu",
-            "fullyDesc": "Onnittelut! Sinulla on hyvä suojaus.",
             "notFully": "Ei täysin suojattu",
-            "notFullyDesc": "Et ole täysin suojattu. Lue lisätietoja siitä, miten voit suojautua paremmin nyt.",
             "security101": "SECURITY ADVISOR 101",
             "firewall": "Palomuuri",
             "pwdHealth": "Salasanan kunto",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "Wi-Fi-yhteyden & Connected Home -suojaus",
             "connectedHomeSecurity": "Connected Home -suojaus",
             "fingerprint": "Sormenjälkitunnistin",
-            "seeAllNetwork": "Katso kaikki liittyneet verkot",
-            "maliciousNetwork": "Tietokonettasi on estetty liittymästä {{maliciousWifi}} haitalliseen verkkoon tässä kuussa.",
-            "good": "HYVÄ",
-            "malicious": "HAITALLINEN",
-            "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
-            "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
-            "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
-            "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
-            "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
-            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
             "uacTitle": "Mikä on käyttäjätilien valvontailmoitus?",
             "uacText": "Käyttäjätilien valvonta on erittäin tärkeä Windowsin tietoturvaominaisuus, joka auttaa estämään mahdollisesti vahingollisten ohjelmien muutosten tekemisen järjestelmääsi.",
             "windowsTitle": "Miksi minun täytyy aktivoida Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Miten suojata salasana paremmin?",
             "passwordText": "Tallenna ja hallitse kaikkia salasanojasi ammattimaisen digitaalisen suojaussovelluksen avulla sen sijaan, että vain tallennat ne selaimissa, mistä kolmannet osapuolet pääsevät niihin helposti käsiksi tietämättäsi.",
             "enhanceTitle": "Mitä minun pitäisi tehdä parantaakseni tietoturvasuojausta?",
-            "enhanceText": "Suosittelemme, että vähintään suojaat laitteesi virustentorjuntaohjelmistolla ja palomuurilla ja määrität käyttäjätilien valvontailmoitukset. Ja lisäsuojauksena luot vahvoja salasanoja ja hallitset niitä turvallisesti, ja salaat tietosi, kun käytät julkista verkkoa."
+            "enhanceText": "Suosittelemme, että vähintään suojaat laitteesi virustentorjuntaohjelmistolla ja palomuurilla ja määrität käyttäjätilien valvontailmoitukset. Ja lisäsuojauksena luot vahvoja salasanoja ja hallitset niitä turvallisesti, ja salaat tietosi, kun käytät julkista verkkoa.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi (valinnainen)",
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
-		"custom": "Mukautettu käyttökokemus",
-		"professional": "Ammattikäyttö",
+        "custom": "Mukautettu käyttökokemus",
+        "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
         "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
         "testNotApplicable": "Ei sovellu mukautettu tarkistus",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Odota, kunnes tarkistus alkaa",
+        "reminderTimeRetrieveHardwareInformation": "Laitteiston tietojen noutamisprosessi saattaa kestää jonkin aikaa",
+        "retrievingHardwareInformation": "Noudetaan laitteistotietoja...",
         "pluginTokens": {
             "cpu": "Suoritin",
             "memory": "Muisti",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Asenna",
-				"installing": "Asentaminen",
-				"downloading": "Ladataan",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
                 "installed": "Asennettu",
                 "launch": "Aloita",
                 "seeMore": "Näytä lisää"

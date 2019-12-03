@@ -632,7 +632,6 @@
             "wifi": "WiFi 安全性",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "已啟用",
             "disabled": "已停用",
             "partiallyProtected": "受部分保護",
@@ -642,7 +641,8 @@
             "installing": "正在安裝",
             "notFound": "找不到",
             "registered": "已註冊",
-            "notRegistered": "未註冊"
+            "notRegistered": "未註冊",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -1132,7 +1132,8 @@
                             "wed": "星期三",
                             "thurs": "星期四",
                             "fri": "星期五",
-                            "sat": "星期六"
+                            "sat": "星期六",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "套用"
                     },
                     "website": {
-                        "url": "網站 URL"
+                        "url": "網站 URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "要輸入的文字"
+                        "title": "要輸入的文字",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "受到完整保護",
-            "fullyDesc": "恭喜您！您受到良好保護。",
             "notFully": "未受到完整保護",
-            "notFullyDesc": "您未受到完整保護。立即瞭解如何更好地保護自己。",
             "security101": "安全顧問 101",
             "firewall": "防火牆",
             "pwdHealth": "密碼安全狀態",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi 與連線家庭安全性",
             "connectedHomeSecurity": "連線家庭安全性",
             "fingerprint": "指紋辨識器",
-            "seeAllNetwork": "查看所有加入的網路",
-            "maliciousNetwork": "本月已阻止您的電腦加入 {{maliciousWifi}} 個惡意網路。",
-            "good": "良好",
-            "malicious": "惡意",
-            "suspicious": "可疑",
-            "securityScoreDepends": "您的安全分數結果將依下列條件而異：",
-            "antivirus": "是否獲得防毒軟體的保護",
-            "password": "是否在安全方式中採用強式及複雜的密碼進行管理",
-            "vpn": "是否監控網路遭受攻擊的風險",
-            "wifi": "是否在使用公共 WiFi 時加密您的個人資料",
-            "windowsHello": "是否使用安全登入選項來保護裝置",
             "uacTitle": "什麼是 UAC 通知？",
             "uacText": "使用者帳戶控制是 Windows 非常重要的一項安全性功能，可協助防止潛在有害的程式對您的系統進行變更。",
             "windowsTitle": "為什麼需要啟用 Windows？",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "如何能更妥善保護密碼？",
             "passwordText": "安全地儲存及管理所有經由專業數位保護應用程式加密過的密碼，而不是逕行存放於瀏覽器使第三方可在您不知情的情況下輕易存取。",
             "enhanceTitle": "應該採取哪些措施以強化安全保護？",
-            "enhanceText": "強烈建議您交由防毒軟體和防火牆保護您的裝置，設定 UAC 通知以提供最低限度的保護。此外，建立高保護性密碼並以安全的方式進行管理，使用公用網路時加密您的資料做為進階保護措施。"
+            "enhanceText": "強烈建議您交由防毒軟體和防火牆保護您的裝置，設定 UAC 通知以提供最低限度的保護。此外，建立高保護性密碼並以安全的方式進行管理，使用公用網路時加密您的資料做為進階保護措施。",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "告訴我們您的興趣（選填）",
         "personal": "個人使用",
         "business": "業務使用",
-		"custom": "自訂",
-		"professional": "專業使用",
+        "custom": "自訂",
+        "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
         "title1": "歡迎使用",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "請等待取消進度",
         "pluginNotUpdate": "硬體掃描是舊版的因此無法使用。請升級。",
         "testNotApplicable": "不適用於自訂掃描",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "等待掃描開始",
+        "reminderTimeRetrieveHardwareInformation": "此程序可能需要一段時間才能擷取您的硬體資訊",
+        "retrievingHardwareInformation": "正在擷取硬體資訊...",
         "pluginTokens": {
             "cpu": "處理器",
             "memory": "記憶體",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "安裝",
-				"installing": "安裝",
-				"downloading": "下載",
+                "installing": "安裝",
+                "downloading": "下載",
                 "installed": "已安裝",
                 "launch": "啟動",
                 "seeMore": "查看更多"
