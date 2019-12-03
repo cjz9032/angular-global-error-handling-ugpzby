@@ -416,12 +416,17 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	updateRegister(list: Array<any>, data) {
-		const featureList = list.slice(1, 5);
+		this.viewModel.mcafee.registered = data;
 		const registerList = {
 			status: data,
 			title: this.register
 		};
-		return featureList.splice(0, 0, registerList);
+		if (list.length > 0) {
+			list.splice(0, 1, registerList);
+		} else {
+			list.push(registerList);
+		}
+		return list;
 	}
 
 	getMcafeeMetric(metrics: Array<phoenix.McafeeMetricsList>, data?) {

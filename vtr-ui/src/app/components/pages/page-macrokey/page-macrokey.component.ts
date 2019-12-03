@@ -9,7 +9,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
-import { DeviceService } from 'src/app/services/device/device.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -35,8 +36,7 @@ export class PageMacrokeyComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService,
-		public deviceService: DeviceService
+		private translate: TranslateService
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();
@@ -47,7 +47,24 @@ export class PageMacrokeyComponent implements OnInit {
 		this.isOnline = this.commonService.isOnline;
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+			this.fetchCMSArticles();
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {

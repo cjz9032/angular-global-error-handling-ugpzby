@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-header-main',
@@ -22,10 +23,12 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() isInnerBack = false;
 	@Input() textId: string;
 	@Input() hideBack = false;
-
 	@Output() innerBack = new EventEmitter();
 
-	constructor(private router: Router) { }
+	constructor(
+		private router: Router,
+		public deviceService: DeviceService
+	) { }
 
 	ngOnInit() {
 		const self = this;

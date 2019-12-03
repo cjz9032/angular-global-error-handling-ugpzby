@@ -20,18 +20,27 @@
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4" [class.disabled]="isCheckedAuto || isGaugeResetRunning">
-							<div class="btn-group btn-block dropdown-left" ngbDropdown placement="bottom-right">
-								<button class="btn btn-outline-shadow" ngbDropdownToggle [disabled]="isCheckedAuto?true:false" #startToggle
-									id="{{textId}}-start-dropdown" attr.aria-label="battery threshold , start charging percent, dropdown" tabindex="0">
+						<div class="col-8 px-20 pb-4"
+							[class.disabled]="isCheckedAuto || isGaugeResetRunning">
+							<div class="btn-group btn-block dropdown-left"
+								ngbDropdown
+								placement="bottom-right">
+								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
+									ngbDropdownToggle
+									[disabled]="isCheckedAuto?true:false"
+									type="button"
+									id="{{textId}}-start-dropdown"
+									attr.aria-label="{{textId}}-start-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
-											<div class="select-title" id="{{textId}}-startcharge"
+											<div class="select-title"
+												id="{{textId}}-startcharge"
 												attr.aria-label="{{textId}}-startcharge">
 												{{start}}
 											</div>
 
-											<div class="select-text text-left" id="{{textId}}-selectedstartcharge"
+											<div class="select-text text-left"
+												id="{{textId}}-selectedstartcharge"
 												attr.aria-label="{{textId}}-selectedstartcharge">
 												{{selectedStartAtCharge}}%
 											</div>
@@ -43,13 +52,16 @@
 										</div>
 									</div>
 								</button>
-								<div ngbDropdownMenu aria-labelledby="" role="listbox">
-									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']" role="option" tabindex="0"
+								<div ngbDropdownMenu
+									aria-labelledby=""
+									role="listbox">
+									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
+										role="option"
+										tabindex="0"
 										*ngFor="let item of startAtChargeOptions"
-										(click)="[onChargeChange('startAtCharge', item , $event, startToggle),$event.preventDefault()]"
-										(keydown.enter)="onChargeChange('startAtCharge', item , $event, startToggle)"
+										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
 										id="{{textId}}-startAtChargeOption-{{item}}"
-										attr.aria-label="start {{textId}} , {{item}} percent">{{item}}%</a>
+										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
@@ -57,16 +69,25 @@
 					</div>
 					<div class="row">
 						<!--start of right dropdown box for action in row-->
-						<div class="col-8 px-20 pb-4" [class.disabled]="isGaugeResetRunning">
-							<div class="btn-group btn-block dropdown-right" ngbDropdown placement="bottom-right">
-								<button class="btn btn-outline-shadow" ngbDropdownToggle id="{{textId}}-stop-dropdown" tabindex="0"
-									attr.aria-label="battery threshold , stop charging percent, dropdown" #endToggle>
+						<div class="col-8 px-20 pb-4"
+							[class.disabled]="isGaugeResetRunning">
+							<div class="btn-group btn-block dropdown-right"
+								ngbDropdown
+								placement="bottom-right">
+								<button [ngClass]="['btn','btn-outline-shadow']"
+									ngbDropdownToggle
+									type="button"
+									id="{{textId}}-stop-dropdown"
+									attr.aria-label="{{textId}}-stop-dropdown">
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
-											<div class="select-title" id="{{textId}}-stopcharge" attr.aria-label="{{textId}}-stopcharge">
+											<div class="select-title"
+												id="{{textId}}-stopcharge"
+												attr.aria-label="{{textId}}-stopcharge">
 												{{stop}}
 											</div>
-											<div class="select-text text-left" id="{{textId}}-selectedStopAtCharge"
+											<div class="select-text text-left"
+												id="{{textId}}-selectedStopAtCharge"
 												attr.aria-label="{{textId}}-selectedStopAtCharge">
 												{{selectedStopAtCharge}}%
 											</div>
@@ -78,13 +99,15 @@
 										</div>
 									</div>
 								</button>
-								<div ngbDropdownMenu aria-labelledby="">
-									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']" role="option" tabindex="0"
+								<div ngbDropdownMenu
+									aria-labelledby="">
+									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
+										role="option"
+										tabindex="0"
 										*ngFor="let item of stopAtChargeOptions"
-										(click)="[onChargeChange('stopAtCharge', item , $event, endToggle), $event.preventDefault()]"
-										(keydown.enter)="onChargeChange('stopAtCharge', item , $event, endToggle)"
+										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
-										attr.aria-label="stop {{textId}} , {{item}} percent">{{item}}%</a>
+										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
 							</div>
 						</div>
