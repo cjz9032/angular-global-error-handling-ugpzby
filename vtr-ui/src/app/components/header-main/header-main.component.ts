@@ -56,8 +56,11 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 		if (this.isInnerBack) {
 			this.onInnerBack();
 		} else {
-			if (window.history.length > 1) { return window.history.back(); }
-			this.router.navigate(['dashboard']);
+			if (window.history.length > 1) {
+				return window.history.back();
+			} else if (typeof this.deviceService.isGaming === 'boolean') {
+				this.router.navigate([this.deviceService.isGaming ? 'device-gaming' : 'dashboard']);
+			}
 		}
 	}
 }
