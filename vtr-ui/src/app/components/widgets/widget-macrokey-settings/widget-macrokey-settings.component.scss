@@ -9,50 +9,50 @@
 		margin-top: 1.4rem;
 		.numbers-wrapper {
 			float: left;
-			width: 17rem;
-			@media #{$breakpoint_xl} {
-				clear: both;
-				width: 100%
-			}
-			@media #{$breakpoint_lg} {
-				clear: none;
-				float: left;
-				width: 17rem;
-			}
-			@media #{$breakpoint_md} {
-				clear: both;
-				width: 100%
-			}
+			width: 5rem;
 		}
 		.details-wrapper {
-			width: calc(100% - 17rem);
+			width: calc(100% - 5rem);
 			float: right;
 			padding-left: 2rem;
-			@media #{$breakpoint_xl} {
-				clear: both;
-				width: 100%;
-				padding-left: 0;
+		}
+		&.numberpad {
+			.numbers-wrapper {
+				width: 17rem;
+				@media #{$breakpoint_xl} {
+					clear: both;
+					width: 100%;
+				}
+				@media #{$breakpoint_lg} {
+					clear: none;
+					float: left;
+					width: 17rem;
+				}
+				@media #{$breakpoint_md} {
+					clear: both;
+					width: 100%;
+				}
 			}
-			@media #{$breakpoint_lg} {
-				clear: none;
+			.details-wrapper {
 				width: calc(100% - 17rem);
-				float: right;
-				padding-left: 2rem;
-			}
-			@media #{$breakpoint_md} {
-				clear: both;
-				width: 100%;
-				padding-left: 0;
+				@media #{$breakpoint_xl} {
+					clear: both;
+					width: 100%;
+					padding-left: 0;
+				}
+				@media #{$breakpoint_lg} {
+					clear: none;
+					width: calc(100% - 17rem);
+					float: right;
+					padding-left: 2rem;
+				}
+				@media #{$breakpoint_md} {
+					clear: both;
+					width: 100%;
+					padding-left: 0;
+				}
 			}
 		}
-		// &.numberpad {
-		// 	.numbers-wrapper {
-		// 		width: 17rem;
-		// 	}
-		// 	.details-wrapper {
-		// 		width: calc(100% - 17rem);
-		// 	}
-		// }
 	}
 	.widget-container {
 		border-radius: $border_radius;
@@ -73,12 +73,12 @@
 	}
 	.select-wrapper {
 		background: $gaming_hover;
-		@media #{$black-on-white}{
-			border:0.1rem solid $dark;
-			}
-		@media #{$white-on-black}{
-			border:0.1rem solid $light;
-			}
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+		}
 		border-radius: 0.8rem;
 		padding-bottom: 1.4rem;
 		margin: 1rem 0;
