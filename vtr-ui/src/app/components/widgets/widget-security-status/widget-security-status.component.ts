@@ -13,6 +13,7 @@ import { WindowsHelloService } from 'src/app/services/security/windowsHello.serv
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -64,6 +65,8 @@ export class WidgetSecurityStatusComponent implements OnInit{
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHelloItem(windowsHello);
 		});
+		const antivirus = new AntivirusErrorHandle(this.securityAdvisor.antivirus);
+		antivirus.refreshAntivirus();
 	}
 
 	showWindowsHelloItem(windowsHello: WindowsHello) {

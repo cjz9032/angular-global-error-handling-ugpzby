@@ -50,6 +50,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 
 @Component({
@@ -139,6 +140,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.getScore();
 		});
 		this.fetchCMSArticles();
+		const antivirus = new AntivirusErrorHandle(this.antivirus);
+		antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {
