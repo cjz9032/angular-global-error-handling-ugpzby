@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 mt-3">
+        <div class="col-12 mt-3" *ngIf="isSufficient === false">
             <div class="note pl-4">
                 <h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
             </div>
