@@ -25,7 +25,7 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-display'">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3">
+							<li class="pt-3" *ngIf="this.showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayColorTemperature.title' | translate"
 									componentName="Display color temperature"
@@ -39,6 +39,98 @@
 										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
 										<a id="goto_nightlight_link" href="javascript:void()" attr.aria-label="goto_nightlight_link" (click)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
 										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+
+							<li class="pt-3"
+								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available && !this.showECMReset">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+									componentName="Display color temperature"
+									[name]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+									[caption]=""
+									[isSwitchVisible]="false"
+									[leftIcon]="['fal', 'eye']"
+									[rightIcon]="['far', 'question-circle']"
+									[readMoreText]="''"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate"
+									[switchId]="'day-time-color-temp'">
+									<div class="row">
+										<div class="col-12">
+											<vtr-display-color-temp
+												[displayColorTempSettings]="displayColorTempDataSource"
+												[enableSlider]="false"
+												[manualRefresh]="manualRefresh"
+												(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
+												(resetTemparature)="resetDaytimeColorTemp($event)"
+												(colorPreviewValue)="setToEyeCareMode()">
+											</vtr-display-color-temp>
+											<div class="row">
+												<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
+													 id="day-time-color-temp-note"
+													 tabindex="0"
+													 attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
+													<p>
+														{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+
+							<li class="pt-3"
+								*ngIf="eyeCareModeStatus.available">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+									componentName="Eye Care Mode"
+									[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+									[isSwitchVisible]="true"
+									[isLastChild]="false"
+									[leftIcon]="['fal', 'eye']"
+									[rightIcon]="['far', 'question-circle']"
+									[readMoreText]="''"
+									[showChildContent]="true"
+									[isSwitchChecked]="eyeCareModeStatus.status"
+									(toggleOnOff)="onEyeCareModeStatusToggle($event)"
+									[theme]="'white'"
+									[tooltipText]="'device.deviceSettings.displayCamera.display.eyeCareMode.tooltip' | translate"
+									[switchId]="'color-temp-eyeCareMode'">
+									<div class="row">
+										<div class="col-12">
+											<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
+															   [enableSlider]="!enableSlider"
+															   [enableSunsetToSunrise]="enableSunsetToSunrise"
+															   [sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
+															   [manualRefresh]="manualRefresh"
+															   (eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
+															   (resetTemparature)="onResetTemparature($event)"
+															   (sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12 pr-0">
+											<div *ngIf="enableSunsetToSunrise">
+												<vtr-widget-permission-note
+													[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
+													[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
+													[path]="'ms-settings:privacy-location'"
+													[linkId]="'display-eyeCareMode-privacy-settings-link'">
+												</vtr-widget-permission-note>
+											</div>
+
+											<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
+										<ng-template #vtrwidgetpermissionnote>
+											<vtr-widget-permission-note
+												[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
+												[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
+												[path]="'ms-settings:privacy-location'"></vtr-widget-permission-note>
+										</ng-template> -->
+										</div>
 									</div>
 								</vtr-ui-row-switch>
 							</li>

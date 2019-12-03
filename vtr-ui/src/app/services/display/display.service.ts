@@ -4,6 +4,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CommonService } from '../common/common.service';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { WhiteListCapability } from '../../data-models/eye-care-mode/white-list-capability.interface';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -410,5 +411,9 @@ export class DisplayService {
 
 	resetEyecaremodeAllSettings() {
 		return this.displayEyeCareMode.resetEyecaremodeAllSettings();
+	}
+
+	getWhiteListCapability(): Promise<WhiteListCapability> {
+		return this.displayEyeCareMode.getWhiteListCapability();
 	}
 }

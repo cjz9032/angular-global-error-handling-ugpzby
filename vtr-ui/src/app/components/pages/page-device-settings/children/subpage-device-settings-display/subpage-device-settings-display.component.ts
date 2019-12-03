@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, CameraSettingsResponse, CameraFeatureAccess, EyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -17,11 +17,12 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { ActivatedRoute } from '@angular/router';
-import { map, timeout, takeWhile } from 'rxjs/operators';
+import { takeWhile } from 'rxjs/operators';
 import { EyeCareModeCapability } from 'src/app/data-models/device/eye-care-mode-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { WinRT } from "@lenovo/tan-client-bridge";
+import { WinRT } from '@lenovo/tan-client-bridge';
+import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 
 
 @Component({
@@ -30,8 +31,7 @@ import { WinRT } from "@lenovo/tan-client-bridge";
 	styleUrls: ['./subpage-device-settings-display.component.scss'],
 	changeDetection: ChangeDetectionStrategy.Default
 })
-export class SubpageDeviceSettingsDisplayComponent
-	implements OnInit, OnDestroy, AfterViewInit {
+export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy {
 	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
@@ -133,6 +133,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	isDTmachine = false;
 	isAllInOneMachineFlag = false;
 	cameraSessionId: Subscription;
+	showECMReset = false;
 
 	constructor(
 		public baseCameraDetail: BaseCameraDetail,
@@ -476,24 +477,46 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.initEyecaremodeSettings()
-					.then((result: boolean) => {
+					.then<boolean>(result => {
 						console.log('initEyecaremodeSettings.then', result);
-						if (result === false) {
+						if (!result) {
 							this.initEyecare++;
 							if (this.initEyecare <= 1) {
 								this.initEyecaremodeSettings();
 							}
-						} else {
-							//
+						}
+						return result;
+					})
+					.then<boolean | WhiteListCapability>(result => {
+						if (result) {
+							return this.displayService.getWhiteListCapability();
+						}
+						return result;
+					})
+					.then(result => {
+						switch (result) {
+							case 'NotSupport':
+								this.showECMReset = true;
+								return false;
+							case 'NotAvailable':
+							case 'Support':
+								return true;
+							case false:
+							default:
+								return result;
+						}
+					})
+					.then(result => {
+						if (result) {
 							this.getSunsetToSunrise();
 							this.getEyeCareModeStatus();
 							this.getDisplayColorTemperature();
 							this.getDaytimeColorTemperature();
+						} else {
+							this.resetEyecaremodeAllSettings();
 						}
-
 					}).catch(error => {
 						this.logger.error('initEyecaremodeSettings', error.message);
-
 					});
 			}
 		} catch (error) {
@@ -1070,18 +1093,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	resetEyecaremodeAllSettings() {
-		if (window.localStorage.getItem(LocalStorageKey.EyeCareModeResetStatus)) {
+		if (this.commonService.getLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus) === 'true') {
 			return;
 		}
 		this.displayService.resetEyecaremodeAllSettings()
 			.then(errorCode => {
 				if (errorCode === 0) {
-					window.localStorage.setItem(LocalStorageKey.EyeCareModeResetStatus, 'true');
+					this.commonService.setLocalStorageValue(LocalStorageKey.EyeCareModeResetStatus, 'true');
 				}
 			});
 	}
 
-	ngAfterViewInit(): void {
-		this.resetEyecaremodeAllSettings();
-	}
 }
