@@ -629,7 +629,7 @@
 		},
 		"securityAdvisor": {
 			"title": "Security Advisor",
-			"subtitle": "CHECK IF YOUR DEVICE IS SECURED.",
+			"subtitle": "Check if your device is secured.",
 			"antiVirus": "Anti-Virus",
 			"wifi": "WiFi Security",
 			"pswdMgr": "Password Manager",
@@ -648,7 +648,7 @@
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
-			"subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
+			"subtitle": "Find some helpful tips for your device.",
 			"question1": "Backup and Restore your files",
 			"question2": "How to refresh your PC",
 			"question3": "How to know your machine's CPU",
@@ -749,7 +749,7 @@
 		},
 		"systemStatus": {
 			"title": "System Status",
-			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+			"subtitle": "Quick catch up your device status.",
 			"memory": {
 				"title": "Memory",
 				"detail": {
