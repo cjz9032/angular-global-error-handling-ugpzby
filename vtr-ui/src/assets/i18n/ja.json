@@ -632,7 +632,6 @@
             "wifi": "WiFi セキュリティー",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -642,7 +641,8 @@
             "installing": "インストール中",
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
-            "notRegistered": "未登録"
+            "notRegistered": "未登録",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -1132,7 +1132,8 @@
                             "wed": "水曜日",
                             "thurs": "木曜日",
                             "fri": "金曜日",
-                            "sat": "土曜日"
+                            "sat": "土曜日",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "日曜日",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "適用"
                     },
                     "website": {
-                        "url": "Web サイトの URL"
+                        "url": "Web サイトの URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "入力するテキスト"
+                        "title": "入力するテキスト",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "完全保護",
-            "fullyDesc": "おめでとうございます。十分に保護されています。",
             "notFully": "保護は未完全",
-            "notFullyDesc": "保護は完全ではありません。より十分な保護機能を得る方法。",
             "security101": "セキュリティー・アドバイザー 101",
             "firewall": "ファイアウォール",
             "pwdHealth": "パスワードの健全性",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "WiFi/接続ホーム・セキュリティー",
             "connectedHomeSecurity": "接続ホーム・セキュリティー",
             "fingerprint": "指紋センサー",
-            "seeAllNetwork": "結合されたネットワークをすべて表示",
-            "maliciousNetwork": "今月、{{maliciousWifi}}の悪意のあるネットワークへのコンピューターの参加を防止しました。",
-            "good": "良好",
-            "malicious": "悪意",
-            "suspicious": "疑わしい",
-            "securityScoreDepends": "セキュリティの結果は、次の条件によって異なります。",
-            "antivirus": "ウイルス対策ソフトウェアで保護されている",
-            "password": "強力で複雑なパスワードを安全な方法で管理している",
-            "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
-            "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
-            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している",
             "uacTitle": "UAC 通知とは何ですか?",
             "uacText": "ユーザーアカウント制御は、Windows の非常に重要なセキュリティ機能であり、潜在的に有害なプログラムによってシステムが変更されるのを防ぎます。",
             "windowsTitle": "Windows をアクティブにする必要があるのはなぜですか?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "パスワードをより良く保護する方法は?",
             "passwordText": "知らないうちに第三者が簡単にアクセスできるブラウザーに単に保存するのではなく、専用のデジタル保護アプリで、暗号化されたすべてのパスワードを安全に保存および管理します。",
             "enhanceTitle": "セキュリティ保護を強化するにはどうすればよいですか?",
-            "enhanceText": "デバイスをアンチウイルスソフトウェアとファイアウォールで保護し、最小限の保護で UAC 通知を設定することを強くお勧めします。強力なパスワードを作成して安全な方法で管理し、高度な保護として公衆ネットワークを使用しながらデータを暗号化します。"
+            "enhanceText": "デバイスをアンチウイルスソフトウェアとファイアウォールで保護し、最小限の保護で UAC 通知を設定することを強くお勧めします。強力なパスワードを作成して安全な方法で管理し、高度な保護として公衆ネットワークを使用しながらデータを暗号化します。",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "興味のあることを教えてください (任意)",
         "personal": "個人用",
         "business": "仕事用",
-		"custom": "カスタム・エクスペリエンス",
-		"professional": "業務用",
+        "custom": "カスタム・エクスペリエンス",
+        "professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
         "testNotApplicable": "カスタム・スキャンには適用されません",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "スキャンが開始されるまで待ちます",
+        "reminderTimeRetrieveHardwareInformation": "この処理には、ハードウェア情報の取得に多少時間がかかる場合があります",
+        "retrievingHardwareInformation": "ハードウェア情報を取得しています...",
         "pluginTokens": {
             "cpu": "プロセッサー",
             "memory": "メモリー",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "インストール",
-				"installing": "インストール",
-				"downloading": "ダウンロード中",
+                "installing": "インストール",
+                "downloading": "ダウンロード中",
                 "installed": "インストール済み",
                 "launch": "起動",
                 "seeMore": "詳細を見る"

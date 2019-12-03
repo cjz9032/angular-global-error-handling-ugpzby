@@ -632,7 +632,6 @@
             "wifi": "Zabezpečenie WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ZAPNUTÉ",
             "disabled": "VYPNUTÉ",
             "partiallyProtected": "ČIASTOČNE CHRÁNENÉ",
@@ -642,7 +641,8 @@
             "installing": "INŠTALÁCIA",
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
-            "notRegistered": "NEREGISTROVANÉ"
+            "notRegistered": "NEREGISTROVANÉ",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -1132,7 +1132,8 @@
                             "wed": "streda",
                             "thurs": "štvrtok",
                             "fri": "piatok",
-                            "sat": "sobota"
+                            "sat": "sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -1153,14 +1154,42 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
-                    },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    }
                 }
             },
             "audio": {
@@ -1436,10 +1465,14 @@
                         "title": "POUŽIŤ"
                     },
                     "website": {
-                        "url": "ADRESA URL WEBOVEJ LOKALITY"
+                        "url": "ADRESA URL WEBOVEJ LOKALITY",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ"
+                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1876,7 @@
     "security": {
         "landing": {
             "fully": "Plne chránené",
-            "fullyDesc": "Blahoželáme! Ste dobre chránení.",
             "notFully": "Nie plne chránené",
-            "notFullyDesc": "Nie ste úplne chránení. Zistite, ako sa lepšie chrániť.",
             "security101": "PORADCA ZABEZPEČENÍM 101",
             "firewall": "Brána firewall",
             "pwdHealth": "Sila hesla",
@@ -1854,17 +1885,6 @@
             "wifiConnected": "Zabezpečenie WiFi a prepojenej domácnosti",
             "connectedHomeSecurity": "Zabezpečenie prepojenej domácnosti",
             "fingerprint": "Snímač odtlačkov prstov",
-            "seeAllNetwork": "Zobraziť všetky pripojené siete",
-            "maliciousNetwork": "Tento mesiac sa zabránilo počítaču pripojiť k {{maliciousWifi}} škodlivým sieťam.",
-            "good": "DOBRÉ",
-            "malicious": "ŠKODLIVÉ",
-            "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Výsledok zabezpečenia závisí od toho, či ste:",
-            "antivirus": "Ste chránení antivírusovým softvérom;",
-            "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
-            "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
-            "wifi": "Šifrujete svoje osobné údaje pri používaní verejných sietí WiFi;",
-            "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia.",
             "uacTitle": "Čo je oznámenie kontroly používateľských kont (UAC)?",
             "uacText": "Kontrola používateľských kont je veľmi dôležitá bezpečnostná funkcia systému Windows, ktorá pomáha zabrániť potenciálne škodlivým programom vykonávať zmeny v systéme.",
             "windowsTitle": "Prečo potrebujem aktívny systém Windows?",
@@ -1874,7 +1894,43 @@
             "passwordTitle": "Ako si lepšie chrániť heslo?",
             "passwordText": "Bezpečne ukladajte a spravujte všetky svoje heslá šifrované profesionálnou aplikáciou digitálnej ochrany namiesto toho, aby ste ich jednoducho ukladali do prehliadačov, ku ktorým majú bez vášho vedomia prístup tretie strany.",
             "enhanceTitle": "Čo mám urobiť na posilnenie bezpečnostnej ochrany?",
-            "enhanceText": "Dôrazne odporúčame, aby ste si svoje zariadenia chránili antivírusovým softvérom a bránou firewall, aby ste nastavili upozornenie UAC na minimálnu úroveň ochrany. Okrem toho vytvárajte silné heslá a bezpečne spravujte, pri používaní verejnej siete šifrujte svoje údaje v rámci rozšírenej ochrany."
+            "enhanceText": "Dôrazne odporúčame, aby ste si svoje zariadenia chránili antivírusovým softvérom a bránou firewall, aby ste nastavili upozornenie UAC na minimálnu úroveň ochrany. Okrem toho vytvárajte silné heslá a bezpečne spravujte, pri používaní verejnej siete šifrujte svoje údaje v rámci rozšírenej ochrany.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2547,8 +2603,8 @@
         "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-		"custom": "Vlastné prostredie",
-		"professional": "Určené pre odborníkov",
+        "custom": "Vlastné prostredie",
+        "professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2746,9 +2802,9 @@
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
         "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Čakajte na spustenie kontroly",
+        "reminderTimeRetrieveHardwareInformation": "Proces získania informácií o hardvéri môže chvíľu trvať",
+        "retrievingHardwareInformation": "Načítavajú sa informácie o hardvéri...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Pamäť",
@@ -2975,8 +3031,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-				"installing": "Inštalácia",
-				"downloading": "Sťahuje sa",
+                "installing": "Inštalácia",
+                "downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"
