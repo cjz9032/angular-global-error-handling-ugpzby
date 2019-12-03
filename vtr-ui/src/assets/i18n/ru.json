@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
         "testNotApplicable": "При настраиваемом сканировании неприменимо",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Дождитесь начала проверки",
+        "reminderTimeRetrieveHardwareInformation": "Процедура получения информации об оборудовании может занять некоторое время",
+        "retrievingHardwareInformation": "Получение информации об оборудовании...",
         "pluginTokens": {
             "cpu": "Процессор",
             "memory": "Оперативная память",

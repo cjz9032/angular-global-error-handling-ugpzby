@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
         "testNotApplicable": "Nu se aplică la scanarea personalizată",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Aşteptaţi până când începe scanarea",
+        "reminderTimeRetrieveHardwareInformation": "Acest proces poate dura un timp cât timp se preiau informaţiile despre hardware",
+        "retrievingHardwareInformation": "Se preiau informaţiile despre hardware...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorie",

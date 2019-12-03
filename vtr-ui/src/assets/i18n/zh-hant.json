@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "請等待取消進度",
         "pluginNotUpdate": "硬體掃描是舊版的因此無法使用。請升級。",
         "testNotApplicable": "不適用於自訂掃描",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "等待掃描開始",
+        "reminderTimeRetrieveHardwareInformation": "此程序可能需要一段時間才能擷取您的硬體資訊",
+        "retrievingHardwareInformation": "正在擷取硬體資訊...",
         "pluginTokens": {
             "cpu": "處理器",
             "memory": "記憶體",

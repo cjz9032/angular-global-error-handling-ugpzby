@@ -2,12 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [1.3.0](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.12...v1.3.0) (2019-12-02)
-
-
-### Features
-
-* **VAN-11226:** Keep break all word ([07d4114](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/07d4114))
+## [1.2.13](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.3.1...v1.2.13) (2019-12-02)
 
 
 

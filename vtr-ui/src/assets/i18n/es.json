@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Espere el proceso de cancelación",
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
         "testNotApplicable": "No se aplica a personalizar exploración",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Espere hasta que se inicie la exploración",
+        "reminderTimeRetrieveHardwareInformation": "Este proceso puede tardar un poco en recuperar la información del hardware",
+        "retrievingHardwareInformation": "Recuperando información del hardware...",
         "pluginTokens": {
             "cpu": "Procesador",
             "memory": "Memoria",

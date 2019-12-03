@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Warten Sie, bis der Vorgang abgebrochen ist",
         "pluginNotUpdate": "Hardware-Scan ist nicht verfügbar, da er veraltet ist. Bitte aktualisieren Sie ihn.",
         "testNotApplicable": "Nicht zutreffend bei benutzerdefinierter scan",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Warten Sie, bis der Scan gestartet wird",
+        "reminderTimeRetrieveHardwareInformation": "Das Abrufen der Hardwareinformationen kann einige Zeit dauern",
+        "retrievingHardwareInformation": "Hardwareinformationen werden abgerufen...",
         "pluginTokens": {
             "cpu": "Prozessor",
             "memory": "Arbeitsspeicher",

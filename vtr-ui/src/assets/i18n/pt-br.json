@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Aguarde o progresso do cancelamento",
         "pluginNotUpdate": "A verificação de hardware não está disponível porque está desatualizada. Atualize-a.",
         "testNotApplicable": "Não aplicável em verificação personalizada",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Aguarde até o início da verificação",
+        "reminderTimeRetrieveHardwareInformation": "Esse processo pode demorar um pouco para recuperar suas informações de hardware",
+        "retrievingHardwareInformation": "Recuperando informações de hardware...",
         "pluginTokens": {
             "cpu": "Processador",
             "memory": "Memória",

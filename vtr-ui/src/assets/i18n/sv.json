@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
         "testNotApplicable": "Kan inte användas på anpassad sökning",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Vänta tills genomsökningen startar",
+        "reminderTimeRetrieveHardwareInformation": "Den här processen med att hämta information om maskinvaran kan ta en stund",
+        "retrievingHardwareInformation": "Hämtar information om maskinvaran...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Minne",

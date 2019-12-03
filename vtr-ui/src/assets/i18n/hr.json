@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Pričekajte napredak otkazivanja",
         "pluginNotUpdate": "Skeniranje hardvera nije dostupno jer je zastarjelo. Provedite nadogradnju.",
         "testNotApplicable": "Nije primjenjivo za prilagođeni pregled",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Pričekajte dok se skeniranje ne pokrene",
+        "reminderTimeRetrieveHardwareInformation": "Ovaj bi postupak mogao potrajati neko vrijeme dok ne dobijete podatke o hardveru",
+        "retrievingHardwareInformation": "Dohvaćanje podataka o hardveru...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorija",

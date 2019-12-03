@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
         "testNotApplicable": "カスタム・スキャンには適用されません",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "スキャンが開始されるまで待ちます",
+        "reminderTimeRetrieveHardwareInformation": "この処理には、ハードウェア情報の取得に多少時間がかかる場合があります",
+        "retrievingHardwareInformation": "ハードウェア情報を取得しています...",
         "pluginTokens": {
             "cpu": "プロセッサー",
             "memory": "メモリー",

@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "취소 진행을 기다리십시오",
         "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
         "testNotApplicable": "사용자 정의 스캔에 적용되지 않음",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "스캔 시작까지 기다려 주십시오",
+        "reminderTimeRetrieveHardwareInformation": "이 프로세스는 하드웨어 정보 검색에 시간이 다소 소요될 수 있습니다",
+        "retrievingHardwareInformation": "하드웨어 정보 검색 중...",
         "pluginTokens": {
             "cpu": "프로세서",
             "memory": "메모리",

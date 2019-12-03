@@ -2802,9 +2802,9 @@
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
         "testNotApplicable": "Niet van toepassing op aangepaste scan",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Wacht totdat het scannen start",
+        "reminderTimeRetrieveHardwareInformation": "Het ophalen van uw hardwaregegevens kan even duren",
+        "retrievingHardwareInformation": "Bezig met ophalen van hardwaregegevens...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Geheugen",
