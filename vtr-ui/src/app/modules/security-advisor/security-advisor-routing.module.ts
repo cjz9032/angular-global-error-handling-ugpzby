@@ -38,7 +38,7 @@ const routes: Routes = [
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
@@ -46,7 +46,7 @@ const routes: Routes = [
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
