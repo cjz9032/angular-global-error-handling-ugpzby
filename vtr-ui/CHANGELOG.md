@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.15...v1.3.0) (2019-12-04)
+
+
+
+## [1.0.268](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.13...v1.0.268) (2019-12-03)
+
+
+
+## [1.0.267](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.266...v1.0.267) (2019-12-02)
+
+
+
+## [1.0.266](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.265...v1.0.266) (2019-12-02)
+
+
+
+## [1.0.265](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.12...v1.0.265) (2019-11-29)
+
+
+### Performance Improvements
+
+* disable preload strategy to see the performance ([818da82](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/818da82))
+
+
+
+## [1.0.264](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.263...v1.0.264) (2019-11-29)
+
+
+
+## [1.0.263](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.262...v1.0.263) (2019-11-28)
+
+
+
+## [1.0.262](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.1.0...v1.0.262) (2019-11-27)
+
+
+
+# [1.1.0](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.10...v1.1.0) (2019-11-27)
+
+
+### Features
+
+* battery condition based on windows api. ([557b370](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/557b370))
+* QA/DEV -> QA CMS, STAGE/PROD -> PROD CMS ([b8e11bc](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/b8e11bc))
+
+
+
 ## [1.2.15](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.14...v1.2.15) (2019-12-04)
 
 
