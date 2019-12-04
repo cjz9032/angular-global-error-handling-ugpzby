@@ -792,10 +792,10 @@
                 "title": "Systemopdatering",
                 "notFound": "Der blev ikke fundet en systemopdatering",
                 "detail": {
-                    "uptoDate": "Softwaren er opdateret",
-                    "updatedOn": "opdateret den",
-                    "outdated": "Forældet software",
-                    "neverRanUpdate": "opdatering blev aldrig kørt"
+                    "uptoDate": "Der er søgt efter opdateringer ",
+					"updatedOn": "søgt den ",
+					"outdated": "Der er ikke søgt efter opdateringer for nylig ",
+					"neverRanUpdate": "der er aldrig søgt efter opdateringer"
                 }
             },
             "extendedWarranty": "Garanti, udvidet",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>"
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
-                "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
+                "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
                 "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
+                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -2016,8 +2017,8 @@
                 "back": "TILBAGE"
             },
             "container": {
-                "title": "Lenovo Wi-Fi-sikkerhed",
-                "name": "WI-FI-SIKKERHED",
+                "title": "Lenovo WiFi-sikkerhed",
+                "name": "WIFI-SIKKERHED",
                 "enable": "AKTIVERET",
                 "disable": "DEAKTIVERET",
                 "less": "Færre oplysninger",
@@ -2026,8 +2027,8 @@
                 "connect": "Senest tilsluttet",
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
-                "button": "Aktivér Wi-Fi-sikkerhed",
-                "disableDecribe": "Lenovo Wi-Fi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "button": "Aktivér WiFi-sikkerhed",
+                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2037,7 +2038,7 @@
             },
             "locationmodal": {
                 "title": "Aktivér placeringstjenester",
-                "describe1": "Hvis du vil bruge Lenovo Wi-Fi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
+                "describe1": "Hvis du vil bruge Lenovo WiFi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
                 "describe2": "Hvis du vil bruge Tilsluttet Home Security, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
                 "agree": "ACCEPTÉR",
                 "cancel": "ANNULLER"
@@ -2101,7 +2102,7 @@
                 "pass": "BESTÅET",
                 "learnMoreAboutSecurityHealth": "Få flere oplysninger om hver af disse komponenter <tag>her</tag>.",
                 "peaceOfMind": "Vil du have ro i sindet?",
-                "button": "Aktivér Wi-Fi-sikkerhed"
+                "button": "Aktivér WiFi-sikkerhed"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2163,7 +2164,7 @@
             "allowsYou": "Med Dashlane kan du",
             "allowsYou1": "Logge på med det samme overalt og få problemfri søgning på internettet - Synkronisere på tværs af enheder, så du altid kan få adgang til vigtige konti",
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
-            "allowsYou3": "Forblive sikret på ikke-sikre Wi-Fi-netværk med indbygget VPN",
+            "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
             "poweredByDashLane": "Udarbejdet af Dashlane",
             "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"

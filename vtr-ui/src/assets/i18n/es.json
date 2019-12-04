@@ -792,10 +792,10 @@
                 "title": "Actualización de sistema",
                 "notFound": "No se encontró la actualización de sistema",
                 "detail": {
-                    "uptoDate": "El software está actualizado",
-                    "updatedOn": "actualizado",
-                    "outdated": "Software desactualizado",
-                    "neverRanUpdate": "nunca se ha ejecutado la actualización"
+                    "uptoDate": "Actualizaciones comprobadas ",
+					"updatedOn": "comprobado el ",
+					"outdated": "Actualizaciones no comprobadas recientemente ",
+					"neverRanUpdate": "las actualizaciones nunca se han comprobado"
                 }
             },
             "extendedWarranty": "Ampliar garantía",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} La alimentación está conectada.</b>"
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
-                "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
                 "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -1882,7 +1883,7 @@
             "pwdHealth": "Estado de la contraseña",
             "vpnSecurity": "Seguridad VPN",
             "vpnVirtual": "Red privada virtual",
-            "wifiConnected": "Wi-Fi y seguridad de hogar conectado",
+            "wifiConnected": "WiFi y seguridad de hogar conectado",
             "connectedHomeSecurity": "Seguridad de hogar conectado",
             "fingerprint": "Lector de huellas dactilares",
             "uacTitle": "¿Qué es la notificación de UAC?",
@@ -2012,12 +2013,12 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Wi-Fi y seguridad de hogar conectado",
+                "title": "WiFi y seguridad de hogar conectado",
                 "back": "ATRÁS"
             },
             "container": {
-                "title": "Seguridad de Lenovo Wifi",
-                "name": "SEGURIDAD DE Wi-Fi",
+                "title": "Seguridad de Lenovo WiFi",
+                "name": "SEGURIDAD DE WiFi",
                 "enable": "HABILITADO",
                 "disable": "DESHABILITADO",
                 "less": "Menos información",
@@ -2026,7 +2027,7 @@
                 "connect": "Último conectado",
                 "showmore": "Mostrar más",
                 "showless": "Mostrar menos",
-                "button": "Habilitar seguridad de Wi-Fi",
+                "button": "Habilitar seguridad de WiFi",
                 "disableDecribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas."
             },
             "threatlocator": {
@@ -2037,7 +2038,7 @@
             },
             "locationmodal": {
                 "title": "Habilitar servicios de ubicación",
-                "describe1": "Para utilizar la Seguridad de Wi-Fi de Lenovo, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
+                "describe1": "Para utilizar la Seguridad de WiFi de Lenovo, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
                 "describe2": "Para utilizar la Seguridad de hogar conectado, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
                 "agree": "ACEPTO",
                 "cancel": "CANCELAR"
@@ -2101,7 +2102,7 @@
                 "pass": "APROBADO",
                 "learnMoreAboutSecurityHealth": "Obtener más información acerca de cada uno de estos componentes <tag>aquí</tag>.",
                 "peaceOfMind": "¿Desea más tranquilidad?",
-                "button": "Habilitar seguridad de Wi-Fi"
+                "button": "Habilitar seguridad de WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2163,7 +2164,7 @@
             "allowsYou": "Dashlane le permite",
             "allowsYou1": "Iniciar sesión instantáneamente en cualquier lugar para una exploración perfecta - Sincronizar entre dispositivos para que nunca quede sin acceso a cuentas importantes",
             "allowsYou2": "Monitoree la web oscura para detectar sus datos personales",
-            "allowsYou3": "Permanezca seguro en las redes Wi-Fi no seguras con VPN integrado",
+            "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
             "poweredByDashLane": "Con tecnología Dashlane",
             "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"

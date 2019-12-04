@@ -1,5 +1,5 @@
 <div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'articles'"
+	*ngIf="articleType === SupportContentStatus.Articles"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -39,9 +39,12 @@
 					class="col col-12 content">
 					<div href="javascript:;"
 						class="title"
+						#articleTitle
+						[title]="articleTitle.innerText"
 						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 					</div>
@@ -59,7 +62,7 @@
 	</div>
 </div>
 <div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'content'"
+	*ngIf="articleType === SupportContentStatus.Content"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -98,9 +101,12 @@
 				<div *ngIf="item.Title"
 					class="col col-12 content">
 					<div class="title"
+						#articleTitle
+						[title]="articleTitle.innerText"
 						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 					</div>

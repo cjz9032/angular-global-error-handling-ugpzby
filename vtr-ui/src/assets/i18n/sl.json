@@ -792,10 +792,10 @@
                 "title": "Posodobitev sistema",
                 "notFound": "Posodobitve sistema ni bilo mogoče najti",
                 "detail": {
-                    "uptoDate": "Programska oprema je posodobljena",
-                    "updatedOn": "posodobljeno dne",
-                    "outdated": "Programska oprema je zastarela",
-                    "neverRanUpdate": "nikoli izvedena posodobitev"
+                    "uptoDate": "Posodobitve preverjene ",
+					"updatedOn": "preverjene ",
+					"outdated": "Posodobitve v zadnjem času niso bile preverjene ",
+					"neverRanUpdate": "posodobitve niso bile nikoli preverjene"
                 }
             },
             "extendedWarranty": "Podaljšanje garancije",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W napajanje {{acAdapterType}} je priključeno.</b>"
                 },
                 "batteryNotDetected": "Baterija ni zaznana",
-                "thresholdNote": "<b>Opomba:</b> zaradi podaljšanja življenjske dobe baterije ste polnjenje nastavili tako, da se ustavi, ko baterija doseže {{value}}% napolnjenosti.",
+                "thresholdNote": "<b>Opomba:</b> Ko je omogočena funkcija Prag polnjenja baterije, baterije ni mogoče povsem napolniti.",
                 "seeDetailsLink": "Prikaži podrobnosti",
                 "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
                         "progressText2": "{{stage}} od {{stageNum}}: umerjanje do skoraj prazne baterije",
+                        "progressText3": "{{stage}} od {{stageNum}}: umerjanje do povsem napolnjene baterije",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
@@ -2016,8 +2017,8 @@
                 "back": "NAZAJ"
             },
             "container": {
-                "title": "Program družbe Lenovo za varnost Wifi-ja",
-                "name": "VARNOST WI-FI-ja",
+                "title": "Program družbe Lenovo za varnost WiFi-ja",
+                "name": "VARNOST WIFI-ja",
                 "enable": "OMOGOČEN",
                 "disable": "ONEMOGOČEN",
                 "less": "Manj informacij",

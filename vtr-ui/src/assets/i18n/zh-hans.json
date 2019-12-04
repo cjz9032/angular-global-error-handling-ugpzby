@@ -792,10 +792,10 @@
                 "title": "系统更新",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件已更新",
-                    "updatedOn": "更新时间",
-                    "outdated": "软件已过时",
-                    "neverRanUpdate": "从未运行更新"
+                    "uptoDate": "已检查更新",
+					"updatedOn": "检查时间",
+					"outdated": "最近未检查更新",
+					"neverRanUpdate": "从未检查过更新"
                 }
             },
             "extendedWarranty": "延长保修",
@@ -909,7 +909,7 @@
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
                 },
-                "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
+                "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
                 "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
             },
@@ -1074,8 +1074,9 @@
                             "reset": "重置",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stageNum}} 的 {{stage}}：校准为完全充电",
-                        "progressText2": "{{stageNum}} 的 {{stage}}：校准为电池电量不足",
+                        "progressText1": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为完全充电",
+                        "progressText2": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为放电到低电量",
+                        "progressText3": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为充电到高电量",
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
@@ -1090,7 +1091,7 @@
                         },
                         "popup": {
                             "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
-                            "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2.关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3.在此过程中，将禁用电池充电阈值功能。",
+                            "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2. 关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3. 在此过程中，将禁用电池充电阈值功能。",
                             "continue": "继续",
                             "cancel": "取消",
                             "yes": "是",

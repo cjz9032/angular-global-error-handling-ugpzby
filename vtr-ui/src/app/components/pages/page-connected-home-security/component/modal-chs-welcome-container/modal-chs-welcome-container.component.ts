@@ -11,6 +11,7 @@ import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -36,7 +37,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private logger: LoggerService
 	) {	}
 
 	ngOnInit() {
@@ -61,14 +63,18 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	ngAfterViewInit(): void {
+		this.logger.info('chs welcome dialog - ngAfterViewInit');
 		this.refreshPage();
 	}
 
 	refreshPage() {
 		if (this.hasSystemPermissionShowed) {
+			this.logger.info('refreshPage, hasSystemPermissionShowed');
 			this.requestVantagePermission();
 		} else {
+			this.logger.info('refreshPage, get system permission showed');
 			this.permission.getSystemPermissionShowed().then((response: boolean) => {
+				this.logger.info('getSystemPermissionShowed done!', response);
 				this.hasSystemPermissionShowed = response;
 				if (!response) { return; }
 				this.requestVantagePermission();
@@ -114,7 +120,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit, AfterViewInit 
 	}
 
 	requestVantagePermission() {
+		this.logger.info('requestVantagePermission!');
 		this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
+			this.logger.info('get geolocation done!', {old: this.isLocationServiceOn, new: status});
 			this.isLocationServiceOn = status;
 			if (status) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);

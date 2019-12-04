@@ -8,6 +8,24 @@
 	// background: -webkit-linear-gradient(left, #289cd0 0%, #72d0bb 100%);
 	// background: linear-gradient(to right, #289cd0 0%, #72d0bb 100%);
 	// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#289cd0', endColorstr='#72d0bb', GradientType=1);
+
+	&.dcc {
+		background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185d73", endColorstr="#1e7390", GradientType=1);
+		&::before {
+			content: "";
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			background: url(/assets/images/dcc/top-image-dcc.jpg) center center no-repeat;
+			background-size: cover;
+			opacity: 0.15;
+		}
+	}
+
 	.vtr-header-main-inner {
 		max-width: $max_page_width;
 		margin: 0 auto;
