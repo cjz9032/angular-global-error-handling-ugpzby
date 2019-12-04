@@ -17,7 +17,7 @@
                         "balText": "Normální CPU a otáčky ventilátoru",
                         "quietText": "Nižší zátěž CPU a otáčky ventilátoru"
                     },
-                    "wifiSecurity": "Zabezpečení Wi-Fi",
+                    "wifiSecurity": "Zabezpečení WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Rych-lé nabíjení"
                 },
@@ -613,7 +613,7 @@
                 "title": "Zabezpečení",
                 "sub1": "Moje zabezpečení",
                 "sub2": "Antivirus",
-                "sub3": "Zabezpečení Wi-Fi",
+                "sub3": "Zabezpečení WiFi",
                 "sub4": "Stav hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
@@ -629,7 +629,7 @@
             "title": "Bezpečnostního rádce",
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
-            "wifi": "Zabezpečení Wi-Fi",
+            "wifi": "Zabezpečení WiFi",
             "pswdMgr": "Správce hesel",
             "vpn": "Síť VPN",
             "enabled": "POVOLENO",
@@ -792,10 +792,10 @@
                 "title": "Aktualizace systému",
                 "notFound": "Aktualizace systému nebyla nalezena",
                 "detail": {
-                    "uptoDate": "Software je aktuální",
-                    "updatedOn": "aktualizováno",
-                    "outdated": "Software je zastaralý",
-                    "neverRanUpdate": "nikdy nespouštět aktualizaci"
+                    "uptoDate": "Aktualizace zkontrolovány ",
+					"updatedOn": "zkontrolováno ",
+					"outdated": "Aktualizace nebyly dlouho kontrolovány ",
+					"neverRanUpdate": "Aktualizace nebyly nikdy kontrolovány"
                 }
             },
             "extendedWarranty": "Prodloužit záruku",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>"
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
-                "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
+                "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
@@ -2016,8 +2017,8 @@
                 "back": "ZPĚT"
             },
             "container": {
-                "title": "Zabezpečení Wifi Lenovo",
-                "name": "ZABEZPEČENÍ WI-FI",
+                "title": "Zabezpečení WiFi Lenovo",
+                "name": "ZABEZPEČENÍ WIFI",
                 "enable": "POVOLENO",
                 "disable": "ZAKÁZÁNO",
                 "less": "Méně informací",
@@ -2026,7 +2027,7 @@
                 "connect": "Poslední připojení",
                 "showmore": "Zobrazit více",
                 "showless": "Zobrazit méně",
-                "button": "Zapnout zabezpečení Wi-Fi",
+                "button": "Zapnout zabezpečení WiFi",
                 "disableDecribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých."
             },
             "threatlocator": {
@@ -2101,7 +2102,7 @@
                 "pass": "ÚSPĚCH",
                 "learnMoreAboutSecurityHealth": "Další informace o jednotlivých součástech <tag>získáte zde</tag>.",
                 "peaceOfMind": "Toužíte po větším klidu?",
-                "button": "Zapnout zabezpečení Wi-Fi"
+                "button": "Zapnout zabezpečení WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

@@ -67,6 +67,7 @@
 											</div>
 											<label *ngIf="airplaneAutoDetection"
 												role="text"
+												tabindex="0"
 												class="auto-detection-note">
 												{{ 	'device.deviceSettings.power.batterySettings.airPlanePower.note' | translate }}
 											</label>
@@ -355,9 +356,139 @@
 				</div>
 			</div>
 
-			<div class="row py-5 smartsettings-card"
+			<div class="row py-5"
+				id="power"
+				*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
+				<div class="col-10 mx-auto ">
+					<vtr-container-collapsible
+						[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
+						[tabIndex]="0"
+						[vtrAppSearchScroller]="['search-usb-charging', 'search-easy-resume']"
+						[isCollapsed]="false"
+						[collapseLinkId]="'device-settings-powerSettings'">
+						<ul class="list-group list-group-flush">
+							<li *ngIf="showFlipToBootSection$ | async">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+									[name]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
+									[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
+									[isSwitchVisible]=true
+									[isLastChild]=false
+									[isSwitchChecked]='toggleFlipToBootStatus'
+									[leftIcon]="['icomoon','icomoon-Flip-to-boot']"
+									[rightIcon]="['far', 'question-circle']"
+									[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
+									[switchId]="'ds-power-flipToBoot'"
+									(toggleOnOff)="onToggleOfFlipToBoot($event)">
+								</vtr-ui-row-switch>
+							</li>
+							<li class=""
+								*ngIf="!isDesktopMachine && alwaysOnUSBStatus.available">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+									[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+									[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
+									[isSwitchVisible]=true
+									[isLastChild]="!showEasyResumeSection"
+									[isSwitchChecked]="toggleAlwaysOnUsbFlag"
+									[leftIcon]="['fab', 'usb']"
+									[rightIcon]="[]"
+									[showChildContent]="true"
+									[tooltipText]=""
+									[switchId]="'ds-power-alwaysUSB'"
+									(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
+									<div class="row">
+										<div class="col-auto justify-content-start align-items-center pr-2">
+											<i class="icomoon icomoon-LE-Charging-USB2x"></i>
+										</div>
+										<div class="col-auto px-0 align-self-center seperator"
+											id="always-on-usb-or"
+											attr.aria-label="always-on-usb-or">
+											{{'device.deviceSettings.power.powerSettings.or' | translate}}
+										</div>
+										<div class="col-auto pl-2">
+											<i class="icomoon icomoon-LE-Charging-USB---SS2x"></i>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col px-20">
+											<div class="auto-set-checkbox custom-checkbox-gaming"
+												*ngIf="usbChargingInBatteryModeStatus">
+												<input id="cb-always-on-usb"
+													class="custom-control-input"
+													attr.aria-label="cb-always-on-usb"
+													type="checkbox"
+													tabindex="-1"
+													name="always-on-usb-checkbox-id"
+													[disabled]="!toggleAlwaysOnUsbFlag"
+													[(ngModel)]="usbChargingCheckboxFlag"
+													(ngModelChange)='onUsbChargingStatusChange()'
+													checked="" />
+												<span class="checkmark"></span>
+												<label for="cb-always-on-usb"
+													tabindex="0">
+													{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
+												</label>
+											</div>
+										</div>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+							<li class=""
+								*ngIf="showEasyResumeSection">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+									[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+									[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
+									[isSwitchVisible]=true
+									[isLastChild]=true
+									[isSwitchChecked]='toggleEasyResumeStatus'
+									[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
+									[rightIcon]="['far', 'question-circle']"
+									[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
+									[switchId]="'ds-power-easyResume'"
+									(toggleOnOff)="onToggleOfEasyResume($event)">
+								</vtr-ui-row-switch>
+							</li>
+						</ul>
+					</vtr-container-collapsible>
+				</div>
+			</div>
+
+			<div class="row py-5"
+				id="other"
+				*ngIf="vantageToolbarStatus.available">
+				<div class="col-10 mx-auto ">
+					<vtr-container-collapsible
+						componentName="'device.deviceSettings.power.otherSettings.title' | translate"
+						[tabIndex]="0"
+						[vtrAppSearchScroller]="['search-vantage-toolbar']"
+						[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
+						[isCollapsed]="false"
+						[collapseLinkId]="'device-settings-otherSettings'">
+						<ul class="list-group list-group-flush">
+							<li class="">
+								<vtr-ui-row-switch
+									[componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
+									[name]="'device.deviceSettings.power.otherSettings.title' | translate"
+									[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
+									[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
+									[isSwitchVisible]=true
+									[isLastChild]=true
+									[leftIcon]="['fal', 'thumbtack']"
+									[isSwitchChecked]="vantageToolbarStatus.status"
+									[switchId]="'ds-power-otherSettings-toolBar'"
+									(toggleOnOff)="onVantageToolBarStatusToggle($event)">
+								</vtr-ui-row-switch>
+							</li>
+						</ul>
+					</vtr-container-collapsible>
+				</div>
+			</div>
+
+			<div class="row py-5"
 				*ngIf="isEnergyStarProduct">
-				<div class="col-12 mx-auto container-card">
+				<div class="col-10 mx-auto ">
 					<vtr-container-collapsible
 						componentName="'device.deviceSettings.power.energyStar.title' | translate"
 						[tabIndex]="0"
@@ -366,13 +497,11 @@
 						[collapseLinkId]="'device-settings-power-otherSettings'">
 						<div class="row energystar-container">
 							<div class="col-lg-2 col-md-2 col-sm-12">
-								<img role="img"
-									class="img-fluid mx-auto d-block"
-									src="assets/images/energystar.png">
+								<img class="img-fluid mx-auto d-block"
+									src="/assets/images/energystar.png">
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-12 align-self-center">
-								<p class="energystar-text"
-									role="text">
+								<p class="energystar-text">
 									{{'device.deviceSettings.power.energyStar.description' | translate}}
 								</p>
 							</div>

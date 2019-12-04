@@ -17,7 +17,7 @@
                         "balText": "正常 CPU 和風扇速度",
                         "quietText": "CPU 使用量越低，風扇速度越慢"
                     },
-                    "wifiSecurity": "Wifi 安全性",
+                    "wifiSecurity": "WiFi 安全性",
                     "dolby": "Dolby",
                     "rapidCharge": "快速充電"
                 },
@@ -792,10 +792,10 @@
                 "title": "系統更新",
                 "notFound": "找不到系統更新",
                 "detail": {
-                    "uptoDate": "軟體已是最新版本",
-                    "updatedOn": "更新時間",
-                    "outdated": "軟體是舊版",
-                    "neverRanUpdate": "從未更新"
+                    "uptoDate": "已檢查更新",
+					"updatedOn": "檢查時間",
+					"outdated": "最近未檢查更新",
+					"neverRanUpdate": "從未檢查過更新"
                 }
             },
             "extendedWarranty": "延長保固",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源已連接。</b>"
                 },
                 "batteryNotDetected": "未偵測到電池",
-                "thresholdNote": "<b>注意：</b>若要延長電池的壽命，您必須將電池設定為達到 {{value}}% 時停止充電。",
+                "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
                 "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
             },
@@ -1074,8 +1074,9 @@
                             "reset": "重設",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stageNum}} 的 {{stage}}：充飽校準",
-                        "progressText2": "{{stageNum}} 的 {{stage}}：電池電力不足校準",
+                        "progressText1": "步驟{{stage}}（共{{stageNum}}個步驟）：充飽校準",
+                        "progressText2": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為放電到低電量",
+                        "progressText3": "步驟{{stage}}（共{{stageNum}}個步驟）：校準為充電到高電量",
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
@@ -1090,7 +1091,7 @@
                         },
                         "popup": {
                             "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
-                            "description2": "附註：<br>1. 這個程序可能需費時數小時。請避免在此期間使用電腦。<br>2.關閉所有已開啟的應用程式，然後將電腦連接到 AC 電源。<br>3.在此程序期間，會停用電池充電臨界值功能。",
+                            "description2": "附註：<br>1. 這個程序可能需費時數小時。請避免在此期間使用電腦。<br>2. 關閉所有已開啟的應用程式，然後將電腦連接到 AC 電源。<br>3. 在此程序期間，會停用電池充電臨界值功能。",
                             "continue": "繼續",
                             "cancel": "取消",
                             "yes": "是",
@@ -2016,7 +2017,7 @@
                 "back": "上一步"
             },
             "container": {
-                "title": "Lenovo Wifi 安全性",
+                "title": "Lenovo WiFi 安全性",
                 "name": "WIFI 安全性",
                 "enable": "已啟用",
                 "disable": "已停用",

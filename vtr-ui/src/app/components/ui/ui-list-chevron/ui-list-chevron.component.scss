@@ -138,8 +138,9 @@
 
 			.item-icon-image {
 				display: inline-block;
-				height: 3rem;
+				height: 2.3rem;
 				width: 3rem;
+				padding-right: 1rem;
 				@media #{$black-on-white} {
 					color: lightgray;
 				}
@@ -166,14 +167,12 @@
 				.title {
 					cursor: pointer;
 					font-size: $fontsize_xs;
-					font-weight: $weight_bold;
+					font-weight: $weight_600;
 					float: left;
 					padding-top: 0.1rem;
 					padding-right: 0.1rem;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
 					color: $blue-dark;
+					width: 13rem;
 
 					&.light-title {
 						font-weight: $weight_light;

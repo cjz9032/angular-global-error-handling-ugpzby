@@ -17,7 +17,7 @@
                         "balText": "Normalna brzina procesora i ventilatora",
                         "quietText": "Niža potrošnja procesora, niža brzina ventilatora"
                     },
-                    "wifiSecurity": "Wi-Fi sigurnost",
+                    "wifiSecurity": "WiFi sigurnost",
                     "dolby": "Dolby",
                     "rapidCharge": "Brzo punjenje"
                 },
@@ -792,10 +792,10 @@
                 "title": "Ažuriranje sustava",
                 "notFound": "Nije pronađeno ažuriranje sustava",
                 "detail": {
-                    "uptoDate": "Softver je ažuriran",
-                    "updatedOn": "ažurirano",
-                    "outdated": "Softver je zastario",
-                    "neverRanUpdate": "nikada nije pokrenuto ažuriranje"
+                    "uptoDate": "Provjerena ažuriranja ",
+					"updatedOn": "provjereno uključeno ",
+					"outdated": "Ažuriranja nisu nedavno provjerena ",
+					"neverRanUpdate": "ažuriranja nikada nisu provjerena"
                 }
             },
             "extendedWarranty": "Produlji jamstvo",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>"
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
-                "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
+                "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
                         "progressText2": "{{stage}} od {{stageNum}}: Kalibriranje na nisku razinu baterije",
+                        "progressText3": "{{stage}} od {{stageNum}}: Kalibriranje do potpune napunjenosti",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
@@ -2026,7 +2027,7 @@
                 "connect": "Posljednje povezano",
                 "showmore": "Više detalja",
                 "showless": "Pokaži manje",
-                "button": "Omogući sigurnost Wifi mreže",
+                "button": "Omogući sigurnost WiFi mreže",
                 "disableDecribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih."
             },
             "threatlocator": {
@@ -2101,7 +2102,7 @@
                 "pass": "PROŠLO",
                 "learnMoreAboutSecurityHealth": "Saznajte više o svakoj od tih stavki <tag>ovdje</tag>.",
                 "peaceOfMind": "Želite li više mira?",
-                "button": "Omogući sigurnost Wifi mreže"
+                "button": "Omogući sigurnost WiFi mreže"
             },
             "homeStatus": {
                 "protected": "Protected",
