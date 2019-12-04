@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, timer } from 'rxjs';
+import { delay, take } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,6 +15,6 @@ export class CommunicationSwitcherService {
 	}
 
 	startPulling() {
-		this.isPullingActive.next(true);
+		timer(1000).pipe(take(1)).subscribe(() => this.isPullingActive.next(true));
 	}
 }
