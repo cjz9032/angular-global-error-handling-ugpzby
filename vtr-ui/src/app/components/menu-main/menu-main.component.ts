@@ -198,7 +198,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	private loadMenuOptions(machineType: number) {
 		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
 		// Added special case for KEI machine
-		if(machineFamily){
+		if (machineFamily) {
 		const familyName = machineFamily.replace(/\s+/g, '');
 		if (machineType === 1 && familyName !== 'LenovoTablet10') {
 			this.initInputAccessories();

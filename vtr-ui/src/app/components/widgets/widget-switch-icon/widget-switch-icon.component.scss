@@ -74,6 +74,7 @@
 		}
 
 		.title {
+			cursor: pointer;
 			text-transform: uppercase;
 			text-align: center;
 			font-size: 1.1rem;
@@ -183,6 +184,6 @@
 	opacity: 0.65;
 }
 .disable-container {
-	cursor: not-allowed !important;
+	cursor: default !important;
 	color: lightgray;
 }
