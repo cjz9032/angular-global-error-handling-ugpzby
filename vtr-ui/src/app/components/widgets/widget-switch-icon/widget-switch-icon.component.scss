@@ -64,6 +64,7 @@
 		}
 
 		.title {
+			cursor: pointer;
 			text-transform: uppercase;
 			text-align: center;
 			font-size: 1.1rem;
@@ -88,7 +89,7 @@
 			margin: 1rem auto;
 			text-align: center;
 			position: relative;
-			cursor: pointer;
+			// cursor: pointer;
 			@media #{$mediaquery_6} {
 				height: 5rem;
 				width: 5rem;
@@ -148,6 +149,6 @@
 	opacity: 0.65;
 }
 .disable-container {
-	cursor: not-allowed !important;
+	cursor: default !important;
 	color: lightgray;
 }
