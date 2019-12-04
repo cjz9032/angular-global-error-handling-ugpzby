@@ -279,8 +279,8 @@
 							top: -4rem;
 							@media #{$breakpoint_sm}{
 								top: 50%;
-								transform: translateY(-50%) translateX(0);
-								left: calc(-200% - 1rem);
+								transform: translateY(-50%) translateX(-100%);
+								left: -0.5rem;
 								padding: 2rem;
 								min-width: 15rem;
 								&::after {
