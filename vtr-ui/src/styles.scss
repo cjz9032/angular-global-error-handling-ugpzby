@@ -489,7 +489,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Intelligent-Cooling-Modes-Modal {
 	.modal-dialog {
 		max-width: 35%;
-
+		display: table;
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
 		// 	max-width: 75%;
