@@ -73,9 +73,9 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 				console.log('Pen Status --------------------------------- ', res);
 				this.smartAssist
 					.getPenDelayTime()
-					.then(res => {
-						this.penDelay = res;
-						console.log('PEN DELAY --------------------------------- ', res, typeof res);
+					.then(response => {
+						this.penDelay = response;
+						console.log('PEN DELAY --------------------------------- ', response, typeof response);
 					})
 					.catch(error => console.log(error));
 			})
@@ -104,9 +104,9 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 				console.log('PEN STATUS SET --------------------------------- ', res);
 				this.smartAssist
 					.getPenDelayTime()
-					.then(res => {
-						this.penDelay = res;
-						console.log('PEN DELAY --------------------------------- ', res, typeof res);
+					.then(response => {
+						this.penDelay = response;
+						console.log('PEN DELAY --------------------------------- ', response, typeof response);
 					})
 					.catch(error => console.log(error));
 			})
@@ -120,9 +120,9 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 				console.log('PEN DELAY TIME --------------------------------- ', value, res)
 				this.smartAssist
 					.getPenDelayTime()
-					.then(res => {
-						this.penDelay = res;
-						console.log('PEN DELAY --------------------------------- ', res, typeof res);
+					.then(response => {
+						this.penDelay = response;
+						console.log('PEN DELAY --------------------------------- ', response, typeof response);
 					})
 					.catch(error => console.log(error));
 			})
@@ -132,14 +132,32 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 		const value = !this.touchStatus;
 		this.smartAssist
 			.setTouchInputSetting(value)
-			.then(res => console.log('TOUCH INPUT SET --------------------------------- ', res))
+			.then(res => {
+				console.log('TOUCH INPUT SET --------------------------------- ', res);
+				this.smartAssist
+					.getTouchInputSetting()
+					.then(response => {
+						this.touchStatus = response;
+						console.log('Touch Status --------------------------------- ', response);
+					})
+					.catch(error => console.log(error));
+			})
 			.catch(err => console.log(err));
 	}
 	setPSensorSetting(event) {
 		const value = !this.pSensorStatus;
 		this.smartAssist
 			.setPSensorSetting(value)
-			.then(res => console.log('PSENSOR SET --------------------------------- ', res))
+			.then(res => {
+				console.log('PSENSOR SET --------------------------------- ', res);
+				this.smartAssist
+					.getPSensorSetting()
+					.then(response => {
+						this.pSensorStatus = response;
+						console.log('PSensor --------------------------------- ', response);
+					})
+					.catch(error => console.log(error));
+			})
 			.catch(err => console.log(err));
 	}
 
