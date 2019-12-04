@@ -1145,24 +1145,24 @@
 		}
 
 		.vtr-page-right-column {
-			// background-image: url("./assets/images/gaming/GradientLine@1x.png");
-			// background-repeat: repeat;
-			// background-size: 100% 100%;
+			 background-image: url("./assets/images/gaming/GradientLine@1x.png");
+			 background-repeat: repeat;
+			 background-size: 100% 100%;
 			// padding: 0 8.5rem 4rem 4rem;
 
-			// @media #{$small-screen} {
+			 @media #{$small-screen} {
 			// 	margin-top: -0.1rem;
 			// 	padding: 6rem 3rem 1.5rem 3rem !important;
-			// 	background-color: $gaming_darkest !important;
-			// 	background-image: none;
-			// }
+			 	background-color: $gaming_darkest !important;
+			 	background-image: none;
+			 }
 
-			// @media #{$medium-screen} {
+			 @media #{$medium-screen} {
 			// 	margin-top: -0.1rem;
 			// 	padding: 6rem 6.5rem 4rem 6.5rem !important;
-			// 	background-color: $gaming_darkest !important;
-			// 	background-image: none;
-			// }
+			 	background-color: $gaming_darkest !important;
+			 	background-image: none;
+			 }
 
 			.vtr-widget-schedule-scan {
 				background: $dark_cell;
