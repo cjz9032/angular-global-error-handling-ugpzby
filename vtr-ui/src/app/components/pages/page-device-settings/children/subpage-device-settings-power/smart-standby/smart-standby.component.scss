@@ -109,7 +109,7 @@ ul.list-group {
 	color: black;
 	text-decoration: none;
 	margin-top: 3rem;
-	cursor: pointer;
+	cursor: not-allowed;
 }
 .container-border {
 	@media #{$black-on-white} {

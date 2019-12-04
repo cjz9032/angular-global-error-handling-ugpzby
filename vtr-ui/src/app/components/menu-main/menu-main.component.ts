@@ -200,8 +200,13 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	private loadMenuOptions(machineType: number) {
 		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+		// Added special case for KEI machine
+		if(machineFamily){
 		const familyName = machineFamily.replace(/\s+/g, '');
-
+		if (machineType === 1 && familyName !== 'LenovoTablet10') {
+			this.initInputAccessories();
+		}
+	}
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
@@ -213,10 +218,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.removeDeviceSettings();
 				}
 			});
-		}
-		if (machineType === 1 && familyName !== 'LenovoTablet10') {
-			this.initInputAccessories();
-		}
+		}	
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
 			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
