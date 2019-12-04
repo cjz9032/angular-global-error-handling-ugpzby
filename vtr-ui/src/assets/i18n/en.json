@@ -983,6 +983,27 @@
 							}
 						}
 					},
+					"dytc6": {
+						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"autoMode": {
+							"title1": "Auto Battery mode",
+							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+							"title2": "Auto Performance mode",
+							"desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						},
+						"manualMode": {
+							"title1": "Quiet mode",
+							"desc1": "The slider is on the left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"title2": "Balanced mode",
+							"desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					},
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "INTELLIGENT COOLING",

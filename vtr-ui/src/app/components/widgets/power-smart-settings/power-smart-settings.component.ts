@@ -40,6 +40,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	add = 0;
 	onReadMoreClick: boolean;
 	cache: IntelligentCoolingCapability = undefined;
+	public isCollapsed = false;
+	public dytc6Mode = "manualMode"; //"autoMode";
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
@@ -138,6 +140,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	changeBatterySaving(event) {
 		console.log('BatterySaving');
 		this.setManualModeSetting(IntelligentCoolingModes.BatterySaving);
+	}
+
+	public showMoreDytc6() {
+		this.isCollapsed = !this.isCollapsed;
 	}
 
 	// Start Power Smart Settings for IdeaPad
