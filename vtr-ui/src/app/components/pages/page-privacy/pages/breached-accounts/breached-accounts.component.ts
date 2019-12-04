@@ -21,16 +21,17 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	isOnline = this.commonService.isOnline;
 
 	breachedAccounts$ = this.breachedAccountsFacadeService.breachedAccounts$;
-	isAccountVerify$ = this.breachedAccountsFacadeService.isAccountVerify$;
 	isShowVerifyBlock$ = this.breachedAccountsFacadeService.isShowVerifyBlock$;
 	isFigleafReadyForCommunication$ = this.breachedAccountsFacadeService.isFigleafReadyForCommunication$;
+	isShowExitPitch$ = this.breachedAccountsFacadeService.isShowExitPitch$;
 	isUserAuthorized$ = this.breachedAccountsFacadeService.isUserAuthorized$;
 	breachedAccountsCount$ = this.breachedAccountsFacadeService.breachedAccountsCount$;
 	userEmail$ = this.breachedAccountsFacadeService.userEmail$;
 	breachedAccountWasScanned$ = this.breachedAccountsFacadeService.breachedAccountWasScanned$;
-	isUndefinedWithoutFigleafState$ = this.breachedAccountsFacadeService.isUndefinedWithoutFigleafState$;
+	isShowEmailScanner = this.breachedAccountsFacadeService.isShowEmailScanner$;
 	isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$ = this.breachedAccountsFacadeService.isBreachedFoundAndUserNotAuthorizedWithoutFigleaf$;
 	scanCounter$ = this.breachedAccountsFacadeService.scanCounter$;
+	isShowBreachedAccount$ = this.breachedAccountsFacadeService.isShowBreachedAccount$;
 
 	textForFeatureHeader = {
 		title: 'Check email for breaches',

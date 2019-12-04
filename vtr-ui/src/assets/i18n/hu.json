@@ -792,10 +792,10 @@
                 "title": "Rendszerfrissítés",
                 "notFound": "A rendszerfrissítés nem található",
                 "detail": {
-                    "uptoDate": "A szoftverek naprakészek",
-                    "updatedOn": "frissítve",
-                    "outdated": "A szoftverek elavultak",
-                    "neverRanUpdate": "még nem lett frissítve"
+                    "uptoDate": "Frissítés keresése ",
+					"updatedOn": "keresés ekkor: ",
+					"outdated": "Nem keresett frissítéseket mostanában ",
+					"neverRanUpdate": "soha nem keresett frissítéseket"
                 }
             },
             "extendedWarranty": "Jótállás kiterjesztése",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>"
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
-                "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
+                "thresholdNote": "<b>Jegyzet:</b> Az akkumulátor nem tölthető fel teljesen, ha az akkumulátortöltési küszöbérték engedélyezve van.",
                 "seeDetailsLink": "Részletek megtekintése",
                 "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {

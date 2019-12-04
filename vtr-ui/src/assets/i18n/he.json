@@ -792,10 +792,10 @@
                 "title": "‏‫עדכון המערכת‬",
                 "notFound": "לא נמצא עדכון מערכת",
                 "detail": {
-                    "uptoDate": "התוכנה מעודכנת",
-                    "updatedOn": "עודכן בתאריך",
-                    "outdated": "התוכנה לא עדכנית",
-                    "neverRanUpdate": "מעולם לא הופעל עדכון"
+                    "uptoDate": "בוצעה בדיקה לחיפוש עדכונים ",
+					"updatedOn": "הבדיקה בוצעה בתאריך ",
+					"outdated": "לא התבצעה בדיקה לחיפוש עדכונים לאחרונה ",
+					"neverRanUpdate": "מעולם לא בוצעה בדיקה לחיפוש עדכונים"
                 }
             },
             "extendedWarranty": "הרחבת האחריות",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
-                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
+                "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
+                        "progressText3": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
@@ -2026,7 +2027,7 @@
                 "connect": "חובר לאחרונה",
                 "showmore": "הצג יותר",
                 "showless": "הצג פחות",
-                "button": "הפעלת אבטחת Wifi",
+                "button": "הפעלת אבטחת WiFi",
                 "disableDecribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
             },
             "threatlocator": {
@@ -2101,7 +2102,7 @@
                 "pass": "עבר",
                 "learnMoreAboutSecurityHealth": "קבלו מידע נוסף על כל אחד מרכיבים אלה <tag>כאן</tag>.",
                 "peaceOfMind": "מעוניינים ביותר שקט נפשי?",
-                "button": "הפעלת אבטחת Wifi"
+                "button": "הפעלת אבטחת WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

@@ -8,9 +8,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceInfo } from 'src/app/data-models/common/device-info.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { TranslationNotification } from 'src/app/data-models/translation/translation';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { EMPTY } from 'rxjs/internal/observable/empty';
-import { filter } from 'rxjs/internal/operators/filter';
+import { Subscription, EMPTY } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-home',

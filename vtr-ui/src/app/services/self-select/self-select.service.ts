@@ -75,6 +75,9 @@ export class SelfSelectService {
 		if (changedConfig && changedConfig.segment) {
 			console.log(`SelfSelectService update segment. ${changedConfig.segment}`);
 			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, changedConfig.segment);
+			if (this.selfSelect) {
+				this.selfSelect.updateConfig(changedConfig).catch((error) => {});
+			}
 		} else {
 			this.commonService.setLocalStorageValue(LocalStorageKey.LocalInfoSegment, SegmentConst.Consumer);
 		}
