@@ -174,7 +174,7 @@
 
 	<div class="row py-5"
 		id="power"
-		*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection)">
+		*ngIf="!isDesktopMachine && !isPowerDriverMissing && (alwaysOnUSBStatus?.available || showEasyResumeSection || (showFlipToBootSection$ | async))">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				[tabIndex]="0"
