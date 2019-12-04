@@ -15,6 +15,7 @@ import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-l
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingLightingComponent } from '../../modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -60,8 +61,26 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 	}
 
-	ngOnInit() { }
-	ngOnDestroy() { }
+	ngOnInit() {
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
+
+	ngOnDestroy() {}
+
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+			this.fetchCMSArticles();
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {

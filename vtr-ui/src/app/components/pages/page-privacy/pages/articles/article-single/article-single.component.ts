@@ -33,9 +33,13 @@ export class ArticleSingleComponent implements OnInit {
 		private router: Router,
 		private commonService: CommonService
 	) {
+		this.router.routeReuseStrategy.shouldReuseRoute = function() {
+			return false;
+		};
 	}
 
 	ngOnInit() {
+		this.commonService.scrollTop();
 	}
 
 	openArticle(articleId) {

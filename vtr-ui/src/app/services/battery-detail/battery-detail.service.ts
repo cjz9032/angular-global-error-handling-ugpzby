@@ -31,12 +31,11 @@ export class BatteryDetailService {
 		}
 	}
 
-	public startMonitor(handler: any): Promise<any> {
+	public startMonitor(handler: any) {
 		try {
 			if (this.isShellAvailable) {
-				return this.battery.startBatteryMonitor((handler));
+				this.battery.startBatteryMonitor((handler));
 			}
-			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
 		}
@@ -44,9 +43,7 @@ export class BatteryDetailService {
 
 	public stopMonitor() {
 		if (this.isShellAvailable) {
-			this.battery.stopBatteryMonitor((response: boolean) => {
-				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
-			});
+			this.battery.stopBatteryMonitor((response: boolean) => { });
 		}
 	}
 

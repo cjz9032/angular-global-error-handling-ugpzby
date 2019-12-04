@@ -792,10 +792,10 @@
                 "title": "Atualização do Sistema",
                 "notFound": "Atualização do sistema não encontrada",
                 "detail": {
-                    "uptoDate": "Software atualizado",
-                    "updatedOn": "atualizado em",
-                    "outdated": "Software desatualizado",
-                    "neverRanUpdate": "atualização nunca executada"
+                    "uptoDate": "Atualizações verificadas ",
+					"updatedOn": "verificadas em ",
+					"outdated": "Atualizações não verificadas recentemente ",
+					"neverRanUpdate": "atualizações nunca verificadas"
                 }
             },
             "extendedWarranty": "Garantia estendida",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de energia está conectado.</b>"
                 },
                 "batteryNotDetected": "Nenhuma bateria detectada",
-                "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> A bateria não pode ser totalmente carregada quando o Limite de Carga da Bateria está ativado.",
                 "seeDetailsLink": "Ver detalhes",
                 "gaugeResetWarning": "<b>Nota:</b> A redefinição do medidor de bateria está em andamento. Mantenha o adaptador de energia CA conectado."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
                         "progressText2": "{{stage}} de {{stageNum}}: Calibrando em bateria fraca",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibrando em carga máxima",
                         "FCCText": "De {{before}} Wh para {{after}} Wh",
                         "note": "Nota: Antes de redefinir o medidor da bateria, certifique-se de conectar o computador à energia CA. ",
                         "resetLog": {
@@ -2016,7 +2017,7 @@
                 "back": "VOLTAR"
             },
             "container": {
-                "title": "Lenovo Segurança Wifi",
+                "title": "Lenovo Segurança WiFi",
                 "name": "SEGURANÇA WIFI",
                 "enable": "ATIVADO",
                 "disable": "DESATIVADO",

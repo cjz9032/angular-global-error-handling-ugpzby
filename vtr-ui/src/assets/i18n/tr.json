@@ -17,7 +17,7 @@
                         "balText": "Normal CPU ve fan hızı",
                         "quietText": "Düşük CPU kullanımı Düşük fan hızı"
                     },
-                    "wifiSecurity": "Wifi Güvenliği",
+                    "wifiSecurity": "WiFi Güvenliği",
                     "dolby": "Dolby",
                     "rapidCharge": "Hızlı Şarj"
                 },
@@ -792,10 +792,10 @@
                 "title": "Sistem Güncellemesi",
                 "notFound": "Sistem güncellemesi bulunamadı",
                 "detail": {
-                    "uptoDate": "Yazılım güncel",
-                    "updatedOn": "güncelleme",
-                    "outdated": "Yazılım güncel değil",
-                    "neverRanUpdate": "hiç güncelleme çalıştırılmadı"
+                    "uptoDate": "Güncellemeler denetlendi ",
+					"updatedOn": "denetlenme tarihi ",
+					"outdated": "Güncellemeler yakın zamanda denetlenmedi ",
+					"neverRanUpdate": "güncellemeler hiç denetlenmedi"
                 }
             },
             "extendedWarranty": "Garantiyi uzat",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
                 },
                 "batteryNotDetected": "Pil algılanmadı",
-                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
+                "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
                 "seeDetailsLink": "Ayrıntıları görün",
                 "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -2016,7 +2017,7 @@
                 "back": "GERİ"
             },
             "container": {
-                "title": "Lenovo Wifi Güvenliği",
+                "title": "Lenovo WiFi Güvenliği",
                 "name": "WIFI GÜVENLİĞİ",
                 "enable": "ETKİN",
                 "disable": "DEVRE DIŞI",
@@ -2026,7 +2027,7 @@
                 "connect": "Son bağlantı",
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
-                "button": "Wifi güvenliğini etkinleştirin",
+                "button": "WiFi güvenliğini etkinleştirin",
                 "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
             },
             "threatlocator": {
@@ -2101,7 +2102,7 @@
                 "pass": "BAŞARILI OLDU",
                 "learnMoreAboutSecurityHealth": "Bu bileşenlerin her biri hakkında daha fazla bilgiyi <tag>burada</tag> bulabilirsiniz.",
                 "peaceOfMind": "Daha huzurlu olmak ister misiniz?",
-                "button": "Wifi güvenliğini etkinleştirin"
+                "button": "WiFi güvenliğini etkinleştirin"
             },
             "homeStatus": {
                 "protected": "Protected",

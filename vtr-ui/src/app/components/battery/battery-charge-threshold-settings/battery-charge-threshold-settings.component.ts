@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
 @Component({
@@ -39,7 +39,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	ngOnInit() { }
 
 	onChargeChange(id: string, newCharge: number, event: Event, button: HTMLElement) {
-		
+
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
 				this.selectedStartAtCharge = newCharge;
