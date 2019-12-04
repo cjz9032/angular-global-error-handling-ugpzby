@@ -45,6 +45,7 @@
 							metricsEvent="featureClick"
 							[tooltip]="false"
 							[metricsItem]="'NEXT'"
+							[tabIndex]="1"
 							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
 							[isGradient]=true
@@ -154,8 +155,7 @@
 								#checkbox1
 								(click)="toggle($event, interest.label)"
 								[checked]="interest.checked" />
-							<label
-								[ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}"
+							<label [ngClass]="{'hideLabel': i > 7 && !hideMoreInterestBtn}"
 								tabindex="4"
 								(keypress)="onKeyPress($event)"
 								#interestChkboxs
@@ -206,7 +206,7 @@
 						(keypress)="btnDoneOnKeyPress($event)">
 						<vtr-ui-button metricsParent="WelcomePage"
 							metricsEvent="featureClick"
-							[tabIndex]='8'
+							[tabIndex]='1'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"

@@ -207,5 +207,7 @@ export enum LocalStorageKey {
 	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
 
 	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
-	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig'
+	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig',
+
+	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability'
 }

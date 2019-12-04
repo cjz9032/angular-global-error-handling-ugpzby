@@ -6,12 +6,19 @@
 	cursor: pointer;
 	label {
 		cursor: pointer;
-		.switch-label, .switch {
+		.switch-label,
+		.switch {
 			cursor: pointer;
 		}
 	}
 	&.switch-disable {
 		pointer-events: none;
+	}
+}
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
 	}
 }
 

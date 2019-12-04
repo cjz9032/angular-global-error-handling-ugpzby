@@ -792,10 +792,10 @@
                 "title": "Järjestelmäpäivitys",
                 "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
-                    "uptoDate": "Ohjelmisto ajan tasalla",
-                    "updatedOn": "päivitetty",
-                    "outdated": "Vanhentunut ohjelmisto",
-                    "neverRanUpdate": "päivitystä ei ole koskaan tehty"
+                    "uptoDate": "Päivitykset tarkistettu ",
+					"updatedOn": "tarkistuspäivä ",
+					"outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
+					"neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
                 }
             },
             "extendedWarranty": "Laajenna takuu",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
-                "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
+                "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
                 "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
@@ -1882,7 +1883,7 @@
             "pwdHealth": "Salasanan kunto",
             "vpnSecurity": "VPN-suojaus",
             "vpnVirtual": "Näennäisverkko",
-            "wifiConnected": "Wi-Fi-yhteyden & Connected Home -suojaus",
+            "wifiConnected": "WiFi-yhteyden & Connected Home -suojaus",
             "connectedHomeSecurity": "Connected Home -suojaus",
             "fingerprint": "Sormenjälkitunnistin",
             "uacTitle": "Mikä on käyttäjätilien valvontailmoitus?",
@@ -2012,12 +2013,12 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Wi-Fi-yhteyden ja Connected Home -suojaus",
+                "title": "WiFi-yhteyden ja Connected Home -suojaus",
                 "back": "EDELLINEN"
             },
             "container": {
-                "title": "Lenovo Wifi -suojaus",
-                "name": "Wi-Fi-SUOJAUS",
+                "title": "Lenovo WiFi -suojaus",
+                "name": "WiFi-SUOJAUS",
                 "enable": "KÄYTÖSSÄ",
                 "disable": "POISSA KÄYTÖSTÄ",
                 "less": "Vähemmän tietoja",
@@ -2026,7 +2027,7 @@
                 "connect": "Viimeksi yhdistetty",
                 "showmore": "Näytä lisää",
                 "showless": "Näytä vähemmän",
-                "button": "Ota Wi-Fi -suojaus käyttöön",
+                "button": "Ota WiFi -suojaus käyttöön",
                 "disableDecribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista."
             },
             "threatlocator": {
@@ -2037,7 +2038,7 @@
             },
             "locationmodal": {
                 "title": "Ota sijaintipalvelut käyttöön",
-                "describe1": "Jotta voit käyttää Lenovo Wi-Fi -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
+                "describe1": "Jotta voit käyttää Lenovo WiFi -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
                 "describe2": "Jotta voit käyttää Connected Home -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
                 "agree": "HYVÄKSYN",
                 "cancel": "PERUUTA"
@@ -2101,7 +2102,7 @@
                 "pass": "HYVÄKSYTTY",
                 "learnMoreAboutSecurityHealth": "Saat lisätietoja näistä osista <tag>tästä</tag>.",
                 "peaceOfMind": "Haluatko enemmän mielenrauhaa?",
-                "button": "Ota Wi-Fi -suojaus käyttöön"
+                "button": "Ota WiFi -suojaus käyttöön"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2163,7 +2164,7 @@
             "allowsYou": "Dashlanen avulla voit",
             "allowsYou1": "Kirjautua nopeasti sisään mihin tahansa ja selailla verkkoa saumattomasti - Synkronoida eri laitteet niin, että sinulla on aina pääsy tärkeille tileillesi",
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
-            "allowsYou3": "Käyttää turvaamattomia Wi-Fi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
+            "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
             "poweredByDashLane": "Dashlanen tarjoama",
             "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"

@@ -49,6 +49,7 @@ import { MetricsTranslateService } from '../services/mertics-traslate/metrics-tr
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
+import { ModalDccDetailComponent } from '../components/modal/modal-dcc-detail/modal-dcc-detail.component';
 import { ModalWelcomeComponent } from '../components/modal/modal-welcome/modal-welcome.component';
 import { ModernPreloadModule } from './modern-preload/modern-preload.module';
 import { NavbarModule } from './common/navbar.module';
@@ -67,6 +68,7 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 		HomeComponent,
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
+		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 		PageSettingsComponent,
@@ -124,6 +126,7 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 	entryComponents: [
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
+		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
 	],

@@ -99,6 +99,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 							this.toggleOnOff.emit($event);
 						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
+							if (document.getElementById('ds-power-battery-threshold-onOffButton')) {
+								document.getElementById('ds-power-battery-threshold-onOffButton').focus();
+							}
 						}
 					},
 					reason => {
