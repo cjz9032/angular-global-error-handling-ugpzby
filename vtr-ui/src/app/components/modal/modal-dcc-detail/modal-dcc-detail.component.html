@@ -1,0 +1,46 @@
+<div class="modal-body vtr-modal-dcc-detail">
+	<div class="content" tabindex="0">
+		<div class="img-top">
+			<div class="title" [innerHTML]="dccTitle"></div>
+		</div>
+		<div class="img-medium">
+			<div class="link-content">
+				<div class="link-icons">
+					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
+						<img src="/assets/images/dcc/icon-dcc-cloud.jpg" />
+					</a>
+					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
+						<img src="/assets/images/dcc/icon-dcc-photoshop.jpg" />
+					</a>
+					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
+						<img src="/assets/images/dcc/icon-dcc-illustrator.jpg" />
+					</a>
+					<a href="https://support.lenovo.com" target="_blank" class="button-dcc">
+						<img src="/assets/images/dcc/icon-dcc-lightroom.jpg" />
+					</a>
+				</div>
+			</div>
+			<div class="text-content">
+				<div class="subtitle1">{{dccSubTitle1}}</div>
+				<div class="body1" [innerHTML]="dccBody1"> </div>
+			</div>
+		</div>
+		<div class="img-bottom">
+			<div class="text-content">
+				<div class="subtitle2">{{dccSubTitle2}}</div>
+				<div class="body2" [innerHTML]="dccBody2"> </div>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:;"
+		role="button"
+		class="close-btn"
+		aria-hidden="true"
+		vtrMetrics
+		metricsItem="DccCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="{{ metricsParent }}"
+	 (click)="closeModal()">
+		<img [src]=" '/assets/images/dcc/icon-close-white.png'" alt="" srcset="">
+	</a>
+</div>

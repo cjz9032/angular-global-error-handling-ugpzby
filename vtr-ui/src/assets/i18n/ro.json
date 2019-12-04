@@ -792,10 +792,10 @@
                 "title": "Actualizare sistem",
                 "notFound": "Actualizarea sistemului a fost găsită",
                 "detail": {
-                    "uptoDate": "Software actualizat",
-                    "updatedOn": "actualizat pe",
-                    "outdated": "Software învechit",
-                    "neverRanUpdate": "nu a fost actualizat niciodată"
+                    "uptoDate": "S-a verificat dacă există actualizări ",
+					"updatedOn": "s-a verificat la ",
+					"outdated": "Nu s-a verificat recent dacă există actualizări ",
+					"neverRanUpdate": "nu s-a verificat niciodată dacă există actualizări"
                 }
             },
             "extendedWarranty": "Extindere garanție",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
-                "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
+                "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
                 "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+                        "progressText3": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
@@ -2016,7 +2017,7 @@
                 "back": "ÎNAPOI"
             },
             "container": {
-                "title": "Securitate Wifi Lenovo",
+                "title": "Securitate WiFi Lenovo",
                 "name": "SECURITATE WIFI",
                 "enable": "ACTIVAT",
                 "disable": "DEZACTIVAT",

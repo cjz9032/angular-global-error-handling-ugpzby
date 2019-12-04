@@ -7,7 +7,7 @@
 			<div class="modal-body">
 				<div class="top-header">
 					<button type="button" id="close" class="close" (click)="closeModal(false)" (keyup)="checkFocus($event)"
-					  tabindex="1"  attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}" 
+					  tabindex="1"  attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}"
 						(keyup.enter)="closeModal(false)">
 						<svg width="16px" height="16px" viewBox="0 0 12 11" version="1.1"
 							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -53,14 +53,14 @@
 											{{item.processDescription}}</div>
 										<div class="btn-add-app mx-auto">
 											<button value="{{item.processPath}}"
-												[disabled]="addedApps>=5 && !isChecked[i]"
-												 [ngClass]="{'checked': isChecked[i],'disabled':addedApps>=5 && !item.isChecked}"
-												[ngClass]="{'checked': isChecked[i]}" (click)="onValueChange($event,i)"
+												[disabled]="addedApps>=5 && !item.isChecked"
+												 [ngClass]="{'checked': item.isChecked,'disabled':addedApps>=5 && !item.isChecked}"
+												[ngClass]="{'checked': item.isChecked}" (click)="onValueChange($event,i, item)"
 												[id]="'addApps'+i" vtrMetrics [metricsItem]="item.processDescription"
 												metricsEvent="featureClick" tabindex="1"
 												(keydown)="runappKeyup($event,i)" role="checkbox"
-												[attr.aria-checked]="isChecked[i]"
-												attr.aria-label="{{'gaming.narrator.networkBoost.addApps.add' | translate}}{{item.processDescription}}">
+												[attr.aria-checked]="item.isChecked"
+												[attr.aria-label]="'Add '+item.processDescription">
 											</button>
 										</div>
 									</li>

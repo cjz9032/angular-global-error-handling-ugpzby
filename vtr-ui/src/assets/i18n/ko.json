@@ -17,7 +17,7 @@
                         "balText": "일반 CPU 및 팬 속도",
                         "quietText": "CPU사용량 낮을수록 팬속도 낮음"
                     },
-                    "wifiSecurity": "Wifi 보안",
+                    "wifiSecurity": "WiFi 보안",
                     "dolby": "Dolby",
                     "rapidCharge": "급속 충전"
                 },
@@ -792,10 +792,10 @@
                 "title": "시스템 업데이트",
                 "notFound": "시스템 업데이트를 찾을 수 없음",
                 "detail": {
-                    "uptoDate": "소프트웨어가 최신임",
-                    "updatedOn": "업데이트 날짜",
-                    "outdated": "소프트웨어가 오래됨",
-                    "neverRanUpdate": "업데이트 실행되지 않음"
+                    "uptoDate": "업데이트 확인됨 ",
+					"updatedOn": "확인된 날짜 ",
+					"outdated": "최근에 업데이트를 확인하지 않음 ",
+					"neverRanUpdate": "업데이트 확인을 한 적 없음"
                 }
             },
             "extendedWarranty": "연장 보증",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>"
                 },
                 "batteryNotDetected": "배터리 없음",
-                "thresholdNote": "<b>참고:</b> 배터리 수명을 연장하기 위해 {{value}}%에서 충전이 멈추도록 배터리를 설정했습니다.",
+                "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "progressText2": "{{stageNum}}의 {{stage}}: 저전력으로 보정 중",
+                        "progressText3": "{{stageNum}}의 {{stage}}: 완전 충전으로 보정 중",
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
@@ -2016,7 +2017,7 @@
                 "back": "뒤로"
             },
             "container": {
-                "title": "Lenovo Wifi 보안",
+                "title": "Lenovo WiFi 보안",
                 "name": "WIFI 보안",
                 "enable": "사용",
                 "disable": "사용 안 함",

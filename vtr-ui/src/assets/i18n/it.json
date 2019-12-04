@@ -792,10 +792,10 @@
                 "title": "Aggiornamento del sistema",
                 "notFound": "Aggiornamento sistema non rilevato",
                 "detail": {
-                    "uptoDate": "Software aggiornato",
-                    "updatedOn": "aggiornato in data",
-                    "outdated": "Software obsoleto",
-                    "neverRanUpdate": "aggiornamento mai eseguito"
+                    "uptoDate": "Aggiornamenti controllati ",
+					"updatedOn": "controllati in data ",
+					"outdated": "Aggiornamenti non controllati di recente ",
+					"neverRanUpdate": "aggiornamenti mai controllati"
                 }
             },
             "extendedWarranty": "Garanzia estesa",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
-                "thresholdNote": "<b>Nota:</b> per estenderne la durata, la batteria è stata impostata per interromperne la ricarica al {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "progressText2": "{{stage}} di {{stageNum}}: calibrazione per batteria scarica in corso",
+                        "progressText3": "{{stage}} di {{stageNum}}: calibrazione per carica completa in corso",
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
@@ -2026,7 +2027,7 @@
                 "connect": "Ultima connessione",
                 "showmore": "Mostra di più",
                 "showless": "Mostra meno",
-                "button": "Abilita sicurezza Wifi",
+                "button": "Abilita sicurezza WiFi",
                 "disableDecribe": "Sicurezza Lenovo WiFi è un servizio software avanzato basato su cloud che consente al dispositivo in uso di distinguere reti wireless sicure da quelle potenzialmente dannose."
             },
             "threatlocator": {
@@ -2101,7 +2102,7 @@
                 "pass": "SUPERATO",
                 "learnMoreAboutSecurityHealth": "Ulteriori informazioni su questi componenti sono disponibili <tag>qui</tag>.",
                 "peaceOfMind": "Vuoi maggiore sicurezza e tranquillità?",
-                "button": "Abilita sicurezza Wifi"
+                "button": "Abilita sicurezza WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",

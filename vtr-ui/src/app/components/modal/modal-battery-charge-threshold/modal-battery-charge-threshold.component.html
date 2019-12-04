@@ -15,31 +15,26 @@
 			</button>
 		</div>
 	</div>
-	<h1 id="ds-threshold-popup" class="modal-title" tabindex="0" role="text">
-		{{title | translate}}</h1>
+	<h1 id="ds-threshold-popup"
+		attr.aria-label="ds-threshold-popup"
+		[innerHTML]="title | translate"></h1>
 	<p id="ds-thresholdpopup-description1"
-		role="text" tabindex="0"
-		[innerHTML]="description1 | translate">
-	</p>
+		attr.aria-label="ds-thresholdpopup-description1"
+		[innerHTML]="description1 | translate"></p>
 	<p id="ds-thresholdpopup-description2"
-		role="text" tabindex="0"
-		[innerHTML]="description2 | translate">
-	</p>
-	<hr aria-hidden="true">
+		attr.aria-label="ds-thresholdpopup-description2"
+		[innerHTML]="description2 | translate"></p>
+	<hr>
 	<div class="row">
 		<button id="battery-threshold-popup-enable"
-			tabindex="0"
-			role="button"
-			aria-label="enable battery threshold"
+			attr.aria-label="battery-threshold-popup-enable"
 			class="btn enable-button"
-			(click)="enableBatteryChargeThreshold()"
-			(keydown.enter)="enableBatteryChargeThreshold()">{{positiveResponseText | translate}}</button>
+			(click)="enableBatteryChargeThreshold()">
+			{{positiveResponseText | translate}}
+		</button>
 		<a id="battery-threshold-popup-cancel"
-			aria-label="dismiss modal"
-			tabindex="0"
-			role="button"
+			attr.aria-label="battery-threshold-popup-cancel"
 			(click)="closeModal()"
-			(keydown.enter)="closeModal()"
 			class="cancel-link active">{{negativeResponseText | translate}}</a>
 	</div>
 

@@ -15,13 +15,12 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { ModalModernPreloadComponent } from '../modal/modal-modern-preload/modal-modern-preload.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
 import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
-import { EMPTY, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { HardwareScanService } from 'src/app/beta/hardware-scan/services/hardware-scan/hardware-scan.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
@@ -31,9 +30,7 @@ import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/chi
 import { StringBooleanEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { catchError } from 'rxjs/operators';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
-import { DashboardLocalStorageKey } from 'src/app/enums/dashboard-local-storage-key.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
@@ -249,9 +246,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			undefined
 		);
 		if (cacheUnreadMessageCount) {
-			this.UnreadMessageCount.totalMessage = cacheUnreadMessageCount.totalMessage;
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
+			let totalMessage = 0;
+			if (this.appsForYouService.showLmaMenu() && !this.UnreadMessageCount.lmaMenuClicked) {
+				totalMessage++;
+			}
+			if (this.appsForYouService.showAdobeMenu() && !this.UnreadMessageCount.adobeMenuClicked) {
+				totalMessage++;
+			}
+			this.UnreadMessageCount.totalMessage = totalMessage;
 		} else if (this.UnreadMessageCount.totalMessage === 0) {
 			if (this.appsForYouService.showLmaMenu()) {
 				this.UnreadMessageCount.totalMessage++;

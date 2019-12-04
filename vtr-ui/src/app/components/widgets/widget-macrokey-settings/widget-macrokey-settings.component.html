@@ -6,11 +6,12 @@
 					<p class="intro-text">{{ 'gaming.macroKey.introLine' | translate }}</p>
 				</div>
 				<div class="col-12 macrokey-status-wrapper" *ngIf="isNumpad">
-					<div class="select-wrapper">
-						<vtr-ui-lighting-effect [isRecording]="isRecording" [options]="macroKeyOptions[0]"
+					<div class="select-wrapper" ngbTooltip="{{ tooltips_value }}">
+						<vtr-ui-lighting-effect [isRecording]="isRecording" [options]="macroKeyOptions[0]" 
 							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus" (change)="optionChanged($event)" [tabindex]="1">
 						</vtr-ui-lighting-effect>
 					</div>
+					
 				</div>
 				<div class="col-12">
 					<div class="macrokey-wrapper" [ngClass]="{numberpad: isNumpad}">
@@ -19,6 +20,7 @@
 								(numberSelected)="onNumberSelected($event)" [isNumberpad]="isNumpad"
 								[selectedNumber]="numberSelected" [recordingStatus]="isRecording">
 							</vtr-ui-number-button>
+
 						</div>
 						<div class="details-wrapper">
 							<vtr-ui-macrokey-details [number]="numberSelected" [isNumberpad]="isNumpad"

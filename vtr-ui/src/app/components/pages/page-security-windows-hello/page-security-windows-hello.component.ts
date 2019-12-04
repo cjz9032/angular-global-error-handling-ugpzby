@@ -28,7 +28,6 @@ export class PageSecurityWindowsHelloComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private guard: GuardService,
-
 		public vantageShellService: VantageShellService,
 		private router: Router
 	) {	}
