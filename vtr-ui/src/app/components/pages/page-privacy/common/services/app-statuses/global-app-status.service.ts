@@ -11,6 +11,7 @@ import { GetFeaturesConsentService } from './get-features-consent.service';
 export class GlobalAppStatusService {
 	licenseTypes = licenseTypes;
 	isFigleafReadyForCommunication = false;
+	isFigleafInExit = false;
 	figleafStatus: FigleafStatus;
 
 	constructor(
@@ -21,6 +22,10 @@ export class GlobalAppStatusService {
 	) {
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isFigleafReadyForCommunication) => {
 			this.isFigleafReadyForCommunication = isFigleafReadyForCommunication;
+		});
+
+		this.communicationWithFigleafService.isFigleafInExit$.subscribe((isFigleafInExit) => {
+			this.isFigleafInExit = isFigleafInExit;
 		});
 
 		this.figleafOverviewService.figleafStatus$.subscribe((figleafStatus) => {
@@ -41,6 +46,10 @@ export class GlobalAppStatusService {
 
 		const getFeaturesConsent = this.getFeaturesConsentService.getFeaturesConsent();
 		const isConsentGiven = Object.values(getFeaturesConsent).includes(true);
+
+		if (!isConsentGiven && this.isFigleafInExit || getFeaturesConsent.breachedAccountsResult && this.isFigleafInExit) {
+			return AppStatuses.figleafInExitWithoutScan;
+		}
 
 		if (isConsentGiven) {
 			return AppStatuses.scanPerformed;

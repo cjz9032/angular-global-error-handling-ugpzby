@@ -41,7 +41,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	onReadMoreClick: boolean;
 	cache: IntelligentCoolingCapability = undefined;
 	public isCollapsed = false;
-	public dytc6Mode = "manualMode"; //"autoMode";
+	public dytc6Mode = 'manualMode'; // "autoMode";
+	legacyManualModeCapability = true;
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
@@ -337,8 +338,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				// Check for Legacy Capable
 				this.cQLCapability = await this.getLegacyCQLCapability();
 				this.tIOCapability = 0 !== (await this.getLegacyTIOCapability());
-				const legacyManualModeCapability = await this.getLegacyManualModeCapability();
-				if (this.cQLCapability || this.tIOCapability || legacyManualModeCapability) {
+				this.legacyManualModeCapability = await this.getLegacyManualModeCapability();
+				if (this.cQLCapability || this.tIOCapability || this.legacyManualModeCapability) {
 					// Legacy Capable or DYTC 3.0
 					this.captionText = this.translate.instant('device.deviceSettings.power.powerSmartSettings.description3');
 					this.cache.captionText = 'device.deviceSettings.power.powerSmartSettings.description3';
@@ -402,6 +403,15 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.error('getPMDriverStatus', error.message);
 		}
+	}
+
+	public isShowIntelligentCoolingModes(): boolean {
+		if (!this.legacyManualModeCapability) {
+			this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.legacyManualModeCapability);
+			return false;
+		}
+		this.logger.info('PowerSmartSettingsComponent.isShowIntelligentCoolingModes', this.showIntelligentCoolingModes);
+		return this.showIntelligentCoolingModes;
 	}
 
 	private getDYTCRevision(): Promise<number> {
@@ -651,10 +661,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	readMore(readMoreDiv: HTMLElement) {
 		this.onReadMoreClick = true;
 		readMoreDiv.style.display = 'block';
-		//readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		//const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
+		// readMoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		// const focusElement = readMoreDiv.querySelector('[tabindex = \'0\']') as HTMLElement;
 		// Fix for Edge browser
-		//window.scrollBy(0, 0);
+		// window.scrollBy(0, 0);
 		readMoreDiv.focus();
 	}
 

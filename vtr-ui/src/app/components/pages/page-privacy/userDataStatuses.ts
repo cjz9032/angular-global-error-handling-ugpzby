@@ -6,6 +6,7 @@ export enum AppStatuses {
 	subscriptionExpired = 'SubscriptionExpired',
 	scanPerformed = 'ScanPerformed',
 	firstTimeVisitor = 'FirstTimeVisitor',
+	figleafInExitWithoutScan = 'FigleafInExit'
 }
 
 export enum FeaturesStatuses {

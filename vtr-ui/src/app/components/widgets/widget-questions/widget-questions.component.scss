@@ -13,7 +13,6 @@
 	.description {
 		color: $main_shade;
 		font-size: $fontsize_md;
-		text-transform: uppercase;
 		font-weight: $weight_medium;
 	}
 	@media #{$black-on-white} {

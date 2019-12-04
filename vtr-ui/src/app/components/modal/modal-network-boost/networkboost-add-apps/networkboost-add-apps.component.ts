@@ -1,3 +1,4 @@
+import { LoggerService } from './../../../../services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { NetworkBoostService } from './../../../../services/gaming/gaming-networkboost/networkboost.service';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit, OnDestroy } from '@angular/core';
@@ -22,7 +23,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	@Input() addedApps = 0;
 	maxAppsCount = 5;
 	@Output() closeAddAppsModal = new EventEmitter<boolean>();
-	constructor(private networkBoostService: NetworkBoostService) { }
+	constructor(private networkBoostService: NetworkBoostService, private loggerService: LoggerService) { }
 
 	ngOnInit() {
 		this.refreshNetworkBoostList();
@@ -39,31 +40,38 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 		}
 	}
 
-	async onValueChange(event: any, i: number) {
+	async onValueChange(event: any, i: number, item: any = {}) {
 		this.isChecked[i] = !this.isChecked[i];
+		item.isChecked = !item.isChecked;
 		if (event && event.target) {
 			this.addAppsList = event.target.value;
 			if (this.isChecked[i]) {
-				this.addAppToList(event.target.value);
+				this.addedApps += 1;
+				this.addAppToList(event.target.value, item);
 			} else {
-				this.removeApp(event.target.value);
+				this.addedApps -= 1;
+				this.removeApp(event.target.value, item);
 			}
 		}
 	}
 
-	async addAppToList(app) {
+	async addAppToList(app, item: any = {}) {
 		try {
 			const result = await this.networkBoostService.addProcessToNetworkBoost(app);
-			if (result) {
-				this.addedApps += 1;
+			if (!result) {
+				this.addedApps -= 1;
+				item.isChecked = false;
 			}
+			this.loggerService.info('NetworkboostaddComponent.addAppToList',
+				'RESULT FROM NB ADD ========>' + result + 'checked-->' + item.isChecked);
 		} catch (error) { }
 	}
-	async removeApp(app) {
+	async removeApp(app, item: any = {}) {
 		try {
 			const result = await this.networkBoostService.deleteProcessInNetBoost(app);
-			if (result) {
-				this.addedApps -= 1;
+			if (!result) {
+				this.addedApps += 1;
+				item.isChecked = true;
 			}
 		} catch (err) { }
 	}
@@ -71,7 +79,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	async refreshNetworkBoostList() {
 		try {
 			const result: any = await this.networkBoostService.getNetUsingProcesses();
-			console.log('RESULT frpm NB', result);
+			// console.log('RESULT frpm NB', result);
 			this.loading = false;
 			this.runningList = [];
 			if (result && !isUndefined(result.processList)) {
@@ -83,22 +91,30 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 			} else {
 				this.ariaLabel = 'gaming.narrator.networkBoost.addApps.addAppsTitle';
 			}
+			// console.log(this.runningList, '--RUNNINGLIST');
 		} catch (error) {
 			this.loading = false;
 			this.noAppsRunning = true;
-			document.getElementById('nbAddApps').focus();
-			console.log(`ERROR in refreshNetworkBoostList()`, error);
+			this.focusElement('nbAddApps');
+			this.loggerService.error('networkboost-add-apps.component => ERROR in refreshNetworkBoostList()', error);
 		} finally {
 			setTimeout(() => {
-				document.getElementById('nbAddApps').focus();
+				this.focusElement('nbAddApps');
 			}, 2);
+		}
+	}
+
+	focusElement(id) {
+		if (document.getElementById(id)) {
+			document.getElementById(id).focus();
 		}
 	}
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
-		document.getElementById('main-wrapper').focus();
+		this.focusElement('main-wrapper');
 	}
+
 	runappKeyup(event, i) {
 		if (event.which === 9) {
 			if (i > this.currentLength) {
@@ -119,17 +135,15 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 
 	focusClose() {
 		setTimeout(() => {
-			document.getElementById('close').focus();
-
-		}, 2)
+			this.focusElement('close');
+		}, 2);
 	}
 	checkApps(i) {
 		let isShow = false;
 		this.runningList.forEach((e, index) => {
-			console.log(index);
+			// console.log(index);
 			if (this.isChecked[index] && index > i) {
-				console.log(index, i);
-				console.log(this.isChecked)
+				// console.log(index, i);
 				isShow = true;
 			}
 		});
@@ -139,7 +153,7 @@ export class NetworkboostAddAppsComponent implements OnInit, OnChanges, AfterVie
 	checkFocus(event) {
 		if (this.noAppsRunning && event.which === 9) {
 			this.noRunningInterval = setInterval(() => {
-				document.getElementById('close').focus();
+				this.focusElement('close');
 			}, 1);
 		}
 	}

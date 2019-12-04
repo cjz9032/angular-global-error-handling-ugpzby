@@ -24,6 +24,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
+import { SecureMath } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -47,6 +48,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
+
+	heroBannerDemoItems = [];
 
 	heroBannerItemsCms: []; // tile A
 	cardContentPositionBCms: any = {};
@@ -192,12 +195,17 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 
 	private getWelcomeText() {
 		if (!this.dashboardService.welcomeText) {
+			const win: any = window;
+			let isShellOnline = true;
+			if (win.VantageShellExtension && win.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode) {
+				isShellOnline = false;
+			}
 			const dashboardLastWelcomeText = this.commonService.getLocalStorageValue(LocalStorageKey.DashboardLastWelcomeText);
 			let textIndex = 1;
 			const welcomeTextLength = 15;
 			if (dashboardLastWelcomeText && dashboardLastWelcomeText.welcomeText) {
 				const lastIndex = this.getWelcomeTextIndex(dashboardLastWelcomeText.welcomeText);
-				if (!dashboardLastWelcomeText.isOnline && this.commonService.isOnline) {
+				if (!dashboardLastWelcomeText.isOnline && isShellOnline) {
 					textIndex = lastIndex;
 				} else {
 					if (lastIndex === welcomeTextLength) {
@@ -207,7 +215,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 					}
 				}
 			} else {
-				textIndex = Math.floor(Math.random() * 15 + 1);
+				textIndex = Math.floor(SecureMath.random() * 15 + 1);
 				if (textIndex === 2) {
 					textIndex = 3;
 				} // Do not show again in first time
@@ -218,7 +226,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				LocalStorageKey.DashboardLastWelcomeText,
 				{
 					welcomeText: this.dashboardService.welcomeText,
-					isOnline: this.commonService.isOnline
+					isOnline: isShellOnline
 				}
 			);
 		}
@@ -273,6 +281,10 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			this.fetchCMSContent(lang);
 			this.fetchUPEContent();
 		});
+
+		if (this.deviceService.showDemo) {
+			this.getHeroBannerDemoItems();
+		}
 	}
 
 	private fetchCMSContent(lang?: string) {
@@ -322,6 +334,20 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	getHeroBannerDemoItems() {
+		this.cmsRequestResult.tileA = true;
+		this.heroBannerDemoItems = [{
+			albumId: 1,
+			id: '',
+			source: this.sanitizer.sanitize(SecurityContext.HTML, 'VANTAGE'),
+			title: this.sanitizer.sanitize(SecurityContext.HTML, 'Lenovo exclusive offer of Adobe designer suite'),
+			url: '/assets/images/dcc/hero-banner-dcc.jpg',
+			ActionLink: 'dcc-demo',
+			ActionType: 'Internal',
+			DataSource: 'cms'
+		}];
 	}
 
 	getCMSHeroBannerItems(response) {
@@ -764,8 +790,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				const memory = this.systemStatus[0];
 				const totalRam = value.memory.total;
 				const usedRam = value.memory.used;
-				const percentRam = parseInt((usedRam / totalRam * 100).toFixed(0), 10);
-				if (percentRam > 70) {
+				if (usedRam === totalRam) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -783,8 +808,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 						1
 					)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
 				});
-				const percent = parseInt((usedDisk / totalDisk * 100).toFixed(0), 10);
-				if (percent > 90) {
+				if (usedDisk === totalDisk) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;
@@ -871,7 +895,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 						this.getPreviousContent();
 					} else {
 						this.fetchContent();
-						this.fetchUPEContent();
+						// this.fetchUPEContent();
 						this.getWarrantyInfo();
 					}
 					break;

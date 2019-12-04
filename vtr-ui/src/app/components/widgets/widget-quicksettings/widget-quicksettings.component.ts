@@ -21,6 +21,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PowerService } from 'src/app/services/power/power.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -65,9 +66,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private powerService: PowerService,
 		private logger: LoggerService,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private ngZone: NgZone,
-		private vantageShellService: VantageShellService) {
+		private vantageShellService: VantageShellService,
+		private router: Router) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
 			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
@@ -433,9 +435,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 			.stopEyeCareMonitor();
 	// 	}
 	// }
+
 	onClick(path) {
 		this.deviceService.launchUri(path);
 	}
+
 	public getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
 			try {
@@ -506,7 +510,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				const featureStatus = await this.powerService.getConservationModeStatusIdeaNoteBook();
 				console.log('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 				this.conservationModeStatus = featureStatus;
-				} catch (error) {
+			} catch (error) {
 				this.logger.error('getConservationModeStatusIdeaNoteBook', error.message);
 				return EMPTY;
 			}

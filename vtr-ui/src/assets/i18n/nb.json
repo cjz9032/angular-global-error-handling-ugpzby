@@ -17,7 +17,7 @@
                         "balText": "Normal CPU og viftehastighet",
                         "quietText": "Lavere CPU-bruk og viftehastighet"
                     },
-                    "wifiSecurity": "Wi-Fi Sikkerhet",
+                    "wifiSecurity": "WiFi Sikkerhet",
                     "dolby": "Dolby",
                     "rapidCharge": "Hurtiglading"
                 },
@@ -792,10 +792,10 @@
                 "title": "Systemoppdateringer",
                 "notFound": "Finner ikke systemoppdatering",
                 "detail": {
-                    "uptoDate": "Programvare er oppdatert",
-                    "updatedOn": "oppdatert",
-                    "outdated": "Programvare er utdatert",
-                    "neverRanUpdate": "kjørte aldri oppdatering"
+                    "uptoDate": "Oppdateringer sjekket ",
+					"updatedOn": "sjekket den ",
+					"outdated": "Oppdateringer ikke sjekket nylig ",
+					"neverRanUpdate": "oppdateringer aldri sjekket"
                 }
             },
             "extendedWarranty": "Utvide garantien",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
-                "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
+                "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+                        "progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {

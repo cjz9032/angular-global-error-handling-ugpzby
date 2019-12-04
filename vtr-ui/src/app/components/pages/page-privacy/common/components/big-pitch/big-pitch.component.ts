@@ -16,7 +16,13 @@ export class BigPitchComponent {
 	@Input() appStatuses: AppStatuses;
 	@Input() timeToExpires;
 	@Input() articleId: number;
+	@Input() isFigleafInExit = false;
 	@Output() clickMore = new EventEmitter();
+
+	isFigleafInExitTexts = {
+		title: 'Relaunch Lenovo Privacy Essentials',
+		text: 'Get the most recent information about breaches and tracking tools.'
+	};
 
 	appStatusesEnum = AppStatuses;
 }

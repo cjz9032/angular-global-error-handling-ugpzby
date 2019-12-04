@@ -25,12 +25,12 @@
 										*ngIf="showIC===3 && !apsStatus">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }}
 									</div>
-									<div *ngIf="showIC===3 && showIntelligentCoolingModes"
+									<div *ngIf="showIC===3 && isShowIntelligentCoolingModes()"
 										class="optimize">
 										{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }}
 									</div>
 									<div class="row no-gutters"
-										*ngIf="showIntelligentCoolingModes"
+										*ngIf="isShowIntelligentCoolingModes()"
 										role="radiogroup">
 										<vtr-ui-circle-radio-with-checkbox *ngIf="showIC!==14"
 											[theme]="'blue'"
