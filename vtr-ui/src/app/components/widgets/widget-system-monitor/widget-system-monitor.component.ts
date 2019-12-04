@@ -46,7 +46,16 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() gpuMax = 3.3;
 	@Input() ramCurrent = 0;
 	@Input() ramMax = 0;
-	public hds: any = [];
+	public hds: any = [
+		{
+			capacity: 476,
+			diskUsage: '14',
+			hddName: 'LENSE30512GMSP34MEAT3TA',
+			isSystemDisk: 'true',
+			type: 'SSD',
+			usedDisk: 71
+		}
+	];
 	public defaultHds = [
 		{
 			capacity: 476,
@@ -87,7 +96,9 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private logger: LoggerService
-	) {}
+	) {
+		this.hds = this.defaultHds;
+	}
 
 	// CPU Panel Data
 	GetcpuBaseFrequencyCache(): any {
