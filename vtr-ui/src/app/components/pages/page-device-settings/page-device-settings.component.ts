@@ -185,7 +185,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
 			if (machineFamily) {
 				const familyName = machineFamily.replace(/\s+/g, '');
-				if (this.machineType !== 1 || (this.machineType === 1 && familyName === 'LenovoTablet10')) {
+				if (this.machineType === 1 && familyName === 'LenovoTablet10') {
 					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
 					return;
 				}
