@@ -40,7 +40,8 @@
 					role="status"></div>
 			</div>
 		</div>
-		<div class="row" [ngClass]="{'is-visible' : hideOnOffLabel}">
+		<div class="row"
+			[ngClass]="{'is-visible' : hideOnOffLabel}">
 			<div class="col">
 				<div class="switch-on-off">
 					<div *ngIf="!value && !isLoading"
@@ -55,12 +56,14 @@
 						id="qs-{{switchId}}-switch-on"
 						attr.aria-label="qs-{{switchId}}-switch-on">
 						{{'common.ui.on' | translate}}</div>
-					<!-- <div *ngIf="isLoading"
+					<div *ngIf="isLoading"
 						class="switch-label off-label"
 						id="qs-{{switchId}}-switch-loading"
 						attr.aria-label="qs-{{switchId}}-switch-loading">
-						{{'common.ui.loading' | translate}}
-					</div> -->
+						<!-- avoid title shifting to downward effect by adding space -->
+						&nbsp;
+						<!-- {{'common.ui.loading' | translate}} -->
+					</div>
 				</div>
 			</div>
 		</div>
