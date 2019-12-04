@@ -792,10 +792,10 @@
                 "title": "Systemaktualisierung",
                 "notFound": "System Update nicht gefunden",
                 "detail": {
-                    "uptoDate": "Die Software ist aktuell",
-                    "updatedOn": "aktualisiert am",
-                    "outdated": "Software veraltet",
-                    "neverRanUpdate": "Aktualisierung nie ausgeführt"
+                    "uptoDate": "Updates geprüft ",
+					"updatedOn": "geprüft am ",
+					"outdated": "Updates wurden zuletzt nicht geprüft ",
+					"neverRanUpdate": "updates wurden nie geprüft"
                 }
             },
             "extendedWarranty": "Garantieverlängerung",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>"
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
-                "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",
+                "thresholdNote": "<b>Hinweis:</b> Der Akku kann nicht vollständig aufgeladen werden, wenn der Schwellenwert für die Akkuladung aktiviert ist.",
                 "seeDetailsLink": "Details anzeigen",
                 "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
                         "progressText2": "{{stage}} von {{stageNum}}: Kalibrierung für niedrigen Akkustand",
+                        "progressText3": "{{stage}} von {{stageNum}}: Kalibrierung für volle Ladung",
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
@@ -2163,7 +2164,7 @@
             "allowsYou": "Dashlane ermöglicht Ihnen:",
             "allowsYou1": "Unmittelbare Anmeldung auf sämtlichen Seiten für ein reibungsloses Surfen im Internet - Synchronisierung verschiedener Geräte, sodass Sie stets Zugriff auf Ihre wichtigen Konten haben.",
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
-            "allowsYou3": "Sicherheit bei ungesicherten Wi-Fi-Netzwerken dank integriertem VPN.",
+            "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
             "poweredByDashLane": "Unterstützt von Dashlane",
             "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"

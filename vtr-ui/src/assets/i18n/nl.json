@@ -792,10 +792,10 @@
                 "title": "Systeemupdate",
                 "notFound": "Systeemupdate niet gevonden",
                 "detail": {
-                    "uptoDate": "Software bijgewerkt",
-                    "updatedOn": "bijgewerkt op",
-                    "outdated": "Software verouderd",
-                    "neverRanUpdate": "update nooit uitgevoerd"
+                    "uptoDate": "Updates gecontroleerd ",
+					"updatedOn": "gecontroleerd op ",
+					"outdated": "Updates niet recent gecontroleerd ",
+					"neverRanUpdate": "updates nooit gecontroleerd"
                 }
             },
             "extendedWarranty": "Garantie uitbreiden",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-voeding is aangesloten.</b>"
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
-                "thresholdNote": "<b>Opmerking:</b> om de levensduur van de batterij te verlengen, moet u de oplaaddrempel instellen op {{value}}%.",
+                "thresholdNote": "<b>Opmerking:</b> de batterij kan niet volledig worden opgeladen als drempelwaarde voor batterijlading is ingeschakeld.",
                 "seeDetailsLink": "Bekijk meer informatie",
                 "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
                         "progressText2": "{{stage}} van {{stageNum}}: kalibreren naar bijna lege batterij",
+                        "progressText3": "{{stage}} van {{stageNum}}: kalibreren naar volledig opladen",
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
@@ -2016,7 +2017,7 @@
                 "back": "TERUG"
             },
             "container": {
-                "title": "Lenovo Wifi-beveiliging",
+                "title": "Lenovo WiFi-beveiliging",
                 "name": "WIFI-BEVEILIGING",
                 "enable": "INGESCHAKELD",
                 "disable": "UITGESCHAKELD",

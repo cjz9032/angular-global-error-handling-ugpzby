@@ -792,10 +792,10 @@
                 "title": "Systemuppdatering",
                 "notFound": "Systemuppdatering hittades inte",
                 "detail": {
-                    "uptoDate": "Programvaran är uppdaterad",
-                    "updatedOn": "uppdaterad den",
-                    "outdated": "Programvaran är inaktuell",
-                    "neverRanUpdate": "uppdatering har inte skett"
+                    "uptoDate": "Uppdateringar kontrollerade ",
+					"updatedOn": "kontrollerades den ",
+					"outdated": "Uppdateringar har inte kontrollerats nyligen ",
+					"neverRanUpdate": "uppdateringar har aldrig kontrollerats"
                 }
             },
             "extendedWarranty": "Förläng garantin",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
-                "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
+                "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
                 "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
@@ -1076,6 +1076,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {

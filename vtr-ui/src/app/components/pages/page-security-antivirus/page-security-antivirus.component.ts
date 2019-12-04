@@ -15,6 +15,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-common.model';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -207,6 +208,8 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();
 		}
+		const antivirus = new AntivirusErrorHandle(this.antiVirus);
+		antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {
@@ -416,12 +419,17 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	}
 
 	updateRegister(list: Array<any>, data) {
-		const featureList = list.slice(1, 5);
+		this.viewModel.mcafee.registered = data;
 		const registerList = {
-			status: data,
+			status: data ? 'enabled' : 'disabled',
 			title: this.register
 		};
-		return featureList.splice(0, 0, registerList);
+		if (list.length > 0) {
+			list.splice(0, 1, registerList);
+		} else {
+			list.push(registerList);
+		}
+		return list;
 	}
 
 	getMcafeeMetric(metrics: Array<phoenix.McafeeMetricsList>, data?) {

@@ -8,7 +8,7 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
 import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/schedule-update-status.model';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
-import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
+import { SystemUpdateStatus } from 'src/app/data-models/system-update/system-update-status-message.model';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
@@ -54,6 +54,7 @@ export class SystemUpdateService {
 	public isDownloadingCancel = false;
 	public isImcErrorOrEmptyResponse = false;
 	public isRebootRequiredDialogNeeded = false;
+	public isCheckingCancel = false;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
@@ -138,18 +139,29 @@ export class SystemUpdateService {
 				console.log('checkForUpdates callback', progressPercentage);
 				this.percentCompleted = progressPercentage;
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
-			}).then((response) => {
+			}).then(async (response) => {
 				console.log('checkForUpdates response', response, typeof response.status);
 				this.isCheckForUpdateComplete = true;
 				const status = parseInt(response.status, 10);
 				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 
-				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
+				if (status === SystemUpdateStatus.SUCCESS) { // success
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
+					while (this.percentCompleted < 100 && !this.isCheckingCancel) {
+						const percent = this.percentCompleted + 10;
+						if (percent <= 100 ) {
+							this.percentCompleted = percent;
+						} else {
+							this.percentCompleted = 100;
+						}
+						this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, this.percentCompleted);
+						const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+						await sleep(80);
+					}
 					this.percentCompleted = 0;
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
@@ -182,6 +194,7 @@ export class SystemUpdateService {
 				.then((status: boolean) => {
 					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
+					this.isCheckingCancel = true;
 				});
 		}
 	}
@@ -270,7 +283,7 @@ export class SystemUpdateService {
 				if (!this.isDownloadingCancel) {
 					this.isInstallationCompleted = true;
 					this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
-					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
+					this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatus.SUCCESS;
 					this.isRebootRequiredDialogNeeded = this.isRebootRequested();
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstallationComplete, this.updateInfo);
 				}
@@ -279,7 +292,7 @@ export class SystemUpdateService {
 				const status = parseInt(response.checkForUpdatesResult.status, 10);
 				this.isUpdatesAvailable = (response.checkForUpdatesResult.updateList && response.checkForUpdatesResult.updateList.length > 0);
 
-				if (status === SystemUpdateStatusMessage.SUCCESS.code) {
+				if (status === SystemUpdateStatus.SUCCESS) {
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status, updateList: this.mapAvailableUpdateResponse(response.checkForUpdatesResult.updateList) };
@@ -690,7 +703,7 @@ export class SystemUpdateService {
 			updates.push(update);
 			this.installedUpdates.push(update);
 		});
-		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusMessage.SUCCESS.code : SystemUpdateStatusMessage.FAILURE.code;
+		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatus.SUCCESS : SystemUpdateStatus.FAILURE;
 		availableUpdate.updateList = updates;
 		return availableUpdate;
 	}
@@ -760,7 +773,7 @@ export class SystemUpdateService {
 	// check for installed updates, if all installed correctly return true else return false
 	private getInstallationSuccess(payload: any): boolean {
 		let isSuccess = false;
-		if (payload.status !== SystemUpdateStatusMessage.SUCCESS.code) {
+		if (payload.status !== SystemUpdateStatus.SUCCESS ) {
 			isSuccess = false;
 		} else {
 			for (let index = 0; index < payload.updateList.length; index++) {

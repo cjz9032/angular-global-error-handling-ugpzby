@@ -23,10 +23,12 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() isInnerBack = false;
 	@Input() textId: string;
 	@Input() hideBack = false;
-
 	@Output() innerBack = new EventEmitter();
 
-	constructor(private router: Router, private deviceService: DeviceService) { }
+	constructor(
+		private router: Router,
+		public deviceService: DeviceService
+	) { }
 
 	ngOnInit() {
 		const self = this;

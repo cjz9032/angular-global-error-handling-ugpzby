@@ -180,29 +180,30 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
-
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
-		const familyName = machineFamily.replace(/\s+/g, '');
-
-		if (this.machineType !== 1 || (this.machineType === 1 && familyName === 'LenovoTablet10')) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
-			return;
-		}
-
-		if (this.machineType !== 1 && this.machineType !== 0) {
-			this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
-			return;
-		} else {
-			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-			let isAvailable;
-			if (inputAccessoriesCapability) {
-				isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+		if (this.machineType) {
+			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+			if (machineFamily) {
+				const familyName = machineFamily.replace(/\s+/g, '');
+				if (this.machineType === 1 && familyName === 'LenovoTablet10') {
+					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+					return;
+				}
 			}
-			const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
-			const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
-			if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
+			if (this.machineType !== 1 && this.machineType !== 0) {
 				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+				return;
+			} else {
+				const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+				let isAvailable;
+				if (inputAccessoriesCapability) {
+					isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+				}
+				const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
+				const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
+				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
+					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+				}
 			}
 		}
 	}

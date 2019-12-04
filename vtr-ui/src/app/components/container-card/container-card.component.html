@@ -26,21 +26,29 @@
 						metricsItemCategory="corner"
 						metricsEvent="docClick"
 						[metricsItem]="dynamicmetricsItem"
-					 	[metricsParam]="dataSource"
+						[metricsParam]="dataSource"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
 						target="_blank"
 						rel="noopener"
 						class="card-image"
-						[style.background-image]="'url(' + img + ')'">
-						<div class="inner-content" *ngIf="!isOfflineArm">
+						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardCorner.clientWidth * ratio - 1">
+						<div class="inner-content"
+							*ngIf="!isOfflineArm">
 							<div *ngIf="title"
-								class="title" id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}" [innerHTML]="title"></div>
+								class="title"
+								id="{{containerCardId+'-title'}}"
+								attr.aria-label="{{containerCardId+'-title'}}"
+								#cornerTitle
+								[title]="cornerTitle.innerText"
+								[innerHTML]="title"></div>
 							<div *ngIf="caption"
 								class="caption"
 								id="{{containerCardId+'-caption'}}"
 								attr.aria-label="{{containerCardId+'-caption'}}"
+								#cornerCaption
+								[title]="cornerCaption.innerText"
 								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -48,8 +56,8 @@
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
 								<span class="logo-text"
-								id="{{containerCardId+'-logo-text'}}"
-								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+									id="{{containerCardId+'-logo-text'}}"
+									attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
 							</div>
 						</div>
 					</a>
@@ -78,7 +86,8 @@
 							target="_blank"
 							rel="noopener"
 							class="card-image"
-							[style.background-image]="'url(' + img + ')'">
+							[style.background-image]="'url(' + img + ')'"
+							[style.height.px]="containerCardAndroid.clientWidth * ratio * 2">
 						</a>
 						<div class="inner-content">
 							<div *ngIf="title"
@@ -96,8 +105,9 @@
 								<span class="logo-img">
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
-								<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+								<span class="logo-text"
+									id="{{containerCardId+'-logo-text'}}"
+									attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
 							</div>
 						</div>
 					</ng-container>
@@ -108,7 +118,8 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title default-cursor"
-								[innerHtml]="title" id="{{containerCardId+'-title'}}"
+								[innerHtml]="title"
+								id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"></div>
 							<div *ngIf="caption"
 								class="caption default-cursor"
@@ -120,8 +131,9 @@
 								<span class="logo-img default-cursor">
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
-								<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-								attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+								<span class="logo-text"
+									id="{{containerCardId+'-logo-text'}}"
+									attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
 							</div>
 						</div>
 					</ng-container>
@@ -139,7 +151,8 @@
 				*ngIf="isOnline">
 				<div class="col col-12 content">
 					<a *ngIf="isOnline"
-						tabindex="0" attr.aria-label="{{ title }} . {{ caption }}"
+						tabindex="0"
+						attr.aria-label="{{ title }} . {{ caption }}"
 						[attr.href]="!actionLink ? null : actionLink"
 						(click)="linkClicked(actionType, actionLink)"
 						target="_blank"
@@ -151,24 +164,32 @@
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="itemID"
 						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardCornerArticle.clientWidth * ratio"
 						id="{{containerCardId+'-article_link'}}">
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
-								[innerHtml]="title" id="{{containerCardId+'-title'}}"
+								#cornerArticleTitle
+								[title]="cornerArticleTitle.innerText"
+								[innerHtml]="title"
+								id="{{containerCardId+'-title'}}"
 								role="text"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
-								role="text"></div>
+								<div #cornerArticleCaption
+									[title]="cornerArticleCaption.innerText"
+									[innerHtml]="caption"
+									id="{{containerCardId+'-caption'}}"
+									attr.aria-label="{{containerCardId+'-caption'}}"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
 								<span class="logo-img">
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
-								<span class="logo-text"id="{{containerCardId+'-logo-text'}}"
-								role="text">{{logoText}}</span>
+								<span class="logo-text"
+									id="{{containerCardId+'-logo-text'}}"
+									role="text">{{logoText}}</span>
 							</div>
 						</div>
 					</a>
@@ -178,20 +199,27 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
-								[innerHtml]="title" id="{{containerCardId+'-title'}}"
+								#cornerArticleTitle
+								[title]="cornerArticleTitle.innerText"
+								[innerHtml]="title"
+								id="{{containerCardId+'-title'}}"
 								role="text"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div [innerHtml]="caption" id="{{containerCardId+'-caption'}}"
-								role="text"></div>
+								<div #cornerArticleCaption
+									[title]="cornerArticleCaption.innerText"
+									[innerHtml]="caption"
+									id="{{containerCardId+'-caption'}}"
+									attr.aria-label="{{containerCardId+'-caption'}}"></div>
 							</div>
 							<div *ngIf="logo || logoText"
 								class="logo">
 								<span class="logo-img">
 									<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 								</span>
-								<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-								role="text">{{logoText}}</span>
+								<span class="logo-text"
+									id="{{containerCardId+'-logo-text'}}"
+									role="text">{{logoText}}</span>
 							</div>
 						</div>
 					</div>
@@ -226,10 +254,14 @@
 						rel="noopener"
 						class="card-image"
 						[class.default-cursor]="isOfflineArm"
-						[style.background-image]="'url(' + img + ')'">
+						[style.background-image]="'url(' + img + ')'"
+						[style.height.px]="containerCardHighlight.clientWidth * ratio">
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
-								class="title" id="{{containerCardId+'-title'}}"
+								#highlightTitle
+								[title]="highlightTitle.innerText"
+								class="title"
+								id="{{containerCardId+'-title'}}"
 								attr.aria-label="{{containerCardId+'-title'}}"
 								[innerHtml]="title"></div>
 						</div>
@@ -264,14 +296,17 @@
 							<span class="logo-img">
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
-							<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-							role="text">{{logoText}}</span>
+							<span class="logo-text"
+								id="{{containerCardId+'-logo-text'}}"
+								role="text">{{logoText}}</span>
 						</div>
 					</div>
 					<div class="row w-100">
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
 								class="title"
+								#articleTitle
+								[title]="articleTitle.innerText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
@@ -284,7 +319,9 @@
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
 								class="read-more">
-								<span class="link-label" role="link" [innerHTML]="action"></span>
+								<span class="link-label"
+									role="link"
+									[innerHTML]="action"></span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</div>
 						</div>
@@ -301,14 +338,16 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 image"
-					[style.background-image]="'url('+img+')'">
+					[style.background-image]="'url('+img+')'"
+					[style.height.px]="containerCardPartnerArticle.clientWidth * ratio">
 					<div *ngIf="logo || logoText"
 						class="logo">
 						<span class="logo-img">
 							<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 						</span>
-						<span class="logo-text" id="{{containerCardId+'-logo-text'}}"
-						attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
+						<span class="logo-text"
+							id="{{containerCardId+'-logo-text'}}"
+							attr.aria-label="{{containerCardId+'-logo-text'}}">{{logoText}}</span>
 					</div>
 					<div class="row">
 						<a *ngIf="isOnline"
@@ -324,7 +363,8 @@
 							<div class="col col-12 content">
 								<div *ngIf="title"
 									class="title"
-									[innerHtml]="title" id="{{containerCardId+'-title'}}"
+									[innerHtml]="title"
+									id="{{containerCardId+'-title'}}"
 									attr.aria-label="{{containerCardId+'-title'}}"></div>
 								<div *ngIf="actionLink"
 									class="read-more">
@@ -332,13 +372,13 @@
 							</div>
 						</a>
 						<div *ngIf="!isOnline"
-						class="offline-a">
+							class="offline-a">
 							<div class="col col-12 content">
 								<div *ngIf="title"
 									class="title"
 									[innerHtml]="title"
 									id="{{containerCardId+'-title'}}"
-								attr.aria-label="{{containerCardId+'-title'}}"></div>
+									attr.aria-label="{{containerCardId+'-title'}}"></div>
 								<div *ngIf="actionLink"
 									class="read-more">
 								</div>

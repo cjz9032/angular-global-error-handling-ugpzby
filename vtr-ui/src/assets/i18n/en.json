@@ -19,7 +19,7 @@
 						"balText": "Normal CPU and fan speed",
 						"quietText": "Lower CPU usage, Lower fan speed"
 					},
-					"wifiSecurity": "Wifi Security",
+					"wifiSecurity": "WiFi Security",
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
 				},
@@ -629,7 +629,7 @@
 		},
 		"securityAdvisor": {
 			"title": "Security Advisor",
-			"subtitle": "CHECK IF YOUR DEVICE IS SECURED.",
+			"subtitle": "Check if your device is secured.",
 			"antiVirus": "Anti-Virus",
 			"wifi": "WiFi Security",
 			"pswdMgr": "Password Manager",
@@ -648,7 +648,7 @@
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
-			"subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
+			"subtitle": "Find some helpful tips for your device.",
 			"question1": "Backup and Restore your files",
 			"question2": "How to refresh your PC",
 			"question3": "How to know your machine's CPU",
@@ -749,7 +749,7 @@
 		},
 		"systemStatus": {
 			"title": "System Status",
-			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+			"subtitle": "Quick catch up your device status.",
 			"memory": {
 				"title": "Memory",
 				"detail": {
@@ -794,10 +794,10 @@
 				"title": "System Update",
 				"notFound": "System Update not found",
 				"detail": {
-					"uptoDate": "Software up to date ",
-					"updatedOn": "updated on ",
-					"outdated": "Software outdated ",
-					"neverRanUpdate": "never ran update"
+					"uptoDate": "Updates checked ",
+					"updatedOn": "checked on ",
+					"outdated": "Updates not checked recently ",
+					"neverRanUpdate": "updates never checked"
 				}
 			},
 			"extendedWarranty": "Extend warranty",
@@ -843,7 +843,7 @@
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
-				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
@@ -983,6 +983,27 @@
 							}
 						}
 					},
+					"dytc6": {
+						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"autoMode": {
+							"title1": "Auto Battery mode",
+							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+							"title2": "Auto Performance mode",
+							"desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						},
+						"manualMode": {
+							"title1": "Quiet mode",
+							"desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"title2": "Balanced mode",
+							"desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					},
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "INTELLIGENT COOLING",
@@ -1022,13 +1043,15 @@
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
 					"subTitle": "Schedule your computer",
+					"description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+					"subTitle2": "Set time when you typically use this computer",
 					"subNote": "Your computer is scheduled for quicker resume based on the usage.",
 					"timer": {
 						"heading": "The time you typically use this computer:",
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"endTimeNote": "END must be within 20 hours from START time",
+						"endTimeNote": "END time must be within 20 hours from START time",
 						"timeUnits": {
 							"unit1": "Hours",
 							"unit2": "Minutes",
@@ -1061,7 +1084,8 @@
 						},
 						"everyday": "Everyday",
 						"weekdays": "Weekdays",
-						"weekends": "Weekends"
+						"weekends": "Weekends",
+						"noDaySelected": "No day selected"
 					},
 					"warningtip": "Please select at least one day.",
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
@@ -1146,6 +1170,7 @@
 						},
 						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
 						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"progressText3": "{{stage}} of {{stageNum}}: Calibrating to high battery power",
 						"FCCText": "From {{before}} Wh to {{after}} Wh",
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
@@ -2336,8 +2361,8 @@
 				"back": "BACK"
 			},
 			"container": {
-				"title": "Lenovo Wi-fi Security",
-				"name": "WI-FI SECURITY",
+				"title": "Lenovo WiFi Security",
+				"name": "WIFI SECURITY",
 				"enable": "ENABLED",
 				"disable": "DISABLED",
 				"less": "Less info",
@@ -2346,7 +2371,7 @@
 				"connect": "Connected last",
 				"showmore": "Show more",
 				"showless": "Show less",
-				"button": "Enable Wifi security",
+				"button": "Enable WiFi security",
 				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
 			},
 			"threatlocator": {
@@ -2837,8 +2862,7 @@
 		},
 		"question5": {
 			"title": "Use your PC like a tablet",
-			"description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
-			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+			 "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
 			"heading1": "Use tablet mode",
 			"para2": {
 				"span1": "To turn on tablet mode, select",
@@ -2877,7 +2901,7 @@
 		},
 		"question6": {
 			"title": "Get to know Cortana, your personal assistant",
-			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, oreven people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong>and turn on <strong>Let Cortana respond to 'Hey Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
 			"heading1": "What is Cortana?",
 			"para1": "Cortana is your digital agent. She'll help you get things done.",
 			"para2": "The more you use Cortana, the more personalized your experience will be.",

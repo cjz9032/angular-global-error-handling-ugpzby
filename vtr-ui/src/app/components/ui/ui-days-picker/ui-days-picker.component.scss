@@ -99,27 +99,7 @@
     .custom-file-label,
     .custom-select {
       transition-property: none;
-    }
-
-    .dropbtn {
-      box-shadow: 0px 0px 1.5rem 0px rgba(0, 0, 0, 0.15);
-      border-radius: 0.5rem;
-      border: 0.1rem solid rgba(0, 0, 0, 0.1);
-      color: $shade_blue;
-      padding: 1.5rem;
-      font-size: 1.6rem;
-      border: none;
-      position: relative;
-      display: block;
-      cursor: pointer;
-      margin-bottom: 0rem;
-      @media #{$black-on-white} {
-        border: 0.1rem solid $dark;
-      }
-      @media #{$white-on-black} {
-        border: 0.1rem solid $light;
-      }
-    }
+    }    
 
     .dropdown {
       position: relative;
@@ -131,8 +111,8 @@
         font-weight: 500;
         line-height: 13px;
       }
+     
     }
-
     .dropdown-content {
       display: none;
       position: absolute;
@@ -189,4 +169,36 @@
       flex: 1;
     }
   }
+  .dropbtn {
+    box-shadow: 0px 0px 1.5rem 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    color: $shade_blue;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border: none;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0rem;
+    min-height: 6rem;
+    line-height: 3rem;
+    @media #{$black-on-white} {
+      border: 0.1rem solid $dark;
+    }
+    @media #{$white-on-black} {
+      border: 0.1rem solid $light;
+    }
+  }
+  .toggle-icon {
+		fa-icon {
+			color: #4579f0;
+			font-size: 2rem;
+			cursor: pointer;
+		}
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+
 }

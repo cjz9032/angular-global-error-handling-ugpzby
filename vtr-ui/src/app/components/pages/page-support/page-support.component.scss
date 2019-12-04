@@ -197,138 +197,143 @@
 				padding-top: 6.5rem;
 				margin-bottom: 6.5rem;
 
+				img {
+					width: 50%;
+					margin-top: -3rem;
+				}
+
 				.spinner-border {
 					width: 5rem !important;
 					height: 5rem !important;
 					padding: 4rem;
 				}
+
+				.mn-6 {
+					margin-top: $shift_up_small;
+				}
 			}
 
-			.mn-6 {
-				margin-top: $shift_up_small;
+			.vtr-page-right-column {
+				@media #{$mediaquery_X5} {
+					padding: 4rem 8.5rem;
+				}
 			}
 		}
 
-		.vtr-page-right-column {
-			@media #{$mediaquery_X5} {
-				padding: 4rem 8.5rem;
+		.quick-access {
+			padding: 4rem;
+
+			.quick-access-title {
+				font-size: 2.5rem;
+				color: $main_dark;
+				font-weight: $weight_medium;
 			}
-		}
-	}
 
-	.quick-access {
-		padding: 4rem;
+			.quick-access-desc {
+				font-size: 1.6rem;
+				margin-bottom: 2rem;
+				color: #667481;
+			}
 
-		.quick-access-title {
-			font-size: 2.5rem;
-			color: $main_dark;
-			font-weight: $weight_medium;
-		}
+			.quick-assess-categories {
+				display: flex;
+				justify-content: space-around;
 
-		.quick-access-desc {
-			font-size: 1.6rem;
-			margin-bottom: 2rem;
-			color: #667481;
-		}
+				.quick-assess-item {
+					width: 25%;
+					padding: 1.2rem;
+					text-decoration: none;
 
-		.quick-assess-categories {
-			display: flex;
-			justify-content: space-around;
-
-			.quick-assess-item {
-				width: 25%;
-				padding: 1.2rem;
-				text-decoration: none;
-
-				.item-con {
-					padding: 1.2rem 1rem 2.4rem;
-					width: 100%;
-					border: 1px solid #ecf0f1;
-					border-radius: 5px;
-					background: linear-gradient(180deg, #fbfcfc 0%, #f5f7f8 100%);
-					display: flex;
-					flex-flow: column;
-					justify-content: center;
-					text-align: center;
-					cursor: pointer;
-
-					.item-icon {
-						height: 5rem;
-						color: $main;
-						margin-bottom: 0;
-						cursor: pointer;
-						padding-top: 1rem;
-						overflow: hidden;
-						.item-img {
-							background-color: red;
-						}
-
-						img {
-							position: relative;
-							height: 3.6rem;
-							filter: drop-shadow(0px 100px 0px #fff);
-						}
-					}
-
-					.item-title {
-						color: $shade_blue;
-						margin-bottom: 0.6rem;
-						font-size: 1.6rem;
-						font-weight: $weight_600;
+					.item-con {
+						padding: 1.2rem 1rem 2.4rem;
 						width: 100%;
-						height: 4.8rem;
-						line-height: 1.6rem;
-						overflow: hidden;
+						border: 1px solid #ecf0f1;
+						border-radius: 5px;
+						background: linear-gradient(180deg, #fbfcfc 0%, #f5f7f8 100%);
 						display: flex;
-						align-items: center;
+						flex-flow: column;
 						justify-content: center;
-						letter-spacing: 0;
-						cursor: pointer;
-					}
-
-					.item-button {
-						text-transform: uppercase;
-						width: 86%;
-						padding: 0 2rem;
-						margin-left: 7%;
-						height: 4rem;
-						line-height: 4rem;
-						border-radius: 10rem;
-						background: $gradient_main;
-						color: $light;
-						font-size: 1.5rem;
-						letter-spacing: 0.1rem;
-						font-weight: $weight_600;
 						text-align: center;
-						overflow: hidden;
-						white-space: nowrap;
-						text-overflow: ellipsis;
 						cursor: pointer;
-					}
 
-					&:hover {
-						background: linear-gradient(90deg, #3968d4 0%, #4a81fd 100%);
-						box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
+						.item-icon {
+							height: 5rem;
+							color: $main;
+							margin-bottom: 0;
+							cursor: pointer;
+							padding-top: 1rem;
+							overflow: hidden;
+							.item-img {
+								background-color: red;
+							}
 
-						fa-icon {
-							color: white;
+							img {
+								position: relative;
+								height: 3.6rem;
+								filter: drop-shadow(0px 100px 0px #fff);
+							}
 						}
 
 						.item-title {
-							color: white;
-						}
-
-						.item-button {
-							background: linear-gradient(270deg, #fbfcfc 0%, #f5f7f8 100%);
-							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-							// border: 1px solid #ECF0F1;
-							color: $main_dark;
+							color: $shade_blue;
+							margin-bottom: 0.6rem;
+							font-size: 1.6rem;
+							font-weight: $weight_600;
+							width: 100%;
+							height: 4.8rem;
+							line-height: 1.6rem;
+							overflow: hidden;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							letter-spacing: 0;
 							cursor: pointer;
 						}
 
-						.item-icon {
-							img {
-								top: -100px;
+						.item-button {
+							text-transform: uppercase;
+							width: 86%;
+							padding: 0 2rem;
+							margin-left: 7%;
+							height: 4rem;
+							line-height: 4rem;
+							border-radius: 10rem;
+							background: $gradient_main;
+							color: $light;
+							font-size: 1.5rem;
+							letter-spacing: 0.1rem;
+							font-weight: $weight_600;
+							text-align: center;
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							cursor: pointer;
+						}
+
+						&:hover {
+							background: linear-gradient(90deg, #3968d4 0%, #4a81fd 100%);
+							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
+
+							fa-icon {
+								color: white;
+							}
+
+							.item-title {
+								color: white;
+							}
+
+							.item-button {
+								background: linear-gradient(270deg, #fbfcfc 0%, #f5f7f8 100%);
+								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+								// border: 1px solid #ECF0F1;
+								color: $main_dark;
+								cursor: pointer;
+							}
+
+							.item-icon {
+								img {
+									top: -100px;
+								}
 							}
 						}
 					}
@@ -336,67 +341,67 @@
 			}
 		}
 	}
-}
 
-:host-context(.is-gaming) {
-	::ng-deep {
-		.vtr-page-support {
-			.vtr-page-left-column {
-				.card {
-					background: $dark_cell;
-					&.quick-access {
+	:host-context(.is-gaming) {
+		::ng-deep {
+			.vtr-page-support {
+				.vtr-page-left-column {
+					.card {
 						background: $dark_cell;
-						.quick-access-title {
-							color: $gaming_lightest;
-						}
-						.quick-assess-categories {
-							.quick-assess-item {
-								.item-con {
-									background: $gaming_darkest;
-									border: none;
-									&:hover {
-										background: $gaming;
-									}
-									.item-title {
-										color: $gaming_lightest !important;
+						&.quick-access {
+							background: $dark_cell;
+							.quick-access-title {
+								color: $gaming_lightest;
+							}
+							.quick-assess-categories {
+								.quick-assess-item {
+									.item-con {
+										background: $gaming_darkest;
+										border: none;
+										&:hover {
+											background: $gaming;
+										}
+										.item-title {
+											color: $gaming_lightest !important;
+										}
 									}
 								}
 							}
 						}
 					}
 				}
-			}
-			.vtr-page-right-column {
-				.vtr-widget-support {
-					background-color: auto;
-					background: $dark_cell;
-					.title {
-						color: $gaming_lightest !important;
-					}
-					.vtr-ui-list-support {
-						.support-list {
-							background-color: $gaming-Darkslate-blue !important;
-							border: none !important;
-							button {
-								&:hover {
-									background-color: transparent !important;
-								}
-							}
-							.title {
-								color: $gaming_lightest;
-							}
-							.arrow {
-								color: $gaming_lightest !important;
-							}
-							.description {
-								color: $gaming_grey_lightest;
-								font-size: 1.2rem;
-							}
-							li {
-								border-bottom: 0.1rem solid $screen_dark_15 !important;
-								a {
+				.vtr-page-right-column {
+					.vtr-widget-support {
+						background-color: auto;
+						background: $dark_cell;
+						.title {
+							color: $gaming_lightest !important;
+						}
+						.vtr-ui-list-support {
+							.support-list {
+								background-color: $gaming-Darkslate-blue !important;
+								border: none !important;
+								button {
 									&:hover {
 										background-color: transparent !important;
+									}
+								}
+								.title {
+									color: $gaming_lightest;
+								}
+								.arrow {
+									color: $gaming_lightest !important;
+								}
+								.description {
+									color: $gaming_grey_lightest;
+									font-size: 1.2rem;
+								}
+								li {
+									border-bottom: 0.1rem solid $screen_dark_15 !important;
+									a {
+										&:hover {
+											background-color: transparent !important;
+										}
 									}
 								}
 							}
