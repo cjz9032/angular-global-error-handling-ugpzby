@@ -14,6 +14,7 @@
 		height: 12.5rem;
 		width: 12.5rem;
 		border-radius: $border_radius;
+		padding: 0.1rem 0 0;
 		&.focus-blue-outline {
 			&:focus::after {
 				border-radius: $border_radius;
@@ -78,10 +79,10 @@
 			text-transform: uppercase;
 			text-align: center;
 			font-size: 1.1rem;
-			margin: 0 0 0rem 0.6rem;
+			// margin: 0 0 0rem 0.6rem;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
-			overflow: hidden;
+			// overflow: hidden;
 
 			@media #{$breakpoint_lg} {
 				font-size: 2rem;
@@ -128,21 +129,26 @@
 				line-height: 1.3em;
 				@media #{$breakpoint_xl3} {
 					font-size: 3.5rem;
+					line-height: 4.5rem;
 				}
 
 				@media #{$breakpoint_xl2} {
 					font-size: 2.7rem;
+					line-height: 4.3rem;
 				}
 
 				@media #{$breakpoint_xl} {
 					font-size: 3.7rem;
+					line-height: 5rem;
 				}
 				@media #{$breakpoint_lg} {
 					font-size: 4.5rem;
+					line-height: 6rem;
 				}
 
 				@media #{$breakpoint_md} {
 					font-size: 4.5rem;
+					line-height: 6rem;
 				}
 			}
 
