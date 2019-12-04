@@ -59,9 +59,12 @@ export class CommunicationWithFigleafService {
 
 		FigleafConnector.onDisconnect(() => {
 			this.ngZone.run(() => {
-				this.sendTestMessage().pipe(
-					retryWhen((errors) => errors.pipe(delay(1000), take(5), concatMap(() => throwError(new Error('oops!'))))),
-				).subscribe(() => {},
+				this.communicationSwitcherService.isPullingActive$.pipe(take(1)).pipe(
+					switchMap((res) => {
+						return res ? this.sendTestMessage().pipe(
+								retryWhen((errors) => errors.pipe(delay(200), take(5), concatMap(() => throwError(new Error('oops!')))))
+						) : EMPTY;
+					})).subscribe(() => {},
 					(err) => {
 						this.figleafState$.next(null);
 						this.communicationSwitcherService.startPulling();
@@ -81,7 +84,9 @@ export class CommunicationWithFigleafService {
 	private receiveFigleafReadyForCommunicationState() {
 		const figleafConnectSubscription = timer(0, 3000).pipe(
 			switchMap(() => this.communicationSwitcherService.isPullingActive$.pipe(take(1))),
-			switchMap((res) => res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))),
+			switchMap((res) => {
+				return res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))
+			}),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			this.figleafState$.next(figleafStatus.status);
@@ -105,15 +110,14 @@ export class CommunicationWithFigleafService {
 	private sendTestMessage() {
 		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
 			.pipe(
-				retryWhen((errors) => errors.pipe(delay(200), take(5), concatMap(() => throwError(new Error('App in exit state'))))),
 				catchError((e) => {
-				if (e.message === 'App in exit state') {
-					this.communicationSwitcherService.stopPulling();
-					return this.checkIfFigleafInstalled();
-				}
+					if (e.message === 'App in exit state') {
+						this.communicationSwitcherService.stopPulling();
+						return this.checkIfFigleafInstalled();
+					}
 
-				return throwError(e);
-			}));
+					return throwError(e);
+				}));
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {
