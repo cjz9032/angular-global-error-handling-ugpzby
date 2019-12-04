@@ -9,7 +9,7 @@ export class AntivirusErrorHandle {
 		const timeOut = 30000;
 		let onlyWindowAV;
 		if (this.antivirus.windowsDefender) {
-			onlyWindowAV = !this.antivirus.mcafee && !this.antivirus.others && !this.antivirus.windowsDefender.firewallStatus && this.antivirus.windowsDefender.status;
+			onlyWindowAV = !this.antivirus.mcafee && !this.antivirus.others && typeof this.antivirus.windowsDefender.firewallStatus !== 'boolean' && typeof this.antivirus.windowsDefender.status === 'boolean';
 		}
 		if (errorData || onlyWindowAV) {
 			setTimeout(() => {

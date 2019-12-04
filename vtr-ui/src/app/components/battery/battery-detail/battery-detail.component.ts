@@ -61,6 +61,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 		if (response) {
 			if (response.detail) {
+				this.remainingHours = [];
+				this.remainingMinutes = [];
 				for (let i = 0; i < response.detail.length; i++) {
 					if (response.detail[i] && response.detail[i] !== null) {
 						response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
