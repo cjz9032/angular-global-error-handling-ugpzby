@@ -92,7 +92,7 @@
 						<span *ngIf="isValid(remainingHours[i])">
 							{{remainingHours[i]}} {{hourText | translate}}
 						</span>
-						<span *ngIf="!isValid(remainingHours[i])&&!isValid(remainingMinutes[i])">
+						<span>
 							{{remainingMinutes[i]}} {{minutesText | translate}}
 						</span>
 
