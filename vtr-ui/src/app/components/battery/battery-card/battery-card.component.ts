@@ -11,12 +11,13 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription, EMPTY } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
 import { BatteryGaugeReset } from 'src/app/data-models/device/battery-gauge-reset.model';
+
+declare var Windows;
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -28,10 +29,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	@ViewChild('batteryDetail', { static: false }) batteryModal: ElementRef<HTMLElement>;
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
-	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	batteryConditions: BatteryConditionModel[];
+	batteryConditions: BatteryConditionModel[] = [new BatteryConditionModel(BatteryConditionsEnum.Good, BatteryStatus.Good)];
 	batteryConditionsEnum = BatteryConditionsEnum;
 	batteryConditionNotes: string[];
 	batteryStatus = BatteryStatus;
@@ -47,13 +47,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private remainingTimeEventRef: any;
 	private powerBatteryGaugeResetEventRef: any;
 	public isLoading = true;
-	public thresholdNoteParam: any;
-	public storeLimitationNoteParam: any;
 	public acAdapterInfoParams: any;
+	public param: any;
 	remainingPercentages: number[];
 	notificationSubscription: Subscription;
 	shortAcErrNote = true;
-	isModalShown: boolean;
+	isModalShown = false;
+	isWinRTLoading = true;
 
 	constructor(
 		private modalService: NgbModal,
@@ -65,8 +65,71 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private activatedRoute: ActivatedRoute) {
 	}
 
+	getMainBatteryInfo() {
+		if (typeof Windows !== 'undefined') {
+			const power = Windows.System.Power;
+			return {
+				percentage: power.PowerManager.remainingChargePercent,
+				remainingTime: Math.trunc(power.PowerManager.remainingDischargeTime / 60000),
+				status: power.PowerManager.batteryStatus
+			};
+		}
+		return {};
+	}
+
+	getAcAttachedStatus() {
+		if (typeof Windows !== 'undefined') {
+			const power = Windows.System.Power;
+			return power.PowerManager.powerSupplyStatus !== power.PowerSupplyStatus.notPresent;
+		}
+		return false;
+	}
+
+	updateMainBatteryTime() {
+		const maininfo = this.getMainBatteryInfo();
+		let time = 0;
+		let timetype = '';
+		if (maininfo.status === 1) { // BatteryStatus discharging
+			// check if value is within valid min range 525600 mins in 1 year
+			if (maininfo.remainingTime < 525600) {
+				time = maininfo.remainingTime;
+				timetype = 'timeRemaining';
+			}
+		}
+		// battery not detected
+		if (maininfo.status === 0) {
+			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryStatus.Poor);
+			maininfo.percentage = 0;
+			this.batteryIndicator.percent = 0;
+		}
+		this.batteryIndicator.convertMin(time);
+		this.batteryIndicator.timeText = timetype;
+
+		if (maininfo.percentage !== 0) {
+			this.batteryIndicator.percent = maininfo.percentage;
+		}
+	}
+
 	ngOnInit() {
-		this.isLoading = true;
+		// temp
+		this.updateMainBatteryTime();
+		this.batteryIndicator.charging = this.getAcAttachedStatus();
+		this.isLoading = false;
+		try {
+			const conditions = JSON.parse(window.localStorage.getItem('batteryCondition'));
+			if (Array.isArray(conditions) && conditions.length > 0) {
+				conditions.forEach((condition: BatteryConditionModel, index) => {
+					conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
+				});
+				this.batteryConditions = conditions;
+			}
+		} catch (e) {
+			console.log(e);
+		}
+		this.setConditionTips();
+		this.isWinRTLoading = false;
+
+		// temp
 		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
 			// this.logger.info('BatteryCardComponent.ngOnInit: Query Params', params);
 			if (params.has('batterydetail') && !this.isModalShown) {
@@ -159,9 +222,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (notification) {
 			if (notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
 				this.chargeThresholdInfo = notification.payload;
-				if (this.chargeThresholdInfo !== undefined && this.chargeThresholdInfo.isOn) {
-					this.thresholdNoteParam = { value: this.chargeThresholdInfo.stopValue1 };
-				}
 				this.sendThresholdWarning();
 			}
 			if (notification.type === 'AirplaneModeStatus') {
@@ -282,7 +342,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				if (this.batteryHealth === 1 || this.batteryHealth === 2) {
 					healthCondition = BatteryConditionsEnum.StoreLimitation;
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
-					this.storeLimitationNoteParam = { value: parseFloat(percentLimit.toFixed(1)) };
+					this.param = { value: parseFloat(percentLimit.toFixed(1)) };
 				}
 
 				if (this.batteryHealth === 4) {
@@ -363,6 +423,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			!(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
+
+		// temp cache battery condition
+		window.localStorage.setItem('batteryCondition', JSON.stringify(this.batteryConditions));
 	}
 
 	setConditionTips() {

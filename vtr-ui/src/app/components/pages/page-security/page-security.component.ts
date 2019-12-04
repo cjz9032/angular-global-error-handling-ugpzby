@@ -52,6 +52,7 @@ import { WindowsActiveLandingViewModel } from 'src/app/data-models/security-advi
 import { UacLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/uac-landing.model';
 import { BitLockerLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/bitLocker-landing.model';
 import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-info.model';
+import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 
 @Component({
@@ -141,6 +142,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.getLevelStatus();
 		});
 		this.fetchCMSArticles();
+		const antivirus = new AntivirusErrorHandle(this.antivirus);
+		antivirus.refreshAntivirus();
 	}
 
 	ngOnDestroy() {

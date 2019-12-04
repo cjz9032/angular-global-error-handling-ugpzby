@@ -80,6 +80,9 @@
 			.num {
 				display: none;
 			}
+			@media #{$breakpoint_xl2}{
+				font-size: 1.4rem;
+			}
 			@media #{$small-screen} {
 				white-space: nowrap;
 				overflow: hidden;

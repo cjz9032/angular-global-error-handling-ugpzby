@@ -52,7 +52,7 @@ export class UiListCheckboxComponent implements OnInit {
 		private languageService: LanguageService
 	) {
 		this.translateString();
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar') {
+		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
 			this.direction = 'rtl';
 		}
 	}

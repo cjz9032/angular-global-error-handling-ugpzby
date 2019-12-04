@@ -22,6 +22,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public fillStartColor = '#ff0000';
 	public fillEndColor = '#00ff00';
 	hideRemainingTimeTxt = false;
+	@Input() isWinRTLoading = true;
 
 	@ViewChild('battery', { static: true }) battery: ElementRef;
 	@ViewChild('batteryIndicator', { static: true }) batteryIndicator: ElementRef;

@@ -46,7 +46,7 @@ const routes: Routes = [
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [GuardService, NonSmodeGuard, NonArmGuard],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
