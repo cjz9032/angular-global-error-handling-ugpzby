@@ -56,7 +56,7 @@
 			class="row text-center align-items-center justify-content-center">
 			<div>
 				<vtr-ui-button linkId="chs-tour-btn-start"
-					*ngIf="!isLocationServiceOn"
+					*ngIf="isLocationServiceOn === false"
 					metricsEvent="FeatureClick"
 					metricsItem="CHSWelcomeNextButton"
 					metricsParent="{{metricsParent}}"

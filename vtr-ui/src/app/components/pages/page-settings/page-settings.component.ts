@@ -201,6 +201,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				} else {
 					this.isToggleDeviceStatistics = false;
 				}
+			}).catch((error) => {
+				console.error("getAppMetricCollectionSetting failed for exception, will hide the device metric setting.", error);
+				this.isToggleDeviceStatistics = false;
 			});
 		}
 	}
@@ -214,6 +217,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
 					this.isMessageSettings = true;
 				}
+			}).catch((error) => {
+				console.error("getMessagingPreference failed for exception, will hide the messages setting.", error);
+				this.isMessageSettings = false;
 			});
 		}
 	}
@@ -235,7 +241,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleAppFeature = !event.switchValue;
 					this.settingsService.toggleAppFeature = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingAppFeatures', event.switchValue);
 	}
@@ -252,7 +258,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleMarketing = !event.switchValue;
 					this.settingsService.toggleMarketing = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingMarketing', event.switchValue);
 	}
@@ -269,7 +275,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleActionTriggered = !event.switchValue;
 					this.settingsService.toggleActionTriggered = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingActionTriggered', event.switchValue);
 	}
@@ -284,7 +290,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleDeviceStatistics = !event.switchValue;
 					this.settingsService.toggleDeviceStatistics = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
 	}

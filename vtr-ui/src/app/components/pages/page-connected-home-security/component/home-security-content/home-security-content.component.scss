@@ -9,14 +9,14 @@
 		padding-left: 1.5rem;
 		.heading {
 			color: $shade_blue;
-			font-size: 3.6rem;
+			font-size: 3.4rem;
 			font-weight: $weight_regular;
 		}
 	}
 
 	.text-regular {
 		color: $shade_blue;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		font-weight: $weight_regular;
 		padding: 1rem 1rem 1rem 0rem;
 		a{
@@ -29,8 +29,8 @@
 			.icon-bkg {
 				display: inline-block;
 				border-radius: 50%;
-				height: 3.3rem;
-				width: 3.3rem;
+				height: 3rem;
+				width: 3rem;
 				border-width: 0.3rem;
 				border-style: solid;
 				text-align: center;
@@ -44,7 +44,7 @@
 
 		.sub-heading {
 			color: $shade_blue;
-			font-size: 2rem;
+			font-size: 2.4rem;
 			font-weight: $weight_bold;
 		}
 	}
@@ -74,8 +74,8 @@
 				.icon-bkg {
 					display: inline-block;
 					border-radius: 50%;
-					height: 3.3rem;
-					width: 3.3rem;
+					height: 3rem;
+					width: 3rem;
 					border-width: 0.3rem;
 					border-style: solid;
 					text-align: center;
@@ -91,7 +91,7 @@
 	}
 
 	.gem-box {
-		padding: 3rem 1rem 4rem 1rem;
+		// padding: 3rem 1rem 4rem 1rem;
 		height: auto;
 		width: 100%;
 		max-width: 100%;
@@ -122,6 +122,9 @@
 		}
 	}
 
+	.bottom-content {
+		padding-bottom: 3rem;
+	}
 	vtr-home-security-card {
 		width: 100%;
 		margin: 1rem;

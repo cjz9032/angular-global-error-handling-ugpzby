@@ -24,7 +24,7 @@ export class ModalSmartStandByComponent implements OnInit {
 	];
 
 	public colors = {
-		first: ['#FFFFFF', '#d1d0ff', '#918fff', '#413DFF', '#0602CA'],
+		first: ['#FFFFFF', '#C5CAE9', '#7986CB', '#303F9F', '#1A237E'],
 		second: ['#FFFFFF', '#EAB029', '#EAB029', '#EAB029', '#EAB029']
 	};
 	public weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];

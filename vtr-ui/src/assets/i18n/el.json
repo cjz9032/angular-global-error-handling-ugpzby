@@ -793,9 +793,9 @@
                 "notFound": "Δεν εντοπίστηκε ενημέρωση συστήματος",
                 "detail": {
                     "uptoDate": "Οι ενημερώσεις ελέγχθηκαν ",
-					"updatedOn": "ημερομηνία ελέγχου ",
-					"outdated": "Οι ενημερώσεις δεν έχουν ελεγχθεί πρόσφατα ",
-					"neverRanUpdate": "οι ενημερώσεις δεν έχουν ελεγχθεί ποτέ"
+                    "updatedOn": "ημερομηνία ελέγχου ",
+                    "outdated": "Οι ενημερώσεις δεν έχουν ελεγχθεί πρόσφατα ",
+                    "neverRanUpdate": "οι ενημερώσεις δεν έχουν ελεγχθεί ποτέ"
                 }
             },
             "extendedWarranty": "Παράταση εγγύησης",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows",
-                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\"."
+                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ρυθμίσεις ενέργειας",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Κάθε μέρα",
                         "weekdays": "Εργάσιμες",
-                        "weekends": "Σαββατοκύριακα"
+                        "weekends": "Σαββατοκύριακα",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Αυτόματη ρύθμιση του ενεργού χρόνου του υπολογιστή σας με βάση τη χρήση σας",
                     "hyperlinkToGraph": "Κάντε κλικ για να δείτε τη δραστηριότητα και τον ενεργό χρόνο του πίνακα του υπολογιστή σας",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1376,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "ενεργοποιεί τη δυνατότητα ζουμ σε οθόνες υψηλής ανάλυσης",
+                        "description": "ενεργοποιήσετε τη δυνατότητα ζουμ σε οθόνες υψηλής ανάλυσης",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Χρήση του υπολογιστή ως tablet",
             "description": "<div class='faqInFs4Fb'>    Χρήση του υπολογιστή ως tablet</div><hr><p>Η λειτουργία tablet κάνει τα Windows πιο έξυπνα και εύχρηστα όταν έχετε συσκευή με οθόνη αφής.</p><h3 class='faqInFs25FbP10'>Χρήση λειτουργίας tablet</h3><p>Για να ενεργοποιήσετε τη λειτουργία tablet, επιλέξτε <strong>κέντρο ενεργειών (action center)</strong> στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <strong>Λειτουργία tablet (Tablet mode)</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Σημείωση</h3><p>Για να δείτε αν η συσκευή σας μπορεί να ενεργοποιεί αυτόματα τη λειτουργία tablet, πραγματοποιήστε αναζήτηση για τη συσκευή σας στον δικτυακό τόπο του κατασκευαστή. Η υποστήριξη για αυτή τη δυνατότητα εξαρτάται από το υλικό, το πρόγραμμα οδήγησης που έχει εγκατασταθεί και τον τρόπο ρύθμισης της συσκευής από τον κατασκευαστή. </p><p> </p><p>Σε λειτουργία tablet, η εφαρμογές ανοίγουν σε λειτουργία πλήρους οθόνης, παρέχοντας σας περισσότερο χώρο για εργασία. Για να κλείσετε μια εφαρμογή, σύρετέ τη στο κάτω μέρος της οθόνης.</p><p> </p><h3 class='faqInFs25FbP10'>Συμβουλή</h3><p>Η γραμμή εργασιών είναι διαθέσιμη όταν ο υπολογιστή σας βρίσκεται σε λειτουργία tablet, αλλά μπορείτε να την αποκρύψετε αν θέλετε περισσότερο χώρο στην οθόνη. Επιλέξτε το κουμπί <strong>Έναρξη (Start)</strong>, επιλέξτε <strong>Ρυθμίσεις (Settings) </strong>> <strong>Σύστημα (System) </strong>> <strong>Λειτουργία tablet (Tablet mode) </strong>και, στη συνέχεια, ενεργοποιήστε τη επιλογή <strong>Αυτόματη απόκρυψη της γραμμής εργασιών σε λειτουργία tablet (Automatically hide the taskbar in tablet mode)</strong>. Για να δείτε την κρυμμένη γραμμή εργασιών, σαρώστε προς τα επάνω από το κάτω μέρος της οθόνης ή χρησιμοποιήστε το ποντίκι για να κάνετε κατάδειξη εκεί.</p><h3 class='faqInFs25FbP10'>Ταυτόχρονη χρήση δύο εφαρμογών</h3><p>Για να χρησιμοποιήσετε δύο εφαρμογές τη μία δίπλα στην άλλη σε λειτουργία tablet, σύρετε μια ανοικτή εφαρμογή προς τα κάτω και στο πλάι. Θα δείτε που θα κουμπώσει και θα δείτε τυχόν ανοικτές εφαρμογές δίπλα της.</p><p>Σε αυτή την προβολή, μπορείτε επίσης να κάνετε τα ακόλουθα:</p><ul>    <li>Να χρησιμοποιήσετε την κοινή ακμή μεταξύ δύο κουμπωμένων εφαρμογών για να αλλάξετε το μέγεθος και των δύο εφαρμογών ταυτόχρονα.</li>    <li>Ανοίξτε τη νέα εφαρμογή από την προβολή εργασιών &mdash;επιλέξτε <strong>Προβολή εργασιών (Task view)</strong> από τη γραμμή εργασιών, επιλέξτε μια εφαρμογή και, στη συνέχεια, σύρετέ τη στη μία πλευρά για να την κουμπώσετε στη διαιρεμένη οθόνη.</li>    <li>Χρησιμοποιήστε το κουμπί επιστροφή στη γραμμή εργασιών για να επιστρέψετε σε μία εφαρμογή ή να ανοίξετε μια εφαρμογή που χρησιμοποιούσατε νωρίτερα.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
