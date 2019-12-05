@@ -793,9 +793,9 @@
                 "notFound": "未找到系统更新",
                 "detail": {
                     "uptoDate": "已检查更新",
-					"updatedOn": "检查时间",
-					"outdated": "最近未检查更新",
-					"neverRanUpdate": "从未检查过更新"
+                    "updatedOn": "检查时间",
+                    "outdated": "最近未检查更新",
+                    "neverRanUpdate": "从未检查过更新"
                 }
             },
             "extendedWarranty": "延长保修",
@@ -987,7 +987,28 @@
                             "battery&Quite": "电池和安静状态"
                         }
                     },
-                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。"
+                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "每天",
                         "weekdays": "工作日",
-                        "weekends": "周末"
+                        "weekends": "周末",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
                     "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2519,7 +2543,6 @@
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
             "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
-            "para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
