@@ -182,9 +182,7 @@ ui-popover-apps {
 			touch-action: none;
 			height: 55vh;
 			margin-top: 1rem;
-			@media #{$breakpoint_md} {
-				padding: 0 1.5rem;
-			}
+			padding: 0 1.5rem;
 			.text-content {
 				padding-bottom: 3.4rem;
 				h3 {
