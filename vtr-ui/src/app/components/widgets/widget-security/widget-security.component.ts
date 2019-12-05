@@ -58,7 +58,7 @@ export class WidgetSecurityComponent implements OnInit {
 	}
 
 	fetchCMSArticleCategory() {
-		this.cmsService.fetchCMSArticle(this.articleId, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.articleId, { Lang: 'EN'}).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.articleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}

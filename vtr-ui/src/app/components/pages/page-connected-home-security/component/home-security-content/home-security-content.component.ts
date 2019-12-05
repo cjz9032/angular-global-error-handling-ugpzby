@@ -29,7 +29,7 @@ export class HomeSecurityContentComponent implements OnInit {
 	}
 
 	fetchCMSArticles() {
-		this.cmsService.fetchCMSArticle(this.peaceOfMindArticleId, { Lang: 'EN', GEO: 'US' }).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.peaceOfMindArticleId, { Lang: 'EN' }).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.peaceOfMindArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
