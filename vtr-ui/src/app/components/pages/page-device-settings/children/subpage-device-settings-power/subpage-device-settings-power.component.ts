@@ -9,7 +9,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { BehaviorSubject, EMPTY } from 'rxjs';
+import { BehaviorSubject, EMPTY, pipe, zip, range, timer, from, combineLatest } from 'rxjs';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import {
 	FlipToBootCurrentModeEnum,
@@ -23,6 +23,7 @@ import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/bat
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { retryWhen, map, mergeMap, tap, finalize } from 'rxjs/operators';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -957,16 +958,37 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		console.log('onVantageToolBarStatusToggle', event.switchValue);
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService.setVantageToolBarStatus(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setVantageToolBarStatus.then', event.switchValue);
-						setTimeout(() => {
-							this.getVantageToolBarStatus();
-						}, 80);
-					}).catch(error => {
-						this.logger.error('setVantageToolBarStatus', error.message);
-						return EMPTY;
-					});
+				// for fix van-11383
+					function backoff(maxTries, ms) {
+						return pipe(
+							retryWhen(attempts => zip(range(1, maxTries), attempts)
+							  .pipe(
+								map(([i]) => i * i),
+								mergeMap(i =>  timer(i * ms)),
+							  )
+							)
+						  );
+					}
+	
+					const setEvent$ = from(this.powerService.setVantageToolBarStatus(event.switchValue))
+					.pipe(
+						tap(() => console.log(`powerService.setVantageToolBarStatus - start stream`))
+					);
+	
+					const retry$ = from(this.powerService.getVantageToolBarStatus())
+						.pipe(
+							map( res => {
+								if (res.status !== event.switchValue){
+									throw res;
+								} else {
+									return res;
+								}
+							}
+							),
+							backoff(2,60),
+							finalize(() => this.getVantageToolBarStatus())
+						)
+					combineLatest(setEvent$, retry$).subscribe(() => console.log(`powerService.setVantageToolBarStatus successed`))
 			}
 		} catch (error) {
 			this.logger.error('getVantageToolBarStatus', error.message);
