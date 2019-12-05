@@ -182,9 +182,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		if (isDesktopMachine) {
 			this.removeSettingval();
 		}
-		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
-			this.handleError(new PluginMissingError());
-		});
 		this.initializeWifiSecCache();
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
@@ -238,8 +235,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	}
 
 	public removeSettingval() {
-		const id = 'gaming.dashboard.device.quickSettings.dolby' ;
-		const id1 =  'gaming.dashboard.device.quickSettings.rapidCharge';
+		const id = 'gaming.dashboard.device.quickSettings.dolby';
+		const id1 = 'gaming.dashboard.device.quickSettings.rapidCharge';
 		this.quickSettings = this.quickSettings.filter(item => item.header !== id && item.header !== id1);
 	}
 
