@@ -62,7 +62,7 @@ export class CommunicationWithFigleafService {
 				this.communicationSwitcherService.isPullingActive$.pipe(take(1)).pipe(
 					switchMap((res) => {
 						return res ? this.sendTestMessage().pipe(
-								retryWhen((errors) => errors.pipe(delay(200), take(5), concatMap(() => throwError(new Error('oops!')))))
+								retryWhen((errors) => errors.pipe(delay(600), take(5), concatMap(() => throwError(new Error('oops!')))))
 						) : EMPTY;
 					})).subscribe(() => {},
 					(err) => {
