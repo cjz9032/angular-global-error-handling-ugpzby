@@ -280,12 +280,7 @@ export class CMSService {
 
 	requestCMSArticle(articleId, locInfo, queryParams?) {
 		const defaults = {
-			Lang: locInfo.Lang,
-			GEO: locInfo.GEO,
-			OEM: locInfo.OEM,
-			OS: locInfo.OS,
-			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
+			Lang: locInfo.Lang
 		};
 
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
