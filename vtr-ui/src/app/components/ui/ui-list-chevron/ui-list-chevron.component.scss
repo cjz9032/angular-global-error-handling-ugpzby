@@ -170,7 +170,10 @@
 					font-weight: $weight_600;
 					float: left;
 					padding-top: 0.1rem;
-					padding-right: 0.1rem;
+					padding-right: 0.5rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 					color: $blue-dark;
 					width: 13rem;
 

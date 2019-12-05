@@ -1,5 +1,5 @@
 <div class="vtr-connected-home-status">
-	<div class="container-fluid p-40">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
 				<span class="title">{{'homeSecurity.title' | translate}}</span>
@@ -7,7 +7,7 @@
 					<div class="card">
 						<div class="card-header flex align-items-center">
 							<div class="row no-gutters">
-								<div class="col-sm-7 subHeading align-items-center">
+								<div class="col-6 subHeading align-items-center d-flex">
 									<span class="circle green"
 										*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'">
 										<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -21,22 +21,24 @@
 										<div class="spinner-border text-primary progress-spinner"
 											role="status"></div>
 									</div>
-									<h3 class="mb-0 homesecurity-container-name"
-										title="{{'homeSecurity.title' | translate}}">
-										{{'homeSecurity.title' | translate}}
-									</h3>
-									<h3 class="homesecurity-container-enable mb-0 "><span
-											class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3"
-											title="{{'security.homeprotection.homeStatus.protected' | translate}}"
-											*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'"
-											[innerHTML]="'security.homeprotection.homeStatus.protected' | translate"></span>
-										<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3"
-											title="{{'security.homeprotection.homeStatus.notProtected' | translate}}"
-											*ngIf="homeSecurity?.account?.state !== 'trial' && homeSecurity?.account?.state !== 'standard'"
-											[innerHTML]="'security.homeprotection.homeStatus.notProtected' | translate"></span>
-									</h3>
+									<div class="d-flex align-items-center flex-wrap flex-shrink-1 overflow-hidden">
+										<h3 class="mb-0 homesecurity-container-name pr-3"
+											title="{{'homeSecurity.title' | translate}}">
+											{{'homeSecurity.title' | translate}}
+										</h3>
+										<h3 class="homesecurity-container-enable mb-0 overflow-hidden"><span
+												class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3 w-100"
+												title="{{'security.homeprotection.homeStatus.protected' | translate}}"
+												*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'"
+												[innerHTML]="'security.homeprotection.homeStatus.protected' | translate"></span>
+											<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3 w-100"
+												title="{{'security.homeprotection.homeStatus.notProtected' | translate}}"
+												*ngIf="homeSecurity?.account?.state !== 'trial' && homeSecurity?.account?.state !== 'standard'"
+												[innerHTML]="'security.homeprotection.homeStatus.notProtected' | translate"></span>
+										</h3>
+									</div>
 								</div>
-								<div class="col-sm-5 button-container">
+								<div class="col-6 button-container">
 									<vtr-ui-button
 										routerLink="/home-security"
 										metricsItem="goToChs"

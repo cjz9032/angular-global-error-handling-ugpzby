@@ -24,12 +24,11 @@
 			class="connected-home-container">
 			<vtr-home-security></vtr-home-security>
 		</div>
-		<div class="bottom-content"
-			hidden>
-			<div class="d-none d-lg-block">
+		<div class="bottom-content" hidden>
+			<div class="d-none d-md-block">
 				<hr>
 				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
-					[detail]="'security.vpn.privacyPolicyAndTermsOfService'"
+					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 					[imgUrl]="'assets/images/coronet-logo.svg'"
 					privacyUrl="https://homesecurity.coro.net/"
 					termsUrl="https://homesecurity.coro.net/">
@@ -50,7 +49,7 @@
 				</div>
 			</div>
 			<!--end of Security Card Advisor-->
-			<div class="row">
+			<div class="row mb-5">
 				<div class="col col-12">
 					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 						[caption]="cardContentPositionA.Description"
@@ -71,18 +70,17 @@
 				</div>
 			</div>
 		</div>
-		<div class="bottom-content w-100"
-			hidden>
-			<div class="d-block d-lg-none">
-				<hr>
-				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
-					[detail]="'security.vpn.privacyPolicyAndTermsOfService'"
-					[imgUrl]="'assets/images/coronet-logo.svg'"
-					privacyUrl="https://homesecurity.coro.net/"
-					termsUrl="https://homesecurity.coro.net/">
-				</vtr-widget-powered-by-info>
-			</div>
+	<div class="bottom-content w-100" hidden>
+		<div class="d-block d-md-none">
+			<hr>
+			<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+				[imgUrl]="'assets/images/coronet-logo.svg'"
+				privacyUrl="https://homesecurity.coro.net/"
+				termsUrl="https://homesecurity.coro.net/">
+			</vtr-widget-powered-by-info>
 		</div>
+	</div>
 	</right-content>
 
 </vtr-page-layout>

@@ -46,13 +46,14 @@
 					</vtr-container-card>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-12 px-0 pb-20 pt-0">
+			<div class="bottom-content" hidden>
+				<div class="d-none d-md-block">
+					<hr>
 					<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
-						[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+						[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+						[imgUrl]="'assets/images/coronet-logo.svg'"
 						privacyUrl="https://homesecurity.coro.net/"
-						termsUrl="https://homesecurity.coro.net/"
-						[imgUrl]="'assets/images/coronet-logo.svg'">
+						termsUrl="https://homesecurity.coro.net/">
 					</vtr-widget-powered-by-info>
 				</div>
 			</div>
@@ -167,6 +168,17 @@
 						containerCardId="chs-modal-right-article">
 					</vtr-container-card>
 				</div>
+			</div>
+		</div>
+		<div class="bottom-content">
+			<div class="d-none d-md-block" hidden>
+				<hr>
+				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+					[imgUrl]="'assets/images/coronet-logo.svg'"
+					privacyUrl="https://homesecurity.coro.net/"
+					termsUrl="https://homesecurity.coro.net/">
+				</vtr-widget-powered-by-info>
 			</div>
 		</div>
 	</right-content>
