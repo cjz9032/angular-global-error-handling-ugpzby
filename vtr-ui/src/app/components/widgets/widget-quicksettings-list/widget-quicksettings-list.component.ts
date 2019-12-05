@@ -41,6 +41,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public setThermalModeStatus: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
 
+
 	public quickSettings = [
 		{
 			readMoreText: '',
@@ -177,6 +178,10 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	) {}
 
 	ngOnInit() {
+		const isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (isDesktopMachine) {
+			this.removeSettingval();
+		}
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
 			this.handleError(new PluginMissingError());
 		});
@@ -230,6 +235,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			EventTypes.gamingThermalModeChangeEvent,
 			this.onRegThermalModeEvent.bind(this)
 		);
+	}
+
+	public removeSettingval() {
+		const id = 'gaming.dashboard.device.quickSettings.dolby' ;
+		const id1 =  'gaming.dashboard.device.quickSettings.rapidCharge';
+		this.quickSettings = this.quickSettings.filter(item => item.header !== id && item.header !== id1);
 	}
 
 	public registerThermalModeEvent() {
