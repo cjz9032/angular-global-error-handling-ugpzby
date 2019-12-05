@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.0.273",
+	"version": "1.0.274",
 	"scripts": {
 		"build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
 		"build:qa": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=qa",
