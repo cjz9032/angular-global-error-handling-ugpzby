@@ -793,9 +793,9 @@
                 "notFound": "Posodobitve sistema ni bilo mogoče najti",
                 "detail": {
                     "uptoDate": "Posodobitve preverjene ",
-					"updatedOn": "preverjene ",
-					"outdated": "Posodobitve v zadnjem času niso bile preverjene ",
-					"neverRanUpdate": "posodobitve niso bile nikoli preverjene"
+                    "updatedOn": "preverjene ",
+                    "outdated": "Posodobitve v zadnjem času niso bile preverjene ",
+                    "neverRanUpdate": "posodobitve niso bile nikoli preverjene"
                 }
             },
             "extendedWarranty": "Podaljšanje garancije",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije. Ta funkcija ima 3 načine (tihi način, uravnotežen način in način učinkovitosti delovanja) in je zdaj dostopna z drsnikom za zmogljivost sistema Windows",
-                    "nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema."
+                    "nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavitve napajanja",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Vsak dan",
                         "weekdays": "Med tedni",
-                        "weekends": "Vikendi"
+                        "weekends": "Vikendi",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
                     "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1376,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + tabulatorka",
-                        "description": "omogočanje povečave pri zaslonih velike ločljivosti",
+                        "description": "omogočanje funkcije povečave in pomanjšave pri zaslonih velike ločljivosti",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Uporaba računalnika kot tabličnega računalnika",
             "description": "<div class='faqInFs4Fb'>    Uporaba računalnika kot tabličnega računalnika</div><hr><p>S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.</p><h3 class='faqInFs25FbP10'>Uporaba tabličnega načina</h3><p>Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Opomba</h3><p>Če želite izvedeti, ali lahko vaša naprava samodejno vklopi tablični način, jo poiščite na spletnem mestu proizvajalca. Možnost uporabe te funkcije je odvisna od strojne opreme, nameščenega gonilnika in proizvajalčeve nastavitve naprave. </p><p> </p><p>V tabličnem načinu se programi odpirajo v celozaslonskem pogledu, da imate na voljo večjo delovno površino. Program zaprete tako, da ga povlečete na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Namig</h3><p>Ko je računalnik v tabličnem načinu, je opravilna vrstica prikazana. Če pa želite imeti večjo delovno površino, jo lahko po želji skrijete. Izberite gumb <strong>Start</strong>, odprite <strong>Nastavitve</strong> > <strong>Sistem</strong> > <strong>Tablični način</strong> in vklopite možnost <strong>Samodejno skrij opravilno vrstico v tabličnem načinu</strong>. Če želite prikazati skrito opravilno vrstico, s prstom povlecite z dna zaslona navzgor ali pa miško zadržite na dnu zaslona.</p><h3 class='faqInFs25FbP10'>Hkratna uporaba dveh aplikacij</h3><p>Če želite v tabličnem načinu dva programa uporabljati enega ob drugem, povlecite odprti program navzdol in na stran. S tem program zataknete za rob, ob njem pa se prikažejo morebitni preostali odprti programi.</p><p>V tem pogledu lahko storite tudi to:</p><ul>    <li>Z vlečenjem skupne stranice lahko spreminjate velikost obeh za rob zataknjenih programov hkrati.</li>    <li>V pogledu opravil lahko odprete nov program: v opravilni vrstici izberite <strong>Pogled opravil</strong> in želeni program, ki ga nato povlečete na eno stran, da se zatakne ob rob razdeljenega zaslona.</li>    <li>Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

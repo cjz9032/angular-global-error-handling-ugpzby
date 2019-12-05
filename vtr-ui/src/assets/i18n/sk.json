@@ -793,9 +793,9 @@
                 "notFound": "Aktualizácia systému sa nenašla",
                 "detail": {
                     "uptoDate": "Aktualizácie boli skontrolované ",
-					"updatedOn": "skontrolované ",
-					"outdated": "Aktualizácie neboli dlho kontrolované ",
-					"neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
+                    "updatedOn": "skontrolované ",
+                    "outdated": "Aktualizácie neboli dlho kontrolované ",
+                    "neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
                 }
             },
             "extendedWarranty": "Rozšíriť záruku",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
-                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší."
+                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Každý deň",
                         "weekdays": "Dni v týždni",
-                        "weekends": "víkendy"
+                        "weekends": "víkendy",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Používanie počítača ako tabletu",
             "description": "<div class='faqInFs4Fb'>    Používanie počítača ako tabletu</div><hr><p>Vďaka režimu tabletu je systém Windows intuitívnejší a jednoduchšie sa používa, ak máte zariadenie s dotykovou obrazovkou.</p><h3 class='faqInFs25FbP10'>Používanie režimu tabletu</h3><p>Ak chcete zapnúť režim tabletu, vyberte <strong>centrum akcií</strong> na paneli úloh a potom vyberte položku <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Ak chcete zistiť, či zariadenie môže automaticky zapnúť režim tabletu, vyhľadajte zariadenie na webovej lokalite výrobcu. Podpora pre túto funkciu závisí od hardvéru, nainštalovaného ovládača a nastavenia zariadenia výrobcom. </p><p> </p><p>V režime tabletu sa aplikácie otvárajú na celej obrazovke, aby ste mali viac miesta na prácu. Ak chcete aplikáciu zatvoriť, potiahnite ju k dolnému okraju obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Keď je počítač v režime tabletu, panel úloh je k dispozícii, ale môžete ho skryť, ak potrebujete na obrazovke viac miesta. Vyberte tlačidlo <strong>Štart</strong>, vyberte položky <strong>Nastavenia</strong> > <strong>Systém</strong> > <strong>Režim tabletu</strong> a potom zapnite funkciu <strong>Automaticky skrývať panel úloh v režime tabletu</strong>. Ak chcete zobraziť skrytý panel úloh, potiahnite prstom nahor od dolného okraja obrazovky alebo naň ukážte myšou.</p><h3 class='faqInFs25FbP10'>Používanie dvoch aplikácií súčasne</h3><p>Ak chcete v režime tabletu používať dve aplikácie vedľa seba, otvorte aplikáciu jej potiahnutím nadol a do strany. Uvidíte, kde sa prichytí, a vedľa nej sa zobrazia všetky otvorené aplikácie.</p><p>V tomto zobrazení tiež môžete:</p><ul>    <li>zmeniť veľkosť oboch aplikácií naraz pomocou spoločného okraja medzi dvoma prichytenými aplikáciami;</li>    <li>otvoriť novú aplikáciu zo zobrazenia úloh &mdash; vyberte položku <strong>Zobrazenie úloh</strong> na paneli úloh, vyberte aplikáciu a potiahnite ju do strany, aby ste ju prichytili na rozdelenú obrazovku;</li>    <li>vrátiť sa späť v aplikácii alebo otvoriť predtým používanú aplikáciu pomocou tlačidla Späť na paneli úloh.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
