@@ -188,7 +188,7 @@
 										[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 										[isSwitchChecked]="expressChargingStatus.status"
 										[disabled]="expressChargingLock"
-										[showLoaderState]="conservationModeLock"
+										[showLoaderState]="false"
 										[switchId]="'ds-power-battery-expressCharging'"
 										[label]="'rapid charging, toggle button'"
 										(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
@@ -206,7 +206,7 @@
 										[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 										[isSwitchChecked]="conservationModeStatus.status"
 										[disabled]="conservationModeLock"
-										[showLoaderState]="expressChargingLock"
+										[showLoaderState]="false"
 										[switchId]="'ds-power-battery-conservationMode'"
 										(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 									</vtr-ui-row-switch>
