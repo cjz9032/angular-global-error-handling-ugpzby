@@ -80,22 +80,12 @@ ui-popover-apps {
 		}
 		.app-add-container {
 			background: #1f2a42;
-			min-height: 40rem;
 			margin-top: 1.5rem;
 			padding: 3rem 4rem;
 			overflow-y: auto;
 			overflow-x: hidden;
-			max-height: 40rem;
+			max-height: 51vh;
 			touch-action: none;
-			@media #{$large-screen} {
-				min-height: 42rem;
-			}
-			@media #{$large-screen-1} {
-				max-height: 44rem;
-			}
-			@media #{$mediaquery_7} {
-				max-height: 50rem;
-			}
 			@media #{$breakpoint_sm} {
 				padding: 2rem 1rem;
 			}
