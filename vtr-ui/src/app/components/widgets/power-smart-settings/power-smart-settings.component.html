@@ -190,7 +190,7 @@
 									src="assets/images/dytc6_toolbar.png">
 								</div>
 							</div>
-							<p tabindex="0"
+							<p *ngIf="dytc6IsAutoModeSupported" tabindex="0"
 								role="text">
 								{{'device.deviceSettings.power.powerSmartSettings.dytc6.desc3' | translate}}
 							</p>

@@ -229,9 +229,9 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.eyeCareModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
 			if (this.eyeCareModeCache) {
 				this.eyeCareModeStatus.available = this.eyeCareModeCache.available;
-				if (!this.eyeCareModeStatus.available) {
-					return;
-				}
+				// if (!this.eyeCareModeStatus.available) {
+				// 	return;
+				// }
 				this.eyeCareModeStatus.status = this.eyeCareModeCache.toggleStatus;
 				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
 				this.enableSlider = this.eyeCareModeCache.enableSlider;
