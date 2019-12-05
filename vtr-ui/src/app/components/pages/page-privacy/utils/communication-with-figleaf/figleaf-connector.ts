@@ -38,6 +38,7 @@ class FigleafConnector {
 
 		const response = await currentConnection.sendMessageAsync(message);
 
+		console.log('~~~~~~~~~~', response);
 		if (response && response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
 			return JSON.parse(response.message.result);
 		} else {
