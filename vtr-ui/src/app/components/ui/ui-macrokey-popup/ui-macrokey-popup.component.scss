@@ -19,7 +19,7 @@
 }
 ui-popover {
 	position: absolute;
-	max-width: 35%;
+	max-width: 40%;
 	padding: 3rem 5rem;
 	background: #fbfdff;
 	z-index: 9;
@@ -98,9 +98,9 @@ ui-popover {
 		margin-left: 3rem;
 		border-bottom: 2px solid $btn_secondary_color;
 		cursor: pointer;
-		&:hover{
-				text-decoration: none;
-			}
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
