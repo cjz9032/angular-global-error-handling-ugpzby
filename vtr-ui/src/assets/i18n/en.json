@@ -900,7 +900,7 @@
 					"Good": "<b>The battery is in good condition.</b>",
 					"Exhaustion": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
-					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
+					"NotDetected": "<b>No battery detected.</b>",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
 					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
@@ -915,7 +915,7 @@
 					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
 				},
 				"dualConditions": {
-					"NotDetected": "Primary battery not Detected"
+					"NotDetected": "The primary battery is not Detected"
 				}
 			},
 			"power": {
