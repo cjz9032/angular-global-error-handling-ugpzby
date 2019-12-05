@@ -155,15 +155,15 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
-		this.setBatteryCard(info);
+		this.setBatteryCard(info, 'onPowerSupplyStatusEvent');
 	}
 
 	onRemainingPercentageEvent(info: any) {
-		this.setBatteryCard(info);
+		this.setBatteryCard(info, 'onRemainingPercentageEvent');
 	}
 
 	onRemainingTimeEvent(info: any) {
-		this.setBatteryCard(info);
+		this.setBatteryCard(info, 'onRemainingTimeEvent');
 	}
 
 	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: BatteryGaugeReset[]) {
@@ -183,10 +183,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	setBatteryCard(response) {
+	setBatteryCard(response, methodName = 'Battery Info') {
 		if (response) {
-			this.logger.info('Battery Info', response);
-			console.log('Battery Info', JSON.stringify(response));
+			this.logger.info(methodName + ' : ', response);
+			console.log(methodName + ' : ', response);
 			this.batteryInfo = response.batteryInformation;
 			this.batteryGauge = response.batteryIndicatorInfo;
 			this.updateBatteryDetails();
@@ -200,9 +200,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.logger.info('BatteryCardComponent: getBatteryDetails ==> Before API call');
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
-				this.logger.info('BatteryCardComponent: getBatteryDetails ==> After API call', response);
+				this.logger.info('BatteryCardComponent: getBatteryDetails ==> After API call');
 				this.isLoading = false;
-				this.setBatteryCard(response);
+				this.setBatteryCard(response, 'getBatteryDetails');
 
 				if (showBatteryDetail) {
 					window.history.replaceState([], '', '');
@@ -395,9 +395,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
 			if (isThinkPad) {
-				if (this.batteryGauge.acAdapterStatus && this.batteryGauge.acAdapterStatus !== null) {
-					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'supported' && this.batteryGauge.isAttached) {
-						this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' ? 'ac' : 'USB-C';
+				if (this.batteryGauge.isAttached && this.batteryGauge.acAdapterStatus) {
+					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'supported') {
+						this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' || 'ac' ? 'ac' : 'USB-C';
 						this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
 					}
