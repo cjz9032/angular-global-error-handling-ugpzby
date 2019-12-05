@@ -148,11 +148,10 @@
 			border-bottom: 0.1rem solid $shade_lighter;
 		}
 		.bold-title {
-			::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-ui-switch-row.white-theme {
 				.title {
-					font-weight: 700;
-					font-size: 1.8rem;
-					// letter-spacing: 0rem;
+					font-weight: 700 !important;
+					font-size: 1.8rem !important;
 				}
 			}
 		}
@@ -170,7 +169,7 @@
 		}
 		.padding-right-07 {
 			padding-right: 0.7rem;
-		}
+        }
 		.margin-right-05 {
 			margin-right: 0.5rem;
 		}
@@ -273,7 +272,8 @@
 	.facial-recognition {
 		h3 {
 			font-weight: $weight_bold;
-			color: $main_darker;
+            color: $main_darker;
+            font-size:1.8rem !important;
 		}
 		p {
 			font-size: $body;
