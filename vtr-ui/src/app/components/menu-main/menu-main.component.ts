@@ -199,11 +199,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
 		// Added special case for KEI machine
 		if (machineFamily) {
-		const familyName = machineFamily.replace(/\s+/g, '');
-		if (machineType === 1 && familyName !== 'LenovoTablet10') {
-			this.initInputAccessories();
+			const familyName = machineFamily.replace(/\s+/g, '');
+			if (machineType === 1 && familyName !== 'LenovoTablet10') {
+				this.initInputAccessories();
+			}
 		}
-	}
 		// if IdeaPad or ThinkPad then call below function
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
@@ -215,7 +215,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					this.removeDeviceSettings();
 				}
 			});
-		}	
+		}
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
 			this.commonService.setLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability, false);
@@ -571,6 +571,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					if (isAvailable && !isSmartAssistSupported) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
+
+					// if cache is old and new capability call is false then remove it
+					if (!isAvailable) {
+						this.removeSmartAssistMenu(myDeviceItem);
+					}
 				}
 			}
 		});
@@ -591,6 +596,15 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				sMode: true,
 				subitems: []
 			});
+		}
+	}
+
+	private removeSmartAssistMenu(myDeviceItem: any) {
+		const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
+		if (smartAssistItem) {
+			myDeviceItem.subitems = myDeviceItem.subitems.filter(
+				(item) => item.id !== 'smart-assist'
+			);
 		}
 	}
 
