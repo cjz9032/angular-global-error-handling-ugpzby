@@ -189,7 +189,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		if (wifiSecurity.isSupported !== undefined) {
 			this.showWifiSecurityItem();
 		}
-		this.advanceItems.push(this.wifiSecurityLandingViewModel.wfStatus,
+		this.advanceItems.push(
+			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus : undefined,
 			this.bitLockerLandingViewModel.blStatus,
 			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus : undefined);
 		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
