@@ -15,7 +15,7 @@ import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelli
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { async } from 'q';
+
 const thinkpad = 1;
 const ideapad = 0;
 @Component({
@@ -688,7 +688,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getAMTCapability();
 			}
 		} catch (error) {
-			this.logger.error('PowerSmartSettingsComponent:getAMTCapability', error.message);
+			this.logger.exception('PowerSmartSettingsComponent:getAMTCapability', error);
 			return false;
 		}
 	}
@@ -699,7 +699,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				return this.powerService.getAMTSetting();
 			}
 		} catch (error) {
-			this.logger.error('PowerSmartSettingsComponent:getAMTSetting', error.message);
+			this.logger.exception('PowerSmartSettingsComponent:getAMTSetting', error);
 			return false;
 		}
 	}
