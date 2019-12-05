@@ -5,15 +5,14 @@ import { PageSecurityAntivirusComponent } from 'src/app/components/pages/page-se
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityWindowsHelloComponent } from 'src/app/components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { WindowsHelloGuardService } from 'src/app/services/guard/windows-hello-guardService.service';
 import { VpnGuardService } from 'src/app/services/guard/vpn-guardService.service';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonCommercialGuard } from 'src/app/services/guard/non-commercial-guard';
+import { WifiGuardService } from 'src/app/services/guard/wifi-guardService.service';
 
 
 const routes: Routes = [
@@ -46,7 +45,7 @@ const routes: Routes = [
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonSmodeGuard, NonArmGuard],
+		canActivate: [GuardService, WifiGuardService,  NonSmodeGuard, NonArmGuard],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
@@ -58,15 +57,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Security.InternetProtection'
 		}
-	}, {
-		path: 'windows-hello',
-		component: PageSecurityWindowsHelloComponent,
-		canActivate: [GuardService, WindowsHelloGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
-		canDeactivate: [GuardService],
-		data: {
-			pageName: 'Security.WindowsHello'
-		}
-	},
+	}
 ];
 
 @NgModule({
