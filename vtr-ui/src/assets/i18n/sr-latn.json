@@ -793,9 +793,9 @@
                 "notFound": "Ažuriranje sistema nije pronađeno",
                 "detail": {
                     "uptoDate": "Ispravke su proverene ",
-					"updatedOn": "provereno ",
-					"outdated": "Ispravke nisu nedavno proverene ",
-					"neverRanUpdate": "ispravke nikada nisu proverene"
+                    "updatedOn": "provereno ",
+                    "outdated": "Ispravke nisu nedavno proverene ",
+                    "neverRanUpdate": "ispravke nikada nisu proverene"
                 }
             },
             "extendedWarranty": "Proširenje garancije",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
-                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“"
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Svaki dan",
                         "weekdays": "Weekdays",
-                        "weekends": "Vikendom"
+                        "weekends": "Vikendom",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
                     "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Korišćenje računara kao tableta",
             "description": "<div class='faqInFs4Fb'>    Korišćenje računara kao tableta</div><hr><p>Uz režim tablet računara, Windows je intuitivniji i lakši za korišćenje kada imate uređaj osetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Korišćenje u režimu tablet računara</h3><p>Da biste uključili režim tablet računara, izaberite <strong>Centar aktivnosti</strong> na traci zadataka, a zatim izaberite <strong>Tablet mode</strong> (Režim tablet računara).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali da li vaš uređaj može automatski da uključi režim tablet računara, potražite vaš uređaj na veb lokaciji proizvođača. Podrška za ovu funkciju zavisi od hardvera, upravljačkog programa koji je instaliran i kako je proizvođač podesio uređaj. </p><p> </p><p>U režimu tablet računara, aplikacije se otvaraju u prikazu preko celog ekrana, dajući vam više prostora za rad. Da biste zatvorili aplikaciju, prevucite je na donji deo ekrana.</p><p> </p><h3 class='faqInFs25FbP10'>Savet</h3><p>Traka zadataka je dostupna kada je vaš računar u režimu tablet računara, ali možete da je sakrijete ako želite više prostora na ekranu. Izaberite dugme <strong>Start</strong>, izaberite <strong>Settings (Postavke) </strong>> <strong>System (Sistem) </strong>> <strong> Tablet mode (Režim tablet računara)</strong>, a zatim uključite opciju <strong>Automatically hide the taskbar in tablet mode</strong> (Automatsko skrivanje trake zadataka u režimu tablet računara). Da biste videli skrivenu traku zadataka, prevucite nagore sa dna ekrana ili pređite mišem preko tog dela.</p><h3 class='faqInFs25FbP10'>Istovremeno korišćenje dve aplikacije</h3><p>Da biste naporedno koristili dve aplikacije u režimu tablet računara, prevucite i otvorite aplikaciju nadole i u stranu. Videćete gde će se prikačiti i videćete sve otvorene aplikacije pored nje.</p><p>U ovom prikazu, možete i da radite sledeće:</p><ul>    <li>Koristite deljenu ivicu između dve prikačene aplikacije kako biste istovremeno promenili veličinu obe aplikacije.</li>    <li>Otvorite novu aplikaciju sa trake zadataka. Izaberite <strong>Task view</strong> (Prikaz zadataka) na traci zadataka, izaberite aplikaciju, prevucite je na jednu stranu kako biste je prikačili na podeljeni ekran.</li>    <li>Koristite dugme „Nazad“ na traci zadataka da biste se vratili u aplikaciji ili da biste otvorili aplikaciju koju ste prethodno koristili.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

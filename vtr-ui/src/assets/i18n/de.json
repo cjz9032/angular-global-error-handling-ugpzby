@@ -793,9 +793,9 @@
                 "notFound": "System Update nicht gefunden",
                 "detail": {
                     "uptoDate": "Updates geprüft ",
-					"updatedOn": "geprüft am ",
-					"outdated": "Updates wurden zuletzt nicht geprüft ",
-					"neverRanUpdate": "updates wurden nie geprüft"
+                    "updatedOn": "geprüft am ",
+                    "outdated": "Updates wurden zuletzt nicht geprüft ",
+                    "neverRanUpdate": "updates wurden nie geprüft"
                 }
             },
             "extendedWarranty": "Garantieverlängerung",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
-                    "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert."
+                    "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Einstellungen für Energieversorgung",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Jeden Tag",
                         "weekdays": "Wochentage",
-                        "weekends": "Wochenenden"
+                        "weekends": "Wochenenden",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
                     "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Verwenden Sie Ihren PC wie ein Tablet",
             "description": "<div class='faqInFs4Fb'>    Verwenden Sie Ihren PC wie ein Tablet</div><hr><p>Mit dem Tabletmodus wird Windows intuitiver und benutzerfreundlicher, wenn Sie ein Gerät mit Touchscreen verwenden.</p><h3 class='faqInFs25FbP10'>Tabletmodus verwenden</h3><p>Aktivieren Sie den Tabletmodus, wählen Sie in der Taskleiste <strong>Info-Center</strong> und anschließend <strong>Tabletmodus</strong> aus.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmerkung</h3><p>Um herauszufinden, ob Ihr Gerät den Tabletmodus automatisch aktivieren kann, suchen Sie auf der Website des Herstellers nach Ihrem Gerät. Ob diese Funktion unterstützt wird, hängt von der Hardware, dem installierten Treiber sowie davon ab, wie das Gerät vom Hersteller eingerichtet wurde. </p><p> </p><p>Im Tabletmodus werden Apps im Vollbildmodus geöffnet, damit Sie mehr Platz zum Arbeiten haben. Um eine App zu schließen, ziehen Sie sie zum unteren Rand des Bildschirms.</p><p> </p><h3 class='faqInFs25FbP10'>Tipp</h3><p>Die Taskleiste ist verfügbar, wenn Ihr PC im Tabletmodus ausgeführt wird. Sie können sie jedoch verbergen, wenn Sie mehr Platz auf dem Bildschirm benötigen. Wählen Sie die Schaltfläche <strong>Start </strong>aus, wählen Sie <strong>Einstellungen </strong>> <strong>System </strong>> <strong> Tabletmodus </strong> aus und aktivieren Sie <strong>Die Taskleiste im Tabletmodus automatisch ausblenden</strong>. Wenn Sie die ausgeblendete Taskleiste anzeigen möchten, gleiten Sie vom unteren Rand aus auf dem Bildschirm nach oben oder bewegen Sie den Mauszeiger dorthin.</p><h3 class='faqInFs25FbP10'>Zwei Apps gleichzeitig verwenden</h3><p>Wenn Sie zwei Apps nebeneinander im Tabletmodus verwenden möchten, ziehen Sie eine offene Apps nach untern und dann zur Seite. Sie sehen, wie sie andockt und alle offenen Apps werden daneben angezeigt.</p><p>In dieser Ansicht können Sie außerdem:</p><ul>    <li>Die gemeinsame Kante zwischen zwei angedockten Apps verwenden, um die Größe beider Apps zur selben Zeit anzupassen.</li>    <li>Öffnen Sie eine neue Apps über die Aufgabenansicht, wählen Sie in der Taskleiste <strong>Aufgabenansicht</strong> aus, wählen Sie eine App aus und ziehen Sie sie dann zu einer Seite, um sie in Ihrem geteilten Bildschirm anzudocken.</li>    <li>Verwenden Sie die Schaltfläche \"Zurück\" in der Taskleiste, um zu einer App zurückzukehren oder eine App zu öffnen, die Sie zuvor verwendet haben.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
