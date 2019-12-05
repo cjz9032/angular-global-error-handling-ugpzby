@@ -29,7 +29,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 
 	private populateIntervals() {
 
-		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); //'seconds';
+		const seconds = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'); // 'seconds';
 
 
 		this.intervals = [{
@@ -117,7 +117,7 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 		this.smartAssist
 			.setPenDelayTime(value)
 			.then(res => {
-				console.log('PEN DELAY TIME --------------------------------- ', value, res)
+				console.log('PEN DELAY TIME --------------------------------- ', value, res);
 				this.smartAssist
 					.getPenDelayTime()
 					.then(response => {
@@ -160,6 +160,4 @@ export class ActiveProtectionSystemAdvancedComponent implements OnInit {
 			})
 			.catch(err => console.log(err));
 	}
-
-
 }

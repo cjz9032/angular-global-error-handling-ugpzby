@@ -68,6 +68,18 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 ## [1.0.260](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.6...v1.0.260) (2019-11-21)
+## [1.0.272](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.271...v1.0.272) (2019-12-05)
+
+
+
+## [1.0.271](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.270...v1.0.271) (2019-12-04)
+
+
+
+## [1.0.270](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.268...v1.0.270) (2019-12-04)
+
+
+
 ## [1.0.269](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.268...v1.0.269) (2019-12-04)
 
 

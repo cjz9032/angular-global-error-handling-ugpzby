@@ -105,11 +105,14 @@ export class DeviceService {
 	}
 
 	private initShowDemo() {
-		this.shellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}').then((hyp) => {
-			if (hyp === 'CES-2019') {
-				this.showDemo = true;
-			}
-		});
+		const filter: Promise<any> = this.shellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}');
+		if (filter) {
+			filter.then((hyp) => {
+				if (hyp === 'CES-2019') {
+					this.showDemo = true;
+				}
+			});
+		}
 	}
 
 	public getDeviceInfo(): Promise<MyDevice> {
