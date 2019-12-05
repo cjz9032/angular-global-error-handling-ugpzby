@@ -118,12 +118,10 @@
 		}
 
 		.bottom-content {
+			padding-bottom: 3rem;
 			hr {
 				border: 0.1rem solid $grey_light;
 				margin: 5rem 0 4rem 0;
-			}
-			@media #{$mediaquery_X5} {
-				padding: 4rem 4rem 4rem 8.5rem;
 			}
 		}
 
@@ -145,7 +143,7 @@
 
 		@media #{$mediaquery_md} {
 			.bottom-content {
-				margin: 0 4rem 2rem;
+				// margin: 0 4rem 2rem;
 			}
 			.vtr-page-right-column {
 				padding: 0rem 4rem 0rem 4rem;
