@@ -12,7 +12,8 @@ import {
 	retryWhen,
 	shareReplay,
 	switchMap,
-	take, tap
+	take,
+	tap
 } from 'rxjs/operators';
 
 import { CommunicationSwitcherService } from './communication-switcher.service';
@@ -31,6 +32,9 @@ export interface MessageFromFigleaf {
 enum FigleafState {
 	ready,
 	notOnboarded,
+	invalidRequest,
+	missingParameters,
+	unknown,
 	exit
 }
 
