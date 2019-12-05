@@ -44,8 +44,8 @@
 					padding-left: $padding_side_sm;
 				}
 				@media #{$breakpoint_lg} {
-					padding-left: $padding_side_sm;
-					padding-right: $padding_side_sm;
+					// padding-left: $padding_side_sm;
+					// padding-right: $padding_side_sm;
 				}
 			}
 			&.vtr-page-right-column {
@@ -56,15 +56,15 @@
 					padding-right: $padding_side_sm;
 				}
 				@media #{$breakpoint_lg} {
-					padding-left: $padding_side_sm;
-					padding-right: $padding_side_sm;
+					// padding-left: $padding_side_sm;
+					// padding-right: $padding_side_sm;
 				}
 				@media #{$breakpoint_lg} {
-					padding-top: 2rem;
+					// padding-top: 2rem;
 				}
 				.vtr-page-column-shift-up {
-					@media #{$breakpoint_lg} {
-						margin-top: 0;
+					@media #{$breakpoint_md} {
+						margin-top:0;
 					}
 				}
 			}

@@ -739,7 +739,7 @@ export class VantageShellService {
 					}
 				],
 				isLocationServiceOn: true,
-				isComputerPermissionOn: true,
+				isAllAppsPermissionOn: true,
 				isDevicePermissionOn: true,
 				isLWSPluginInstalled: true,
 				hasSystemPermissionShowed: true,
@@ -1007,10 +1007,10 @@ export class VantageShellService {
 	 */
 	public getSmartSettings(): any {
 		const smartSettings: any = {
-			absFeature: { 
+			absFeature: {
 				getDolbyFeatureStatus: this.getPromise({ available: true, status: false }),
 				setDolbyFeatureStatus: this.getPromise(true)
-							
+
 		}
 		};
 
@@ -1294,8 +1294,8 @@ export class VantageShellService {
 	// 	}
 	// }
 	public getPowerItsIntelligentCooling(): any {
-        const devicePowerItsIntelligentCooling = { 
-                intelligentCooling: { 
+        const devicePowerItsIntelligentCooling = {
+                intelligentCooling: {
                     getPMDriverStatus: this.getPromise(true),
                     getITSServiceStatus: this.getPromise(true),
                     getDYTCRevision:this.getPromise(true),
@@ -1313,8 +1313,8 @@ export class VantageShellService {
                     setLegacyAutoModeState:this.getPromise(true),
                     setLegacyManualModeState:this.getPromise(true)
 
-                 } 
-                }             
+                 }
+                }
 		// if (this.getPowerSettings() && this.getPowerSettings().its) {
 		// 	return this.getPowerSettings().its;
 		// }
@@ -1515,9 +1515,9 @@ export class VantageShellService {
 			errorCode: 0,
 			supportedModes: ['Blur', 'Comic', 'Sketch']
 		};
-		const cameraBlur: any = { 
+		const cameraBlur: any = {
 			getCameraBlurSettings: this.getPromise(obj) ,
-			setCameraBlurSettings: this.getPromise(obj) 
+			setCameraBlurSettings: this.getPromise(obj)
 		};
 		return cameraBlur;
 	}
