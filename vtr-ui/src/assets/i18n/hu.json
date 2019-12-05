@@ -793,9 +793,9 @@
                 "notFound": "A rendszerfrissítés nem található",
                 "detail": {
                     "uptoDate": "Frissítés keresése ",
-					"updatedOn": "keresés ekkor: ",
-					"outdated": "Nem keresett frissítéseket mostanában ",
-					"neverRanUpdate": "soha nem keresett frissítéseket"
+                    "updatedOn": "keresés ekkor: ",
+                    "outdated": "Nem keresett frissítéseket mostanában ",
+                    "neverRanUpdate": "soha nem keresett frissítéseket"
                 }
             },
             "extendedWarranty": "Jótállás kiterjesztése",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
-                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen."
+                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Minden nap",
                         "weekdays": "Hétköznapok",
-                        "weekends": "Hétvégén"
+                        "weekends": "Hétvégén",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
                     "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "A számítógép táblagépként történő használata",
             "description": "<div class='faqInFs4Fb'>    A számítógép táblagépként történő használata</div><hr><p>A Táblagép mód intuitívabbá és könnyebben használhatóvá teszi a Windows rendszert érintőképernyős eszközökön.</p><h3 class='faqInFs25FbP10'>A Táblagép mód használata</h3><p>A Táblagép mód bekapcsolásához válassza a <strong>műveletközpontot</strong> a tálcán, majd válassza a <strong>Táblagép mód</strong> lehetőséget.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Megjegyzés</h3><p>Ha szeretné megtudni, hogy az eszköz automatikusan be tudja-e kapcsolni a Táblagép módot, keresse meg eszközét a gyártó webhelyén. Ennek a funkciónak a támogatása attól függ, hogy milyen a gép hardvere, milyen illesztőprogramok vannak telepítve és a gyártó hogyan állította be az eszközt. </p><p> </p><p>Táblagép módban az alkalmazások teljes képernyőn nyitnak meg, így több helyet biztosítanak a munkához. Az alkalmazások bezárásához húzza őket a képernyő aljára.</p><p> </p><h3 class='faqInFs25FbP10'>Tipp</h3><p>A tálcát el lehet elérni, amikor a számítógép Táblagép módban van, de el is rejtheti, ha több helyet szeretne a képernyőn. Válassza a <strong>Start </strong>gombot, majd a <strong>Gépház </strong>> <strong>Rendszer </strong>> <strong> Táblagép mód </strong> lehetőséget, végül kapcsolja be <strong>A tálca automatikus elrejtése táblagép módban</strong> beállítást. Az elrejtett tálca megjelenítéséhez húzza felfelé a képernyő aljától, vagy mutasson rá az egérrel.</p><h3 class='faqInFs25FbP10'>Két alkalmazás használata egyszerre</h3><p>Ha két alkalmazást szeretne használni egymás mellett a Táblagép módban, húzza lefelé és oldalra a megnyitott alkalmazást. Látni fogja, hogy hol dokkolódik, valamint a többi megnyitott alkalmazás is megjelenik mellette.</p><p>Ebben a nézetben a következőket is teheti:</p><ul>    <li>Használhatja a dokkolt alkalmazások közös szélét a két alkalmazás egyidejű átméretezéséhez.</li>    <li>Megnyithat egy új alkalmazást a feladatnézetből &mdash; válassza a <strong>Feladatnézetet</strong> a tálcán, és húzza valamelyik oldalra megosztott képernyőn történő dokkoláshoz.</li>    <li>Használja a tálcán található Vissza gombot az alkalmazásokban való visszalépéshez vagy egy korábban használt alkalmazás megnyitásához.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

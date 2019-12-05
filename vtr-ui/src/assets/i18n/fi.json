@@ -793,9 +793,9 @@
                 "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
                     "uptoDate": "Päivitykset tarkistettu ",
-					"updatedOn": "tarkistuspäivä ",
-					"outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
-					"neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
+                    "updatedOn": "tarkistuspäivä ",
+                    "outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
+                    "neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
                 }
             },
             "extendedWarranty": "Laajenna takuu",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
-                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa."
+                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
-                        "weekends": "Viikonloppuisin"
+                        "weekends": "Viikonloppuisin",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
                     "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Tietokoneen käyttö taulutietokoneen tavoin",
             "description": "<div class='faqInFs4Fb'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 class='faqInFs25FbP10'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 class='faqInFs25FbP10'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 class='faqInFs25FbP10'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

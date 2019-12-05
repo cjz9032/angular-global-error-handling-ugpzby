@@ -793,9 +793,9 @@
                 "notFound": "Nie znaleziono aktualizacji systemu",
                 "detail": {
                     "uptoDate": "Aktualizacje sprawdzone ",
-					"updatedOn": "sprawdzone ",
-					"outdated": "Ostatnio nie sprawdzano aktualizacji ",
-					"neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
+                    "updatedOn": "sprawdzone ",
+                    "outdated": "Ostatnio nie sprawdzano aktualizacji ",
+                    "neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
                 }
             },
             "extendedWarranty": "Rozszerz gwarancję",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
-                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”."
+                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ustawienia zasilania",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Codzienny",
                         "weekdays": "Dni powszednie",
-                        "weekends": "Weekendy"
+                        "weekends": "Weekendy",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
                     "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Używanie komputera jak tabletu",
             "description": "<div class='faqInFs4Fb'>    Używanie komputera jak tabletu</div><hr><p>Tryb tabletu sprawia, że system Windows jest bardziej intuicyjny i łatwiejszy w obsłudze na urządzeniu z ekranem dotykowym.</p><h3 class='faqInFs25FbP10'>Używanie trybu tabletu</h3><p>Aby włączyć tryb tabletu, na pasku zadań kliknij pozycję <strong>centrum akcji</strong> i wybierz opcję <strong>Tryb tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Uwaga</h3><p>Aby sprawdzić, czy urządzenie może się automatycznie przełączać do trybu tabletu, poszukaj urządzenia w witrynie internetowej producenta. Obsługa tej funkcji zależy od sprzętu, zainstalowanego sterownika i fabrycznej konfiguracji urządzenia. </p><p> </p><p>W trybie tabletu aplikacje otwierają się na całym ekranie, oferując więcej miejsca do pracy. Aby zamknąć aplikację, przeciągnij ją do dołu ekranu.</p><p> </p><h3 class='faqInFs25FbP10'>Wskazówka</h3><p>W trybie tabletu pasek zadań jest dostępny, ale można go schować, jeśli chcesz mieć więcej miejsca do pracy na ekranie. Naciśnij przycisk <strong>Start</strong>, wybierz kolejno opcje <strong>Ustawienia</strong> > <strong>System</strong> > <strong>Tryb tabletu</strong>, a następnie włącz opcję <strong>Automatycznie ukrywaj pasek zadań w trybie tabletu</strong>. Aby zobaczyć ukryty pasek zadań, przesuń palcem od dołu do góry ekranu lub umieść wskaźnik myszy u dołu ekranu.</p><h3 class='faqInFs25FbP10'>Używanie dwóch aplikacji równocześnie</h3><p>Aby używać dwóch aplikacji obok siebie w trybie tabletu, przeciągnij otwartą aplikację w dół i na bok. Zostanie przyciągnięta, a obok będzie widać wszystkie otwarte aplikacje.</p><p>W tym widoku można również:</p><ul>    <li>Użyć wspólnej krawędzi dwóch przyciągniętych aplikacji, aby zmienić rozmiar obu aplikacji równocześnie.</li>    <li>Otworzyć nową aplikację z widoku zadań: na pasku zadań kliknij opcję <strong>Widok zadań</strong>, zaznacz aplikację, a następnie przeciągnij ją w jedną stronę, a zostanie przyciągnięta do podzielonego ekranu.</li>    <li>Użyć przycisku Wstecz na pasku zadań, aby wrócić do poprzedniego okna w obecnej aplikacji lub otworzyć wcześniej używaną aplikację.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",

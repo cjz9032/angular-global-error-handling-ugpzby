@@ -644,7 +644,8 @@
 			"installing": "INSTALLING",
 			"notFound": "NOT FOUND",
 			"registered": "REGISTERED",
-			"notRegistered": "NOT REGISTERED"
+			"notRegistered": "NOT REGISTERED",
+			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",

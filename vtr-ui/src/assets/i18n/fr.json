@@ -793,9 +793,9 @@
                 "notFound": "Mise à jour du système introuvable",
                 "detail": {
                     "uptoDate": "Mises à jour vérifiées ",
-					"updatedOn": "vérification effectuée le ",
-					"outdated": "Mises à jour non vérifiées récemment ",
-					"neverRanUpdate": "mises à jour jamais vérifiées"
+                    "updatedOn": "vérification effectuée le ",
+                    "outdated": "Mises à jour non vérifiées récemment ",
+                    "neverRanUpdate": "mises à jour jamais vérifiées"
                 }
             },
             "extendedWarranty": "Garantie prolongée",
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
-                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux."
+                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Paramètres d'alimentation",
@@ -1147,7 +1168,8 @@
                         },
                         "everyday": "Tous les jours",
                         "weekdays": "Jours de la semaine",
-                        "weekends": "Fins de semaine"
+                        "weekends": "Fins de semaine",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
                     "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
@@ -1190,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2518,7 +2542,6 @@
         "question5": {
             "title": "Utilisez votre ordinateur comme une tablette",
             "description": "<div class='faqInFs4Fb'>    Utilisez votre ordinateur comme une tablette</div><hr><p>Le mode tablette graphique rend Windows plus intuitif et plus facile à utiliser si vous utilisez un périphérique à écran tactile.</p><h3 class='faqInFs25FbP10'>Utiliser le Mode Tablette</h3><p>Pour activer le mode tablette, sélectionnez le <strong>Centre de notifications</strong> dans la barre des taches, puis sélectionner le<strong>mode tablette</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Important</h3><p>Pour savoir si votre périphérique peut activer automatiquement le mode tablette, recherchez votre périphérique sur le site Web du fabricant. La prise en charge de cette fonction dépend du matériel, du pilote installé et de la configuration du périphérique par le fabricant. </p><p> </p><p>En mode tablette, les applications ouvrent le plein écran et vous donnent de l'espace pour travailler. Pour fermer une application, faites-la glisser dans la partie inférieure de l'écran.</p><p> </p><h3 class='faqInFs25FbP10'>Astuce</h3><p>La barre des tâches est disponible lorsque votre PC est en mode tablette, mais vous pouvez le masquer si vous souhaitez plus de place à l'écran. Sélectionnez le bouton<strong> démarrer</strong>, sélectionnez <strong>paramètres </strong>> <strong>système </strong>> <strong>mode </strong>tablette, puis activer la <strong>fonction Masquer automatiquement la barre des tâches</strong>en mode tablette. Pour afficher la barre des tâches masquée, balayez le curseur en haut de l'écran ou utilisez votre souris pour la placer au pointage.</p><h3 class='faqInFs25FbP10'>Utiliser deux applications simultanément</h3><p>Pour utiliser deux applications côte à côte en mode tablette, faites glisser une application ouverte vers le bas et vers le côté. Vous verrez où elle sera aimantée et vous verrez s'afficher toutes les applications en cours.</p><p>Dans cette vue, vous pouvez également :</p><ul>    <li>Utilisez l'arête partagée entre deux applications aimantées pour redimensionner les deux applications simultanément.</li>    <li>Ouvrir une nouvelle application à partir de l'affichage des tâches - sélectionnez <strong>Affichage des tâches</strong> dans la barre des tâches, sélectionnez une application, puis faites-la glisser sur un côté pour l'aligner sur l'écran divisé.</li>    <li>Utilisez le bouton précédent de la barre des tâches pour revenir en arrière dans une application ou pour ouvrir une application que vous utilisiez auparavant.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
