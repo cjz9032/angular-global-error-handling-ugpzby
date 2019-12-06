@@ -63,7 +63,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 		if (thinkpad === this.machineType || this.isYogo730()) {
 			this.add = 0; // thinkpad
-			this.initPowerSmartSettingsForThinkPad();
+			this.checkDriverForThinkPad();
 		} else if (ideapad === this.machineType) {
 			this.add = 10; // Ideapad
 			this.initPowerSmartSettingsForIdeaPad();
@@ -101,6 +101,36 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 		} else {
 			this.cache = new IntelligentCoolingCapability();
+		}
+	}
+
+	async checkDriverForThinkPad() {
+		try {
+			if (this.isYogo730()) {
+				const isEMDriverAvailable = await this.getEMDriverStatus();
+				if (!isEMDriverAvailable) {
+					this.logger.info('PowerSmartSettingsComponent:isEMDriverAvailable', isEMDriverAvailable);
+					this.showIC = 0;
+					this.cache.showIC = this.showIC;
+					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+					this.isPowerSmartSettingHidden.emit(true);
+					return false;
+				}
+				this.initPowerSmartSettingsForThinkPad();
+			} else {
+				const isPMDriverAvailable = await this.getPMDriverStatus();
+				if (!isPMDriverAvailable) {
+					this.logger.info('PowerSmartSettingsComponent:isPMDriverAvailable', isPMDriverAvailable);
+					this.showIC = 0;
+					this.cache.showIC = this.showIC;
+					this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+					this.isPowerSmartSettingHidden.emit(true);
+					return false;
+				}
+				this.initPowerSmartSettingsForThinkPad();
+			}
+		} catch (error) {
+			this.logger.info('PowerSmartSettingsComponent:checkDriverForThinkPad', error);
 		}
 	}
 
@@ -159,16 +189,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	// Start Power Smart Settings for IdeaPad
 	async initPowerSmartSettingsForIdeaPad() {
 		try {
-			const isEMDriverAvailable = await this.getEMDriverStatus();
-			this.logger.debug('PowerSmartSettingsComponent:isEMDriverAvailable', isEMDriverAvailable);
-			if (!isEMDriverAvailable) {
-				this.showIC = 0;
-				this.cache.showIC = this.showIC;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
-				this.isPowerSmartSettingHidden.emit(true);
-				return;
-			}
-
 			const response = await this.powerService.getITSModeForICIdeapad();
 			this.logger.debug('getITSModeForICIdeapad: ', response);
 			if (response && !response.available) {
@@ -307,15 +327,6 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	async initPowerSmartSettingsForThinkPad() {
 		try {
 			let isITS = false;
-			const isPMDriverAvailable = await this.getPMDriverStatus();
-			if (!isPMDriverAvailable) {
-				console.log('isPMDriverAvailable', isPMDriverAvailable);
-				this.showIC = 0;
-				this.cache.showIC = this.showIC;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
-				this.isPowerSmartSettingHidden.emit(true);
-				return;
-			}
 			const itsServiceStatus = await this.getITSServiceStatus();
 			const its = await this.getDYTCRevision();
 			this.logger.info('PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad its version', its);
