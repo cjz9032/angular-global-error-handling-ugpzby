@@ -80,11 +80,7 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": {
-								"scripts": true,
-								"styles": true,
-								"vendor": true
-							},
+							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -146,11 +142,7 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": {
-								"scripts": true,
-								"styles": true,
-								"vendor": true
-							},
+							"sourceMap": false,
 							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,

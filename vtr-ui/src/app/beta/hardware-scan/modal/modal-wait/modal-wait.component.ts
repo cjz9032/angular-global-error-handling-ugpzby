@@ -30,7 +30,9 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(){
-		this.shouldCloseModalSubscription.unsubscribe();
+		if (this.shouldCloseModalSubscription) {
+			this.shouldCloseModalSubscription.unsubscribe();
+		}
 	}
 
 	public closeModal() {

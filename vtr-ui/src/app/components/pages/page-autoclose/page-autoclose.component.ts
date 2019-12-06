@@ -71,6 +71,7 @@ export class PageAutocloseComponent implements OnInit {
 			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
 		) {
 			this.isOnline = notification.payload.isOnline;
+			this.fetchCMSArticles();
 		}
 		if (this.isOnline === undefined) {
 			this.isOnline = true;
@@ -171,6 +172,8 @@ export class PageAutocloseComponent implements OnInit {
 					if (success) {
 						this.refreshAutoCloseList();
 						this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
+					} else {
+						this.loggerService.error('Got failure from JS Bridge while adding apps to AutoClose', addApp);
 					}
 				});
 			} catch (error) { }

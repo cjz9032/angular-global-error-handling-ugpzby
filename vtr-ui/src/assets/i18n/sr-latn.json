@@ -632,7 +632,6 @@
             "wifi": "WiFi bezbednost",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
@@ -642,7 +641,8 @@
             "installing": "INSTALIRA SE",
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
-            "notRegistered": "NIJE REGISTROVAN"
+            "notRegistered": "NIJE REGISTROVAN",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -792,10 +792,10 @@
                 "title": "Ažuriranje sistema",
                 "notFound": "Ažuriranje sistema nije pronađeno",
                 "detail": {
-                    "uptoDate": "Softver je ažuran",
-                    "updatedOn": "ažurirano",
-                    "outdated": "Softver je zastareo",
-                    "neverRanUpdate": "nikada nije pokrenuto ažuriranje"
+                    "uptoDate": "Ispravke su proverene ",
+                    "updatedOn": "provereno ",
+                    "outdated": "Ispravke nisu nedavno proverene ",
+                    "neverRanUpdate": "ispravke nikada nisu proverene"
                 }
             },
             "extendedWarranty": "Proširenje garancije",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>"
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
-                "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
+                "thresholdNote": "<b>Napomena:</b> Baterija se ne može automatski napuniti kada je omogućen Prag punjenja baterije.",
                 "seeDetailsLink": "Pogledajte detalje",
                 "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
-                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“"
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+                        "progressText3": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "Sreda",
                             "thurs": "Četvrtak",
                             "fri": "Petak",
-                            "sat": "Subota"
+                            "sat": "Subota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Svaki dan",
                         "weekdays": "Weekdays",
-                        "weekends": "Vikendom"
+                        "weekends": "Vikendom",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
                     "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "PRIMENI"
                     },
                     "website": {
-                        "url": "URL ADRESA VEB LOKACIJE"
+                        "url": "URL ADRESA VEB LOKACIJE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEKST KOJI TREBA UNETI"
+                        "title": "TEKST KOJI TREBA UNETI",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "U potpunosti zaštićen",
-            "fullyDesc": "Čestitamo! Dobro ste zaštićeni.",
             "notFully": "Nije u potpunosti zaštićen",
-            "notFullyDesc": "Niste u potpunosti zaštićeni. Saznajte kako da se bolje zaštitite.",
             "security101": "SAVETNIK ZA BEZBEDNOST 101",
             "firewall": "Zaštitni zid",
             "pwdHealth": "Ispravnost lozinke",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi i povezana kućna bezbednost",
             "connectedHomeSecurity": "Povezana kućna bezbednost",
             "fingerprint": "Čitač otisaka prstiju",
-            "seeAllNetwork": "Pogledajte sve spojene mreže",
-            "maliciousNetwork": "Vaš računar je ovog meseca sprečen pri priključivanju {{maliciousWifi}} zlonamernim mrežama.",
-            "good": "DOBRO",
-            "malicious": "ZLONAMERNO",
-            "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Vaš rezultat bezbednosti zavisi od toga da li ste:",
-            "antivirus": "Da li ste zaštićeni antivirusnim softverom",
-            "password": "Da li imate jake i složene lozinke kojima upravljate na bezbedan način",
-            "vpn": "Da li nadzirete izloženost mreže napadačima",
-            "wifi": "Da li šifrujete svoje lične podatke kada koristite javni WiFi",
-            "windowsHello": "Da li štitite uređaj korišćenjem opcije za bezbedno prijavljivanje",
             "uacTitle": "Šta je to UAC obaveštenje?",
             "uacText": "Kontrola korisničkog naloga je veoma važna bezbednosna funkcija operativnog sistema Windows koja pomaže u sprečavanju potencijalno štetnih programa da menjaju vaš sistem.",
             "windowsTitle": "Zašto treba da aktiviram Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Kako da bolje zaštitim lozinku?",
             "passwordText": "Bezbedno smestite sve svoje lozinke i upravljajte njima tako što ćete ih šifrovati pomoću aplikacije za profesionalnu digitalnu zaštitu umesto da ih samo sačuvate u pregledaču gde im treće strane mogu lako pristupiti bez vašeg znanja.",
             "enhanceTitle": "Šta treba da uradim da bih poboljšao zaštitu bezbednosti?",
-            "enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu."
+            "enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Korišćenje računara kao tableta",
             "description": "<div class='faqInFs4Fb'>    Korišćenje računara kao tableta</div><hr><p>Uz režim tablet računara, Windows je intuitivniji i lakši za korišćenje kada imate uređaj osetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Korišćenje u režimu tablet računara</h3><p>Da biste uključili režim tablet računara, izaberite <strong>Centar aktivnosti</strong> na traci zadataka, a zatim izaberite <strong>Tablet mode</strong> (Režim tablet računara).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali da li vaš uređaj može automatski da uključi režim tablet računara, potražite vaš uređaj na veb lokaciji proizvođača. Podrška za ovu funkciju zavisi od hardvera, upravljačkog programa koji je instaliran i kako je proizvođač podesio uređaj. </p><p> </p><p>U režimu tablet računara, aplikacije se otvaraju u prikazu preko celog ekrana, dajući vam više prostora za rad. Da biste zatvorili aplikaciju, prevucite je na donji deo ekrana.</p><p> </p><h3 class='faqInFs25FbP10'>Savet</h3><p>Traka zadataka je dostupna kada je vaš računar u režimu tablet računara, ali možete da je sakrijete ako želite više prostora na ekranu. Izaberite dugme <strong>Start</strong>, izaberite <strong>Settings (Postavke) </strong>> <strong>System (Sistem) </strong>> <strong> Tablet mode (Režim tablet računara)</strong>, a zatim uključite opciju <strong>Automatically hide the taskbar in tablet mode</strong> (Automatsko skrivanje trake zadataka u režimu tablet računara). Da biste videli skrivenu traku zadataka, prevucite nagore sa dna ekrana ili pređite mišem preko tog dela.</p><h3 class='faqInFs25FbP10'>Istovremeno korišćenje dve aplikacije</h3><p>Da biste naporedno koristili dve aplikacije u režimu tablet računara, prevucite i otvorite aplikaciju nadole i u stranu. Videćete gde će se prikačiti i videćete sve otvorene aplikacije pored nje.</p><p>U ovom prikazu, možete i da radite sledeće:</p><ul>    <li>Koristite deljenu ivicu između dve prikačene aplikacije kako biste istovremeno promenili veličinu obe aplikacije.</li>    <li>Otvorite novu aplikaciju sa trake zadataka. Izaberite <strong>Task view</strong> (Prikaz zadataka) na traci zadataka, izaberite aplikaciju, prevucite je na jednu stranu kako biste je prikačili na podeljeni ekran.</li>    <li>Koristite dugme „Nazad“ na traci zadataka da biste se vratili u aplikaciji ili da biste otvorili aplikaciju koju ste prethodno koristili.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Ispričajte nam o vašim interesovanjima (opcionalno)",
         "personal": "Lična upotreba",
         "business": "Poslovna upotreba",
-		"custom": "Prilagođeno iskustvo",
-		"professional": "Profesionalna upotreba",
+        "custom": "Prilagođeno iskustvo",
+        "professional": "Profesionalna upotreba",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
         "moreInterest": "+ više oblasti interesovanja",
         "title1": "Dobro došli u",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Sačekajte otkazivanje",
         "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga.",
         "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Sačekajte da skeniranje započne",
+        "reminderTimeRetrieveHardwareInformation": "Ovaj proces može potrajati neko vreme kako bi se preuzele informacije o hardveru",
+        "retrievingHardwareInformation": "Preuzimanje informacija o hardveru...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorija",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instaliraj",
-				"installing": "Instaliranje",
-				"downloading": "Preuzimanje",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokreni",
                 "seeMore": "Pogledajte još"

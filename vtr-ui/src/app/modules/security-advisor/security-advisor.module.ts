@@ -9,7 +9,6 @@ import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wi
 import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityWindowsHelloComponent } from 'src/app/components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
 import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-status/connected-home-status.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -85,7 +84,6 @@ library.add(
 		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
-		PageSecurityWindowsHelloComponent,
 		// Widget
 		WidgetSecurityComponent,
 		WidgetMcafeeComponent,

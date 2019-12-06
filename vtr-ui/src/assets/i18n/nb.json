@@ -17,7 +17,7 @@
                         "balText": "Normal CPU og viftehastighet",
                         "quietText": "Lavere CPU-bruk og viftehastighet"
                     },
-                    "wifiSecurity": "Wi-Fi Sikkerhet",
+                    "wifiSecurity": "WiFi Sikkerhet",
                     "dolby": "Dolby",
                     "rapidCharge": "Hurtiglading"
                 },
@@ -632,7 +632,6 @@
             "wifi": "WiFi-sikkerhet",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "AKTIVERT",
             "disabled": "DEAKTIVERT",
             "partiallyProtected": "DELVIS BESKYTTET",
@@ -642,7 +641,8 @@
             "installing": "INSTALLERING",
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
-            "notRegistered": "IKKE REGISTRERT"
+            "notRegistered": "IKKE REGISTRERT",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -792,10 +792,10 @@
                 "title": "Systemoppdateringer",
                 "notFound": "Finner ikke systemoppdatering",
                 "detail": {
-                    "uptoDate": "Programvare er oppdatert",
-                    "updatedOn": "oppdatert",
-                    "outdated": "Programvare er utdatert",
-                    "neverRanUpdate": "kjørte aldri oppdatering"
+                    "uptoDate": "Oppdateringer sjekket ",
+                    "updatedOn": "sjekket den ",
+                    "outdated": "Oppdateringer ikke sjekket nylig ",
+                    "neverRanUpdate": "oppdateringer aldri sjekket"
                 }
             },
             "extendedWarranty": "Utvide garantien",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
-                "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",
+                "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
-                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig»."
+                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Strøminnstillinger",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "progressText2": "{{stage}} av {{stageNum}}: kalibrerer for lite batteristrøm",
+                        "progressText3": "{{stage}} av {{stageNum}}: kalibrerer for fullading",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "ons",
                             "thurs": "Tor",
                             "fri": "fre",
-                            "sat": "lør"
+                            "sat": "lør",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "søndag",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
-                        "weekends": "Helger"
+                        "weekends": "Helger",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
                     "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "BRUK"
                     },
                     "website": {
-                        "url": "NETTADRESSE"
+                        "url": "NETTADRESSE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEKST SOM SKAL SKRIVES INN"
+                        "title": "TEKST SOM SKAL SKRIVES INN",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "FULLSTENDIG BESKYTTET",
-            "fullyDesc": "Gratulerer! Du er godt beskyttet.",
             "notFully": "Ikke fullstendig beskyttet",
-            "notFullyDesc": "Du er ikke fullstendig beskyttet. Finn ut nå hvordan du beskytter deg selv.",
             "security101": "SIKKERHETSRÅDGIVER 101",
             "firewall": "Brannmur",
             "pwdHealth": "Passordtilstand",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi og Sikkerhet for tilkoblede hjem",
             "connectedHomeSecurity": "Sikkerhet for tilkoblede hjem",
             "fingerprint": "Fingeravtrykkleser",
-            "seeAllNetwork": "Se alle sammenkoblede nettverk",
-            "maliciousNetwork": "Hindret at datamaskinen ble med i {{maliciousWifi}}skadelig nettverk denne måneden.",
-            "good": "GOD",
-            "malicious": "SKADELIG",
-            "suspicious": "MISTENKELIG",
-            "securityScoreDepends": "Sikkerhetsresultatet avhenger av om du er:",
-            "antivirus": "Om du er beskyttet av antivirusprogramvare",
-            "password": "Om du har sterke passord som du håndterer på en sikker måte",
-            "vpn": "Om du overvåker nettverkets sårbarhet for angripere",
-            "wifi": "Om du krypterer personlige data når du bruker offentlig WiFi",
-            "windowsHello": "Om du beskytter enheten ved hjelp av sikre påloggingsmåter",
             "uacTitle": "Hva er UAC-varsling?",
             "uacText": "Brukerkontokontroll er en svært viktig sikkerhetsfunksjon i Windows som bidrar til å hindre at potensielt skadelige programmer gjør endringer på systemet.",
             "windowsTitle": "Hvorfor må jeg aktive Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Hvordan beskytter du passordene dine bedre?",
             "passwordText": "Lagre og administrere alle passordene dine på en sikker måte ved å kryptere dem med en profesjonell digital beskyttelsesapp i stedet for bare å lagre dem i nettleserne, som tredjeparter enkelt kan få tilgang uten din viten.",
             "enhanceTitle": "Hva bør jeg gjøre for å forbedre sikkerhetsbeskyttelsen?",
-            "enhanceText": "Vi anbefaler at du beskytter enhetene dine med antivirusprogramvare og brannmur, og konfigurerer UAC-varsling som minimumsbeskyttelse. I tillegg bør du opprette sterke passord og administrere dem på en sikker måte, og kryptere dataene dine som avansert beskyttelse når du bruker offentlige nettverk."
+            "enhanceText": "Vi anbefaler at du beskytter enhetene dine med antivirusprogramvare og brannmur, og konfigurerer UAC-varsling som minimumsbeskyttelse. I tillegg bør du opprette sterke passord og administrere dem på en sikker måte, og kryptere dataene dine som avansert beskyttelse når du bruker offentlige nettverk.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Bruke datamaskinen som et nettbrett",
             "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Fortell oss om interessene dine (valgfritt)",
         "personal": "Personlig bruk",
         "business": "Jobbrelatert bruk",
-		"custom": "Egendefinert brukeropplevelse",
-		"professional": "Profesjonell bruk",
+        "custom": "Egendefinert brukeropplevelse",
+        "professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
         "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Vent mens avbrytingen pågår",
         "pluginNotUpdate": "Maskinvaresøk er ikke tilgjengelig fordi det er utdatert. Du må oppgradere tjenesten.",
         "testNotApplicable": "Ikke aktuelt for egendefinert skanning",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Vent til skanningen starter",
+        "reminderTimeRetrieveHardwareInformation": "Det kan ta en stund å hente maskinvareinformasjonen",
+        "retrievingHardwareInformation": "Henter maskinvareinformasjon...",
         "pluginTokens": {
             "cpu": "Prosessor",
             "memory": "Minne",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installer",
-				"installing": "Installerer",
-				"downloading": "Laster ned",
+                "installing": "Installerer",
+                "downloading": "Laster ned",
                 "installed": "Installert",
                 "launch": "Start",
                 "seeMore": "Se mer"

@@ -632,7 +632,6 @@
             "wifi": "WiFi セキュリティー",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "有効",
             "disabled": "無効",
             "partiallyProtected": "部分的に保護",
@@ -642,7 +641,8 @@
             "installing": "インストール中",
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
-            "notRegistered": "未登録"
+            "notRegistered": "未登録",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -792,10 +792,10 @@
                 "title": "システム アップデート",
                 "notFound": "システム更新が見つかりません",
                 "detail": {
-                    "uptoDate": "ソフトウェアは最新です",
-                    "updatedOn": "更新日",
-                    "outdated": "古いソフトウェア",
-                    "neverRanUpdate": "更新を実行したことがありません"
+                    "uptoDate": "更新を確認しました",
+                    "updatedOn": "確認日",
+                    "outdated": "更新を最近確認していません",
+                    "neverRanUpdate": "更新を確認したことはありません"
                 }
             },
             "extendedWarranty": "保証の延長",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源が接続されています。</b>"
                 },
                 "batteryNotDetected": "バッテリーが検出されませんでした",
-                "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",
+                "thresholdNote": "<b>注:</b>バッテリー充電のしきい値が有効な場合は、バッテリーを完全に充電することはできません。",
                 "seeDetailsLink": "詳細を見る",
                 "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
-                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。"
+                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: 満充電にして調整",
                         "progressText2": "{{stage}}/{{stageNum}}: 低バッテリー残量にして調整",
+                        "progressText3": "{{stage}}/{{stageNum}}: 満充電にして調整",
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
@@ -1090,7 +1112,7 @@
                         },
                         "popup": {
                             "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電  -->  バッテリーを完全に放電  -->  バッテリーを完全に再充電",
-                            "description2": "注: <br>1. この処理には数時間かかる場合があります。この間、コンピューターの使用は避けてください。<br>2.開いているすべてのアプリを閉じて、コンピューターを AC 電源に接続します。<br>3.プロセス中、バッテリー充電のしきい値機能は無効になります。",
+                            "description2": "注: <br>1. この処理には数時間かかる場合があります。この間、コンピューターの使用は避けてください。<br>2. 開いているすべてのアプリを閉じて、コンピューターを AC 電源に接続します。<br>3. プロセス中、バッテリー充電のしきい値機能は無効になります。",
                             "continue": "続行",
                             "cancel": "キャンセル",
                             "yes": "はい",
@@ -1132,7 +1154,8 @@
                             "wed": "水曜日",
                             "thurs": "木曜日",
                             "fri": "金曜日",
-                            "sat": "土曜日"
+                            "sat": "土曜日",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "日曜日",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "毎日",
                         "weekdays": "平日",
-                        "weekends": "週末"
+                        "weekends": "週末",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
                     "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "適用"
                     },
                     "website": {
-                        "url": "Web サイトの URL"
+                        "url": "Web サイトの URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "入力するテキスト"
+                        "title": "入力するテキスト",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "完全保護",
-            "fullyDesc": "おめでとうございます。十分に保護されています。",
             "notFully": "保護は未完全",
-            "notFullyDesc": "保護は完全ではありません。より十分な保護機能を得る方法。",
             "security101": "セキュリティー・アドバイザー 101",
             "firewall": "ファイアウォール",
             "pwdHealth": "パスワードの健全性",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi/接続ホーム・セキュリティー",
             "connectedHomeSecurity": "接続ホーム・セキュリティー",
             "fingerprint": "指紋センサー",
-            "seeAllNetwork": "結合されたネットワークをすべて表示",
-            "maliciousNetwork": "今月、{{maliciousWifi}}の悪意のあるネットワークへのコンピューターの参加を防止しました。",
-            "good": "良好",
-            "malicious": "悪意",
-            "suspicious": "疑わしい",
-            "securityScoreDepends": "セキュリティの結果は、次の条件によって異なります。",
-            "antivirus": "ウイルス対策ソフトウェアで保護されている",
-            "password": "強力で複雑なパスワードを安全な方法で管理している",
-            "vpn": "攻撃者に対してネットワークが露出しているかどうかを監視している",
-            "wifi": "公共の WiFi を使用するときは個人データを暗号化している",
-            "windowsHello": "安全なログイン・オプションを使用してデバイスを保護している",
             "uacTitle": "UAC 通知とは何ですか?",
             "uacText": "ユーザーアカウント制御は、Windows の非常に重要なセキュリティ機能であり、潜在的に有害なプログラムによってシステムが変更されるのを防ぎます。",
             "windowsTitle": "Windows をアクティブにする必要があるのはなぜですか?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "パスワードをより良く保護する方法は?",
             "passwordText": "知らないうちに第三者が簡単にアクセスできるブラウザーに単に保存するのではなく、専用のデジタル保護アプリで、暗号化されたすべてのパスワードを安全に保存および管理します。",
             "enhanceTitle": "セキュリティ保護を強化するにはどうすればよいですか?",
-            "enhanceText": "デバイスをアンチウイルスソフトウェアとファイアウォールで保護し、最小限の保護で UAC 通知を設定することを強くお勧めします。強力なパスワードを作成して安全な方法で管理し、高度な保護として公衆ネットワークを使用しながらデータを暗号化します。"
+            "enhanceText": "デバイスをアンチウイルスソフトウェアとファイアウォールで保護し、最小限の保護で UAC 通知を設定することを強くお勧めします。強力なパスワードを作成して安全な方法で管理し、高度な保護として公衆ネットワークを使用しながらデータを暗号化します。",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "PC をタブレットのように使用する",
             "description": "<div class='faqInFs4Fb'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 class='faqInFs25FbP10'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 class='faqInFs25FbP10'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 class='faqInFs25FbP10'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "興味のあることを教えてください (任意)",
         "personal": "個人用",
         "business": "仕事用",
-		"custom": "カスタム・エクスペリエンス",
-		"professional": "業務用",
+        "custom": "カスタム・エクスペリエンス",
+        "professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
         "moreInterest": "+ その他のことに興味がある",
         "title1": "ようこそ",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "キャンセルの進捗をお待ちください",
         "pluginNotUpdate": "ハードウェア・スキャンは古いため利用できません。アップグレードしてください。",
         "testNotApplicable": "カスタム・スキャンには適用されません",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "スキャンが開始されるまで待ちます",
+        "reminderTimeRetrieveHardwareInformation": "この処理には、ハードウェア情報の取得に多少時間がかかる場合があります",
+        "retrievingHardwareInformation": "ハードウェア情報を取得しています...",
         "pluginTokens": {
             "cpu": "プロセッサー",
             "memory": "メモリー",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "インストール",
-				"installing": "インストール",
-				"downloading": "ダウンロード中",
+                "installing": "インストール",
+                "downloading": "ダウンロード中",
                 "installed": "インストール済み",
                 "launch": "起動",
                 "seeMore": "詳細を見る"

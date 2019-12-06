@@ -12,7 +12,7 @@ import {
 	retryWhen,
 	shareReplay,
 	switchMap,
-	take
+	take, tap
 } from 'rxjs/operators';
 import {
 	TaskActionWithTimeoutService,
@@ -29,6 +29,9 @@ export interface MessageFromFigleaf {
 enum FigleafState {
 	ready,
 	notOnboarded,
+	invalidRequest,
+	missingParameters,
+	unknown,
 	exit
 }
 
@@ -41,14 +44,20 @@ export class CommunicationWithFigleafService {
 
 	isFigleafReadyForCommunication$ = this.isStateEqual(FigleafState.ready);
 	isFigleafNotOnboarded$ = this.isStateEqual(FigleafState.notOnboarded);
-	isFigleafInExit$ = this.isStateEqual(FigleafState.exit);
+	isFigleafInExit$ = this.isStateEqual(FigleafState.exit).pipe(
+		tap((isFigleafInExit) => {
+			if (isFigleafInExit) {
+				this.communicationSwitcherService.stopPulling();
+			}
+		})
+	);
 
 	subscription: Subscription[] = [];
 
 	constructor(
 		private ngZone: NgZone,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
-		private communicationSwitcherService: CommunicationSwitcherService
+		private communicationSwitcherService: CommunicationSwitcherService,
 	) {
 		FigleafConnector.onConnect(() => {
 			// this.ngZone.run(() => this.isFigleafInstalled$.next(true));
@@ -56,9 +65,13 @@ export class CommunicationWithFigleafService {
 
 		FigleafConnector.onDisconnect(() => {
 			this.ngZone.run(() => {
-				this.sendTestMessage().pipe(
-					retryWhen((errors) => errors.pipe(delay(1000), take(5), concatMap(() => throwError(new Error('oops!'))))),
-				).subscribe(() => {},
+				this.communicationSwitcherService.isPullingActive$.pipe(take(1)).pipe(
+					switchMap((res) => {
+						return res ? this.sendTestMessage().pipe(
+							retryWhen((errors) => errors.pipe(delay(1000), take(5), concatMap(() => throwError(new Error('oops!')))))
+						) : EMPTY;
+					})).subscribe(() => {
+					},
 					(err) => {
 						this.figleafState$.next(null);
 						this.communicationSwitcherService.startPulling();
@@ -76,7 +89,9 @@ export class CommunicationWithFigleafService {
 	private receiveFigleafReadyForCommunicationState() {
 		const figleafConnectSubscription = timer(0, 3000).pipe(
 			switchMap(() => this.communicationSwitcherService.isPullingActive$.pipe(take(1))),
-			switchMap((res) => res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))),
+			switchMap((res) => {
+				return res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY));
+			}),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			this.figleafState$.next(figleafStatus.status);
@@ -98,15 +113,7 @@ export class CommunicationWithFigleafService {
 	}
 
 	private sendTestMessage() {
-		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}))
-			.pipe(catchError((e) => {
-				if (e.message === 'App in exit state') {
-					this.communicationSwitcherService.stopPulling();
-					return this.checkIfFigleafInstalled();
-				}
-
-				return throwError(e);
-			}));
+		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}));
 	}
 
 	sendMessageToFigleaf<T>(message: MessageToFigleaf): Observable<T> {
@@ -135,7 +142,8 @@ export class CommunicationWithFigleafService {
 
 	private checkIfFigleafInstalled() {
 		return from(FigleafConnector.checkIfFigleafInstalled()).pipe(
-			map((res) => res > 0 ? {type: 'testfigleafStatus', status: FigleafState.exit} : throwError('ooops'))
+			map(([checkIfFigleafInstalled, isExitFlowActivate]) => checkIfFigleafInstalled > 0 || JSON.parse(isExitFlowActivate)),
+			map((res) => res ? {type: 'testfigleafStatus', status: FigleafState.exit} : throwError('ooops'))
 		);
 	}
 }

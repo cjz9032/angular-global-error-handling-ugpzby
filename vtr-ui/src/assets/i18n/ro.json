@@ -632,7 +632,6 @@
             "wifi": "Securitate WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -642,7 +641,8 @@
             "installing": "SE INSTALEAZĂ",
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
-            "notRegistered": "NEÎNREGISTRAT"
+            "notRegistered": "NEÎNREGISTRAT",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -792,10 +792,10 @@
                 "title": "Actualizare sistem",
                 "notFound": "Actualizarea sistemului a fost găsită",
                 "detail": {
-                    "uptoDate": "Software actualizat",
-                    "updatedOn": "actualizat pe",
-                    "outdated": "Software învechit",
-                    "neverRanUpdate": "nu a fost actualizat niciodată"
+                    "uptoDate": "S-a verificat dacă există actualizări ",
+                    "updatedOn": "s-a verificat la ",
+                    "outdated": "Nu s-a verificat recent dacă există actualizări ",
+                    "neverRanUpdate": "nu s-a verificat niciodată dacă există actualizări"
                 }
             },
             "extendedWarranty": "Extindere garanție",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
-                "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
+                "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
                 "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
-                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
+                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+                        "progressText3": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "miercuri",
                             "thurs": "joi",
                             "fri": "vineri",
-                            "sat": "sâmbătă"
+                            "sat": "sâmbătă",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "duminică",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "In fiecare zi",
                         "weekdays": "Zilele saptamanii",
-                        "weekends": "Weekend-uri"
+                        "weekends": "Weekend-uri",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
                     "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1346,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "activați caracteristica zoom pe ecranele de înaltă rezoluție",
+                        "description": "activaţi caracteristica zoom pe ecranele de înaltă rezoluţie",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1436,10 +1490,14 @@
                         "title": "APLICARE"
                     },
                     "website": {
-                        "url": "ADRESĂ URL SITE"
+                        "url": "ADRESĂ URL SITE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXT DE INTRODUS"
+                        "title": "TEXT DE INTRODUS",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Complet protejat",
-            "fullyDesc": "Felicitări! Sunteți bine protejat.",
             "notFully": "Neprotejat complet",
-            "notFullyDesc": "Nu sunteți complet protejat. Aflați acum ce puteți face ca să vă protejați mai bine.",
             "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
             "firewall": "Paravan de protecție",
             "pwdHealth": "Sănătatea parolei",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi și securitate conectată, la domiciliu",
             "connectedHomeSecurity": "Securitate conectată, la domiciliu",
             "fingerprint": "Cititor de amprentă",
-            "seeAllNetwork": "Vizualizați toate rețelele asociate",
-            "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
-            "good": "BUN",
-            "malicious": "RĂU-INTENȚIONAT",
-            "suspicious": "SUSPECTED",
-            "securityScoreDepends": "Rezultatul dvs. de securitate depinde dacă sunteţi:",
-            "antivirus": "Dacă sunteți protejat de software antivirus",
-            "password": "Dacă aveți parole puternice și complexe gestionate într-un mod sigur",
-            "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
-            "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
-            "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure",
             "uacTitle": "Ce este notificarea UAC?",
             "uacText": "Control cont utilizator (User Account Control – UAC) este o caracteristică de securitate foarte importantă din Windows, care împiedică efectuarea de modificări în sistemul dvs. de programe potenţial dăunătoare.",
             "windowsTitle": "De ce trebuie să activez Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Cum să vă protejaţi mai bine parola?",
             "passwordText": "Stocaţi şi gestionaţi în mod securizat toate parolele criptate cu o aplicaţie profesională de protecţie digitală, în loc să le stocaţi pur şi simplu în browserele dvs., care pot fi accesate cu uşurinţă de către terţe părţi, fără cunoştinţa dvs.",
             "enhanceTitle": "Ce ar trebui să fac pentru a îmbunătăţi protecţia de securitate?",
-            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice."
+            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1960,7 +2041,7 @@
                 "back": "ÎNAPOI"
             },
             "container": {
-                "title": "Securitate Wifi Lenovo",
+                "title": "Securitate WiFi Lenovo",
                 "name": "SECURITATE WIFI",
                 "enable": "ACTIVAT",
                 "disable": "DEZACTIVAT",
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Folosiți PC-ul ca o tabletă",
             "description": "<div class='faqInFs4Fb'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 class='faqInFs25FbP10'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 class='faqInFs25FbP10'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 class='faqInFs25FbP10'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
-		"custom": "Experiență personalizată",
-		"professional": "Utilizare la nivel profesionist",
+        "custom": "Experiență personalizată",
+        "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
         "testNotApplicable": "Nu se aplică la scanarea personalizată",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Aşteptaţi până când începe scanarea",
+        "reminderTimeRetrieveHardwareInformation": "Acest proces poate dura un timp cât timp se preiau informaţiile despre hardware",
+        "retrievingHardwareInformation": "Se preiau informaţiile despre hardware...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Memorie",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Instalare",
-				"installing": "Instalare în curs",
-				"downloading": "Descărcare în curs",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"

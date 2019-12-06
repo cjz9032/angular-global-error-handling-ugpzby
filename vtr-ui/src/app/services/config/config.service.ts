@@ -69,15 +69,6 @@ export class ConfigService {
 				this.notifyMenuChange(this.wifiSecurity.isSupported);
 			});
 		}
-
-		this.windowsHello = this.securityAdvisor.windowsHello;
-		if (!this.windowsHello.fingerPrintStatus) {
-			this.windowsHello.refresh();
-		}
-		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (result) => {
-			this.notifyMenuChange(result);
-		});
-
 	}
 
 	getMenuItems(isGaming) {
@@ -159,17 +150,17 @@ export class ConfigService {
 
 	showSecurityItem(region, items) {
 		const securityItem = items.find((item) => item.id === 'security');
+		const cacheWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, false);
 		if (securityItem) {
+			items = this.supportFilter(items, 'wifi-security', cacheWifi);
 			if (region === 'cn') {
 				items = this.supportFilter(items, 'internet-protection', false);
 			} else {
 				items = this.supportFilter(items, 'internet-protection', true);
 			}
-			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-			items = this.supportFilter(items, 'windows-hello', cacheShowWindowsHello);
-			if (this.windowsHello.fingerPrintStatus) {
-				items = this.supportFilter(items, 'windows-hello', this.windowsHelloService.showWindowsHello());
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, this.windowsHelloService.showWindowsHello());
+			if (typeof this.wifiSecurity.isSupported === 'boolean') {
+				items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 			}
 		}
 	}
@@ -201,12 +192,7 @@ export class ConfigService {
 				item.hide = !isSupported;
 			}
 			if (item.subitems.length > 0) {
-				item.subitems.forEach(subitem => {
-					if (subitem.id === id) {
-						subitem.isSupported = isSupported;
-						subitem.hide = !isSupported;
-					}
-				});
+				item.subitems = this.supportFilter(item.subitems, id, isSupported);
 			}
 		});
 		return menu;

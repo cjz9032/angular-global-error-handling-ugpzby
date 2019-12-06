@@ -17,7 +17,7 @@
                         "balText": "Normal CPU ve fan hızı",
                         "quietText": "Düşük CPU kullanımı Düşük fan hızı"
                     },
-                    "wifiSecurity": "Wifi Güvenliği",
+                    "wifiSecurity": "WiFi Güvenliği",
                     "dolby": "Dolby",
                     "rapidCharge": "Hızlı Şarj"
                 },
@@ -632,7 +632,6 @@
             "wifi": "WiFi Güvenliği",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ETKİN",
             "disabled": "DEVRE DIŞI",
             "partiallyProtected": "KISMEN KORUNUYOR",
@@ -642,7 +641,8 @@
             "installing": "YÜKLENİYOR",
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
-            "notRegistered": "KAYITLI DEĞİL"
+            "notRegistered": "KAYITLI DEĞİL",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -792,10 +792,10 @@
                 "title": "Sistem Güncellemesi",
                 "notFound": "Sistem güncellemesi bulunamadı",
                 "detail": {
-                    "uptoDate": "Yazılım güncel",
-                    "updatedOn": "güncelleme",
-                    "outdated": "Yazılım güncel değil",
-                    "neverRanUpdate": "hiç güncelleme çalıştırılmadı"
+                    "uptoDate": "Güncellemeler denetlendi ",
+                    "updatedOn": "denetlenme tarihi ",
+                    "outdated": "Güncellemeler yakın zamanda denetlenmedi ",
+                    "neverRanUpdate": "güncellemeler hiç denetlenmedi"
                 }
             },
             "extendedWarranty": "Garantiyi uzat",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
                 },
                 "batteryNotDetected": "Pil algılanmadı",
-                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
+                "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
                 "seeDetailsLink": "Ayrıntıları görün",
                 "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
-                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur."
+                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "Çarşamba",
                             "thurs": "Perşembe",
                             "fri": "Cuma",
-                            "sat": "Cumartesi"
+                            "sat": "Cumartesi",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Pazar",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Her gün",
                         "weekdays": "Hafta içi",
-                        "weekends": "Hafta sonları"
+                        "weekends": "Hafta sonları",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
                     "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "UYGULA"
                     },
                     "website": {
-                        "url": "WEB SİTESİ URL'Sİ"
+                        "url": "WEB SİTESİ URL'Sİ",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "GİRİLECEK METİN"
+                        "title": "GİRİLECEK METİN",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Tam korunuyor",
-            "fullyDesc": "Tebrikler! Çok iyi korunuyorsunuz.",
             "notFully": "Tam olarak korunmuyor",
-            "notFullyDesc": "Tam olarak korunmuyorsunuz. Kendinizi nasıl daha iyi koruyabileceğinizi öğrenin.",
             "security101": "GÜVENLİK DANIŞMANI 101",
             "firewall": "Güvenlik Duvarı",
             "pwdHealth": "Parola Durumu",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi ve Bağlı Ev Güvenliği",
             "connectedHomeSecurity": "Bağlı Ev Güvenliği",
             "fingerprint": "Parmak İzi Okuyucu",
-            "seeAllNetwork": "Katılım sağlanan tüm ağları göster",
-            "maliciousNetwork": "Bu ay bilgisayarınızın {{maliciousWifi}} kötü amaçlı ağa katılması önlendi.",
-            "good": "İYİ",
-            "malicious": "KÖTÜ AMAÇLI",
-            "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Güvenlik sonucunuz aşağıdakilere bağlıdır:",
-            "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
-            "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
-            "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
-            "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
-            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız",
             "uacTitle": "UAC bildirimi nedir?",
             "uacText": "Kullanıcı Hesabı Denetimi, zararlı olabilecek programların sisteminizde değişiklik yapmasını önlemeye yardımcı olan çok önemli bir Windows güvenlik özelliğidir.",
             "windowsTitle": "Neden etkin bir Windows'a ihtiyacım var?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Parolalar nasıl daha iyi korunur?",
             "passwordText": "Tüm parolalarınızı 3. tarafların bilginiz olmadan kolayca erişebileceği tarayıcılarınızda saklamak yerine, profesyonel bir dijital koruma uygulamasıyla şifreleyerek güvenle saklayın ve yönetin.",
             "enhanceTitle": "Güvenlik korumasını geliştirmek için ne yapmalıyım?",
-            "enhanceText": "Cihazlarınızı virüsten koruma yazılımı ve güvenlik duvarı ile korumanızı, UAC bildirimini minimum koruma düzeyine ayarlamanızı önemle tavsiye ederiz. Ayrıca, güçlü parolalar oluşturun ve bunları güvenli bir şekilde yönetin; gelişmiş koruma olarak genel ağları kullanırken verilerinizi şifreleyin."
+            "enhanceText": "Cihazlarınızı virüsten koruma yazılımı ve güvenlik duvarı ile korumanızı, UAC bildirimini minimum koruma düzeyine ayarlamanızı önemle tavsiye ederiz. Ayrıca, güçlü parolalar oluşturun ve bunları güvenli bir şekilde yönetin; gelişmiş koruma olarak genel ağları kullanırken verilerinizi şifreleyin.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1960,7 +2041,7 @@
                 "back": "GERİ"
             },
             "container": {
-                "title": "Lenovo Wifi Güvenliği",
+                "title": "Lenovo WiFi Güvenliği",
                 "name": "WIFI GÜVENLİĞİ",
                 "enable": "ETKİN",
                 "disable": "DEVRE DIŞI",
@@ -1970,7 +2051,7 @@
                 "connect": "Son bağlantı",
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
-                "button": "Wifi güvenliğini etkinleştirin",
+                "button": "WiFi güvenliğini etkinleştirin",
                 "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
             },
             "threatlocator": {
@@ -2045,7 +2126,7 @@
                 "pass": "BAŞARILI OLDU",
                 "learnMoreAboutSecurityHealth": "Bu bileşenlerin her biri hakkında daha fazla bilgiyi <tag>burada</tag> bulabilirsiniz.",
                 "peaceOfMind": "Daha huzurlu olmak ister misiniz?",
-                "button": "Wifi güvenliğini etkinleştirin"
+                "button": "WiFi güvenliğini etkinleştirin"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Bilgisayarınızın tablet gibi kullanılması",
             "description": "<div class='faqInFs4Fb'>    Bilgisayarınızın tablet gibi kullanılması</div><hr><p>Tablet modu, dokunmatik ekranlı bir cihazınız varsa Windows'u daha sezgisel ve kullanımı kolay hale getirir.</p><h3 class='faqInFs25FbP10'>Tablet modunun kullanılması</h3><p>Tablet modunu açmak için görev çubuğunda <strong>işlem merkezini</strong> açın, ardından <strong>Tablet mode</strong> (Tablet modu) seçeneğini belirleyin.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Not</h3><p>Cihazınızın tablet modunu otomatik olarak açıp açamayacağını öğrenmek için üreticinin web sitesinde cihazınızı arayın. Bu özelliğe yönelik destek donanıma, yüklü sürücüye ve cihazın üretici tarafından nasıl ayarlandığına bağlıdır. </p><p> </p><p>Tablet modunda, uygulamalar tam ekran olarak açılarak size daha fazla çalışma alanı sağlar. Uygulamayı kapatmak için ekranın altına doğru sürükleyin.</p><p> </p><h3 class='faqInFs25FbP10'>İpucu</h3><p>Bilgisayarınız tablet modundayken görev çubuğu kullanılabilir ancak ekranda daha fazla yer açmak istiyorsanız görev çubuğunu gizleyebilirsiniz. <strong>Start </strong>(Başlat) düğmesini seçin, <strong>Settings </strong>(Ayarlar) > <strong>System </strong>(Sistem) > <strong> Tablet mode </strong>(Tablet modu) seçeneğini belirleyin, ardından <strong>Automatically hide the taskbar in tablet mode</strong> (Tablet modunda görev çubuğunu otomatik olarak gizle) seçeneğini açın. Gizli görev çubuğunu görmek için ekranın alt kısmından yukarı doğru kaydırın veya farenizi kullanarak üzerine gelin.</p><h3 class='faqInFs25FbP10'>İki uygulamanın aynı anda kullanılması</h3><p>Tablet modunda iki uygulamayı yan yana kullanmak için açık olan bir uygulamayı aşağı ve yana doğru sürükleyin. Nereye tutturulacağı gösterilir ve uygulamanın yanında açık olan diğer uygulamaları görürsünüz.</p><p>Bu görünümde şunları da yapabilirsiniz:</p><ul>    <li>Her iki uygulamayı aynı anda yeniden boyutlandırmak için iki tutturulmuş uygulama arasındaki paylaşılan kenarı kullanın.</li>    <li>Görev görünümünden yeni bir uygulama açın. Görev çubuğunda <strong>Task view</strong> (Görev görünümü) öğesini seçin, bir uygulama belirleyin, ardından bölünmüş ekranınıza tutturmak için bir tarafa sürükleyin.</li>    <li>Bir uygulamaya geri dönmek veya daha önce kullandığınız bir uygulamayı açmak için görev çubuğundaki geri düğmesini kullanın.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Bize ilgi alanlarınızdan bahsedin (isteğe bağlı)",
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
-		"custom": "Özel Deneyim",
-		"professional": "Profesyonel Kullanım",
+        "custom": "Özel Deneyim",
+        "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
         "testNotApplicable": "Özel tarama için geçerli değildir",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Tarama başlayana kadar bekleyin",
+        "reminderTimeRetrieveHardwareInformation": "Bu işlemin donanım bilgilerinizi toplaması biraz zaman alabilir",
+        "retrievingHardwareInformation": "Donanım bilgileri alınıyor...",
         "pluginTokens": {
             "cpu": "İşlemci",
             "memory": "Bellek",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Kur",
-				"installing": "Kurma",
-				"downloading": "Karşıdan yükleniyor",
+                "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
                 "installed": "Kurulu",
                 "launch": "Başlat",
                 "seeMore": "Daha Fazla"

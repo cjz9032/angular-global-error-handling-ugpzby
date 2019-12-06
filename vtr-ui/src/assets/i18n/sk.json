@@ -17,7 +17,7 @@
                         "balText": "Normálne CPU a otáčky ventilátora",
                         "quietText": "Nižšie využitie CPU a otáčky vent."
                     },
-                    "wifiSecurity": "Zabezpečenie Wifi",
+                    "wifiSecurity": "Zabezpečenie WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Rýchle nabíjanie"
                 },
@@ -632,7 +632,6 @@
             "wifi": "Zabezpečenie WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ZAPNUTÉ",
             "disabled": "VYPNUTÉ",
             "partiallyProtected": "ČIASTOČNE CHRÁNENÉ",
@@ -642,7 +641,8 @@
             "installing": "INŠTALÁCIA",
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
-            "notRegistered": "NEREGISTROVANÉ"
+            "notRegistered": "NEREGISTROVANÉ",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -792,10 +792,10 @@
                 "title": "Aktualizácia systému",
                 "notFound": "Aktualizácia systému sa nenašla",
                 "detail": {
-                    "uptoDate": "Softvér je aktualizovaný",
-                    "updatedOn": "aktualizovaný",
-                    "outdated": "Zastaraný softvér",
-                    "neverRanUpdate": "nikdy nebola spustená aktualizácia"
+                    "uptoDate": "Aktualizácie boli skontrolované ",
+                    "updatedOn": "skontrolované ",
+                    "outdated": "Aktualizácie neboli dlho kontrolované ",
+                    "neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
                 }
             },
             "extendedWarranty": "Rozšíriť záruku",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>"
                 },
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
-                "thresholdNote": "<b>Poznámka:</b> Ak chcete predĺžiť životnosť batérie, musíte ju nastaviť na zastavenie nabíjania pri kapacite {{value}}%.",
+                "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
                 "seeDetailsLink": "Zobraziť podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
-                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší."
+                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibrácia na nízku úroveň nabitia batérie",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrácia na úplné nabitie",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "streda",
                             "thurs": "štvrtok",
                             "fri": "piatok",
-                            "sat": "sobota"
+                            "sat": "sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Každý deň",
                         "weekdays": "Dni v týždni",
-                        "weekends": "víkendy"
+                        "weekends": "víkendy",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "POUŽIŤ"
                     },
                     "website": {
-                        "url": "ADRESA URL WEBOVEJ LOKALITY"
+                        "url": "ADRESA URL WEBOVEJ LOKALITY",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ"
+                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Plne chránené",
-            "fullyDesc": "Blahoželáme! Ste dobre chránení.",
             "notFully": "Nie plne chránené",
-            "notFullyDesc": "Nie ste úplne chránení. Zistite, ako sa lepšie chrániť.",
             "security101": "PORADCA ZABEZPEČENÍM 101",
             "firewall": "Brána firewall",
             "pwdHealth": "Sila hesla",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "Zabezpečenie WiFi a prepojenej domácnosti",
             "connectedHomeSecurity": "Zabezpečenie prepojenej domácnosti",
             "fingerprint": "Snímač odtlačkov prstov",
-            "seeAllNetwork": "Zobraziť všetky pripojené siete",
-            "maliciousNetwork": "Tento mesiac sa zabránilo počítaču pripojiť k {{maliciousWifi}} škodlivým sieťam.",
-            "good": "DOBRÉ",
-            "malicious": "ŠKODLIVÉ",
-            "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Výsledok zabezpečenia závisí od toho, či ste:",
-            "antivirus": "Ste chránení antivírusovým softvérom;",
-            "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
-            "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
-            "wifi": "Šifrujete svoje osobné údaje pri používaní verejných sietí WiFi;",
-            "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia.",
             "uacTitle": "Čo je oznámenie kontroly používateľských kont (UAC)?",
             "uacText": "Kontrola používateľských kont je veľmi dôležitá bezpečnostná funkcia systému Windows, ktorá pomáha zabrániť potenciálne škodlivým programom vykonávať zmeny v systéme.",
             "windowsTitle": "Prečo potrebujem aktívny systém Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Ako si lepšie chrániť heslo?",
             "passwordText": "Bezpečne ukladajte a spravujte všetky svoje heslá šifrované profesionálnou aplikáciou digitálnej ochrany namiesto toho, aby ste ich jednoducho ukladali do prehliadačov, ku ktorým majú bez vášho vedomia prístup tretie strany.",
             "enhanceTitle": "Čo mám urobiť na posilnenie bezpečnostnej ochrany?",
-            "enhanceText": "Dôrazne odporúčame, aby ste si svoje zariadenia chránili antivírusovým softvérom a bránou firewall, aby ste nastavili upozornenie UAC na minimálnu úroveň ochrany. Okrem toho vytvárajte silné heslá a bezpečne spravujte, pri používaní verejnej siete šifrujte svoje údaje v rámci rozšírenej ochrany."
+            "enhanceText": "Dôrazne odporúčame, aby ste si svoje zariadenia chránili antivírusovým softvérom a bránou firewall, aby ste nastavili upozornenie UAC na minimálnu úroveň ochrany. Okrem toho vytvárajte silné heslá a bezpečne spravujte, pri používaní verejnej siete šifrujte svoje údaje v rámci rozšírenej ochrany.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1960,7 +2041,7 @@
                 "back": "SPÄŤ"
             },
             "container": {
-                "title": "Zabezpečenie Wi-Fi od spoločnosti Lenovo",
+                "title": "Zabezpečenie WiFi od spoločnosti Lenovo",
                 "name": "ZABEZPEČENIE WIFI",
                 "enable": "ZAPNUTÉ",
                 "disable": "VYPNUTÉ",
@@ -1971,7 +2052,7 @@
                 "showmore": "Zobraziť viac",
                 "showless": "Zobraziť menej",
                 "button": "Zapnúť zabezpečenie WiFi",
-                "disableDecribe": "Zabezpečenie Wi-Fi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
+                "disableDecribe": "Zabezpečenie WiFi od spoločnosti Lenovo je pokročilá cloudová softvérová služba, ktorá pomáha vášmu zariadeniu odlíšiť bezpečné bezdrôtové siete od tých potenciálne škodlivých."
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Používanie počítača ako tabletu",
             "description": "<div class='faqInFs4Fb'>    Používanie počítača ako tabletu</div><hr><p>Vďaka režimu tabletu je systém Windows intuitívnejší a jednoduchšie sa používa, ak máte zariadenie s dotykovou obrazovkou.</p><h3 class='faqInFs25FbP10'>Používanie režimu tabletu</h3><p>Ak chcete zapnúť režim tabletu, vyberte <strong>centrum akcií</strong> na paneli úloh a potom vyberte položku <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Ak chcete zistiť, či zariadenie môže automaticky zapnúť režim tabletu, vyhľadajte zariadenie na webovej lokalite výrobcu. Podpora pre túto funkciu závisí od hardvéru, nainštalovaného ovládača a nastavenia zariadenia výrobcom. </p><p> </p><p>V režime tabletu sa aplikácie otvárajú na celej obrazovke, aby ste mali viac miesta na prácu. Ak chcete aplikáciu zatvoriť, potiahnite ju k dolnému okraju obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Keď je počítač v režime tabletu, panel úloh je k dispozícii, ale môžete ho skryť, ak potrebujete na obrazovke viac miesta. Vyberte tlačidlo <strong>Štart</strong>, vyberte položky <strong>Nastavenia</strong> > <strong>Systém</strong> > <strong>Režim tabletu</strong> a potom zapnite funkciu <strong>Automaticky skrývať panel úloh v režime tabletu</strong>. Ak chcete zobraziť skrytý panel úloh, potiahnite prstom nahor od dolného okraja obrazovky alebo naň ukážte myšou.</p><h3 class='faqInFs25FbP10'>Používanie dvoch aplikácií súčasne</h3><p>Ak chcete v režime tabletu používať dve aplikácie vedľa seba, otvorte aplikáciu jej potiahnutím nadol a do strany. Uvidíte, kde sa prichytí, a vedľa nej sa zobrazia všetky otvorené aplikácie.</p><p>V tomto zobrazení tiež môžete:</p><ul>    <li>zmeniť veľkosť oboch aplikácií naraz pomocou spoločného okraja medzi dvoma prichytenými aplikáciami;</li>    <li>otvoriť novú aplikáciu zo zobrazenia úloh &mdash; vyberte položku <strong>Zobrazenie úloh</strong> na paneli úloh, vyberte aplikáciu a potiahnite ju do strany, aby ste ju prichytili na rozdelenú obrazovku;</li>    <li>vrátiť sa späť v aplikácii alebo otvoriť predtým používanú aplikáciu pomocou tlačidla Späť na paneli úloh.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Povedzte nám o svojich záujmoch (nepovinné)",
         "personal": "Osobné použitie",
         "business": "Pracovné použitie",
-		"custom": "Vlastné prostredie",
-		"professional": "Určené pre odborníkov",
+        "custom": "Vlastné prostredie",
+        "professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
         "title1": "Víta vás aplikácia WRITEit",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
         "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Čakajte na spustenie kontroly",
+        "reminderTimeRetrieveHardwareInformation": "Proces získania informácií o hardvéri môže chvíľu trvať",
+        "retrievingHardwareInformation": "Načítavajú sa informácie o hardvéri...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Pamäť",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Nainštalovať",
-				"installing": "Inštalácia",
-				"downloading": "Sťahuje sa",
+                "installing": "Inštalácia",
+                "downloading": "Sťahuje sa",
                 "installed": "Nainštalované",
                 "launch": "Spustiť",
                 "seeMore": "Ukázať viac"

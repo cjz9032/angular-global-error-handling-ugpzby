@@ -632,7 +632,6 @@
             "wifi": "WiFi-säkerhet",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -642,7 +641,8 @@
             "installing": "INSTALLERAR",
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
-            "notRegistered": "INTE REGISTRERAD"
+            "notRegistered": "INTE REGISTRERAD",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -792,10 +792,10 @@
                 "title": "Systemuppdatering",
                 "notFound": "Systemuppdatering hittades inte",
                 "detail": {
-                    "uptoDate": "Programvaran är uppdaterad",
-                    "updatedOn": "uppdaterad den",
-                    "outdated": "Programvaran är inaktuell",
-                    "neverRanUpdate": "uppdatering har inte skett"
+                    "uptoDate": "Uppdateringar kontrollerade ",
+                    "updatedOn": "kontrollerades den ",
+                    "outdated": "Uppdateringar har inte kontrollerats nyligen ",
+                    "neverRanUpdate": "uppdateringar har aldrig kontrollerats"
                 }
             },
             "extendedWarranty": "Förläng garantin",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
-                "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
+                "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
                 "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
-                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”."
+                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ströminställningar",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "ons",
                             "thurs": "tors",
                             "fri": "fre",
-                            "sat": "lör"
+                            "sat": "lör",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "söndag",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Varje dag",
                         "weekdays": "vardagar",
-                        "weekends": "helger"
+                        "weekends": "helger",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
                     "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "VERKSTÄLL"
                     },
                     "website": {
-                        "url": "WEBBADRESS"
+                        "url": "WEBBADRESS",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "PLATSHÅLLARE FÖR TEXT"
+                        "title": "PLATSHÅLLARE FÖR TEXT",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Helt skyddad",
-            "fullyDesc": "Du har tur! Du är helt skyddad.",
             "notFully": "Inte helt skyddad",
-            "notFullyDesc": "Du är inte helt skyddad. Läs om hur du skyddar dig själv bättre nu.",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
             "pwdHealth": "Lösenordstillstånd",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
             "connectedHomeSecurity": "Säkerhet för uppkopplat hem",
             "fingerprint": "Fingeravtrycksläsare",
-            "seeAllNetwork": "Se alla ingående nätverk",
-            "maliciousNetwork": "Förhindrade att datorn gick med i {{maliciousWifi}} skadliga nätverk denna månad.",
-            "good": "BRA",
-            "malicious": "SKADLIGT",
-            "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Säkerhetsresultatet beror på om du:",
-            "antivirus": "Skyddas av ett antivirusprogram",
-            "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
-            "vpn": "Övervakar nätverkets exponering för angripare",
-            "wifi": "Krypterar dina personliga data när du använder offentlig WiFi",
-            "windowsHello": "Skyddar din enhet med alternativ för säker inloggning.",
             "uacTitle": "Vad är UAC-meddelanden?",
             "uacText": "User Account Control är en viktig säkerhetsfunktion i Windows som bidrar till att förhindra att potentiellt skadliga program gör ändringar i systemet.",
             "windowsTitle": "Varför behöver jag aktivera Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Hur skyddar jag mina lösenord bättre?",
             "passwordText": "Lagra och hantera alla dina lösenord krypterade med en professionell onlineskyddsapp i stället för att bara lagra dem i webbläsaren där de är lättåtkomliga för obehöriga.",
             "enhanceTitle": "Vad ska jag göra för att öka säkerheten?",
-            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd."
+            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Använda datorn som pekplatta",
             "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Berätta om dina intressen (valfritt)",
         "personal": "Privat",
         "business": "Arbete",
-		"custom": "Skräddarsydd upplevelse",
-		"professional": "Användning i arbetet",
+        "custom": "Skräddarsydd upplevelse",
+        "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
         "testNotApplicable": "Kan inte användas på anpassad sökning",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Vänta tills genomsökningen startar",
+        "reminderTimeRetrieveHardwareInformation": "Den här processen med att hämta information om maskinvaran kan ta en stund",
+        "retrievingHardwareInformation": "Hämtar information om maskinvaran...",
         "pluginTokens": {
             "cpu": "Processor",
             "memory": "Minne",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Installera",
-				"installing": "Installerar",
-				"downloading": "Hämtar",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
                 "installed": "Installerad",
                 "launch": "Starta",
                 "seeMore": "Mer information"
