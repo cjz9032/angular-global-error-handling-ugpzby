@@ -904,7 +904,8 @@
                     "PermanentError": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>",
+                    "EMDriverMissing": "Batterioplysninger er utilgængelige. Kør Windows Update-> Søg efter opdateringer for at installere <b>Lenovo ACPI-Compliant Virtual Power Controller</b>-driver."
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",

@@ -904,7 +904,8 @@
                     "PermanentError": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
                     "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>",
+                    "EMDriverMissing": "Details zum Akku sind nicht verfügbar. Führen Sie \"Windows Update\" -> \"Nach Updates suchen\" aus, um den <b>Lenovo ACPI - Compliant Virtual Power Controller</b> zu installieren."
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Um die Lebensdauer des Akkus zu verlängern, haben Sie festgelegt, dass der Ladevorgang des Akkus bei {{value}}% beendet wird.",

@@ -904,7 +904,8 @@
                     "PermanentError": "バッテリー容量が<b>低下しています</b>。新しいバッテリーに交換してください。",
                     "NotSupportACAdapterDetail": "<b>AC アダプターがサポートされていません。</b>お使いの Lenovo コンピューターはこの AC アダプタをサポートしていません。突然シャットダウンする可能性があります。正しい AC アダプターを接続してください。",
                     "LimitedACAdapterSupportDetail": "<b>AC アダプターは、システムのパフォーマンスと充電速度に影響を与えるほどの十分な電力</b>を Lenovo コンピューターに供給することができません。適切な AC アダプターを再接続してください。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源が接続されています。</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源が接続されています。</b>",
+                    "EMDriverMissing": "バッテリーの詳細を使用できません。[Windows Update] の [更新プログラムの確認] を実行して、<b>Lenovo ACPI - Compliant Virtual Power Controller</b> ドライバーをインストールしてください。"
                 },
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b> バッテリーの寿命を延ばすため、バッテリーの充電を {{value}}% で止めるように設定しています。",

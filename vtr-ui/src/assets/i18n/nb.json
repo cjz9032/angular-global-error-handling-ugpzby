@@ -904,7 +904,8 @@
                     "PermanentError": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>",
+                    "EMDriverMissing": "Detaljert batteriinformasjon er utilgjengelig. Kjør Windows Update -> Se etter oppdateringer for å installere <b>Lenovo ACPI – Compliant Virtual Power Controller</b>-driveren."
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> For å øke batteriets levetid, har du angitt at batteriet skal stoppe ladingen ved {{value}}%.",

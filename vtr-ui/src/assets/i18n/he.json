@@ -904,7 +904,8 @@
                     "PermanentError": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
                     "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
-                    "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
+                    "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>",
+                    "EMDriverMissing": "פרטי הסוללה לא זמינים. הפעילו את Windows Update-> בדוק אם קיימים עדכונים להתקנת מנהל ההתקן <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",

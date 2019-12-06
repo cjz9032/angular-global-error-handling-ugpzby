@@ -904,7 +904,8 @@
                     "PermanentError": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
-                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
+                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>",
+                    "EMDriverMissing": "Detaliile privind bateria sunt indisponibile. Rulaţi Windows Update->Căutaţi actualizări pentru a instala driverul <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",

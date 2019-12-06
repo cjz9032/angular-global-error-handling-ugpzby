@@ -904,7 +904,9 @@
                     "PermanentError": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>",
+                    "EMDriverMissing": "Pil ayrıntıları kullanılamıyor. Windows Update->Güncelleştirmeleri denetle seçeneğini kullanarak <b>Lenovo ACPI - Compliant Virtual Power Controller</b> sürücüsünü yükleyin."
+
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",

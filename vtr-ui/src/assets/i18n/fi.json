@@ -904,7 +904,8 @@
                     "PermanentError": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>",
+                    "EMDriverMissing": "Akun tiedot eivät ole saatavilla. Suorita Windows Update -> Tarkista päivitykset <b>Lenovo ACPI - Compliant Virtual Power Controller</b> -ohjaimen asennusta varten."
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",

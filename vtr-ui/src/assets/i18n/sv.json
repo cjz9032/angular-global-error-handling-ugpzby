@@ -904,7 +904,8 @@
                     "PermanentError": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>",
+                    "EMDriverMissing": "Batteriuppgifter är inte tillgängliga. Kör Windows Update->Sök efter uppdateringar för att installera drivrutinen <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",

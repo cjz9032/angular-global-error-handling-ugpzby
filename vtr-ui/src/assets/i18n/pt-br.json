@@ -904,7 +904,8 @@
                     "PermanentError": "A capacidade da bateria foi <b>degradada</b>. Substitua por uma nova.",
                     "NotSupportACAdapterDetail": "<b>O adaptador de energia CA não é suportado.</b> Seu computador Lenovo não suporta este adaptador de energia CA. Ele pode causar um desligamento repentino. Conecte um adaptador de energia CA correto.",
                     "LimitedACAdapterSupportDetail": "<b>O adaptador de energia CA não pode fornecer energia suficiente</b> para o seu computador Lenovo, isso afetará o desempenho do sistema e a velocidade de carregamento. Reconecte o adaptador de energia CA correto.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de energia está conectado.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de energia está conectado.</b>",
+                    "EMDriverMissing": "Detalhes da bateria indisponíveis. Execute o Windows Update-> Verificar se há atualizações para instalar o driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nenhuma bateria detectada",
                 "thresholdNote": "<b>Nota:</b> para estender a duração da bateria, você a configurou para parar de carregar em {{value}}%.",

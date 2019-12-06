@@ -905,7 +905,8 @@
                     "PermanentError": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>",
+                    "EMDriverMissing": "未提供电池详细信息。请运行 Windows 更新 -> 检查更新以安装 <b>Lenovo ACPI - Compliant Virtual Power Controller</b>驱动程序。"
                 },
                 "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
                 "seeDetailsLink": "查看详细信息",
