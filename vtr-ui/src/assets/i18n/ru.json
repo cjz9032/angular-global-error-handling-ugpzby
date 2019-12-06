@@ -642,7 +642,8 @@
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -1101,14 +1102,14 @@
                         "FCCText": "С {{before}} Вт·ч до {{after}} Вт·ч",
                         "note": "Примечание. Перед сбросом индикатора аккумулятора обязательно подключите компьютер к сети переменного тока. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Завершено. Сброс выполнен.",
-                            "ERROR_SHUTDOWN": "Не завершено. Отключение системы.",
-                            "ERROR_LOGOFF": "Не завершено. Пользователь вышел из системы.",
-                            "ERROR_BATTERY_REMOVE": "Не завершено. Аккумулятор извлечен.",
-                            "ERROR_BATTERY_REPLACE": "Не завершено. Аккумулятор заменен.",
-                            "ERROR_AC_DETTACH": "Не завершено. Адаптер электропитания отсоединен.",
-                            "ERROR_USER_CANCEL": "Не завершено. Отменено пользователем.",
-                            "ERROR_UNEXPECTED": "Не завершено. Неожиданная ошибка."
+                            "ERROR_SUCCESS": "Завершено: Сброс выполнен.",
+                            "ERROR_SHUTDOWN": "Сбой: отключение системы.",
+                            "ERROR_LOGOFF": "Сбой: пользователь вышел из системы.",
+                            "ERROR_BATTERY_REMOVE": "Сбой: аккумулятор извлечен.",
+                            "ERROR_BATTERY_REPLACE": "Сбой: аккумулятор заменен.",
+                            "ERROR_AC_DETTACH": "Сбой: адаптер электропитания отсоединен.",
+                            "ERROR_USER_CANCEL": "Сбой: отменено пользователем.",
+                            "ERROR_UNEXPECTED": "Сбой: неожиданная ошибка."
                         },
                         "popup": {
                             "description1": "Процедура сброса выглядит следующим образом:<br>Полная зарядка аккумулятора  -->  Полная разрядка аккумулятора  -->  Полная перезарядка аккумулятора",
@@ -1173,18 +1174,18 @@
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
                     "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Планирование работы компьютера",
+                    "automaticMode": "Автоматический режим",
+                    "manualMode": "Ручной режим",
+                    "subNote": "С учетом характера вашего использования компьютер переведен в текущий режим ожидания.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Использование этого компьютера",
+                        "graph2Tittle": "Фактическое активное время",
+                        "graphSubtittle": "В эти промежутки времени компьютер готов для быстрого возвращения к работе.",
+                        "graphNote": "Данных об активности этого компьютера недостаточно, чтобы составить профиль для автоматического планирования. Умный режим ожидания будет использовать график ручного режима, пока не будет собрано достаточно данных.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Нет",
+                            "frequent": "Часто"
                         },
                         "hours": {
                             "zero": 0,
