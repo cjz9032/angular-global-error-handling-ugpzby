@@ -1171,6 +1171,29 @@ export class HardwareScanService {
 		}
 	}
 
+	public getStatus() {
+		console.log('[Start] GetStatus (hwscanService)!');
+
+		if (this.hardwareScanBridge) {
+			return this.hardwareScanBridge.getStatus()
+				.then((response) => {
+					if (response) {
+						console.log('[GET STATUS] ', response);
+						return response;
+					} else {
+						console.error('[GET STATUS] Error getting the status');
+						return false;
+					}
+				})
+				.catch((error) => {
+					console.error('[GET STATUS] Error getting the status');
+					console.error('[GET STATUS] ' + error);
+				});
+		}
+
+		return false;
+	}
+
 	public cleanResponses() {
 		for (const moduleObject of this.quickScanResponse) {
 			for (const test of moduleObject.listTest) {
