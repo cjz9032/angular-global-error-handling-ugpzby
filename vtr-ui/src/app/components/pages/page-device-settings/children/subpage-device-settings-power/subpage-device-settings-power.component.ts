@@ -97,7 +97,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 	public isPowerDriverMissing = false;
-	public isEMDriverMissing = false;
+	public isEmDriverInstalled = true;
 
 	gaugeResetInfo: BatteryGaugeReset[];
 	gaugeResetInfoCache: GaugeResetInfoCache = undefined;
@@ -1103,8 +1103,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.commonService.setLocalStorageValue(LocalStorageKey.GaugeResetInformation, this.gaugeResetInfoCache);
 					}
 					break;
-				case 'IsEMDriverMissing':
-					this.checkEMDriverMissing(notification.payload);
+				case 'IsEmDriverInstalled':
+					this.checkEmDriverInstalled(notification.payload);
 				// case 'BatteryInfoForGaugeReset':
 				// 	if (notification.payload) {
 				// 		this.remainingPercentages = notification.payload.remainingPercentages;
@@ -1124,8 +1124,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.updatePowerPageSettings();
 	}
 
-	public checkEMDriverMissing(status) {
-		this.isEMDriverMissing = status;
+	public checkEmDriverInstalled(status) {
+		this.isEmDriverInstalled = status;
 		if (!status) {
 			this.headerMenuItems = this.tempHeaderMenuItems;
 		}

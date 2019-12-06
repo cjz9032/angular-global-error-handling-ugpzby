@@ -905,7 +905,7 @@
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>",
-                    "EMDriverMissing": "Détails de la batterie indisponibles. Exécutez Windows Update -> Rechercher les mises à jour pour installer le pilote <b>Lenovo ACPI - Compliant Virtual Power Controller.</b>"
+                    "EmDriverInstalled": "Détails de la batterie indisponibles. Exécutez Windows Update -> Rechercher les mises à jour pour installer le pilote <b>Lenovo ACPI - Compliant Virtual Power Controller.</b>"
                 },
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Batterie :</b> pour augmenter la durée de vie de la batterie, vous l'avez configurée pour qu'elle stoppe de se charger à {{value}}%.",

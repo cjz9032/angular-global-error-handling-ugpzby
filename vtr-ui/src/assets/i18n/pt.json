@@ -905,7 +905,7 @@
                     "NotSupportACAdapterDetail": "<b>O transformador CA não é suportado.</b> O seu computador Lenovo não suporta este transformador CA. Poderá causar um encerramento súbito. Ligue um transformador CA correto.",
                     "LimitedACAdapterSupportDetail": "<b>O transformador CA não pode fornecer energia suficiente</b> ao seu computador Lenovo, o que terá impacto no desempenho do sistema e na velocidade de carregamento. Volte a ligar o transformador CA correto.",
                     "FullACAdapterSupport": "<b>A alimentação {{acWattage}} W {{acAdapterType}} está ligada.</b>",
-                    "EMDriverMissing": "Detalhes da bateria indisponíveis. Execute Windows Update->Procurar atualizações para instalar o controlador <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
+                    "EmDriverInstalled": "Detalhes da bateria indisponíveis. Execute Windows Update->Procurar atualizações para instalar o controlador <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> para aumentar a vida útil da bateria, definiu a bateria para parar o carregamento aos {{value}}%.",

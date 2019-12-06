@@ -905,7 +905,7 @@
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
                     "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
                     "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>",
-                    "EMDriverMissing": "Informacje dotyczące akumulatora niedostępne. Uruchom Windows Update-> Sprawdź aktualizacje, aby zainstalować sterownik <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
+                    "EmDriverInstalled": "Informacje dotyczące akumulatora niedostępne. Uruchom Windows Update-> Sprawdź aktualizacje, aby zainstalować sterownik <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",

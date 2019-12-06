@@ -905,7 +905,7 @@
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
                     "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>",
-                    "EMDriverMissing": "Detalji o bateriji nisu dostupni. Pokrenite Windows Update-> Proveri da li postoje ispravke da biste instalirali upravljački program <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
+                    "EmDriverInstalled": "Detalji o bateriji nisu dostupni. Pokrenite Windows Update-> Proveri da li postoje ispravke da biste instalirali upravljački program <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",

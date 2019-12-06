@@ -9,7 +9,7 @@ class BatteryGaugeDetail {
 	public acAdapterType: string;
 	public isPowerDriverMissing: boolean;
 	public isExpressCharging: boolean;
-	public isEMDriverMissing: boolean;
+	public isEmDriverInstalled: boolean;
 }
 
 export default BatteryGaugeDetail;

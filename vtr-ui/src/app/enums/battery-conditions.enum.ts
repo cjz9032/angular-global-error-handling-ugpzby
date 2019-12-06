@@ -16,7 +16,7 @@ export enum BatteryConditionsEnum {
 	NonLenovoUsbPowerAdapter,
 
 	MissingDriver,
-	EMDriverMissing,
+	EmDriverInstalled,
 
 	NotSupportACAdapter,
 	LimitedACAdapterSupport,

@@ -907,7 +907,7 @@
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
                     "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
                     "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>",
-                    "EMDriverMissing": "تفاصيل البطارية غير متوفرة. الرجاء تشغيل Windows Update->ابحث عن تحديثات لتثبيت برامج تشغيل <b>Lenovo ACPI - Compliant Virtual Power Controller</b> ."
+                    "EmDriverInstalled": "تفاصيل البطارية غير متوفرة. الرجاء تشغيل Windows Update->ابحث عن تحديثات لتثبيت برامج تشغيل <b>Lenovo ACPI - Compliant Virtual Power Controller</b> ."
                 },
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",

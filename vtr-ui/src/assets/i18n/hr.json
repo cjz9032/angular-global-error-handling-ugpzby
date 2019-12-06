@@ -905,7 +905,7 @@
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
                     "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
-                    "EMDriverMissing": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
+                    "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> da biste produljili vijek baterije, postavili ste zaustavljanje punjenja baterije na {{value}}%.",
