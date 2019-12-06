@@ -80,10 +80,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
-			if (this.showIC === 0) {
-				this.isPowerSmartSettingHidden.emit(true);
-				return;
-			}
+			// if (this.showIC === 0) {
+			// 	this.isPowerSmartSettingHidden.emit(true);
+			// 	return;
+			// }
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;
@@ -159,6 +159,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	// Start Power Smart Settings for IdeaPad
 	async initPowerSmartSettingsForIdeaPad() {
 		try {
+			const isEMDriverAvailable = await this.getEMDriverStatus();
+			if (!isEMDriverAvailable) {
+				this.logger.info('PowerSmartSettingsComponent:isEMDriverAvailable', isEMDriverAvailable);
+				this.showIC = 0;
+				this.cache.showIC = this.showIC;
+				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+				this.isPowerSmartSettingHidden.emit(true);
+				return;
+			}
+
 			const response = await this.powerService.getITSModeForICIdeapad();
 			console.log('getITSModeForICIdeapad: ', response);
 			if (response && !response.available) {
@@ -447,6 +457,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('getPMDriverStatus', error.message);
+		}
+	}
+
+	private getEMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.getEMDriverStatus();
+			}
+		} catch (error) {
+			this.logger.error('PowerSmartSettingsComponent:getEMDriverStatus', error.message);
 		}
 	}
 
