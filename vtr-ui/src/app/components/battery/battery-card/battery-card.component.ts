@@ -339,6 +339,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
 
 			if (isThinkPad) {
+				this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' || 'ac' ? 'ac' : 'USB-C';
+				this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
+
 				if (this.batteryHealth === 1 || this.batteryHealth === 2) {
 					healthCondition = BatteryConditionsEnum.StoreLimitation;
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
@@ -397,8 +400,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			if (isThinkPad) {
 				if (this.batteryGauge.isAttached && this.batteryGauge.acAdapterStatus) {
 					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'supported') {
-						this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' || 'ac' ? 'ac' : 'USB-C';
-						this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
 					}
 					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
