@@ -339,8 +339,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
 
 			if (isThinkPad) {
-				this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' || 'ac' ? 'ac' : 'USB-C';
-				this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
+				if (this.batteryGauge.isAttached && this.batteryGauge.acAdapterStatus) {
+					this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' || 'ac' ? 'ac' : 'USB-C';
+					this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
+				}
 
 				if (this.batteryHealth === 1 || this.batteryHealth === 2) {
 					healthCondition = BatteryConditionsEnum.StoreLimitation;
