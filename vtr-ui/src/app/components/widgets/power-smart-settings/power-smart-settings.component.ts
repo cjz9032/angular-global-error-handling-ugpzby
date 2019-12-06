@@ -80,10 +80,10 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		if (this.cache) {
 			// init ui
 			this.showIC = this.cache.showIC;
-			if (this.showIC === 0) {
-				this.isPowerSmartSettingHidden.emit(true);
-				return;
-			}
+			// if (this.showIC === 0) {
+			// 	this.isPowerSmartSettingHidden.emit(true);
+			// 	return;
+			// }
 			if (this.showIC === 6) {
 				this.dytc6Mode = this.cache.captionText;
 				this.dytc6IsAutoModeSupported = this.cache.autoModeToggle.available;
@@ -159,8 +159,18 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	// Start Power Smart Settings for IdeaPad
 	async initPowerSmartSettingsForIdeaPad() {
 		try {
+			const isEMDriverAvailable = await this.getEMDriverStatus();
+			this.logger.debug('PowerSmartSettingsComponent:isEMDriverAvailable', isEMDriverAvailable);
+			if (!isEMDriverAvailable) {
+				this.showIC = 0;
+				this.cache.showIC = this.showIC;
+				this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
+				this.isPowerSmartSettingHidden.emit(true);
+				return;
+			}
+
 			const response = await this.powerService.getITSModeForICIdeapad();
-			console.log('getITSModeForICIdeapad: ', response);
+			this.logger.debug('getITSModeForICIdeapad: ', response);
 			if (response && !response.available) {
 				this.showIC = 0;
 				this.cache.showIC = this.showIC;
@@ -175,7 +185,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 				}
 			}
 		} catch (error) {
-			this.logger.error('initPowerSmartSettingsForIdeaPad: ' + error.message);
+			this.logger.exception('initPowerSmartSettingsForIdeaPad: ', error);
 			this.showIC = 0;
 			this.cache.showIC = this.showIC;
 			this.commonService.setLocalStorageValue(LocalStorageKey.IntelligentCoolingCapability, this.cache);
@@ -350,7 +360,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					const amtCapability = await this.getAMTCapability();
 					let amtSetting = await this.getAMTSetting();
 					this.dytc6GetStatus(amtCapability, amtSetting);
-					this.amtCapabilityInterval = setInterval(async ()  => {
+					this.amtCapabilityInterval = setInterval(async () => {
 						this.logger.debug('Trying after 30 seconds for getting AMT status');
 						amtSetting = await this.getAMTSetting();
 						this.dytc6GetStatus(amtCapability, amtSetting);
@@ -447,6 +457,16 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		} catch (error) {
 			this.logger.error('getPMDriverStatus', error.message);
+		}
+	}
+
+	private getEMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.getEMDriverStatus();
+			}
+		} catch (error) {
+			this.logger.error('PowerSmartSettingsComponent:getEMDriverStatus', error.message);
 		}
 	}
 
