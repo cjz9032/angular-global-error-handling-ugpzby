@@ -88,10 +88,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private router: Router
 	) {
 
-		const showPowerPage = this.commonService.getLocalStorageValue(LocalStorageKey.IsHidePowerPage);
-		if (showPowerPage) {
-			this.hidePowerPage();
-		}
 		// translate subheader menus
 		this.menuItems.forEach(m => {
 			// m.label = this.translate.instant(m.label);//VAN-5872, server switch feature
