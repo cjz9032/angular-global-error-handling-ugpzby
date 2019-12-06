@@ -1,8 +1,14 @@
-<div [ngClass]="{'is-gaming':deviceService.isGaming, 'is-arm':deviceService.isArm}" class="disable-text-selection"
-	tabindex="-1" attr.aria-label="{{ pageTitle | translate }}" id="main-wrapper" role="document">
-	<vtr-menu-main *ngIf="isMachineInfoLoaded && !deviceService.isAndroid" [loadMenuItem]="machineInfo">
+<div [ngClass]="{'is-gaming':deviceService.isGaming, 'is-arm':deviceService.isArm}"
+	class="disable-text-selection"
+	tabindex="-1"
+	attr.aria-label="{{ pageTitle | translate }}"
+	id="main-wrapper"
+	role="document">
+	<vtr-menu-main *ngIf="isMachineInfoLoaded && !deviceService.isAndroid"
+		[loadMenuItem]="machineInfo">
 	</vtr-menu-main>
-	<div class="vtr-app container-fluid" [ngClass]="{'is-android': deviceService.isAndroid}">
+	<div class="vtr-app container-fluid"
+		[ngClass]="{'is-android': deviceService.isAndroid}">
 		<div class="row">
 			<div class="col p-0">
 				<router-outlet></router-outlet>
