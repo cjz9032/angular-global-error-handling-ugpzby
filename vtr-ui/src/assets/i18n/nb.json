@@ -2805,7 +2805,7 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Knappen er deaktivert siden maskinvareinformasjonen ikke er hentet ennå, i tilfelle lagringsenhetene ikke støtter denne funksjonaliteten eller når de gjenopprette dårlige sektorene kjører."
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
