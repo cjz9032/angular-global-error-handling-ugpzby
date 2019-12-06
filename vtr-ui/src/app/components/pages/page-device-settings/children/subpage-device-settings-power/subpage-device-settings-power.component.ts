@@ -1125,7 +1125,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	public checkEmDriverInstalled(status) {
-		this.isEmDriverInstalled = status;
+		this.isEmDriverInstalled = !status;
 		if (!status) {
 			this.headerMenuItems = this.tempHeaderMenuItems;
 		}
