@@ -2801,7 +2801,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Die Schaltfläche ist deaktiviert, solange die Hardwareinformationen noch nicht abgerufen wurden, falls die Speichergeräte diese Funktionalität nicht unterstützen oder wenn die Wiederherstellung fehlerhafter Sektoren läuft."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",

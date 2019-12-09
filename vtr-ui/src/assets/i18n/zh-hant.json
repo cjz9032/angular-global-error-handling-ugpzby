@@ -2801,7 +2801,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "如果儲存裝置不支援此功能或回復錯誤磁區正在運作中，在尚未擷取硬體資訊時，此按鈕會停用。"
         },
         "support": {
             "title": "下載專業診斷工具",

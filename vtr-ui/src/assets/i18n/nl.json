@@ -2801,7 +2801,7 @@
                 "yes": "Ja",
                 "no": "Nee"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "De knop is uitgeschakeld zolang de hardwaregegevens nog niet zijn opgehaald, voor het geval de opslagapparaten deze functionaliteit niet ondersteunen of als het herstel van beschadigde sectoren wordt uitgevoerd."
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",

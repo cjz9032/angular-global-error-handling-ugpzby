@@ -2801,7 +2801,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Dugme je onemogućeno dok informacije o hardveru još uvek nisu preuzete, u slučaju da uređaji za skladištenje ne podržavaju ovu funkcionalnost ili kada je pokrenut neispravan sektor za oporavak."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",

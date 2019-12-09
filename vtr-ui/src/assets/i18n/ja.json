@@ -2801,7 +2801,7 @@
                 "yes": "はい",
                 "no": "いいえ"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "ストレージ・デバイスでこの機能がサポートされていない場合、または不良セクタの復元が実行されている場合、ハードウェア情報が未取得であれば、このボタンは無効になります。"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",

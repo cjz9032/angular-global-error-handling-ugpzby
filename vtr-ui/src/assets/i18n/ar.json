@@ -2803,7 +2803,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "يكون الزر معطلاً بينما لم يتم استرداد معلومات الأجهزة بعد، في حال لم تكن أجهزة التخزين تدعم هذه الميزة أو عندما تكون استعادة القطاعات المصابة‬ قيد التشغيل."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",

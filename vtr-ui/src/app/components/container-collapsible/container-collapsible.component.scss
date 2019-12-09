@@ -13,6 +13,9 @@
 			.card-header {
 				background: none;
 				border-color: $border;
+				&.hide-border-bottom{
+					border-bottom: none;
+				}
 
 				.header {
 					color: $color;

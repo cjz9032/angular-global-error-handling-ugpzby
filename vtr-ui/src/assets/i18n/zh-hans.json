@@ -2801,7 +2801,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
         },
         "support": {
             "title": "下载专业诊断工具",

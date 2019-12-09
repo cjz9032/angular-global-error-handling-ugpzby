@@ -2801,7 +2801,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "A gomb le van tiltva ha a hardverinformációk beolvasása még nem történt meg, ha a tárolóeszközök nem támogatják ezt a funkciót, vagy amíg a rendszer helyreállítja a hibás szektorokat."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",

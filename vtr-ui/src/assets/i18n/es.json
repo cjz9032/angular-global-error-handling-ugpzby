@@ -2801,7 +2801,7 @@
                 "yes": "Sí",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "El botón está inhabilitado mientras la información de hardware aún no se ha recuperado, en el caso de que los dispositivos de almacenamiento no permitan esta funcionalidad o cuando se esté ejecutando la recuperación de sectores defectuosos."
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
