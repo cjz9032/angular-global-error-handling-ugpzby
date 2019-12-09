@@ -212,84 +212,84 @@
 }
 
 
-// :host-context(.is-gaming) {
-// 	.vtr-page-support {
-// 		.vtr-page-left-column {
-// 			.card {
-// 				background: $dark_cell;
+:host-context(.is-gaming) {
+	::ng-deep {
+		.vtr-page-left-column {
+			.card {
+				background: $dark_cell;
 
-// 				&.quick-access {
-// 					background: $dark_cell;
+				&.quick-access {
+					background: $dark_cell;
 
-// 					.quick-access-title {
-// 						color: $gaming_lightest;
-// 					}
+					.quick-access-title {
+						color: $gaming_lightest;
+					}
 
-// 					.quick-assess-categories {
-// 						.quick-assess-item {
-// 							.item-con {
-// 								background: $gaming_darkest;
-// 								border: none;
+					.quick-assess-categories {
+						.quick-assess-item {
+							.item-con {
+								background: $gaming_darkest;
+								border: none;
 
-// 								&:hover {
-// 									background: $gaming;
-// 								}
+								&:hover {
+									background: $gaming;
+								}
 
-// 								.item-title {
-// 									color: $gaming_lightest !important;
-// 								}
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
+								.item-title {
+									color: $gaming_lightest !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
-// 		.vtr-page-right-column {
-// 			.vtr-widget-support {
-// 				background-color: auto;
-// 				background: $dark_cell;
+		.vtr-page-right-column {
+			.vtr-widget-support {
+				background-color: auto;
+				background: $dark_cell;
 
-// 				.title {
-// 					color: $gaming_lightest !important;
-// 				}
+				.title {
+					color: $gaming_lightest !important;
+				}
 
-// 				.vtr-ui-list-support {
-// 					.support-list {
-// 						background-color: $gaming-Darkslate-blue !important;
-// 						border: none !important;
+				.vtr-ui-list-support {
+					.support-list {
+						background-color: $gaming-Darkslate-blue !important;
+						border: none !important;
 
-// 						button {
-// 							&:hover {
-// 								background-color: transparent !important;
-// 							}
-// 						}
+						button {
+							&:hover {
+								background-color: transparent !important;
+							}
+						}
 
-// 						.title {
-// 							color: $gaming_lightest;
-// 						}
+						.title {
+							color: $gaming_lightest;
+						}
 
-// 						.arrow {
-// 							color: $gaming_lightest !important;
-// 						}
+						.arrow {
+							color: $gaming_lightest !important;
+						}
 
-// 						.description {
-// 							color: $gaming_grey_lightest;
-// 							font-size: 1.2rem;
-// 						}
+						.description {
+							color: $gaming_grey_lightest;
+							font-size: 1.2rem;
+						}
 
-// 						li {
-// 							border-bottom: 0.1rem solid $screen_dark_15 !important;
+						li {
+							border-bottom: 0.1rem solid $screen_dark_15 !important;
 
-// 							a {
-// 								&:hover {
-// 									background-color: transparent !important;
-// 								}
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+							a {
+								&:hover {
+									background-color: transparent !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
