@@ -1,25 +1,5 @@
 @import "../../../app.theme";
 
-.card-left {
-	padding-left: 0;
-	padding-right: 2rem;
-
-	@media #{$breakpoint_xl} {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-.card-right {
-	padding-left: 2rem;
-	padding-right: 0;
-
-	@media #{$breakpoint_xl} {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
 :host ::ng-deep {
 	.vtr-page-left-column {
 		background: $shade_lightest;
@@ -36,23 +16,26 @@
 			border-radius: $border_radius;
 			box-shadow: $drop_shadow;
 			border: none;
-			padding: 4rem;
+			padding: 2.4rem 0 1.2rem;
 
 			.quick-access-title {
 				font-size: 2.5rem;
+				padding: 0 2.4rem;
 				color: $main_dark;
 				font-weight: $weight_medium;
 			}
 
 			.quick-access-desc {
 				font-size: 1.6rem;
-				margin-bottom: 2rem;
+				padding: 0 2.4rem;
+				margin-bottom: 1.2rem;
 				color: #667481;
 			}
 
 			.quick-assess-categories {
 				display: flex;
 				justify-content: space-around;
+				padding: 0 1.2rem;
 
 				.quick-assess-item {
 					width: 25%;
@@ -168,6 +151,7 @@
 		}
 
 		.card-left {
+			padding-left: 0;
 			padding-right: 2rem;
 
 			@media #{$breakpoint_md} {
@@ -177,6 +161,7 @@
 
 		.card-right {
 			padding-left: 2rem;
+			padding-right: 0;
 
 			@media #{$breakpoint_md} {
 				padding-right: 0;
