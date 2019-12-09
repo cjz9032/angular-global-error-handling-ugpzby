@@ -7,24 +7,22 @@
 		border-radius: $border_radius;
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
-		padding: 2rem 4rem 4rem 4rem;
-		height: 41rem;
-		@media #{$breakpoint_xl3} {
-			height: 35rem;
-		}
+		padding: 2rem 4rem 2rem 4rem;
+		height:auto;
+		@media #{$breakpoint_xl3} {		}
 		@media #{$breakpoint_xl2} {
-			height: 29rem;
+			//height: 29rem;//removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_xl} {
-			height: auto;
-			padding-bottom: 21rem;
+			//height: auto;
+			//padding-bottom: 21rem;//removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_lg} {
 			padding: 2rem 2rem 0 2rem;
-			// padding-bottom: 22rem;
+			// padding-bottom: 22rem; //removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_md} {
-			padding-bottom: 19rem;
+			//padding-bottom: 19rem;removed as it is breaking in some points 
 		}
 
 		// @media #{$mediaquery_5} {
@@ -150,7 +148,7 @@
 				// 	height: 18rem;
 				// }
 				&.hds {
-					position: absolute;
+					//position: absolute; //removed as it is breaking in some points 
 					width: 100%;
 					border: 1px solid $gaming_darkest;
 					// @media #{$mediaquery_sm} {

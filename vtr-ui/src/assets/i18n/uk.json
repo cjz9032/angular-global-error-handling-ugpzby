@@ -2800,7 +2800,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",
