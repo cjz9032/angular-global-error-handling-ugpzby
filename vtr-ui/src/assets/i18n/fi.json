@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Näyttö",
+					"displayColorTemperature": {
+						"title": "Näytön värilämpötila",
+						"description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+						"link": {
+							"click": "Napsauta",
+							"here": "tätä",
+							"rest": "muuttaaksesi värilämpötilaa."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Silmien hoitotila",
                         "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",

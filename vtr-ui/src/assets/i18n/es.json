@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Pantalla",
+					"displayColorTemperature": {
+						"title": "Temperatura del color de visualización",
+						"description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
+						"link": {
+							"click": "Hacer clic en",
+							"here": "aquí",
+							"rest": "para cambiar la temperatura de color."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
                         "checkbox": "Planificación del modo de cuidado ocular de anochecer a amanecer",

@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Anzeigen",
+					"displayColorTemperature": {
+						"title": "Farbtemperatur der Anzeige",
+						"description": "Sie können die Farbtemperatur der Anzeige so anpassen, dass blaues Licht gefiltert und Ihre Augen geschont werden. Stellt die Farbtemperatur der Anzeige in der Zeit zwischen Sonnenuntergang und ‑aufgang auf wärmere Farben ein, um Ihnen das Einschlafen zu erleichtern.",
+						"link": {
+							"click": "Klicken Sie",
+							"here": "hier",
+							"rest": "um die Farbtemperatur zu ändern."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modus \"Augen schonen\"",
                         "checkbox": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",

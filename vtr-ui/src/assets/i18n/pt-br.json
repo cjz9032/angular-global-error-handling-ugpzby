@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Exibir",
+					"displayColorTemperature": {
+						"title": "Temperatura das cores do monitor",
+						"description": "Você pode ajustar a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular. Ajusta os monitores para cores mais quentes durante o pôr do sol até o nascer do sol para ajudá-lo a dormir.",
+						"link": {
+							"click": "Clique",
+							"here": "aqui",
+							"rest": "para alterar a temperatura das cores."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modo Proteção Ocular",
                         "checkbox": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",

@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Skärm",
+					"displayColorTemperature": {
+						"title": "Bildskärmens färgtemperatur",
+						"description": "Du kan justera bildskärmens färgtemperatur för att minska avgivningen av blått ljus och därmed belastningen på ögonen. Bildskärmen justeras till varmare färger från solnedgång till soluppgång för att hjälpa dig att sova.",
+						"link": {
+							"click": "Klicka",
+							"here": "här",
+							"rest": "för att ändra färgtemperaturen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Ögonskyddsläge",
                         "checkbox": "Schemalägg ögonskyddsläge från morgon till kväll",

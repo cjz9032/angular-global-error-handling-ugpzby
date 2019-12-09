@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Obrazovka",
+					"displayColorTemperature": {
+						"title": "Teplota farieb obrazovky",
+						"description": "Môžete upraviť teplotu farieb obrazovky a vyžarovanie modrého svetla na zníženie únavy zraku. Táto funkcia prispôsobuje farby zobrazovacích jednotiek na teplejšie tóny pri západe a východe slnka, aby ste mohli lepšie spať.",
+						"link": {
+							"click": "Kliknite",
+							"here": "sem",
+							"rest": "a zmeňte teplotu farieb."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Režim na ochranu zraku",
                         "checkbox": "Naplánovať režim na ochranu zraku medzi západom a východom slnka",

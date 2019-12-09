@@ -1296,6 +1296,15 @@
                 },
                 "display": {
                     "title": "Skjerm",
+					"displayColorTemperature": {
+						"title": "Skjermens fargetemperatur",
+						"description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
+						"link": {
+							"click": "Klikk på",
+							"here": "her",
+							"rest": "for å endre fargetemperaturen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Øyebeskyttelse",
                         "checkbox": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
