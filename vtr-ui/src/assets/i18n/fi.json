@@ -912,7 +912,10 @@
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
-                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
+                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Virta",
@@ -1494,11 +1497,11 @@
                         "url": "VERKKOSIVUSTON URL-OSOITE",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Aloita kirjoittamalla http:// tai https://"
                     },
                     "enterText": {
                         "title": "KIRJOITETTAVA TEKSTI",
-                        "placeholder": "Please type here"
+                        "placeholder": "Kirjoita tähän"
                     }
                 },
                 "fnCtrlKey": {

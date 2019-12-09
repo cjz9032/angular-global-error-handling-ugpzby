@@ -914,7 +914,10 @@
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لا يمكن شحن البطارية بالكامل عند تمكين حد شحن البطارية.",
                 "seeDetailsLink": "انظر التفاصيل",
-                "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً."
+                "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "الطاقة",
@@ -1496,11 +1499,11 @@
                         "url": "عنوان URL لموقع الويب",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "يرجى البدء بـ http:// أو https://"
                     },
                     "enterText": {
                         "title": "النص الذي يجب إدخاله",
-                        "placeholder": "Please type here"
+                        "placeholder": "يرجى الكتابة هنا"
                     }
                 },
                 "fnCtrlKey": {

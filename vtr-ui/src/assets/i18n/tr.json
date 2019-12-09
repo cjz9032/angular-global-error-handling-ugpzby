@@ -912,7 +912,10 @@
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
                 "seeDetailsLink": "Ayrıntıları görün",
-                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
+                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Güç",
@@ -1494,11 +1497,11 @@
                         "url": "WEB SİTESİ URL'Sİ",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Lütfen http:// veya https:// ile başlayın"
                     },
                     "enterText": {
                         "title": "GİRİLECEK METİN",
-                        "placeholder": "Please type here"
+                        "placeholder": "Lütfen buraya yazın"
                     }
                 },
                 "fnCtrlKey": {

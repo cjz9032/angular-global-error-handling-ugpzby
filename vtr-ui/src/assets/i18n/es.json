@@ -912,7 +912,10 @@
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
-                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
+                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Energía",
@@ -1494,11 +1497,11 @@
                         "url": "URL DEL SITIO WEB",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Empiece con http:// o https://"
                     },
                     "enterText": {
                         "title": "TEXTO QUE SE INGRESARÁ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Escríbalo aquí"
                     }
                 },
                 "fnCtrlKey": {

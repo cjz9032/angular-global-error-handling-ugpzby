@@ -912,7 +912,10 @@
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga:</b> Nie można w pełni naładować akumulatora, gdy włączony jest próg ładowania akumulatora.",
                 "seeDetailsLink": "Zobacz szczegóły",
-                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
+                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Zasilanie",
@@ -1494,11 +1497,11 @@
                         "url": "ADRES URL WITRYNY",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Zacznij od http:// lub https://"
                     },
                     "enterText": {
                         "title": "TEKST DO WPROWADZENIA",
-                        "placeholder": "Please type here"
+                        "placeholder": "Proszę wpisać tutaj"
                     }
                 },
                 "fnCtrlKey": {
