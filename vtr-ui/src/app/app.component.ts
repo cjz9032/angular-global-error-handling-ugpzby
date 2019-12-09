@@ -105,6 +105,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
 		this.metricService.sendAppLaunchMetric();
 
+		const self = this;
+		window.onresize = () => {
+			self.displayService.calcSize(self.displayService);
+		};
+		self.displayService.calcSize(self.displayService);
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
