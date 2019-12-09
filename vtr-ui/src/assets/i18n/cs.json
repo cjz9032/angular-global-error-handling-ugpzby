@@ -2840,7 +2840,8 @@
             "pci_express": "PCI Express",
             "storage": "Úložiště",
             "wireless": "Bezdrátové"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
