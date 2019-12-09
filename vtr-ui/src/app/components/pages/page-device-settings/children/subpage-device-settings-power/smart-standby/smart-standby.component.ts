@@ -268,7 +268,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						console.log('===== getIsAutonomicCapability =====:', response);
 						this.isAutonomicCapability = response || false;
 						if (!this.isAutonomicCapability) {
-							this.checkbox = true;	
+							this.checkbox = false;	
 							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
 					}
 					}).catch(error => {

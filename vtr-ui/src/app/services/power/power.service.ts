@@ -269,6 +269,17 @@ export class PowerService {
 		}
 	}
 
+	public getEMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getEMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public getITSServiceStatus(): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {

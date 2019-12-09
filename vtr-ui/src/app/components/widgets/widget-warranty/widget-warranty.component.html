@@ -4,20 +4,20 @@
 		<div class="row">
 			<div class="col"
 				*ngIf="item.info.status >= 0">
-				<div class="title pb-40" *ngIf="item.info.status !== 2">{{status.title[item.info.status] | translate}}</div>
-				<div class="title title-detail pb-40" *ngIf="item.info.status === 2">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
+				<div class="title pb-20" *ngIf="item.info.status !== 2">{{status.title[item.info.status] | translate}}</div>
+				<div class="title title-detail pb-20" *ngIf="item.info.status === 2">{{'support.warranty.warrantyDashboardDetails' | translate}}</div>
 				<div class="content"
 					*ngIf="item.info.status == 1 || item.info.status == 0">
 					<div class="sub-title">
 						{{ year }}{{'support.warranty.yearDepotWarranty' | translate}}
 					</div>
-					<div class="sub-description pb-40">
+					<div class="sub-description pb-20">
 						{{'support.warranty.subDescription1' | translate}}
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>
 					</div>
 					<div class="sub-title">{{'support.warranty.warrantyDetails' | translate}}</div>
-					<div class="sub-description pb-40">
+					<div class="sub-description pb-20">
 						<div class="pb-2">
 							{{'support.warranty.startDate' | translate}}<b>{{item.info.startDate | dateFormat}}</b></div>
 						<div class="pb-2">
@@ -29,7 +29,7 @@
 				</div>
 				<div class="content"
 					*ngIf="item.info.status == 2">
-					<div class="sub-description pb-40">
+					<div class="sub-description pb-20">
 						{{'support.warranty.subDescription2' | translate}}
 						<span *ngIf="!isConnected && item.cache">{{'support.warranty.offlineTips1' | translate}}</span>
 						<span *ngIf="!isConnected && !item.cache">{{'support.warranty.offlineTips2' | translate}}</span>

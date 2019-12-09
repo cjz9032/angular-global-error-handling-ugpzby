@@ -2800,7 +2800,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Knappen deaktiveres, mens hardwareoplysningerne endnu ikke er hentet, hvis lagerenhederne ikke understøtter denne funktion, eller når gendannelsen af beskadigede sektorer kører."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",

@@ -2800,7 +2800,7 @@
                 "yes": "Да",
                 "no": "Нет"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопка отключена, если сведения об оборудовании еще не получены, устройства хранения данных не поддерживают эту функцию или выполняется восстановление поврежденных секторов."
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",

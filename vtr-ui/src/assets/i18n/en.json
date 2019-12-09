@@ -372,7 +372,7 @@
 			},
 			"brightness": {
 				"text1": {
-					"title": "*Brightness setting doesn't apply on "
+					"title": "*Brightness setting doesn't apply on"
 				},
 				"text2": {
 					"title": " effect"
@@ -901,7 +901,7 @@
 					"Good": "<b>The battery is in good condition.</b>",
 					"Exhaustion": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
-					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
+					"NotDetected": "<b>No battery detected.</b>",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
 					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
@@ -914,6 +914,9 @@
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
 					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+				},
+				"dualConditions": {
+					"NotDetected": "<b>The primary battery is not detected</b>"
 				}
 			},
 			"power": {

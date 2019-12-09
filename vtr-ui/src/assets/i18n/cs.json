@@ -2800,7 +2800,7 @@
                 "yes": "Ano",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Tlačítko je deaktivováno, pokud dosud nebyly načteny informace o hardwaru, úložná zařízení nepodporují tuto funkci nebo byla spuštěna obnova vadných sektorů."
         },
         "support": {
             "title": "Stáhnout profesionální diagnostické nástroje",

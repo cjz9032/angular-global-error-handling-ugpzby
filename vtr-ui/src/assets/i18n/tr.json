@@ -2800,7 +2800,7 @@
                 "yes": "Evet",
                 "no": "Hayır"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Donanım bilgileri henüz alınmadıysa, depolama cihazlarının bu işlevi desteklememe olasılığına karşı veya bozuk kesimleri kurtar aracı çalıştırılırken düğme devre dışı bırakılır."
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
