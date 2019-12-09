@@ -80,6 +80,8 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 					} else {
 						console.log('Hardware scan still working.');
 					}
+				} else {
+					console.error('GetStatus returned an invalid response');
 				}
 			}).catch((error) => {
 				console.log('Get status error ---> ' + error);
