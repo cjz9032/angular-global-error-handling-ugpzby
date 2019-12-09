@@ -642,7 +642,8 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -1101,14 +1102,14 @@
                         "FCCText": "De {{before}} Wh até {{after}} Wh",
                         "note": "Nota: antes de repor o indicador de bateria, certifique-se de que liga o computador à alimentação CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Concluído. Reposição com êxito.",
-                            "ERROR_SHUTDOWN": "Incompleto. Encerramento do sistema.",
-                            "ERROR_LOGOFF": "Incompleto. Utilizador com sessão terminada.",
-                            "ERROR_BATTERY_REMOVE": "Incompleto. Bateria removida.",
-                            "ERROR_BATTERY_REPLACE": "Incompleto. Bateria substituída.",
-                            "ERROR_AC_DETTACH": "Incompleto. Transformador CA desligado.",
-                            "ERROR_USER_CANCEL": "Incompleto. Cancelado pelo utilizador.",
-                            "ERROR_UNEXPECTED": "Incompleto. Ocorreu um erro inesperado."
+                            "ERROR_SUCCESS": "Concluído: Reposição com êxito.",
+                            "ERROR_SHUTDOWN": "Falha: Encerramento do sistema.",
+                            "ERROR_LOGOFF": "Falha: Utilizador com sessão terminada.",
+                            "ERROR_BATTERY_REMOVE": "Falha: Bateria removida.",
+                            "ERROR_BATTERY_REPLACE": "Falha: Bateria substituída.",
+                            "ERROR_AC_DETTACH": "Falha: Transformador CA desligado.",
+                            "ERROR_USER_CANCEL": "Falha: Cancelado pelo utilizador.",
+                            "ERROR_UNEXPECTED": "Falha: Ocorreu um erro inesperado."
                         },
                         "popup": {
                             "description1": "O processo de reposição é o seguinte:<br>Carregar totalmente a bateria  -->  Descarregar totalmente a bateria  -->  Voltar a carregar totalmente a bateria",
@@ -1173,18 +1174,18 @@
                     },
                     "checkbox": "Ajustar automaticamente o tempo ativo do computador com base na utilização",
                     "hyperlinkToGraph": "Clique para ver a atividade e o tempo ativo da tabela do computador",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programe o seu computador",
+                    "automaticMode": "Modo automático",
+                    "manualMode": "Modo manual",
+                    "subNote": "Baseado na sua utilização, o seu computador está programado para o Modo de Suspensão Moderno.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilização deste computador",
+                        "graph2Tittle": "Tempo ativo aplicado",
+                        "graphSubtittle": "Nestes períodos, mantemos o computador pronto para ser retomado mais depressa.",
+                        "graphNote": "Os dados de atividade deste computador não são suficientes para fornecer um perfil para a programação automática. O Modo de Suspensão Inteligente utilizará a programação Modo manual até estarem disponíveis dados suficientes.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Nenhum",
+                            "frequent": "Frequente"
                         },
                         "hours": {
                             "zero": 0,

@@ -642,7 +642,8 @@
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
@@ -1101,14 +1102,14 @@
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Completo. Restablecimiento satisfactorio.",
-                            "ERROR_SHUTDOWN": "Incompleto. Se apagó el sistema.",
-                            "ERROR_LOGOFF": "Incompleto. Se cerró la sesión del usuario.",
-                            "ERROR_BATTERY_REMOVE": "Incompleto. Se extrajo la batería.",
-                            "ERROR_BATTERY_REPLACE": "Incompleto. Se reemplazó la batería.",
-                            "ERROR_AC_DETTACH": "Incompleto. Se desconectó el adaptador de alimentación de CA.",
-                            "ERROR_USER_CANCEL": "Incompleto. Cancelado por el usuario.",
-                            "ERROR_UNEXPECTED": "Incompleto. Ha ocurrido un error inesperado."
+                            "ERROR_SUCCESS": "Completo: Restablecimiento satisfactorio.",
+                            "ERROR_SHUTDOWN": "Error: Se apagó el sistema.",
+                            "ERROR_LOGOFF": "Error: Se cerró la sesión del usuario.",
+                            "ERROR_BATTERY_REMOVE": "Error: Se extrajo la batería.",
+                            "ERROR_BATTERY_REPLACE": "Error: Se sustituyó la batería.",
+                            "ERROR_AC_DETTACH": "Error: Se desconectó el adaptador de alimentación de CA.",
+                            "ERROR_USER_CANCEL": "Error: Cancelado por el usuario.",
+                            "ERROR_UNEXPECTED": "Error: Ha ocurrido un error inesperado."
                         },
                         "popup": {
                             "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
@@ -1173,18 +1174,18 @@
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
                     "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programar su equipo",
+                    "automaticMode": "Modalidad automática",
+                    "manualMode": "Modalidad manual",
+                    "subNote": "El sistema está programado en Espera moderna según su uso.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Uso de este sistema",
+                        "graph2Tittle": "Tiempo activo aplicado",
+                        "graphSubtittle": "En estos periodos de tiempo, mantenemos el sistema listo para una reanudación más rápida.",
+                        "graphNote": "Los datos de actividad de este sistema no son suficientes para proporcionar un perfil para la planificación automática. La Espera inteligente usará la programación de Modalidad manual hasta que haya suficientes datos disponibles.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ninguna",
+                            "frequent": "Frecuente"
                         },
                         "hours": {
                             "zero": 0,
