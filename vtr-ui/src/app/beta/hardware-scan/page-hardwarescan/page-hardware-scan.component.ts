@@ -75,8 +75,8 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 				if (response) {
 					if (!response.isScanInProgress) {
 						console.log('Hardware scan has stopped running by inactivity or system suspended!');
-						// Back to home!
-						this.redirectBack();
+						// Reloading the page!
+						location.reload();
 					} else {
 						console.log('Hardware scan still working.');
 					}
