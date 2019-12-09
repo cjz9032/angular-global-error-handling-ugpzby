@@ -28,8 +28,8 @@
 			</div>
 		</ng-container>
 	</div>
+	
 	<p class="brightCondition"
-		ngbTooltip="{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}	{{'gaming.lightingProfile.brightness.text2.title' | translate}}"
 		 *ngIf="enableBrightCondition1" id="lighting_brightness_setting_msg"
 		attr.aria-label="lighting_brightness_setting_msg">
 		<span *ngIf="defaultLang === 'ar'" dir="rtl">
@@ -39,5 +39,9 @@
 		<span *ngIf="defaultLang !== 'ar'">
 			{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}
 			{{'gaming.lightingProfile.brightness.text2.title' | translate}}
-		</span> </p>
+		</span> 
+	</p>
+	<div class="gaming-tooltip">
+		<p>{{'gaming.lightingProfile.brightness.text1.title' | translate}} {{effectOptionName | translate}}{{'gaming.lightingProfile.brightness.text2.title' | translate}}</p>
+	</div>
 </div>

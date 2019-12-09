@@ -19,7 +19,7 @@
                         "balText": "استخدام CPU عادي، سرعة مروحة عادية",
                         "quietText": "استخدام CPU أقل، سرعة مروحة أقل"
                     },
-                    "wifiSecurity": "‏أمان Wifi",
+                    "wifiSecurity": "‏أمان WiFi",
                     "dolby": "‏Dolby",
                     "rapidCharge": "الشحن السريع"
                 },
@@ -794,10 +794,10 @@
                 "title": "تحديث النظام",
                 "notFound": "لم يتم العثور على تحديث النظام",
                 "detail": {
-                    "uptoDate": "البرنامج محدّث",
-                    "updatedOn": "تاريخ التحديث",
-                    "outdated": "البرنامج قديم",
-                    "neverRanUpdate": "لا تشغّل التحديث إطلاقًا"
+                    "uptoDate": "تم التحقق من التحديثات ",
+                    "updatedOn": "تم التحقق في ",
+                    "outdated": "لم يتم التحقق من التحديثات مؤخرًا ",
+                    "neverRanUpdate": "لم يتم التحقق من التحديثات أبدًا"
                 }
             },
             "extendedWarranty": "تمديد الضمان",
@@ -911,7 +911,7 @@
                     "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>"
                 },
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
-                "thresholdNote": "<b>ملاحظة:</b> لزيادة المدى العمري للبطارية، يجب تعيين البطارية بحيث يتوقف شحنها عند وصول الشحن إلى {{value}}%.",
+                "thresholdNote": "<b>ملاحظة:</b> لا يمكن شحن البطارية بالكامل عند تمكين حد شحن البطارية.",
                 "seeDetailsLink": "انظر التفاصيل",
                 "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً."
             },
@@ -989,7 +989,28 @@
                         }
                     },
                     "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
-                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\"."
+                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "إعدادات الطاقة",
@@ -1078,6 +1099,7 @@
                         },
                         "progressText1": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
                         "progressText2": "{{stage}} من {{stageNum}}: معايرة إلى طاقة البطارية المنخفضة",
+                        "progressText3": "{{stage}} من {{stageNum}}: معايرة إلى الشحن الكامل",
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
@@ -1148,7 +1170,8 @@
                         },
                         "everyday": "كل يوم",
                         "weekdays": "أيام الأسبوع",
-                        "weekends": "عطلة نهاية الأسبوع"
+                        "weekends": "عطلة نهاية الأسبوع",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
                     "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
@@ -1191,7 +1214,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1377,7 +1402,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "لتمكين ميزة التكبير/التصغير على أجهزة العرض عالية الدقة",
+                        "description": "تمكين ميزة التكبير/التصغير على شاشات العرض عالية الدقة",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -2028,7 +2053,7 @@
                 "connect": "الاتصال الأخير",
                 "showmore": "إظهار المزيد",
                 "showless": "إظهار أقل",
-                "button": "تمكين أمان شبكة Wifi",
+                "button": "تمكين أمان شبكة WiFi",
                 "disableDecribe": "ميزة أمان Lenovo WiFi هي عبارة عن خدمة برمجية متقدمة تستند إلى السحابة والتي تساعد جهازك في تمييز الشبكات اللاسلكية الآمنة عن الشبكات الضارة المحتملة."
             },
             "threatlocator": {
@@ -2103,7 +2128,7 @@
                 "pass": "نجاح",
                 "learnMoreAboutSecurityHealth": "اعرف المزيد حول كل واحد من هذه المكونات <tag>هنا</tag>.",
                 "peaceOfMind": "هل تريد المزيد من راحة البال؟",
-                "button": "تمكين أمان شبكة Wifi"
+                "button": "تمكين أمان شبكة WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2519,7 +2544,6 @@
         "question5": {
             "title": "استخدام الكمبيوتر الشخصي ككمبيوتر لوحي",
             "description": "<div class='faqInFs4Fb'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 class='faqInFs25FbP10'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 class='faqInFs25FbP10'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 class='faqInFs25FbP10'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2778,7 +2802,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "يكون الزر معطلاً بينما لم يتم استرداد معلومات الأجهزة بعد، في حال لم تكن أجهزة التخزين تدعم هذه الميزة أو عندما تكون استعادة القطاعات المصابة‬ قيد التشغيل."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",

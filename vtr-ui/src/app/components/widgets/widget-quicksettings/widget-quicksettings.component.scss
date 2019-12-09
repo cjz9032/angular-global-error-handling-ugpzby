@@ -2,7 +2,7 @@
 
 .vtr-widget-quicksettings {
 	.heading {
-		color: $main_darker;
+		color: $shade_blue;
 		font-size: $fontsize_xl2;
 		line-height: 1.1em;
 		font-weight: $weight_light;
@@ -11,7 +11,7 @@
 		display: flex;
 		// justify-content: space-between;
 		> div {
-			width: 33%;
+			width: 35%;
 		}
 	}
 }
@@ -20,7 +20,7 @@
 	display: flex;
 	// justify-content: flex-start;
 	> div {
-		width: 33%;
+		width: 35%;
 	}
 }
 .permission-note {
@@ -38,19 +38,19 @@
 		text-align: left;
 		@media #{$black-on-white} {
 			color: $yellow;
-			border:none;
+			border: none;
 		}
 		@media #{$white-on-black} {
 			color: $blue-lighter;
-			border:none;
+			border: none;
 		}
 	}
 }
-	.link-text {
-		font-size: $body;
-		text-decoration: underline;
-		letter-spacing: 0.05rem;
-		color: $menu_hover;
-		cursor: pointer;
-		font-weight: 600;
-	}
+.link-text {
+	font-size: $body;
+	text-decoration: underline;
+	letter-spacing: 0.05rem;
+	color: $menu_hover;
+	cursor: pointer;
+	font-weight: 600;
+}

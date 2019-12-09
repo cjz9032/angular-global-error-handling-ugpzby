@@ -54,8 +54,12 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.notificationSubscription.unsubscribe();
-		this.routeSubscription.unsubscribe();
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.routeSubscription) {
+			this.routeSubscription.unsubscribe();
+		}
 
 	}
 

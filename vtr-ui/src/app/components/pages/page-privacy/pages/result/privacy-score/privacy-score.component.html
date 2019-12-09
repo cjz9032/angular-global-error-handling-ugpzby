@@ -1,13 +1,18 @@
 <div class="privacy-score row" data-analyticsName="ScoreBlock" [vtrAppSearchScroller]="['search-privacy-score']">
 	<div class="privacy-score__picture score-pic col-xl-auto col-lg-12 col-md-auto">
 		<div [class]="'score-pic__circle score-pic__circle--' + privacyLevel">
-			<div *ngIf="(isFirstTimeVisitor$ | async)" class="score-pic__symbol">
-				<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
-			</div>
-			<div *ngIf="!(isFirstTimeVisitor$ | async)" class="score-pic__number">
-				<vtr-spinner *ngIf="!(isShowScore$ | async)"></vtr-spinner>
-				<span *ngIf="(isShowScore$ | async)">{{score}} <span class="score-pic__percent">%</span></span>
-			</div>
+			<ng-container [ngSwitch]="appState$ | async">
+				<div *ngSwitchCase="appStatuses.firstTimeVisitor" class="score-pic__symbol">
+					<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
+				</div>
+				<div *ngSwitchCase="appStatuses.figleafInExitWithoutScan" class="score-pic__symbol">
+					<img src="{{defaultScoreImageUrl}}" alt="undefined privacy score">
+				</div>
+				<div *ngSwitchDefault class="score-pic__number">
+					<vtr-spinner *ngIf="!(isShowScore$ | async)"></vtr-spinner>
+					<span *ngIf="(isShowScore$ | async)">{{score}} <span class="score-pic__percent">%</span></span>
+				</div>
+			</ng-container>
 		</div>
 	</div>
 	<div class="privacy-score__description-col col-xl-8 col-lg-12 col-md-8">
@@ -35,7 +40,7 @@
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'DefineMyScoreButton'"
 					(click)="openPopUp('oneClickScan')">
-				{{btnText}}
+				Define my score
 			</button>
 		</div>
 	</div>

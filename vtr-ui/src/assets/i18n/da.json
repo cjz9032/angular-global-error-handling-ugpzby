@@ -792,10 +792,10 @@
                 "title": "Systemopdatering",
                 "notFound": "Der blev ikke fundet en systemopdatering",
                 "detail": {
-                    "uptoDate": "Softwaren er opdateret",
-                    "updatedOn": "opdateret den",
-                    "outdated": "Forældet software",
-                    "neverRanUpdate": "opdatering blev aldrig kørt"
+                    "uptoDate": "Der er søgt efter opdateringer ",
+                    "updatedOn": "søgt den ",
+                    "outdated": "Der er ikke søgt efter opdateringer for nylig ",
+                    "neverRanUpdate": "der er aldrig søgt efter opdateringer"
                 }
             },
             "extendedWarranty": "Garanti, udvidet",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>"
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
-                "thresholdNote": "<b>Bemærk:</b> For at forlænge batteriets levetid har du indstillet batteriet til at stoppe med at oplade ved {{value}}%.",
+                "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
                 "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows",
-                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille."
+                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Strømindstillinger",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "progressText2": "{{stage}} af {{stageNum}}: Kalibrerer til lavt batteristrømniveau",
+                        "progressText3": "{{stage}} af {{stageNum}}: Kalibrerer til fuld opladning",
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
@@ -1146,7 +1168,8 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
-                        "weekends": "Weekender"
+                        "weekends": "Weekender",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
                     "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
@@ -1189,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -2016,8 +2041,8 @@
                 "back": "TILBAGE"
             },
             "container": {
-                "title": "Lenovo Wi-Fi-sikkerhed",
-                "name": "WI-FI-SIKKERHED",
+                "title": "Lenovo WiFi-sikkerhed",
+                "name": "WIFI-SIKKERHED",
                 "enable": "AKTIVERET",
                 "disable": "DEAKTIVERET",
                 "less": "Færre oplysninger",
@@ -2026,8 +2051,8 @@
                 "connect": "Senest tilsluttet",
                 "showmore": "Vis mere",
                 "showless": "Vis mindre",
-                "button": "Aktivér Wi-Fi-sikkerhed",
-                "disableDecribe": "Lenovo Wi-Fi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
+                "button": "Aktivér WiFi-sikkerhed",
+                "disableDecribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige."
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
@@ -2037,7 +2062,7 @@
             },
             "locationmodal": {
                 "title": "Aktivér placeringstjenester",
-                "describe1": "Hvis du vil bruge Lenovo Wi-Fi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
+                "describe1": "Hvis du vil bruge Lenovo WiFi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
                 "describe2": "Hvis du vil bruge Tilsluttet Home Security, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
                 "agree": "ACCEPTÉR",
                 "cancel": "ANNULLER"
@@ -2101,7 +2126,7 @@
                 "pass": "BESTÅET",
                 "learnMoreAboutSecurityHealth": "Få flere oplysninger om hver af disse komponenter <tag>her</tag>.",
                 "peaceOfMind": "Vil du have ro i sindet?",
-                "button": "Aktivér Wi-Fi-sikkerhed"
+                "button": "Aktivér WiFi-sikkerhed"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2163,7 +2188,7 @@
             "allowsYou": "Med Dashlane kan du",
             "allowsYou1": "Logge på med det samme overalt og få problemfri søgning på internettet - Synkronisere på tværs af enheder, så du altid kan få adgang til vigtige konti",
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
-            "allowsYou3": "Forblive sikret på ikke-sikre Wi-Fi-netværk med indbygget VPN",
+            "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
             "poweredByDashLane": "Udarbejdet af Dashlane",
             "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
@@ -2517,7 +2542,6 @@
         "question5": {
             "title": "Brug din pc som en tablet",
             "description": "<div class='faqInFs4Fb'>    Brug din pc som en tablet</div><hr><p>Tablettilstand gør Windows mere intuitiv og nemmere at bruge, fordi du har en berøringsfølsom skærmenhed.</p><h3 class='faqInFs25FbP10'>Brug tablettilstand</h3><p>Hvis du vil aktivere tablettilstand, skal du vælge <strong>Handlingscenter</strong> på proceslinjen og derefter vælge <strong>Tablettilstand</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Bemærk</h3><p>Hvis du vil finde ud af, om din enhed kan aktivere tablettilstand automatisk, skal du søge efter enheden på producentens websted. Understøttelsen af denne funktion afhænger af hardwaren, den installerede driver, og hvordan enheden er konfigureret af producenten. </p><p> </p><p>I tablettilstand åbnes apps i fuld skærmvisning, så du får mere plads til at arbejde. Hvis du vil lukke en app, skal du trække den til bunden af skærmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Proceslinjen er tilgængelig, når pc'en er i tablettilstand, men du kan skjule den, hvis du vil have mere plads på skærmen. Vælg knappen <strong>Start</strong>, vælg <strong>Indstillinger </strong>> <strong>System </strong>> <strong>Tablettilstand</strong>, og aktivér derefter <strong>Skjul automatisk proceslinjen i tablettilstand</strong>. Hvis du vil se den skjulte proceslinje, skal du stryge opad fra bunden af skærmen eller bruge musen til at pege på den.</p><h3 class='faqInFs25FbP10'>Brug to apps samtidigt</h3><p>Hvis du vil bruge to apps side om side i tablettilstand, skal du trække en åben app nedad og til siden. Du kan se, hvor den bliver fastgjort, og du vil få vist alle åbne apps ved siden af den.</p><p>I denne visning kan du også:</p><ul>    <li>Bruge den fælles kant mellem to fastgjorte apps til at tilpasse størrelsen på begge apps samtidigt.</li>    <li>Åbn en ny app fra opgavevisningen. Vælg <strong>Opgavevisning</strong> på proceslinjen, vælg en app, og træk den derefter til den ene side for at fastgøre den på den delte skærm.</li>    <li>Brug knappen Tilbage på proceslinjen til at gå tilbage i en app eller åbne en app, du har brugt før.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2776,7 +2800,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Knappen deaktiveres, mens hardwareoplysningerne endnu ikke er hentet, hvis lagerenhederne ikke understøtter denne funktion, eller når gendannelsen af beskadigede sektorer kører."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",

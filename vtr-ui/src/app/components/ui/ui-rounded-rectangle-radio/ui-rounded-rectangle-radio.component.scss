@@ -131,6 +131,7 @@
 	}
 	&.border-disabled {
 		border: 0.3rem solid #e6eaeb;
+		cursor: default;
 		label {
 			.icon-circle {
 				color: $grey_darker;
@@ -139,6 +140,7 @@
 	}
 	&.border-checked-disabled {
 		border: 0.3rem solid #667481;
+		cursor: default;
 		label {
 			.icon-circle {
 				color: $grey_darker;

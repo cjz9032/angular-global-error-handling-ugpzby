@@ -792,10 +792,10 @@
                 "title": "Оновлення системи",
                 "notFound": "Оновлення системи не знайдено",
                 "detail": {
-                    "uptoDate": "Програмне забезпечення не потребує оновлень",
-                    "updatedOn": "оновлено",
-                    "outdated": "Програмне забезпечення потребує оновлення",
-                    "neverRanUpdate": "оновлення ніколи не запускалося"
+                    "uptoDate": "Оновлення перевірено ",
+                    "updatedOn": "перевірено ",
+                    "outdated": "Оновлення не перевірялись останнім часом ",
+                    "neverRanUpdate": "оновлення ніколи не перевірялися"
                 }
             },
             "extendedWarranty": "Подовжити гарантію",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
-                "thresholdNote": "<b>Примітка.</b> Щоб подовжити строк служби акумулятора, налаштуйте його так, щоб він припиняв заряджатися на рівні {{value}}%.",
+                "thresholdNote": "<b>Примітка.</b> Батарея не може бути заряджена повністю якщо увімкнено граничне значення заряду акумулятора.",
                 "seeDetailsLink": "Показати відомості",
                 "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
-                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи."
+                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} з {{stageNum}}: калібрування до повного заряду",
                         "progressText2": "{{stage}} з {{stageNum}}: калібрування до низького заряду",
+                        "progressText3": "{{stage}} з {{stageNum}}: калібрування до повного заряду",
                         "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
                         "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
@@ -1146,7 +1168,8 @@
                         },
                         "everyday": "Щодня",
                         "weekdays": "Будні",
-                        "weekends": "Вихідні дні"
+                        "weekends": "Вихідні дні",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
                     "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
@@ -1189,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1375,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "Увімкнення функції масштабування на екранах із високою роздільною здатністю",
+                        "description": "увімкнення функції змінення масштабу на екранах із високою роздільною здатністю",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -2016,7 +2041,7 @@
                 "back": "НАЗАД"
             },
             "container": {
-                "title": "Безпека Wifi від Lenovo",
+                "title": "Безпека WiFi від Lenovo",
                 "name": "БЕЗПЕКА WIFI",
                 "enable": "УВІМКНУТО",
                 "disable": "ВИМКНУТО",
@@ -2517,7 +2542,6 @@
         "question5": {
             "title": "Використання комп'ютера як планшета",
             "description": "<div class='faqInFs4Fb'>    Використання комп'ютера як планшета</div><hr><p>Режим планшета робить Windows більш інтуїтивною та зручнішою у використанні для пристроїв з сенсорним екраном.</p><h3 class='faqInFs25FbP10'>Використання режиму планшета</h3><p>Щоб увімкнути режим планшета, виберіть <strong>Центр підтримки</strong> на панелі завдань, а потім – <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Примітка</h3><p>Щоб дізнатися, чи може ваш пристрій автоматично вмикати режим планшета, знайдіть свій пристрій на веб-сайті виробника. Підтримка цієї функції залежить від обладнання, встановленого драйвера та способу налаштування пристрою виробником. </p><p> </p><p>У режимі планшета програми відкриваються на весь екран, що дає більше місця для роботи. Щоб закрити програму, перетягніть її в нижню частину екрана.</p><p> </p><h3 class='faqInFs25FbP10'>Порада</h3><p>Панель завдань доступна, коли комп'ютер перебуває в режимі планшета, але її можна приховати, якщо потрібно більше місця на екрані. Натисніть кнопку <strong>Пуск</strong>, виберіть <strong>Настройки</strong> > <strong>Система</strong> > <strong>Режим планшета</strong>, потім увімкніть параметр <strong>Автоматично приховувати панель завдань у режимі планшета</strong>. Щоб переглянути приховану панель завдань, проведіть пальцем знизу вгору екрана або наведіть курсор миші на неї.</p><h3 class='faqInFs25FbP10'>Використання двох програм одночасно</h3><p>Щоб використовувати одночасно дві програми в режимі планшета, перетягніть відкриту програму вниз та в бік. Ви побачите, де вона зафіксується, і поруч з нею відображатимуться відкриті програми.</p><p>У цьому поданні також можна:</p><ul>    <li>Використовувати спільний край двох зафіксованих програм, щоб змінити розмір обох програм одночасно.</li>    <li>Відкривати нову програму з подання завдань: виберіть <strong>Перегляд завдань</strong> на панелі завдань виберіть програму, а потім перетягніть її на одну сторону, щоб зафіксувати її на розділеному екрані.</li>    <li>Натисніть кнопку \"Назад\" на панелі завдань, щоб повернутися до програми або відкрити програму, яку використовували раніше.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2776,7 +2800,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",

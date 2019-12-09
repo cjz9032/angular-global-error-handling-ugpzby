@@ -7,7 +7,7 @@
 					attr.aria-label="dashboard-quick-settings-title">{{'dashboard.quickSettings.title' | translate}}
 				</div>
 				<div [ngClass]="cameraStatus.available ? 'widget-icon-3': 'widget-icon-2'">
-					<div class="text-left">
+					<div class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Microphone2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Microphone---slash2x'"
 							[value]="microphoneStatus.status && microphoneStatus.permission"
@@ -23,7 +23,7 @@
 						</vtr-widget-switch-icon>
 					</div>
 					<div *ngIf="cameraStatus.available"
-						class="text-center">
+						class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
 							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
 							[value]="!cameraStatus.status && cameraStatus.permission"
@@ -39,6 +39,24 @@
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
+					<!-- <div *ngIf="!deviceService.isSMode"
+						class="text-right">
+						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-quick-setting-system-update'"
+							[offIconDefinition]="'icomoon icomoon-quick-setting-system-update'"
+							[value]="true"
+							[title]="'dashboard.systemStatus.systemUpdate.detail.update' | translate"
+							metricsItem="system-update"
+							id="qs-switch-system-update"
+							aria-label="qs-switch-system-update"
+							[switchId]="'system-update'"
+							[isBlocked]="false"
+							[isCamera]="true"
+							(toggle)="onSystemUpdateToggle($event)"
+							[disable]="false"
+							[isLoading]="false"
+							[hideOnOffLabel]="true">
+						</vtr-widget-switch-icon>
+					</div> -->
 					<!-- <div *ngIf="vantageToolbarStatus.available"
 						class="text-center">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
@@ -70,7 +88,7 @@
 							[disable]="!(eyeCareModeStatus.available && quickSettingsWidget[2].state)"
 							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
 					</div> -->
-					<div class="text-right" *ngIf="machineType ==1">
+					<div class="" *ngIf="machineType ==1">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
 							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
 							[title]="'dashboard.quickSettings.threshold' | translate"
@@ -84,7 +102,7 @@
 							[isLoading]="thresholdLoadingStatus">
 						</vtr-widget-switch-icon>
 					</div>
-					<div class="text-right" *ngIf="machineType ==0">
+					<div class="" *ngIf="machineType ==0">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
 							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
 							[title]="'dashboard.quickSettings.conservation' | translate"
@@ -193,8 +211,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-right link-text text-uppercase mt-4">
-			<a class="nav-link"
+		<div class="text-right text-uppercase mt-4">
+			<a class="link-text"
 				vtrMetrics
 				id="qs-lnk-my-device-settings"
 				attr.aria-label="qs-lnk-my-device-settings"

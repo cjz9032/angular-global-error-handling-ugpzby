@@ -10,14 +10,14 @@
 				</span>
 			</div>
 		</div>
-		<div class="col-6" *ngIf="!recordingStatus">
+		<div class="col-12" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [selectedValue]="repeatSelectedValue" [options]="repeatOptions[0]"
 					[enableDescription]="false" (change)="onRepeatChanged($event)" [tabindex]="1">
 				</vtr-ui-lighting-effect >
 			</div>
 		</div>
-		<div class="col-6" *ngIf="!recordingStatus">
+		<div class="col-12" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
 					(change)="onIntervalChanged($event)" [tabindex]="1">

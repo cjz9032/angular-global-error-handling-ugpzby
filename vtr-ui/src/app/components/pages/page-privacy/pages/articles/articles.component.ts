@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from './articles.service';
 import { Router } from '@angular/router';
 import { RoutersName } from '../../privacy-routing-name';
@@ -9,7 +9,7 @@ import { CommonService } from '../../../../../services/common/common.service';
 	templateUrl: './articles.component.html',
 	styleUrls: ['./articles.component.scss']
 })
-export class ArticlesComponent {
+export class ArticlesComponent implements OnInit {
 	articles$ = this.articlesService.getListOfArticles();
 
 	constructor(
@@ -17,6 +17,10 @@ export class ArticlesComponent {
 		private router: Router,
 		private commonService: CommonService
 	) {
+	}
+
+	ngOnInit() {
+		this.commonService.scrollTop();
 	}
 
 	openArticle(articleId: string) {

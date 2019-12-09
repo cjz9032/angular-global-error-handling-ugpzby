@@ -13,6 +13,8 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ScanLimitPitchComponent } from './email-scanner/scan-limit-pitch/scan-limit-pitch.component';
 import { RouterModule } from '@angular/router';
+import { FakeBreachesComponent } from './fake-breaches/fake-breaches.component';
+import { ExitPitchComponent } from './exit-pitch/exit-pitch.component';
 
 @NgModule({
 	declarations: [
@@ -26,6 +28,8 @@ import { RouterModule } from '@angular/router';
 		BreachedOtherDescriptionComponent,
 		VerifyEmailComponent,
 		ScanLimitPitchComponent,
+		FakeBreachesComponent,
+		ExitPitchComponent,
 	],
 	exports: [
 		EmailScannerComponent,
@@ -35,7 +39,8 @@ import { RouterModule } from '@angular/router';
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
 		BreachedOtherDescriptionComponent,
-		VerifyEmailComponent
+		VerifyEmailComponent,
+		ExitPitchComponent,
 	],
 	imports: [
 		CommonModule,

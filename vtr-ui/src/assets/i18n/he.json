@@ -792,10 +792,10 @@
                 "title": "‏‫עדכון המערכת‬",
                 "notFound": "לא נמצא עדכון מערכת",
                 "detail": {
-                    "uptoDate": "התוכנה מעודכנת",
-                    "updatedOn": "עודכן בתאריך",
-                    "outdated": "התוכנה לא עדכנית",
-                    "neverRanUpdate": "מעולם לא הופעל עדכון"
+                    "uptoDate": "בוצעה בדיקה לחיפוש עדכונים ",
+                    "updatedOn": "הבדיקה בוצעה בתאריך ",
+                    "outdated": "לא התבצעה בדיקה לחיפוש עדכונים לאחרונה ",
+                    "neverRanUpdate": "מעולם לא בוצעה בדיקה לחיפוש עדכונים"
                 }
             },
             "extendedWarranty": "הרחבת האחריות",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
-                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
+                "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
-                    "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\"."
+                    "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "הגדרות צריכת חשמל",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
+                        "progressText3": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
@@ -1146,7 +1168,8 @@
                         },
                         "everyday": "כל יום",
                         "weekdays": "ימי חול",
-                        "weekends": "סופי שבוע"
+                        "weekends": "סופי שבוע",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "התאמה אוטומטית של הזמן הפעיל של המחשב בהתבסס על השימוש שלכם",
                     "hyperlinkToGraph": "לחצו כדי לראות את הפעילות ואת הזמן הפעיל של טבלת המחשב שלכם",
@@ -1189,7 +1212,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1375,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "הפעלת תכונת שינוי גודל התצוגה בתצוגות בעלות רזולוציה גבוהה",
+                        "description": "הפעלת תכונת ההקטנה/הגדלה של התצוגה בתצוגות בעלות רזולוציה גבוהה",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -2026,7 +2051,7 @@
                 "connect": "חובר לאחרונה",
                 "showmore": "הצג יותר",
                 "showless": "הצג פחות",
-                "button": "הפעלת אבטחת Wifi",
+                "button": "הפעלת אבטחת WiFi",
                 "disableDecribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
             },
             "threatlocator": {
@@ -2101,7 +2126,7 @@
                 "pass": "עבר",
                 "learnMoreAboutSecurityHealth": "קבלו מידע נוסף על כל אחד מרכיבים אלה <tag>כאן</tag>.",
                 "peaceOfMind": "מעוניינים ביותר שקט נפשי?",
-                "button": "הפעלת אבטחת Wifi"
+                "button": "הפעלת אבטחת WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2517,7 +2542,6 @@
         "question5": {
             "title": "שימוש במחשב כמו במחשב לוח",
             "description": "<div class='faqInFs4Fb'>    שימוש במחשב כמו במחשב לוח</div><hr><p>מצב לוח הופך את Windows ליותר אינטואיטיבית וקלה לשימוש כאשר יש לכם מכשיר עם מסך מגע.</p><h3 class='faqInFs25FbP10'>שימוש במצב לוח</h3><p>להפעלת מצב לוח, בחרו <strong>מרכז הפעולות</strong> בשורת המשימות, לאחר מכן בחרו <strong>מצב לוח</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>הערה</h3><p>כדי לגלות אם מכשירכם יכול להפעיל אוטומטית את מצב הלוח, אתרו את מכשירכם באתר אינטרנט של היצרן.התמיכה בתכונה זו תלויה בחומרה, במנהל ההתקן המותקן ובאופן הגדרת המכשיר על-ידי היצרן. </p><p> </p><p>במצב לוח, היישומים נפתחים במסך מלא ומספקים לכם מרחב עבודה גדול יותר.כדי לסגור יישום, גררו אותו לתחתית המסך.</p><p> </p><h3 class='faqInFs25FbP10'>עצה</h3><p>שורת המשימות זמינה כאשר המחשב נמצא במצב לוח, אך ניתן להסתיר אותה אם אתם רוצים יותר מרחב על המסך.בחרו בלחצן <strong>התחל </strong>, בחרו <strong>הגדרות </strong>> <strong>מערכת </strong>> <strong> מצב לוח </strong>, לאחר מכן הפעילו את האפשרות <strong>הסתר באופן אוטומטי את שורת המשימות במצב לוח</strong>. כדי לראות את שורת המשימות המוסתרת, החליקו למעלה מתחתית המסך, או השתמשו בעכבר כדי לרחף באזור.</p><h3 class='faqInFs25FbP10'>שימוש בשני יישומים בו-זמנית</h3><p>כדי להשתמש בשני יישומים זה לצד זה במצב לוח, גררו יישום פתוח כלפי מטה והצידה.תראו היכן הוא ימוקם, ותראו את כל היישומים הפתוחים לצידו.</p><p>בתצוגה זו, תוכלו גם:</p><ul>    <li>להשתמש בקצה המשותף בין שני יישומים מקובעים כדי לשנות את הגודל של שני היישומים בו-זמנית.</li>    <li>לפתוח יישום חדש מתוך תצוגת המשימות&mdash;בחרו <strong>תצוגת המשימות</strong> בשורת המשימות, בחרו יישום, ולאחר מכן גררו אותו לצד אחד כדי למקמו במסך המפוצל.</li>    <li>להשתמש בלחצן החזרה בשורת המשימות כדי לחזור אחורה ביישום, או כדי לפתוח יישום שהשתמשתם בו קודם לכן.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2776,7 +2800,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "הלחצן מושבת כאשר פרטי החומרה עדיין לא אוחזרו, למקרה שהתקני האחסון אינם תומכים בפונקציונליות זו או כאשר שחזור ההסקטורים הפגומים פועל."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",

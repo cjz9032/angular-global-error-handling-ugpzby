@@ -5,6 +5,12 @@
 		max-height: 75vh;
 		overflow-x: hidden;
 		overflow-y: auto;
+		@media #{$breakpoint_md} {
+			max-height: 60rem;
+		}
+		@media #{$breakpoint_sm} {
+			max-height: 68rem;
+		}
 
 		.battery-indicator {
 			width: 35rem;

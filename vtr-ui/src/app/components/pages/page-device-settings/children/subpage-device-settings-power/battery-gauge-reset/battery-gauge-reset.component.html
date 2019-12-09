@@ -48,7 +48,7 @@
 											{{ 'device.deviceSettings.power.batterySettings.gaugeReset.progress' | translate}}
 										</div>
 										<div class="col-8 label-value"
-											*ngIf="battery.stage==1||battery.stage==3"
+											*ngIf="battery.stage==1"
 											role="text">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText1' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
 										</div>
@@ -56,6 +56,11 @@
 											*ngIf="battery.stage==2"
 											role="text">
 											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText2' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
+										</div>
+										<div class="col-8 label-value"
+											*ngIf="battery.stage==3"
+											role="text">
+											{{'device.deviceSettings.power.batterySettings.gaugeReset.progressText3' | translate : { stage: battery.stage, stageNum: battery.stageNum } }}
 										</div>
 									</div>
 									<div class="row"

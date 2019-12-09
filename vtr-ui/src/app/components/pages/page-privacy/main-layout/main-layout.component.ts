@@ -9,6 +9,7 @@ import { FigleafOverviewService } from '../common/services/figleaf-overview.serv
 import { UpdateTriggersService } from '../common/services/update-triggers.service';
 import { TaskObserverService } from '../common/services/analytics/task-observer.service';
 import { WidgetDataService } from '../common/services/widget-data.service';
+import { CommunicationSwitcherService } from '../utils/communication-with-figleaf/communication-switcher.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -62,7 +63,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private figleafOverviewService: FigleafOverviewService,
 		private updateTriggersService: UpdateTriggersService,
 		private taskObserverService: TaskObserverService,
-		private widgetDataService: WidgetDataService
+		private widgetDataService: WidgetDataService,
+		private communicationSwitcherService: CommunicationSwitcherService
 	) {
 	}
 
@@ -74,6 +76,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.taskObserverService.start();
 		this.widgetDataService.startWrite();
+		this.communicationSwitcherService.startPulling();
+		this.communicationWithFigleafService.connect();
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),

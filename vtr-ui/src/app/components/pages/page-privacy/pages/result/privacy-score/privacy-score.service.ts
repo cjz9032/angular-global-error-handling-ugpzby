@@ -6,11 +6,13 @@ import { ScoreForBreachedAccountsService } from './privacy-score-calculate/score
 import { ScoreForVulnerablePasswordsService } from './privacy-score-calculate/score-for-vulnerable-passwords.service';
 import { ScoreForTrackingToolsService } from './privacy-score-calculate/score-for-tracking-tools.service';
 import { ScoreForMonitoringService } from './privacy-score-calculate/score-for-monitoring.service';
+import { AppStatuses } from '../../../userDataStatuses';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class PrivacyScoreService {
+	appStatuses = AppStatuses;
 
 	constructor(
 		private scoreForVulnerablePasswordsService: ScoreForVulnerablePasswordsService,
@@ -40,8 +42,8 @@ export class PrivacyScoreService {
 		shareReplay(1)
 	);
 
-	getStaticDataAccordingToScore(score) {
-		if (score === 0) {
+	getStaticDataAccordingToScore(score, appState: AppStatuses) {
+		if (appState === this.appStatuses.firstTimeVisitor) {
 			return {
 				privacyLevel: 'undefined',
 				title: 'Find out your privacy score',
@@ -49,6 +51,12 @@ export class PrivacyScoreService {
 						in control of your privacy. It all
 						starts with simple tools to show you how
 						private you are online.`,
+			};
+		} else if (appState === this.appStatuses.figleafInExitWithoutScan) {
+			return {
+				privacyLevel: 'exit-undefined',
+				title: 'Privacy score is not available',
+				text: `Launch Lenovo Privacy Essentials by FigLeaf to see how private you are online.`,
 			};
 		} else if (score < 40) {
 			return {
