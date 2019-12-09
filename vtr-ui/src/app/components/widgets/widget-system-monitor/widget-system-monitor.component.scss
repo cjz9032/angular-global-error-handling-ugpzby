@@ -8,7 +8,7 @@
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 2rem 4rem;
-		height: 41rem;
+		height:auto;
 		@media #{$breakpoint_xl3} {		}
 		@media #{$breakpoint_xl2} {
 			//height: 29rem;//removed as it is breaking in some points 
