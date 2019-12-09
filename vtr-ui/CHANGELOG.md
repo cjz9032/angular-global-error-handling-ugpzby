@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.275](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.274...v1.0.275) (2019-12-09)
+
+
+### Bug Fixes
+
+* **privacy:** scrollTop bluescreened on Intel video card system ([6b2225d](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/6b2225d))
+
+
+
 ## [1.0.274](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.0.273...v1.0.274) (2019-12-05)
 
 
