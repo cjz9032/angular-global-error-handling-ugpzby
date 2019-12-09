@@ -1105,14 +1105,14 @@
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Kész. Sikeres nullázás",
-                            "ERROR_SHUTDOWN": "Befejezetlen. Rendszer bezárása.",
-                            "ERROR_LOGOFF": "Befejezetlen. A felhasználó kilépett.",
-                            "ERROR_BATTERY_REMOVE": "Befejezetlen. Akkumulátor eltávolítva.",
-                            "ERROR_BATTERY_REPLACE": "Befejezetlen. Akkumulátor kicserélve.",
-                            "ERROR_AC_DETTACH": "Befejezetlen. A hálózati adapter lecsatlakoztatva.",
-                            "ERROR_USER_CANCEL": "Befejezetlen. A felhasználó megszakította.",
-                            "ERROR_UNEXPECTED": "Befejezetlen. Váratlan hiba történt."
+                            "ERROR_SUCCESS": "Kész: Sikeres nullázás",
+                            "ERROR_SHUTDOWN": "Sikertelen: A rendszer leállt.",
+                            "ERROR_LOGOFF": "Sikertelen: A felhasználó kilépett.",
+                            "ERROR_BATTERY_REMOVE": "Sikertelen: Akkumulátor eltávolítva.",
+                            "ERROR_BATTERY_REPLACE": "Sikertelen: Akkumulátor kicserélve.",
+                            "ERROR_AC_DETTACH": "Sikertelen: A hálózati adapter lecsatlakoztatva.",
+                            "ERROR_USER_CANCEL": "Sikertelen: A felhasználó megszakította.",
+                            "ERROR_UNEXPECTED": "Sikertelen: Váratlan hiba történt."
                         },
                         "popup": {
                             "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
                     "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Számítógép ütemezése",
+                    "automaticMode": "Automatikus üzemmód",
+                    "manualMode": "Manuális üzemmód",
+                    "subNote": "A számítógép használati séma alapján Modern készenléti állapotra lett ütemezve.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "A számítógép használata",
+                        "graph2Tittle": "Alkalmazott aktív idő",
+                        "graphSubtittle": "Ebben az időszakokban a számítógép készen áll a gyorsabb folytatásra.",
+                        "graphNote": "A számítógép tevékenységi adatai nem elegendőek az automatikus ütemezés profiljának létrehozásához. Az Intelligens készenlét a Manuális üzemmód ütemezését fogja használni, amíg elegendő adat nem áll rendelkezésre.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Egyik sem",
+                            "frequent": "Gyakori"
                         },
                         "hours": {
                             "zero": 0,

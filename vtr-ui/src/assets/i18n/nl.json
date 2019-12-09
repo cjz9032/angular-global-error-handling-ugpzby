@@ -1105,14 +1105,14 @@
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Voltooid. Opnieuw ingesteld.",
-                            "ERROR_SHUTDOWN": "Niet voltooid. Systeem is uitgeschakeld.",
-                            "ERROR_LOGOFF": "Niet voltooid. Gebruiker is afgemeld.",
-                            "ERROR_BATTERY_REMOVE": "Niet voltooid. Batterij is verwijderd.",
-                            "ERROR_BATTERY_REPLACE": "Niet voltooid. Batterij is vervangen.",
-                            "ERROR_AC_DETTACH": "Niet voltooid. Netvoedingsadapter is ontkoppeld.",
-                            "ERROR_USER_CANCEL": "Niet voltooid. Geannuleerd door gebruiker.",
-                            "ERROR_UNEXPECTED": "Niet voltooid. Er is een onverwachte fout opgetreden."
+                            "ERROR_SUCCESS": "Voltooid: Opnieuw ingesteld.",
+                            "ERROR_SHUTDOWN": "Mislukt: Systeem is afgesloten.",
+                            "ERROR_LOGOFF": "Mislukt: Gebruiker is afgemeld.",
+                            "ERROR_BATTERY_REMOVE": "Mislukt: Batterij is verwijderd.",
+                            "ERROR_BATTERY_REPLACE": "Mislukt: Batterij is vervangen.",
+                            "ERROR_AC_DETTACH": "Mislukt: Netvoedingsadapter is ontkoppeld.",
+                            "ERROR_USER_CANCEL": "Mislukt: Geannuleerd door gebruiker.",
+                            "ERROR_UNEXPECTED": "Mislukt: Er is een onverwachte fout opgetreden."
                         },
                         "popup": {
                             "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
@@ -1177,17 +1177,17 @@
                     },
                     "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
                     "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Uw computer plannen",
+                    "automaticMode": "Automatische modus",
+                    "manualMode": "Handmatige modus",
+                    "subNote": "Uw computer staat op basis van uw gebruik ingesteld op Modern stand-by.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Gebruik van deze computer",
+                        "graph2Tittle": "Toegepaste actieve tijd",
+                        "graphSubtittle": "In deze perioden wordt ervoor gezorgd dat de computer klaarstaat voor een snellere hervatting.",
+                        "graphNote": "De activiteitgegevens van deze computer zijn onvoldoende om een profiel samen te stellen voor automatische planning. Slim stand-by zal gebruik maken van de planning voor de handmatige modus totdat er genoeg gegevens beschikbaar zijn.",
                         "legends": {
-                            "none": "None",
+                            "none": "Geen",
                             "frequent": "Frequent"
                         },
                         "hours": {

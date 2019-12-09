@@ -1105,14 +1105,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fullfør. Vellykket tilbakestilling.",
-                            "ERROR_SHUTDOWN": "Ikke fullført. Systemet slås av.",
-                            "ERROR_LOGOFF": "Ikke fullført. Bruker logget av.",
-                            "ERROR_BATTERY_REMOVE": "Ikke fullført. Batteriet ble tatt ut.",
-                            "ERROR_BATTERY_REPLACE": "Ikke fullført. Batteriet ble byttet ut.",
-                            "ERROR_AC_DETTACH": "Ikke fullført. Strømadapteren ble koblet fra.",
-                            "ERROR_USER_CANCEL": "Ikke fullført. Avbrutt av bruker.",
-                            "ERROR_UNEXPECTED": "Ikke fullført. Det oppstod en uventet feil."
+                            "ERROR_SUCCESS": "Fullfør: Vellykket tilbakestilling.",
+                            "ERROR_SHUTDOWN": "Mislyktes: Systemet slås av.",
+                            "ERROR_LOGOFF": "Mislyktes: Bruker logget av.",
+                            "ERROR_BATTERY_REMOVE": "Mislyktes: Batteriet ble tatt ut.",
+                            "ERROR_BATTERY_REPLACE": "Mislyktes: Batteriet ble erstattet.",
+                            "ERROR_AC_DETTACH": "Mislyktes: Strømadapteren ble koblet fra.",
+                            "ERROR_USER_CANCEL": "Mislyktes: Avbrutt av bruker.",
+                            "ERROR_UNEXPECTED": "Mislyktes: Det oppstod en uventet feil."
                         },
                         "popup": {
                             "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
                     "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Opprett kjøreplan for datamaskinen",
+                    "automaticMode": "Automatisk modus",
+                    "manualMode": "Manuell modus",
+                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Bruken av denne datamaskinen",
+                        "graph2Tittle": "Brukt aktiv tid",
+                        "graphSubtittle": "I disse tidsperiodene holder vi datamaskinen klar for raskere gjenopptak.",
+                        "graphNote": "Aktivitetsdataene til denne datamaskinen er ikke tilstrekkelig til å gi en profil for automatisk planlegging. Smart Standby vil bruke manuell modusplan til det er nok data tilgjengelig.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Frekvens"
                         },
                         "hours": {
                             "zero": 0,

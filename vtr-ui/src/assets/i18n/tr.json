@@ -1105,14 +1105,14 @@
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Tamamlandı. Başarılı sıfırlama.",
-                            "ERROR_SHUTDOWN": "Tamamlanmadı. Sistemi kapat.",
-                            "ERROR_LOGOFF": "Tamamlanmadı. Kullanıcı oturumunu kapat.",
-                            "ERROR_BATTERY_REMOVE": "Tamamlanmadı. Pil çıkarıldı.",
-                            "ERROR_BATTERY_REPLACE": "Tamamlanmadı. Pil değiştirildi.",
-                            "ERROR_AC_DETTACH": "Tamamlanmadı. AC güç bağdaştırıcısı çıkarıldı.",
-                            "ERROR_USER_CANCEL": "Tamamlanmadı. Kullanıcı tarafından iptal edildi.",
-                            "ERROR_UNEXPECTED": "Tamamlanmadı. Beklenmedik bir hata oluştu."
+                            "ERROR_SUCCESS": "Tamamlandı: Başarılı sıfırlama.",
+                            "ERROR_SHUTDOWN": "Başarısız: Sistem kapatıldı.",
+                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapatıldı.",
+                            "ERROR_BATTERY_REMOVE": "Başarısız: Pil çıkarıldı.",
+                            "ERROR_BATTERY_REPLACE": "Başarısız: Pil değiştirildi.",
+                            "ERROR_AC_DETTACH": "Başarısız: AC güç bağdaştırıcısı çıkarıldı.",
+                            "ERROR_USER_CANCEL": "Başarısız: Kullanıcı tarafından iptal edildi.",
+                            "ERROR_UNEXPECTED": "Başarısız: Beklenmedik bir hata oluştu."
                         },
                         "popup": {
                             "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
                     "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Bilgisayarınızı zamanlama",
+                    "automaticMode": "Otomatik kip",
+                    "manualMode": "Manuel kip",
+                    "subNote": "Bilgisayarınız, kullanımınıza dayalı olarak Modern Bekleme Durumu kipine ayarlanmıştır.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Bu bilgisayarın kullanımı",
+                        "graph2Tittle": "Uygulanan etkin zaman",
+                        "graphSubtittle": "Bu zaman aralıklarında, bilgisayarı hazır tutarak beklemeden daha hızlı çıkmasını sağlarız.",
+                        "graphNote": "Bu bilgisayarın etkinlik verileri, otomatik zamanlamaya yönelik bir profil sağlamak için yeterli değil. Akıllı Bekleme, yeterli veri toplanıncaya kadar Manuel kip zamanlamasını kullanacak.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Hiçbiri",
+                            "frequent": "Sık"
                         },
                         "hours": {
                             "zero": 0,

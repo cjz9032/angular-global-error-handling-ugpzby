@@ -1105,14 +1105,14 @@
                         "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
                         "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Готово. Успішне скидання.",
-                            "ERROR_SHUTDOWN": "Не завершено. Система завершила роботу.",
-                            "ERROR_LOGOFF": "Не завершено. Користувач вийшов із системи.",
-                            "ERROR_BATTERY_REMOVE": "Не завершено. Акумулятор знято.",
-                            "ERROR_BATTERY_REPLACE": "Не завершено. Акумулятор замінено.",
-                            "ERROR_AC_DETTACH": "Не завершено. Адаптер живлення змінного струму від’єднано.",
-                            "ERROR_USER_CANCEL": "Не завершено. Скасовано користувачем.",
-                            "ERROR_UNEXPECTED": "Не завершено. Сталася невідома помилка."
+                            "ERROR_SUCCESS": "Готово: Успішне скидання.",
+                            "ERROR_SHUTDOWN": "Помилка. Система завершила роботу.",
+                            "ERROR_LOGOFF": "Помилка. Користувач вийшов із системи.",
+                            "ERROR_BATTERY_REMOVE": "Помилка. Акумулятор знято.",
+                            "ERROR_BATTERY_REPLACE": "Помилка. Акумулятор змінено.",
+                            "ERROR_AC_DETTACH": "Помилка. Адаптер живлення змінного струму від’єднано.",
+                            "ERROR_USER_CANCEL": "Помилка. Скасовано користувачем.",
+                            "ERROR_UNEXPECTED": "Помилка. Сталася невідома помилка."
                         },
                         "popup": {
                             "description1": "Скидання виконуйте в такій послідовності:<br>повністю зарядіть акумулятор  -->  повністю розрядіть акумулятор  -->  повністю перезарядіть акумулятор",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
                     "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Заплануйте комп'ютер",
+                    "automaticMode": "Автоматичний режим",
+                    "manualMode": "Ручний режим",
+                    "subNote": "Перехід комп'ютера до сучасного режиму очікування планується залежно від використання.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Використання цього комп’ютера",
+                        "graph2Tittle": "Час активного використання",
+                        "graphSubtittle": "У ці періоди ми тримаємо комп'ютер готовим до швидшого відновлення роботи.",
+                        "graphNote": "Даних про активність цього комп'ютера недостатньо для створення профілю автоматичного планування. Розумне очікування буде використовувати графік ручного режиму, поки не накопичиться достатньо даних.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Жодної дії",
+                            "frequent": "Часто"
                         },
                         "hours": {
                             "zero": 0,

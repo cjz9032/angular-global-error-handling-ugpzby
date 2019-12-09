@@ -1105,14 +1105,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dovršeno. Ponovno je postavljanje uspjelo.",
-                            "ERROR_SHUTDOWN": "Nedovršeno. Isključenje sustava",
-                            "ERROR_LOGOFF": "Nedovršeno. Korisnik je odjavljen.",
-                            "ERROR_BATTERY_REMOVE": "Nedovršeno. Baterija je uklonjena.",
-                            "ERROR_BATTERY_REPLACE": "Nedovršeno. Baterija je zamijenjena.",
-                            "ERROR_AC_DETTACH": "Nedovršeno. Prilagodnik napajanja odspojen je.",
-                            "ERROR_USER_CANCEL": "Nedovršeno. Korisnik je odustao.",
-                            "ERROR_UNEXPECTED": "Nedovršeno. Došlo je do neočekivane pogreške."
+                            "ERROR_SUCCESS": "Dovršeno: Ponovno je postavljanje uspjelo.",
+                            "ERROR_SHUTDOWN": "Neuspješno: sustav se isključuje.",
+                            "ERROR_LOGOFF": "Neuspješno: korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Neuspješno: baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nauspješno: baterija je zamijenjena.",
+                            "ERROR_AC_DETTACH": "Nauspješno: ispravljač za struju odspojen.",
+                            "ERROR_USER_CANCEL": "Neuspješno: korisnik je otkazao.",
+                            "ERROR_UNEXPECTED": "Neuspješno: došlo je do neočekivane pogreške."
                         },
                         "popup": {
                             "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
                     "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Zakažite raspored za svoje računalo",
+                    "automaticMode": "Automatski način rada",
+                    "manualMode": "Ručni način rada",
+                    "subNote": "Na vašem je računalu predviđeno moderno stanje pripravnosti na temelju vaše upotrebe.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Upotreba ovog računala",
+                        "graph2Tittle": "Primijenjeno aktivno vrijeme",
+                        "graphSubtittle": "U tim vremenskim razdobljima, računalo je spremno za brži nastavak.",
+                        "graphNote": "Podaci o aktivnosti ovog računala nisu dovoljni da osiguraju profil za automatsko zakazivanje. Pametno stanje pripravnosti će koristiti raspored ručnog načina rada sve dok nema dovoljno podataka.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Nema",
+                            "frequent": "Često"
                         },
                         "hours": {
                             "zero": 0,

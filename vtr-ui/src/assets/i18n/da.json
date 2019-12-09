@@ -1105,14 +1105,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fuldført. Nulstilling lykkedes.",
-                            "ERROR_SHUTDOWN": "Ufuldstændig. Nedlukning af system.",
-                            "ERROR_LOGOFF": "Ufuldstændig. Bruger logget af.",
-                            "ERROR_BATTERY_REMOVE": "Ufuldstændig. Batteriet blev fjernet.",
-                            "ERROR_BATTERY_REPLACE": "Ufuldstændig. Batteriet blev udskiftet.",
-                            "ERROR_AC_DETTACH": "Ufuldstændig. Vekselstrømsadapteren blev fjernet.",
-                            "ERROR_USER_CANCEL": "Ufuldstændig. Annulleret af bruger.",
-                            "ERROR_UNEXPECTED": "Ufuldstændig. Der er opstået en uventet fejl."
+                            "ERROR_SUCCESS": "Fuldført: Nulstilling lykkedes.",
+                            "ERROR_SHUTDOWN": "Mislykkedes: Nedlukning af system.",
+                            "ERROR_LOGOFF": "Mislykkedes: Bruger logget af.",
+                            "ERROR_BATTERY_REMOVE": "Mislykkedes: Batteriet blev fjernet.",
+                            "ERROR_BATTERY_REPLACE": "Mislykkedes: Batteriet blev udskiftet.",
+                            "ERROR_AC_DETTACH": "Mislykkedes: Vekselstrømsadapteren blev fjernet.",
+                            "ERROR_USER_CANCEL": "Mislykkedes: Annulleret af bruger.",
+                            "ERROR_UNEXPECTED": "Mislykkedes: Der er opstået en uventet fejl."
                         },
                         "popup": {
                             "description1": "Nulstillingsprocessen er som følger:<br>Fuld opladning af batteriet  -->  fuld afladning af batteriet  -->  fuld genopladning af batteriet",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
                     "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Tidsplan for din computer",
+                    "automaticMode": "Automatisk tilstand",
+                    "manualMode": "Manuel tilstand",
+                    "subNote": "Din computer er indstillet til at skifte til Moderne standby baseret på din brug.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Brug af denne computer",
+                        "graph2Tittle": "Tildelt aktiv tid",
+                        "graphSubtittle": "I disse tidsperioder holder vi computeren klar, så du hurtigere kan genoptage arbejdet på den.",
+                        "graphNote": "Aktivitetsdataene for denne computer er ikke tilstrækkelige til at oprette en profil til automatisk tidsplanlægning. Smart-standby bruger tidsplanen for Manuel tilstand, indtil der er nok data til rådighed.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Ofte"
                         },
                         "hours": {
                             "zero": 0,

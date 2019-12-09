@@ -1105,14 +1105,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
-                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
-                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
-                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
-                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
-                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
-                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
+                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
                     "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programaţi computerul",
+                    "automaticMode": "Mod Automat",
+                    "manualMode": "Mod Manual",
+                    "subNote": "Computerul este programat în Starea de veghe modernă în funcţie de utilizare.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilizarea acestui computer",
+                        "graph2Tittle": "Timp activ aplicat",
+                        "graphSubtittle": "În aceste perioade de timp, menţinem computerul pregătit pentru o revenire mai rapidă.",
+                        "graphNote": "Datele privind activitatea acestui computer nu sunt suficiente pentru a oferi un profil de programare automată. Starea de veghe inteligentă va utiliza programarea modului Manual până când vor fi disponibile date suficiente.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Niciuna",
+                            "frequent": "Frecvent"
                         },
                         "hours": {
                             "zero": 0,

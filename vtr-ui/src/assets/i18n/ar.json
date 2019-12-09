@@ -1107,14 +1107,14 @@
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "كامل. تمت إعادة التعيين بنجاح.",
-                            "ERROR_SHUTDOWN": "غير مكتمل. توقف تشغيل النظام.",
-                            "ERROR_LOGOFF": "غير مكتمل. سجل المستخدم خروجه.",
-                            "ERROR_BATTERY_REMOVE": "غير مكتمل. تمت ازالة البطارية.",
-                            "ERROR_BATTERY_REPLACE": "غير مكتمل. تم استبدال البطارية.",
-                            "ERROR_AC_DETTACH": "غير مكتمل. تم فصل محول التيار المتردد.",
-                            "ERROR_USER_CANCEL": "غير مكتمل. تم الإلغاء من قِبل المستخدم.",
-                            "ERROR_UNEXPECTED": "غير مكتمل. حدث خطأ غير متوقع."
+                            "ERROR_SUCCESS": "كامل: تمت إعادة التعيين بنجاح.",
+                            "ERROR_SHUTDOWN": "فشل: توقف تشغيل النظام",
+                            "ERROR_LOGOFF": "فشل: سجل المستخدم خروجه.",
+                            "ERROR_BATTERY_REMOVE": "فشل: تمت ازالة البطارية.",
+                            "ERROR_BATTERY_REPLACE": "فشل: تم استبدال البطارية.",
+                            "ERROR_AC_DETTACH": "فشل: تم فصل محول التيار المتردد.",
+                            "ERROR_USER_CANCEL": "فشل: تم الإلغاء من قِبل المستخدم.",
+                            "ERROR_UNEXPECTED": "فشل: حدث خطأ غير متوقع."
                         },
                         "popup": {
                             "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل  -->  إفراغ البطارية بشكل كامل  -->  إعادة شحن البطارية بشكل كامل",
@@ -1179,18 +1179,18 @@
                     },
                     "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
                     "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "جدولة الكمبيوتر",
+                    "automaticMode": "الوضع التلقائي",
+                    "manualMode": "الوضع اليدوي",
+                    "subNote": "تمت جدولة الكمبيوتر للدخول إلى وضع الاستعداد الحديث بالاستناد إلى استخدامك له.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "استخدام هذا الكمبيوتر",
+                        "graph2Tittle": "الوقت النشط المطبق",
+                        "graphSubtittle": "في هذه الفترات الزمنية، نبقي الكمبيوتر جاهزًا للاستئناف بشكل أسرع.",
+                        "graphNote": "بيانات نشاط هذا الكمبيوتر ليست كافية لتوفير ملف تعريف للجدولة التلقائية. سيستخدم وضع الاستعداد الذكي جدول الوضع اليدوي حتى تتوفر بيانات كافية.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "بلا",
+                            "frequent": "متكرر"
                         },
                         "hours": {
                             "zero": 0,

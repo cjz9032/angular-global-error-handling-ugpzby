@@ -1105,14 +1105,14 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončeno. Reset proběhl úspěšně.",
-                            "ERROR_SHUTDOWN": "Nedokončeno. Systém byl vypnut.",
-                            "ERROR_LOGOFF": "Nedokončeno. Uživatel se odhlásil.",
-                            "ERROR_BATTERY_REMOVE": "Nedokončeno. Byla vyňata baterie.",
-                            "ERROR_BATTERY_REPLACE": "Nedokončeno. Byla vyměněna baterie.",
-                            "ERROR_AC_DETTACH": "Nedokončeno. Byl odpojen napájecí adaptér.",
-                            "ERROR_USER_CANCEL": "Nedokončeno. Zrušeno uživatelem.",
-                            "ERROR_UNEXPECTED": "Nedokončeno. Došlo k neočekávané chybě."
+                            "ERROR_SUCCESS": "Dokončeno: Reset proběhl úspěšně.",
+                            "ERROR_SHUTDOWN": "Selhání: Systém byl vypnut.",
+                            "ERROR_LOGOFF": "Selhání: Uživatel se odhlásil.",
+                            "ERROR_BATTERY_REMOVE": "Selhání: Byla vyňata baterie.",
+                            "ERROR_BATTERY_REPLACE": "Selhání: Byla vyměněna baterie.",
+                            "ERROR_AC_DETTACH": "Selhání: Byl odpojen napájecí adaptér.",
+                            "ERROR_USER_CANCEL": "Selhání: Zrušeno uživatelem.",
+                            "ERROR_UNEXPECTED": "Selhání: Došlo k neočekávané chybě."
                         },
                         "popup": {
                             "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Plánování počítače",
+                    "automaticMode": "Automatický režim",
+                    "manualMode": "Ruční režim",
+                    "subNote": "Váš počítač je naplánován na přepnutí do moderního pohotovostního režimu na základě vašeho použití.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Použití tohoto počítače",
+                        "graph2Tittle": "Použitý aktivní čas",
+                        "graphSubtittle": "V těchto časových obdobích udržujeme počítač připravený k rychlejšímu obnovení činnosti.",
+                        "graphNote": "Údaje o aktivitě tohoto počítače nejsou dostatečné k tomu, aby poskytovaly profil pro automatické plánování. Chytrý pohotovostní režim použije plán ručního režimu, dokud nebude k dispozici dostatek dat.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Žádné",
+                            "frequent": "Časté"
                         },
                         "hours": {
                             "zero": 0,

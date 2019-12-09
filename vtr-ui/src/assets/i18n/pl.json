@@ -1105,14 +1105,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ukończono. Resetowanie zakończyło się powodzeniem.",
-                            "ERROR_SHUTDOWN": "Nie zakończono. System zostanie zamknięty.",
-                            "ERROR_LOGOFF": "Nie zakończono. Wylogowano użytkownika.",
-                            "ERROR_BATTERY_REMOVE": "Nie zakończono. Wyjęto akumulator.",
-                            "ERROR_BATTERY_REPLACE": "Nie zakończono. Wymieniono akumulator.",
-                            "ERROR_AC_DETTACH": "Nie zakończono. Odłączono zasilacz.",
-                            "ERROR_USER_CANCEL": "Nie zakończono. Zadanie anulowane przez użytkownika.",
-                            "ERROR_UNEXPECTED": "Nie zakończono. Wystąpił nieoczekiwany błąd."
+                            "ERROR_SUCCESS": "Ukończono: Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SHUTDOWN": "Niepowodzenie: System zostanie zamknięty.",
+                            "ERROR_LOGOFF": "Niepowodzenie: Wylogowano użytkownika.",
+                            "ERROR_BATTERY_REMOVE": "Niepowodzenie: Wyjęto akumulator.",
+                            "ERROR_BATTERY_REPLACE": "Niepowodzenie: Wymieniono akumulator.",
+                            "ERROR_AC_DETTACH": "Niepowodzenie: Odłączono zasilacz.",
+                            "ERROR_USER_CANCEL": "Niepowodzenie: Zadanie anulowane przez użytkownika.",
+                            "ERROR_UNEXPECTED": "Niepowodzenie: Wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
                             "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
@@ -1177,18 +1177,18 @@
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
                     "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Ustaw harmonogram pracy komputera",
+                    "automaticMode": "Tryb automatyczny",
+                    "manualMode": "Tryb ręczny",
+                    "subNote": "Komputer przechodzi w tryb Modern Standby na podstawie użytkowania.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Użytkowanie komputera",
+                        "graph2Tittle": "Zastosowany czas aktywności",
+                        "graphSubtittle": "W tych okresach komputer pozostaje gotowy do szybszego wznowienia pracy.",
+                        "graphNote": "Dane o aktywności komputera nie są wystarczające, aby zapewnić profil do automatycznego planowania harmonogramu. Tryb Smart Standby będzie korzystać z harmonogramu trybu ręcznego, aż dostępna będzie wystarczająca ilość danych.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Brak",
+                            "frequent": "Często"
                         },
                         "hours": {
                             "zero": 0,
