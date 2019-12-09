@@ -1,246 +1,54 @@
 @import "../../../app.theme";
 
-.card-left {
-	padding-left: 0;
-	padding-right: 2rem;
-	@media #{$breakpoint_xl} {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
+:host ::ng-deep {
+	.vtr-page-left-column {
+		background: $shade_lightest;
 
-.card-right {
-	padding-left: 2rem;
-	padding-right: 0;
-	@media #{$breakpoint_xl} {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-::ng-deep {
-	.vtr-page-support {
-		.vtr-page-content {
-			.vtr-page-left-column {
-				background: $shade_lightest;
-
-				.offline-article-item {
-					box-shadow: $drop_shadow;
-					border-radius: $border_radius;
-					background-color: $light;
-					position: relative;
-					overflow: hidden;
-				}
-
-				.card {
-					border-radius: $border_radius;
-					box-shadow: $drop_shadow;
-
-					.input-group {
-						height: 6rem;
-
-						.input-group-append,
-						.input-group-prepend {
-							height: 100%;
-						}
-
-						.input-group-prepend {
-							.input-group-text {
-								font-size: 4rem;
-								color: $main;
-								background: none;
-								border: none;
-							}
-						}
-
-						.search-pre {
-							font-size: 2.4rem;
-							font-style: italic;
-							color: $main_darker;
-							cursor: default;
-						}
-
-						.form-control {
-							height: 100%;
-							font-size: 2.4rem;
-							font-style: italic;
-							border: none;
-							background: none;
-
-							&:focus {
-								box-shadow: none;
-								color: $main_darker;
-								z-index: 0;
-							}
-						}
-
-						.button {
-							text-transform: uppercase;
-							width: 100%;
-							height: 100%;
-							border: none;
-							border-radius: 10rem;
-							background: $gradient_main;
-							padding: 0 3rem;
-							color: $light;
-							font-size: 1.5rem;
-							letter-spacing: 0.1rem;
-							font-weight: $weight_medium;
-							text-align: center;
-							text-decoration: none;
-							display: inline-block;
-							cursor: pointer;
-						}
-					}
-
-					.text {
-						color: $shade_darker;
-						font-size: 1.8rem;
-						font-weight: $weight_light;
-						line-height: 1.8em;
-
-						&.smaller {
-							font-size: 1.4rem;
-						}
-					}
-
-					.subtitle {
-						color: $shade;
-						font-size: 1.3rem;
-						font-weight: $weight_medium;
-						letter-spacing: 0.1rem;
-						line-height: 2rem;
-						margin-top: -2rem;
-						text-transform: uppercase;
-					}
-
-					.inset-content {
-						border: 1px solid $shade_lighter;
-						border-radius: $border_radius;
-						background: $shade_lightest;
-
-						.icon-bkg {
-							background: $light;
-							border: 1px solid $shade_lighter;
-							width: 5rem;
-							height: 5rem;
-							border-radius: 2.5rem;
-						}
-
-						fa-icon {
-							font-size: 2.3rem;
-							line-height: 5rem;
-							color: $main;
-						}
-					}
-				}
-
-				.title {
-					color: $main_shade;
-					font-size: 3.9rem;
-					font-weight: $weight_regular;
-					word-spacing: 0;
-					margin-bottom: 2rem;
-
-					.special {
-						color: $main;
-					}
-				}
-
-				.sub-title {
-					color: $main_darker;
-					font-size: 1.5rem;
-					font-weight: $weight-medium;
-				}
-
-				.icon {
-					color: $main;
-				}
-
-				.btn-label {
-					height: 4.5rem;
-					margin: 1rem 0;
-					padding: 0 2rem;
-					border-radius: 2.25rem;
-					background: $gradient_main;
-					color: $light;
-					font-size: 1.5rem;
-					font-weight: $weight_medium;
-					text-align: center;
-					text-transform: uppercase;
-				}
-
-				.search-result-text {
-					.button {
-						text-transform: uppercase;
-						height: 5rem;
-						line-height: 5rem;
-						border: none;
-						border-radius: 10rem;
-						background: $gradient_main;
-						padding: 0 3rem;
-						color: $light;
-						font-size: 1.5rem;
-						letter-spacing: 0.1rem;
-						font-weight: $weight_medium;
-						text-align: center;
-						text-decoration: none;
-						display: inline-block;
-						cursor: pointer;
-						-webkit-appearance: initial;
-					}
-				}
-			}
-
-			.spinner-content {
-				padding-top: 6.5rem;
-				margin-bottom: 6.5rem;
-
-				img {
-					width: 50%;
-					margin-top: -3rem;
-				}
-
-				.spinner-border {
-					width: 5rem !important;
-					height: 5rem !important;
-					padding: 4rem;
-				}
-
-				.mn-6 {
-					margin-top: $shift_up_small;
-				}
-			}
-
-			.vtr-page-right-column {
-				@media #{$mediaquery_X5} {
-					padding: 4rem 8.5rem;
-				}
-			}
+		.offline-article-item {
+			box-shadow: $drop_shadow;
+			border-radius: $border_radius;
+			background-color: $light;
+			position: relative;
+			overflow: hidden;
 		}
 
 		.quick-access {
-			padding: 4rem;
+			border-radius: $border_radius;
+			box-shadow: $drop_shadow;
+			border: none;
+			padding: 2.4rem 0 1.2rem;
 
 			.quick-access-title {
 				font-size: 2.5rem;
+				padding: 0 2.4rem;
 				color: $main_dark;
 				font-weight: $weight_medium;
 			}
 
 			.quick-access-desc {
 				font-size: 1.6rem;
-				margin-bottom: 2rem;
+				padding: 0 2.4rem;
+				margin-bottom: 1.2rem;
 				color: #667481;
 			}
 
 			.quick-assess-categories {
 				display: flex;
 				justify-content: space-around;
+				padding: 0 1.2rem;
 
 				.quick-assess-item {
 					width: 25%;
 					padding: 1.2rem;
 					text-decoration: none;
+
+					@media #{$breakpoint_xl} {
+						width: 50%;
+					}
+
+					@media #{$breakpoint_sm} {
+						width: 100%;
+					}
 
 					.item-con {
 						padding: 1.2rem 1rem 2.4rem;
@@ -248,6 +56,7 @@
 						border: 1px solid #ecf0f1;
 						border-radius: 5px;
 						background: linear-gradient(180deg, #fbfcfc 0%, #f5f7f8 100%);
+						box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.01);
 						display: flex;
 						flex-flow: column;
 						justify-content: center;
@@ -261,12 +70,14 @@
 							cursor: pointer;
 							padding-top: 1rem;
 							overflow: hidden;
+
 							.item-img {
 								background-color: red;
 							}
 
 							img {
 								position: relative;
+								top: 0;
 								height: 3.6rem;
 								filter: drop-shadow(0px 100px 0px #fff);
 							}
@@ -293,12 +104,12 @@
 							width: 86%;
 							padding: 0 2rem;
 							margin-left: 7%;
-							height: 4rem;
-							line-height: 4rem;
+							height: 3.6rem;
+							line-height: 3.6rem;
 							border-radius: 10rem;
 							background: $gradient_main;
 							color: $light;
-							font-size: 1.5rem;
+							font-size: 1.4rem;
 							letter-spacing: 0.1rem;
 							font-weight: $weight_600;
 							text-align: center;
@@ -338,69 +149,126 @@
 				}
 			}
 		}
+
+		.card-left {
+			padding-left: 0;
+			padding-right: 2rem;
+
+			@media #{$breakpoint_md} {
+				padding-right: 0;
+			}
+		}
+
+		.card-right {
+			padding-left: 2rem;
+			padding-right: 0;
+
+			@media #{$breakpoint_md} {
+				padding-right: 0;
+			}
+		}
 	}
 
-	:host-context(.is-gaming) {
-		::ng-deep {
-			.vtr-page-support {
-				.vtr-page-left-column {
-					.card {
-						background: $dark_cell;
-						&.quick-access {
-							background: $dark_cell;
-							.quick-access-title {
-								color: $gaming_lightest;
-							}
-							.quick-assess-categories {
-								.quick-assess-item {
-									.item-con {
-										background: $gaming_darkest;
-										border: none;
-										&:hover {
-											background: $gaming;
-										}
-										.item-title {
-											color: $gaming_lightest !important;
-										}
-									}
+	.spinner-content {
+		padding-top: 6.5rem;
+		margin-bottom: 6.5rem;
+
+		img {
+			width: 50%;
+			margin-top: -3rem;
+		}
+
+		.spinner-border {
+			width: 5rem !important;
+			height: 5rem !important;
+			padding: 4rem;
+		}
+
+		.mn-6 {
+			margin-top: $shift_up_small;
+		}
+	}
+
+	.vtr-page-right-column {
+		@media #{$mediaquery_X5} {
+			padding: 4rem 8.5rem;
+		}
+	}
+}
+
+
+:host-context(.is-gaming) {
+	::ng-deep {
+		.vtr-page-left-column {
+			.card {
+				background: $dark_cell;
+
+				&.quick-access {
+					background: $dark_cell;
+
+					.quick-access-title {
+						color: $gaming_lightest;
+					}
+
+					.quick-assess-categories {
+						.quick-assess-item {
+							.item-con {
+								background: $gaming_darkest;
+								border: none;
+
+								&:hover {
+									background: $gaming;
+								}
+
+								.item-title {
+									color: $gaming_lightest !important;
 								}
 							}
 						}
 					}
 				}
-				.vtr-page-right-column {
-					.vtr-widget-support {
-						background-color: auto;
-						background: $dark_cell;
+			}
+		}
+
+		.vtr-page-right-column {
+			.vtr-widget-support {
+				background-color: auto;
+				background: $dark_cell;
+
+				.title {
+					color: $gaming_lightest !important;
+				}
+
+				.vtr-ui-list-support {
+					.support-list {
+						background-color: $gaming-Darkslate-blue !important;
+						border: none !important;
+
+						button {
+							&:hover {
+								background-color: transparent !important;
+							}
+						}
+
 						.title {
+							color: $gaming_lightest;
+						}
+
+						.arrow {
 							color: $gaming_lightest !important;
 						}
-						.vtr-ui-list-support {
-							.support-list {
-								background-color: $gaming-Darkslate-blue !important;
-								border: none !important;
-								button {
-									&:hover {
-										background-color: transparent !important;
-									}
-								}
-								.title {
-									color: $gaming_lightest;
-								}
-								.arrow {
-									color: $gaming_lightest !important;
-								}
-								.description {
-									color: $gaming_grey_lightest;
-									font-size: 1.2rem;
-								}
-								li {
-									border-bottom: 0.1rem solid $screen_dark_15 !important;
-									a {
-										&:hover {
-											background-color: transparent !important;
-										}
-									}
+
+						.description {
+							color: $gaming_grey_lightest;
+							font-size: 1.2rem;
+						}
+
+						li {
+							border-bottom: 0.1rem solid $screen_dark_15 !important;
+
+							a {
+								&:hover {
+									background-color: transparent !important;
 								}
 							}
 						}
