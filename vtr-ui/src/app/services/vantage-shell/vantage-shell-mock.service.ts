@@ -798,21 +798,25 @@ export class VantageShellService {
 			uac: {
 				mitt: null,
 				status: 'disable',
-				uacProtocol: '',
 				on(type, handler) {
 					return this;
 				},
 				off() {
 					return this;
 				},
+				launch() {
+					return Promise.resolve(true);
+				},
 				refresh() {
 					return Promise.resolve();
 				}
 			},
-			hardDiskEncryption: {
+			bitLocker: {
 				mitt: null,
 				status: 'disable',
-				hdeProtocol: '',
+				launch() {
+					return Promise.resolve(true);
+				},
 				on(type, handler) {
 					return this;
 				},

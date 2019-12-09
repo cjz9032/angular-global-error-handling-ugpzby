@@ -642,7 +642,8 @@
             "notFound": "未找到",
             "registered": "已注册",
             "notRegistered": "未注册",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -911,7 +912,10 @@
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
-                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
+                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "电源管理",
@@ -1101,14 +1105,14 @@
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "已完成。已成功重置。",
-                            "ERROR_SHUTDOWN": "未完成。系统已关闭。",
-                            "ERROR_LOGOFF": "未完成。用户已注销。",
-                            "ERROR_BATTERY_REMOVE": "未完成。已卸下电池。",
-                            "ERROR_BATTERY_REPLACE": "未完成。已更换电池。",
-                            "ERROR_AC_DETTACH": "未完成。已拔下交流电源适配器。",
-                            "ERROR_USER_CANCEL": "未完成。已被用户取消。",
-                            "ERROR_UNEXPECTED": "未完成。发生意外错误。"
+                            "ERROR_SUCCESS": "已完成：已成功重置。",
+                            "ERROR_SHUTDOWN": "失败：系统已关闭。",
+                            "ERROR_LOGOFF": "失败：用户已注销。",
+                            "ERROR_BATTERY_REMOVE": "失败：已卸下电池。",
+                            "ERROR_BATTERY_REPLACE": "失败：已更换电池。",
+                            "ERROR_AC_DETTACH": "失败：已拔下交流电源适配器。",
+                            "ERROR_USER_CANCEL": "失败：已被用户取消。",
+                            "ERROR_UNEXPECTED": "失败：发生意外错误。"
                         },
                         "popup": {
                             "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
@@ -1173,18 +1177,18 @@
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
                     "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "安排您的计算机",
+                    "automaticMode": "自动模式",
+                    "manualMode": "手动模式",
+                    "subNote": "根据您的使用情况将您的计算机安排为现代待机模式。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "此电脑的使用情况",
+                        "graph2Tittle": "应用的活动时间",
+                        "graphSubtittle": "在这些时间段内，我们让计算机保持随时就绪状态，以便实现更快速的恢复。",
+                        "graphNote": "此计算机的活动数据不足以为自动安排提供概要文件。智能待机将使用手动模式安排，直到有足够的数据可用为止。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "无",
+                            "frequent": "经常"
                         },
                         "hours": {
                             "zero": 0,
@@ -1493,11 +1497,11 @@
                         "url": "Web 站点 URL",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "请以 http:// 或 https:// 开头"
                     },
                     "enterText": {
                         "title": "要输入的文本",
-                        "placeholder": "Please type here"
+                        "placeholder": "请在这里输入"
                     }
                 },
                 "fnCtrlKey": {

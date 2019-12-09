@@ -642,7 +642,8 @@
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Remarque :</b> La batterie ne peut pas être complètement chargée lorsque Seuil de chargement de la batterie est activé.",
                 "seeDetailsLink": "Voir les détails",
-                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation."
+                "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentation",
@@ -1101,14 +1105,14 @@
                         "FCCText": "De {{before}} Wh à {{after}} Wh",
                         "note": "Remarque : avant de réinitialiser la jauge de la batterie, assurez-vous de connecter votre ordinateur à l'alimentation secteur. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Terminé. La réinitialisation a abouti.",
-                            "ERROR_SHUTDOWN": "Incomplet. Arrêter le système.",
-                            "ERROR_LOGOFF": "Incomplet. Utilisateur déconnecté.",
-                            "ERROR_BATTERY_REMOVE": "Incomplet. La batterie a été retirée.",
-                            "ERROR_BATTERY_REPLACE": "Incomplet. La batterie a été remplacée.",
-                            "ERROR_AC_DETTACH": "Incomplet. Le boîtier d'alimentation a été débranché.",
-                            "ERROR_USER_CANCEL": "Incomplet. Annulé par l'utilisateur.",
-                            "ERROR_UNEXPECTED": "Incomplet. Une erreur inattendue s'est produite."
+                            "ERROR_SUCCESS": "Terminé : La réinitialisation a abouti.",
+                            "ERROR_SHUTDOWN": "Échec : Le système a été arrêté.",
+                            "ERROR_LOGOFF": "Échec : Utilisateur déconnecté.",
+                            "ERROR_BATTERY_REMOVE": "Échec : La batterie a été retirée.",
+                            "ERROR_BATTERY_REPLACE": "Échec : La batterie a été remplacée.",
+                            "ERROR_AC_DETTACH": "Échec : Le boîtier d'alimentation a été débranché.",
+                            "ERROR_USER_CANCEL": "Échec : Annulé par l'utilisateur.",
+                            "ERROR_UNEXPECTED": "Échec : Une erreur inattendue est survenue."
                         },
                         "popup": {
                             "description1": "Le processus de réinitialisation est le suivant :<br>Charge complète de la batterie  -->  Décharge complète de la batterie  -->  Recharge complète de la batterie",
@@ -1173,18 +1177,18 @@
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
                     "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programmer votre ordinateur",
+                    "automaticMode": "Mode Automatique",
+                    "manualMode": "Mode Manuel",
+                    "subNote": "Votre ordinateur est programmé en Veille moderne en fonction de votre utilisation.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilisation de cet ordinateur",
+                        "graph2Tittle": "Durée d'activité appliquée",
+                        "graphSubtittle": "Pendant ces périodes, l'ordinateur est prêt à être lancé plus rapidement.",
+                        "graphNote": "Les données d'activité de cet ordinateur ne sont pas suffisantes pour fournir un profil de planification automatique. La Veille intelligente utilise la planification en mode manuel jusqu'à ce que suffisamment de données soient disponibles.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Aucune",
+                            "frequent": "Fréquent"
                         },
                         "hours": {
                             "zero": 0,
@@ -1493,11 +1497,11 @@
                         "url": "URL DU SITE WEB",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Veuillez commencer en saisissant http:// ou https://"
                     },
                     "enterText": {
                         "title": "TEXTE À SAISIR",
-                        "placeholder": "Please type here"
+                        "placeholder": "Veuillez saisir votre texte ici"
                     }
                 },
                 "fnCtrlKey": {
