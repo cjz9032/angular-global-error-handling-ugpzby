@@ -409,6 +409,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
+	public onSystemUpdateToggle($event: boolean) {
+		this.router.navigate(['device/system-updates'], { queryParams: {action: 'start'}});
+	}
+
 	// private getEyeCareModeCallback(response: any) {
 	// 	this.eyeCareModeStatus.status = response.eyecaremodeState;
 	// }
