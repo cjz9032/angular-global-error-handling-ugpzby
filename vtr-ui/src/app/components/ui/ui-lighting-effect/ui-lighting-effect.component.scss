@@ -1,6 +1,7 @@
 @import "../../../app.theme.scss";
 
 .select-box {
+	position: relative;
 	@media #{$black-on-white} {
 		background-color: transparent;
 		border: 0.1rem solid $dark;
@@ -36,6 +37,58 @@
 		white-space: nowrap;
 		@media #{$large-screen-1} {
 			font-size: 1.6rem;
+		}
+		&:hover ~ .gaming-tooltip {
+			opacity: 1;
+		}
+	}
+	.gaming-tooltip {
+		padding: 2rem;
+		background: $gaming_lightest;
+		color: $main_dark;
+		border-radius: 0.8rem;
+		text-align: center;
+		position: absolute;
+		display: inline-block;
+		z-index: 99;
+		bottom: 1rem;
+		min-width: 40rem;
+		left: 50%;
+		transform: translate(-50%);
+		opacity: 0;
+		transition: all 0.5s ease-in-out;
+		white-space: pre-wrap;
+		word-break: keep-all;
+		pointer-events: none;
+		p{
+			font-size: $fontsize_xs;
+			line-height: 1.8rem;
+		}
+		@media #{$black-on-white}{
+			background-color: $high-contrast-grey;
+		}
+		@media #{$white-on-black}{
+			background-color: $high-contrast-grey;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-bottom: 3rem solid $gaming_lightest;
+			border-left: 3rem solid transparent;
+			transform: rotate(45deg);
+			bottom: -1rem;
+			left: calc(50% - 1.5rem);
+			z-index: -1;
+			@media #{$black-on-white}{
+				border-bottom-color: $high-contrast-grey;
+				border-left-color: transparent;
+			}
+			@media #{$white-on-black}{
+				border-bottom-color: $high-contrast-grey;
+				border-left-color: transparent;
+			}
 		}
 	}
 	.dropdown-toggle {
@@ -85,6 +138,9 @@
 		li {
 			list-style: none;
 			.dropdown-item {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 				color: $gaming_lightest;
 				font-size: 1.6rem;
 				height: 5.5rem;
@@ -140,23 +196,27 @@
 		background: $gaming_hover;
 	}
 }
-::ng-deep ngb-tooltip-window.tooltip {
-	top: 1.5rem !important;
-	.arrow {
-		height: 0.5rem;
-		&::before {
-			top: 0px;
-			border-width: 1.2rem 1.2rem 0;
-			border-top-color: $gaming_lightest;
+::ng-deep vtr-ui-lighting-effect {
+	.select-box {
+		ngb-tooltip-window.tooltip {
+			top: 1.5rem !important;
+			.arrow {
+				height: 0.5rem;
+				&::before {
+					top: 0px;
+					border-width: 1.2rem 1.2rem 0;
+					border-top-color: $gaming_lightest;
+				}
+			}
+			.tooltip-inner {
+				padding: 2.4rem;
+				min-width: 45rem;
+				text-align: center;
+				background-color: #fff;
+				border-radius: 0.4rem;
+				font-size: 1.4rem;
+				color: $gaming_dark;
+			}
 		}
-	}
-	.tooltip-inner {
-		padding: 2.4rem;
-		min-width: 45rem;
-		text-align: center;
-		background-color: #fff;
-		border-radius: 0.4rem;
-		font-size: 1.4rem;
-		color: $gaming_dark;
 	}
 }

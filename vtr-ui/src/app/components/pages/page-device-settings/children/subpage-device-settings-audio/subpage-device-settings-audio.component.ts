@@ -9,11 +9,11 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription, EMPTY } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
 import { DolbyAudioToggleCapability } from 'src/app/data-models/device/dolby-audio-toggle-capability';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -44,6 +44,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
 
 	constructor(
+		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
@@ -60,7 +61,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		if (this.isOnline) {
 			const welcomeTutorial: WelcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial, undefined);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
-			if (welcomeTutorial && welcomeTutorial.page === 2) {
+			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();
 			}
 		} else {
@@ -75,7 +76,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getMicrophoneSettings();
 		this.getDolbyFeatureStatus();
 		this.getDolbyModesStatus();
-		this.getSupportedModes();
+		// this.getSupportedModes();
 		this.startMonitor();
 		this.startMonitorForDolby();
 	}
@@ -90,6 +91,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	initDolbyAudioFromCache() {
 		try {
+			this.dolbyModeResponse.available = this.commonService.getLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, true);
 			this.dolbyAudioToggleCache = this.commonService.getLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, undefined);
 			if (this.dolbyAudioToggleCache !== undefined) {
 				this.autoDolbyFeatureStatus.available = this.dolbyAudioToggleCache.available;
@@ -167,6 +169,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
+						this.getSupportedModes();
 						this.microphoneProperties = microphone;
 						const status = new FeatureStatus(microphone.available, microphone.muteDisabled, microphone.permission);
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);

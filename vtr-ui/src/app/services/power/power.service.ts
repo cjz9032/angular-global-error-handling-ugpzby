@@ -269,6 +269,17 @@ export class PowerService {
 		}
 	}
 
+	public getEMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getEMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public getITSServiceStatus(): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
@@ -476,6 +487,31 @@ export class PowerService {
 		}
 	}
 	// -------------End IdeaPad
+	// ------------- Start DYTC 6.0 -------------------
+
+	public getAMTCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getAMTCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getAMTSetting(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getAMTSetting();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	// ------------- End DYTC 6.0 -------------------
+
 
 	// End Power smart settings
 
@@ -643,6 +679,12 @@ export class PowerService {
 	public GetSmartStandbyActiveHours(): Promise<any> {
 		if (this.devicePowerThinkPad) {
 			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveHours();
+		}
+		return undefined;
+	}
+	public getIsPresenceDataSufficient(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getIsPresenceDataSufficient();
 		}
 		return undefined;
 	}

@@ -632,7 +632,6 @@
             "wifi": "WiFi 安全",
             "pswdMgr": "密码管理器",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -642,7 +641,8 @@
             "loading": "正在加载",
             "notFound": "未找到",
             "registered": "已注册",
-            "notRegistered": "未注册"
+            "notRegistered": "未注册",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "未检测到互联网连接",
             "subtitle": "详细了解如何解决我们的连接问题",
-            "buttonText": "获取支持"
+            "buttonText": "获取支持",
+            "welcomeToVantage": "欢迎使用新一代 Vantage",
+            "systemHealth": "系统性能"
         },
         "feedback": {
             "title": "提供反馈",
@@ -790,10 +792,10 @@
                 "title": "系统更新",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件已更新",
-                    "updatedOn": "更新时间",
-                    "outdated": "软件已过时",
-                    "neverRanUpdate": "从未运行更新"
+                    "uptoDate": "已检查更新",
+                    "updatedOn": "检查时间",
+                    "outdated": "最近未检查更新",
+                    "neverRanUpdate": "从未检查过更新"
                 }
             },
             "extendedWarranty": "延长保修",
@@ -908,7 +910,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>",
                     "EmDriverInstalled": "未提供电池详细信息。请运行 Windows 更新 -> 检查更新以安装 <b>Lenovo ACPI - Compliant Virtual Power Controller</b>驱动程序。"
                 },
-                "thresholdNote": "<b>注意：</b>为了延长电池使用寿命，已将电池设置成电池电量处于 {{value}}% 时停止充电。",
+                "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
                 "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
             },
@@ -975,7 +977,7 @@
                             "close": "关闭",
                             "coolingModesList": {
                                 "list1": "单击工具栏中的 Windows 电池图标",
-                                "list2": "将显示 Windows 电源模式，滑动滑块以在最佳时间或最佳性能之间进行选择。"
+                                "list2": "将显示 Windows 电池量表，滑动滑块以在最佳时间或最佳性能之间进行选择。"
                             }
                         }
                     },
@@ -986,7 +988,28 @@
                             "battery&Quite": "电池和安静状态"
                         }
                     },
-                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。"
+                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -1035,9 +1058,9 @@
                             "cancel": "取消"
                         },
                         "options": {
-                            "start": "下面开始充电",
+                            "start": "低于以下电量时开始充电",
                             "checkboxText": "自动将启动充电阈值设置为低于停止充电阈值5个百分点。",
-                            "stop": "停止充电"
+                            "stop": "停止充电阈值"
                         }
                     },
                     "expressCharging": {
@@ -1073,8 +1096,9 @@
                             "reset": "重置",
                             "stop": "停止"
                         },
-                        "progressText1": "{{stageNum}} 的 {{stage}}：校准为完全充电",
-                        "progressText2": "{{stageNum}} 的 {{stage}}：校准为电池电量不足",
+                        "progressText1": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为完全充电",
+                        "progressText2": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为放电到低电量",
+                        "progressText3": "步骤{{stage}}（共{{stageNum}}个步骤）：校准为充电到高电量",
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
@@ -1089,13 +1113,13 @@
                         },
                         "popup": {
                             "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
-                            "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2.关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3.在此过程中，将禁用电池充电阈值功能。",
+                            "description2": "注意：<br>1. 此过程可能耗时数小时。在此期间，请不要使用计算机。<br>2. 关闭所有打开的应用程序，然后将计算机连接到交流电源。<br>3. 在此过程中，将禁用电池充电阈值功能。",
                             "continue": "继续",
                             "cancel": "取消",
                             "yes": "是",
                             "description3": "确定要停止电池量表重置吗？"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "注意：一次只能重置一块电池。"
                     }
                 },
                 "energyStar": {
@@ -1105,9 +1129,9 @@
                 "smartStandby": {
                     "title": "智能待机",
                     "description": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划或我们获得的计算机使用时间而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
+                    "tooltip": "启用智能待机后，在设定的开始时间之前，计算机将切换到现代待机模式，并在一段时间没有活动后，进入休眠状态以节省电池电量。这一时间段是根据您设置的计划而优化设定的。计算机仅在计划的天数内从休眠状态切换至现代待机模式，如果在计划的天数内连续几天没有活动，则不会进行切换。",
                     "timer": {
-                        "heading": "通常使用计算机的时间",
+                        "heading": "设置通常使用此计算机的时间",
                         "subHeading1": "开始",
                         "subHeading2": "结束",
                         "subHeading3": "将此计划用于",
@@ -1131,7 +1155,8 @@
                             "wed": "星期三",
                             "thurs": "星期四",
                             "fri": "星期五",
-                            "sat": "星期六"
+                            "sat": "星期六",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "星期日",
@@ -1144,18 +1169,53 @@
                         },
                         "everyday": "每天",
                         "weekdays": "工作日",
-                        "weekends": "周末"
+                        "weekends": "周末",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
                     "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1431,10 +1491,14 @@
                         "title": "应用"
                     },
                     "website": {
-                        "url": "Web 站点 URL"
+                        "url": "Web 站点 URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "要输入的文本"
+                        "title": "要输入的文本",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1525,7 +1589,7 @@
                     "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
                     "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集任何个人数据。",
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
-                    "description4": "2. 如果您的计算机处于休眠模式或已关闭，则零触摸登录功能将无法使用。",
+                    "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
                     "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
                     "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
@@ -1838,9 +1902,7 @@
     "security": {
         "landing": {
             "fully": "受全面保护",
-            "fullyDesc": "恭喜您！您受到良好保护。",
             "notFully": "未受全面保护",
-            "notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
             "security101": "安全建议入门",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
@@ -1849,27 +1911,52 @@
             "wifiConnected": "WiFi 和互联家庭网络安全顾问",
             "connectedHomeSecurity": "互联家庭网络安全顾问",
             "fingerprint": "指纹读取器",
-            "seeAllNetwork": "请查看所有加入的网络",
-            "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
-            "good": "良好",
-            "malicious": "恶意",
-            "suspicious": "可疑",
-            "securityScoreDepends": "您的安全性结果取决于您是否：",
-            "antivirus": "受到反病毒软件的保护",
-            "password": "以安全的方式管理安全程度强且复杂的密码",
-            "vpn": "监控您的网络以防暴露给攻击者",
-            "wifi": "使用公共 WiFi 时加密您的个人数据",
-            "windowsHello": "使用安全登录选项保护您的设备",
             "uacTitle": "什么是 UAC 通知？",
-			"uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
-			"windowsTitle": "为什么我需要激活 Windows？",
-			"windowsText": "运行非正版的 Windows 会让您面临更大的病毒和其他安全威胁的风险。",
-			"encryptionTitle": "什么是硬盘驱动器加密？",
-			"encryptionText": "通过对整个硬盘驱动器进行加密，它能够保护您的数据免遭未经授权的访问，即使驱动器已从当前 PC 移除并装入其他设备中。",
-			"passwordTitle": "如何更好地保护密码？",
-			"passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
-			"enhanceTitle": "我应该做什么以加强安全保护？",
-			"enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。"
+            "uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
+            "windowsTitle": "为什么我需要激活 Windows？",
+            "windowsText": "运行非正版的 Windows 会让您面临更大的病毒和其他安全威胁的风险。",
+            "encryptionTitle": "什么是硬盘驱动器加密？",
+            "encryptionText": "通过对整个硬盘驱动器进行加密，它能够保护您的数据免遭未经授权的访问，即使驱动器已从当前 PC 移除并装入其他设备中。",
+            "passwordTitle": "如何更好地保护密码？",
+            "passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
+            "enhanceTitle": "我应该做什么以加强安全保护？",
+            "enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2135,9 +2222,36 @@
         "logout": "注销",
         "unlockExclusives": "解锁专享功能",
         "user": "用户",
-        "welcomeText": "今天也是活力满满的一天 {{firstName}}！",
-        "welcomeTextWithouUserName": "元气满满的一天！",
-        "welcomeTextWithoutUserName": "今天也是活力满满的一天！",
+        "welcomeText1": "今天也是活力满满的一天，{{firstName}}！",
+        "welcomeText2": "很高兴再次见到您，{{firstName}}",
+        "welcomeText3": "多么令人惊喜，{{firstName}}",
+        "welcomeText4": "微笑一下，{{firstName}}，一起开心吧 :)",
+        "welcomeText5": "叮咚，{{firstName}}，你还在吗？",
+        "welcomeText6": "我们一起探索美好世界！",
+        "welcomeText7": "让我们开启元气满满的一天，{{firstName}}！",
+        "welcomeText8": "要不要来一杯快乐肥宅水？",
+        "welcomeText9": "派对开始了，{{firstName}}！",
+        "welcomeText10": "保持冷静，Vantage 就来了",
+        "welcomeText11": "Vantage 物美价廉",
+        "welcomeText12": "将 Vantage 带回家",
+        "welcomeText13": "吃好、睡好，起来接着玩转Vantage！",
+        "welcomeText14": "Vantage 每一刻都新鲜",
+        "welcomeText15": "Vantage 发挥最大作用",
+        "welcomeTextWithoutUserName1": "今天也是活力满满的一天！",
+        "welcomeTextWithoutUserName2": "很高兴再次见到您",
+        "welcomeTextWithoutUserName3": "多么令人惊喜",
+        "welcomeTextWithoutUserName4": "微笑一下，一起开心吧 :)",
+        "welcomeTextWithoutUserName5": "叮咚，你还在吗？",
+        "welcomeTextWithoutUserName6": "我们一起探索美好世界！",
+        "welcomeTextWithoutUserName7": "让我们开启元气满满的一天！",
+        "welcomeTextWithoutUserName8": "要不要来一杯快乐肥宅水？",
+        "welcomeTextWithoutUserName9": "派对开始了！",
+        "welcomeTextWithoutUserName10": "保持冷静，Vantage 就来了",
+        "welcomeTextWithoutUserName11": "Vantage 物美价廉",
+        "welcomeTextWithoutUserName12": "将 Vantage 带回家",
+        "welcomeTextWithoutUserName13": "吃好、睡好，起来接着玩转Vantage！",
+        "welcomeTextWithoutUserName14": "Vantage 每一刻都新鲜",
+        "welcomeTextWithoutUserName15": "Vantage 发挥最大作用",
         "helloUser": "您好，{{firstName}}！",
         "ssoErrorTitle": "错误",
         "ssoErrorCommon": "糟糕，出现了错误。请重试。",
@@ -2361,7 +2475,7 @@
         },
         "question4": {
             "title": "检查计算机的电池使用情况",
-            "description": "<div class='faqInFs4Fb'>    检查计算机的电池使用情况</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 包含一个新<strong>“电池使用情况”</strong>屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><ul>    <li>Lenovo 笔记本电脑、台式机</li></ul><h3 class='faqInFs25FbP10'>受影响的系统</h3><ul>    <li>全部</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解决方案</h3><p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的<strong>控制面板</strong>视图中，而是位于新的<strong>“设置”</strong>应用程序中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找到“电池使用情况”屏幕</h3></p><p>1.单击或轻触开始菜单中的<strong>“设置”</strong>选项</p><p>2.在<strong>设置</strong>中选择<strong>“系统”</strong>，然后选择<strong>“节电模式”<br /><br /></strong><strong><br /><br /></strong>。</p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.单击或轻触此标题下的<strong>“电池使用情况”</strong>链接以查看更多详细信息。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析电源使用情况</h3><p>4 您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p><p>5 <strong>“系统”</strong>、“<strong>显示器</strong>”和“<strong>Wi-Fi”</strong>百分比。这将显示系统进程、显示器使用的电量</p><p>6 <strong>“使用中”</strong>和<strong>“后台”</strong>选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p><p>7 如果应用程序在后台消耗电量，可点击或轻触<strong>“更改后台应用设置”</strong>链接，然后配置让应用程序不在后台运行。此功能仅适用于通用 Windows 10 应用程序。</p><p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    检查计算机的电池使用情况</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 包含一个新<strong>“电池使用情况”</strong>屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><ul>    <li>Lenovo 笔记本电脑、台式机</li></ul><h3 class='faqInFs25FbP10'>受影响的系统</h3><ul>    <li>全部</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解决方案</h3><p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的<strong>控制面板</strong>视图中，而是位于新的<strong>“设置”</strong>应用程序中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A。找到“电池使用情况”屏幕</h3></p><p>1.单击或轻触开始菜单中的<strong>“设置”</strong>选项</p><p>2.在<strong>设置</strong>中选择<strong>“系统”</strong>，然后选择<strong>“节电模式”<br /><br /></strong><strong><br /><br /></strong>。</p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.单击或轻触此标题下的<strong>“电池使用情况”</strong>链接以查看更多详细信息。</p><p> </p><h3 class='faqInFs25FbP10'>B。分析电源使用情况</h3><p>4 您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p><p>5 <strong>“系统”</strong>、“<strong>显示器</strong>”和“<strong>Wi-Fi”</strong>百分比。这将显示系统进程、显示器使用的电量</p><p>6 <strong>“使用中”</strong>和<strong>“后台”</strong>选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p><p>7 如果应用程序在后台消耗电量，可点击或轻触<strong>“更改后台应用设置”</strong>链接，然后配置让应用程序不在后台运行。此功能仅适用于通用 Windows 10 应用程序。</p><p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
             "heading1": "症状",
             "para1": {
                 "span1": "Windows 10 包含一个新",
@@ -2430,7 +2544,6 @@
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
             "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
-            "para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
@@ -2469,7 +2582,7 @@
         },
         "question6": {
             "title": "了解您的个人助理 Cortana",
-            "description": "<div class='faqInFs4Fb'>    了解您的个人助理 Cortana</div><hr><h3 class='faqInFs25FbP10'>Cortana 是什么？</h3><hr /><p>Cortana 是您的数字助手。她可以帮助您完成工作。</p><p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p><p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）</p><p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>主页 2. 笔记本 3. 设置 4. 反馈</li></ol><p>以下是 Cortana 可为您做的一些事情：</p><ul>    <li>基于时间、地点、人物为您提供提醒。</li>    <li>跟踪包裹、团队、兴趣和航班。</li>    <li>发送电子邮件和文本。</li>    <li>管理您的日历，不错失最新动态。</li>    <li>创建和管理列表。</li>    <li>聊天和玩游戏。</li>    <li>查找事件、文件、地点和信息。</li>    <li>打开系统上的任何应用程序。</li></ul><h3 class='faqInFs25FbP10'>试试这个：设置提醒</h3><hr /><p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。</p><p>例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺。”</p><p>当收到 Tanya 的来电时，将显示这条提醒。</p><p>此外还有更棒的消息&mdash;如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>你好小娜？</h3><hr /><p>设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择<strong>设置</strong>并打开<strong>让 Cortana 响应“你好小娜。”</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>注</p><p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    了解您的个人助理 Cortana</div><hr><h3 class='faqInFs25FbP10'>Cortana 是什么？</h3><hr /><p>Cortana 是您的数字助手。她可以帮助您完成工作。</p><p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p><p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）</p><p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>主页 2。笔记本 3。设置 4。反馈</li></ol><p>以下是 Cortana 可为您做的一些事情：</p><ul>    <li>基于时间、地点、人物为您提供提醒。</li>    <li>跟踪包裹、团队、兴趣和航班。</li>    <li>发送电子邮件和文本。</li>    <li>管理您的日历，不错失最新动态。</li>    <li>创建和管理列表。</li>    <li>聊天和玩游戏。</li>    <li>查找事件、文件、地点和信息。</li>    <li>打开系统上的任何应用程序。</li></ul><h3 class='faqInFs25FbP10'>试试这个：设置提醒</h3><hr /><p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。</p><p>例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺。”</p><p>当收到 Tanya 的来电时，将显示这条提醒。</p><p>此外还有更棒的消息&mdash;如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>你好小娜？</h3><hr /><p>设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择<strong>设置</strong>并打开<strong>让 Cortana 响应“你好小娜。”</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>注</p><p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。</p><p> </p>",
             "heading1": "Cortana 是什么？",
             "para1": "Cortana 是您的数字助手。她可以帮助您完成工作。",
             "para2": "使用 Cortana 的次数越多，获得的体验也会更具个性化。",
@@ -2512,10 +2625,11 @@
         "bullets2": "安全顾问助您轻松改善系统安全状况。",
         "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型不可用）。",
         "subtitle1": "您将如何使用您的设备？",
-        "subtitle2": "告诉我们您的兴趣",
+        "subtitle2": "告诉我们您的兴趣（选填）",
         "personal": "个人使用",
         "business": "商业用途",
         "custom": "自定义",
+        "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
         "title1": "欢迎来到",
@@ -2542,7 +2656,7 @@
         "settingsDescription": "在“首选项设置”页面，您可以根据 Vantage 的消息类别来选择开启/关闭消息通知，请注意，即使禁用所有消息类别，您仍可能偶尔收到 Vantage 在必要时发出的系统重要消息。",
         "messagesInLenovoVantage": "Lenovo Vantage 中的消息",
         "appFeatures": "应用程序功能",
-        "appFeaturesDescription": "有关 System Update、文章和其他重要功能的消息。",
+        "appFeaturesDescription": "有关系统更新、文章和其他重要功能的消息。",
         "marketing": "市场营销",
         "marketingDescription": "包括 Lenovo 特别优惠在内的促销消息。",
         "actionTriggered": "触发的操作",
@@ -2552,9 +2666,12 @@
         "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
         "deviceStatistics": "与 Lenovo 共享统计数据",
         "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
-        "userProfile": "User profile",
+        "userProfile": "用户概要文件",
         "Note": "注意：",
-        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。"
+        "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
+        "betaSettingTitle": "Beta 程序",
+        "betaProgram": "Beta 程序",
+        "betaSettingDescription": "试用我们正在开发的最新功能。"
     },
     "modernPreload": {
         "cancel": "取消",
@@ -2683,7 +2800,8 @@
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
                 "no": "否"
-            }
+            },
+            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -2708,11 +2826,220 @@
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
         "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
-        "testNotApplicable": "不适用于定制扫描"
+        "testNotApplicable": "不适用于定制扫描",
+        "waitScanStarts": "等待扫描开始",
+        "reminderTimeRetrieveHardwareInformation": "此过程可能需要一段时间以检索硬件信息",
+        "retrievingHardwareInformation": "正在检索硬件信息...",
+        "pluginTokens": {
+            "cpu": "处理器",
+            "memory": "内存",
+            "motherboard": "主板",
+            "pci_express": "PCI Express",
+            "storage": "存储器",
+            "wireless": "无线"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2730,6 +3057,7 @@
             "installButton": {
                 "install": "安装",
                 "installing": "正在安装",
+                "downloading": "正在下载",
                 "installed": "已安装",
                 "launch": "启动",
                 "seeMore": "查看更多"
@@ -2826,7 +3154,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

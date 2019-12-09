@@ -70,27 +70,29 @@
 			</div>
 
 			<div class="browser-accounts">
-				<div *ngFor="let account of installedBrowser.accounts; trackBy: trackAccountsById; let i = index;">
-					<div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
-						<div class="browser-account__img-col">
-							<img [src]="(account.domain | sitesFavicon | async)"
-								 default="{{defaultIcon}}"
-								 alt="account stored in browser image"
-								 class="browser-account__img">
+				<infinite-scroll (scrolled)="changeScrollEnd()">
+					<ng-container *ngFor="let account of installedBrowser.accounts | slice:0:scrollEnd; trackBy: trackAccountsById; let i = index;">
+						<div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
+							<div class="browser-account__img-col">
+								<img [src]="(account.domain | sitesFavicon | async)"
+									 default="{{defaultIcon}}"
+									 alt="account stored in browser image"
+									 class="browser-account__img">
+							</div>
+							<div class="browser-account__text-wrapper">
+								<div class="browser-account__website-col">
+									<p class="browser-account__website" [title]="account.domain">{{account.domain}}</p>
+								</div>
+								<div class="browser-account__email-col">
+									<p class="browser-account__email" [title]="account.login">{{account.login}}</p>
+								</div>
+								<div class="browser-account__pass-col">
+									<p class="browser-account__pass" [title]="account.password">{{account.password}}</p>
+								</div>
+							</div>
 						</div>
-						<div class="browser-account__text-wrapper">
-							<div class="browser-account__website-col">
-								<p class="browser-account__website" [title]="account.domain">{{account.domain}}</p>
-							</div>
-							<div class="browser-account__email-col">
-								<p class="browser-account__email" [title]="account.login">{{account.login}}</p>
-							</div>
-							<div class="browser-account__pass-col">
-								<p class="browser-account__pass" [title]="account.password">{{account.password}}</p>
-							</div>
-						</div>
-					</div>
-				</div>
+					</ng-container>
+				</infinite-scroll>
 			</div>
 			<vtr-try-product-block
 				[isFigleafReadyToCommunication]="isFigleafInstalled"

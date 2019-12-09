@@ -28,7 +28,7 @@
 			@media #{$white-on-black} {
 				//background: darkviolet;
 			}
-	
+
 		}
 
 		.checkbox-custom+.checkbox-custom-label>.icomoon::before {
@@ -59,20 +59,21 @@
 		.title {
 			position: absolute;
 			//bottom: 4px;
+			top:80%;
 			left: 0;
 			right: 0;
 			font-weight: $weight_bold;
 			font-size: $caption;
 			color: $shade_light;
-			top: 9.5rem;
-			//white-space: nowrap;
+			//top: 75px;
+			// white-space: nowrap;
 		}
 
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
 			@media #{$white-on-black}{
 				background-color: $highlight_bright;;
-				
+
 			}
 			@media #{$black-on-white}{
 				background-color:$high-contrast-white-textselected;
@@ -88,14 +89,14 @@
 			color: $light;
 			font-size: 2rem;
 			@media #{$black-on-white} {
-				border: 0.1rem solid $dark;
+				//border: 0.1rem solid $dark;
 				color:$light;
 			}
 			@media #{$white-on-black} {
-				border: 0.1rem solid $light;
+				//border: 0.1rem solid $light;
 				color:$dark;
 			}
-	
+
 
 		}
 
@@ -107,11 +108,11 @@
 			font-size: 2rem;
 			@media #{$black-on-white} {
 				color: $dark;
-				
+
 			}
 			@media #{$white-on-black} {
 				color: $light;
-				
+
 	}
 		}
 	}

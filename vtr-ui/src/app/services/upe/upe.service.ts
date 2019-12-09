@@ -59,7 +59,7 @@ export class UPEService {
 		return new Promise((resolve, reject) => {
 			const win: any = window;
 			let cred = null;
-			if (win.VantageStub) {
+			if (win.VantageStub && win.VantageStub.getCredential) {
 				cred = win.VantageStub.getCredential(this.CredNameUPEAPIKey);
 			}
 
@@ -79,8 +79,16 @@ export class UPEService {
 		});
 	}
 
+	private getUpeShareKey() {
+		if (!environment.upeSharedKey) {
+			throw new Error('upe key is empty');
+		}
+		const factor = environment.upeSharedKey.concat('S00MzU3LTkxOGYtYmNjODZkZjgyNmY5');
+		return window.atob(factor);
+	}
+
 	private generateAPIKey() {
-		const salt = window.atob(environment.upeSharedKey);
+		const salt = this.getUpeShareKey();
 		const anonUserID = this.upeUserID;
 		const anonDeviceId = this.deviceService.getMachineInfoSync().deviceId;
 		const clientAgentId = environment.upeClientID;
@@ -152,7 +160,7 @@ export class UPEService {
 	private getUPEUserID() {
 		const win: any = window;
 		let uuid;
-		if (win.VantageStub) {
+		if (win.VantageStub && win.VantageStub.getCredential) {
 			const cred = win.VantageStub.getCredential(this.CredNameUPEUserID);
 			if (cred) {
 				uuid = cred.password;

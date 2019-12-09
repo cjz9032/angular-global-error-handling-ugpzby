@@ -5,7 +5,11 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
+import { ConfigService } from 'src/app/services/config/config.service';
+import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { BetaService } from 'src/app/services/beta/beta.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -15,6 +19,7 @@ import { SelfSelectService } from 'src/app/services/self-select/self-select.serv
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
+	public segmentConst = SegmentConst;
 	backId = 'setting-page-btn-back';
 
 	toggleAppFeature = false;
@@ -22,16 +27,20 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 	toggleDeviceStatistics = false;
+	toggleBetaProgram = false;
 
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
 	usageRadioValue = null;
+	userSelectionChanged = false;
 
 	valueToBoolean = [false, true, false];
 
-
+	usageType = null;
+	interests = [];
 	preferenceSettings: any;
+	segmentTag = SegmentConst.Consumer;
 
 	messageSettings = [
 		{
@@ -54,49 +63,96 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		}
 	];
 
+	betaSettings = [
+		{
+			leftImageSource: ['fal', 'flask'],
+		}
+	];
 	metrics: any;
 	metricsPreference: any;
-	checkedArray: string[] = [];
-	userProfileEnabled = true;
+	notificationSubscription: any;
 
 	constructor(
 		private shellService: VantageShellService,
+		public configService: ConfigService,
 		private settingsService: SettingsService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public selfSelectService: SelfSelectService,
-		private timerService: TimerService
+		private timerService: TimerService,
+		private betaService: BetaService,
+		private localInfoService: LocalInfoService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
 		this.metricsPreference = shellService.getMetricPreferencePlugin();
-		shellService.getMetricsPolicy((result)=>{
+		shellService.getMetricsPolicy((result) => {
 			this.metrics.metricsEnabled = result;
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
 		});
 	}
 
 	ngOnInit() {
+		this.getSegment();
 		this.getAllToggles();
 		this.timerService.start();
-		this.initializeSelfSelectConfig();
+		this.getSelfSelectStatus();
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
 	}
 
-	initializeSelfSelectConfig() {
-		this.selfSelectService.getConfig().then((config) => {
-			if (config && config.segment) {
-				this.usageRadioValue = config.segment;
-			}
-			if (config && config.customtags) {
-				const checkedTags = config.customtags;
-				this.checkedArray = checkedTags.split(',');
-				this.selfSelectService.interests.forEach(item => {
-					item.checked = checkedTags && checkedTags.includes(item.label);
-				});
-			}
-		}).catch((error) => {
-			this.userProfileEnabled = false;
+	onNotification(response: AppNotification) {
+		const {type, payload} = response;
+		switch (type) {
+			case LocalStorageKey.WelcomeTutorial:
+				try {
+					this.usageType = this.selfSelectService.usageType;
+					this.interests.forEach(item => {
+						item.checked = this.selfSelectService.checkedArray && this.selfSelectService.checkedArray.includes(item.label);
+					});
+					let radioId = '';
+					switch (this.usageType) {
+						case this.segmentConst.Consumer:
+							radioId = 'radioPersonal';
+							break;
+						case this.segmentConst.SMB:
+							radioId = 'radioBusiness';
+							break;
+						case this.segmentConst.Commercial:
+							radioId = 'radioProfessional';
+							break;
+					}
+					if (radioId) {
+						document.getElementById(radioId).click();
+					}
+				} catch (error) {}
+				break;
+			default:
+				break;
+		}
+	}
+
+	segmentChecked(current, expected) {
+		return current && current === expected;
+	}
+
+	private getSelfSelectStatus() {
+		this.selfSelectService.getConfig().then((result) => {
+			this.usageType = result.usageType;
+			this.interests = result.interests;
 		});
+		this.userSelectionChanged = false;
+	}
+
+	private getSegment() {
+		if (this.localInfoService) {
+			this.localInfoService.getLocalInfo().then((result) => {
+				this.segmentTag = result.Segment;
+			}).catch(() => {
+				this.segmentTag = SegmentConst.Consumer;
+			});
+		}
 	}
 
 	ngOnDestroy() {
@@ -129,6 +185,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getDeviceStatisticsPreference();
 		}
+		if (this.betaService) {
+			this.toggleBetaProgram = this.betaService.getBetaStatus();
+		}
 	}
 	private getDeviceStatisticsPreference() {
 		if (this.metricsPreference) {
@@ -136,14 +195,15 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				if (response && response.app && response.app.metricCollectionState === 'On') {
 					this.toggleDeviceStatistics = true;
 					this.isToggleDeviceStatistics = true;
-				}
-				else if (response && response.app && response.app.metricCollectionState === 'Off') {
+				} else if (response && response.app && response.app.metricCollectionState === 'Off') {
 					this.toggleDeviceStatistics = false;
 					this.isToggleDeviceStatistics = true;
-				}
-				else {
+				} else {
 					this.isToggleDeviceStatistics = false;
 				}
+			}).catch((error) => {
+				console.error("getAppMetricCollectionSetting failed for exception, will hide the device metric setting.", error);
+				this.isToggleDeviceStatistics = false;
 			});
 		}
 	}
@@ -157,6 +217,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
 					this.isMessageSettings = true;
 				}
+			}).catch((error) => {
+				console.error("getMessagingPreference failed for exception, will hide the messages setting.", error);
+				this.isMessageSettings = false;
 			});
 		}
 	}
@@ -178,7 +241,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleAppFeature = !event.switchValue;
 					this.settingsService.toggleAppFeature = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingAppFeatures', event.switchValue);
 	}
@@ -195,7 +258,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleMarketing = !event.switchValue;
 					this.settingsService.toggleMarketing = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingMarketing', event.switchValue);
 	}
@@ -212,7 +275,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleActionTriggered = !event.switchValue;
 					this.settingsService.toggleActionTriggered = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingActionTriggered', event.switchValue);
 	}
@@ -227,7 +290,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.toggleDeviceStatistics = !event.switchValue;
 					this.settingsService.toggleDeviceStatistics = !event.switchValue;
 				}
-			});
+			}).catch(() => {});
 		}
 		this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
 	}
@@ -253,6 +316,13 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.commonService.setLocalStorageValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
+	onToggleOfBetaProgram(event: any) {
+		this.toggleBetaProgram = event.switchValue;
+		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
+		this.betaService.setBetaStatus(this.toggleBetaProgram);
+		this.configService.notifyMenuChange();
+	}
+
 	sendMetrics(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
@@ -276,43 +346,41 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	saveUsageType(value) {
-		this.usageRadioValue = value;
+		this.usageType = value;
+		this.selfSelectService.usageType = this.usageType;
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 
-	toggle($event, value) {
+	onInterestToggle($event, value) {
 		if ($event.target.checked) {
-			this.checkedArray.push(value);
+			this.selfSelectService.checkedArray.push(value);
 		} else {
-			this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
+			this.selfSelectService.checkedArray.splice(this.selfSelectService.checkedArray.indexOf(value), 1);
 		}
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 	}
 
 	saveUserProfile() {
-		const config = {
-			customtags: this.checkedArray.join(','),
-			segment: this.usageRadioValue
-		}
-		this.selfSelectService.updateConfig(config);
-
+		this.selfSelectService.saveConfig();
+		this.userSelectionChanged = this.selfSelectService.selectionChanged();
 		const usageData = {
-			ItemType: 'FeatureClick',
-			ItemName: 'UsageType',
-			ItemValue: this.usageRadioValue,
-			ItemParent: 'Page.Settings'
+			ItemType: 'SettingUpdate',
+			SettingName: 'UsageType',
+			SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
+			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(usageData);
 
 		const interestMetricValue = {};
-		this.checkedArray.forEach(item => {
+		this.selfSelectService.checkedArray.forEach(item => {
 			interestMetricValue[item] = true;
 		});
 		const interestData = {
-			ItemType: 'FeatureClick',
-			ItemName: 'Interest',
-			ItemValue: interestMetricValue,
-			ItemParent: 'Page.Settings'
+			ItemType: 'SettingUpdate',
+			SettingName: 'Interest',
+			SettingValue: interestMetricValue,
+			SettingParent: 'Page.Settings'
 		};
 		this.metrics.sendAsync(interestData);
 	}
-
 }

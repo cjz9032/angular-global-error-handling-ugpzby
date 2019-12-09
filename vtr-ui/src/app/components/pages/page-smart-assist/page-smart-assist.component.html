@@ -51,7 +51,7 @@
 											[rightIcon]="['far', 'question-circle']"
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
 										</vtr-ui-row-switch>
-										<div class="bold-title no-border-bottom pb-4 border-bottom"
+										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom padding-right-07"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
 											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
@@ -484,9 +484,13 @@
 					<!-- Start of Intelligent Media -->
 
 					<vtr-intelligent-media id="media"
-						*ngIf="intelligentMedia.available"
+						*ngIf="intelligentMedia.available || superResolution.available"
 						[isLoading]="isIntelligentMediaLoading"
-						[isChecked]="intelligentMedia.status">
+						[isChecked]="intelligentMedia.status"
+						[isSRLoading]="isSuperResolutionLoading"
+						[isSRChecked]="superResolution.status"
+						[intelligentMediaAvailable]="intelligentMedia.available"
+						[superResolutionAvailable]="superResolution.available">
 					</vtr-intelligent-media>
 
 					<!-- End of Intelligent Media -->

@@ -1,5 +1,5 @@
 <div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'articles'"
+	*ngIf="articleType === SupportContentStatus.Articles"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -20,7 +20,7 @@
 				metricsItemPosition="{{ index }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				(click)="showArticleDetails()">
+				(click)="clickContent()">
 				<div *ngIf="item.Thumbnail"
 					class="image"
 					[style.background-image]="'url('+item.Thumbnail+')'">
@@ -39,9 +39,12 @@
 					class="col col-12 content">
 					<div href="javascript:;"
 						class="title"
+						#articleTitle
+						[title]="articleTitle.innerText"
 						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 					</div>
@@ -59,7 +62,7 @@
 	</div>
 </div>
 <div class="vtr-ui-article-item mb-80"
-	*ngIf="articleType === 'content'"
+	*ngIf="articleType === SupportContentStatus.Content"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
 	attr.aria-label="{{'article-item-' + index}}"
@@ -67,7 +70,8 @@
 	[style.height.px]="articleItemDiv.clientWidth * ratio">
 	<div class="container-fluid">
 		<div class="row">
-			<a href="javascript:;"
+			<a [attr.href]="item.ActionLink"
+				target="_blank"
 				class="article-conetnt"
 				vtrMetrics
 				id="{{'article-item-card-' + index}}"
@@ -79,7 +83,7 @@
 				metricsItemPosition="{{index}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				(click)="showArticleDetails()">
+				(click)="clickContent()">
 				<div *ngIf="item.FeatureImage"
 					class="image"
 					[style.background-image]="'url('+item.FeatureImage+')'">
@@ -97,9 +101,12 @@
 				<div *ngIf="item.Title"
 					class="col col-12 content">
 					<div class="title"
+						#articleTitle
+						[title]="articleTitle.innerText"
 						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430">{{item.Title}}</div>
+						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 					</div>

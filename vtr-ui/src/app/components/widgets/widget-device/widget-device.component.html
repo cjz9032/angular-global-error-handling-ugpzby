@@ -1,46 +1,55 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid p-40">
-		<div class="circleimage"><img class="img-fluid"
-				src="assets/images/device.png" /> </div>
-		<div class="row mt-20">
-			<div class="col">
-				<div class="family"
-					id="myDevice-machine-info"
-					attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
-			</div>
+		<div class="d-flex device-status">
+				<div class="col device-info">
+						<div class="family"
+							id="myDevice-machine-info"
+							attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
+							<div class="col-12 px-0 dir={{direction}}">
+									<span class="sub-header-separator">
+										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+									</span>
+									<span class="device-sub-header"
+										id="myDevice-serial"
+										attr.aria-label="myDevice-serial"><span class="{{'dirClass' | translate}}"
+											dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>:
+										{{myDevice.sn}}</span>
+								</div>
+								<div class="col-12 px-0">
+									<span class="sub-header-separator">
+										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+									</span>
+									<span class="device-sub-header"
+										id="myDevice-product-number"
+										attr.aria-label="myDevice-product-number"><span class="{{'dirClass' | translate}}"
+											dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>:
+										{{myDevice.productNo}}</span>
+								</div>
+								<div class="col-12 px-0">
+									<span class="sub-header-separator">
+										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+									</span>
+									<span
+										id="myDevice-bios-version"
+										attr.aria-label="myDevice-bios-version"
+										class="{{'dirClass' | translate}} device-sub-header text-wrap"
+										dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}</span>
+									<span class="device-sub-header text-wrap">: {{myDevice.bios}}</span>
+
+								</div>
+					</div>
+					<div class="col device-image">
+						<div class="circleimage">
+							<img class="img-fluid" *ngIf="!deviceService.isGaming"
+								[src]=" '/assets/icons/logo-lenovo-red.svg' | svgInline | async"
+								alt="Lenovo logo">
+							<img class="img-fluid" *ngIf="deviceService.isGaming"
+								[src]=" '/assets/icons/logo-lenovo-white.svg' | svgInline | async"
+								alt="Lenovo logo">
+						</div>
+					</div>
 		</div>
-		<div class="row">
-			<div class="col-12 px-0">
-				<span class="sub-header-separator">
-					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-				</span>
-				<span class="device-sub-header"
-					id="myDevice-serial"
-					attr.aria-label="myDevice-serial"><span class="{{'dirClass' | translate}}"
-						dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>:
-					{{myDevice.sn}}</span>
-			</div>
-			<div class="col-12 px-0">
-				<span class="sub-header-separator">
-					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-				</span>
-				<span class="device-sub-header"
-					id="myDevice-product-number"
-					attr.aria-label="myDevice-product-number"><span class="{{'dirClass' | translate}}"
-						dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>:
-					{{myDevice.productNo}}</span>
-			</div>
-			<div class="col-12 px-0">
-				<span class="sub-header-separator">
-					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-				</span>
-				<span class="device-sub-header text-wrap"
-					id="myDevice-bios-version"
-					attr.aria-label="myDevice-bios-version"><span class="{{'dirClass' | translate}}"
-						dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion' | translate}}</span>:
-					{{myDevice.bios}}</span>
-			</div>
-		</div>
+
 		<div class="row">
 			<div class="col">
 				<div class="subheader"
@@ -57,15 +66,13 @@
 						[hidden]="item.isHidden"
 						tabindex="0">
 						<div class="container-fluid">
-							<div class="row align-items-center {{'dirClass' | translate}}">
-								<div class="col-auto">
+							<div class="row d-flex align-items-center {{'dirClass' | translate}}">
 									<div class="status-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
 										</div>
 									</div>
-								</div>
-								<div class="col-auto status-block p-0">
+								<div class="d-flex status-content justify-content-between">
 									<div class="title"
 										[ngClass]="[!item.status?'good':'bad']"
 										id="myDevice-system-details-{{item.id}}"
@@ -76,11 +83,6 @@
 											class='systemDetails'
 											dir="{{'dir' | translate}}">({{item.systemDetails}})</span>
 									</div>
-
-
-								</div>
-								<div class="col-auto text-right ml-auto p-0">
-
 									<div *ngIf="item.status === 4"
 										class="spinner-content">
 										<div class="spinner-border text-secondary progress-spinner"

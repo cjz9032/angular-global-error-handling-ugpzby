@@ -17,23 +17,8 @@
 
 .col-6 {
 	min-width: 22rem;
-	@media #{$mediaquery_X6} {
-		min-width: 35rem;
-	}
-
-	@media #{$mediaquery_16} {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
-
-	@media #{$mediaquery_X3} {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
 }
 
-.select-wrapper {
-}
 
 .record-list-wrapper {
 	position: relative;

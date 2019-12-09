@@ -632,7 +632,6 @@
             "wifi": "WiFi-säkerhet",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "AKTIVERAD",
             "disabled": "INAKTIVERAD",
             "partiallyProtected": "DELVIS SKYDDAD",
@@ -642,7 +641,8 @@
             "installing": "INSTALLERAR",
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
-            "notRegistered": "INTE REGISTRERAD"
+            "notRegistered": "INTE REGISTRERAD",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "Det finns ingen Internetanslutning",
             "subtitle": "Läs mer om hur du åtgärdar anslutningsproblem i",
-            "buttonText": "Få support"
+            "buttonText": "Få support",
+            "welcomeToVantage": "Välkommen till nästa generations Vantage",
+            "systemHealth": "Systemtillstånd"
         },
         "feedback": {
             "title": "Ge feedback",
@@ -790,10 +792,10 @@
                 "title": "Systemuppdatering",
                 "notFound": "Systemuppdatering hittades inte",
                 "detail": {
-                    "uptoDate": "Programvaran är uppdaterad",
-                    "updatedOn": "uppdaterad den",
-                    "outdated": "Programvaran är inaktuell",
-                    "neverRanUpdate": "uppdatering har inte skett"
+                    "uptoDate": "Uppdateringar kontrollerade ",
+                    "updatedOn": "kontrollerades den ",
+                    "outdated": "Uppdateringar har inte kontrollerats nyligen ",
+                    "neverRanUpdate": "uppdateringar har aldrig kontrollerats"
                 }
             },
             "extendedWarranty": "Förläng garantin",
@@ -896,7 +898,7 @@
                     "NotGood": "<b>Batteriet är inte i gott skick.</b>",
                     "NotSupportACAdapter": "<b>Nätadaptern stöds inte.</b>",
                     "LimitedACAdapterSupport": "<b>Nätadaptern ger inte tillräcklig strömförsörjning.</b>",
-                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>.",
+                    "MissingDriver": "<b>Drivrutinen för Lenovo Power Manager</b> har inte installerats eller fungerar inte korrekt. Kör Windows Update för att installera den senaste drivrutinen. Du kan även installera drivrutinen <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">härifrån</a>. Starta om datorn efter installationen.",
                     "StoreLimitation": "<b>Batteriet kan endast lagra {{value}}% av</b> sin ursprungliga laddningskapacitet.",
                     "HighTemperature": "<b>Urladdning</b> har stoppats på grund av att <b>batteritemperaturen är för hög.</b>",
                     "TrickleCharge": "Batteriet var <b>helt urladdat</b> och måste laddas. Det kan ta tio timmer eller mer.",
@@ -908,7 +910,7 @@
                     "EmDriverInstalled": "Batteriuppgifter är inte tillgängliga. Kör Windows Update->Sök efter uppdateringar för att installera drivrutinen <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
-                "thresholdNote": "<b>Obs!</b> Du har ställt in att batteriladdningen ska avbrytas vid {{value}}%, vilket förlänger batteriets livslängd.",
+                "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
                 "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
             },
@@ -986,7 +988,28 @@
                         }
                     },
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
-                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”."
+                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ströminställningar",
@@ -1075,6 +1098,7 @@
                         },
                         "progressText1": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "progressText2": "{{stage}} av {{stageNum}}: Kalibrerar för låg batterinivå",
+                        "progressText3": "{{stage}} av {{stageNum}}: Kalibrerar för full laddning",
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
@@ -1095,7 +1119,7 @@
                             "yes": "Ja",
                             "description3": "Vill du stoppa återställning av batterimätaren?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Obs: Endast ett batteri kan återställas i taget."
                     }
                 },
                 "energyStar": {
@@ -1131,7 +1155,8 @@
                             "wed": "ons",
                             "thurs": "tors",
                             "fri": "fre",
-                            "sat": "lör"
+                            "sat": "lör",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "söndag",
@@ -1144,18 +1169,53 @@
                         },
                         "everyday": "Varje dag",
                         "weekdays": "vardagar",
-                        "weekends": "helger"
+                        "weekends": "helger",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
                     "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1431,10 +1491,14 @@
                         "title": "VERKSTÄLL"
                     },
                     "website": {
-                        "url": "WEBBADRESS"
+                        "url": "WEBBADRESS",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "PLATSHÅLLARE FÖR TEXT"
+                        "title": "PLATSHÅLLARE FÖR TEXT",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1838,9 +1902,7 @@
     "security": {
         "landing": {
             "fully": "Helt skyddad",
-            "fullyDesc": "Du har tur! Du är helt skyddad.",
             "notFully": "Inte helt skyddad",
-            "notFullyDesc": "Du är inte helt skyddad. Läs om hur du skyddar dig själv bättre nu.",
             "security101": "SÄKERHETSRÅDGIVARE",
             "firewall": "Brandvägg",
             "pwdHealth": "Lösenordstillstånd",
@@ -1849,17 +1911,6 @@
             "wifiConnected": "WiFi-säkerhet och Säkerhet för uppkopplat hem",
             "connectedHomeSecurity": "Säkerhet för uppkopplat hem",
             "fingerprint": "Fingeravtrycksläsare",
-            "seeAllNetwork": "Se alla ingående nätverk",
-            "maliciousNetwork": "Förhindrade att datorn gick med i {{maliciousWifi}} skadliga nätverk denna månad.",
-            "good": "BRA",
-            "malicious": "SKADLIGT",
-            "suspicious": "MISSTÄNKT",
-            "securityScoreDepends": "Säkerhetsresultatet beror på om du:",
-            "antivirus": "Skyddas av ett antivirusprogram",
-            "password": "Har starka och komplexa lösenord som hanteras på ett säkert sätt",
-            "vpn": "Övervakar nätverkets exponering för angripare",
-            "wifi": "Krypterar dina personliga data när du använder offentlig WiFi",
-            "windowsHello": "Skyddar din enhet med alternativ för säker inloggning.",
             "uacTitle": "Vad är UAC-meddelanden?",
             "uacText": "User Account Control är en viktig säkerhetsfunktion i Windows som bidrar till att förhindra att potentiellt skadliga program gör ändringar i systemet.",
             "windowsTitle": "Varför behöver jag aktivera Windows?",
@@ -1869,7 +1920,43 @@
             "passwordTitle": "Hur skyddar jag mina lösenord bättre?",
             "passwordText": "Lagra och hantera alla dina lösenord krypterade med en professionell onlineskyddsapp i stället för att bara lagra dem i webbläsaren där de är lättåtkomliga för obehöriga.",
             "enhanceTitle": "Vad ska jag göra för att öka säkerheten?",
-            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd."
+            "enhanceText": "Vi rekommenderar att du skyddar dina enheter med antivirusprogram och brandväggar och ställer in UAC-meddelanden för minimiskydd. Skapa starka lösenord och hantera dem på ett säkert sätt, och kryptera dina data medan du använder offentliga nätverk för att få ett avancerat skydd.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2135,9 +2222,36 @@
         "logout": "Logga ut",
         "unlockExclusives": "Visa exklusiva erbjudanden",
         "user": "Användare",
-        "welcomeText": "Energin är på topp i dag, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Energin är på topp i dag!",
+        "welcomeText1": "Energin är på topp i dag, {{firstName}}!",
+        "welcomeText2": "Kul att se dig igen, {{firstName}}",
+        "welcomeText3": "Vilken glad överraskning, {{firstName}}",
+        "welcomeText4": "Le, {{firstName}}, det smittar :)",
+        "welcomeText5": "Knack knack, {{firstName}}",
+        "welcomeText6": "Du gör raketkarriär!",
+        "welcomeText7": "I dag är din dag, {{firstName}}!",
+        "welcomeText8": "Vem gillar glada små träd?",
+        "welcomeText9": "Festa på, {{firstName}}!",
+        "welcomeText10": "Behåll lugnet och Vantage på",
+        "welcomeText11": "Mer Vantage för pengarna",
+        "welcomeText12": "Ta med dig Vantage hem",
+        "welcomeText13": "Ät, sov, Vantage, upprepa",
+        "welcomeText14": "Varje ögonblick är en ny Vantage",
+        "welcomeText15": "Vantage till det yttersta",
+        "welcomeTextWithoutUserName1": "Energin är på topp i dag!",
+        "welcomeTextWithoutUserName2": "Kul att se dig igen",
+        "welcomeTextWithoutUserName3": "Vilken glad överraskning",
+        "welcomeTextWithoutUserName4": "Le, det smittar :)",
+        "welcomeTextWithoutUserName5": "Knack knack",
+        "welcomeTextWithoutUserName6": "Du gör raketkarriär!",
+        "welcomeTextWithoutUserName7": "I dag är din dag!",
+        "welcomeTextWithoutUserName8": "Vem gillar glada små träd?",
+        "welcomeTextWithoutUserName9": "Festa på!",
+        "welcomeTextWithoutUserName10": "Behåll lugnet och Vantage på",
+        "welcomeTextWithoutUserName11": "Mer Vantage för pengarna",
+        "welcomeTextWithoutUserName12": "Ta med dig Vantage hem",
+        "welcomeTextWithoutUserName13": "Ät, sov, Vantage, upprepa",
+        "welcomeTextWithoutUserName14": "Varje ögonblick är en ny Vantage",
+        "welcomeTextWithoutUserName15": "Vantage till det yttersta",
         "helloUser": "Hej {{firstName}}!",
         "ssoErrorTitle": "Fel",
         "ssoErrorCommon": "Hoppsan, vi påträffade ett fel. Försök igen.",
@@ -2429,7 +2543,6 @@
         "question5": {
             "title": "Använda datorn som pekplatta",
             "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2512,10 +2625,11 @@
         "bullets2": "Säkerhetsrådgivare gör det enkelt att hantera säkerheten (ingår i vissa modeller).",
         "bullets3": "Automatiska uppdateringar gör att enheten fungerar optimalt (ingår i vissa modeller).",
         "subtitle1": "Hur planerar du att använda din enhet?",
-        "subtitle2": "Berätta för oss om dina intressen",
+        "subtitle2": "Berätta om dina intressen (valfritt)",
         "personal": "Privat",
         "business": "Arbete",
         "custom": "Skräddarsydd upplevelse",
+        "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
         "title1": "Välkommen till",
@@ -2552,9 +2666,12 @@
         "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
         "deviceStatistics": "Dela statistisk information med Lenovo",
         "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
-        "userProfile": "User profile",
+        "userProfile": "Användarprofil",
         "Note": "Obs! ",
-        "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om."
+        "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om.",
+        "betaSettingTitle": "Betaprogram",
+        "betaProgram": "Betaprogram",
+        "betaSettingDescription": "Prova de senaste funktionerna vi arbetar på."
     },
     "modernPreload": {
         "cancel": "Avbryt",
@@ -2683,7 +2800,8 @@
                 "description": "Genomsökningen och reparationen kan resultera i att data går förlorade. Vi rekommenderar att du skapar en säkerhetskopia innan du utför denna åtgärd. Vill du fortsätta?",
                 "yes": "Ja",
                 "no": "Nej"
-            }
+            },
+            "waitAvailability": "Knappen är inaktiverad medan informationen om maskinvaran ännu inte har hämtats, om lagringsenheterna inte stödjer denna funktion eller om återställningen av skadade sektorer pågår."
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",
@@ -2708,11 +2826,220 @@
         "cancelTextPrompt": "Vill du verkligen avbryta?",
         "cancelTextProgress": "Vänta tills allt har avbrutits",
         "pluginNotUpdate": "Genomsökningen av maskinvaran är inaktuell och därför inte tillgänglig. Uppgradera den.",
-        "testNotApplicable": "Kan inte användas på anpassad sökning"
+        "testNotApplicable": "Kan inte användas på anpassad sökning",
+        "waitScanStarts": "Vänta tills genomsökningen startar",
+        "reminderTimeRetrieveHardwareInformation": "Den här processen med att hämta information om maskinvaran kan ta en stund",
+        "retrievingHardwareInformation": "Hämtar information om maskinvaran...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Minne",
+            "motherboard": "Moderkort",
+            "pci_express": "PCI Express",
+            "storage": "Lagring",
+            "wireless": "Radio"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2730,6 +3057,7 @@
             "installButton": {
                 "install": "Installera",
                 "installing": "Installerar",
+                "downloading": "Hämtar",
                 "installed": "Installerad",
                 "launch": "Starta",
                 "seeMore": "Mer information"
@@ -2826,7 +3154,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

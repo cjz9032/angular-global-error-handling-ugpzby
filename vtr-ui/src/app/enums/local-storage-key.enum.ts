@@ -5,7 +5,13 @@ export enum LocalStorageKey {
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
+	SecurityLandingPasswordManagerShowOwn = '[LocalStorageKey] SecurityLandingPasswordManagerShowOwn',
+	SecurityLandingWifiSecurityShowOwn = '[LocalStorageKey] SecurityLandingWifiSecurityShowOwn',
+	SecurityLandingVPNShowOwn = '[LocalStorageKey] SecurityLandingVPNShowOwn',
 	SecurityWindowsHelloStatus = '[LocalStorageKey] SecurityWindowsHelloStatus',
+	SecurityWindowsActiveStatus = '[LocalStorageKey] SecurityWindowsActiveStatus',
+	SecurityUacStatus = '[LocalStorageKey] SecurityUacStatus',
+	SecurityBitLockerStatus = '[LocalStorageKey] SecurityBitLockerStatus',
 	SecurityShowWindowsHello = '[LocalStorageKey] SecurityShowWindowsHello',
 	SecurityShowWifiSecurity = '[LocalStorageKey] SecurityShowWifiSecurity',
 	SecurityMcAfee = '[LocalStorageKey] SecurityMcAfee',
@@ -165,6 +171,7 @@ export enum LocalStorageKey {
 	AutoCloseList = '[LocalStorageKey] AutoCloseList',
 	NeedToAsk = '[LocalStorageKey] NeedToAsk',
 	BetaUser = '[LocalStorageKey] BetaUser',
+	BetaTag = '[LocalStorageKey] BetaTag',
 	IntelligentCoolingCapability = '[LocalStorageKey] IntelligentCoolingCapability',
 	SmartStandbyCapability = '[LocalStorageKey] SmartStandbyCapability',
 	AlwaysOnUSBCapability = '[LocalStorageKey] AlwaysOnUSBCapability',
@@ -191,5 +198,16 @@ export enum LocalStorageKey {
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
-	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails'
+	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
+	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing',
+	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
+	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
+	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
+	IsAudioPageAvailable = '[LocalStorageKey] IsAudioPageAvailable',
+	IsBatteryQuickSettingAvailable = '[LocalStorageKey] IsBatteryQuickSettingAvailable',
+
+	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
+	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig',
+
+	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability'
 }

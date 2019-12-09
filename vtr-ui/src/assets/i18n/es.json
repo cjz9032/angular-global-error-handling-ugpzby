@@ -632,7 +632,6 @@
             "wifi": "Seguridad de WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "HABILITADO",
             "disabled": "DESHABILITADO",
             "partiallyProtected": "PARCIALMENTE PROTEGIDO",
@@ -642,7 +641,8 @@
             "installing": "INSTALANDO",
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
-            "notRegistered": "NO REGISTRADO"
+            "notRegistered": "NO REGISTRADO",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
@@ -705,7 +705,9 @@
         "offlineInfo": {
             "title": "No se ha detectado ninguna conexión a Internet",
             "subtitle": "Obtenga más información sobre cómo resolver problemas de conexión en nuestro",
-            "buttonText": "Obtenga soporte"
+            "buttonText": "Obtenga soporte",
+            "welcomeToVantage": "Bienvenido a la próxima generación de Vantage",
+            "systemHealth": "Estado del sistema"
         },
         "feedback": {
             "title": "Proporcionar comentarios",
@@ -790,10 +792,10 @@
                 "title": "Actualización de sistema",
                 "notFound": "No se encontró la actualización de sistema",
                 "detail": {
-                    "uptoDate": "El software está actualizado",
-                    "updatedOn": "actualizado",
-                    "outdated": "Software desactualizado",
-                    "neverRanUpdate": "nunca se ha ejecutado la actualización"
+                    "uptoDate": "Actualizaciones comprobadas ",
+                    "updatedOn": "comprobado el ",
+                    "outdated": "Actualizaciones no comprobadas recientemente ",
+                    "neverRanUpdate": "las actualizaciones nunca se han comprobado"
                 }
             },
             "extendedWarranty": "Ampliar garantía",
@@ -896,7 +898,7 @@
                     "NotGood": "<b>La batería no está en buen estado.</b>",
                     "NotSupportACAdapter": "<b>El adaptador de CA no es compatible.</b>",
                     "LimitedACAdapterSupport": "<b>El adaptador de CA no puede proporcionar suficiente energía.</b>",
-                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>.",
+                    "MissingDriver": "<b>El controlador Lenovo Power Manager</b> no está instalado o no funciona correctamente. Ejecute Windows Update para instalar el controlador más reciente. También puede instalar el controlador desde <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aquí</a>. Reinicie el sistema después de la instalación.",
                     "StoreLimitation": "<b>La batería solo puede almacenar un {{value}}% de</b> su capacidad de carga original.",
                     "HighTemperature": "Se interrumpió la <b>descarga</b> debido a que la <b>temperatura de la batería es demasiado alta.</b>",
                     "TrickleCharge": "La batería se <b>descargó completamente</b> y se debe volver a cargar. El proceso podría tomar diez horas o más.",
@@ -908,7 +910,7 @@
                     "EmDriverInstalled": "Los detalles de la batería no están disponibles. Ejecute Windows Update -> Buscar actualizaciones para instalar el controlador <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
-                "thresholdNote": "<b>Note:</b> para ampliar la duración de la batería, debe configurarla para que deje de cargar en {{value}}%.",
+                "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
                 "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
             },
@@ -986,7 +988,28 @@
                         }
                     },
                     "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
-                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”."
+                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Valores de energía",
@@ -1075,6 +1098,7 @@
                         },
                         "progressText1": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "progressText2": "{{stage}} de {{stageNum}}: Calibración a energía de batería baja",
+                        "progressText3": "{{stage}} de {{stageNum}}: Calibración a carga completa",
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
@@ -1095,7 +1119,7 @@
                             "yes": "Sí",
                             "description3": "¿Está seguro de que desea detener el restablecimiento del indicador de batería?"
                         },
-                        "dual_note": "Note: Only one battery can be reset at a time"
+                        "dual_note": "Nota: solo se puede restablecer una batería a la vez."
                     }
                 },
                 "energyStar": {
@@ -1131,7 +1155,8 @@
                             "wed": "Miércoles",
                             "thurs": "Jueves",
                             "fri": "Viernes",
-                            "sat": "Sábado"
+                            "sat": "Sábado",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Domingo",
@@ -1144,18 +1169,53 @@
                         },
                         "everyday": "Todos los días",
                         "weekdays": "Entre semana",
-                        "weekends": "Fines de semana"
+                        "weekends": "Fines de semana",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
                     "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
                     "subTitle": "Schedule your computer",
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
-                    "descriptionLink": "Modern Standby",
-                    "subDescription1": "during hours of heavier use.",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1431,10 +1491,14 @@
                         "title": "APLICAR"
                     },
                     "website": {
-                        "url": "URL DEL SITIO WEB"
+                        "url": "URL DEL SITIO WEB",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXTO QUE SE INGRESARÁ"
+                        "title": "TEXTO QUE SE INGRESARÁ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1838,28 +1902,15 @@
     "security": {
         "landing": {
             "fully": "Completamente protegido",
-            "fullyDesc": "Felicidades. También está protegido.",
             "notFully": "No está completamente protegido",
-            "notFullyDesc": "No está completamente protegido. Aprenda cómo protegerse mejor en línea ahora.",
             "security101": "ASESOR DE SEGURIDAD 101",
             "firewall": "Cortafuegos",
             "pwdHealth": "Estado de la contraseña",
             "vpnSecurity": "Seguridad VPN",
             "vpnVirtual": "Red privada virtual",
-            "wifiConnected": "Wi-Fi y seguridad de hogar conectado",
+            "wifiConnected": "WiFi y seguridad de hogar conectado",
             "connectedHomeSecurity": "Seguridad de hogar conectado",
             "fingerprint": "Lector de huellas dactilares",
-            "seeAllNetwork": "Ver todas las redes conectadas",
-            "maliciousNetwork": "Impidió que su equipo se uniera a {{maliciousWifi}} redes malintencionadas este mes.",
-            "good": "BIEN",
-            "malicious": "MALINTENCIONADO",
-            "suspicious": "SOSPECHOSO",
-            "securityScoreDepends": "Su resultado de seguridad depende de si está:",
-            "antivirus": "Está protegido por software antivirus",
-            "password": "Dispone de contraseñas seguras y complejas gestionadas de forma segura",
-            "vpn": "Está supervisando la exposición de la red a los atacantes",
-            "wifi": "Está cifrando sus datos personales al utilizar WiFi público",
-            "windowsHello": "Está protegiendo el dispositivo utilizando opciones de inicio de sesión seguro",
             "uacTitle": "¿Qué es la notificación de UAC?",
             "uacText": "El Control de cuentas de usuario es una característica de seguridad muy importante de Windows que ayuda a evitar que programas potencialmente dañinos realicen cambios en el sistema.",
             "windowsTitle": "¿Por qué tengo que activar Windows?",
@@ -1869,7 +1920,43 @@
             "passwordTitle": "¿Cómo proteger mejor la contraseña?",
             "passwordText": "Almacene y gestione de forma segura todas las contraseñas cifradas mediante una aplicación de protección digital profesional en lugar de simplemente almacenarlas en sus navegadores, a los que pueden acceder fácilmente los terceros sin su conocimiento.",
             "enhanceTitle": "¿Qué debo hacer para mejorar la protección de seguridad?",
-            "enhanceText": "Recomendamos encarecidamente que los dispositivos estén protegidos mediante software antivirus y firewall, configurando la notificación de UAC a la protección mínima. Y cree contraseñas seguras y administre de forma segura, cifre los datos utilizando una red pública como protección avanzada."
+            "enhanceText": "Recomendamos encarecidamente que los dispositivos estén protegidos mediante software antivirus y firewall, configurando la notificación de UAC a la protección mínima. Y cree contraseñas seguras y administre de forma segura, cifre los datos utilizando una red pública como protección avanzada.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1951,12 +2038,12 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Wi-Fi y seguridad de hogar conectado",
+                "title": "WiFi y seguridad de hogar conectado",
                 "back": "ATRÁS"
             },
             "container": {
-                "title": "Seguridad de Lenovo Wifi",
-                "name": "SEGURIDAD DE Wi-Fi",
+                "title": "Seguridad de Lenovo WiFi",
+                "name": "SEGURIDAD DE WiFi",
                 "enable": "HABILITADO",
                 "disable": "DESHABILITADO",
                 "less": "Menos información",
@@ -1965,7 +2052,7 @@
                 "connect": "Último conectado",
                 "showmore": "Mostrar más",
                 "showless": "Mostrar menos",
-                "button": "Habilitar seguridad de Wi-Fi",
+                "button": "Habilitar seguridad de WiFi",
                 "disableDecribe": "Seguridad de Lenovo WiFi es un avanzado servicio de software basado en la nube que ayuda a su dispositivo a diferenciar entre redes inalámbricas seguras y aquellas posiblemente maliciosas."
             },
             "threatlocator": {
@@ -1976,7 +2063,7 @@
             },
             "locationmodal": {
                 "title": "Habilitar servicios de ubicación",
-                "describe1": "Para utilizar la Seguridad de Wi-Fi de Lenovo, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
+                "describe1": "Para utilizar la Seguridad de WiFi de Lenovo, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
                 "describe2": "Para utilizar la Seguridad de hogar conectado, debe activar los servicios de ubicación de Lenovo Vantage. ¿Desea activar su ubicación ahora?",
                 "agree": "ACEPTO",
                 "cancel": "CANCELAR"
@@ -2040,7 +2127,7 @@
                 "pass": "APROBADO",
                 "learnMoreAboutSecurityHealth": "Obtener más información acerca de cada uno de estos componentes <tag>aquí</tag>.",
                 "peaceOfMind": "¿Desea más tranquilidad?",
-                "button": "Habilitar seguridad de Wi-Fi"
+                "button": "Habilitar seguridad de WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2102,7 +2189,7 @@
             "allowsYou": "Dashlane le permite",
             "allowsYou1": "Iniciar sesión instantáneamente en cualquier lugar para una exploración perfecta - Sincronizar entre dispositivos para que nunca quede sin acceso a cuentas importantes",
             "allowsYou2": "Monitoree la web oscura para detectar sus datos personales",
-            "allowsYou3": "Permanezca seguro en las redes Wi-Fi no seguras con VPN integrado",
+            "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
             "poweredByDashLane": "Con tecnología Dashlane",
             "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
@@ -2135,9 +2222,36 @@
         "logout": "Cerrar sesión",
         "unlockExclusives": "Desbloquear contenido exclusivo",
         "user": "Usuario",
-        "welcomeText": "¡Energícese hoy, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "¡Energícese hoy!",
+        "welcomeText1": "¡Energícese hoy, {{firstName}}!",
+        "welcomeText2": "Feliz volver a verlo, {{firstName}}",
+        "welcomeText3": "Qué agradable sorpresa, {{firstName}}",
+        "welcomeText4": "Sonría, {{firstName}}, es contagioso :)",
+        "welcomeText5": "Toc, toc, {{firstName}}",
+        "welcomeText6": "¡Lo esperan grandes destinos!",
+        "welcomeText7": "Hoy es su día, {{firstName}}.",
+        "welcomeText8": "¿A quién le gustan los arbolitos?",
+        "welcomeText9": "¡Fiesta, {{firstName}}!",
+        "welcomeText10": "Mantenga la calma y Vantage",
+        "welcomeText11": "Más Vantage por su dinero",
+        "welcomeText12": "Traiga Vantage a su hogar",
+        "welcomeText13": "Comer, dormir, Vantage, repetir",
+        "welcomeText14": "Cada vez es una nueva oportunidad Vantage",
+        "welcomeText15": "Vantage al máximo",
+        "welcomeTextWithoutUserName1": "¡Energícese hoy!",
+        "welcomeTextWithoutUserName2": "Feliz volver a verlo",
+        "welcomeTextWithoutUserName3": "Qué agradable sorpresa",
+        "welcomeTextWithoutUserName4": "Sonría, es contagioso :)",
+        "welcomeTextWithoutUserName5": "Toc, toc",
+        "welcomeTextWithoutUserName6": "¡Lo esperan grandes destinos!",
+        "welcomeTextWithoutUserName7": "Hoy es su día.",
+        "welcomeTextWithoutUserName8": "¿A quién le gustan los arbolitos?",
+        "welcomeTextWithoutUserName9": "¡Fiesta!",
+        "welcomeTextWithoutUserName10": "Mantenga la calma y Vantage",
+        "welcomeTextWithoutUserName11": "Más Vantage por su dinero",
+        "welcomeTextWithoutUserName12": "Traiga Vantage a su hogar",
+        "welcomeTextWithoutUserName13": "Comer, dormir, Vantage, repetir",
+        "welcomeTextWithoutUserName14": "Cada vez es una nueva oportunidad Vantage",
+        "welcomeTextWithoutUserName15": "Vantage al máximo",
         "helloUser": "¡Hola, {{firstName}}!",
         "ssoErrorTitle": "Error",
         "ssoErrorCommon": "¡Ups! Hemos encontrado un error. Inténtelo de nuevo.",
@@ -2429,7 +2543,6 @@
         "question5": {
             "title": "Use su equipo como una tableta",
             "description": "<div class='faqInFs4Fb'>    Use su equipo como una tableta</div><hr><p>La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.</p><h3 class='faqInFs25FbP10'>Use la modalidad de tableta</h3><p>Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. </p><p> </p><p>En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.</p><p> </p><h3 class='faqInFs25FbP10'>Consejo</h3><p>La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.</p><h3 class='faqInFs25FbP10'>Utilizar dos aplicaciones simultáneamente</h3><p>Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.</p><p>En esta vista también puede:</p><ul>    <li>Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.</li>    <li>Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.</li>    <li>Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2512,10 +2625,11 @@
         "bullets2": "Security Advisor facilita la gestión de su seguridad (disponible en los sistemas seleccionados).",
         "bullets3": "Las actualizaciones automáticas mantienen el dispositivo en excelentes condiciones (disponible en los sistemas seleccionados).",
         "subtitle1": "¿Cómo va a utilizar su dispositivo?",
-        "subtitle2": "Cuéntenos sus intereses",
+        "subtitle2": "Cuéntenos sus intereses (opcional)",
         "personal": "Uso personal",
         "business": "Uso empresarial",
         "custom": "Experiencia personalizada",
+        "professional": "Uso profesional",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
         "moreInterest": "+ más intereses",
         "title1": "Bienvenido a",
@@ -2552,9 +2666,12 @@
         "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
         "deviceStatistics": "Compartir datos estadísticos con Lenovo",
         "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
-        "userProfile": "User profile",
+        "userProfile": "Perfil de usuario",
         "Note": "Nota: ",
-        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto."
+        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",
+        "betaSettingTitle": "Programa Beta",
+        "betaProgram": "Programa Beta",
+        "betaSettingDescription": "Pruebe las más recientes características en las que estamos trabajando."
     },
     "modernPreload": {
         "cancel": "Cancelar",
@@ -2683,7 +2800,8 @@
                 "description": "La ejecución del examen y la reparación pueden producir la pérdida de datos. Se recomienda realizar una copia de seguridad antes de ejecutar esta operación. ¿Seguro que desea continuar?",
                 "yes": "Sí",
                 "no": "No"
-            }
+            },
+            "waitAvailability": "El botón está inhabilitado mientras la información de hardware aún no se ha recuperado, en el caso de que los dispositivos de almacenamiento no permitan esta funcionalidad o cuando se esté ejecutando la recuperación de sectores defectuosos."
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -2708,11 +2826,220 @@
         "cancelTextPrompt": "¿Está seguro de que desea cancelar?",
         "cancelTextProgress": "Espere el proceso de cancelación",
         "pluginNotUpdate": "El análisis de hardware no está disponible porque está obsoleta. Actualice.",
-        "testNotApplicable": "No se aplica a personalizar exploración"
+        "testNotApplicable": "No se aplica a personalizar exploración",
+        "waitScanStarts": "Espere hasta que se inicie la exploración",
+        "reminderTimeRetrieveHardwareInformation": "Este proceso puede tardar un poco en recuperar la información del hardware",
+        "retrievingHardwareInformation": "Recuperando información del hardware...",
+        "pluginTokens": {
+            "cpu": "Procesador",
+            "memory": "Memoria",
+            "motherboard": "Placa madre",
+            "pci_express": "PCI Express",
+            "storage": "Almacenamiento",
+            "wireless": "Inalámbrica"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2730,6 +3057,7 @@
             "installButton": {
                 "install": "Instalar",
                 "installing": "Instalación",
+                "downloading": "Descargando",
                 "installed": "Instalado",
                 "launch": "Inicie",
                 "seeMore": "Ver más"
@@ -2826,7 +3154,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

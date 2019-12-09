@@ -20,8 +20,11 @@
 			padding-bottom: 21rem;
 		}
 		@media #{$breakpoint_lg} {
-			padding: 2rem 2rem 21rem 2rem;
-			padding-bottom: 22rem;
+			padding: 2rem 2rem 0 2rem;
+			// padding-bottom: 22rem;
+		}
+		@media #{$breakpoint_md} {
+			padding-bottom: 19rem;
 		}
 
 		// @media #{$mediaquery_5} {
@@ -43,6 +46,12 @@
 				@media #{$breakpoint_xl} {
 					padding-right: 0;
 				}
+				@media #{$breakpoint_lg} {
+					padding-right: 2rem;
+				}
+				@media #{$breakpoint_sm} {
+					padding-right: 0;
+				}
 				// @media #{$mediaquery_5} {
 				// 	padding-right: 4rem;
 				// }
@@ -56,9 +65,14 @@
 					padding: 1rem 0;
 				}
 				@media #{$breakpoint_lg} {
-					padding: 6rem 0;
+					//padding: 6rem 0;
+					padding: 4rem 0;
 				}
 				@media #{$breakpoint_md} {
+					//padding: 6rem 0;
+					padding: 2rem 0;
+				}
+				@media #{$breakpoint_sm} {
 					padding: 1rem 0;
 				}
 				// @media #{$mediaquery_5} {
@@ -129,12 +143,12 @@
 				@media #{$breakpoint_xl2} {
 					height: 18rem;
 				}
-				@media #{$breakpoint_lg} {
-					height: 24rem;
-				}
-				@media #{$breakpoint_md} {
-					height: 18rem;
-				}
+				// @media #{$breakpoint_lg} {
+				// 	height: 24rem;
+				// }
+				// @media #{$breakpoint_md} {
+				// 	height: 18rem;
+				// }
 				&.hds {
 					position: absolute;
 					width: 100%;
@@ -263,6 +277,20 @@
 							left: 50%;
 							transform: translate(-50%);
 							top: -4rem;
+							@media #{$breakpoint_sm}{
+								top: 50%;
+								transform: translateY(-50%) translateX(-100%);
+								left: -0.5rem;
+								padding: 2rem;
+								min-width: 15rem;
+								&::after {
+									border-bottom: 2rem solid $gaming_lightest;
+									border-left: 2rem solid transparent;
+									left: calc(100% - 1rem);
+									transform: rotate(-45deg);
+									bottom: calc(50% - 1rem);
+								}
+							}
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -276,6 +304,23 @@
 							min-width: 20rem;
 							left: 50%;
 							transform: translate(-50%);
+							top: -4rem;
+							@media #{$breakpoint_sm}{
+								top: 50%;
+								transform: translateY(-50%) translateX(0);
+								left: 7rem;
+								padding: 2rem;
+								min-width: 15rem;
+								&::after {
+									border-top: 2rem solid $gaming_lightest;
+									border-right: 2rem solid transparent;
+									border-bottom: none;
+									border-left: none;
+									left: -1rem;
+									transform: rotate(-45deg);
+									bottom: calc(50% - 1rem);
+								}
+							}
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -395,22 +440,30 @@
 						height: 24rem;
 						margin-left: -12rem;
 					}
-					@media #{$breakpoint_lg} {
-						top: -7rem;
-						margin-left: -19rem;
-						width: 38rem;
-						height: 38rem;
-					}
-					@media #{$breakpoint_md} {
-						top: -3.5rem;
-						width: 24rem;
-						height: 24rem;
-						margin-left: -12rem;
-					}
+					// @media #{$breakpoint_lg} {
+					// 	top: -7rem;
+					// 	margin-left: -19rem;
+					// 	width: 38rem;
+					// 	height: 38rem;
+					// }
+					// @media #{$breakpoint_md} {
+					// 	top: -3.5rem;
+					// 	width: 24rem;
+					// 	height: 24rem;
+					// 	margin-left: -12rem;
+					// }
 					.gaming-tooltip {
 						top: -2.5rem;
 						left: 50%;
 						transform: translate(-50%);
+						@media #{$breakpoint_sm}{
+							transform: translate(0);
+							left: 0;
+							right: 0;
+							margin-left: auto;
+							margin-right: auto;
+							min-width: 20rem;
+						}
 					}
 					&:hover {
 						.gaming-tooltip {
@@ -442,18 +495,18 @@
 							width: 22rem;
 							height: 22rem;
 						}
-						@media #{$breakpoint_lg} {
-							top: 1.75rem;
-							left: 1.75rem;
-							width: 34.5rem;
-							height: 34.5rem;
-						}
-						@media #{$breakpoint_md} {
-							top: 1rem;
-							left: 1rem;
-							width: 22rem;
-							height: 22rem;
-						}
+						// @media #{$breakpoint_lg} {
+						// 	top: 1.75rem;
+						// 	left: 1.75rem;
+						// 	width: 34.5rem;
+						// 	height: 34.5rem;
+						// }
+						// @media #{$breakpoint_md} {
+						// 	top: 1rem;
+						// 	left: 1rem;
+						// 	width: 22rem;
+						// 	height: 22rem;
+						// }
 					}
 
 					.cpu-mask {
@@ -476,18 +529,18 @@
 							width: 11rem;
 							height: 22rem;
 						}
-						@media #{$breakpoint_lg} {
-							width: 17.25rem;
-							height: 34.5rem;
-							top: 1.75rem;
-							left: 1.75rem;
-						}
-						@media #{$breakpoint_md} {
-							top: 1rem;
-							left: 1rem;
-							width: 11rem;
-							height: 22rem;
-						}
+						// @media #{$breakpoint_lg} {
+						// 	width: 17.25rem;
+						// 	height: 34.5rem;
+						// 	top: 1.75rem;
+						// 	left: 1.75rem;
+						// }
+						// @media #{$breakpoint_md} {
+						// 	top: 1rem;
+						// 	left: 1rem;
+						// 	width: 11rem;
+						// 	height: 22rem;
+						// }
 						&.hidden {
 							display: none;
 						}
@@ -509,16 +562,16 @@
 								height: 22rem;
 								border-radius: 11rem 0 0 11rem;
 							}
-							@media #{$breakpoint_lg} {
-								width: 17.25rem;
-								height: 34.5rem;
-								border-radius: 17.25rem 0 0 17.25rem;
-							}
-							@media #{$breakpoint_md} {
-								width: 11rem;
-								height: 22rem;
-								border-radius: 11rem 0 0 11rem;
-							}
+							// @media #{$breakpoint_lg} {
+							// 	width: 17.25rem;
+							// 	height: 34.5rem;
+							// 	border-radius: 17.25rem 0 0 17.25rem;
+							// }
+							// @media #{$breakpoint_md} {
+							// 	width: 11rem;
+							// 	height: 22rem;
+							// 	border-radius: 11rem 0 0 11rem;
+							// }
 							@media #{$black-on-white}{
 								background-color: $high-contrast-grey;
 							}
@@ -540,14 +593,14 @@
 									width: 22rem;
 									height: 22rem;
 								}
-								@media #{$breakpoint_lg} {
-									width: 34.5rem;
-									height: 34.5rem;
-								}
-								@media #{$breakpoint_md} {
-									width: 22rem;
-									height: 22rem;
-								}
+								// @media #{$breakpoint_lg} {
+								// 	width: 34.5rem;
+								// 	height: 34.5rem;
+								// }
+								// @media #{$breakpoint_md} {
+								// 	width: 22rem;
+								// 	height: 22rem;
+								// }
 								@media #{$black-on-white}{
 									background-color: $high-contrast-grey;
 								}
@@ -564,12 +617,12 @@
 							@media #{$breakpoint_xl2} {
 								left: 12rem;
 							}
-							@media #{$breakpoint_lg} {
-								left: 19rem;
-							}
-							@media #{$breakpoint_md} {
-								left: 12rem;
-							}
+							// @media #{$breakpoint_lg} {
+							// 	left: 19rem;
+							// }
+							// @media #{$breakpoint_md} {
+							// 	left: 12rem;
+							// }
 							.mask-obj {
 								background-color: $gaming_dark;
 								content: "";
@@ -588,16 +641,16 @@
 									height: 22rem;
 									border-radius: 0 11rem 11rem 0;
 								}
-								@media #{$breakpoint_lg} {
-									width: 17.25rem;
-									height: 34.5rem;
-									border-radius: 0 17.25rem 17.25rem 0;
-								}
-								@media #{$breakpoint_md} {
-									width: 11rem;
-									height: 22rem;
-									border-radius: 0 11rem 11rem 0;
-								}
+								// @media #{$breakpoint_lg} {
+								// 	width: 17.25rem;
+								// 	height: 34.5rem;
+								// 	border-radius: 0 17.25rem 17.25rem 0;
+								// }
+								// @media #{$breakpoint_md} {
+								// 	width: 11rem;
+								// 	height: 22rem;
+								// 	border-radius: 0 11rem 11rem 0;
+								// }
 								@media #{$black-on-white}{
 									background-color: $high-contrast-grey;
 								}
@@ -612,12 +665,12 @@
 									@media #{$breakpoint_xl2} {
 										left: -11rem;
 									}
-									@media #{$breakpoint_lg} {
-										left: -17.25rem;
-									}
-									@media #{$breakpoint_md} {
-										left: -11rem;
-									}
+									// @media #{$breakpoint_lg} {
+									// 	left: -17.25rem;
+									// }
+									// @media #{$breakpoint_md} {
+									// 	left: -11rem;
+									// }
 								}
 							}
 						}
@@ -644,18 +697,18 @@
 							width: 15rem;
 							height: 15rem;
 						}
-						@media #{$breakpoint_lg} {
-							top: 6rem;
-							left: 6rem;
-							width: 26rem;
-							height: 26rem;
-						}
-						@media #{$breakpoint_md} {
-							top: 4.5rem;
-							left: 4.5rem;
-							width: 15rem;
-							height: 15rem;
-						}
+						// @media #{$breakpoint_lg} {
+						// 	top: 6rem;
+						// 	left: 6rem;
+						// 	width: 26rem;
+						// 	height: 26rem;
+						// }
+						// @media #{$breakpoint_md} {
+						// 	top: 4.5rem;
+						// 	left: 4.5rem;
+						// 	width: 15rem;
+						// 	height: 15rem;
+						// }
 						.cpu-inner-circle {
 							position: relative;
 							top: 50%;
@@ -674,14 +727,14 @@
 								width: 11rem;
 								height: 11rem;
 							}
-							@media #{$breakpoint_lg} {
-								width: 21.5rem;
-								height: 21.5rem;
-							}
-							@media #{$breakpoint_md} {
-								width: 11rem;
-								height: 11rem;
-							}
+							// @media #{$breakpoint_lg} {
+							// 	width: 21.5rem;
+							// 	height: 21.5rem;
+							// }
+							// @media #{$breakpoint_md} {
+							// 	width: 11rem;
+							// 	height: 11rem;
+							// }
 							.cpu-label {
 								margin-top: 5rem;
 								display: inline-block;
@@ -691,12 +744,12 @@
 								@media #{$breakpoint_xl2} {
 									margin-top: 1.5rem;
 								}
-								@media #{$breakpoint_lg} {
-									margin-top: 5rem;
-								}
-								@media #{$breakpoint_md} {
-									margin-top: 1.5rem;
-								}
+								// @media #{$breakpoint_lg} {
+								// 	margin-top: 5rem;
+								// }
+								// @media #{$breakpoint_md} {
+								// 	margin-top: 1.5rem;
+								// }
 								.cpu-title {
 									text-transform: uppercase;
 									color: $gaming_lightest;
@@ -711,14 +764,14 @@
 										font-size: 4rem;
 										line-height: 5rem;
 									}
-									@media #{$breakpoint_lg} {
-										font-size: 7rem;
-										line-height: 10rem;
-									}
-									@media #{$breakpoint_md} {
-										font-size: 4rem;
-										line-height: 5rem;
-									}
+									// @media #{$breakpoint_lg} {
+									// 	font-size: 7rem;
+									// 	line-height: 10rem;
+									// }
+									// @media #{$breakpoint_md} {
+									// 	font-size: 4rem;
+									// 	line-height: 5rem;
+									// }
 								}
 								.cpu-status {
 									color: $shade;
@@ -736,7 +789,7 @@
 					}
 				}
 				.hd-list {
-					padding: 2rem 3rem;
+					padding: 2rem 2.50rem;
 					@media #{$breakpoint_xl} {
 						text-align: center;
 					}
@@ -752,12 +805,12 @@
 						@media #{$breakpoint_xl2} {
 							padding-top: 1.5rem;
 						}
-						@media #{$breakpoint_lg} {
-							padding-top: 3.5rem;
-						}
-						@media #{$breakpoint_md} {
-							padding-top: 1.5rem;
-						}
+						// @media #{$breakpoint_lg} {
+						// 	padding-top: 3.5rem;
+						// }
+						// @media #{$breakpoint_md} {
+						// 	padding-top: 1.5rem;
+						// }
 						// @media #{$only-small-screen} {
 						// 	height: 13.5rem;
 						// 	padding: 2rem 3rem;
@@ -769,6 +822,30 @@
 								top: -5rem;
 								left: 50%;
 								transform: translate(-50%);
+								@media #{$breakpoint_sm}{
+									transform: translate(0);
+									left: 0;
+									right: 0;
+									margin-left: auto;
+									margin-right: auto;
+								}
+								@media #{$breakpoint_md}{
+									min-width: 30rem;
+									transform: translate(0);
+									left: 0;
+									right: 0;
+									margin-left: auto;
+									margin-right: auto;
+								}
+								@media #{$breakpoint_lg}{
+									min-width: 20rem;
+									transform: translate(0);
+									left: 0;
+									right: 0;
+									margin-left: auto;
+									margin-right: auto;
+									padding: 1.4rem;
+								}
 							}
 
 							&:hover {
@@ -801,8 +878,8 @@
 									height: $gaming_hd_diameter_lg;
 								}
 								@media #{$breakpoint_lg} {
-									width: $gaming_hd_diameter_xl;
-									height: $gaming_hd_diameter_xl;
+									width: $gaming_hd_diameter_lg;
+									height: $gaming_hd_diameter_lg;
 								}
 								@media #{$breakpoint_md} {
 									width: $gaming_hd_diameter_lg;
@@ -859,12 +936,12 @@
 						@media #{$breakpoint_xl2} {
 							margin-bottom: 1rem;
 						}
-						@media #{$breakpoint_lg} {
-							margin-bottom: 3.4rem;
-						}
-						@media #{$breakpoint_md} {
-							margin-bottom: 1rem;
-						}
+						// @media #{$breakpoint_lg} {
+						// 	margin-bottom: 3.4rem;
+						// }
+						// @media #{$breakpoint_md} {
+						// 	margin-bottom: 1rem;
+						// }
 						// @media #{$only-small-screen} {
 						// 	display: flex;
 						// 	align-items: center;
@@ -887,6 +964,10 @@
 							top: -6rem;
 							left: 50%;
 							transform: translate(-50%);
+							@media #{$breakpoint_sm}{
+								transform: translate(0);
+								left: 50%;
+							}
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -947,14 +1028,14 @@
 								width: $gaming_hd_diameter_xs;
 								height: $gaming_hd_diameter_xs;
 							}
-							@media #{$breakpoint_lg} {
-								width: $gaming_hd_diameter_sm;
-								height: $gaming_hd_diameter_sm;
-							}
-							@media #{$breakpoint_md} {
-								width: $gaming_hd_diameter_xs;
-								height: $gaming_hd_diameter_xs;
-							}
+							// @media #{$breakpoint_lg} {
+							// 	width: $gaming_hd_diameter_sm;
+							// 	height: $gaming_hd_diameter_sm;
+							// }
+							// @media #{$breakpoint_md} {
+							// 	width: $gaming_hd_diameter_xs;
+							// 	height: $gaming_hd_diameter_xs;
+							// }
 							.hd-ring {
 								background: linear-gradient(125deg, $main_gstart 50%, $highlight_bright 100%);
 								width: 93.5%;

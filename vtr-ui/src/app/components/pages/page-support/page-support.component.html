@@ -65,6 +65,10 @@
 										{{ 'support.quickAccess.seeArticles' | translate }}</div>
 								</div>
 							</div>
+							<div class="spinner-content w-100 text-center"
+								*ngIf="articlesType === SupportContentStatus.Empty && isOnline">
+								<img src="/assets/images/support/empty.png" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -183,7 +187,3 @@
 	</right-content>
 
 </vtr-page-layout>
-
-
-
-

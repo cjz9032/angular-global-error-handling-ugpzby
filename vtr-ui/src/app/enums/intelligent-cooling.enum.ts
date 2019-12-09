@@ -12,6 +12,11 @@ export enum ICModes {
 	Error = "Error"
 }
 
+export enum DYTC6Modes {
+	Auto = 'autoMode',
+	Manual = 'manualMode'
+}
+
 export interface IntelligentCoolingMode {
 	type: string;
 	status: boolean;

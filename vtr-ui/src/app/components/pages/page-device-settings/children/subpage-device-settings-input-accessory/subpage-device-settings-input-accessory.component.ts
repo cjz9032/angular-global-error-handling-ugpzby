@@ -10,6 +10,7 @@ import { VoipApp } from '../../../../../data-models/input-accessories/voip.model
 import { EMPTY, Subscription } from 'rxjs';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -28,7 +29,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
 	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
- 
+
 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
@@ -55,6 +56,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	private topRowFunctionsIdeapadSubscription: Subscription;
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
@@ -142,6 +144,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 				if (this.inputAccessoriesCapability.additionalCapabilitiesObj) {
 					this.additionalCapabilitiesObj = this.inputAccessoriesCapability.additionalCapabilitiesObj;
+					if (this.keyboardCompatibility && this.inputAccessoriesCapability.keyboardLayoutName) {
+						this.getAdditionalCapabilitiesFromCache();
+					}
+
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
@@ -151,11 +157,32 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 
+	getAdditionalCapabilitiesFromCache() {
+		this.shortcutKeys = [];
+		if (this.additionalCapabilitiesObj.performance) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+		}
+
+		this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
+
+		if (this.additionalCapabilitiesObj.privacy) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
+		}
+		if (this.additionalCapabilitiesObj.magnifier) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+		}
+		if (this.additionalCapabilitiesObj.backLight) {
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
+		}
+	}
+
 	// To get Keyboard Layout Name
 	public getKBDLayoutName() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.GetKBDLayoutName().then((value: any) => {
+					this.inputAccessoriesCapability.keyboardLayoutName = value;
+					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					if (value) {
 						this.getKBDMachineType(value);
 					}
@@ -195,7 +222,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
-		const type = machineType.toLowerCase();	
+		const type = machineType.toLowerCase();
 		this.imagesArray.forEach(element => {
 			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
 				if (this.keyboardVersion === '1') {
@@ -273,41 +300,41 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			this.logger.error('GetFnCtrlSwapCapability', error.message);
 			return EMPTY;
 		}
-		}
-		public getFnCtrlSwap() {
-			try {
-				if (this.keyboardService.isShellAvailable) {
-					this.keyboardService.GetFnCtrlSwap().then(res => {
-						this.fnCtrlSwapStatus = res;
-					}).catch(error => {
-							this.logger.error('GetFnCtrlSwap error here', error.message);
-							return EMPTY;
-						});
-				}
-			} catch (error) {
-				this.logger.error('GetFnCtrlSwap', error.message);
-				return EMPTY;
+	}
+	public getFnCtrlSwap() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwap().then(res => {
+					this.fnCtrlSwapStatus = res;
+				}).catch(error => {
+					this.logger.error('GetFnCtrlSwap error here', error.message);
+					return EMPTY;
+				});
 			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwap', error.message);
+			return EMPTY;
 		}
+	}
 
 	public fnCtrlKey(event) {
-			this.fnCtrlSwapStatus = event.switchValue;
-			try {
-				if (this.keyboardService.isShellAvailable) {
-					this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
-						this.isRestartRequired = res.RebootRequired;
-						if (res.RebootRequired === true) {
-							this.keyboardService.restartMachine();
-						}
-					}).catch((error) => {
-						this.logger.error('SetFnCtrlSwap', error.message);
-					});
-				}
-			} catch (error) {
-				this.logger.error('SetFnCtrlSwap', error.message);
-				return EMPTY;
+		this.fnCtrlSwapStatus = event.switchValue;
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
+					this.isRestartRequired = res.RebootRequired;
+					if (res.RebootRequired === true) {
+						this.keyboardService.restartMachine();
+					}
+				}).catch((error) => {
+					this.logger.error('SetFnCtrlSwap', error.message);
+				});
 			}
+		} catch (error) {
+			this.logger.error('SetFnCtrlSwap', error.message);
+			return EMPTY;
 		}
+	}
 
 	public launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
@@ -331,6 +358,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	ngOnDestroy(): void {
-		this.topRowFunctionsIdeapadSubscription.unsubscribe();
+		if (this.topRowFunctionsIdeapadSubscription) {
+			this.topRowFunctionsIdeapadSubscription.unsubscribe();
+		}
 	}
 }

@@ -52,6 +52,7 @@
 		<div class="pt-4 battery-frame pr-3"
 			role="text">
 			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
+				[isWinRTLoading]="isWinRTLoading"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
 				[isCharging]="batteryIndicator.charging"
@@ -66,7 +67,7 @@
 		<div class="row px-3"
 			*ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto "
-				*ngIf="!(batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams.acWattage==0)"
+				*ngIf="!(batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams?.acWattage==0)"
 				[class.normal-ACAdapter-condition]="batteryConditions[i].condition == batteryConditionsEnum.FullACAdapterSupport">
 				<span *ngIf="batteryConditions[i].conditionStatus == batteryStatus.Good"
 					class="icomoon icomoon-ConditionGoodBattery"></span>
@@ -76,16 +77,16 @@
 					batteryConditions[i].condition!=batteryConditionsEnum.Error"
 					class="icomoon icomoon-ConditionBadBattery"></span>
 				<span
-					*ngIf="batteryConditions[i].conditionStatus==batteryStatus.AcAdapterStatus && !(batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams.acWattage==0)"
+					*ngIf="batteryConditions[i].conditionStatus==batteryStatus.AcAdapterStatus && !(batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams?.acWattage==0)"
 					class="icomoon icomoon-ConditionACAdapterError"></span>
 			</div>
 			<div class='col battery-conditions-tips'>
 				<span *ngIf="batteryConditions[i].condition==batteryConditionsEnum.StoreLimitation"
-					[innerHTML]="batteryConditionNote | translate:storeLimitationNoteParam"
+					[innerHTML]="batteryConditionNote | translate:param"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
 				<span
-					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams.acWattage!=0"
+					*ngIf="batteryConditions[i].condition==batteryConditionsEnum.FullACAdapterSupport && acAdapterInfoParams && acAdapterInfoParams?.acWattage!=0"
 					[innerHTML]="batteryConditionNote | translate:acAdapterInfoParams"
 					id="myDevice-settings-battery-condition-tip"
 					role="text"></span>
@@ -103,15 +104,15 @@
 
 		</div>
 		<div class="feature-note p-3 mt-2"
-			*ngIf="chargeThresholdInfo?.isOn || isGaugeResetRunning">
+			*ngIf="chargeThresholdInfo?.isOn || batteryService.checkIsGaugeResetRunning()">
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
 					role="text">
 					<span role="text"
-						*ngIf="!isGaugeResetRunning"
-						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate:thresholdNoteParam"></span>
+						*ngIf="!batteryService.checkIsGaugeResetRunning()"
+						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate"></span>
 					<span role="text"
-						*ngIf="isGaugeResetRunning"
+						*ngIf="batteryService.checkIsGaugeResetRunning()"
 						[innerHTML]="'device.deviceSettings.batteryGauge.gaugeResetWarning' | translate"></span>
 				</p>
 			</div>

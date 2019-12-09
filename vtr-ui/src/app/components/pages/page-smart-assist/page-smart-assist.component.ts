@@ -16,10 +16,11 @@ import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-as
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, NavigationExtras } from '@angular/router';
-import {  throttleTime } from 'rxjs/operators';
+import { throttleTime } from 'rxjs/operators';
 import { EMPTY, fromEvent } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -101,6 +102,7 @@ export class PageSmartAssistComponent
 	private smartAssistCapability: SmartAssistCapability = undefined;
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private smartAssist: SmartAssistService,
 		private deviceService: DeviceService,
 		public qaService: QaService,
@@ -446,19 +448,8 @@ export class PageSmartAssistComponent
 
 	public onHumanPresenceDetectStatusToggle($event: any) {
 		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
-
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-		// this.intelligentSecurityCopy = { ...this.intelligentSecurity };
-		// if (!this.intelligentSecurity.isHPDEnabled) {
-		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = false;
-		// 	this.intelligentSecurity.isZeroTouchLockEnabled = false;
-		// 	this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
-		// } else {
-		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = this.intelligentSecurityCopy.isZeroTouchLoginEnabled;
-		// 	this.intelligentSecurity.isZeroTouchLockEnabled = this.intelligentSecurityCopy.isZeroTouchLockEnabled;
-		// 	this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = this.intelligentSecurityCopy.isZeroTouchLoginAdjustEnabled;
-		// }
 
 		this.smartAssist.setHPDStatus(this.intelligentSecurity.isHPDEnabled)
 			.then((isSuccess: boolean) => {
@@ -613,14 +604,27 @@ export class PageSmartAssistComponent
 	}
 
 	private getVideoPauseResumeStatus() {
-		console.log('getVideoPauseResumeStatus');
+		this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: before check cache');
 		try {
 			if (this.smartAssist.isShellAvailable) {
+				const assistCapability: SmartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, null);
+				// cache found use it
+				if (assistCapability && assistCapability.isIntelligentMediaSupported) {
+					this.intelligentMedia = assistCapability.isIntelligentMediaSupported;
+					this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: cache found', this.intelligentMedia);
+					this.isIntelligentMediaLoading = false;
+					if (!this.intelligentMedia.available) {
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+					}
+				}
+
+				// get current value from API
+				this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: get current status from API');
 				this.smartAssist.getVideoPauseResumeStatus()
 					.then((response: FeatureStatus) => {
 						this.isIntelligentMediaLoading = false;
 						this.intelligentMedia = response;
-						console.log('getVideoPauseResumeStatus.then:', response);
+						this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: response from API', response);
 
 						if (!response.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
@@ -628,13 +632,11 @@ export class PageSmartAssistComponent
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 					}).catch(error => {
-						this.logger.error('getVideoPauseResumeStatus.error', error.message);
-						return EMPTY;
+						this.logger.error('PageSmartAssistComponent.getVideoPauseResumeStatus: error', error);
 					});
 			}
 		} catch (error) {
-			this.logger.error('getVideoPauseResumeStatus' + error.message);
-			return EMPTY;
+			this.logger.exception('PageSmartAssistComponent.getVideoPauseResumeStatus: exception', error);
 		}
 	}
 

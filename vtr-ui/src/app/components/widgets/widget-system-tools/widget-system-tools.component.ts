@@ -31,15 +31,15 @@ export class WidgetSystemToolsComponent implements OnInit {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
-		
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.hardwareScanService.isAvailable()
-				.then((isAvailable: any) => {
-					this.showHWScanMenu = isAvailable;
-				})
-				.catch(() => {
-					this.showHWScanMenu = false;
-				});
-		}
+
+		// if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+		// 	this.hardwareScanService.isAvailable()
+		// 		.then((isAvailable: any) => {
+		// 			this.showHWScanMenu = isAvailable;
+		// 		})
+		// 		.catch(() => {
+		// 			this.showHWScanMenu = false;
+		// 		});
+		// }
 	}
 }
