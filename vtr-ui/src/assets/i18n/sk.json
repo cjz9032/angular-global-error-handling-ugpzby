@@ -642,7 +642,8 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
                 "seeDetailsLink": "Zobraziť podrobnosti",
-                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér."
+                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napájanie",
@@ -1493,11 +1497,11 @@
                         "url": "ADRESA URL WEBOVEJ LOKALITY",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Začnite s http:// alebo https://"
                     },
                     "enterText": {
                         "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Tu napíšte"
                     }
                 },
                 "fnCtrlKey": {

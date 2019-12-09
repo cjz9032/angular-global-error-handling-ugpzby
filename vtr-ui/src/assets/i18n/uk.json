@@ -642,7 +642,8 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Батарея не може бути заряджена повністю якщо увімкнено граничне значення заряду акумулятора.",
                 "seeDetailsLink": "Показати відомості",
-                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
+                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Живлення",
@@ -1493,11 +1497,11 @@
                         "url": "URL-АДРЕСА ВЕБСАЙТУ",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Почніть з http:// або https://"
                     },
                     "enterText": {
                         "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Введіть тут"
                     }
                 },
                 "fnCtrlKey": {

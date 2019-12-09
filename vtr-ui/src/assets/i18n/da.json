@@ -642,7 +642,8 @@
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
-                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
+                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Strøm",
@@ -1493,11 +1497,11 @@
                         "url": "URL TIL WEBSTED",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
                         "title": "TEKST, DER SKAL SKRIVES",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {

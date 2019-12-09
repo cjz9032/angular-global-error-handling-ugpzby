@@ -642,7 +642,8 @@
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Аккумулятор не найден",
                 "thresholdNote": "<b>Примечание.</b> Аккумулятор не может быть полностью заряжен, если включен пороговый уровень заряда аккумулятора.",
                 "seeDetailsLink": "См. подробные сведения",
-                "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания."
+                "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Питание",
@@ -1493,11 +1497,11 @@
                         "url": "URL-АДРЕС ВЕБ-САЙТА",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Начните с http:// или https://"
                     },
                     "enterText": {
                         "title": "ВВОДИМЫЙ ТЕКСТ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Введите адрес здесь"
                     }
                 },
                 "fnCtrlKey": {

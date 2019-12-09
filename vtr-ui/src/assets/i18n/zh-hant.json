@@ -642,7 +642,8 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
-                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "電源",
@@ -1493,11 +1497,11 @@
                         "url": "網站 URL",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "請以 http:// 或 https:// 開頭"
                     },
                     "enterText": {
                         "title": "要輸入的文字",
-                        "placeholder": "Please type here"
+                        "placeholder": "請在這裡輸入"
                     }
                 },
                 "fnCtrlKey": {

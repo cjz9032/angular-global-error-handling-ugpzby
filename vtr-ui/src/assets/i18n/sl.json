@@ -642,7 +642,8 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> Ko je omogočena funkcija Prag polnjenja baterije, baterije ni mogoče povsem napolniti.",
                 "seeDetailsLink": "Prikaži podrobnosti",
-                "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen."
+                "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",
@@ -1493,11 +1497,11 @@
                         "url": "URL SPLETNEGA MESTA",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Začnite s http:// ali https://"
                     },
                     "enterText": {
                         "title": "BESEDILO BO DODANO",
-                        "placeholder": "Please type here"
+                        "placeholder": "Vnesite tukaj"
                     }
                 },
                 "fnCtrlKey": {

@@ -642,7 +642,8 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
-                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
+                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentazione",
@@ -1493,11 +1497,11 @@
                         "url": "URL SITO WEB",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Deve iniziare con http:// o https://"
                     },
                     "enterText": {
                         "title": "TESTO DA IMMETTERE",
-                        "placeholder": "Please type here"
+                        "placeholder": "Digitare qui"
                     }
                 },
                 "fnCtrlKey": {

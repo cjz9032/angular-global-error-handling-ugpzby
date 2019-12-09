@@ -642,7 +642,8 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
-                "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר."
+                "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "צריכת חשמל",
@@ -1493,11 +1497,11 @@
                         "url": "URL של אתר האינטרנט",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "התחל עם http:// או https://"
                     },
                     "enterText": {
                         "title": "טקסט להזנה",
-                        "placeholder": "Please type here"
+                        "placeholder": "הקלד כאן"
                     }
                 },
                 "fnCtrlKey": {

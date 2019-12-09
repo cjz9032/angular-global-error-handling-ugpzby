@@ -642,7 +642,8 @@
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Der Akku kann nicht vollständig aufgeladen werden, wenn der Schwellenwert für die Akkuladung aktiviert ist.",
                 "seeDetailsLink": "Details anzeigen",
-                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen."
+                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Stromversorgung",
@@ -1493,11 +1497,11 @@
                         "url": "WEBSITE-URL",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Starten Sie mit http:// oder https://"
                     },
                     "enterText": {
                         "title": "EINZUGEBENDER TEXT",
-                        "placeholder": "Please type here"
+                        "placeholder": "Text hier eingeben"
                     }
                 },
                 "fnCtrlKey": {

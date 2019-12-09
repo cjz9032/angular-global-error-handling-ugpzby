@@ -642,7 +642,8 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
-                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
+                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",
@@ -1493,11 +1497,11 @@
                         "url": "URL WEB-MJESTA",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Započnite s http:// ili https://"
                     },
                     "enterText": {
                         "title": "TEKST ZA UNOS",
-                        "placeholder": "Please type here"
+                        "placeholder": "Pišite ovdje"
                     }
                 },
                 "fnCtrlKey": {

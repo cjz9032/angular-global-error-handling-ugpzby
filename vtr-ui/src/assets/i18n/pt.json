@@ -642,7 +642,8 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Nenhuma bateria detetada",
                 "thresholdNote": "<b>Nota:</b> A bateria não pode estar totalmente carregada quando o Limiar de Carregamento da Bateria está ativado.",
                 "seeDetailsLink": "Ver detalhes",
-                "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado."
+                "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentação",
@@ -1493,11 +1497,11 @@
                         "url": "URL DO SÍTIO WEB",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Comece por http:// ou https://"
                     },
                     "enterText": {
                         "title": "TEXTO A INSERIR",
-                        "placeholder": "Please type here"
+                        "placeholder": "Digite aqui"
                     }
                 },
                 "fnCtrlKey": {

@@ -642,7 +642,8 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b>バッテリー充電のしきい値が有効な場合は、バッテリーを完全に充電することはできません。",
                 "seeDetailsLink": "詳細を見る",
-                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
+                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "電源",
@@ -1493,11 +1497,11 @@
                         "url": "Web サイトの URL",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "http:// または https:// から始めてください"
                     },
                     "enterText": {
                         "title": "入力するテキスト",
-                        "placeholder": "Please type here"
+                        "placeholder": "ここに入力してください"
                     }
                 },
                 "fnCtrlKey": {

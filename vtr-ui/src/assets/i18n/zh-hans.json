@@ -642,7 +642,8 @@
             "notFound": "未找到",
             "registered": "已注册",
             "notRegistered": "未注册",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -911,7 +912,10 @@
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
-                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
+                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "电源管理",
@@ -1493,11 +1497,11 @@
                         "url": "Web 站点 URL",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "请以 http:// 或 https:// 开头"
                     },
                     "enterText": {
                         "title": "要输入的文本",
-                        "placeholder": "Please type here"
+                        "placeholder": "请在这里输入"
                     }
                 },
                 "fnCtrlKey": {
