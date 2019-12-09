@@ -42,7 +42,7 @@
 							{{ 'support.quickAccess.categoriesDesc' | translate }}</div>
 						<div class="quick-assess-categories row">
 							<div role="button"
-								class="quick-assess-item col col-6 col-sm-3"
+								class="quick-assess-item"
 								*ngFor="let category of articleCategories, let i = index"
 								tabindex="1"
 								id="{{'support-category-'+category.Id}}"
@@ -76,7 +76,7 @@
 
 			<div class="row"
 				*ngIf="articlesType !== 'loading'">
-				<div class="col-xl-6 py-20 card-left"
+				<div class="col-md-6 pb-20 card-left"
 					*ngIf="articles.leftTop.length > 0">
 					<vtr-container-article [items]="articles.leftTop"
 						*ngIf="isOnline"
@@ -99,7 +99,7 @@
 						[type]="articlesType">
 					</vtr-container-article>
 				</div>
-				<div class="col-xl-6 py-20 card-right"
+				<div class="col-md-6 pb-20 card-right"
 					*ngIf="articles.middleTop.length > 0">
 					<vtr-container-article [items]="articles.middleTop"
 						*ngIf="isOnline"
@@ -165,7 +165,6 @@
 			<div class="row"
 				[vtrAppSearchScroller]="['search-lenovo-service']">
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<!-- 	[description]="'support.quicklinks.description' | translate" -->
 					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
 						[description]="''"
 						[items]="supportDatas.quicklinks"></vtr-widget-support>
