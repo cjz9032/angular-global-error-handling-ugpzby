@@ -33,11 +33,14 @@
 			font-weight: $weight_600;
 			padding-bottom: 2rem;
 			cursor: pointer;
-			@media #{$breakpoint_md} {
+			@media #{$breakpoint_xl} {
 				font-size: $fontsize_md;
 			}
-			@media #{$breakpoint_sm} {
+			@media #{$breakpoint_md} {
 				font-size: $fontsize_sm;
+			}
+			@media #{$breakpoint_sm} {
+				font-size: $fontsize_xs;
 			}
 
 		}

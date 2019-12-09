@@ -3,6 +3,7 @@
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery
+			 *ngIf="!isWinRTLoading"
 			[class]="isInDetailsModal?'battery detail-battery': 'battery'">
 			<div class="acid-container">
 				<div class="fill"></div>

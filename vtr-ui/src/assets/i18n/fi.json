@@ -632,7 +632,6 @@
             "wifi": "WiFi-suojaus",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "KÄYTÖSSÄ",
             "disabled": "POISSA KÄYTÖSTÄ",
             "partiallyProtected": "OSITTAIN SUOJATTU",
@@ -642,7 +641,8 @@
             "installing": "ASENNETAAN",
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
-            "notRegistered": "EI REKISTERÖITY"
+            "notRegistered": "EI REKISTERÖITY",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -792,10 +792,10 @@
                 "title": "Järjestelmäpäivitys",
                 "notFound": "Järjestelmän päivitystä ei löydy",
                 "detail": {
-                    "uptoDate": "Ohjelmisto ajan tasalla",
-                    "updatedOn": "päivitetty",
-                    "outdated": "Vanhentunut ohjelmisto",
-                    "neverRanUpdate": "päivitystä ei ole koskaan tehty"
+                    "uptoDate": "Päivitykset tarkistettu ",
+                    "updatedOn": "tarkistuspäivä ",
+                    "outdated": "Päivityksiä ei ole tarkistettu äskettäin ",
+                    "neverRanUpdate": "päivityksiä ei ole koskaan tarkistettu"
                 }
             },
             "extendedWarranty": "Laajenna takuu",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
-                "thresholdNote": "<b>Huomautus:</b> Voit pidentää akun käyttöikää määrittämällä akun lopettamaan latauksen, kun lataustaso on {{value}}%.",
+                "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
                 "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
-                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa."
+                    "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Virta-asetukset",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "progressText2": "{{stage}} / {{stageNum}}: Kalibroidaan akun alhaiseen varaukseen",
+                        "progressText3": "{{stage}} / {{stageNum}}: Kalibroidaan täyteen lataukseen",
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "Weskiviikko",
                             "thurs": "Torstai",
                             "fri": "Perjantai",
-                            "sat": "Lauantai"
+                            "sat": "Lauantai",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Sunnuntai",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
-                        "weekends": "Viikonloppuisin"
+                        "weekends": "Viikonloppuisin",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
                     "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "KÄYTÄ"
                     },
                     "website": {
-                        "url": "VERKKOSIVUSTON URL-OSOITE"
+                        "url": "VERKKOSIVUSTON URL-OSOITE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "KIRJOITETTAVA TEKSTI"
+                        "title": "KIRJOITETTAVA TEKSTI",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,28 +1901,15 @@
     "security": {
         "landing": {
             "fully": "Täysin suojattu",
-            "fullyDesc": "Onnittelut! Sinulla on hyvä suojaus.",
             "notFully": "Ei täysin suojattu",
-            "notFullyDesc": "Et ole täysin suojattu. Lue lisätietoja siitä, miten voit suojautua paremmin nyt.",
             "security101": "SECURITY ADVISOR 101",
             "firewall": "Palomuuri",
             "pwdHealth": "Salasanan kunto",
             "vpnSecurity": "VPN-suojaus",
             "vpnVirtual": "Näennäisverkko",
-            "wifiConnected": "Wi-Fi-yhteyden & Connected Home -suojaus",
+            "wifiConnected": "WiFi-yhteyden & Connected Home -suojaus",
             "connectedHomeSecurity": "Connected Home -suojaus",
             "fingerprint": "Sormenjälkitunnistin",
-            "seeAllNetwork": "Katso kaikki liittyneet verkot",
-            "maliciousNetwork": "Tietokonettasi on estetty liittymästä {{maliciousWifi}} haitalliseen verkkoon tässä kuussa.",
-            "good": "HYVÄ",
-            "malicious": "HAITALLINEN",
-            "suspicious": "EPÄILYTTÄVIÄ",
-            "securityScoreDepends": "Turvallisuustulos riippuu vastauksista seuraaviin:",
-            "antivirus": "Onko laitteesi suojattu virusten torjuntaohjelmalla",
-            "password": "Onko sinulla vahvat ja monimutkaiset salasanat, joita hallitaan turvallisella tavalla",
-            "vpn": "Valvotaanko altistumistasi hyökkääjille verkossa",
-            "wifi": "Salataanko henkilökohtaiset tietosi käyttäessäsi julkista WiFi-yhteyttä",
-            "windowsHello": "Suojataanko laitteesi turvallisten sisäänkirjausvalintojen avulla",
             "uacTitle": "Mikä on käyttäjätilien valvontailmoitus?",
             "uacText": "Käyttäjätilien valvonta on erittäin tärkeä Windowsin tietoturvaominaisuus, joka auttaa estämään mahdollisesti vahingollisten ohjelmien muutosten tekemisen järjestelmääsi.",
             "windowsTitle": "Miksi minun täytyy aktivoida Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Miten suojata salasana paremmin?",
             "passwordText": "Tallenna ja hallitse kaikkia salasanojasi ammattimaisen digitaalisen suojaussovelluksen avulla sen sijaan, että vain tallennat ne selaimissa, mistä kolmannet osapuolet pääsevät niihin helposti käsiksi tietämättäsi.",
             "enhanceTitle": "Mitä minun pitäisi tehdä parantaakseni tietoturvasuojausta?",
-            "enhanceText": "Suosittelemme, että vähintään suojaat laitteesi virustentorjuntaohjelmistolla ja palomuurilla ja määrität käyttäjätilien valvontailmoitukset. Ja lisäsuojauksena luot vahvoja salasanoja ja hallitset niitä turvallisesti, ja salaat tietosi, kun käytät julkista verkkoa."
+            "enhanceText": "Suosittelemme, että vähintään suojaat laitteesi virustentorjuntaohjelmistolla ja palomuurilla ja määrität käyttäjätilien valvontailmoitukset. Ja lisäsuojauksena luot vahvoja salasanoja ja hallitset niitä turvallisesti, ja salaat tietosi, kun käytät julkista verkkoa.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1956,12 +2037,12 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "Wi-Fi-yhteyden ja Connected Home -suojaus",
+                "title": "WiFi-yhteyden ja Connected Home -suojaus",
                 "back": "EDELLINEN"
             },
             "container": {
-                "title": "Lenovo Wifi -suojaus",
-                "name": "Wi-Fi-SUOJAUS",
+                "title": "Lenovo WiFi -suojaus",
+                "name": "WiFi-SUOJAUS",
                 "enable": "KÄYTÖSSÄ",
                 "disable": "POISSA KÄYTÖSTÄ",
                 "less": "Vähemmän tietoja",
@@ -1970,7 +2051,7 @@
                 "connect": "Viimeksi yhdistetty",
                 "showmore": "Näytä lisää",
                 "showless": "Näytä vähemmän",
-                "button": "Ota Wi-Fi -suojaus käyttöön",
+                "button": "Ota WiFi -suojaus käyttöön",
                 "disableDecribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista."
             },
             "threatlocator": {
@@ -1981,7 +2062,7 @@
             },
             "locationmodal": {
                 "title": "Ota sijaintipalvelut käyttöön",
-                "describe1": "Jotta voit käyttää Lenovo Wi-Fi -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
+                "describe1": "Jotta voit käyttää Lenovo WiFi -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
                 "describe2": "Jotta voit käyttää Connected Home -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",
                 "agree": "HYVÄKSYN",
                 "cancel": "PERUUTA"
@@ -2045,7 +2126,7 @@
                 "pass": "HYVÄKSYTTY",
                 "learnMoreAboutSecurityHealth": "Saat lisätietoja näistä osista <tag>tästä</tag>.",
                 "peaceOfMind": "Haluatko enemmän mielenrauhaa?",
-                "button": "Ota Wi-Fi -suojaus käyttöön"
+                "button": "Ota WiFi -suojaus käyttöön"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2107,7 +2188,7 @@
             "allowsYou": "Dashlanen avulla voit",
             "allowsYou1": "Kirjautua nopeasti sisään mihin tahansa ja selailla verkkoa saumattomasti - Synkronoida eri laitteet niin, että sinulla on aina pääsy tärkeille tileillesi",
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
-            "allowsYou3": "Käyttää turvaamattomia Wi-Fi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
+            "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
             "poweredByDashLane": "Dashlanen tarjoama",
             "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Tietokoneen käyttö taulutietokoneen tavoin",
             "description": "<div class='faqInFs4Fb'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 class='faqInFs25FbP10'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 class='faqInFs25FbP10'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 class='faqInFs25FbP10'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Kerro meille kiinnostuksen kohteistasi (valinnainen)",
         "personal": "Henkilökohtainen käyttö",
         "business": "Yrityskäyttö",
-		"custom": "Mukautettu käyttökokemus",
-		"professional": "Ammattikäyttö",
+        "custom": "Mukautettu käyttökokemus",
+        "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
         "title1": "Tervetuloa",
@@ -2720,7 +2800,7 @@
                 "yes": "Kyllä",
                 "no": "Ei"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Vaikka laitteistotietoja ei ole vielä noudettu, painike ei ole käytettävissä sen varalta, että tallennuslaitteet eivät tue tätä toimintoa tai viallisten sektorien palautus on käynnissä."
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Odota, kunnes peruutus on meneillään",
         "pluginNotUpdate": "Laitteistotarkistus ei ole käytettävissä, koska se on vanhentunut. Päivitä se.",
         "testNotApplicable": "Ei sovellu mukautettu tarkistus",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Odota, kunnes tarkistus alkaa",
+        "reminderTimeRetrieveHardwareInformation": "Laitteiston tietojen noutamisprosessi saattaa kestää jonkin aikaa",
+        "retrievingHardwareInformation": "Noudetaan laitteistotietoja...",
         "pluginTokens": {
             "cpu": "Suoritin",
             "memory": "Muisti",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Asenna",
-				"installing": "Asentaminen",
-				"downloading": "Ladataan",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
                 "installed": "Asennettu",
                 "launch": "Aloita",
                 "seeMore": "Näytä lisää"

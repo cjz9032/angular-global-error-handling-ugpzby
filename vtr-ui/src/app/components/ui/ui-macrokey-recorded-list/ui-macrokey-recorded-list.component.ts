@@ -1,3 +1,4 @@
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Validators } from '@angular/forms';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } from '@angular/core';
 import { isUndefined } from 'util';
@@ -8,7 +9,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
+	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -24,6 +25,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	public recordsList: any = [];
 	public pairCounter = {};
 	public hoveredPair = '';
+	deleteStart: any = new Date();
 
 	repeatOptions: any = [
 		{
@@ -158,9 +160,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		popupWindowTitle: 'gaming.macroKey.popupContent.clearMacrokey.modalTitle'
 	};
 
-	constructor(private macrokeyService: MacrokeyService) { }
+	constructor(private macrokeyService: MacrokeyService, private loggerService: LoggerService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	async recordDelete(record, i) {
 		try {
@@ -169,7 +171,15 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 				const remainingInputs = this.recordsData.inputs.filter(
 					(recordItem: any) => recordItem.pairName !== record.pairName
 				);
+
+				const deleteStart: any = new Date();
+				this.loggerService.info(`Performance: MACROKEY DELETE START TIME. ${deleteStart}`);
 				await this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
+					// response;
+					const deleteEnd: any = new Date();
+					const deleteTime = deleteEnd - this.deleteStart;
+					this.loggerService.info(`Performance: MACROKEY DELETE END TIME. ${deleteEnd}`);
+					this.loggerService.info(`Performance: MACROKEY DELETE TOTAL TIME. ${deleteTime}ms`);
 					this.deleteCalled = false;
 					if (responseStatus) {
 						this.recordsData.inputs = remainingInputs;
@@ -179,7 +189,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 					}
 				});
 			}
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	clearRecords() {

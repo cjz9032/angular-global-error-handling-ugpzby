@@ -632,7 +632,6 @@
             "wifi": "Безопасность WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ВКЛЮЧЕНО",
             "disabled": "ВЫКЛЮЧЕНО",
             "partiallyProtected": "ЧАСТИЧНО ЗАЩИЩЕНО",
@@ -642,7 +641,8 @@
             "installing": "УСТАНОВКА",
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
-            "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО"
+            "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -792,10 +792,10 @@
                 "title": "Обновление системы",
                 "notFound": "Обновление системы не найдено",
                 "detail": {
-                    "uptoDate": "Установлена последняя версия ПО",
-                    "updatedOn": "обновлено",
-                    "outdated": "Версия ПО устарела",
-                    "neverRanUpdate": "обновление не выполнялось"
+                    "uptoDate": "Наличие обновлений проверено ",
+                    "updatedOn": "проверено ",
+                    "outdated": "Наличие обновлений давно не проверялось ",
+                    "neverRanUpdate": "наличие обновлений никогда не проверялось"
                 }
             },
             "extendedWarranty": "Продление гарантии",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>Подключено питание мощностью {{acWattage}} W {{acAdapterType}}.</b>"
                 },
                 "batteryNotDetected": "Аккумулятор не найден",
-                "thresholdNote": "<b>Примечание.</b> Для увеличения срока службы аккумулятора вы установили прекращение зарядки аккумулятора при заряде {{value}}%.",
+                "thresholdNote": "<b>Примечание.</b> Аккумулятор не может быть полностью заряжен, если включен пороговый уровень заряда аккумулятора.",
                 "seeDetailsLink": "См. подробные сведения",
                 "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows",
-                    "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише."
+                    "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Параметры питания",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} из {{stageNum}}: калибровка до полной зарядки",
                         "progressText2": "{{stage}} из {{stageNum}}: калибровка до низкого уровня заряда аккумулятора",
+                        "progressText3": "{{stage}} из {{stageNum}}: калибровка до полной зарядки",
                         "FCCText": "С {{before}} Вт·ч до {{after}} Вт·ч",
                         "note": "Примечание. Перед сбросом индикатора аккумулятора обязательно подключите компьютер к сети переменного тока. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "среда",
                             "thurs": "Четверг",
                             "fri": "пятница",
-                            "sat": "суббота"
+                            "sat": "суббота",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Воскресенье",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Каждый день",
                         "weekdays": "Будние дни",
-                        "weekends": "Выходные дни"
+                        "weekends": "Выходные дни",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
                     "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "ПРИМЕНИТЬ"
                     },
                     "website": {
-                        "url": "URL-АДРЕС ВЕБ-САЙТА"
+                        "url": "URL-АДРЕС ВЕБ-САЙТА",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "ВВОДИМЫЙ ТЕКСТ"
+                        "title": "ВВОДИМЫЙ ТЕКСТ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Полностью защищено",
-            "fullyDesc": "Поздравляем! Ваше устройство надежно защищено.",
             "notFully": "Защищено не полностью",
-            "notFullyDesc": "Ваше устройство защищено не полностью. Узнайте, как усилить безопасность своего устройства прямо сейчас.",
             "security101": "ПОМОЩНИК ПО БЕЗОПАСНОСТИ: ОСНОВЫ",
             "firewall": "Брандмауэр",
             "pwdHealth": "Надежность пароля",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "Безопасность WiFi и устройств в домашней сети",
             "connectedHomeSecurity": "Безопасность устройств в домашней сети",
             "fingerprint": "Устройство распознавания отпечатков пальцев",
-            "seeAllNetwork": "Просмотреть все сети, к которым выполнялось подключение",
-            "maliciousNetwork": "В этом месяце ваш компьютер был защищен от подключения к вредоносным сетям в количестве {{maliciousWifi}}.",
-            "good": "БЕЗОПАСНАЯ",
-            "malicious": "ВРЕДОНОСНАЯ",
-            "suspicious": "ПОДОЗРИТЕЛЬНАЯ",
-            "securityScoreDepends": "Ваша оценка безопасности зависит от следующего:",
-            "antivirus": "Использование антивирусных программ",
-            "password": "Использование надежных и сложных паролей с безопасной системой управления паролями",
-            "vpn": "Мониторинг уязвимости сети к атакам",
-            "wifi": "Шифрование личных данных при использовании общедоступных сетей WiFi",
-            "windowsHello": "Защита устройства с помощью параметров безопасного входа",
             "uacTitle": "Что такое уведомление функции контроля учетных записей пользователей?",
             "uacText": "Контроль учетных записей пользователей — очень важная функция безопасности Windows, которая не дает потенциально вредоносным программам внести изменения в систему.",
             "windowsTitle": "Зачем активировать Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Как обеспечить надежную защиту пароля?",
             "passwordText": "Используйте профессиональное приложение цифровой защиты для хранения и администрирования всех своих паролей в зашифрованном виде, вместо того чтобы хранить их в браузере, где к ним легко могут получить доступ третьи лица без вашего ведома.",
             "enhanceTitle": "Как повысить безопасность системы?",
-            "enhanceText": "Настоятельно рекомендуем защитить устройства антивирусной программой и брандмауэром, а также настроить уведомление функции контроля учетных записей пользователей на минимальный уровень защиты. Кроме того, используйте надежные пароли и управляйте ими безопасным способом, а для дополнительной защиты шифруйте данные при использовании общедоступных сетей."
+            "enhanceText": "Настоятельно рекомендуем защитить устройства антивирусной программой и брандмауэром, а также настроить уведомление функции контроля учетных записей пользователей на минимальный уровень защиты. Кроме того, используйте надежные пароли и управляйте ими безопасным способом, а для дополнительной защиты шифруйте данные при использовании общедоступных сетей.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1960,7 +2041,7 @@
                 "back": "НАЗАД"
             },
             "container": {
-                "title": "Безопасность Lenovo Wifi",
+                "title": "Безопасность Lenovo WiFi",
                 "name": "БЕЗОПАСНОСТЬ WIFI",
                 "enable": "ВКЛЮЧЕНО",
                 "disable": "ВЫКЛЮЧЕНО",
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Использование компьютера в качестве планшетного ПК",
             "description": "<div class='faqInFs4Fb'>    Использование компьютера в качестве планшетного ПК</div><hr><p>Режим планшета делает Windows более интуитивно понятным и простым в использовании, если у вас есть устройство с сенсорным экраном.</p><h3 class='faqInFs25FbP10'>Использование режима планшета</h3><p>Чтобы включить режим планшета, выберите <strong>центр уведомлений</strong> на панели задач, затем выберите <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Примечание</h3><p>Чтобы узнать, может ли устройство автоматически включать режим планшета, найдите его на веб-сайте производителя. Поддержка этой функции зависит от оборудования, установленного драйвера и способа настройки устройства производителем. </p><p> </p><p>В режиме планшета приложения открываются в полноэкранном режиме, предоставляя больше пространства для работы. Чтобы закрыть приложение, перетащите его в нижнюю часть экрана.</p><p> </p><h3 class='faqInFs25FbP10'>Рекомендация</h3><p>Панель задач доступна, когда компьютер находится в режиме планшета, но ее можно скрыть, если требуется больше пространства на экране. Нажмите кнопку <strong>Пуск</strong>, выберите <strong>Параметры </strong>> <strong>Система </strong>> <strong>Режим планшета</strong> и включите параметр <strong>Автоматически скрывать панель задач в режиме планшета</strong>. Чтобы отобразить скрытую панель задач, проведите вверх от нижней части экрана или наведите на нее указатель мыши.</p><h3 class='faqInFs25FbP10'>Использование двух приложений одновременно</h3><p>Чтобы использовать два приложения одновременно в режиме планшета, перетащите открытое приложение вниз и в сторону. Вы увидите, где оно будет прикреплено, и все открытые приложения рядом с ним.</p><p>В этом представлении также можно:</p><ul>    <li>Использовать общий край между двумя прикрепленными приложениями, чтобы изменить размер обоих приложений одновременно.</li>    <li>Открыть новое приложение из представления задач. Для этого нажмите <strong>Представление задач</strong> на панели задач, выберите приложение и перетащите его на одну сторону, чтобы прикрепить к разделенному экрану.</li>    <li>Нажать кнопку \"Назад\" на панели задач, чтобы вернуться к приложению или открыть приложение, которое использовалось ранее.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Расскажите нам о своих интересах (необязательно)",
         "personal": "Личное пользование",
         "business": "Использование для работы или бизнеса",
-		"custom": "Особое использование",
-		"professional": "Профессиональное использование",
+        "custom": "Особое использование",
+        "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
         "moreInterest": "+ другие интересы",
         "title1": "Добро пожаловать в",
@@ -2720,7 +2800,7 @@
                 "yes": "Да",
                 "no": "Нет"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопка отключена, если сведения об оборудовании еще не получены, устройства хранения данных не поддерживают эту функцию или выполняется восстановление поврежденных секторов."
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Дождитесь отмены",
         "pluginNotUpdate": "Функция сканирования оборудования недоступна, так как она устарела. Обновите ее.",
         "testNotApplicable": "При настраиваемом сканировании неприменимо",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Дождитесь начала проверки",
+        "reminderTimeRetrieveHardwareInformation": "Процедура получения информации об оборудовании может занять некоторое время",
+        "retrievingHardwareInformation": "Получение информации об оборудовании...",
         "pluginTokens": {
             "cpu": "Процессор",
             "memory": "Оперативная память",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Установить",
-				"installing": "Идет установка",
-				"downloading": "Скачивание",
+                "installing": "Идет установка",
+                "downloading": "Скачивание",
                 "installed": "Установлено",
                 "launch": "Запустить",
                 "seeMore": "Дополнительная информация"

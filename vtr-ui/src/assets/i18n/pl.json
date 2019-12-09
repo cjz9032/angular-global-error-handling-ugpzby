@@ -17,7 +17,7 @@
                         "balText": "Normalna prędkość CPU i wentylatora",
                         "quietText": "Mniejsza prędkość CPU i wentylatora"
                     },
-                    "wifiSecurity": "Bezp. Wi-Fi",
+                    "wifiSecurity": "Bezp. WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Szybkie ładowanie"
                 },
@@ -613,7 +613,7 @@
                 "title": "Ochrona",
                 "sub1": "Moje zabezpieczenie",
                 "sub2": "Antywirus",
-                "sub3": "Bezpieczeństwo Wi-Fi",
+                "sub3": "Bezpieczeństwo WiFi",
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Ochrona internetowa",
                 "sub6": "Windows Hello"
@@ -629,10 +629,9 @@
             "title": "Doradca zabezpieczeń",
             "subtitle": "SPRAWDŹ, CZY URZĄDZENIE JEST ZABEZPIECZONE.",
             "antiVirus": "Antywirus",
-            "wifi": "Bezpieczeństwo Wi-Fi",
+            "wifi": "Bezpieczeństwo WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "WŁĄCZONO",
             "disabled": "WYŁĄCZONO",
             "partiallyProtected": "CZĘŚCIOWO CHRONIONE",
@@ -642,7 +641,8 @@
             "installing": "INSTALOWANIE",
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
-            "notRegistered": "NIE ZAREJESTROWANY"
+            "notRegistered": "NIE ZAREJESTROWANY",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -792,10 +792,10 @@
                 "title": "Aktualizacja systemu",
                 "notFound": "Nie znaleziono aktualizacji systemu",
                 "detail": {
-                    "uptoDate": "Oprogramowanie aktualne",
-                    "updatedOn": "zaktualizowano",
-                    "outdated": "Oprogramowanie przestarzałe",
-                    "neverRanUpdate": "nigdy nieaktualizowane"
+                    "uptoDate": "Aktualizacje sprawdzone ",
+                    "updatedOn": "sprawdzone ",
+                    "outdated": "Ostatnio nie sprawdzano aktualizacji ",
+                    "neverRanUpdate": "nigdy nie sprawdzano aktualizacji"
                 }
             },
             "extendedWarranty": "Rozszerz gwarancję",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>"
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
-                "thresholdNote": "<b>Uwaga</b>: w celu zwiększenia żywotności akumulatora ustawiono go tak, aby przestał ładować się po osiągnięciu {{value}}%.",
+                "thresholdNote": "<b>Uwaga:</b> Nie można w pełni naładować akumulatora, gdy włączony jest próg ładowania akumulatora.",
                 "seeDetailsLink": "Zobacz szczegóły",
                 "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
-                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”."
+                    "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ustawienia zasilania",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
                         "progressText2": "{{stage}} z {{stageNum}}: Kalibracja do niskiego poziomu naładowania baterii",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibracja do całkowitego naładowania",
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "środa",
                             "thurs": "czwartek",
                             "fri": "piątek",
-                            "sat": "sobota"
+                            "sat": "sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "niedziela",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Codzienny",
                         "weekdays": "Dni powszednie",
-                        "weekends": "Weekendy"
+                        "weekends": "Weekendy",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
                     "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "ZASTOSUJ"
                     },
                     "website": {
-                        "url": "ADRES URL WITRYNY"
+                        "url": "ADRES URL WITRYNY",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEKST DO WPROWADZENIA"
+                        "title": "TEKST DO WPROWADZENIA",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Pełna ochrona",
-            "fullyDesc": "Gratulacje! Jesteś dobrze chroniony.",
             "notFully": "Brak pełnej ochrony",
-            "notFullyDesc": "Nie jesteś dobrze chroniony. Dowiedz się, jak lepiej chronić swoje urządzenie.",
             "security101": "DORADCA ZABEZPIECZEŃ 101",
             "firewall": "Zapora",
             "pwdHealth": "Bezpieczeństwo hasła",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi i Bezpieczny Dom",
             "connectedHomeSecurity": "Bezpieczny Dom",
             "fingerprint": "Czytnik linii papilarnych",
-            "seeAllNetwork": "Zobacz wszystkie połączone sieci",
-            "maliciousNetwork": "Uniemożliwił komputerowi połączenie {{maliciousWifi}}ze złośliwymi sieciami w tym miesiącu.",
-            "good": "DOBRY",
-            "malicious": "ZŁOŚLIWY",
-            "suspicious": "PODEJRZANY",
-            "securityScoreDepends": "Twój wynik bezpieczeństwa zależy od tego, czy:",
-            "antivirus": "Używasz oprogramowania antywirusowego",
-            "password": "Używasz silnych i skomplikowanych haseł i zarządzasz nimi w bezpieczny sposób",
-            "vpn": "Monitorujesz narażenie sieci na ataki",
-            "wifi": "Szyfrujesz dane osobowe podczas korzystania z publicznej sieci WiFi",
-            "windowsHello": "Chronisz urządzenie, korzystając z opcji bezpiecznego logowania",
             "uacTitle": "Czym jest powiadomienie kontroli konta użytkownika?",
             "uacText": "Kontrola konta użytkownika jest bardzo ważną funkcją bezpieczeństwa systemu Windows, która pomaga zapobiegać wprowadzaniu zmian w systemie przez potencjalnie szkodliwe programy.",
             "windowsTitle": "Dlaczego muszę aktywować system Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Jak lepiej chronić hasło?",
             "passwordText": "Bezpiecznie przechowuj wszystkie hasła i nimi zarządzaj po zaszyfrowaniu przez profesjonalną cyfrową aplikację zabezpieczającą zamiast tylko przechowywać je w przeglądarce, do której dostęp bez twojej wiedzy mogą uzyskać osoby trzecie.",
             "enhanceTitle": "Co powinno się wykonać, aby zwiększyć ochronę?",
-            "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej."
+            "enhanceText": "Zdecydowanie zalecamy, aby twoje urządzenia były chronione przez oprogramowanie antywirusowe i firewall, a przy minimalnej ochronie skonfiguruj powiadomienia kontroli konta użytkownika. Twórz silne hasła i zarządzaj nimi w bezpieczny sposób oraz szyfruj dane, aby korzystać z zaawansowanej ochrony przy używaniu sieci publicznej.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1960,7 +2041,7 @@
                 "back": "WSTECZ"
             },
             "container": {
-                "title": "Bezpieczeństwo Wi-Fi Lenovo",
+                "title": "Bezpieczeństwo WiFi Lenovo",
                 "name": "BEZPIECZEŃSTWO WIFI",
                 "enable": "WŁĄCZONO",
                 "disable": "WYŁĄCZONO",
@@ -1970,8 +2051,8 @@
                 "connect": "Połączony jako ostatni",
                 "showmore": "Pokaż więcej",
                 "showless": "Pokaż mniej",
-                "button": "Włącz funkcję Bezpieczeństwo Wi-Fi",
-                "disableDecribe": "Bezpieczeństwo Wi-Fi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
+                "button": "Włącz funkcję Bezpieczeństwo WiFi",
+                "disableDecribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych."
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
@@ -2045,7 +2126,7 @@
                 "pass": "POWIODŁO SIĘ",
                 "learnMoreAboutSecurityHealth": "Dowiedz się więcej o każdym z tych <tag>komponentów</tag>tutaj.",
                 "peaceOfMind": "Chcesz więcej spokoju?",
-                "button": "Włącz funkcję Bezpieczeństwo Wi-Fi"
+                "button": "Włącz funkcję Bezpieczeństwo WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "Używanie komputera jak tabletu",
             "description": "<div class='faqInFs4Fb'>    Używanie komputera jak tabletu</div><hr><p>Tryb tabletu sprawia, że system Windows jest bardziej intuicyjny i łatwiejszy w obsłudze na urządzeniu z ekranem dotykowym.</p><h3 class='faqInFs25FbP10'>Używanie trybu tabletu</h3><p>Aby włączyć tryb tabletu, na pasku zadań kliknij pozycję <strong>centrum akcji</strong> i wybierz opcję <strong>Tryb tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Uwaga</h3><p>Aby sprawdzić, czy urządzenie może się automatycznie przełączać do trybu tabletu, poszukaj urządzenia w witrynie internetowej producenta. Obsługa tej funkcji zależy od sprzętu, zainstalowanego sterownika i fabrycznej konfiguracji urządzenia. </p><p> </p><p>W trybie tabletu aplikacje otwierają się na całym ekranie, oferując więcej miejsca do pracy. Aby zamknąć aplikację, przeciągnij ją do dołu ekranu.</p><p> </p><h3 class='faqInFs25FbP10'>Wskazówka</h3><p>W trybie tabletu pasek zadań jest dostępny, ale można go schować, jeśli chcesz mieć więcej miejsca do pracy na ekranie. Naciśnij przycisk <strong>Start</strong>, wybierz kolejno opcje <strong>Ustawienia</strong> > <strong>System</strong> > <strong>Tryb tabletu</strong>, a następnie włącz opcję <strong>Automatycznie ukrywaj pasek zadań w trybie tabletu</strong>. Aby zobaczyć ukryty pasek zadań, przesuń palcem od dołu do góry ekranu lub umieść wskaźnik myszy u dołu ekranu.</p><h3 class='faqInFs25FbP10'>Używanie dwóch aplikacji równocześnie</h3><p>Aby używać dwóch aplikacji obok siebie w trybie tabletu, przeciągnij otwartą aplikację w dół i na bok. Zostanie przyciągnięta, a obok będzie widać wszystkie otwarte aplikacje.</p><p>W tym widoku można również:</p><ul>    <li>Użyć wspólnej krawędzi dwóch przyciągniętych aplikacji, aby zmienić rozmiar obu aplikacji równocześnie.</li>    <li>Otworzyć nową aplikację z widoku zadań: na pasku zadań kliknij opcję <strong>Widok zadań</strong>, zaznacz aplikację, a następnie przeciągnij ją w jedną stronę, a zostanie przyciągnięta do podzielonego ekranu.</li>    <li>Użyć przycisku Wstecz na pasku zadań, aby wrócić do poprzedniego okna w obecnej aplikacji lub otworzyć wcześniej używaną aplikację.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Opowiedz nam o swoich zainteresowaniach (opcjonalnie)",
         "personal": "Do celów prywatnych",
         "business": "Do celów firmowych",
-		"custom": "Niestandardowe zastosowanie",
-		"professional": "Zastosowania profesjonalne",
+        "custom": "Niestandardowe zastosowanie",
+        "professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
         "moreInterest": "+ więcej zainteresowań",
         "title1": "Witamy w aplikacji",
@@ -2720,7 +2800,7 @@
                 "yes": "Tak",
                 "no": "Nie"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Przycisk jest wyłączony, jeśli informacje o sprzęcie nie zostały jeszcze pobrane lub w przypadku, gdy urządzenia pamięci masowej nie obsługują tej funkcji albo jeśli trwa odzyskiwanie uszkodzonych sektorów."
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Poczekaj na anulowanie postępu",
         "pluginNotUpdate": "Funkcja skanowania sprzętu jest niedostępna, ponieważ jest nieaktualna. Należy ją zaktualizować.",
         "testNotApplicable": "Nie dotyczy skanowania niestandardowego",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Poczekaj aż rozpocznie się skanowanie",
+        "reminderTimeRetrieveHardwareInformation": "Proces pobierania informacji o sprzęcie może chwilę potrwać",
+        "retrievingHardwareInformation": "Pobieranie informacji o sprzęcie...",
         "pluginTokens": {
             "cpu": "Procesor",
             "memory": "Pamięć",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Zainstaluj",
-				"installing": "Instalowanie",
-				"downloading": "Pobieranie",
+                "installing": "Instalowanie",
+                "downloading": "Pobieranie",
                 "installed": "Zainstalowane",
                 "launch": "Uruchom",
                 "seeMore": "Zobacz więcej"

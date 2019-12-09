@@ -170,7 +170,7 @@
 			.vtr-widget-device {
 				background: $dark_cell !important;
 				.family {
-					color: $gaming_lightest;
+					color: $gaming_lightest!important;
 				}
 				.device-sub-header {
 					color: $gaming_grey_lightest;
@@ -861,15 +861,15 @@
 					input {
 						& + .switch {
 							background: $gaming_switch_light;
-							height: 2.4rem;
-							width: 5.4rem;
+							//height: 2.4rem;
+							//width: 5.4rem;
 							transition: all 0.2s ease-in;
 
 							small {
 								background: $gaming_switch_dark;
-								height: 1.8rem;
-								width: 1.8rem;
-								margin-top: 0.1rem;
+								//height: 1.8rem;
+								//width: 1.8rem;
+								//margin-top: 0.1rem;
 								transition: all 0.2s ease-in;
 							}
 						}
@@ -881,7 +881,7 @@
 							small {
 								background: $gaming_lightest;
 								transition: all 0.2s ease-in;
-								left: 3.2rem;
+							//	left: 3.2rem;
 							}
 						}
 					}
@@ -890,16 +890,16 @@
 						color: $gaming_lightest;
 						font-weight: bold;
 						font-size: 1.2rem;
-						padding-top: 0.1rem;
+						//padding-top: 0.1rem;
 						text-indent: -0.4rem;
 						transition: all 0.2s ease-in;
 
 						@media #{$medium-screen} {
-							padding-top: 0.3rem;
+							//padding-top: 0.3rem;
 						}
 
 						@media #{$small-screen} {
-							padding-top: 0.3rem;
+							//padding-top: 0.3rem;
 						}
 					}
 
@@ -907,16 +907,16 @@
 						color: $gaming_switch_dark;
 						font-weight: bold;
 						font-size: 1.2rem;
-						padding-top: 0.1rem;
+						//padding-top: 0.1rem;
 						text-indent: 0;
 						transition: all 0.2s ease-in;
 
 						@media #{$medium-screen} {
-							padding-top: 0.3rem;
+							//padding-top: 0.3rem;
 						}
 
 						@media #{$small-screen} {
-							padding-top: 0.3rem;
+							//padding-top: 0.3rem;
 						}
 					}
 				}
@@ -1145,24 +1145,24 @@
 		}
 
 		.vtr-page-right-column {
-			// background-image: url("./assets/images/gaming/GradientLine@1x.png");
-			// background-repeat: repeat;
-			// background-size: 100% 100%;
+			 background-image: url("./assets/images/gaming/GradientLine@1x.png");
+			 background-repeat: repeat;
+			 background-size: 100% 100%;
 			// padding: 0 8.5rem 4rem 4rem;
 
-			// @media #{$small-screen} {
+			 @media #{$small-screen} {
 			// 	margin-top: -0.1rem;
 			// 	padding: 6rem 3rem 1.5rem 3rem !important;
-			// 	background-color: $gaming_darkest !important;
-			// 	background-image: none;
-			// }
+			 	background-color: $gaming_darkest !important;
+			 	background-image: none;
+			 }
 
-			// @media #{$medium-screen} {
+			 @media #{$medium-screen} {
 			// 	margin-top: -0.1rem;
 			// 	padding: 6rem 6.5rem 4rem 6.5rem !important;
-			// 	background-color: $gaming_darkest !important;
-			// 	background-image: none;
-			// }
+			 	background-color: $gaming_darkest !important;
+			 	background-image: none;
+			 }
 
 			.vtr-widget-schedule-scan {
 				background: $dark_cell;

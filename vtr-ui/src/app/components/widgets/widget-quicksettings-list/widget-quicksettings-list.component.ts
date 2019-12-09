@@ -28,7 +28,7 @@ import { GuardService } from 'src/app/services/guard/guardService.service';
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
 	templateUrl: './widget-quicksettings-list.component.html',
-	styleUrls: [ './widget-quicksettings-list.component.scss' ]
+	styleUrls: ['./widget-quicksettings-list.component.scss']
 })
 export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, OnDestroy {
 	@Input() title = '';
@@ -40,6 +40,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	public thermalModeStatusObj = new ThermalModeStatus();
 	public setThermalModeStatus: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
+
 
 	public quickSettings = [
 		{
@@ -174,12 +175,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		public deviceService: DeviceService,
 		private guard: GuardService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit() {
-		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
-			this.handleError(new PluginMissingError());
-		});
+		const isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (isDesktopMachine) {
+			this.removeSettingval();
+		}
 		this.initializeWifiSecCache();
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
@@ -224,12 +226,18 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
 	}
-	ngAfterViewInit() {}
+	ngAfterViewInit() { }
 	public unRegisterThermalModeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeChangeEvent,
 			this.onRegThermalModeEvent.bind(this)
 		);
+	}
+
+	public removeSettingval() {
+		const id = 'gaming.dashboard.device.quickSettings.dolby';
+		const id1 = 'gaming.dashboard.device.quickSettings.rapidCharge';
+		this.quickSettings = this.quickSettings.filter(item => item.header !== id && item.header !== id1);
 	}
 
 	public registerThermalModeEvent() {
@@ -306,7 +314,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					);
 				}
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public onOptionSelected(event) {
@@ -340,7 +348,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 						}
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 	}
 
@@ -379,7 +387,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			} else {
 				this.quickSettings[3].isChecked = !value;
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public async getWifiSecuritySettings() {
@@ -392,13 +400,16 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 				this.ngZone,
 				this.dialogService
 			);
+			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, () => {
+				this.handleError(new PluginMissingError());
+			});
 			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
 			this.commonService.setSessionStorageValue(
 				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
 				true
 			);
 			this.wifiSecurity.getWifiState().then(
-				(res) => {},
+				(res) => { },
 				(error) => {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				}
@@ -503,7 +514,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			});
 			this.quickSettings[3].isVisible = available;
 			this.quickSettings[3].isChecked = status;
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public initializeWifiSecCache() {
@@ -538,7 +549,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 					status
 				});
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	public initialiseRapidChargeCache() {

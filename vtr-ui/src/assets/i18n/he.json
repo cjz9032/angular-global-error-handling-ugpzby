@@ -632,7 +632,6 @@
             "wifi": "אבטחת WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "מופעל",
             "disabled": "מושבת",
             "partiallyProtected": "הגנה חלקית",
@@ -642,7 +641,8 @@
             "installing": "מתקין",
             "notFound": "לא נמצא",
             "registered": "רשום",
-            "notRegistered": "לא רשום"
+            "notRegistered": "לא רשום",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -792,10 +792,10 @@
                 "title": "‏‫עדכון המערכת‬",
                 "notFound": "לא נמצא עדכון מערכת",
                 "detail": {
-                    "uptoDate": "התוכנה מעודכנת",
-                    "updatedOn": "עודכן בתאריך",
-                    "outdated": "התוכנה לא עדכנית",
-                    "neverRanUpdate": "מעולם לא הופעל עדכון"
+                    "uptoDate": "בוצעה בדיקה לחיפוש עדכונים ",
+                    "updatedOn": "הבדיקה בוצעה בתאריך ",
+                    "outdated": "לא התבצעה בדיקה לחיפוש עדכונים לאחרונה ",
+                    "neverRanUpdate": "מעולם לא בוצעה בדיקה לחיפוש עדכונים"
                 }
             },
             "extendedWarranty": "הרחבת האחריות",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
-                "thresholdNote": "<b>הערה:</b> להארכת משך חיי הסוללה, הגדרתם את הסוללה לעצור את הטעינה כשהיא ברמה של {{value}}%.",
+                "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
-                    "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\"."
+                    "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "הגדרות צריכת חשמל",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "progressText2": "{{stage}} מתוך {{stageNum}}: כיול לרמת חשמל נמוכה של הסוללה",
+                        "progressText3": "{{stage}} מתוך {{stageNum}}: כיול לטעינה מלאה",
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "יום רביעי",
                             "thurs": "יום חמישי",
                             "fri": "יום שישי",
-                            "sat": "יום שבת"
+                            "sat": "יום שבת",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "יום ראשון",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "כל יום",
                         "weekdays": "ימי חול",
-                        "weekends": "סופי שבוע"
+                        "weekends": "סופי שבוע",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "התאמה אוטומטית של הזמן הפעיל של המחשב בהתבסס על השימוש שלכם",
                     "hyperlinkToGraph": "לחצו כדי לראות את הפעילות ואת הזמן הפעיל של טבלת המחשב שלכם",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1346,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "הפעלת תכונת שינוי גודל התצוגה בתצוגות בעלות רזולוציה גבוהה",
+                        "description": "הפעלת תכונת ההקטנה/הגדלה של התצוגה בתצוגות בעלות רזולוציה גבוהה",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1436,10 +1490,14 @@
                         "title": "החל"
                     },
                     "website": {
-                        "url": "URL של אתר האינטרנט"
+                        "url": "URL של אתר האינטרנט",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "טקסט להזנה"
+                        "title": "טקסט להזנה",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "הגנה מלאה",
-            "fullyDesc": "ברכותינו! יש לכם הגנה מלאה.",
             "notFully": "אין הגנה מלאה",
-            "notFullyDesc": "אין לכם הגנה מלאה. למדו כיצד להגן על עצמכם טוב יותר כעת.",
             "security101": "יועץ האבטחה 101",
             "firewall": "חומת אש",
             "pwdHealth": "תקינות סיסמה",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "אבטחת הבית המחובר ו-WiFi",
             "connectedHomeSecurity": "אבטחת הבית המחובר",
             "fingerprint": "קורא טביעות אצבע",
-            "seeAllNetwork": "ראו את כל הרשתות המצורפות",
-            "maliciousNetwork": "מנעו מהמחשב שלכם מלהצטרף אל {{maliciousWifi}} רשתות זדוניות החודש.",
-            "good": "טוב",
-            "malicious": "זדוני",
-            "suspicious": "חשוד",
-            "securityScoreDepends": "תוצאת האבטחה שלכם יכולה להשתנות אם:",
-            "antivirus": "האם אתם מוגנים על-ידי תוכנת אנטי-וירוס",
-            "password": "האם אתם מנהלים סיסמאות חזקות ומורכבות באופן בטוח",
-            "vpn": "האם אתם מנטרים את החשיפה שלכם לתוקפים ברשת",
-            "wifi": "האם אתם מצפינים את המידע האישי שלהם כשאתם משתמשים ב-WiFi ציבורי",
-            "windowsHello": "האם אתם מגינים על המכשיר שלכם באמצעות אפשרויות כניסה בטוחות",
             "uacTitle": "מהי הודעת UAC?",
             "uacText": "בקרת חשבון משתמש היא תכונת אבטחה חשובה מאוד של Windows, המסייעת למנוע מתוכניות שעלולות להזיק לבצע שינויים במערכת שלכם.",
             "windowsTitle": "מדוע עלי להפעיל את Windows?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "כיצד להגן טוב יותר על סיסמאות?",
             "passwordText": "אחסנו ונהלו בצורה מאובטחת את כל הסיסמאות המוצפנות שלכם בעזרת יישום הגנה דיגיטלי ומקצועי, במקום פשוט לאחסן את הסיסמאות בדפדפנים שלכם, שאליהם צד שלישי יכול לגשת בקלות ללא ידיעתכם.",
             "enhanceTitle": "מה עלי לעשות כדי לשפר את ההגנה על האבטחה?",
-            "enhanceText": "אנו ממליצים מאוד שהמכשירים שלכם יהיו מוגנים על ידי תוכנת אנטי-וירוס וחומת אש, הגדירו את הודעת ה- UAC כהגנה מינימלית. וכדאי ליצור סיסמאות חזקות ולנהל אותן בצורה מאובטחת, ולהצפין את הנתונים שלכם תוך כדי שימוש ברשת הציבורית כהגנה מתקדמת."
+            "enhanceText": "אנו ממליצים מאוד שהמכשירים שלכם יהיו מוגנים על ידי תוכנת אנטי-וירוס וחומת אש, הגדירו את הודעת ה- UAC כהגנה מינימלית. וכדאי ליצור סיסמאות חזקות ולנהל אותן בצורה מאובטחת, ולהצפין את הנתונים שלכם תוך כדי שימוש ברשת הציבורית כהגנה מתקדמת.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1970,7 +2051,7 @@
                 "connect": "חובר לאחרונה",
                 "showmore": "הצג יותר",
                 "showless": "הצג פחות",
-                "button": "הפעלת אבטחת Wifi",
+                "button": "הפעלת אבטחת WiFi",
                 "disableDecribe": "אבטחת WiFi של Lenovo היא תוכנה מתקדמת המבוססת על ענן שמסייעת למכשיר להבדיל בין רשתות אלחוטיות בטוחות ורשתות העלולות להיות זדוניות."
             },
             "threatlocator": {
@@ -2045,7 +2126,7 @@
                 "pass": "עבר",
                 "learnMoreAboutSecurityHealth": "קבלו מידע נוסף על כל אחד מרכיבים אלה <tag>כאן</tag>.",
                 "peaceOfMind": "מעוניינים ביותר שקט נפשי?",
-                "button": "הפעלת אבטחת Wifi"
+                "button": "הפעלת אבטחת WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "שימוש במחשב כמו במחשב לוח",
             "description": "<div class='faqInFs4Fb'>    שימוש במחשב כמו במחשב לוח</div><hr><p>מצב לוח הופך את Windows ליותר אינטואיטיבית וקלה לשימוש כאשר יש לכם מכשיר עם מסך מגע.</p><h3 class='faqInFs25FbP10'>שימוש במצב לוח</h3><p>להפעלת מצב לוח, בחרו <strong>מרכז הפעולות</strong> בשורת המשימות, לאחר מכן בחרו <strong>מצב לוח</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>הערה</h3><p>כדי לגלות אם מכשירכם יכול להפעיל אוטומטית את מצב הלוח, אתרו את מכשירכם באתר אינטרנט של היצרן.התמיכה בתכונה זו תלויה בחומרה, במנהל ההתקן המותקן ובאופן הגדרת המכשיר על-ידי היצרן. </p><p> </p><p>במצב לוח, היישומים נפתחים במסך מלא ומספקים לכם מרחב עבודה גדול יותר.כדי לסגור יישום, גררו אותו לתחתית המסך.</p><p> </p><h3 class='faqInFs25FbP10'>עצה</h3><p>שורת המשימות זמינה כאשר המחשב נמצא במצב לוח, אך ניתן להסתיר אותה אם אתם רוצים יותר מרחב על המסך.בחרו בלחצן <strong>התחל </strong>, בחרו <strong>הגדרות </strong>> <strong>מערכת </strong>> <strong> מצב לוח </strong>, לאחר מכן הפעילו את האפשרות <strong>הסתר באופן אוטומטי את שורת המשימות במצב לוח</strong>. כדי לראות את שורת המשימות המוסתרת, החליקו למעלה מתחתית המסך, או השתמשו בעכבר כדי לרחף באזור.</p><h3 class='faqInFs25FbP10'>שימוש בשני יישומים בו-זמנית</h3><p>כדי להשתמש בשני יישומים זה לצד זה במצב לוח, גררו יישום פתוח כלפי מטה והצידה.תראו היכן הוא ימוקם, ותראו את כל היישומים הפתוחים לצידו.</p><p>בתצוגה זו, תוכלו גם:</p><ul>    <li>להשתמש בקצה המשותף בין שני יישומים מקובעים כדי לשנות את הגודל של שני היישומים בו-זמנית.</li>    <li>לפתוח יישום חדש מתוך תצוגת המשימות&mdash;בחרו <strong>תצוגת המשימות</strong> בשורת המשימות, בחרו יישום, ולאחר מכן גררו אותו לצד אחד כדי למקמו במסך המפוצל.</li>    <li>להשתמש בלחצן החזרה בשורת המשימות כדי לחזור אחורה ביישום, או כדי לפתוח יישום שהשתמשתם בו קודם לכן.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "ספרו לנו על תחומי העניין שלכם (אופציונלי)",
         "personal": "שימוש אישי",
         "business": "שימוש עסקי",
-		"custom": "חוויה מותאמת אישית",
-		"professional": "שימוש מקצועי",
+        "custom": "חוויה מותאמת אישית",
+        "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
         "title1": "ברוכים הבאים אל",
@@ -2720,7 +2800,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "הלחצן מושבת כאשר פרטי החומרה עדיין לא אוחזרו, למקרה שהתקני האחסון אינם תומכים בפונקציונליות זו או כאשר שחזור ההסקטורים הפגומים פועל."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "המתינו לביצוע הביטול",
         "pluginNotUpdate": "סריקת חומרה אינה זמינה מכיוון שהיא מיושנת. יש לשדרג אותה.",
         "testNotApplicable": "לא ישים בסריקה מותאמת אישית",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "יש להמתין עד שתתחיל הסריקה",
+        "reminderTimeRetrieveHardwareInformation": "תהליך אחזור מידע החומרה עשוי לארוך זמן מה",
+        "retrievingHardwareInformation": "מאחזר מידע מהחומרה...",
         "pluginTokens": {
             "cpu": "מעבד",
             "memory": "זיכרון",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "התקן",
-				"installing": "התקנה",
-				"downloading": "הורדה",
+                "installing": "התקנה",
+                "downloading": "הורדה",
                 "installed": "מותקן",
                 "launch": "הפעלה",
                 "seeMore": "פרטים נוספים"

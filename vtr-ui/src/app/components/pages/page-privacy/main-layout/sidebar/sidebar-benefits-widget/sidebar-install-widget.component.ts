@@ -7,6 +7,7 @@ import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
 import { getFigleafProtectedStatus } from '../../../utils/helpers';
 import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -28,10 +29,13 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	isFirstTimeVisitor = false;
 	currentPath = '';
 
+	isFigleafInExit$ = this.communicationWithFigleafService.isFigleafInExit$;
+
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
 		private sidebarInstallWidgetService: SidebarInstallWidgetService,
 		private appStatusesService: AppStatusesService,
+		private communicationWithFigleafService: CommunicationWithFigleafService
 	) {
 	}
 

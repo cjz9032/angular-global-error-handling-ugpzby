@@ -105,6 +105,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
 		this.metricService.sendAppLaunchMetric();
 
+		const self = this;
+		window.onresize = () => {
+			self.displayService.calcSize(self.displayService);
+		};
+		self.displayService.calcSize(self.displayService);
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
 			if (s instanceof NavigationEnd) {
@@ -211,6 +217,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	private onMachineInfoReceived(value: any) {
+		this.setFontFamilyByLocale(value.locale);
 		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
 		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 		this.machineInfo = value;
@@ -467,6 +474,39 @@ export class AppComponent implements OnInit, OnDestroy {
 			handleVisibilityChange(false);
 		}, false);
 	} // END OF DURATION
+
+	private setFontFamilyByLocale(locale: string = 'en') {
+		const defaultFontFamily = '"Segoe UI", sans-serif';
+		let fontFamily = '';
+		switch (locale) {
+			case 'zh-hans':
+				// simplified chinese: full-stop is like english
+				fontFamily = `"Microsoft YaHei UI", ${defaultFontFamily}`;
+				break;
+			case 'zh-hant':
+				// traditional chinese: full-stop is in vertically middle
+				fontFamily = `"Microsoft JhengHei UI", ${defaultFontFamily}`;
+				break;
+			case 'ko':
+				fontFamily = `"Malgun Gothic", ${defaultFontFamily}`;
+				break;
+			case 'ja':
+				fontFamily = `"Yu Gothic UI", ${defaultFontFamily}`;
+				break;
+			default:
+				fontFamily = defaultFontFamily;
+				break;
+		}
+
+		// dynamically add font family on body tag
+		document.getElementsByTagName('body')[0].style['font-family'] = fontFamily;
+		// ngbTooltip is sending font family, to override it dynamically inject css class
+		const style = document.createElement<'style'>('style');
+		style.innerHTML = `.tooltip { font-family: ${fontFamily}; }`;
+		document.getElementsByTagName('head')[0].appendChild(style);
+	}
+
+
 	// private registerWebWorker() {
 	// 	if (typeof Worker !== 'undefined') {
 	// 		// Create a new

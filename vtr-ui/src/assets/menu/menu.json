@@ -245,19 +245,6 @@
 					"subitems": []
 				},
 				{
-					"id": "wifi-security",
-					"label": "common.menu.security.sub3",
-					"path": "wifi-security",
-					"icon": null,
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.wifisecurity",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"subitems": []
-				},
-				{
 					"id": "password-protection",
 					"label": "common.menu.security.sub4",
 					"path": "password-protection",
@@ -269,6 +256,19 @@
 						"exact": true
 					},
 					"icon": null,
+					"subitems": []
+				},
+				{
+					"id": "wifi-security",
+					"label": "common.menu.security.sub3",
+					"path": "wifi-security",
+					"icon": null,
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.wifisecurity",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
 					"subitems": []
 				},
 				{
@@ -284,25 +284,11 @@
 					"icon": null,
 					"segment": "-[Commercial]",
 					"subitems": []
-				},
-				{
-					"id": "windows-hello",
-					"label": "common.menu.security.sub6",
-					"path": "windows-hello",
-					"segment": "-[Commercial]",
-					"icon": null,
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.windowshello",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"subitems": []
 				}
 			]
 		},
 		{
-			"id": "security",
+			"id": "wifi-security",
 			"label": "common.menu.security.title",
 			"path": "security/wifi-security",
 			"icon": [

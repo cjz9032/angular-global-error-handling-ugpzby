@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AppStatusesService, featuresResult } from '../../../common/services/app-statuses/app-statuses.service';
-import { map } from 'rxjs/operators';
+import { map, withLatestFrom } from 'rxjs/operators';
 import { AppStatuses, FeaturesStatuses } from '../../../userDataStatuses';
+import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { AppStatusesService, featuresResult } from '../../../common/services/app-statuses/app-statuses.service';
 import { GetFeaturesConsentService } from '../../../common/services/app-statuses/get-features-consent.service';
 
 @Injectable({
@@ -10,7 +11,8 @@ import { GetFeaturesConsentService } from '../../../common/services/app-statuses
 export class ScoreShowSpinnerService {
 	constructor(
 		private appStatusesService: AppStatusesService,
-		private getFeaturesConsentService: GetFeaturesConsentService
+		private getFeaturesConsentService: GetFeaturesConsentService,
+		private communicationWithFigleafService: CommunicationWithFigleafService
 	) {
 	}
 
@@ -22,14 +24,16 @@ export class ScoreShowSpinnerService {
 
 	private getFeaturesForWaiting() {
 		return this.appStatusesService.globalStatus$.pipe(
-			map((globalStatus) => {
+			withLatestFrom(this.communicationWithFigleafService.isFigleafInExit$),
+			map(([globalStatus, isFigleafInExit]) => {
 				const getFeaturesConsent = this.getFeaturesConsentService.getFeaturesConsent();
 				const consentGiven = {
+					...getFeaturesConsent,
 					breachedAccountsResult: this.isFigleafInstalled(globalStatus.appState) ? true : getFeaturesConsent.breachedAccountsResult,
-					...getFeaturesConsent
 				};
 
-				const consents = Object.keys(consentGiven).filter((feature) => consentGiven[feature]);
+				const consentGivenWithIgnore = this.setIgnoreConsent(consentGiven, isFigleafInExit);
+				const consents = Object.keys(consentGivenWithIgnore).filter((feature) => consentGivenWithIgnore[feature]);
 				return consents.reduce((prev, featureName) => ({
 					...prev,
 					[featureName]: globalStatus[featureName]
@@ -46,5 +50,12 @@ export class ScoreShowSpinnerService {
 			AppStatuses.trialExpired,
 			AppStatuses.figLeafInstalled,
 		].includes(appState);
+	}
+
+	private setIgnoreConsent(consentGiven: { websiteTrackersResult: boolean; nonPrivatePasswordResult: boolean; breachedAccountsResult: boolean }, isFigleafInExit) {
+		return {
+			...consentGiven,
+			breachedAccountsResult: isFigleafInExit ? false : consentGiven.breachedAccountsResult,
+		};
 	}
 }

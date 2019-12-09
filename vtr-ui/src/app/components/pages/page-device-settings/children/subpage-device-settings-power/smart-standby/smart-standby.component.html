@@ -3,54 +3,41 @@
 		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.title' | translate"
 			[isCollapsed]="false" [collapseLinkId]="'smartrStandby'" [tabIndex]="0">
 			<ul class="list-group list-group-flush">
-				<li class="pl-5">
-					<vtr-ui-row-switch [caption]="'device.deviceSettings.power.smartStandby.description' | translate"
-						[captionLink]="'device.deviceSettings.power.smartStandby.descriptionLink' | translate"
-						[subDescription]="'device.deviceSettings.power.smartStandby.subDescription1' | translate"
+				<li>
+					<vtr-ui-row-switch 
+						[caption]="caption"						
 						[isSwitchVisible]=true [isLastChild]=true [showChildContent]="true"
 						[rightIcon]="['far', 'question-circle']"
 						[tooltipText]="'device.deviceSettings.power.smartStandby.tooltip' | translate"
 						[isSwitchChecked]="smartStandby.isEnabled" (toggleOnOff)="onSmartStandbyToggle($event)"
 						[switchId]="'smartStandby'">
 					</vtr-ui-row-switch>
-					<div>
-						<!-- <div class="auto-set-checkbox">
-							<input id="cb-auto-standby"
-								class="custom-control-input"
-								attr.aria-label="cb-auto-standby"
-								type="checkbox"
-								tabindex="0"
-								name="auto-standby-checkbox-id"
-								[(ngModel)]="checkbox"
-								(ngModelChange)='onCheckboxClicked(checkbox)'
-								checked="" />
-							<span class="checkmark"></span>
-							<label for="cb-auto-standby">
-								{{ 'device.deviceSettings.power.smartStandby.checkbox' | translate }}
-							</label>
-						</div> -->
+					<div>			
 						<div *ngIf="isAutonomicCapability" class="schedule_header">
 							<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle' | translate }}</h5>
 							<vtr-ui-rounded-rectangle-radio [radioId]="'automatic_show'" [group]="'smartStandByBtns'"
 								name="nMehod_show"
 								[label]="'device.deviceSettings.power.smartStandby.automaticMode' | translate"
-								[value]="'Automatic mode'" [checked]="!checkbox" (change)="onCheckboxClicked(false)"
+								[value]="'Automatic mode'" [checked]="checkbox" (change)="onCheckboxClicked(true)"
 								[disabled]="!smartStandby.isEnabled">
 							</vtr-ui-rounded-rectangle-radio>
 							<vtr-ui-rounded-rectangle-radio [radioId]="'manual_show'" [group]="'smartStandByBtns'"
 								name="fnKeyMehod_show"
 								[label]="'device.deviceSettings.power.smartStandby.manualMode' | translate"
-								[value]="'Manual mode'" [checked]="checkbox" (change)="onCheckboxClicked(true)"
+								[value]="'Manual mode'" [checked]="!checkbox" (change)="onCheckboxClicked(false)"
 								[disabled]="!smartStandby.isEnabled">
 							</vtr-ui-rounded-rectangle-radio>
 						</div>
 					</div>
-					<div class="schedule" *ngIf="isAutonomicCapability && !checkbox">
+					<div *ngIf="!isAutonomicCapability" class="schedule_header">
+						<h5>{{ 'device.deviceSettings.power.smartStandby.subTitle2' | translate }}</h5>
+					</div>
+					<div class="schedule" *ngIf="isAutonomicCapability && checkbox && smartStandby?.isEnabled">
 						<h5>
 							{{ 'device.deviceSettings.power.smartStandby.subNote' | translate }}
 						</h5>
 					</div>
-					<div *ngIf="checkbox && smartStandby?.isEnabled" class="schedule">
+					<div *ngIf="!checkbox && smartStandby?.isEnabled && isAutonomicCapability" class="schedule">
 						<h5>
 							{{ 'device.deviceSettings.power.smartStandby.timer.heading' | translate }}
 						</h5>
@@ -63,9 +50,9 @@
 							{{'common.ui.to' | translate}} {{smartStandbyEndTime}}
 						</span>
 					</div>
-					<div *ngIf="checkbox && smartStandby?.isEnabled" class="click-to-change-collapse">
+					<div *ngIf="!checkbox && smartStandby?.isEnabled" class="click-to-change-collapse">
 						<!-- header -->
-						<div class="collapse-header" (click)="onToggle(timeToggle)"
+						<div *ngIf="isAutonomicCapability" class="collapse-header" (click)="onToggle(timeToggle)"
 							(keydown.enter)="onToggle(timeToggle)" [attr.aria-expanded]="!isCollapsed" #timeToggle
 							tabindex="0" aria-label="smart standby, time picker-toggle button">
 							<div>

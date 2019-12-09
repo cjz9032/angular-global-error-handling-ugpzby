@@ -632,7 +632,6 @@
             "wifi": "Biztonságos WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ENGEDÉLYEZETT",
             "disabled": "LETILTOTT",
             "partiallyProtected": "RÉSZLEGESEN VÉDETT",
@@ -642,7 +641,8 @@
             "installing": "TELEPÍTÉS",
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
-            "notRegistered": "NEM REGISZTRÁLT"
+            "notRegistered": "NEM REGISZTRÁLT",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -792,10 +792,10 @@
                 "title": "Rendszerfrissítés",
                 "notFound": "A rendszerfrissítés nem található",
                 "detail": {
-                    "uptoDate": "A szoftverek naprakészek",
-                    "updatedOn": "frissítve",
-                    "outdated": "A szoftverek elavultak",
-                    "neverRanUpdate": "még nem lett frissítve"
+                    "uptoDate": "Frissítés keresése ",
+                    "updatedOn": "keresés ekkor: ",
+                    "outdated": "Nem keresett frissítéseket mostanában ",
+                    "neverRanUpdate": "soha nem keresett frissítéseket"
                 }
             },
             "extendedWarranty": "Jótállás kiterjesztése",
@@ -909,7 +909,7 @@
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>"
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
-                "thresholdNote": "<b>Megjegyzés:</b> Megadta, hogy – az akkumulátor élettartamának megnövelésének érdekében – az akkumulátor töltése álljon le {{value}}%-nál.",
+                "thresholdNote": "<b>Jegyzet:</b> Az akkumulátor nem tölthető fel teljesen, ha az akkumulátortöltési küszöbérték engedélyezve van.",
                 "seeDetailsLink": "Részletek megtekintése",
                 "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
             },
@@ -987,7 +987,28 @@
                         }
                     },
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
-                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen."
+                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -1076,6 +1097,7 @@
                         },
                         "progressText1": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "progressText2": "{{stage}}/{{stageNum}}: Kalibrálás alacsony akkumulátortöltöttségre",
+                        "progressText3": "{{stage}}/{{stageNum}}: Kalibrálás teljes feltöltésre",
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
@@ -1132,7 +1154,8 @@
                             "wed": "Szerda",
                             "thurs": "Csütörtök",
                             "fri": "Péntek",
-                            "sat": "Szombat"
+                            "sat": "Szombat",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Vasárnap",
@@ -1145,7 +1168,8 @@
                         },
                         "everyday": "Minden nap",
                         "weekdays": "Hétköznapok",
-                        "weekends": "Hétvégén"
+                        "weekends": "Hétvégén",
+                        "noDaySelected": "No day selected"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
                     "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
@@ -1153,14 +1177,44 @@
                     "automaticMode": "Automatic mode",
                     "manualMode": "Manual mode",
                     "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
-                    "graph1Tittle": "The usage of your computer",
-                    "graph2Tittle": "The Modern Standby schedule for your computer",
-                    "legends": {
-                        "none": "None",
-                        "frequent": "Frequent"
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
                     },
-                    "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                    "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available."
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1436,10 +1490,14 @@
                         "title": "ALKALMAZÁS"
                     },
                     "website": {
-                        "url": "WEBHELY URL-JE"
+                        "url": "WEBHELY URL-JE",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "MEGADANDÓ SZÖVEG"
+                        "title": "MEGADANDÓ SZÖVEG",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
@@ -1843,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Teljesen védett",
-            "fullyDesc": "Gratulálunk! Az Ön rendszere megfelelően védett.",
             "notFully": "Nem teljesen védett",
-            "notFullyDesc": "Az Ön rendszere nem védett teljesen. Tudja meg, hogyan védekezhet még hatékonyabban.",
             "security101": "BIZTONSÁGI TANÁCSADÓ 101",
             "firewall": "Tűzfal",
             "pwdHealth": "Jelszó állapota",
@@ -1854,17 +1910,6 @@
             "wifiConnected": "WiFi és Biztonsági rendszer csatlakoztatott otthonhoz",
             "connectedHomeSecurity": "Biztonsági rendszer csatlakoztatott otthonhoz",
             "fingerprint": "Ujjlenyomat-olvasó",
-            "seeAllNetwork": "Az összes kapcsolódó hálózat megtekintése",
-            "maliciousNetwork": "Ebben a hónapban {{maliciousWifi}} rosszindulatú hálózathoz való csatlakozást akadályozott meg.",
-            "good": "JÓ",
-            "malicious": "ROSSZINDULATÚ",
-            "suspicious": "GYANÚS",
-            "securityScoreDepends": "Adatainak biztonsága attól függ, hogy Ön:",
-            "antivirus": "Vírusirtó szoftver használata",
-            "password": "Erős, összetett, biztonságos módon kezelt jelszavak használata",
-            "vpn": "A hálózat támadóknak való kitettségének mérése",
-            "wifi": "A személyes adatok titkosítása nyilvános WiFi használata esetén",
-            "windowsHello": "Az eszköz védelme biztonságos bejelentkezési megoldásokkal",
             "uacTitle": "Mi az UAC-értesítés?",
             "uacText": "A Felhasználói fiókok felügyelete a Windows nagyon fontos biztonsági funkciója, amely megakadályozza, hogy az esetlegesen káros programok a megváltoztassák a rendszert.",
             "windowsTitle": "Miért kell aktiválnom a Windows rendszert?",
@@ -1874,7 +1919,43 @@
             "passwordTitle": "Hogyan lehet jobban megvédeni a jelszavakat?",
             "passwordText": "Biztonságosan tárolja és kezeli az összes jelszavát, amelyet egy professzionális digitális védelmi alkalmazás titkosított, ahelyett, hogy csupán böngészőiben tárolja azokat, amelyhez harmadik felek könnyen hozzáférhetnek az Ön tudta nélkül.",
             "enhanceTitle": "Mit kell tennem a biztonsági védelem fokozása érdekében?",
-            "enhanceText": "Ajánljuk, hogy vírusvédelmi szoftverrel és tűzfallal védje eszközét, és állítson be UAC-értesítést minimális védelmi szinten. Adjon meg erős jelszavakat, kezelje azokat biztonságosan, titkosítsa adatait miközben a nyilvános hálózatot használja fejlett védelemként."
+            "enhanceText": "Ajánljuk, hogy vírusvédelmi szoftverrel és tűzfallal védje eszközét, és állítson be UAC-értesítést minimális védelmi szinten. Adjon meg erős jelszavakat, kezelje azokat biztonságosan, titkosítsa adatait miközben a nyilvános hálózatot használja fejlett védelemként.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2461,7 +2542,6 @@
         "question5": {
             "title": "A számítógép táblagépként történő használata",
             "description": "<div class='faqInFs4Fb'>    A számítógép táblagépként történő használata</div><hr><p>A Táblagép mód intuitívabbá és könnyebben használhatóvá teszi a Windows rendszert érintőképernyős eszközökön.</p><h3 class='faqInFs25FbP10'>A Táblagép mód használata</h3><p>A Táblagép mód bekapcsolásához válassza a <strong>műveletközpontot</strong> a tálcán, majd válassza a <strong>Táblagép mód</strong> lehetőséget.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Megjegyzés</h3><p>Ha szeretné megtudni, hogy az eszköz automatikusan be tudja-e kapcsolni a Táblagép módot, keresse meg eszközét a gyártó webhelyén. Ennek a funkciónak a támogatása attól függ, hogy milyen a gép hardvere, milyen illesztőprogramok vannak telepítve és a gyártó hogyan állította be az eszközt. </p><p> </p><p>Táblagép módban az alkalmazások teljes képernyőn nyitnak meg, így több helyet biztosítanak a munkához. Az alkalmazások bezárásához húzza őket a képernyő aljára.</p><p> </p><h3 class='faqInFs25FbP10'>Tipp</h3><p>A tálcát el lehet elérni, amikor a számítógép Táblagép módban van, de el is rejtheti, ha több helyet szeretne a képernyőn. Válassza a <strong>Start </strong>gombot, majd a <strong>Gépház </strong>> <strong>Rendszer </strong>> <strong> Táblagép mód </strong> lehetőséget, végül kapcsolja be <strong>A tálca automatikus elrejtése táblagép módban</strong> beállítást. Az elrejtett tálca megjelenítéséhez húzza felfelé a képernyő aljától, vagy mutasson rá az egérrel.</p><h3 class='faqInFs25FbP10'>Két alkalmazás használata egyszerre</h3><p>Ha két alkalmazást szeretne használni egymás mellett a Táblagép módban, húzza lefelé és oldalra a megnyitott alkalmazást. Látni fogja, hogy hol dokkolódik, valamint a többi megnyitott alkalmazás is megjelenik mellette.</p><p>Ebben a nézetben a következőket is teheti:</p><ul>    <li>Használhatja a dokkolt alkalmazások közös szélét a két alkalmazás egyidejű átméretezéséhez.</li>    <li>Megnyithat egy új alkalmazást a feladatnézetből &mdash; válassza a <strong>Feladatnézetet</strong> a tálcán, és húzza valamelyik oldalra megosztott képernyőn történő dokkoláshoz.</li>    <li>Használja a tálcán található Vissza gombot az alkalmazásokban való visszalépéshez vagy egy korábban használt alkalmazás megnyitásához.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2547,8 +2627,8 @@
         "subtitle2": "Adja meg az érdeklődési köreit (opcionális)",
         "personal": "Személyes használat",
         "business": "Céges használat",
-		"custom": "Egyéni megoldások",
-		"professional": "Professzionális célú felhasználás",
+        "custom": "Egyéni megoldások",
+        "professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
         "moreInterest": "+ további érdeklődési kör",
         "title1": "Üdvözli a",
@@ -2720,7 +2800,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "A gomb le van tiltva ha a hardverinformációk beolvasása még nem történt meg, ha a tárolóeszközök nem támogatják ezt a funkciót, vagy amíg a rendszer helyreállítja a hibás szektorokat."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",
@@ -2746,9 +2826,9 @@
         "cancelTextProgress": "Várja meg a megszakítási folyamatot",
         "pluginNotUpdate": "A Hardverkeresés nem vehető igénybe, mert elavult. Kérjük, frissítse.",
         "testNotApplicable": "Egyéni ellenőrzésnél nem használható",
-        "waitScanStarts": "Wait until the scan starts",
-        "reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
-        "retrievingHardwareInformation": "Retrieving hardware information...",
+        "waitScanStarts": "Várjon, amíg a szkennelés elkezdődik",
+        "reminderTimeRetrieveHardwareInformation": "E folyamat számára eltarthat egy ideig a hardverinformációk beolvasása",
+        "retrievingHardwareInformation": "Hardverinformációk lekérése...",
         "pluginTokens": {
             "cpu": "Processzor",
             "memory": "Memória",
@@ -2975,8 +3055,8 @@
         "appDetails": {
             "installButton": {
                 "install": "Telepítse",
-				"installing": "Telepítés",
-				"downloading": "Letöltés folyamatban",
+                "installing": "Telepítés",
+                "downloading": "Letöltés folyamatban",
                 "installed": "Telepítve",
                 "launch": "Indítás",
                 "seeMore": "Továbbiak megtekintése"

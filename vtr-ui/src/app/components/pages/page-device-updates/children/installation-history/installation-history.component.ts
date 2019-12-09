@@ -34,7 +34,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		if (typeof(cashData) !== 'undefined' && cashData.length > 0) {
 			this.installationHistory = cashData;
 		}
-		if (this.languageService.currentLanguage.toLowerCase() === 'ar') {
+		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
 			this.direction = 'rtl';
 		}
 	}
