@@ -347,10 +347,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.hardwareScanService.setFinalResponse(response);
 		}
 
+		this.startScanClicked = false;
 		if (!this.hardwareScanService.isCancelRequested()) {
 			this.hardwareScanService.setEnableViewResults(true);
 		} else {
-			this.startScanClicked = false;
 			this.initComponent();
 		}
 	}
