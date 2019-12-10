@@ -642,7 +642,8 @@
             "notFound": "ΔΕΝ ΒΡΕΘΗΚΕ",
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Δεν είναι δυνατή η πλήρης φόρτιση της μπαταρίας όταν έχει ενεργοποιηθεί το όριο φορτίου μπαταρίας.",
                 "seeDetailsLink": "Βλέπε λεπτομέρειες",
-                "gaugeResetWarning": "<b>Σημείωση:</b> Η επαναφορά του μετρητή μπαταρίας βρίσκεται σε εξέλιξη. Διατηρήστε τον μετασχηματιστή εναλλασσόμενου ρεύματος (ac) συνδεδεμένο."
+                "gaugeResetWarning": "<b>Σημείωση:</b> Η επαναφορά του μετρητή μπαταρίας βρίσκεται σε εξέλιξη. Διατηρήστε τον μετασχηματιστή εναλλασσόμενου ρεύματος (ac) συνδεδεμένο.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Ενέργεια",
@@ -1101,14 +1105,14 @@
                         "FCCText": "Από {{before}} Wh σε {{after}} Wh",
                         "note": "Σημείωση: Πριν επαναφέρετε τον μετρητή μπαταρίας, βεβαιωθείτε ότι έχετε συνδέσει τον υπολογιστή σας σε παροχή εναλλασσόμενου ρεύματος. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ολοκληρώθηκε. Επιτυχής επαναφορά.",
-                            "ERROR_SHUTDOWN": "Δεν ολοκληρώθηκε. Τερματισμός συστήματος.",
-                            "ERROR_LOGOFF": "Δεν ολοκληρώθηκε. Ο χρήστης είναι αποσυνδεδεμένος.",
-                            "ERROR_BATTERY_REMOVE": "Δεν ολοκληρώθηκε. Η μπαταρία έχει αφαιρεθεί.",
-                            "ERROR_BATTERY_REPLACE": "Δεν ολοκληρώθηκε. Η μπαταρία έχει αντικατασταθεί.",
-                            "ERROR_AC_DETTACH": "Δεν ολοκληρώθηκε. Ο μετασχηματιστής εναλλασσόμενου ρεύματος έχει αποσυνδεθεί.",
-                            "ERROR_USER_CANCEL": "Δεν ολοκληρώθηκε. Ακυρώθηκε από το χρήστη.",
-                            "ERROR_UNEXPECTED": "Δεν ολοκληρώθηκε. Παρουσιάστηκε απροσδόκητο σφάλμα."
+                            "ERROR_SUCCESS": "Ολοκληρώθηκε: Επιτυχής επαναφορά.",
+                            "ERROR_SHUTDOWN": "Απέτυχε: Τερματισμός λειτουργίας συστήματος.",
+                            "ERROR_LOGOFF": "Απέτυχε: Ο χρήστης αποσυνδέθηκε.",
+                            "ERROR_BATTERY_REMOVE": "Απέτυχε: Η μπαταρία αφαιρέθηκε.",
+                            "ERROR_BATTERY_REPLACE": "Απέτυχε: Η μπαταρία αντικαταστάθηκε.",
+                            "ERROR_AC_DETTACH": "Απέτυχε: Ο μετασχηματιστής εναλλασσόμενου ρεύματος αποσυνδέθηκε.",
+                            "ERROR_USER_CANCEL": "Απέτυχε: Ακυρώθηκε από τον χρήστη.",
+                            "ERROR_UNEXPECTED": "Απέτυχε: Παρουσιάστηκε μη αναμενόμενο σφάλμα."
                         },
                         "popup": {
                             "description1": "Η διαδικασία επαναφοράς είναι η εξής:<br>Πλήρης φόρτιση της μπαταρίας  -->  Πλήρης εκφόρτιση της μπαταρίας  -->  Πλήρης επαναφόρτιση της μπαταρίας",
@@ -1173,18 +1177,18 @@
                     },
                     "checkbox": "Αυτόματη ρύθμιση του ενεργού χρόνου του υπολογιστή σας με βάση τη χρήση σας",
                     "hyperlinkToGraph": "Κάντε κλικ για να δείτε τη δραστηριότητα και τον ενεργό χρόνο του πίνακα του υπολογιστή σας",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Προγραμματισμός του υπολογιστή σας",
+                    "automaticMode": "Αυτόματη λειτουργία",
+                    "manualMode": "Χειροκίνητη λειτουργία",
+                    "subNote": "Ο υπολογιστής σας έχει προγραμματιστεί σε κατάσταση Σύγχρονης αναμονής με βάση τη χρήση σας.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Χρήση αυτού του υπολογιστή",
+                        "graph2Tittle": "Εφαρμοζόμενος ενεργός χρόνος",
+                        "graphSubtittle": "Σε αυτές τις χρονικές περιόδους, διατηρούμε τον υπολογιστή έτοιμο για γρήγορη συνέχιση.",
+                        "graphNote": "Τα δεδομένα δραστηριότητας αυτού του υπολογιστή δεν επαρκούν για την παροχή ενός προφίλ για αυτόματο προγραμματισμό. Η κατάσταση Έξυπνης αναμονής θα χρησιμοποιήσει το χρονοδιάγραμμα της Χειροκίνητης λειτουργίας μέχρι να είναι διαθέσιμα αρκετά δεδομένα.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Χωρίς",
+                            "frequent": "Συχνή"
                         },
                         "hours": {
                             "zero": 0,
@@ -1502,11 +1506,11 @@
                         "url": "ΔΙΕΥΘΥΝΣΗ URL ΔΙΚΤΥΑΚΟΥ ΤΟΠΟΥ",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Ξεκινήστε με http:// ή https://"
                     },
                     "enterText": {
                         "title": "ΚΕΙΜΕΝΟ ΠΡΟΣ ΕΙΣΑΓΩΓΗ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Πληκτρολογήστε εδώ"
                     }
                 },
                 "fnCtrlKey": {

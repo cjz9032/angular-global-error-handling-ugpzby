@@ -12,7 +12,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -91,7 +90,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private dialogService: DialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
-		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,

@@ -642,7 +642,8 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
-                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
+                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Ström",
@@ -1101,14 +1105,14 @@
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Klart. Återställningen lyckades.",
-                            "ERROR_SHUTDOWN": "Ofullständig. Systemavstängning.",
-                            "ERROR_LOGOFF": "Ofullständig. Användare loggade ut.",
-                            "ERROR_BATTERY_REMOVE": "Ofullständig. Batteriet togs bort.",
-                            "ERROR_BATTERY_REPLACE": "Ofullständig. Batteriet byttes ut.",
-                            "ERROR_AC_DETTACH": "Ofullständig. Nätadaptern kopplades bort.",
-                            "ERROR_USER_CANCEL": "Ofullständig. Avbröts av användaren.",
-                            "ERROR_UNEXPECTED": "Ofullständig. Ett oväntat fel inträffade."
+                            "ERROR_SUCCESS": "Klart: Återställningen lyckades.",
+                            "ERROR_SHUTDOWN": "Misslyckades: Systemet stängdes av.",
+                            "ERROR_LOGOFF": "Misslyckades: Användaren loggade ut.",
+                            "ERROR_BATTERY_REMOVE": "Misslyckades: Batteriet togs bort.",
+                            "ERROR_BATTERY_REPLACE": "Misslyckades: Batteriet byttes ut.",
+                            "ERROR_AC_DETTACH": "Misslyckades: Nätadaptern kopplades bort.",
+                            "ERROR_USER_CANCEL": "Misslyckades: Avbröts av användaren.",
+                            "ERROR_UNEXPECTED": "Misslyckades: Ett oväntat fel inträffade."
                         },
                         "popup": {
                             "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
@@ -1173,18 +1177,18 @@
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
                     "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Schemalägg datorn",
+                    "automaticMode": "Automatiskt läge",
+                    "manualMode": "Manuellt läge",
+                    "subNote": "Datorn är schemalagd för modernt vänteläge baserat på din användning.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Datoranvändning",
+                        "graph2Tittle": "Tillämpad aktiv tid",
+                        "graphSubtittle": "Under dessa perioder är datorn aktiverad så att det går snabbare att återuppta arbetet.",
+                        "graphNote": "Det finns inte tillräckligt med aktivitetsdata för att skapa en profil för automatisk schemaläggning. I smart vänteläge används schemat för manuellt läge tills det finns tillräckligt med data.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Regelbunden"
                         },
                         "hours": {
                             "zero": 0,
@@ -1502,11 +1506,11 @@
                         "url": "WEBBADRESS",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Börja med http:// eller https://"
                     },
                     "enterText": {
                         "title": "PLATSHÅLLARE FÖR TEXT",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv här"
                     }
                 },
                 "fnCtrlKey": {

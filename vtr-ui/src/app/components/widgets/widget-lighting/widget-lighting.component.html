@@ -29,9 +29,14 @@
 									[checked]="setprofId===0"
 									(change)="SetProfile($event)"
 									(click)="SetProfile($event)">
-								<label for="off_radio"
+								<label *ngIf="defaultLanguage !== 'fr'" for="off_radio"
 									id="off"
 									[ngClass]="{'toggle-stable': isPopupVisible && setprofId===0, 'gamingTextColor': setprofId==0}">
+									{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}} </label>
+
+									<label *ngIf="defaultLanguage === 'fr'" title="{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}}" for="off_radio"
+									id="off"
+									[ngClass]="{'toggle-stable': isPopupVisible && setprofId===0, 'gamingTextColor': setprofId==0, 'profile-text' : defaultLanguage === 'fr'}">
 									{{'gaming.lightingProfile.lightingProfileHeading.text1.title' | translate}} </label>
 
 

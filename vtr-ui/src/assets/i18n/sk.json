@@ -642,7 +642,8 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
                 "seeDetailsLink": "Zobraziť podrobnosti",
-                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér."
+                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napájanie",
@@ -1101,14 +1105,14 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončené. Úspešné vynulovanie.",
-                            "ERROR_SHUTDOWN": "Nedokončené. Vypnutie systému.",
-                            "ERROR_LOGOFF": "Nedokončené. Odhlásenie používateľa.",
-                            "ERROR_BATTERY_REMOVE": "Nedokončené. Batéria bola vybratá.",
-                            "ERROR_BATTERY_REPLACE": "Nedokončené. Batéria bola vymenená.",
-                            "ERROR_AC_DETTACH": "Nedokončené. Napájací adaptér bol odpojený.",
-                            "ERROR_USER_CANCEL": "Nedokončené. Zrušené používateľom.",
-                            "ERROR_UNEXPECTED": "Nedokončené. Vyskytla sa neočakávaná chyba."
+                            "ERROR_SUCCESS": "Dokončené: Úspešné vynulovanie.",
+                            "ERROR_SHUTDOWN": "Zlyhanie: Vypnutie systému.",
+                            "ERROR_LOGOFF": "Zlyhanie: Odhlásenie používateľa.",
+                            "ERROR_BATTERY_REMOVE": "Zlyhanie: Batéria bola vybratá.",
+                            "ERROR_BATTERY_REPLACE": "Zlyhanie: Batéria bola vymenená.",
+                            "ERROR_AC_DETTACH": "Zlyhanie: Napájací adaptér bol odpojený.",
+                            "ERROR_USER_CANCEL": "Zlyhanie: Zrušené používateľom.",
+                            "ERROR_UNEXPECTED": "Zlyhanie: Vyskytla sa neočakávaná chyba."
                         },
                         "popup": {
                             "description1": "Proces vynulovania prebieha takto:<br>Plne nabite batériu  -->  Plne vybite batériu  -->  Plne nabite batériu",
@@ -1173,18 +1177,18 @@
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Plánovanie počítača",
+                    "automaticMode": "Automatický režim",
+                    "manualMode": "Manuálny režim",
+                    "subNote": "Váš počítač je naplánovaný na prepnutie do moderného pohotovostného režimu podľa vášho použitia.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Použitie tohto počítača",
+                        "graph2Tittle": "Aplikovaný aktívny čas",
+                        "graphSubtittle": "V týchto časových obdobiach udržujeme počítač pripravený na rýchlejšiu obnovu.",
+                        "graphNote": "Údaje o činnosti tohto počítača nie sú dostatočné na poskytnutie profilu pre automatické plánovanie. Inteligentný pohotovostný režim bude používať plán manuálneho režimu, kým nebude k dispozícii dostatok údajov.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Žiadne",
+                            "frequent": "Časté"
                         },
                         "hours": {
                             "zero": 0,
@@ -1502,11 +1506,11 @@
                         "url": "ADRESA URL WEBOVEJ LOKALITY",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Začnite s http:// alebo https://"
                     },
                     "enterText": {
                         "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Tu napíšte"
                     }
                 },
                 "fnCtrlKey": {

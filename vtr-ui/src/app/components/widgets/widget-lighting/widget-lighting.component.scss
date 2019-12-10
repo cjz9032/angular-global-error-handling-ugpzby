@@ -99,6 +99,14 @@
 					position: relative;
 					z-index: 1;
 					cursor: pointer;
+					&.profile-text{
+						overflow: hidden;
+						max-width: 10rem;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						display: block;
+						padding: 0.5rem;
+					}
 				}
 			}
 			.toggle-stable {

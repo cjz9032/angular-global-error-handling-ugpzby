@@ -1,4 +1,4 @@
-<div class="vtr-ui-article-item mb-80"
+<div class="vtr-ui-article-item mb-40"
 	*ngIf="articleType === SupportContentStatus.Articles"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
@@ -41,17 +41,17 @@
 						class="title"
 						#articleTitle
 						[title]="articleTitle.innerText"
-						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 28 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
 						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 					</div>
 					<div *ngIf="item.ReadMore && item.Thumbnail"
-						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 18 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 30 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 30 / 430"
 						class="read-more">
 						<span class="link-label">Read More</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
@@ -61,7 +61,7 @@
 		</div>
 	</div>
 </div>
-<div class="vtr-ui-article-item mb-80"
+<div class="vtr-ui-article-item mb-40"
 	*ngIf="articleType === SupportContentStatus.Content"
 	#articleItemDiv
 	id="{{'article-item-' + index}}"
@@ -103,17 +103,17 @@
 					<div class="title"
 						#articleTitle
 						[title]="articleTitle.innerText"
-						[style.font-size.px]="articleItemDiv.clientWidth * 20 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 81 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 28 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
 						[innerHTML]="item.Title"></div>
 					<div class="logo-text">
 						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 					</div>
 					<div *ngIf="item.ActionLink && item.FeatureImage && item.Action"
-						[style.font-size.px]="articleItemDiv.clientWidth * 14 / 430"
-						[style.height.px]="articleItemDiv.clientWidth * 27 / 430"
-						[style.line-height.px]="articleItemDiv.clientWidth * 27 / 430"
+						[style.font-size.px]="articleItemDiv.clientWidth * 18 / 430"
+						[style.height.px]="articleItemDiv.clientWidth * 30 / 430"
+						[style.line-height.px]="articleItemDiv.clientWidth * 30 / 430"
 						class="read-more">
 						<span class="link-label">{{item.Action}}</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>

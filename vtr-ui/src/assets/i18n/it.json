@@ -642,7 +642,8 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
-                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
+                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentazione",
@@ -1101,14 +1105,14 @@
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Operazione completata. Reimpostazione riuscita.",
-                            "ERROR_SHUTDOWN": "Operazione non completata. Arresto del sistema.",
-                            "ERROR_LOGOFF": "Operazione non completata. Utente scollegato.",
-                            "ERROR_BATTERY_REMOVE": "Operazione non completata. La batteria è stata rimossa.",
-                            "ERROR_BATTERY_REPLACE": "Operazione non completata. La batteria è stata sostituita.",
-                            "ERROR_AC_DETTACH": "Operazione non completata. L'adattatore di alimentazione CA è stato scollegato.",
-                            "ERROR_USER_CANCEL": "Operazione non completata. Operazione annullata dall'utente.",
-                            "ERROR_UNEXPECTED": "Operazione non completata. Si è verificato un errore imprevisto."
+                            "ERROR_SUCCESS": "Operazione completata: Reimpostazione riuscita.",
+                            "ERROR_SHUTDOWN": "Operazione non riuscita: arresto del sistema.",
+                            "ERROR_LOGOFF": "Operazione non riuscita: utente scollegato.",
+                            "ERROR_BATTERY_REMOVE": "Operazione non riuscita: batteria rimossa.",
+                            "ERROR_BATTERY_REPLACE": "Operazione non riuscita: batteria sostituita.",
+                            "ERROR_AC_DETTACH": "Operazione non riuscita: adattatore di alimentazione CA scollegato.",
+                            "ERROR_USER_CANCEL": "Operazione non riuscita: annullata dall'utente.",
+                            "ERROR_UNEXPECTED": "Operazione non riuscita: errore imprevisto."
                         },
                         "popup": {
                             "description1": "Il processo di reimpostazione è il seguente:<br>caricare completamente la batteria  -->  scaricare completamente la batteria  -->  ricaricare completamente la batteria",
@@ -1173,18 +1177,18 @@
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
                     "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Pianificazione del computer",
+                    "automaticMode": "Modalità automatica",
+                    "manualMode": "Modalità manuale",
+                    "subNote": "Il computer è pianificato per la modalità Standby moderno in base all'utilizzo.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilizzo di questo computer",
+                        "graph2Tittle": "Tempo attivo applicato",
+                        "graphSubtittle": "In questi periodi di tempo, il computer è pronto per essere rapidamente riattivato.",
+                        "graphNote": "I dati di attività di questo computer non sono sufficienti per fornire un profilo per la pianificazione automatica. Standby intelligente utilizzerà la pianificazione in modalità manuale finché non saranno disponibili dati sufficienti.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Nessuno",
+                            "frequent": "Frequente"
                         },
                         "hours": {
                             "zero": 0,
@@ -1502,11 +1506,11 @@
                         "url": "URL SITO WEB",
                         "successMessage": "The setting is applied successfully.",
                         "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "placeholder": "Deve iniziare con http:// o https://"
                     },
                     "enterText": {
                         "title": "TESTO DA IMMETTERE",
-                        "placeholder": "Please type here"
+                        "placeholder": "Digitare qui"
                     }
                 },
                 "fnCtrlKey": {
