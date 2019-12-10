@@ -56,11 +56,13 @@
 			color: $light;
 			overflow: hidden;
 			&.logo-y {
+				background-color: rgba(4, 184, 255, 0.548);
 				height: 9rem;
 				padding-bottom: 0;
 			}
 
 			.menu-main-logo {
+				background-color: #27add7;
 				display: block;
 				width: 100%;
 				height: 100%;
