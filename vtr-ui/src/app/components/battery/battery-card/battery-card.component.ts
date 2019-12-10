@@ -267,6 +267,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
 
+		if (this.batteryGauge.isAttached && this.batteryGauge.acWattage !== 0) {
+			const adapterType = this.batteryGauge.acAdapterType.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
+			this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: adapterType };
+		}
+
 		this.getBatteryCondition();
 	}
 
@@ -339,11 +344,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditionStatus = this.getConditionState(this.batteryHealth);
 
 			if (isThinkPad) {
-				if (this.batteryGauge.isAttached && this.batteryGauge.acAdapterStatus) {
-					this.batteryGauge.acAdapterType = this.batteryGauge.acAdapterType === 'Legacy' || 'ac' ? 'ac' : 'USB-C';
-					this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: this.batteryGauge.acAdapterType };
-				}
-
 				if (this.batteryHealth === 1 || this.batteryHealth === 2) {
 					healthCondition = BatteryConditionsEnum.StoreLimitation;
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
@@ -399,18 +399,19 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		if (!(this.batteryIndicator.batteryNotDetected || this.batteryService.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
-			if (isThinkPad) {
-				if (this.batteryGauge.isAttached && this.batteryGauge.acAdapterStatus) {
-					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'supported') {
-						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
-					}
-					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+			if (isThinkPad && this.batteryGauge.acAdapterStatus) {
+				switch (this.batteryGauge.acAdapterStatus.toLocaleLowerCase()) {
+					case 'supported':
+						if (this.batteryGauge.isAttached) {
+							batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
+						}
+						break;
+					case 'limited':
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryStatus.AcAdapterStatus));
-					}
-
-					if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+						break;
+					case 'notsupported':
 						batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryStatus.AcAdapterStatus));
-					}
+						break;
 				}
 			}
 		}
