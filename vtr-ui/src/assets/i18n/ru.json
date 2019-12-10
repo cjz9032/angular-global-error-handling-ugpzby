@@ -1138,7 +1138,7 @@
                         "subHeading1": "начнете",
                         "subHeading2": "окончание",
                         "subHeading3": "использовать это расписание в",
-                        "endTimeNote": "Время окончания должно быть позже времени начала не более чем на 20 часов",
+                        "endTimeNote": "Время ОКОНЧАНИЯ должно быть позже времени НАЧАЛА не более чем на 20 часов",
                         "timeUnits": {
                             "unit1": "Часы",
                             "unit2": "Минуты",
@@ -1173,7 +1173,7 @@
                         "everyday": "Каждый день",
                         "weekdays": "Будние дни",
                         "weekends": "Выходные дни",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "День не выбран"
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
                     "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
+                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "URL-АДРЕС ВЕБ-САЙТА",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Параметры успешно применены.",
+                        "invalidURLMessage": "Введите действительный URL-адрес.",
                         "placeholder": "Начните с http:// или https://"
                     },
                     "enterText": {

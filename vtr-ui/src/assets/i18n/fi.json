@@ -1138,7 +1138,7 @@
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
-                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
+                        "endTimeNote": "LOPETUSajan on oltava 20 tunnin kuluessa ALOITUSajasta",
                         "timeUnits": {
                             "unit1": "tuntia",
                             "unit2": "minuuttia",
@@ -1173,7 +1173,7 @@
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
                         "weekends": "Viikonloppuisin",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Päivää ei ole valittuna"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
                     "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "VERKKOSIVUSTON URL-OSOITE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Asetusten käyttöönotto onnistui.",
+                        "invalidURLMessage": "Anna kelvollinen URL-osoite.",
                         "placeholder": "Aloita kirjoittamalla http:// tai https://"
                     },
                     "enterText": {
