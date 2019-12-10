@@ -1,4 +1,4 @@
-import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { SecurityAdvisor, EventTypes } from '@lenovo/tan-client-bridge';
 import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';

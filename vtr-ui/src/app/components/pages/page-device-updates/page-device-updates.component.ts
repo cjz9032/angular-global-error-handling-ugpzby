@@ -226,6 +226,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
+			if (this.systemUpdateService.isToastMessageNeeded) {
+				this.showToastMessage(this.systemUpdateService.installedUpdates);
+			}	
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.ignoredRebootDelayUpdates && this.systemUpdateService.ignoredRebootDelayUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
@@ -593,6 +596,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
 			this.isInstallFailedMessageToasted = true;
 		}
+		this.systemUpdateService.isToastMessageNeeded = false;
 	}
 
 	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
