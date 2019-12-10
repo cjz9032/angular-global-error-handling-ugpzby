@@ -18,7 +18,7 @@
 			//padding-bottom: 21rem;//removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_lg} {
-			padding: 2rem 2rem 0 2rem;
+			padding: 2rem;
 			// padding-bottom: 22rem; //removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_md} {
@@ -34,51 +34,43 @@
 		// }
 
 		.monitor-col {
-			padding: 4rem 0;
+			padding:4rem 0;
 			position: relative;
-			// @media #{$mediaquery_5} {
-			// 	padding: 3rem 0;
-			// }
 			&.left {
 				padding-right: 2rem;
 				@media #{$breakpoint_xl} {
-					padding-right: 0;
+					padding-right: 0rem!important;
 				}
 				@media #{$breakpoint_lg} {
-					padding-right: 2rem;
+					padding-right: 0rem!important;
 				}
 				@media #{$breakpoint_sm} {
 					padding-right: 0;
 				}
-				// @media #{$mediaquery_5} {
-				// 	padding-right: 4rem;
-				// }
-				// @media #{$only-small-screen} {
-				// 	padding-right: 0rem;
-				// }
 			}
 			&.right {
 				padding-left: 0rem;
 				@media #{$breakpoint_xl} {
-					padding: 1rem 0;
-				}
-				@media #{$breakpoint_lg} {
-					//padding: 6rem 0;
-					padding: 4rem 0;
+					//padding-left:1rem;
 				}
 				@media #{$breakpoint_md} {
-					//padding: 6rem 0;
 					padding: 2rem 0;
 				}
+				@media only screen and (min-width: 572px) and (max-width: 766px){
+					padding:2rem 0!important;
+				}
+				@media only screen and (min-width: 991px) and (max-width: 992px){
+					padding-left:2rem!important;
+				}
+				@media only screen and (min-width: 765px) and (max-width: 767px){
+					padding:4rem 0rem 4rem 0rem!important;
+				}
+				@media #{$breakpoint_lg} {
+					padding: 4rem 0rem 4rem 2rem;
+				}				
 				@media #{$breakpoint_sm} {
 					padding: 1rem 0;
-				}
-				// @media #{$mediaquery_5} {
-				// 	padding-left: 0rem;
-				// }
-				// @media #{$only-small-screen} {
-				// 	padding-left: 0rem;
-				// }
+				}				
 			}
 			&.link-wrapper {
 				padding: 0.5rem;
