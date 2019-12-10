@@ -35,7 +35,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryConditionsEnum = BatteryConditionsEnum;
 	batteryConditionNotes: string[];
 	batteryStatus = BatteryStatus;
-	isBatteryDetailsBtnDisabled = true;
 	// percentageLimitation: Store Limitation Percentage
 	percentageLimitation = 60;
 	batteryHealth = 0;
@@ -259,8 +258,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
 
-		this.isBatteryDetailsBtnDisabled = this.batteryGauge.isPowerDriverMissing;
-		this.commonService.sendNotification('IsPowerDriverMissing', this.isBatteryDetailsBtnDisabled);
+		this.batteryService.isPowerDriverMissing = this.batteryGauge.isPowerDriverMissing;
+		this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
+
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
@@ -329,7 +329,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		const batteryConditions = [];
 		const isThinkPad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
 
-		if (this.batteryGauge.isPowerDriverMissing) {
+		if (this.batteryService.isPowerDriverMissing) {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor));
 		}
 
@@ -396,7 +396,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			});
 		}
 
-		if (!(this.batteryIndicator.batteryNotDetected || this.batteryGauge.isPowerDriverMissing)) {
+		if (!(this.batteryIndicator.batteryNotDetected || this.batteryService.isPowerDriverMissing)) {
 
 			// AcAdapter conditions hidden for IdeaPad & IdeaCenter machines
 			if (isThinkPad) {

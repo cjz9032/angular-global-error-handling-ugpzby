@@ -287,7 +287,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		return show;
 	}
 
-	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?) {
+	getMcafeeFeature(mcafee: phoenix.McAfeeInfo, data?: Array<phoenix.McafeeFeature>) {
 		const featureList = [{
 			status: mcafee.registered,
 			title: this.register,
@@ -344,12 +344,30 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			});
 		} else if (data) {
 			if (data.length < 6) {
-				data.forEach((feature) => {
-					featureList.push({
-						status: feature.value,
-						title: feature.key,
-						installed: feature.installed
-					});
+				featureList.push({
+					status: data[0].value,
+					title: this.virusScan,
+					installed: data[0].installed
+				});
+				featureList.push({
+					status: data[1].value,
+					title: this.fireWall,
+					installed: data[1].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: data[2].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: data[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: data[4].installed
 				});
 			} else {
 				featureList.push({
@@ -380,12 +398,30 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			}
 		} else {
 			if (mcafee.features.length < 6) {
-				mcafee.features.forEach((feature) => {
-					featureList.push({
-						status: feature.value,
-						title: feature.key,
-						installed: feature.installed
-					});
+				featureList.push({
+					status: mcafee.status,
+					title: this.virusScan,
+					installed: true
+				});
+				featureList.push({
+					status: mcafee.firewallStatus,
+					title: this.fireWall,
+					installed: true
+				});
+				featureList.push({
+					status: null,
+					title: this.antiSpam,
+					installed: mcafee.features[2].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.quickClean,
+					installed: mcafee.features[3].installed
+				});
+				featureList.push({
+					status: null,
+					title: this.vulnerability,
+					installed: mcafee.features[4].installed
 				});
 			} else {
 				featureList.push({

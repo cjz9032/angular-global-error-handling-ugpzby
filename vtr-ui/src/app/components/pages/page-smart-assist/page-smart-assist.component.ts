@@ -599,6 +599,7 @@ export class PageSmartAssistComponent
 				if (this.smartAssist.isShellAvailable) {
 					this.initSmartAssist(false);
 				}
+				this.getHPDLeaveSensitivityStatus();
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 	}
