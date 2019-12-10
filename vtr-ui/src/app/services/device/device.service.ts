@@ -23,6 +23,7 @@ export class DeviceService {
 	public is64bit = true;
 	public showPrivacy = false;
 	public isGaming = false;
+	public isLiteGaming = false;
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;

@@ -282,10 +282,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				width: 4rem;
 				height: 4rem;
 				vertical-align: auto;
-			}
-			@media #{$mediaquery_X21} {
-				top: 10%;
-			}
+            }
 			@media #{$mediaquery_X23} {
 				left: 5%;
 			}
