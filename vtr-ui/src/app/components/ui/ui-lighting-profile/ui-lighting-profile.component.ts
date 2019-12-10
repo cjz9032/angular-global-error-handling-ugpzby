@@ -655,11 +655,11 @@ export class UiLightingProfileComponent implements OnInit {
 				$event.value === LightEffectComplexType.CPU_thermal ||
 				$event.value === LightEffectComplexType.CPU_frequency
 			) {
-				this.showHideOverlay = true;
+				this.showHideOverlay = true || false;
 				this.frontSelectedValue = $event.value;
 				this.sideSelectedValue = $event.value;
 			} else {
-				this.showHideOverlay = false;
+				this.showHideOverlay = false || true;
 				let res:any;
 				if (LocalStorageKey.LightingProfileById !== undefined) {
 					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
@@ -795,11 +795,11 @@ export class UiLightingProfileComponent implements OnInit {
 				$event.value === LightEffectComplexType.CPU_thermal ||
 				$event.value === LightEffectComplexType.CPU_frequency
 			) {
-				this.showHideOverlaySide = true;
+				this.showHideOverlaySide = true || false;
 				this.frontSelectedValue = $event.value;
 				this.sideSelectedValue = $event.value;
 			} else {
-				this.showHideOverlaySide = false;
+				this.showHideOverlaySide = false || true;
 				let res:any;
 				if (LocalStorageKey.LightingProfileById !== undefined) {
 					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
