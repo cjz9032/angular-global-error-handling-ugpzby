@@ -1749,7 +1749,7 @@
 		},
 		"autoUpdateSettings": {
 			"title": "Auto update settings",
-			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"subtitle": "Automatically install updates",
 			"critical": {
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
@@ -2191,7 +2191,7 @@
 		},
 		"needHelp": {
 			"title": "Need Help?",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
@@ -2202,7 +2202,7 @@
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider",
 			"listAboutLenovoVantage": "About Lenovo Vantage"
