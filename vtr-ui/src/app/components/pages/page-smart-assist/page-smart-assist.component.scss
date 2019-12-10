@@ -254,7 +254,6 @@
 		background-color: $shade_lightest;
 			border: 1px solid $shade_lighter;
 			padding-right: 1.4rem;
-			max-width: 60rem;
 			span {
 				font-size: $body;
 				color: $main_darker;
@@ -264,6 +263,7 @@
 			letter-spacing: 0.76px;
 			text-align: left;
 			text-decoration: underline;
+			margin-bottom: 0.5rem;
 				&:hover {
 					text-decoration: underline;
 				}
@@ -278,11 +278,12 @@
 		p {
 			font-size: $body;
 			font-weight: $weight_light;
-			max-width: 60rem;
 		}
 	}
 	.fac-control {
-		margin-left: 0.5rem;
+		margin-right: 1rem;
+		margin-left: 2.5rem;
+		padding-top: 1.5rem;
 	}
 	
 }
