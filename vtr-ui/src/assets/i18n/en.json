@@ -916,7 +916,7 @@
 					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
 				},
 				"dualConditions": {
-					"NotDetected": "<b>The primary battery is not detected</b>"
+					"NotDetected": "<b>The primary battery is not detected.</b>"
 				}
 			},
 			"power": {
