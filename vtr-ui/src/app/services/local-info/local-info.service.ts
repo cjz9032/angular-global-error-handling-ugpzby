@@ -38,26 +38,37 @@ export class LocalInfoService {
 		} else {
 			if (this.deviceService) {
 				return this.deviceService.getMachineInfo().then(result => {
-					let osName = 'Windows';
-					if (result.os &&
-						result.os.toLowerCase().indexOf('android') > -1) {
-						osName = 'Android';
-					}
-					let lang = 'en';
-					if (result.locale) {
-						lang = result.locale.toLowerCase();
-						if (this.supportLanguages.indexOf(lang) === -1) {
-							lang = 'en';
+					if (result) {
+						let osName = 'Windows';
+						if (result.os &&
+							result.os.toLowerCase().indexOf('android') > -1) {
+							osName = 'Android';
 						}
+						let lang = 'en';
+						if (result.locale) {
+							lang = result.locale.toLowerCase();
+							if (this.supportLanguages.indexOf(lang) === -1) {
+								lang = 'en';
+							}
+						}
+						this.localInfo = {
+							Lang: lang,
+							GEO: result.country.toLowerCase() ? result.country.toLowerCase() : 'us',
+							OEM: result.manufacturer ? result.manufacturer : 'Lenovo',
+							OS: osName,
+							Segment: result.isGaming ? this.gamingTag : this.selfSelectSegment,
+							Brand: result.brand ? result.brand : 'Lenovo',
+						};
+					} else {
+						this.localInfo = {
+							Lang: 'en',
+							GEO: 'us',
+							OEM: 'Lenovo',
+							OS: 'Windows',
+							Segment: SegmentConst.Consumer,
+							Brand: 'Lenovo',
+						};
 					}
-					this.localInfo = {
-						Lang: lang,
-						GEO: result.country.toLowerCase() ? result.country.toLowerCase() : 'us',
-						OEM: result.manufacturer ? result.manufacturer : 'Lenovo',
-						OS: osName,
-						Segment: result.isGaming ? this.gamingTag : this.selfSelectSegment,
-						Brand: result.brand ? result.brand : 'Lenovo',
-					};
 					return this.localInfo;
 				});
 			}

@@ -17,7 +17,6 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from '../self-select/self-select.service';
 import { SecurityAdvisor, EventTypes, WindowsHello, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { WindowsHelloService } from '../security/windowsHello.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
@@ -55,7 +54,6 @@ export class ConfigService {
 		private logger: LoggerService,
 		private localInfoService: LocalInfoService,
 		private vantageShellService: VantageShellService,
-		private windowsHelloService: WindowsHelloService,
 		private commonService: CommonService) {
 		this.menuItemSubject = new BehaviorSubject<AppNotification>(
 			new AppNotification(MenuItem.MenuItemChange, 'init')
