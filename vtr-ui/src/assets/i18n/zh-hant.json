@@ -2840,7 +2840,8 @@
             "pci_express": "PCI Express",
             "storage": "儲存裝置",
             "wireless": "無線"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

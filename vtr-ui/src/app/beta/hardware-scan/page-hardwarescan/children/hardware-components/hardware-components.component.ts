@@ -347,6 +347,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.hardwareScanService.setFinalResponse(response);
 		}
 
+		this.startScanClicked = false;
 		if (!this.hardwareScanService.isCancelRequested()) {
 			this.hardwareScanService.setEnableViewResults(true);
 		} else {
@@ -562,11 +563,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			if(this.batteryMessage !== ''){
 				this.batteryMessage += '\n';
 			}
-			this.batteryMessage += this.translate.instant('hardwareScan.testsMustRunUniterrupted') + ' ' +
-			                       this.translate.instant('hardwareScan.doNotUse') + '\n' +
-			                       this.translate.instant('hardwareScan.doNotCloseOrMinimizeApp') + '\n' +
-			                       this.translate.instant('hardwareScan.doNotSwitchApp') + '\n' +
-			                       this.translate.instant('hardwareScan.doNotSleepOrSignOutOrTurnOffComputer');
 
 			if (this.batteryMessage !== '') {
 				const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {

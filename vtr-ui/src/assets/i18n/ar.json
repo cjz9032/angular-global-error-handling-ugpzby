@@ -2842,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
