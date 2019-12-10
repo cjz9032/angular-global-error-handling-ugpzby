@@ -1173,7 +1173,7 @@
                         "everyday": "每天",
                         "weekdays": "工作日",
                         "weekends": "周末",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "未选择日期"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
                     "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
+                    "subTitle2": "设置通常使用此计算机的时间"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "Web 站点 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "已成功应用设置。",
+                        "invalidURLMessage": "请输入有效 URL。",
                         "placeholder": "请以 http:// 或 https:// 开头"
                     },
                     "enterText": {
@@ -2546,7 +2546,7 @@
         },
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
-            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注意</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
@@ -2626,7 +2626,7 @@
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
         "bullets2": "安全顾问助您轻松改善系统安全状况。",
-        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型不可用）。",
+        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用）。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "告诉我们您的兴趣（选填）",
         "personal": "个人使用",
