@@ -1173,7 +1173,7 @@
                         "everyday": "毎日",
                         "weekdays": "平日",
                         "weekends": "週末",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
                     "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "subTitle2": "通常このコンピューターを使用する時刻を設定します"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "Web サイトの URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "設定が正常に適用されました。",
+                        "invalidURLMessage": "有効な URL を入力してください。",
                         "placeholder": "http:// または https:// から始めてください"
                     },
                     "enterText": {
