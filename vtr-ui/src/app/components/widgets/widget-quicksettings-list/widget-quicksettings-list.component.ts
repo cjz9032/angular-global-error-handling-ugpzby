@@ -178,10 +178,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 	) { }
 
 	ngOnInit() {
-		const isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		if (isDesktopMachine) {
-			this.removeSettingval();
-		}
 		this.initializeWifiSecCache();
 		this.initialiseDolbyCache();
 		this.initialiseRapidChargeCache();
@@ -221,12 +217,17 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 			}
 		});
 	}
+
 	handleError(err) {
 		if (err && err instanceof PluginMissingError) {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
 	}
-	ngAfterViewInit() { }
+
+	ngAfterViewInit() { 
+		this.desktopCheck();
+	}
+	
 	public unRegisterThermalModeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingThermalModeChangeEvent,
@@ -234,10 +235,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, AfterViewInit, 
 		);
 	}
 
-	public removeSettingval() {
-		const id = 'gaming.dashboard.device.quickSettings.dolby';
-		const id1 = 'gaming.dashboard.device.quickSettings.rapidCharge';
-		this.quickSettings = this.quickSettings.filter(item => item.header !== id && item.header !== id1);
+	public desktopCheck(){
+		const isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (isDesktopMachine) {
+			const id = 'gaming.dashboard.device.quickSettings.dolby' ;
+			const id1 =  'gaming.dashboard.device.quickSettings.rapidCharge';
+			this.quickSettings = this.quickSettings.filter(item => item.header !== id && item.header !== id1);
+		}
 	}
 
 	public registerThermalModeEvent() {

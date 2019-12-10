@@ -1138,7 +1138,7 @@
                         "subHeading1": "početak",
                         "subHeading2": "završetak",
                         "subHeading3": "koristi ovaj raspored za",
-                        "endTimeNote": "Vrijeme završetka mora biti unutar 20 sati od vremena početka",
+                        "endTimeNote": "Vrijeme ZAVRŠETKA mora biti unutar 20 sati od vremena POČETKA",
                         "timeUnits": {
                             "unit1": "Sati",
                             "unit2": "Minuta",
@@ -1173,7 +1173,7 @@
                         "everyday": "Svaki dan",
                         "weekdays": "Radnim danom",
                         "weekends": "Vikendi",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nije odabran dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
                     "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
+                    "subTitle2": "Postavite vrijeme kada obično koristite računalo"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "URL WEB-MJESTA",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Postavke su uspješno primjenjene.",
+                        "invalidURLMessage": "Unesite valjani URL.",
                         "placeholder": "Započnite s http:// ili https://"
                     },
                     "enterText": {

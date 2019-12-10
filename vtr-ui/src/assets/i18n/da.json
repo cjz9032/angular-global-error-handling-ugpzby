@@ -1138,7 +1138,7 @@
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
-                        "endTimeNote": "Sluttidspunktet skal være inden for 20 timer fra starttidspunktet",
+                        "endTimeNote": "SLUTtidspunktet skal være inden for 20 timer fra STARTtidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1173,7 +1173,7 @@
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
                         "weekends": "Weekender",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
                     "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
+                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "URL TIL WEBSTED",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Indstillingerne er blevet anvendt.",
+                        "invalidURLMessage": "Angiv en gyldig webadresse.",
                         "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {

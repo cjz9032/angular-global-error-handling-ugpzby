@@ -1138,7 +1138,7 @@
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
-                        "endTimeNote": "Czas od godziny początkowej do końcowej nie może przekraczać 20 godzin",
+                        "endTimeNote": "Czas od godziny POCZĄTKOWEJ do KOŃCOWEJ nie może przekraczać 20 godzin",
                         "timeUnits": {
                             "unit1": "Godziny",
                             "unit2": "Minuty",
@@ -1173,7 +1173,7 @@
                         "everyday": "Codzienny",
                         "weekdays": "Dni powszednie",
                         "weekends": "Weekendy",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nie wybrano dnia"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
                     "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
+                    "subTitle2": "Ustaw typowe godziny korzystania z komputera"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "ADRES URL WITRYNY",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Ustawienia zostały pomyślnie zastosowane.",
+                        "invalidURLMessage": "Wprowadź prawidłowy adres URL.",
                         "placeholder": "Zacznij od http:// lub https://"
                     },
                     "enterText": {

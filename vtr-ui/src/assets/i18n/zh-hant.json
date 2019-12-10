@@ -1173,7 +1173,7 @@
                         "everyday": "每天",
                         "weekdays": "週間日",
                         "weekends": "週末",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
                     "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
+                    "subTitle2": "設定您一般使用這部電腦的時間"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "網站 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "已成功套用設定。",
+                        "invalidURLMessage": "請輸入有效的 URL。",
                         "placeholder": "請以 http:// 或 https:// 開頭"
                     },
                     "enterText": {

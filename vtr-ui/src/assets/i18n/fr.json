@@ -1138,7 +1138,7 @@
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
-                        "endTimeNote": "L'heure de fin doit se situer dans les 20 heures suivant l'heure de début",
+                        "endTimeNote": "L'heure de FIN doit se situer dans les 20 heures suivant l'heure de DÉBUT",
                         "timeUnits": {
                             "unit1": "Heures",
                             "unit2": "Minutes",
@@ -1173,7 +1173,7 @@
                         "everyday": "Tous les jours",
                         "weekdays": "Jours de la semaine",
                         "weekends": "Fins de semaine",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Aucun jour sélectionné"
                     },
                     "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
                     "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
+                    "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "URL DU SITE WEB",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Les paramètres ont bien été appliqués.",
+                        "invalidURLMessage": "Entrez une URL valide.",
                         "placeholder": "Veuillez commencer en saisissant http:// ou https://"
                     },
                     "enterText": {

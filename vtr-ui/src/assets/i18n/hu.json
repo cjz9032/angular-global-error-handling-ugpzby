@@ -1138,7 +1138,7 @@
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
-                        "endTimeNote": "A befejezési idő legfeljebb 20 órával lehet a kezdési idő után",
+                        "endTimeNote": "A BEFEJEZÉSI idő legfeljebb 20 órával lehet a KEZDÉSI idő után",
                         "timeUnits": {
                             "unit1": "Óra",
                             "unit2": "Perc",
@@ -1173,7 +1173,7 @@
                         "everyday": "Minden nap",
                         "weekdays": "Hétköznapok",
                         "weekends": "Hétvégén",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nincs kiválasztott nap"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
                     "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "WEBHELY URL-JE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "A beállítások alkalmazása sikeres.",
+                        "invalidURLMessage": "Adjon meg egy érvényes URL-címet.",
                         "placeholder": "Kezdje a következő begépelésével: http:// vagy https://"
                     },
                     "enterText": {

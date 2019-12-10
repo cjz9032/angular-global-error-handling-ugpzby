@@ -1173,7 +1173,7 @@
                         "everyday": "매일",
                         "weekdays": "평일",
                         "weekends": "주말",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
                     "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "웹 사이트 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "설정이 적용되었습니다.",
+                        "invalidURLMessage": "올바른 URL을 입력해 주십시오.",
                         "placeholder": "http:// 또는 https://로 시작해야 합니다."
                     },
                     "enterText": {

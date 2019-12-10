@@ -110,28 +110,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
-
-		let self = this;
-		window.onfocus = function(){
-			self.validateScanState();
-		};
-	}
-
-	private validateScanState() {
-		if (this.hardwareScanService.isScanExecuting()) {
-			console.log('Running hwscan');
-			for (const module of this.modules) {
-				for (const test of module.listTest) {
-					if (test.status === HardwareScanTestResult.Cancelled) {
-						// When there are cancelled tests, go back to home
-						console.log('Going back to home due to a cancelled test');
-						location.reload();
-						return;
-					}
-				}
-			}
-			console.log('No cancelled tests found.');
-		}
 	}
 
 	ngOnDestroy() {
