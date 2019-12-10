@@ -151,6 +151,15 @@
 					// 		height: 13.5rem;
 					// 	}
 					// }
+					.hd-item {
+						@media #{$breakpoint_md} {
+						 max-width: 35rem;
+						 margin: auto;
+					 }
+					 @media #{$breakpoint_sm} {
+						 max-width: 30rem;
+					 }
+					}
 					&.expanded {
 						height: auto;
 					}
