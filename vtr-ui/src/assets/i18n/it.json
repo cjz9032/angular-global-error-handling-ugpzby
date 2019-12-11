@@ -907,7 +907,8 @@
                     "PermanentError": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
-                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
+                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>",
+                    "EmDriverInstalled": "Dettagli della batteria non disponibili. Eseguire Windows Update -> Verifica disponibilità aggiornamenti per installare il driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",

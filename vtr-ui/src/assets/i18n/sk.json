@@ -907,7 +907,8 @@
                     "PermanentError": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "NotSupportACAdapterDetail": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>",
+                    "EmDriverInstalled": "Podrobnosti o batérii nie sú k dispozícii. Prejdite na položky Windows Update->Vyhľadať aktualizácie a nainštaluje ovládač <b>Lenovo ACPI – Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
