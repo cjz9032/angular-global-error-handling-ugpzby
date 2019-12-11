@@ -182,6 +182,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		// 	this.startEyeCareMonitor();
 		// }, 5);
 	}
+	
 	public getCameraPermission() {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -384,7 +385,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	//#endregion
 
 	public onCameraStatusToggle($event: boolean) {
-
 		this.cameraStatus.isLoading = true;
 		this.quickSettingsWidget[1].state = false;
 		try {
@@ -496,7 +496,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	onClick(path) {
+	onClick(path: string) {
 		this.deviceService.launchUri(path);
 	}
 
@@ -516,6 +516,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
 	public showBatteryThresholdsettings(event) {
 		this.thresholdStatus = !this.thresholdStatus;
 		this.thresholdLoadingStatus = true;
@@ -537,6 +538,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 	}
+
 	public setChargeThresholdValues(batteryDetails: any) {
 		let batteryInfo: any = {};
 		try {
@@ -576,6 +578,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
 	public async setConservationModeStatusIdeaNoteBook(status: any) {
 		console.log('======== setConservationModeStatusIdeaNoteBook.then ======== ');
 		try {
