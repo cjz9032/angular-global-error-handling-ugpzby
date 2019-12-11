@@ -1327,11 +1327,11 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "seconds",
-							"minute": "minute",
-							"minutes": "minutes",
+							"seconds": "Seconds",
+							"minute": "Minute",
+							"minutes": "Minutes",
 							"alwaysOn": "Always on",
-							"never": "never",
+							"never": "Never",
 							"halfTime": "Half time of display off timer"
 						},
 						"taskBarDimmer": "TASKBAR DIMMER",
