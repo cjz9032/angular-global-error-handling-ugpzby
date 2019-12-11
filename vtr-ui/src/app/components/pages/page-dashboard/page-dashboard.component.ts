@@ -282,9 +282,23 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			this.fetchUPEContent();
 		});
 
-		if (this.deviceService.showDemo) {
+		this.isShowDccDemo().then(() => {
 			this.getHeroBannerDemoItems();
-		}
+		});
+	}
+
+	private isShowDccDemo() {
+		return new Promise((resolve) => {
+			const filter: Promise<any> = this.vantageShellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}');
+			if (filter) {
+				filter.then((hyp) => {
+					if (hyp === 'CES-2019') {
+						this.deviceService.showDemo = true;
+						resolve(true);
+					}
+				});
+			}
+		});
 	}
 
 	private fetchCMSContent(lang?: string) {

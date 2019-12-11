@@ -93,7 +93,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
-	public isPowerDriverMissing = false;
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
 	tempHeaderMenuItems = [];
@@ -564,9 +563,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
 						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
 						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
-						if (alwaysOnUsbThinkPad.isEnabled) {
-							this.toggleAlwaysOnUsbFlag = true;
-						}
+						this.toggleAlwaysOnUsbFlag = true;
 						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
 						this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
@@ -1124,7 +1121,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	public checkPowerDriverMissing(status) {
-		this.isPowerDriverMissing = status;
 		if (this.machineType === 1 && status) {
 			this.showAirplanePowerModeSection = false;
 			this.isChargeThresholdAvailable = false;

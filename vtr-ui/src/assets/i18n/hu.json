@@ -642,7 +642,8 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Jegyzet:</b> Az akkumulátor nem tölthető fel teljesen, ha az akkumulátortöltési küszöbérték engedélyezve van.",
                 "seeDetailsLink": "Részletek megtekintése",
-                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
+                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Tápellátás",
@@ -1102,14 +1106,14 @@
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Kész. Sikeres nullázás",
-                            "ERROR_SHUTDOWN": "Befejezetlen. Rendszer bezárása.",
-                            "ERROR_LOGOFF": "Befejezetlen. A felhasználó kilépett.",
-                            "ERROR_BATTERY_REMOVE": "Befejezetlen. Akkumulátor eltávolítva.",
-                            "ERROR_BATTERY_REPLACE": "Befejezetlen. Akkumulátor kicserélve.",
-                            "ERROR_AC_DETTACH": "Befejezetlen. A hálózati adapter lecsatlakoztatva.",
-                            "ERROR_USER_CANCEL": "Befejezetlen. A felhasználó megszakította.",
-                            "ERROR_UNEXPECTED": "Befejezetlen. Váratlan hiba történt."
+                            "ERROR_SUCCESS": "Kész: Sikeres nullázás",
+                            "ERROR_SHUTDOWN": "Sikertelen: A rendszer leállt.",
+                            "ERROR_LOGOFF": "Sikertelen: A felhasználó kilépett.",
+                            "ERROR_BATTERY_REMOVE": "Sikertelen: Akkumulátor eltávolítva.",
+                            "ERROR_BATTERY_REPLACE": "Sikertelen: Akkumulátor kicserélve.",
+                            "ERROR_AC_DETTACH": "Sikertelen: A hálózati adapter lecsatlakoztatva.",
+                            "ERROR_USER_CANCEL": "Sikertelen: A felhasználó megszakította.",
+                            "ERROR_UNEXPECTED": "Sikertelen: Váratlan hiba történt."
                         },
                         "popup": {
                             "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
-                        "endTimeNote": "A befejezési idő legfeljebb 20 órával lehet a kezdési idő után",
+                        "endTimeNote": "A BEFEJEZÉSI idő legfeljebb 20 órával lehet a KEZDÉSI idő után",
                         "timeUnits": {
                             "unit1": "Óra",
                             "unit2": "Perc",
@@ -1170,22 +1174,22 @@
                         "everyday": "Minden nap",
                         "weekdays": "Hétköznapok",
                         "weekends": "Hétvégén",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nincs kiválasztott nap"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
                     "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Számítógép ütemezése",
+                    "automaticMode": "Automatikus üzemmód",
+                    "manualMode": "Manuális üzemmód",
+                    "subNote": "A számítógép használati séma alapján Modern készenléti állapotra lett ütemezve.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "A számítógép használata",
+                        "graph2Tittle": "Alkalmazott aktív idő",
+                        "graphSubtittle": "Ebben az időszakokban a számítógép készen áll a gyorsabb folytatásra.",
+                        "graphNote": "A számítógép tevékenységi adatai nem elegendőek az automatikus ütemezés profiljának létrehozásához. Az Intelligens készenlét a Manuális üzemmód ütemezését fogja használni, amíg elegendő adat nem áll rendelkezésre.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Egyik sem",
+                            "frequent": "Gyakori"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "WEBHELY URL-JE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "A beállítások alkalmazása sikeres.",
+                        "invalidURLMessage": "Adjon meg egy érvényes URL-címet.",
+                        "placeholder": "Kezdje a következő begépelésével: http:// vagy https://"
                     },
                     "enterText": {
                         "title": "MEGADANDÓ SZÖVEG",
-                        "placeholder": "Please type here"
+                        "placeholder": "Írja be ide"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Tárolás",
             "wireless": "Vezeték nélküli"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

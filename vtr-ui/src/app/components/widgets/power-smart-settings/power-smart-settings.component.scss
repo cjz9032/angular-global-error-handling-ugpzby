@@ -48,19 +48,12 @@
 				width: 25rem;
 			}
 		}
-		.well {
-			padding: 15px;
-			background: #225faa;
-			border-radius: 10px;
-			opacity: 0.9;
-			font-size: 1.7rem;
-			color: $light;
-			margin-top: 3rem;
-		}
+
 		@media #{$mediaquery_X25} {
 			width: 25rem;
 		}
 	}
+
 	.well {
 		padding: 15px;
 		background: #225faa;
@@ -69,7 +62,10 @@
 		font-size: 1.7rem;
 		color: $light;
 		margin-top: 3rem;
+		margin-right: 4rem;
+		max-width: 60rem;
 	}
+
 	.alignment {
 		margin-top: 1rem;
 		margin-left: -5px !important;

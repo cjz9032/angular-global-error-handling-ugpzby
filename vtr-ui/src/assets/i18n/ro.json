@@ -642,7 +642,8 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
-                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentare",
@@ -1102,14 +1106,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
-                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
-                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
-                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
-                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
-                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
-                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
+                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
-                        "endTimeNote": "Ora de oprire trebuie să fie în interval de maximum 20 de ore de la ora de pornire",
+                        "endTimeNote": "Ora de OPRIRE trebuie să fie în interval de maximum 20 de ore de la ora de PORNIRE",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minute",
@@ -1170,22 +1174,22 @@
                         "everyday": "In fiecare zi",
                         "weekdays": "Zilele saptamanii",
                         "weekends": "Weekend-uri",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nicio zi selectată"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
                     "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programaţi computerul",
+                    "automaticMode": "Mod Automat",
+                    "manualMode": "Mod Manual",
+                    "subNote": "Computerul este programat în Starea de veghe modernă în funcţie de utilizare.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilizarea acestui computer",
+                        "graph2Tittle": "Timp activ aplicat",
+                        "graphSubtittle": "În aceste perioade de timp, menţinem computerul pregătit pentru o revenire mai rapidă.",
+                        "graphNote": "Datele privind activitatea acestui computer nu sunt suficiente pentru a oferi un profil de programare automată. Starea de veghe inteligentă va utiliza programarea modului Manual până când vor fi disponibile date suficiente.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Niciuna",
+                            "frequent": "Frecvent"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
+                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "ADRESĂ URL SITE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Setările au fost aplicate cu succes.",
+                        "invalidURLMessage": "Introduceţi o adresă URL validă.",
+                        "placeholder": "Începeţi cu http:// sau https://"
                     },
                     "enterText": {
                         "title": "TEXT DE INTRODUS",
-                        "placeholder": "Please type here"
+                        "placeholder": "Tastaţi aici"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Stocare",
             "wireless": "Fără fir"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

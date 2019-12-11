@@ -23,6 +23,7 @@ export class DeviceService {
 	public is64bit = true;
 	public showPrivacy = false;
 	public isGaming = false;
+	public isLiteGaming = false;
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
@@ -47,7 +48,6 @@ export class DeviceService {
 		this.initIsArm();
 		this.initshowPrivacy();
 		this.initShowSearch();
-		this.initShowDemo();
 	}
 
 	private initIsArm() {
@@ -104,17 +104,6 @@ export class DeviceService {
 		}
 	}
 
-	private initShowDemo() {
-		const filter: Promise<any> = this.shellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}');
-		if (filter) {
-			filter.then((hyp) => {
-				if (hyp === 'CES-2019') {
-					this.showDemo = true;
-				}
-			});
-		}
-	}
-
 	public getDeviceInfo(): Promise<MyDevice> {
 		if (this.device) {
 			return this.device.getDeviceInfo();
@@ -140,7 +129,7 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
-					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd'))) {
+					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')))) {
 						this.showWarranty = true;
 					}
 					if (info && info.cpuArchitecture) {

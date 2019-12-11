@@ -642,7 +642,8 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Baterija se ne može automatski napuniti kada je omogućen Prag punjenja baterije.",
                 "seeDetailsLink": "Pogledajte detalje",
-                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
+                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",
@@ -1102,14 +1106,14 @@
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Završeno. Uspešan reset.",
-                            "ERROR_SHUTDOWN": "Nije završeno. Sistem se isključio.",
-                            "ERROR_LOGOFF": "Nije završeno. Korisnik se odjavio.",
-                            "ERROR_BATTERY_REMOVE": "Nije završeno. Baterija je uklonjena.",
-                            "ERROR_BATTERY_REPLACE": "Nije završeno. Baterija je zamenjena.",
-                            "ERROR_AC_DETTACH": "Nije završeno. Adapter za naizmeničnu struju je otkačen.",
-                            "ERROR_USER_CANCEL": "Nije završeno. Otkazano od strane korisnika.",
-                            "ERROR_UNEXPECTED": "Nije završeno. Došlo je do neočekivane greške."
+                            "ERROR_SUCCESS": "Završeno: Uspešan reset.",
+                            "ERROR_SHUTDOWN": "Neuspelo: Sistem se isključio.",
+                            "ERROR_LOGOFF": "Neuspelo: Korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Neuspelo: Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Neuspelo: Baterija je zamenjena.",
+                            "ERROR_AC_DETTACH": "Neuspelo: Adapter za naizmeničnu struju je otkačen.",
+                            "ERROR_USER_CANCEL": "Neuspelo: Otkazano od strane korisnika.",
+                            "ERROR_UNEXPECTED": "Neuspelo: Došlo je do neočekivane greške."
                         },
                         "popup": {
                             "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
-                        "endTimeNote": "Vreme završetka mora da bude u roku od 20 časova od vremena početka",
+                        "endTimeNote": "Vreme ZAVRŠETKA mora da bude u roku od 20 časova od vremena POČETKA",
                         "timeUnits": {
                             "unit1": "Sati",
                             "unit2": "Minuti",
@@ -1170,22 +1174,22 @@
                         "everyday": "Svaki dan",
                         "weekdays": "Weekdays",
                         "weekends": "Vikendom",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nije izabran nijedan dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
                     "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Zakazivanje rada računara",
+                    "automaticMode": "Automatski režim",
+                    "manualMode": "Ručni režim",
+                    "subNote": "Predviđeno je moderno stanje pripravnosti računara na osnovu vašeg korišćenja.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Korišćenje ovog računara",
+                        "graph2Tittle": "Primenjeno aktivno vreme",
+                        "graphSubtittle": "Tokom ovih perioda održavamo spremnost računara za brži nastavak rada.",
+                        "graphNote": "Podaci o aktivnosti ovog računara nisu dovoljni da bi se obezbedio profil za automatsko zakazivanje. Pametno stanje pripravnosti će koristiti zakazivanje ručnog režima dok ne bude dostupno dovoljno podataka.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Nema",
+                            "frequent": "Često"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
+                    "subTitle2": "Podesite vreme kada obično koristite ovaj računar"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "URL ADRESA VEB LOKACIJE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Postavke se uspešno primenjuju.",
+                        "invalidURLMessage": "Unesite ispravnu URL adresu.",
+                        "placeholder": "Počnite sa http:// ili https://"
                     },
                     "enterText": {
                         "title": "TEKST KOJI TREBA UNETI",
-                        "placeholder": "Please type here"
+                        "placeholder": "Unesite ovde"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Skladištenje",
             "wireless": "Bežični"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

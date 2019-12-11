@@ -642,7 +642,8 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga:</b> Nie można w pełni naładować akumulatora, gdy włączony jest próg ładowania akumulatora.",
                 "seeDetailsLink": "Zobacz szczegóły",
-                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony."
+                "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Zasilanie",
@@ -1102,14 +1106,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ukończono. Resetowanie zakończyło się powodzeniem.",
-                            "ERROR_SHUTDOWN": "Nie zakończono. System zostanie zamknięty.",
-                            "ERROR_LOGOFF": "Nie zakończono. Wylogowano użytkownika.",
-                            "ERROR_BATTERY_REMOVE": "Nie zakończono. Wyjęto akumulator.",
-                            "ERROR_BATTERY_REPLACE": "Nie zakończono. Wymieniono akumulator.",
-                            "ERROR_AC_DETTACH": "Nie zakończono. Odłączono zasilacz.",
-                            "ERROR_USER_CANCEL": "Nie zakończono. Zadanie anulowane przez użytkownika.",
-                            "ERROR_UNEXPECTED": "Nie zakończono. Wystąpił nieoczekiwany błąd."
+                            "ERROR_SUCCESS": "Ukończono: Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SHUTDOWN": "Niepowodzenie: System zostanie zamknięty.",
+                            "ERROR_LOGOFF": "Niepowodzenie: Wylogowano użytkownika.",
+                            "ERROR_BATTERY_REMOVE": "Niepowodzenie: Wyjęto akumulator.",
+                            "ERROR_BATTERY_REPLACE": "Niepowodzenie: Wymieniono akumulator.",
+                            "ERROR_AC_DETTACH": "Niepowodzenie: Odłączono zasilacz.",
+                            "ERROR_USER_CANCEL": "Niepowodzenie: Zadanie anulowane przez użytkownika.",
+                            "ERROR_UNEXPECTED": "Niepowodzenie: Wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
                             "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "rozpocząć się",
                         "subHeading2": "koniec",
                         "subHeading3": "używaj tego harmonogramu dla",
-                        "endTimeNote": "Czas od godziny początkowej do końcowej nie może przekraczać 20 godzin",
+                        "endTimeNote": "Czas od godziny POCZĄTKOWEJ do KOŃCOWEJ nie może przekraczać 20 godzin",
                         "timeUnits": {
                             "unit1": "Godziny",
                             "unit2": "Minuty",
@@ -1170,22 +1174,22 @@
                         "everyday": "Codzienny",
                         "weekdays": "Dni powszednie",
                         "weekends": "Weekendy",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nie wybrano dnia"
                     },
                     "checkbox": "Automatyczne dostosowywanie czasu aktywacji komputera na podstawie użytkowania",
                     "hyperlinkToGraph": "Kliknij, aby zobaczyć tabelę aktywności i czasu aktywacji twojego komputera",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Ustaw harmonogram pracy komputera",
+                    "automaticMode": "Tryb automatyczny",
+                    "manualMode": "Tryb ręczny",
+                    "subNote": "Komputer przechodzi w tryb Modern Standby na podstawie użytkowania.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Użytkowanie komputera",
+                        "graph2Tittle": "Zastosowany czas aktywności",
+                        "graphSubtittle": "W tych okresach komputer pozostaje gotowy do szybszego wznowienia pracy.",
+                        "graphNote": "Dane o aktywności komputera nie są wystarczające, aby zapewnić profil do automatycznego planowania harmonogramu. Tryb Smart Standby będzie korzystać z harmonogramu trybu ręcznego, aż dostępna będzie wystarczająca ilość danych.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Brak",
+                            "frequent": "Często"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ta funkcja umożliwia zaplanowanie godzin pracy komputera, aby optymalnie oszczędzać energię w godzinach bezczynności, a jednocześnie zapewnić szybkie uruchamianie w godzinach bardziej intensywnego korzystania.",
+                    "subTitle2": "Ustaw typowe godziny korzystania z komputera"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "ADRES URL WITRYNY",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Ustawienia zostały pomyślnie zastosowane.",
+                        "invalidURLMessage": "Wprowadź prawidłowy adres URL.",
+                        "placeholder": "Zacznij od http:// lub https://"
                     },
                     "enterText": {
                         "title": "TEKST DO WPROWADZENIA",
-                        "placeholder": "Please type here"
+                        "placeholder": "Proszę wpisać tutaj"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Pamięć masowa",
             "wireless": "Bezprzewodowe"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

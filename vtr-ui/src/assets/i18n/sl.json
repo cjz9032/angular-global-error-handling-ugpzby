@@ -642,7 +642,8 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> Ko je omogočena funkcija Prag polnjenja baterije, baterije ni mogoče povsem napolniti.",
                 "seeDetailsLink": "Prikaži podrobnosti",
-                "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen."
+                "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",
@@ -1102,14 +1106,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Končano. Uspešna ponastavitev",
-                            "ERROR_SHUTDOWN": "Nedokončano. Zaustavitev sistema",
-                            "ERROR_LOGOFF": "Nedokončano. Uporabnik se je odjavil",
-                            "ERROR_BATTERY_REMOVE": "Nedokončano. Baterija je bila odstranjena",
-                            "ERROR_BATTERY_REPLACE": "Nedokončano. Baterija je bila zamenjana",
-                            "ERROR_AC_DETTACH": "Nedokončano. Napajalnik je bil odklopljen",
-                            "ERROR_USER_CANCEL": "Nedokončano. Preklical uporabnik",
-                            "ERROR_UNEXPECTED": "Nedokončano. Nepričakovana napaka"
+                            "ERROR_SUCCESS": "Končano: Uspešna ponastavitev",
+                            "ERROR_SHUTDOWN": "Neuspešno: Sistem se je zaustavil.",
+                            "ERROR_LOGOFF": "Neuspešno: Uporabnik se je odjavil.",
+                            "ERROR_BATTERY_REMOVE": "Neuspešno: Baterija je bila odstranjena.",
+                            "ERROR_BATTERY_REPLACE": "Neuspešno: Baterija je bila zamenjana.",
+                            "ERROR_AC_DETTACH": "Neuspešno: Napajalnik je bil odklopljen.",
+                            "ERROR_USER_CANCEL": "Neuspešno: Uporabnik je preklical.",
+                            "ERROR_UNEXPECTED": "Neuspešno: Prišlo je do nepričakovane napake."
                         },
                         "popup": {
                             "description1": "Postopek ponastavitve je naslednji:<br>povsem napolnite baterijo  -->  popolnoma izpraznite baterijo  -->  popolnoma napolnite baterijo",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "začeti",
                         "subHeading2": "konec",
                         "subHeading3": "ta urnik uporabi za",
-                        "endTimeNote": "Ura konca ne sme biti več kot 20 ur po uri začetka",
+                        "endTimeNote": "Med uro ZAČETKA in uro KONCA ne sme biti več kot 20 ur",
                         "timeUnits": {
                             "unit1": "h",
                             "unit2": "min",
@@ -1170,22 +1174,22 @@
                         "everyday": "Vsak dan",
                         "weekdays": "Med tedni",
                         "weekends": "Vikendi",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Dan ni izbran"
                     },
                     "checkbox": "Samodejno prilagajanje dejavnega časa računalnika glede na vašo uporabo",
                     "hyperlinkToGraph": "Kliknite, če si želite ogledati tabelo dejavnosti in dejavnega časa računalnika",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Nastavitev časovnega razporeda delovanja računalnika",
+                    "automaticMode": "Samodejni način",
+                    "manualMode": "Ročni način",
+                    "subNote": "Vaš računalnik ima nastavljen časovni razpored za preklop v sodobno stanje pripravljenosti na podlagi njegove uporabe.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Uporaba tega računalnika",
+                        "graph2Tittle": "Uporabljeni aktivni čas",
+                        "graphSubtittle": "V teh obdobjih je računalnik pripravljen na hitrejše nadaljevanje delovanja.",
+                        "graphNote": "Podatki o aktivnostih v tem računalniku ne zadoščajo za izdelavo profila, ki bi služil kot podlaga za samodejno nastavljanje časovnega razporeda. Dokler ne bo na voljo dovolj podatkov, se bo pametno stanje pripravljenosti vklapljalo po časovnem razporedu za ročni način.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Brez",
+                            "frequent": "Pogosto"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
+                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "URL SPLETNEGA MESTA",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Nastavitve so bile uspešno uporabljene.",
+                        "invalidURLMessage": "Vnesite veljaven naslov URL.",
+                        "placeholder": "Začnite s http:// ali https://"
                     },
                     "enterText": {
                         "title": "BESEDILO BO DODANO",
-                        "placeholder": "Please type here"
+                        "placeholder": "Vnesite tukaj"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

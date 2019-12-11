@@ -642,7 +642,8 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
                 "seeDetailsLink": "Zobraziť podrobnosti",
-                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér."
+                "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napájanie",
@@ -1102,14 +1106,14 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Pred resetovaním ukazovateľa batérie pripojte počítač k zdroju napájania. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončené. Úspešné vynulovanie.",
-                            "ERROR_SHUTDOWN": "Nedokončené. Vypnutie systému.",
-                            "ERROR_LOGOFF": "Nedokončené. Odhlásenie používateľa.",
-                            "ERROR_BATTERY_REMOVE": "Nedokončené. Batéria bola vybratá.",
-                            "ERROR_BATTERY_REPLACE": "Nedokončené. Batéria bola vymenená.",
-                            "ERROR_AC_DETTACH": "Nedokončené. Napájací adaptér bol odpojený.",
-                            "ERROR_USER_CANCEL": "Nedokončené. Zrušené používateľom.",
-                            "ERROR_UNEXPECTED": "Nedokončené. Vyskytla sa neočakávaná chyba."
+                            "ERROR_SUCCESS": "Dokončené: Úspešné vynulovanie.",
+                            "ERROR_SHUTDOWN": "Zlyhanie: Vypnutie systému.",
+                            "ERROR_LOGOFF": "Zlyhanie: Odhlásenie používateľa.",
+                            "ERROR_BATTERY_REMOVE": "Zlyhanie: Batéria bola vybratá.",
+                            "ERROR_BATTERY_REPLACE": "Zlyhanie: Batéria bola vymenená.",
+                            "ERROR_AC_DETTACH": "Zlyhanie: Napájací adaptér bol odpojený.",
+                            "ERROR_USER_CANCEL": "Zlyhanie: Zrušené používateľom.",
+                            "ERROR_UNEXPECTED": "Zlyhanie: Vyskytla sa neočakávaná chyba."
                         },
                         "popup": {
                             "description1": "Proces vynulovania prebieha takto:<br>Plne nabite batériu  -->  Plne vybite batériu  -->  Plne nabite batériu",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
-                        "endTimeNote": "Hodnota času ukončenia musí byť do 20 hodín od času začiatku",
+                        "endTimeNote": "Hodnota času UKONČENIA musí byť do 20 hodín od času ZAČIATKU",
                         "timeUnits": {
                             "unit1": "Hodiny",
                             "unit2": "Minúty",
@@ -1170,22 +1174,22 @@
                         "everyday": "Každý deň",
                         "weekdays": "Dni v týždni",
                         "weekends": "víkendy",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nie je vybratý žiadny deň"
                     },
                     "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Plánovanie počítača",
+                    "automaticMode": "Automatický režim",
+                    "manualMode": "Manuálny režim",
+                    "subNote": "Váš počítač je naplánovaný na prepnutie do moderného pohotovostného režimu podľa vášho použitia.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Použitie tohto počítača",
+                        "graph2Tittle": "Aplikovaný aktívny čas",
+                        "graphSubtittle": "V týchto časových obdobiach udržujeme počítač pripravený na rýchlejšiu obnovu.",
+                        "graphNote": "Údaje o činnosti tohto počítača nie sú dostatočné na poskytnutie profilu pre automatické plánovanie. Inteligentný pohotovostný režim bude používať plán manuálneho režimu, kým nebude k dispozícii dostatok údajov.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Žiadne",
+                            "frequent": "Časté"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
+                    "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "ADRESA URL WEBOVEJ LOKALITY",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Nastavenia sa úspešne použili.",
+                        "invalidURLMessage": "Zadajte platnú adresu URL.",
+                        "placeholder": "Začnite s http:// alebo https://"
                     },
                     "enterText": {
                         "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Tu napíšte"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Ukladací priestor",
             "wireless": "Bezdrôtové"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

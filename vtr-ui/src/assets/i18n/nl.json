@@ -642,7 +642,8 @@
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> de batterij kan niet volledig worden opgeladen als drempelwaarde voor batterijlading is ingeschakeld.",
                 "seeDetailsLink": "Bekijk meer informatie",
-                "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten."
+                "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Energiebeheer",
@@ -1102,14 +1106,14 @@
                         "FCCText": "Van {{before}} Wh tot {{after}} Wh",
                         "note": "Opmerking: voordat u de batterijmeter opnieuw instelt, zorg ervoor dat de computer is aangesloten op de netvoeding. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Voltooid. Opnieuw ingesteld.",
-                            "ERROR_SHUTDOWN": "Niet voltooid. Systeem is uitgeschakeld.",
-                            "ERROR_LOGOFF": "Niet voltooid. Gebruiker is afgemeld.",
-                            "ERROR_BATTERY_REMOVE": "Niet voltooid. Batterij is verwijderd.",
-                            "ERROR_BATTERY_REPLACE": "Niet voltooid. Batterij is vervangen.",
-                            "ERROR_AC_DETTACH": "Niet voltooid. Netvoedingsadapter is ontkoppeld.",
-                            "ERROR_USER_CANCEL": "Niet voltooid. Geannuleerd door gebruiker.",
-                            "ERROR_UNEXPECTED": "Niet voltooid. Er is een onverwachte fout opgetreden."
+                            "ERROR_SUCCESS": "Voltooid: Opnieuw ingesteld.",
+                            "ERROR_SHUTDOWN": "Mislukt: Systeem is afgesloten.",
+                            "ERROR_LOGOFF": "Mislukt: Gebruiker is afgemeld.",
+                            "ERROR_BATTERY_REMOVE": "Mislukt: Batterij is verwijderd.",
+                            "ERROR_BATTERY_REPLACE": "Mislukt: Batterij is vervangen.",
+                            "ERROR_AC_DETTACH": "Mislukt: Netvoedingsadapter is ontkoppeld.",
+                            "ERROR_USER_CANCEL": "Mislukt: Geannuleerd door gebruiker.",
+                            "ERROR_UNEXPECTED": "Mislukt: Er is een onverwachte fout opgetreden."
                         },
                         "popup": {
                             "description1": "Het proces voor opnieuw instellen verloopt als volgt:<br>de batterij wordt volledig opgeladen  -->  de batterij wordt volledig ontladen  -->  de batterij wordt opnieuw volledig opgeladen",
@@ -1135,7 +1139,7 @@
                         "subHeading1": "met",
                         "subHeading2": "eind",
                         "subHeading3": "Gebruik deze planning voor",
-                        "endTimeNote": "Eindtijd moet binnen 20 uur na begintijd liggen",
+                        "endTimeNote": "EINDtijd moet binnen 20 uur na BEGINtijd liggen",
                         "timeUnits": {
                             "unit1": "Uur",
                             "unit2": "Minuten",
@@ -1170,21 +1174,21 @@
                         "everyday": "Elke dag",
                         "weekdays": "Doordeweekse dagen",
                         "weekends": "Weekends",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Geen dag geselecteerd"
                     },
                     "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
                     "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Uw computer plannen",
+                    "automaticMode": "Automatische modus",
+                    "manualMode": "Handmatige modus",
+                    "subNote": "Uw computer staat op basis van uw gebruik ingesteld op Modern stand-by.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Gebruik van deze computer",
+                        "graph2Tittle": "Toegepaste actieve tijd",
+                        "graphSubtittle": "In deze perioden wordt ervoor gezorgd dat de computer klaarstaat voor een snellere hervatting.",
+                        "graphNote": "De activiteitgegevens van deze computer zijn onvoldoende om een profiel samen te stellen voor automatische planning. Slim stand-by zal gebruik maken van de planning voor de handmatige modus totdat er genoeg gegevens beschikbaar zijn.",
                         "legends": {
-                            "none": "None",
+                            "none": "Geen",
                             "frequent": "Frequent"
                         },
                         "hours": {
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
+                    "subTitle2": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "WEBSITE-URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "De instellingen zijn toegepast.",
+                        "invalidURLMessage": "Voer een geldige URL in.",
+                        "placeholder": "Begin met http:// of https://"
                     },
                     "enterText": {
                         "title": "IN TE VOEREN TEKST",
-                        "placeholder": "Please type here"
+                        "placeholder": "Typ hier"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Opslag",
             "wireless": "Draadloos"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1,5 +1,5 @@
 <ul class="vtr-widget-landing-nav">
-    <li class="nav-item" [ngClass]="{'d-none': !featureConfig.display}" *ngFor="let featureConfig of featurePagesConfig">
+    <li class="nav-item" [ngClass]="{'d-none': advancedItems && advancedItems.length === 0}" *ngFor="let featureConfig of featurePagesConfig">
         <span class="nav-link" [ngClass]="{'active': featureConfig.page === currentPage}" 
         (click)="changePage(featureConfig.page)">
             <p class="nav-title mb-0">{{featureConfig.title}}</p>
@@ -14,7 +14,7 @@
     *ngIf="currentPage === 'intermediate-security'"
     [items]="intermediateItems | statusTransform"></vtr-widget-landing-security>
     <vtr-widget-landing-security
-    *ngIf="currentPage === 'advanced-security'"
+    *ngIf="currentPage === 'advanced-security' && advancedItems.length > 0"
     [items]="advancedItems | statusTransform"></vtr-widget-landing-security>
 </section>
 

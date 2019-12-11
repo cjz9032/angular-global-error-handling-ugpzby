@@ -77,7 +77,8 @@
 								(toggle)="onAutoExposureChange($event)"
 								[onOffSwitchId]="'cameraSettings-autoExposure'"></vtr-ui-switch-onoff>
 						</div>
-					</div>
+                    </div>
+                    <div *ngIf="!cameraFeatureAccess.exposureAutoValue">
 					<vtr-ui-range-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
 						[step]="cameraSettings.exposure.step"
 						[minValue]="cameraSettings.exposure.min"
@@ -87,7 +88,8 @@
 						[(value)]="cameraSettings.exposure.value"
 						(change)="onExposureSliderChange($event)"
 						[rangeSliderId]="'cameraSettings-autoExposure'">
-					</vtr-ui-range-slider>
+                    </vtr-ui-range-slider>
+                </div>
 				</li>
 				<li class="list-group-item"
 					*ngIf="cameraSettings.focus && cameraSettings.focus.supported">

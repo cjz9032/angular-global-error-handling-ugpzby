@@ -642,7 +642,8 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -912,7 +913,10 @@
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
-                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "電源",
@@ -1102,14 +1106,14 @@
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "完成，已成功重設。",
-                            "ERROR_SHUTDOWN": "未完成。系統已關閉。",
-                            "ERROR_LOGOFF": "未完成。使用者已登出。",
-                            "ERROR_BATTERY_REMOVE": "未完成。電池已取出。",
-                            "ERROR_BATTERY_REPLACE": "未完成。電池已更換。",
-                            "ERROR_AC_DETTACH": "未完成。AC 電源整流器已卸下。",
-                            "ERROR_USER_CANCEL": "未完成。已由使用者取消。",
-                            "ERROR_UNEXPECTED": "未完成。發生非預期的錯誤。"
+                            "ERROR_SUCCESS": "完成：已成功重設。",
+                            "ERROR_SHUTDOWN": "失敗：系統已關閉。",
+                            "ERROR_LOGOFF": "失敗：使用者已登出。",
+                            "ERROR_BATTERY_REMOVE": "失敗：電池已取出。",
+                            "ERROR_BATTERY_REPLACE": "失敗：電池已更換。",
+                            "ERROR_AC_DETTACH": "失敗：AC 電源整流器已卸下。",
+                            "ERROR_USER_CANCEL": "失敗：已由使用者取消。",
+                            "ERROR_UNEXPECTED": "失敗：發生非預期的錯誤。"
                         },
                         "popup": {
                             "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
@@ -1170,22 +1174,22 @@
                         "everyday": "每天",
                         "weekdays": "週間日",
                         "weekends": "週末",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
                     "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "排程您的電腦",
+                    "automaticMode": "自動模式",
+                    "manualMode": "手動模式",
+                    "subNote": "根據您的使用情形將您的電腦排程為新式待命模式。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "此電腦的使用情形",
+                        "graph2Tittle": "套用的啟用時間",
+                        "graphSubtittle": "在這些時段中，我們讓電腦隨時就續，以加速回復。",
+                        "graphNote": "此電腦的活動資料不足以為自動排程提供設定檔。智慧型待命將使用手動模式排程，直到有足夠的資料為止。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "無",
+                            "frequent": "經常"
                         },
                         "hours": {
                             "zero": 0,
@@ -1214,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
+                    "subTitle2": "設定您一般使用這部電腦的時間"
                 }
             },
             "audio": {
@@ -1492,13 +1496,13 @@
                     },
                     "website": {
                         "url": "網站 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "已成功套用設定。",
+                        "invalidURLMessage": "請輸入有效的 URL。",
+                        "placeholder": "請以 http:// 或 https:// 開頭"
                     },
                     "enterText": {
                         "title": "要輸入的文字",
-                        "placeholder": "Please type here"
+                        "placeholder": "請在這裡輸入"
                     }
                 },
                 "fnCtrlKey": {
@@ -1944,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2837,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "儲存裝置",
             "wireless": "無線"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
