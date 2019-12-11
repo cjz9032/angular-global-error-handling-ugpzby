@@ -258,8 +258,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryIndicator.batteryNotDetected = false;
 		}
 
+		this.batteryService.isEmDriverInstalled = this.batteryGauge.isEmDriverInstalled;
 		this.batteryService.isPowerDriverMissing = this.batteryGauge.isPowerDriverMissing;
 		this.commonService.sendNotification('IsPowerDriverMissing', this.batteryService.isPowerDriverMissing);
+		this.commonService.sendNotification('IsEmDriverInstalled', this.batteryService.isEmDriverInstalled);
 
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
@@ -338,6 +340,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor));
 		}
 
+		if (!this.batteryService.isEmDriverInstalled) {
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.EmDriverInstalled, BatteryStatus.Poor));
+		}
 		if (this.batteryInfo && this.batteryInfo.length > 0) {
 
 			healthCondition = this.batteryHealth;
