@@ -642,7 +642,8 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -793,9 +794,9 @@
                 "notFound": "Оновлення системи не знайдено",
                 "detail": {
                     "uptoDate": "Оновлення перевірено ",
-					"updatedOn": "перевірено ",
-					"outdated": "Оновлення не перевірялись останнім часом ",
-					"neverRanUpdate": "оновлення ніколи не перевірялися"
+                    "updatedOn": "перевірено ",
+                    "outdated": "Оновлення не перевірялись останнім часом ",
+                    "neverRanUpdate": "оновлення ніколи не перевірялися"
                 }
             },
             "extendedWarranty": "Подовжити гарантію",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Батарея не може бути заряджена повністю якщо увімкнено граничне значення заряду акумулятора.",
                 "seeDetailsLink": "Показати відомості",
-                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
+                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Живлення",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
-                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи."
+                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -1080,14 +1105,14 @@
                         "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
                         "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Готово. Успішне скидання.",
-                            "ERROR_SHUTDOWN": "Не завершено. Система завершила роботу.",
-                            "ERROR_LOGOFF": "Не завершено. Користувач вийшов із системи.",
-                            "ERROR_BATTERY_REMOVE": "Не завершено. Акумулятор знято.",
-                            "ERROR_BATTERY_REPLACE": "Не завершено. Акумулятор замінено.",
-                            "ERROR_AC_DETTACH": "Не завершено. Адаптер живлення змінного струму від’єднано.",
-                            "ERROR_USER_CANCEL": "Не завершено. Скасовано користувачем.",
-                            "ERROR_UNEXPECTED": "Не завершено. Сталася невідома помилка."
+                            "ERROR_SUCCESS": "Готово: Успішне скидання.",
+                            "ERROR_SHUTDOWN": "Помилка. Система завершила роботу.",
+                            "ERROR_LOGOFF": "Помилка. Користувач вийшов із системи.",
+                            "ERROR_BATTERY_REMOVE": "Помилка. Акумулятор знято.",
+                            "ERROR_BATTERY_REPLACE": "Помилка. Акумулятор змінено.",
+                            "ERROR_AC_DETTACH": "Помилка. Адаптер живлення змінного струму від’єднано.",
+                            "ERROR_USER_CANCEL": "Помилка. Скасовано користувачем.",
+                            "ERROR_UNEXPECTED": "Помилка. Сталася невідома помилка."
                         },
                         "popup": {
                             "description1": "Скидання виконуйте в такій послідовності:<br>повністю зарядіть акумулятор  -->  повністю розрядіть акумулятор  -->  повністю перезарядіть акумулятор",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "Початок використання",
                         "subHeading2": "Завершення використання",
                         "subHeading3": "Використовувати цей розклад",
-                        "endTimeNote": "Час завершення має бути в межах 20 годин після часу початку",
+                        "endTimeNote": "Час ЗАВЕРШЕННЯ має бути в межах 20 годин після часу ПОЧАТКУ",
                         "timeUnits": {
                             "unit1": "год.",
                             "unit2": "Хвилини",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Щодня",
                         "weekdays": "Будні",
-                        "weekends": "Вихідні дні"
+                        "weekends": "Вихідні дні",
+                        "noDaySelected": "Не вибрано день"
                     },
                     "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
                     "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Заплануйте комп'ютер",
+                    "automaticMode": "Автоматичний режим",
+                    "manualMode": "Ручний режим",
+                    "subNote": "Перехід комп'ютера до сучасного режиму очікування планується залежно від використання.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Використання цього комп’ютера",
+                        "graph2Tittle": "Час активного використання",
+                        "graphSubtittle": "У ці періоди ми тримаємо комп'ютер готовим до швидшого відновлення роботи.",
+                        "graphNote": "Даних про активність цього комп'ютера недостатньо для створення профілю автоматичного планування. Розумне очікування буде використовувати графік ручного режиму, поки не накопичиться достатньо даних.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Жодної дії",
+                            "frequent": "Часто"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
+                    "subTitle2": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером"
                 }
             },
             "audio": {
@@ -1376,7 +1404,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "Увімкнення функції масштабування на екранах із високою роздільною здатністю",
+                        "description": "увімкнення функції змінення масштабу на екранах із високою роздільною здатністю",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL-АДРЕСА ВЕБСАЙТУ",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Настройки успішно застосовано.",
+                        "invalidURLMessage": "Введіть дійсну URL-адресу.",
+                        "placeholder": "Почніть з http:// або https://"
                     },
                     "enterText": {
                         "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Введіть тут"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Використання комп'ютера як планшета",
             "description": "<div class='faqInFs4Fb'>    Використання комп'ютера як планшета</div><hr><p>Режим планшета робить Windows більш інтуїтивною та зручнішою у використанні для пристроїв з сенсорним екраном.</p><h3 class='faqInFs25FbP10'>Використання режиму планшета</h3><p>Щоб увімкнути режим планшета, виберіть <strong>Центр підтримки</strong> на панелі завдань, а потім – <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Примітка</h3><p>Щоб дізнатися, чи може ваш пристрій автоматично вмикати режим планшета, знайдіть свій пристрій на веб-сайті виробника. Підтримка цієї функції залежить від обладнання, встановленого драйвера та способу налаштування пристрою виробником. </p><p> </p><p>У режимі планшета програми відкриваються на весь екран, що дає більше місця для роботи. Щоб закрити програму, перетягніть її в нижню частину екрана.</p><p> </p><h3 class='faqInFs25FbP10'>Порада</h3><p>Панель завдань доступна, коли комп'ютер перебуває в режимі планшета, але її можна приховати, якщо потрібно більше місця на екрані. Натисніть кнопку <strong>Пуск</strong>, виберіть <strong>Настройки</strong> > <strong>Система</strong> > <strong>Режим планшета</strong>, потім увімкніть параметр <strong>Автоматично приховувати панель завдань у режимі планшета</strong>. Щоб переглянути приховану панель завдань, проведіть пальцем знизу вгору екрана або наведіть курсор миші на неї.</p><h3 class='faqInFs25FbP10'>Використання двох програм одночасно</h3><p>Щоб використовувати одночасно дві програми в режимі планшета, перетягніть відкриту програму вниз та в бік. Ви побачите, де вона зафіксується, і поруч з нею відображатимуться відкриті програми.</p><p>У цьому поданні також можна:</p><ul>    <li>Використовувати спільний край двох зафіксованих програм, щоб змінити розмір обох програм одночасно.</li>    <li>Відкривати нову програму з подання завдань: виберіть <strong>Перегляд завдань</strong> на панелі завдань виберіть програму, а потім перетягніть її на одну сторону, щоб зафіксувати її на розділеному екрані.</li>    <li>Натисніть кнопку \"Назад\" на панелі завдань, щоб повернутися до програми або відкрити програму, яку використовували раніше.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Пам'ять",
             "wireless": "Безпровідні підключення"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

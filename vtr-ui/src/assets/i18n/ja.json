@@ -642,7 +642,8 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -793,9 +794,9 @@
                 "notFound": "システム更新が見つかりません",
                 "detail": {
                     "uptoDate": "更新を確認しました",
-					"updatedOn": "確認日",
-					"outdated": "更新を最近確認していません",
-					"neverRanUpdate": "更新を確認したことはありません"
+                    "updatedOn": "確認日",
+                    "outdated": "更新を最近確認していません",
+                    "neverRanUpdate": "更新を確認したことはありません"
                 }
             },
             "extendedWarranty": "保証の延長",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "バッテリーが検出されませんでした",
                 "thresholdNote": "<b>注:</b>バッテリー充電のしきい値が有効な場合は、バッテリーを完全に充電することはできません。",
                 "seeDetailsLink": "詳細を見る",
-                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。"
+                "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "電源",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
-                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。"
+                    "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1080,14 +1105,14 @@
                         "FCCText": "{{before}} Wh から {{after}} Wh",
                         "note": "注: バッテリー・ゲージをリセットする前に、コンピューターを AC 電源に接続してください。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "完了しました。リセットに成功しました。",
-                            "ERROR_SHUTDOWN": "未完了。システムがシャットダウンしました。",
-                            "ERROR_LOGOFF": "未完了。ユーザーがログオフしました。",
-                            "ERROR_BATTERY_REMOVE": "未完了。バッテリーが取り外されました。",
-                            "ERROR_BATTERY_REPLACE": "未完了。バッテリーが交換されました。",
-                            "ERROR_AC_DETTACH": "未完了。AC 電源アダプターが取り外されました。",
-                            "ERROR_USER_CANCEL": "未完了。ユーザーによってキャンセルされました。",
-                            "ERROR_UNEXPECTED": "未完了。予期しないエラーが発生しました。"
+                            "ERROR_SUCCESS": "完了しました: リセットに成功しました。",
+                            "ERROR_SHUTDOWN": "失敗: システムがシャットダウンしました。",
+                            "ERROR_LOGOFF": "失敗: ユーザーがログオフしました。",
+                            "ERROR_BATTERY_REMOVE": "失敗: バッテリーが取り外されました。",
+                            "ERROR_BATTERY_REPLACE": "失敗: バッテリーが交換されました。",
+                            "ERROR_AC_DETTACH": "失敗: AC 電源アダプターが取り外されました。",
+                            "ERROR_USER_CANCEL": "失敗: ユーザーによってキャンセルされました。",
+                            "ERROR_UNEXPECTED": "失敗: 予期しないエラーが発生しました。"
                         },
                         "popup": {
                             "description1": "リセット・プロセスは次のとおりです。<br>バッテリーを完全に充電  -->  バッテリーを完全に放電  -->  バッテリーを完全に再充電",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "毎日",
                         "weekdays": "平日",
-                        "weekends": "週末"
+                        "weekends": "週末",
+                        "noDaySelected": "日が選択されていません"
                     },
                     "checkbox": "使用状況に基づいてコンピューターのアクティブ時間を自動調整する",
                     "hyperlinkToGraph": "クリックして、コンピューター・テーブルのアクティビティとアクティブ時間を表示します",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "コンピューターのスケジュール",
+                    "automaticMode": "自動モード",
+                    "manualMode": "手動モード",
+                    "subNote": "コンピューターは、使用状況に基づいてモダン・スタンバイにスケジュールされます。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "このコンピューターの使用状況",
+                        "graph2Tittle": "適用されたアクティブ時間",
+                        "graphSubtittle": "この期間中は、コンピューターをより迅速に再開できる状態にします。",
+                        "graphNote": "このコンピューターの活動データは、自動スケジューリングのプロファイルを提供するには不十分です。スマート・スタンバイは、十分なデータを利用できるようになるまで、手動モード・スケジュールを使用します。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "なし",
+                            "frequent": "頻繁"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "この機能は、使用頻度の高い時間中の高速スタートアップ時間に影響を与えずにアイドル時間中のバッテリー省電力を最適化するようにコンピューターをスケジュールします。",
+                    "subTitle2": "通常このコンピューターを使用する時刻を設定します"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "Web サイトの URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "設定が正常に適用されました。",
+                        "invalidURLMessage": "有効な URL を入力してください。",
+                        "placeholder": "http:// または https:// から始めてください"
                     },
                     "enterText": {
                         "title": "入力するテキスト",
-                        "placeholder": "Please type here"
+                        "placeholder": "ここに入力してください"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "PC をタブレットのように使用する",
             "description": "<div class='faqInFs4Fb'>    PC をタブレットのように使用する</div><hr><p>タブレット モードを使用すると、タッチスクリーン・デバイスを使用しているときに Windows がより直感的で使いやすくなります。</p><h3 class='faqInFs25FbP10'>タブレット モードの使用</h3><p>タブレット モードをオンにするには、タスク バーの<strong>「アクション センター」</strong>を選択してから、 <strong>「タブレット モード」</strong>を選択します。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>お願い</h3><p>デバイスでタブレット モードが自動的にオンになるかどうかを調べるには、製造元の Web サイトでデバイスを検索してください。この機能のサポート状況は、ハードウェア、インストールされているドライバー、および製造元によるデバイスの設定方法によって異なります。 </p><p> </p><p>タブレット モードでは、アプリは全画面表示になり、作業スペースが広がります。アプリを閉じるには、画面の一番下までドラッグします。</p><p> </p><h3 class='faqInFs25FbP10'>ヒント</h3><p>タスク バーは、PC がタブレット モードのときに使用できますが、画面に追加のスペースが必要な場合は非表示にすることができます。<strong>「スタート」</strong>ボタンを選択し、<strong>「設定」</strong> > <strong>「システム」</strong> > <strong>「タブレット モード」</strong>の順に選択したら、<strong>「タブレット モードでタスク バーを自動的に非表示にする」</strong>をオンにします。非表示のタスクバーを確認するには、画面の下から上にスワイプするか、そこにマウス・カーソルを合わせます。</p><h3 class='faqInFs25FbP10'>2 つのアプリを同時に使う</h3><p>タブレット モードで 2 つのアプリを並べて使用するには、開いているアプリを下に、また横にドラッグします。アプリのスナップ先の位置と、その横にスナップできる、開いているアプリが表示されます。</p><p>このビューでは、次のこともできます。</p><ul>    <li>スナップされている 2 つのアプリの間で共有エッジを使い、同時に両方のアプリのサイズを変更します。</li>    <li>タスク バーの<strong>「タスク ビュー」</strong>を選び、アプリを選択してから端までドラッグして、分割された画面にスナップさせます。</li>    <li>タスク バーの「戻る」ボタンを使用して、現在のアプリに戻ったり、その前に使っていたアプリを開いたりすることができます。</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "はい",
                 "no": "いいえ"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "ストレージ・デバイスでこの機能がサポートされていない場合、または不良セクタの復元が実行されている場合、ハードウェア情報が未取得であれば、このボタンは無効になります。"
         },
         "support": {
             "title": "プロの診断ツールをダウンロードする",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "ストレージ",
             "wireless": "ワイヤレス"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -642,7 +642,8 @@
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
@@ -793,9 +794,9 @@
                 "notFound": "No se encontró la actualización de sistema",
                 "detail": {
                     "uptoDate": "Actualizaciones comprobadas ",
-					"updatedOn": "comprobado el ",
-					"outdated": "Actualizaciones no comprobadas recientemente ",
-					"neverRanUpdate": "las actualizaciones nunca se han comprobado"
+                    "updatedOn": "comprobado el ",
+                    "outdated": "Actualizaciones no comprobadas recientemente ",
+                    "neverRanUpdate": "las actualizaciones nunca se han comprobado"
                 }
             },
             "extendedWarranty": "Ampliar garantía",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
                 "seeDetailsLink": "Ver detalles",
-                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado."
+                "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Energía",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
-                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”."
+                    "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Valores de energía",
@@ -1080,14 +1105,14 @@
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Completo. Restablecimiento satisfactorio.",
-                            "ERROR_SHUTDOWN": "Incompleto. Se apagó el sistema.",
-                            "ERROR_LOGOFF": "Incompleto. Se cerró la sesión del usuario.",
-                            "ERROR_BATTERY_REMOVE": "Incompleto. Se extrajo la batería.",
-                            "ERROR_BATTERY_REPLACE": "Incompleto. Se reemplazó la batería.",
-                            "ERROR_AC_DETTACH": "Incompleto. Se desconectó el adaptador de alimentación de CA.",
-                            "ERROR_USER_CANCEL": "Incompleto. Cancelado por el usuario.",
-                            "ERROR_UNEXPECTED": "Incompleto. Ha ocurrido un error inesperado."
+                            "ERROR_SUCCESS": "Completo: Restablecimiento satisfactorio.",
+                            "ERROR_SHUTDOWN": "Error: Se apagó el sistema.",
+                            "ERROR_LOGOFF": "Error: Se cerró la sesión del usuario.",
+                            "ERROR_BATTERY_REMOVE": "Error: Se extrajo la batería.",
+                            "ERROR_BATTERY_REPLACE": "Error: Se sustituyó la batería.",
+                            "ERROR_AC_DETTACH": "Error: Se desconectó el adaptador de alimentación de CA.",
+                            "ERROR_USER_CANCEL": "Error: Cancelado por el usuario.",
+                            "ERROR_UNEXPECTED": "Error: Ha ocurrido un error inesperado."
                         },
                         "popup": {
                             "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "comience",
                         "subHeading2": "final",
                         "subHeading3": "utilice esta planificación para",
-                        "endTimeNote": "El tiempo de finalización debe encontrarse en un plazo de 20 horas desde la hora de inicio",
+                        "endTimeNote": "La hora de FINALIZACIÓN debe encontrarse en un plazo de 20 horas desde la hora de INICIO",
                         "timeUnits": {
                             "unit1": "Horas",
                             "unit2": "Minutos",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Todos los días",
                         "weekdays": "Entre semana",
-                        "weekends": "Fines de semana"
+                        "weekends": "Fines de semana",
+                        "noDaySelected": "No se seleccionó el día"
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
                     "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programar su equipo",
+                    "automaticMode": "Modalidad automática",
+                    "manualMode": "Modalidad manual",
+                    "subNote": "El sistema está programado en Espera moderna según su uso.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Uso de este sistema",
+                        "graph2Tittle": "Tiempo activo aplicado",
+                        "graphSubtittle": "En estos periodos de tiempo, mantenemos el sistema listo para una reanudación más rápida.",
+                        "graphNote": "Los datos de actividad de este sistema no son suficientes para proporcionar un perfil para la planificación automática. La Espera inteligente usará la programación de Modalidad manual hasta que haya suficientes datos disponibles.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ninguna",
+                            "frequent": "Frecuente"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
+                    "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL DEL SITIO WEB",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "La configuración se aplicó satisfactoriamente.",
+                        "invalidURLMessage": "Ingrese una URL válida.",
+                        "placeholder": "Empiece con http:// o https://"
                     },
                     "enterText": {
                         "title": "TEXTO QUE SE INGRESARÁ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Escríbalo aquí"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Use su equipo como una tableta",
             "description": "<div class='faqInFs4Fb'>    Use su equipo como una tableta</div><hr><p>La modalidad de tablero hace que Windows sea más intuitivo y más fácil de utilizar cuando tiene un dispositivo de pantalla táctil.</p><h3 class='faqInFs25FbP10'>Use la modalidad de tableta</h3><p>Para activar la modalidad de tableta, seleccione <strong>Centro de actividades</strong> en la barra de tareas y luego seleccione <strong>Modalidad de tableta</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Para averiguar si el dispositivo puede activar automáticamente la modalidad de tableta, busque el dispositivo en el sitio web del fabricante. La compatibilidad con esta característica depende del hardware, del controlador instalado y de la forma en la que el fabricante configuró el dispositivo. </p><p> </p><p>En la modalidad de tableta, las aplicaciones abren la pantalla completa, lo que proporciona más espacio para trabajar. Para cerrar una aplicación, arrástrela a la parte inferior de la pantalla.</p><p> </p><h3 class='faqInFs25FbP10'>Consejo</h3><p>La barra de tareas está disponible cuando el equipo está en modalidad de tableta, pero puede ocultarla si desea disponer de más espacio en la pantalla. Seleccione el botón <strong>Inicio</strong>, seleccione <strong>Configuración </strong>> <strong>Sistema </strong>> <strong> Modalidad de tableta </strong>, luego active <strong>Ocultar barra de tareas automáticamente en modo de tableta</strong>. Para ver la barra de tareas oculta, deslice el dedo hacia arriba desde la parte inferior de la pantalla o utilice el mouse para situarse allí.</p><h3 class='faqInFs25FbP10'>Utilizar dos aplicaciones simultáneamente</h3><p>Para utilizar dos aplicaciones en paralelo en modalidad de tableta, arrastre una aplicación abierta hacia abajo y hacia el lado. Verá dónde se ajustará y verá cualquier aplicación abierta junto a ella.</p><p>En esta vista también puede:</p><ul>    <li>Utilice el borde compartido entre dos aplicaciones ajustadas para cambiar el tamaño de ambas aplicaciones al mismo tiempo.</li>    <li>Abra una nueva aplicación desde la vista de tarea: seleccione <strong>Vista de tareas</strong> en la barra de tareas, seleccione una aplicación y luego arrástrela a un lado para ajustarla a la pantalla dividida.</li>    <li>Utilice el botón atrás de la barra de tareas para volver a una aplicación o para abrir una aplicación que estaba usando antes.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Sí",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "El botón está inhabilitado mientras la información de hardware aún no se ha recuperado, en el caso de que los dispositivos de almacenamiento no permitan esta funcionalidad o cuando se esté ejecutando la recuperación de sectores defectuosos."
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Almacenamiento",
             "wireless": "Inalámbrica"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

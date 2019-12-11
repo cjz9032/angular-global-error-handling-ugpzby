@@ -170,7 +170,7 @@
 			.vtr-widget-device {
 				background: $dark_cell !important;
 				.family {
-					color: $gaming_lightest;
+					color: $gaming_lightest!important;
 				}
 				.device-sub-header {
 					color: $gaming_grey_lightest;
@@ -1531,20 +1531,24 @@
 
 .gaming-help-modal {
 	.modal-dialog {
-		top: 16rem;
 		width: 80rem;
 		max-width: 100%;
-
+		margin: auto;
 		@media #{$medium-screen} {
 			max-width: 70rem;
 			position: relative;
 		}
-
 		@media #{$small-screen} {
 			max-width: 50rem;
 			position: relative;
 			margin: auto;
 			width: 90%;
+		}
+		.modal-content{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
 		}
 	}
 }

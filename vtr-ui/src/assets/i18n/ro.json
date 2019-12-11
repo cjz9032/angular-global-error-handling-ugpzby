@@ -642,7 +642,8 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -793,9 +794,9 @@
                 "notFound": "Actualizarea sistemului a fost găsită",
                 "detail": {
                     "uptoDate": "S-a verificat dacă există actualizări ",
-					"updatedOn": "s-a verificat la ",
-					"outdated": "Nu s-a verificat recent dacă există actualizări ",
-					"neverRanUpdate": "nu s-a verificat niciodată dacă există actualizări"
+                    "updatedOn": "s-a verificat la ",
+                    "outdated": "Nu s-a verificat recent dacă există actualizări ",
+                    "neverRanUpdate": "nu s-a verificat niciodată dacă există actualizări"
                 }
             },
             "extendedWarranty": "Extindere garanție",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
-                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentare",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
-                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
+                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -1080,14 +1105,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
-                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
-                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
-                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
-                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
-                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
-                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
+                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
-                        "endTimeNote": "Ora de oprire trebuie să fie în interval de maximum 20 de ore de la ora de pornire",
+                        "endTimeNote": "Ora de OPRIRE trebuie să fie în interval de maximum 20 de ore de la ora de PORNIRE",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minute",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "In fiecare zi",
                         "weekdays": "Zilele saptamanii",
-                        "weekends": "Weekend-uri"
+                        "weekends": "Weekend-uri",
+                        "noDaySelected": "Nicio zi selectată"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
                     "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programaţi computerul",
+                    "automaticMode": "Mod Automat",
+                    "manualMode": "Mod Manual",
+                    "subNote": "Computerul este programat în Starea de veghe modernă în funcţie de utilizare.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilizarea acestui computer",
+                        "graph2Tittle": "Timp activ aplicat",
+                        "graphSubtittle": "În aceste perioade de timp, menţinem computerul pregătit pentru o revenire mai rapidă.",
+                        "graphNote": "Datele privind activitatea acestui computer nu sunt suficiente pentru a oferi un profil de programare automată. Starea de veghe inteligentă va utiliza programarea modului Manual până când vor fi disponibile date suficiente.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Niciuna",
+                            "frequent": "Frecvent"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
+                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer"
                 }
             },
             "audio": {
@@ -1376,7 +1404,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "activați caracteristica zoom pe ecranele de înaltă rezoluție",
+                        "description": "activaţi caracteristica zoom pe ecranele de înaltă rezoluţie",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "ADRESĂ URL SITE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Setările au fost aplicate cu succes.",
+                        "invalidURLMessage": "Introduceţi o adresă URL validă.",
+                        "placeholder": "Începeţi cu http:// sau https://"
                     },
                     "enterText": {
                         "title": "TEXT DE INTRODUS",
-                        "placeholder": "Please type here"
+                        "placeholder": "Tastaţi aici"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Folosiți PC-ul ca o tabletă",
             "description": "<div class='faqInFs4Fb'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 class='faqInFs25FbP10'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 class='faqInFs25FbP10'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 class='faqInFs25FbP10'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Da",
                 "no": "Nu"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Butonul este dezactivat atunci când informaţiile hardware nu au fost încă preluate, dacă dispozitivele de stocare nu acceptă această funcţionalitate sau atunci când se execută recuperarea sectoarelor defecte."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Stocare",
             "wireless": "Fără fir"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

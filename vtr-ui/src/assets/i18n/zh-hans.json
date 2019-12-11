@@ -642,7 +642,8 @@
             "notFound": "未找到",
             "registered": "已注册",
             "notRegistered": "未注册",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -793,9 +794,9 @@
                 "notFound": "未找到系统更新",
                 "detail": {
                     "uptoDate": "已检查更新",
-					"updatedOn": "检查时间",
-					"outdated": "最近未检查更新",
-					"neverRanUpdate": "从未检查过更新"
+                    "updatedOn": "检查时间",
+                    "outdated": "最近未检查更新",
+                    "neverRanUpdate": "从未检查过更新"
                 }
             },
             "extendedWarranty": "延长保修",
@@ -911,7 +912,10 @@
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
-                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
+                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "电源管理",
@@ -987,7 +991,28 @@
                             "battery&Quite": "电池和安静状态"
                         }
                     },
-                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。"
+                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -1080,14 +1105,14 @@
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "已完成。已成功重置。",
-                            "ERROR_SHUTDOWN": "未完成。系统已关闭。",
-                            "ERROR_LOGOFF": "未完成。用户已注销。",
-                            "ERROR_BATTERY_REMOVE": "未完成。已卸下电池。",
-                            "ERROR_BATTERY_REPLACE": "未完成。已更换电池。",
-                            "ERROR_AC_DETTACH": "未完成。已拔下交流电源适配器。",
-                            "ERROR_USER_CANCEL": "未完成。已被用户取消。",
-                            "ERROR_UNEXPECTED": "未完成。发生意外错误。"
+                            "ERROR_SUCCESS": "已完成：已成功重置。",
+                            "ERROR_SHUTDOWN": "失败：系统已关闭。",
+                            "ERROR_LOGOFF": "失败：用户已注销。",
+                            "ERROR_BATTERY_REMOVE": "失败：已卸下电池。",
+                            "ERROR_BATTERY_REPLACE": "失败：已更换电池。",
+                            "ERROR_AC_DETTACH": "失败：已拔下交流电源适配器。",
+                            "ERROR_USER_CANCEL": "失败：已被用户取消。",
+                            "ERROR_UNEXPECTED": "失败：发生意外错误。"
                         },
                         "popup": {
                             "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "每天",
                         "weekdays": "工作日",
-                        "weekends": "周末"
+                        "weekends": "周末",
+                        "noDaySelected": "未选择日期"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
                     "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "安排您的计算机",
+                    "automaticMode": "自动模式",
+                    "manualMode": "手动模式",
+                    "subNote": "根据您的使用情况将您的计算机安排为现代待机模式。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "此电脑的使用情况",
+                        "graph2Tittle": "应用的活动时间",
+                        "graphSubtittle": "在这些时间段内，我们让计算机保持随时就绪状态，以便实现更快速的恢复。",
+                        "graphNote": "此计算机的活动数据不足以为自动安排提供概要文件。智能待机将使用手动模式安排，直到有足够的数据可用为止。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "无",
+                            "frequent": "经常"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
+                    "subTitle2": "设置通常使用此计算机的时间"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "Web 站点 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "已成功应用设置。",
+                        "invalidURLMessage": "请输入有效 URL。",
+                        "placeholder": "请以 http:// 或 https:// 开头"
                     },
                     "enterText": {
                         "title": "要输入的文本",
-                        "placeholder": "Please type here"
+                        "placeholder": "请在这里输入"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,8 +2547,7 @@
         },
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
-            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
-            "para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
+            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注意</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
@@ -2599,7 +2627,7 @@
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
         "bullets2": "安全顾问助您轻松改善系统安全状况。",
-        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型不可用）。",
+        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用）。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "告诉我们您的兴趣（选填）",
         "personal": "个人使用",
@@ -2777,7 +2805,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "存储器",
             "wireless": "无线"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

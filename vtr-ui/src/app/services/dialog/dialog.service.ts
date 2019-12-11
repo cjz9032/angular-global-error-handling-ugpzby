@@ -17,6 +17,7 @@ import { ModalLenovoIdComponent } from 'src/app/components/modal/modal-lenovo-id
 import { ModalModernPreloadComponent } from 'src/app/components/modal/modal-modern-preload/modal-modern-preload.component';
 import { Router } from '@angular/router';
 import { DeviceService } from '../device/device.service';
+import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 
 
 @Injectable({
@@ -170,7 +171,7 @@ export class DialogService {
 		}
 	}
 
-	openCHSPermissionModal(): NgbModalRef {
+	openCHSPermissionModal(locationPermission: DeviceLocationPermission): NgbModalRef {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -181,12 +182,13 @@ export class DialogService {
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
+			welcomeModal.componentInstance.locationPermission = locationPermission;
 			welcomeModal.componentInstance.switchPage = 2;
 			return welcomeModal;
 		}
 	}
 
-	openWelcomeModal(showWelcome): NgbModalRef {
+	openWelcomeModal(showWelcome: number, locationPermission: DeviceLocationPermission): NgbModalRef {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -202,6 +204,7 @@ export class DialogService {
 				centered: true,
 				windowClass: 'Welcome-container-Modal'
 			});
+			welcomeModal.componentInstance.locationPermission = locationPermission;
 			return welcomeModal;
 		}
 	}

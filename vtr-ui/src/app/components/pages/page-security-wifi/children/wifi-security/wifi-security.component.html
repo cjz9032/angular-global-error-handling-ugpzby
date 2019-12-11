@@ -19,7 +19,7 @@
 						<div class="card-header flex align-items-center"
 							id="wifiSecurity">
 							<div class="row no-gutters">
-								<div class="col-sm-6 subHeading align-items-center">
+								<div class="col-8 subHeading align-items-center d-flex">
 									<span class="circle green"
 										*ngIf="data.isLWSEnabled">
 										<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -33,20 +33,22 @@
 										<div class="spinner-border text-primary progress-spinner"
 											role="status"></div>
 									</div>
-									<h3 class="mb-0 wifisecurity-container-name"
-										title="{{'security.wifisecurity.container.name' | translate}}">
-										{{'security.wifisecurity.container.name' | translate}}
-									</h3>
-									<h3 class="wifisecurity-container-enable"><span
-											class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3"
-											title="{{'security.wifisecurity.container.enable' | translate}}"
-											*ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
-										<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3"
-											title="{{'security.wifisecurity.container.disable' | translate}}"
-											*ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
-									</h3>
+									<div class="d-flex align-items-center flex-wrap flex-shrink-1 overflow-hidden">
+										<h3 class="mb-0 wifisecurity-container-name pr-3"
+											title="{{'security.wifisecurity.container.name' | translate}}">
+											{{'security.wifisecurity.container.name' | translate}}
+										</h3>
+										<h3 class="wifisecurity-container-enable mb-0"><span
+												class="badge badge-pill badge-success line-height-2-5 p-0 pl-3 pr-3"
+												title="{{'security.wifisecurity.container.enable' | translate}}"
+												*ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
+											<span class="badge badge-pill badge-danger line-height-2-5 p-0 pl-3 pr-3"
+												title="{{'security.wifisecurity.container.disable' | translate}}"
+												*ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
+										</h3>
+									</div>
 								</div>
-								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
+								<div class="col-4 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
 									<vtr-ui-switch-onoff
 										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || switchDisabled || cancelClick}"
 										*ngIf="data.wifiSecurity.state !== 'never-used'"
@@ -116,9 +118,9 @@
 								<div class="cardBody">
 									<div class="row no-gutters wifi-card">
 										<div *ngFor="let history of data.historys"
-											class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-5 wifi">
+											class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pr-3 wifi">
 											<div class="media pt-3 border-0">
-												<div class="status-icon">
+												<div class="status-icon pr-3 pl-3">
 													<span class="fa-stack fa-3x">
 														<fa-icon [icon]="['fal', 'wifi']"
 															class="menu-pointer"></fa-icon>
@@ -131,7 +133,7 @@
 														</span>
 													</span>
 												</div>
-												<div class="connection-name media-body border-0">
+												<div class="connection-name media-body border-0 pl-3">
 													<h5 class="mt-0"
 														title="{{history.ssid}}">{{history.ssid}}</h5>
 													<small class="connection-status text-muted">
@@ -173,13 +175,13 @@
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">
-						<div class="col-sm-12 col-md-12 col-lg-8">
+						<div class="col-sm-12 col-md-12 col-lg-7">
 							<div class="sub-heading-2">Threat locator</div>
 							<div class="text-regular">
 								{{'security.wifisecurity.threatlocator.describe' | translate}}
 							</div>
 						</div>
-						<div class="col-sm-12 col-md-12 col-lg-4 col-check-location">
+						<div class="col-sm-12 col-md-12 col-lg-5 col-check-location">
 							<div class="button-box">
 								<vtr-ui-button
 									metricsEvent="featureClick"

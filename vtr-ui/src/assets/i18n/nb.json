@@ -642,7 +642,8 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -793,9 +794,9 @@
                 "notFound": "Finner ikke systemoppdatering",
                 "detail": {
                     "uptoDate": "Oppdateringer sjekket ",
-					"updatedOn": "sjekket den ",
-					"outdated": "Oppdateringer ikke sjekket nylig ",
-					"neverRanUpdate": "oppdateringer aldri sjekket"
+                    "updatedOn": "sjekket den ",
+                    "outdated": "Oppdateringer ikke sjekket nylig ",
+                    "neverRanUpdate": "oppdateringer aldri sjekket"
                 }
             },
             "extendedWarranty": "Utvide garantien",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
-                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
+                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Strøm",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
-                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig»."
+                    "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Strøminnstillinger",
@@ -1080,14 +1105,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fullfør. Vellykket tilbakestilling.",
-                            "ERROR_SHUTDOWN": "Ikke fullført. Systemet slås av.",
-                            "ERROR_LOGOFF": "Ikke fullført. Bruker logget av.",
-                            "ERROR_BATTERY_REMOVE": "Ikke fullført. Batteriet ble tatt ut.",
-                            "ERROR_BATTERY_REPLACE": "Ikke fullført. Batteriet ble byttet ut.",
-                            "ERROR_AC_DETTACH": "Ikke fullført. Strømadapteren ble koblet fra.",
-                            "ERROR_USER_CANCEL": "Ikke fullført. Avbrutt av bruker.",
-                            "ERROR_UNEXPECTED": "Ikke fullført. Det oppstod en uventet feil."
+                            "ERROR_SUCCESS": "Fullfør: Vellykket tilbakestilling.",
+                            "ERROR_SHUTDOWN": "Mislyktes: Systemet slås av.",
+                            "ERROR_LOGOFF": "Mislyktes: Bruker logget av.",
+                            "ERROR_BATTERY_REMOVE": "Mislyktes: Batteriet ble tatt ut.",
+                            "ERROR_BATTERY_REPLACE": "Mislyktes: Batteriet ble erstattet.",
+                            "ERROR_AC_DETTACH": "Mislyktes: Strømadapteren ble koblet fra.",
+                            "ERROR_USER_CANCEL": "Mislyktes: Avbrutt av bruker.",
+                            "ERROR_UNEXPECTED": "Mislyktes: Det oppstod en uventet feil."
                         },
                         "popup": {
                             "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
-                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
+                        "endTimeNote": "SLUTT-tidspunktet må være innen 20 timer etter START-tidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
-                        "weekends": "Helger"
+                        "weekends": "Helger",
+                        "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
                     "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Opprett kjøreplan for datamaskinen",
+                    "automaticMode": "Automatisk modus",
+                    "manualMode": "Manuell modus",
+                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Bruken av denne datamaskinen",
+                        "graph2Tittle": "Brukt aktiv tid",
+                        "graphSubtittle": "I disse tidsperiodene holder vi datamaskinen klar for raskere gjenopptak.",
+                        "graphNote": "Aktivitetsdataene til denne datamaskinen er ikke tilstrekkelig til å gi en profil for automatisk planlegging. Smart Standby vil bruke manuell modusplan til det er nok data tilgjengelig.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Frekvens"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "NETTADRESSE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Innstillingene er tatt i bruk.",
+                        "invalidURLMessage": "Angi en gyldig URL-adresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
                         "title": "TEKST SOM SKAL SKRIVES INN",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Bruke datamaskinen som et nettbrett",
             "description": "<div class='faqInFs4Fb'>    Bruke datamaskinen som et nettbrett</div><hr><p>Nett brett modus gjør Windows mer intuitiv og enklere å bruke når du har en berørings enhet.</p><h3 class='faqInFs25FbP10'>Bruk tavlemodus</h3><p>Hvis du vil slå på nett brett <strong>modus</strong> velger du handlings senter på oppgave linjen <strong>og velger deretter nett brett modus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Merk</h3><p>Hvis du vil finne ut om enheten kan slå på nett brett modus automatisk, søker du etter enheten på produsentens nettsted. Støtte for denne funksjonen avhenger av maskin varen, driveren som er installert og hvordan enheten ble konfigurert av produsenten. </p><p> </p><p>I nett brett modus åpner apper full skjerm og gir deg mer plass å arbeide på. Hvis du vil lukke en app, drar du den til bunnen av skjermen.</p><p> </p><h3 class='faqInFs25FbP10'>Spiss</h3><p>Oppgave linjen er tilgjengelig når PC-en er i nett brett modus, men du kan skjule den hvis du vil ha mer plass på skjermen. Velg <strong>på Start</strong>-knappen, <strong>Velg</strong> innstillinger <strong>> </strong>system <strong> > nett </strong>brett modus, og <strong>slå på automatisk Skjul oppgave linjen i nett brett modus</strong>. Hvis du vil se den skjulte oppgave linjen, sveiper du ned nederst på skjermen, eller du kan bruke musen til å peke der.</p><h3 class='faqInFs25FbP10'>Bruk to apper samtidig</h3><p>Hvis du vil bruke to applikasjoner side ved side i nett brett modus, drar du en åpen app ned og til siden. Du vil se hvor den kan festes, og du vil se eventuelle åpne apper ved siden av den.</p><p>I denne visningen kan du også:</p><ul>    <li>Bruk den delte kanten mellom to festede applikasjoner til å endre størrelse på begge appene samtidig.</li>    <li>Åpne en ny app fra oppgave visning-Velg <strong>oppgave visning</strong> på oppgave linjen, Velg en app, og dra den til den ene siden for å feste den på den delte skjermen.</li>    <li>Bruk tilbake-knappen på oppgave linjen for å gå tilbake i en app eller åpne en app som du brukte tidligere.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2782,7 +2810,7 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Knappen er deaktivert siden maskinvareinformasjonen ikke er hentet ennå, i tilfelle lagringsenhetene ikke støtter denne funksjonaliteten eller når de gjenopprette dårlige sektorene kjører."
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Trådløs"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

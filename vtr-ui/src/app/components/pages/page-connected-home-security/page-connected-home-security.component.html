@@ -14,7 +14,7 @@
 					<vtr-home-security-after-signup [allDevices]="allDevicesInfo"
 						[account]="account"
 						[common]="common"
-						[location]="homeSecurityLocation">
+						[location]="locationPermission">
 					</vtr-home-security-after-signup>
 				</div>
 			</div>
@@ -22,7 +22,7 @@
 				*ngIf="account?.state === 'local'">
 				<div class="col-12 px-0 pb-20 pt-0">
 					<vtr-home-security-content page="homeSecurity"
-						[location]="homeSecurityLocation"
+						[location]="locationPermission"
 						[permission]="permission">
 					</vtr-home-security-content>
 				</div>
@@ -46,13 +46,14 @@
 					</vtr-container-card>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-12 px-0 pb-20 pt-0">
+			<div class="bottom-content" hidden>
+				<div class="d-none d-md-block">
+					<hr>
 					<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
-						[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
+						[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+						[imgUrl]="'assets/images/coronet-logo.svg'"
 						privacyUrl="https://homesecurity.coro.net/"
-						termsUrl="https://homesecurity.coro.net/"
-						[imgUrl]="'assets/images/coronet-logo.svg'">
+						termsUrl="https://homesecurity.coro.net/">
 					</vtr-widget-powered-by-info>
 				</div>
 			</div>
@@ -71,7 +72,7 @@
 									{{'security.homeprotection.securityhealth.title' | translate}}
 								</div>
 								<div class="description"
-									*ngIf="homeSecurityLocation?.isLocationServiceOn">
+									*ngIf="locationPermission?.isLocationServiceOn">
 									<span
 										*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
 										<a id="chs-lnk-sh-learnmore"
@@ -90,9 +91,9 @@
 						</div>
 
 						<div class="row">
-							<div class="col col-12 px-0 pb-20 pt-0">
+							<div class="col col-12 px-0 pt-0">
 								<!--Start of Security Health Advisor When LWS is enabled-->
-								<div *ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
+								<div *ngIf="locationPermission?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
 									class="loading">
 									<div class="spinner-border text-primary progress-spinner"
 										role="status"></div>
@@ -101,23 +102,23 @@
 									metricsEvent="featureClick"
 									[chevronVisibility]='false'
 									[clickable]="false"
-									*ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
+									*ngIf="locationPermission?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
 								</vtr-ui-list-chevron>
 								<!--end of Security Health Advisor When LWS is enabled-->
 
 								<!--Start of Security Health Advisor When LWS is disabled-->
 								<div class="security-health-disabled"
-									*ngIf="!homeSecurityLocation?.isLocationServiceOn">
+									*ngIf="!locationPermission?.isLocationServiceOn">
 									<div
 										class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
 										<div class="peace-of-mind mb-5"
 											[innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
 										</div>
-										<vtr-ui-button [ngClass]="{'disable': homeSecurityLocation?.isLoading}"
+										<vtr-ui-button [ngClass]="{'disable': locationPermission?.isLoading}"
 											metricsItem="enableLocationSecurityHealth"
 											metricsEvent="featureClick"
-											(onClick)="dialogService?.openCHSPermissionModal()"
-											[isDisabled]="homeSecurityLocation?.isLoading"
+											(onClick)="dialogService?.openCHSPermissionModal(locationPermission)"
+											[isDisabled]="locationPermission?.isLoading"
 											linkId="chs-btn-enableLocation"
 											[label]="'security.homeprotection.securityhealth.button' | translate">
 										</vtr-ui-button>
@@ -167,6 +168,17 @@
 						containerCardId="chs-modal-right-article">
 					</vtr-container-card>
 				</div>
+			</div>
+		</div>
+		<div class="bottom-content">
+			<div class="d-none d-md-block" hidden>
+				<hr>
+				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+					[imgUrl]="'assets/images/coronet-logo.svg'"
+					privacyUrl="https://homesecurity.coro.net/"
+					termsUrl="https://homesecurity.coro.net/">
+				</vtr-widget-powered-by-info>
 			</div>
 		</div>
 	</right-content>

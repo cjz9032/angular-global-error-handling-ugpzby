@@ -58,13 +58,14 @@
 				@media #{$breakpoint_lg} {
 					padding-left: $padding_side_sm;
 					padding-right: $padding_side_sm;
+					padding-bottom: $padding_side_sm;
 				}
 				@media #{$breakpoint_lg} {
-					padding-top: 2rem;
+					// padding-top: 2rem;
 				}
 				.vtr-page-column-shift-up {
 					@media #{$breakpoint_lg} {
-						margin-top: 0;
+						margin-top:0;
 					}
 				}
 			}

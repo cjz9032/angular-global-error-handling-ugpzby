@@ -642,7 +642,8 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -793,9 +794,9 @@
                 "notFound": "找不到系統更新",
                 "detail": {
                     "uptoDate": "已檢查更新",
-					"updatedOn": "檢查時間",
-					"outdated": "最近未檢查更新",
-					"neverRanUpdate": "從未檢查過更新"
+                    "updatedOn": "檢查時間",
+                    "outdated": "最近未檢查更新",
+                    "neverRanUpdate": "從未檢查過更新"
                 }
             },
             "extendedWarranty": "延長保固",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
-                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "電源",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
-                    "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。"
+                    "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "電源設定",
@@ -1080,14 +1105,14 @@
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "完成，已成功重設。",
-                            "ERROR_SHUTDOWN": "未完成。系統已關閉。",
-                            "ERROR_LOGOFF": "未完成。使用者已登出。",
-                            "ERROR_BATTERY_REMOVE": "未完成。電池已取出。",
-                            "ERROR_BATTERY_REPLACE": "未完成。電池已更換。",
-                            "ERROR_AC_DETTACH": "未完成。AC 電源整流器已卸下。",
-                            "ERROR_USER_CANCEL": "未完成。已由使用者取消。",
-                            "ERROR_UNEXPECTED": "未完成。發生非預期的錯誤。"
+                            "ERROR_SUCCESS": "完成：已成功重設。",
+                            "ERROR_SHUTDOWN": "失敗：系統已關閉。",
+                            "ERROR_LOGOFF": "失敗：使用者已登出。",
+                            "ERROR_BATTERY_REMOVE": "失敗：電池已取出。",
+                            "ERROR_BATTERY_REPLACE": "失敗：電池已更換。",
+                            "ERROR_AC_DETTACH": "失敗：AC 電源整流器已卸下。",
+                            "ERROR_USER_CANCEL": "失敗：已由使用者取消。",
+                            "ERROR_UNEXPECTED": "失敗：發生非預期的錯誤。"
                         },
                         "popup": {
                             "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "每天",
                         "weekdays": "週間日",
-                        "weekends": "週末"
+                        "weekends": "週末",
+                        "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
                     "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "排程您的電腦",
+                    "automaticMode": "自動模式",
+                    "manualMode": "手動模式",
+                    "subNote": "根據您的使用情形將您的電腦排程為新式待命模式。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "此電腦的使用情形",
+                        "graph2Tittle": "套用的啟用時間",
+                        "graphSubtittle": "在這些時段中，我們讓電腦隨時就續，以加速回復。",
+                        "graphNote": "此電腦的活動資料不足以為自動排程提供設定檔。智慧型待命將使用手動模式排程，直到有足夠的資料為止。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "無",
+                            "frequent": "經常"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
+                    "subTitle2": "設定您一般使用這部電腦的時間"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "網站 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "已成功套用設定。",
+                        "invalidURLMessage": "請輸入有效的 URL。",
+                        "placeholder": "請以 http:// 或 https:// 開頭"
                     },
                     "enterText": {
                         "title": "要輸入的文字",
-                        "placeholder": "Please type here"
+                        "placeholder": "請在這裡輸入"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "將電腦當作平板電腦使用",
             "description": "<div class='faqInFs4Fb'>    將電腦當作平板電腦使用</div><hr><p>平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。</p><h3 class='faqInFs25FbP10'>使用平板電腦模式</h3><p>若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>備注</h3><p>若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 </p><p> </p><p>在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>要訣</h3><p>當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。</p><h3 class='faqInFs25FbP10'>同時使用兩個應用程式</h3><p>若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。</p><p>在這個檢視中，您也可以：</p><ul>    <li>使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。</li>    <li>從任務檢視中開啟新的應用程式&mdash;在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。</li>    <li>使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "如果儲存裝置不支援此功能或回復錯誤磁區正在運作中，在尚未擷取硬體資訊時，此按鈕會停用。"
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "儲存裝置",
             "wireless": "無線"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

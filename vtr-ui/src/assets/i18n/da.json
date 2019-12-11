@@ -642,7 +642,8 @@
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -793,9 +794,9 @@
                 "notFound": "Der blev ikke fundet en systemopdatering",
                 "detail": {
                     "uptoDate": "Der er søgt efter opdateringer ",
-					"updatedOn": "søgt den ",
-					"outdated": "Der er ikke søgt efter opdateringer for nylig ",
-					"neverRanUpdate": "der er aldrig søgt efter opdateringer"
+                    "updatedOn": "søgt den ",
+                    "outdated": "Der er ikke søgt efter opdateringer for nylig ",
+                    "neverRanUpdate": "der er aldrig søgt efter opdateringer"
                 }
             },
             "extendedWarranty": "Garanti, udvidet",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
-                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
+                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Strøm",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows",
-                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille."
+                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Strømindstillinger",
@@ -1080,14 +1105,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fuldført. Nulstilling lykkedes.",
-                            "ERROR_SHUTDOWN": "Ufuldstændig. Nedlukning af system.",
-                            "ERROR_LOGOFF": "Ufuldstændig. Bruger logget af.",
-                            "ERROR_BATTERY_REMOVE": "Ufuldstændig. Batteriet blev fjernet.",
-                            "ERROR_BATTERY_REPLACE": "Ufuldstændig. Batteriet blev udskiftet.",
-                            "ERROR_AC_DETTACH": "Ufuldstændig. Vekselstrømsadapteren blev fjernet.",
-                            "ERROR_USER_CANCEL": "Ufuldstændig. Annulleret af bruger.",
-                            "ERROR_UNEXPECTED": "Ufuldstændig. Der er opstået en uventet fejl."
+                            "ERROR_SUCCESS": "Fuldført: Nulstilling lykkedes.",
+                            "ERROR_SHUTDOWN": "Mislykkedes: Nedlukning af system.",
+                            "ERROR_LOGOFF": "Mislykkedes: Bruger logget af.",
+                            "ERROR_BATTERY_REMOVE": "Mislykkedes: Batteriet blev fjernet.",
+                            "ERROR_BATTERY_REPLACE": "Mislykkedes: Batteriet blev udskiftet.",
+                            "ERROR_AC_DETTACH": "Mislykkedes: Vekselstrømsadapteren blev fjernet.",
+                            "ERROR_USER_CANCEL": "Mislykkedes: Annulleret af bruger.",
+                            "ERROR_UNEXPECTED": "Mislykkedes: Der er opstået en uventet fejl."
                         },
                         "popup": {
                             "description1": "Nulstillingsprocessen er som følger:<br>Fuld opladning af batteriet  -->  fuld afladning af batteriet  -->  fuld genopladning af batteriet",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
-                        "endTimeNote": "Sluttidspunktet skal være inden for 20 timer fra starttidspunktet",
+                        "endTimeNote": "SLUTtidspunktet skal være inden for 20 timer fra STARTtidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
-                        "weekends": "Weekender"
+                        "weekends": "Weekender",
+                        "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
                     "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Tidsplan for din computer",
+                    "automaticMode": "Automatisk tilstand",
+                    "manualMode": "Manuel tilstand",
+                    "subNote": "Din computer er indstillet til at skifte til Moderne standby baseret på din brug.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Brug af denne computer",
+                        "graph2Tittle": "Tildelt aktiv tid",
+                        "graphSubtittle": "I disse tidsperioder holder vi computeren klar, så du hurtigere kan genoptage arbejdet på den.",
+                        "graphNote": "Aktivitetsdataene for denne computer er ikke tilstrækkelige til at oprette en profil til automatisk tidsplanlægning. Smart-standby bruger tidsplanen for Manuel tilstand, indtil der er nok data til rådighed.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Ofte"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
+                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL TIL WEBSTED",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Indstillingerne er blevet anvendt.",
+                        "invalidURLMessage": "Angiv en gyldig webadresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
                         "title": "TEKST, DER SKAL SKRIVES",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Brug din pc som en tablet",
             "description": "<div class='faqInFs4Fb'>    Brug din pc som en tablet</div><hr><p>Tablettilstand gør Windows mere intuitiv og nemmere at bruge, fordi du har en berøringsfølsom skærmenhed.</p><h3 class='faqInFs25FbP10'>Brug tablettilstand</h3><p>Hvis du vil aktivere tablettilstand, skal du vælge <strong>Handlingscenter</strong> på proceslinjen og derefter vælge <strong>Tablettilstand</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Bemærk</h3><p>Hvis du vil finde ud af, om din enhed kan aktivere tablettilstand automatisk, skal du søge efter enheden på producentens websted. Understøttelsen af denne funktion afhænger af hardwaren, den installerede driver, og hvordan enheden er konfigureret af producenten. </p><p> </p><p>I tablettilstand åbnes apps i fuld skærmvisning, så du får mere plads til at arbejde. Hvis du vil lukke en app, skal du trække den til bunden af skærmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Proceslinjen er tilgængelig, når pc'en er i tablettilstand, men du kan skjule den, hvis du vil have mere plads på skærmen. Vælg knappen <strong>Start</strong>, vælg <strong>Indstillinger </strong>> <strong>System </strong>> <strong>Tablettilstand</strong>, og aktivér derefter <strong>Skjul automatisk proceslinjen i tablettilstand</strong>. Hvis du vil se den skjulte proceslinje, skal du stryge opad fra bunden af skærmen eller bruge musen til at pege på den.</p><h3 class='faqInFs25FbP10'>Brug to apps samtidigt</h3><p>Hvis du vil bruge to apps side om side i tablettilstand, skal du trække en åben app nedad og til siden. Du kan se, hvor den bliver fastgjort, og du vil få vist alle åbne apps ved siden af den.</p><p>I denne visning kan du også:</p><ul>    <li>Bruge den fælles kant mellem to fastgjorte apps til at tilpasse størrelsen på begge apps samtidigt.</li>    <li>Åbn en ny app fra opgavevisningen. Vælg <strong>Opgavevisning</strong> på proceslinjen, vælg en app, og træk den derefter til den ene side for at fastgøre den på den delte skærm.</li>    <li>Brug knappen Tilbage på proceslinjen til at gå tilbage i en app eller åbne en app, du har brugt før.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Knappen deaktiveres, mens hardwareoplysningerne endnu ikke er hentet, hvis lagerenhederne ikke understøtter denne funktion, eller når gendannelsen af beskadigede sektorer kører."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lager",
             "wireless": "Trådløs"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

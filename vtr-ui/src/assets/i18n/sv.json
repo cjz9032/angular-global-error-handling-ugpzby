@@ -642,7 +642,8 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -793,9 +794,9 @@
                 "notFound": "Systemuppdatering hittades inte",
                 "detail": {
                     "uptoDate": "Uppdateringar kontrollerade ",
-					"updatedOn": "kontrollerades den ",
-					"outdated": "Uppdateringar har inte kontrollerats nyligen ",
-					"neverRanUpdate": "uppdateringar har aldrig kontrollerats"
+                    "updatedOn": "kontrollerades den ",
+                    "outdated": "Uppdateringar har inte kontrollerats nyligen ",
+                    "neverRanUpdate": "uppdateringar har aldrig kontrollerats"
                 }
             },
             "extendedWarranty": "Förläng garantin",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
-                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
+                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Ström",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
-                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”."
+                    "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ströminställningar",
@@ -1080,14 +1105,14 @@
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Klart. Återställningen lyckades.",
-                            "ERROR_SHUTDOWN": "Ofullständig. Systemavstängning.",
-                            "ERROR_LOGOFF": "Ofullständig. Användare loggade ut.",
-                            "ERROR_BATTERY_REMOVE": "Ofullständig. Batteriet togs bort.",
-                            "ERROR_BATTERY_REPLACE": "Ofullständig. Batteriet byttes ut.",
-                            "ERROR_AC_DETTACH": "Ofullständig. Nätadaptern kopplades bort.",
-                            "ERROR_USER_CANCEL": "Ofullständig. Avbröts av användaren.",
-                            "ERROR_UNEXPECTED": "Ofullständig. Ett oväntat fel inträffade."
+                            "ERROR_SUCCESS": "Klart: Återställningen lyckades.",
+                            "ERROR_SHUTDOWN": "Misslyckades: Systemet stängdes av.",
+                            "ERROR_LOGOFF": "Misslyckades: Användaren loggade ut.",
+                            "ERROR_BATTERY_REMOVE": "Misslyckades: Batteriet togs bort.",
+                            "ERROR_BATTERY_REPLACE": "Misslyckades: Batteriet byttes ut.",
+                            "ERROR_AC_DETTACH": "Misslyckades: Nätadaptern kopplades bort.",
+                            "ERROR_USER_CANCEL": "Misslyckades: Avbröts av användaren.",
+                            "ERROR_UNEXPECTED": "Misslyckades: Ett oväntat fel inträffade."
                         },
                         "popup": {
                             "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
-                        "endTimeNote": "Sluttiden måste infalla högst 20 timmar efter starttiden",
+                        "endTimeNote": "SLUTTIDEN måste infalla högst 20 timmar efter STARTTIDEN",
                         "timeUnits": {
                             "unit1": "Timmar",
                             "unit2": "Minuter",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Varje dag",
                         "weekdays": "vardagar",
-                        "weekends": "helger"
+                        "weekends": "helger",
+                        "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
                     "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Schemalägg datorn",
+                    "automaticMode": "Automatiskt läge",
+                    "manualMode": "Manuellt läge",
+                    "subNote": "Datorn är schemalagd för modernt vänteläge baserat på din användning.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Datoranvändning",
+                        "graph2Tittle": "Tillämpad aktiv tid",
+                        "graphSubtittle": "Under dessa perioder är datorn aktiverad så att det går snabbare att återuppta arbetet.",
+                        "graphNote": "Det finns inte tillräckligt med aktivitetsdata för att skapa en profil för automatisk schemaläggning. I smart vänteläge används schemat för manuellt läge tills det finns tillräckligt med data.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Regelbunden"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
+                    "subTitle2": "Ange vilken tid du använder datorn mest"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "WEBBADRESS",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Inställningarna har tillämpats.",
+                        "invalidURLMessage": "Ange en giltig webbadress.",
+                        "placeholder": "Börja med http:// eller https://"
                     },
                     "enterText": {
                         "title": "PLATSHÅLLARE FÖR TEXT",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv här"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Använda datorn som pekplatta",
             "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Knappen är inaktiverad medan informationen om maskinvaran ännu inte har hämtats, om lagringsenheterna inte stödjer denna funktion eller om återställningen av skadade sektorer pågår."
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Radio"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

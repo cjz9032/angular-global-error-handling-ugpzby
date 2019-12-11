@@ -642,7 +642,8 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -793,9 +794,9 @@
                 "notFound": "A rendszerfrissítés nem található",
                 "detail": {
                     "uptoDate": "Frissítés keresése ",
-					"updatedOn": "keresés ekkor: ",
-					"outdated": "Nem keresett frissítéseket mostanában ",
-					"neverRanUpdate": "soha nem keresett frissítéseket"
+                    "updatedOn": "keresés ekkor: ",
+                    "outdated": "Nem keresett frissítéseket mostanában ",
+                    "neverRanUpdate": "soha nem keresett frissítéseket"
                 }
             },
             "extendedWarranty": "Jótállás kiterjesztése",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Jegyzet:</b> Az akkumulátor nem tölthető fel teljesen, ha az akkumulátortöltési küszöbérték engedélyezve van.",
                 "seeDetailsLink": "Részletek megtekintése",
-                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban."
+                "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Tápellátás",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
-                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen."
+                    "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Energiagazdálkodási beállítások",
@@ -1080,14 +1105,14 @@
                         "FCCText": "{{before}} Wó-ról {{after}} Wó-ra",
                         "note": "Megjegyzés: Mielőtt nullázná az akkumulátormérőt, feltétlenül csatlakoztassa a számítógépet hálózati tápellátáshoz. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Kész. Sikeres nullázás",
-                            "ERROR_SHUTDOWN": "Befejezetlen. Rendszer bezárása.",
-                            "ERROR_LOGOFF": "Befejezetlen. A felhasználó kilépett.",
-                            "ERROR_BATTERY_REMOVE": "Befejezetlen. Akkumulátor eltávolítva.",
-                            "ERROR_BATTERY_REPLACE": "Befejezetlen. Akkumulátor kicserélve.",
-                            "ERROR_AC_DETTACH": "Befejezetlen. A hálózati adapter lecsatlakoztatva.",
-                            "ERROR_USER_CANCEL": "Befejezetlen. A felhasználó megszakította.",
-                            "ERROR_UNEXPECTED": "Befejezetlen. Váratlan hiba történt."
+                            "ERROR_SUCCESS": "Kész: Sikeres nullázás",
+                            "ERROR_SHUTDOWN": "Sikertelen: A rendszer leállt.",
+                            "ERROR_LOGOFF": "Sikertelen: A felhasználó kilépett.",
+                            "ERROR_BATTERY_REMOVE": "Sikertelen: Akkumulátor eltávolítva.",
+                            "ERROR_BATTERY_REPLACE": "Sikertelen: Akkumulátor kicserélve.",
+                            "ERROR_AC_DETTACH": "Sikertelen: A hálózati adapter lecsatlakoztatva.",
+                            "ERROR_USER_CANCEL": "Sikertelen: A felhasználó megszakította.",
+                            "ERROR_UNEXPECTED": "Sikertelen: Váratlan hiba történt."
                         },
                         "popup": {
                             "description1": "A nullázási folyamat a következő: <br> Töltse fel teljesen az akkumulátort  -->  Süsse ki teljesen az akkumulátort  -->  Töltse újra teljesen az akkumulátort",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "mezőből",
                         "subHeading2": "befejezés",
                         "subHeading3": "az ütemezés használata a következőhöz",
-                        "endTimeNote": "A befejezési idő legfeljebb 20 órával lehet a kezdési idő után",
+                        "endTimeNote": "A BEFEJEZÉSI idő legfeljebb 20 órával lehet a KEZDÉSI idő után",
                         "timeUnits": {
                             "unit1": "Óra",
                             "unit2": "Perc",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Minden nap",
                         "weekdays": "Hétköznapok",
-                        "weekends": "Hétvégén"
+                        "weekends": "Hétvégén",
+                        "noDaySelected": "Nincs kiválasztott nap"
                     },
                     "checkbox": "A számítógép aktív idejének automatikus beállítása a használati séma alapján",
                     "hyperlinkToGraph": "Kattintson a számítógép tevékenységének és aktív idejének áttekintéséhez",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Számítógép ütemezése",
+                    "automaticMode": "Automatikus üzemmód",
+                    "manualMode": "Manuális üzemmód",
+                    "subNote": "A számítógép használati séma alapján Modern készenléti állapotra lett ütemezve.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "A számítógép használata",
+                        "graph2Tittle": "Alkalmazott aktív idő",
+                        "graphSubtittle": "Ebben az időszakokban a számítógép készen áll a gyorsabb folytatásra.",
+                        "graphNote": "A számítógép tevékenységi adatai nem elegendőek az automatikus ütemezés profiljának létrehozásához. Az Intelligens készenlét a Manuális üzemmód ütemezését fogja használni, amíg elegendő adat nem áll rendelkezésre.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Egyik sem",
+                            "frequent": "Gyakori"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
+                    "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "WEBHELY URL-JE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "A beállítások alkalmazása sikeres.",
+                        "invalidURLMessage": "Adjon meg egy érvényes URL-címet.",
+                        "placeholder": "Kezdje a következő begépelésével: http:// vagy https://"
                     },
                     "enterText": {
                         "title": "MEGADANDÓ SZÖVEG",
-                        "placeholder": "Please type here"
+                        "placeholder": "Írja be ide"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "A számítógép táblagépként történő használata",
             "description": "<div class='faqInFs4Fb'>    A számítógép táblagépként történő használata</div><hr><p>A Táblagép mód intuitívabbá és könnyebben használhatóvá teszi a Windows rendszert érintőképernyős eszközökön.</p><h3 class='faqInFs25FbP10'>A Táblagép mód használata</h3><p>A Táblagép mód bekapcsolásához válassza a <strong>műveletközpontot</strong> a tálcán, majd válassza a <strong>Táblagép mód</strong> lehetőséget.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Megjegyzés</h3><p>Ha szeretné megtudni, hogy az eszköz automatikusan be tudja-e kapcsolni a Táblagép módot, keresse meg eszközét a gyártó webhelyén. Ennek a funkciónak a támogatása attól függ, hogy milyen a gép hardvere, milyen illesztőprogramok vannak telepítve és a gyártó hogyan állította be az eszközt. </p><p> </p><p>Táblagép módban az alkalmazások teljes képernyőn nyitnak meg, így több helyet biztosítanak a munkához. Az alkalmazások bezárásához húzza őket a képernyő aljára.</p><p> </p><h3 class='faqInFs25FbP10'>Tipp</h3><p>A tálcát el lehet elérni, amikor a számítógép Táblagép módban van, de el is rejtheti, ha több helyet szeretne a képernyőn. Válassza a <strong>Start </strong>gombot, majd a <strong>Gépház </strong>> <strong>Rendszer </strong>> <strong> Táblagép mód </strong> lehetőséget, végül kapcsolja be <strong>A tálca automatikus elrejtése táblagép módban</strong> beállítást. Az elrejtett tálca megjelenítéséhez húzza felfelé a képernyő aljától, vagy mutasson rá az egérrel.</p><h3 class='faqInFs25FbP10'>Két alkalmazás használata egyszerre</h3><p>Ha két alkalmazást szeretne használni egymás mellett a Táblagép módban, húzza lefelé és oldalra a megnyitott alkalmazást. Látni fogja, hogy hol dokkolódik, valamint a többi megnyitott alkalmazás is megjelenik mellette.</p><p>Ebben a nézetben a következőket is teheti:</p><ul>    <li>Használhatja a dokkolt alkalmazások közös szélét a két alkalmazás egyidejű átméretezéséhez.</li>    <li>Megnyithat egy új alkalmazást a feladatnézetből &mdash; válassza a <strong>Feladatnézetet</strong> a tálcán, és húzza valamelyik oldalra megosztott képernyőn történő dokkoláshoz.</li>    <li>Használja a tálcán található Vissza gombot az alkalmazásokban való visszalépéshez vagy egy korábban használt alkalmazás megnyitásához.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "A gomb le van tiltva ha a hardverinformációk beolvasása még nem történt meg, ha a tárolóeszközök nem támogatják ezt a funkciót, vagy amíg a rendszer helyreállítja a hibás szektorokat."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Tárolás",
             "wireless": "Vezeték nélküli"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

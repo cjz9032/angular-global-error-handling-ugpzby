@@ -131,7 +131,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Yu Gothic UI", "Segoe UI", Sans-serif;
+	font-family: "Segoe UI", sans-serif;
 	cursor: default;
 	// font-weight: 300;
 }
@@ -294,11 +294,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	border-radius: 0.4rem;
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	font-family: "Segoe UI";
-	// RESPONSIVE EFFORT
-	// @media #{$mediaquery_xl} {
-	// 	max-width: 20rem;
-	// }
+
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 	}
@@ -454,7 +450,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*modal-intelligent-cooling-modes-styles*/
 .Intelligent-Cooling-Modes-Modal {
 	.modal-dialog {
-		max-width: 35%;
+		max-width: 49rem;
 		display: table;
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
@@ -823,7 +819,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
-		// font-family: "Segoe UI";
 
 		ul {
 			padding: 0;
@@ -846,7 +841,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
-		// font-family: "Segoe UI";
 
 		span {
 			font-weight: bold;

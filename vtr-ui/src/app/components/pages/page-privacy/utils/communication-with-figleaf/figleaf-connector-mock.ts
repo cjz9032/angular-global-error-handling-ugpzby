@@ -108,6 +108,10 @@ class FigleafConnector {
 	private async connect() {
 	}
 
+	async checkIfFigleafInstalled() {
+		return 0;
+	}
+
 	disconnect() {
 	}
 

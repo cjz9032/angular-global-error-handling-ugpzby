@@ -644,7 +644,8 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -795,9 +796,9 @@
                 "notFound": "لم يتم العثور على تحديث النظام",
                 "detail": {
                     "uptoDate": "تم التحقق من التحديثات ",
-					"updatedOn": "تم التحقق في ",
-					"outdated": "لم يتم التحقق من التحديثات مؤخرًا ",
-					"neverRanUpdate": "لم يتم التحقق من التحديثات أبدًا"
+                    "updatedOn": "تم التحقق في ",
+                    "outdated": "لم يتم التحقق من التحديثات مؤخرًا ",
+                    "neverRanUpdate": "لم يتم التحقق من التحديثات أبدًا"
                 }
             },
             "extendedWarranty": "تمديد الضمان",
@@ -913,7 +914,10 @@
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لا يمكن شحن البطارية بالكامل عند تمكين حد شحن البطارية.",
                 "seeDetailsLink": "انظر التفاصيل",
-                "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً."
+                "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "الطاقة",
@@ -989,7 +993,28 @@
                         }
                     },
                     "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
-                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\"."
+                    "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "إعدادات الطاقة",
@@ -1082,14 +1107,14 @@
                         "FCCText": "من {{before}} واط بالساعة‬ إلى {{after}} واط بالساعة‬",
                         "note": "ملاحظة: قبل إعادة تعيين مقياس البطارية، تأكد من توصيل الكمبيوتر بطاقة التيار المتردد. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "كامل. تمت إعادة التعيين بنجاح.",
-                            "ERROR_SHUTDOWN": "غير مكتمل. توقف تشغيل النظام.",
-                            "ERROR_LOGOFF": "غير مكتمل. سجل المستخدم خروجه.",
-                            "ERROR_BATTERY_REMOVE": "غير مكتمل. تمت ازالة البطارية.",
-                            "ERROR_BATTERY_REPLACE": "غير مكتمل. تم استبدال البطارية.",
-                            "ERROR_AC_DETTACH": "غير مكتمل. تم فصل محول التيار المتردد.",
-                            "ERROR_USER_CANCEL": "غير مكتمل. تم الإلغاء من قِبل المستخدم.",
-                            "ERROR_UNEXPECTED": "غير مكتمل. حدث خطأ غير متوقع."
+                            "ERROR_SUCCESS": "كامل: تمت إعادة التعيين بنجاح.",
+                            "ERROR_SHUTDOWN": "فشل: توقف تشغيل النظام",
+                            "ERROR_LOGOFF": "فشل: سجل المستخدم خروجه.",
+                            "ERROR_BATTERY_REMOVE": "فشل: تمت ازالة البطارية.",
+                            "ERROR_BATTERY_REPLACE": "فشل: تم استبدال البطارية.",
+                            "ERROR_AC_DETTACH": "فشل: تم فصل محول التيار المتردد.",
+                            "ERROR_USER_CANCEL": "فشل: تم الإلغاء من قِبل المستخدم.",
+                            "ERROR_UNEXPECTED": "فشل: حدث خطأ غير متوقع."
                         },
                         "popup": {
                             "description1": "تتم عملية إعادة التعيين على الشكل التالي:<br>شحن البطارية بشكل كامل  -->  إفراغ البطارية بشكل كامل  -->  إعادة شحن البطارية بشكل كامل",
@@ -1115,7 +1140,7 @@
                         "subHeading1": "بدء",
                         "subHeading2": "إنهاء",
                         "subHeading3": "استخدم هذا الجدول الزمني لأجل",
-                        "endTimeNote": "يجب أن يقع وقت الإنهاء بعد 20 ساعة من وقت البدء.",
+                        "endTimeNote": "يجب أن يقع وقت الانتهاء‬ بعد 20 ساعة من وقت البدء.",
                         "timeUnits": {
                             "unit1": "ساعات",
                             "unit2": "دقائق",
@@ -1149,22 +1174,23 @@
                         },
                         "everyday": "كل يوم",
                         "weekdays": "أيام الأسبوع",
-                        "weekends": "عطلة نهاية الأسبوع"
+                        "weekends": "عطلة نهاية الأسبوع",
+                        "noDaySelected": "لم يتم تحديد أي يوم"
                     },
                     "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
                     "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "جدولة الكمبيوتر",
+                    "automaticMode": "الوضع التلقائي",
+                    "manualMode": "الوضع اليدوي",
+                    "subNote": "تمت جدولة الكمبيوتر للدخول إلى وضع الاستعداد الحديث بالاستناد إلى استخدامك له.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "استخدام هذا الكمبيوتر",
+                        "graph2Tittle": "الوقت النشط المطبق",
+                        "graphSubtittle": "في هذه الفترات الزمنية، نبقي الكمبيوتر جاهزًا للاستئناف بشكل أسرع.",
+                        "graphNote": "بيانات نشاط هذا الكمبيوتر ليست كافية لتوفير ملف تعريف للجدولة التلقائية. سيستخدم وضع الاستعداد الذكي جدول الوضع اليدوي حتى تتوفر بيانات كافية.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "بلا",
+                            "frequent": "متكرر"
                         },
                         "hours": {
                             "zero": 0,
@@ -1192,7 +1218,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
+                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة"
                 }
             },
             "audio": {
@@ -1378,7 +1406,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "لتمكين ميزة التكبير/التصغير على أجهزة العرض عالية الدقة",
+                        "description": "تمكين ميزة التكبير/التصغير على شاشات العرض عالية الدقة",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1469,13 +1497,13 @@
                     },
                     "website": {
                         "url": "عنوان URL لموقع الويب",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "تم تطبيق الإعدادات بنجاح.",
+                        "invalidURLMessage": "يرجى إدخال عنوان URL صالح.",
+                        "placeholder": "يرجى البدء بـ http:// أو https://"
                     },
                     "enterText": {
                         "title": "النص الذي يجب إدخاله",
-                        "placeholder": "Please type here"
+                        "placeholder": "يرجى الكتابة هنا"
                     }
                 },
                 "fnCtrlKey": {
@@ -1921,6 +1949,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2520,7 +2549,6 @@
         "question5": {
             "title": "استخدام الكمبيوتر الشخصي ككمبيوتر لوحي",
             "description": "<div class='faqInFs4Fb'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 class='faqInFs25FbP10'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 class='faqInFs25FbP10'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 class='faqInFs25FbP10'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2779,7 +2807,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "يكون الزر معطلاً بينما لم يتم استرداد معلومات الأجهزة بعد، في حال لم تكن أجهزة التخزين تدعم هذه الميزة أو عندما تكون استعادة القطاعات المصابة‬ قيد التشغيل."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -2815,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

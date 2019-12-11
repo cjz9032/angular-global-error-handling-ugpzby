@@ -642,7 +642,8 @@
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
@@ -793,9 +794,9 @@
                 "notFound": "Обновление системы не найдено",
                 "detail": {
                     "uptoDate": "Наличие обновлений проверено ",
-					"updatedOn": "проверено ",
-					"outdated": "Наличие обновлений давно не проверялось ",
-					"neverRanUpdate": "наличие обновлений никогда не проверялось"
+                    "updatedOn": "проверено ",
+                    "outdated": "Наличие обновлений давно не проверялось ",
+                    "neverRanUpdate": "наличие обновлений никогда не проверялось"
                 }
             },
             "extendedWarranty": "Продление гарантии",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Аккумулятор не найден",
                 "thresholdNote": "<b>Примечание.</b> Аккумулятор не может быть полностью заряжен, если включен пороговый уровень заряда аккумулятора.",
                 "seeDetailsLink": "См. подробные сведения",
-                "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания."
+                "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Питание",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows",
-                    "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише."
+                    "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Параметры питания",
@@ -1080,14 +1105,14 @@
                         "FCCText": "С {{before}} Вт·ч до {{after}} Вт·ч",
                         "note": "Примечание. Перед сбросом индикатора аккумулятора обязательно подключите компьютер к сети переменного тока. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Завершено. Сброс выполнен.",
-                            "ERROR_SHUTDOWN": "Не завершено. Отключение системы.",
-                            "ERROR_LOGOFF": "Не завершено. Пользователь вышел из системы.",
-                            "ERROR_BATTERY_REMOVE": "Не завершено. Аккумулятор извлечен.",
-                            "ERROR_BATTERY_REPLACE": "Не завершено. Аккумулятор заменен.",
-                            "ERROR_AC_DETTACH": "Не завершено. Адаптер электропитания отсоединен.",
-                            "ERROR_USER_CANCEL": "Не завершено. Отменено пользователем.",
-                            "ERROR_UNEXPECTED": "Не завершено. Неожиданная ошибка."
+                            "ERROR_SUCCESS": "Завершено: Сброс выполнен.",
+                            "ERROR_SHUTDOWN": "Сбой: отключение системы.",
+                            "ERROR_LOGOFF": "Сбой: пользователь вышел из системы.",
+                            "ERROR_BATTERY_REMOVE": "Сбой: аккумулятор извлечен.",
+                            "ERROR_BATTERY_REPLACE": "Сбой: аккумулятор заменен.",
+                            "ERROR_AC_DETTACH": "Сбой: адаптер электропитания отсоединен.",
+                            "ERROR_USER_CANCEL": "Сбой: отменено пользователем.",
+                            "ERROR_UNEXPECTED": "Сбой: неожиданная ошибка."
                         },
                         "popup": {
                             "description1": "Процедура сброса выглядит следующим образом:<br>Полная зарядка аккумулятора  -->  Полная разрядка аккумулятора  -->  Полная перезарядка аккумулятора",
@@ -1113,7 +1138,7 @@
                         "subHeading1": "начнете",
                         "subHeading2": "окончание",
                         "subHeading3": "использовать это расписание в",
-                        "endTimeNote": "Время окончания должно быть позже времени начала не более чем на 20 часов",
+                        "endTimeNote": "Время ОКОНЧАНИЯ должно быть позже времени НАЧАЛА не более чем на 20 часов",
                         "timeUnits": {
                             "unit1": "Часы",
                             "unit2": "Минуты",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "Каждый день",
                         "weekdays": "Будние дни",
-                        "weekends": "Выходные дни"
+                        "weekends": "Выходные дни",
+                        "noDaySelected": "День не выбран"
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
                     "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Планирование работы компьютера",
+                    "automaticMode": "Автоматический режим",
+                    "manualMode": "Ручной режим",
+                    "subNote": "С учетом характера вашего использования компьютер переведен в текущий режим ожидания.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Использование этого компьютера",
+                        "graph2Tittle": "Фактическое активное время",
+                        "graphSubtittle": "В эти промежутки времени компьютер готов для быстрого возвращения к работе.",
+                        "graphNote": "Данных об активности этого компьютера недостаточно, чтобы составить профиль для автоматического планирования. Умный режим ожидания будет использовать график ручного режима, пока не будет собрано достаточно данных.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Нет",
+                            "frequent": "Часто"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
+                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер"
                 }
             },
             "audio": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL-АДРЕС ВЕБ-САЙТА",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Параметры успешно применены.",
+                        "invalidURLMessage": "Введите действительный URL-адрес.",
+                        "placeholder": "Начните с http:// или https://"
                     },
                     "enterText": {
                         "title": "ВВОДИМЫЙ ТЕКСТ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Введите адрес здесь"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "Использование компьютера в качестве планшетного ПК",
             "description": "<div class='faqInFs4Fb'>    Использование компьютера в качестве планшетного ПК</div><hr><p>Режим планшета делает Windows более интуитивно понятным и простым в использовании, если у вас есть устройство с сенсорным экраном.</p><h3 class='faqInFs25FbP10'>Использование режима планшета</h3><p>Чтобы включить режим планшета, выберите <strong>центр уведомлений</strong> на панели задач, затем выберите <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Примечание</h3><p>Чтобы узнать, может ли устройство автоматически включать режим планшета, найдите его на веб-сайте производителя. Поддержка этой функции зависит от оборудования, установленного драйвера и способа настройки устройства производителем. </p><p> </p><p>В режиме планшета приложения открываются в полноэкранном режиме, предоставляя больше пространства для работы. Чтобы закрыть приложение, перетащите его в нижнюю часть экрана.</p><p> </p><h3 class='faqInFs25FbP10'>Рекомендация</h3><p>Панель задач доступна, когда компьютер находится в режиме планшета, но ее можно скрыть, если требуется больше пространства на экране. Нажмите кнопку <strong>Пуск</strong>, выберите <strong>Параметры </strong>> <strong>Система </strong>> <strong>Режим планшета</strong> и включите параметр <strong>Автоматически скрывать панель задач в режиме планшета</strong>. Чтобы отобразить скрытую панель задач, проведите вверх от нижней части экрана или наведите на нее указатель мыши.</p><h3 class='faqInFs25FbP10'>Использование двух приложений одновременно</h3><p>Чтобы использовать два приложения одновременно в режиме планшета, перетащите открытое приложение вниз и в сторону. Вы увидите, где оно будет прикреплено, и все открытые приложения рядом с ним.</p><p>В этом представлении также можно:</p><ul>    <li>Использовать общий край между двумя прикрепленными приложениями, чтобы изменить размер обоих приложений одновременно.</li>    <li>Открыть новое приложение из представления задач. Для этого нажмите <strong>Представление задач</strong> на панели задач, выберите приложение и перетащите его на одну сторону, чтобы прикрепить к разделенному экрану.</li>    <li>Нажать кнопку \"Назад\" на панели задач, чтобы вернуться к приложению или открыть приложение, которое использовалось ранее.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "Да",
                 "no": "Нет"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопка отключена, если сведения об оборудовании еще не получены, устройства хранения данных не поддерживают эту функцию или выполняется восстановление поврежденных секторов."
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Хранение",
             "wireless": "Беспроводная связь"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

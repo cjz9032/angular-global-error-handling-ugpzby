@@ -642,7 +642,8 @@
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -793,9 +794,9 @@
                 "notFound": "시스템 업데이트를 찾을 수 없음",
                 "detail": {
                     "uptoDate": "업데이트 확인됨 ",
-					"updatedOn": "확인된 날짜 ",
-					"outdated": "최근에 업데이트를 확인하지 않음 ",
-					"neverRanUpdate": "업데이트 확인을 한 적 없음"
+                    "updatedOn": "확인된 날짜 ",
+                    "outdated": "최근에 업데이트를 확인하지 않음 ",
+                    "neverRanUpdate": "업데이트 확인을 한 적 없음"
                 }
             },
             "extendedWarranty": "연장 보증",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
                 "seeDetailsLink": "세부사항 참조",
-                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오."
+                "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "전원",
@@ -987,7 +991,28 @@
                         }
                     },
                     "description5": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다. 이 기능에는 3 가지 모드(자동 모드, 균형 모드 및 성능 모드)가 있으며, 이제 Windows 성능 전원 슬라이더를 사용하여 액세스할 수 있음",
-                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다."
+                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "전원 설정",
@@ -1080,14 +1105,14 @@
                         "FCCText": "{{before}} Wh에서 {{after}} Wh",
                         "note": "참고: 배터리 게이지를 리셋하기 전에, 컴퓨터를 AC 전원에 연결시키십시오. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "완료되었습니다. 리셋에 성공했습니다.",
-                            "ERROR_SHUTDOWN": "완료되지 않았습니다. 시스템을 종료합니다.",
-                            "ERROR_LOGOFF": "완료되지 않았습니다. 사용자가 로그아웃했습니다.",
-                            "ERROR_BATTERY_REMOVE": "완료되지 않았습니다. 배터리가 제거되었습니다.",
-                            "ERROR_BATTERY_REPLACE": "완료되지 않았습니다. 배터리가 교체되었습니다.",
-                            "ERROR_AC_DETTACH": "완료되지 않았습니다. AC 전원 어댑터가 분리되었습니다.",
-                            "ERROR_USER_CANCEL": "완료되지 않았습니다. 사용자가 취소했습니다.",
-                            "ERROR_UNEXPECTED": "완료되지 않았습니다. 예상치 않은 오류가 발생했습니다."
+                            "ERROR_SUCCESS": "완료되었습니다: 리셋에 성공했습니다.",
+                            "ERROR_SHUTDOWN": "실패: 시스템이 종료되었습니다.",
+                            "ERROR_LOGOFF": "실패: 사용자가 로그아웃했습니다.",
+                            "ERROR_BATTERY_REMOVE": "실패: 배터리가 제거되었습니다.",
+                            "ERROR_BATTERY_REPLACE": "실패: 배터리가 교체되었습니다.",
+                            "ERROR_AC_DETTACH": "실패: AC 전원 어댑터가 분리되었습니다.",
+                            "ERROR_USER_CANCEL": "실패: 사용자가 취소했습니다.",
+                            "ERROR_UNEXPECTED": "실패: 예상치 않은 오류가 발생했습니다."
                         },
                         "popup": {
                             "description1": "리셋 절차는 다음과 같습니다.<br>배터리 완충  -->  배터리 방전  -->  배터리 완전히 재충전",
@@ -1147,22 +1172,23 @@
                         },
                         "everyday": "매일",
                         "weekdays": "평일",
-                        "weekends": "주말"
+                        "weekends": "주말",
+                        "noDaySelected": "날짜를 선택하지 않음"
                     },
                     "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
                     "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "컴퓨터 예약",
+                    "automaticMode": "자동 모드",
+                    "manualMode": "수동 모드",
+                    "subNote": "사용량에 기반하여 컴퓨터가 모던 대기 모드가 되도록 예약되어 있습니다.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "이 컴퓨터 사용량",
+                        "graph2Tittle": "적용된 활성 시간",
+                        "graphSubtittle": "이 시간에는 컴퓨터를 언제든 빠르게 다시 사용할 수 있는 상태로 유지합니다.",
+                        "graphNote": "이 컴퓨터는 활동 데이터가 부족해 자동 예약을 위한 프로파일을 제공할 수 없습니다. 스마트 대기는 충분한 데이터를 사용할 수 있을 때까지 수동 모드 예약을 사용합니다.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "없음",
+                            "frequent": "자주"
                         },
                         "hours": {
                             "zero": 0,
@@ -1190,7 +1216,9 @@
                             "twentyTwo": 22,
                             "twentythree": 23
                         }
-                    }
+                    },
+                    "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
+                    "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정"
                 }
             },
             "audio": {
@@ -1376,7 +1404,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "고해상도 디스플레이의 확대/축소 기능을 사용하도록 설정",
+                        "description": "고해상도 디스플레이에서 확대/축소 기능 사용 설정",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1467,13 +1495,13 @@
                     },
                     "website": {
                         "url": "웹 사이트 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "설정이 적용되었습니다.",
+                        "invalidURLMessage": "올바른 URL을 입력해 주십시오.",
+                        "placeholder": "http:// 또는 https://로 시작해야 합니다."
                     },
                     "enterText": {
                         "title": "입력할 텍스트",
-                        "placeholder": "Please type here"
+                        "placeholder": "여기에 입력해 주십시오"
                     }
                 },
                 "fnCtrlKey": {
@@ -1919,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2518,7 +2547,6 @@
         "question5": {
             "title": "태블릿 같은 PC 사용",
             "description": "<div class='faqInFs4Fb'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 class='faqInFs25FbP10'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 class='faqInFs25FbP10'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 class='faqInFs25FbP10'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2777,7 +2805,7 @@
                 "yes": "예",
                 "no": "아니요"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "저장 장치가 이 기능을 지원하지 않거나 불량 섹터 복구가 실행 중인 경우에는 하드웨어 정보가 검색되지 않으면 이 버튼을 사용할 수 없습니다."
         },
         "support": {
             "title": "전문 진단 도구 다운로드",
@@ -2813,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "저장 장치",
             "wireless": "무선"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
