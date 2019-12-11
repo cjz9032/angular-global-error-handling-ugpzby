@@ -33,52 +33,56 @@
 				<div class="col-4 app-name">
 					<div class="app-title">{{ appDetails.title }}</div>
 				</div>
-				<div class="col-6 btn-content"
-					[ngSwitch]="installButtonStatus">
+				<div class="col-6 btn-content">
 					<div class="spinner-content app-spinner"
 						*ngIf="appDetails.showStatus == statusEnum.DOWNLOADING || appDetails.showStatus == statusEnum.INSTALLING">
 						<div class="spinner-border text-primary progress-spinner"
 							role="status"></div>
 					</div>
 					<div class="btn-box">
-						<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.INSTALL"
 							[isDisabled]="!isOnline"
 							(onClick)="clickInstallButton()"
 							metricsEvent="FeatureClick"
 							metricsParent="{{ metricsParent }}"
 							metricsItem="btn.Install"
 							[isFullWidth]="true"
+							linkId="apps-for-you-btn-install"
 							[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.DOWNLOADING"
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.DOWNLOADING"
 							(onClick)="clickInstallButton()"
 							metricsEvent="FeatureClick"
 							metricsParent="{{ metricsParent }}"
 							metricsItem="btn.Downloading"
 							[isDisabled]="true"
 							[isFullWidth]="true"
+							linkId="apps-for-you-btn-downloading"
 							[label]="'appsForYou.appDetails.installButton.downloading' | translate"></vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.INSTALLING"
 							(onClick)="clickInstallButton()"
 							metricsEvent="FeatureClick"
 							metricsParent="{{ metricsParent }}"
 							metricsItem="btn.Installing"
 							[isDisabled]="true"
 							[isFullWidth]="true"
+							linkId="apps-for-you-btn-installing"
 							[label]="'appsForYou.appDetails.installButton.installing' | translate"></vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.LAUNCH"
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.LAUNCH"
 							(onClick)="clickInstallButton()"
 							metricsEvent="FeatureClick"
 							metricsParent="{{ metricsParent }}"
 							metricsItem="btn.Launch"
 							[isFullWidth]="true"
+							linkId="apps-for-you-btn-launch"
 							[label]="'appsForYou.appDetails.installButton.launch' | translate"></vtr-ui-button>
-						<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.SEEMORE"
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.SEEMORE"
 							[isDisabled]="!isOnline"
 							(onClick)="clickInstallButton()"
 							metricsEvent="FeatureClick"
 							metricsParent="{{ metricsParent }}"
 							metricsItem="btn.SeeMore"
 							[isFullWidth]="true"
+							linkId="apps-for-you-btn-see-more"
 							[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>
 					</div>
 					<div class="error-message"

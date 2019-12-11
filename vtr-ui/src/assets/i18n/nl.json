@@ -907,7 +907,8 @@
                     "PermanentError": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
                     "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-voeding is aangesloten.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-voeding is aangesloten.</b>",
+                    "EmDriverInstalled": "Geen batterijdetails beschikbaar. Voer Windows Update-> Controleren op updates uit om het stuurprogramma <b>Lenovo ACPI-Compliant Virtual Power Controller</b> te installeren."
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> de batterij kan niet volledig worden opgeladen als drempelwaarde voor batterijlading is ingeschakeld.",

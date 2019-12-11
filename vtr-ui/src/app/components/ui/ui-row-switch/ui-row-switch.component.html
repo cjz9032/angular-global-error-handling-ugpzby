@@ -116,10 +116,8 @@
 					</ng-template>
 
 				</div>
-
-				<div class="p-0"
-					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
-					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
+				<!-- [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}" -->
+				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
 					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"

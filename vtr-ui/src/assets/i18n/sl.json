@@ -907,7 +907,8 @@
                     "PermanentError": "Zmogljivost baterije je <b>zmanjšana</b>. Prosimo, zamenjajte jo z novo.",
                     "NotSupportACAdapterDetail": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
                     "LimitedACAdapterSupportDetail": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W napajanje {{acAdapterType}} je priključeno.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W napajanje {{acAdapterType}} je priključeno.</b>",
+                    "EmDriverInstalled": "Podatki o bateriji niso na voljo. Zaženite Windows Update->Preveri, ali so na voljo posodobitve, da namestite gonilnik <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> Ko je omogočena funkcija Prag polnjenja baterije, baterije ni mogoče povsem napolniti.",
