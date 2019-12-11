@@ -1,5 +1,4 @@
 import { EventTypes, UAC } from '@lenovo/tan-client-bridge';
-import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,7 +19,9 @@ export class UacLandingViewModel {
 
 	constructor(translate: TranslateService, uacModel: UAC, public commonService: CommonService, ) {
 		uacModel.on(EventTypes.uacStatusEvent, (data) => {
-			this.setWaStatus(data);
+			if (data !== 'unknown') {
+				this.setUacStatus(data);
+			}
 		});
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityUacStatus);
 		translate.stream([
@@ -40,14 +41,14 @@ export class UacLandingViewModel {
 			this.uacStatus.buttonLabel = res['security.landing.visitUac'];
 			this.uacStatus.launch = uacModel.launch.bind(uacModel);
 			if (uacModel.status !== 'unknown') {
-				this.setWaStatus(uacModel.status);
+				this.setUacStatus(uacModel.status);
 			} else if (cacheStatus) {
-				this.setWaStatus(cacheStatus);
+				this.setUacStatus(cacheStatus);
 			}
 		});
 	}
 
-	setWaStatus(status: string) {
+	setUacStatus(status: string) {
 		if (!this.translateString) {
 			return;
 		}

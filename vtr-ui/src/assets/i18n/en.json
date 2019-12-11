@@ -2256,6 +2256,7 @@
 			"goPassword": "go to passwordManger",
 			"goWifi": "go to wifi-security",
 			"goVpn": "go to VPN security",
+			"haveOwn" : "I have my own",
 			"visitWindows": "Visit Windows Activation",
 			"visitFingerprint": "Visit Fingerprint reader",
 			"visitUac": "Visit User Account Control",

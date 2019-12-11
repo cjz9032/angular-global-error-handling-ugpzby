@@ -35,6 +35,10 @@
 			color: $shade_blue;
 			font-size: 1.6rem;
 			font-weight: $weight_600;
+			max-width: 20rem;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 
 		fa-icon {
