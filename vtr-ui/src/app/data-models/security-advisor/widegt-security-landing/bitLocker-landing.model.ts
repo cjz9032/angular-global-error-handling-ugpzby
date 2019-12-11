@@ -1,5 +1,4 @@
 import { EventTypes, BitLocker } from '@lenovo/tan-client-bridge';
-import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,7 +19,9 @@ export class BitLockerLandingViewModel {
 
 	constructor(translate: TranslateService, blModel: BitLocker, public commonService: CommonService, ) {
 		blModel.on(EventTypes.bitLockerStatusEvent, (data) => {
-			this.setBlStatus(data);
+			if (data !== 'unknown') {
+				this.setBlStatus(data);
+			}
 		});
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityBitLockerStatus);
 		translate.stream([

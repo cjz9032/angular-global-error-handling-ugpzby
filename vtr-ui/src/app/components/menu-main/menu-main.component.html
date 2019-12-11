@@ -130,12 +130,10 @@
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							data-toggle="dropdown"
-							attr.aria-haspopup="true"
-							attr.aria-expanded="false"
+							aria-haspopup="true"
+							aria-expanded="false"
 							href="javascript:void(0)"
-							(click)="onMenuItemClick(item);hideDropDown=true"
-							(mouseover)="hideDropDown=false"
-							(mouseout)="hideDropDown=true"
+							(click)="onMenuItemClick(item);"
 							(keydown.enter)="onMenuItemClick(item)"
 							role="button"
 							*ngIf="item.label | translate">
@@ -148,11 +146,8 @@
 								class="beta">Beta</span>
 						</a>
 						<div ngbDropdownMenu
-							(mouseover)="hideDropDown=false"
-							(mouseout)="hideDropDown=true"
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
 							class="dropdown-menu"
-							[ngClass]="{'d-none': hideDropDown}"
 							aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
@@ -174,24 +169,7 @@
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
 									(keyup.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a ngbDropdownItem
-									*ngIf="!subitem.externallink && subitem.path==='support' && showItem(subitem)"
-									vtrMetrics
-									tabindex="1"
-									id="menu-main-nav-lnk-dropdown-menu-support-{{item.id}}-{{ii}}"
-									attr.aria-label="{{subitem.label | translate}}"
-									routerLinkActive="link-active"
-									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-									[metricsEvent]="subitem.metricsEvent"
-									[metricsParent]="subitem.metricsParent"
-									[metricsItem]="subitem.metricsItem"
-									class="dropdown-item link"
-									routerLink="{{subitem.path}}"
-									(click)="onMenuItemClick(subitem)"
-									(keyup.enter)="onMenuItemClick(subitem)"
-									href="javascript:void(0)"
-									role="menuitem">{{subitem.label | translate}}</a>
-								<a ngbDropdownItem
-									*ngIf="!subitem.externallink  && subitem.path!=='support' && showItem(subitem)"
+									*ngIf="!subitem.externallink && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
@@ -289,7 +267,6 @@
 						</a>
 						<div ngbDropdownMenu
 							class="dropdown-menu {{item.id}} dropdown-menu-id"
-							[ngClass]="{'d-none': !hideDropDown}"
 							id="navbarDropdownMenu"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item"
