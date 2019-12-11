@@ -642,7 +642,8 @@
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -906,12 +907,16 @@
                     "PermanentError": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>",
+                    "EmDriverInstalled": "Akun tiedot eivät ole saatavilla. Suorita Windows Update -> Tarkista päivitykset <b>Lenovo ACPI - Compliant Virtual Power Controller</b> -ohjaimen asennusta varten."
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
-                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
+                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Virta",
@@ -989,24 +994,24 @@
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
                     "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa.",
+                        "desc2": "Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä säädetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä. Liukusäätimen saa käyttöön napsauttamalla Windowsin järjestelmäalueella näkyvää akun kuvaketta.",
+                        "desc3": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat ottaa käyttöön automaattisen tilan, paina Fn+T-näppäinyhdistelmää.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automaattinen akkutila",
+                            "desc1": "Liukusäädin sijaitsee vasemmalla. Toimintatila siirtyy dynaamisesti hiljaiseen tilaan tai akkutilaan parhaan tasasähkövirran käyttökokemuksen saavuttamiseksi.",
+                            "title2": "Automaattinen suorituskyvyn tila",
+                            "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Toimintatila siirtyy dynaamisesti hiljaiseen tilaan, tasapainotettuun tilaan tai suorituskyvyn tilaan parhaan verkkovirran käyttökokemuksen saavuttamiseksi.",
+                            "title3": "Suorituskykytila",
+                            "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Hiljainen tila",
+                            "desc1": "Liukusäädin sijaitsee vasemmalla. Tuulettimen kierrosnopeutta hidastetaan ja tietokoneen suorituskykyä vähennetään, joten se pysyy viileämpänä ja toimii hiljaisemmin. Samalla akku kestää pidempään.",
+                            "title2": "Tasapainotettu tila",
+                            "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
+                            "title3": "Suorituskykytila",
+                            "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Valmis. Nollaus onnistui.",
-                            "ERROR_SHUTDOWN": "Vaillinainen. Järjestelmä sammui.",
-                            "ERROR_LOGOFF": "Vaillinainen. Käyttäjä kirjautui ulos.",
-                            "ERROR_BATTERY_REMOVE": "Vaillinainen. Akku poistettiin.",
-                            "ERROR_BATTERY_REPLACE": "Vaillinainen. Akku vaihdettiin.",
-                            "ERROR_AC_DETTACH": "Vaillinainen. Verkkolaite irrotettiin.",
-                            "ERROR_USER_CANCEL": "Vaillinainen. Käyttäjä peruutti toiminnon.",
-                            "ERROR_UNEXPECTED": "Vaillinainen. On tapahtunut odottamaton virhe."
+                            "ERROR_SUCCESS": "Valmis: Nollaus onnistui.",
+                            "ERROR_SHUTDOWN": "Epäonnistui: Järjestelmä sammui.",
+                            "ERROR_LOGOFF": "Epäonnistui: Käyttäjä kirjautui ulos.",
+                            "ERROR_BATTERY_REMOVE": "Epäonnistui: Akku poistettiin.",
+                            "ERROR_BATTERY_REPLACE": "Epäonnistui: Akku vaihdettiin.",
+                            "ERROR_AC_DETTACH": "Epäonnistui: Verkkolaite irrotettiin.",
+                            "ERROR_USER_CANCEL": "Epäonnistui: Käyttäjä peruutti toiminnon.",
+                            "ERROR_UNEXPECTED": "Epäonnistui: On tapahtunut odottamaton virhe."
                         },
                         "popup": {
                             "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
-                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
+                        "endTimeNote": "LOPETUSajan on oltava 20 tunnin kuluessa ALOITUSajasta",
                         "timeUnits": {
                             "unit1": "tuntia",
                             "unit2": "minuuttia",
@@ -1169,22 +1174,22 @@
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
                         "weekends": "Viikonloppuisin",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Päivää ei ole valittuna"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
                     "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Ajasta tietokoneesi",
+                    "automaticMode": "Automaattinen tila",
+                    "manualMode": "Manuaalinen tila",
+                    "subNote": "Tietokone on ajastettu käyttämään Modern Standby -ominaisuutta käytön mukaan.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Tämän tietokoneen käyttö",
+                        "graph2Tittle": "Käytössä oleva aktiivinen aika",
+                        "graphSubtittle": "Näinä aikoina tietokone pidetään valmiudessa nopeampaan lepotilasta palamiseen.",
+                        "graphNote": "Tämän tietokoneen toimintatiedot eivät riitä luomaan profiilia automaattista ajoitusta varten. Smart Standby -ominaisuus käyttää manuaalisen tilan ajoitusta, kunnes käytettävissä on riittävästi tietoja.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ei mitään",
+                            "frequent": "Toistuva"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta"
                 }
             },
             "audio": {
@@ -1491,13 +1496,13 @@
                     },
                     "website": {
                         "url": "VERKKOSIVUSTON URL-OSOITE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Asetusten käyttöönotto onnistui.",
+                        "invalidURLMessage": "Anna kelvollinen URL-osoite.",
+                        "placeholder": "Aloita kirjoittamalla http:// tai https://"
                     },
                     "enterText": {
                         "title": "KIRJOITETTAVA TEKSTI",
-                        "placeholder": "Please type here"
+                        "placeholder": "Kirjoita tähän"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2800,7 +2806,7 @@
                 "yes": "Kyllä",
                 "no": "Ei"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Vaikka laitteistotietoja ei ole vielä noudettu, painike ei ole käytettävissä sen varalta, että tallennuslaitteet eivät tue tätä toimintoa tai viallisten sektorien palautus on käynnissä."
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",
@@ -2836,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Tallennus",
             "wireless": "Langattomat yhteydet"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

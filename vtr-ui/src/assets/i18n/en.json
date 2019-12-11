@@ -372,7 +372,7 @@
 			},
 			"brightness": {
 				"text1": {
-					"title": "*Brightness setting doesn't apply on "
+					"title": "*Brightness setting doesn't apply on"
 				},
 				"text2": {
 					"title": " effect"
@@ -842,7 +842,7 @@
 				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
-				"charge": "TIME TO FULLY CHARGE",
+				"charge": "Time to full charge",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
@@ -901,7 +901,7 @@
 					"Good": "<b>The battery is in good condition.</b>",
 					"Exhaustion": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
-					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
+					"NotDetected": "<b>No battery detected.</b>",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
 					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
@@ -913,7 +913,11 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
+					"EmDriverInstalled": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller</b>driver."
+				},
+				"dualConditions": {
+					"NotDetected": "<b>The primary battery is not detected.</b>"
 				}
 			},
 			"power": {
@@ -1043,6 +1047,7 @@
 					"title": "Smart standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
+					"oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"subTitle": "Schedule your computer",
 					"description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
 					"subTitle2": "Set time when you typically use this computer",
@@ -1176,14 +1181,14 @@
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete. Successful reset.",
-							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
-							"ERROR_LOGOFF": "Incomplete. User logged off.",
-							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+							"ERROR_SUCCESS": "Complete: Successful reset.",
+							"ERROR_SHUTDOWN": "Failed: System shut down.",
+							"ERROR_LOGOFF": "Failed: User has logged off.",
+							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Failed: Battery was replaced.",
+							"ERROR_AC_DETTACH": "Failed: AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Failed: Cancelled by user.",
+							"ERROR_UNEXPECTED": "Failed: Unexpected error occurred."
 						},
 						"popup": {
 							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
@@ -1323,11 +1328,11 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "seconds",
-							"minute": "minute",
-							"minutes": "minutes",
+							"seconds": "Seconds",
+							"minute": "Minute",
+							"minutes": "Minutes",
 							"alwaysOn": "Always on",
-							"never": "never",
+							"never": "Never",
 							"halfTime": "Half time of display off timer"
 						},
 						"taskBarDimmer": "TASKBAR DIMMER",
@@ -1485,7 +1490,7 @@
 					},
 					"website": {
 						"url": "WEBSITE URL",
-						"successMessage": "The setting is applied successfully.",
+						"successMessage": "The settings are applied successfully.",
 						"invalidURLMessage": "Please input a valid URL.",
 						"placeholder":"Please start with http:// or https://"
 					},
@@ -1746,7 +1751,7 @@
 		},
 		"autoUpdateSettings": {
 			"title": "Auto update settings",
-			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"subtitle": "Automatically install updates",
 			"critical": {
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
@@ -2188,7 +2193,7 @@
 		},
 		"needHelp": {
 			"title": "Need Help?",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
@@ -2199,7 +2204,7 @@
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider",
 			"listAboutLenovoVantage": "About Lenovo Vantage"
@@ -2246,13 +2251,14 @@
 			"uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
 			"wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
 			"bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-			"vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+			"vpnContent": "A Virtual Private Network (VPN) uses encryption to keep your online activity secure and private, and helps prevent hackers from stealing your personal information over Wi-Fi.",
 			"windows": "Windows Activation",
 			"goAntivirus": "go to antivirus",
 			"goFirewall": "go to firewall",
 			"goPassword": "go to passwordManger",
 			"goWifi": "go to wifi-security",
 			"goVpn": "go to VPN security",
+			"haveOwn" : "I have my own",
 			"visitWindows": "Visit Windows Activation",
 			"visitFingerprint": "Visit Fingerprint reader",
 			"visitUac": "Visit User Account Control",
@@ -2261,6 +2267,7 @@
 			"haveOwnWifi": "I have my own wifi security",
 			"haveOwnVpn" : "I have my own wifi security",
 			"uac": "User Account Control (UAC)",
+			"uacTitles": "User Account Control",
 			"hde": "Hard drive encryption",
 			"level": "Security Level:",
 			"fully": "To get a better offer protect your device, stay with",
@@ -3157,7 +3164,8 @@
 			"pci_express": "PCI Express",
 			"storage": "Storage",
 			"wireless": "Wireless"
-		}
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
 	},
 	"appsForYou": {
 		"common": {

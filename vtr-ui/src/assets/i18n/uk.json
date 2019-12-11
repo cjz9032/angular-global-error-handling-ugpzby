@@ -642,7 +642,8 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -906,12 +907,16 @@
                     "PermanentError": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
-                    "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
+                    "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>",
+                    "EmDriverInstalled": "Відомості про акумулятор не доступні. Запустіть Windows Update та виберіть «Перевірити наявність оновлень» для інсталяції драйвера <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Батарея не може бути заряджена повністю якщо увімкнено граничне значення заряду акумулятора.",
                 "seeDetailsLink": "Показати відомості",
-                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
+                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Живлення",
@@ -989,24 +994,24 @@
                     "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
                     "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи.",
+                        "desc2": "Ця функція має наведені нижче режими та регулюється тепер за допомогою повзунка швидкодії Windows. Ви можете отримати доступ до нього, натиснувши значок акумулятора в системному треї Windows.",
+                        "desc3": "Певні режими можуть автоматично підлаштовуватись у ширшому діапазоні продуктивності залежно від вашої активності. Щоб увімкнути автоматичний режим, натисніть Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Автоматичний режим акумулятора",
+                            "desc1": "Повзунок розташований зліва. Режим динамічно перемикається на тихий або режим акумулятора для оптимальної роботи від мережі постійного струму.",
+                            "title2": "Режим автоматичної продуктивності",
+                            "desc2": "Повзунок розташований по центру або справа по центру. Режим динамічно перемикається на тихий, збалансований або продуктивний для оптимальної роботи від мережі змінного струму.",
+                            "title3": "Режим продуктивності",
+                            "desc3": "Повзунок розташований із правого краю. Швидкість вентилятора та припустима температура поверхні вищі, ніж в інших режимах. Комп'ютер має найвищу швидкодію."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Тихий режим",
+                            "desc1": "Повзунок розташований зліва. Швидкість вентилятора та продуктивність нижчі, ніж в інших режимах. Комп'ютер менше нагрівається, працює тихіше, час роботи від акумулятора максимальний.",
+                            "title2": "Збалансований режим",
+                            "desc2": "Повзунок розташований по центру або справа по центру. Швидкість вентилятора та швидкодія динамічно збалансовані для найкращої роботи.",
+                            "title3": "Режим продуктивності",
+                            "desc3": "Повзунок розташований із правого краю. Швидкість вентилятора та припустима температура поверхні вищі, ніж в інших режимах. Комп'ютер має найвищу швидкодію."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
                         "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Готово. Успішне скидання.",
-                            "ERROR_SHUTDOWN": "Не завершено. Система завершила роботу.",
-                            "ERROR_LOGOFF": "Не завершено. Користувач вийшов із системи.",
-                            "ERROR_BATTERY_REMOVE": "Не завершено. Акумулятор знято.",
-                            "ERROR_BATTERY_REPLACE": "Не завершено. Акумулятор замінено.",
-                            "ERROR_AC_DETTACH": "Не завершено. Адаптер живлення змінного струму від’єднано.",
-                            "ERROR_USER_CANCEL": "Не завершено. Скасовано користувачем.",
-                            "ERROR_UNEXPECTED": "Не завершено. Сталася невідома помилка."
+                            "ERROR_SUCCESS": "Готово: Успішне скидання.",
+                            "ERROR_SHUTDOWN": "Помилка. Система завершила роботу.",
+                            "ERROR_LOGOFF": "Помилка. Користувач вийшов із системи.",
+                            "ERROR_BATTERY_REMOVE": "Помилка. Акумулятор знято.",
+                            "ERROR_BATTERY_REPLACE": "Помилка. Акумулятор змінено.",
+                            "ERROR_AC_DETTACH": "Помилка. Адаптер живлення змінного струму від’єднано.",
+                            "ERROR_USER_CANCEL": "Помилка. Скасовано користувачем.",
+                            "ERROR_UNEXPECTED": "Помилка. Сталася невідома помилка."
                         },
                         "popup": {
                             "description1": "Скидання виконуйте в такій послідовності:<br>повністю зарядіть акумулятор  -->  повністю розрядіть акумулятор  -->  повністю перезарядіть акумулятор",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "Початок використання",
                         "subHeading2": "Завершення використання",
                         "subHeading3": "Використовувати цей розклад",
-                        "endTimeNote": "Час завершення має бути в межах 20 годин після часу початку",
+                        "endTimeNote": "Час ЗАВЕРШЕННЯ має бути в межах 20 годин після часу ПОЧАТКУ",
                         "timeUnits": {
                             "unit1": "год.",
                             "unit2": "Хвилини",
@@ -1169,22 +1174,22 @@
                         "everyday": "Щодня",
                         "weekdays": "Будні",
                         "weekends": "Вихідні дні",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Не вибрано день"
                     },
                     "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
                     "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Заплануйте комп'ютер",
+                    "automaticMode": "Автоматичний режим",
+                    "manualMode": "Ручний режим",
+                    "subNote": "Перехід комп'ютера до сучасного режиму очікування планується залежно від використання.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Використання цього комп’ютера",
+                        "graph2Tittle": "Час активного використання",
+                        "graphSubtittle": "У ці періоди ми тримаємо комп'ютер готовим до швидшого відновлення роботи.",
+                        "graphNote": "Даних про активність цього комп'ютера недостатньо для створення профілю автоматичного планування. Розумне очікування буде використовувати графік ручного режиму, поки не накопичиться достатньо даних.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Жодної дії",
+                            "frequent": "Часто"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
+                    "subTitle2": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером"
                 }
             },
             "audio": {
@@ -1491,13 +1496,13 @@
                     },
                     "website": {
                         "url": "URL-АДРЕСА ВЕБСАЙТУ",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Настройки успішно застосовано.",
+                        "invalidURLMessage": "Введіть дійсну URL-адресу.",
+                        "placeholder": "Почніть з http:// або https://"
                     },
                     "enterText": {
                         "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Введіть тут"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2800,7 +2806,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",
@@ -2836,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Пам'ять",
             "wireless": "Безпровідні підключення"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -642,7 +642,8 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -906,12 +907,16 @@
                     "PermanentError": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
                     "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
+                    "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
                 "seeDetailsLink": "Prikaži pojedinosti",
-                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen."
+                "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",
@@ -989,24 +994,24 @@
                     "description5": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije. Ova značajka ima 3 načina rada (tihi način rada, balansirani način i način performansi), a sada je dostupna putem klizača napajanja sustava Windows",
                     "nocqldesc": "Inteligentno hlađenje vam omogućava podešavanje performansi sustava i temperature zagrijavanja. U načinu \"Performanse\" optimizira performanse sustava. Isto tako, u načinu \"Hladno i tiho\" pomaže u održavanju hladnijeg ili tišeg rada sustava.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije.",
+                        "desc2": "Značajka ima načine navedene u nastavku, a sada ih podešava klizač napajanja performansi sustava Windows. Možete mu pristupiti klikom na ikonu baterije u programskoj traci sustava Windows.",
+                        "desc3": "Neki se načini mogu automatski prilagoditi u širem rasponu performansi na temelju vaše aktivnosti. Da biste omogućili automatski način rada, pritisnite Fn + T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatski način rada baterije",
+                            "desc1": "Klizač je s lijeve strane. Način se dinamički prebacuje u miran način rada ili način rada baterije za najbolji doživljaj istosmjernog načina rada.",
+                            "title2": "Visokoučinkoviti način rada",
+                            "desc2": "Klizač je u sredini ili desno. Način se dinamički prebacuje u miran način rada, uravnoteženi način rada ili način performansi za najbolji doživljaj istosmjernog načina rada.",
+                            "title3": "Način performansi",
+                            "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tih način rada",
+                            "desc1": "Klizač je s lijeve strane. Brzina i performanse ventilatora smanjuju se za hladnije, tiše računalo i najbolji radni vijek baterije.",
+                            "title2": "Uravnoteženi način rada",
+                            "desc2": "Klizač je u sredini ili desno. Brzina i performanse ventilatora dinamički se uravnotežuje za najbolje iskustvo.",
+                            "title3": "Način performansi",
+                            "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Napomena: Prije ponovnog postavljanja prikaza napunjenosti baterije obavezno povežite računalo na izmjenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dovršeno. Ponovno je postavljanje uspjelo.",
-                            "ERROR_SHUTDOWN": "Nedovršeno. Isključenje sustava",
-                            "ERROR_LOGOFF": "Nedovršeno. Korisnik je odjavljen.",
-                            "ERROR_BATTERY_REMOVE": "Nedovršeno. Baterija je uklonjena.",
-                            "ERROR_BATTERY_REPLACE": "Nedovršeno. Baterija je zamijenjena.",
-                            "ERROR_AC_DETTACH": "Nedovršeno. Prilagodnik napajanja odspojen je.",
-                            "ERROR_USER_CANCEL": "Nedovršeno. Korisnik je odustao.",
-                            "ERROR_UNEXPECTED": "Nedovršeno. Došlo je do neočekivane pogreške."
+                            "ERROR_SUCCESS": "Dovršeno: Ponovno je postavljanje uspjelo.",
+                            "ERROR_SHUTDOWN": "Neuspješno: sustav se isključuje.",
+                            "ERROR_LOGOFF": "Neuspješno: korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Neuspješno: baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Nauspješno: baterija je zamijenjena.",
+                            "ERROR_AC_DETTACH": "Nauspješno: ispravljač za struju odspojen.",
+                            "ERROR_USER_CANCEL": "Neuspješno: korisnik je otkazao.",
+                            "ERROR_UNEXPECTED": "Neuspješno: došlo je do neočekivane pogreške."
                         },
                         "popup": {
                             "description1": "Postupak ponovnog postavljanja je sljedeći:<br>Potpuno napunite bateriju  -->  Potpuno ispraznite bateriju  -->  Potpuno napunite bateriju",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "početak",
                         "subHeading2": "završetak",
                         "subHeading3": "koristi ovaj raspored za",
-                        "endTimeNote": "Vrijeme završetka mora biti unutar 20 sati od vremena početka",
+                        "endTimeNote": "Vrijeme ZAVRŠETKA mora biti unutar 20 sati od vremena POČETKA",
                         "timeUnits": {
                             "unit1": "Sati",
                             "unit2": "Minuta",
@@ -1169,22 +1174,22 @@
                         "everyday": "Svaki dan",
                         "weekdays": "Radnim danom",
                         "weekends": "Vikendi",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nije odabran dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena vašeg računala na temelju vaše uporabe",
                     "hyperlinkToGraph": "Kliknite za prikaz tablice aktivnosti i aktivnog vremena vašeg računala",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Zakažite raspored za svoje računalo",
+                    "automaticMode": "Automatski način rada",
+                    "manualMode": "Ručni način rada",
+                    "subNote": "Na vašem je računalu predviđeno moderno stanje pripravnosti na temelju vaše upotrebe.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Upotreba ovog računala",
+                        "graph2Tittle": "Primijenjeno aktivno vrijeme",
+                        "graphSubtittle": "U tim vremenskim razdobljima, računalo je spremno za brži nastavak.",
+                        "graphNote": "Podaci o aktivnosti ovog računala nisu dovoljni da osiguraju profil za automatsko zakazivanje. Pametno stanje pripravnosti će koristiti raspored ručnog načina rada sve dok nema dovoljno podataka.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Nema",
+                            "frequent": "Često"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
+                    "subTitle2": "Postavite vrijeme kada obično koristite računalo"
                 }
             },
             "audio": {
@@ -1491,13 +1496,13 @@
                     },
                     "website": {
                         "url": "URL WEB-MJESTA",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Postavke su uspješno primjenjene.",
+                        "invalidURLMessage": "Unesite valjani URL.",
+                        "placeholder": "Započnite s http:// ili https://"
                     },
                     "enterText": {
                         "title": "TEKST ZA UNOS",
-                        "placeholder": "Please type here"
+                        "placeholder": "Pišite ovdje"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2800,7 +2806,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Gumb je onemogućen dok podaci o hardveru još nisu dohvaćeni, u slučaju da uređaji za pohranu ne podržavaju ovu funkciju ili kada se pokreću loši sektori."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",
@@ -2836,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Pohrana",
             "wireless": "Bežična veza"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

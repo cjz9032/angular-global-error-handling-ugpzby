@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppsForYouRoutingModule } from './apps-for-you-routing.module';
@@ -17,6 +17,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAppsForYouScreenshotComponent } from 'src/app/components/modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 library.add(faChevronLeft);
 library.add(faChevronRight);
 
@@ -33,6 +34,7 @@ library.add(faChevronRight);
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
+		PageLayoutModule,
 		NgbModalModule
 	],
 	providers: [
@@ -40,6 +42,7 @@ library.add(faChevronRight);
 	],
 	entryComponents: [
 		ModalAppsForYouScreenshotComponent,
-	]
+	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppsForYouModule { }

@@ -112,6 +112,7 @@ $light: #fff;
 $dark: #000;
 $gray: #ccc;
 $charcoal: #434343;
+$purple_navy: #444F78;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0073ff;
@@ -181,10 +182,10 @@ $fontsize_xs: 1.4rem;
 $fontsize_xs2: 1.2rem;
 
 // RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
-$breakpoint_sm: "only screen and (max-width: 576px)";
-$breakpoint_md: "only screen and (max-width: 768px)";
-$breakpoint_lg: "only screen and (max-width: 992px)";
-$breakpoint_xl: "only screen and (max-width: 1200px)";
+$breakpoint_sm: "only screen and (max-width: 575px)";
+$breakpoint_md: "only screen and (max-width: 767px)";
+$breakpoint_lg: "only screen and (max-width: 991px)";
+$breakpoint_xl: "only screen and (max-width: 1199px)";
 $breakpoint_xl2: "only screen and (max-width: 1400px)";
 $breakpoint_xl3: "only screen and (max-width: 1600px)";
 $breakpoint_xl4: "only screen and (max-width: 1800px)";
@@ -218,6 +219,7 @@ $mediaquery_22: "only screen and (min-width: 1200px) and (max-width: 1280px)";
 $mediaquery_23: "only screen and (max-width: 991px)";
 $mediaquery_xl: "only screen and (max-width: 1199px)";
 $mediaquery_lg: "only screen and (max-width: 992px)";
+$mediaquery_lg_ex: "only screen and (width: 992px)";
 $mediaquery_md: "only screen and (max-width: 768px)";
 $mediaquery_sm: "only screen and (max-width: 576px)";
 $mediaquery_X1: "only screen and (min-width: 800px) and (max-width: 1200px)";

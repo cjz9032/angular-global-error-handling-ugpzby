@@ -642,7 +642,8 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -906,12 +907,17 @@
                     "PermanentError": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>",
+                    "EmDriverInstalled": "Pil ayrıntıları kullanılamıyor. Windows Update->Güncelleştirmeleri denetle seçeneğini kullanarak <b>Lenovo ACPI - Compliant Virtual Power Controller</b> sürücüsünü yükleyin."
+
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
                 "seeDetailsLink": "Ayrıntıları görün",
-                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
+                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Güç",
@@ -989,24 +995,24 @@
                     "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
                     "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir.",
+                        "desc2": "Özellik aşağıda listelenen kiplere sahiptir ve artık Windows performans güç kaydırıcısından ayarlanmaktadır. Windows sistem tepsisindeki pil simgesine tıklayarak erişebilirsiniz.",
+                        "desc3": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi etkinleştirmek için Fn+T tuşlarına basın.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Otomatik Pil kipi",
+                            "desc1": "Kaydırıcı soldadır. En iyi DC kipi deneyimi için kip dinamik bir şekilde Sessiz veya Pil kipine geçirilir.",
+                            "title2": "Otomatik Performans kipi",
+                            "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi AC kipi deneyimi için kip dinamik bir şekilde Sessiz, Dengeli veya Performans kipine geçirilir.",
+                            "title3": "Performans kipi",
+                            "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Sessiz kipi",
+                            "desc1": "Kaydırıcı soldadır. Daha serin, daha sessiz bir bilgisayar ve en iyi pil ömrü için fan hızı ve performans düşürülür.",
+                            "title2": "Dengeli kipi",
+                            "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
+                            "title3": "Performans kipi",
+                            "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
                         }
                     }
                 },
@@ -1101,14 +1107,14 @@
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Tamamlandı. Başarılı sıfırlama.",
-                            "ERROR_SHUTDOWN": "Tamamlanmadı. Sistemi kapat.",
-                            "ERROR_LOGOFF": "Tamamlanmadı. Kullanıcı oturumunu kapat.",
-                            "ERROR_BATTERY_REMOVE": "Tamamlanmadı. Pil çıkarıldı.",
-                            "ERROR_BATTERY_REPLACE": "Tamamlanmadı. Pil değiştirildi.",
-                            "ERROR_AC_DETTACH": "Tamamlanmadı. AC güç bağdaştırıcısı çıkarıldı.",
-                            "ERROR_USER_CANCEL": "Tamamlanmadı. Kullanıcı tarafından iptal edildi.",
-                            "ERROR_UNEXPECTED": "Tamamlanmadı. Beklenmedik bir hata oluştu."
+                            "ERROR_SUCCESS": "Tamamlandı: Başarılı sıfırlama.",
+                            "ERROR_SHUTDOWN": "Başarısız: Sistem kapatıldı.",
+                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapatıldı.",
+                            "ERROR_BATTERY_REMOVE": "Başarısız: Pil çıkarıldı.",
+                            "ERROR_BATTERY_REPLACE": "Başarısız: Pil değiştirildi.",
+                            "ERROR_AC_DETTACH": "Başarısız: AC güç bağdaştırıcısı çıkarıldı.",
+                            "ERROR_USER_CANCEL": "Başarısız: Kullanıcı tarafından iptal edildi.",
+                            "ERROR_UNEXPECTED": "Başarısız: Beklenmedik bir hata oluştu."
                         },
                         "popup": {
                             "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
@@ -1134,7 +1140,7 @@
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
-                        "endTimeNote": "Bitiş saati, Başlangıç saatinden sonraki 20 saat içinde olmalıdır",
+                        "endTimeNote": "BİTİŞ saati, BAŞLANGIÇ saatinden sonraki 20 saat içinde olmalıdır",
                         "timeUnits": {
                             "unit1": "Saat",
                             "unit2": "Dakika",
@@ -1169,22 +1175,22 @@
                         "everyday": "Her gün",
                         "weekdays": "Hafta içi",
                         "weekends": "Hafta sonları",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Gün seçilmedi"
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
                     "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Bilgisayarınızı zamanlama",
+                    "automaticMode": "Otomatik kip",
+                    "manualMode": "Manuel kip",
+                    "subNote": "Bilgisayarınız, kullanımınıza dayalı olarak Modern Bekleme Durumu kipine ayarlanmıştır.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Bu bilgisayarın kullanımı",
+                        "graph2Tittle": "Uygulanan etkin zaman",
+                        "graphSubtittle": "Bu zaman aralıklarında, bilgisayarı hazır tutarak beklemeden daha hızlı çıkmasını sağlarız.",
+                        "graphNote": "Bu bilgisayarın etkinlik verileri, otomatik zamanlamaya yönelik bir profil sağlamak için yeterli değil. Akıllı Bekleme, yeterli veri toplanıncaya kadar Manuel kip zamanlamasını kullanacak.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Hiçbiri",
+                            "frequent": "Sık"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1219,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın"
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "WEB SİTESİ URL'Sİ",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Ayarlar başarıyla uygulandı.",
+                        "invalidURLMessage": "Lütfen geçerli bir URL girin.",
+                        "placeholder": "Lütfen http:// veya https:// ile başlayın"
                     },
                     "enterText": {
                         "title": "GİRİLECEK METİN",
-                        "placeholder": "Please type here"
+                        "placeholder": "Lütfen buraya yazın"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1949,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2800,7 +2807,7 @@
                 "yes": "Evet",
                 "no": "Hayır"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Donanım bilgileri henüz alınmadıysa, depolama cihazlarının bu işlevi desteklememe olasılığına karşı veya bozuk kesimleri kurtar aracı çalıştırılırken düğme devre dışı bırakılır."
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "Depolama alanı",
             "wireless": "Kablosuz"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

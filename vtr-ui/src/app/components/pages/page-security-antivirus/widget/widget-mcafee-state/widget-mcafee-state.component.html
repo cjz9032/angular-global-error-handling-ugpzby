@@ -1,7 +1,7 @@
 <ul class="list-group" [ngClass]="{'windows-group': windowsDefender}">
     <li class="group-item" *ngFor="let list of statusList">
       <div class="row align-items-center">
-        <div class="col-auto pl-0 pr-3">
+        <div class="col-auto pl-0 pr-3 windows-padding">
           <div *ngIf="list.status!=='loading'" class="bullet-icon">
             <div *ngIf="list.status !== 'disabled' && list.status !== 'not-installed'" class="icon-bkg icon-check">
               <fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-auto text px-0">
           <div [innerHTML]="list.title | translate | characterLimit:26"></div>
-          <div class="divider"></div>
+          <div class="divider m-0"></div>
         </div>
         <div class="col-auto px-0 ml-auto">
           <h3 class="mb-1"><span class="text-uppercase text-color"

@@ -93,11 +93,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
-	public isPowerDriverMissing = false;
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
 	tempHeaderMenuItems = [];
 	gaugeResetCapability = false;
+	public isEmDriverInstalled = true;
 
 	headerMenuItems = [
 		{
@@ -563,9 +563,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
 						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
 						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
-						if (alwaysOnUsbThinkPad.isEnabled) {
-							this.toggleAlwaysOnUsbFlag = true;
-						}
+						this.toggleAlwaysOnUsbFlag = true;
 						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
 						this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
@@ -1114,13 +1112,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					break;
+				case 'IsEmDriverInstalled':
+					this.checkEmDriverInstalled(notification.payload);
+					break;
 			}
 
 		}
 	}
 
 	public checkPowerDriverMissing(status) {
-		this.isPowerDriverMissing = status;
 		if (this.machineType === 1 && status) {
 			this.showAirplanePowerModeSection = false;
 			this.isChargeThresholdAvailable = false;
@@ -1128,6 +1128,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.updateBatteryLinkStatus(false);
 			this.checkMenuItemsEmpty();
+		}
+	}
+
+	public checkEmDriverInstalled(status) {
+		this.isEmDriverInstalled = !status;
+		if(this.machineType === 0 && status) {
+		this.getConservationModeStatusIdeaPad();
+		this.getRapidChargeModeStatusIdeaPad();
+		this.getAlwaysOnUSBStatusIdeaPad();
+		this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+		this.getFlipToBootCapability();
+		this.getVantageToolBarCapability();
+		this.getEnergyStarCapability();
+		this.onSetSmartStandbyCapability(this.smartStandbyCapability);
+		this.updateBatteryLinkStatus(false);
+		this.checkMenuItemsEmpty();
 		}
 	}
 

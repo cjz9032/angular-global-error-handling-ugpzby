@@ -642,7 +642,8 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -906,12 +907,16 @@
                     "PermanentError": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
-                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
+                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>",
+                    "EmDriverInstalled": "Dettagli della batteria non disponibili. Eseguire Windows Update -> Verifica disponibilità aggiornamenti per installare il driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
-                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA."
+                "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentazione",
@@ -989,24 +994,24 @@
                     "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
                     "nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria.",
+                        "desc2": "La funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows. È possibile accedervi facendo clic sull'icona della batteria nella barra delle applicazioni di Windows.",
+                        "desc3": "Le prestazioni di alcune modalità possono essere regolate automaticamente in base all'attività. Per abilitare la modalità automatica, premere Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità automatica batteria",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La modalità silenziosa o la modalità batteria viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CC.",
+                            "title2": "Modalità automatica prestazioni",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La modalità silenziosa, la modalità bilanciata o la modalità prestazioni viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CA.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità silenziosa",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La velocità e le prestazioni della ventola vengono ridotte per ottenere un computer più fresco e silenzioso e la massima durata della batteria.",
+                            "title2": "Modalità bilanciata",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "Da {{before}} Wh a {{after}} Wh",
                         "note": "Nota: prima di reimpostare l'indicatore della batteria, assicurarsi di collegare il computer all'alimentazione CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Operazione completata. Reimpostazione riuscita.",
-                            "ERROR_SHUTDOWN": "Operazione non completata. Arresto del sistema.",
-                            "ERROR_LOGOFF": "Operazione non completata. Utente scollegato.",
-                            "ERROR_BATTERY_REMOVE": "Operazione non completata. La batteria è stata rimossa.",
-                            "ERROR_BATTERY_REPLACE": "Operazione non completata. La batteria è stata sostituita.",
-                            "ERROR_AC_DETTACH": "Operazione non completata. L'adattatore di alimentazione CA è stato scollegato.",
-                            "ERROR_USER_CANCEL": "Operazione non completata. Operazione annullata dall'utente.",
-                            "ERROR_UNEXPECTED": "Operazione non completata. Si è verificato un errore imprevisto."
+                            "ERROR_SUCCESS": "Operazione completata: Reimpostazione riuscita.",
+                            "ERROR_SHUTDOWN": "Operazione non riuscita: arresto del sistema.",
+                            "ERROR_LOGOFF": "Operazione non riuscita: utente scollegato.",
+                            "ERROR_BATTERY_REMOVE": "Operazione non riuscita: batteria rimossa.",
+                            "ERROR_BATTERY_REPLACE": "Operazione non riuscita: batteria sostituita.",
+                            "ERROR_AC_DETTACH": "Operazione non riuscita: adattatore di alimentazione CA scollegato.",
+                            "ERROR_USER_CANCEL": "Operazione non riuscita: annullata dall'utente.",
+                            "ERROR_UNEXPECTED": "Operazione non riuscita: errore imprevisto."
                         },
                         "popup": {
                             "description1": "Il processo di reimpostazione è il seguente:<br>caricare completamente la batteria  -->  scaricare completamente la batteria  -->  ricaricare completamente la batteria",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
-                        "endTimeNote": "L'ora di fine non deve superare le 20 ore da quella di inizio",
+                        "endTimeNote": "L'ora di FINE non deve superare le 20 ore da quella di INIZIO",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minuti",
@@ -1169,22 +1174,22 @@
                         "everyday": "Ogni giorno",
                         "weekdays": "Nei giorni feriali",
                         "weekends": "Fine settimana",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nessun giorno selezionato"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
                     "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Pianificazione del computer",
+                    "automaticMode": "Modalità automatica",
+                    "manualMode": "Modalità manuale",
+                    "subNote": "Il computer è pianificato per la modalità Standby moderno in base all'utilizzo.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilizzo di questo computer",
+                        "graph2Tittle": "Tempo attivo applicato",
+                        "graphSubtittle": "In questi periodi di tempo, il computer è pronto per essere rapidamente riattivato.",
+                        "graphNote": "I dati di attività di questo computer non sono sufficienti per fornire un profilo per la pianificazione automatica. Standby intelligente utilizzerà la pianificazione in modalità manuale finché non saranno disponibili dati sufficienti.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Nessuno",
+                            "frequent": "Frequente"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
+                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer"
                 }
             },
             "audio": {
@@ -1491,13 +1496,13 @@
                     },
                     "website": {
                         "url": "URL SITO WEB",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Le impostazioni sono state applicate correttamente.",
+                        "invalidURLMessage": "Immettere un URL valido.",
+                        "placeholder": "Deve iniziare con http:// o https://"
                     },
                     "enterText": {
                         "title": "TESTO DA IMMETTERE",
-                        "placeholder": "Please type here"
+                        "placeholder": "Digitare qui"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1948,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2800,7 +2806,7 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Il pulsante è disabilitato se le informazioni sull'hardware non sono ancora state recuperate, se i dispositivi di memorizzazione non supportano questa funzionalità o se è in corso il ripristino dei settori danneggiati."
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",
@@ -2836,7 +2842,8 @@
             "pci_express": "PCI Express",
             "storage": "Memorizzazione",
             "wireless": "Wireless"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -106,7 +106,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			}
 			@media #{$white-on-black} {
 						border:none;
-				
+
 			}
 		}
 
@@ -137,13 +137,13 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@media #{$black-on-white} {
 					background: $light;
 					border: 0.1rem solid $dark;
-					
+
 				}
 				@media #{$white-on-black} {
 					background: $dark;
 					border: 0.1rem solid $light;
-					
-					
+
+
 				}
 			}
 
@@ -164,13 +164,13 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					flex-shrink: 0;
 					@media #{$black-on-white} {
 						background: $dark;
-						
-						
+
+
 					}
 					@media #{$white-on-black} {
 						background: $light;
-						
-						
+
+
 					}
 				}
 
@@ -179,7 +179,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					z-index: 5;
 					text-align: center;
 					width: calc(100% - 0.8rem);
-					font-size: $page_header;
+					font-size: 4.5rem;
 					font-weight: bold;
 				}
 
@@ -223,7 +223,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 			.base-remaining-text {
 				position: absolute;
-				font-size: $caption;
+				font-size: 1.3rem;
 				z-index: 5;
 				font-weight: $weight_bold;
 				width: 100%;
@@ -241,14 +241,14 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				@extend .base-remaining-text;
 				color: $main_dark;
 				bottom: 5%;
-				font-weight: $weight_medium;
-				font-size: 1rem;
-				@media #{$mediaquery_22} {
-					font-size: 0.9rem;
-				}
-				@media #{$mediaquery_23} {
-					font-size: 1.5rem;
-				}
+				font-weight: $weight_light;
+				font-size: 1.3rem;
+				// @media #{$mediaquery_22} {
+				// 	font-size: 0.9rem;
+				// }
+				// @media #{$mediaquery_23} {
+				// 	font-size: 1.5rem;
+				// }
 			}
 		}
 		.detail-battery {
@@ -282,10 +282,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				width: 4rem;
 				height: 4rem;
 				vertical-align: auto;
-			}
-			@media #{$mediaquery_X21} {
-				top: 10%;
-			}
+            }
 			@media #{$mediaquery_X23} {
 				left: 5%;
 			}

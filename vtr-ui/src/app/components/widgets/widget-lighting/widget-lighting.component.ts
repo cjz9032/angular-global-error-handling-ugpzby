@@ -1,3 +1,4 @@
+import { DeviceService } from './../../../services/device/device.service';
 import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -22,11 +23,13 @@ export class WidgetLightingComponent implements OnInit {
 	public isLightingVisible: any;
 	public isdriverpopup = false;
 	public isPopupVisible: any;
+	public defaultLanguage: any;
 	constructor(
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
-		private router: Router
+		private router: Router,
+		private deviceService: DeviceService
 	) { }
 
 	ngOnInit() {
@@ -36,6 +39,10 @@ export class WidgetLightingComponent implements OnInit {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.getCapabilities();
 			}
+		});
+		this.deviceService.getMachineInfo().then((value: any) => {
+			this.defaultLanguage = value.locale;
+			console.log('defaultLanguagedefaultLanguagedefaultLanguagedefaultLanguage===>', this.defaultLanguage);
 		});
 	}
 
