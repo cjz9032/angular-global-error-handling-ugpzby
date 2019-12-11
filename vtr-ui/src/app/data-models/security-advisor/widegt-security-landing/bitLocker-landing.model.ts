@@ -1,4 +1,4 @@
-import { EventTypes } from '@lenovo/tan-client-bridge';
+import { EventTypes, BitLocker } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -11,17 +11,17 @@ export class BitLockerLandingViewModel {
 		title: 'security.landing.hde',
 		content: 'security.landing.bitLockerContent',
 		buttonLabel: 'security.landing.visitHde',
-		buttonHref: 'ms-settings:activation',
+		launch() {},
 		noneCheck: true,
 		detail: '',
 		id: 'sa-ov-link-bitLocker',
 	};
 	translateString: any;
 
-	constructor(translate: TranslateService, blModel, public commonService: CommonService, ) {
-		// waModel.on(EventTypes.pmStatusEvent, (data) => {
-		// 	this.setWaStatus(data);
-		// });
+	constructor(translate: TranslateService, blModel: BitLocker, public commonService: CommonService, ) {
+		blModel.on(EventTypes.bitLockerStatusEvent, (data) => {
+			this.setBlStatus(data);
+		});
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityBitLockerStatus);
 		translate.stream([
 			'common.securityAdvisor.enabled',
@@ -38,7 +38,8 @@ export class BitLockerLandingViewModel {
 			this.blStatus.title = res['security.landing.hde'];
 			this.blStatus.content = res['security.landing.bitLockerContent'];
 			this.blStatus.buttonLabel = res['security.landing.visitHde'];
-			if (blModel.status) {
+			this.blStatus.launch = blModel.launch.bind(blModel);
+			if (blModel.status !== 'unknown') {
 				this.setBlStatus(blModel.status);
 			} else if (cacheStatus) {
 				this.setBlStatus(cacheStatus);
@@ -50,8 +51,8 @@ export class BitLockerLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		this.blStatus.detail = this.translateString[`common.securityAdvisor.${status === 'active' ? 'enabled' : 'disabled'}`];
-		this.blStatus.status = status === 'active' ? 'enabled' : 'disabled';
+		this.blStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
+		this.blStatus.status = status === 'enable' ? 'enabled' : 'disabled';
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityBitLockerStatus, status);
 	}
 }

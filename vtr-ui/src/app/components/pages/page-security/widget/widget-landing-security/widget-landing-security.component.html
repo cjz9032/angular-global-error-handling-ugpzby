@@ -15,6 +15,10 @@
                 <vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
                     [ngClass]="{'white-button':item.status === 'enabled'}">
                 </vtr-ui-button>
+                <vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
+                    [ngClass]="{'white-button':item.status === 'enabled'}"
+                    (onClick)="item.launch()">
+                </vtr-ui-button>
                 <div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="customCheck-{{item.id}}"
                         [checked]="item.showOwn" attr.aria-label="defaultUnchecked" (change)="haveOwn(item.showOwn, item.id)">
