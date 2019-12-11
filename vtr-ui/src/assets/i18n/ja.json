@@ -993,24 +993,24 @@
                     "description5": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。この機能には 3 つのモード (静音モード、バランス・モード、パフォーマンス・モード) があり、Windows パフォーマンスの電源のスライダーからアクセスできるようになっています",
                     "nocqldesc": "インテリジェント冷却により、システムのパフォーマンスと温度を調整できます。「パフォーマンス」モードでは、システムのパフォーマンスが最適化されます。「クール & 静音」モードは、システムをより涼しくまたは静かに保つのに役立ちます。",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "インテリジェント・クーリングは、ファンの速度、最大パフォーマンスを調整し、バッテリー寿命を管理します。",
+                        "desc2": "この機能には以下に示すモードがあり、Windows パフォーマンスの電源スライダーから調整できるようになりました。Windows システム・トレイのバッテリー・アイコンをクリックすることでアクセスできます。",
+                        "desc3": "一部のモードでは、動作に基づいてより広範にパフォーマンスを自動調整できます。自動モードを有効にするには、Fn+T を押します。",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "自動バッテリー・モード",
+                            "desc1": "スライダーを左に移動します。このモードでは、DC モードで最適なエクスペリエンスを得るために、静音モードまたはバッテリー モードに動的に切り替えられます。",
+                            "title2": "自動パフォーマンス・モード",
+                            "desc2": "スライダーを中央または中央右に移動します。このモードでは、AC モードで最適なエクスペリエンスを得るために、静音モード、バランス・モード、またはパフォーマンス・モードに動的に切り替えられます。",
+                            "title3": "パフォーマンス・モード",
+                            "desc3": "スライダーを右端に移動します。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。"
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "静音モード",
+                            "desc1": "スライダーを左に移動します。コンピューターの冷却と静音、およびバッテリー寿命を最長にするために、ファンの速度とパフォーマンスは低下します。",
+                            "title2": "バランス・モード",
+                            "desc2": "スライダーを中央または中央右に移動します。最適なエクスペリエンスのために、ファンの速度とパフォーマンスが動的にバランスされます。",
+                            "title3": "パフォーマンス・モード",
+                            "desc3": "スライダーを右端に移動します。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。"
                         }
                     }
                 },

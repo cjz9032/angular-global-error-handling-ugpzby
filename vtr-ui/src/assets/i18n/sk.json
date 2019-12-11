@@ -993,24 +993,24 @@
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
                     "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie.",
+                        "desc2": "Režimy funkcie sú uvedené nižšie a momentálne ich možno upraviť pomocou jazdca nastavenia výkonu systému Windows. Prístup k nemu získate kliknutím na ikonu batérie na systémovej lište Windows.",
+                        "desc3": "Niektoré režimy sa môžu automaticky upravovať v rámci širšieho rozsahu výkonu na základe vašej činnosti. Ak chcete povoliť automatický režim, stlačte kombináciu klávesov Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatický režim batérie",
+                            "desc1": "Jazdec sa nachádza vľavo. Režim je dynamicky prepínaný do tichého režimu alebo do režimu batérie na dosiahnutie toho najlepšieho sieťového režimu.",
+                            "title2": "Automatický režim výkonu",
+                            "desc2": "Jazdec sa nachádza v strede alebo v strede na pravej strane. Režim je dynamicky prepínaný do tichého režimu, vyváženého režimu alebo do režimu výkonu na dosiahnutie toho najlepšieho sieťového režimu.",
+                            "title3": "Režim vysokého výkonu",
+                            "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tichý režim",
+                            "desc1": "Jazdec sa nachádza vľavo. Otáčky ventilátora a výkon sa znížia, aby sa zaistilo lepšie chladenie, tichší počítač a tá najlepšia výdrž batérie.",
+                            "title2": "Vyvážený režim",
+                            "desc2": "Jazdec sa nachádza v strede alebo v strede na pravej strane. Otáčky ventilátora a výkon sú dynamicky vyvážené s cieľom zaistiť ten najlepší používateľský zážitok.",
+                            "title3": "Režim vysokého výkonu",
+                            "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
                         }
                     }
                 },

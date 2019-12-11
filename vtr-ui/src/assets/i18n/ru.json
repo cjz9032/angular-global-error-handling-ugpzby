@@ -993,24 +993,24 @@
                     "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows",
                     "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора.",
+                        "desc2": "Эта функция предоставляет указанные ниже режимы и теперь настраивается с помощью ползунка выбора режима питания Windows. Чтобы открыть его, нажмите значок аккумулятора на панели задач Windows.",
+                        "desc3": "Некоторые режимы могут автоматически изменяться в широком диапазоне производительности в зависимости от вашей активности. Чтобы включить автоматический режим, нажмите сочетание клавиш Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Автоматический режим экономии заряда аккумулятора",
+                            "desc1": "Ползунок расположен слева. Динамическое переключение между тихим режимом и режимом экономии заряда аккумулятора для оптимальной работы режима DC.",
+                            "title2": "Автоматический режим производительности",
+                            "desc2": "Ползунок расположен в центре или по центру справа. Динамическое переключение между тихим режимом, сбалансированным режимом и режимом производительности для оптимальной работы режима AC.",
+                            "title3": "Режим производительности",
+                            "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Тихий режим",
+                            "desc1": "Ползунок расположен слева. Скорость вращения вентиляторов и производительность снижены, чтобы сократить уровень нагрева и шума компьютера, а также увеличить время работы аккумулятора.",
+                            "title2": "Сбалансированный режим",
+                            "desc2": "Ползунок расположен в центре или по центру справа. Скорость вращения вентиляторов и производительность динамически оптимизируются для максимального комфорта использования.",
+                            "title3": "Режим производительности",
+                            "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
                         }
                     }
                 },

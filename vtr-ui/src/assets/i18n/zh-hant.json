@@ -993,24 +993,24 @@
                     "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
                     "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。",
+                        "desc2": "此功能具有下列模式，而且現在可透過 Windows 效能電源滑桿進行調整。按一下 Windows 系統匣中的電池圖示即可存取。",
+                        "desc3": "部分模式可以根據您的活動在更大的效能範圍內自動調整。若要啟用自動模式，請按 Fn+T。",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "自動電池模式",
+                            "desc1": "滑桿在左邊。此模式會動態切換至安靜模式或電池模式，以達最佳的 DC 模式體驗。",
+                            "title2": "自動效能模式",
+                            "desc2": "滑桿在中央或中間靠右。此模式會動態切換至安靜模式、平衡模式或效能模式，以達最佳的 AC 模式體驗。",
+                            "title3": "效能模式",
+                            "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "安靜模式",
+                            "desc1": "滑桿在左邊。降低風扇速度和效能以獲得更涼爽、更安靜的電腦和最佳的電池續航力。",
+                            "title2": "平衡模式",
+                            "desc2": "滑桿在中央或中間靠右。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
+                            "title3": "效能模式",
+                            "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
                         }
                     }
                 },
