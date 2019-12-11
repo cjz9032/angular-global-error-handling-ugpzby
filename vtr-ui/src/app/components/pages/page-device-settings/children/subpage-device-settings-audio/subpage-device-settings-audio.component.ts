@@ -39,8 +39,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public readonly helpIcon = ['far', 'question-circle'];
 	public automaticDolbyHelpIcon = [];
 	public isOnline: any = true;
-	// isOptimizeModeCached = false;
-	microphoneDataCount = 0;
+
+	// when initialize page, cacheFlag need change to false if user make changes before getting response back,
+	// in this case, need to drop response status.
+	cacheFlag = {autoOptimization: true, keyboardNoiseSuppression: true, AEC: true, currentMode: true};
 
 	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
 
@@ -73,13 +75,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	private initFeatures() {
 		this.initMockData();
+
 		this.initMicrophoneFromCache();
 		this.initDolbyAudioFromCache();
-		// this.getMicrophoneSettings();
+
 		this.getMicrophoneSettingsAsync();
 		this.getDolbyFeatureStatus();
 		this.getDolbyModesStatus();
-		// this.getSupportedModes();
+		
 		this.startMonitor();
 		this.startMonitorForDolby();
 	}
@@ -156,6 +159,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			}
 			this.microOptimizeModeResponse.current = newVal;
 			if (this.audioService.isShellAvailable) {
+				this.cacheFlag.currentMode = false;
 				this.audioService.setMicrophoneOpitimaztion(this.microOptimizeModeResponse.current)
 					.then((value) => {
 						console.log('onOptimizeModesRadioChange:', value);
@@ -164,6 +168,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						return EMPTY;
 					});
 			}
+			
 		} catch (error) {
 			this.logger.error('onOptimizeModesRadioChange' + error.message);
 			return EMPTY;
@@ -176,7 +181,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	// 			this.audioService.getMicrophoneSettings()
 	// 				.then((microphone: Microphone) => {
 	// 					this.getSupportedModes();
-	// 					// this.isOptimizeModeCached = true;
 	// 					this.microphoneProperties = microphone;
 
 	// 					this.microphoneLoader = false;
@@ -348,6 +352,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	onToggleOfMicrophoneAutoOptimization(event) {
 		try {
 			if (this.audioService.isShellAvailable) {
+				this.cacheFlag.autoOptimization = false;
 				this.audioService.setMicrophoneAutoOptimization(event.switchValue)
 					.then((value) => {
 						console.log('onToggleOfMicrophoneAutoOptimization:', value);
@@ -404,6 +409,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public onToggleOfSuppressKbdNoise(event) {
 		try {
 			if (this.audioService.isShellAvailable) {
+				this.cacheFlag.keyboardNoiseSuppression = false;
 				this.audioService.setSuppressKeyboardNoise(event.switchValue)
 					.then((value: boolean) => {
 						console.log('onToggleOfSuppressKbdNoise', value);
@@ -421,6 +427,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public setMicrophoneAEC(event) {
 		try {
 			if (this.audioService.isShellAvailable) {
+				this.cacheFlag.AEC = false;
 				this.audioService.setMicrophoneAEC(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setMicrophoneAEC', value);
@@ -470,18 +477,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandler(microphone: Microphone) {
-		console.log('startMonitorHandler for microphone 1');
 		// because microphone object only contains the changed properies
 		this.microphoneProperties = {...this.microphoneProperties, ...microphone};
 		// this.microphoneProperties = microphone;
 		// update microphone mode
-		console.log('startMonitorHandler for microphone 2');
 		if (this.microphoneProperties.currentMode != '') {
 			this.microOptimizeModeResponse.current = this.microphoneProperties.currentMode;
 		}
-		console.log('startMonitorHandler for microphone 3');
 		this.microphoneLoader = false;
 		console.log('startMonitorHandler for microphone', JSON.stringify(microphone));
+		this.updateMicrophoneCache();
 	}
 
 	initMockData() {
@@ -520,11 +525,21 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				if (microphoneCache.data.autoOptimization) {
 					this.microphoneProperties.autoOptimization = microphoneCache.data.autoOptimization;
 				}
+				if (microphoneCache.data.keyboardNoiseSuppression) {
+					this.microphoneProperties.keyboardNoiseSuppression = microphoneCache.data.keyboardNoiseSuppression;
+				}
+				if (microphoneCache.data.AEC) {
+					this.microphoneProperties.AEC = microphoneCache.data.AEC;
+				}
 			}
 			if (microphoneCache.modes && microphoneCache.modes.length > 0) {
 				// because microOptimizeModeResponse already initiliazed in initMockData function, here can use directly
-				// this.isOptimizeModeCached = true;
 				this.microOptimizeModeResponse.modes = microphoneCache.modes;
+
+				if (microphoneCache.data.currentMode) {
+					this.microphoneProperties.currentMode = microphoneCache.data.currentMode;
+					this.microOptimizeModeResponse.current = microphoneCache.data.currentMode;
+				}
 			}
 		}
 	}
@@ -541,7 +556,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	updateMicrophoneHandler(msg: any) {
 		this.microphoneLoader = false;
-		this.microphoneDataCount++;
 
 		if (msg.hasOwnProperty('available')) {
 			this.microphoneProperties.available = msg.available;
@@ -550,7 +564,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microphoneProperties.muteDisabled = msg.muteDisabled;
 		}
 		if (msg.hasOwnProperty('volume')) {
-			console.log('ready to change volume')
+			console.log('*****ready to change volume ' + msg.volume)
 			this.microphoneProperties.volume = msg.volume;
 		}
 		if (msg.hasOwnProperty('permission')) {
@@ -563,34 +577,44 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microOptimizeModeResponse.modes = msg.modes;
 		}
 		if (msg.hasOwnProperty('currentMode')) {
-			if(msg.currentMode) {
+			if(msg.currentMode && this.cacheFlag.currentMode) {
 				this.microphoneProperties.currentMode = msg.currentMode;
 				this.microOptimizeModeResponse.current = msg.currentMode;
 			}
 		}
-		if (msg.hasOwnProperty('keyboardNoiseSuppression')) {
+		if (msg.hasOwnProperty('keyboardNoiseSuppression') && this.cacheFlag.keyboardNoiseSuppression) {
 			this.microphoneProperties.keyboardNoiseSuppression = msg.keyboardNoiseSuppression;
 		}
-		if (msg.hasOwnProperty('AEC')) {
+		if (msg.hasOwnProperty('AEC') && this.cacheFlag.AEC) {
 			this.microphoneProperties.AEC = msg.AEC;
 		}
 		if (msg.hasOwnProperty('disableEffect')) {
 			this.microphoneProperties.disableEffect = msg.disableEffect;
 		}
-		if (msg.hasOwnProperty('autoOptimization')) {
+		if (msg.hasOwnProperty('autoOptimization') && this.cacheFlag.autoOptimization) {
 			this.microphoneProperties.autoOptimization = msg.autoOptimization;
 			// because this item need plugin response, so it is the last response
 			// this.microphoneLoader = false;
 		}
+		// if message has finished flag, means already get all the data, now can save to cache
+		if (msg.hasOwnProperty('finished')) {
+			this.updateMicrophoneCache();
+			// reset cacheFlag
+			this.cacheFlag.AEC = true;
+			this.cacheFlag.autoOptimization = true;
+			this.cacheFlag.currentMode = true;
+			this.cacheFlag.keyboardNoiseSuppression = true;
+		}
 		
 		console.log('updateMicrophoneHandler ' + JSON.stringify(msg));
+	}
 
-		if (this.microphoneDataCount >= 3){
-			const info = {
-				data: this.microphoneProperties,
-				modes: this.microOptimizeModeResponse.modes
-			};
-			this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
-		}
+	updateMicrophoneCache() {
+		const info = {
+			data: this.microphoneProperties,
+			modes: this.microOptimizeModeResponse.modes
+		};
+		console.log('ready to update microhone cache');
+		this.commonService.setLocalStorageValue(LocalStorageKey.MicrohoneCapability, info);
 	}
 }
