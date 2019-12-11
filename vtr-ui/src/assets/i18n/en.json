@@ -1181,7 +1181,7 @@
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete: Successful reset.",
+							"ERROR_SUCCESS": "Complete: Reset successfully.",
 							"ERROR_SHUTDOWN": "Failed: System shut down.",
 							"ERROR_LOGOFF": "Failed: User has logged off.",
 							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",

@@ -165,9 +165,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.setBatteryCard(info, 'onRemainingTimeEvent');
 	}
 
-	onPowerBatteryGaugeResetEvent(batteryGaugeResetInfo: BatteryGaugeReset[]) {
-		this.logger.info('onPowerBatteryGaugeResetEvent: Information', batteryGaugeResetInfo);
-		this.batteryService.gaugeResetInfo = batteryGaugeResetInfo;
+	onPowerBatteryGaugeResetEvent(gaugeResetInfo: BatteryGaugeReset[]) {
+		this.logger.info('onPowerBatteryGaugeResetEvent: Information', gaugeResetInfo);
+		this.batteryService.gaugeResetInfo = gaugeResetInfo;
+		this.batteryService.isGaugeResetRunning = gaugeResetInfo && (gaugeResetInfo.length > 0 && gaugeResetInfo[0].isResetRunning) || (gaugeResetInfo.length > 1 && gaugeResetInfo[1].isResetRunning);
 	}
 
 	public getBatteryDetailOnCard() {
@@ -220,8 +221,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	onNotification(notification: AppNotification) {
 		if (notification) {
 			if (notification.type === ChargeThresholdInformation.ChargeThresholdInfo) {
-				this.chargeThresholdInfo = notification.payload;
-				this.sendThresholdWarning();
+				this.batteryIndicator.isChargeThresholdOn = notification.payload;
 			}
 			if (notification.type === 'AirplaneModeStatus') {
 				this.batteryIndicator.isAirplaneMode = notification.payload;
@@ -275,29 +275,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		this.getBatteryCondition();
-	}
-
-	/**
-	 * sends notification to threshold section in case of update in remaining percentages & thresholdInfo
-	 * for displaying warning note
-	 */
-	public sendThresholdWarning() {
-		if (this.chargeThresholdInfo && this.remainingPercentages
-			&& this.remainingPercentages.length > 0) {
-			this.batteryIndicator.isChargeThresholdOn = this.chargeThresholdInfo.isOn;
-			if (this.chargeThresholdInfo.isOn) {
-				if ((this.chargeThresholdInfo.stopValue1 &&
-					this.remainingPercentages[0] &&
-					this.remainingPercentages[0] > this.chargeThresholdInfo.stopValue1)
-					|| (this.chargeThresholdInfo.stopValue2 &&
-						this.remainingPercentages[1] &&
-						this.remainingPercentages[1] > this.chargeThresholdInfo.stopValue2)) {
-					this.commonService.sendNotification('ThresholdWarningNote', true);
-				} else {
-					this.commonService.sendNotification('ThresholdWarningNote', false);
-				}
-			}
-		}
 	}
 
 	/**
@@ -486,7 +463,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	reInitValue() {
 		this.flag = false;
-		// this.getBatteryDetailOnCard();
 	}
 
 	ngOnDestroy() {
