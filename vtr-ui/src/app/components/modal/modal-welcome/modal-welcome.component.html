@@ -190,8 +190,8 @@
 								<a class="linktext"
 									tabindex="7"
 									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
-									href="https://www.lenovo.com/us/en/privacy"
-									target="_blank"
+									(click) = "privacyPolicyClick($event)"
+									href="#"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
 									<!-- Lenovo's Privacy Policy -->

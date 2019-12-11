@@ -642,7 +642,8 @@
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
                 "seeDetailsLink": "Flere oplysninger",
-                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet."
+                "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Strøm",
@@ -1101,14 +1105,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Bemærk: Før du nulstiller batterimåleren, skal du slutte computeren til vekselstrøm. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fuldført. Nulstilling lykkedes.",
-                            "ERROR_SHUTDOWN": "Ufuldstændig. Nedlukning af system.",
-                            "ERROR_LOGOFF": "Ufuldstændig. Bruger logget af.",
-                            "ERROR_BATTERY_REMOVE": "Ufuldstændig. Batteriet blev fjernet.",
-                            "ERROR_BATTERY_REPLACE": "Ufuldstændig. Batteriet blev udskiftet.",
-                            "ERROR_AC_DETTACH": "Ufuldstændig. Vekselstrømsadapteren blev fjernet.",
-                            "ERROR_USER_CANCEL": "Ufuldstændig. Annulleret af bruger.",
-                            "ERROR_UNEXPECTED": "Ufuldstændig. Der er opstået en uventet fejl."
+                            "ERROR_SUCCESS": "Fuldført: Nulstilling lykkedes.",
+                            "ERROR_SHUTDOWN": "Mislykkedes: Nedlukning af system.",
+                            "ERROR_LOGOFF": "Mislykkedes: Bruger logget af.",
+                            "ERROR_BATTERY_REMOVE": "Mislykkedes: Batteriet blev fjernet.",
+                            "ERROR_BATTERY_REPLACE": "Mislykkedes: Batteriet blev udskiftet.",
+                            "ERROR_AC_DETTACH": "Mislykkedes: Vekselstrømsadapteren blev fjernet.",
+                            "ERROR_USER_CANCEL": "Mislykkedes: Annulleret af bruger.",
+                            "ERROR_UNEXPECTED": "Mislykkedes: Der er opstået en uventet fejl."
                         },
                         "popup": {
                             "description1": "Nulstillingsprocessen er som følger:<br>Fuld opladning af batteriet  -->  fuld afladning af batteriet  -->  fuld genopladning af batteriet",
@@ -1134,7 +1138,7 @@
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
-                        "endTimeNote": "Sluttidspunktet skal være inden for 20 timer fra starttidspunktet",
+                        "endTimeNote": "SLUTtidspunktet skal være inden for 20 timer fra STARTtidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1169,22 +1173,22 @@
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
                         "weekends": "Weekender",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Ingen dag valgt"
                     },
                     "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
                     "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Tidsplan for din computer",
+                    "automaticMode": "Automatisk tilstand",
+                    "manualMode": "Manuel tilstand",
+                    "subNote": "Din computer er indstillet til at skifte til Moderne standby baseret på din brug.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Brug af denne computer",
+                        "graph2Tittle": "Tildelt aktiv tid",
+                        "graphSubtittle": "I disse tidsperioder holder vi computeren klar, så du hurtigere kan genoptage arbejdet på den.",
+                        "graphNote": "Aktivitetsdataene for denne computer er ikke tilstrækkelige til at oprette en profil til automatisk tidsplanlægning. Smart-standby bruger tidsplanen for Manuel tilstand, indtil der er nok data til rådighed.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Ofte"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
+                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer"
                 }
             },
             "audio": {
@@ -1491,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL TIL WEBSTED",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Indstillingerne er blevet anvendt.",
+                        "invalidURLMessage": "Angiv en gyldig webadresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
                         "title": "TEKST, DER SKAL SKRIVES",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2836,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lager",
             "wireless": "Trådløs"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

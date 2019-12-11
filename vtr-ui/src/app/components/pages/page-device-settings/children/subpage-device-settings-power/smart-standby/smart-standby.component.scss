@@ -38,10 +38,11 @@ ul.list-group {
 	font-size: $body;
 	font-weight: $weight_600;
 	.collapse-header {
-		display: flex;
+		display: inline-flex;
 		color: $blueHyperLink;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
+		width: auto;
 	}
 	.collapse-header-icon {
 		flex-wrap: nowrap;
@@ -98,7 +99,8 @@ ul.list-group {
 	font-weight: $weight_light;
 	color: $blueHyperLink;
 	text-decoration: underline;
-	margin-top: 3rem;
+	// margin-top: 3rem;
+	display: inline-block;
 	cursor: pointer;
 }
 .disabled {

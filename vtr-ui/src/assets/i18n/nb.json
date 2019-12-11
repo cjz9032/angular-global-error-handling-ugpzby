@@ -642,7 +642,8 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
-                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
+                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Strøm",
@@ -1101,14 +1105,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fullfør. Vellykket tilbakestilling.",
-                            "ERROR_SHUTDOWN": "Ikke fullført. Systemet slås av.",
-                            "ERROR_LOGOFF": "Ikke fullført. Bruker logget av.",
-                            "ERROR_BATTERY_REMOVE": "Ikke fullført. Batteriet ble tatt ut.",
-                            "ERROR_BATTERY_REPLACE": "Ikke fullført. Batteriet ble byttet ut.",
-                            "ERROR_AC_DETTACH": "Ikke fullført. Strømadapteren ble koblet fra.",
-                            "ERROR_USER_CANCEL": "Ikke fullført. Avbrutt av bruker.",
-                            "ERROR_UNEXPECTED": "Ikke fullført. Det oppstod en uventet feil."
+                            "ERROR_SUCCESS": "Fullfør: Vellykket tilbakestilling.",
+                            "ERROR_SHUTDOWN": "Mislyktes: Systemet slås av.",
+                            "ERROR_LOGOFF": "Mislyktes: Bruker logget av.",
+                            "ERROR_BATTERY_REMOVE": "Mislyktes: Batteriet ble tatt ut.",
+                            "ERROR_BATTERY_REPLACE": "Mislyktes: Batteriet ble erstattet.",
+                            "ERROR_AC_DETTACH": "Mislyktes: Strømadapteren ble koblet fra.",
+                            "ERROR_USER_CANCEL": "Mislyktes: Avbrutt av bruker.",
+                            "ERROR_UNEXPECTED": "Mislyktes: Det oppstod en uventet feil."
                         },
                         "popup": {
                             "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
@@ -1134,7 +1138,7 @@
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
-                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
+                        "endTimeNote": "SLUTT-tidspunktet må være innen 20 timer etter START-tidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1169,22 +1173,22 @@
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
                         "weekends": "Helger",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
                     "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Opprett kjøreplan for datamaskinen",
+                    "automaticMode": "Automatisk modus",
+                    "manualMode": "Manuell modus",
+                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Bruken av denne datamaskinen",
+                        "graph2Tittle": "Brukt aktiv tid",
+                        "graphSubtittle": "I disse tidsperiodene holder vi datamaskinen klar for raskere gjenopptak.",
+                        "graphNote": "Aktivitetsdataene til denne datamaskinen er ikke tilstrekkelig til å gi en profil for automatisk planlegging. Smart Standby vil bruke manuell modusplan til det er nok data tilgjengelig.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Frekvens"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen"
                 }
             },
             "audio": {
@@ -1491,13 +1495,13 @@
                     },
                     "website": {
                         "url": "NETTADRESSE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Innstillingene er tatt i bruk.",
+                        "invalidURLMessage": "Angi en gyldig URL-adresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
                         "title": "TEKST SOM SKAL SKRIVES INN",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2836,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Trådløs"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

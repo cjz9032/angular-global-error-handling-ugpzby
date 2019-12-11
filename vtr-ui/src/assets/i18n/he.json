@@ -642,7 +642,8 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
-                "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר."
+                "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "צריכת חשמל",
@@ -1101,14 +1105,14 @@
                         "FCCText": "מ-{{before}} ואט עד {{after}} ואט",
                         "note": "הערה: לפני איפוס מד הסוללה, הקפידו לחבר את המחשב שלכם לחשמל. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "הושלם. האיפוס בוצע בהצלחה.",
-                            "ERROR_SHUTDOWN": "לא הושלם. המערכת כובתה.",
-                            "ERROR_LOGOFF": "לא הושלם. המשתמש התנתק.",
-                            "ERROR_BATTERY_REMOVE": "לא הושלם. הסוללה הוסרה.",
-                            "ERROR_BATTERY_REPLACE": "לא הושלם. הסוללה הוחלפה.",
-                            "ERROR_AC_DETTACH": "לא הושלם. מתאם מתח ה-AC נותק.",
-                            "ERROR_USER_CANCEL": "לא הושלם. בוטל על-ידי המשתמש.",
-                            "ERROR_UNEXPECTED": "לא הושלם. אירעה שגיאה בלתי צפויה."
+                            "ERROR_SUCCESS": "הושלם: האיפוס בוצע בהצלחה.",
+                            "ERROR_SHUTDOWN": "הפעולה נכשלה: המערכת כבתה.",
+                            "ERROR_LOGOFF": "הפעולה נכשלה: המשתמש התנתק.",
+                            "ERROR_BATTERY_REMOVE": "הפעולה נכשלה: הסוללה הוסרה.",
+                            "ERROR_BATTERY_REPLACE": "הפעולה נכשלה: הסוללה הוחלפה.",
+                            "ERROR_AC_DETTACH": "הפעולה נכשלה: מתאם מתח ה-AC נותק.",
+                            "ERROR_USER_CANCEL": "הפעולה נכשלה: ביטול על-ידי המשתמש.",
+                            "ERROR_UNEXPECTED": "הפעולה נכשלה: אירעה שגיאה בלתי צפויה."
                         },
                         "popup": {
                             "description1": "תהליך האיפוס מתבצע באופן הבא:<br>סוללה טעונה במלואה  -->  פריקה מלאה של הסוללה  -->  סוללה טעונה במלואה",
@@ -1169,22 +1173,22 @@
                         "everyday": "כל יום",
                         "weekdays": "ימי חול",
                         "weekends": "סופי שבוע",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "לא נבחר יום"
                     },
                     "checkbox": "התאמה אוטומטית של הזמן הפעיל של המחשב בהתבסס על השימוש שלכם",
                     "hyperlinkToGraph": "לחצו כדי לראות את הפעילות ואת הזמן הפעיל של טבלת המחשב שלכם",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "תזמון המחשב",
+                    "automaticMode": "מצב אוטומטי",
+                    "manualMode": "מצב ידני",
+                    "subNote": "המחשב מתוזמן למצב 'המתנה מודרנית' בהתאם לשימוש.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "השימוש במחשב זה",
+                        "graph2Tittle": "זמן פעיל מעשי",
+                        "graphSubtittle": "בפרקי זמן אלה אנו המחשב מוכן לחזור לפעולה מהר יותר.",
+                        "graphNote": "נתוני הפעילות של מחשב זה אינם מספיקים בכדי לספק פרופיל לתזמון אוטומטי. התכונה 'המתנה החכמה' תשתמש בלוח הזמנים של המצב הידני עד לאיסוף מספיק נתונים זמינים.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "ללא",
+                            "frequent": "תכוף"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
+                    "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב"
                 }
             },
             "audio": {
@@ -1491,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL של אתר האינטרנט",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "ההגדרות הוחלו בהצלחה.",
+                        "invalidURLMessage": "יש להזין כתובת URL חוקית.",
+                        "placeholder": "התחל עם http:// או https://"
                     },
                     "enterText": {
                         "title": "טקסט להזנה",
-                        "placeholder": "Please type here"
+                        "placeholder": "הקלד כאן"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2836,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "אחסון",
             "wireless": "אלחוטי"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

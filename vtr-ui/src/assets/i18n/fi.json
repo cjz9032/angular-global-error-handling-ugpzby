@@ -642,7 +642,8 @@
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
-                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen."
+                "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Virta",
@@ -1101,14 +1105,14 @@
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Valmis. Nollaus onnistui.",
-                            "ERROR_SHUTDOWN": "Vaillinainen. Järjestelmä sammui.",
-                            "ERROR_LOGOFF": "Vaillinainen. Käyttäjä kirjautui ulos.",
-                            "ERROR_BATTERY_REMOVE": "Vaillinainen. Akku poistettiin.",
-                            "ERROR_BATTERY_REPLACE": "Vaillinainen. Akku vaihdettiin.",
-                            "ERROR_AC_DETTACH": "Vaillinainen. Verkkolaite irrotettiin.",
-                            "ERROR_USER_CANCEL": "Vaillinainen. Käyttäjä peruutti toiminnon.",
-                            "ERROR_UNEXPECTED": "Vaillinainen. On tapahtunut odottamaton virhe."
+                            "ERROR_SUCCESS": "Valmis: Nollaus onnistui.",
+                            "ERROR_SHUTDOWN": "Epäonnistui: Järjestelmä sammui.",
+                            "ERROR_LOGOFF": "Epäonnistui: Käyttäjä kirjautui ulos.",
+                            "ERROR_BATTERY_REMOVE": "Epäonnistui: Akku poistettiin.",
+                            "ERROR_BATTERY_REPLACE": "Epäonnistui: Akku vaihdettiin.",
+                            "ERROR_AC_DETTACH": "Epäonnistui: Verkkolaite irrotettiin.",
+                            "ERROR_USER_CANCEL": "Epäonnistui: Käyttäjä peruutti toiminnon.",
+                            "ERROR_UNEXPECTED": "Epäonnistui: On tapahtunut odottamaton virhe."
                         },
                         "popup": {
                             "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",
@@ -1134,7 +1138,7 @@
                         "subHeading1": "aloitat",
                         "subHeading2": "lopetusaika",
                         "subHeading3": "käytä tätä aikataulua seuraavaan:",
-                        "endTimeNote": "Lopetusajan on oltava 20 tunnin kuluessa aloitusajasta",
+                        "endTimeNote": "LOPETUSajan on oltava 20 tunnin kuluessa ALOITUSajasta",
                         "timeUnits": {
                             "unit1": "tuntia",
                             "unit2": "minuuttia",
@@ -1169,22 +1173,22 @@
                         "everyday": "Joka päivä",
                         "weekdays": "Arkisin",
                         "weekends": "Viikonloppuisin",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Päivää ei ole valittuna"
                     },
                     "checkbox": "Tietokoneen aktiivisen ajan automaattinen säätäminen käytön mukaan",
                     "hyperlinkToGraph": "Napsauta tätä, jos haluat tarkastella tietokoneen taulukon toimintaa ja aktiivista aikaa",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Ajasta tietokoneesi",
+                    "automaticMode": "Automaattinen tila",
+                    "manualMode": "Manuaalinen tila",
+                    "subNote": "Tietokone on ajastettu käyttämään Modern Standby -ominaisuutta käytön mukaan.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Tämän tietokoneen käyttö",
+                        "graph2Tittle": "Käytössä oleva aktiivinen aika",
+                        "graphSubtittle": "Näinä aikoina tietokone pidetään valmiudessa nopeampaan lepotilasta palamiseen.",
+                        "graphNote": "Tämän tietokoneen toimintatiedot eivät riitä luomaan profiilia automaattista ajoitusta varten. Smart Standby -ominaisuus käyttää manuaalisen tilan ajoitusta, kunnes käytettävissä on riittävästi tietoja.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ei mitään",
+                            "frequent": "Toistuva"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
+                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta"
                 }
             },
             "audio": {
@@ -1491,13 +1495,13 @@
                     },
                     "website": {
                         "url": "VERKKOSIVUSTON URL-OSOITE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Asetusten käyttöönotto onnistui.",
+                        "invalidURLMessage": "Anna kelvollinen URL-osoite.",
+                        "placeholder": "Aloita kirjoittamalla http:// tai https://"
                     },
                     "enterText": {
                         "title": "KIRJOITETTAVA TEKSTI",
-                        "placeholder": "Please type here"
+                        "placeholder": "Kirjoita tähän"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2836,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Tallennus",
             "wireless": "Langattomat yhteydet"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

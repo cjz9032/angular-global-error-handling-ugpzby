@@ -372,7 +372,7 @@
 			},
 			"brightness": {
 				"text1": {
-					"title": "*Brightness setting doesn't apply on "
+					"title": "*Brightness setting doesn't apply on"
 				},
 				"text2": {
 					"title": " effect"
@@ -916,7 +916,7 @@
 					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
 				},
 				"dualConditions": {
-					"NotDetected": "<b>The primary battery is not detected</b>"
+					"NotDetected": "<b>The primary battery is not detected.</b>"
 				}
 			},
 			"power": {
@@ -1179,14 +1179,14 @@
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete. Successful reset.",
-							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
-							"ERROR_LOGOFF": "Incomplete. User logged off.",
-							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+							"ERROR_SUCCESS": "Complete: Successful reset.",
+							"ERROR_SHUTDOWN": "Failed: System shut down.",
+							"ERROR_LOGOFF": "Failed: User logged off.",
+							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Failed: Battery was replaced.",
+							"ERROR_AC_DETTACH": "Failed: AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Failed: Cancelled by user.",
+							"ERROR_UNEXPECTED": "Failed: An unexpected error occurred."
 						},
 						"popup": {
 							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
@@ -1488,7 +1488,7 @@
 					},
 					"website": {
 						"url": "WEBSITE URL",
-						"successMessage": "The setting is applied successfully.",
+						"successMessage": "The settings are applied successfully.",
 						"invalidURLMessage": "Please input a valid URL.",
 						"placeholder":"Please start with http:// or https://"
 					},
@@ -1749,7 +1749,7 @@
 		},
 		"autoUpdateSettings": {
 			"title": "Auto update settings",
-			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"subtitle": "Automatically install updates",
 			"critical": {
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
@@ -2191,7 +2191,7 @@
 		},
 		"needHelp": {
 			"title": "Need Help?",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
@@ -2202,7 +2202,7 @@
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider",
 			"listAboutLenovoVantage": "About Lenovo Vantage"
@@ -2249,7 +2249,7 @@
 			"uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
 			"wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
 			"bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-			"vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+			"vpnContent": "A Virtual Private Network (VPN) uses encryption to keep your online activity secure and private, and helps prevent hackers from stealing your personal information over Wi-Fi.",
 			"windows": "Windows Activation",
 			"goAntivirus": "go to antivirus",
 			"goFirewall": "go to firewall",
@@ -2264,6 +2264,7 @@
 			"haveOwnWifi": "I have my own wifi security",
 			"haveOwnVpn" : "I have my own wifi security",
 			"uac": "User Account Control (UAC)",
+			"uacTitles": "User Account Control",
 			"hde": "Hard drive encryption",
 			"level": "Security Level:",
 			"fully": "To get a better offer protect your device, stay with",
@@ -3160,7 +3161,8 @@
 			"pci_express": "PCI Express",
 			"storage": "Storage",
 			"wireless": "Wireless"
-		}
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
 	},
 	"appsForYou": {
 		"common": {

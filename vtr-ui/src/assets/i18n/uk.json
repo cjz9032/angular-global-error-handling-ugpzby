@@ -642,7 +642,8 @@
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -911,7 +912,10 @@
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Батарея не може бути заряджена повністю якщо увімкнено граничне значення заряду акумулятора.",
                 "seeDetailsLink": "Показати відомості",
-                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним."
+                "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Живлення",
@@ -1101,14 +1105,14 @@
                         "FCCText": "З {{before}} Вт·год до {{after}} Вт·год",
                         "note": "Примітка. Перед скиданням акумуляторного вольтметра обов'язково підключіть комп'ютер до джерела живлення змінного струму. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Готово. Успішне скидання.",
-                            "ERROR_SHUTDOWN": "Не завершено. Система завершила роботу.",
-                            "ERROR_LOGOFF": "Не завершено. Користувач вийшов із системи.",
-                            "ERROR_BATTERY_REMOVE": "Не завершено. Акумулятор знято.",
-                            "ERROR_BATTERY_REPLACE": "Не завершено. Акумулятор замінено.",
-                            "ERROR_AC_DETTACH": "Не завершено. Адаптер живлення змінного струму від’єднано.",
-                            "ERROR_USER_CANCEL": "Не завершено. Скасовано користувачем.",
-                            "ERROR_UNEXPECTED": "Не завершено. Сталася невідома помилка."
+                            "ERROR_SUCCESS": "Готово: Успішне скидання.",
+                            "ERROR_SHUTDOWN": "Помилка. Система завершила роботу.",
+                            "ERROR_LOGOFF": "Помилка. Користувач вийшов із системи.",
+                            "ERROR_BATTERY_REMOVE": "Помилка. Акумулятор знято.",
+                            "ERROR_BATTERY_REPLACE": "Помилка. Акумулятор змінено.",
+                            "ERROR_AC_DETTACH": "Помилка. Адаптер живлення змінного струму від’єднано.",
+                            "ERROR_USER_CANCEL": "Помилка. Скасовано користувачем.",
+                            "ERROR_UNEXPECTED": "Помилка. Сталася невідома помилка."
                         },
                         "popup": {
                             "description1": "Скидання виконуйте в такій послідовності:<br>повністю зарядіть акумулятор  -->  повністю розрядіть акумулятор  -->  повністю перезарядіть акумулятор",
@@ -1134,7 +1138,7 @@
                         "subHeading1": "Початок використання",
                         "subHeading2": "Завершення використання",
                         "subHeading3": "Використовувати цей розклад",
-                        "endTimeNote": "Час завершення має бути в межах 20 годин після часу початку",
+                        "endTimeNote": "Час ЗАВЕРШЕННЯ має бути в межах 20 годин після часу ПОЧАТКУ",
                         "timeUnits": {
                             "unit1": "год.",
                             "unit2": "Хвилини",
@@ -1169,22 +1173,22 @@
                         "everyday": "Щодня",
                         "weekdays": "Будні",
                         "weekends": "Вихідні дні",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Не вибрано день"
                     },
                     "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
                     "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Заплануйте комп'ютер",
+                    "automaticMode": "Автоматичний режим",
+                    "manualMode": "Ручний режим",
+                    "subNote": "Перехід комп'ютера до сучасного режиму очікування планується залежно від використання.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Використання цього комп’ютера",
+                        "graph2Tittle": "Час активного використання",
+                        "graphSubtittle": "У ці періоди ми тримаємо комп'ютер готовим до швидшого відновлення роботи.",
+                        "graphNote": "Даних про активність цього комп'ютера недостатньо для створення профілю автоматичного планування. Розумне очікування буде використовувати графік ручного режиму, поки не накопичиться достатньо даних.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Жодної дії",
+                            "frequent": "Часто"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
+                    "subTitle2": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером"
                 }
             },
             "audio": {
@@ -1491,13 +1495,13 @@
                     },
                     "website": {
                         "url": "URL-АДРЕСА ВЕБСАЙТУ",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Настройки успішно застосовано.",
+                        "invalidURLMessage": "Введіть дійсну URL-адресу.",
+                        "placeholder": "Почніть з http:// або https://"
                     },
                     "enterText": {
                         "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Введіть тут"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2836,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Пам'ять",
             "wireless": "Безпровідні підключення"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

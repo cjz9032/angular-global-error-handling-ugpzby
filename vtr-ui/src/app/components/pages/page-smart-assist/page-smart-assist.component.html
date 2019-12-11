@@ -53,7 +53,7 @@
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom padding-right-07"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
+											>
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
@@ -302,7 +302,6 @@
 									</div>
 										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
