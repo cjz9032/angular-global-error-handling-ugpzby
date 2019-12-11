@@ -373,7 +373,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		});
 		screenshotModal.componentInstance.metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
-		setTimeout(() => { document.getElementById('apps-for-you-screenshot-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		setTimeout(() => { (document.querySelector('.apps-for-you-dialog') as HTMLElement).focus(); }, 0);
 	}
 
 	copyObjectArray(obj: any) {
