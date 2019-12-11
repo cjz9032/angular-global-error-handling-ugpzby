@@ -51,7 +51,7 @@
 											[rightIcon]="['far', 'question-circle']"
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
 										</vtr-ui-row-switch>
-										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom padding-right-07"
+										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
 											>
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
@@ -198,8 +198,8 @@
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
-											<div class="row">
-												<div class="col px-20 mt-10 facial-recognition"
+											<div class="row fac-control">
+												<div class="col mt-10 facial-recognition"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
 													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">

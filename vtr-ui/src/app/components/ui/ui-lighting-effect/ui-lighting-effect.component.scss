@@ -97,6 +97,14 @@
 		font-size: 1.6rem;
 		color: $shade_light;
 		margin-bottom: -1.2rem;
+		.name {
+			@media #{$mediaquery_lg_ex} {
+			max-width: 20rem;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			}
+		}
 		.icon {
 			position: relative;
 			font-size: 2.2rem;
