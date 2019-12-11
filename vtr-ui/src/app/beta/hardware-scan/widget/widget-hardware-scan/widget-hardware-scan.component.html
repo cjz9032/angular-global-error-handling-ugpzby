@@ -8,6 +8,9 @@
                 <div class="row" *ngIf="showProgress && !(percent === 100)">
                     <div class="col row1">{{subTitle}}</div>
                 </div>
+                <div class="row" *ngIf="showProgress && !(percent === 100)">
+                    <div class="col row1">{{warningMessage}}</div>
+                </div>
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
                         <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" 
