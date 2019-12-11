@@ -10,8 +10,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 export class WidgetLandingSecurityComponent implements OnInit {
 
 	@Input() items: Array<any>;
-	constructor(public commonService: CommonService) { }
-	badgeContent = 'I have my own';
+	constructor(public commonService: CommonService) {}
+	badgeContent = 'security.landing.haveOwn';
 	ngOnInit() {
 	}
 

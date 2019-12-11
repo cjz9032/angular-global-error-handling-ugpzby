@@ -245,6 +245,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		if (this.appDetails.screenshots.length > 3) {
 			this.showArrows = true;
 			this.startScreenshotAutoSwipe();
+		} else {
+			this.showArrows = false;
+			clearInterval(this.screenshotInterval);
 		}
 	}
 
