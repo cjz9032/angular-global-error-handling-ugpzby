@@ -34,7 +34,8 @@
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules" 
 						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-						(click)="refreshModules()">{{refreshText}} 
+						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
+						(click)="refreshModules()">{{refreshText}}
 						<fa-icon class="refresh-icon" 
 							placement="auto" 
 							[icon]="['fal', 'redo']" 
