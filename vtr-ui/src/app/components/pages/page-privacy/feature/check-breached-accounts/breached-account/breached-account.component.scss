@@ -107,11 +107,11 @@ $leftIndent: 7.5rem;
 		}
 
 		&--password:before {
-			background: url("/assets/icons/privacy-tab/icon-password-red.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-password-red.svg") 0 0 no-repeat;
 		}
 
 		&--email:before {
-			background: url("/assets/icons/privacy-tab/icon-email-red.svg") 0 0 no-repeat;
+			background: url("src/assets/icons/privacy-tab/icon-email-red.svg") 0 0 no-repeat;
 		}
 	}
 

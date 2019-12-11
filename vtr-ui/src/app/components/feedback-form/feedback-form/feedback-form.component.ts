@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -95,6 +95,12 @@ export class FeedbackFormComponent implements OnInit {
 		const subject = 'vantage%203%20program%20feedback';
 		const uriPath = 'mailto:' + email + '?subject=' + subject;
 		this.deviceService.launchUri(uriPath);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.feedback-modal') as HTMLElement;
+		modal.focus();
 	}
 
 	setRadioStatus(name: string, status: boolean) {

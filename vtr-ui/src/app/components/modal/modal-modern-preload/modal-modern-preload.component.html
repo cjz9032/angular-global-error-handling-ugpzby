@@ -108,7 +108,8 @@
 								*ngSwitchCase="statusEnum.DOWNLOADING">
 								<div class="downloading-text"
 									role="text"
-									id="modern-preload-status-downloading-{{ app.udcId }}">{{ app.progress }}% <span [innerHTML]="'modernPreload.downloading' | translate"></span></div>
+									id="modern-preload-status-downloading-{{ app.udcId }}">{{ app.progress }}% <span
+										[innerHTML]="'modernPreload.downloading' | translate"></span></div>
 								<div class="progress-box w-100">
 									<ngb-progressbar type="success"
 										[value]="app.progress"

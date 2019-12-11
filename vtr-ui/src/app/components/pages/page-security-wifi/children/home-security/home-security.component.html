@@ -1,23 +1,26 @@
 <div class="vtr-home-security">
-	<div class="container-fluid p-40">
-		<div class="row pb-3">
+	<div class="container-fluid">
+		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading pb-3" [innerHTML]="'security.homeprotection.homesecurity.title' | translate"></div>
-					<div class="text-regular pb-0" [innerHTML]="'security.homeprotection.homesecurity.titleDescription' | translate"></div>
+					<div class="heading">{{'security.homeprotection.homesecurity.title' | translate}}</div>
+					<div class="text-regular">
+						{{'security.homeprotection.homesecurity.titleDescription' | translate}}
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12 col-lg-6 order-lg-2 p-0">
+		<div class="row mt-20">
+			<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2">
 				<div class="gem-box">
-					<div class="gem p-0">
+					<div class="gem">
 						<img src="assets/images/Banner_no_logo_h&f.jpg"
 							center />
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-lg-6 order-lg-1 text-content">
+
+			<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 text-content">
 				<ul class="bullet-list">
 					<li class="good">
 						<div class="container-fluid">
@@ -30,11 +33,14 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular p-2" [innerHTML]="'security.homeprotection.homesecurity.homeSecurityAffect1' | translate"></div>
+									<div class="text-regular">
+										{{'security.homeprotection.homesecurity.homeSecurityAffect1' | translate}}
+									</div>
 								</div>
 							</div>
 						</div>
 					</li>
+
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
@@ -46,11 +52,14 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular p-2" [innerHTML]="'security.homeprotection.homesecurity.homeSecurityAffect2' | translate"></div>
+									<div class="text-regular">
+										{{'security.homeprotection.homesecurity.homeSecurityAffect2' | translate}}
+									</div>
 								</div>
 							</div>
 						</div>
 					</li>
+
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
@@ -62,16 +71,28 @@
 									</div>
 								</div>
 								<div class="col">
-									<div class="text-regular p-2" [innerHTML]="'security.homeprotection.homesecurity.homeSecurityAffect3' | translate"></div>
+									<div class="text-regular">
+										{{'security.homeprotection.homesecurity.homeSecurityAffect3' | translate}}
+									</div>
+
 								</div>
 							</div>
 						</div>
 					</li>
+
 					<li>
 						<div class="container-fluid">
 							<div class="row align-items-center">
+								<div class="col-auto pl-0 invisible">
+									<div class="bullet-icon">
+										<div class="icon-bkg ">
+										</div>
+									</div>
+								</div>
 								<div class="col">
-									<div class="text-regular" [innerHTML]="'security.homeprotection.homesecurity.describe' | translate"></div>
+									<div class="text-regular">
+										{{'security.homeprotection.homesecurity.describe' | translate}}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -79,13 +100,20 @@
 				</ul>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-12 text-content">
-				<div class="peace-of-mind row mb-5">
+				<div class="peace-of-mind row">
+					<div class="col-auto pl-0 invisible">
+						<div class="bullet-icon">
+							<div class="icon-bkg ">
+							</div>
+						</div>
+					</div>
 					<div class="col">
-						<div class="sub-heading" [innerHTML]="'security.homeprotection.homesecurity.subtitle' | translate"></div>
-						<div class="text-regular col-12 col-lg-6 order-lg-1" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
-							<a vtrMetrics  id="sa-ws-lnk-chs-here"
+						<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
+						<div class="text-regular" *vtrTranslate="'security.homeprotection.homesecurity.subtitleDescribe' | translate">
+							<a vtrMetrics  id="sa-ws-lnk-CHS-here"
 								metricsEvent="ArticleClick"
 								metricsItem="learnMoreAboutSecurityHealth"
 								metricsItemPosition="1"

@@ -31,8 +31,26 @@
 			color: $main;
 		}
 	}
-
+		.container-card{
+			@media #{$black-on-white} {
+				//background-color: $high-contrast-grey;
+				border: 0.1rem solid $dark;
+				border-radius: 1rem;
+				box-sizing: border-box;
+				
+				
+			}
+			@media #{$white-on-black} {
+				//background-color: $high-contrast-grey;
+				border: 0.1rem solid $light;
+				border-radius: 1rem;
+				box-sizing: border-box;
+				
+				
+			}
+		}
 	.smartsettings-card {
+		
 		.subtitle {
 			width: 100%;
 
@@ -63,6 +81,14 @@
 			.privacy-button {
 				font-size: 1.2rem;
 				letter-spacing: 0.76px;
+				@media #{$black-on-white} {
+					color: $high-contrast-blue;
+					border:none;
+				}
+				@media #{$white-on-black} {
+					color: $yellow;
+					border:none;
+				}
 			}
 		}
 	}
@@ -164,6 +190,15 @@
 			font-size: 1.4rem;
 			letter-spacing: 0.76px;
 			text-align: left;
+			text-align: left;
+			@media #{$black-on-white} {
+				color: $high-contrast-blue;
+				border:none;
+			}
+			@media #{$white-on-black} {
+				color: $yellow;
+				border: none;
+			}
 		}
 	}
 }

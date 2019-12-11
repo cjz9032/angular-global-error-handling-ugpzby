@@ -1,47 +1,54 @@
 <div class="vtr-ui-time-picker">
 	<p class="sub-heading">
 		{{ subHeadingText | translate | uppercase }}</p>
-
-
-
 	<div class="row">
 		<div class="col-md-10 col-sm-12 pl-0">
 			<div class="row">
 				<div class="dropdown">
 					<input [id]="id"
-					attr.aria-label="{{id}}"
 						class="dropcheck"
 						type="checkbox"
+						tabindex="-1"
+						[attr.aria-checked]="showDropDown"
 						[checked]="showDropDown"
-						(click)="onToggleDropDown()">
+						(click)="onToggleDropDown()"
+						(keydown.enter)="onToggleDropDown()">
 					<label [for]="id"
-						class="dropbtn">
+						attr.aria-label="{{label}}, {{hours[hour]}}, 'hours', {{minutes[minute]}}, 'minutes', {{amPms[amPm] | translate}}"
+						[attr.aria-expanded]="showDropDown"
+						tabindex="0"
+						class="dropbtn"
+						role="combobox"
+						(keydown.enter)="onToggleDropDown()">
 						<div class="row">
 							<div class="col align-items-center d-flex justify-content-between">
-
 								<div class="time-headings">
-									<p class="ml-5" id="smartStandby-{{linkId}}-hours"
-									attr.aria-label="smartStandby-{{linkId}}-hours">
+									<p class="ml-5"
+										id="smartStandby-{{linkId}}-hours"
+										attr.aria-label="smartStandby-{{linkId}}-hours">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit1' | translate | uppercase }}
 									</p>
 									<span class="ml-5">{{hours[hour]}}</span>
 								</div>
 								<div class="time-headings">
-									<p class="mr-2" id="smartStandby-{{linkId}}-minutes"
-									attr.aria-label="smartStandby-{{linkId}}-minutes">
+									<p class="mr-2"
+										id="smartStandby-{{linkId}}-minutes"
+										attr.aria-label="smartStandby-{{linkId}}-minutes">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit2' | translate | uppercase }}
 									</p>
 									<span class="mr-2">{{minutes[minute]}}</span>
 								</div>
 								<div class="time-headings">
-									<p class="mr-5" id="smartStandby-{{linkId}}-amPm"
-									attr.aria-label="smartStandby-{{linkId}}-amPm">
+									<p class="mr-5"
+										id="smartStandby-{{linkId}}-amPm"
+										attr.aria-label="smartStandby-{{linkId}}-amPm">
 										{{ 'device.deviceSettings.power.smartStandby.timer.timeUnits.unit3' | translate }}
 									</p>
 									<span class="mr-5">{{amPms[amPm] | translate}}</span>
 								</div>
 
-								<div class="toggle-icon" id="smartStandby-{{linkId}}-dropDown-btn"
+								<div class="toggle-icon"
+									id="smartStandby-{{linkId}}-dropDown-btn"
 									attr.aria-label="smartStandby-{{linkId}}-dropDown-btn">
 									<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 								</div>
@@ -58,18 +65,26 @@
 									<div class="hours-block pl-5 ml-5">
 
 										<div class="toggle-icon"
-											(click)="updateHours(false)" id="smartStandby-{{linkId}}-hours-prev-btn"
-											attr.aria-label="smartStandby-{{linkId}}-hours-prev-btn">
+											(click)="updateHours(false)"
+											(keydown.enter)="updateHours(false)"
+											tabindex="0"
+											role="button"
+											id="smartStandby-{{linkId}}-hours-prev-btn"
+											aria-label="smart standby hours decrease button">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
 										<span>{{hours[prevHour]}}</span><br>
-										<span class="highlight">{{hours[copyHour]}}</span><br>
+										<span class="highlight" role="text" tabindex="0" attr.aria-label="{{hours[copyHour]}}, 'hours'">{{hours[copyHour]}}</span><br>
 										<span>{{hours[nextHour]}}</span>
 
 										<div class="toggle-icon"
-											(click)="updateHours(true)" id="smartStandby-{{linkId}}-hours-next-btn"
-											attr.aria-label="smartStandby-{{linkId}}-hours-next-btn">
+											(click)="updateHours(true)"
+											(keydown.enter)="updateHours(true)"
+											tabindex="0"
+											role="button"
+											id="smartStandby-{{linkId}}-hours-next-btn"
+											aria-label="smart standby hours increase button">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
@@ -77,46 +92,58 @@
 
 									<div class="minutes-block">
 										<div class="toggle-icon"
-											(click)="updateMinutes(false)" id="smartStandby-{{linkId}}-minutes-prev-btn"
-											attr.aria-label="smartStandby-{{linkId}}-minutes-prev-btn">
+											(click)="updateMinutes(false)"
+											(keydown.enter)="updateMinutes(false)"
+											id="smartStandby-{{linkId}}-minutes-prev-btn"
+											tabindex="0"
+											role="button"
+											aria-label="smart standby minutes decrease button">
 											<fa-icon [icon]="['fal', 'chevron-up']"></fa-icon>
 										</div>
 
 										<span>{{minutes[prevMinute]}}</span><br>
-										<span class="highlight">{{minutes[copyMinute]}}</span><br>
+										<span class="highlight" role="text" tabindex="0" attr.aria-label="{{minutes[copyMinute]}}, 'minutes'">{{minutes[copyMinute]}}</span><br>
 										<span>{{minutes[nextMinute]}}</span>
 
 										<div class="toggle-icon"
-											(click)="updateMinutes(true)" id="smartStandby-{{linkId}}-minutes-next-btn"
-											attr.aria-label="smartStandby-{{linkId}}-minutes-next	-btn">
+											(click)="updateMinutes(true)"
+											(keydown.enter)="updateMinutes(true)"
+											tabindex="0"
+											role="button"
+											id="smartStandby-{{linkId}}-minutes-next-btn"
+											aria-label="smart standby minutes increase button">
 											<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
 										</div>
 
 									</div>
-									<div class="am-pm ml-52 highlight">
+
+									<div class="am-pm ml-52 highlight" role="radiogroup" tabindex="0">
 										<span>
-											<label class="inline-block">
+											<label class="inline-block" for="{{linkId}}-am-radio" attr.aria-label="{{ amPms[0] | translate }}" tabindex="0"
+											[attr.aria-checked]="copyAmPm==0" (keydown.enter)="setAmPm(0)">
 												<input class="label-radio"
 													id="{{linkId}}-am-radio"
-													attr.aria-label="{{linkId}}-am-radio"
 													[name]="'ampmradio'+id"
 													type="radio"
 													value="0"
+													tabindex="-1"
 													[checked]="copyAmPm==0"
-													(click)="setAmPm(0)" />
+													(click)="setAmPm(0)"
+													 />
 												<p class="label-text">{{ amPms[0] | translate }}</p>
 											</label>
 										</span><br>
 										<span>
-											<label class="inline-block">
+											<label class="inline-block" for="{{linkId}}-pm-radio" attr.aria-label="{{ amPms[1] | translate }}" [attr.aria-checked]="copyAmPm==1" tabindex="0" (keydown.enter)="setAmPm(1)">
 												<input class="label-radio"
-												id="{{linkId}}-pm-radio"
-												attr.aria-label="{{linkId}}-pm-radio"
+													id="{{linkId}}-pm-radio"
 													[name]="'ampmradio'+id"
 													type="radio"
+													tabindex="-1"
 													value="1"
 													[checked]="copyAmPm==1"
-													(click)="setAmPm(1)" />
+													(click)="setAmPm(1)"
+													 />
 												<p class="label-text">{{ amPms[1] | translate }}</p>
 											</label>
 										</span>
@@ -127,11 +154,19 @@
 						<div class="d-flex justify-content-end py-3">
 							<div class="select-close">
 								<fa-icon [icon]="['fal', 'check']"
-									(click)="setTimer()" id="smartStandby-{{linkId}}-done-icon"
-									attr.aria-label="smartStandby-{{linkId}}-done-icon"></fa-icon>
+									tabindex="0"
+									role="button"
+									(click)="setTimer()"
+									(keydown.enter)="setTimer()"
+									id="smartStandby-{{linkId}}-done-icon"
+									aria-label="'confirm changes'"></fa-icon>
 								<fa-icon [icon]="['fal', 'times']"
-									(click)="clearSettings()" id="smartStandby-{{linkId}}-close-icon"
-									attr.aria-label="smartStandby-{{linkId}}-close-icon"></fa-icon>
+									tabindex="0"
+									role="button"
+									(click)="clearSettings()"
+									(keydown.enter)="clearSettings()"
+									id="smartStandby-{{linkId}}-close-icon"
+									aria-label="'cancel changes'"></fa-icon>
 							</div>
 						</div>
 					</div>

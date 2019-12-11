@@ -1,30 +1,20 @@
-<div class='cover'
-	id="{{dropDownId}}"
-	attr.aria-label="{{dropDownId}}"
-	*ngIf='isDropDownOpen'
-	(click)="toggle()">
-</div>
+<div class='cover' id="{{dropDownId}}" attr.aria-label="{{dropDownId}}" *ngIf='isDropDownOpen' [attr.aria-hidden]="!isDropDownOpen" (click)="toggle()" (keydown.enter)="toggle()" tabindex="0"></div>
 <section class="vtr-ui-dropdown">
-	<div class="list"
-		*ngIf="isDropDownOpen && !disabled">
-		<ul>
-			<li (click)="select(i)"
-				*ngFor="let i of list">
-				{{i.text | uppercase }}
-			</li>
-		</ul>
-	</div>
-	<div class="input"
-		(click)="toggle()">
+	<div #toggleBtn class="input" (click)="toggle()" (keydown.enter)="toggle()" role="combobox" [attr.aria-expanded]="isDropDownOpen" aria-haspopup="true" tabindex="0">
+		<div class="list" *ngIf="isDropDownOpen && !disabled" role="listbox" tabindex="0" [attr.aria-hidden]="!isDropDownOpen">
+			<ul>
+				<li (click)="[select(i, toggleBtn),toggle()]" role="option" (keydown.enter)="[select(i, toggleBtn),toggle()]" tabindex="0" attr.aria-label="{{ i.text }}" *ngFor="let i of list" >
+					{{i.text | titlecase }}
+				</li>
+			</ul>
+		</div>
 		<div class="time">
-			<span>{{name}} {{placeholder | uppercase }} </span>
+			<span>{{name}} {{placeholder | titlecase }} </span>
 		</div>
 		<p class="chevron">
-			<fa-icon *ngIf="!isDropDownOpen"
-				[icon]="['fal', 'chevron-down']">
+			<fa-icon *ngIf="!isDropDownOpen" [icon]="['fal', 'chevron-down']">
 			</fa-icon>
-			<fa-icon *ngIf="isDropDownOpen"
-				[icon]="['fal', 'chevron-up']">
+			<fa-icon *ngIf="isDropDownOpen" [icon]="['fal', 'chevron-up']">
 			</fa-icon>
 		</p>
 	</div>

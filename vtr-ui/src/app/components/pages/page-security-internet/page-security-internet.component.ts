@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, Inject, OnDestroy } from '@angular/core';
-import { MockService } from 'src/app/services/mock/mock.service';
 import { Vpn, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
@@ -22,12 +21,10 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-	backId = 'sa-vpn-btn-back';
 	isOnline = true;
 	notificationSubscription: Subscription;
 
 	constructor(
-		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public vantageShellService: VantageShellService,

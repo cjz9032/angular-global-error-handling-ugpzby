@@ -1,100 +1,86 @@
-<div class="vtr-page-security-wifi vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
-				[back]="'common.ui.back'| translate"
-				[title]="'common.securityAdvisor.wifi' | translate"
-				[backId]="backId"></vtr-header-main>
+<vtr-page-layout [title]="'common.securityAdvisor.wifi' | translate"
+	[textId]="'security-wifi'"
+	[pageCssClass]="'security-wifi'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'sa-ws-btn-back'">
+
+	<left-content>
+		<vtr-widget-offline-info *ngIf="!isOnline"
+			[title]="'dashboard.offlineInfo.title' | translate"
+			[isSubtitleVisible]="false"
+			[isButtonVisible]="false"></vtr-widget-offline-info>
+		<wifi-security [data]="wifiHomeViewModel"
+			[vtrAppSearchScroller]="['search-wifi-security']"
+			[isShowHistory]="isShowHistory"
+			[showChs]="showChs"
+			></wifi-security>
+		<div class="connected-home-status"
+			*ngIf="showChs">
+			<vtr-connected-home-status [homeSecurity]="homeSecurity"></vtr-connected-home-status>
 		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
-						<div class="vtr-subpage">
-							<div class="vtr-page-shift-up">
-								<vtr-widget-offline-info *ngIf="!isOnline"
-									[title]="'dashboard.offlineInfo.title' | translate"
-									[isSubtitleVisible]="false"
-									[isButtonVisible]="false"></vtr-widget-offline-info>
-								<wifi-security [data]="wifiHomeViewModel"
-									[vtrAppSearchScroller]="['search-wifi-security']"
-									[isShowHistory]="isShowHistory"
-									[showChs]="showChs"></wifi-security>
-							</div>
-						</div>
-						<div class="connected-home-status" *ngIf="showChs">
-							<vtr-connected-home-status
-								[homeSecurity]="homeSecurity"></vtr-connected-home-status>
-						</div>
-						<div id="home-security" *ngIf="showChs"
-							class="connected-home-container">
-							<vtr-home-security></vtr-home-security>
-						</div>
-						<div class="bottom-content" hidden>
-							<div class="d-none d-lg-block">
-								<hr>
-								<vtr-widget-powered-by-info
-									[title]="'homeSecurity.overview.poweredBy'"
-									[detail]="'security.vpn.privacyPolicyAndTermsOfService'"
-									[imgUrl]="'assets/images/coronet-logo.svg'"
-									privacyUrl="https://homesecurity.coro.net/"
-									termsUrl="https://homesecurity.coro.net/">
-								</vtr-widget-powered-by-info>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<!--Start of Security Card Advisor-->
-								<div *ngIf="segment !== 'Commercial' && !deviceService.isGaming" class="row mb-40">
-									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-											[linkId]="'wifi-security'">
-										</vtr-widget-security-status>
-									</div>
-								</div>
-								<!--end of Security Card Advisor-->
-								<div class="row">
-									<div class="col col-12">
-										<vtr-container-card
-											[img]="cardContentPositionA.FeatureImage"
-											[caption]="cardContentPositionA.Description"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[itemID]="cardContentPositionA.ActionLink"
-											[ratioX]="4"
-											[ratioY]="2"
-											type="corner-article"
-											cornerShift="large"
-											order="1"
-											sideFlag="r"
-											[containerCardId]="'sa-ws-modal'">
-										</vtr-container-card>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="bottom-content w-100" hidden>
-						<div class="d-block d-lg-none">
-							<hr>
-							<vtr-widget-powered-by-info
-								[title]="'homeSecurity.overview.poweredBy'"
-								[detail]="'security.vpn.privacyPolicyAndTermsOfService'"
-								[imgUrl]="'assets/images/coronet-logo.svg'"
-								privacyUrl="https://homesecurity.coro.net/"
-								termsUrl="https://homesecurity.coro.net/">
-							</vtr-widget-powered-by-info>
-						</div>
-					</div>
+		<div id="home-security" *ngIf="showChs"
+			class="connected-home-container">
+			<vtr-home-security></vtr-home-security>
+		</div>
+		<div class="bottom-content" hidden>
+			<div class="d-none d-md-block">
+				<hr>
+				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+					[imgUrl]="'assets/images/coronet-logo.svg'"
+					privacyUrl="https://homesecurity.coro.net/"
+					termsUrl="https://homesecurity.coro.net/">
+				</vtr-widget-powered-by-info>
+			</div>
+		</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<!--Start of Security Card Advisor-->
+			<div *ngIf="segment !== segmentConst.Commercial && !this.deviceService.isGaming"
+				class="row mb-40">
+				<div class="col col-12">
+					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+						[linkId]="'wifi-security'">
+					</vtr-widget-security-status>
+				</div>
+			</div>
+			<!--end of Security Card Advisor-->
+			<div class="row mb-5">
+				<div class="col col-12">
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[itemID]="cardContentPositionA.ActionLink"
+						[ratioX]="4"
+						[ratioY]="2"
+						type="corner-article"
+						cornerShift="large"
+						order="1"
+						sideFlag="r"
+						[containerCardId]="'sa-ws-modal'">
+					</vtr-container-card>
 				</div>
 			</div>
 		</div>
+	<div class="bottom-content w-100" hidden>
+		<div class="d-block d-md-none">
+			<hr>
+			<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+				[imgUrl]="'assets/images/coronet-logo.svg'"
+				privacyUrl="https://homesecurity.coro.net/"
+				termsUrl="https://homesecurity.coro.net/">
+			</vtr-widget-powered-by-info>
+		</div>
 	</div>
-</div>
+	</right-content>
+
+</vtr-page-layout>

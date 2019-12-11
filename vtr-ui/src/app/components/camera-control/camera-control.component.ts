@@ -93,8 +93,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		let deviceInfo = null;
 		// Get available devices for capturing pictures
 		return this.DeviceInformation.findAllAsync(this.DeviceClass.videoCapture)
-			.then(function(devices) {
-				devices.forEach(function(cameraDeviceInfo) {
+			.then((devices) => {
+				devices.forEach((cameraDeviceInfo) => {
 					if (cameraDeviceInfo.enclosureLocation != null && cameraDeviceInfo.enclosureLocation.panel === panel) {
 						deviceInfo = cameraDeviceInfo;
 						return;
@@ -168,7 +168,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					this.ngZone.run(() => {
 						this.disabledAll = true;
 					});
-				}).then(function() {
+				}).then(() => {
 					return self.startPreviewAsync();
 				}).done();
 		} catch (error) {

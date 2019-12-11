@@ -1,95 +1,38 @@
-<div>
-	<div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
-		<div class="row" *ngIf="!isOnline">
-			<div class="col col-12 px-40 pb-40">
-				<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
-					[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-					[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
-					[isButtonVisible]="false" id="dashboard-btn-connectivity">
-				</vtr-widget-offline-info>
-			</div>
-		</div>
-		<div class="row vtr-page-header">
-			<div class="col vtr-col">
-				<vtr-header-main [title]="'gaming.networkBoost.title' | translate" [backarrow]="'&lt; '"
-					[back]="'common.ui.back' | translate" [backId]="backId">
-				</vtr-header-main>
-			</div>
-		</div>
-		<div class="row vtr-page-content">
-			<div class="col vtr-col">
-				<div class="container-fluid">
-					<div class="row">
-						<div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
-							<div class="vtr-page-shift-up nmx-40">
-								<div class="container-fluid">
-									<div class="row mb-60">
-										<div class="col col-12 px-40">
-											<div class="vtr-widget-system-monitor">
-												<div class="widget-container">
-													<div class="container-fluid">
-														<div class="row">
-															<div class="col-sm-12">
-																<!-- <vtr-ui-switch-onoff [value]="toggleStatus"
-																	(toggle)="setNetworkBoostStatus($event)" [ariaLabel]="'Network boost'">
-																</vtr-ui-switch-onoff> -->
-																<vtr-ui-toggle
-																	[label]="'networkBoost'"
-																	[toggleId]="'networkBoost'"
-																	[onOffSwitchId]="'networkboostSwitch'"
-																	(toggle)="setNetworkBoostStatus($event)"
-																	[value]="toggleStatus">
-																</vtr-ui-toggle>
-																<p class="intro-text">
-																	{{'gaming.networkBoost.introLine' | translate}}</p>
-																<vtr-widget-networkboost [modalStatus]="(showTurnOnModal || showAppsModal)" [changeNum]="changeListNum"
-																	(actionModal)="openTargetModal()"
-																	(addedApps)="appsCount = $event">
-																</vtr-widget-networkboost>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
-							<div class="vtr-page-shift-up">
-								<div class="container-fluid">
-									<div class="row">
-										<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-											<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1" 
-											  [itemID]="cardContentPositionF.Id"
-												[img]="cardContentPositionF.FeatureImage"
-												[title]="cardContentPositionF.Title"
-												[logoText]="cardContentPositionF.BrandName"
-												[action]="cardContentPositionF.Action"
-												[actionType]="cardContentPositionF.ActionType"
-												[actionLink]="cardContentPositionF.ActionLink" 
-												[type]="'article'"
-												[ratioX]="4" 
-												[ratioY]="4">
-											</vtr-container-card>
-										</div>
+<vtr-page-layout [title]="'gaming.networkBoost.title' | translate" [textId]="'networkboost'"
+	[pageCssClass]="'networkboost'" [shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate"
+	[backId]="'vtr-gaming-networkboost-btn-back'">
 
-										<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-											<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2" 
-											  [itemID]="cardContentPositionC.id"
-												[img]="cardContentPositionC.FeatureImage"
-												[caption]="cardContentPositionC.Description"
-												[title]="cardContentPositionC.Title"
-												[logoText]="cardContentPositionC.BrandName"
-												[action]="cardContentPositionC.Action"
-												[actionType]="cardContentPositionC.ActionType"
-												[actionLink]="cardContentPositionC.ActionLink" 
-												[type]="'corner'"
-												[ratioX]="4" 
-												[ratioY]="2">
-											</vtr-container-card>
-										</div>
+	<left-content>
+		<div class="container-fluid">
+			<div class="row" *ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
+						[isButtonVisible]="false" id="dashboard-btn-connectivity">
+					</vtr-widget-offline-info>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<div class="vtr-widget-networkboost">
+						<div class="widget-container">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col col-12">
+										<!-- <vtr-ui-switch-onoff [value]="toggleStatus"
+											(toggle)="setNetworkBoostStatus($event)" [ariaLabel]="'Network boost'">
+										</vtr-ui-switch-onoff> -->
+										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [label]="'networkBoost'"
+											[toggleId]="'networkBoost'" [onOffSwitchId]="'networkboostSwitch'"
+											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus">
+										</vtr-ui-toggle>
+										<p class="intro-text">
+											{{'gaming.networkBoost.introLine' | translate}}</p>
+										<vtr-widget-networkboost [modalStatus]="(showTurnOnModal || showAppsModal)"
+											[changeNum]="changeListNum" (actionModal)="openTargetModal()"
+											(addedApps)="appsCount = $event">
+										</vtr-widget-networkboost>
 									</div>
 								</div>
 							</div>
@@ -98,13 +41,44 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</left-content>
 
-	<vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-		(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction($event)"
-		(actionTurnOn)="initTurnOnAction($event)">
-	</vtr-networkboost-turn-on>
+	<right-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div *ngIf="!deviceService.isGaming" class="col col-12 px-0 pt-0 pb-40">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionF.Id"
+						[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
+						[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
+						[dataSource]="cardContentPositionF.DataSource" [actionType]="cardContentPositionF.ActionType"
+						[actionLink]="cardContentPositionF.ActionLink" [type]="'article'" [ratioX]="4"
+						[ratioY]="4">
+					</vtr-container-card>
+				</div>
 
-	<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount"
-		(closeAddAppsModal)="modalCloseAddApps($event)">
-	</vtr-networkboost-add-apps>
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionB.id"
+						[img]="cardContentPositionB.FeatureImage" [caption]="cardContentPositionB.Description"
+						[title]="cardContentPositionB.Title" [logoText]="cardContentPositionB.BrandName"
+						[action]="cardContentPositionB.Action" [dataSource]="cardContentPositionB.DataSource"
+						[actionType]="cardContentPositionB.ActionType" [actionLink]="cardContentPositionB.ActionLink"
+						[type]="'corner'" [ratioX]="4" [ratioY]="2" [cornerShift]="'large'"
+						[dynamicmetricsItem]="dynamic_metricsItem">
+					</vtr-container-card>
+				</div>
+
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>
+
+
+<vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
+	(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction($event)"
+	(actionTurnOn)="initTurnOnAction($event)">
+</vtr-networkboost-turn-on>
+
+<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount"
+	(closeAddAppsModal)="modalCloseAddApps($event)">
+</vtr-networkboost-add-apps>

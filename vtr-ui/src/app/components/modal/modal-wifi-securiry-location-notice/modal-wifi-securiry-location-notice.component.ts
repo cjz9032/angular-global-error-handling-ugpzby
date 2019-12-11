@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -32,6 +32,7 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 	ngOnInit() {
 	}
 
+
 	// closeModal() {
 	// 	this.activeModal.close('close');
 	// }
@@ -52,6 +53,19 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 			});
 		}
 		this.activeModal.close(false);
+		document.getElementById('main-wrapper').focus();
+	}
+
+	keydownFn(event) {
+		if (event.which === 9) {
+			document.getElementById('wifi-sec-modal').focus();
+		}
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.wifi-security-location-modal') as HTMLElement;
+		modal.focus();
 	}
 }
 

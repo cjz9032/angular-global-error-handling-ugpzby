@@ -8,6 +8,7 @@
 		[manualRefresh]="manualRefresh"
 		(userChangeEnd)="dragEnd($event)"
 		id="{{rangeSliderId + '-slider'}}"
+		tabindex="0"
 		attr.aria-label="{{rangeSliderId + '-slider'}}">
 	</ng5-slider>
 	<div class="row label"
@@ -15,6 +16,9 @@
 		<div class="col"
 			id="{{rangeSliderId + '-min-value-title'}}"
 			attr.aria-label="{{rangeSliderId + '-min-value-title'}}">{{ minValueLegend }}</div>
+			<div class="col text-center"
+			id="{{rangeSliderId + '-med-value-title'}}"
+			attr.aria-label="{{rangeSliderId + '-med-value-title'}}">{{ mediumValueLegend }}</div>
 		<div class="col text-right"
 			id="{{rangeSliderId + '-max-value-title'}}"
 			attr.aria-label="{{rangeSliderId + '-max-value-title'}}">{{ maxValueLegend }}</div>

@@ -22,6 +22,13 @@
 			font-size: 3rem;
 			transform: translate(-50%, -50%);
 			margin: 0;
+			@media #{$black-on-white} {
+				//background: $highlight_bright;
+			}
+			@media #{$white-on-black} {
+				//background: darkviolet;
+			}
+
 		}
 
 		.checkbox-custom+.checkbox-custom-label>.icomoon::before {
@@ -64,6 +71,14 @@
 
 		.checkbox-custom:checked+.checkbox-custom-label {
 			background-color: $background;
+			@media #{$white-on-black}{
+				background-color: $highlight_bright;;
+
+			}
+			@media #{$black-on-white}{
+				background-color:$high-contrast-white-textselected;
+			}
+
 		}
 
 
@@ -73,6 +88,16 @@
 			top: 0.5rem;
 			color: $light;
 			font-size: 2rem;
+			@media #{$black-on-white} {
+				//border: 0.1rem solid $dark;
+				color:$light;
+			}
+			@media #{$white-on-black} {
+				//border: 0.1rem solid $light;
+				color:$dark;
+			}
+
+
 		}
 
 		.icon-circle{
@@ -81,6 +106,14 @@
 			top: 0.5rem;
 			color: $main;
 			font-size: 2rem;
+			@media #{$black-on-white} {
+				color: $dark;
+
+			}
+			@media #{$white-on-black} {
+				color: $light;
+
+	}
 		}
 	}
 }

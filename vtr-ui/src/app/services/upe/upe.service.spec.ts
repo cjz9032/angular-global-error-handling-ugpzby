@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { UPEService } from './upe.service';
 
-describe('UpeService', () => {
+xdescribe('UpeService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {

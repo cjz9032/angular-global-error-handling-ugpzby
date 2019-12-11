@@ -54,8 +54,12 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.notificationSubscription.unsubscribe();
-		this.routeSubscription.unsubscribe();
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.routeSubscription) {
+			this.routeSubscription.unsubscribe();
+		}
 
 	}
 
@@ -150,6 +154,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	}
 
 	public redirectBack() {
+		// Clearing the last response received from Scan/RBS to ensure that
+		// the Hardware Components page will be shown, since user just clicked
+		// in the back button.
+		this.hardwareScanService.clearLastResponse();
 		this.commonService.sendNotification(HardwareScanProgress.BackEvent);
 	}
 

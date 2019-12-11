@@ -1,148 +1,62 @@
-<div class="vtr-page-security vtr-page" [vtrAppSearchScroller]="['search-security-status']">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="'common.menu.security.title' | translate"
-				[backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[backId]="backId"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
+<vtr-page-layout [title]="'common.menu.security.sub1' | translate"
+	[textId]="'security'"
+	[pageCssClass]="'security'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'sa-ov-btn-back'">
+
+	<left-content>
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-12 col-sm-12 col-md-6 col-lg-8 vtr-page-left-column">
-					<div class="vtr-page-shift-up">
-						<div class="vtr-page-left-column-inner">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col col-12">
-										<vtr-widget-security *ngIf="isOnline"
-											[showWindowsHello]="windowsHelloLandingViewModel? true : false"
-											[percentValue]="score"></vtr-widget-security>
-										<vtr-widget-offline-info *ngIf="!isOnline"
-											[title]="'dashboard.offlineInfo.title' | translate"
-											[isSubtitleVisible]="false"
-											[isButtonVisible]="false"></vtr-widget-offline-info>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container left">
-
-										<vtr-ui-landing-feature
-											*ngIf="antivirusLandingViewModel?.subject?.status !== undefined && antivirusLandingViewModel?.subject?.status !== null"
-											[feature]='antivirusLandingViewModel'>
-										</vtr-ui-landing-feature>
-
-										<vtr-ui-landing-feature
-											*ngIf="passwordManagerLandingViewModel?.subject?.status !== undefined && passwordManagerLandingViewModel?.subject?.status !== null"
-											[feature]='passwordManagerLandingViewModel'>
-										</vtr-ui-landing-feature>
-
-										<vtr-ui-landing-feature
-											*ngIf="vpnLandingViewModel?.subject?.status !== undefined && vpnLandingViewModel?.subject?.status !== null && showVpn"
-											[feature]='vpnLandingViewModel'>
-										</vtr-ui-landing-feature>
-									</div>
-
-									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container">
-										<div class="security-widget wifi-connected-home"
-											*ngIf="wifiSecurityLandingViewModel?.subject?.status !== undefined && wifiSecurityLandingViewModel?.subject?.status !== null">
-											<div class="security-widget-inner">
-												<div class="security-widget-wifi">
-													<div class="title row no-gutters">
-														<span class="col-11 text-break pl-1" [innerHTML]="wifiSecurityLandingViewModel?.subject?.title"></span>
-													</div>
-													<vtr-ui-list-chevron
-														[items]="wifiSecurityLandingViewModel.statusList"
-														metricsEvent="featureClick">
-													</vtr-ui-list-chevron>
-													<div class="wifi-history"
-														*ngIf="wifiHistory && wifiSecurityLandingViewModel?.subject?.status === 0 && wifiHistory.length !== 0">
-														<div class="row align-items-center pt-wifiLength">
-															<div class="col-2 row justify-content-center pl-3">
-																<fa-icon class="wifi-font-icon"
-																	[icon]="['fas', 'wifi']"></fa-icon>
-															</div>
-															<div class="col-10">
-																{{'security.landing.maliciousNetwork' | translate: { maliciousWifi: maliciousWifi } }}
-															</div>
-														</div>
-														<ul class="chevron-list">
-															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
-																class="row no-gutters">
-																<div
-																	class="col-2 d-flex justify-content-center align-items-center">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'wifi']"></fa-icon>
-																	</div>
-																</div>
-																<div class="col-6 pl-0 ellipsis wifi-good-font"
-																	title="{{wifi.ssid}}">{{wifi.ssid}}</div>
-																<div class="wifi-bg col-4 pl-0 pr-3 ellipsis">
-																	<div class="wifi-good pt-1 pb-1 pr-2 pl-2 "
-																		[ngClass]="getWifiStatus(wifi.good)"
-																		title="{{getWifiDetail(wifi.good)}}">
-																		{{getWifiDetail(wifi.good)}}
-																	</div>
-																</div>
-															</li>
-															<li class="wifi-link">
-																<a routerLink="wifi-security"
-																	id="sa-ov-link-seeAllNetwork"
-																	[queryParams]="{isShowMore:false}"
-																	vtrMetrics
-																	metricsEvent="FeatureClick"
-																	metricsItem="seeAllNetwork"
-																	title="{{'security.landing.seeAllNetwork' | translate}}">
-																	{{'security.landing.seeAllNetwork' | translate}}
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="pull"><img class="coronet-logo"
-														[src]="wifiSecurityLandingViewModel.imgUrl|svgInline|async" />
-												</div>
-											</div>
-										</div>
-										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel"
-											[feature]='windowsHelloLandingViewModel'>
-										</vtr-ui-landing-feature>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="col-12 p-0 mb-4">
+					<vtr-widget-security *ngIf="isOnline"
+						[showWindowsHello]="fingerPrintLandingViewModel? true : false"
+						[statusItem]="statusItem"></vtr-widget-security>
+					<vtr-widget-offline-info *ngIf="!isOnline"
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[isSubtitleVisible]="false"
+						[isButtonVisible]="false"></vtr-widget-offline-info>
 				</div>
-				<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
-					<div class="vtr-page-shift-up">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col col-12">
-									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-										[caption]="cardContentPositionA.Description"
-										[title]="cardContentPositionA.Title"
-										[logoText]="cardContentPositionA.BrandName"
-										[action]="cardContentPositionA.Action"
-										[actionType]="cardContentPositionA.ActionType"
-										[actionLink]="cardContentPositionA.ActionLink"
-										[itemID]="cardContentPositionA.ActionLink"
-										[ratioX]="4"
-										[ratioY]="2"
-										type="corner-article"
-										order="1"
-										sideFlag="r"
-										cornerShift="large"
-										[containerCardId]="'sa-ov-modal'">
-									</vtr-container-card>
-								</div>
-							</div>
-						</div>
-					</div>
+			</div>
+			<section class="landing-nav mb-40">
+				<vtr-widget-landing-nav
+					[baseItems]="baseItems"
+					[intermediateItems]="intermediateItems"
+					[advancedItems]="advanceItems"></vtr-widget-landing-nav>
+			</section>
+		</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row mb-40">
+				<div class="col col-12">
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[itemID]="cardContentPositionA.ActionLink"
+						[ratioX]="4"
+						[ratioY]="2"
+						type="corner-article"
+						order="1"
+						sideFlag="r"
+						cornerShift="large"
+						[containerCardId]="'sa-ov-modal'">
+					</vtr-container-card>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-12">
+					<vtr-widget-qa></vtr-widget-qa>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</right-content>
+
+</vtr-page-layout>

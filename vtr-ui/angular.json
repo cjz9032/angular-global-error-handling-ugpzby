@@ -85,7 +85,7 @@
 							"namedChunks": true,
 							"aot": true,
 							"extractLicenses": false,
-							"vendorChunk": true,
+							"vendorChunk": false,
 							"buildOptimizer": true,
 							"budgets": [
 								{
@@ -142,11 +142,7 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": {
-								"scripts": true,
-								"styles": true,
-								"vendor": true
-							},
+							"sourceMap": false,
 							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,
@@ -171,6 +167,14 @@
 								{
 									"replace": "src/app/services/mock/mock.service.ts",
 									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
+									"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+								},
+								{
+									"replace": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector.ts",
+									"with": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector-mock.ts"
 								}
 							],
 							"optimization": false,
@@ -190,6 +194,39 @@
 								}
 							],
 							"serviceWorker": false
+						},
+						"beta": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.beta.ts"
+								},
+								{
+									"replace": "src/app/services/mock/mock.service.ts",
+									"with": "src/app/services/mock/mock.service.prod.ts"
+								},
+								{
+									"replace": "src/app/services/security/securityMock.service.ts",
+									"with": "src/app/services/security/securityMock.service.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": true,
+							"aot": true,
+							"extractLicenses": false,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "15mb"
+								}
+							],
+							"serviceWorker": true
 						}
 					}
 				},
@@ -223,10 +260,6 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
-						"assets": [
-							"src/favicon.ico",
-							"src/assets"
-						],
 						"styles": [
 							"src/styles.scss"
 						],
@@ -235,6 +268,25 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/manifest.webmanifest"
+						],
+						"codeCoverage": true,
+						"fileReplacements": [
+							{
+								"replace": "src/environments/environment.ts",
+								"with": "src/environments/environment.mock.ts"
+							},
+							{
+								"replace": "src/app/services/mock/mock.service.ts",
+								"with": "src/app/services/mock/mock.service.prod.ts"
+							},
+							{
+								"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
+								"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+							},
+							{
+								"replace": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector.ts",
+								"with": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector-mock.ts"
+							}
 						]
 					}
 				},

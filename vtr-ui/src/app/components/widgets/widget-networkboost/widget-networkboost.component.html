@@ -1,43 +1,78 @@
 <div class="autoclose-wrapper">
-  <ul class="d-flex flex-wrap">
-    <li class="add-icon">
-      <div (click)="openModal()" role="button" id="addButton"
-       [ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}"
-       (keyup.enter)="openModal()" [tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
-       aria-label="Add apps">
-        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>6.20pxIcon/add</title>
-          <desc>Created with Sketch.</desc>
-          <g id="6.20pxIcon/add" stroke="none" stroke-width="1" fill="rgba(255,255,255,0.6)" fill-rule="evenodd">
-            <path
-              d="M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z"
-              id="Shape" fill="#1c2238" fill-rule="nonzero"></path>
-          </g>
-        </svg>
-      </div>
-      <div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
-    </li>
-		<li *ngFor="let app of runningAppsList; let i = index" [ngClass]="{'hovered': app.isHovered, runningList: app.isHovered}"
-    (mouseover)="app.isHovered=true" (mouseout)="app.isHovered=false"  [title]="app.processDescription">
+	<ul class="d-flex flex-wrap">
+		<li class="add-icon">
+			<div (click)="openModal()"
+				role="button"
+				id="addButton"
+				[ngClass]="{'isdisabled': runningAppsList && runningAppsList.length >=5}"
+				(keyup.enter)="openModal()"
+				[tabindex]="runningAppsList && runningAppsList.length >=5 ? -1 : 1"
+				attr.aria-label="{{'gaming.narrator.networkBoost.subPage.addApps' | translate}}">
+				<svg width="20px"
+					height="20px"
+					viewBox="0 0 20 20"
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink">
+					<title>6.20pxIcon/add</title>
+					<desc>Created with Sketch.</desc>
+					<g id="6.20pxIcon/add"
+						stroke="none"
+						stroke-width="1"
+						fill="rgba(255,255,255,0.6)"
+						fill-rule="evenodd">
+						<path
+							d="M9.86634391,2 C9.30897756,2 8.85714286,2.44991629 8.85714286,2.99708744 L8.85714286,8.85714286 L2.99708744,8.85714286 C2.44641125,8.85714286 2,9.29785156 2,9.86634391 L2,10.1336561 C2,10.6910224 2.44991629,11.1428571 2.99708744,11.1428571 L8.85714286,11.1428571 L8.85714286,17.0029126 C8.85714286,17.5535887 9.29785156,18 9.86634391,18 L10.1336561,18 C10.6910224,18 11.1428571,17.5500837 11.1428571,17.0029126 L11.1428571,11.1428571 L17.0029126,11.1428571 C17.5535887,11.1428571 18,10.7021484 18,10.1336561 L18,9.86634391 C18,9.30897756 17.5500837,8.85714286 17.0029126,8.85714286 L11.1428571,8.85714286 L11.1428571,2.99708744 C11.1428571,2.44641125 10.7021484,2 10.1336561,2 L9.86634391,2 Z"
+							id="Shape"
+							fill="#1c2238"
+							fill-rule="nonzero"></path>
+					</g>
+				</svg>
+			</div>
+			<div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
+		</li>
+		<li *ngFor="let app of runningAppsList; let i = index"
+			[ngClass]="{'hovered': app.isHovered, runningList: app.isHovered}"
+			(mouseover)="app.isHovered=true"
+			(mouseout)="app.isHovered=false"
+			[title]="app.processDescription">
 			<div>
-        <img  [src]="app.iconName | sanitize : 'resourceUrl'"
-        alt="{{app.processDescription}}" />
-      			</div>
-         <div placement="bottom" [title]="app.processDescription">
-              {{app.processDescription}}
-            </div>
-			<div class="remove-app" id="{{'remove'+i}}" (click)="removeApp(app.processPath,i)" role="area"
-				(keyup.enter)="removeApp(app.processPath,i)"  (focus)="app.isHovered=true" (focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button"
-				attr.aria-label="{{'Remove '+ app.processDescription}}" role="button" >
-				<svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+				<img [src]="app.iconName | sanitize : 'resourceUrl'"
+					alt="{{app.processDescription}}" />
+			</div>
+			<div placement="bottom"
+				[title]="app.processDescription">
+				{{app.processDescription}}
+			</div>
+			<div class="remove-app"
+				id="{{'remove'+i}}"
+				(click)="removeApp(app.processPath,i)"
+				role="area"
+				(keyup.enter)="removeApp(app.processPath,i)"
+				(focus)="app.isHovered=true"
+				(focusout)="app.isHovered=false"
+				[tabindex]="modalStatus? '-1':'1'"
+				role="button"
+				attr.aria-label="{{'gaming.narrator.networkBoost.subPage.remove' | translate}} {{app.processDescription}}"
+				role="button">
+				<svg width="16px"
+					height="16px"
+					viewBox="0 0 20 20"
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/Close</title>
 					<desc>Created with Sketch.</desc>
-					<g id="6.20pxIcon/Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<g id="6.20pxIcon/Close"
+						stroke="none"
+						stroke-width="1"
+						fill="none"
+						fill-rule="evenodd">
 						<path
 							d="M10.9653688,10.3512186 L17.1764486,16.445129 C17.4918286,16.7545595 17.4966516,17.2610686 17.1872211,17.5764486 C16.8777906,17.8918286 16.3712816,17.8966516 16.0559016,17.5872211 L9.84477507,11.4932648 L3.63364858,17.5872211 C3.31826856,17.8966516 2.81175954,17.8918286 2.50232902,17.5764486 C2.1928985,17.2610686 2.19772153,16.7545595 2.51310155,16.445129 L8.71216362,10.3630096 L2.65985124,4.42487144 C2.34447121,4.11544092 2.33964818,3.6089319 2.6490787,3.29355187 C2.95850922,2.97817185 3.46501824,2.97334882 3.78039826,3.28277934 L9.83278004,9.22098556 L15.7731957,3.16635187 C16.0826262,2.85097185 16.5891352,2.84614882 16.9045153,3.15557934 C17.2198953,3.46500986 17.2247183,3.97151888 16.9152878,4.2868989 L10.9653688,10.3512186 Z"
-							id="Combined-Shape-Copy" fill="#FFFFFF" fill-rule="nonzero"
+							id="Combined-Shape-Copy"
+							fill="#FFFFFF"
+							fill-rule="nonzero"
 							transform="translate(9.844775, 10.371400) scale(1, -1) rotate(-90.000000) translate(-9.844775, -10.371400) ">
 						</path>
 					</g>

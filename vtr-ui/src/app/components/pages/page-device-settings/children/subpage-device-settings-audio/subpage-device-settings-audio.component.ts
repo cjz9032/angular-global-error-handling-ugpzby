@@ -104,12 +104,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.autoDolbyFeatureStatus.status = this.dolbyAudioToggleCache.status;
 				this.autoDolbyFeatureLoader = this.dolbyAudioToggleCache.loader;
 				this.automaticDolbyHelpIcon = this.dolbyAudioToggleCache.icon;
+				this.dolbyModeResponse = this.dolbyAudioToggleCache.dolbyModeResponse;
 			} else {
 				this.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 				this.dolbyAudioToggleCache.available = this.autoDolbyFeatureStatus.available;
 				this.dolbyAudioToggleCache.status = this.autoDolbyFeatureStatus.status;
 				this.dolbyAudioToggleCache.loader = this.autoDolbyFeatureLoader;
 				this.dolbyAudioToggleCache.icon = this.automaticDolbyHelpIcon;
+				this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
 				this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 			}
 		} catch (error) {
@@ -280,6 +282,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
 						this.dolbyModeResponse = response;
+						this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
+						this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 						console.log('getDolbyModesStatus:', response);
 					}).catch(error => {
 						this.logger.error('getDolbyModesStatus', error.message);
@@ -329,11 +333,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	startMonitorHandlerForDolby(response: DolbyModeResponse) {
 		console.log('startMonitorHandlerForDolby', response);
 		this.dolbyModeResponse = response;
+		this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
+		this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 	}
 
 	onDolbySeetingRadioChange(event) {
 		try {
 			this.dolbyModeResponse.currentMode = event.target.value;
+			this.dolbyAudioToggleCache.dolbyModeResponse = this.dolbyModeResponse;
+			this.commonService.setLocalStorageValue(LocalStorageKey.DolbyAudioToggleCache, this.dolbyAudioToggleCache);
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
 					.then((value) => {

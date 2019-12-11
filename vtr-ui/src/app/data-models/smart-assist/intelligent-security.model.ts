@@ -10,4 +10,8 @@ export class IntelligentSecurity {
 	public isIntelligentSecuritySupported: boolean;
 	public isDistanceSensitivityVisible: boolean;
 	public isWindowsHelloRegistered: boolean;
+	public isZeroTouchLockFacialRecoVisible: boolean;
+	public isZeroTouchLockFacialRecoEnabled: boolean;
+	public facilRecognitionCameraAccess: boolean;
+	public facialRecognitionCameraPrivacyMode: boolean;
 }

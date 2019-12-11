@@ -9,18 +9,27 @@
 	</div>
 	<div *ngIf="!showLoader"
 		class="checkbox"
-		[ngClass]="{'switch-disable': isSwitchDisable}">
+		[ngClass]="{'switch-disable': isSwitchDisable}"
+		#toggleMain
+		(keydown.enter)="disabled? '':toggleLabel.click();toggleMain.focus();"
+		[attr.aria-checked]="value"
+		[attr.aria-disabled]="disabled"
+		[attr.aria-readonly]="readonly"
+		[attr.aria-labelledby]="onOffSwitchId+'_checkbox'"
+		role="switch"
+		[tabIndex]="disabled?-1:tabIndex">
 		<label class="pb-1 pl-1"
-			(keyup.enter)="onChange(toggle)"
-			vtrMetrics
-			metricsEvent="featureClick"
-			[metricsItem]="onOffSwitchId"
-			[metricsValue]="!value"
-			tabindex="{{tabIndex}}">
+			#toggleLabel
+			(keydown.enter)="sendChangeEvent(toggle)"
+			(keyup.enter)="onChange(toggle)">
 			<input type="checkbox"
+				vtrMetrics
+				metricsEvent="featureClick"
+				[metricsItem]="onOffSwitchId"
+				[metricsValue]="!value"
 				id="{{onOffSwitchId+'_checkbox'}}"
 				#toggle
-				role="checkbox"
+				role="switch"
 				tabindex="-1"
 				[name]="onOffSwitchId"
 				class="switch"
@@ -29,20 +38,31 @@
 				[checked]="value"
 				[disabled]="disabled"
 				[readonly]="readonly"
-				[attr.aria-label]="ariaLabel"
-				(click)="sendChangeEvent(toggle)"
-				(change)="onChange($event)" />
+				[attr.aria-checked]="value"
+				[attr.aria-disabled]="disabled"
+				[attr.aria-readonly]="readonly"
+				attr.aria-label="{{ariaLabel}}"
+				aria-hidden="true"
+				(change)="onChange($event)"
+				(keydown.enter)="onChange($event)"
+				(click)="sendChangeEvent(toggle)"/>
 			<span class="switch {{ size }}"
+				aria-hidden="true"
 				id="{{onOffSwitchId+'_sizeStopProp'}}"
-				(click)="stopPropagation($event);">
+				(click)="stopPropagation($event);"
+				(keydown.enter)="stopPropagation($event);">
 				<small></small> </span>
 			<div *ngIf="!value"
+				aria-hidden="true"
 				id="{{onOffSwitchId+'_off_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
+				(keydown.enter)="stopPropagation($event);"
 				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 			<div *ngIf="value"
+				aria-hidden="true"
 				id="{{onOffSwitchId+'_on_sizeStopProp'}}"
 				(click)="stopPropagation($event);"
+				(keydown.enter)="stopPropagation($event);"
 				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 		</label>
 	</div>

@@ -1,61 +1,81 @@
 <div class="modal-body vtr-modal-intelligent-cooling-modes">
-	<div class="row justify-content-end">
+	<div class="row justify-content-end"
+		role="dialog">
 		<div class="btn-close">
 			<button type="button"
+				tabindex="1"
 				class="close"
-				aria-hidden="true"
-				(click)="closeModal()">
+				(click)="closeModal()"
+				(keydown.enter)="closeModal()"
+				attr.aria-label="intelligentCoolingModesModal-close-modal"
+				id="intelligentCoolingModesModal-close-modal">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
 		</div>
 	</div>
-	<h1 class="mb-3">
+	<h1 class="mb-3"
+		tabindex="0"
+		ngbAutofocus
+		role="text">
 		{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.title' | translate}}
 	</h1>
-	<hr>
-	<div class="row">
+	<hr aria-hidden="true">
+	<div class="row"
+		role="text">
 		<div class="col">
 			<div class="number-list">
 				<li>
 					<div class="d-flex justify-content-start mb-2 mr-2">
 						<div class="serial-bakcground">
-							<p class="serial">1</p>
+							<p class="serial"
+								role="text">1</p>
 						</div>
-						<span
+						<span role="text"
 							class="text-regular">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list1' | translate}}</span>
 					</div>
 					<div class="col ml-5 toolbar-block">
 						<img class="img-fluid ml-5"
+							tabindex="0"
+							role="img"
 							src="../../../../assets/images/toolbar.PNG">
 					</div>
 				</li>
 			</div>
 		</div>
 	</div>
-	<hr>
-	<div class="row">
+	<hr aria-hidden="true">
+	<div class="row"
+		role="text">
 		<div class="col">
 			<div class="number-list">
 				<li>
 					<div class="d-flex justify-content-start mb-2 mr-2">
 						<div class="serial-bakcground">
-							<p class="serial serial2">2</p>
+							<p class="serial serial2"
+								role="text">2</p>
 						</div>
-						<span
+						<span role="text"
 							class="text-regular">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.coolingModesList.list2' | translate}}</span>
 					</div>
 					<div class="col ml-5 battery-guage-block">
 						<img class="img-fluid ml-5 "
+							role="img"
+							tabindex="0"
 							src="../../../../assets/images/battery-guage.jpg">
 					</div>
 				</li>
 			</div>
 		</div>
 	</div>
-	<hr>
+	<hr aria-hidden="true">
 	<div class="row">
 		<button class="btn close-button"
-			(click)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
+			tabindex="1"
+			(click)="closeModal()"
+			(keydown.enter)="closeModal()"
+			attr.aria-label="intelligentCoolingModesModal-close-button"
+			id="intelligentCoolingModesModal-close-button">
+			{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}</button>
 	</div>
 
 </div>

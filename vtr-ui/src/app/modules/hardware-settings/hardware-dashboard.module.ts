@@ -2,14 +2,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
 import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.module';
 import { TranslationModule } from '../translation.module';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { PageDashboardComponent } from 'src/app/components/pages/page-dashboard/page-dashboard.component';
 import { MetricsModule } from 'src/app/directives/metrics.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
-import { WidgetFeedbackComponent } from 'src/app/components/widgets/widget-feedback/widget-feedback.component';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { WidgetQuicksettingsComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetSwitchIconComponent } from 'src/app/components/widgets/widget-switch-icon/widget-switch-icon.component';
@@ -27,12 +25,11 @@ import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
+import { FeedbackModule } from '../feedback/feedback.module';
 
 @NgModule({
 	declarations: [
-		FeedbackFormComponent,
 		PageDashboardComponent,
-		WidgetFeedbackComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
 		WidgetDashboardWarrantyComponent
@@ -56,7 +53,8 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 		NgbModalModule,
 		CommonPipeModule,
 		PageLayoutModule,
-		AppSearchModule
+		AppSearchModule,
+		FeedbackModule,
 	],
 	exports: [
 		MetricsModule,
@@ -72,7 +70,7 @@ import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/wid
 		WidgetDashboardWarrantyComponent
 	],
 	providers: [MockService],
-	entryComponents: [FeedbackFormComponent],
+	entryComponents: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class HardwareDashboardModule {

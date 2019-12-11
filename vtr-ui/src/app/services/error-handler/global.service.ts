@@ -16,6 +16,5 @@ export class GlobalErrorHandler implements ErrorHandler {
 		}
 		this.logger.error('GlobalErrorHandler: uncaught exception', errorMessage);
 		console.error('GlobalErrorHandler: uncaught exception', errorMessage);
-
 	}
 }

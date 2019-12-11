@@ -5,7 +5,7 @@ import { HomeSecurityCommon } from 'src/app/data-models/home-security/home-secur
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { HomeSecurityLocation } from 'src/app/data-models/home-security/home-security-location.model';
+import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 
 @Component({
   selector: 'vtr-home-security-after-signup',
@@ -16,7 +16,7 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() allDevices: HomeSecurityAllDevice;
 	@Input() account: HomeSecurityAccount;
 	@Input() common: HomeSecurityCommon;
-	@Input() location: HomeSecurityLocation;
+	@Input() location: DeviceLocationPermission;
 
 	metricsParent = 'ConnectedHomeSecurity';
 	constructor(
@@ -32,12 +32,8 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.disconnect);
 		} else {
-			this.dialogService.openCHSPermissionModal();
+			this.dialogService.openCHSPermissionModal(this.location);
 		}
-	}
-
-	openCornet() {
-		this.common.openCornet();
 	}
 
 	isMoreThen30Day(num: number): boolean {

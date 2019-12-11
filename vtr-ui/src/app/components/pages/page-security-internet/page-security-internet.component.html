@@ -1,286 +1,258 @@
-<div class="vtr-page-security-internet vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"
-				[title]="'security.vpn.title' | translate"
-				[backId]="backId"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-12 col-sm-12 col-lg-8 vtr-page-left-column">
-						<div class="vtr-subpage">
-							<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
-								[isSubtitleVisible]="false"
-								[isButtonVisible]="false"></vtr-widget-offline-info>
-							<div [ngClass]="{'vtr-page-shift-up': isOnline}">
-								<div class="vtr-page-security-internet">
-									<div class="container-fluid p-40 security-card">
-										<div class="row"
-										[vtrAppSearchScroller]="['search-internet-protection']"
-										>
-											<div class="col">
-												<div class="heading">{{'security.vpn.header' | translate}}</div>
-											</div>
-											<div class="pull right"><img class="surfeasy_logo_teal"
-													src="../../../../assets/images/SurfEasy-logo.png" /></div>
-										</div>
-										<div class="row mt-20">
-											<div class="col">
-												<div class="text-regular">
-													{{'security.vpn.whatIsSufEasy' | translate}}
-												</div>
-											</div>
-										</div>
-										<div class="row mt-40">
-											<div class="col get-app-code-box">
-												<vtr-ui-security-statusbar [statusList]="[statusItem]">
-												</vtr-ui-security-statusbar>
-											</div>
-										</div>
-										<div class="row mt-40">
-											<div class="col text-regular">
-												{{'security.vpn.helpKeep' | translate}}
-											</div>
-											<div class=" pull right">
-												<div class="col-12">
-													<vtr-ui-button
-														*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
-														(onClick)="getSurfEasy()"
-														metricsEvent="FeatureClick"
-														metricsItem="getSurfEasy"
-														[linkId]="'sa-vpn-btn-getsufeasy'"
-														[isDisabled]="statusItem.status === 'installing' || isOnline === false"
-														[label]="'security.vpn.getSufEasy' | translate">
-													</vtr-ui-button>
-													<vtr-ui-button
-														*ngIf="statusItem.status === 'installed'"
-														(onClick)="openSurfEasy()"
-														metricsEvent="FeatureClick"
-														metricsItem="openSurfEasy"
-														[linkId]="'sa-vpn-btn-opensufeasy'"
-														[label]="'security.vpn.openSufEasy' | translate">
-													</vtr-ui-button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row vtr-page-security-internet"
-								*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'">
-								<div class="row">
-									<div class="col col-12 col-sm-12 mt-40">
-										<div>
-											<p class="title">{{'security.vpn.whySufEasy' | translate}}</p>
-											<p class="text">{{'security.vpn.whySufEasyDescription' | translate}}
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="row w-100">
-									<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40 p-0">
-										<div class="col mt-4">
-											<img src="../../../../assets/images/surfeasy-left-img.jpg"
-												class="surfeasy-side-left-img" />
-										</div>
-									</div>
-									<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
-										<div class="col">
-											<div class="list-heading">
-												<p class="adjust-left">{{'security.vpn.startUseSufEasy' | translate}}
-												</p>
-											</div>
-											<ul class="bullet-list">
-												<li class="good">
-													<div class="container-fluid">
-														<div class="row align-items-center">
-															<div class="col-auto pl-0">
-																<div class="bullet-icon">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																	</div>
-																</div>
-															</div>
-															<div class="col">
-																<div class="text-regular">
-																	{{'security.vpn.startUseSufEasy1' | translate}}
-																</div>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="good">
-													<div class="container-fluid">
-														<div class="row align-items-center">
-															<div class="col-auto pl-0">
-																<div class="bullet-icon">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																	</div>
-																</div>
-															</div>
-															<div class="col">
-																<div class="text-regular">
-																	{{'security.vpn.startUseSufEasy2' | translate}}
-																</div>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="good">
-													<div class="container-fluid">
-														<div class="row align-items-center">
-															<div class="col-auto pl-0">
-																<div class="bullet-icon">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																	</div>
-																</div>
-															</div>
-															<div class="col">
-																<div class="text-regular">
-																	{{'security.vpn.startUseSufEasy3' | translate}}
-																</div>
-															</div>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row vtr-connected-security-internet"
-								*ngIf="statusItem.status === 'installed'">
-								<div class="row">
-									<div class="col col-12 col-sm-12 mt-40">
-										<div>
-											<p class="title">{{'security.vpn.howToUseSufEasy' | translate}}</p>
-											<p class="text">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
-										</div>
-									</div>
-								</div>
-								<div class="row w-100">
-									<div class="col-12 col-lg-6 mt-40">
-										<div class="col mt-4">
-											<img src="../../../../assets/images/SurfEasy-Left-img-2.jpg"
-												class="surfeasy-side-right-img" />
-										</div>
-									</div>
-									<div class="col col-6 mt-40">
-										<div class="col">
-											<div class="list-heading">
-												<p class="adjust-left">{{'security.vpn.getStarted' | translate}}</p>
-											</div>
-											<div class="number-list">
-												<li>
-													<div class="d-flex align-items-center mb-3">
-														<span class="serial mr-2">1.</span>
-														<span class="text-regular">{{'security.vpn.getStarted1' | translate}}</span>
-													</div>
-												</li>
-												<li>
-													<div class="d-flex align-items-center mb-3">
-														<span class="serial mr-2">2.</span>
-														<span class="text-regular">{{'security.vpn.getStarted2' | translate}}</span>
-													</div>
-												</li>
-												<li>
-													<div class="d-flex align-items-center mb-3">
-														<span class="serial mr-2">3.</span>
-														<span class="text-regular">{{'security.vpn.getStarted3' | translate}}</span>
-													</div>
-												</li>
-											</div>
-										</div>
-									</div>
+<vtr-page-layout [title]="'security.vpn.title' | translate"
+	[textId]="'security-internet'"
+	[pageCssClass]="'security-internet'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'sa-vpn-btn-back'">
 
-								</div>
-							</div>
-							<div class="col col-12 ">
-								<div class="row top-line">
-									<div class="col">
-										<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
-										<p class="text-regular"
-											*vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
+	<left-content>
+		<vtr-widget-offline-info *ngIf="!isOnline"
+			[title]="'dashboard.offlineInfo.title' | translate"
+			[isSubtitleVisible]="false"
+			[isButtonVisible]="false"></vtr-widget-offline-info>
+		<div class="container-fluid p-0">
+			<div class="row security-card p-40">
 
-											<a id="sa-vpn-lnk-privacypolicy"
-												vtrMetrics
-												metricsEvent="featureClick"
-												metricsItem="privacyPolicy"
-												href="https://www.surfeasy.com/privacy_policy/"
-												target="_blank"></a>
-											<a id="sa-vpn-lnk-termsofservices"
-												vtrMetrics
-												metricsEvent="featureClick"
-												metricsItem="termsOfServices"
-												href="https://www.surfeasy.com/terms_of_service/"
-												target="_blank"></a>
-										</p>
-									</div>
-									<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
-											src="../../../../assets/images/SurfEasy-logo.png" /></div>
-								</div>
-							</div>
+					<div class="container-fluid p-0">
+				<div class="row"
+					[vtrAppSearchScroller]="['search-internet-protection']">
+					<div class="col">
+						<div class="heading">{{'security.vpn.header' | translate}}</div>
+					</div>
+					<div class="pull right"><img class="surfeasy_logo_teal"
+							src="../../../../assets/images/SurfEasy-logo.png" /></div>
+				</div>
+				<div class="row mt-20">
+					<div class="col">
+						<div class="text-regular">
+							{{'security.vpn.whatIsSufEasy' | translate}}
 						</div>
 					</div>
-					<div class="col-12 col-sm-12 col-lg-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<!--Start of Security Card Advisor-->
-								<div class="row mb-40">
-									<div class="col col-12">
-										<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
-											[linkId]="'internet-protection'">
-										</vtr-widget-security-status>
-									</div>
-								</div>
-								<!--End of Security Card Advisor-->
-								<div class="row">
-									<div class="col col-12">
-										<!--<vtr-container-card id="sa-vpn-lnk-cardcontent"
-											aria-label="sa-vpn-lnk-cardcontent"
-											[img]="cardContentPositionA.FeatureImage"
-											[caption]="cardContentPositionA.Description"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[itemID]="cardContentPositionA.ActionLink"
-											[ratioX]="4"
-											[ratioY]="2"
-											type="corner-article"
-											cornerShift="large"
-											order="r1">
-										</vtr-container-card>-->
-										<vtr-container-card
-											[img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
-											[caption]="cardContentPositionA.Description"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'corner-article'"
-											cornerShift="large"
-											order="1"
-											sideFlag="r"
-											[ratioX]="4"
-											[ratioY]="2"
-											[cornerShift]="'large'"
-											[containerCardId]="'sa-vpn-modal'">
-										</vtr-container-card>
-									</div>
-								</div>
+				</div>
+				<div class="row mt-40">
+					<div class="col get-app-code-box">
+						<vtr-ui-security-statusbar [statusList]="[statusItem]">
+						</vtr-ui-security-statusbar>
+					</div>
+				</div>
+				<div class="row mt-40">
+					<div class="col text-regular">
+						{{'security.vpn.helpKeep' | translate}}
+					</div>
+					<div class=" pull right">
+						<div class="col-12">
+							<vtr-ui-button
+								*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
+								(onClick)="getSurfEasy()"
+								metricsEvent="FeatureClick"
+								metricsItem="getSurfEasy"
+								[linkId]="'sa-vpn-btn-getsufeasy'"
+								[isDisabled]="statusItem.status === 'installing' || isOnline === false"
+								[label]="'security.vpn.getSufEasy' | translate">
+							</vtr-ui-button>
+							<vtr-ui-button *ngIf="statusItem.status === 'installed'"
+								(onClick)="openSurfEasy()"
+								metricsEvent="FeatureClick"
+								metricsItem="openSurfEasy"
+								[linkId]="'sa-vpn-btn-opensufeasy'"
+								[label]="'security.vpn.openSufEasy' | translate">
+							</vtr-ui-button>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="row"
+				*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'">
+				<div class="row">
+					<div class="col col-12 col-sm-12 mt-40">
+						<div>
+							<p class="title">{{'security.vpn.whySufEasy' | translate}}</p>
+							<p class="text-regular">{{'security.vpn.whySufEasyDescription' | translate}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row w-100">
+					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40 p-0">
+						<div class="col mt-4">
+							<img src="../../../../assets/images/surfeasy-left-img.jpg"
+								class="surfeasy-side-left-img" />
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
+						<div class="col">
+							<div class="list-heading">
+								<p class="adjust-left">{{'security.vpn.startUseSufEasy' | translate}}
+								</p>
 							</div>
+							<ul class="bullet-list">
+								<li class="good">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col-auto pl-0">
+												<div class="bullet-icon">
+													<div class="icon-bkg">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="text-regular">
+													{{'security.vpn.startUseSufEasy1' | translate}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="good">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col-auto pl-0">
+												<div class="bullet-icon">
+													<div class="icon-bkg">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="text-regular">
+													{{'security.vpn.startUseSufEasy2' | translate}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="good">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col-auto pl-0">
+												<div class="bullet-icon">
+													<div class="icon-bkg">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="text-regular">
+													{{'security.vpn.startUseSufEasy3' | translate}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row"
+				*ngIf="statusItem.status === 'installed'">
+				<div class="row">
+					<div class="col col-12 col-sm-12 mt-40">
+						<div>
+							<p class="title">{{'security.vpn.howToUseSufEasy' | translate}}</p>
+							<p class="text-regular">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="row w-100">
+					<div class="col-12 col-lg-6 mt-40">
+						<div class="col mt-4">
+							<img src="../../../../assets/images/SurfEasy-Left-img-2.jpg"
+								class="surfeasy-side-right-img" />
+						</div>
+					</div>
+					<div class="col col-6 mt-40">
+						<div class="col">
+							<div class="list-heading">
+								<p class="adjust-left">{{'security.vpn.getStarted' | translate}}</p>
+							</div>
+							<div class="number-list">
+								<li>
+									<div class="d-flex align-items-center mb-3">
+										<span class="serial mr-2">1.</span>
+										<span class="text-regular">{{'security.vpn.getStarted1' | translate}}</span>
+									</div>
+								</li>
+								<li>
+									<div class="d-flex align-items-center mb-3">
+										<span class="serial mr-2">2.</span>
+										<span class="text-regular">{{'security.vpn.getStarted2' | translate}}</span>
+									</div>
+								</li>
+								<li>
+									<div class="d-flex align-items-center mb-3">
+										<span class="serial mr-2">3.</span>
+										<span class="text-regular">{{'security.vpn.getStarted3' | translate}}</span>
+									</div>
+								</li>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="row top-line">
+				<div class="col">
+					<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
+					<p class="text-regular"
+						*vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
+
+						<a id="sa-vpn-lnk-privacypolicy"
+							vtrMetrics
+							metricsEvent="featureClick"
+							metricsItem="privacyPolicy"
+							href="https://www.surfeasy.com/privacy_policy/"
+							target="_blank"></a>
+						<a id="sa-vpn-lnk-termsofservices"
+							vtrMetrics
+							metricsEvent="featureClick"
+							metricsItem="termsOfServices"
+							href="https://www.surfeasy.com/terms_of_service/"
+							target="_blank"></a>
+					</p>
+				</div>
+				<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
+						src="../../../../assets/images/SurfEasy-logo.png" /></div>
+			</div>
 		</div>
-	</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<!--Start of Security Card Advisor-->
+			<div class="row mb-40">
+				<div class="col col-12">
+					<vtr-widget-security-status [securityAdvisor]="securityAdvisor"
+						[linkId]="'internet-protection'">
+					</vtr-widget-security-status>
+				</div>
+			</div>
+			<!--End of Security Card Advisor-->
+			<div class="row">
+				<div class="col col-12">
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						[itemID]="cardContentPositionA.Id"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[type]="'corner-article'"
+						cornerShift="large"
+						order="1"
+						sideFlag="r"
+						[ratioX]="4"
+						[ratioY]="2"
+						[cornerShift]="'large'"
+						[containerCardId]="'sa-vpn-modal'">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

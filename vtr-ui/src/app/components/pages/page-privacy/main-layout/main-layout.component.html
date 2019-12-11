@@ -1,52 +1,64 @@
 <div class="privacy-wrapper"
-	 data-analyticsName="privacy">
-    <vtr-main-header></vtr-main-header>
-    <div class="privacy-wrapper__content">
-        <div class="privacy-wrapper__main-col">
-            <div [ngClass]="[currentPageSettings?.moveBlockToTop ? 'privacy-wrapper__inner-page' : '']">
-                <vtr-privacy-score *ngIf="currentPageSettings?.showPrivacyScore"></vtr-privacy-score>
-                <vtr-nav-tabs *ngIf="currentPageSettings?.showNavigationBlock"></vtr-nav-tabs>
-                <router-outlet></router-outlet>
-            </div>
-			<vtr-did-you-know></vtr-did-you-know>
-			<vtr-stat
-				*ngIf="(isFigleafReadyForCommunication$ | async) && currentPageSettings?.isShowStat"
-				[dashboardData]="dashboardData$ | async">
-			</vtr-stat>
-            <vtr-support-banner *ngIf="currentPageSettings?.showSupportBanner"></vtr-support-banner>
-        </div>
-        <div class="privacy-wrapper__side-col">
-            <vtr-side-bar></vtr-side-bar>
-        </div>
-    </div>
+	data-analyticsName="privacy">
+	<div class="col page-header-bg">
+		<vtr-main-header></vtr-main-header>
+	</div>
+	<div class="privacy-wrapper__content row">
+		<div class="privacy-wrapper__main-col col-lg-7 col-xl-8">
+			<div class="vtr-page-column-shift-up">
+				<div [ngClass]="[currentPageSettings?.moveBlockToTop ? 'privacy-wrapper__inner-page' : '']">
+					<vtr-privacy-score *ngIf="currentPageSettings?.showPrivacyScore"></vtr-privacy-score>
+					<vtr-nav-tabs *ngIf="currentPageSettings?.showNavigationBlock"></vtr-nav-tabs>
+					<router-outlet></router-outlet>
+				</div>
+				<vtr-did-you-know></vtr-did-you-know>
+				<vtr-stat *ngIf="(isFigleafReadyForCommunication$ | async) && currentPageSettings?.isShowStat"
+					[dashboardData]="dashboardData$ | async">
+				</vtr-stat>
+				<vtr-support-banner *ngIf="currentPageSettings?.showSupportBanner"></vtr-support-banner>
+			</div>
+
+		</div>
+		<div class="privacy-wrapper__side-col col-lg-5 col-xl-4">
+			<div class="vtr-page-column-shift-up">
+				<vtr-side-bar></vtr-side-bar>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="img-for-service-worker">
-	<img src="/assets/images/privacy-tab/default-site.png" alt="default-site icon">
-	<img src="/assets/images/privacy-tab/Unknown.png" alt="unknown site icon">
-	<img src="/assets/icons/privacy-tab/icon-support-clock.png"
-		 srcset="/assets/icons/privacy-tab/icon-support-clock@2x.png 2x"
-		 alt="support chat icon">
-	<img src="/assets/icons/privacy-tab/icon-support--green.svg" alt="support icon green">
-	<img src="/assets/icons/privacy-tab/icon-support.svg" alt="support icon">
-	<img src="/assets/icons/privacy-tab/error-white.svg" alt="error icon white">
-	<img src="/assets/images/privacy-tab/video-widget/video-widget-offline.png" alt="Why Online Privacy Matters video">
-	<img src="/assets/images/privacy-tab/offline-widget/offline-mode-grey.png"
-		 srcset="/assets/images/privacy-tab/offline-widget/offline-mode-grey@2x.png 2x"
-		 alt="offline-mode-grey">
-	<img src="/assets/images/privacy-tab/offline-widget/article-offline.png"
-		 srcset="/assets/images/privacy-tab/offline-widget/article-offline.png@2x.png 2x"
-		 alt="offline-mode-grey">
+	<img src="assets/images/privacy-tab/default-site.png"
+		alt="default-site icon">
+	<img src="assets/images/privacy-tab/Unknown.png"
+		alt="unknown site icon">
+	<img src="assets/icons/privacy-tab/icon-support-clock.png"
+		srcset="assets/icons/privacy-tab/icon-support-clock@2x.png 2x"
+		alt="support chat icon">
+	<img src="assets/icons/privacy-tab/icon-support--green.svg"
+		alt="support icon green">
+	<img src="assets/icons/privacy-tab/icon-support.svg"
+		alt="support icon">
+	<img src="assets/icons/privacy-tab/error-white.svg"
+		alt="error icon white">
+	<img src="assets/images/privacy-tab/video-widget/video-widget-offline.png"
+		alt="Why Online Privacy Matters video">
+	<img src="assets/images/privacy-tab/offline-widget/offline-mode-grey.png"
+		srcset="assets/images/privacy-tab/offline-widget/offline-mode-grey@2x.png 2x"
+		alt="offline-mode-grey">
+	<img src="assets/images/privacy-tab/offline-widget/article-offline.png"
+		srcset="assets/images/privacy-tab/offline-widget/article-offline.png@2x.png 2x"
+		alt="offline-mode-grey">
 	<video>
 		<source [src]="'/assets/images/privacy-tab/non-private-passwords/how-remove-passwords-edge.mp4'"
-				type="video/mp4">
+			type="video/mp4">
 	</video>
 	<video>
 		<source [src]="'/assets/images/privacy-tab/non-private-passwords/how-remove-passwords-chrome.mp4'"
-				type="video/mp4">
+			type="video/mp4">
 	</video>
 	<video>
 		<source [src]="'/assets/images/privacy-tab/non-private-passwords/how-remove-passwords-firefox.mp4'"
-				type="video/mp4">
+			type="video/mp4">
 	</video>
 </div>

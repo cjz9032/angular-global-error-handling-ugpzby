@@ -63,11 +63,12 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		}
 	}
 
-	public select(event: DropDownInterval) {
+	public select(event: DropDownInterval, toggle) {
 		this.value = event.value;
 		this.name = event.name;
 		this.placeholder = event.placeholder;
 		this.isDropDownOpen = !this.isDropDownOpen;
 		this.change.emit(event);
+		toggle.focus();
 	}
 }

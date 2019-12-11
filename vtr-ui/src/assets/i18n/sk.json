@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Naozaj chcete odstrániť tento kláves makra?"
+                    "title": "Naozaj chcete odstrániť tento kláves makra?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Časový limit nahrávania.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "Nahrávanie klávesu makra pre"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "Farba"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "Žiadne spustené aplikácie na pridanie",
                 "body": "Zobrazia sa iba práve spustené aplikácie. Spustite aplikáciu, ktorú chcete pridať a vráťte sa späť."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "Možno pridať až 5 apl. na zvýšenie výkonu",
                     "part2": "z",
                     "part3": "pridané/pridaných"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "Zabezpečenie WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ZAPNUTÉ",
             "disabled": "VYPNUTÉ",
             "partiallyProtected": "ČIASTOČNE CHRÁNENÉ",
@@ -456,7 +641,8 @@
             "installing": "INŠTALÁCIA",
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
-            "notRegistered": "NEREGISTROVANÉ"
+            "notRegistered": "NEREGISTROVANÉ",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -475,7 +661,10 @@
             "collapse": "Zbaliť",
             "expand": "Rozbaliť",
             "loader": "Stav <br> načítania",
-            "loading": "Načítava..."
+            "loading": "Načítava...",
+            "from": "od",
+            "to": "zmeňte na",
+            "clickToChange": "kliknutím zmeňte"
         },
         "app-update": {
             "message": "Dobrý deň. K dispozícii je novšia verzia aplikácie Vantage, chcete ju načítať?"
@@ -552,7 +741,9 @@
                 "accessUrl": "Prejdite do nastavení systému Windows a povoľte prístup",
                 "microphoneNote": "Lenovo Vantage nemá prístup k mikrofónu.",
                 "cameraPrivacyNote": "Lenovo Vantage nemá prístup k fotoaparátu."
-            }
+            },
+            "threshold": "Hraničná úroveň",
+            "conservation": "Úspora"
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -602,9 +793,9 @@
                 "notFound": "Aktualizácia systému sa nenašla",
                 "detail": {
                     "uptoDate": "Aktualizácie boli skontrolované ",
-					"updatedOn": "skontrolované ",
-					"outdated": "Aktualizácie neboli dlho kontrolované ",
-					"neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
+                    "updatedOn": "skontrolované ",
+                    "outdated": "Aktualizácie neboli dlho kontrolované ",
+                    "neverRanUpdate": "aktualizácie neboli nikdy kontrolované"
                 }
             },
             "extendedWarranty": "Rozšíriť záruku",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "Tento systém <b>nepodporuje</b> nainštalovanú batériu, ktorá sa preto nebude nabíjať. Vymeňte batériu za správnu batériu Lenovo určenú pre tento systém.",
                     "Good": "<b>Batéria je v dobrom stave.</b>",
-                    "Exhaustion": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "Exhaustion": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "Bad": "<b>Vyskytla sa chyba batérie.</b> Batériu nemožno nabiť/vybiť. Vymeňte batériu.",
                     "NotDetected": "<b>Nezistená žiadna batéria ani</b> pripojená batéria.",
                     "NotGood": "<b>Batéria nie je v dobrom stave.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "<b>Vybíjanie</b> sa zastavilo, pretože <b>teplota batérie je príliš vysoká.</b>",
                     "TrickleCharge": "Batéria je <b>úplne vybitá</b> a musí sa nabiť. Môže to trvať desať hodín alebo dlhšie.",
                     "OverheatedBattery": "Batéria je <b>príliš horúca</b>. Vyberte ju z počítača a ochlaďte ju na izbovú teplotu.",
-                    "PermanentError": "Batéria <b>zlyhala z dôvodu normálneho opotrebovania.</b> Batériu nemožno nabiť. Vymeňte batériu.",
+                    "PermanentError": "Kapacita batérie sa <b>zhoršila</b>. Vymeňte ju za novú.",
                     "NotSupportACAdapterDetail": "<b>Napájací adaptér nie je podporovaný.</b> Počítač Lenovo nepodporuje tento napájací adaptér. Môže to spôsobiť náhle vypnutie. Pripojte správny napájací adaptér.",
-                    "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér."
+                    "LimitedACAdapterSupportDetail": "<b>Napájací adaptér nedokáže poskytnúť dostatok energie</b> pre počítač Lenovo, čo ovplyvní výkon systému a rýchlosť nabíjania. Znova pripojte správny napájací adaptér.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájanie je pripojené.</b>"
                 },
                 "batteryNotDetected": "Nebola zistená žiadna batéria",
                 "thresholdNote": "<b>Poznámka:</b> Ak je aktivovaný limit hraničné úrovne nabitia batérie, batériu nie je možné úplne nabiť.",
@@ -783,7 +975,7 @@
                             "close": "zatvoriť",
                             "coolingModesList": {
                                 "list1": "Kliknite na ikonu batérie v systéme Windows na paneli s nástrojmi",
-                                "list2": "Zobrazí sa ukazovateľ batérie systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
+                                "list2": "Zobrazí sa režim výkonu systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "Inteligentné chladenie upravuje otáčky ventilátora, maximálny výkon a riadi výdrž batérie. Táto funkcia má 3 režimy (tichý režim, vyvážený režim a režim vysokého výkonu) a teraz je dostupná prostredníctvom jazdca na nastavenie výkonu systému Windows",
-                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší."
+                    "nocqldesc": "Inteligentné chladenie vám umožňuje nastaviť výkon systému a teplotu. V režime „Vysoký výkon“ sa optimalizuje výkon systému. Zatiaľ čo režim „Chladný a tichý“ pomáha zaistiť, aby bol systém chladnejší a tichší.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavenia napájania",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "Inteligentný pohotovostný režim",
                     "description": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným začiatkom a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie sa optimalizuje podľa vami nastaveného plánu. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie keď sa počas nasledujúcich plánovaných dní nevyužíva.",
+                    "tooltip": "Keď je inteligentný pohotovostný režim povolený, počítač sa prepne do moderného pohotovostného režimu pred plánovaným ZAČIATKOM a prejde do režimu hlbokého spánku, keď sa pri napájaní z batérie určitý čas nevyužíva. Toto časové obdobie je optimalizované na základe nastaveného harmonogramu alebo stanoveného času využívania počítača. Počítač sa prepne z režimu hlbokého spánku do moderného pohotovostného režimu len v plánované dni, nie vtedy, ak sa počas nasledujúcich plánovaných dní nevyužíva.",
                     "timer": {
-                        "heading": "Nastavte čas, v ktorom zvyčajne používate počítač",
+                        "heading": "Čas, kedy obyčajne využívate svoj počítač",
                         "subHeading1": "začnete",
                         "subHeading2": "koniec",
                         "subHeading3": "tento plán použiť na",
@@ -941,7 +1154,8 @@
                             "wed": "streda",
                             "thurs": "štvrtok",
                             "fri": "piatok",
-                            "sat": "sobota"
+                            "sat": "sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "nedeľa",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "Každý deň",
                         "weekdays": "Dni v týždni",
-                        "weekends": "víkendy"
-                    }
+                        "weekends": "víkendy",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "Automatické prispôsobenie aktívneho času počítača podľa vášho využívania",
+                    "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktívny čas tabuľky vášho počítača",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1194,7 +1453,24 @@
                             "description": "Zmena predvolenej funkcie horného riadka si vyžaduje reštartovanie počítača. Naozaj chcete vykonať reštartovanie?",
                             "reboot": "REŠTARTOVAŤ",
                             "cancel": "TERAZ NIE"
+                        },
+                        "note": {
+                            "sFunKey": "Funkcie klávesov F1 – F12 môžete použiť stlačením klávesu Fn a klávesov v hornom riadku.",
+                            "fnKey": "Špeciálne funkcie môžete použiť stlačením klávesu Fn a klávesov v hornom riadku."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Funkcie klávesových skratiek VoIP",
+                        "description": {
+                            "main": "Táto funkcia umožňuje prijať alebo odmietnuť hovor VoIP stlačením klávesových skratiek na klávesnici:",
+                            "f10": "F10: prijatie hovoru",
+                            "f11": "F11: odmietnutie alebo ukončenie hovoru"
+                        },
+                        "tooltip": "V súčasnosti sa táto funkcia podporuje iba v programoch Skype for Business 2016 a Microsoft Teams 1.0.<br>Ak chcete používať túto funkciu, musíte si najprv stiahnuť a nainštalovať príslušné aplikácie.",
+                        "hasInstalledAppsDescription": "Vyberte aplikáciu, v ktorej chcete používať klávesové skratky:",
+                        "noInstalledAppsDescription": "Táto funkcia podporuje iba tieto aplikácie: ",
+                        "hasInstalledAppsNote": "Poznámka: V prípade programov Microsoft Teams 1.0 nemožno kláves F11 použiť na ukončenie hovoru.",
+                        "noInstalledAppsNote": "Poznámka: Ak chcete používať túto funkciu, musíte si najprv stiahnuť a nainštalovať príslušné aplikácie."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "POUŽIŤ"
                     },
                     "website": {
-                        "url": "ADRESA URL WEBOVEJ LOKALITY"
+                        "url": "ADRESA URL WEBOVEJ LOKALITY",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ"
+                        "title": "TEXT, KTORÝ SA MÁ ZADAŤ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Výmena klávesov Fn a Ctrl",
+                    "description": "Ak zvyčajne stlačíte kláves Fn, keď chce stlačiť kláves Ctrl, môžete vymeniť funkcie týchto dvoch klávesov.",
+                    "restartNote": "Výmena funkcie dvoch klávesov vyžaduje reštart počítača. Naozaj chcete počítač reštartovať?"
                 },
                 "controlOptions": {
                     "more": "VIAC",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "Bezdotykové prihlásenie",
                     "caption": "Táto funkcia odomkne alebo prebudí počítač automaticky, keď ste pred ním alebo sa k nemu priblížite.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ak ste pred počítačom alebo sa k nemu približujete (do vzdialenosti 1,2 metra), táto funkcia umožňuje automatické prihlásenie sa do systému po rozpoznaní tváre. Ak ste skôr v exteriéri než v kancelárii, musíte byť bližšie k počítaču a prebudenie bude trvať dlhšie."
                 },
                 "zeroTouchLock": {
                     "title": "Bezdotykové uzamknutie",
@@ -1270,6 +1551,17 @@
                             "slow": "Pomalé"
                         },
                         "toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť. Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom."
+                    },
+                    "facialRecognition": {
+                        "title": "ROZPOZNÁVANIE TVÁRE",
+                        "caption": "Môžete povoliť funkciu rozpoznávania tváre a povoliť jej prístup k fotoaparátu. Tento nástroj zaznamená vašu snímku, aby mohol presne rozpoznať vašu prítomnosť alebo zistiť, kedy ste nechali zariadenie bez dozoru. Tieto údaje sa spracúvajú lokálne vo vašom zariadení. Spoločnosť Lenovo k nim nemá prístup a nepoužíva ich.",
+                        "checkBox": "Zapnúť fotoaparát a povoliť túto funkciu",
+                        "note": {
+                            "permission": "Lenovo Vantage nemá prístup k fotoaparátu. Funkcia začiarkavacieho políčka nebude fungovať.",
+                            "privacyMode": "Je zapnutý režim súkromia kamery aplikácie Lenovo Vantage. Funkcia začiarkavacieho políčka nebude fungovať.",
+                            "windowsLink": "Prejdite do nastavení systému Windows a povoľte prístup",
+                            "privacyLink": "Prejdite na režim súkromia kamery a vypnite ho"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "Automatické nastavenie vzdialenosti automaticky aktualizuje vzdialenosť detekcie pomocou nástroja využívajúceho umelú inteligenciu.",
                     "options": {
                         "near": "Blízko",
-                        "far": "Ďaleko"
+                        "far": "Ďaleko",
+                        "medium": "Stredné"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Ak je funkcia povolená, detekčná vzdialenosť sa automaticky upraví. Detekčnú vzdialenosť môžete nastaviť aj manuálne pomocou posúvača. K dispozícii sú tieto možnosti:",
+                        "context2": "Ak detekčnú vzdialenosť nastavíte manuálne, venujte pozornosť týmto údajom:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Krátka: 0 – 0,42 metra (17 palcov)",
+                            "line2": "Stredná: 0 – 0,60 metra (24 palcov)",
+                            "line3": "Veľká: 0 – 1,20 metra (47 palcov)",
+                            "line4": "Maximálna detekčná vzdialenosť je 1,2 metra. Ak vzdialenosť presiahne 1,2 metra, senzor nedokáže zistiť vašu prítomnosť.",
+                            "line5": "Odporúčaná detekčná vzdialenosť je do 0,60 metra."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "Táto funkcia využíva službu Windows Hello. Uistite sa, že v nastaveniach systému Windows je zapnuté rozpoznávanie tváre.",
                     "description2": "Táto funkcia využíva senzory a kameru na zistenie vašej prítomnosti. Funkcia však nezhromažďuje, neukladá ani neposkytuje žiadne osobné údaje ani snímky.",
                     "description3": "1. Ak je počítač v režime Stan, Tablet alebo Podstavec, tieto funkcie nemusia správne fungovať.",
-                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, Bezdotykové prihlásenie nebude fungovať.",
+                    "description4": "2. Ak je počítač v režime dlhodobého spánku alebo je vypnutý, funkcie Bezdotykové prihlásenie nebude fungovať.",
                     "description5": "3. Nastavte obrazovku počítača do vhodného uhla, aby infračervená kamera dokázala rozpoznať vašu tvár pri automatickom prihlásení.",
-                    "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté."
+                    "description6": "4. Ak je v počítači povolený režim V lietadle, tieto funkcie sú vypnuté.",
+                    "description7": "Presnosť sa líši podľa veľkosti a držania tela a frekvencie pohybu. Ak sa počítač neočakávane uzamkne, upravte posúvač citlivosti, aby ste zvýšili presnosť."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Prejsť na nastavenia služby Windows Hello",
                     "screenTimeoutSettings": "Prejdite na nastavenia časovača obrazovky"
                 },
-                "resetToDefault": "Obnoviť predvolené"
+                "resetToDefault": "Obnoviť predvolené",
+                "sensitivityAdjusting": {
+                    "title": "NASTAVENIE CITLIVOSTI"
+                }
             },
             "intelligentScreen": {
                 "title": "Inteligentná obrazovka",
@@ -1370,6 +1667,18 @@
                 "title": "Bezdotykové prehrávanie videa",
                 "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
                 "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
+            },
+            "superResolution": {
+                "heading": "Inteligentné médiá",
+                "title": "Zvýšenie rozlíšenia videa",
+                "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
+                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Funkcia nefunguje v týchto prípadoch:",
+                    "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
+                    "description2": "Počítač nie je pripojený k zdroju napájania a je zapnutý šetriaci režim batérie.",
+                    "description3": "Teplota procesora je príliš vysoká."
+                }
             },
             "voice": {
                 "title": "Hlas",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Plne chránené",
-            "fullyDesc": "Blahoželáme! Ste dobre chránení.",
             "notFully": "Nie plne chránené",
-            "notFullyDesc": "Nie ste úplne chránení. Zistite, ako sa lepšie chrániť.",
             "security101": "PORADCA ZABEZPEČENÍM 101",
             "firewall": "Brána firewall",
             "pwdHealth": "Sila hesla",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "Zabezpečenie WiFi a prepojenej domácnosti",
             "connectedHomeSecurity": "Zabezpečenie prepojenej domácnosti",
             "fingerprint": "Snímač odtlačkov prstov",
-            "seeAllNetwork": "Zobraziť všetky pripojené siete",
-            "maliciousNetwork": "Tento mesiac sa zabránilo počítaču pripojiť k {{maliciousWifi}} škodlivým sieťam.",
-            "good": "DOBRÉ",
-            "malicious": "ŠKODLIVÉ",
-            "suspicious": "PODOZRIVÉ",
-            "securityScoreDepends": "Výsledok zabezpečenia závisí od toho, či ste:",
-            "antivirus": "Ste chránení antivírusovým softvérom;",
-            "password": "Máte silné a zložité heslá, ktoré spravujete bezpečným spôsobom;",
-            "vpn": "Monitorujete vystavenie svojej siete útočníkom;",
-            "wifi": "Šifrujete svoje osobné údaje pri používaní verejných sietí WiFi;",
-            "windowsHello": "Chránite svoje zariadenie pomocou možností bezpečného prihlásenia."
+            "uacTitle": "Čo je oznámenie kontroly používateľských kont (UAC)?",
+            "uacText": "Kontrola používateľských kont je veľmi dôležitá bezpečnostná funkcia systému Windows, ktorá pomáha zabrániť potenciálne škodlivým programom vykonávať zmeny v systéme.",
+            "windowsTitle": "Prečo potrebujem aktívny systém Windows?",
+            "windowsText": "Spustenie neoriginálnej kópie systému Windows vás môže vystaviť väčšiemu riziku ohrozenia vírusmi a ďalšími bezpečnostnými hrozbami.",
+            "encryptionTitle": "Čo je šifrovanie jednotky pevného disku?",
+            "encryptionText": "Táto funkcia pomáha chrániť vaše údaje šifrovaním celého pevného disku s cieľom zabezpečiť ich pred neoprávneným prístupom, aj keď sa jednotka odstráni z príslušného počítača a umiestni sa do iných zariadení.",
+            "passwordTitle": "Ako si lepšie chrániť heslo?",
+            "passwordText": "Bezpečne ukladajte a spravujte všetky svoje heslá šifrované profesionálnou aplikáciou digitálnej ochrany namiesto toho, aby ste ich jednoducho ukladali do prehliadačov, ku ktorým majú bez vášho vedomia prístup tretie strany.",
+            "enhanceTitle": "Čo mám urobiť na posilnenie bezpečnostnej ochrany?",
+            "enhanceText": "Dôrazne odporúčame, aby ste si svoje zariadenia chránili antivírusovým softvérom a bránou firewall, aby ste nastavili upozornenie UAC na minimálnu úroveň ochrany. Okrem toho vytvárajte silné heslá a bezpečne spravujte, pri používaní verejnej siete šifrujte svoje údaje v rámci rozšírenej ochrany.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "Používanie počítača ako tabletu",
             "description": "<div class='faqInFs4Fb'>    Používanie počítača ako tabletu</div><hr><p>Vďaka režimu tabletu je systém Windows intuitívnejší a jednoduchšie sa používa, ak máte zariadenie s dotykovou obrazovkou.</p><h3 class='faqInFs25FbP10'>Používanie režimu tabletu</h3><p>Ak chcete zapnúť režim tabletu, vyberte <strong>centrum akcií</strong> na paneli úloh a potom vyberte položku <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Ak chcete zistiť, či zariadenie môže automaticky zapnúť režim tabletu, vyhľadajte zariadenie na webovej lokalite výrobcu. Podpora pre túto funkciu závisí od hardvéru, nainštalovaného ovládača a nastavenia zariadenia výrobcom. </p><p> </p><p>V režime tabletu sa aplikácie otvárajú na celej obrazovke, aby ste mali viac miesta na prácu. Ak chcete aplikáciu zatvoriť, potiahnite ju k dolnému okraju obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Keď je počítač v režime tabletu, panel úloh je k dispozícii, ale môžete ho skryť, ak potrebujete na obrazovke viac miesta. Vyberte tlačidlo <strong>Štart</strong>, vyberte položky <strong>Nastavenia</strong> > <strong>Systém</strong> > <strong>Režim tabletu</strong> a potom zapnite funkciu <strong>Automaticky skrývať panel úloh v režime tabletu</strong>. Ak chcete zobraziť skrytý panel úloh, potiahnite prstom nahor od dolného okraja obrazovky alebo naň ukážte myšou.</p><h3 class='faqInFs25FbP10'>Používanie dvoch aplikácií súčasne</h3><p>Ak chcete v režime tabletu používať dve aplikácie vedľa seba, otvorte aplikáciu jej potiahnutím nadol a do strany. Uvidíte, kde sa prichytí, a vedľa nej sa zobrazia všetky otvorené aplikácie.</p><p>V tomto zobrazení tiež môžete:</p><ul>    <li>zmeniť veľkosť oboch aplikácií naraz pomocou spoločného okraja medzi dvoma prichytenými aplikáciami;</li>    <li>otvoriť novú aplikáciu zo zobrazenia úloh &mdash; vyberte položku <strong>Zobrazenie úloh</strong> na paneli úloh, vyberte aplikáciu a potiahnite ju do strany, aby ste ju prichytili na rozdelenú obrazovku;</li>    <li>vrátiť sa späť v aplikácii alebo otvoriť predtým používanú aplikáciu pomocou tlačidla Späť na paneli úloh.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "Vykonanie kontroly a opravy môže spôsobiť stratu údajov. Pred vykonaním tejto operácie sa odporúča vytvorenie zálohy. Naozaj to chcete pokračovať?",
                 "yes": "Áno",
                 "no": "Nie"
-            }
+            },
+            "waitAvailability": "Tlačidlo je deaktivované, pokiaľ hardvérové informácie ešte neboli načítané, v prípade, že úložné zariadenia nepodporujú túto funkciu alebo keď je spustená obnova chybných sektorov."
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
         "cancelTextProgress": "Počkajte na informácie o postupe rušenia",
         "pluginNotUpdate": "Kontrola hardvéru nie je k dispozícii, pretože je zastaraná. Inovujte ju.",
-        "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu"
+        "testNotApplicable": "Nevzťahuje sa na vlastnú kontrolu",
+        "waitScanStarts": "Čakajte na spustenie kontroly",
+        "reminderTimeRetrieveHardwareInformation": "Proces získania informácií o hardvéri môže chvíľu trvať",
+        "retrievingHardwareInformation": "Načítavajú sa informácie o hardvéri...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Pamäť",
+            "motherboard": "Základná doska",
+            "pci_express": "PCI Express",
+            "storage": "Ukladací priestor",
+            "wireless": "Bezdrôtové"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

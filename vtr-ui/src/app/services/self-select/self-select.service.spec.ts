@@ -6,8 +6,8 @@ xdescribe('SelfSelectService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SelfSelectService = TestBed.get(SelfSelectService);
-    expect(service).toBeTruthy();
+	const service: SelfSelectService = TestBed.get(SelfSelectService);
+	expect(service).toBeTruthy();
   });
 
   it('IsMatch case insensitive, source: Lenovo V330-14ARR, pattern: /^lenovo V/i', () => {

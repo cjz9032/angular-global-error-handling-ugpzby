@@ -11,7 +11,6 @@
 }
 ui-popover-turn-on {
 	position: absolute;
-	max-width: 35%;
 	padding: 3rem 5rem;
 	background: #fbfdff;
 	z-index: 9;
@@ -23,11 +22,18 @@ ui-popover-turn-on {
 	top: 0;
 	bottom: 0;
 	height: 35rem;
-	@media #{$small-screen} {
-		max-width: 45rem;
+	max-width: 56rem;
+	@media #{$breakpoint_xl} {
+		width: 80%; 
 	}
-	@media #{$medium-screen} {
-		max-width: 50rem;
+	@media #{$breakpoint_sm} {
+		width: 90%;
+	} 
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid $light;
@@ -35,6 +41,54 @@ ui-popover-turn-on {
 	@media #{$black-on-white} {
 		border: 0.1rem solid $gaming_darkest;
 	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border: 0.1rem solid $gaming_darkest;
+	}
+	@media #{$white-on-black} {
+		border:0.1rem solid $light;
+	}
+	@media #{$black-on-white} {
+		border:0.1rem solid $gaming_darkest;
+	} 
 }
 
 ::ng-deep .turn-on-modal-container {

@@ -1,5 +1,5 @@
-<div class="privacy-score" data-analyticsName="ScoreBlock" [vtrAppSearchScroller]="['search-privacy-score']">
-	<div class="privacy-score__picture score-pic">
+<div class="privacy-score row" data-analyticsName="ScoreBlock" [vtrAppSearchScroller]="['search-privacy-score']">
+	<div class="privacy-score__picture score-pic col-xl-auto col-lg-12 col-md-auto">
 		<div [class]="'score-pic__circle score-pic__circle--' + privacyLevel">
 			<ng-container [ngSwitch]="appState$ | async">
 				<div *ngSwitchCase="appStatuses.firstTimeVisitor" class="score-pic__symbol">
@@ -15,7 +15,7 @@
 			</ng-container>
 		</div>
 	</div>
-	<div class="privacy-score__description-col">
+	<div class="privacy-score__description-col col-xl-8 col-lg-12 col-md-8">
 		<div class="privacy-score__text-block score-description">
 			<div class="privacy-score__title-wrapper">
 				<h4 class="score-description__title">{{title}}</h4>

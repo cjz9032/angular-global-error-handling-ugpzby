@@ -29,6 +29,8 @@ export class ModalThreatLocatorComponent implements OnInit {
 	@HostListener('window: focus')
 	onFocus(): void {
 		this.online = navigator.onLine;
+		const modal = document.querySelector('.Threat-Locator-Modal') as HTMLElement;
+		modal.focus();
 	}
 	@HostListener('window:message', ['$event'])
 	onMessage(event: any): void {
@@ -93,4 +95,5 @@ export class ModalThreatLocatorComponent implements OnInit {
 	closeModal() {
 		this.activeModal.close('close');
 	}
+
 }

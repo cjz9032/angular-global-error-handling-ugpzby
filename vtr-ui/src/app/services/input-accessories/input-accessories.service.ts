@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { VoipResponse } from '../../data-models/input-accessories/voip.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -8,8 +9,10 @@ export class InputAccessoriesService {
 	public keyboardManager: any;
 	private mouseAndTouchPad: any;
 	public isShellAvailable = false;
+	private voipHotkeys;
 
 	constructor(shellService: VantageShellService) {
+		this.voipHotkeys = shellService.getVoipHotkeysObject();
 		this.keyboardManager = shellService.getKeyboardManagerObject();
 		this.mouseAndTouchPad = shellService.getMouseAndTouchPad();
 		if (this.keyboardManager) {
@@ -29,6 +32,7 @@ export class InputAccessoriesService {
 		}
 
 	}
+
 	//  Check Keyboard UDK Compatability Status
 	public GetUDKCapability(): Promise<boolean> {
 		try {
@@ -55,13 +59,23 @@ export class InputAccessoriesService {
 	}
 
 
-
-
 	// Start Hidden keyboard keys
 	public GetKeyboardMapCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetKeyboardMapCapability();
+				return response;
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public GetKeyboardVersion(): Promise<string> {
+		try {
+			if (this.keyboardManager) {
+				const response = this.keyboardManager.GetKeyboardVersion();
 				return response;
 			}
 			return undefined;
@@ -103,6 +117,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	public GetKbdHiddenKeyBackLightCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -113,6 +128,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	public GetKbdHiddenKeyMagnifierCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -123,6 +139,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+
 	public GetKbdHiddenKeyPerformanceModeCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
@@ -241,13 +258,44 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
+	public GetFnCtrlSwapCapability(): Promise<boolean> {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwapCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 
+	public GetFnCtrlSwap() {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.GetFnCtrlSwap();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public SetFnCtrlSwap(value) {
+		try {
+			if (this.keyboardManager) {
+				return this.keyboardManager.SetFnCtrlSwap(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 	public getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
 				return this.mouseAndTouchPad.GetMouseCapability();
 			}
-			return this.booleanPromise(false);
+			return Promise.resolve(false);
 		} catch (error) {
 			throw new Error(error.message);
 		}
@@ -258,14 +306,33 @@ export class InputAccessoriesService {
 			if (this.mouseAndTouchPad) {
 				return this.mouseAndTouchPad.GetTouchpadCapability();
 			}
-			return this.booleanPromise(false);
+			return Promise.resolve(false);
 		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
 
-	private booleanPromise(value: boolean): Promise<boolean> {
-		return new Promise((resolve) => resolve(value));
+	// Voiphotkeys Feature
+	public getVoipHotkeysSettings(): Promise<VoipResponse> {
+		try {
+			if (this.voipHotkeys) {
+				return this.voipHotkeys.getVOIPHotkeysSettings();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setVoipHotkeysSettings(selectedApp: number): Promise<VoipResponse> {
+		try {
+			if (this.voipHotkeys) {
+				return this.voipHotkeys.setVOIPHotkeysSettings(selectedApp);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
 	}
 	// To Restart Windows
 	public restartMachine() {

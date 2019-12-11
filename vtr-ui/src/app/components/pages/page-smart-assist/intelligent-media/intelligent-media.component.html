@@ -1,6 +1,6 @@
 <div class="row py-5 smart-assist-card"
 	id="intelligentMedia">
-	<div class="col-10 mx-auto"
+	<div class="col-12 mx-auto"
 		id="media">
 		<vtr-container-collapsible [collapseLinkId]="'intelligentMedia'"
 			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
@@ -10,7 +10,8 @@
 			[theme]="'white'">
 			<ul class="list-group list-group-flush">
 				<li>
-					<vtr-ui-row-switch [switchId]="'intelligentMedia'"
+					<vtr-ui-row-switch *ngIf="intelligentMediaAvailable"
+					    [switchId]="'intelligentMedia'"
 						[title]="'device.smartAssist.intelligentMedia.title' | translate"
 						componentName="intelligentMediaSwitch"
 						[isLastChild]="true"
@@ -25,6 +26,38 @@
 						[theme]="'white'"
 						[showLoaderState]="isLoading">
 					</vtr-ui-row-switch>
+				</li>
+			</ul>
+			<ul class="list-group list-group-flush">
+				<li>
+					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
+					    [switchId]="'superResolution'"
+						[title]="'device.smartAssist.superResolution.title' | translate"
+						componentName="superResolutionSwitch"
+						[isLastChild]="true"
+						[isSwitchVisible]="true"
+						[leftIcon]="['icomoon', 'icomoon-superResolution']"
+						[rightIcon]="['far', 'question-circle']"
+						[showChildContent]="false"
+						[isSwitchChecked]="isSRChecked"
+						[tooltipText]="'device.smartAssist.superResolution.tooltip' | translate"
+						(toggleOnOff)="setSuperResolutionStatus($event)"
+						[caption]="'device.smartAssist.superResolution.desc' | translate"
+						[theme]="'white'"
+						[showLoaderState]="isSRLoading">
+					</vtr-ui-row-switch>
+					<div class="row">
+						<div class="feature-note p-4" *ngIf="superResolutionAvailable">
+							<p>{{'device.smartAssist.superResolution.note.description' | translate}}</p>
+							<div class="m-4">
+								<ul>
+									<li><p>{{'device.smartAssist.superResolution.note.description1' | translate}}</p></li>
+									<li><p>{{'device.smartAssist.superResolution.note.description2' | translate}}</p></li>
+									<li><p>{{'device.smartAssist.superResolution.note.description3' | translate}}</p></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</li>
 			</ul>
 		</vtr-container-collapsible>

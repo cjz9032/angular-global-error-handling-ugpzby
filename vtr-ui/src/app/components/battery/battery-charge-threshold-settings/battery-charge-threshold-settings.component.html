@@ -27,6 +27,7 @@
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
 									ngbDropdownToggle
+									 #startToggle
 									[disabled]="isCheckedAuto?true:false"
 									type="button"
 									id="{{textId}}-start-dropdown"
@@ -53,10 +54,14 @@
 									</div>
 								</button>
 								<div ngbDropdownMenu
-									aria-labelledby="">
+									aria-labelledby=""
+									role="listbox">
 									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
+										role="option"
+										tabindex="0"
 										*ngFor="let item of startAtChargeOptions"
-										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
+										(click)="[onChargeChange('startAtCharge', item , $event, startToggle),$event.preventDefault()]"
+										(keydown.enter)="onChargeChange('startAtCharge', item , $event, startToggle)"
 										id="{{textId}}-startAtChargeOption-{{item}}"
 										attr.aria-label="{{textId}}-startAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
@@ -73,6 +78,7 @@
 								placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
 									ngbDropdownToggle
+									#endToggle
 									type="button"
 									id="{{textId}}-stop-dropdown"
 									attr.aria-label="{{textId}}-stop-dropdown">
@@ -99,8 +105,11 @@
 								<div ngbDropdownMenu
 									aria-labelledby="">
 									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
+										role="option"
+										tabindex="0"
 										*ngFor="let item of stopAtChargeOptions"
-										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
+										(click)="[onChargeChange('stopAtCharge', item , $event, endToggle), $event.preventDefault()]"
+										(keydown.enter)="onChargeChange('stopAtCharge', item , $event, endToggle)"
 										id="{{textId}}-stopAtChargeOption-{{item}}"
 										attr.aria-label="{{textId}}-stopAtChargeOption-{{item}}">{{item}}%</a>
 								</div>
@@ -116,6 +125,7 @@
 								<input type="checkbox"
 									class="custom-control-input"
 									[id]="isCheckedAutoInput + randomNumber"
+									attr.aria-label="batteryThreshold-options-checkboxText"
 									[name]="isCheckedAutoInput + randomNumber"
 									[(ngModel)]="isCheckedAuto"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>

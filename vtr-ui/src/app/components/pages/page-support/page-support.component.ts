@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
@@ -122,6 +123,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private loggerService: LoggerService,
+		private modalService: NgbModal
 	) {
 		this.isOnline = this.commonService.isOnline;
 	}

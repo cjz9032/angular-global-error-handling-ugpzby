@@ -202,6 +202,11 @@ export class CommonService {
 		return array.filter(e => e.path !== path);
 	}
 
+	public isFoundInArray(array: any[], path: string) {
+		const element = array.find(e => e.path === path);
+		return element ? true : false;
+	}
+
 	public removeObjById(array: any[], id: string) {
 		return array.filter(e => e.id !== id);
 	}

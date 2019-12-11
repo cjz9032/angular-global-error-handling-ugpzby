@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeviceService } from 'src/app/services/device/device.service';
 
@@ -10,7 +10,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 		'./header-main.component.gaming.scss'
 	]
 })
-export class HeaderMainComponent implements OnInit {
+export class HeaderMainComponent implements OnInit, AfterViewInit {
 
 	@Input() title: string;
 	@Input() back: string;
@@ -21,16 +21,29 @@ export class HeaderMainComponent implements OnInit {
 	@Input() backId: string;
 	@Input() ariaLabel: string;
 	@Input() isInnerBack = false;
-	@Output() innerBack = new EventEmitter();
 	@Input() textId: string;
-	constructor(private router: Router, public deviceService: DeviceService) {
-	}
+	@Input() hideBack = false;
+	@Output() innerBack = new EventEmitter();
+
+	constructor(
+		private router: Router,
+		public deviceService: DeviceService
+	) { }
 
 	ngOnInit() {
 		const self = this;
 		if (this.parentPath !== '' && this.parentPath !== undefined) {
 			this.menuItems.forEach((d, i) => {
 				d.path = self.parentPath + '/' + d.path;
+			});
+		}
+	}
+
+	ngAfterViewInit() {
+		const back = document.getElementById(this.backId);
+		if (back) {
+			back.addEventListener('focus', () => {
+				window.scrollTo(0, 0);
 			});
 		}
 	}
@@ -43,8 +56,11 @@ export class HeaderMainComponent implements OnInit {
 		if (this.isInnerBack) {
 			this.onInnerBack();
 		} else {
-			if (window.history.length > 1) { return window.history.back(); }
-			this.router.navigate(['dashboard']);
+			if (window.history.length > 1) {
+				return window.history.back();
+			} else if (typeof this.deviceService.isGaming === 'boolean') {
+				this.router.navigate([this.deviceService.isGaming ? 'device-gaming' : 'dashboard']);
+			}
 		}
 	}
 }

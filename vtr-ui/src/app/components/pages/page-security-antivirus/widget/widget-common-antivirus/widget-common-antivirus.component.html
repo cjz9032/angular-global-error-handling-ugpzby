@@ -1,54 +1,71 @@
 <div class="vtr-common-antivirus">
-  <div class="title" [innerHTML]="'security.antivirus.common.recommends' | translate"></div>
-  <div class="row px-0 content p-2">
-    <div class="px-0 col-12 col-md-6 d-flex">
-      <img src="/assets/images/antivirus/thumb.png" />
-    </div>
-    <div class="align-self-center px-0 col-12 col-md-6 md-margin">
-      <div class="flex-column px-0">
-        <div class="row inner-body no-gutters pt-0">
-          <img class="logo col-2 align-self-center"
-            [src]=" '/assets/icons/SecurityAdvisor/Trophy.svg' | svgInline | async" />
-          <div class="height-line"></div>
-          <div class="col-9">
-            <div class="title" [innerHTML]="'security.antivirus.common.award' | translate"></div>
-            <div class="subtitle" [innerHTML]="'security.antivirus.common.awardText' | translate"></div>
-          </div>
-        </div>
-        <div class="row inner-body no-gutters">
-          <img class="logo col-2 align-self-center"
-            [src]=" '/assets/icons/SecurityAdvisor/Rock-solid.svg' | svgInline | async" />
-          <div class="height-line"></div>
-          <div class="col-9">
-            <div class="title" [innerHTML]="'security.antivirus.common.performance' | translate"></div>
-            <div class="subtitle" [innerHTML]="'security.antivirus.common.performanceText' | translate"></div>
-          </div>
-        </div>
-        <div class="row inner-body no-gutters pb-0">
-          <img class="last-logo col-2 align-self-center"
-            [src]=" '/assets/icons/SecurityAdvisor/Blazing_fast.svg' | svgInline | async" />
-          <div class="height-line"></div>
-          <div class="col-9">
-            <div class="title" [innerHTML]="'security.antivirus.common.Blazing' | translate"></div>
-            <div class="subtitle" [innerHTML]="'security.antivirus.common.BlazingText' | translate"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer row justify-content-center">
-    <div class="row px-0">
-      <div class="px-0">
-        <img class="mcafee-logo" [src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
-      </div>
-      <p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-        <a id="sa-av-link-privacypolicy" vtrMetrics metricsEvent="itemClick" metricsItem="privacyPolicy"
-          metricsParent="security.antivirus" href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-          target="_blank"></a>
-        <a id="sa-av-link-termsofservices" vtrMetrics metricsEvent="itemClick" metricsItem="termsOfServices"
-          metricsParent="security.antivirus" href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
-          target="_blank"></a>
-      </p>
-    </div>
-  </div>
+	<div class="title"
+		[innerHTML]="'security.antivirus.common.recommends' | translate"></div>
+	<div class="row px-0 content p-2">
+		<div class="px-0 col-12 col-xl-6 d-flex">
+			<img src="assets/images/antivirus/thumb.png" />
+		</div>
+		<div class="align-self-center px-0 col-12 col-xl-6 xl-margin">
+			<div class="flex-column px-0">
+				<div class="row inner-body no-gutters pt-0">
+					<img class="logo col-2 align-self-center"
+						[src]=" '/assets/icons/SecurityAdvisor/Trophy.svg' | svgInline | async" />
+					<div class="height-line"></div>
+					<div class="col-9">
+						<div class="title"
+							[innerHTML]="'security.antivirus.common.award' | translate"></div>
+						<div class="subtitle"
+							[innerHTML]="'security.antivirus.common.awardText' | translate"></div>
+					</div>
+				</div>
+				<div class="row inner-body no-gutters">
+					<img class="logo col-2 align-self-center"
+						[src]=" '/assets/icons/SecurityAdvisor/Rock-solid.svg' | svgInline | async" />
+					<div class="height-line"></div>
+					<div class="col-9">
+						<div class="title"
+							[innerHTML]="'security.antivirus.common.performance' | translate"></div>
+						<div class="subtitle"
+							[innerHTML]="'security.antivirus.common.performanceText' | translate"></div>
+					</div>
+				</div>
+				<div class="row inner-body no-gutters pb-0">
+					<img class="last-logo col-2 align-self-center"
+						[src]=" '/assets/icons/SecurityAdvisor/Blazing_fast.svg' | svgInline | async" />
+					<div class="height-line"></div>
+					<div class="col-9">
+						<div class="title"
+							[innerHTML]="'security.antivirus.common.Blazing' | translate"></div>
+						<div class="subtitle"
+							[innerHTML]="'security.antivirus.common.BlazingText' | translate"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer row justify-content-center">
+		<div class="row px-0">
+			<div class="px-0">
+				<img class="mcafee-logo"
+					[src]=" '/assets/images/mcafee_logo.svg' | svgInline | async" />
+			</div>
+			<p class="text-regular mt-10"
+				*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
+				<a id="sa-av-link-privacypolicy"
+					vtrMetrics
+					metricsEvent="itemClick"
+					metricsItem="privacyPolicy"
+					metricsParent="security.antivirus"
+					href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+					target="_blank"></a>
+				<a id="sa-av-link-termsofservices"
+					vtrMetrics
+					metricsEvent="itemClick"
+					metricsItem="termsOfServices"
+					metricsParent="security.antivirus"
+					href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+					target="_blank"></a>
+			</p>
+		</div>
+	</div>
 </div>

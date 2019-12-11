@@ -10,7 +10,7 @@ export class UiRectangleRadioComponent implements OnInit {
 	@Input() group: string;
 	@Input() label: string;
 	@Input() tooltip: string;
-	@Input() value: string;
+	@Input() value: any;
 	@Input() checked: boolean;
 	@Input() disabled: boolean;
 	@Input() iconName: string;

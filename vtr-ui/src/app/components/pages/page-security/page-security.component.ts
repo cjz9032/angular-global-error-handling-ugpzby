@@ -14,19 +14,16 @@ import {
 } from '../../../services/cms/cms.service';
 import {
 	AntiVirusLandingViewModel
-} from '../../../data-models/security-advisor/antivirus-landing.model';
+} from '../../../data-models/security-advisor/widegt-security-landing/antivirus-landing.model';
 import {
 	PasswordManagerLandingViewModel
-} from '../../../data-models/security-advisor/passwordmanager-landing.model';
+} from '../../../data-models/security-advisor/widegt-security-landing/passwordmanager-landing.model';
 import {
 	VpnLandingViewModel
-} from '../../../data-models/security-advisor/vpn-landing.model';
+} from '../../../data-models/security-advisor/widegt-security-landing/vpn-landing.model';
 import {
 	WifiSecurityLandingViewModel
-} from '../../../data-models/security-advisor/wifisecurity-landing.model';
-import {
-	WindowsHelloLandingViewModel
-} from '../../../data-models/security-advisor/windowshello-landing.model';
+} from '../../../data-models/security-advisor/widegt-security-landing/wifisecurity-landing.model';
 import {
 	CommonService
 } from 'src/app/services/common/common.service';
@@ -50,6 +47,11 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { FingerPrintLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/fingerPrint-landing.model';
+import { WindowsActiveLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/windowsActive-landing.model';
+import { UacLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/uac-landing.model';
+import { BitLockerLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/bitLocker-landing.model';
+import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-info.model';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 
 
@@ -63,33 +65,31 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
-	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
-	wifiHistory: Array<phoenix.WifiDetail>;
+	fingerPrintLandingViewModel: FingerPrintLandingViewModel;
+	windowsActiveLandingViewModel: WindowsActiveLandingViewModel;
+	bitLockerLandingViewModel: BitLockerLandingViewModel;
+	uacLandingViewModel: UacLandingViewModel;
+	windowsActive;
+	uac;
+	bitLocker;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
-	score: number;
+	// statusList: any;
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	isOnline: boolean;
 	notificationSubscription: Subscription;
 	showVpn: boolean;
-	backId = 'sa-ov-btn-back';
 	isRS5OrLater: boolean;
-	itemStatusClass = {
-		0: 'good',
-		1: 'orange',
-		2: 'bad'
-	};
-	itemDetail = {
-		0: 'security.landing.good',
-		1: 'security.landing.suspicious',
-		2: 'security.landing.malicious'
-	};
+	baseItems = [];
+	intermediateItems = [];
+	advanceItems = [];
+	statusItem: any;
 
 	constructor(
 		public vantageShellService: VantageShellService,
@@ -101,7 +101,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private guard: GuardService,
 		private router: Router,
 		private windowsHelloService: WindowsHelloService
-	) {	}
+	) { }
 
 	@HostListener('window: focus')
 	onFocus(): void {
@@ -116,8 +116,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 
 		this.createViewModels();
-		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore, 0);
-		this.maliciousWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, 0);
 		this.isOnline = this.commonService.isOnline;
 
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -134,10 +132,14 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			if (result.GEO === 'cn') {
 				this.showVpn = false;
 			}
+			if (this.wifiSecurity) {
+				this.wifiSecurity.getWifiSecurityState();
+			}
+			this.refreshAll();
 		}).catch(e => {
 			this.showVpn = true;
 		}).finally(() => {
-			this.getScore();
+			this.getLevelStatus();
 		});
 		this.fetchCMSArticles();
 		const antivirus = new AntivirusErrorHandle(this.antivirus);
@@ -154,109 +156,142 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	private refreshAll() {
-		this.securityAdvisor.antivirus.refresh().then(() => {
-			this.getScore();
-		});
-		this.securityAdvisor.wifiSecurity.refresh().then(() => {
-			this.getMaliciousWifi();
-		});
-		this.securityAdvisor.wifiSecurity.getWifiSecurityStateOnce().then(() => {
-			this.getScore();
-		});
-		this.securityAdvisor.passwordManager.refresh().then(() => {
-			this.getScore();
-		});
-		this.securityAdvisor.vpn.refresh().then(() => {
-			this.getScore();
-		});
-		this.securityAdvisor.windowsHello.refresh().then(() => {
-			this.getScore();
+		this.securityAdvisor.refresh().then(() => {
+			this.getLevelStatus();
 		});
 	}
 
 	createViewModels() {
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
+		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
-		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
-		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
+		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
+		this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
+		this.baseItems.push(this.antivirusLandingViewModel.avStatus, this.antivirusLandingViewModel.fwStatus, this.windowsActiveLandingViewModel.waStatus);
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
-			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
+			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, windowsHello, this.commonService);
+		}
+		if (cacheShowWifiSecurity) {
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
 		}
 		if (windowsHello.fingerPrintStatus) {
 			this.showWindowsHelloItem(windowsHello);
 		}
+		this.intermediateItems.push(this.passwordManagerLandingViewModel.pmStatus,
+			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus : undefined,
+			this.uacLandingViewModel.uacStatus);
+		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
+		if (wifiSecurity.isSupported !== undefined) {
+			this.showWifiSecurityItem();
+		}
+		this.advanceItems.push(
+			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus : undefined,
+			this.bitLockerLandingViewModel.blStatus,
+			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus : undefined);
+		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHelloItem(windowsHello);
 		});
+		this.getLevelStatus();
+		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
+			this.showWifiSecurityItem();
+		});
 		wifiSecurity.on(EventTypes.wsStateEvent, () => {
-			this.getScore();
+			this.getLevelStatus();
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.ngZone.run(() => {
-				this.getScore();
+				this.getLevelStatus();
 			});
 		});
 
-		// this.securityAdvisor.refresh();
+		this.securityAdvisor.refresh();
 	}
 
-	getWifiStatus(good: string) {
-		let itemStatClass = 'good';
-		if (good) {
-			if (this.itemStatusClass.hasOwnProperty(Number(good))) {
-				itemStatClass = this.itemStatusClass[Number(good)];
+	public getLevelStatus() {
+		const statusList = {
+			basic: [],
+			intermediate: [],
+			advanced: []
+		};
+		statusList.basic = new Array(
+			this.antivirusLandingViewModel.avStatus.status,
+			this.antivirusLandingViewModel.fwStatus.status,
+			this.windowsActiveLandingViewModel.waStatus.status
+		).filter(i => i !== undefined);
+		statusList.intermediate = new Array(
+			this.passwordManagerLandingViewModel.pmStatus.status,
+			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus.status : undefined,
+			this.uacLandingViewModel.uacStatus.status
+		).filter(i => i !== undefined);
+		statusList.advanced = new Array(
+			this.wifiSecurityLandingViewModel.wfStatus.status,
+			this.bitLockerLandingViewModel.blStatus.status,
+			this.vpnLandingViewModel.vpnStatus.status,
+		).filter(i => i !== undefined);
+
+		const levelStatus = {
+			basicValid: 0,
+			basicSuccess: false,
+			intermediateValid: 0,
+			intermediateSuccess: false,
+			advancedValid: 0,
+			advancedSuccess: false
+		};
+		for (const key in statusList) {
+			if (statusList.hasOwnProperty(key)) {
+				const element = statusList[key];
+				switch (key) {
+					case SecurityTypeConst.Basic:
+						levelStatus.basicValid = element.filter(i => i === true || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.basicSuccess = element.length === levelStatus.basicValid;
+						break;
+					case SecurityTypeConst.Intermediate:
+						levelStatus.intermediateValid = element.filter(i => i === true || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.intermediateSuccess = element.length === levelStatus.intermediateValid;
+						break;
+					case SecurityTypeConst.Advanced:
+						levelStatus.advancedValid = element.filter(i => i === true || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.advancedSuccess = element.length === levelStatus.advancedValid;
+						break;
+					default:
+						break;
+				}
 			}
 		}
-		return itemStatClass;
-	}
-
-	getWifiDetail(good: string) {
-		let itemDetail = 'good';
-		if (good) {
-			if (this.itemDetail.hasOwnProperty(Number(good))) {
-				itemDetail = this.itemDetail[Number(good)];
-				this.translate.stream(itemDetail).subscribe((res) => {
-					itemDetail = res;
-				});
+		const item = {
+			status: 0,
+			fullyProtected: false,
+			icon: 0
+		};
+		if (levelStatus.basicValid > 0 || levelStatus.intermediateValid > 0 || levelStatus.advancedValid > 0) {
+			if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
+				if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
+					item.status = 3;
+					item.fullyProtected = true;
+					item.icon = levelStatus.advancedValid;
+				} else {
+					item.status = 2;
+					item.fullyProtected = false;
+					item.icon = levelStatus.intermediateValid;
+				}
+			} else {
+				item.status = 1;
+				item.fullyProtected = false;
+				item.icon = levelStatus.basicValid;
 			}
-		}
-		return itemDetail;
-	}
 
-	private getMaliciousWifi() {
-		const wifiHistoryList = this.wifiHistory;
-		if (wifiHistoryList && wifiHistoryList.length !== 0) {
-			this.maliciousWifi = wifiHistoryList.filter(wifi => {
-				const connected = new Date(wifi.info);
-				const monthFirst = new Date();
-				monthFirst.setDate(1);
-				monthFirst.setHours(0);
-				monthFirst.setMinutes(0);
-				monthFirst.setSeconds(0);
-				return wifi.good !== '0' && connected > monthFirst;
-			}).length;
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, this.maliciousWifi);
+		} else {
+			item.status = 0;
+			item.fullyProtected = false;
+			item.icon = 0;
 		}
-	}
 
-	public getScore() {
-		const antivirusScoreInit = [
-			this.antivirusLandingViewModel.subject.status,
-			this.passwordManagerLandingViewModel.subject.status,
-			this.showVpn ? this.vpnLandingViewModel.subject.status : null,
-			this.wifiSecurityLandingViewModel.subject.status,
-			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
-		];
-		const antivirusScore = antivirusScoreInit.filter(current => {
-			return current !== undefined && current !== null;
-		});
-		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
-		this.score = Math.floor(valid / antivirusScore.length * 100);
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
-		this.securityAdvisor.setScoreRegistry(this.score);
+		this.statusItem = item;
 	}
 
 	fetchCMSArticles() {
@@ -282,9 +317,17 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	showWindowsHelloItem(windowsHello: phoenix.WindowsHello) {
 		if (this.windowsHelloService.showWindowsHello()) {
-			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
+			this.fingerPrintLandingViewModel = new FingerPrintLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
-			this.windowsHelloLandingViewModel = null;
+			this.fingerPrintLandingViewModel = null;
+		}
+	}
+
+	showWifiSecurityItem() {
+		if (this.wifiSecurity.isSupported) {
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
+		} else {
+			this.wifiSecurityLandingViewModel = null;
 		}
 	}
 

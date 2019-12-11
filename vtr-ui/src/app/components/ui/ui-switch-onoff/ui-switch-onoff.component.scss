@@ -13,14 +13,6 @@
 	}
 	&.switch-disable {
 		pointer-events: none;
-
-		.switch {
-			cursor: pointer;
-		}
-
-		.switch-label {
-			cursor: pointer;
-		}
 	}
 }
 .switch-disable {
@@ -64,11 +56,25 @@
 input + .switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
 	margin-right: 0.7rem;
+	@media #{$black-on-white} {
+		background: $dark;
+	}
+	@media #{$white-on-black} {
+		background:$light;
+	}
+
 }
 
 input.wifi-checked + .switch {
 	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
+	@media #{$black-on-white} {
+		background: $high-contrast-white-textselected;
+	}
+	@media #{$white-on-black} {
+		background: $highlight_bright;
+	}
+
 }
 
 .checkbox-double .switch {
@@ -88,6 +94,12 @@ input.wifi-checked + .switch {
 	-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
+	@media #{$black-on-white} {
+		background-color: $light;
+	}
+	@media #{$white-on-black} {
+		background-color: $dark;
+	}
 }
 
 input.wifi-checked + .switch > small {
@@ -147,11 +159,18 @@ input.wifi-checked + .switch.switch-xs > small {
 	width: 1.4rem;
 }
 
-/* DISABLED */
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
+		@media #{$black-on-white} {
+			background: $high-contrast-black-disabled !important;
+		}
+		@media #{$white-on-black} {
+			background: $high-contrast-black-disabled !important;
+		}
 
-.disabled .switch {
-	cursor: not-allowed;
-	opacity: 0.5;
+	}
 }
 
 /* Full Width Switch - Right Aligned */
@@ -180,7 +199,7 @@ input.wifi-checked + .switch.switch-xs > small {
 	&.off-label {
 		left: 2rem;
 		color: $shade_darkest;
-	}
+		}
 }
 
 .spinner-text {

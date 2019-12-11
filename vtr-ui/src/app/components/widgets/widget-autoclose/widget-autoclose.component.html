@@ -2,7 +2,7 @@
 	<ul class="d-flex flex-wrap">
 		<li class="add-icon">
 			<div (click)="openAutoCloseModal()" (keydown.enter)="openAutoCloseModal()" tabindex="1" role="button"
-				[attr.aria-label]="'Add'" id="addAutoCloseAppBtn">
+				[attr.aria-label]="'gaming.autoClose.autocClosenarrator' | translate" id="addAutoCloseAppBtn">
 				<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/add</title>
@@ -30,7 +30,7 @@
 				(keydown.enter)="removeApp(app.processDescription,i)"
 				(keyup.enter)="removeApp(app.processDescription,i)" (focus)="app.isHovered=true"
 				(focusout)="app.isHovered=false" [tabindex]="modalStatus? '-1':'1'" role="button"
-				attr.aria-label="{{'Remove '+ app.processDescription}}">
+				attr.aria-label="{{('gaming.autoClose.autocClosenarratorremove' | translate)+ (app.processDescription| translate)}}">
 				<svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/Close</title>

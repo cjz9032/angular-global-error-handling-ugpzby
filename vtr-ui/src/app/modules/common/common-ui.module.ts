@@ -66,7 +66,7 @@ library.add(faChevronUp);
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-
+		ContainerCollapsibleComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
@@ -92,7 +92,7 @@ library.add(faChevronUp);
 		UiSwitchTristateComponent,
 		UiSwitchTristateComponent,
 		UiTimePickerComponent,
-
+		ContainerCollapsibleComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiPopoverComponent,
@@ -107,8 +107,8 @@ library.add(faChevronUp);
 		RouterModule,
 		MetricsModule,
 		NgbTooltipModule,
-		FontAwesomeModule,
-		NgbCollapseModule
+		NgbCollapseModule,
+		FontAwesomeModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

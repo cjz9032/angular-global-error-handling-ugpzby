@@ -2,11 +2,12 @@
 
 .vtr-header-main {
 	// TEMP STYLING TO BE REPLACED WHEN WE HAVE ACTUAL BACKGROUND SPECS
-	background: #289cd0;
-	background: -moz-linear-gradient(left, #289cd0 0%, #72d0bb 100%);
-	background: -webkit-linear-gradient(left, #289cd0 0%, #72d0bb 100%);
-	background: linear-gradient(to right, #289cd0 0%, #72d0bb 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#289cd0', endColorstr='#72d0bb', GradientType=1);
+	// RESPONSIVE EFFORT
+	// background: #289cd0;
+	// background: -moz-linear-gradient(left, #289cd0 0%, #72d0bb 100%);
+	// background: -webkit-linear-gradient(left, #289cd0 0%, #72d0bb 100%);
+	// background: linear-gradient(to right, #289cd0 0%, #72d0bb 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#289cd0', endColorstr='#72d0bb', GradientType=1);
 
 	&.dcc {
 		background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
@@ -24,101 +25,111 @@
 			opacity: 0.15;
 		}
 	}
-	
-	position: relative;
-	padding: 5rem $padding_side 8rem $padding_side;
-	height: 100%;
-	@media #{$mediaquery_X4} {
-		padding-left: 5rem;
-	}
-	@media #{$mediaquery_xl} {
-		//	padding-top: 13rem;
-	}
-	.title {
-		width: 100%;
-		color: $light;
-		font-size: $page_header;
-		font-weight: $weight_light;
-		display: inline-block;
-		margin: 0;
-		position: relative;
-		z-index: 1;
-		::ng-deep {
-			pre {
-				width: 100%;
-				color: inherit;
-				font: inherit;
-				margin: 0;
-				display: inline-block;
-				word-break: break-word;
-				word-wrap: break-word;
-				white-space: pre-wrap;
-				overflow: visible;
-			}
-		}
-	}
-	.back {
-		color: $light;
-		font-size: $base;
-		font-weight: $weight_bold;
-		margin: 0;
-		display: table;
-		position: relative;
-		cursor: pointer;
-		z-index: 1;
 
-		a {
-			color: #ffffff;
-			border-bottom: 0.1rem solid $light;
-			color:  $light;
+	.vtr-header-main-inner {
+		max-width: $max_page_width;
+		margin: 0 auto;
+		position: relative;
+		padding: 5rem $padding_side 8rem $padding_side;
+		height: 100%;
+
+		&.show-back-btn {
+			padding-top: 2rem;
 		}
 
-		span {
-			text-decoration: underline;
+		@media #{$breakpoint_xl} {
+			padding-left: $padding_side_sm;
 		}
-
-		&:hover {
-			span {
-				text-decoration: none;
-			}
-		}
-	}
-	a {
-		&:hover {
-			text-decoration: none;
-		}
-		&:focus {
-			text-decoration: none;
-		}
-	}
-	.forward-link {
-		float: right;
-		margin-top: 3.5rem;
-		text-transform: uppercase;
-		font-size: 1.2rem;
-		position: relative;
-		z-index: 1;
-		a {
+		// RESPONSIVE EFFORT
+		// @media #{$mediaquery_X4} {
+		// 	padding-left: 5rem;
+		// }
+		// @media #{$mediaquery_xl} {
+		// 	//	padding-top: 13rem;
+		// }
+		.title {
 			color: $light;
-			text-decoration: none;
+			font-size: $page_header;
+			font-weight: $weight_light;
+			margin: 0;
+			position: relative;
+			z-index: 1;
+			max-width: $max_page_width;
+			@media #{$black-on-white} {
+				margin-top: 1rem;
+			}
+			@media #{$white-on-black} {
+				margin-top: 1rem;
+			}
+		}
+		.back {
+			color: $light;
+			font-size: $base;
+			font-weight: $weight_bold;
+			margin: 0;
+			display: table;
+			position: relative;
+			cursor: pointer;
+			z-index: 1;
+			@media #{$black-on-white} {
+				margin: 2px;
+			}
+			@media #{$white-on-black} {
+				margin: 2px;
+			}
+			a {
+				color: #ffffff;
+				border-bottom: 0.1rem solid $light;
+				color: $light;
+			}
+
+			span {
+				text-decoration: underline;
+			}
+
 			&:hover {
-				text-decoration: none;
-				.forward-link-label {
-					border-bottom: 0.2rem solid transparent;
+				span {
+					text-decoration: none;
 				}
 			}
-			.forward-link-label {
-				padding-bottom: 0.4rem;
-				border-bottom: 0.2rem solid $light;
+		}
+		a {
+			&:hover {
+				text-decoration: none;
 			}
-			.forward-link-icon {
-				padding-left: 1rem;
+			&:focus {
+				text-decoration: none;
 			}
 		}
-	}
-	.menu {
-		position: absolute;
-		bottom: 0;
-		left: $padding_side;
+		.forward-link {
+			float: right;
+			margin-top: 3.5rem;
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			position: relative;
+			z-index: 1;
+			a {
+				color: $light;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+					.forward-link-label {
+						border-bottom: 0.2rem solid transparent;
+					}
+				}
+				.forward-link-label {
+					padding-bottom: 0.4rem;
+					border-bottom: 0.2rem solid $light;
+				}
+				.forward-link-icon {
+					padding-left: 1rem;
+				}
+			}
+		}
+		.menu {
+			position: absolute;
+			bottom: 0;
+			left: $padding_side;
+		}
 	}
 }

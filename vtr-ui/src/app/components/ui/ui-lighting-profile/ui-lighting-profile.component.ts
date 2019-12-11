@@ -72,7 +72,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option8.title',
 						name: 'gaming.lightingProfile.effect.option8.title',
 						id: 'lighting_front_effect_off',
-						label: 'front off',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option8.title',
 						metricitem: 'lighting_front_effect_off',
 						value: 268435456
 					},
@@ -80,7 +80,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option1.title',
 						name: 'gaming.lightingProfile.effect.option1.title',
 						id: 'lighting_front_effect_on',
-						label: 'front on',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option1.title',
 						metricitem: 'lighting_front_effect_on',
 						value: 1
 					},
@@ -88,7 +88,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option2.title',
 						name: 'gaming.lightingProfile.effect.option2.title',
 						id: 'lighting_front_effect_flicker',
-						label: 'front flicker',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option2.title',
 						metricitem: 'lighting_front_effect_flicker',
 						value: 2
 					},
@@ -96,7 +96,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option3.title',
 						name: 'gaming.lightingProfile.effect.option3.title',
 						id: 'lighting_front_effect_breath',
-						label: 'front breath',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option3.title',
 						metricitem: 'lighting_front_effect_breath',
 						value: 4
 					},
@@ -104,7 +104,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option4.title',
 						name: 'gaming.lightingProfile.effect.option4.title',
 						id: 'lighting_front_effect_wave',
-						label: 'front wave',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option4.title',
 						metricitem: 'lighting_front_effect_wave',
 						value: 8
 					},
@@ -117,7 +117,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
 						id: 'lighting_front_effect_smooth',
-						label: 'front smooth',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option5.title',
 						metricitem: 'lighting_front_effect_smooth',
 						value: 32
 					},
@@ -125,7 +125,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
 						id: 'lighting_front_effect_cpu_temperature',
-						label: 'front cpu temperature',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option6.title',
 						metricitem: 'lighting_front_effect_cpu_temperature',
 						value: 64
 					},
@@ -133,7 +133,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
 						id: 'lighting_front_effect_cpu_utilization',
-						label: 'front cpu utilization',
+						label: 'gaming.lightingProfile.lightingeffectnarrator.option7.title',
 						metricitem: 'lighting_front_effect_cpu_utilization',
 						value: 128
 					}
@@ -147,7 +147,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option8.title',
 						name: 'gaming.lightingProfile.effect.option8.title',
 						id: 'lighting_side_effect_off',
-						label: 'side off',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option8.title',
 						metricitem: 'lighting_side_effect_off',
 						value: 268435456
 					},
@@ -155,7 +155,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option1.title',
 						name: 'gaming.lightingProfile.effect.option1.title',
 						id: 'lighting_side_effect_on',
-						label: 'side on',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option1.title',
 						metricitem: 'lighting_side_effect_on',
 						value: 1
 					},
@@ -163,7 +163,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option2.title',
 						name: 'gaming.lightingProfile.effect.option2.title',
 						id: 'lighting_side_effect_flicker',
-						label: 'side flicker',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option2.title',
 						metricitem: 'lighting_side_effect_flicker',
 						value: 2
 					},
@@ -171,7 +171,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option3.title',
 						name: 'gaming.lightingProfile.effect.option3.title',
 						id: 'lighting_side_effect_breath',
-						label: 'side breath',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option3.title',
 						metricitem: 'lighting_side_effect_breath',
 						value: 4
 					},
@@ -179,7 +179,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option4.title',
 						name: 'gaming.lightingProfile.effect.option4.title',
 						id: 'lighting_side_effect_wave',
-						label: 'side wave',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option4.title',
 						metricitem: 'lighting_side_effect_wave',
 						value: 8
 					},
@@ -192,7 +192,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
 						id: 'lighting_side_effect_smooth',
-						label: 'side smooth',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option5.title',
 						metricitem: 'lighting_side_effect_smooth',
 						value: 32
 					},
@@ -200,7 +200,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option6.title',
 						name: 'gaming.lightingProfile.effect.option6.title',
 						id: 'lighting_side_effect_cpu_temperature',
-						label: 'side cpu temperature',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option6.title',
 						metricitem: 'lighting_side_effect_cpu_temperature',
 						value: 64
 					},
@@ -208,7 +208,7 @@ export class UiLightingProfileComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option7.title',
 						name: 'gaming.lightingProfile.effect.option7.title',
 						id: 'lighting_side_effect_cpu_utilization',
-						label: 'side cpu utilization',
+						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option7.title',
 						metricitem: 'lighting_side_effect_cpu_utilization',
 						value: 128
 					}
@@ -291,10 +291,10 @@ export class UiLightingProfileComponent implements OnInit {
 		}
 	];
 	optionsSingleColor = [
-		new Options(1, 'gaming.lightingProfile.lightingSingleLightingOption.option1.title', 'Always On'),
-		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title', 'Fast Blink'),
-		new Options(3, 'gaming.lightingProfile.lightingSingleLightingOption.option3.title', 'Medium Blink'),
-		new Options(4, 'gaming.lightingProfile.lightingSingleLightingOption.option4.title', 'Slow Blink')
+		new Options(1, 'gaming.lightingProfile.lightingSingleLightingOption.option1.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title'"),
+		new Options(2, 'gaming.lightingProfile.lightingSingleLightingOption.option2.title',"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option2.title'"),
+		new Options(3, 'gaming.lightingProfile.lightingSingleLightingOption.option3.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option3.title'"),
+		new Options(4, 'gaming.lightingProfile.lightingSingleLightingOption.option4.title', "'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option4.title'")
 	];
 
 	public imagePath = './../../../../assets/images/gaming/lighting';
@@ -310,7 +310,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((value: any) => {
-			this.defaultLanguage = value.locale;
+			//this.defaultLanguage = value.locale;
 		});
 		this.isProfileOff = false;
 		if (LocalStorageKey.LightingCapabilities !== undefined) {
@@ -341,7 +341,7 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 	public getCacheLightingCapabilities(response) {
 		try {
-			if (response.LightPanelType.length > 0) {
+			if (response && response.LightPanelType && response.LightPanelType.length > 0) {
 				this.profileRGBFeature = response.RGBfeature;
 				this.lightingCapabilities = response;
 				if (response.BrightAdjustLevel === 0) {
@@ -488,7 +488,7 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 	public updateGetGamingLightingCapabilities(response: any) {
 		try {
-			if (response !== undefined) {
+			if (response) {
 				this.profileRGBFeature = response.RGBfeature;
 				this.lightingCapabilities = response;
 				if (response.BrightAdjustLevel === 0) {
@@ -656,8 +656,25 @@ export class UiLightingProfileComponent implements OnInit {
 				$event.value === LightEffectComplexType.CPU_frequency
 			) {
 				this.showHideOverlay = true;
+				this.frontSelectedValue = $event.value;
+				this.sideSelectedValue = $event.value;
 			} else {
 				this.showHideOverlay = false;
+				let res:any;
+				if (LocalStorageKey.LightingProfileById !== undefined) {
+					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+				}
+				if(res.lightInfo.length>0){
+					if (
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.Wave ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.Smooth ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.CPU_thermal ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.CPU_frequency
+					) {
+						this.frontSelectedValue = $event.value;
+						this.sideSelectedValue = $event.value;
+					}
+				}
 			}
 			if ($event.value === LightEffectComplexType.Breath || $event.value === LightEffectComplexType.Wave) {
 				this.enableBrightCondition = true;
@@ -779,8 +796,25 @@ export class UiLightingProfileComponent implements OnInit {
 				$event.value === LightEffectComplexType.CPU_frequency
 			) {
 				this.showHideOverlaySide = true;
+				this.frontSelectedValue = $event.value;
+				this.sideSelectedValue = $event.value;
 			} else {
 				this.showHideOverlaySide = false;
+				let res:any;
+				if (LocalStorageKey.LightingProfileById !== undefined) {
+					res = this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById);
+				}
+				if(res.lightInfo.length>0){
+					if (
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.Wave ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.Smooth ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.CPU_thermal ||
+						res.lightInfo[0].lightEffectType === LightEffectComplexType.CPU_frequency
+					) {
+						this.frontSelectedValue = $event.value;
+						this.sideSelectedValue = $event.value;
+					}
+				}
 			}
 			if ($event.value === LightEffectComplexType.Breath || $event.value === LightEffectComplexType.Wave) {
 				this.enableBrightConditionside = true;
@@ -1215,7 +1249,7 @@ export class UiLightingProfileComponent implements OnInit {
 							this.response =
 								this.commonService.getLocalStorageValue(LocalStorageKey.LightingProfileById) || 0;
 						}
-						if (response !== undefined) {
+						if (response) {
 							this.currentProfileId = response.profileId;
 							this.currentProfile = response.profileId;
 							this.profileBrightness = response.brightness;

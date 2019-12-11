@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -13,8 +13,8 @@ import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/se
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
-	styleUrls: ['./modal-welcome.component.scss'],
-	providers: [TimerService]
+	styleUrls: [ './modal-welcome.component.scss' ],
+	providers: [ TimerService ]
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
@@ -33,7 +33,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
+	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
 	machineInfo: any;
+
 	@Input() tutorialVersion: string;
 
 	@ViewChildren('interestChkboxs') interestChkboxs: any;
@@ -55,7 +57,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		shellService.getMetricsPolicy((result) => {
 			self.privacyPolicy = result;
 		});
-		deviceService.getMachineInfo().then(val => {
+		deviceService.getMachineInfo().then((val) => {
 			this.machineInfo = val;
 		});
 	}
@@ -88,7 +90,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	next(page) {
-		this.metrics.metricsEnabled = (this.privacyPolicy === true);
+		this.metrics.metricsEnabled = this.privacyPolicy === true;
 		let tutorialData;
 		if (page < 2) {
 			const data = {
@@ -207,5 +209,12 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngOnDestroy() {
 		// this.commonService.setLocalStorageValue(LocalStorageKey.DashboardOOBBEStatus, true);
 		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
+	}
+
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.welcome-modal-size') as HTMLElement;
+		modal.focus();
 	}
 }

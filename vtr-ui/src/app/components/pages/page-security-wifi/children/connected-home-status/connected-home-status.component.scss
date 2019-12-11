@@ -4,9 +4,12 @@
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	background-color: $light;
+	.container-fluid {
+		padding: 2rem;
+	}
 	.title {
 		display: inline-block;
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 		font-weight: 400;
 		margin-right: 2rem;
 		color: $shade_blue;
@@ -23,56 +26,54 @@
 	.card {
 		border-radius: $border_radius;
 		.no-gutters {
-			height: 4.5rem;
+			// height: 4.5rem;
 			width: 100%;
 			display: flex;
+			.homesecurity-container-name {
+				line-height: 2rem;
+				h3 {
+					font-size: 1.4rem;
+				}
+			}
 			.homesecurity-container-name,
 			.homesecurity-container-enable span{
-				display: inline-blockl;
+				display: inline-block;
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
-			}
-			.homesecurity-container-name{
-				min-width: 20%
-			}
-			.homesecurity-container-enable{
-				max-width: 50%;
-				line-height: 0rem;
-				span{
-					width: 100%
-				}
+				font-size: 1.2rem;
 			}
 		}
 
 		.card-header {
 			border-radius: $border_radius;
-			padding: 1.6rem 2.5rem;
+			padding: 1.5rem;
 			background: $shade_extralight;
 			border: 0rem;
 		}
 
 		.subHeading {
-			display: flex;
+			// display: flex;
 			.loading {
 				margin-right: 1rem;
 			}
-			width: 50%;
-			justify-content: flex-start;
+			// width: 50%;
+			// justify-content: flex-start;
 			.circle {
 				background-color: $go;
 				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
-				height: 2.5rem;
-				width: 2.7rem;
+				height: 2rem;
+				width: 2rem;
 				border-radius: 100%;
 				border: 0.1rem solid $go_dark;
 				text-align: center;
 				display: inline-block;
 				margin-right: 1rem;
 				flex-shrink: 0;
+				flex-basis: auto;
 
 				fa-icon {
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 					color: $light;
 				}
 
@@ -90,7 +91,7 @@
 			h3 {
 				font-weight: $weight_bold;
 				text-transform: uppercase;
-				margin-right: 2.5rem;
+				// margin-right: 2.5rem;
 			}
 		}
 	}
@@ -98,7 +99,7 @@
 	.button-container {
 		display: flex;
 		align-items: center;
-		width: 50%;
+		// width: 50%;
 		vtr-ui-button {
 			max-width: 90%;
 			margin-left: auto;

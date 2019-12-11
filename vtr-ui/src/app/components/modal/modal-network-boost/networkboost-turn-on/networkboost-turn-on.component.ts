@@ -48,6 +48,7 @@ export class NetworkboostTurnOnComponent implements OnInit, AfterViewInit {
 
   closeModal(action: boolean) {
     this.closeTurnOnModal.emit(action);
+    document.getElementById('main-wrapper').focus();
   }
 
   keydownFn(event) {

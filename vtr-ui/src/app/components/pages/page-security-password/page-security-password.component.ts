@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { MockService } from 'src/app/services/mock/mock.service';
 import { PasswordManager, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
@@ -24,14 +23,12 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-	backId = 'sa-pm-btn-back';
 	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
 	dashlaneArticleCategory: string;
 	isOnline = true;
 	notificationSubscription: Subscription;
 
 	constructor(
-		public mockService: MockService,
 		private commonService: CommonService,
 		private cmsService: CMSService,
 		private modalService: NgbModal,

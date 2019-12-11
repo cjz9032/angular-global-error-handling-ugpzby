@@ -13,6 +13,8 @@ import { MainHeaderComponent } from './main-layout/main-header/main-header.compo
 import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
+// Providers
+import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 // Directives
 // Common UI components
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
@@ -74,6 +76,9 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		OfflineWidgetComponent,
 		VideoWidgetComponent,
 	],
+	providers: [
+		httpInterceptorProviders
+	]
 })
 export class PrivacyModule {
 }

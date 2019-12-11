@@ -19,7 +19,8 @@ export class UiRoundedRectangleRadioComponent implements OnInit {
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon = false;
 
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit() {
 	}

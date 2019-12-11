@@ -20,6 +20,9 @@ import {
 	CommonService
 } from 'src/app/services/common/common.service';
 import {
+	DeviceService
+} from 'src/app/services/device/device.service';
+import {
 	SessionStorageKey
 } from 'src/app/enums/session-storage-key-enum';
 import {
@@ -51,6 +54,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
+		public	deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
 		private dialogService: DialogService
 	) {

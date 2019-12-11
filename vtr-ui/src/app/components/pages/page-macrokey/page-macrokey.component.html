@@ -1,6 +1,11 @@
-<div class="vtr-page-device-gaming vtr-page container-fluid macro-key-subpage">
-		<div class="row" *ngIf="!isOnline">
-				<div class="col col-12 px-40 pb-40">
+<vtr-page-layout [title]="'gaming.macroKey.title' | translate" [textId]="'gaming-macrokey'"
+	[pageCssClass]="'gaming-macrokey'" [shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate"
+	[backId]="'vtr-gaming-macrokey-btn-back'">
+
+	<left-content>
+		<div class="container-fluid">
+			<div class="row" *ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate" [isSubtitleVisible]="false"
@@ -8,68 +13,41 @@
 					</vtr-widget-offline-info>
 				</div>
 			</div>
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="'gaming.macroKey.title' | translate" [backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate" [backId]="backId" [ariaLabel]="'Back to dashboard'">
-			</vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div [ngClass]="'col-sm-12 col-md-12 col-lg-8 col-xl-8 vtr-page-left-column'">
-						<div class="vtr-page-shift-up nmx-40">
-							<div class="container-fluid">
-								<div class="row mb-60">
-									<div class="col col-12 px-40">
-										<vtr-widget-macrokey-settings></vtr-widget-macrokey-settings>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1"
-											[itemID]="cardContentPositionF.Id"
-											[img]="cardContentPositionF.FeatureImage"
-											[title]="cardContentPositionF.Title"
-											[logoText]="cardContentPositionF.BrandName"
-											[action]="cardContentPositionF.Action"
-											[actionType]="cardContentPositionF.ActionType"
-											[actionLink]="cardContentPositionF.ActionLink"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
-										</vtr-container-card>
-									</div>
-
-									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2"
-											[itemID]="cardContentPositionC.id"
-											[img]="cardContentPositionC.FeatureImage"
-											[caption]="cardContentPositionC.Description"
-											[title]="cardContentPositionC.Title"
-											[logoText]="cardContentPositionC.BrandName"
-											[action]="cardContentPositionC.Action"
-											[actionType]="cardContentPositionC.ActionType"
-											[actionLink]="cardContentPositionC.ActionLink"
-											[type]="'corner'"
-											[ratioX]="4"
-											[ratioY]="2">
-										</vtr-container-card>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-widget-macrokey-settings></vtr-widget-macrokey-settings>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div *ngIf="!deviceService.isGaming" class="col col-12 pt-0 pb-40 px-0">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="1" [itemID]="cardContentPositionF.Id"
+						[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
+						[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
+						[dataSource]="cardContentPositionF.DataSource" [actionType]="cardContentPositionF.ActionType"
+						[actionLink]="cardContentPositionF.ActionLink" [type]="'article'" [ratioX]="4"
+						[ratioY]="4" id="macro_key_crm_card_A" aria-label="macro_key_crm_card_A"
+						[cardId]="'macro_key_crm_card'">
+					</vtr-container-card>
+				</div>
+
+				<div class="col col-12 pt-0 pb-40 px-0">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2" [itemID]="cardContentPositionC.id"
+						[dynamicmetricsItem]="dynamic_metricsItem" [img]="cardContentPositionC.FeatureImage"
+						[caption]="cardContentPositionC.Description" [title]="cardContentPositionC.Title"
+						[logoText]="cardContentPositionC.BrandName" [action]="cardContentPositionC.Action"
+						[dataSource]="cardContentPositionC.DataSource" [actionType]="cardContentPositionC.ActionType"
+						[actionLink]="cardContentPositionC.ActionLink" [type]="'corner'" [ratioX]="4"
+						[ratioY]="2" [cornerShift]="'large'" id="macro_key_crm_card_B" aria-label="macro_key_crm_card_B"
+						[cardId]="'macro_key_crm_card'">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

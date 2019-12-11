@@ -39,11 +39,11 @@
         </div>
         <div *ngIf="emailWasSubmitted && emailForm.touched && emailForm.invalid"
              class="check-error check-error--validation">
-            <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
+            <img class="check-error__img" src="assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Please enter a valid email address.</p>
         </div>
         <div *ngIf="(serverError$ | async) && strategy !== 'emitEmail'" class="check-error check-error--server">
-            <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
+            <img class="check-error__img" src="assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Sorry, the server is not available at the moment. Please try again later.</p>
         </div>
     </form>

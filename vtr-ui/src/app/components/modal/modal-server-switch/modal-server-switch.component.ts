@@ -203,4 +203,10 @@ export class ModalServerSwitchComponent implements OnInit {
 		//  array.filter(e => e.Value === value);
 
 	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.Server-Switch-Modal') as HTMLElement;
+		modal.focus();
+	}
 }

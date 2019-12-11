@@ -84,32 +84,34 @@ $shade_lightest: #f1f1f1;
 $shade_extralight: #f6f8f8;
 $shade_blue: #34495e;
 $blue-dark: #24536d;
-$blue-light: #2955BC;
-$blue-lighter: #346CEF;
-$blue_lightest: #0078D7;
+$blue-light: #2955bc;
+$blue-lighter: #346cef;
+$blue_lightest: #0078d7;
 $light-grey: #788590;
+$grey_darker: #34495e;
 $border_light: #f8d5d5;
 $text_light: #fef8f8;
 $button_disable: #808080;
-$button_disable_text: #8D9AA4;
+$button_disable_text: #8d9aa4;
 $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
-$button_red_start: #DB221F;
-$button_red_end: #FF5B4D;
+$button_red_start: #db221f;
+$button_red_end: #ff5b4d;
 $grey_dark: #667481;
 $grey_light: #e6eaeb;
-$grey_lighter: #F5F7F8;
-$blueHyperLink: #346CEF;
+$grey_lighter: #f5f7f8;
+$blueHyperLink: #346cef;
 $green_darker: #00893a;
 $green_dark: #008035;
 $green-light: #00a886;
 $black_light: #424b6c;
-$hover_gray: #C2C8CE;
-$hover_dark: #191C28;
+$hover_gray: #c2c8ce;
+$hover_dark: #191c28;
 
 $light: #fff;
 $dark: #000;
 $gray: #ccc;
+$charcoal: #434343;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0073ff;
@@ -143,19 +145,22 @@ $weight_600: 600;
 $shift_up_small: -6rem;
 $shift_up_medium: -14rem;
 
+$max_page_width: 160rem;
 $menu_height: 9rem;
 $header_height: 20.5rem;
 
-$padding_side: 10%;
+$padding_side: 8rem;
+$padding_side_sm: 5%;
 $gradient_angle: 135deg;
 $gradient_angle_reverse: 315deg;
 
 $border_radius: 0.9rem;
 $border_radius_sm: 0.6rem;
 
-$gaming_hd_diameter_lg: 11rem;
-$gaming_hd_diameter_md: 9rem;
-$gaming_hd_diameter_sm: 8rem;
+$gaming_hd_diameter_xl: 12rem;
+$gaming_hd_diameter_lg: 10rem;
+$gaming_hd_diameter_md: 8rem;
+$gaming_hd_diameter_sm: 7rem;
 $gaming_hd_diameter_xs: 6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
@@ -164,15 +169,29 @@ $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
 $blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
 
-$breakpoint_0: "only screen and (max-width: 576px)";
-$breakpoint_1: "only screen and (max-width: 768px)";
-$breakpoint_2: "only screen and (max-width: 992px)";
-$breakpoint_3: "only screen and (max-width: 1140px)";
-$breakpoint_4: "only screen and (max-width: 1400px)";
-$breakpoint_5: "only screen and (max-width: 1800px)";
-$breakpoint_6: "only screen and (max-width: 2200px)";
-$breakpoint_7: "only screen and (max-width: 3000px)";
+//RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
+$fontsize_xl4: 4.6rem;
+$fontsize_xl3: 4rem;
+$fontsize_xl2: 3.4rem;
+$fontsize_xl: 2.4rem;
+$fontsize_lg: 2rem;
+$fontsize_md: 1.8rem;
+$fontsize_sm: 1.6rem;
+$fontsize_xs: 1.4rem;
+$fontsize_xs2: 1.2rem;
 
+// RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
+$breakpoint_sm: "only screen and (max-width: 575px)";
+$breakpoint_md: "only screen and (max-width: 767px)";
+$breakpoint_lg: "only screen and (max-width: 991px)";
+$breakpoint_xl: "only screen and (max-width: 1199px)";
+$breakpoint_xl2: "only screen and (max-width: 1400px)";
+$breakpoint_xl3: "only screen and (max-width: 1600px)";
+$breakpoint_xl4: "only screen and (max-width: 1800px)";
+$breakpoint_xl5: "only screen and (max-width: 2200px)";
+$breakpoint_xl6: "only screen and (max-width: 3000px)";
+
+// RESPONSIVE EFFORT - The media queries below need to be depricated and removed from the app
 $mediaquery_0: "only screen and (max-width: 3600px)";
 $mediaquery_1: "only screen and (max-width: 3000px)";
 $mediaquery_2: "only screen and (max-width: 2600px)";
@@ -246,6 +265,7 @@ $mediaquery_X41: "only screen and (min-width: 600px) and (max-width: 991px)";
 $mediaquery_X42: "only screen and (min-width: 992px) and (max-width: 1100px)";
 $mediaquery_X43: "only screen and (min-width: 1366px)";
 $mediaquery_X44: "all and (min-width: 992px)";
+$mediaquery_X45: "only screen and (min-width: 992px) and (max-width: 1200px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
@@ -263,7 +283,6 @@ $weight_bold: 700;
 $weight_black: 900;
 
 $shift_up_small: -6rem;
-$padding_side: 8.5rem;
 
 // for battery indicator
 $yellow: #e6e73c;
@@ -329,3 +348,10 @@ $mediaquery_XXL350X: "only screen and (min-width: 1601px) and (max-width: 4000px
 $high-contrast-grey: #c0c0c0;
 $black-on-white: "screen and (-ms-high-contrast: black-on-white)";
 $white-on-black: "screen and (-ms-high-contrast: white-on-black)";
+$screen_dark_01: rgba(0, 0, 0, 0.01);
+$high-contrast-white-textselected: #37006e;
+$high-contrast-blue: #0007a4;
+$high-contrast-white-disabled: #600000;
+$high-contrast-grey: #767879;
+$high-contrast-black-textselected: #1aebff;
+$high-contrast-black-disabled: #3be23b;

@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Voulez-vous vraiment effacer cette touche macro ?"
+                    "title": "Voulez-vous vraiment effacer cette touche macro ?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Délai d'attente pour l'enregistrement.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "Enregistrement de touche macro pour"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "Couleur"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "Aucune application en cours d'exécution à ajouter",
                 "body": "Seules les applications en cours d'exécution s'afficheront. Lancez une application à ajouter et revenez."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "Vous pouvez ajouter un maximum de 5 applications à améliorer",
                     "part2": "sur",
                     "part3": "ajoutés récemment"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "Sécurité WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ACTIVÉ",
             "disabled": "DÉSACTIVÉ",
             "partiallyProtected": "PARTIELLEMENT PROTÉGÉ",
@@ -456,7 +641,8 @@
             "installing": "INSTALLATION EN COURS",
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
-            "notRegistered": "NON ENREGISTRÉ"
+            "notRegistered": "NON ENREGISTRÉ",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -475,7 +661,10 @@
             "collapse": "Réduire",
             "expand": "Développer",
             "loader": "Récupération du statut <br>",
-            "loading": "Chargement..."
+            "loading": "Chargement...",
+            "from": "à partir de",
+            "to": "pour",
+            "clickToChange": "cliquez pour modifier"
         },
         "app-update": {
             "message": "Bonjour, Une version plus récente de Vantage est disponible. Voulez-vous la télécharger ?"
@@ -552,7 +741,9 @@
                 "accessUrl": "Accéder aux paramètres Windows pour donner accès",
                 "microphoneNote": "Lenovo Vantage n'a pas accès au micro.",
                 "cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
-            }
+            },
+            "threshold": "Seuil",
+            "conservation": "Conservation"
         },
         "systemStatus": {
             "title": "État du système",
@@ -602,9 +793,9 @@
                 "notFound": "Mise à jour du système introuvable",
                 "detail": {
                     "uptoDate": "Mises à jour vérifiées ",
-					"updatedOn": "vérification effectuée le ",
-					"outdated": "Mises à jour non vérifiées récemment ",
-					"neverRanUpdate": "mises à jour jamais vérifiées"
+                    "updatedOn": "vérification effectuée le ",
+                    "outdated": "Mises à jour non vérifiées récemment ",
+                    "neverRanUpdate": "mises à jour jamais vérifiées"
                 }
             },
             "extendedWarranty": "Garantie prolongée",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "La batterie installée n'est <b>pas prise en charge</b> par ce système et ne va pas se charger. Remplacez la batterie par une batterie agréée par Lenovo et compatible avec ce système.",
                     "Good": "<b>La batterie est en bon état.</b>",
-                    "Exhaustion": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
+                    "Exhaustion": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "Bad": "<b>Une erreur batterie s'est produite.</b> La batterie ne peut pas être chargée/déchargée. Remplacez la batterie.",
                     "NotDetected": "<b>Aucune batterie n'a été</b> détectée ou n'est connectée à la batterie.",
                     "NotGood": "<b>La batterie n'est pas en bon état.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "Le <b>déchargement</b> a été interrompu, car la <b>température de la batterie est trop élevée.</b>",
                     "TrickleCharge": "La batterie est <b>complètement déchargée</b> et doit être rechargée. Cette opération peut durer plus de dix heures.",
                     "OverheatedBattery": "La batterie est <b>trop chaude</b>. Retirez-la de l'ordinateur et laissez-la refroidir à la température ambiante.",
-                    "PermanentError": "La batterie est <b>défaillante suite à une usure normale.</b> La batterie ne peut pas être rechargée. Remplacez la batterie.",
+                    "PermanentError": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
-                    "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat."
+                    "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>"
                 },
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Remarque :</b> La batterie ne peut pas être complètement chargée lorsque Seuil de chargement de la batterie est activé.",
@@ -783,7 +975,7 @@
                             "close": "fermer",
                             "coolingModesList": {
                                 "list1": "Cliquez sur l'icône de la batterie Windows dans la barre d'outils",
-                                "list2": "La jauge de la batterie Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
+                                "list2": "La mode d'alimentation de Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
-                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux."
+                    "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Paramètres d'alimentation",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "Veille intelligente",
                     "description": "Cette fonctionnalité programme l'ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "tooltip": "Lorsque la Veille intelligente est activée, votre ordinateur passe à la Veille moderne avant l'heure de début prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisé en fonction de la période que vous aurez définie. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
+                    "tooltip": "Lorsque la Veille intelligente est activée, l'ordinateur passe à la Veille moderne avant l'heure de DÉBUT prévue et entre en mode hibernation au bout d'un certain temps d'inactivité lorsqu'il fonctionne sur la batterie. Ce laps de temps est optimisée en fonction de la période que vous aurez définie ou de la durée d'utilisation de votre ordinateur. L'ordinateur passe du mode hibernation à la Veille moderne uniquement lors des jours programmés, et n'effectuera pas cette transition s'il est inactif pendant des jours programmés consécutifs.",
                     "timer": {
-                        "heading": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                        "heading": "Les heures pendant lesquelles vous utilisez en général l'ordinateur",
                         "subHeading1": "début",
                         "subHeading2": "fin",
                         "subHeading3": "utilisez cette planification pour",
@@ -941,7 +1154,8 @@
                             "wed": "Mercredi",
                             "thurs": "Jeudi",
                             "fri": "Vendredi",
-                            "sat": "Samedi"
+                            "sat": "Samedi",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Dimanche",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "Tous les jours",
                         "weekdays": "Jours de la semaine",
-                        "weekends": "Fins de semaine"
-                    }
+                        "weekends": "Fins de semaine",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "Ajustement automatique du temps d'activité de l'ordinateur en fonction de votre utilisation",
+                    "hyperlinkToGraph": "Cliquez pour afficher le tableau de l'activité et du temps d'activité de l'ordinateur",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1194,7 +1453,24 @@
                             "description": "Si vous modifiez la fonction par défaut de la rangée supérieure, vous devez redémarrer l'ordinateur. Voulez-vous vraiment redémarrer ?",
                             "reboot": "REDÉMARRER",
                             "cancel": "PAS MAINTENANT"
+                        },
+                        "note": {
+                            "sFunKey": "Pour accéder aux touches de fonction F1-F12, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure.",
+                            "fnKey": "Pour accéder à une fonction spéciale, appuyez simultanément sur la touche Fn et sur l'une des touches de la rangée supérieure."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Fonctions des touches de raccourci VoIP",
+                        "description": {
+                            "main": "Cette fonction vous permet de répondre à un appel VoIP ou de le rejeter en appuyant sur les touches de raccourci de votre clavier :",
+                            "f10": "F10 : répondre à l'appel",
+                            "f11": "F11 : rejeter ou mettre fin à l'appel"
+                        },
+                        "tooltip": "Cette fonction est actuellement prise en charge par Skype Entreprise 2016 et Microsoft Teams 1.0.<br>Pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications.",
+                        "hasInstalledAppsDescription": "Sélectionnez l'application dans laquelle vous souhaitez utiliser les touches de raccourci :",
+                        "noInstalledAppsDescription": "Cette fonction ne prend en charge que les applications suivantes : ",
+                        "hasInstalledAppsNote": "Remarque : pour Microsoft Teams 1.0, la touche F11 ne peut pas être utilisée pour mettre fin à l'appel.",
+                        "noInstalledAppsNote": "Remarque : pour utiliser cette fonction, vous devez d'abord télécharger et installer les applications."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "APPLIQUER"
                     },
                     "website": {
-                        "url": "URL DU SITE WEB"
+                        "url": "URL DU SITE WEB",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEXTE À SAISIR"
+                        "title": "TEXTE À SAISIR",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Permutation touches Fn et Ctrl",
+                    "description": "Si vous appuyez habituellement sur la touche Fn pour utiliser la touche Ctrl, vous pouvez permuter les fonctions de ces deux touches.",
+                    "restartNote": "La permutation de la fonction de deux touches nécessite le redémarrage de l'ordinateur, voulez-vous vraiment redémarrer ?"
                 },
                 "controlOptions": {
                     "more": "PLUS",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "Connexion sans pression tactile",
                     "caption": "Cette fonction déverrouille ou fait sortir l'ordinateur du mode veille automatiquement lorsque vous êtes assis devant ou que vous vous en approchez.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Lorsque vous vous trouvez devant votre ordinateur ou que vous l'approchez (dans les limites d'une distance de 1,2 mètres), cette fonction vous permet de vous connecter automatiquement au système une fois qu'il aura reconnu votre visage. Si vous êtes à l'extérieur plutôt qu'au bureau, vous devez vous situer plus près de l'ordinateur et le réveil sera plus long."
                 },
                 "zeroTouchLock": {
                     "title": "Verrouillage sans pression tactile",
@@ -1270,6 +1551,17 @@
                             "slow": "Lent"
                         },
                         "toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
+                    },
+                    "facialRecognition": {
+                        "title": "RECONNAISSANCE FACIALE",
+                        "caption": "Vous pouvez activer la fonction de reconnaissance faciale et l'autoriser à accéder à votre caméra. Cet outil capture votre image afin de reconnaître précisément votre présence ou détecter lorsque vous avez laissé votre périphérique sans surveillance. Ces données sont traitées localement sur votre appareil. Lenovo ne peut ni y accéder ni les utiliser.",
+                        "checkBox": "Allumer la caméra et activer cette fonction",
+                        "note": {
+                            "permission": "Lenovo Vantage n'a pas accès à la caméra. La fonction de la case cochée ne fonctionnera pas.",
+                            "privacyMode": "Le mode de confidentialité de la caméra Lenovo Vantage est activé. La fonction de la case cochée ne fonctionnera pas.",
+                            "windowsLink": "Accéder aux paramètres Windows pour donner accès",
+                            "privacyLink": "Accéder au mode de confidentialité de la caméra pour la désactiver"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "Le réglage de distance automatique met à jour automatiquement la distance de détection via un moteur AI.",
                     "options": {
                         "near": "Proche",
-                        "far": "Éloigné"
+                        "far": "Éloigné",
+                        "medium": "Moyenne"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Lorsque cette option est activée, la distance de détection est automatiquement ajustée. Vous pouvez également définir manuellement la distance de détection à l'aide du curseur. Les options sont les suivantes :",
+                        "context2": "Lorsque vous définissez manuellement la distance de détection, veuillez prendre en considération les éléments suivants :",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Distance proche : 0 à 0,42 mètres (17 pouces)",
+                            "line2": "Distance moyenne : 0 à 0,60 mètres (24 pouces)",
+                            "line3": "Distance éloignée : 0 à 1,20 mètres (47 pouces)",
+                            "line4": "La distance de détection maximale est de 1,2 mètres. En cas de dépassement d'une distance de 1,2 mètres, le capteur ne détectera pas votre présence.",
+                            "line5": "La distance de détection recommandée est de moins de 0,60 mètres."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "Cette fonction dépend de Windows Hello. Assurez-vous que la reconnaissance faciale est activée dans les paramètres Windows.",
                     "description2": "Cette fonction utilise les capteurs et l'appareil photo pour détecter votre présence. Cependant, la fonction ne recueille AUCUNE donnée personnelle.",
                     "description3": "1. Si votre ordinateur est en mode chevalet, tablette ou sur support, il se peut que ces fonctions ne marchent pas correctement.",
-                    "description4": "2. Si l'ordinateur est en mode hibernation ou a été éteint. La connexion sans pression tactile ne fonctionnera pas.",
+                    "description4": "2. Si votre ordinateur est en mode hibernation ou a été mis hors tension, la connexion sans pression tactile ne fonctionnera pas.",
                     "description5": "3. Veuillez ajuster l'écran de l'ordinateur à un angle approprié pour que la caméra infrarouge reconnaisse votre visage pour vous connecter automatiquement.",
-                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées."
+                    "description6": "4. Si le mode avion est activé sur votre ordinateur, ces fonctions sont désactivées.",
+                    "description7": "La précision varie en fonction de la taille du corps, de la posture et de la fréquence des mouvements. Si votre ordinateur est verrouillé de manière inattendue, réglez la barre de sensibilité pour améliorer la précision."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Accédez aux paramètres Windows Hello",
                     "screenTimeoutSettings": "Accédez aux paramètres de mise en veille de l'écran"
                 },
-                "resetToDefault": "Réinitialiser"
+                "resetToDefault": "Réinitialiser",
+                "sensitivityAdjusting": {
+                    "title": "AJUSTEMENT DE LA SENSIBILITÉ"
+                }
             },
             "intelligentScreen": {
                 "title": "Écran intelligent",
@@ -1370,6 +1667,18 @@
                 "title": "Lecture de la vidéo sans pression tactile",
                 "desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",
                 "tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
+            },
+            "superResolution": {
+                "heading": "Support intelligent",
+                "title": "Mise à l'échelle de la résolution vidéo",
+                "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
+                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Cette fonction est inopérante quand :",
+                    "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
+                    "description2": "L'ordinateur n'est pas branché à l'alimentation secteur et le mode économiseur de batterie est activé.",
+                    "description3": "La température de l'unité centrale est trop élevée."
+                }
             },
             "voice": {
                 "title": "Voix",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Totalement protégé",
-            "fullyDesc": "Félicitations ! Vous êtes bien protégé.",
             "notFully": "Non totalement protégé",
-            "notFullyDesc": "Vous n'êtes pas totalement protégé. Apprenez maintenant comment améliorer votre sécurité.",
             "security101": "CONSEIL SÉCURITÉ 101",
             "firewall": "Pare-feu",
             "pwdHealth": "État de santé du mot de passe",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "WiFi et Sécurité domestique connectée",
             "connectedHomeSecurity": "Sécurité domestique connectée",
             "fingerprint": "Lecteur d'empreintes digitales",
-            "seeAllNetwork": "Afficher tous les réseaux connectés",
-            "maliciousNetwork": "Empêchez votre ordinateur, durant ce mois, de se connecter à des {{maliciousWifi}}réseaux malveillants.",
-            "good": "BON",
-            "malicious": "MALVEILLANT",
-            "suspicious": "SUSPECT",
-            "securityScoreDepends": "Le résultat de la sécurité dépend de l'un des éléments suivants :",
-            "antivirus": "Protection par un logiciel anti-virus",
-            "password": "Utilisation de mots de passe complexes et sûrs gérés de manière sécurisée",
-            "vpn": "Surveillance de l'exposition de votre réseau aux attaquants",
-            "wifi": "Chiffrement de vos données personnelles lors de l'utilisation de WiFi public",
-            "windowsHello": "Protection de votre périphérique à l'aide des options de connexion sécurisée"
+            "uacTitle": "Qu'est-ce qu'une notification UAC ?",
+            "uacText": "Le Contrôle de compte d'utilisateur (UAC) est une fonction de sécurité très importante de Windows qui permet d'éviter que des programmes potentiellement dangereux apportent des modifications à votre système.",
+            "windowsTitle": "Pourquoi dois-je activer Windows ?",
+            "windowsText": "L'exécution d'une copie non authentique de Windows peut vous exposer à un risque accru de menaces virales et autres menaces de la sécurité.",
+            "encryptionTitle": "Qu'est ce que le chiffrement de disque dur ?",
+            "encryptionText": "Il s'agit d'une méthode permettant de protéger vos données par le chiffrement de l'intégralité de l'unité de disque dur contre tout accès non autorisé, même si l'unité est retirée du PC actuel et placée dans d'autres périphériques.",
+            "passwordTitle": "Comment obtenir une meilleure protection par mot de passe ?",
+            "passwordText": "Stockez et gérez en toute sécurité tous vos mots de passe chiffrés à l'aide d'une application de protection numérique professionnelle au lieu de les stocker dans vos navigateurs qui sont facilement accessibles à des tiers à votre insu.",
+            "enhanceTitle": "Que dois-je faire pour améliorer la protection de la sécurité ?",
+            "enhanceText": "Comme protection minimum, nous vous recommandons vivement de protéger vos appareils à l'aide d'un logiciel anti-virus et d'un pare-feu et de configurer la protection UAC. Comme protection avancée, nous vous conseillons également de créer des mots de passe forts, de les gérer de manière sécurisée et de chiffrer vos données lorsque vous utilisez un réseau public.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "Utilisez votre ordinateur comme une tablette",
             "description": "<div class='faqInFs4Fb'>    Utilisez votre ordinateur comme une tablette</div><hr><p>Le mode tablette graphique rend Windows plus intuitif et plus facile à utiliser si vous utilisez un périphérique à écran tactile.</p><h3 class='faqInFs25FbP10'>Utiliser le Mode Tablette</h3><p>Pour activer le mode tablette, sélectionnez le <strong>Centre de notifications</strong> dans la barre des taches, puis sélectionner le<strong>mode tablette</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Important</h3><p>Pour savoir si votre périphérique peut activer automatiquement le mode tablette, recherchez votre périphérique sur le site Web du fabricant. La prise en charge de cette fonction dépend du matériel, du pilote installé et de la configuration du périphérique par le fabricant. </p><p> </p><p>En mode tablette, les applications ouvrent le plein écran et vous donnent de l'espace pour travailler. Pour fermer une application, faites-la glisser dans la partie inférieure de l'écran.</p><p> </p><h3 class='faqInFs25FbP10'>Astuce</h3><p>La barre des tâches est disponible lorsque votre PC est en mode tablette, mais vous pouvez le masquer si vous souhaitez plus de place à l'écran. Sélectionnez le bouton<strong> démarrer</strong>, sélectionnez <strong>paramètres </strong>> <strong>système </strong>> <strong>mode </strong>tablette, puis activer la <strong>fonction Masquer automatiquement la barre des tâches</strong>en mode tablette. Pour afficher la barre des tâches masquée, balayez le curseur en haut de l'écran ou utilisez votre souris pour la placer au pointage.</p><h3 class='faqInFs25FbP10'>Utiliser deux applications simultanément</h3><p>Pour utiliser deux applications côte à côte en mode tablette, faites glisser une application ouverte vers le bas et vers le côté. Vous verrez où elle sera aimantée et vous verrez s'afficher toutes les applications en cours.</p><p>Dans cette vue, vous pouvez également :</p><ul>    <li>Utilisez l'arête partagée entre deux applications aimantées pour redimensionner les deux applications simultanément.</li>    <li>Ouvrir une nouvelle application à partir de l'affichage des tâches - sélectionnez <strong>Affichage des tâches</strong> dans la barre des tâches, sélectionnez une application, puis faites-la glisser sur un côté pour l'aligner sur l'écran divisé.</li>    <li>Utilisez le bouton précédent de la barre des tâches pour revenir en arrière dans une application ou pour ouvrir une application que vous utilisiez auparavant.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "L'exécution d'une analyse et d'une réparation peut entraîner la perte de données. Il est recommandé d'effectuer une sauvegarde avant d'exécuter cette opération. Souhaitez-vous vraiment poursuivre ?",
                 "yes": "Oui",
                 "no": "Non"
-            }
+            },
+            "waitAvailability": "Le bouton est désactivé lorsque les informations matérielles n'ont pas encore été récupérées, au cas où les unités de stockage ne prennent pas en charge cette fonctionnalité ou lorsque la restauration de secteurs défectueux est en cours d'exécution."
         },
         "support": {
             "title": "Télécharger les outils de diagnostic professionnels",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
         "cancelTextProgress": "Veuillez attendre la progression de l'annulation",
         "pluginNotUpdate": "L'analyse matérielle n'est pas disponible car elle est obsolète. Veuillez procéder à une mise à niveau.",
-        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée"
+        "testNotApplicable": "Ne s'applique pas à l'analyse personnalisée",
+        "waitScanStarts": "Attendez que l'analyse démarre",
+        "reminderTimeRetrieveHardwareInformation": "Ce processus peut prendre un certain temps pour récupérer vos informations matérielles",
+        "retrievingHardwareInformation": "Récupération des informations matérielles...",
+        "pluginTokens": {
+            "cpu": "Processeur",
+            "memory": "Mémoire",
+            "motherboard": "Carte mère",
+            "pci_express": "PCI Express",
+            "storage": "Stockage",
+            "wireless": "Sans fil"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -12,8 +12,9 @@ import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 import { SettingsService } from './services/settings.service';
-import { TimerService } from 'src/app/services/timer/timer.service';
+import { ModalServerSwitchComponent } from './components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language/language.service';
 import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
@@ -23,6 +24,7 @@ import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RoutersName } from './components/pages/page-privacy/privacy-routing-name';
+import { AppUpdateService } from './services/app-update/app-update.service';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metric.service';
@@ -35,14 +37,15 @@ declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [TimerService, TimerServiceEx]
+	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
 	machineInfo: any;
 	public isMachineInfoLoaded = false;
 	public isGaming: any = false;
 	private subscription: Subscription;
+	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
+	private totalDuration = 0; // itermittant app duratin will be added to it
 	private vantageFocusHelper = new VantageFocusHelper();
 
 	constructor(
@@ -51,13 +54,14 @@ export class AppComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		// private translate: TranslateService,
+		private translate: TranslateService,
 		private userService: UserService,
 		private settingsService: SettingsService,
 		private vantageShellService: VantageShellService,
-		// private activatedRoute: ActivatedRoute,
+		private activatedRoute: ActivatedRoute,
 		private languageService: LanguageService,
 		private logger: LoggerService,
+		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
 		// private appUpdateService: AppUpdateService
@@ -89,6 +93,8 @@ export class AppComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		// check for update and download it but it will be available in next launch
 		// this.appUpdateService.checkForUpdatesNoPrompt();
+		// active duration
+		this.getDuration();
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -98,6 +104,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 
 		this.metricService.sendAppLaunchMetric();
+
+		window.onresize = () => {}; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe((s) => {
@@ -115,7 +123,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
-		// this.serverSwitchThis();
+		this.serverSwitchThis();
 		this.setRunVersionToRegistry();
 	}
 
@@ -131,11 +139,8 @@ export class AppComponent implements OnInit, OnDestroy {
 			win.NetworkListener.onnetworkchanged = (state) => {
 				this.notifyNetworkState();
 			};
-			if (win.NetworkListener.isInternetAccess()) {
-				this.notifyNetworkState();
-			} else {
-				this.notifyNetworkState();
-			}
+
+			this.notifyNetworkState();
 		} else {
 			window.addEventListener('online', (e) => {
 				this.notifyNetworkState();
@@ -144,11 +149,7 @@ export class AppComponent implements OnInit, OnDestroy {
 				this.notifyNetworkState();
 			}, false);
 
-			if (navigator.onLine) {
-				this.notifyNetworkState();
-			} else {
-				this.notifyNetworkState();
-			}
+			this.notifyNetworkState();
 		}
 	} // end of addInternetListener
 
@@ -188,7 +189,9 @@ export class AppComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		setTimeout(() => { document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
+		setTimeout(() => {
+			document.getElementById('modal-welcome').parentElement.parentElement.parentElement.parentElement.focus();
+		}, 0);
 	}
 
 	private async getMachineInfo() {
@@ -210,13 +213,14 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	private onMachineInfoReceived(value: any) {
+		this.setFontFamilyByLocale(value.locale);
 		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
 		this.commonService.setLocalStorageValue(DashboardLocalStorageKey.DeviceInfo, cachedDeviceInfo);
 		this.machineInfo = value;
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
-		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !==  value.locale ? value.locale.toLowerCase() : 'en') {
+		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale ? value.locale.toLowerCase() : 'en') {
 			this.languageService.useLanguageByLocale(value.locale);
 		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.MachineFamilyName, value.family);
@@ -274,45 +278,45 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// VAN-5872, server switch feature
-	// private serverSwitchThis() {
-	// 	this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-	// 		if (params.has('serverswitch')) {
-	// 			// retrive from localStorage
-	// 			const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
-	// 			if (serverSwitchLocalData) {
-	// 				// force cms service to use this server parms
-	// 				serverSwitchLocalData.forceit = true;
-	// 				this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
+	private serverSwitchThis() {
+		this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (params.has('serverswitch')) {
+				// retrive from localStorage
+				const serverSwitchLocalData = this.commonService.getLocalStorageValue(LocalStorageKey.ServerSwitchKey);
+				if (serverSwitchLocalData) {
+					// force cms service to use this server parms
+					serverSwitchLocalData.forceit = true;
+					this.commonService.setLocalStorageValue(LocalStorageKey.ServerSwitchKey, serverSwitchLocalData);
 
-	// 				const langCode = serverSwitchLocalData.language.Value.toLowerCase();
-	// 				const allLangs = this.translate.getLangs();
-	// 				const currentLang = this.translate.currentLang
-	// 					? this.translate.currentLang.toLowerCase()
-	// 					: this.translate.defaultLang.toLowerCase();
+					const langCode = serverSwitchLocalData.language.Value.toLowerCase();
+					const allLangs = this.translate.getLangs();
+					const currentLang = this.translate.currentLang
+						? this.translate.currentLang.toLowerCase()
+						: this.translate.defaultLang.toLowerCase();
 
-	// 				// change language only when countrycode or language code changes
-	// 				if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
-	// 					// this.translate.resetLang('ar');
-	// 					// this.languageService.useLanguage(langCode);
-	// 					if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
-	// 						this.translate.reloadLang(langCode);
-	// 					}
+					// change language only when countrycode or language code changes
+					if (allLangs.indexOf(langCode) >= 0 && currentLang !== langCode.toLowerCase()) {
+						// this.translate.resetLang('ar');
+						// this.languageService.useLanguage(langCode);
+						if (langCode.toLowerCase() !== this.translate.defaultLang.toLowerCase()) {
+							this.translate.reloadLang(langCode);
+						}
 
-	// 					this.translate.use(langCode).subscribe(
-	// 						(data) => console.log('@sahinul trans use NEXT'),
-	// 						(error) => console.log('@sahinul server switch error ', error),
-	// 						() => {
-	// 							// Evaluate the translations for QA on language Change
-	// 							// this.qaService.setTranslationService(this.translate);
-	// 							// this.qaService.setCurrentLangTranslations();
-	// 							console.log('@sahinul server switch completed');
-	// 						}
-	// 					);
-	// 				}
-	// 			}
-	// 		}
-	// 	});
-	// }
+						this.translate.use(langCode).subscribe(
+							(data) => console.log('@sahinul trans use NEXT'),
+							(error) => console.log('@sahinul server switch error ', error),
+							() => {
+								// Evaluate the translations for QA on language Change
+								// this.qaService.setTranslationService(this.translate);
+								// this.qaService.setCurrentLangTranslations();
+								// console.log('@sahinul server switch completed');
+							}
+						);
+					}
+				}
+			}
+		});
+	}
 
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
@@ -330,15 +334,15 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 
 			// // VAN-5872, server switch feature
-			// if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
-			// 	const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
-			// 		backdrop: true,
-			// 		size: 'lg',
-			// 		centered: true,
-			// 		windowClass: 'Server-Switch-Modal',
-			// 		keyboard: false
-			// 	});
-			// }
+			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
+					backdrop: true,
+					size: 'lg',
+					centered: true,
+					windowClass: 'Server-Switch-Modal',
+					keyboard: false
+				});
+			}
 		} catch (error) { }
 	}
 
@@ -356,13 +360,9 @@ export class AppComponent implements OnInit, OnDestroy {
 	// Defect fix VAN-2988
 	@HostListener('window:keydown', ['$event'])
 	disableCtrlA($event: KeyboardEvent) {
-
 		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
-		if (
-			($event.ctrlKey || $event.metaKey) &&
-			($event.keyCode === 65) && !isPrivacyTab
-		) {
+		if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
 			$event.stopPropagation();
 			$event.preventDefault();
 		}
@@ -375,21 +375,21 @@ export class AppComponent implements OnInit, OnDestroy {
 					this.logger.info(`AppComponent.onNotification`, notification);
 					// launch welcome modal once translation is loaded, meanwhile show spinner from home component
 					this.deviceService.getMachineInfo()
-					.then((info) => {
-						if (info) {
-							if (info.isGaming) {
-								const gamingTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Gaming);
-								this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, gamingTutorialData);
-							} else if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-								const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
-								this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
-							} else {
-								setTimeout(() => {
-									this.launchWelcomeModal();
-								}, 0);
+						.then((info) => {
+							if (info) {
+								if (info.isGaming) {
+									const gamingTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Gaming);
+									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, gamingTutorialData);
+								} else if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+									const armTutorialData = new WelcomeTutorial(2, '', true, SegmentConst.Consumer);
+									this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
+								} else {
+									setTimeout(() => {
+										this.launchWelcomeModal();
+									}, 0);
+								}
 							}
-						}
-					}).catch((error) => {});
+						}).catch((error) => { });
 					break;
 				default:
 					break;
@@ -416,6 +416,92 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 		}, 2000);
 	}
+
+	// TESTING ACTIVE DURATION
+	private getDuration() {
+		const component = this; // value of this is null/undefined inside the functions
+		let isVisible = true; // internal flag, defaults to true
+		function onVisible() {
+			// prevent double execution
+			if (isVisible) {
+				return;
+			}
+			// console.log(' APP is VISIBLE-------------------------------------------------------');
+			component.metricService.sendAppResumeMetric();
+			// change flag value
+			isVisible = true;
+		} // end of onVisible
+		function onHidden() {
+			// prevent double execution
+			if (!isVisible) {
+				return;
+			}
+			// console.log(' APP is HIDDEN-------------------------------------------------------');
+			component.metricService.sendAppSuspendMetric();
+			// change flag value
+			isVisible = false;
+		} // end of onHidden
+		function handleVisibilityChange(forcedFlag) {
+			// forcedFlag is a boolean when this event handler is triggered by a
+			// focus or blur eventotherwise it's an Event object
+			if (typeof forcedFlag === 'boolean') {
+				if (forcedFlag) {
+					return onVisible();
+				}
+				return onHidden();
+			}
+			if (document.hidden) {
+				return onHidden();
+			}
+			return onVisible();
+		} // end of handleVisibilityChange
+		document.addEventListener('visibilitychange', handleVisibilityChange, false);
+		// extra event listeners for better behaviour
+		document.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		document.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+		window.addEventListener('focus', () => {
+			handleVisibilityChange(true);
+		}, false);
+		window.addEventListener('blur', () => {
+			handleVisibilityChange(false);
+		}, false);
+	} // END OF DURATION
+
+	private setFontFamilyByLocale(locale: string = 'en') {
+		const defaultFontFamily = '"Segoe UI", sans-serif';
+		let fontFamily = '';
+		switch (locale) {
+			case 'zh-hans':
+				// simplified chinese: full-stop is like english
+				fontFamily = `"Microsoft YaHei UI", ${defaultFontFamily}`;
+				break;
+			case 'zh-hant':
+				// traditional chinese: full-stop is in vertically middle
+				fontFamily = `"Microsoft JhengHei UI", ${defaultFontFamily}`;
+				break;
+			case 'ko':
+				fontFamily = `"Malgun Gothic", ${defaultFontFamily}`;
+				break;
+			case 'ja':
+				fontFamily = `"Yu Gothic UI", ${defaultFontFamily}`;
+				break;
+			default:
+				fontFamily = defaultFontFamily;
+				break;
+		}
+
+		// dynamically add font family on body tag
+		document.getElementsByTagName('body')[0].style['font-family'] = fontFamily;
+		// ngbTooltip is sending font family, to override it dynamically inject css class
+		const style = document.createElement<'style'>('style');
+		style.innerHTML = `.tooltip { font-family: ${fontFamily}; }`;
+		document.getElementsByTagName('head')[0].appendChild(style);
+	}
+
 
 	// private registerWebWorker() {
 	// 	if (typeof Worker !== 'undefined') {

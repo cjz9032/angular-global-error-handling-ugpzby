@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,6 +16,9 @@ export class ModalCancelComponent implements OnInit {
 	loading: boolean;
 
 	timerRef: any;
+	@Input() ItemParent: string;
+	@Input() CancelItemName: string;
+	@Input() ConfirmItemName: string;
 
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 

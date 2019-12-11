@@ -8,9 +8,11 @@
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
-					*ngIf="!batteryNotDetected">
+					*ngIf="!batteryNotDetected"
+					role="text">
 					{{ percentage }}
-					<span class="percentage-symbol">
+					<span class="percentage-symbol"
+						role="text">
 						%
 					</span>
 				</div>
@@ -19,25 +21,26 @@
 					<span class="icomoon icomoon-NoBatteryError error-icon"></span>
 					<span class="no-battery-detected"
 						id="myDevice-settings-batteryGauge-notDetected-title"
-						attr.aria-label="myDevice-settings-batteryGauge-notDetected-title">
+						role="text">
 						{{'device.deviceSettings.batteryGauge.batteryNotDetected'| translate}}
 					</span>
 				</div>
 			</div>
 			<div *ngIf="!batteryNotDetected && !hideRemainingTimeTxt">
-				<div class="remaining-time">
+				<div class="remaining-time"
+					role="text">
 					{{ getTimeRemaining() }}
 				</div>
-				<div class="remaining-text text-uppercase"
+				<div [class]="isInDetailsModal?'remaining-text text-uppercase remaining-text-detail': 'remaining-text text-uppercase'"
 					*ngIf="timeText === 'timeRemaining'"
 					id="myDevice-settings-batteryGauge-remainingTime-title"
-					attr.aria-label="myDevice-settings-batteryGauge-remainingTime-title">
+					role="text">
 					{{'device.deviceSettings.batteryGauge.details.remainingTime' | translate}}
 				</div>
 				<div class="remaining-text text-uppercase"
 					*ngIf="timeText === 'timeCompletion'"
 					id="myDevice-settings-batteryGauge-charge-title"
-					attr.aria-label="myDevice-settings-batteryGauge-charge-title">
+					role="text">
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>

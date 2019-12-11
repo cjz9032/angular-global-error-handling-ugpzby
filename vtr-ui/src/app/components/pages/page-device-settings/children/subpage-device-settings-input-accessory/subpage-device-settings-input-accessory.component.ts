@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { EMPTY } from 'rxjs';
+import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
+import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
+import { EMPTY, Subscription } from 'rxjs';
+import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
@@ -13,7 +17,7 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 	templateUrl: './subpage-device-settings-input-accessory.component.html',
 	styleUrls: ['./subpage-device-settings-input-accessory.component.scss']
 })
-export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
+export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnDestroy {
 
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
@@ -21,24 +25,44 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 	public kbdBlIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
 	public merlynIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
 	public zoomIcon = '/assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public imagePath = 'assets/images/keyboard-images/KeyboardMap_Images/';
+	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
+	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
+	public imagesArray: string[] = ['Belgium.png', 'French.png', 'French_Canadian.png', 'German.png', 'Italian.png', 'Spanish.png', 'Turkish_F.png', 'Standered.png'];
+
 
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
 	public machineType: number;
 	public keyboardCompatibility: boolean;
-	public switchValue = false;
 	public stickyFunStatus = false;
 	public isTouchPadVisible = false;
 	public isMouseVisible = false;
+	public keyboardVersion: string;
+
+	public selectedApp: VoipApp;
+	public installedApps: VoipApp[] = [];
+	public showVoipHotkeysSection = false;
+	public isAppInstalled = false;
+	public fnCtrlSwapCapability = false;
+	public fnCtrlSwapStatus = false;
+	public isRestartRequired = false;
+	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
+	hasUDKCapability = false;
+	fnLockCapability = false;
+	private topRowFunctionsIdeapadSubscription: Subscription;
 
 	constructor(
 		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,
 		private logger: LoggerService
-	) { }
+	) {
+	}
 
 	ngOnInit() {
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -47,8 +71,62 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			if (this.keyboardCompatibility) {
 				this.getKBDLayoutName();
 			}
+			// udk capability
+			const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+			this.hasUDKCapability = inputAccessoriesCapability.isUdkAvailable;
+			this.getFnCtrlSwapCapability();
 		}
 		this.getMouseAndTouchPadCapability();
+		this.getVoipHotkeysSettings();
+		this.topRowFunctionsIdeapadSubscription = this.topRowFunctionsIdeapadService.capability.subscribe(capabilities => {
+			capabilities.forEach(capability => {
+				if (capability.key === 'FnLock' && capability.value === StringBooleanEnum.TRUTHY) {
+					this.fnLockCapability = true;
+				}
+			});
+		});
+	}
+
+	getVoipHotkeysSettings() {
+		this.keyboardService.getVoipHotkeysSettings()
+			.then(res => {
+				if (+res.errorCode !== VoipErrorCodeEnum.SUCCEED || !res.capability) {
+					return res;
+				}
+				this.showVoipHotkeysSection = true;
+				res.appList.forEach(app => {
+					if (app.isAppInstalled) {
+						this.isAppInstalled = true;
+					}
+					if (app.isSelected) {
+						this.selectedApp = app;
+					}
+				});
+				if (this.isAppInstalled) {
+					this.installedApps = res.appList;
+				}
+			})
+			.catch(error => {
+				console.log('getVoipHotkeysSettings error', error);
+			});
+	}
+
+	setVoipHotkeysSettings(app: VoipApp) {
+		const prev = this.selectedApp;
+		this.selectedApp = app;
+		this.keyboardService.setVoipHotkeysSettings(app.appName)
+			.then(VoipResponse => {
+				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+					this.selectedApp.isSelected = false;
+					this.selectedApp = prev;
+					this.selectedApp.isSelected = true;
+					return VoipResponse;
+				}
+				this.installedApps = VoipResponse.appList;
+			})
+			.catch(error => {
+				console.log('setVoipHotkeysSettings error', error);
+			});
 	}
 
 	initDataFromCache() {
@@ -60,6 +138,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			this.inputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, undefined);
 			if (this.inputAccessoriesCapability !== undefined) {
 				this.keyboardCompatibility = this.inputAccessoriesCapability.isKeyboardMapAvailable;
+				this.keyboardVersion = this.inputAccessoriesCapability.keyboardVersion;
 				if (this.inputAccessoriesCapability.image && this.inputAccessoriesCapability.image.length > 0) {
 					this.image = this.inputAccessoriesCapability.image;
 				}
@@ -126,6 +205,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 				this.keyboardService.GetKBDMachineType().then((value: any) => {
 					this.getKeyboardMap(layOutName, value);
 					this.inputAccessoriesCapability.image = this.image;
+					this.inputAccessoriesCapability.keyboardVersion = this.keyboardVersion;
 					this.commonService.setLocalStorageValue(LocalStorageKey.InputAccessoriesCapability, this.inputAccessoriesCapability);
 					this.getAdditionalCapabilities();
 				})
@@ -139,89 +219,26 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			return EMPTY;
 		}
 	}
+
 	// To display the keyboard map image
 	public getKeyboardMap(layOutName, machineType) {
 		const type = machineType.toLowerCase();
-		this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-		switch (layOutName.toLowerCase()) {
-			case 'standered':
-				if (type === 'other') {
-
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-					return this.image;
+		this.imagesArray.forEach(element => {
+			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
+				if (this.keyboardVersion === '1') {
+					this.image = this.imagePathCS20 + element;
+					// else if (this.keyboardVersion === '0') {
 				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Standered.png';
-					return this.image;
+					if (type === 'grafevo') {
+						this.image = this.imagePathGrafEvo + element;
+					} else {
+						this.image = this.imagePath + element;
+					}
 				}
-				break;
-			case 'belgium':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Belgium.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Belgium.png';
-					return this.image;
-				}
-				break;
-			case 'french':
-				if (type === 'other') {
-
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/French.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French.png';
-					return this.image;
-				}
-				break;
-			case 'french_canadian':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/French_Canadian.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/French_Canadian.png';
-					return this.image;
-				}
-				break;
-			case 'german':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/German.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/German.png';
-					return this.image;
-				}
-				break;
-			case 'italian':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Italian.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Italian.png';
-					return this.image;
-				}
-				break;
-			case 'spanish':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Spanish.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Spanish.png';
-					return this.image;
-				}
-				break;
-			case 'turkish_':
-				if (type === 'other') {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Turkish_F.png';
-					return this.image;
-				} else {
-					this.image = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/Turkish_F.png';
-					return this.image;
-				}
-				break;
-			default:
-				this.image = 'assets/images/keyboard-images/KeyboardMap_Images/Standered.png';
-		}
+			}
+		});
 	}
+
 	// To get Additional Capability Status
 	public getAdditionalCapabilities() {
 		this.shortcutKeys = [];
@@ -266,8 +283,57 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			return EMPTY;
 		}
 	}
-	fnCtrlKey(event) {
-		this.switchValue = event.switchValue;
+
+	public getFnCtrlSwapCapability() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwapCapability().then(res => {
+					this.fnCtrlSwapCapability = res;
+					if (this.fnCtrlSwapCapability) {
+						this.getFnCtrlSwap();
+					}
+				}).catch((error) => {
+					this.logger.error('GetFnCtrlSwapCapability', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwapCapability', error.message);
+			return EMPTY;
+		}
+	}
+	public getFnCtrlSwap() {
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.GetFnCtrlSwap().then(res => {
+					this.fnCtrlSwapStatus = res;
+				}).catch(error => {
+					this.logger.error('GetFnCtrlSwap error here', error.message);
+					return EMPTY;
+				});
+			}
+		} catch (error) {
+			this.logger.error('GetFnCtrlSwap', error.message);
+			return EMPTY;
+		}
+	}
+
+	public fnCtrlKey(event) {
+		this.fnCtrlSwapStatus = event.switchValue;
+		try {
+			if (this.keyboardService.isShellAvailable) {
+				this.keyboardService.SetFnCtrlSwap(this.fnCtrlSwapStatus).then(res => {
+					this.isRestartRequired = res.RebootRequired;
+					if (res.RebootRequired === true) {
+						this.keyboardService.restartMachine();
+					}
+				}).catch((error) => {
+					this.logger.error('SetFnCtrlSwap', error.message);
+				});
+			}
+		} catch (error) {
+			this.logger.error('SetFnCtrlSwap', error.message);
+			return EMPTY;
+		}
 	}
 
 	public launchProtocol(protocol: string) {
@@ -288,6 +354,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit {
 			}).catch((error) => {
 				this.logger.error('SubpageDeviceSettingsInputAccessoryComponent: error in getMouseAndTouchPadCapability.Promise.all()', error);
 			});
+		}
+	}
+
+	ngOnDestroy(): void {
+		if (this.topRowFunctionsIdeapadSubscription) {
+			this.topRowFunctionsIdeapadSubscription.unsubscribe();
 		}
 	}
 }

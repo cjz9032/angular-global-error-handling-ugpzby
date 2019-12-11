@@ -4,6 +4,12 @@
 	.vtr-ui-switch-row.#{$name} {
 		.col-auto {
 			height: 100%;
+			@media #{$black-on-white} {
+				margin: 0.2rem;
+			}
+			@media #{$white-on-black} {
+				margin: 0.2rem;
+	}
 		}
 		.vtr-col-pad {
 			padding: 0 1rem;
@@ -76,6 +82,8 @@
 		.left-icon-block {
 			width: 2rem;
 			color: $icon_color;
+			position: relative;
+			top: .7em;
 		}
 		.top-pad-03 {
 			padding-top: 0.3rem;
@@ -96,7 +104,7 @@
 			color: $color;
 			font-weight: $weight_light;
 			letter-spacing: 0.05rem;
-			text-transform: none;
+            text-transform: none;
 		}
 
 		.caption {
@@ -168,7 +176,10 @@
 	list-style: none;
 	fa-icon {
 		color: $dark;
-		font-size: 0.5rem;
+        font-size: 0.5rem;
+        padding-bottom:6px;
+        vertical-align: middle;
+        display: inline-block;
 	}
 }
 

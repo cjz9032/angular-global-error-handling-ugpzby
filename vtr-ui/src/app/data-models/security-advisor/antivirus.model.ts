@@ -17,6 +17,7 @@ export class AntiVirusViewModel {
 		status: false,
 		enabled: false,
 		metrics: [],
+		additionalCapabilities: '',
 	};
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
@@ -28,7 +29,7 @@ export class AntiVirusViewModel {
 		name: 'security.antivirus.others.unknown',
 	};
 	metricsList: Array<any> = [];
-	otherFirewall: OtherInfo ;
+	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [{
 		status: this.windowsDefender.status,
@@ -41,6 +42,7 @@ export class AntiVirusViewModel {
 	othersFirewallstatusList: Array<any> = [];
 	showMetricsList = true;
 	showMetricButton = true;
+	showMcafee = true;
 
 	constructor(antiVirus: Antivirus, private commonService: CommonService, private translate: TranslateService, ) {
 		translate.stream(this.otherAntiVirus.name).subscribe((res) => {
@@ -78,6 +80,10 @@ export class AntiVirusViewModel {
 		if (typeof cacheShowMetricList === 'boolean') {
 			this.showMetricsList = cacheShowMetricList;
 		}
+		const cacheShowMcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowMcafee);
+		if (typeof cacheShowMcafee === 'boolean') {
+			this.showMcafee = cacheShowMcafee;
+		}
 		const cacheMcafeeMetricsList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeMetricList);
 		if (cacheMcafeeMetricsList) {
 			this.metricsList = cacheMcafeeMetricsList;
@@ -100,7 +106,7 @@ export class AntiVirusViewModel {
 		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
 			this.currentPage = 'mcafee';
 			this.mcafeeInstall = true;
-		} else if (antiVirus.others) {
+		} else if (antiVirus.others && antiVirus.others.enabled) {
 			if (antiVirus.mcafee) {
 				this.mcafeeInstall = true;
 			} else { this.mcafeeInstall = false; }

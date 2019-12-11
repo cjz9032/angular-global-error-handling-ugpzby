@@ -99,7 +99,7 @@
 			<vtr-ui-button
 				metricsItem="goToDashboard"
 				metricsEvent="featureClick"
-				(onClick)="common.openCornet()"
+				(onClick)="common.openCoronet()"
 				[isDisabled]="!common?.connectedHomeSecurity"
 				linkId="chs-btn-goToDashboard"
 				btnHeight=true
@@ -107,7 +107,7 @@
 			</vtr-ui-button>
 		</div>
 	</div>
-	<div *ngIf="account?.role === 'user'" class="p-40 mt-5">
+	<div *ngIf="account?.role !== 'admin'" class="mt-5">
 		<div class="d-flex flex-column justify-content-center pb-3">
 			<p class="m-0" [innerHTML]="'homeSecurity.overview.disconnectDevice' | translate"></p>
 		</div>

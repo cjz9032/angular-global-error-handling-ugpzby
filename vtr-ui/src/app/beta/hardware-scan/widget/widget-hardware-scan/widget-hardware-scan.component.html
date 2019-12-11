@@ -10,8 +10,23 @@
                 </div>
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
-                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" [disabled]="disableQuickScan" (click)="onQuickScan()">{{buttonText}}</button>
-                        <a [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">{{anchorText}}</a>
+                        <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" 
+                            vtrMetrics 
+                            metricsEvent="FeatureClick" 
+                            metricsParent="HardwareScan"
+                            metricsItem="HardwareScan.QuickScan"
+                            [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+                            [disabled]="disableQuickScan" 
+                            (click)="onQuickScan()">{{buttonText}}</button>
+                        <a 
+                            vtrMetrics 
+                            metricsEvent="FeatureClick" 
+                            metricsParent="HardwareScan"
+                            metricsItem="HardwareScan.CustomizeScan"
+                            [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+                            [ngClass]="{'action-anchor': !disableQuickScan, 'disabled-anchor': disableQuickScan}" (click)="onAnchor()">
+                            {{anchorText}}
+                        </a>
                     </div>
                 </div>
                 <div *ngIf="showProgress" class="col row hwscan-header">
@@ -32,7 +47,7 @@
 
 
                     <div class="col col-12 row">
-                        <div class="cancel-check" *ngIf="!(percent === 100)">
+                        <div class="cancel-check" *ngIf="!(percent === 100)" title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
                             <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" (click)="onCancel()">{{cancelText}}</button>
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">

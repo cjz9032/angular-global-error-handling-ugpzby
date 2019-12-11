@@ -258,6 +258,39 @@ export class PowerService {
 
 	// Power smart settings
 	// ----------start ITC Capable
+	public getPMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getPMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getEMDriverStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getEMDriverStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getITSServiceStatus(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getITSServiceStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
@@ -454,6 +487,31 @@ export class PowerService {
 		}
 	}
 	// -------------End IdeaPad
+	// ------------- Start DYTC 6.0 -------------------
+
+	public getAMTCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getAMTCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getAMTSetting(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getAMTSetting();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	// ------------- End DYTC 6.0 -------------------
+
 
 	// End Power smart settings
 
@@ -582,6 +640,53 @@ export class PowerService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+
+	public getIsAutonomicCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.getIsAutonomicCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
+		console.log('setSmartStandbyIsAutonomic: ', value);
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getSmartStandbyIsAutonomic(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyIsAutonomic();
+		}
+		return undefined;
+	}
+	public getSmartStandbyPresenceData(): Promise<any> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyPresenceData();
+		}
+		return undefined;
+	}
+	public GetSmartStandbyActiveHours(): Promise<any> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getSmartStandbyActiveHours();
+		}
+		return undefined;
+	}
+	public getIsPresenceDataSufficient(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionSmartStandby.getIsPresenceDataSufficient();
+		}
+		return undefined;
 	}
 
 	public getGaugeResetCapability(): Promise<boolean> {

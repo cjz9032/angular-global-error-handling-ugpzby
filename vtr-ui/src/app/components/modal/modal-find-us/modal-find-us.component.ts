@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
@@ -31,5 +31,11 @@ export class ModalFindUsComponent implements OnInit, AfterViewInit {
 
 	public onCancelClick() {
 		this.activeModal.close(false);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.Find-Us-Modal') as HTMLElement;
+		modal.focus();
 	}
 }

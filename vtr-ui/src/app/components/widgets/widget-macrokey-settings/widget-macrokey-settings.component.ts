@@ -14,6 +14,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { isUndefined } from 'util';
 import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macrokey-recorded-change.model';
 import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macrokey-input-change.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
@@ -23,34 +24,38 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	macroKeyOptions: any = [
 		{
-			title: 'gaming.macroKey.status.on.title',
-			name: 'gaming.macroKey.status.on.title',
-			description: 'gaming.macroKey.status.on.description',
-			id: 'macro key settings on',
-			label: 'on',
-			metricitem: 'macrokey_settings_on',
-			value: 1
-		},
-		{
-			title: 'gaming.macroKey.status.whileGaming.title',
-			name: 'gaming.macroKey.status.whileGaming.title',
-			description: 'gaming.macroKey.status.whileGaming.description',
-			id: 'macro key settings enabled when gaming',
-			label: 'macro key settings enabled when gaming',
-			metricitem: 'macrokey_settings_enabled_when_gaming',
-			value: 2
-		},
-		{
-			title: 'gaming.macroKey.status.off.title',
-			name: 'gaming.macroKey.status.off.title',
-			description: 'gaming.macroKey.status.off.description',
-			id: 'macro key settings off',
-			label: 'macro key settings off',
-			metricitem: 'macrokey_settings_off',
-			value: 3
+			dropOptions: [
+				{
+					title: 'gaming.macroKey.status.on.title',
+					name: 'gaming.macroKey.status.on.title',
+					description: 'gaming.macroKey.status.on.description',
+					id: 'macro key settings on',
+					label: 'gaming.macroKey.narrator.macrokeySettings1.option1',
+					metricitem: 'macrokey_settings_on',
+					value: 1
+				},
+				{
+					title: 'gaming.macroKey.status.whileGaming.title',
+					name: 'gaming.macroKey.status.whileGaming.title',
+					description: 'gaming.macroKey.status.whileGaming.description',
+					id: 'macro key settings enabled when gaming',
+					label: 'gaming.macroKey.narrator.macrokeySettings1.option2',
+					metricitem: 'macrokey_settings_enabled_when_gaming',
+					value: 2
+				},
+				{
+					title: 'gaming.macroKey.status.off.title',
+					name: 'gaming.macroKey.status.off.title',
+					description: 'gaming.macroKey.status.off.description',
+					id: 'macro key settings off',
+					label: 'gaming.macroKey.narrator.macrokeySettings1.option3',
+					metricitem: 'macrokey_settings_off',
+					value: 3
+				}
+			]
 		}
 	];
-
+	tooltips_value: any = '';
 	numberSelected;
 	isNumpad: Boolean = true;
 	isRecording: Boolean = false;
@@ -65,7 +70,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		private router: Router,
 		private commonService: CommonService,
-		private gamingCapabilityService: GamingAllCapabilitiesService
+		private gamingCapabilityService: GamingAllCapabilitiesService,
+		private translate: TranslateService
 	) { }
 
 	ngOnInit() {
@@ -94,6 +100,20 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		this.numberSelected = this.macroKeyRecordedStatus.filter(
 			(number) => number.key === this.macroKeyInputData.key
 		)[0];
+
+
+		// let tipid = 2;
+		// if (this.macroKeyTypeStatus.MacroKeyStatus == tipid) {
+		// 	this.macroKeyOptions.dropOptions.forEach((option) => {
+		// 		if (option.value == tipid) {
+		// 			this.tooltips_value = this.translate.instant(option.name);
+		// 		}
+		// 	});
+		// }
+		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
+			this.tooltips_value = this.translate.instant('gaming.macroKey.status.whileGaming.title');
+		}
+
 	}
 
 	initMacroKeySubpage() {
@@ -204,6 +224,13 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	optionChanged(option: any) {
+
+		if (option.value == 2) {
+			this.tooltips_value = this.translate.instant(option.name);
+		} else {
+			this.tooltips_value = '';
+		}
+
 		this.macroKeyService.setMacroKeyApplyStatus(option.value).then((responseStatus) => {
 			if (responseStatus) {
 				// Setting the value of macrokey status dropdown

@@ -56,6 +56,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	@Input() isDisabled = false;
 	@Input() metricsParent = '';
 	@Input() isAdminRequired = false;
+	@Input() isRebootRequired = false;
+	@Input() label = '';
 	public contentExpand = false;
 
 
@@ -69,7 +71,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
-
 		// this.commonService.notification.subscribe((notification: AppNotification) => {
 		// 	this.onNotification(notification);
 		// });
@@ -98,6 +99,9 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 							this.toggleOnOff.emit($event);
 						} else if (result === 'negative') {
 							this.isSwitchChecked = !this.isSwitchChecked;
+							if (document.getElementById('ds-power-battery-threshold-onOffButton')) {
+								document.getElementById('ds-power-battery-threshold-onOffButton').focus();
+							}
 						}
 					},
 					reason => {
@@ -112,14 +116,20 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 		this.rebootConfirm($event);
 	}
 	public rebootConfirm($event) {
-		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title')) {
+		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title') || this.isRebootRequired) {
 			this.isSwitchChecked = !this.isSwitchChecked;
-			this.modalService.open(ModalRebootConfirmComponent, {
+			const modalRef = this.modalService.open(ModalRebootConfirmComponent, {
 				backdrop: 'static',
 				size: 'sm',
 				centered: true,
 				windowClass: 'Battery-Charge-Threshold-Modal'
-			}).result.then(
+			});
+			if (this.isRebootRequired) {
+				modalRef.componentInstance.description = 'device.deviceSettings.inputAccessories.fnCtrlKey.restartNote';
+			} else {
+				modalRef.componentInstance.description = 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.description';
+			}
+			modalRef.result.then(
 				result => {
 					if (result === 'enable') {
 						this.rebootToggleOnOff.emit($event);
@@ -154,7 +164,6 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit {
 			this.deviceService.launchUri(linkPath);
 		}
 	}
-
 	voicePopUp() {
 		console.log('modal open');
 		console.log(this.voiceValue);

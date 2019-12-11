@@ -1,54 +1,52 @@
 <div class="vtr-voice">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="d-flex justify-content-between">
-					<p class="context">{{'device.smartAssist.voice.description' | translate}}</p>
-					<button id="voice-install-or-launch-btn"
-						attr.aria-label="voice-install-or-launch-btn"
-						*ngIf="!showLoader"
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="Device.SmartAssist"
-						metricsItem="Voice{{voiceStatus}}Button"
-						type="button"
-						class="btn btn-primary btn-block install-btn"
-						(click)="btnClicked()">
-						{{ btnText | uppercase }}
-					</button>
-					<vtr-spinner *ngIf="showLoader"
-						class="blue-theme"></vtr-spinner>
-					<!-- <button type="button"
+	<div class="row">
+		<div class="col-12">
+			<div class="d-flex justify-content-between">
+				<p class="context">{{'device.smartAssist.voice.description' | translate}}</p>
+				<button id="voice-install-or-launch-btn"
+					attr.aria-label="voice-install-or-launch-btn"
+					*ngIf="!showLoader"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					metricsParent="Device.SmartAssist"
+					metricsItem="Voice{{voiceStatus}}Button"
+					type="button"
+					class="btn btn-primary btn-block install-btn"
+					(click)="btnClicked()">
+					{{ btnText | uppercase }}
+				</button>
+				<vtr-spinner *ngIf="showLoader"
+					class="blue-theme"></vtr-spinner>
+				<!-- <button type="button"
 						class="btn btn-primary btn-block install-btn">{{'device.smartAssist.voice.launchBtnText' | translate | uppercase }}</button> -->
-				</div>
 			</div>
 		</div>
-		<ul class="list-group list-group-flush">
-			<li class="">
-				<vtr-ui-row-switch [switchId]="'voiceToText'"
-					[title]="'device.smartAssist.voice.voiceToText.title' | translate"
-					[caption]="'device.smartAssist.voice.voiceToText.caption' | translate"
-					[leftIcon]="['icomoon', 'icomoon-voice-to-text']"
-					[rightIcon]="['far', 'question-circle']"
-					[voice]="true"
-					[voiceValue]="voiceToText"
-					[showChildContent]="true"
-					[metricsParent]="'VoiceToText'">
-				</vtr-ui-row-switch>
-			</li>
-			<li class="">
-				<vtr-ui-row-switch [switchId]="'voiceTranslation'"
-					[isLastChild]="true"
-					[title]="'device.smartAssist.voice.translation.title' | translate"
-					[caption]="'device.smartAssist.voice.translation.caption' | translate"
-					[leftIcon]="['icomoon', 'icomoon-translation']"
-					[rightIcon]="['far', 'question-circle']"
-					[voice]="true"
-					[voiceValue]="translation"
-					[showChildContent]="true"
-					[metricsParent]="'Translation'">
-				</vtr-ui-row-switch>
-			</li>
-		</ul>
 	</div>
+	<ul class="list-group list-group-flush">
+		<li class="">
+			<vtr-ui-row-switch [switchId]="'voiceToText'"
+				[title]="'device.smartAssist.voice.voiceToText.title' | translate"
+				[caption]="'device.smartAssist.voice.voiceToText.caption' | translate"
+				[leftIcon]="['icomoon', 'icomoon-voice-to-text']"
+				[rightIcon]="['far', 'question-circle']"
+				[voice]="true"
+				[voiceValue]="voiceToText"
+				[showChildContent]="true"
+				[metricsParent]="'VoiceToText'">
+			</vtr-ui-row-switch>
+		</li>
+		<li class="">
+			<vtr-ui-row-switch [switchId]="'voiceTranslation'"
+				[isLastChild]="true"
+				[title]="'device.smartAssist.voice.translation.title' | translate"
+				[caption]="'device.smartAssist.voice.translation.caption' | translate"
+				[leftIcon]="['icomoon', 'icomoon-translation']"
+				[rightIcon]="['far', 'question-circle']"
+				[voice]="true"
+				[voiceValue]="translation"
+				[showChildContent]="true"
+				[metricsParent]="'Translation'">
+			</vtr-ui-row-switch>
+		</li>
+	</ul>
 </div>

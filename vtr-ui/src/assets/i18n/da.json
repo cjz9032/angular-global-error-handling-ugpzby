@@ -81,7 +81,7 @@
                     "line2": "<b>Oversigt over funktionsstyring</b> <br> Nogle funktioner er ikke tilgængelige på alle enheder",
                     "line3": "<b>CPU-overclocking</b><br> Øg processorens hastighed til det optimale",
                     "line4": "<b>RAM-overclocking</b><br> Øg hukommelsens hastighed til det optimale",
-                    "line5": "<b>Netværksforstærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
+                    "line5": "<b>Netværksfor-stærkning</b><br> Prioriter netværkstrafik for det spil, du spiller",
                     "line6": "<b>Dolby</b><br> Optimer din lyd, især til spil, med Dolby-teknologi",
                     "line7": "<b>Hybridtilstand</b><br> Deaktiver avancerede GPU-indstillinger, når du ikke spiller, for at øge batteriets ydeevne",
                     "line8": "<b>Hurtig opladning</b><br> Spil længere tid på farten med hurtigere batteriopladning",
@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Er du sikker på, at du vil rydde denne makro-tast?"
+                    "title": "Er du sikker på, at du vil rydde denne makro-tast?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Timeout for optagelse.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "Optager makro-tast for"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "Farve"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "Der er ingen kørende apps at tilføje",
                 "body": "Kun apps, der kører i øjeblikket, vises. Start en app, du vil tilføje, og vend tilbage."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "Du kan tilføje op til 5 yderligere apps",
                     "part2": "af",
                     "part3": "tilføjet"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "WiFi-sikkerhed",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "AKTIVERET",
             "disabled": "DEAKTIVERET",
             "partiallyProtected": "DELVIST BESKYTTET",
@@ -456,7 +641,8 @@
             "installing": "INSTALLATION",
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
-            "notRegistered": "IKKE REGISTRERET"
+            "notRegistered": "IKKE REGISTRERET",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -475,7 +661,10 @@
             "collapse": "Skjul",
             "expand": "Udvid",
             "loader": "Henter <br> Status",
-            "loading": "Indlæser..."
+            "loading": "Indlæser...",
+            "from": "fra",
+            "to": "til",
+            "clickToChange": "klik for at ændre"
         },
         "app-update": {
             "message": "Hej! Der findes en nyere version af Vantage. Vil du indlæse den?"
@@ -552,7 +741,9 @@
                 "accessUrl": "Gå til Windows-indstillingerne for at give adgang",
                 "microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
                 "cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
-            }
+            },
+            "threshold": "Grænse",
+            "conservation": "Bevaring"
         },
         "systemStatus": {
             "title": "Systemstatus",
@@ -602,9 +793,9 @@
                 "notFound": "Der blev ikke fundet en systemopdatering",
                 "detail": {
                     "uptoDate": "Der er søgt efter opdateringer ",
-					"updatedOn": "søgt den ",
-					"outdated": "Der er ikke søgt efter opdateringer for nylig ",
-					"neverRanUpdate": "der er aldrig søgt efter opdateringer"
+                    "updatedOn": "søgt den ",
+                    "outdated": "Der er ikke søgt efter opdateringer for nylig ",
+                    "neverRanUpdate": "der er aldrig søgt efter opdateringer"
                 }
             },
             "extendedWarranty": "Garanti, udvidet",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "Det batteri, der er installeret, <b>understøttes ikke</b> af dette system og vil ikke blive opladet. Udskift batteriet med det korrekte Lenovo-batteri til systemet.",
                     "Good": "<b>Batteriets tilstand er god.</b>",
-                    "Exhaustion": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
+                    "Exhaustion": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "Bad": "<b>Der er opstået en batterifejl.</b> Batteriet kan ikke oplades/aflades. Udskift batteriet.",
                     "NotDetected": "<b>Der er ikke registreret et batteri</b>, eller der er ikke tilsluttet noget batteri.",
                     "NotGood": "<b>Batteriets tilstand er ikke god.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "<b>Afladning</b> er stoppet, fordi <b>batteriets temperatur er for høj.</b>",
                     "TrickleCharge": "Batteriet er blevet <b>fuldstændigt afladet</b> og skal genoplades. Dette kan tage op til ti timer eller mere.",
                     "OverheatedBattery": "Batteriet er <b>for varmt</b>. Tag det ud af computeren, og lad det køle af til almindelig stuetemperatur.",
-                    "PermanentError": "Der er opstået en <b>batterifejl pga. almindelig slid.</b> Batteriet kan ikke oplades. Udskift batteriet.",
+                    "PermanentError": "Batteriets kapacitet er blevet <b>forringet</b>. Udskift det med et nyt.",
                     "NotSupportACAdapterDetail": "<b>Vekselstrømsadapter understøttes ikke.</b> Din Lenovo-computer understøtter ikke denne vekselstrømsadapter. Den kan forårsage pludselig nedlukning. Tilslut en korrekt vekselstrømsadapter.",
-                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter."
+                    "LimitedACAdapterSupportDetail": "<b>Vekselstrømsadapteren kan ikke levere nok strøm</b> til din Lenovo-computer. Det vil påvirke systemets ydeevne og opladningshastigheden. Tilslut den korrekte vekselstrømsadapter.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-strømforsyning er tilsluttet.</b>"
                 },
                 "batteryNotDetected": "Der blev ikke fundet noget batteri",
                 "thresholdNote": "<b>Bemærk:</b> Batteriet kan ikke blive fuldt opladet, når Opladningsgrænse for batteri er aktiveret.",
@@ -783,7 +975,7 @@
                             "close": "luk",
                             "coolingModesList": {
                                 "list1": "Klik på Windows-batteriikonet på værktøjslinjen",
-                                "list2": "Windows-batterimåleren vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
+                                "list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "Intelligent køling justerer blæserens hastighed, den maksimale ydeevne og administrerer batterilevetiden. Denne funktion har tre tilstande (stille tilstand, balanceret tilstand og ydeevnetilstand), og den er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows",
-                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille."
+                    "nocqldesc": "Intelligent køling gør det muligt for dig at justere systemets ydeevne og termiske temperaturer. I tilstanden \"Ydeevne\" optimeres systemets ydeevne. I tilstanden \"Kølig og stille\" holdes systemet køligere eller mere stille.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Strømindstillinger",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "Smart-standby",
                     "description": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte starttidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres på baggrund af den tidsplan, du angiver. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
+                    "tooltip": "Når Smart-standby er aktiveret, skifter computeren til Moderne standby før det planlagte STARTtidspunkt og går i dvale, når den har været inaktiv i et bestemt tidsrum på batteristrøm. Dette tidsrum optimeres baseret på den tidsplan, du har valgt, eller den tid for computerbrug, som vi får. Computeren skifter kun fra dvale til Moderne standby på planlagte dage, og den skifter ikke, når den er inaktiv i flere planlagte dage efter hinanden.",
                     "timer": {
-                        "heading": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                        "heading": "Det tidspunkt, hvor du normalt bruger denne computer",
                         "subHeading1": "starter",
                         "subHeading2": "slut",
                         "subHeading3": "brug denne tidsplan for",
@@ -941,7 +1154,8 @@
                             "wed": "Onsdag",
                             "thurs": "Torsdag",
                             "fri": "Fredag",
-                            "sat": "Lørdag"
+                            "sat": "Lørdag",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Søndag",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "Hver dag",
                         "weekdays": "Hverdage",
-                        "weekends": "Weekender"
-                    }
+                        "weekends": "Weekender",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "Automatisk justering af computerens aktive tid baseret på din brug",
+                    "hyperlinkToGraph": "Klik for at se aktiviteten og den aktive tid ved dit computerbord",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1194,7 +1453,24 @@
                             "description": "Ændring af standardfunktionen for øverste række kræver, at du genstarter computeren. Er du sikker på, du vil genstarte?",
                             "reboot": "GENSTART",
                             "cancel": "IKKE NU"
+                        },
+                        "note": {
+                            "sFunKey": "Hvis du vil have adgang til F1-F12-funktionen, skal du trykke på Fn og tasterne på den øverste række.",
+                            "fnKey": "Hvis du vil have adgang til den særlige funktion, skal du trykke på Fn og tasterne på den øverste række."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-genvejsfunktioner:",
+                        "description": {
+                            "main": "Med denne funktion kan du besvare eller afvise et VoIP-opkald ved at trykke på genvejstasterne på tastaturet:",
+                            "f10": "F10: Besvar opkaldet",
+                            "f11": "F11: Afvis eller afbryd opkaldet"
+                        },
+                        "tooltip": "Denne funktion understøttes i øjeblikket kun i Skype for Business 2016 og Microsoft Teams 1.0.<br>Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps.",
+                        "hasInstalledAppsDescription": "Vælg den app, som du vil bruge genvejstasterne på:",
+                        "noInstalledAppsDescription": "Funktionen understøtter kun nedenstående programmer: ",
+                        "hasInstalledAppsNote": "Bemærk: for Microsoft Teams 1.0 kan du ikke bruge F11-tasten til at afbryde opkaldet.",
+                        "noInstalledAppsNote": "Bemærk: Hvis du vil bruge funktionen, skal du først downloade og installere de relevante apps."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "ANVEND"
                     },
                     "website": {
-                        "url": "URL TIL WEBSTED"
+                        "url": "URL TIL WEBSTED",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "TEKST, DER SKAL SKRIVES"
+                        "title": "TEKST, DER SKAL SKRIVES",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Ombytning af Fn- og Ctrl-tast",
+                    "description": "Hvis du ofte kommer til at trykke på Fn-tasten, når du vil trykke på Ctrl-tasten, kan du bytte om på funktionen for de to taster.",
+                    "restartNote": "Hvis du vil bytte om på funktionen for to taster, skal computeren genstartes. Er du sikker på, du vil genstarte?"
                 },
                 "controlOptions": {
                     "more": "FLERE",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "Logon uden berøring",
                     "caption": "Denne funktion aktiverer eller låser automatisk computeren op, når du sidder foran den eller nærmer dig den.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Når du sidder foran computeren eller nærmer dig den (inden for en afstand af 1,2 meter), kan du bruge denne funktion til at logge på systemet automatisk, når dit ansigt genkendes. Hvis du er udendørs i stedet for på kontoret, skal du være tættere på computeren, og opvågningen vil tage længere tid."
                 },
                 "zeroTouchLock": {
                     "title": "Lås uden berøring",
@@ -1270,6 +1551,17 @@
                             "slow": "Langsomt"
                         },
                         "toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det."
+                    },
+                    "facialRecognition": {
+                        "title": "ANSIGTSGENKENDELSE",
+                        "caption": "Du kan aktivere ansigtsgenkendelsesfunktionen og tillade, at den får adgang til kameraet. Dette værktøj tager et billede af dig for at kunne registrere din tilstedeværelse med præcision eller registrere, når du har forladt din enhed uden opsyn. Disse data behandles lokalt på din enhed. Lenovo kan ikke få adgang til eller bruge dem.",
+                        "checkBox": "Tænd for kameraet, og aktivér denne funktion",
+                        "note": {
+                            "permission": "Lenovo Vantage har ikke adgang til kamera. Afkrydsningsfeltet fungerer ikke.",
+                            "privacyMode": "Privat kameratilstand er aktiveret for Lenovo Vantage. Afkrydsningsfeltet fungerer ikke.",
+                            "windowsLink": "Gå til Windows-indstillinger for at give adgang",
+                            "privacyLink": "Gå til privat kameratilstand for at slå det fra"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "Den automatiske afstandsjustering opdaterer automatisk registreringsafstanden via en AI-funktion.",
                     "options": {
                         "near": "Tæt på",
-                        "far": "Langt"
+                        "far": "Langt",
+                        "medium": "Mellem"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Når funktionen er aktiveret, justeres registreringsafstanden automatisk. Du kan også angive registreringsafstanden manuelt med skyderen. Du kan vælge mellem:",
+                        "context2": "Når du indstiller registreringsafstanden, skal du være opmærksom på følgende:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Tæt på: 0-0,42 meter",
+                            "line2": "Mellem: 0-0,60 meter",
+                            "line3": "Langt: 0-1,20 meter",
+                            "line4": "Den maksimale registreringsafstand er 1,2 meter. Hvis der er mere end 1,2 meter, vil sensoren ikke registrere din tilstedeværelse.",
+                            "line5": "Den anbefalede registreringsafstand er inden for 0,60 meter."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "Denne funktion er afhængig af Windows Hello. Kontrollér, at ansigtsgenkendelse er slået til i Windows-indstillinger.",
                     "description2": "Funktionen bruger sensorer og kameraet til at registrere din tilstedeværelse. Men funktionen indsamler IKKE personlige data.",
                     "description3": "1. Hvis din computer er i Telt-, Tablet- eller Støtte-tilstand, fungerer disse funktioner muligvis ikke korrekt.",
-                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket. Logon uden berøring fungerer ikke.",
+                    "description4": "2. Hvis computeren er i slumretilstand eller er slukket, vil logon uden berøring ikke fungere.",
                     "description5": "3. Juster computerskærmen til en vinkel, så det infrarøde kamera kan genkende dit ansigt til automatisk logon.",
-                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret."
+                    "description6": "4. Hvis Flytilstand er aktiveret på din computer, er disse funktioner deaktiveret.",
+                    "description7": "Nøjagtigheden varierer efter kropsstørrelse, stilling og bevægelseshyppighed. Hvis computeren bliver låst uventet, skal du justere følsomhedsvælgeren for at forbedre nøjagtigheden."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Gå til indstillinger for Windows Hello",
                     "screenTimeoutSettings": "Gå til indstillinger for skærmtimeout"
                 },
-                "resetToDefault": "Nulstil"
+                "resetToDefault": "Nulstil",
+                "sensitivityAdjusting": {
+                    "title": "JUSTERING AF FØLSOMHED"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent skærm",
@@ -1370,6 +1667,18 @@
                 "title": "Videoafspilning uden berøring",
                 "desc": "Denne funktion afbryder videoen, når du forlader computeren, og genoptager videoen, når du er tilbage.",
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
+            },
+            "superResolution": {
+                "heading": "Intelligente medier",
+                "title": "Opskalering af videoopløsning",
+                "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
+                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Denne funktion virker ikke i disse situationer:",
+                    "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
+                    "description2": "Computeren er ikke tilsluttet til vekselstrøm, og strømsparetilstand er aktiveret.",
+                    "description3": "CPU-temperaturen er for høj."
+                }
             },
             "voice": {
                 "title": "stemme",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Fuldt beskyttet",
-            "fullyDesc": "Tillykke. Du er godt beskyttet.",
             "notFully": "Ikke fuldt beskyttet",
-            "notFullyDesc": "Du er ikke fuldt beskyttet. Lær, hvordan du beskytter dig selv nu.",
             "security101": "SIKKERHEDSVEJLEDNING 101",
             "firewall": "Firewall",
             "pwdHealth": "Adgangskodesundhed",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "WiFi & Tilsluttet Home Security",
             "connectedHomeSecurity": "Tilsluttet Home Security",
             "fingerprint": "Fingeraftrykslæser",
-            "seeAllNetwork": "Se alle tilsluttede netværk",
-            "maliciousNetwork": "Forhindrer computeren i at blive tilsluttet {{maliciousWifi}}skadelige netværk denne måned.",
-            "good": "GODT",
-            "malicious": "SKADELIGT",
-            "suspicious": "MISTÆNKELIGT",
-            "securityScoreDepends": "Dit sikkerhedsresultat afhænger af, om du er:",
-            "antivirus": "Er beskyttet af antivirussoftware",
-            "password": "Har stærke og komplekse adgangskoder, der administreres på en sikker måde",
-            "vpn": "Overvåger om dit netværk udsættes for hackerangreb",
-            "wifi": "Krypterer dine personlige data, når du bruger offentligt WiFi",
-            "windowsHello": "Beskytter din enhed med indstillinger til sikker login"
+            "uacTitle": "Hvad er Kontrol af brugerkonti (UAC-meddelelse)?",
+            "uacText": "Kontrol af brugerkonti er en meget vigtig sikkerhedsfunktion i Windows, der forhindrer, at potentielt skadelige programmer kan foretage ændringer af systemet.",
+            "windowsTitle": "Hvorfor skal jeg aktivere Windows?",
+            "windowsText": "Hvis du bruger en uægte kopi af Windows, kan du blive udsat for større risiko for virus og andre sikkerhedstrusler.",
+            "encryptionTitle": "Hvad er kryptering af harddisk?",
+            "encryptionText": "Denne funktion giver mulighed for kryptering af en hel harddisk og beskytter på den måde dine data mod uautoriseret adgang, også selvom drevet fjernes fra den aktuelle computer og sættes i andre enheder.",
+            "passwordTitle": "Hvordan beskytter jeg min adgangskode bedre?",
+            "passwordText": "Du kan gemme og administrere alle dine adgangskoder sikkert ved at kryptere dem med en professionel, digital beskyttelsesapp i stedet for at gemme dem i webbrowseren, der nemt kan tilgås af en tredjepart, uden at du ved det.",
+            "enhanceTitle": "Hvad skal jeg gøre for at forbedre sikkerheden?",
+            "enhanceText": "Vi anbefaler, at du beskytter dine enheder med antivirussoftware og en firewall og konfigurerer Kontrol af brugerkonti (UAC-meddelelse) til minimumsbeskyttelse. Opret desuden stærke adgangskoder, som du opbevarer på en sikker måde, og krypter dine data, når du bruger offentlige netværk, som udvidet beskyttelse.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "Brug din pc som en tablet",
             "description": "<div class='faqInFs4Fb'>    Brug din pc som en tablet</div><hr><p>Tablettilstand gør Windows mere intuitiv og nemmere at bruge, fordi du har en berøringsfølsom skærmenhed.</p><h3 class='faqInFs25FbP10'>Brug tablettilstand</h3><p>Hvis du vil aktivere tablettilstand, skal du vælge <strong>Handlingscenter</strong> på proceslinjen og derefter vælge <strong>Tablettilstand</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Bemærk</h3><p>Hvis du vil finde ud af, om din enhed kan aktivere tablettilstand automatisk, skal du søge efter enheden på producentens websted. Understøttelsen af denne funktion afhænger af hardwaren, den installerede driver, og hvordan enheden er konfigureret af producenten. </p><p> </p><p>I tablettilstand åbnes apps i fuld skærmvisning, så du får mere plads til at arbejde. Hvis du vil lukke en app, skal du trække den til bunden af skærmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>Proceslinjen er tilgængelig, når pc'en er i tablettilstand, men du kan skjule den, hvis du vil have mere plads på skærmen. Vælg knappen <strong>Start</strong>, vælg <strong>Indstillinger </strong>> <strong>System </strong>> <strong>Tablettilstand</strong>, og aktivér derefter <strong>Skjul automatisk proceslinjen i tablettilstand</strong>. Hvis du vil se den skjulte proceslinje, skal du stryge opad fra bunden af skærmen eller bruge musen til at pege på den.</p><h3 class='faqInFs25FbP10'>Brug to apps samtidigt</h3><p>Hvis du vil bruge to apps side om side i tablettilstand, skal du trække en åben app nedad og til siden. Du kan se, hvor den bliver fastgjort, og du vil få vist alle åbne apps ved siden af den.</p><p>I denne visning kan du også:</p><ul>    <li>Bruge den fælles kant mellem to fastgjorte apps til at tilpasse størrelsen på begge apps samtidigt.</li>    <li>Åbn en ny app fra opgavevisningen. Vælg <strong>Opgavevisning</strong> på proceslinjen, vælg en app, og træk den derefter til den ene side for at fastgøre den på den delte skærm.</li>    <li>Brug knappen Tilbage på proceslinjen til at gå tilbage i en app eller åbne en app, du har brugt før.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "Udførelsen af scanning og reparation kan medføre tab af data. Det anbefales, at du tager en sikkerhedskopi, før du udfører denne handling. Er du sikker på, at du vil fortsætte?",
                 "yes": "Ja",
                 "no": "Nej"
-            }
+            },
+            "waitAvailability": "Knappen deaktiveres, mens hardwareoplysningerne endnu ikke er hentet, hvis lagerenhederne ikke understøtter denne funktion, eller når gendannelsen af beskadigede sektorer kører."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "Er du sikker på, at du vil annullere?",
         "cancelTextProgress": "Vent et øjeblik, mens status annulleres",
         "pluginNotUpdate": "Hardwaresøgning er ikke tilgængelig, fordi den er forældet. Opgrader den.",
-        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning"
+        "testNotApplicable": "Kan ikke benyttes ved tilpasset søgning",
+        "waitScanStarts": "Vent, indtil scanningen starter",
+        "reminderTimeRetrieveHardwareInformation": "Det kan tage lidt tid at hente dine hardwareoplysninger",
+        "retrievingHardwareInformation": "Henter hardwareoplysninger...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Hukommelse",
+            "motherboard": "Systemkort",
+            "pci_express": "PCI Express",
+            "storage": "Lager",
+            "wireless": "Trådløs"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

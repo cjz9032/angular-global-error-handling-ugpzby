@@ -12,41 +12,62 @@
 		</div>
 	</form> -->
 
-<vtr-settings-page-layout [pageTitle]="'common.menu.device.sub2' | translate"
-	[backLinkText]="'common.ui.back' | translate" [textId]="'myDevice-settings'" [parentPath]="parentPath"
-	[menuItems]="menuItems" [pageCssClass]="'device-settings'">
+
+<vtr-page-layout [title]="'common.menu.device.sub2' | translate"
+	[back]="'common.ui.back' | translate"
+	[textId]="'myDevice-settings'"
+	[parentPath]="parentPath"
+	[menuItems]="menuItems"
+	[pageCssClass]="'device-settings'"
+	[shiftLeftUp]="false"
+	[shiftRightUp]="true">
 
 	<left-content>
-		<div class="mt-5">
-			<router-outlet></router-outlet>
+		<div class="mt-5"
+			#hsRouterOutlet>
+			<router-outlet (activate)="onRouteActivate($event, hsRouterOutlet)"></router-outlet>
 		</div>
 	</left-content>
 
 	<right-content>
 		<div class="container-fluid">
 			<div class="row mb-40">
-				<div class="col col-12" [ngClass]="{'battery-unavailable': isDesktopMachine}">
+				<div class="col col-12"
+					[ngClass]="{'battery-unavailable': isDesktopMachine}"
+					role="text"
+					tabindex="0"
+					id="battery-details">
 					<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
 				</div>
 			</div>
 			<div class="row mb-40">
 				<div class="col col-12 cont">
-					<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
-					</div>
 					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-						[description]="'common.qAndA.subtitle' | translate" [items]="qaService.qas" blockPosition="r2"
+						[description]="'common.qAndA.subtitle' | translate"
+						[items]="qaService.qas"
+						blockPosition="r2"
 						[linkId]="'device-settings-qa'"></vtr-widget-questions>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col col-12">
-					<vtr-container-card [img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
-						[caption]="cardContentPositionA.Description" [title]="cardContentPositionA.Title"
-						[logoText]="cardContentPositionA.BrandName" [action]="cardContentPositionA.Action"
-						[actionType]="cardContentPositionA.ActionType" [actionLink]="cardContentPositionA.ActionLink"
-						[type]="'corner-article'" [ratioX]="4" [ratioY]="2" order="3" sideFlag='r'
-						[cornerShift]="'large'" id="device-settings-container-card"
-						aria-label="device-settings-container-card"
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						[itemID]="cardContentPositionA.Id"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[type]="'corner-article'"
+						[ratioX]="4"
+						[ratioY]="2"
+						order="3"
+						sideFlag='r'
+						[cornerShift]="'large'"
+						id="device-settings-container-card"
+						attr.aria-label="device-settings-container-card-{{cardContentPositionA.Title}}"
+						role="link"
 						[containerCardId]="'device-settings-container-card'">
 					</vtr-container-card>
 				</div>
@@ -54,4 +75,4 @@
 		</div>
 	</right-content>
 
-</vtr-settings-page-layout>
+</vtr-page-layout>

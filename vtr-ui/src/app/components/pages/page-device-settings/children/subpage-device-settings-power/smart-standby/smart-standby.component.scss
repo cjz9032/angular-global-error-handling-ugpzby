@@ -3,24 +3,120 @@ ul.list-group {
 	list-style-type: none;
 	padding-bottom: 1rem;
 }
-.smart-standby-timer {
-	margin-left: 1rem;
+.schedule_header{
+	padding: 0 1rem;
 	h5 {
-		font-size: $base;
+		font-size: $caption;
 		color: $shade_blue;
 		font-weight: $weight_bold;
 		letter-spacing: 0.89px;
 		line-height: 23px;
+		text-transform: uppercase;
+		margin-bottom: 2.5rem;
 	}
-	.note {
-		border: 1px solid #ecf0f1;
-		border-radius: 0.5rem;
-		background-color: #f5f7f8;
-		padding: 2rem;
-		width: 80.9%;
-		margin-top: 1.5rem;
-		line-height: 23px;
-		font-size: 1.6rem;
+}
+.schedule {
+	margin-top: 2rem;
+	margin-left: 1rem;
+	span {
+		font-size: $body;
+		font-weight: $weight_light;
+		color: $main_darker;
+	}
+	h5 {
+		font-size: $caption;
 		color: $shade_blue;
+		// font-weight: $weight_bold;
+		letter-spacing: 0.89px;
+		line-height: 23px;
+	}
+}
+
+
+.click-to-change-collapse {
+	margin-left: 1rem;
+	font-size: $body;
+	font-weight: $weight_600;
+	.collapse-header {
+		display: flex;
+		color: $blueHyperLink;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.collapse-header-icon {
+		flex-wrap: nowrap;
+		margin-left: 1rem;
+		cursor: pointer;
+	}
+
+	.collapse-text {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+
+	.smart-standby-timer {
+		.note {
+			border: 1px solid #ecf0f1;
+			border-radius: 0.5rem;
+			background-color: #f5f7f8;
+			padding: 2rem;
+			width: 80.9%;
+			margin-top: 1.5rem;
+			line-height: 23px;
+			font-size: 1.4rem;
+			color: $shade_blue;
+		}
+	}
+}
+
+.auto-set-checkbox {
+	margin-left: 1rem;
+	position: relative;
+	margin-bottom: 2rem;
+	input {
+		width: 1.5rem;
+		height: 1.5rem;
+		position: absolute;
+		top: 0.5rem;
+		margin-right: 0.5rem;
+		z-index: 0;
+		opacity: 1;
+		outline: 0;
+	}
+	label {
+		color: $shade_darker;
+		font-size: 1.5rem;
+		font-weight: $weight_light;
+		text-align: left;
+		padding-left: 2rem;
+	}
+}
+
+.hyperlink-to-graph {
+	margin-left: 1rem;
+	font-size: $body;
+	font-weight: $weight_light;
+	color: $blueHyperLink;
+	text-decoration: underline;
+	margin-top: 3rem;
+	cursor: pointer;
+}
+.disabled {
+	margin-left: 1rem;
+	font-size: $body;
+	font-weight: $weight_light;
+	color: black;
+	text-decoration: none;
+	margin-top: 3rem;
+	cursor: default;
+}
+.container-border {
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		border-radius: 1rem;
 	}
 }

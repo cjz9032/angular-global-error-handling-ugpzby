@@ -10,9 +10,9 @@
 		border-radius: $border_radius;
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
-		padding: 6rem;
-		@media #{$mediaquery_6} {
-			padding: 4rem;
+		padding: 4rem;
+		@media #{$breakpoint_sm} {
+			padding: 2rem;
 		}
 		&::ng-deep vtr-ui-switch-onoff {
 			.checkbox {

@@ -11,9 +11,9 @@
 			border-radius: 0.4rem;
 		}
 		.feed {
-			@extend .base-preview;
+            @extend .base-preview;
+            transform: rotateY(180deg);
 			background-color: $dark;
-			transform: rotateY(180deg);
 			&.disable {
 				cursor: not-allowed;
 			}
@@ -46,4 +46,5 @@
 		font-size: 1.3rem;
 		color: $shade_blue;
 	}
+	
 }

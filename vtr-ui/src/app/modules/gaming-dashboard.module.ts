@@ -35,6 +35,11 @@ import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTo
 import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { LocationNoticeModule } from './location-notice/location-notice.module';
+import { DialogService } from '../services/dialog/dialog.service';
+import { FeedbackModule } from './feedback/feedback.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { ModalGamingLightingComponent } from '../components/modal/modal-gaming-lighting/modal-gaming-lighting.component';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
 
@@ -53,6 +58,7 @@ library.add(faCheck);
 		PageDeviceGamingComponent,
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
+		ModalGamingLightingComponent,
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
@@ -79,18 +85,22 @@ library.add(faCheck);
 		FontAwesomeModule,
 		ContainerCardModule,
 		MetricsModule,
-		WidgetOfflineModule
+		WidgetOfflineModule,
+		LocationNoticeModule,
+		FeedbackModule,
+		PageLayoutModule
 	],
-	exports: [ TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule ],
-	providers: [ MockService ],
+	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
+	providers: [MockService, DialogService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,
 		ModalGamingLegionedgeComponent,
+		ModalGamingLightingComponent,
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent
 	],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class GamingDashboardModule {}
+export class GamingDashboardModule { }

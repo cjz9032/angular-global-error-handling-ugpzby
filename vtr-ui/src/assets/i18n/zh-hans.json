@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "是否确实要清除此宏键？"
+                    "title": "是否确实要清除此宏键？",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "录制超时。",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "录制宏键，用于"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "heading": {
                     "title": "选择概要文件："
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "没有任何要添加的正在运行的应用",
                 "body": "仅显示当前正在运行的应用。请启动要添加的应用并返回。"
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "最多可添加 5 个要加速的应用",
                     "part2": "/",
                     "part3": "已添加"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "WiFi 安全",
             "pswdMgr": "密码管理器",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "已启用",
             "disabled": "已禁用",
             "partiallyProtected": "部分受保护",
@@ -456,7 +641,8 @@
             "loading": "正在加载",
             "notFound": "未找到",
             "registered": "已注册",
-            "notRegistered": "未注册"
+            "notRegistered": "未注册",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -475,7 +661,10 @@
             "collapse": "折叠",
             "expand": "展开",
             "loader": "获取状态",
-            "loading": "载入中..."
+            "loading": "载入中...",
+            "from": "从",
+            "to": "到",
+            "clickToChange": "单击以更改"
         },
         "app-update": {
             "message": "您好！已有较新版本的 Vantage，您要加载吗？"
@@ -552,7 +741,9 @@
                 "accessUrl": "转到 Windows 设置以授予访问权限",
                 "microphoneNote": "Lenovo Vantage 无法访问麦克风。",
                 "cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
-            }
+            },
+            "threshold": "阈值",
+            "conservation": "节电"
         },
         "systemStatus": {
             "title": "系统状态",
@@ -602,9 +793,9 @@
                 "notFound": "未找到系统更新",
                 "detail": {
                     "uptoDate": "已检查更新",
-					"updatedOn": "检查时间",
-					"outdated": "最近未检查更新",
-					"neverRanUpdate": "从未检查过更新"
+                    "updatedOn": "检查时间",
+                    "outdated": "最近未检查更新",
+                    "neverRanUpdate": "从未检查过更新"
                 }
             },
             "extendedWarranty": "延长保修",
@@ -702,7 +893,7 @@
                 "condition": {
                     "Illegal": "系统<b>不支持</b>所安装的电池，电池无法充电。请将该电池更换为用于此系统的正确 Lenovo 电池。",
                     "Good": "<b>电池状况良好。</b>",
-                    "Exhaustion": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
+                    "Exhaustion": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "Bad": "<b>出现电池错误。</b>电池无法充电/放电。更换电池。",
                     "NotDetected": "<b>未检测到电池或未</b>插入电池。",
                     "NotGood": "<b>电池状况不佳。</b>",
@@ -713,9 +904,10 @@
                     "HighTemperature": "<b>由于电池温度过高</b>，电池已停止<b>放电</b>。",
                     "TrickleCharge": "电池已<b>完全放电</b>，需要再次充电。此过程可能耗时 10 小时或更长时间。",
                     "OverheatedBattery": "电池<b>过热</b>。请将其从计算机中卸下并冷却至室温。",
-                    "PermanentError": "电池<b>因正常损耗而发生故障。</b>电池无法充电。更换电池。",
+                    "PermanentError": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
-                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。"
+                    "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
@@ -795,7 +987,28 @@
                             "battery&Quite": "电池和安静状态"
                         }
                     },
-                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。"
+                    "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "电源设置",
@@ -941,7 +1154,8 @@
                             "wed": "星期三",
                             "thurs": "星期四",
                             "fri": "星期五",
-                            "sat": "星期六"
+                            "sat": "星期六",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "星期日",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "每天",
                         "weekdays": "工作日",
-                        "weekends": "周末"
-                    }
+                        "weekends": "周末",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "根据您的使用情况自动调整计算机的活动时间",
+                    "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1194,7 +1453,24 @@
                             "description": "更改首行的缺省功能后，您需要重新启动计算机。是否确实要重新启动？",
                             "reboot": "重新启动",
                             "cancel": "暂不"
+                        },
+                        "note": {
+                            "sFunKey": "要实现 F1 - F12 键的功能，请按 Fn 键和首行按键。",
+                            "fnKey": "要实现特殊功能，请按 Fn 键和首行按键。"
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 热键功能",
+                        "description": {
+                            "main": "此功能让您可以通过按键盘上的热键来接听或拒绝 VoIP 电话：",
+                            "f10": "F10：接听电话",
+                            "f11": "F11：拒绝或挂断电话"
+                        },
+                        "tooltip": "目前，仅 Skype for Business 2016 和 Microsoft Teams 1.0 支持此功能。<br>要使用此功能，您需要先下载并安装应用程序。",
+                        "hasInstalledAppsDescription": "选择要在其上使用热键的应用程序：",
+                        "noInstalledAppsDescription": "此功能仅支持以下应用程序：",
+                        "hasInstalledAppsNote": "注意：对于 Microsoft Teams 1.0，F11 键不能用于挂断电话。",
+                        "noInstalledAppsNote": "注意：要使用此功能，您需要先下载并安装应用程序。"
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "应用"
                     },
                     "website": {
-                        "url": "Web 站点 URL"
+                        "url": "Web 站点 URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "要输入的文本"
+                        "title": "要输入的文本",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "互换 Fn 键和 Ctrl 键",
+                    "description": "如果当您想要按 Ctrl 键时却习惯按下 Fn 键，则您可以互换这两个键的功能。",
+                    "restartNote": "交换两个键的功能需要重新启动计算机，确定要重新启动吗？"
                 },
                 "controlOptions": {
                     "more": "更多",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "红外摄像头自动登录",
                     "caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "当您在计算机前面或接近计算机时（在 1.2 米的距离内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。"
                 },
                 "zeroTouchLock": {
                     "title": "自动锁定屏幕",
@@ -1270,6 +1551,17 @@
                             "slow": "慢"
                         },
                         "toolTipContent": "当未检测到您的存在时，选择希望的方式以较快/中等/较慢的速度来锁定屏幕。然而，屏幕锁定的时间也会受到实际用户场景、传感器功能和 Windows 屏幕超时设置的影响。因此，我们强烈建议您在离开时即锁定系统。"
+                    },
+                    "facialRecognition": {
+                        "title": "面部识别",
+                        "caption": "您可以启用面部识别功能并允许其访问您的摄像头。此工具可拍摄您的图像，从而准确地识别您的在场状态，或检测您的设备是否因您离开而暂时无人照管。此数据将在您的设备上进行本地处理。Lenovo 不会访问或使用它。",
+                        "checkBox": "打开摄像头并启用此功能",
+                        "note": {
+                            "permission": "Lenovo Vantage 无法访问摄像头。复选框的功能将不起作用。",
+                            "privacyMode": "Lenovo Vantage 摄像头隐私模式已开启。复选框的功能将不起作用。",
+                            "windowsLink": "转到 Windows 设置以授予访问权限",
+                            "privacyLink": "转到摄像头隐私模式以将其关闭"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "自动距离调整将会通过人工智能引擎自动更新检测距离。",
                     "options": {
                         "near": "较近",
-                        "far": "较远"
+                        "far": "较远",
+                        "medium": "中"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "启用后，检测距离将自动调整。您也可以通过滑块手动设置检测距离。选项包括：",
+                        "context2": "手动设置检测距离时，请注意以下几点：",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "近距离：0 - 0.42 米（17 英寸）",
+                            "line2": "中等距离：0 - 0.60 米（24 英寸）",
+                            "line3": "远距离：0 - 1.20 米（47 英寸）",
+                            "line4": "最大检测距离为 1.2 米。如果超过 1.2 米，传感器将无法检测到您的存在。",
+                            "line5": "建议的检测距离为不超过 0.60 米。"
                         }
                     }
                 },
@@ -1297,13 +1590,17 @@
                     "description3": "1. 如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
                     "description4": "2. 如果您的计算机处于休眠模式或已关机，自动红外摄像头登录将无法工作。",
                     "description5": "3. 请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。",
-                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。"
+                    "description6": "4. 如果在计算机上启用飞行模式，则将禁用这些功能部件。",
+                    "description7": "准确性随身体大小、姿势和移动频率而变化。如果您的计算机被意外锁定，请调整灵敏度栏以提高准确性。"
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "转到 Windows Hello 设置",
                     "screenTimeoutSettings": "转至屏幕超时设置"
                 },
-                "resetToDefault": "重置"
+                "resetToDefault": "重置",
+                "sensitivityAdjusting": {
+                    "title": "灵敏度调整"
+                }
             },
             "intelligentScreen": {
                 "title": "智能屏幕",
@@ -1370,6 +1667,18 @@
                 "title": "视频播放智能控制",
                 "desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",
                 "tooltip": "此功能不适用于 Web 视频播放器。流行的本地视频播放器（例如 Windows Media Player、5KPlayer 等）均支持此功能。"
+            },
+            "superResolution": {
+                "heading": "智能媒体",
+                "title": "提高视频分辨率",
+                "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
+                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player <br/> 暴风影音 <br/> 迅雷影音",
+                "note": {
+                    "description": "此功能在以下情况下无效：",
+                    "description1": "计算机未连接交流电源且电池电量低于 20%。",
+                    "description2": "计算机未连接交流电源且已启用电池省电模式。",
+                    "description3": "CPU 温度过高。"
+                }
             },
             "voice": {
                 "title": "语音",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "受全面保护",
-            "fullyDesc": "恭喜您！您受到良好保护。",
             "notFully": "未受全面保护",
-            "notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
             "security101": "安全建议入门",
             "firewall": "防火墙",
             "pwdHealth": "密码保险箱",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "WiFi 和互联家庭网络安全顾问",
             "connectedHomeSecurity": "互联家庭网络安全顾问",
             "fingerprint": "指纹读取器",
-            "seeAllNetwork": "请查看所有加入的网络",
-            "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
-            "good": "良好",
-            "malicious": "恶意",
-            "suspicious": "可疑",
-            "securityScoreDepends": "您的安全性结果取决于您是否：",
-            "antivirus": "受到反病毒软件的保护",
-            "password": "以安全的方式管理安全程度强且复杂的密码",
-            "vpn": "监控您的网络以防暴露给攻击者",
-            "wifi": "使用公共 WiFi 时加密您的个人数据",
-            "windowsHello": "使用安全登录选项保护您的设备"
+            "uacTitle": "什么是 UAC 通知？",
+            "uacText": "用户帐户控制是 Windows 的一项非常重要的安全功能，它能帮助防止具有潜在危害性的程序对系统进行更改。",
+            "windowsTitle": "为什么我需要激活 Windows？",
+            "windowsText": "运行非正版的 Windows 会让您面临更大的病毒和其他安全威胁的风险。",
+            "encryptionTitle": "什么是硬盘驱动器加密？",
+            "encryptionText": "通过对整个硬盘驱动器进行加密，它能够保护您的数据免遭未经授权的访问，即使驱动器已从当前 PC 移除并装入其他设备中。",
+            "passwordTitle": "如何更好地保护密码？",
+            "passwordText": "安全地存储和管理由专业数字保护应用程序加密的所有密码，而不是简单地存储在浏览器中，这会使第三方在您不知情的情况下轻松地访问您的密码。",
+            "enhanceTitle": "我应该做什么以加强安全保护？",
+            "enhanceText": "我们强烈建议您让设备受到防病毒软件和防火墙的保护，并以最低保护级别设置 UAC 通知。并创建强密码并以安全方式进行管理，加密您的数据，同时使用公共网络作为高级保护。",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2201,7 +2543,6 @@
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
             "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
-            "para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
@@ -2458,7 +2799,8 @@
                 "description": "执行扫描和修复会导致数据丢失。建议在执行此操作前先进行备份。是否确实要继续？",
                 "yes": "是",
                 "no": "否"
-            }
+            },
+            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "您确定要取消吗？",
         "cancelTextProgress": "请等待取消进度",
         "pluginNotUpdate": "硬件扫描是旧版的，因此无法使用。请升级。",
-        "testNotApplicable": "不适用于定制扫描"
+        "testNotApplicable": "不适用于定制扫描",
+        "waitScanStarts": "等待扫描开始",
+        "reminderTimeRetrieveHardwareInformation": "此过程可能需要一段时间以检索硬件信息",
+        "retrievingHardwareInformation": "正在检索硬件信息...",
+        "pluginTokens": {
+            "cpu": "处理器",
+            "memory": "内存",
+            "motherboard": "主板",
+            "pci_express": "PCI Express",
+            "storage": "存储器",
+            "wireless": "无线"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

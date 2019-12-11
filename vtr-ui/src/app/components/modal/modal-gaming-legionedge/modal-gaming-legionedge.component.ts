@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -15,5 +15,11 @@ export class ModalGamingLegionedgeComponent implements OnInit {
 
 	closeModal() {
 		this.activeModal.close('close');
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.gaming-help-modal') as HTMLElement;
+		modal.focus();
 	}
 }

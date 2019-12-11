@@ -1,0 +1,42 @@
+@import "../../../../../../app.theme.scss";
+
+.top-row-key-block{
+	.title-blck{
+		.left-icon {
+			display: inline-block;
+			font-size: $section_header;
+			height: 1em;
+			width: 1.12em;
+			color:$menu_hover;
+			overflow: visible;
+			vertical-align: -0.12em;
+		}
+		.title {
+			font-size: $section_header;
+			color: $main_darker;
+			font-weight: $weight_light;
+			letter-spacing: 0.05rem;
+			text-transform: none;
+		}
+	}
+	.caption {
+		.text{
+			font-size: $body;
+			font-weight: $weight_light;
+			color: $main_darker;
+		}
+		max-width: 60rem;
+	}
+	.link-text {
+		font-size: $caption;
+		font-weight: $weight_bold;
+		text-decoration: underline;
+		letter-spacing: 0.05rem;
+		color: $menu_hover;
+		cursor: pointer;
+		padding-top: 0.3rem;
+	}
+	.sectn-padding {
+		padding: 1.5rem 0.7rem 1.5rem;
+	}
+}

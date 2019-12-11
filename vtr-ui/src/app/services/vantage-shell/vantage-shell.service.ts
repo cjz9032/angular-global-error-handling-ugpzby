@@ -7,6 +7,7 @@ import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
+import { TopRowFunctionsIdeapad } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
 
 declare var Windows;
 
@@ -21,7 +22,7 @@ export class VantageShellService {
 	constructor(
 		private commonService: CommonService,
 		private http: HttpClient
-		) {
+	) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.isShellAvailable = true;
@@ -38,16 +39,12 @@ export class VantageShellService {
 			});
 
 			this.phoenix.loadFeatures([
-				Phoenix.Features.Dashboard,
 				Phoenix.Features.Device,
 				Phoenix.Features.LenovoId,
-				Phoenix.Features.SecurityAdvisor,
-				Phoenix.Features.SystemInformation,
 				Phoenix.Features.HwSettings,
 				// Phoenix.Features.Gaming,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
-				Phoenix.Features.Permissions,
 				Phoenix.Features.UserGuide,
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
@@ -56,7 +53,6 @@ export class VantageShellService {
 				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
-				Phoenix.Features.ConnectedHomeSecurity,
 				Phoenix.Features.HardwareScan,
 				Phoenix.Features.DevicePosture,
 				Phoenix.Features.AdPolicy,
@@ -350,6 +346,9 @@ export class VantageShellService {
 
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		if (this.phoenix) {
+			if (!this.phoenix.securityAdvisor) {
+				this.phoenix.loadFeatures([Phoenix.Features.SecurityAdvisor]);
+			}
 			return this.phoenix.securityAdvisor;
 		}
 		return undefined;
@@ -357,6 +356,9 @@ export class VantageShellService {
 
 	public getPermission(): any {
 		if (this.phoenix) {
+			if (!this.phoenix.permissions) {
+				this.phoenix.loadFeatures([Phoenix.Features.Permissions]);
+			}
 			return this.phoenix.permissions;
 		}
 		return undefined;
@@ -364,6 +366,9 @@ export class VantageShellService {
 
 	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
 		if (this.phoenix) {
+			if (!this.phoenix.connectedHomeSecurity) {
+				this.phoenix.loadFeatures([Phoenix.Features.ConnectedHomeSecurity]);
+			}
 			return this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
@@ -371,6 +376,9 @@ export class VantageShellService {
 
 	public getDevicePosture(): Phoenix.DevicePosture {
 		if (this.phoenix) {
+			if (!this.phoenix.devicePosture) {
+				this.phoenix.loadFeatures([Phoenix.Features.DevicePosture]);
+			}
 			return this.phoenix.devicePosture;
 		}
 		return undefined;
@@ -529,6 +537,18 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	// public getSmartPerformance() {
+	// 	console.log('----------CALLING');
+	// 	if (this.phoenix) {
+	// 		if (!this.phoenix.smartPerformance) {
+	// 			return this.phoenix.loadFeatures([Phoenix.Features.HwSettings]);
+	// 		}
+	// 		console.log(this.phoenix.hwsettings.smartPerformance);
+	// 		console.log('----------DONE');
+	// 	}
+	// 	return undefined;
+	// }
 
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
@@ -694,6 +714,13 @@ export class VantageShellService {
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentMedia;
+		}
+		return undefined;
+	}
+
+	public getSuperResolution(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.ai.superResolution;
 		}
 		return undefined;
 	}
@@ -925,11 +952,23 @@ export class VantageShellService {
 	}
 	// ==================== End Hardware Scan
 
+	// shellService
+	public getVoipHotkeysObject(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.input.voipHotkeys;
+		}
+		return undefined;
+	}
+
 	public getMouseAndTouchPad(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.input.inputControlLinks;
 		}
 		return undefined;
+	}
+
+	getTopRowFunctionsIdeapad(): TopRowFunctionsIdeapad {
+		return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
 	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {

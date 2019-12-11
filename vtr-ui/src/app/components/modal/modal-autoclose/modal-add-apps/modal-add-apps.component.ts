@@ -16,7 +16,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 	public loadingNoApps = false;
 	runningList: any = [];
 	public isChecked: any = [];
-	constructor(private gamingAutoCloseService: GamingAutoCloseService) {}
+	constructor(private gamingAutoCloseService: GamingAutoCloseService) { }
 	public statusitem;
 	ariaLabel = 'Auto close add apps window opened';
 	//constructor() { }
@@ -39,9 +39,9 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 			this.loadingNoApps = this.runningList.length === 0 ? true : false;
 			this.loading = false;
 			if (this.loadingNoApps) {
-				this.ariaLabel = 'No running apps to add window';
+				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.running';
 			} else {
-				this.ariaLabel = 'Auto close add apps window opened';
+				this.ariaLabel = 'gaming.autoClose.modalTurnAutoCloseNarrator.open';
 			}
 			setTimeout(() => {
 				document.getElementById('close').focus();
@@ -63,6 +63,7 @@ export class ModalAddAppsComponent implements OnInit, AfterViewInit {
 
 	closeModal(action: boolean) {
 		this.closeAddAppsModal.emit(action);
+		document.getElementById('main-wrapper').focus();
 	}
 
 	runappKeyup(event, index) {

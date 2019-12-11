@@ -1,29 +1,35 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Title } from '@angular/platform-browser';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
-	styleUrls: [ './page-macrokey.component.scss' ]
+	styleUrls: ['./page-macrokey.component.scss']
 })
-export class PageMacrokeyComponent implements OnInit, OnDestroy {
+export class PageMacrokeyComponent implements OnInit {
 	isOnline = true;
 	backId = 'vtr-gaming-macrokey-btn-back';
 	startDateTime: any = new Date();
 	metrics: any;
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
+	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
 
 	constructor(
+		private titleService: Title,
+		public dashboardService: DashboardService,
 		private cmsService: CMSService,
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -31,7 +37,8 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();
@@ -106,12 +113,9 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnDestroy() {}
-
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else {
 		}
 	}
 }

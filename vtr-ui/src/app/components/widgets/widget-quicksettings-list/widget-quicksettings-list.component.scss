@@ -1,9 +1,9 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-widget-quicksettings-list {
 	.widget-title {
 		color: $gaming_lightest;
-		font-size: 5rem;
+		font-size: 4rem;
 		margin-bottom: 1rem;
 		font-weight: $weight-light;
 	}
@@ -19,19 +19,19 @@
 			padding: 0;
 			box-shadow: none;
 			border: none;
-			.settings-container{
+			.settings-container {
 				margin-top: 0;
-				.list-group-item{
+				.list-group-item {
 					background: transparent;
 					color: white;
 					padding: 1.8rem 0.8rem;
 					font-size: 1.8rem;
 					border: none;
 					border-bottom: 1px solid $screen_dark_15;
-					&:last-child{
+					&:last-child {
 						border-bottom: none;
 					}
-					&:first-child{
+					&:first-child {
 						.media-body {
 							> div.collapsible {
 								display: block !important;
@@ -40,7 +40,7 @@
 					}
 					.media {
 						padding-left: 0 !important;
-						fa-icon{
+						fa-icon {
 							display: none;
 						}
 						.media-body {
@@ -58,8 +58,8 @@
 								width: 3.2rem;
 								border-radius: 3.2rem;
 								margin-top: 0.3rem;
-								position:absolute;
-								right:6rem;
+								position: absolute;
+								right: 6rem;
 								.icon {
 									text-align: center;
 									font-size: 2.2rem;
@@ -72,14 +72,14 @@
 									@media #{$white-on-black} {
 										color: $gaming_lightest;
 									}
-									&::after{
-										content: '';
+									&::after {
+										content: "";
 										position: absolute;
 										height: 3.2rem;
 										width: 3.2rem;
 										border-radius: 3.2rem;
 										background: $screen_dark_20;
-										transition: all .3s ease-in;
+										transition: all 0.3s ease-in;
 										right: 0;
 										opacity: 0;
 										@media #{$black-on-white} {
@@ -96,24 +96,24 @@
 							}
 						}
 					}
-					.update-title{
+					.update-title {
 						color: white;
 					}
 				}
-				&::ng-deep vtr-ui-switch-onoff{
-					.checkbox{
+				&::ng-deep vtr-ui-switch-onoff {
+					.checkbox {
 						input {
-							&+ .switch{
+							& + .switch {
 								background: $gaming_switch_light;
 								height: 2.4rem;
 								width: 5.4rem;
-								transition: all .2s ease-in;
+								transition: all 0.2s ease-in;
 								small {
 									background: $gaming_switch_dark;
 									height: 1.8rem;
 									width: 1.8rem;
 									margin-top: 0.1rem;
-									transition: all .2s ease-in;
+									transition: all 0.2s ease-in;
 									@media #{$black-on-white} {
 										background: $gaming_darkest;
 									}
@@ -124,10 +124,10 @@
 							}
 							&.wifi-checked + .switch {
 								background: $gaming_green_gradient;
-								transition: all .2s ease-in;
-								small{
+								transition: all 0.2s ease-in;
+								small {
 									background: $gaming_lightest;
-									transition: all .2s ease-in;
+									transition: all 0.2s ease-in;
 									left: 3.2rem;
 									@media #{$black-on-white} {
 										background: $gaming_darkest;
@@ -138,31 +138,31 @@
 								}
 							}
 						}
-						.switch-label.on-label{
+						.switch-label.on-label {
 							color: $gaming_lightest;
 							font-weight: bold;
 							font-size: 1.2rem;
 							padding-top: 0.1rem;
 							text-indent: -0.4rem;
-							transition: all .2s ease-in;
-							@media #{$medium-screen}{
+							transition: all 0.2s ease-in;
+							@media #{$medium-screen} {
 								padding-top: 0.3rem;
 							}
-							@media #{$small-screen}{
+							@media #{$small-screen} {
 								padding-top: 0.3rem;
 							}
 						}
-						.switch-label.off-label{
+						.switch-label.off-label {
 							color: $gaming_switch_dark;
 							font-weight: bold;
 							font-size: 1.2rem;
 							padding-top: 0.1rem;
 							text-indent: 0;
-							transition: all .2s ease-in;
-							@media #{$medium-screen}{
+							transition: all 0.2s ease-in;
+							@media #{$medium-screen} {
 								padding-top: 0.3rem;
 							}
-							@media #{$small-screen}{
+							@media #{$small-screen} {
 								padding-top: 0.3rem;
 							}
 						}

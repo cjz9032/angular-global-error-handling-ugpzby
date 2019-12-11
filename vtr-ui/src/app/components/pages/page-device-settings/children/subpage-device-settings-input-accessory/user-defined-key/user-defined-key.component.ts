@@ -22,14 +22,14 @@ export class UserDefinedKeyComponent implements OnInit {
 	public machineType: number;
 	public description: string;
 	public url: string;
-	public hyperLinkPatterns = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
-	// public enterTextPatterns = '[a-zA-Z0-9][A-Za-z0-9._-]*';
 	public hideApplyForDefault = false;
 	public udkFormSubmitted = false;
-
 	userDefinedKeyOptions: any[] = [];
-
 	public selectedValue: any;
+	public isUDFSetSuccessVisible = false;
+	public isUDFSetFailedVisible = false;
+	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+
 	constructor(
 		private keyboardService: InputAccessoriesService,
 		private translateService: TranslateService,
@@ -123,6 +123,7 @@ export class UserDefinedKeyComponent implements OnInit {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService.setUserDefinedKeySetting(type, actionType, settingKey, settingValue)
 					.then((value: any) => {
+						this.showUDFSetSuccessMessage(settingKey);
 						this.udkFormSubmitted = false;
 						this.userDefinedKeyOptions = this.commonService.removeObjFrom(this.userDefinedKeyOptions, '1');
 						console.log('keyboard setUDKTypeList here -------------.>', value);
@@ -138,19 +139,55 @@ export class UserDefinedKeyComponent implements OnInit {
 	}
 
 	udkSubmit(value: number) {
+		this.logger.debug('UserDefinedKeyComponent.udkSubmit function called', value);
 		this.udkFormSubmitted = true;
 		switch (value) {
 			case 2:
-				this.setUDKTypeList('0', OPEN_WEB.value, OPEN_WEB.str, this.url);
+				if (this.isURLValidate(this.url)) {
+					this.setUDKTypeList('0', OPEN_WEB.value, OPEN_WEB.str, this.url);
+				} else {
+					this.showUDFSetFailedMessage(OPEN_WEB.str);
+				}
 				break;
 			case 3:
-				this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
+				if (this.description && this.description.length > 0) {
+					this.setUDKTypeList('0', INPUT_TEXT.value, INPUT_TEXT.str, this.description);
+				}
 		}
-		console.log('submit called');
 	}
+
 	public onKeydown(event) {
 		if ((event.ctrlKey && event.key === 'Enter') || event.key === 'Enter') {
 			event.preventDefault();
 		}
+	}
+
+	/**
+	 * hide UDF set or error message after 5 seconds
+	 */
+	private hideUDFMessage() {
+		setTimeout(() => {
+			this.isUDFSetFailedVisible = false;
+			this.isUDFSetSuccessVisible = false;
+		}, 5000);
+	}
+
+	private showUDFSetSuccessMessage(action: string) {
+		this.isUDFSetSuccessVisible = true;
+		this.hideUDFMessage();
+	}
+
+	private showUDFSetFailedMessage(action: string) {
+		if (action === OPEN_WEB.str) {
+			this.isUDFSetFailedVisible = true;
+			this.hideUDFMessage();
+		}
+	}
+
+	private isURLValidate(url: string): boolean {
+		if (url && url.length > 0) {
+			return this.regExForUrlWithParam.test(url);
+		}
+		return false;
 	}
 }

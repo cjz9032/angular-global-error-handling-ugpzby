@@ -118,7 +118,7 @@ $topIndent: -5.6rem;
 		right: 0;
 		width: 1.4rem;
 		height: 0.8rem;
-		background: url("/assets/icons/privacy-tab/icon-blue-arrow.svg") center no-repeat;
+		background: url("src/assets/icons/privacy-tab/icon-blue-arrow.svg") center no-repeat;
 		background-size: contain;
 	}
 
@@ -132,7 +132,7 @@ $topIndent: -5.6rem;
 			transform: translateY(-50%) rotate(0deg);
 			width: 1.4rem;
 			height: 1.4rem;
-			background-image: url("/assets/icons/privacy-tab/blue-arrow-right-long.svg");
+			background-image: url("src/assets/icons/privacy-tab/blue-arrow-right-long.svg");
 		}
 	}
 
@@ -141,7 +141,7 @@ $topIndent: -5.6rem;
 			transform: translateY(-50%) rotate(0deg);
 			width: 1.4rem;
 			height: 1.4rem;
-			background-image: url("/assets/icons/privacy-tab/white-arrow-right-long.svg");
+			background-image: url("src/assets/icons/privacy-tab/white-arrow-right-long.svg");
 		}
 	}
 
@@ -153,7 +153,7 @@ $topIndent: -5.6rem;
 
 	&--disabled {
 		&:before {
-			background-image: url("/assets/icons/privacy-tab/icon-grey-arrow.svg");
+			background-image: url("src/assets/icons/privacy-tab/icon-grey-arrow.svg");
 			transform: translateY(-50%) rotate(0deg);
 		}
 	}

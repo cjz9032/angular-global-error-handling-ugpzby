@@ -16,6 +16,6 @@ export class CameraBackgroundBlurComponent implements OnInit {
 	}
 
 	public onChange(event: any) {
-		this.onOptionChanged.emit(event.target.value);
+		this.onOptionChanged.emit(event);
 	}
 }

@@ -1,191 +1,116 @@
 @import "../../../app.theme.scss";
 
-.vtr-page-connected-home-security {
-	.subTitle {
-		color: $main_darker;
-		font-size: 2.4rem;
-		font-weight: $weight_600;
-	}
-	.vtr-security-health {
-		border-radius: $border_radius;
-		background-color: $light;
-		box-shadow: $drop_shadow;
-		padding: 4rem;
+::ng-deep {
+	.vtr-page-connected-home-security {
+		.vtr-security-health {
+			border-radius: $border_radius;
+			background-color: $light;
+			box-shadow: $drop_shadow;
+			padding: 4rem;
 
-		a {
-			text-decoration: underline;
-		}
-
-		.description {
-			color: $main_shade;
-			font-size: 1.6rem;
-			font-weight: $weight_medium;
-		}
-
-		.loading {
-			text-align: center;
-		}
-
-		vtr-ui-list-chevron ::ng-deep {
-			a.disabled {
-				pointer-events: auto;
+			.subTitle {
+				font-size: $fontsize_xl;
+				font-weight: $weight_medium;
 			}
-			.chevron-list {
-				li.black {
-					.detail {
-						color: $black_light!important;
-					}
-				}
+
+			.description {
+				color: $main_shade;
+				font-size: 1.6rem;
+				font-weight: $weight_medium;
 			}
-		}
 
-		.home-security {
-			color: $main_darker;
-			font-size: 2rem;
-			margin-top: 1rem;
-			font-weight: $weight_bold;
-		}
+			.loading {
+				text-align: center;
+			}
 
-		.security-health-disabled {
-			.security-health-disabled-list {
-				background-color: $shade;
-				border: 0.1rem solid $shade_lighter;
-				border-radius: $border_radius;
-				padding: 1rem 0rem 0rem 0rem;
-				background-size: cover;
-				margin: 1.5rem 0rem 0rem 0rem;
-				background: url("/assets/images/security-health-disabled.png");
-				height: 50rem;
-
-				.peace-of-mind {
-					margin: 0rem 1rem;
-					color: $main_dark;
-					font-size: 3rem;
-					font-weight: $weight_light;
-					text-align: center;
+			vtr-ui-list-chevron {
+				a.disabled {
+					pointer-events: auto;
 				}
-
-				vtr-ui-button {
-					max-width: 90%;
-					::ng-deep .button {
-						width: 100%;
+				.chevron-list {
+					li.black {
+						.detail {
+							color: $black_light !important;
+						}
 					}
 				}
 			}
 
-			.coronet-section {
-				margin-top: 1.5rem;
+			.home-security {
+				color: $main_darker;
+				font-size: 2rem;
+				margin-top: 1rem;
+				font-weight: $weight_bold;
+			}
 
-				.p-0 {
-					padding: 0rem;
-				}
+			.security-health-disabled {
+				.security-health-disabled-list {
+					background-color: $shade;
+					border: 0.1rem solid $shade_lighter;
+					border-radius: $border_radius;
+					padding: 1rem 0rem 0rem 0rem;
+					background-size: cover;
+					margin: 1.5rem 0rem 0rem 0rem;
+					background: url("src/assets/images/security-health-disabled.png");
+					height: 50rem;
 
-				.view-security-check {
-					padding: 0rem;
-					margin-top: 1.2rem;
-					text-align: center;
-					font-size: 1.3rem;
-					font-weight: $weight_regular;
-					cursor: pointer;
+					.peace-of-mind {
+						margin: 0rem 1rem;
+						color: $main_dark;
+						font-size: 3rem;
+						font-weight: $weight_light;
+						text-align: center;
+					}
 
-					a {
-						color: $main;
-						text-decoration: none;
-
-						&:hover {
-							text-decoration: underline;
+					vtr-ui-button {
+						max-width: 90%;
+						::ng-deep .button {
+							width: 100%;
 						}
 					}
 				}
 
-				.coronet_logo_teal {
-					width: 10rem;
-					padding: 0rem 0.5rem 0rem 0rem;
-					margin-top: 0rem;
+				.coronet-section {
+					margin-top: 1.5rem;
+
+					.p-0 {
+						padding: 0rem;
+					}
+
+					.view-security-check {
+						padding: 0rem;
+						margin-top: 1.2rem;
+						text-align: center;
+						font-size: 1.3rem;
+						font-weight: $weight_regular;
+						cursor: pointer;
+
+						a {
+							color: $main;
+							text-decoration: none;
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+
+					.coronet_logo_teal {
+						width: 10rem;
+						padding: 0rem 0.5rem 0rem 0rem;
+						margin-top: 0rem;
+					}
+				}
+
+				.coronet-disabled {
+					filter: blur(0.5rem);
+					opacity: 1;
+					-webkit-filter: blur(0.5rem);
+					-moz-filter: blur(0.5rem);
+					-o-filter: blur(0.5rem);
+					-ms-filter: blur(0.5rem);
 				}
 			}
-
-			.coronet-disabled {
-				filter: blur(0.5rem);
-				opacity: 1;
-				-webkit-filter: blur(0.5rem);
-				-moz-filter: blur(0.5rem);
-				-o-filter: blur(0.5rem);
-				-ms-filter: blur(0.5rem);
-			}
 		}
 	}
-	.bottom-content {
-		.img {
-			border-radius: $border_radius;
-		}
-		.coronet-logo {
-			width: 10rem;
-		}
-		hr {
-			border: 0.1rem solid $grey_light;
-			margin: 5rem 0 4rem 0;
-		}
-		.text-regular {
-			color: $main_shade;
-			font-size: 1.6rem;
-			font-weight: $weight_regular;
-			a {
-				text-decoration: underline;
-			}
-		}
-	}
-	.article-card {
-		height: 200px;
-		border-radius: $border_radius;
-		background-color: $light;
-		box-shadow: $drop_shadow;
-		padding: 4rem;
-	}
-
-	.title {
-		color: $main_dark;
-		font-size: 4.2rem;
-		font-weight: $weight_medium;
-	}
-
-	@media #{$mediaquery_lg} {
-		.home-card {
-			height: 32rem !important;
-		}
-		.mydevice-title{
-			display: none !important;
-		}
-	}
-
-    @media #{$medium-screen} {
-        .vtr-page-right-column, .vtr-page-left-column{
-            padding: 0rem 4rem 4rem 4rem;
-            margin-top: 0;
-        }
-        vtr-header-main{
-            ::ng-deep .vtr-header-main{
-                padding-left: 5rem;
-            }
-        }
-    }
-
-    @media #{$small-screen}{
-        .vtr-page-left-column{
-            background-color: #fff;
-        }
-        .vtr-page-right-column{
-            margin-top: 6rem;
-        }
-	}
-
-	@media #{$mediaquery_md} {
-		.bottom-content {
-			margin: 0 4rem 2rem;
-		}
-		.vtr-page-right-column{
-            padding: 0rem 4rem 0rem 4rem;
-        }
-	}
-
 }

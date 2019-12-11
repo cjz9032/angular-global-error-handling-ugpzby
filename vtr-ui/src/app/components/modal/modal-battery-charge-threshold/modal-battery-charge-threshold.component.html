@@ -1,10 +1,16 @@
-<div class="modal-body vtr-modal-battery-charge-threshold">
+<div class="modal-body vtr-modal-battery-charge-threshold"
+	role="dialog"
+	aria-modal="true">
 	<div class="row justify-content-end">
 		<div class="btn-close">
 			<button type="button"
 				class="close"
+				tabindex="0"
+				id="ds-threshold-popup-close-button"
 				aria-hidden="true"
-				(click)="closeModal()">
+				aria-label="close modal"
+				(click)="closeModal()"
+				(keydown.enter)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
 		</div>

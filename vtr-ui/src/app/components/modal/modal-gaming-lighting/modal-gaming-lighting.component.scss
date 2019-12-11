@@ -1,0 +1,69 @@
+@import '../../../app.theme.scss';
+.gaming-help-popup{
+	position: relative;
+	background: $gaming_slate_blue;
+	color: $gaming_lightest;
+	.modal-header{
+		height: 12rem;
+		padding: 3rem 4rem;
+		border-bottom:none;
+		background: url(../../../../assets/images/gaming/light800@2x.jpg) no-repeat center;
+		background-size: 100% auto;
+		@media #{$black-on-white} {
+			background: $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			background: $gaming_darkest;
+		}
+		.modal-title {
+			img {
+				height: 3rem;
+			}
+		}
+		.close {
+			color: $gaming_lightest;
+			opacity: 1;
+			font-size: 1.8rem;
+			position: relative;
+			top: -2rem;
+			right: -3rem;
+			@media #{$black-on-white} {
+				color: $gaming_lightest;
+			}
+			@media #{$white-on-black} {
+				color: $gaming_lightest;
+			}
+		}
+	}
+	.modal-body {
+		padding: 0 0rem 3rem 4rem;
+		width: 100%;
+		background: $light;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $gaming_darkest;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $gaming_darkest;
+		}
+		.innerContent{
+			width: 100%;
+			background: $light;
+			padding: 2rem;
+			overflow-y: auto;
+			max-height: 45rem;
+			p {
+				font-size: 1.6rem;
+				color: $gaming_darkest;
+				margin-top: 1.5rem;
+			}
+			.title{
+				font-weight: $weight_black;
+			}
+			h3 {
+				font-size: 3rem;
+				color: $gaming_darkest;
+				font-weight: $weight_light;
+			}
+		}
+	}
+}

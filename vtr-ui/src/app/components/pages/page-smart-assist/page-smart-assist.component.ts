@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ChangeContext } from 'ng5-slider';
 
@@ -11,11 +11,14 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { QaService } from 'src/app/services/qa/qa.service';
 import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-screen.model';
-import { parse } from 'querystring';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { EMPTY } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, NavigationExtras } from '@angular/router';
+import { throttleTime } from 'rxjs/operators';
+import { EMPTY, fromEvent } from 'rxjs';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
@@ -24,7 +27,8 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss']
 })
-export class PageSmartAssistComponent implements OnInit {
+export class PageSmartAssistComponent
+	implements OnInit, OnDestroy {
 
 	title = 'Smart Assist';
 	back = 'BACK';
@@ -43,13 +47,21 @@ export class PageSmartAssistComponent implements OnInit {
 	public zeroTouchLockTitle: string;
 	public options: any;
 	// public keepMyDisplay: boolean;
+	public getAutoScreenOffNoteStatus: any;
 	public intelligentScreen: IntelligentScreen;
 	public intelligentMedia = new FeatureStatus(false, true);
 	public lenovoVoice = new FeatureStatus(false, true);
 	public isIntelligentMediaLoading = true;
 	public isAPSAvailable = false;
+	private visibilityChange: any;
+	private Windows: any;
+	private windowsObj: any;
 	public hpdSensorType = 0;
+	public sensitivityVisibility = false;
+	public sesnsitivityAdjustVal: number;
 	smartAssistCache: SmartAssistCache;
+	public isSuperResolutionLoading = true;
+	public superResolution = new FeatureStatus(false, true);
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -98,6 +110,9 @@ export class PageSmartAssistComponent implements OnInit {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
+		public modalService: NgbModal,
+		private router: Router,
+		private vantageShellService: VantageShellService
 	) {
 		// VAN-5872, server switch feature on language change
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -105,6 +120,26 @@ export class PageSmartAssistComponent implements OnInit {
 		});
 
 		this.fetchCMSArticles();
+
+		// below logic required to getZeroTouchLockFacialRecoStatus when window is maximized from minimized state
+		this.visibilityChange = this.onVisibilityChanged.bind(this);
+		document.addEventListener('visibilitychange', this.visibilityChange);
+		fromEvent(document.body, 'mouseenter')
+			.pipe(
+				throttleTime(2500)
+			)
+			.subscribe(() => {
+				this.onMouseEnterEvent();
+			});
+		this.Windows = vantageShellService.getWindows();
+		if (this.Windows) {
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
+				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+
+			this.windowsObj.addEventListener('accesschanged', () => {
+				this.permissionChanged();
+			});
+		}
 	}
 
 	ngOnInit() {
@@ -118,6 +153,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.setIntelligentScreen();
 			this.initDataFromCache();
 			this.initSmartAssist(true);
+			this.getHPDLeaveSensitivityVisibilityStatus();
 		}
 	}
 
@@ -180,6 +216,10 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
 		this.intelligentSecurity.isWindowsHelloRegistered = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = false;
+		this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = false;
+		this.intelligentSecurity.facilRecognitionCameraAccess = true;
+		this.intelligentSecurity.facialRecognitionCameraPrivacyMode = false;
 		this.intelligentSecurity.isDistanceSensitivityVisible = false;
 	}
 
@@ -203,6 +243,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.initZeroTouchLogin();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
+			this.getSuperResolutionStatus();
 		} else {
 			if (this.smartAssistCapability.isIntelligentSecuritySupported) {
 				this.intelligentSecurity.isIntelligentSecuritySupported = true;
@@ -221,9 +262,53 @@ export class PageSmartAssistComponent implements OnInit {
 				this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 				this.initIntelligentScreen();
 			}
+			if (this.smartAssistCapability.isSuperResolutionSupported) {
+				this.superResolution = this.smartAssistCapability.isSuperResolutionSupported;
+				this.getSuperResolutionStatus();
+			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 		}
 	}
+
+	public getHPDLeaveSensitivityVisibilityStatus() {
+		try {
+			this.smartAssist.getHPDLeaveSensitivityVisibility().then((value: any) => {
+				console.log('getHPDLeaveSensitivityVisibility value----->', value);
+				this.sensitivityVisibility = value;
+				if (this.sensitivityVisibility) {
+					this.getHPDLeaveSensitivityStatus();
+				}
+			});
+
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public async getHPDLeaveSensitivityStatus() {
+		try {
+			await this.smartAssist.getHPDLeaveSensitivity().then((value: any) => {
+				this.sesnsitivityAdjustVal = value || 2;
+				console.log('getHPDLeaveSensitivity value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('getHPDLeaveSensitivityVisibilityStatus', error.message);
+			return EMPTY;
+		}
+	}
+
+	public setHPDLeaveSensitivitySetting(event) {
+		try {
+			this.smartAssist.SetHPDLeaveSensitivitySetting(event.value).then((value: any) => {
+				console.log('setHPDLeaveSensitivitySetting value----->', value);
+			});
+		} catch (error) {
+			this.logger.error('setHPDLeaveSensitivitySetting', error.message);
+			return EMPTY;
+		}
+	}
+
 
 	private apsAvailability() {
 		Promise
@@ -252,7 +337,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getAutoScreenOffNoteStatus(),
 			this.smartAssist.getReadingOrBrowsingVisibility(),
 			this.smartAssist.getReadingOrBrowsingStatus(),
-			this.smartAssist.getReadingOrBrowsingTime()
+			this.smartAssist.getReadingOrBrowsingTime(),
 		]).then((responses: any[]) => {
 			this.intelligentScreen.isIntelligentScreenVisible = responses[0];
 			this.intelligentScreen.isAutoScreenOffVisible = responses[1];
@@ -269,12 +354,21 @@ export class PageSmartAssistComponent implements OnInit {
 
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
+			this.getAutoScreenOffNoteStatusFunc();
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 			return EMPTY;
 		});
 	}
 
+	private getAutoScreenOffNoteStatusFunc() {
+		this.getAutoScreenOffNoteStatus = setInterval(() => {
+			// console.log('Trying after 30 seconds for getting auto screenOffNoteStatus');
+			this.smartAssist.getAutoScreenOffNoteStatus().then((response) => {
+				this.intelligentScreen.isAutoScreenOffNoteVisible = response;
+			});
+		}, 30000);
+	}
 	private initZeroTouchLogin() {
 		Promise.all([
 			this.smartAssist.getZeroTouchLoginVisibility(),
@@ -305,18 +399,19 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getZeroTouchLockStatus(),
 			this.smartAssist.getSelectedLockTimer(),
 			this.smartAssist.getHPDStatus(),
-			this.smartAssist.getHPDVisibilityInIdeaPad(),
-			this.smartAssist.getHPDVisibilityInThinkPad()
+			this.smartAssist.getHPDVisibility(),
+			this.getFacialRecognitionStatus()
 		]).then((responses: any[]) => {
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			this.intelligentSecurity.isHPDEnabled = responses[3];
-			if (this.machineType === 0) {
-				this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
-			} else {
-				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
-			}
+			this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
+			// if (this.machineType === 0) {
+			// 	this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
+			// } else {
+			// 	this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
+			// }
 
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
@@ -353,19 +448,8 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public onHumanPresenceDetectStatusToggle($event: any) {
 		this.intelligentSecurity.isHPDEnabled = $event.switchValue;
-
 		this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 		this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
-		// this.intelligentSecurityCopy = { ...this.intelligentSecurity };
-		// if (!this.intelligentSecurity.isHPDEnabled) {
-		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = false;
-		// 	this.intelligentSecurity.isZeroTouchLockEnabled = false;
-		// 	this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
-		// } else {
-		// 	this.intelligentSecurity.isZeroTouchLoginEnabled = this.intelligentSecurityCopy.isZeroTouchLoginEnabled;
-		// 	this.intelligentSecurity.isZeroTouchLockEnabled = this.intelligentSecurityCopy.isZeroTouchLockEnabled;
-		// 	this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = this.intelligentSecurityCopy.isZeroTouchLoginAdjustEnabled;
-		// }
 
 		this.smartAssist.setHPDStatus(this.intelligentSecurity.isHPDEnabled)
 			.then((isSuccess: boolean) => {
@@ -420,6 +504,14 @@ export class PageSmartAssistComponent implements OnInit {
 		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
 				console.log('onZeroTouchLockTimerChange.setSelectedLockTimer', isSuccess, value);
+			});
+	}
+
+	public onZeroTouchLockFacialRecoChange() {
+		const value = this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled;
+		this.smartAssist.setZeroTouchLockFacialRecoStatus(value)
+			.then((isSuccess: boolean) => {
+				console.log(`onZeroTouchLockFacialRecoChange.setZeroTouchLockFacialRecoStatus ${isSuccess} ; ${value}`);
 			});
 	}
 
@@ -512,14 +604,27 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	private getVideoPauseResumeStatus() {
-		console.log('getVideoPauseResumeStatus');
+		this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: before check cache');
 		try {
 			if (this.smartAssist.isShellAvailable) {
+				const assistCapability: SmartAssistCapability = this.commonService.getLocalStorageValue(LocalStorageKey.SmartAssistCapability, null);
+				// cache found use it
+				if (assistCapability && assistCapability.isIntelligentMediaSupported) {
+					this.intelligentMedia = assistCapability.isIntelligentMediaSupported;
+					this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: cache found', this.intelligentMedia);
+					this.isIntelligentMediaLoading = false;
+					if (!this.intelligentMedia.available) {
+						this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
+					}
+				}
+
+				// get current value from API
+				this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: get current status from API');
 				this.smartAssist.getVideoPauseResumeStatus()
 					.then((response: FeatureStatus) => {
 						this.isIntelligentMediaLoading = false;
 						this.intelligentMedia = response;
-						console.log('getVideoPauseResumeStatus.then:', response);
+						this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: response from API', response);
 
 						if (!response.available) {
 							this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'media');
@@ -527,13 +632,11 @@ export class PageSmartAssistComponent implements OnInit {
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 						this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 					}).catch(error => {
-						this.logger.error('getVideoPauseResumeStatus.error', error.message);
-						return EMPTY;
+						this.logger.error('PageSmartAssistComponent.getVideoPauseResumeStatus: error', error);
 					});
 			}
 		} catch (error) {
-			this.logger.error('getVideoPauseResumeStatus' + error.message);
-			return EMPTY;
+			this.logger.exception('PageSmartAssistComponent.getVideoPauseResumeStatus: exception', error);
 		}
 	}
 
@@ -554,4 +657,70 @@ export class PageSmartAssistComponent implements OnInit {
 			console.error('getHPDSensorType' + error.message);
 		}
 	}
+
+	onClick(path) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
+
+	onJumpClick() {
+		const navigationExtras: NavigationExtras = {
+			queryParams: { cameraSession_id: 'camera' },
+			fragment: 'anchor'
+		};
+		// this.router.navigate(['/device/device-settings/display-camera']);
+		this.router.navigate(['/device/device-settings/display-camera'], navigationExtras);
+	}
+
+	getFacialRecognitionStatus() {
+		return this.smartAssist.getZeroTouchLockFacialRecoStatus().then((res: any) => {
+			if (res) {
+				this.intelligentSecurity.isZeroTouchLockFacialRecoVisible = res.available;
+				this.intelligentSecurity.isZeroTouchLockFacialRecoEnabled = res.status;
+				this.intelligentSecurity.facilRecognitionCameraAccess = res.cameraPermission;
+				this.intelligentSecurity.facialRecognitionCameraPrivacyMode = res.privacyModeStatus;
+			}
+			console.log(`getFacialRecognitionStatus refresh successed`);
+		});
+	}
+
+	onVisibilityChanged() {
+		if (!document.hidden) {
+			this.getFacialRecognitionStatus();
+			console.log(`zero touch lock facial recognition visibilityChanged - getFacialRecognitionStatus`);
+		}
+	}
+
+	onMouseEnterEvent() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition onMouseEnterEvent - getFacialRecognitionStatus`);
+	}
+
+	permissionChanged() {
+		this.getFacialRecognitionStatus();
+		console.log(`zero touch lock facial recognition permissionChange - getFacialRecognitionStatus`);
+	}
+
+	ngOnDestroy() {
+		clearTimeout(this.getAutoScreenOffNoteStatus);
+		document.removeEventListener('visibilitychange', this.visibilityChange);
+	}
+
+	private getSuperResolutionStatus() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.smartAssist.getSuperResolutionStatus()
+					.then((response: FeatureStatus) => {
+						this.isSuperResolutionLoading = false;
+						this.superResolution = response;
+					}).catch(error => {
+						console.error('getSuperResolutionStatus.error', error);
+					});
+			}
+		} catch (error) {
+			console.error('getSuperResolutionStatus' + error.message);
+		}
+	}
+
 }

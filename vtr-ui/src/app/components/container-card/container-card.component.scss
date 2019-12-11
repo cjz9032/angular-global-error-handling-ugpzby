@@ -50,9 +50,8 @@
 				border-radius: $border_radius;
 				overflow: hidden;
 
-
 				&::after {
-					content: '';
+					content: "";
 					background: rgba(0, 0, 0, 0.4);
 					width: 100%;
 					height: 100%;
@@ -92,6 +91,8 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
+						font-weight: $weight_light;
 					}
 
 					.description {
@@ -108,6 +109,8 @@
 						div {
 							cursor: pointer;
 						}
+						font-size: $fontsize_md;
+						font-weight: $weight_light;
 					}
 
 					.logo {
@@ -154,7 +157,7 @@
 				height: 50%;
 
 				@media #{$mediaquery_X9} {
-					padding: .5rem 0;
+					padding: 0.5rem 0;
 				}
 
 				@media #{$mediaquery_X10} {
@@ -162,7 +165,7 @@
 				}
 
 				@media #{$mediaquery_X3} {
-					padding: .5rem 0;
+					padding: 0.5rem 0;
 				}
 
 				@media #{$mediaquery_X4} {
@@ -170,7 +173,7 @@
 				}
 
 				@media #{$mediaquery_X7} {
-					padding: .5rem 0;
+					padding: 0.5rem 0;
 				}
 
 				.title {
@@ -180,7 +183,6 @@
 
 				.description {
 					color: $shade_darkest;
-					;
 					cursor: pointer;
 				}
 
@@ -211,7 +213,6 @@
 	}
 
 	&.card-corner-article {
-
 		.content {
 			position: relative;
 			z-index: 1;
@@ -231,7 +232,7 @@
 				overflow: hidden;
 
 				&::after {
-					content: '';
+					content: "";
 					background: rgba(0, 0, 0, 0.4);
 					width: 100%;
 					height: 100%;
@@ -246,6 +247,14 @@
 					z-index: 1;
 					padding: 2rem;
 					height: 100%;
+					@media #{$black-on-white} {
+						border: 0.1rem solid;
+						border-radius: 2rem;
+					}
+					@media #{$white-on-black} {
+						border: 0.1rem solid;
+						border-radius: 2rem;
+					}
 
 					@media #{$mediaquery_X1} {
 						padding: 2rem;
@@ -370,7 +379,6 @@
 
 		a,
 		.offline-a {
-
 			&:hover {
 				text-decoration: none;
 			}
@@ -416,7 +424,7 @@
 					// position: absolute;
 					// margin-top: 2rem;
 					// left: 4rem;
-					font-size: 1.4rem;
+					font-size: $fontsize_xs;
 					cursor: pointer;
 					text-transform: uppercase;
 					color: $main;
@@ -487,6 +495,8 @@
 			.title {
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+				font-size: $fontsize_xl;
+				line-height: 4.6rem;
 				cursor: pointer;
 				white-space: normal !important;
 			}
@@ -528,6 +538,24 @@
 				}
 			}
 		}
+
+		.offline-a {
+			.default-cursor {
+				cursor: default;
+			}
+
+			.content {
+				cursor: default;
+
+				.title {
+					cursor: default;
+				}
+
+				.read-more {
+					cursor: default;
+				}
+			}
+		}
 	}
 
 	.content {
@@ -537,33 +565,13 @@
 
 		.title {
 			color: $main_dark;
-			font-size: 2.5rem;
-			font-weight: $weight_bold;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
 			line-height: 1.4;
 			width: 100%;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
-
-			/*	@media #{$mediaquery_X4} {
-				font-size: 2rem;
-			}
-
-			@media #{$mediaquery_X7} {
-				font-size: 1.85rem;
-			}
-
-			@media #{$mediaquery_X11} {
-				font-size: 2rem;
-			}
-
-			@media #{$mediaquery_17} {
-				font-size: 2rem;
-			}
-
-			@media #{$mediaquery_X3} {
-				font-size: 1.6rem;
-			}*/
 		}
 
 		.description {
@@ -575,7 +583,8 @@
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
-			line-height: 1.4;
+			line-height: 1.1em;
+			padding-top: 1rem;
 			width: 100%;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -649,7 +658,7 @@
 		font-size: 6rem;
 	}
 
-	background-color:#1d2339;
+	background-color: #1d2339;
 	color: white;
 	display: flex;
 	justify-content: center;

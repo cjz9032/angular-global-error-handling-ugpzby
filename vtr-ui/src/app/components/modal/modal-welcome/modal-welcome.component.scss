@@ -27,7 +27,7 @@
 	}
 
 	.banner-page-1 {
-		background: url("/assets/images/welcome/header-1.jpg") no-repeat;
+		background: url("src/assets/images/welcome/header-1.jpg") no-repeat;
 		background-size: cover;
 		background-position: center;
 		width: 100%;
@@ -49,7 +49,7 @@
 	}
 
 	.banner-page-2 {
-		background: url("/assets/images/welcome/header-2.jpg") no-repeat;
+		background: url("src/assets/images/welcome/header-2.jpg") no-repeat;
 		background-size: cover;
 		height: 10rem;
 		width: 100%;
@@ -110,7 +110,6 @@
 			}
 
 			label {
-				// font-family: "Segoe UI Bold", Sans-serif;
 				font-size: 1.4rem;
 				width: 94%;
 				height: 100%;

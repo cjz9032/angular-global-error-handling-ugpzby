@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
@@ -89,5 +89,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 
 	closeModal() {
 		this.activeModal.close('close');
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.license-Modal') as HTMLElement;
+		modal.focus();
 	}
 }

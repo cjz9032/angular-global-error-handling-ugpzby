@@ -19,7 +19,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	@Input() inHEX: any;
 	@Input() btnStatus: String = 'apply';
 	@Input() showOverlay: Boolean;
-	@Input() defaultLang : any;
+	@Input() defaultLang: any;
 	colorWheel: any;
 
 	constructor() { }
@@ -81,5 +81,9 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 			return false;
 		}
 		return true;
+	}
+
+	checkEmpty(event: any) {
+		event.target.value = event.target.value === '' ? 0 : event.target.value;
 	}
 }

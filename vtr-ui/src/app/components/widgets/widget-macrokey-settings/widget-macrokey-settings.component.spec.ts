@@ -19,7 +19,8 @@ const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'setMacrokeyInputChangeCache',
 	'setMacrokeyInitialKeyDataCache',
 	'setStartRecording',
-	'setStopRecording'
+	'setStopRecording',
+	'setKey'
 ]);
 
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
@@ -58,7 +59,7 @@ const sampleInputData = {
 	}
 };
 
-xdescribe('WidgetMacrokeySettingsComponent', () => {
+describe('WidgetMacrokeySettingsComponent', () => {
 	let component: WidgetMacrokeySettingsComponent;
 	let fixture: ComponentFixture<WidgetMacrokeySettingsComponent>;
 	macrokeyServiceMock.isMacroKeyAvailable.and.returnValue(true);
@@ -68,6 +69,7 @@ xdescribe('WidgetMacrokeySettingsComponent', () => {
 	macrokeyServiceMock.getMacrokeyRecordedStatusCache.and.returnValue(recordedStatusSampleData);
 	macrokeyServiceMock.getMacrokeyInputChangeCache.and.returnValue(sampleInputData);
 	macrokeyServiceMock.getMacrokeyInitialKeyDataCache.and.returnValue(sampleInputData);
+	macrokeyServiceMock.setKey.and.returnValue(true);
 
 	beforeEach(
 		async(() => {
@@ -77,10 +79,10 @@ xdescribe('WidgetMacrokeySettingsComponent', () => {
 					mockPipe({ name: 'translate' }),
 					mockPipe({ name: 'sanitize' })
 				],
-				schemas: [ NO_ERRORS_SCHEMA ],
+				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
-					{ provide: Router },
+					{ provide: Router, useValue: { navigate: (route) => route } },
 					{ provide: MacrokeyService, useValue: macrokeyServiceMock },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock }
 				]
@@ -162,6 +164,22 @@ xdescribe('WidgetMacrokeySettingsComponent', () => {
 		recordingChangeData.recordingStatus = false;
 		component.onRecordingChanged(recordingChangeData);
 	});
+	it('Should select the number', fakeAsync(() => {
+		component.onNumberSelected({ key: 9 });
+		expect(component.numberSelected).toEqual({ key: 9 });
+	})
+	);
+	it('Should route back', fakeAsync(() => {
+		const result = component.redirectBack();
+		expect(result).toEqual(undefined);
+	})
+	);
+	it('Should update the macrokey message event', fakeAsync(() => {
+		component.updateMacroKeyInputMessageEvent({message: 'Dummy message here'});
+		tick(10);
+		fixture.detectChanges();
+		expect(component.macroKeyMessageData).toEqual({message: 'Dummy message here'});
+	}));
 });
 
 export function mockPipe(options: Pipe): Pipe {

@@ -9,11 +9,12 @@ import { UPEService } from 'src/app/services/upe/upe.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: [ './page-networkboost.component.scss' ]
+	styleUrls: ['./page-networkboost.component.scss']
 })
 export class PageNetworkboostComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -26,9 +27,11 @@ export class PageNetworkboostComponent implements OnInit {
 	needToAskStatusObj: any = {};
 	isOnline = true;
 	// CMS Content block
+	cardContentPositionA: any = {};
+	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
-
+	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
 	backId = 'vtr-gaming-networkboost-btn-back';
 
 	constructor(
@@ -38,7 +41,8 @@ export class PageNetworkboostComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -55,8 +59,39 @@ export class PageNetworkboostComponent implements OnInit {
 		// AutoClose Init
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
 		this.getNetworkBoostStatus();
-	}
+		const queryOptions = {
+			Page: 'dashboard',
+			Lang: 'EN',
+			GEO: 'US',
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
+		};
 
+		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const cardContentPositionA = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-top-image-title-link',
+				'position-F'
+			)[0];
+			if (cardContentPositionA) {
+				this.cardContentPositionA = cardContentPositionA;
+			}
+
+			const cardContentPositionB = this.cmsService.getOneCMSContent(
+				response,
+				'half-width-title-description-link-image',
+				'position-B'
+			)[0];
+			if (cardContentPositionB) {
+				this.cardContentPositionB = cardContentPositionB;
+				if (this.cardContentPositionB.BrandName) {
+					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				}
+			}
+		});
+	}
 	async openTargetModal() {
 		try {
 			this.needToAsk = this.networkBoostService.getNeedToAsk();
@@ -161,9 +196,9 @@ export class PageNetworkboostComponent implements OnInit {
 
 	hiddenScroll(action: boolean) {
 		if (action) {
-			document.body.style.overflow = 'hidden';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
 		} else {
-			document.body.style.overflow = '';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
 		}
 	}
 

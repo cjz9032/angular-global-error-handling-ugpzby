@@ -1,50 +1,49 @@
 <div class="aps">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<p class="caption"
-					id="smart-assist-active-protection-system-desc"
-					attr.aria-label="smart-assist-active-protection-system-desc">
-					{{'device.smartAssist.activeProtectionSystem.description' | translate}}
-				</p>
-			</div>
+	<div class="row">
+		<div class="col-12">
+			<p class="caption"
+				id="smart-assist-active-protection-system-desc"
+				attr.aria-label="smart-assist-active-protection-system-desc">
+				{{'device.smartAssist.activeProtectionSystem.description' | translate}}
+			</p>
+		</div>
 
-			<div class="col-12">
-				<ul class="list-group list-group-flush">
-					<!-- APS Slider -->
-					<li class="auto-screen-off-block">
-						<div class="switch">
-							<vtr-ui-row-switch [switchId]="'activeProtectionSystem'"
-								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
-								[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
-								[isSwitchVisible]="true"
-								[isSwitchChecked]="apsStatus"
-								[leftIcon]="['icomoon', 'icomoon-Active-protection']"
-								[theme]="'white'"
-								[showChildContent]='true'
-								(toggleOnOff)="setAPSMode($event)"
-								vtrMetrics
-								metricsEvent="FeatureClick"
-								metricsParent="Device.SmartAssist"
-								metricsItem="activeProtectionSystem"
-								[metricsValue]="!apsStatus">
-								<div class="slider">
-									<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
-										[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
-										[minValue]="0"
-										[maxValue]="100"
-										[enableSlider]="!apsStatus"
-										[value]="apsSensitivity"
-										[theme]="'white'"
-										[step]='50'
-										(change)='setAPSSensitivityLevel($event)'
-										vtrMetrics
-										metricsEvent="ItemClick"
-										metricsParent="Device.SmartAssist"
-										metricsItem="ActiveProtectionSystem.Sensitivity.Slider">
-									</vtr-ui-aps-slider>
-								</div>
-								<!-- <div class="checkbox">
+		<div class="col-12">
+			<ul class="list-group list-group-flush">
+				<!-- APS Slider -->
+				<li class="auto-screen-off-block">
+					<div class="switch">
+						<vtr-ui-row-switch [switchId]="'activeProtectionSystem'"
+							[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
+							[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
+							[isSwitchVisible]="true"
+							[isSwitchChecked]="apsStatus"
+							[leftIcon]="['icomoon', 'icomoon-Active-protection']"
+							[theme]="'white'"
+							[showChildContent]='true'
+							(toggleOnOff)="setAPSMode($event)"
+							vtrMetrics
+							metricsEvent="FeatureClick"
+							metricsParent="Device.SmartAssist"
+							metricsItem="activeProtectionSystem"
+							[metricsValue]="!apsStatus">
+							<div class="slider">
+								<vtr-ui-aps-slider [apsSliderId]="'activeProtectionSystemSensitivity'"
+									[legends]="['device.smartAssist.activeProtectionSystem.APS.lowSensitivity' | translate,'device.smartAssist.activeProtectionSystem.APS.mediumSensitivity' | translate, 'device.smartAssist.activeProtectionSystem.APS.highSensitivity' | translate]"
+									[minValue]="0"
+									[maxValue]="100"
+									[enableSlider]="!apsStatus"
+									[value]="apsSensitivity"
+									[theme]="'white'"
+									[step]='50'
+									(change)='setAPSSensitivityLevel($event)'
+									vtrMetrics
+									metricsEvent="ItemClick"
+									metricsParent="Device.SmartAssist"
+									metricsItem="ActiveProtectionSystem.Sensitivity.Slider">
+								</vtr-ui-aps-slider>
+							</div>
+							<!-- <div class="checkbox">
 									<vtr-ui-checkbox [checkboxId]="'activeProtectionCheckbox'"
 										[label]="'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate"
 										[checked]="repeatShock"
@@ -57,119 +56,117 @@
 										[metricsValue]="repeatShock" >
 									</vtr-ui-checkbox>
 								</div> -->
-							</vtr-ui-row-switch>
-							<div class="custom-control custom-checkbox aps-checkbox"
-								[class.aps-disabled]="!apsStatus">
-								<input id="aps-toggle-checkbox"
-									attr.aria-label="aps-toggle-checkbox"
-									type="checkbox"
-									class="custom-control-input"
-									[checked]="repeatShock"
-									(change)="setAutoDisableSetting($event)"
+						</vtr-ui-row-switch>
+						<div class="custom-control custom-checkbox aps-checkbox">
+							<input id="aps-toggle-checkbox"
+								attr.aria-label="aps-toggle-checkbox"
+								type="checkbox"
+								class="custom-control-input"
+								[checked]="repeatShock"
+								(change)="setAutoDisableSetting($event)"
+								[disabled]="!apsStatus"
+								vtrMetrics
+								metricsEvent="ItemClick"
+								metricsParent="Device.SmartAssist"
+								metricsItem="ActiveProtectionSystem.AutoDisable"
+								[metricsValue]="repeatShock" />
+							<label class="custom-control-label"
+								for="aps-toggle-checkbox">
+								<span [ngClass]="{'disabled': !apsStatus}"
+									id="aps-toggle-checkbox-text"
+									attr.aria-label="aps-toggle-checkbox-text">
+									{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
+								</span>
+							</label>
+						</div>
+					</div>
+				</li>
+
+				<!-- Manual Overide -->
+				<li class="pt-3 keep-my-display-block auto-screen-off-block">
+					<vtr-ui-row-switch [switchId]="'manualActiveProtectionSuspension'"
+						[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
+						[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
+						[leftIcon]="['icomoon', 'icomoon-Active-protection']"
+						[theme]="'white'"
+						[isSwitchVisible]="true"
+						[isSwitchChecked]="manualSnooze"
+						[showChildContent]="true"
+						(toggleOnOff)="setSnoozeSetting($event)"
+						[disabled]="!apsStatus"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Device.SmartAssist"
+						metricsItem="ActiveProtectionSystem.ManualOverride"
+						[metricsValue]="manualSnooze">
+						<div *ngIf="manualSnooze"
+							class="dropdown row">
+							<section class="col-sm-6">
+								<p class="text-uppercase"
+									id="smart-assist-manual-active-protection-system-desc"
+									attr.aria-label="smart-assist-manual-active-protection-system-desc">
+									{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
+								</p>
+								<vtr-ui-dropdown [dropDownId]="'manualSnoozeTimeDropDown'"
+									[list]="intervals"
+									[value]="manualSnoozeTime"
+									(change)="setSnoozeTime($event)"
 									[disabled]="!apsStatus"
 									vtrMetrics
-									metricsEvent="ItemClick"
+									metricsEvent="FeatureClick"
 									metricsParent="Device.SmartAssist"
-									metricsItem="ActiveProtectionSystem.AutoDisable"
-									[metricsValue]="repeatShock" />
-								<label class="custom-control-label"
-									for="aps-toggle-checkbox">
-									<span [ngClass]="{'disabled': !apsStatus}"
-										id="aps-toggle-checkbox-text"
-										attr.aria-label="aps-toggle-checkbox-text">
-										{{'device.smartAssist.activeProtectionSystem.activeProtection.checkbox' | translate}}
-									</span>
-								</label>
-							</div>
-						</div>
-					</li>
-
-					<!-- Manual Overide -->
-					<li class="pt-3 keep-my-display-block auto-screen-off-block">
-						<vtr-ui-row-switch [switchId]="'manualActiveProtectionSuspension'"
-							[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
-							[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
-							[leftIcon]="['icomoon', 'icomoon-Active-protection']"
-							[theme]="'white'"
-							[isSwitchVisible]="true"
-							[isSwitchChecked]="manualSnooze"
-							[showChildContent]="true"
-							(toggleOnOff)="setSnoozeSetting($event)"
-							[disabled]="!apsStatus"
-							vtrMetrics
-							metricsEvent="FeatureClick"
-							metricsParent="Device.SmartAssist"
-							metricsItem="ActiveProtectionSystem.ManualOverride"
-							[metricsValue]="manualSnooze">
-							<div *ngIf="manualSnooze"
-								class="dropdown row">
-								<section class="col-sm-6">
-									<p class="text-uppercase"
-										id="smart-assist-manual-active-protection-system-desc"
-										attr.aria-label="smart-assist-manual-active-protection-system-desc">
-										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}
-									</p>
-									<vtr-ui-dropdown [dropDownId]="'manualSnoozeTimeDropDown'"
-										[list]="intervals"
-										[value]="manualSnoozeTime"
-										(change)="setSnoozeTime($event)"
-										[disabled]="!apsStatus"
-										vtrMetrics
+									metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
+									[metricsValue]="selectedSnoozeTime">
+								</vtr-ui-dropdown>
+							</section>
+							<section class="col-sm-5">
+								<div class="suspend-now-box">
+									<vtr-ui-button linkId="manualActiveProtectionSuspension_btn"
 										metricsEvent="FeatureClick"
+										metricsItem="ActiveProtectionSystem.ManualOverride.SuspendNow"
 										metricsParent="Device.SmartAssist"
-										metricsItem="ActiveProtectionSystem.ManualOverride.Dropdown"
-										[metricsValue]="selectedSnoozeTime">
-									</vtr-ui-dropdown>
-								</section>
-								<section class="col-sm-5">
-									<div class="suspend-now-box">
-										<vtr-ui-button linkId="manualActiveProtectionSuspension_btn"
-											metricsEvent="FeatureClick"
-											metricsItem="ActiveProtectionSystem.ManualOverride.SuspendNow"
-											metricsParent="Device.SmartAssist"
-											[isFullWidth]="true"
-											[isDisabled]="!apsStatus"
-											[label]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate"
-											(onClick)="suspendNow()"></vtr-ui-button>
-									</div>
-								</section>
-							</div>
-						</vtr-ui-row-switch>
-					</li>
+										[isFullWidth]="true"
+										[isDisabled]="!apsStatus"
+										[label]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate"
+										(onClick)="suspendNow()"></vtr-ui-button>
+								</div>
+							</section>
+						</div>
+					</vtr-ui-row-switch>
+				</li>
 
-					<!-- Advanced section -->
-					<li *ngIf="advanceAvailable && apsStatus"
-						class="advanced pt-3 keep-my-display-block auto-screen-off-block">
-						<h4 *ngIf="!advancedToggle"
-							id="activeProtectionSystem-more"
-							attr.aria-label="activeProtectionSystem-more">
-							{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
-						<a *ngIf="!advancedToggle"
-							id="activeProtectionSystem_advanced_settings_toggle"
-							attr.aria-label="activeProtectionSystem_advanced_settings_toggle"
-							(click)="toggleAdvanced()">
-							<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
-							</p>
+				<!-- Advanced section -->
+				<li *ngIf="advanceAvailable && apsStatus"
+					class="advanced pt-3 keep-my-display-block auto-screen-off-block">
+					<h4 *ngIf="!advancedToggle"
+						id="activeProtectionSystem-more"
+						attr.aria-label="activeProtectionSystem-more">
+						{{ 'device.smartAssist.activeProtectionSystem.advanced.more' | translate }}</h4>
+					<a *ngIf="!advancedToggle"
+						id="activeProtectionSystem_advanced_settings_toggle"
+						attr.aria-label="activeProtectionSystem_advanced_settings_toggle"
+						(click)="toggleAdvanced()">
+						<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
+						</p>
+					</a>
+
+					<section *ngIf="advancedToggle"
+						id="activeProtectionSystem_advanced_settings"
+						attr.aria-label="activeProtectionSystem_advanced_settings">
+						<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
+						</h4>
+						<vtr-active-protection-system-advanced [penCapability]="penCapability"
+							[touchCapability]="touchCapability"
+							[pSensorCapability]="pSensorCapability">
+						</vtr-active-protection-system-advanced>
+						<a (click)="toggleAdvanced()"
+							id="advancedActiveProtectionSystem_toggle"
+							attr.aria-label="advancedActiveProtectionSystem_toggle">
+							<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}</p>
 						</a>
-
-						<section *ngIf="advancedToggle"
-							id="activeProtectionSystem_advanced_settings"
-							attr.aria-label="activeProtectionSystem_advanced_settings">
-							<h4>{{ 'device.smartAssist.activeProtectionSystem.advanced.advanced-settings' | translate }}
-							</h4>
-							<vtr-active-protection-system-advanced [penCapability]="penCapability"
-								[touchCapability]="touchCapability"
-								[pSensorCapability]="pSensorCapability">
-							</vtr-active-protection-system-advanced>
-							<a (click)="toggleAdvanced()"
-								id="advancedActiveProtectionSystem_toggle"
-								attr.aria-label="advancedActiveProtectionSystem_toggle">
-								<p>{{ 'device.smartAssist.activeProtectionSystem.advanced.hide' | translate }}</p>
-							</a>
-						</section>
-					</li>
-				</ul>
-			</div>
+					</section>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
 @Component({
@@ -25,7 +25,6 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() isGaugeResetRunning = false;
 
 
-
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
 
@@ -39,7 +38,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	ngOnInit() { }
 
-	onChargeChange(id: string, newCharge: number, event: Event) {
+	onChargeChange(id: string, newCharge: number, event: Event, button: HTMLElement) {
+
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
 				this.selectedStartAtCharge = newCharge;
@@ -64,7 +64,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		} else {
 			this.toggleAutoChargeSettings(true);
 		}
-
+		button.focus();
 	}
 
 	autoStartStopAtCharge() {

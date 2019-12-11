@@ -1,13 +1,24 @@
 <div class="vtr-ui-circle-radio-with-checkbox col-aut0 px-0"
-	[ngClass]="{
-		'white-theme': theme === 'white',
-		'blue-theme': theme === 'blue'
-	}">
+	attr.aria-labelledby="{{radioId}}"
+	#radioButton
+	role="radio"
+	[tabIndex]="checked? 0 :-1"
+	[attr.aria-disabled]="disabled"
+	[attr.aria-checked]="checked"
+	attr.aria-label="radioId"
+	(keydown)="radioKBNavigation($event,radio)"
+	(focus)="checkOnFocus($event,radio)"
+	[ngClass]="{'white-theme': theme === 'white','blue-theme': theme === 'blue'}">
 	<div class="checkbox">
 		<input class="checkbox-custom"
+			attr.aria-labelledby="{{textId}}-{{value}}-label"
+			[attr.aria-disabled]="disabled"
+			[attr.aria-checked]="checked"
+			[attr.aria-label]="radioId"
 			id="{{radioId}}"
 			name="{{group}}"
 			type="radio"
+			attr.aria-label="{{ radioId }}"
 			[value]="value"
 			[checked]="checked"
 			[disabled]="disabled"
@@ -16,9 +27,9 @@
 			vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="'radio.'+label"
-			[metricsValue]="!radio.checked">
+			[metricsValue]="!radio.checked" tabindex="-1">
 		<label for="{{radioId}}"
-			class="checkbox-custom-label">
+			class="checkbox-custom-label" id="{{ radioId }}" attr.aria-label="{{ radioId }}">
 			<div *ngIf="!hideIcon"
 				[ngClass]="'icomoon icomoon-'+getIconName(value)"></div>
 			<fa-layers [fixedWidth]="true"
@@ -30,11 +41,10 @@
 			</fa-layers>
 
 		</label>
-		<div
-			[ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
+		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']"
 			id="{{textId}}-{{value}}-label"
 			attr.aria-label="{{textId}}-{{value}}-label"
-
-		>{{label | capitalizeFirst}}</div>
+			[attr.aria-disabled]="disabled"
+			[attr.aria-checked]="checked">{{label | capitalizeFirst}}</div>
 	</div>
 </div>

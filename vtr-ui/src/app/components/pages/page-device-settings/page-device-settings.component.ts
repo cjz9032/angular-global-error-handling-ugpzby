@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -6,14 +6,14 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
@@ -24,7 +24,9 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 	styleUrls: ['./page-device-settings.component.scss']
 })
 export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
-
+	routerSubscription: Subscription;
+	activeElement: HTMLElement;
+	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 	title = 'Device Settings';
 	back = 'BACK';
 	backarrow = '< ';
@@ -83,13 +85,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		public audioService: AudioService,
 		private logger: LoggerService,
 		private translate: TranslateService,
-		private router: Router,
+		private router: Router
 	) {
 
-		const showPowerPage = this.commonService.getLocalStorageValue(LocalStorageKey.IsHidePowerPage);
-		if (showPowerPage) {
-			this.hidePowerPage();
-		}
 		// translate subheader menus
 		this.menuItems.forEach(m => {
 			// m.label = this.translate.instant(m.label);//VAN-5872, server switch feature
@@ -128,6 +126,28 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getAudioPageSettings();
 		}
+
+		this.routerSubscription = this.router.events.subscribe((evt) => {
+			if (!(evt instanceof NavigationEnd)) {
+				return;
+			}
+			// focus same active link element after route change , content loaded.
+			if (this.activeElement) {
+				this.activeElement.focus();
+			}
+
+			// window.scrollTo(0, 0);
+			/* const focusParentElement = this.hsRouterOutlet.nativeElement.lastElementChild;
+			if (focusParentElement) {
+				focusParentElement.focus();
+				console.log('aa 1:: ' + this.hsRouterOutlet.nativeElement);
+				console.log('aa 2:: ' + focusParentElement);
+			} */
+			/* const subPageRootElement = document.getElementsByClassName('vtr-subpage') as HTMLCollection;
+			const element = subPageRootElement[0].querySelector('[tabindex = \'0\']') as HTMLElement;
+			element.focus(); */
+			// vtr - subpage
+		});
 	}
 
 	hidePowerPage() {
@@ -156,18 +176,31 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initInputAccessories() {
-
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
-		const familyName = machineFamily.replace(/\s+/g, '');
-		if (this.machineType !== 1 || (this.machineType === 1 && familyName === 'LenovoTablet10')) {
-			this.menuItems = this.commonService.removeObjById(this.menuItems, 'input-accessories');
-			return;
-		}
-		const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
-		const isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
-		if (!isAvailable) {
-			this.menuItems = this.commonService.removeObjById(this.menuItems, 'input-accessories');
+		if (this.machineType) {
+			const machineFamily = this.commonService.getLocalStorageValue(LocalStorageKey.MachineFamilyName, undefined);
+			if (machineFamily) {
+				const familyName = machineFamily.replace(/\s+/g, '');
+				if (this.machineType === 1 && familyName === 'LenovoTablet10') {
+					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+					return;
+				}
+			}
+			if (this.machineType !== 1 && this.machineType !== 0) {
+				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+				return;
+			} else {
+				const inputAccessoriesCapability: InputAccessoriesCapability = this.commonService.getLocalStorageValue(LocalStorageKey.InputAccessoriesCapability);
+				let isAvailable;
+				if (inputAccessoriesCapability) {
+					isAvailable = inputAccessoriesCapability.isUdkAvailable || inputAccessoriesCapability.isKeyboardMapAvailable;
+				}
+				const isVOIPAvailable = this.commonService.getLocalStorageValue(LocalStorageKey.VOIPCapability);
+				const topRowFunctionsIdeapadCapability = this.commonService.getLocalStorageValue(LocalStorageKey.TopRowFunctionsCapability);
+				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability) {
+					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+				}
+			}
 		}
 	}
 
@@ -176,10 +209,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				Promise.all([
 					this.audioService.getDolbyMode(),
-					//this.audioService.getMicrophoneSettings(),
+					// this.audioService.getMicrophoneSettings(),
 				]).then((responses: any[]) => {
 					const dolbyModeResponse: DolbyModeResponse = responses[0];
-					//const microphone: Microphone = responses[1];
+					// const microphone: Microphone = responses[1];
 					this.logger.info('getAudioPageSettings.Promise.all', responses);
 					this.commonService.setLocalStorageValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
 					// if (!microphone.available && !dolbyModeResponse.available) {
@@ -236,12 +269,22 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		};
 	}
 
+	onRouteActivate($event, hsRouterOutlet: HTMLElement) {
+		// On route change , change foucs to immediate next below first tabindex on route change response
+		this.activeElement = document.activeElement as HTMLElement;
+	}
+
 	// VAN-5872, server switch feature
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		this.qaService.destroyChangeSubscribed();
+		if (this.qaService) {
+			this.qaService.destroyChangeSubscribed();
+		}
+		if (this.routerSubscription) {
+			this.routerSubscription.unsubscribe();
+		}
 	}
 
 }

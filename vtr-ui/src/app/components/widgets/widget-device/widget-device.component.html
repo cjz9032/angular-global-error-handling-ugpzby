@@ -1,51 +1,61 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid p-40">
-		<div class="circleimage p-40">
-			<img *ngIf="!deviceService.isGaming" [src]=" '/assets/icons/logo-lenovo-red.svg' | svgInline | async" alt="Lenovo logo">
-			<img *ngIf="deviceService.isGaming" [src]=" '/assets/icons/logo-lenovo-white.svg' | svgInline | async" alt="Lenovo logo">
-		</div>
-		<div class="row mt-20">
-			<div class="col">
-				<div class="family"
-					id="myDevice-machine-info"
-					attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
-			</div>
-		</div>
-		<div class="row" dir={{direction}}>
-			<div class="col-12 px-0">
-				<span class="sub-header-separator">
-					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-				</span>
-				<span class="device-sub-header"
-					id="myDevice-serial"
-					attr.aria-label="myDevice-serial">{{'device.myDevice.serial' | translate}}: {{myDevice.sn}}</span>
+		<div class="d-flex device-status">
+				<div class="col device-info">
+						<div class="family"
+							id="myDevice-machine-info"
+							attr.aria-label="myDevice-machine-info">{{myDevice.family}}</div>
+							<div class="col-12 px-0 dir={{direction}}">
+									<span class="sub-header-separator">
+										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+									</span>
+									<span class="device-sub-header"
+										id="myDevice-serial"
+										attr.aria-label="myDevice-serial"><span class="{{'dirClass' | translate}}"
+											dir="{{'dir' | translate}}">{{'device.myDevice.serial' | translate}}</span>:
+										{{myDevice.sn}}</span>
+								</div>
+								<div class="col-12 px-0">
+									<span class="sub-header-separator">
+										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+									</span>
+									<span class="device-sub-header"
+										id="myDevice-product-number"
+										attr.aria-label="myDevice-product-number"><span class="{{'dirClass' | translate}}"
+											dir="{{'dir' | translate}}">{{'device.myDevice.productNumber' | translate}}</span>:
+										{{myDevice.productNo}}</span>
+								</div>
+								<div class="col-12 px-0">
+									<span class="sub-header-separator">
+										<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+									</span>
+									<span
+										id="myDevice-bios-version"
+										attr.aria-label="myDevice-bios-version"
+										class="{{'dirClass' | translate}} device-sub-header text-wrap"
+										dir="{{'dir' | translate}}">{{'device.myDevice.biosVersion'|translate}}</span>
+									<span class="device-sub-header text-wrap">: {{myDevice.bios}}</span>
 
-			</div>
-			<div class="col-12 px-0">
-				<span class="sub-header-separator">
-					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-				</span>
-				<span class="device-sub-header"
-					id="myDevice-product-number"
-					attr.aria-label="myDevice-product-number">{{'device.myDevice.productNumber' | translate}}:
-					{{myDevice.productNo}}</span>
-			</div>
-			<div class="col-12 px-0">
-				<span class="sub-header-separator">
-					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-				</span>
-				<span class="device-sub-header text-wrap"
-					id="myDevice-bios-version"
-					attr.aria-label="myDevice-bios-version" dir={{direction}}>{{'device.myDevice.biosVersion'|translate}}</span>
-					<span class="device-sub-header text-wrap" >:{{myDevice.bios}}</span>
-
-			</div>
+								</div>
+					</div>
+					<div class="col device-image">
+						<div class="circleimage">
+							<img class="img-fluid" *ngIf="!deviceService.isGaming"
+								[src]=" '/assets/icons/logo-lenovo-red.svg' | svgInline | async"
+								alt="Lenovo logo">
+							<img class="img-fluid" *ngIf="deviceService.isGaming"
+								[src]=" '/assets/icons/logo-lenovo-white.svg' | svgInline | async"
+								alt="Lenovo logo">
+						</div>
+					</div>
 		</div>
+
 		<div class="row">
 			<div class="col">
 				<div class="subheader"
 					id="myDevice-status-title"
-					attr.aria-label="myDevice-status-title">{{'device.myDevice.subtitle'|translate}}</div>
+					attr.aria-label="myDevice-status-title"
+					dir="{{'dir' | translate}}">{{'device.myDevice.subtitle'|translate}}</div>
 			</div>
 		</div>
 		<div class="row">
@@ -53,30 +63,26 @@
 				<ul class="status-list">
 					<li *ngFor="let item of deviceStatus; let i=index"
 						[ngClass]="[!item.status?'good':'bad']"
-						[hidden]="item.isHidden">
+						[hidden]="item.isHidden"
+						tabindex="0">
 						<div class="container-fluid">
-							<div class="row align-items-center">
-								<div class="col-auto">
+							<div class="row d-flex align-items-center {{'dirClass' | translate}}">
 									<div class="status-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
 										</div>
 									</div>
-								</div>
-								<div class="col-auto status-block p-0">
+								<div class="d-flex status-content justify-content-between">
 									<div class="title"
 										[ngClass]="[!item.status?'good':'bad']"
 										id="myDevice-system-details-{{item.id}}"
-										attr.aria-label="myDevice-system-details-{{item.id}}">
+										attr.aria-label="myDevice-system-details-{{item.id}}"
+										dir="{{'dir' | translate}}">
 										{{item.title}}
 										<span *ngIf="item.systemDetails"
-											class='systemDetails' dir={{direction}}>({{item.systemDetails}})</span>
+											class='systemDetails'
+											dir="{{'dir' | translate}}">({{item.systemDetails}})</span>
 									</div>
-
-
-								</div>
-								<div class="col-auto text-right ml-auto p-0">
-
 									<div *ngIf="item.status === 4"
 										class="spinner-content">
 										<div class="spinner-border text-secondary progress-spinner"
@@ -90,11 +96,13 @@
 										metricsEvent="itemClick"
 										[metricsValue]="'link.'+item.id"
 										id="myDevice-status-learn-more-{{item.id}}"
-										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
+										title="{{item.detail}}"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false && item.status !== 4)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
-											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+											<span class="{{'dirClass' | translate}}"
+												dir="{{'dir' | translate}}">{{item.detail}}</span>
+											<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
@@ -105,11 +113,13 @@
 										[metricsValue]="'link.'+item.id"
 										href="javascript:void(0);"
 										id="myDevice-status-learn-more-{{item.id}}"
-										attr.aria-label="myDevice-status-learn-more-{{item.id}}"
+										title="{{item.detail}}"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
-											{{item.detail}} <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+											<span class="{{'dirClass' | translate}}"
+												dir="{{'dir' | translate}}">{{item.detail}}</span>
+											<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 										</div>
 									</a>
 									<!-- <div class="arrow">

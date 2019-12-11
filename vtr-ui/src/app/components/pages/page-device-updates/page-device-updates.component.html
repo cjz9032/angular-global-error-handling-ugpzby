@@ -1,144 +1,125 @@
-<div class="vtr-page-device-updates vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"
-				[backId]="'system-update-back-btn'">
-			</vtr-header-main>
-		</div>
-	</div>
+<vtr-page-layout [title]="title"
+	[back]="'common.ui.back' | translate"
+	[backId]="'system-update-back-btn'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true">
 
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
-						<div class="vtr-page-shift-up">
-							<div class="vtr-device-information">
-								<div class="container-fluid">
+	<left-content>
+		<div class="container-fluid pb-20">
 
-									<div class="row">
-										<div class="col col-12">
-											<vtr-widget-offline-info *ngIf="!isOnline"
-												[isButtonVisible]="false"
-												[isSubtitleVisible]="false"
-												[title]="'dashboard.offlineInfo.title' | translate"
-												[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
+			<div class="row">
+				<div class="col col-12">
+					<vtr-widget-offline-info *ngIf="!isOnline"
+						[isButtonVisible]="false"
+						[isSubtitleVisible]="false"
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
-											<vtr-widget-device-update [title]="updateTitle"
-												*ngIf="isOnline"
-												[vtrAppSearchScroller]="['search-check-update']"
-												[subTitle1]="getLastUpdatedText()"
-												[subTitle2]="getNextUpdatedScanText()"
-												[buttonText]="'systemUpdates.banner.checkButton' | translate"
-												[percent]="percentCompleted"
-												[isCheckingStatus]="isCheckingStatus"
-												[showProgress]="isUpdateCheckInProgress"
-												[isUpdateDownloading]="isUpdateDownloading"
-												[isCheckingPluginStatus]="isCheckingPluginStatus"
-												[installingPercent]="installationPercent"
-												[downloadingPercent]="downloadingPercent"
-												(checkForUpdate)="onCheckForUpdates()"
-												(cancelUpdateCheck)="onCancelUpdateCheck()"
-												(cancelUpdateDownload)="onCancelUpdateDownload()">
-											</vtr-widget-device-update>
-										</div>
-									</div>
-									<vtr-available-updates *ngIf="isUpdateListVisible()"
-										[criticalUpdates]="criticalUpdates"
-										[optionalUpdates]="optionalUpdates"
-										[recommendedUpdates]="recommendedUpdates"
-										[ignoredUpdates]="ignoredUpdates"
-										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
-										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
-										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
-										(checkChange)="onUpdateSelectionChange($event)"
-										(ignoreUpdate)="onIgnoredUpdate($event)"
-										(installAllUpdate)="showInstallConfirmation('all')"
-										(installSelectedUpdate)="showInstallConfirmation('selected')">
-									</vtr-available-updates>
+					<vtr-widget-device-update [title]="updateTitle | translate"
+						*ngIf="isOnline"
+						[vtrAppSearchScroller]="['search-check-update']"
+						[subTitle1]="getLastUpdatedText()"
+						[subTitle2]="getNextUpdatedScanText()"
+						[buttonText]="'systemUpdates.banner.checkButton' | translate"
+						[percent]="percentCompleted"
+						[isCheckingStatus]="isCheckingStatus"
+						[showProgress]="isUpdateCheckInProgress"
+						[isUpdateDownloading]="isUpdateDownloading"
+						[isCheckingPluginStatus]="isCheckingPluginStatus"
+						[installingPercent]="installationPercent"
+						[downloadingPercent]="downloadingPercent"
+						(checkForUpdate)="onCheckForUpdates()"
+						(cancelUpdateCheck)="onCancelUpdateCheck()"
+						(cancelUpdateDownload)="onCancelUpdateDownload()">
+					</vtr-widget-device-update>
+				</div>
+			</div>
+			<vtr-available-updates *ngIf="isUpdateListVisible()"
+				[criticalUpdates]="criticalUpdates"
+				[optionalUpdates]="optionalUpdates"
+				[recommendedUpdates]="recommendedUpdates"
+				[ignoredUpdates]="ignoredUpdates"
+				[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
+				[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
+				[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
+				(checkChange)="onUpdateSelectionChange($event)"
+				(ignoreUpdate)="onIgnoredUpdate($event)"
+				(installAllUpdate)="showInstallConfirmation('all')"
+				(installSelectedUpdate)="showInstallConfirmation('selected')">
+			</vtr-available-updates>
 
-									<div class="row">
-										<div class="col col-12 installation-history-container p-5">
-											<vtr-container-collapsible
-												name="SystemUpdateHistory"
-												[tabIndex]="0"
-												[cardTitle]="'systemUpdates.history' | translate"
-												[isCollapsed]="false"
-												[collapseLinkId]="'su-history'">
-												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
-												</vtr-installation-history>
-											</vtr-container-collapsible>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-						<div class="vtr-page-shift-up">
-							<div class="container-fluid">
-								<div class="row mb-40">
-									<div class="col col-12 cont"
-									[vtrAppSearchScroller]="['search-critical-update', 'search-recommend-update', 'search-windows-update']">
-										<vtr-autoupdate-settings
-											[title]="'systemUpdates.autoUpdateSettings.title' | translate"
-											componentName="Auto Update Settings"
-											[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"
-											[items]="autoUpdateOptions"
-											(toggleOnOff)="onUpdateToggleOnOff($event)">
-										</vtr-autoupdate-settings>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col col-12 mb-40">
-										<vtr-container-card [img]="'assets/images/support.jpg'"
-											id="su-web-support-cardcontent"
-											aria-label="su-web-support-cardcontent"
-											[itemID]="'LenovoSupportWebsite'"
-											[title]="'systemUpdates.support.title' | translate"
-											[action]="'Read More'"
-											[actionType]="'External'"
-											[actionLink]="supportLink"
-											[type]="'partnerarticle'"
-											order="2"
-											sideFlag = 'r'
-											[ratioX]="4"
-											[ratioY]="2">
-										</vtr-container-card>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col col-12 mb-40">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-											id="su-positionA-cardcontent"
-											aria-label="su-positionA-cardcontent"
-											[itemID]="cardContentPositionA.Id"
-											[caption]="cardContentPositionA.Description"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionType]="cardContentPositionA.ActionType"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'corner-article'"
-											order="3"
-											sideFlag = 'r'
-											[ratioX]="4"
-											[ratioY]="2"
-											[cornerShift]="'large'">
-										</vtr-container-card>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col col-12 installation-history-container p-5">
+					<vtr-container-collapsible name="SystemUpdateHistory"
+						[tabIndex]="0"
+						[cardTitle]="'systemUpdates.history' | translate"
+						[isCollapsed]="false"
+						[collapseLinkId]="'su-history'">
+						<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
+						</vtr-installation-history>
+					</vtr-container-collapsible>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row mb-40">
+				<div class="col col-12 cont"
+					[vtrAppSearchScroller]="['search-critical-update', 'search-recommend-update', 'search-windows-update']">
+					<vtr-autoupdate-settings [title]="'systemUpdates.autoUpdateSettings.title' | translate"
+						componentName="Auto Update Settings"
+						[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"
+						[items]="autoUpdateOptions"
+						(toggleOnOff)="onUpdateToggleOnOff($event)">
+					</vtr-autoupdate-settings>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-12 mb-40">
+					<vtr-container-card [img]="'assets/images/support.jpg'"
+						id="su-web-support-cardcontent"
+						aria-label="su-web-support-cardcontent"
+						[itemID]="'LenovoSupportWebsite'"
+						[title]="'systemUpdates.support.title' | translate"
+						[action]="'Read More'"
+						[actionType]="'External'"
+						[actionLink]="supportLink"
+						[type]="'partnerarticle'"
+						order="2"
+						sideFlag='r'
+						[ratioX]="4"
+						[ratioY]="2">
+					</vtr-container-card>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-12 mb-40">
+					<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+						id="su-positionA-cardcontent"
+						aria-label="su-positionA-cardcontent"
+						[itemID]="cardContentPositionA.Id"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[type]="'corner-article'"
+						order="3"
+						sideFlag='r'
+						[ratioX]="4"
+						[ratioY]="2"
+						[cornerShift]="'large'">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

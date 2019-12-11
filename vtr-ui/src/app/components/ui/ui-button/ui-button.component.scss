@@ -13,7 +13,27 @@
 			top: 40%;
 		}
 
+		.loadingIcon {
+			position: absolute;
+			left: 45%;
+			top: 40%;
+		}
+		.loadingIcon {
+			position: absolute;
+			left: 45%;
+			top: 40%;
+		}
 		.button {
+			@media #{$black-on-white} {
+
+				border: 0.1rem solid $dark;
+
+			}
+			@media #{$white-on-black} {
+
+				border: 0.1rem solid $light;
+
+			}
 			@media #{$mediaquery_X4} {
 				min-width: 10rem;
 			}
@@ -25,7 +45,7 @@
 			background: $gradient_main;
 			border: none;
 			color: $light;
-			font-size: $body;
+			font-size: $fontsize_sm;
 			font-weight: $weight_bold;
 			text-align: center;
 			text-decoration: none;

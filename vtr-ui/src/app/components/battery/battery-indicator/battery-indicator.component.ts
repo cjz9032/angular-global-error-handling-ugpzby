@@ -48,7 +48,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		if (changes.batteryNotDetected || (changes.percentage && !changes.percentage.firstChange)) {
+		if ((changes.percentage && !changes.percentage.firstChange) || changes.batteryNotDetected && !changes.batteryNotDetected.previousValue) {
 			this.refreshLevel();
 		}
 		this.checkRemainingTimeIsZero();

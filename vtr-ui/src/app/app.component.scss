@@ -9,6 +9,7 @@
 	min-width: 400px;
 	height: calc(100vh - #{$menu_height} + 1px);
 	overflow-y: auto;
+	overflow-x: hidden;
 	.vtr-widget {
 		background: $screen_dark_70;
 		max-width: 33%;
@@ -51,7 +52,7 @@
 @media only screen and (max-width:800px) {
 	.vtr-app {
 		background-image: none !important;
-		background: $light;
+		// background: $light;
 		.vtr-widget {
 			background: transparent;
 			max-width: 100%;
@@ -70,6 +71,6 @@
 			display: none;
 		}
 	}
-	
+
 }
 

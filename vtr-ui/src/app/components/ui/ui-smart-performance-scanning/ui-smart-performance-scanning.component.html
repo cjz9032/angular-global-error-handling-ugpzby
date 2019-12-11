@@ -1,0 +1,238 @@
+<!-- new changes -->
+<div class="row vtr-page-content">
+	<div class="col vtr-col">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
+					<div class="vtr-page-shift-up">
+						<div class="vtr-ui-smart-performance-scanning">
+							<div class="row">
+								<div class="col col-12 offline-info-background">
+									<div class="w-100">
+										<div class="row d-flex justify-content-between">
+											<div class="mt-5">
+												<h1>{{'smartPerformance.scanningPage.title' |translate }}</h1>
+												<h3>{{'smartPerformance.scanningPage.description' |translate }}</h3>
+											</div>
+											<img class="icon" src="../../../../assets/images/smart-performance/pc-scan-animated.svg">
+										</div>
+										<hr class="light-dashline" />
+									</div>
+						
+										<div *ngIf="showProgress"
+											class="col row">
+											<div class="col col-12 row progress-div">
+												<div class="col col-9 progress-title pb-4" id="su-cheking-updates-title"
+													aria-label="su-cheking-updates-title">{{'smartPerformance.scanningPage.scanningSystem' |translate }}</div>
+												<div class="col col-3 progress-percent-text">
+													<div class="row d-flex justify-content-end">
+														<span class="progress-value-text pb-4">{{percent}}</span>
+														<span
+															class="progress-complete-text" id="su-progress-complete-text"
+															aria-label="su-progress-complete-text">% {{'smartPerformance.scanningPage.complete' |translate }}</span>
+													</div>
+												</div>
+											</div>
+											<div class="col col-12 row progress-bar-div-container">
+												<div class="col col-12 progress-bar-div" id="su_check_progress" aria-label="su_check_progress">
+													<ngb-progressbar
+														type="success"
+														[value]="percent"
+														[height]="'0.6rem'"></ngb-progressbar>
+												</div>
+											</div>
+											<div class="col col-12 row">
+												<div class="col col-12 cancel-check p-5 d-flex justify-content-center">
+													<button type="button"
+														id="su_cancel_updates"
+														attr.aria-label="su_cancel_updates"
+														vtrMetrics
+														metricsEvent="ItemClick"
+														metricsParent="Pages.SystemUpdate"
+														metricsItem="'btn.cancel'"
+														class="btn btn-link cancel-check"
+														[disabled]="percent === 0 || isCheckingStatus" (click)="openCancelScanModel()"
+														 >{{'smartPerformance.scanningPage.cancelScan.button' |translate }}</button>
+												</div>
+											</div>
+										</div>
+						
+								</div>
+							</div>
+							
+						
+							<div class="row">
+								<div class="pc-info-card pc-accordion w-100 my-5">
+									<div class="col-12">
+										<ngb-accordion [closeOthers]="true" #acc="ngbAccordion">
+											<ngb-panel id="Tune up performance">
+												<ng-template ngbPanelTitle>
+												<div class="d-flex justify-content-between">
+													<div class="heading">
+														<div class="icon icon-performance"></div>
+														<h2>{{'smartPerformance.tunePCPerformance.title' |translate }}</h2>
+													</div>
+													<div class="status-text float-right pull-right" >
+														<vtr-widget-speedometer #speedometer *ngIf="activegroup === 'Tune up performance'"></vtr-widget-speedometer>
+														<p *ngIf="activegroup !== 'Tune up performance'">{{'smartPerformance.scanningPage.completed' |translate }}</p>
+													</div>
+												</div>
+												</ng-template>
+												<ng-template ngbPanelContent>
+												<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-recycling-2025397"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Accumilated junk'}">{{'smartPerformance.tunePCPerformance.tabSet1.tab1' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-noun-touch-200038"></div>
+														<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab2' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-microsoft-windows-22"></div>
+														<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab3' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-error-1582584"></div>
+														<p>{{'smartPerformance.tunePCPerformance.tabSet1.tab4' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-noun-registery-key-1581151"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Registry Errors'}">{{'smartPerformance.tunePCPerformance.tabSet1.tab5' |translate }}</p>
+													</div>
+												</div>
+												</ng-template>
+											</ngb-panel>
+											
+											<ngb-panel id="Internet performance">
+												<ng-template ngbPanelTitle>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="heading">
+														<div class="icon icon-internet-performance"></div>
+														<h3>{{'smartPerformance.boostInternetPerformance.extraTitle' |translate }}</h3>
+													</div>
+													<!-- <div class="status-text float-right pull-right">
+														<p>WAITING TO SCAN</p>
+													</div> -->
+													<div  class="status-text float-right pull-right" >
+															<vtr-widget-speedometer #speedometer  *ngIf="activegroup === 'Internet performance'"></vtr-widget-speedometer>
+															<p *ngIf="activegroup === 'Tune up performance'">{{'smartPerformance.scanningPage.waiting' |translate }}</p>
+															<p *ngIf="activegroup === 'Malware & Security'">{{'smartPerformance.scanningPage.completed' |translate }}</p>
+													</div>
+												</div>
+												</ng-template>
+												<ng-template ngbPanelContent>
+												<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+													<div class="icon-box d-flex justify-content-center">
+															<div class="icon icon-router"></div>
+														<!-- <p>Network Settings</p> -->
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Network Settings'}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab1' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-visible-to-online-trackers"></div>
+														<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab2' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-visible-to-online-trackers"></div>
+														<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab3' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-wifi"></div>
+														<p>{{'smartPerformance.boostInternetPerformance.tabSet1.tab4' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-uninstall"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='e-junk'}">{{'smartPerformance.boostInternetPerformance.tabSet1.tab5' |translate }}</p>
+													</div>
+												</div>
+												</ng-template>
+											</ngb-panel>
+											<ngb-panel id="Malware & Security">
+												<ng-template ngbPanelTitle>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="heading">
+														<div class="icon icon-malware-security"></div>
+														<h3>{{'smartPerformance.malwareSecurity.title' |translate }}</h3>
+													</div>
+													<div class="status-text float-right pull-right">
+															<vtr-widget-speedometer #speedometer *ngIf="activegroup === 'Malware & Security'"></vtr-widget-speedometer>
+															<p *ngIf="activegroup === 'Internet performance' || activegroup === 'Tune up performance'">
+																{{'smartPerformance.scanningPage.waiting' |translate }}
+															</p>
+														
+													</div>
+												</div>
+												</ng-template>
+												<ng-template ngbPanelContent>
+												<div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-virus"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Malware Scan'}">{{'smartPerformance.malwareSecurity.tabSet1.tab1' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-power-agenda"></div>
+														<p>{{'smartPerformance.malwareSecurity.tabSet1.tab2' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-malware-security"></div>
+														<p>{{'smartPerformance.malwareSecurity.tabSet1.tab3' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-uninstall-375971"></div>
+														<p>{{'smartPerformance.malwareSecurity.tabSet1.tab4' |translate }}</p>
+													</div>
+													<div class="icon-box d-flex justify-content-center">
+														<div class="icon icon-multitasking"></div>
+														<p [ngClass]="{'text-primary': scanData.status.subcategory=='Annoying adware'}">{{'smartPerformance.malwareSecurity.tabSet1.tab5' |translate }}</p>
+													</div>
+												</div>
+												</ng-template>
+											</ngb-panel>
+										</ngb-accordion>
+									</div>
+								</div>
+							</div>
+						</div>							
+					</div>
+				</div>
+				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
+					<div class="vtr-page-shift-up">
+						<div class="container-fluid">
+							<div class="row mb-40">
+								<div class="col col-12">
+									<div class="accumulated-junk sidebar-widget">
+										<div class="mini-text">{{'smartPerformance.scanningPage.nowScanningDetail.cardTitle' |translate }}</div>
+										<div class="title pb-3">
+											<fa-icon [icon]="['fas', 'laptop']" class="mr-2"></fa-icon>
+											{{subItems.name}}
+										</div>
+										<div class="card-info">
+											<!-- <p>This is a brief description of what Accumulated Junk means to a user and why they should know more about it. What is it, why is it important, how is it affecting my computer performance, how will I benifit from the junk being cleaned up?</p> -->
+											<p>{{subItems.desc}}</p>
+										</div>
+										<div class="d-flex">
+											<div class="labels d-flex flex-column">
+												<span class="badge badge-primary">{{'smartPerformance.scanningPage.nowScanningDetail.current' |translate }}</span>
+												<span class="badge badge-light">{{'smartPerformance.scanningPage.nowScanningDetail.upNext' |translate }}</span>
+											</div>
+											<div class="ms-slider">
+												<ul class="junk-list ms-slider__words">
+														<li class="ms-slider__word" *ngFor="let item of subItems.items">{{item.key}}</li>
+													<!-- <li class="ms-slider__word">Applying registry and shortcut fixes</li>
+													<li class="ms-slider__word">Scanning and fixing critical services</li>
+													<li class="ms-slider__word">Modifying windows settings</li>
+													<li class="ms-slider__word">Improving start-up perfoclsrmance</li> -->
+												</ul>
+											</div>
+										</div>
+										<!-- <a href="#" class="link-text">Manage Subscription</a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

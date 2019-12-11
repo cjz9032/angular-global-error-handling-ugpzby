@@ -152,7 +152,6 @@ describe('WidgetSystemMonitorComponent', () => {
 			expect(DynamicInfov.memoryUsed).toEqual('20.2GB');
 		});
 		expect(DynamicInfov).toEqual(undefined);
-
 	});
 
 });

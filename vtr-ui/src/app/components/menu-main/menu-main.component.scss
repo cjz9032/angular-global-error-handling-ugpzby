@@ -51,11 +51,14 @@
 			font-size: 5rem;
 			font-weight: $weight_bold;
 			width: $menu_height;
-			height: 100%;
 			border: none;
 			text-align: center;
 			color: $light;
 			overflow: hidden;
+			&.logo-y {
+				height: 9rem;
+				padding-bottom: 0;
+			}
 
 			.menu-main-logo {
 				display: block;
@@ -326,7 +329,7 @@
 									margin-top: -0.3rem;
 									width: 0.8rem;
 									height: 0.8rem;
-									background: #DB221F;
+									background: #db221f;
 									border-radius: 50%;
 								}
 							}
@@ -355,6 +358,12 @@
 								transform: rotate(45deg);
 								right: 1.2rem;
 								top: 4rem;
+								@media #{$black-on-white} {
+									background: $high-contrast-blue;
+								}
+								@media #{$white-on-black} {
+									background: $yellow;
+								}
 							}
 
 							&::before {
@@ -367,6 +376,12 @@
 								transform: rotate(135deg);
 								right: 2rem;
 								top: 4rem;
+								@media #{$black-on-white} {
+									background: $high-contrast-blue;
+								}
+								@media #{$white-on-black} {
+									background: $yellow;
+								}
 							}
 
 							&.user {
@@ -520,7 +535,7 @@
 	position: absolute;
 	left: 5rem;
 	top: 1.6rem;
-	background: #DB221F;
+	background: #db221f;
 	color: #ffffff;
 	width: 2rem;
 	height: 2rem;

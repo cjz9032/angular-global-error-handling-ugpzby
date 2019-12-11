@@ -5,21 +5,34 @@ import { CommonService } from '../common/common.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
+export class SelfSelectConfig {
+	public customtags?: string;
+	public segment?: string;
+	public smbRole?: string;
+}
+
+export enum SegmentConst {
+	Consumer = 'Consumer',
+	SMB = 'SMB',
+	Commercial = 'Commercial',
+	Gaming = 'Gaming'
+}
+
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class SelfSelectService {
 	public interests = [
-		{label: 'games', checked: false},
-		{label: 'news', checked: false},
-		{label: 'entertainment', checked: false},
-		{label: 'technology', checked: false},
-		{label: 'sports', checked: false},
-		{label: 'arts', checked: false},
-		{label: 'regionalNews', checked: false},
-		{label: 'politics', checked: false},
-		{label: 'music', checked: false},
-		{label: 'science', checked: false},
+		{ label: 'games', checked: false },
+		{ label: 'news', checked: false },
+		{ label: 'entertainment', checked: false },
+		{ label: 'technology', checked: false },
+		{ label: 'sports', checked: false },
+		{ label: 'arts', checked: false },
+		{ label: 'regionalNews', checked: false },
+		{ label: 'politics', checked: false },
+		{ label: 'music', checked: false },
+		{ label: 'science', checked: false },
 	];
 	public usageType = null;
 	public checkedArray: string[] = [];
@@ -43,17 +56,19 @@ export class SelfSelectService {
 	private vantageStub: any;
 	private machineInfo: any;
 	private DefaultSelectSegmentMap = [
-		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: false}, defaultSegment: SegmentConst.Commercial},
-		{ brand: 'think', familyPattern: {pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.SMB},
-		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false} ,defaultSegment: SegmentConst.Consumer},
-		{ brand: 'lenovo', familyPattern: {pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true} , defaultSegment: SegmentConst.SMB},
-		{ brand: 'idea', familyPattern: {pattern: /^V|thinkbook|ideapad v/i, result: false}, defaultSegment: SegmentConst.Consumer},
-		{ brand: 'idea', familyPattern: {pattern: /^V|thinkbook|ideapad v/i, result: true}, defaultSegment: SegmentConst.SMB},
-	]
+		{ brand: 'think', familyPattern: { pattern: /thinkpad e/i, result: false }, defaultSegment: SegmentConst.Commercial },
+		{ brand: 'think', familyPattern: { pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.SMB },
+		{ brand: 'lenovo', familyPattern: { pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false }, defaultSegment: SegmentConst.Consumer },
+		{ brand: 'lenovo', familyPattern: { pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true }, defaultSegment: SegmentConst.SMB },
+		{ brand: 'idea', familyPattern: { pattern: /^V|thinkbook|ideapad v/i, result: false }, defaultSegment: SegmentConst.Consumer },
+		{ brand: 'idea', familyPattern: { pattern: /^V|thinkbook|ideapad v/i, result: true }, defaultSegment: SegmentConst.SMB },
+	];
 
-	constructor(private vantageShellService: VantageShellService,
+	constructor(
+		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
-		public deviceService: DeviceService) {
+		public deviceService: DeviceService
+	) {
 		this.selfSelect = this.vantageShellService.getSelfSelect();
 		this.vantageStub = this.vantageShellService.getVantageStub();
 		const changedConfig = this.commonService.getLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig);
@@ -105,7 +120,7 @@ export class SelfSelectService {
 			this.savedSegment = this.usageType;
 			this.saveConfig();
 		}
-		return {usageType: this.usageType, interests: this.interests};
+		return { usageType: this.usageType, interests: this.interests };
 	}
 
 	public saveConfig(reloadRequired?) {
@@ -113,14 +128,14 @@ export class SelfSelectService {
 			const config = {
 				customtags: this.checkedArray.join(','),
 				segment: this.usageType
-			}
+			};
 			const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
 			this.savedSegment = this.usageType;
 			this.savedInterests = [];
 			Object.assign(this.savedInterests, this.checkedArray);
 			this.commonService.setLocalStorageValue(LocalStorageKey.ChangedSelfSelectConfig, config);
 			if (this.selfSelect) {
-				this.selfSelect.updateConfig(config).catch((error) => {});
+				this.selfSelect.updateConfig(config).catch((error) => { });
 			}
 			if (reloadNecessary) {
 				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
@@ -137,8 +152,7 @@ export class SelfSelectService {
 			if (!this.machineInfo) {
 				this.machineInfo = await this.deviceService.getMachineInfo();
 				return this.calcDefaultSegment(this.machineInfo);
-			}
-			else {
+			} else {
 				return this.calcDefaultSegment(this.machineInfo);
 			}
 		} catch (error) {
@@ -148,12 +162,11 @@ export class SelfSelectService {
 	}
 
 	private calcDefaultSegment(machineInfo) {
-		try	{
+		try {
 			let segment = SegmentConst.Consumer;
 			if (!machineInfo) {
 				console.log('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
-			}
-			else if (machineInfo.isGaming) {
+			} else if (machineInfo.isGaming) {
 				segment = SegmentConst.Gaming;
 			} else if (machineInfo.cpuArchitecture
 				&& machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
@@ -162,18 +175,17 @@ export class SelfSelectService {
 			} else {
 				const brand = machineInfo.brand;
 				const family = machineInfo.family;
-				for (var i = 0; i < this.DefaultSelectSegmentMap.length; i++) {
+				for (let i = 0; i < this.DefaultSelectSegmentMap.length; i++) {
 					const rule = this.DefaultSelectSegmentMap[i];
 					if (brand && brand.toLowerCase() === rule.brand
-					&& family && this.IsMatch(rule.familyPattern.pattern, family) === rule.familyPattern.result)
-					{
+						&& family && this.IsMatch(rule.familyPattern.pattern, family) === rule.familyPattern.result) {
 						segment = rule.defaultSegment;
 						break;
 					}
 				}
 			}
 			return segment;
-		} catch(e){
+		} catch (e) {
 			console.log('SelfSelectService.calcDefaultSegment exception: ', e);
 			return SegmentConst.Consumer;
 		}
@@ -193,15 +205,3 @@ export class SelfSelectService {
 	}
 }
 
-export class SelfSelectConfig {
-	public customtags?: string;
-	public segment?: string;
-	public smbRole?: string;
-}
-
-export enum SegmentConst {
-	Consumer = 'Consumer',
-	SMB = 'SMB',
-	Commercial = 'Commercial',
-	Gaming = 'Gaming'
-}

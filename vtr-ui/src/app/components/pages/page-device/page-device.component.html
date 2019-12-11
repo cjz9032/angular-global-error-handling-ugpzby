@@ -1,68 +1,59 @@
-<div class="vtr-page-device vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
-				[back]="'common.ui.back' | translate"
-				[title]="'device.myDevice.title' | translate"
-				[backId]="'myDevice-back-btn'"
-				[textId]="'myDevice'">
-			</vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="row">
-				<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
-					<div class="vtr-subpage">
-						<div class="vtr-page-shift-up" [vtrAppSearchScroller]="['search-prossesor', 'search-memory', 'search-disk']">
-							<vtr-widget-device></vtr-widget-device>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
-					<div class="vtr-page-shift-up">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col col-12">
-									<vtr-container-card order="1"
-										sideFlag="r"
-										[img]="cardContentPositionA.FeatureImage"
-										[itemID]="cardContentPositionA.Id"
-										[caption]="cardContentPositionA.Description"
-										[title]="cardContentPositionA.Title"
-										[logoText]="cardContentPositionA.BrandName"
-										[action]="cardContentPositionA.Action"
-										[actionType]="cardContentPositionA.ActionType"
-										[actionLink]="cardContentPositionA.ActionLink"
-										[type]="'corner-article'"
-										[ratioX]="4"
-										[ratioY]="2"
-										[cornerShift]="'large'"
-										id="device-container-card"
-										aria-label="device-container-card"
-										[containerCardId]="'myDevice-container-card'">
-									</vtr-container-card>
-								</div>
-							</div>
+<vtr-page-layout [title]="'device.myDevice.title' | translate"
+	[textId]="'myDevice'"
+	[pageCssClass]="'device'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'myDevice-back-btn'">
 
-							<div class="row mb-40">
-								<div class="col col-12 cont">
-									<div class="widget-heading mb-40" id="myDevice-helpful-content-title"
-									 attr.aria-label="myDevice-helpful-content-title">{{'device.myDevice.helpful' |translate }}</div>
-									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-										[itemid]="'common.QAndA.itemid'|translate"
-										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas"
-										blockPosition="r2"
-										id="device-qa-widget"
-										aria-label="device-qa-widget"
-										[linkId]="'myDevice-qa'"></vtr-widget-questions>
-								</div>
-							</div>
-						</div>
-					</div>
+	<left-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 pb-20 pt-0 px-0"
+					[vtrAppSearchScroller]="['search-prossesor', 'search-memory', 'search-disk']">
+					<vtr-widget-device></vtr-widget-device>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 px-0 pb-20 pt-0">
+					<vtr-container-card order="1"
+						sideFlag="r"
+						[img]="cardContentPositionA.FeatureImage"
+						[itemID]="cardContentPositionA.Id"
+						[caption]="cardContentPositionA.Description"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[type]="'corner-article'"
+						[ratioX]="4"
+						[ratioY]="2"
+						[cornerShift]="'large'"
+						id="device-container-card"
+						aria-label="device-container-card"
+						[containerCardId]="'myDevice-container-card'">
+					</vtr-container-card>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 px-0 py-20">
+					<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+						[itemid]="'common.QAndA.itemid'|translate"
+						[description]="'common.qAndA.subtitle' | translate"
+						[items]="qaService.qas"
+						blockPosition="r2"
+						id="device-qa-widget"
+						aria-label="device-qa-widget"
+						[linkId]="'myDevice-qa'"></vtr-widget-questions>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Weet u zeker dat u deze macro sleutel wilt verwijderen?"
+                    "title": "Weet u zeker dat u deze macro sleutel wilt verwijderen?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Time-out voor opname.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "Macro code opnemen voor"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "Kleur"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "Er zijn geen actieve apps om toe te voegen",
                 "body": "Toont alleen apps die nu actief zijn. Open een app die u wilt toevoegen en kom vervolgens terug."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "Voeg maximaal 5 extra apps toe",
                     "part2": "van",
                     "part3": "toegevoegd"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "WiFi-beveiliging",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "INGESCHAKELD",
             "disabled": "UITGESCHAKELD",
             "partiallyProtected": "GEDEELTELIJK BEVEILIGD",
@@ -456,7 +641,8 @@
             "installing": "INSTALLEREN",
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
-            "notRegistered": "NIET GEREGISTREERD"
+            "notRegistered": "NIET GEREGISTREERD",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -475,7 +661,10 @@
             "collapse": "Samenvouwen",
             "expand": "Uitvouwen",
             "loader": "Status <br> ophalen",
-            "loading": "Bezig met laden..."
+            "loading": "Bezig met laden...",
+            "from": "uit",
+            "to": "naar",
+            "clickToChange": "klik om te wijzigen"
         },
         "app-update": {
             "message": "Hallo! Er is een nieuwere versie van Vantage beschikbaar, wilt u deze laden?"
@@ -552,7 +741,9 @@
                 "accessUrl": "Ga naar de Windows-instellingen om toegang te geven",
                 "microphoneNote": "Lenovo Vantage heeft geen toegang tot de microfoon.",
                 "cameraPrivacyNote": "Lenovo Vantage heeft geen toegang tot de camera."
-            }
+            },
+            "threshold": "Drempel",
+            "conservation": "Behoud"
         },
         "systemStatus": {
             "title": "Systeemstatus",
@@ -602,9 +793,9 @@
                 "notFound": "Systeemupdate niet gevonden",
                 "detail": {
                     "uptoDate": "Updates gecontroleerd ",
-					"updatedOn": "gecontroleerd op ",
-					"outdated": "Updates niet recent gecontroleerd ",
-					"neverRanUpdate": "updates nooit gecontroleerd"
+                    "updatedOn": "gecontroleerd op ",
+                    "outdated": "Updates niet recent gecontroleerd ",
+                    "neverRanUpdate": "updates nooit gecontroleerd"
                 }
             },
             "extendedWarranty": "Garantie uitbreiden",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "De geïnstalleerde batterij wordt <b>niet ondersteund</b> door het systeem en kan niet worden opgeladen. Vervang de batterij door een Lenovo-batterij die geschikt is voor dit systeem.",
                     "Good": "<b>De batterij is in goede staat.</b>",
-                    "Exhaustion": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
+                    "Exhaustion": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "Bad": "<b>Er is een batterijfout opgetreden.</b> De batterij kan niet worden opgeladen/ontladen. Vervang de batterij.",
                     "NotDetected": "<b>Er is geen batterij aangetroffen of</b> aangesloten.",
                     "NotGood": "<b>De batterij is niet in goede staat.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "<b>Het ontladen</b> is gestopt omdat de <b>batterij te heet is geworden.</b>",
                     "TrickleCharge": "De batterij is <b>volledig ontladen</b> en moet opnieuw worden opgeladen. Dit kan tien uur of langer duren.",
                     "OverheatedBattery": "De batterij is <b>te heet</b>. Verwijder hem uit de computer en laat hem afkoelen tot kamertemperatuur.",
-                    "PermanentError": "De batterij is <b>defect als gevolg van normale slijtage.</b> De batterij kan niet worden opgeladen. Vervang de batterij.",
+                    "PermanentError": "De capaciteit van de batterij is <b>verminderd</b>. Vervang deze door een nieuwe.",
                     "NotSupportACAdapterDetail": "<b>De netvoedingsadapter wordt niet ondersteund.</b> De Lenovo-computer biedt geen ondersteuning voor deze netvoedingsadapter. Deze kan onverwachte afsluitingen tot gevolg hebben. Sluit een juiste netvoedingsadapter aan.",
-                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan."
+                    "LimitedACAdapterSupportDetail": "<b>De netvoedingsadapter kan de Lenovo-computer niet voldoende stroom leveren</b>. Dit heeft invloed op de systeemprestaties en de oplaadsnelheid. Sluit de bijbehorende netvoedingsadapter weer aan.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-voeding is aangesloten.</b>"
                 },
                 "batteryNotDetected": "Geen batterij gedetecteerd",
                 "thresholdNote": "<b>Opmerking:</b> de batterij kan niet volledig worden opgeladen als drempelwaarde voor batterijlading is ingeschakeld.",
@@ -783,7 +975,7 @@
                             "close": "sluiten",
                             "coolingModesList": {
                                 "list1": "Klik op het batterijpictogram van Windows op de werkbalk",
-                                "list2": "De batterijmeter van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
+                                "list2": "De modus Energiebeheer van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
-                    "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\"."
+                    "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Energie-instellingen",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "Slim stand-by",
                     "description": "Met deze functie wordt de energiebesparing van de batterij geoptimaliseerd wanneer de computer niet actief is, maar blijft de opstarttijd snel bij zwaarder gebruik.",
-                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande begintijd over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze periode wordt geoptimaliseerd op basis van de planning die u instelt. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
+                    "tooltip": "Als Slim stand-by is ingeschakeld, schakelt de computer vóór de geplande STARTTIJD over naar Modern stand-by en wordt de sluimerstand ingeschakeld nadat de computer een bepaalde periode niet actief is geweest op batterijvoeding. Deze tijdsperiode wordt geoptimaliseerd op basis van het schema dat u instelt, of op het gebruik van uw computer. De computer schakelt alleen op geplande dagen van de sluimerstand over naar Modern stand-by en schakelt niet over wanneer de computer niet actief is gedurende opeenvolgende geplande dagen.",
                     "timer": {
-                        "heading": "Stel de tijd in waarop u deze computer gewoonlijk gebruikt",
+                        "heading": "De tijd waarop u gewoonlijk uw computer gebruikt",
                         "subHeading1": "met",
                         "subHeading2": "eind",
                         "subHeading3": "Gebruik deze planning voor",
@@ -941,7 +1154,8 @@
                             "wed": "woens",
                             "thurs": "donder",
                             "fri": "vrij",
-                            "sat": "zater"
+                            "sat": "zater",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "zondag",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "Elke dag",
                         "weekdays": "Doordeweekse dagen",
-                        "weekends": "Weekends"
-                    }
+                        "weekends": "Weekends",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "Automatisch aanpassen van de actieve tijd op uw computer op basis van uw gebruik",
+                    "hyperlinkToGraph": "Klik hier om de activiteit en de actieve tijd van uw computertabel te bekijken",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1141,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "zoomfunctie voor beeldschermen met een hoge resolutie inschakelen",
+                        "description": "inschakelen van zoomfunctie voor beeldschermen met een hoge resolutie",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1194,7 +1453,24 @@
                             "description": "Als u de standaardfunctie van de bovenste rij wijzigt, moet u uw computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?",
                             "reboot": "OPNIEUW OPSTARTEN",
                             "cancel": "NIET NU"
+                        },
+                        "note": {
+                            "sFunKey": "Om de functietoetsen F1-F12 te gebruiken, druk op Fn en de toetsen op de bovenste rij.",
+                            "fnKey": "Om een speciale functie te gebruiken, druk op Fn en de toetsen op de bovenste rij."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP-sneltoetsfuncties",
+                        "description": {
+                            "main": "Met behulp van deze functie kunt u een VoIP-oproep beantwoorden of weigeren door de sneltoetsen op uw toetsenbord te gebruiken:",
+                            "f10": "F10: de oproep beantwoorden",
+                            "f11": "F11: de oproep weigeren of ophangen"
+                        },
+                        "tooltip": "Momenteel wordt deze functie alleen ondersteund in Skype voor Bedrijven 2016 en Microsoft Teams 1.0.<br>Als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren.",
+                        "hasInstalledAppsDescription": "Selecteer de app waarin u de sneltoetsen wilt gebruiken.",
+                        "noInstalledAppsDescription": "Deze functie biedt alleen ondersteuning voor de volgende toepassingen: ",
+                        "hasInstalledAppsNote": "Opmerking: voor Microsoft Teams 1.0 kan de toets F11 niet worden gebruikt voor het ophangen van de oproep.",
+                        "noInstalledAppsNote": "Opmerking: als u deze functie wilt gebruiken, moet u de apps eerst downloaden en installeren."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "TOEPASSEN"
                     },
                     "website": {
-                        "url": "WEBSITE-URL"
+                        "url": "WEBSITE-URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "IN TE VOEREN TEKST"
+                        "title": "IN TE VOEREN TEKST",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Fn-toets en Ctrl-toets wisselen",
+                    "description": "Als u uit gewoonte op de Fn-toets drukt als u op de Ctrl-toets wilt drukken, kunt u de functie van de twee toetsen omwisselen.",
+                    "restartNote": "Als u de functie van twee toetsen wilt wisselen, moet u de computer opnieuw opstarten. Weet u zeker dat u opnieuw wilt opstarten?"
                 },
                 "controlOptions": {
                     "more": "MEER",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "Aanmelding bij nul aanraken",
                     "caption": "Met deze functie wordt de computer automatisch ontgrendeld of uit de slaapstand gehaald wanneer u ervoor zit of er dicht bij komt.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Als u voor uw computer zit of het apparaat nadert (binnen de afstand van 1,2 meter), kunt u zich met deze functie automatisch aanmelden bij het systeem nadat uw gezicht is herkend. Als u buiten bent in plaats van op kantoor, moet u zich dichter bij de computer bevinden en duurt het ontwaken langer."
                 },
                 "zeroTouchLock": {
                     "title": "Vergrendeling bij nul aanraken",
@@ -1270,6 +1551,17 @@
                             "slow": "Traag"
                         },
                         "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
+                    },
+                    "facialRecognition": {
+                        "title": "GEZICHTSHERKENNING",
+                        "caption": "U kunt de gezichtsherkenningsfunctie inschakelen en toegang tot uw camera geven. Met deze tool wordt uw afbeelding vastgelegd om uw aanwezigheid nauwkeurig te herkennen of te detecteren wanneer u het apparaat hebt achtergelaten. Deze gegevens worden lokaal op uw apparaat verwerkt. Lenovo heeft geen toegang tot uw afbeelding en gebruikt deze ook niet.",
+                        "checkBox": "Zet de camera aan en schakel deze functie in",
+                        "note": {
+                            "permission": "Lenovo Vantage heeft geen toegang tot de camera. De functie van het selectievakje werkt niet.",
+                            "privacyMode": "De privacymodus van Lenovo Vantage Camera is ingeschakeld. De functie van het selectievakje werkt niet.",
+                            "windowsLink": "Ga naar de Windows-instellingen om toegang te geven",
+                            "privacyLink": "Ga naar de privacymodus van de camera om deze uit te schakelen"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "De detectieafstand wordt via een AI-engine automatisch bijgewerkt.",
                     "options": {
                         "near": "Dichtbij",
-                        "far": "Ver"
+                        "far": "Ver",
+                        "medium": "Gemiddeld"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Als u deze functie inschakelt, wordt de detectieafstand automatisch aangepast. U kunt de detectieafstand ook handmatig instellen met de schuifregelaar. U hebt de volgende opties:",
+                        "context2": "Wanneer u de detectieafstand handmatig instelt, moet u op het volgende letten:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Nabij: 0 – 0,42 meter",
+                            "line2": "Midden: 0 – 0,60 meter",
+                            "line3": "Ver: 0 – 1,20 meter",
+                            "line4": "De maximale detectieafstand is 1,2 meter. Als de afstand groter is dan 1,2 meter, wordt uw aanwezigheid niet gedetecteerd door de sensor.",
+                            "line5": "De aanbevolen detectieafstand is maximaal 0,60 meter."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "Deze functie maakt gebruik van Windows Hello. Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
                     "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren. Persoonlijke gegevens of afbeeldingen worden echter NIET door deze functie verzameld, opgeslagen of gelekt.",
                     "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat, werken deze functies mogelijk niet naar behoren.",
-                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld. Aanmelding bij nul aanraken werkt niet.",
+                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgezet, werkt Aanmelding bij nul aanraken niet.",
                     "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camera uw gezicht kan herkennen voor automatisch aanmelden.",
-                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld."
+                    "description6": "4. Als de vliegtuigstand is ingeschakeld op uw computer, zijn deze functies uitgeschakeld.",
+                    "description7": "De nauwkeurigheid is afhankelijk van lichaamsgrootte, postuur en bewegingsfrequentie. Als uw computer onverwacht wordt vergrendeld, pas dan de gevoeligheidsbalk aan om de nauwkeurigheid te verbeteren."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Ga naar Windows Hello-instellingen",
                     "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
-                "resetToDefault": "Resetten"
+                "resetToDefault": "Resetten",
+                "sensitivityAdjusting": {
+                    "title": "GEVOELIGHEID AANPASSEN"
+                }
             },
             "intelligentScreen": {
                 "title": "Intelligent beeldscherm",
@@ -1370,6 +1667,18 @@
                 "title": "Zero Touch Video afspelen",
                 "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
+            },
+            "superResolution": {
+                "heading": "Intelligente media",
+                "title": "Schaalverhoging beeldschermresolutie",
+                "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
+                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Deze functie werkt niet als:",
+                    "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
+                    "description2": "De computer niet is aangesloten op de netvoeding en de batterijbesparing is ingeschakeld.",
+                    "description3": "De CPU-temperatuur te hoog is."
+                }
             },
             "voice": {
                 "title": "Spraak",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Volledig beveiligd",
-            "fullyDesc": "Gefeliciteerd! U bent goed beveiligd.",
             "notFully": "Niet volledig beveiligd",
-            "notFullyDesc": "U bent niet volledig beveiligd. Ontdek hoe u uzelf nu beter kunt beveiligen.",
             "security101": "BEVEILIGINGSADVISEUR 101",
             "firewall": "Firewall",
             "pwdHealth": "Wachtwoordstatus",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "WiFi en Connected Home-beveiliging",
             "connectedHomeSecurity": "Connected Home-beveiliging",
             "fingerprint": "Vingerafdruklezer",
-            "seeAllNetwork": "Alle gekoppelde netwerken weergeven",
-            "maliciousNetwork": "Aantal keer dat deze maand is voorkomen dat de computer verbinding maakt met een {{maliciousWifi}}schadelijk netwerk.",
-            "good": "GOED",
-            "malicious": "SCHADELIJK",
-            "suspicious": "VERDACHT",
-            "securityScoreDepends": "Het resultaat van de beveiliging hangt af van het volgende:",
-            "antivirus": "Beveiligd door antivirussoftware",
-            "password": "Sterke en complexe wachtwoorden op een veilige manier beheren",
-            "vpn": "Monitoring van uw netwerkblootstelling aan aanvallers",
-            "wifi": "Uw persoonlijke gegevens coderen als u openbare WiFi gebruikt",
-            "windowsHello": "Uw apparaat beschermen met behulp van veilige aanmeldingsopties"
+            "uacTitle": "Wat is een UAC-melding?",
+            "uacText": "Gebruikersaccountbeheer (UAC - User Account Control) is een zeer belangrijke beveiligingsfunctie van Windows waarmee u kunt voorkomen dat mogelijk schadelijke programma's wijzigingen aanbrengen in uw systeem.",
+            "windowsTitle": "Waarom moet ik Windows activeren?",
+            "windowsText": "Het gebruiken van een niet-legitieme versie van Windows levert meer risico's op voor virussen en andere bedreigingen.",
+            "encryptionTitle": "Wat is versleuteling van de vaste schijf?",
+            "encryptionText": "Door versleuteling van de gehele vaste schijf worden uw gegevens beter beschermd tegen toegang door onbevoegden, zelfs al wordt de harde schijf van de huidige pc verwijderd en in een ander apparaat geplaatst.",
+            "passwordTitle": "Hoe kunnen wachtwoorden beter beschermd worden?",
+            "passwordText": "Bewaar en beheer al uw wachtwoorden versleuteld door een professionele digitale beschermings-app te gebruiken in plaats van eenvoudig op te slaan in uw browsers. Deze kunnen door derden worden geopend zonder dat u het weet.",
+            "enhanceTitle": "Wat moet ik doen om de beveiliging te verbeteren?",
+            "enhanceText": "Het wordt nadrukkelijk aanbevolen om uw apparatuur te beschermen met antivirussoftware en een firewall, en stel de UAC-meldingen in met minimale bescherming. Maak sterke wachtwoorden en beheer deze op een veilige manier. Versleutel uw gegevens wanneer u een openbaar netwerk gebruikt als geavanceerde bescherming.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "Uw pc als tablet gebruiken",
             "description": "<div class='faqInFs4Fb'>    Uw pc als tablet gebruiken</div><hr><p>In de tabletmodus is Windows intuïtiever en gemakkelijker te gebruiken wanneer u een aanraakapparaat hebt.</p><h3 class='faqInFs25FbP10'>Tabletmodus gebruiken</h3><p>Als u de tabletmodus wilt inschakelen, selecteert u <strong>Actiecentrum</strong> op de taakbalk en selecteert u vervolgens <strong>Tabletmodus</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Opmerking</h3><p>Als u wilt weten of uw apparaat automatisch de tabletmodus kan inschakelen, zoekt u naar uw apparaat op de website van de fabrikant. Ondersteuning voor deze functie is afhankelijk van de hardware, het stuurprogramma dat is geïnstalleerd, en hoe het apparaat door de fabrikant is ingesteld. </p><p> </p><p>In de tabletmodus worden apps op het volledige scherm geopend, zodat u meer ruimte hebt om in te werken. Sleep een app naar de onderkant van het scherm om deze te sluiten.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>De taakbalk is beschikbaar wanneer uw pc zich in de tabletmodus bevindt, maar u kunt deze desgewenst verbergen als u meer ruimte op het scherm wilt. Selecteer de knop <strong>Start</strong>, selecteer <strong>Instellingen</strong> > <strong>Systeem</strong> > <strong>Tabletmodus</strong> en schakel vervolgens <strong>De taakbalk automatisch verbergen in tabletmodus</strong> in. Als u de verborgen taakbalk wilt zien, swipet u omhoog vanaf de onderkant van het scherm of verplaatst u de muisaanwijzer naar de onderkant van het scherm.</p><h3 class='faqInFs25FbP10'>Twee apps tegelijk gebruiken</h3><p>Als u twee apps naast elkaar in de tabletmodus wilt gebruiken, sleept u een geopende app omlaag en naar de zijkant. U ziet waar de app wordt vastgemaakt en u ziet alle geopende apps ernaast.</p><p>Er zijn nog meer dingen die u in deze weergave kunt doen:</p><ul>    <li>Gebruik de gedeelde rand tussen twee vastgemaakte apps om het formaat van beide apps tegelijk te wijzigen.</li>    <li>Open een nieuwe app vanuit de taakweergave: selecteer <strong>Taakweergave</strong> op de taakbalk, selecteer een app en sleep deze vervolgens naar één kant om deze in uw gesplitste venster vast te maken.</li>    <li>Gebruik de knop Vorige op de taakbalk om in een app terug te gaan of om een app te openen die u eerder hebt gebruikt.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "Het uitvoeren van scans en herstel kan gegevensverlies tot gevolg hebben. Het verdient aanbeveling een back-up te maken voordat u deze bewerking uitvoert. Weet u zeker dat u wilt doorgaan?",
                 "yes": "Ja",
                 "no": "Nee"
-            }
+            },
+            "waitAvailability": "De knop is uitgeschakeld zolang de hardwaregegevens nog niet zijn opgehaald, voor het geval de opslagapparaten deze functionaliteit niet ondersteunen of als het herstel van beschadigde sectoren wordt uitgevoerd."
         },
         "support": {
             "title": "Professionele diagnosehulpprogramma's downloaden",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
         "cancelTextProgress": "Wacht op de voortgang van de annulering",
         "pluginNotUpdate": "De hardwarescan is niet beschikbaar omdat deze verouderd is. Voer een upgrade uit.",
-        "testNotApplicable": "Niet van toepassing op aangepaste scan"
+        "testNotApplicable": "Niet van toepassing op aangepaste scan",
+        "waitScanStarts": "Wacht totdat het scannen start",
+        "reminderTimeRetrieveHardwareInformation": "Het ophalen van uw hardwaregegevens kan even duren",
+        "retrievingHardwareInformation": "Bezig met ophalen van hardwaregegevens...",
+        "pluginTokens": {
+            "cpu": "Processor",
+            "memory": "Geheugen",
+            "motherboard": "Moederbord",
+            "pci_express": "PCI Express",
+            "storage": "Opslag",
+            "wireless": "Draadloos"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

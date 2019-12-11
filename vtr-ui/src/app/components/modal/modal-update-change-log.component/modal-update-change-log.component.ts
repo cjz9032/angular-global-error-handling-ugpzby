@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, OnInit, OnDestroy, SecurityContext, HostListener } from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -67,6 +67,12 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 
 	closeModal() {
 		this.activeModal.close('close');
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.update-read-more-modal-size') as HTMLElement;
+		modal.focus();
 	}
 
 }

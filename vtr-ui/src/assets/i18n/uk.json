@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Дійсно очистити цю клавішу макросів?"
+                    "title": "Дійсно очистити цю клавішу макросів?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Час записування сплив.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "Запис клавіші макросів для"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "Колір"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "Немає запущених програм для додавання",
                 "body": "Відобразяться лише запущені програми. Запустіть програму, яку необхідно додати, та поверніться."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "Ви можете прискорити 5 програм",
                     "part2": "з",
                     "part3": "додано"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "Безпека WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "УВІМКНУТО",
             "disabled": "ВИМКНУТО",
             "partiallyProtected": "ЧАСТКОВО ЗАХИЩЕНО",
@@ -456,7 +641,8 @@
             "installing": "ІНСТАЛЯЦІЯ",
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
-            "notRegistered": "НЕ ЗАРЕЄСТРОВАНО"
+            "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -475,7 +661,10 @@
             "collapse": "Згорнути",
             "expand": "Розгорнути",
             "loader": "Отримання <br> статусу",
-            "loading": "Завантаження..."
+            "loading": "Завантаження...",
+            "from": "з",
+            "to": "до",
+            "clickToChange": "натисніть, щоб змінити"
         },
         "app-update": {
             "message": "Вітаємо! Доступна нова версія Vantage, завантажити її?"
@@ -552,7 +741,9 @@
                 "accessUrl": "Перейдіть до настройок Windows, щоб надати доступ",
                 "microphoneNote": "Lenovo Vantage не надано доступ до мікрофона.",
                 "cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
-            }
+            },
+            "threshold": "Граничне значення",
+            "conservation": "Збереження"
         },
         "systemStatus": {
             "title": "Стан системи",
@@ -602,9 +793,9 @@
                 "notFound": "Оновлення системи не знайдено",
                 "detail": {
                     "uptoDate": "Оновлення перевірено ",
-					"updatedOn": "перевірено ",
-					"outdated": "Оновлення не перевірялись останнім часом ",
-					"neverRanUpdate": "оновлення ніколи не перевірялися"
+                    "updatedOn": "перевірено ",
+                    "outdated": "Оновлення не перевірялись останнім часом ",
+                    "neverRanUpdate": "оновлення ніколи не перевірялися"
                 }
             },
             "extendedWarranty": "Подовжити гарантію",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "Установлений акумулятор <b>не підтримується</b> цією системою та не буде заряджатися. Замініть акумулятор акумулятором Lenovo, придатним для цієї системи.",
                     "Good": "<b>Акумулятор у доброму стані.</b>",
-                    "Exhaustion": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "Exhaustion": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "Bad": "<b>Сталася помилка акумулятора.</b> Не вдається зарядити або розрядити акумулятор. Замініть акумулятор.",
                     "NotDetected": "<b>Акумулятор не виявлено</b> або не підключено.",
                     "NotGood": "<b>Акумулятор у поганому стані.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "<b>Розряджання</b> зупинено <b>через зависоку температуру акумулятора.</b>",
                     "TrickleCharge": "Акумулятор <b>повністю розряджено</b>, його потрібно зарядити. Це може зайняти десять або більше годин.",
                     "OverheatedBattery": "Акумулятор <b>сильно нагрівся</b>. Вийміть його з комп’ютера та охолодіть до кімнатної температури.",
-                    "PermanentError": "Акумулятор <b>вийшов із ладу через нормальне зношування.</b> Не вдається зарядити акумулятор. Замініть акумулятор.",
+                    "PermanentError": "Ємність акумулятора <b>впала</b>. Замініть акумулятор на новий.",
                     "NotSupportACAdapterDetail": "<b>Адаптер змінного струму не підтримується.</b> Ваш комп’ютер Lenovo не підтримує цей адаптер змінного струму. Він може викликати раптове вимикання. Підключіть правильний адаптер змінного струму.",
-                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму."
+                    "LimitedACAdapterSupportDetail": "<b>Адаптер змінного струму недостатньо потужний</b> для вашого комп’ютера Lenovo. Це вплине на продуктивність системи та швидкість заряджання. Підключіть придатний адаптер змінного струму.",
+                    "FullACAdapterSupport": "<b>Підключено адаптер живлення {{acAdapterType}} на {{acWattage}} W.</b>"
                 },
                 "batteryNotDetected": "Акумулятор не знайдено",
                 "thresholdNote": "<b>Примітка.</b> Батарея не може бути заряджена повністю якщо увімкнено граничне значення заряду акумулятора.",
@@ -783,7 +975,7 @@
                             "close": "закрити",
                             "coolingModesList": {
                                 "list1": "Натисніть піктограму акумулятора Windows на панелі інструментів",
-                                "list2": "З’явиться індикатор акумулятора Windows, перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
+                                "list2": "Відкриється режим живлення Windows: перетягніть повзунок, щоб вибрати між оптимальною тривалістю автономної роботи та швидкодією."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "Функція інтелектуального охолодження регулює швидкість вентилятора, максимальну швидкодію та тривалість автономної роботи. Ця функція має 3 режими (тихий, збалансований і швидкісний) і тепер доступна з повзунка швидкодії Windows",
-                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи."
+                    "nocqldesc": "Функція інтелектуального охолодження дає змогу регулювати швидкодію та температуру системи. У режимі \"Продуктивність\" підвищується швидкодія системи. А в режимі \"Холод і тиша\" знижується температура й рівень шуму системи.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Настройки живлення",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "Розумне очікування",
                     "description": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
-                    "tooltip": "Коли розумне очікування ввімкнуто, комп’ютер переключається в сучасний режим очікування перед початком використання та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Цей час оптимізується згідно з розкладом, який ви вказали. Комп’ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
+                    "tooltip": "Коли розумне очікування ввімкнуто, комп'ютер переключається в сучасний режим очікування перед запланованим ПОЧАТКОМ роботи та входить у режим сну після певної тривалості простою, якщо він працює від акумулятора. Ми оптимізуємо цей період залежно від встановленого вами розкладу або проаналізованого часу використання комп'ютера. Комп'ютер переключається з режиму глибокого сну в сучасний режим очікування лише в заплановані дні та не переключається зовсім, якщо не користуватися ним кілька запланованих днів поспіль.",
                     "timer": {
-                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                        "heading": "Укажіть час, коли ви зазвичай користуєтеся комп'ютером",
                         "subHeading1": "Початок використання",
                         "subHeading2": "Завершення використання",
                         "subHeading3": "Використовувати цей розклад",
@@ -941,7 +1154,8 @@
                             "wed": "Середа",
                             "thurs": "Четвер",
                             "fri": "П'ятниця",
-                            "sat": "Субота"
+                            "sat": "Субота",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Неділя",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "Щодня",
                         "weekdays": "Будні",
-                        "weekends": "Вихідні дні"
-                    }
+                        "weekends": "Вихідні дні",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "Автоматично налаштовувати активний час комп'ютера залежно від використання",
+                    "hyperlinkToGraph": "Клацніть, щоб побачити активність і час роботи за комп'ютерним столом",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1141,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "Увімкнення функції масштабування на екранах із високою роздільною здатністю",
+                        "description": "увімкнення функції змінення масштабу на екранах із високою роздільною здатністю",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1194,7 +1453,24 @@
                             "description": "Якщо змінити режим роботи верхнього рядка, потрібно перезавантажити комп'ютер. Готові перезавантажити?",
                             "reboot": "ПЕРЕЗАВАНТАЖИТИ",
                             "cancel": "НЕ ЗАРАЗ"
+                        },
+                        "note": {
+                            "sFunKey": "Щоб скористатися функціональними клавішами F1-F12, натисніть клавішу Fn і потрібну клавішу з верхнього ряду.",
+                            "fnKey": "Щоб скористатися спеціальною функцією, натисніть клавішу Fn і потрібну клавішу з верхнього ряду."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Функції гарячих клавіш VoIP",
+                        "description": {
+                            "main": "Ця функція дає змогу приймати або відхиляти VoIP-дзвінки, натискаючи гарячі клавіші на клавіатурі:",
+                            "f10": "F10: прийняти дзвінок",
+                            "f11": "F11: відхилити або завершити дзвінок"
+                        },
+                        "tooltip": "Наразі ця функція підтримується лише в Skype for Business 2016 і Microsoft Teams 1.0.<br>Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми.",
+                        "hasInstalledAppsDescription": "Виберіть програму, у якій потрібно використовувати гарячі клавіші:",
+                        "noInstalledAppsDescription": "Ця функція підтримує лише такі програми: ",
+                        "hasInstalledAppsNote": "Примітка. У Microsoft Teams 1.0 не можна використовувати клавішу F11 для припинення дзвінків.",
+                        "noInstalledAppsNote": "Примітка. Щоб скористатися цією функцією, потрібно спочатку завантажити та інсталювати програми."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "ЗАСТОСУВАТИ"
                     },
                     "website": {
-                        "url": "URL-АДРЕСА ВЕБСАЙТУ"
+                        "url": "URL-АДРЕСА ВЕБСАЙТУ",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ"
+                        "title": "ТЕКСТ ДЛЯ ВВЕДЕННЯ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Зміна функцій клавіш Fn і Ctrl",
+                    "description": "Якщо ви зазвичай натискаєте клавішу Fn замість клавіші Ctrl, функції цих двох клавіш можна поміняти.",
+                    "restartNote": "Щоб переключити функції двох клавіш, потрібно перезавантажити комп'ютер. Справді перезавантажити?"
                 },
                 "controlOptions": {
                     "more": "ДОКЛАДНІШЕ",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "Автоматичний вхід",
                     "caption": "Ця функція автоматично розблоковує комп'ютер або виводить його з режиму сну, коли ви сідаєте перед ним або підходите до нього.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Ця функція дає змогу автоматично входити в систему після розпізнавання обличчя, якщо ви перебуваєте перед комп'ютером або підходите до нього (на відстані до 1,2 метра). На відкритому просторі поза офісом вам потрібно бути ближче до комп'ютера, а пробудження триватиме довше."
                 },
                 "zeroTouchLock": {
                     "title": "Автоматичне блокування",
@@ -1270,6 +1551,17 @@
                             "slow": "Повільний"
                         },
                         "toolTipContent": "Виберіть потрібний параметр, щоб заблокувати свій екран (швидко, помірно або повільно), коли вашу присутність не виявлено. Але на час блокування екрана також впливають фактичний сценарій користувача, можливості датчиків і настройки часу очікування екрана Windows. Тож ми наполегливо радимо негайно блокувати екран, перш ніж перервати роботу."
+                    },
+                    "facialRecognition": {
+                        "title": "РОЗПІЗНАВАННЯ ОБЛИЧЧЯ",
+                        "caption": "Ви можете ввімкнути функцію розпізнавання обличчя й надати їй доступ до камери. Цей інструмент робить ваші знімки, щоб точно розпізнавати вашу присутність або виявляти, коли ви залишили свій пристрій без нагляду. Ці дані обробляються локально на вашому пристрої. Lenovo не має доступу до них і не використовує їх.",
+                        "checkBox": "Увімкніть камеру й цю функцію",
+                        "note": {
+                            "permission": "Lenovo Vantage не надано доступ до камери. Функція прапорця не працюватиме.",
+                            "privacyMode": "У Lenovo Vantage увімкнуто режим конфіденційності камери. Функція прапорця не працюватиме.",
+                            "windowsLink": "Перейдіть до настройок Windows, щоб надати доступ",
+                            "privacyLink": "Перейдіть до режиму конфіденційності камери, щоб вимкнути її"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "Автоматичне регулювання відстані буде автоматично оновлювати відстань розпізнавання за допомогою штучного інтелекту.",
                     "options": {
                         "near": "Поблизу",
-                        "far": "Далеко"
+                        "far": "Далеко",
+                        "medium": "Середній"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Якщо ввімкнути цю функцію, відстань розпізнавання регулюватиметься автоматично. Ви також можете вручну встановити відстань розпізнавання за допомогою повзунка. Доступні варіанти:",
+                        "context2": "Коли ви вручну встановлюєте відстань розпізнавання, зверніть увагу на наведене нижче:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Близька: 0–0,42 м",
+                            "line2": "Середня: 0–0,60 м",
+                            "line3": "Далека: 0–1,20 м",
+                            "line4": "Максимальна відстань розпізнавання – 1,2 метра. Якщо відстань перевищує 1,2 метра, датчик не зможе виявити вашу присутність.",
+                            "line5": "Рекомендована відстань розпізнавання – 0,60 метра."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "Ця функція працює за допомогою Windows Hello. Переконайтеся, що ввімкнули розпізнавання облич у настройках Windows.",
                     "description2": "Ця функція виявляє вашу присутність за допомогою датчиків і камери. Однак ця функція НЕ збирає жодних персональних даних.",
                     "description3": "1. Якщо комп'ютер знаходиться в режимі \"Намет\", \"Планшет\" або \"Стенд\", ці функції можуть не працювати належним чином.",
-                    "description4": "2. Якщо комп'ютер вимкнуто або переведено в режим глибокого сну. Автоматичний вхід не працюватиме.",
+                    "description4": "2. Якщо комп'ютер перебуває в режимі глибокого сну або вимкнений, автоматичний вхід не працюватиме.",
                     "description5": "3. Розташуйте екран комп'ютера під таким кутом, щоб інфрачервона камера могла розпізнати ваше обличчя для автоматичного входу.",
-                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено."
+                    "description6": "4. Якщо ввімкнути на комп'ютері режим \"У літаку\", ці функції буде вимкнено.",
+                    "description7": "Точність сприйняття дотиків залежить від розміру пальців, їх положення та частоти рухів. Якщо комп’ютер випадково блокується, налаштуйте повзунок чутливості сенсора, щоб покращити точність сприйняття дотиків."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Перейти до настройок Windows Hello",
                     "screenTimeoutSettings": "Перейти до настройок часу очікування екрана"
                 },
-                "resetToDefault": "Скидання"
+                "resetToDefault": "Скидання",
+                "sensitivityAdjusting": {
+                    "title": "НАЛАШТУВАННЯ СЕНСОРНОЇ ПАНЕЛІ"
+                }
             },
             "intelligentScreen": {
                 "title": "Інтелектуальний екран",
@@ -1370,6 +1667,18 @@
                 "title": "Автоматичне відтворення відео",
                 "desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",
                 "tooltip": "Ця функція не застосовується до програвачів онлайн-відео. Популярніші місцеві відеоплеєри (як-от Windows Media Player, 5KPlayer тощо) підтримують цю функцію."
+            },
+            "superResolution": {
+                "heading": "Інтелектуальне відтворення мультимедіа",
+                "title": "Підвищення роздільної здатності відео",
+                "desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label> Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Коли ви вмикаєте цю функцію, рекомендуємо підключати комп'ютер до джерела живлення змінного струму.</label></p>",
+                "tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Ця функція не працює, коли:",
+                    "description1": "Комп'ютер не підключено до джерела живлення змінного струму, і рівень заряду акумулятора нижче 20 %.",
+                    "description2": "Комп'ютер не підключено до джерела живлення змінного струму, і ввімкнуто режим економії заряду.",
+                    "description3": "Температура процесора зависока."
+                }
             },
             "voice": {
                 "title": "Голос",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Повністю захищено",
-            "fullyDesc": "Вітаємо! Пристрій надійно захищено.",
             "notFully": "Не повністю захищено",
-            "notFullyDesc": "Пристрій захищено не повністю. Дізнайтеся, як підвищити рівень безпеки.",
             "security101": "ПОРАДНИК З БЕЗПЕКИ 101",
             "firewall": "Брандмауер",
             "pwdHealth": "Надійність паролю",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "Безпека WiFi і Безпека підключеного дому",
             "connectedHomeSecurity": "Безпека підключеного дому",
             "fingerprint": "Сканер відбитків пальців",
-            "seeAllNetwork": "Переглянути всі підключені мережі",
-            "maliciousNetwork": "Цього місяця попереджено підключень комп'ютера до потенційно шкідливих мереж: {{maliciousWifi}}.",
-            "good": "НАДІЙНА",
-            "malicious": "ШКІДЛИВА",
-            "suspicious": "ПІДОЗРІЛА",
-            "securityScoreDepends": "Ваша безпека залежить від того, чи ви:",
-            "antivirus": "Захищені ви антивірусом;",
-            "password": "Маєте складні паролі та безпечно керуєте ними;",
-            "vpn": "Відстежуєте вразливість мережі до нападів;",
-            "wifi": "Шифруєте персональні дані у відкритих мережах WiFi;",
-            "windowsHello": "Захищаєте пристрій безпечними способами входу."
+            "uacTitle": "Що таке сповіщення UAC?",
+            "uacText": "Служба захисту користувачів – дуже важлива функція безпеки Windows, що запобігає внесенню змін у систему з боку потенційно шкідливих програм.",
+            "windowsTitle": "Чому мені потрібна активна операційна система Windows?",
+            "windowsText": "Використання контрафактної копії Windows підвищує ризик інфікування вірусом та інших загроз безпеці.",
+            "encryptionTitle": "Що таке шифрування жорсткого диска?",
+            "encryptionText": "Шифрування всього жорсткого диска від несанкціонованого доступу допомагає захистити ваші дані, навіть у разі встановлення в інші пристрої.",
+            "passwordTitle": "Як краще захистити пароль?",
+            "passwordText": "Використовуйте спеціалізовані програми для безпечного зберігання ваших паролів замість браузерів, до яких зловмисники можуть легко отримати доступ без вашого відома.",
+            "enhanceTitle": "Що мені робити для кращого захисту?",
+            "enhanceText": "Наполегливо радимо захистити пристрої антивірусними програмами та брандмауером, та як мінімум налаштувати сповіщення UAC. Для додаткового захисту даних, використовуйте надійні паролі та шифруйте свої дані під час використання загальнодоступних мереж.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "Використання комп'ютера як планшета",
             "description": "<div class='faqInFs4Fb'>    Використання комп'ютера як планшета</div><hr><p>Режим планшета робить Windows більш інтуїтивною та зручнішою у використанні для пристроїв з сенсорним екраном.</p><h3 class='faqInFs25FbP10'>Використання режиму планшета</h3><p>Щоб увімкнути режим планшета, виберіть <strong>Центр підтримки</strong> на панелі завдань, а потім – <strong>Режим планшета</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Примітка</h3><p>Щоб дізнатися, чи може ваш пристрій автоматично вмикати режим планшета, знайдіть свій пристрій на веб-сайті виробника. Підтримка цієї функції залежить від обладнання, встановленого драйвера та способу налаштування пристрою виробником. </p><p> </p><p>У режимі планшета програми відкриваються на весь екран, що дає більше місця для роботи. Щоб закрити програму, перетягніть її в нижню частину екрана.</p><p> </p><h3 class='faqInFs25FbP10'>Порада</h3><p>Панель завдань доступна, коли комп'ютер перебуває в режимі планшета, але її можна приховати, якщо потрібно більше місця на екрані. Натисніть кнопку <strong>Пуск</strong>, виберіть <strong>Настройки</strong> > <strong>Система</strong> > <strong>Режим планшета</strong>, потім увімкніть параметр <strong>Автоматично приховувати панель завдань у режимі планшета</strong>. Щоб переглянути приховану панель завдань, проведіть пальцем знизу вгору екрана або наведіть курсор миші на неї.</p><h3 class='faqInFs25FbP10'>Використання двох програм одночасно</h3><p>Щоб використовувати одночасно дві програми в режимі планшета, перетягніть відкриту програму вниз та в бік. Ви побачите, де вона зафіксується, і поруч з нею відображатимуться відкриті програми.</p><p>У цьому поданні також можна:</p><ul>    <li>Використовувати спільний край двох зафіксованих програм, щоб змінити розмір обох програм одночасно.</li>    <li>Відкривати нову програму з подання завдань: виберіть <strong>Перегляд завдань</strong> на панелі завдань виберіть програму, а потім перетягніть її на одну сторону, щоб зафіксувати її на розділеному екрані.</li>    <li>Натисніть кнопку \"Назад\" на панелі завдань, щоб повернутися до програми або відкрити програму, яку використовували раніше.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "Сканування й виправлення може призвести до втрати даних. Рекомендуємо зробити резервну копію, перш ніж виконувати цю операцію. Справді продовжити?",
                 "yes": "Так",
                 "no": "Ні"
-            }
+            },
+            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "Скасувати?",
         "cancelTextProgress": "Дочекайтеся завершення скасування",
         "pluginNotUpdate": "Сканування устаткування недоступне, оскільки воно застаріло. Оновіть його.",
-        "testNotApplicable": "Не застосовується для настроюваного сканування"
+        "testNotApplicable": "Не застосовується для настроюваного сканування",
+        "waitScanStarts": "Зачекайте, доки сканування не почнеться",
+        "reminderTimeRetrieveHardwareInformation": "Отримується інформація про апаратне забезпечення – цей процес може тривати деякий час",
+        "retrievingHardwareInformation": "Отримання інформації про апаратне забезпечення...",
+        "pluginTokens": {
+            "cpu": "Процесор",
+            "memory": "Пам'ять",
+            "motherboard": "Материнська плата",
+            "pci_express": "PCI Express",
+            "storage": "Пам'ять",
+            "wireless": "Безпровідні підключення"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

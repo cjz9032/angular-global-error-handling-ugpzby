@@ -101,6 +101,13 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				content: "";
 				border-left-width: 0;
 			}
+			@media #{$black-on-white} {
+				border:none;
+			}
+			@media #{$white-on-black} {
+						border:none;
+				
+			}
 		}
 
 		.battery {
@@ -127,6 +134,17 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				border-radius: 0rem 0.3rem 0.3rem 0rem;
 				content: "";
 				border-left-width: 0;
+				@media #{$black-on-white} {
+					background: $light;
+					border: 0.1rem solid $dark;
+					
+				}
+				@media #{$white-on-black} {
+					background: $dark;
+					border: 0.1rem solid $light;
+					
+					
+				}
 			}
 
 			.acid-container {
@@ -144,6 +162,16 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					display: flex;
 					flex-direction: row;
 					flex-shrink: 0;
+					@media #{$black-on-white} {
+						background: $dark;
+						
+						
+					}
+					@media #{$white-on-black} {
+						background: $light;
+						
+						
+					}
 				}
 
 				.base-percentage-text {
@@ -228,6 +256,18 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			.remaining-text {
 				font-size: 1rem !important;
 			}
+		}
+		.detail-battery {
+			left: -1rem !important;
+			.remaining-text {
+				font-size: 1rem !important;
+			}
+			.remaining-text-detail {
+				font-size: 1rem !important;
+			}
+		}
+		.detail-battery {
+			left: -1rem !important;
 		}
 
 		.battery-charging {

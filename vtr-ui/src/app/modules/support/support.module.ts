@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SupportRoutingModule } from './support-routing.module';
@@ -25,6 +25,8 @@ import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/mo
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FeedbackModule } from '../feedback/feedback.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 
 library.add(faBook);
@@ -52,7 +54,9 @@ library.add(falHeart);
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
-		NgbModalModule
+		NgbModalModule,
+		FeedbackModule,
+		PageLayoutModule
 	],
 	providers: [
 		SupportService,
@@ -61,6 +65,7 @@ library.add(falHeart);
 		ModalLicenseComponent,
 		ModalAboutComponent,
 		ModalFindUsComponent,
-	]
+	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class SupportModule { }

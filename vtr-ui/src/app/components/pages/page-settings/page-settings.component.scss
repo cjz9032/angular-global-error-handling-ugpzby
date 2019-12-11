@@ -1,33 +1,28 @@
 @import "../../../app.theme.scss";
 
-.vtr-page {
-	.vtr-page-content {
-		.settings-main-column {
-			padding: 0 4rem 4rem;
-		}
-	}
-}
+:host ::ng-deep {
+	.vtr-page {
+		.vtr-page-columns {
+			.vtr-page-column {
+				padding: 0 4rem 4rem;
 
-.vtr-page-right-column {
-	background-color: $shade_extralight;
+				&.vtr-page-left-column {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
 
-	.battery-unavailable {
-		height: 8rem;
-	}
-}
-
-@mixin  theme($name, $color){
-	#user-profile-setting.#{$name} {
-		overflow-y: auto;
-		font-size: 1.5rem;
-		letter-spacing: 0.05rem;
-
-		:host-context(.is-gaming) {
-			.user-profile-section {
-				display: none;
-				visibility: hidden;
+				&.vtr-page-right-column {
+					display: none;
+				}
 			}
 		}
+	}
+}
+
+@mixin theme($name, $color) {
+	.user-profile-section.#{$name} {
+		font-size: 1.5rem;
+		letter-spacing: 0.05rem;
 
 		.user-profile-title {
 			font-size: $section_header;
@@ -57,11 +52,11 @@
 			opacity: 0;
 		}
 
-		input[type="radio"]:checked + img {
+		input[type="radio"]:checked+img {
 			border: 2pt solid $go_dark;
 		}
 
-		.radio-is-selected input[type="radio"]:not(:checked) + img {
+		.radio-is-selected input[type="radio"]:not(:checked)+img {
 			opacity: 0.5 !important;
 		}
 
@@ -85,7 +80,6 @@
 			}
 
 			label {
-				// font-family: "Segoe UI Bold", Sans-serif;
 				font-size: 1.4rem;
 				width: 94%;
 				height: 100%;
@@ -145,7 +139,7 @@
 			opacity: 0;
 		}
 
-		.interests input[type="checkbox"] + label {
+		.interests input[type="checkbox"]+label {
 			padding: 0.3rem 2rem;
 			border: 0.1rem solid $shade_btn_light;
 			border-radius: 2.5rem;
@@ -160,7 +154,7 @@
 			}
 		}
 
-		.interests input[type="checkbox"]:checked + label {
+		.interests input[type="checkbox"]:checked+label {
 			border: 0.1rem solid #21c48a;
 			background: #f5f7f8;
 			color: $shade_darkest;
@@ -187,9 +181,16 @@
 		.save-button {
 			padding-left: 1rem;
 		}
+	}
 
+	:host-context(.is-gaming) {
+		.user-profile-section {
+			display: none;
+			visibility: hidden;
+		}
 	}
 }
+
 @include theme(white-theme, $main_darker);
 @include theme(blue-theme, $light);
 
@@ -211,9 +212,9 @@
 		font-size: 1.5rem;
 		color: $shade_blue;
 
-		border: 1px solid #ECF0F1;
+		border: 1px solid #ecf0f1;
 		border-radius: 0.4rem;
-		background-color: #F5F7F8;
+		background-color: #f5f7f8;
 	}
 }
 

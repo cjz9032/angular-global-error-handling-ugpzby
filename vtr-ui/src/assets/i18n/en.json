@@ -1,4 +1,6 @@
 {
+	"dir": "ltr",
+	"dirClass": "ltr",
 	"gaming": {
 		"dashboard": {
 			"device": {
@@ -110,6 +112,13 @@
 				}
 			},
 			"narrator": {
+				"pageTitle": {
+					"device": "Lenovo Vantage home page",
+					"macroKey": "Macro key page",
+					"networkBoost": "network boost page",
+					"autoClose": "auto close page",
+					"lighting": "Lighting page"
+				},
 				"mainMenuLink": "go back to home page"
 			}
 		},
@@ -216,7 +225,8 @@
 			},
 			"popupContent": {
 				"clearMacrokey": {
-					"title": "Are you sure you want to clear this macro key?"
+					"title": "Are you sure you want to clear this macro key?",
+					"modalTitle": "clear double confirm window"
 				},
 				"timeoutRecording": {
 					"title": "Time Out For Recording.",
@@ -238,6 +248,28 @@
 			},
 			"recording": {
 				"title": "Recording Macro Key For"
+			},
+			"narrator": {
+				"backDashboard": "Back to dashboard",
+				"macrokeyNumpad": "macrokey numpad",
+				"clearText": "macrokey clear records",
+				"popupOk": "macrokey popup clear",
+				"popupClear": "macrokey popup ok",
+				"popupCancel": "macrokey popup cancel",
+				"popupClose": "close",
+				"optionSelected": "selected",
+				"numbersSelectedNumpad": "selected macrokey numpad",
+				"macrokeySettings1": {
+					"option1": "on",
+					"option2": "macro key settings enabled when gaming",
+					"option3": "macro key settings off"
+				},
+				"numberInput": {
+					"title": "Number",
+					"bundled": "bundled",
+					"unbundled": "unbundled",
+					"isSelected": "is selected"
+				}
 			}
 		},
 		"lightingProfile": {
@@ -274,6 +306,70 @@
 					"title": "APPLIED"
 				}
 			},
+			"lightingeffectnarrator": {
+				"option1": {
+					"title": "front on"
+				},
+				"option2": {
+					"title": "front flicker"
+				},
+				"option3": {
+					"title": "front breath"
+				},
+				"option4": {
+					"title": "front wave"
+				},
+				"option5": {
+					"title": "front smooth"
+				},
+				"option6": {
+					"title": "front cpu temperature"
+				},
+				"option7": {
+					"title": "front cpu utilization"
+				},
+				"option8": {
+					"title": "front off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
+			"lightingeffectsidenarrator": {
+				"option1": {
+					"title": "side on"
+				},
+				"option2": {
+					"title": "side flicker"
+				},
+				"option3": {
+					"title": "side breath"
+				},
+				"option4": {
+					"title": "side wave"
+				},
+				"option5": {
+					"title": "side smooth"
+				},
+				"option6": {
+					"title": "side cpu temperature"
+				},
+				"option7": {
+					"title": "side cpu utilization"
+				},
+				"option8": {
+					"title": "side off"
+				},
+				"color": {
+					"title": "Color settings"
+				},
+				"lightingEffect": {
+					"title": "Lighting effect"
+				}
+			},
 			"brightness": {
 				"text1": {
 					"title": "*Brightness setting doesn't apply on "
@@ -283,6 +379,23 @@
 				}
 			},
 			"lightingSingleLightingOption": {
+				"option1": {
+					"title": "Always On"
+				},
+				"option2": {
+					"title": "Fast Blink"
+				},
+				"option3": {
+					"title": "Medium Blink"
+				},
+				"option4": {
+					"title": "Slow Blink"
+				},
+				"option5": {
+					"title": "Blink Level"
+				}
+			},
+			"lightingSingleLightingOptionnarrator": {
 				"option1": {
 					"title": "Always On"
 				},
@@ -329,6 +442,26 @@
 					"title": "Profile 3"
 				}
 			},
+			"lightingnarrator": {
+				"text1": {
+					"title": "Lighting profile off"
+				},
+				"text2": {
+					"title": "Lighting profile 1"
+				},
+				"text3": {
+					"title": "Lighting profile 2"
+				},
+				"text4": {
+					"title": "Lighting profile 3"
+				},
+				"Customize": {
+					"title": "set lighting profile"
+				},
+				"heading": {
+					"title": "to default:"
+				}
+			},
 			"colourwheel": {
 				"text1": {
 					"title": "Selecting colour not available to this effect."
@@ -352,6 +485,11 @@
 					"title": "Color"
 				}
 			},
+			"rgbValueNarrator": {
+				"red": "rgb red value edit",
+				"green": "rgb green value edit",
+				"blue": "rgb blue value edit"
+			},
 			"lightingProfileHeading": {
 				"text1": {
 					"title": "Off"
@@ -371,22 +509,50 @@
 				"heading": {
 					"title": "Select Profile:"
 				}
+			},
+			"lightingProfileModal": {
+				"heading1": "Fantastic Lighting to Improve your Gaming Life",
+				"heading1Content": "Easy ways to set your own lighting profile.",
+				"heading2": "Create your own profile",
+				"heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+				"heading3": "Lighting effect",
+				"heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+				"heading4": "Brightness (available on some models)",
+				"heading4Content": "You can set the brightness for lighting.",
+				"heading5": "Speed (available on some models)",
+				"heading5Content": "You can set the speed for lighting effect, - such as breath.",
+				"heading6": "Color",
+				"heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+				"heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+				"heading7": "Set to default",
+				"heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
 			}
 		},
 		"autoClose": {
 			"title": "Auto Close",
 			"addAppsButton": "Add",
 			"introLine": "Add apps that you want to close when you launch a game. This will free up unused resources to maximize the gaming performance. NOTE: This feature closes the app completely. So always make sure that you've saved your work.",
+			"autocClosenarrator": "Add",
+			"autocClosenarratorremove": "Remove",
+			"autocClosenarratorback": "Back to dashboard",
 			"modalTurnAutoClose": {
 				"title": "Turn on Auto Close ?",
-				"body": "Apps you added will be closed when you are gaming, freeing resources for gaming.",
+				"body": "Apps you added will be closed when you game, freeing resources for gaming.",
 				"checkedTitle": "Don't ask again",
 				"btnConfirm": "TURN ON",
 				"btnCancel": "NOT NOW"
 			},
+			"modalTurnAutoCloseNarrator": {
+				"close": "Close",
+				"dontask": "Don't ask again",
+				"turnOn": "Turn on auto close",
+				"notNow": "Not now",
+				"running": "No running apps to add window",
+				"open": "Auto close add apps window opened"
+			},
 			"modalAddApps": {
 				"title": "Add apps to Auto Close",
-				"body": "Only apps currently running will be shown in the list below."
+				"body": "Only apps currently running will show in the list below."
 			},
 			"noRunningApps": {
 				"title": "No Running Apps To Add",
@@ -395,13 +561,13 @@
 		},
 		"networkBoost": {
 			"title": "Network Boost",
-			"introLine": "Enabling Network Boost will automatically prioritize games to the highest level within your network, maximizing the speed. If you are using any apps while gaming, like Twitch or Dsicard, it's recommended that you add them to the below list so that they will also be prioritized on your network.",
+			"introLine": "Enabling Network Boost will automatically set the priority of games to the highest level within your network,maximizing speeds. If you use any apps while gaming,like Twitch or Dsicard, it's recommended that you add them below so that they will also recieve priority on your network.",
 			"modalTurn": {
 				"title": "Turn on Network Boost ?",
 				"body": "Turn on Network Boost ? Apps you added will share more network when they are running.",
 				"checkedTitle": "Don't ask again",
-				"btnConfirm": "TURN ON",
-				"btnCancel": "NOT NOW"
+				"btnConfirm": "Turn on",
+				"btnCancel": "Not now"
 			},
 			"modalAddApps": {
 				"title": "Add apps to Network Boost",
@@ -409,6 +575,28 @@
 					"part1": "You can add up to 5 additional apps to boost",
 					"part2": "of",
 					"part3": "added"
+				}
+			}
+		},
+		"narrator": {
+			"networkBoost": {
+				"subPage": {
+					"addApps": "Add apps",
+					"remove": "Remove"
+				},
+				"turnOnModal": {
+					"confirmation": "Network boost turn on confirmation window opened",
+					"dontAskAgain": "Dont ask again",
+					"turnOnButton": "modal Turn networkBoost turn on",
+					"notOnButton": "modal Turn networkBoost not now"
+				},
+				"addApps": {
+					"addAppsTitle": "Networkboost add apps window opened",
+					"noAppsTitle": "No running Apps to add window",
+					"add": "add"
+				},
+				"common": {
+					"close": "close"
 				}
 			}
 		}
@@ -429,7 +617,7 @@
 				"sub2": "Anti-Virus",
 				"sub3": "WiFi Security",
 				"sub4": "Password Health",
-				"sub5": "Internet Protection",
+				"sub5": "VPN Security",
 				"sub6": "Windows Hello"
 			},
 			"support": "Support",
@@ -441,12 +629,12 @@
 		},
 		"securityAdvisor": {
 			"title": "Security Advisor",
-			"subtitle": "CHECK IF YOUR DEVICE IS SECURED.",
+			"subtitle": "Check if your device is secured.",
 			"antiVirus": "Anti-Virus",
 			"wifi": "WiFi Security",
 			"pswdMgr": "Password Manager",
 			"vpn": "VPN",
-			"windowsHello": "Windows Hello",
+			"fingerPrint": "Fingerprint",
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
 			"partiallyProtected": "PARTIALLY PROTECTED",
@@ -456,11 +644,12 @@
 			"installing": "INSTALLING",
 			"notFound": "NOT FOUND",
 			"registered": "REGISTERED",
-			"notRegistered": "NOT REGISTERED"
+			"notRegistered": "NOT REGISTERED",
+			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
-			"subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
+			"subtitle": "Find some helpful tips for your device.",
 			"question1": "Backup and Restore your files",
 			"question2": "How to refresh your PC",
 			"question3": "How to know your machine's CPU",
@@ -475,7 +664,10 @@
 			"collapse": "Collapse",
 			"expand": "Expand",
 			"loader": "Fetching <br> Status",
-			"loading": "Loading..."
+			"loading": "Loading...",
+			"from": "from",
+			"to": "to",
+			"clickToChange": "click to change"
 		},
 		"app-update": {
 			"message": "Hey! A newer version of Vantage is available, do you want to load it?"
@@ -547,6 +739,8 @@
 			"microphone": "Microphone",
 			"cameraPrivacy": "Camera",
 			"eyeCareMode": "Eye Care",
+			"threshold": "Threshold",
+			"conservation": "Conservation",
 			"note": {
 				"microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
 				"cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera.",
@@ -556,7 +750,7 @@
 		},
 		"systemStatus": {
 			"title": "System Status",
-			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+			"subtitle": "Quick catch up your device status.",
 			"memory": {
 				"title": "Memory",
 				"detail": {
@@ -705,10 +899,11 @@
 				"condition": {
 					"Illegal": "The battery installed is <b>not supported</b> by the system and will not charge. Please replace the battery with the correct Lenovo battery for this system.",
 					"Good": "<b>The battery is in good condition.</b>",
-					"Exhaustion": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery.",
+					"Exhaustion": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
-					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
+					"NotDetected": "<b>No battery detected.</b>",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
+					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
 					"NotSupportACAdapterDetail": "<b>AC adapter not supported.</b> Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown. Please connect a correct AC adapter.",
 					"LimitedACAdapterSupport": "<b>AC adapter cannot provide enough power.</b>",
@@ -718,7 +913,10 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery has <b>failed due to normal wear.</b> The battery cannot be charged. Replace the battery."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+				},
+				"dualConditions": {
+					"NotDetected": "<b>The primary battery is not detected</b>"
 				}
 			},
 			"power": {
@@ -785,8 +983,29 @@
 							"close": "close",
 							"coolingModesList": {
 								"list1": "Click on the windows battery-icon in the toolbar",
-								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+								"list2": "The Windows Power mode will appear, slide the slider to choose between optimal time or optimal performance."
 							}
+						}
+					},
+					"dytc6": {
+						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"autoMode": {
+							"title1": "Auto Battery mode",
+							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+							"title2": "Auto Performance mode",
+							"desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						},
+						"manualMode": {
+							"title1": "Quiet mode",
+							"desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"title2": "Balanced mode",
+							"desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
 					},
 					"nonintelligentCooling": {
@@ -824,15 +1043,19 @@
 					}
 				},
 				"smartStandby": {
-					"title": "Smart Standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"title": "Smart standby",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
+					"subTitle": "Schedule your computer",
+					"description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+					"subTitle2": "Set time when you typically use this computer",
+					"subNote": "Your computer is scheduled for quicker resume based on the usage.",
 					"timer": {
-						"heading": "Set time when you typically use this computer",
+						"heading": "The time you typically use this computer:",
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"endTimeNote": "END must be within 20 hours from START time",
+						"endTimeNote": "END time must be within 20 hours from START time",
 						"timeUnits": {
 							"unit1": "Hours",
 							"unit2": "Minutes",
@@ -851,7 +1074,8 @@
 							"wed": "Wed",
 							"thurs": "Thurs",
 							"fri": "Fri",
-							"sat": "Sat"
+							"sat": "Sat",
+							"thu": "Thu"
 						},
 						"name": {
 							"sun": "Sunday",
@@ -864,9 +1088,50 @@
 						},
 						"everyday": "Everyday",
 						"weekdays": "Weekdays",
-						"weekends": "Weekends"
+						"weekends": "Weekends",
+						"noDaySelected": "No day selected"
 					},
-					"warningtip": "Please select at least one day."
+					"warningtip": "Please select at least one day.",
+					"checkbox": "Auto adjusting your computer's active time based on your usage",
+					"hyperlinkToGraph": "Click to see the usage and applied active time",
+					"automaticMode": "Automatic mode",
+					"manualMode": "Manual mode",
+					"graph": {
+						"graph1Tittle": "Usage of this computer",
+						"graph2Tittle": "Applied active time",
+						"graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+						"graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+						"legends": {
+							"none": "None",
+							"frequent": "Frequent"
+						},
+						"hours": {
+							"zero": "0",
+							"one": "1",
+							"two": "2",
+							"three": "3",
+							"four": "4",
+							"five": "5",
+							"six": "6",
+							"seven": "7",
+							"eight": "8",
+							"nine": "9",
+							"ten": "10",
+							"eleven": "11",
+							"twele": "12",
+							"thirteen": "13",
+							"fourteen": "14",
+							"fifteen": "15",
+							"sixteen": "16",
+							"seventeen": "17",
+							"eighteen": "18",
+							"nineteen": "19",
+							"twenty": "20",
+							"twentyOne": "21",
+							"twentyTwo": "22",
+							"twentythree": "23"
+						}
+					}
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1141,7 +1406,7 @@
 					},
 					"firstKeyObj": {
 						"tittle": "Fn + Tab",
-						"description": "enable zoom feature on high resolution displays",
+						"description": "enable zooming feature on high resolution displays",
 						"image": ""
 					},
 					"secondKeyObj": {
@@ -1194,7 +1459,24 @@
 							"description": "Changing the default top row function requires you to restart your computer. Are you sure to restart?",
 							"reboot": "REBOOT",
 							"cancel": "NOT NOW"
+						},
+						"note": {
+							"sFunKey": "To access F1-F12 function, press Fn and the keys on the top row.",
+							"fnKey": "To access special function, press Fn and the keys on the top row."
 						}
+					},
+					"VoipHotkeys": {
+						"title": "VoIP Hotkey Functions",
+						"description": {
+							"main": "This feature enables you to answer or reject a VoIP call by pressing the hotkeys on your keyboard:",
+							"f10": "F10: answer the call",
+							"f11": "F11: reject or hang up the call"
+						},
+						"tooltip": "Currently, this feature is supported only on Skype for Business 2016 and Microsoft Teams 1.0.<br>To use the feature, you need to download and install the apps first.",
+						"hasInstalledAppsDescription": "Select the app that you want to use the hotkeys on:",
+						"noInstalledAppsDescription": "This feature only support below applications: ",
+						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
+						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
 					}
 				},
 				"userDefinedKey": {
@@ -1205,10 +1487,14 @@
 						"title": "APPLY"
 					},
 					"website": {
-						"url": "WEBSITE URL"
+						"url": "WEBSITE URL",
+						"successMessage": "The setting is applied successfully.",
+						"invalidURLMessage": "Please input a valid URL.",
+						"placeholder":"Please start with http:// or https://"
 					},
 					"enterText": {
-						"title": "TEXT TO BE ENTERED"
+						"title": "TEXT TO BE ENTERED",
+						"placeholder":"Please type here"
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
@@ -1221,8 +1507,9 @@
 					}
 				},
 				"fnCtrlKey": {
-					"title": "FN key and Ctrl key swap",
-					"description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+					"title": "Fn and Ctrl key swap",
+					"description": "If you habitually pressed the Fn key when intending to press the Ctrl key, you can exchange the functions of the two keys.",
+					"restartNote": "Swapping the function of two keys requires you to restart your computer, are you sure to restart?"
 				},
 				"controlOptions": {
 					"more": "MORE",
@@ -1270,13 +1557,28 @@
 							"slow": "Slow"
 						},
 						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+					},
+					"facialRecognition": {
+						"title": "FACIAL RECOGNITION",
+						"caption": "You can enable the facial recognition feature and allow it to access your camera. This tool captures your image in order to accurately recognize your presence or detect when you have left your device unattended. This data is processed locally on your device. Lenovo does not access or use it.",
+						"checkBox": "Turn on the camera and enable this feature",
+						"note": {
+							"permission": "Lenovo Vantage doesn't have access to Camera. The function of the checkbox won't work.",
+							"privacyMode": "Lenovo Vantage Camera privacy mode is on. The function of the checkbox won't work.",
+							"windowsLink": "Go to Windows Settings to give access",
+							"privacyLink": "Go to Camera privacy mode to turn it off"
+						}
 					}
+				},
+				"sensitivityAdjusting": {
+					"title": "SENSITIVITY ADJUSTING"
 				},
 				"distanceSensitivityAdjusting": {
 					"title": "DISTANCE SENSITIVITY ADJUSTING",
 					"caption": "Distance Sensitivity Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
+						"medium": "Middle",
 						"far": "Far"
 					},
 					"tooltipcontent": {
@@ -1295,9 +1597,10 @@
 					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
 					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-					"description4": "2. If your computer is in hibernation mode or has been turned off. Zero Touch Login will not work.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off, Zero Touch Login will not work.",
 					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login.",
-					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled."
+					"description6": "4. If the Airplane mode is enabled on your computer, these features are disabled.",
+					"description7": "The accuracy varies by body size, posture, and frequency of movement. If your computer is locked unexpectedly, adjust the sensitivity bar to improve the accuracy."
 				},
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
@@ -1369,7 +1672,19 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as 5KPlayer, and etc. support this feature."
+			},
+			"superResolution": {
+				"heading": "Intelligent Media",
+				"title": "Video Resolution Upscaling",
+				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
+				"tooltip": "This feature works only on the following players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"note": {
+					"description": "The feature does not work when:",
+					"description1": "The computer is not connected to ac power and the battery power is lower than 20%.",
+					"description2": "The computer is not connected to ac power and the battery saver mode is enabled.",
+					"description3": "The CPU temperature is too high."
+				}
 			},
 			"voice": {
 				"title": "Voice",
@@ -1532,7 +1847,205 @@
 	},
 	"smartPerformance": {
 		"title": "Health & Support",
-		"back": "BACK"
+		"back": "BACK",
+		"performanceandSecurityCheckTitle": "Performance & Security Check",
+		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+		"scanButton": "FREE PC SCAN",
+		"section1Heading": "How would you rate your PC Performance?",
+		"section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+		"critical": "CRITICAL",
+		"allisWell": "ALL IS WELL",
+		"zero": "0",
+		"one": "1",
+		"two": "2",
+		"three": "3",
+		"four": "4",
+		"five": "5",
+		"six": "6",
+		"seven": "7",
+		"eight": "8",
+		"nine": "9",
+		"ten": "10",
+		"tuneUP": "Your PC needs a tune-up",
+		"section2Heading": "Top-notch PC Performance. Always",
+		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+		"tunePCPerformance": {
+			"title": "TUNE PC PERFORMANCE",
+			"heading": "Show your computer some extra love",
+			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+			"tabSet1": {
+				"tab1": "Accumulated Junk",
+				"tab2": "Usability Issues",
+				"tab3": "Windows Settings",
+				"tab4": "Systems Errors",
+				"tab5": "Registry Errors"
+			},
+			"tabSet2": {
+				"tab1Heading": "IT'S EASY",
+				"tab1Description": "We don't confuse you with tech mumbo jumbp",
+				"tab2Heading": "IT'S FAST",
+				"tab2Description": "Get a 100 point check done in under 5 minutes",
+				"tab3Heading": "IT'S SAFE",
+				"tab3Description": "No scareware, built with best practises"
+			}
+		},
+		"boostInternetPerformance": {
+			"title": "BOOST INTERNET PERFORMANCE",
+			"extraTitle": "INTERNET PERFORMANCE",
+			"heading": "Give your internet a boost",
+			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+			"tabSet1": {
+				"tab1": "Network Settings",
+				"tab2": "Browser Settings",
+				"tab3": "Browser Security",
+				"tab4": "Wi-Fi Performance",
+				"tab5": "E-junk"
+			},
+			"tabSet2": {
+				"tab1Heading": "ZERO DAY VIRUS",
+				"tab1Description": "We remove even the newest malware infections",
+				"tab2Heading": "SPYWARE REMOVAL",
+				"tab2Description": "We remove all potentially unwanted programs",
+				"tab3Heading": "LIGHT AND FAST",
+				"tab3Description": "Scan typically takes 5-10 minutes"
+			}
+		},
+		"malwareSecurity": {
+			"title": "MALWARE & SECURITY",
+			"heading": "Give your internet a boost",
+			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+			"tabSet1": {
+				"tab1": "Malware scan",
+				"tab2": "Zero-day infections",
+				"tab3": "Security settings",
+				"tab4": "Errant programs",
+				"tab5": "Annoying adware"
+			},
+			"tabSet2": {
+				"tab1Heading": "SLOW INTERNET",
+				"tab1Description": "We will help you get maximum performance.",
+				"tab2Heading": "CONNECTIVITY ERRORS",
+				"tab2Description": "We can diagnose and repair your connectivity problems.",
+				"tab3Heading": "BROWSER ISSUES",
+				"tab3Description": "We configure and fix all your popular web browsers."
+			}
+		},
+		"proactiveAutomated": {
+			"title": "PROACTIVE & AUTOMATED",
+			"heading": "Get the power to resolve issues, before they impact you!",
+			"description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+			"tabSet1": {
+				"tab1": "Schedule Scan",
+				"tab2": "On-demand scan",
+				"tab3": "Automated resolution",
+				"tab4": "It's effective",
+				"tab5": "24/7 Protection"
+			},
+			"tabSet2": {
+				"tab1Heading": "IT'S EASY",
+				"tab1Description": "We don't confuse you with tech mumbo jumbp",
+				"tab2Heading": "IT'S FAST",
+				"tab2Description": "Get a 100 point check done in under 5 minutes",
+				"tab3Heading": "IT'S SAFE",
+				"tab3Description": "No scareware, built with best practises"
+			}
+		},
+		"startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+		"subscriptionDetails": {
+			"title": "Subscription details",
+			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+			"learnMore": "Learn more",
+			"startDate": "Start date",
+			"endDate": "End date",
+			"status": "Status",
+			"activeStatus": "ACTIVE",
+			"inactiveStatus": "INACTIVE",
+			"manageSubscription": "MANAGE SUBSCRIPTION"
+		},
+		"scanSettings": {
+			"title": "Scan settings",
+			"description": "Enable or disable the scan and set the scan schedule",
+			"enableScan": "Enable Scan",
+			"changeScanTitle": "Change scan schedule",
+			"changeScanDescription": "Edit the scan schedule to run when you need it.",
+			"frequency": "Frequency",
+			"txtDate": "Date",
+			"txtDay": "Day",
+			"txtTime": "Time",
+			"txtSave": "save",
+			"txtCancel": "cancel"
+		},
+		"scanningPage": {
+			"title": "Performance & security check",
+			"description": "Please wait while we scan your system for potential problems and threats.",
+			"scanningSystem": "Scanning system",
+			"complete": "complete",
+			"cancelScan": {
+				"button": "CANCEL SCAN",
+				"title": "Cacel the scan?",
+				"description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+				"yesButton": "YES, CANCEL",
+				"noButton": "NO, RESUME SCAN"
+			},
+			"waiting": "WAITING TO SCAN",
+			"completed": "COMPLETED",
+			"nowScanningDetail": {
+				"cardTitle": "NOW SCANNING DETAIL",
+				"current": "CURRENT: ",
+				"upNext": "UP NEXT"
+			}
+		},
+		"scanCompletePage": {
+			"title": "System scan is complete",
+			"description": "Here is what we found on your Lenovo Vantage 720s.",
+			"scanRates": "Our scan rates your PC at: ",
+			"summary": "Summary",
+			"summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+			"signupRepairButton": "SIGN UP & REPAIR NOW",
+			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+			"issueCount": "{{individualIssueCount}} ISSUES",
+			"scannedAreas": "SCANNED AREAS",
+			"recommendedAction": {
+				"title": "RECOMMENDED ACTION",
+				"description": "We will automatically fix these issues. Once today and every week thereafter",
+				"yearlyPricing": "$19.99 / Yr",
+				"monthlyPricing": "LESS THAN $2 PER MONTH.",
+				"longerTerm": "Longer term? Even more savings?",
+				"signupButton": "SIGN UP"
+			}
+		},
+		"subscriberScanHomePage": {
+			"title": "All is well with your Ideapad 720s",
+			"serialNumber": "Serial number: ",
+			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
+			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+			"scanNow": "SCAN NOW",
+			"returnto": "RETURN TO DASHBOARD",
+			"mostRecent": "MOST RECENT SCAN:",
+			"nextScheduled": "NEXT SCHEDULED SCAN:",
+			"scanSummary": {
+				"title": "Scan summary:",
+				"description": "We are constantly tuning your computer",
+				"tune": "Tune",
+				"tuneSummary": "Disk space reclaimed",
+				"boost": "Boost",
+				"boostSummary": "Fixes to improve performance",
+				"secure": "Secure",
+				"secureSummary": "Fixes to improve security",
+				"annual": "Annual",
+				"quarterly": "Quarterly",
+				"custom": "Custom",
+				"txtFrom": "From",
+				"txtTo": "To",
+				"txtGo": "Go"
+			},
+			"lastScanResults": {
+				"title": "Last 5 scan results:",
+				"scanDate": "Scan date:",
+				"results": "Results:",
+				"status": "Status"
+			}
+		}
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
@@ -1710,29 +2223,63 @@
 	},
 	"security": {
 		"landing": {
-			"fully": "Fully protected",
-			"fullyDesc": "Congratulations! You are well protected.",
-			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
 			"security101": "SECURITY ADVISOR 101",
 			"firewall": "Firewall",
 			"pwdHealth": "Password Health",
 			"vpnSecurity": "VPN Security",
-			"vpnVirtual": "Virtual Private Network",
+			"vpnVirtual": "Virtual Private Network (VPN) security",
 			"wifiConnected": "WiFi Security",
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint Reader",
-			"seeAllNetwork": "See all joined networks",
-			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "GOOD",
-			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security result depends on if you are:",
-			"antivirus": "Being protected by anti-virus software",
-			"password": "Having strong and complex passwords managed in a safe way",
-			"vpn": "Monitoring your network exposure to attackers",
-			"wifi": "Encrypting your personal data when using public WiFi",
-			"windowsHello": "Protecting your device using safe login options"
+			"uacTitle": "What is UAC notification?",
+			"uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
+			"windowsTitle": "Why I need to active Windows?",
+			"windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
+			"encryptionTitle": "What is Hard Drive Encryption?",
+			"encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
+			"passwordTitle": "How to protect password better?",
+			"passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
+			"enhanceTitle": "What should I do to enhance security protection?",
+			"enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection.",
+			"antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+			"firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+			"windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+			"passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+			"fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+			"uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+			"wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+			"bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+			"vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+			"windows": "Windows Activation",
+			"goAntivirus": "go to antivirus",
+			"goFirewall": "go to firewall",
+			"goPassword": "go to passwordManger",
+			"goWifi": "go to wifi-security",
+			"goVpn": "go to VPN security",
+			"visitWindows": "Visit Windows Activation",
+			"visitFingerprint": "Visit Fingerprint reader",
+			"visitUac": "Visit User Account Control",
+			"visitHde": "Visit Hard drive encryption",
+			"haveOwnPassword": "I have my own password manager",
+			"haveOwnWifi": "I have my own wifi security",
+			"haveOwnVpn" : "I have my own wifi security",
+			"uac": "User Account Control (UAC)",
+			"hde": "Hard drive encryption",
+			"level": "Security Level:",
+			"fully": "To get a better offer protect your device, stay with",
+			"notFully": "To learn how to better protect your device, start with",
+			"noProtection": "No protection",
+			"noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+			"basic": "BASIC",
+			"basicTitle": "Basic protection",
+			"basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
+			"advancedTtitle": "Advanced protection",
+			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+
 		},
 		"antivirus": {
 			"common": {
@@ -2162,7 +2709,7 @@
 		},
 		"question3": {
 			"title": "How to know your machine's CPU",
-			"description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bitsystem.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktop and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and then click&nbsp;<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>is displayed in the System type field under the System heading.If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong><strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and then click <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then click <strong>System Summary.</strong></li>\n<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field under the Item heading.</li>\n</ol>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktop and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button, </strong>right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click&nbsp;<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>is displayed in the System type field under the System heading. If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong><strong> 32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then click <strong>System Summary.</strong></li>\n<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong> version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field under the Item heading.</li>\n</ol>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
 			"heading2": "Affected Brands",
@@ -2251,7 +2798,7 @@
 		},
 		"question4": {
 			"title": "Check your machine's battery use",
-			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in the new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display.</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature.It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo; apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in the new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong> and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes, the display.</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background. This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "Windows 10 includes a new",
@@ -2300,7 +2847,7 @@
 					"line3": "“Display”,",
 					"line4": "and",
 					"line5": "“Wi-Fi”",
-					"line6": "percentages. This shows how much battery power has been used by system processes, the display,"
+					"line6": "percentages. This shows how much battery power has been used by system processes, the display."
 				},
 				"span8": {
 					"line1": "6. The",
@@ -2319,7 +2866,7 @@
 		},
 		"question5": {
 			"title": "Use your PC like a tablet",
-			 "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+			 "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
 			"heading1": "Use tablet mode",
 			"para2": {
 				"span1": "To turn on tablet mode, select",
@@ -2358,7 +2905,7 @@
 		},
 		"question6": {
 			"title": "Get to know Cortana, your personal assistant",
-			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana.' Select the search box on the taskbar to open Cortana home. Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
 			"heading1": "What is Cortana?",
 			"para1": "Cortana is your digital agent. She'll help you get things done.",
 			"para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2585,7 +3132,8 @@
 				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
 				"yes": "Yes",
 				"no": "No"
-			}
+			},
+			"waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
 		},
 		"support": {
 			"title": "Download professional diagnostic tools",
@@ -2601,6 +3149,17 @@
 			"title": "Enable Battery Charge Threshold",
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
+		},
+		"waitScanStarts": "Wait until the scan starts",
+		"reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+		"retrievingHardwareInformation": "Retrieving hardware information...",
+		"pluginTokens": {
+			"cpu": "Processor",
+			"memory": "Memory",
+			"motherboard": "Motherboard",
+			"pci_express": "PCI Express",
+			"storage": "Storage",
+			"wireless": "Wireless"
 		}
 	},
 	"appsForYou": {

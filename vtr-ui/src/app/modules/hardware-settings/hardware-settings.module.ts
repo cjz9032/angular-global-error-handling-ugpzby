@@ -39,6 +39,7 @@ import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-sm
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
+import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
 import { SpinnerComponent } from 'src/app/components/common/spinner/spinner.component';
 import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
@@ -87,42 +88,9 @@ import { faCircle as falCircle } from '@fortawesome/free-solid-svg-icons/faCircl
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
-import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
+import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
+import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 
-library.add(faCheck);
-library.add(faCheckCircle);
-library.add(faChevronCircleUp);
-library.add(faPlane);
-library.add(faThumbtack);
-library.add(faQuestionCircle);
-library.add(faBatteryHalf);
-library.add(faBatteryFull);
-library.add(faBatteryBolt);
-library.add(faBatteryQuarter);
-library.add(faUsb);
-library.add(faTachometerFast);
-library.add(faMicrophone);
-library.add(faKeyboard);
-library.add(faEye);
-library.add(faTv);
-library.add(faCamera);
-library.add(faGem);
-library.add(faBatteryThreeQuarters);
-library.add(faChevronDown);
-library.add(faChevronUp);
-library.add(faCaretUp);
-library.add(faCaretDown);
-library.add(faTimesCircle);
-library.add(faPlusCircle);
-library.add(faMinusCircle);
-library.add(falCheck);
-library.add(falTimes);
-library.add(faCircle);
-library.add(falCircle);
-library.add(faSync);
-library.add(faCircleNotch);
-library.add(faAngleRight);
-library.add(faCalendarAlt);
 
 @NgModule({
 	declarations: [
@@ -160,7 +128,9 @@ library.add(faCalendarAlt);
 		SubpageDeviceSettingsPowerComponent,
 		UserDefinedKeyComponent,
 		TopRowFunctionsComponent,
-		VoiceComponent
+		VoiceComponent,
+		SmartStandbyGraphComponent,
+		TopRowFunctionsIdeapadComponent
 	],
 	imports: [
 		CommonModule,
@@ -189,9 +159,47 @@ library.add(faCalendarAlt);
 		CommonModalModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
-		RouterModule
+		RouterModule,
+		HeaderMainModule,
 	],
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class HardwareSettingsModule { }
+export class HardwareSettingsModule {
+	constructor() {
+		library.add(faCheck);
+		library.add(faCheckCircle);
+		library.add(faChevronCircleUp);
+		library.add(faPlane);
+		library.add(faThumbtack);
+		library.add(faQuestionCircle);
+		library.add(faBatteryHalf);
+		library.add(faBatteryBolt);
+		library.add(faBatteryQuarter);
+		library.add(faUsb);
+		library.add(faTachometerFast);
+		library.add(faMicrophone);
+		library.add(faKeyboard);
+		library.add(faEye);
+		library.add(faTv);
+		library.add(faCamera);
+		library.add(faGem);
+		library.add(faBatteryThreeQuarters);
+		library.add(faBatteryFull);
+		library.add(faChevronDown);
+		library.add(faChevronUp);
+		library.add(faCaretUp);
+		library.add(faCaretDown);
+		library.add(faTimesCircle);
+		library.add(faPlusCircle);
+		library.add(faMinusCircle);
+		library.add(falCheck);
+		library.add(falTimes);
+		library.add(faCircle);
+		library.add(falCircle);
+		library.add(faSync);
+		library.add(faCircleNotch);
+		library.add(faAngleRight);
+		library.add(faCalendarAlt);
+	}
+}

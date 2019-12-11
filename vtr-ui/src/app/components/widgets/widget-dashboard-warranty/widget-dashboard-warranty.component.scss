@@ -5,8 +5,8 @@
 	background-size: cover;
 	color: $light;
 	box-shadow: $drop_shadow;
-	padding: 3.6rem 4rem;
 	letter-spacing: 0;
+	padding: 2.4rem;
 
 	&.in-warranty {
 		background-image: url("../../../../assets/images/warranty-bg.png"),
@@ -36,24 +36,27 @@
 	}
 
 	.title {
-		font-size: 2.4rem;
+		font-size: $fontsize_xl;
 		font-weight: $weight_bold;
 		padding-bottom: 1.5rem;
 		text-transform : capitalize;
 	}
 
 	.sub-title {
-		font-size: 1.6rem;
+		font-size: $fontsize_xs;
 		font-weight: $weight_bold;
 		opacity: .8;
 		padding-bottom: 0.75rem;
 	}
 
 	.sub-description {
-		font-size: 1.5rem;
-		font-weight: $weight_medium;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		line-height: 2rem;
 		padding-bottom: 2rem;
+		b {
+			font-weight: $weight_bold;
+		}
 	}
 
 	.status-wrapper {

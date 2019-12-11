@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -19,6 +19,13 @@ export class ModalAppUpdateAvailableComponent implements OnInit {
 
 	public onCancelClick() {
 		this.activeModal.close(false);
+	}
+
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.confirmation-modal') as HTMLElement;
+		modal.focus();
 	}
 
 }

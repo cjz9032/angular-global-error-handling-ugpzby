@@ -21,6 +21,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { Title } from '@angular/platform-browser';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 
 @Component({
@@ -64,11 +65,14 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		private activatedRoute: ActivatedRoute,
 		private dialogService: DialogService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		private titleService: Title
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+
+		this.titleService.setTitle(this.translate.instant('gaming.common.narrator.pageTitle.device'));
 	}
 
 	ngOnInit() {
@@ -483,5 +487,14 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					break;
 			}
 		}
+	}
+
+	onFeedbackModal() {
+		this.modalService.open(FeedbackFormComponent, {
+			backdrop: true,
+			size: 'lg',
+			centered: true,
+			windowClass: 'feedback-modal'
+		});
 	}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
@@ -8,16 +8,27 @@ import { DeviceService } from 'src/app/services/device/device.service';
 })
 export class PageLayoutComponent implements OnInit {
 
-	@Input() pageTitle: string;
+	@Input() title: string;
 	@Input() textId: string;
 	@Input() pageCssClass: string;
 	@Input() parentPath: string;
-	@Input() backLinkText: string;
+	@Input() back: string;
+	@Input() backId: string;
+	@Input() isInnerBack = false;
 	@Input() menuItems: any[];
+	@Input() shiftLeftUp = false;
+	@Input() shiftRightUp = false;
+	@Input() hideBack = false;
+
+	@Output() innerBack = new EventEmitter();
 
 	constructor(public deviceService: DeviceService) { }
 
 	ngOnInit() {
+	}
+
+	onInnerBack() {
+		this.innerBack.emit();
 	}
 
 }

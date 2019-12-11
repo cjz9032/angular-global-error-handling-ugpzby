@@ -14,7 +14,7 @@ export class HomeSecurityGuard implements CanActivate {
 		) { }
 
 	getShowCHS(): boolean {
-		return this.configService && this.configService.showCHSMenu;
+		return this.configService && this.configService.showCHS;
 	}
 
 	canActivate(): boolean | UrlTree {

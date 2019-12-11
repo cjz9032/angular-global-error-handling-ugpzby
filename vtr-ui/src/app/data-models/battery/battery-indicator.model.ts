@@ -1,5 +1,3 @@
-import { BatteryQuality } from 'src/app/enums/battery-conditions.enum';
-
 class BatteryIndicator {
 	constructor() { }
 	public percent = 0;

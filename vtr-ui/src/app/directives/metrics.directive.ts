@@ -21,19 +21,19 @@ import {
 
 export interface MetricsData {
 	ItemType: string;
-	ItemName?: string;
-	ItemParent?: string;
-	ItemParm?: string;
-	ItemValue?: string;
-	viewOrder?: number;
-	ItemID?: string;
-	ItemCategory?: string;
-	ItemPosition?: string;
-	PageNumber?: string;
-	SettingParent?: string;
-	SettingName?: string;
-	SettingValue?: string;
-	SettingParm?: string;
+	ItemName ? : string;
+	ItemParent ? : string;
+	ItemParm ? : string;
+	ItemValue ? : string;
+	viewOrder ? : number;
+	ItemID ? : string;
+	ItemCategory ? : string;
+	ItemPosition ? : string;
+	PageNumber ? : string;
+	SettingParent ? : string;
+	SettingName ? : string;
+	SettingValue ? : string;
+	SettingParm ? : string;
 }
 
 
@@ -104,6 +104,7 @@ export class MetricsDirective {
 			case 'ArticleClick':
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
+				data.ItemName = this.metricsTranslateService.translate(this.metricsItem);
 				data.ItemParent = this.metricsParent;
 				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
 					this.viewOrderService[this.metricsParent] = 0;

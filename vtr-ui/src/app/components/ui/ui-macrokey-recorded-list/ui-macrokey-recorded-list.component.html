@@ -10,18 +10,18 @@
 				</span>
 			</div>
 		</div>
-		<div class="col-6" *ngIf="!recordingStatus">
+		<div class="col-12" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
-				<vtr-ui-macrokey-collapsible-container [selectedValue]="repeatSelectedValue" [options]="repeatOptions"
-					[enableDescription]="false" (change)="onRepeatChanged($event)">
-				</vtr-ui-macrokey-collapsible-container>
+				<vtr-ui-lighting-effect [selectedValue]="repeatSelectedValue" [options]="repeatOptions[0]"
+					[enableDescription]="false" (change)="onRepeatChanged($event)" [tabindex]="1">
+				</vtr-ui-lighting-effect >
 			</div>
 		</div>
-		<div class="col-6" *ngIf="!recordingStatus">
+		<div class="col-12" *ngIf="!recordingStatus">
 			<div class="select-wrapper">
-				<vtr-ui-macrokey-collapsible-container [selectedValue]="delaySelectedValue" [options]="intervalOptions"
-					(change)="onIntervalChanged($event)">
-				</vtr-ui-macrokey-collapsible-container>
+				<vtr-ui-lighting-effect [selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
+					(change)="onIntervalChanged($event)" [tabindex]="1">
+				</vtr-ui-lighting-effect>
 			</div>
 		</div>
 		<div class="col-sm-12">
@@ -104,7 +104,7 @@
 	<div class="bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
 			<div class="delete-btn" (click)="clearRecords()" vtrMetrics [metricsItem]="'macrokey_clear_records'"
-				metricsEvent="featureClick" id="macrokey_clear_records" aria-label="macrokey clear records" tabindex="1"
+				metricsEvent="featureClick" id="macrokey_clear_records" attr.aria-label="{{ 'gaming.macroKey.narrator.clearText' | translate }}" tabindex="1"
 				(keyup.enter)="clearRecords()" role="button">
 				<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -124,7 +124,7 @@
 							id="delete---anticon" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
 					</g>
 				</svg>
-				<span>{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
+				<span tabindex="0">{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
 			</div>
 		</div>
 	</div>

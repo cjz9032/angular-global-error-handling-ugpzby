@@ -1,3 +1,4 @@
+import { GamingDashboardModule } from './gaming-dashboard.module';
 import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { WidgetNetworkboostComponent } from './../components/widgets/widget-networkboost/widget-networkboost.component';
 import { GamingCommonModule } from './gaming/gaming.common.module';
@@ -33,6 +34,7 @@ import { ModalAddAppsComponent } from '../components/modal/modal-autoclose/modal
 import { NetworkboostAddAppsComponent } from '../components/modal/modal-network-boost/networkboost-add-apps/networkboost-add-apps.component';
 import { NetworkboostTurnOnComponent } from '../components/modal/modal-network-boost/networkboost-turn-on/networkboost-turn-on.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
 // Load Icons for Gaming
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -43,6 +45,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTop';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { FeedbackModule } from './feedback/feedback.module';
 
 library.add(faSpinner);
 library.add(faCog);
@@ -81,6 +84,7 @@ library.add(faArrowAltToTop);
 		CommonUiModule,
 		CommonWidgetModule,
 		GamingCommonModule,
+		GamingDashboardModule,
 		SharedModule,
 		GamingRoutingModule,
 		FontAwesomeModule,
@@ -89,12 +93,12 @@ library.add(faArrowAltToTop);
 		MetricsModule,
 		WidgetOfflineModule,
 		NgbModalModule,
-		NgbTooltipModule
+		NgbTooltipModule,
+		FeedbackModule,
+		PageLayoutModule
 	],
-	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	exports: [ ContainerCardModule, MetricsModule, WidgetOfflineModule ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 	entryComponents: []
-
-
 })
-export class GamingModule { }
+export class GamingModule {}

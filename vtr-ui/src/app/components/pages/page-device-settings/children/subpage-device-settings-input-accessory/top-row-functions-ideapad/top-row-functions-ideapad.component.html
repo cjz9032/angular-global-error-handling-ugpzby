@@ -1,0 +1,52 @@
+<div class="top-row-key-block">
+	<div class="row">
+		<div class="col-12 pl-3">
+			<div class="col-12 title-blck px-0 d-flex">
+				<div class="left-icon">
+					<fa-icon [icon]="['fal', 'keyboard']"></fa-icon>
+				</div>
+				<div class="title pl-2" automationid="topRowFunctionsIdeapad.title">
+					{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.title' | translate}}
+				</div>
+			</div>
+			<div class="col-12 pl-5 pr-0 caption">
+				<div class="text" automationid="topRowFunctionsIdeapad.description">
+					{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.description' | translate}}
+				</div>
+				<div class="my-3">
+					<div class="col-12 pl-0 d-flex">
+						<div class="mr-5">
+							<vtr-ui-rectangle-radio [radioId]="'radio1'"
+													[checked]="hotkey$ | async"
+													[group]="'top-row-functions-ideapad-radio'"
+													[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.sFunKey' | translate"
+													[iconName]="'icomoon icomoon-Special-function'"
+													(change)="update$.next(keyType.HOTKEY)"
+													[value]="keyType.HOTKEY"
+													automationid="topRowFunctionsIdeapad.subSection.radioButton.sFunKey">
+							</vtr-ui-rectangle-radio>
+						</div>
+						<div>
+							<vtr-ui-rectangle-radio [radioId]="'radio2'"
+													[group]="'top-row-functions-ideapad-radio'"
+													[checked]="fnkey$ | async"
+													[label]="'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSection.radioButton.fnKey' | translate"
+													[iconName]="'icomoon icomoon-F1-F12-funciton'"
+													(change)="update$.next(keyType.FNKEY)"
+													[value]="keyType.FNKEY"
+													automationid="topRowFunctionsIdeapad.subSection.radioButton.fnKey">
+							</vtr-ui-rectangle-radio>
+						</div>
+					</div>
+					<p class="text mt-3" *ngIf="hotkey$ | async" automationid="topRowFunctionsIdeapad.note.sFunKey">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.sFunKey' | translate}}
+					</p>
+					<p class="text mt-3" *ngIf="fnkey$ | async" automationid="topRowFunctionsIdeapad.note.fnKey">
+						{{'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.note.fnKey' | translate}}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<vtr-ui-row-switch></vtr-ui-row-switch>-->
+</div>

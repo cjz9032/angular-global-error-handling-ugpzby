@@ -81,7 +81,7 @@
                     "line2": "<b>Επισκόπηση διαχείρισης δυνατοτήτων</b> <br> Ορισμένες δυνατότητες δεν είναι διαθέσιμες σε όλες τις συσκευές",
                     "line3": "<b>Υπερχρονισμός CPU </b><br> Αυξήστε τη μέγιστη ταχύτητα του επεξεργαστή σας",
                     "line4": "<b>Υπερχρονισμός RAM </b><br> Αυξήστε τη μέγιστη ταχύτητα της μνήμης σας",
-                    "line5": "<b>Ενίσχυση δικτύου </b><br> Προτεραιότητα κυκλοφορίας δικτύου για το παιχνίδι που παίζετε",
+                    "line5": "<b>Ενίσχυση δικτύου </b><br> Προτεραιότητα της κυκλοφορίας δικτύου για το παιχνίδι που παίζετε",
                     "line6": "<b>Dolby </b><br> Συντονίστε τον ήχο σας ειδικά για τα παιχνίδια με την τεχνολογία Dolby",
                     "line7": "<b>Υβριδική λειτουργία </b><br> Απενεργοποίηση προηγμένων ρυθμίσεων GPU, όταν δεν παίζετε, για ενισχυμένη απόδοση μπαταρίας",
                     "line8": "<b>Γρήγορη φόρτιση </b><br> Παιχνίδι εν κινήσει με ταχύτερη φόρτιση της μπαταρίας",
@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "Σίγουρα θέλετε να διαγράψετε αυτό το πλήκτρο μακροεντολής;"
+                    "title": "Σίγουρα θέλετε να διαγράψετε αυτό το πλήκτρο μακροεντολής;",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "Λήξη χρόνου για εγγραφή.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "Εγγραφή πλήκτρου μακροεντολής για"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "Χρώμα"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "Δεν υπάρχουν εφαρμογές σε λειτουργία για προσθήκη",
                 "body": "Θα εμφανιστούν μόνο οι εφαρμογές που εκτελούνται προς το παρόν. Ανοίξτε μια εφαρμογή που θέλετε να προσθέσετε και στην οποία να επιστρέψετε."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "Δυνατότητα προσθήκης έως 5 εφαρμογών επιπλέον για ενίσχυση",
                     "part2": "από",
                     "part3": "προστέθηκε"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "Ασφάλεια WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
             "disabled": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
             "partiallyProtected": "ΕΝ ΜΕΡΕΙ ΠΡΟΣΤΑΤΕΥΜΕΝΟ",
@@ -456,7 +641,8 @@
             "installing": "ΕΓΚΑΤΑΣΤΑΣΗ",
             "notFound": "ΔΕΝ ΒΡΕΘΗΚΕ",
             "registered": "ΔΗΛΩΘΗΚΕ",
-            "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ"
+            "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
@@ -475,7 +661,10 @@
             "collapse": "Σύμπτυξη",
             "expand": "Επέκταση",
             "loader": "Λήψη της κατάστασης <br>",
-            "loading": "Φόρτωση..."
+            "loading": "Φόρτωση...",
+            "from": "από",
+            "to": "σε",
+            "clickToChange": "κάντε κλικ για αλλαγή"
         },
         "app-update": {
             "message": "Γεια! Υπάρχει διαθέσιμη μια νεότερη έκδοση του Vantage, θέλετε να τη φορτώσετε;"
@@ -552,7 +741,9 @@
                 "accessUrl": "Μεταβείτε στις ρυθμίσεις των Windows για να αποκτήσετε πρόσβαση",
                 "microphoneNote": "Το Lenovo Vantage δεν έχει πρόσβαση στο μικρόφωνο.",
                 "cameraPrivacyNote": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα."
-            }
+            },
+            "threshold": "Κατώφλι",
+            "conservation": "Συντήρηση"
         },
         "systemStatus": {
             "title": "Κατάσταση συστήματος",
@@ -602,9 +793,9 @@
                 "notFound": "Δεν εντοπίστηκε ενημέρωση συστήματος",
                 "detail": {
                     "uptoDate": "Οι ενημερώσεις ελέγχθηκαν ",
-					"updatedOn": "ημερομηνία ελέγχου ",
-					"outdated": "Οι ενημερώσεις δεν έχουν ελεγχθεί πρόσφατα ",
-					"neverRanUpdate": "οι ενημερώσεις δεν έχουν ελεγχθεί ποτέ"
+                    "updatedOn": "ημερομηνία ελέγχου ",
+                    "outdated": "Οι ενημερώσεις δεν έχουν ελεγχθεί πρόσφατα ",
+                    "neverRanUpdate": "οι ενημερώσεις δεν έχουν ελεγχθεί ποτέ"
                 }
             },
             "extendedWarranty": "Παράταση εγγύησης",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "Η εγκατεστημένη μπαταρία <b>δεν υποστηρίζεται</b> από το σύστημα και δεν θα φορτιστεί. Αντικαταστήστε την μπαταρία με τη σωστή μπαταρία της Lenovo για αυτό το σύστημα.",
                     "Good": "<b>Η μπαταρία είναι σε καλή κατάσταση.</b>",
-                    "Exhaustion": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "Exhaustion": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "Bad": "<b>Παρουσιάστηκε σφάλμα μπαταρίας.</b> Δεν είναι δυνατή η φόρτιση/αποφόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
                     "NotDetected": "<b>Δεν εντοπίστηκε μπαταρία ή δεν</b> έχει συνδεθεί μπαταρία.",
                     "NotGood": "<b>Η μπαταρία δεν είναι σε καλή κατάσταση.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "Η <b>αποφόρτιση</b> διακόπηκε, επειδή η <b>θερμοκρασία της μπαταρίας είναι πολύ υψηλή.</b>",
                     "TrickleCharge": "Η μπαταρία <b>αποφορτίστηκε εντελώς</b> και πρέπει να ξαναφορτιστεί. Η διαδικασία ενδέχεται να διαρκέσει δέκα ώρες ή και περισσότερο.",
                     "OverheatedBattery": "Η μπαταρία είναι <b>πολύ ζεστή</b>. Αφαιρέστε την από τον υπολογιστή και αφήστε την να επανέλθει σε θερμοκρασία δωματίου.",
-                    "PermanentError": "Αποτυχία μπαταρίας <b>λόγω φυσιολογικής φθοράς.</b> Δεν είναι δυνατή η φόρτιση της μπαταρίας. Αντικαταστήστε την μπαταρία.",
+                    "PermanentError": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "NotSupportACAdapterDetail": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
-                    "LimitedACAdapterSupportDetail": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος."
+                    "LimitedACAdapterSupportDetail": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
+                    "FullACAdapterSupport": "<b>Συνδέεται τροφοδοσία {{acWattage}} W {{acAdapterType}}.</b>"
                 },
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Δεν είναι δυνατή η πλήρης φόρτιση της μπαταρίας όταν έχει ενεργοποιηθεί το όριο φορτίου μπαταρίας.",
@@ -783,7 +975,7 @@
                             "close": "κλείσιμο",
                             "coolingModesList": {
                                 "list1": "Κάντε κλικ στο εικονίδιο μπαταρίας των Windows στη γραμμή εργαλείων",
-                                "list2": "Θα εμφανιστεί ο μετρητής μπαταρίας των Windows. Σύρετε το ρυθμιστικό για να επιλέξετε μεταξύ βέλτιστου χρόνου ή βέλτιστης απόδοσης."
+                                "list2": "Θα εμφανιστεί η λειτουργία ενέργειας των Windows. Σύρετε το ρυθμιστικό για να επιλέξετε μεταξύ βέλτιστου χρόνου ή βέλτιστης απόδοσης."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows",
-                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\"."
+                    "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\".",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Ρυθμίσεις ενέργειας",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "Έξυπνη αναμονή",
                     "description": "Αυτή η δυνατότητα δημιουργεί χρονοδιαγράμματα στον υπολογιστή σας, ώστε να βελτιστοποιείται η εξοικονόμηση της μπαταρίας κατά τις ώρες αδράνειας χωρίς να επηρεάζεται η γρήγορη εκκίνηση κατά τις ώρες πιο εντατικής χρήσης.",
-                    "tooltip": "Όταν είναι ενεργοποιημένη η Έξυπνη αναμονή, ο υπολογιστής σας μεταβαίνει στη Σύγχρονη αναμονή πριν από την προγραμματισμένη ώρα Έναρξης και μεταβαίνει σε κατάσταση αδρανοποίησης εάν παραμείνει ανενεργός για ένα καθορισμένο χρονικό διάστημα ενώ λειτουργεί με μπαταρία. Αυτό το χρονικό διάστημα βελτιστοποιείται σύμφωνα με το χρονοδιάγραμμα που έχετε καθορίσει. Ο υπολογιστής αλλάζει από την κατάσταση αδρανοποίησης στη Σύγχρονη αναμονή μόνο κατά τις προγραμματισμένες ημέρες, ενώ δεν αλλάζει όταν είναι ανενεργός για συνεχόμενες προγραμματισμένες ημέρες.",
+                    "tooltip": "Όταν είναι ενεργοποιημένη η Έξυπνη αναμονή, ο υπολογιστής σας μεταβαίνει στη Σύγχρονη αναμονή πριν από την προγραμματισμένη ώρα ΕΝΑΡΞΗΣ και μεταβαίνει σε κατάσταση αδρανοποίησης εάν παραμείνει ανενεργός για ένα καθορισμένο χρονικό διάστημα ενώ λειτουργεί με μπαταρία. Αυτό το χρονικό διάστημα βελτιστοποιείται βάσει του χρονοδιαγράμματος που έχετε ορίσει ή του χρόνου χρήσης του υπολογιστή σας. Ο υπολογιστής μεταβαίνει από την κατάσταση αδρανοποίησης στη Σύγχρονη αναμονή μόνο κατά τις προγραμματισμένες ημέρες, ενώ δεν μεταβαίνει όταν είναι ανενεργός για συνεχόμενες προγραμματισμένες ημέρες.",
                     "timer": {
-                        "heading": "Ρυθμίστε την ώρα κατά την οποία χρησιμοποιείτε συνήθως αυτόν τον υπολογιστή",
+                        "heading": "Η ώρα κατά την οποία χρησιμοποιείτε συνήθως τον υπολογιστή σας",
                         "subHeading1": "αρχίσετε",
                         "subHeading2": "λήξη",
                         "subHeading3": "χρήση αυτού του χρονοδιαγράμματος για",
@@ -941,7 +1154,8 @@
                             "wed": "Τετάρτη",
                             "thurs": "Πέμπτη",
                             "fri": "Παρασκευή",
-                            "sat": "Σάββατο"
+                            "sat": "Σάββατο",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Κυριακή",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "Κάθε μέρα",
                         "weekdays": "Εργάσιμες",
-                        "weekends": "Σαββατοκύριακα"
-                    }
+                        "weekends": "Σαββατοκύριακα",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "Αυτόματη ρύθμιση του ενεργού χρόνου του υπολογιστή σας με βάση τη χρήση σας",
+                    "hyperlinkToGraph": "Κάντε κλικ για να δείτε τη δραστηριότητα και τον ενεργό χρόνο του πίνακα του υπολογιστή σας",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1141,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "ενεργοποιεί τη δυνατότητα ζουμ σε οθόνες υψηλής ανάλυσης",
+                        "description": "ενεργοποιήσετε τη δυνατότητα ζουμ σε οθόνες υψηλής ανάλυσης",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1194,7 +1453,24 @@
                             "description": "Η αλλαγή της προεπιλεγμένης λειτουργίας επάνω σειράς απαιτεί να κάνετε επανεκκίνηση του υπολογιστή σας. Είστε βέβαιοι ότι θέλετε επανεκκίνηση;",
                             "reboot": "ΕΠΑΝΕΚΚΙΝΗΣΗ",
                             "cancel": "ΟΧΙ ΤΩΡΑ"
+                        },
+                        "note": {
+                            "sFunKey": "Για να αποκτήσετε πρόσβαση στη λειτουργία F1-F12, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά.",
+                            "fnKey": "Για να αποκτήσετε πρόσβαση σε ειδική λειτουργία, πιέστε το πλήκτρο Fn και τα πλήκτρα στην επάνω σειρά."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "Λειτουργίες πλήκτρων συντόμευσης VoIP",
+                        "description": {
+                            "main": "Αυτή η λειτουργία σάς δίνει τη δυνατότητα να απαντήσετε ή να απορρίψετε μια κλήση VoIP πατώντας τα πλήκτρα συντόμευσης στο πληκτρολόγιό σας:",
+                            "f10": "F10: απάντηση κλήσης",
+                            "f11": "F11: απόρριψη ή τερματισμός κλήσης"
+                        },
+                        "tooltip": "Επί του παρόντος, αυτή η λειτουργία υποστηρίζεται μόνο στο Skype for Business 2016 και το Microsoft Teams 1.0.<br>Για να χρησιμοποιήσετε αυτήν τη λειτουργία, πρέπει πρώτα να πραγματοποιήσετε λήψη και να εγκαταστήσετε τις εφαρμογές.",
+                        "hasInstalledAppsDescription": "Επιλέξτε την εφαρμογή με την οποία θέλετε να χρησιμοποιείτε τα πλήκτρα συντόμευσης:",
+                        "noInstalledAppsDescription": "Αυτή η λειτουργία υποστηρίζει μόνο τις ακόλουθες εφαρμογές: ",
+                        "hasInstalledAppsNote": "Σημείωση: Στο Microsoft Teams 1.0, το πλήκτρο F11 δεν μπορεί να χρησιμοποιηθεί για τον τερματισμό της κλήσης.",
+                        "noInstalledAppsNote": "Σημείωση: Για να χρησιμοποιήσετε αυτήν τη λειτουργία, πρέπει πρώτα να πραγματοποιήσετε λήψη και να εγκαταστήσετε τις εφαρμογές."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "ΕΦΑΡΜΟΓΗ"
                     },
                     "website": {
-                        "url": "ΔΙΕΥΘΥΝΣΗ URL ΔΙΚΤΥΑΚΟΥ ΤΟΠΟΥ"
+                        "url": "ΔΙΕΥΘΥΝΣΗ URL ΔΙΚΤΥΑΚΟΥ ΤΟΠΟΥ",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "ΚΕΙΜΕΝΟ ΠΡΟΣ ΕΙΣΑΓΩΓΗ"
+                        "title": "ΚΕΙΜΕΝΟ ΠΡΟΣ ΕΙΣΑΓΩΓΗ",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Εναλλαγή πλήκτρου Fn και πλήκτρου Ctrl",
+                    "description": "Εάν πιέζατε συνήθως το πλήκτρο Fn όταν σκοπεύατε να πιέσετε το πλήκτρο Ctrl, μπορείτε να κάνετε εναλλαγή των λειτουργιών των δύο πλήκτρων.",
+                    "restartNote": "Η εναλλαγή της λειτουργίας δύο πλήκτρων απαιτεί την επανεκκίνηση του υπολογιστή σας, σίγουρα θέλετε να κάνετε επανεκκίνηση;"
                 },
                 "controlOptions": {
                     "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "Είσοδος χωρίς αφή",
                     "caption": "Η δυνατότητα αυτή ξεκλειδώνει τον υπολογιστή ή τον επαναφέρει σε λειτουργία αυτόματα, όταν καθίσετε μπροστά του ή πλησιάσετε σε αυτόν.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "Όταν βρίσκεστε μπροστά στον υπολογιστή σας ή τον πλησιάζετε (σε απόσταση 1,2 μέτρων), αυτή η λειτουργία σάς επιτρέπει να συνδεθείτε αυτόματα στο σύστημα μετά από την αναγνώριση του προσώπου σας. Εάν βρίσκεστε σε εξωτερικό χώρο και όχι στο γραφείο, πρέπει να είστε πιο κοντά στον υπολογιστή και η επαναφορά θα απαιτήσει περισσότερο χρόνο."
                 },
                 "zeroTouchLock": {
                     "title": "Κλείδωμα χωρίς αφή",
@@ -1270,6 +1551,17 @@
                             "slow": "Αργή"
                         },
                         "toolTipContent": "Επιλέξτε την επιθυμητή ρύθμιση για κλείδωμα της οθόνης σας με Υψηλή/Μέτρια/Χαμηλή ταχύτητα όταν δεν εντοπιστεί η παρουσία σας. Ωστόσο, ο χρόνος που θα παρέλθει για να κλειδώσει η οθόνη επηρεάζεται επίσης από τον πραγματικό χρήστη, τις δυνατότητες των αισθητήρων και τις ρυθμίσεις λήξης χρόνου οθόνης των Windows. Επομένως, προτείνουμε να κλειδώνετε σε κάθε περίπτωση και αμέσως το σύστημά σας πριν φύγετε απ' αυτό."
+                    },
+                    "facialRecognition": {
+                        "title": "ΑΝΑΓΝΩΡΙΣΗ ΠΡΟΣΩΠΟΥ",
+                        "caption": "Μπορείτε να ενεργοποιήσετε τη λειτουργία αναγνώρισης προσώπου και να της επιτρέψετε να έχει πρόσβαση στην κάμερά σας. Αυτό το εργαλείο καταγράφει την εικόνα σας για να αναγνωρίζει με ακρίβεια την παρουσία σας ή να εντοπίζει πότε έχετε αφήσει τη συσκευή σας χωρίς επιτήρηση. Αυτά τα δεδομένα υπόκεινται σε τοπική επεξεργασία στη συσκευή σας. Η Lenovo ούτε έχει πρόσβαση ούτε τα χρησιμοποιεί.",
+                        "checkBox": "Ενεργοποιήστε την κάμερα και ενεργοποιήστε αυτήν τη λειτουργία",
+                        "note": {
+                            "permission": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                            "privacyMode": "Η λειτουργία απορρήτου της κάμερας Lenovo Vantage είναι ενεργοποιημένη. Η λειτουργία του πλαισίου ελέγχου δεν θα λειτουργήσει.",
+                            "windowsLink": "Μεταβείτε στις Ρυθμίσεις των Windows για να δώσετε πρόσβαση",
+                            "privacyLink": "Μεταβείτε στη λειτουργία απορρήτου της Κάμερας για να την απενεργοποιήσετε"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "Η αυτόματη προσαρμογή της απόστασης θα ενημερώνει αυτόματα την απόσταση ανίχνευσης μέσω μιας μηχανής AI.",
                     "options": {
                         "near": "Κοντά",
-                        "far": "Μακριά"
+                        "far": "Μακριά",
+                        "medium": "Μεσαία"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "Όταν είναι ενεργοποιημένο, η απόσταση ανίχνευσης θα ρυθμίζεται αυτόματα. Μπορείτε επίσης να ρυθμίσετε την απόσταση ανίχνευσης μη αυτόματα με το ρυθμιστικό. Οι επιλογές είναι:",
+                        "context2": "Όταν ρυθμίζετε την απόσταση ανίχνευσης μη αυτόματα, να προσέχετε τα ακόλουθα:",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "Κοντινή: 0 – 0,42 μέτρα",
+                            "line2": "Ενδιάμεση: 0 – 0,60 μέτρα",
+                            "line3": "Μακρινή: 0 – 1,20 μέτρα",
+                            "line4": "Η μέγιστη απόσταση ανίχνευσης είναι 1,2 μέτρα. Εάν υπερβαίνει τα 1,2 μέτρα, ο αισθητήρας θα δεν μπορέσει να ανιχνεύσει την παρουσία σας.",
+                            "line5": "Η συνιστώμενη απόσταση ανίχνευσης είναι εντός 0,60 μέτρων."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "Αυτή η δυνατότητα βασίζεται στο Windows Hello. Βεβαιωθείτε ότι η αναγνώριση προσώπου είναι ενεργοποιημένη στις ρυθμίσεις των Windows.",
                     "description2": "Η δυνατότητα χρησιμοποιεί αισθητήρες και κάμερα για να ανιχνεύει την παρουσία σας. Ωστόσο, ΔΕΝ συλλέγει, αποθηκεύει ή διαρρέει προσωπικά δεδομένα ή εικόνες.",
                     "description3": "1. Εάν ο υπολογιστής σας είναι σε λειτουργία σκηνής, tablet ή ανάκλισης, οι δυνατότητες αυτές ενδέχεται να μη λειτουργούν σωστά.",
-                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί. Η σύνδεση χωρίς αφή δεν θα λειτουργήσει.",
+                    "description4": "2. Εάν ο υπολογιστής σας είναι σε κατάσταση αδρανοποίησης ή έχει απενεργοποιηθεί, η σύνδεση χωρίς αφή δεν θα λειτουργεί.",
                     "description5": "3. Ρυθμίστε την οθόνη του υπολογιστή σας σε κατάλληλη γωνία ώστε η κάμερα IR να μπορεί να αναγνωρίσει το πρόσωπό σας για αυτόματη είσοδο.",
-                    "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες."
+                    "description6": "4. Αν η Λειτουργία πτήσης είναι ενεργοποιημένη στον υπολογιστή σας, αυτές οι δυνατότητες είναι απενεργοποιημένες.",
+                    "description7": "Η ακρίβεια ποικίλλει ανάλογα με το μέγεθος και τη στάση του σώματος και τη συχνότητα της κίνησης. Αν ο υπολογιστής σας κλειδώνει απρόσμενα, ρυθμίστε τη γραμμή ευαισθησίας για να βελτιώσετε την ακρίβεια."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Μετάβαση στις Ρυθμίσεις του Windows Hello",
                     "screenTimeoutSettings": "Μετάβαση στις ρυθμίσεις λήξης χρονικού ορίου οθόνης"
                 },
-                "resetToDefault": "Επαναφορά"
+                "resetToDefault": "Επαναφορά",
+                "sensitivityAdjusting": {
+                    "title": "ΠΡΟΣΑΡΜΟΓΗ ΤΗΣ ΕΥΑΙΣΘΗΣΙΑΣ"
+                }
             },
             "intelligentScreen": {
                 "title": "Έξυπνη οθόνη",
@@ -1370,6 +1667,18 @@
                 "title": "Αναπαραγωγή βίντεο μηδενικής αφής",
                 "desc": "Αυτή η δυνατότητα διακόπτει την αναπαραγωγή του βίντεο μόλις απομακρυνθείτε από τον υπολογιστή και συνεχίζει την αναπαραγωγή του βίντεο μόλις επιστρέψετε.",
                 "tooltip": "Αυτή η δυνατότητα δεν ισχύει για προγράμματα αναπαραγωγής βίντεο Web. Αυτή η δυνατότητα υποστηρίζεται από τα πλέον δημοφιλή τοπικά προγράμματα αναπαραγωγής βίντεο, π.χ. Windows Media Player, 5KPlayer κ.λπ."
+            },
+            "superResolution": {
+                "heading": "Έξυπνα μέσα",
+                "title": "Αναβάθμιση ανάλυσης βίντεο",
+                "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση του βίντεο. Αποδίδει ιδιαίτερα όταν η ανάλυση του βίντεο είναι χαμηλή.</label></p> <p style='margin-top:4px;'><label> Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Όταν είναι ενεργοποιημένη, συνιστάται να έχετε τον υπολογιστή συνδεδεμένο σε παροχή εναλλασσόμενου ρεύματος.</label></p>",
+                "tooltip": "Η δυνατότητα λειτουργεί μόνο στα ακόλουθα προγράμματα αναπαραγωγής: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
+                    "description1": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος και η ισχύς της μπαταρίας είναι χαμηλότερη από 20%.",
+                    "description2": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος και είναι ενεργοποιημένη η λειτουργία εξοικονόμησης μπαταρίας.",
+                    "description3": "Η θερμοκρασία της CPU είναι πολύ υψηλή."
+                }
             },
             "voice": {
                 "title": "Φωνή",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "Πλήρης προστασία",
-            "fullyDesc": "Συγχαρητήρια! Είστε καλά προστατευμένοι.",
             "notFully": "Όχι πλήρης προστασία",
-            "notFullyDesc": "Δεν είστε πλήρως προστατευμένοι. Μάθετε πώς μπορείτε να προστατευτείτε καλύτερα, τώρα.",
             "security101": "ΣΥΜΒΟΥΛΟΣ ΑΣΦΑΛΕΙΑΣ 101",
             "firewall": "Τείχος προστασίας",
             "pwdHealth": "Εύρυθμη λειτουργία κωδικών πρόσβασης",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "Ασφάλεια WiFi & οικιακής σύνδεσης",
             "connectedHomeSecurity": "Ασφάλεια οικιακής σύνδεσης",
             "fingerprint": "Μηχανισμός ανάγνωσης δακτυλικού αποτυπώματος",
-            "seeAllNetwork": "Εμφάνιση όλων των δικτύων, όπου έχετε συνδεθεί",
-            "maliciousNetwork": "Εμπόδισε τον υπολογιστή σας να συνδεθεί σε {{maliciousWifi}} κακόβουλα δίκτυα αυτόν το μήνα.",
-            "good": "ΚΑΛΟ",
-            "malicious": "ΚΑΚΟΒΟΥΛΟ",
-            "suspicious": "ΥΠΟΠΤΟ",
-            "securityScoreDepends": "Το αποτέλεσμα ασφάλειας εξαρτάται από το αν είστε:",
-            "antivirus": "Προστατεύεστε από λογισμικό προστασίας από ιούς",
-            "password": "Έχετε ισχυρούς και περίπλοκους κωδικούς πρόσβασης, που διαχειρίζεστε με ασφαλή τρόπο",
-            "vpn": "Παρακολουθείτε την έκθεση του δικτύου σας σε επιτιθέμενους",
-            "wifi": "Κρυπτογραφείτε τα προσωπικά δεδομένα σας, όταν χρησιμοποιείτε δημόσιο WiFi",
-            "windowsHello": "Προστατεύετε τη συσκευή σας χρησιμοποιώντας ασφαλείς επιλογές σύνδεσης"
+            "uacTitle": "Τι είναι η ειδοποίηση UAC;",
+            "uacText": "Ο έλεγχος λογαριασμού χρήστη είναι ένα πολύ σημαντικό χαρακτηριστικό ασφαλείας των Windows που βοηθά στην παρεμπόδιση ενδεχομένως επιβλαβών προγραμμάτων να κάνουν αλλαγές στο σύστημά σας.",
+            "windowsTitle": "Γιατί χρειάζεται ενεργοποιήσω τα Windows;",
+            "windowsText": "Η εκτέλεση ενός μη γνήσιου αντιγράφου των Windows μπορεί να σας θέσει σε μεγαλύτερο κίνδυνο για ιούς και άλλες απειλές για την ασφάλεια.",
+            "encryptionTitle": "Τι είναι η κρυπτογράφηση σκληρού δίσκου;",
+            "encryptionText": "Βοηθά στην προστασία των δεδομένων σας παρέχοντας κρυπτογράφηση για ολόκληρο τον σκληρό δίσκο από μη εξουσιοδοτημένη πρόσβαση ακόμη κι αν η μονάδα αφαιρεθεί από τον τρέχοντα Η/Υ και τοποθετηθεί σε άλλες συσκευές.",
+            "passwordTitle": "Πώς θα προστατεύσετε καλύτερα τον κωδικό πρόσβασης;",
+            "passwordText": "Αποθηκεύστε και διαχειριστείτε με ασφάλεια όλους τους κωδικούς πρόσβασης με κρυπτογράφηση από επαγγελματική εφαρμογή ψηφιακής προστασίας αντί για απλή αποθήκευση στα προγράμματα περιήγησής σας, τα οποία είναι εύκολα προσβάσιμα από τρίτα μέρη χωρίς να το γνωρίζετε.",
+            "enhanceTitle": "Τι θα πρέπει να κάνω για να βελτιώσω την προστασία της ασφάλειας;",
+            "enhanceText": "Συνιστάται ιδιαίτερα η προστασία των συσκευών σας με λογισμικό προστασίας από ιούς και τείχος προστασίας και η ρύθμιση της ειδοποίησης UAC στην ελάχιστη προστασία. Επιπλέον, δημιουργήστε ισχυρούς κωδικούς πρόσβασης και διαχειριστείτε με ασφαλή τρόπο. Κρυπτογραφήστε τα δεδομένα σας ενώ χρησιμοποιείτε το δημόσιο δίκτυο ως προηγμένη προστασία.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "Χρήση του υπολογιστή ως tablet",
             "description": "<div class='faqInFs4Fb'>    Χρήση του υπολογιστή ως tablet</div><hr><p>Η λειτουργία tablet κάνει τα Windows πιο έξυπνα και εύχρηστα όταν έχετε συσκευή με οθόνη αφής.</p><h3 class='faqInFs25FbP10'>Χρήση λειτουργίας tablet</h3><p>Για να ενεργοποιήσετε τη λειτουργία tablet, επιλέξτε <strong>κέντρο ενεργειών (action center)</strong> στη γραμμή εργασιών και, στη συνέχεια, επιλέξτε <strong>Λειτουργία tablet (Tablet mode)</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Σημείωση</h3><p>Για να δείτε αν η συσκευή σας μπορεί να ενεργοποιεί αυτόματα τη λειτουργία tablet, πραγματοποιήστε αναζήτηση για τη συσκευή σας στον δικτυακό τόπο του κατασκευαστή. Η υποστήριξη για αυτή τη δυνατότητα εξαρτάται από το υλικό, το πρόγραμμα οδήγησης που έχει εγκατασταθεί και τον τρόπο ρύθμισης της συσκευής από τον κατασκευαστή. </p><p> </p><p>Σε λειτουργία tablet, η εφαρμογές ανοίγουν σε λειτουργία πλήρους οθόνης, παρέχοντας σας περισσότερο χώρο για εργασία. Για να κλείσετε μια εφαρμογή, σύρετέ τη στο κάτω μέρος της οθόνης.</p><p> </p><h3 class='faqInFs25FbP10'>Συμβουλή</h3><p>Η γραμμή εργασιών είναι διαθέσιμη όταν ο υπολογιστή σας βρίσκεται σε λειτουργία tablet, αλλά μπορείτε να την αποκρύψετε αν θέλετε περισσότερο χώρο στην οθόνη. Επιλέξτε το κουμπί <strong>Έναρξη (Start)</strong>, επιλέξτε <strong>Ρυθμίσεις (Settings) </strong>> <strong>Σύστημα (System) </strong>> <strong>Λειτουργία tablet (Tablet mode) </strong>και, στη συνέχεια, ενεργοποιήστε τη επιλογή <strong>Αυτόματη απόκρυψη της γραμμής εργασιών σε λειτουργία tablet (Automatically hide the taskbar in tablet mode)</strong>. Για να δείτε την κρυμμένη γραμμή εργασιών, σαρώστε προς τα επάνω από το κάτω μέρος της οθόνης ή χρησιμοποιήστε το ποντίκι για να κάνετε κατάδειξη εκεί.</p><h3 class='faqInFs25FbP10'>Ταυτόχρονη χρήση δύο εφαρμογών</h3><p>Για να χρησιμοποιήσετε δύο εφαρμογές τη μία δίπλα στην άλλη σε λειτουργία tablet, σύρετε μια ανοικτή εφαρμογή προς τα κάτω και στο πλάι. Θα δείτε που θα κουμπώσει και θα δείτε τυχόν ανοικτές εφαρμογές δίπλα της.</p><p>Σε αυτή την προβολή, μπορείτε επίσης να κάνετε τα ακόλουθα:</p><ul>    <li>Να χρησιμοποιήσετε την κοινή ακμή μεταξύ δύο κουμπωμένων εφαρμογών για να αλλάξετε το μέγεθος και των δύο εφαρμογών ταυτόχρονα.</li>    <li>Ανοίξτε τη νέα εφαρμογή από την προβολή εργασιών &mdash;επιλέξτε <strong>Προβολή εργασιών (Task view)</strong> από τη γραμμή εργασιών, επιλέξτε μια εφαρμογή και, στη συνέχεια, σύρετέ τη στη μία πλευρά για να την κουμπώσετε στη διαιρεμένη οθόνη.</li>    <li>Χρησιμοποιήστε το κουμπί επιστροφή στη γραμμή εργασιών για να επιστρέψετε σε μία εφαρμογή ή να ανοίξετε μια εφαρμογή που χρησιμοποιούσατε νωρίτερα.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "Η εκτέλεση της σάρωσης και της επισκευής ενδέχεται να προκαλέσει απώλεια δεδομένων. Συνιστάται η δημιουργία αντιγράφου ασφαλείας πριν από την εκτέλεση αυτής της λειτουργίας. Σίγουρα θέλετε να συνεχίσετε;",
                 "yes": "Ναι",
                 "no": "Όχι"
-            }
+            },
+            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο ενώ οι πληροφορίες υλικού δεν έχουν ανακτηθεί ακόμη, σε περίπτωση που οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη δυνατότητα λειτουργίας ή όταν εκτελείται η λειτουργία αποκατάστασης κατεστραμμένων τομέων δίσκου."
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "Σίγουρα θέλετε να ακυρώσετε τη διαδικασία;",
         "cancelTextProgress": "Περιμένετε να ακυρωθεί η πρόοδος",
         "pluginNotUpdate": "Η σάρωση υλικού δεν είναι διαθέσιμη, επειδή είναι ξεπερασμένη. Κάντε αναβάθμισή της.",
-        "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση"
+        "testNotApplicable": "Δεν ισχύει σε προσαρμοσμένη σάρωση",
+        "waitScanStarts": "Περιμένετε έως ότου ξεκινήσει η σάρωση",
+        "reminderTimeRetrieveHardwareInformation": "Αυτή η διαδικασία ενδέχεται να χρειαστεί λίγο χρόνο για να ανακτήσετε τις πληροφορίες του υλικού σας",
+        "retrievingHardwareInformation": "Ανάκτηση πληροφοριών υλικού...",
+        "pluginTokens": {
+            "cpu": "Επεξεργαστής",
+            "memory": "Μνήμη",
+            "motherboard": "Μητρική πλακέτα",
+            "pci_express": "PCI Express",
+            "storage": "Χώρος αποθήκευσης",
+            "wireless": "Ασύρματο"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

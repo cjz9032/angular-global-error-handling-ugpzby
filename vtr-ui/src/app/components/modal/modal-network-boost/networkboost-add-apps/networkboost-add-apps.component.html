@@ -1,4 +1,4 @@
-<div class="modal-main-wrapper"  tabindex="1"  id="nbAddApps" [attr.aria-label]="ariaLabel" role="presentation">
+<div class="modal-main-wrapper"  tabindex="1"  id="nbAddApps" attr.aria-label="{{ariaLabel | translate}}" role="presentation">
 	<div class="spinner-content h-100 d-flex align-items-center justify-content-center" *ngIf="loading">
 		<fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
 	</div>
@@ -7,7 +7,7 @@
 			<div class="modal-body">
 				<div class="top-header">
 					<button type="button" id="close" class="close" (click)="closeModal(false)" (keyup)="checkFocus($event)"
-					  tabindex="1" aria-label="Close"
+					  tabindex="1"  attr.aria-label="{{'gaming.narrator.networkBoost.common.close' | translate}}"
 						(keyup.enter)="closeModal(false)">
 						<svg width="16px" height="16px" viewBox="0 0 12 11" version="1.1"
 							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

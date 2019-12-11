@@ -110,6 +110,13 @@
                 }
             },
             "narrator": {
+                "pageTitle": {
+                    "device": "Lenovo Vantage home page",
+                    "macroKey": "Macro key page",
+                    "networkBoost": "network boost page",
+                    "autoClose": "auto close page",
+                    "lighting": "Lighting page"
+                },
                 "mainMenuLink": "go back to home page"
             }
         },
@@ -216,7 +223,8 @@
             },
             "popupContent": {
                 "clearMacrokey": {
-                    "title": "매크로 키를 지우시겠습니까?"
+                    "title": "매크로 키를 지우시겠습니까?",
+                    "modalTitle": "clear double confirm window"
                 },
                 "timeoutRecording": {
                     "title": "기록 시간 초과.",
@@ -238,6 +246,28 @@
             },
             "recording": {
                 "title": "매크로 키 기록 중"
+            },
+            "narrator": {
+                "backDashboard": "Back to dashboard",
+                "macrokeyNumpad": "macrokey numpad",
+                "clearText": "macrokey clear records",
+                "popupOk": "macrokey popup clear",
+                "popupClear": "macrokey popup ok",
+                "popupCancel": "macrokey popup cancel",
+                "popupClose": "close",
+                "numbersSelectedNumpad": "selected macrokey numpad",
+                "macrokeySettings1": {
+                    "option1": "on",
+                    "option2": "macro key settings enabled when gaming",
+                    "option3": "macro key settings off"
+                },
+                "optionSelected": "selected",
+                "numberInput": {
+                    "title": "Number",
+                    "bundled": "bundled",
+                    "unbundled": "unbundled",
+                    "isSelected": "is selected"
+                }
             }
         },
         "lightingProfile": {
@@ -371,6 +401,129 @@
                 "text7": {
                     "title": "색상"
                 }
+            },
+            "lightingeffectnarrator": {
+                "option1": {
+                    "title": "front on"
+                },
+                "option2": {
+                    "title": "front flicker"
+                },
+                "option3": {
+                    "title": "front breath"
+                },
+                "option4": {
+                    "title": "front wave"
+                },
+                "option5": {
+                    "title": "front smooth"
+                },
+                "option6": {
+                    "title": "front cpu temperature"
+                },
+                "option7": {
+                    "title": "front cpu utilization"
+                },
+                "option8": {
+                    "title": "front off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingeffectsidenarrator": {
+                "option1": {
+                    "title": "side on"
+                },
+                "option2": {
+                    "title": "side flicker"
+                },
+                "option3": {
+                    "title": "side breath"
+                },
+                "option4": {
+                    "title": "side wave"
+                },
+                "option5": {
+                    "title": "side smooth"
+                },
+                "option6": {
+                    "title": "side cpu temperature"
+                },
+                "option7": {
+                    "title": "side cpu utilization"
+                },
+                "option8": {
+                    "title": "side off"
+                },
+                "color": {
+                    "title": "Color settings"
+                },
+                "lightingEffect": {
+                    "title": "Lighting effect"
+                }
+            },
+            "lightingSingleLightingOptionnarrator": {
+                "option1": {
+                    "title": "Always On"
+                },
+                "option2": {
+                    "title": "Fast Blink"
+                },
+                "option3": {
+                    "title": "Medium Blink"
+                },
+                "option4": {
+                    "title": "Slow Blink"
+                },
+                "option5": {
+                    "title": "Blink Level"
+                }
+            },
+            "lightingnarrator": {
+                "text1": {
+                    "title": "Lighting profile off"
+                },
+                "text2": {
+                    "title": "Lighting profile 1"
+                },
+                "text3": {
+                    "title": "Lighting profile 2"
+                },
+                "text4": {
+                    "title": "Lighting profile 3"
+                },
+                "Customize": {
+                    "title": "set lighting profile"
+                },
+                "heading": {
+                    "title": "to default:"
+                }
+            },
+            "rgbValueNarrator": {
+                "red": "rgb red value edit",
+                "green": "rgb green value edit",
+                "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -391,6 +544,17 @@
             "noRunningApps": {
                 "title": "추가할 실행 중인 앱 없음",
                 "body": "현재 실행 중인 앱만 표시됩니다. 추가하려는 앱을 실행한 다음 다시 시도하십시오."
+            },
+            "autocClosenarrator": "Add",
+            "autocClosenarratorremove": "Remove",
+            "autocClosenarratorback": "Back to dashboard",
+            "modalTurnAutoCloseNarrator": {
+                "close": "Close",
+                "dontask": "Don't ask again",
+                "turnOn": "Turn on auto close",
+                "notNow": "Not now",
+                "running": "No running apps to add window",
+                "open": "Auto close add apps window opened"
             }
         },
         "networkBoost": {
@@ -409,6 +573,28 @@
                     "part1": "최대 5개의 앱을 추가할 수 있습니다",
                     "part2": "/",
                     "part3": "추가됨"
+                }
+            }
+        },
+        "narrator": {
+            "networkBoost": {
+                "subPage": {
+                    "addApps": "Add apps",
+                    "remove": "Remove"
+                },
+                "turnOnModal": {
+                    "confirmation": "Network boost turn on confirmation window opened",
+                    "dontAskAgain": "Dont ask again",
+                    "turnOnButton": "modal Turn networkBoost turn on",
+                    "notOnButton": "modal Turn networkBoost not now"
+                },
+                "addApps": {
+                    "addAppsTitle": "Networkboost add apps window opened",
+                    "noAppsTitle": "No running Apps to add window",
+                    "add": "add"
+                },
+                "common": {
+                    "close": "close"
                 }
             }
         }
@@ -446,7 +632,6 @@
             "wifi": "WiFi 보안",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "사용",
             "disabled": "사용 안 함",
             "partiallyProtected": "부분적으로 보호",
@@ -456,7 +641,8 @@
             "installing": "설치하기",
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
-            "notRegistered": "등록되지 않음"
+            "notRegistered": "등록되지 않음",
+            "fingerPrint": "Fingerprint"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
@@ -475,7 +661,10 @@
             "collapse": "축소",
             "expand": "확장",
             "loader": "페치 상태",
-            "loading": "로드 중..."
+            "loading": "로드 중...",
+            "from": "백업 선택",
+            "to": "백업 위치 지정",
+            "clickToChange": "클릭하여 변경"
         },
         "app-update": {
             "message": "앗! 새 버전의 Vantage를 사용할 수 있습니다. 로드하시겠습니까?"
@@ -552,7 +741,9 @@
                 "accessUrl": "액세스 권한을 부여하려면 Windows 설정으로 이동합니다",
                 "microphoneNote": "Lenovo Vantage가 마이크에 액세스할 수 없습니다.",
                 "cameraPrivacyNote": "Lenovo Vantage가 카메라에 액세스할 수 없습니다."
-            }
+            },
+            "threshold": "임계값",
+            "conservation": "보존"
         },
         "systemStatus": {
             "title": "시스템 상태",
@@ -602,9 +793,9 @@
                 "notFound": "시스템 업데이트를 찾을 수 없음",
                 "detail": {
                     "uptoDate": "업데이트 확인됨 ",
-					"updatedOn": "확인된 날짜 ",
-					"outdated": "최근에 업데이트를 확인하지 않음 ",
-					"neverRanUpdate": "업데이트 확인을 한 적 없음"
+                    "updatedOn": "확인된 날짜 ",
+                    "outdated": "최근에 업데이트를 확인하지 않음 ",
+                    "neverRanUpdate": "업데이트 확인을 한 적 없음"
                 }
             },
             "extendedWarranty": "연장 보증",
@@ -701,7 +892,7 @@
                 "condition": {
                     "Illegal": "시스템에서 <b>지원되지 않는</b> 배터리를 설치하여 충전되지 않습니다. 이 시스템에 맞는 Lenovo 배터리로 교체하십시오.",
                     "Good": "<b>배터리의 상태가 좋습니다.</b>",
-                    "Exhaustion": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
+                    "Exhaustion": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "Bad": "<b>배터리 오류가 발생했습니다.</b> 배터리를 충전/방전할 수 없습니다. 배터리를 교체하십시오.",
                     "NotDetected": "<b>배터리가 감지되지 않거나 배터리</b>에 꽂혀 있지 않습니다.",
                     "NotGood": "<b>배터리의 상태가 좋지 않습니다.</b>",
@@ -712,9 +903,10 @@
                     "HighTemperature": "배터리 온도가 너무 높아 <b>방전</b>이 <b>중단되었습니다.</b>",
                     "TrickleCharge": "배터리가 <b>완전히 방전되어</b> 다시 충전해야 합니다. 이 작업은 10시간 이상이 소요될 수 있습니다.",
                     "OverheatedBattery": "배터리가 <b>너무 뜨겁습니다</b>. 컴퓨터에서 배터리를 제거하여 상온 정도까지 식히십시오.",
-                    "PermanentError": "시간이 흐르면서 <b>배터리에 장애가 발생했습니다.</b> 배터리를 충전할 수 없습니다. 배터리를 교체하십시오.",
+                    "PermanentError": "배터리 용량이 <b>저하</b>되었습니다. 새 배터리를 교체하십시오.",
                     "NotSupportACAdapterDetail": "<b>AC 어댑터가 지원되지 않습니다.</b> Lenovo 컴퓨터는 이 AC 어댑터를 지원하지 않습니다. 갑작스런 시스템 종료 문제가 발생할 수 있습니다. 올바른 AC 어댑터를 연결하십시오.",
-                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오."
+                    "LimitedACAdapterSupportDetail": "<b>AC 어댑터는 시스템 성능 및 충전 속도에</b> 영향을 줄 Lenovo 컴퓨터에 충분한 전원을 공급할 수 없습니다. 올바른 AC 어댑터를 다시 연결하십시오.",
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 전원이 연결돼 있습니다.</b>"
                 },
                 "batteryNotDetected": "배터리 없음",
                 "thresholdNote": "<b>참고:</b> 배터리 충전 임계값을 사용하는 경우 배터리가 완전히 충전되지 않습니다.",
@@ -783,7 +975,7 @@
                             "close": "닫기",
                             "coolingModesList": {
                                 "list1": "도구 모음에서 Windows 배터리 아이콘을 클릭하십시오.",
-                                "list2": "Windows 배터리 게이지가 표시되면, 슬라이더를 밀어 최적의 시간이나 최적의 성능을 선택하십시오."
+                                "list2": "Windows 전원 모드가 표시되면, 슬라이더를 밀어 최적의 시간이나 최적의 성능을 선택하십시오."
                             }
                         }
                     },
@@ -795,7 +987,28 @@
                         }
                     },
                     "description5": "지능형 냉각 기능은 팬 속도 및 최대 성능을 조정하고 배터리 수명을 관리합니다. 이 기능에는 3 가지 모드(자동 모드, 균형 모드 및 성능 모드)가 있으며, 이제 Windows 성능 전원 슬라이더를 사용하여 액세스할 수 있음",
-                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다."
+                    "nocqldesc": "지능형 냉각 기능을 사용해 시스템 성능과 열 온도를 조정할 수 있습니다. \"성능\" 모드에서는 시스템 성능을 최적화합니다. 반면에 \"냉각 및 저소음\" 모드에서 시스템을 냉각하고 소음을 줄이는 데 도움이 됩니다.",
+                    "dytc6": {
+                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "autoMode": {
+                            "title1": "Auto Battery mode",
+                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+                            "title2": "Auto Performance mode",
+                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        },
+                        "manualMode": {
+                            "title1": "Quiet mode",
+                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "title2": "Balanced mode",
+                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+                            "title3": "Performance mode",
+                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "전원 설정",
@@ -915,9 +1128,9 @@
                 "smartStandby": {
                     "title": "스마트 대기",
                     "description": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
-                    "tooltip": "스마트 대기를 사용할 경우 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며 배터리 전원이 일정 시간 동안 비활성화된 후 최대 절전 모드로 전환됩니다. 이 시간은 사용자가 설정한 스케줄을 토대로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며 비활성화되도록 예약된 날에는 전환되지 않습니다.",
+                    "tooltip": "스마트 대기를 사용할 경우에는 예약된 시작 시간 전에 컴퓨터가 모던 대기로 바뀌며, 배터리 전원이 일정 시간에 비활성화된 후 최대 절전 모드로 전환됩니다. 이 기간은 설정한 일정 또는 컴퓨터 사용 시간을 기준으로 최적화됩니다. 컴퓨터는 예약된 날에만 최대 절전 모드에서 모던 대기로 전환되며, 비활성화되도록 예약된 날에는 전환되지 않습니다.",
                     "timer": {
-                        "heading": "이 컴퓨터를 주로 사용하는 시간 설정",
+                        "heading": "이 컴퓨터를 주로 사용하는 시간",
                         "subHeading1": "시작하면",
                         "subHeading2": "종료",
                         "subHeading3": "다음에 대해 이 스케줄을 사용합니다",
@@ -941,7 +1154,8 @@
                             "wed": "수요일",
                             "thurs": "목요일",
                             "fri": "금요일",
-                            "sat": "토요일"
+                            "sat": "토요일",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "일요일",
@@ -954,8 +1168,53 @@
                         },
                         "everyday": "매일",
                         "weekdays": "평일",
-                        "weekends": "주말"
-                    }
+                        "weekends": "주말",
+                        "noDaySelected": "No day selected"
+                    },
+                    "checkbox": "사용 현황에 따라 컴퓨터의 활성 시간 자동 조정",
+                    "hyperlinkToGraph": "클릭하여 컴퓨터 테이블의 활동 및 활성 시간을 확인",
+                    "subTitle": "Schedule your computer",
+                    "automaticMode": "Automatic mode",
+                    "manualMode": "Manual mode",
+                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "graph": {
+                        "graph1Tittle": "Usage of this computer",
+                        "graph2Tittle": "Applied active time",
+                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "legends": {
+                            "none": "None",
+                            "frequent": "Frequent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+                    "subTitle2": "Set time when you typically use this computer"
                 }
             },
             "audio": {
@@ -1141,7 +1400,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "고해상도 디스플레이의 확대/축소 기능을 사용하도록 설정",
+                        "description": "고해상도 디스플레이에서 확대/축소 기능 사용 설정",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1194,7 +1453,24 @@
                             "description": "기본 맨 윗줄 기능을 변경하면, 컴퓨터를 다시 시작해야 해야 합니다. 다시 시작하시겠습니까?",
                             "reboot": "다시 부팅",
                             "cancel": "나중에"
+                        },
+                        "note": {
+                            "sFunKey": "F1-F12 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오.",
+                            "fnKey": "특수 기능에 액세스하려면, Fn 키와 맨 윗줄의 키를 누르십시오."
                         }
+                    },
+                    "VoipHotkeys": {
+                        "title": "VoIP 단축키 기능",
+                        "description": {
+                            "main": "이 기능을 사용하면 키보드의 단축키를 눌러 VoIP 통화에 응답하거나 거절할 수 있습니다:",
+                            "f10": "F10: 통화에 응답",
+                            "f11": "F11: 통화 거부 또는 통화 끊기"
+                        },
+                        "tooltip": "현재 이 기능은 비즈니스용 Skype 2016 및 Microsoft Teams 1.0에서만 지원됩니다.<br>이 기능을 사용하려면 먼저 앱을 다운로드하고 설치해야 합니다.",
+                        "hasInstalledAppsDescription": "단축키를 사용할 앱을 선택하십시오:",
+                        "noInstalledAppsDescription": "이 기능은 아래 응용 프로그램만 지원합니다: ",
+                        "hasInstalledAppsNote": "참고: Microsoft Teams 1.0의 경우 F11 키를 사용하여 전화를 끊을 수 없습니다.",
+                        "noInstalledAppsNote": "참고: 이 기능을 사용하려면 먼저 앱을 다운로드하고 설치해야 합니다."
                     }
                 },
                 "userDefinedKey": {
@@ -1214,15 +1490,20 @@
                         "title": "적용"
                     },
                     "website": {
-                        "url": "웹 사이트 URL"
+                        "url": "웹 사이트 URL",
+                        "successMessage": "The setting is applied successfully.",
+                        "invalidURLMessage": "Please input a valid URL.",
+                        "placeholder": "Please start with http:// or https://"
                     },
                     "enterText": {
-                        "title": "입력할 텍스트"
+                        "title": "입력할 텍스트",
+                        "placeholder": "Please type here"
                     }
                 },
                 "fnCtrlKey": {
-                    "title": "FN key and Ctrl key swap",
-                    "description": "If you habitually press the Fn key when intending to press the Ctrl key, you can swap the function of the two keys."
+                    "title": "Fn 키와 Ctrl 키 바꾸기",
+                    "description": "Ctrl 키를 눌러야 하는 데 습관적으로 Fn 키를 누르는 경우 두 키의 기능을 바꿀 수 있습니다.",
+                    "restartNote": "두 키의 기능을 바꾸어도 컴퓨터를 다시 시작해야 합니다. 다시 시작하시겠습니까?"
                 },
                 "controlOptions": {
                     "more": "자세히",
@@ -1257,7 +1538,7 @@
                 "zeroTouchLogin": {
                     "title": "제로 터치 로그인",
                     "caption": "이 기능은 사용자가 바로 앞에 있거나 다가오는 경우 컴퓨터를 자동으로 잠금해제하거나 절전 모드에서 해제합니다.",
-                    "tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
+                    "tooltip": "이 기능은 사용자가 컴퓨터 앞에 있거나 컴퓨터에 접근하면(1.2m 거리 이내) 얼굴을 인식하고 자동으로 시스템에 로그인할 수 있게 해줍니다. 사무실이 아닌 실외에서 사용하는 경우, 컴퓨터에 좀 더 가깝게 접근해야 하며, 절전 모드를 해제하는 데 더 오래 걸립니다."
                 },
                 "zeroTouchLock": {
                     "title": "제로 터치 잠금",
@@ -1270,6 +1551,17 @@
                             "slow": "느리게"
                         },
                         "toolTipContent": "사용자의 존재를 감지하지 못하면, 원하는 옵션을 선택하여 빠른/중간/느린 속도로 화면을 잠그십시오. 그러나 화면이 잠기는 시간도 실제 사용자 시나리오, 센서 능력 및 Windows 화면 시간 제한 설정의 영향을 받습니다. 따라서 시스템을 떠나기 전에 즉시 잠그는 것이 좋습니다."
+                    },
+                    "facialRecognition": {
+                        "title": "얼굴 인식",
+                        "caption": "얼굴 인식 기능을 사용하여 카메라에 액세스하도록 할 수 있습니다. 이 도구는 장치를 두고 자리를 떠날 때 사용자의 현재 상태를 정확하게 인식하거나 감지하기 위해 이미지를 캡처합니다. 이 데이터는 장치에서 로컬로 처리됩니다. Lenovo는 이를 액세스하거나 사용하지 않습니다.",
+                        "checkBox": "카메라를 켜고 이 기능 사용",
+                        "note": {
+                            "permission": "Lenovo Vantage가 카메라에 액세스할 수 없습니다. 선택란의 기능이 작동하지 않습니다.",
+                            "privacyMode": "Lenovo Vantage 카메라 개인 정보 모드가 켜져 있습니다. 선택란의 기능이 작동하지 않습니다.",
+                            "windowsLink": "액세스 권한을 부여하려면, Windows 설정으로 이동합니다",
+                            "privacyLink": "카메라 개인 정보 모드로 이동하여 끄기"
+                        }
                     }
                 },
                 "distanceSensitivityAdjusting": {
@@ -1277,17 +1569,18 @@
                     "caption": "자동 거리 조정은 AI 엔진을 통해 감지 거리를 자동으로 업데이트합니다.",
                     "options": {
                         "near": "근처",
-                        "far": "보다 멀리"
+                        "far": "보다 멀리",
+                        "medium": "중간"
                     },
                     "tooltipcontent": {
-                        "context1": "When enabled, the detection distance will be automatically adjusted. You also can manually set the detection distance by the slider. The options are:",
-                        "context2": "When you manually set the detection distance, please pay attention to the following:",
+                        "context1": "이 기능을 사용하면, 감지 거리가 자동으로 조정됩니다. 또한 슬라이더를 통해 감지 거리를 수동으로 설정할 수 있습니다. 옵션은 다음과 같습니다.",
+                        "context2": "감지 거리를 수동으로 설정하는 경우, 다음과 같은 사항에 주의하십시오.",
                         "list": {
-                            "line1": "Near: 0 – 0.42 meters (17 inches)",
-                            "line2": "Middle: 0 – 0.60 meters (24 inches)",
-                            "line3": "Far: 0 – 1.20 meters (47 inches)",
-                            "line4": "The maximum detection distance is 1.2 meters. If exceeding 1.2 meters, the sensor will fail to detect your presence.",
-                            "line5": "The recommended detection distance is within 0.60 meters."
+                            "line1": "근거리: 0~0.42m(17인치)",
+                            "line2": "중간: 0~0.60m(24인치)",
+                            "line3": "원거리: 0~1.20m(47인치)",
+                            "line4": "최대 감지 거리는 1.2m입니다. 1.2m를 초과하는 경우, 센서가 사용자의 현재 상태를 감지하지 못합니다.",
+                            "line5": "권장 감지 거리는 0.60m 내입니다."
                         }
                     }
                 },
@@ -1295,15 +1588,19 @@
                     "description1": "이 기능은 Windows Hello를 이용합니다. Windows 설정에서 얼굴 인식이 켜졌는지 확인하십시오.",
                     "description2": "이 기능은 센서 및 카메라를 사용하여 사용자의 존재를 감지합니다. 그러나 이 기능은 어떤 개인 정보도 수집하지 않습니다.",
                     "description3": "1. 컴퓨터가 텐트, 태블릿 또는 대기 모드에 있을 경우 이러한 기능이 적절하게 작동하지 않을 수 있습니다.",
-                    "description4": "2. 컴퓨터가 최대 절전 모드이거나 꺼져 있었던 경우. 제로 터치 로그인이 작동하지 않습니다.",
+                    "description4": "2. 컴퓨터가 최대 절전 모드에 있거나 꺼져 있으면, 제로 터치 로그인은 작동하지 않습니다.",
                     "description5": "3. IR 카메라에서 얼굴을 인식하여 자동 로그인을 할 수 있도록 컴퓨터 화면을 적절한 각도로 조정하십시오.",
-                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다."
+                    "description6": "4. 컴퓨터에서 비행기 모드를 설정하면 이 기능을 사용할 수 없게 됩니다.",
+                    "description7": "정확도는 바디 크기, 자세 및 이동 빈도에 따라 다릅니다. 컴퓨터가 예기치 않게 잠기는 경우, 감도바를 조정하여 정확도를 개선합니다."
                 },
                 "WindowsLink": {
                     "goToWindowsHello": "Windows Hello 설정으로 이동",
                     "screenTimeoutSettings": "화면 시간 종료 설정으로 이동"
                 },
-                "resetToDefault": "재설정"
+                "resetToDefault": "재설정",
+                "sensitivityAdjusting": {
+                    "title": "감도 조정"
+                }
             },
             "intelligentScreen": {
                 "title": "지능형 화면",
@@ -1370,6 +1667,18 @@
                 "title": "제로 터치 비디오 재생",
                 "desc": "이 기능은 컴퓨터를 두고 자리를 떠나면 비디오를 일시 정지하고 자리에 다시 돌아 오면 비디오를 다시 시작합니다.",
                 "tooltip": "이 기능은 웹 비디오 플레이어에는 적용되지 않습니다. 대중적인 비디오 플레이어(예: Windows Media Player, 5KPlayer 등)가 이 기능을 지원합니다."
+            },
+            "superResolution": {
+                "heading": "지능형 미디어",
+                "title": "비디오 해상도 업스케일링",
+                "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
+                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "note": {
+                    "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
+                    "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
+                    "description2": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 절전 모드가 전력이 설정되었습니다.",
+                    "description3": "CPU 온도가 너무 높습니다."
+                }
             },
             "voice": {
                 "title": "음성",
@@ -1592,9 +1901,7 @@
     "security": {
         "landing": {
             "fully": "완전히 보호됨",
-            "fullyDesc": "축하합니다! 잘 보호됩니다.",
             "notFully": "완전히 보호되지 않음",
-            "notFullyDesc": "완전히 보호되지 않습니다. 지금 자신을 더욱 적절하게 보호하는 방법을 알아보십시오.",
             "security101": "보안 어드바이저 101",
             "firewall": "방화벽",
             "pwdHealth": "암호 상태",
@@ -1603,17 +1910,52 @@
             "wifiConnected": "WiFi 및 홈 보안 연결",
             "connectedHomeSecurity": "홈 보안 연결",
             "fingerprint": "지문 인식 장치",
-            "seeAllNetwork": "모든 결합 네트워크 참조",
-            "maliciousNetwork": "이 달에 컴퓨터를 {{maliciousWifi}} 악성 테트워크와 연결할 수 없습니다.",
-            "good": "좋음",
-            "malicious": "악성",
-            "suspicious": "의심스러움",
-            "securityScoreDepends": "보안 결과는 다음 사항에 따릅니다.",
-            "antivirus": "바이러스 백신 소프트웨어로 보호",
-            "password": "강력하고 복잡한 암호를 안전하게 관리",
-            "vpn": "공격자에 대한 네트워크의 노출 여부 모니터링",
-            "wifi": "공용 WiFi를 사용할 때 개인 데이터 암호화",
-            "windowsHello": "안전한 로그인 옵션을 사용하여 장치 보호"
+            "uacTitle": "UAC 알림이 무엇입니까?",
+            "uacText": "사용자 계정 컨트롤은 Windows의 매우 중요한 보안 기능으로, 잠재적으로 유해한 프로그램이 시스템을 변경하지 못하도록 방지하는 데 도움이 됩니다.",
+            "windowsTitle": "Windows를 활성화해야 하는 이유는 무엇입니까?",
+            "windowsText": "정품이 아닌 Windows의 복사본을 실행하면, 바이러스나 기타 보안 위험이 더욱 높아질 수 있습니다.",
+            "encryptionTitle": "하드 드라이브 암호화가 무엇입니까?",
+            "encryptionText": "드라이브를 현재 PC에서 제거하고 다른 장치에 저장하는 경우에도 무단 액세스에 대비해 전체 하드 드라이브에 대한 암호화를 제공하여 데이터를 보호하는 데 도움이 됩니다.",
+            "passwordTitle": "암호를 보다 잘 보호하는 방법은 무엇입니까?",
+            "passwordText": "제3자에서 사용자를 알지 못하는 상태에서 쉽게 액세스할 수 있는 브라우저에 저장하는 것으로 그치지 않고 전문 디지털 보호 앱으로 암호화된 모든 암호를 안전하게 저장 및 관리하십시오.",
+            "enhanceTitle": "보안 보호를 강화하려면 어떻게 해야 합니까?",
+            "enhanceText": "바이러스 백신 소프트웨어 및 방화벽으로 장치를 보호하고 최소한의 보호로 UAC 알림을 설정하는 것이 좋습니다. 강력한 암호를 작성하고 안전한 방식으로 관리하고, 공용 네트워크를 고급 보호로 사용하는 동안 데이터를 암호화하십시오.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2200,7 +2542,6 @@
         "question5": {
             "title": "태블릿 같은 PC 사용",
             "description": "<div class='faqInFs4Fb'>    태블릿 같은 PC 사용</div><hr><p>태블릿 모드는 터치 스크린 장치가 있는 경우 Windows를 더욱 직관적이고 사용하기 쉽게 만듭니다.</p><h3 class='faqInFs25FbP10'>태블릿 모드 사용</h3><p>태블릿 모드를 켜려면, 작업 표시줄에서 <strong>관리 센터</strong>를 선택한 다음 <strong>태블릿 모드</strong>를 선택하십시오.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>주</h3><p>장치에서 태블릿 모드를 자동으로 켤 수 있는지 확인하려면, 제조업체 웹 사이트에서 장치를 검색하십시오. 이 기능에 대한 지원은 하드웨어, 설치된 드라이버 및 제조업체에서 장치를 설정하는 방법에 따라 다릅니다. </p><p> </p><p>태블릿 모드에서는 앱이 전체 화면을 열기 때문에 작업 공간이 더 많이 제공됩니다. 앱을 닫으려면, 화면 맨 아래로 끄십시오.</p><p> </p><h3 class='faqInFs25FbP10'>팁</h3><p>작업 표시줄은 PC가 태블릿 모드에 있는 경우에 사용할 수 있지만, 화면에 여유 공간을 추가로 원한다면 숨길 수 있습니다. <strong>시작</strong> 버튼, <strong>설정 </strong>> <strong>시스템 </strong>> <strong> 태블릿 모드</strong>를 차례로 선택한 다음, <strong>태블릿 모드에서 자동으로 작업 표시줄 자동으로 숨기기</strong>를 켭니다. 숨겨진 작업 표시줄을 표시하려면, 화면 하단에서 위로 살짝 밀어 올리거나 마우스를 사용하여 위치를 가리킵니다.</p><h3 class='faqInFs25FbP10'>동시에 두 개의 앱 사용</h3><p>태블릿 모드에서 두 개의 앱을 나란히 사용하려면, 열려 있는 앱을 아래로 및 옆으로 끄십시오. 그러면 표시되는 위치를 볼 수 있으며, 옆에 열려 있는 앱이 표시됩니다.</p><p>이 보기에서 다음을 수행할 수도 있습니다.</p><ul>    <li>두 개의 딸각 소리가 나는 앱 사이의 공유 가장자리를 사용하여 동시에 두 앱의 크기를 조정하십시오.</li>    <li>작업 보기에서 새 앱 열기 &mdash; <strong>작업 표시줄</strong>에서 작업 보기를 선택하고 앱을 선택한 후, 한 쪽으로 끌어서 분할된 화면에 맞춥니다.</li>    <li>앱에서 작업 표시줄의 뒤로 버튼을 사용하여 돌아가거나 전에 사용하던 앱을 여십시오.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2458,7 +2799,8 @@
                 "description": "검색 및 복구를 실행하면, 데이터가 손실될 수 있습니다. 이 작업을 실행하기 전에 백업을 작성하는 것이 좋습니다. 계속하시겠습니까?",
                 "yes": "예",
                 "no": "아니요"
-            }
+            },
+            "waitAvailability": "저장 장치가 이 기능을 지원하지 않거나 불량 섹터 복구가 실행 중인 경우에는 하드웨어 정보가 검색되지 않으면 이 버튼을 사용할 수 없습니다."
         },
         "support": {
             "title": "전문 진단 도구 다운로드",
@@ -2483,11 +2825,220 @@
         "cancelTextPrompt": "정말 취소하시겠습니까?",
         "cancelTextProgress": "취소 진행을 기다리십시오",
         "pluginNotUpdate": "하드웨어 검사 기능이 오래 되어 사용할 수 없습니다. 업그레이드하십시오.",
-        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음"
+        "testNotApplicable": "사용자 정의 스캔에 적용되지 않음",
+        "waitScanStarts": "스캔 시작까지 기다려 주십시오",
+        "reminderTimeRetrieveHardwareInformation": "이 프로세스는 하드웨어 정보 검색에 시간이 다소 소요될 수 있습니다",
+        "retrievingHardwareInformation": "하드웨어 정보 검색 중...",
+        "pluginTokens": {
+            "cpu": "프로세서",
+            "memory": "메모리",
+            "motherboard": "마더보드",
+            "pci_express": "PCI Express",
+            "storage": "저장 장치",
+            "wireless": "무선"
+        }
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2638,5 +3189,7 @@
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
         }
-    }
+    },
+    "dir": "ltr",
+    "dirClass": "ltr"
 }

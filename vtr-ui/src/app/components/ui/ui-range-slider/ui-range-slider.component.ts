@@ -27,6 +27,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	@Input() maxValue = 10; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() minValueLegend = ''; // label to display at the start of slider
+	@Input() mediumValueLegend = ''; // label to display at the center of slider
 	@Input() maxValueLegend = ''; // label to display at the end of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care

@@ -11,180 +11,274 @@
 .vtr-page-right-column {
 	background-color: $shade_extralight;
 }
-.vtr-page-smart-assist {
-	.title {
-		opacity: 0.8;
-		color: $main_darker;
-		font-size: 7rem;
-		line-height: 8.2rem;
-	}
-	ul {
-		li {
+::ng-deep {
+	.vtr-page-smart-assist {
+		// .title {
+		// 	opacity: 0.8;
+		// 	color: $main_darker;
+		// 	font-size: 7rem;
+		// 	line-height: 8.2rem;
+		// }
+		ul.list-group {
 			list-style-type: none;
+			padding-bottom: 1rem;
 		}
-	}
-	.caption {
-		max-width: 60rem;
-		padding-left: 2rem;
-		p {
-			font-size: 1.5rem;
-			color: $main_darker;
-		}
-		a {
-			text-decoration: underline;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-	.card-body {
-		padding: 2rem 4rem;
-	}
-	.blur-1 {
-		opacity: 0.65;
-	}
-	.feature-note {
-		background-color: $shade_lightest;
-		border: 1px solid $shade_lighter;
-		width: 100%;
-		p {
-			font-size: $body;
-			color: $main_darker;
-		}
-		a {
-			text-decoration: underline;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-		&.screen-lock-note {
-			// max-width: 64rem;
-		}
-		&.auto-screen-off-note {
-			p {
-				color: $alt;
-			}
-			span {
-				font-size: 1.5rem;
-			}
-		}
-		fa-icon {
-			color: $alt;
-			font-size: 3rem;
-		}
-	}
-	.blur {
-		&.disabled {
+		// .caption {
+		// 	max-width: 60rem;
+		// 	padding-left: 2rem;
+		// 	p {
+		// 		font-size: 1.5rem;
+		// 		color: $main_darker;
+		// 	}
+		// 	a {
+		// 		text-decoration: underline;
+		// 		&:hover {
+		// 			text-decoration: underline;
+		// 		}
+		// 	}
+		// }
+		.blur-1 {
 			opacity: 0.65;
 		}
+		.feature-note {
+			background-color: $shade_lightest;
+			border: 1px solid $shade_lighter;
+			width: 100%;
+			p {
+				font-size: $body;
+				color: $main_darker;
+			}
+			a {
+				text-decoration: underline;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			&.screen-lock-note {
+				// max-width: 64rem;
+			}
+			&.auto-screen-off-note {
+				p {
+					color: $alt;
+				}
+				span {
+					font-size: 1.5rem;
+				}
+			}
+			fa-icon {
+				color: $alt;
+				font-size: 3rem;
+			}
+		}
+		.blur {
+			&.disabled {
+				opacity: 0.65;
+			}
+		}
+
+		.auto-screen-lock-timer {
+			h3 {
+				font-weight: $weight_bold;
+				color: $main_darker;
+				margin-top: 0.2rem;
+				letter-spacing: 0.05rem;
+			}
+			fa-icon {
+				font-size: 1.8rem;
+				color: $gaming;
+				&:hover {
+					color: $highlight;
+				}
+			}
+		}
+		::ng-deep .vtr-ui-rounded-rectangle-radio {
+			width: 25.5rem;
+			@media #{$mediaquery_X22} {
+				width: 25.5rem;
+			}
+			@media #{$mediaquery_X23} {
+				width: 25.5rem;
+			}
+		}
+
+		.auto-screen-block,
+		.auto-screen-off-block {
+			::ng-deep .vtr-ui-switch-row {
+				border-bottom: none;
+			}
+		}
+
+		.int-screen-desc {
+			p {
+				font-size: $body;
+			}
+		}
+
+		.keep-my-display-block {
+			::ng-deep .vtr-ui-switch-row {
+				border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
+			.display-dim-title {
+				font-size: 1.8rem;
+				color: $main_darker;
+				font-weight: $weight_600;
+				letter-spacing: 0.05rem;
+			}
+			::ng-deep .ng5-slider {
+				margin: 20px 0 15px;
+			}
+		}
+
+		.disabled-overlay {
+			background-color: #f6f8f8;
+			z-index: 2;
+			pointer-events: none;
+		}
+		.disabled {
+			pointer-events: none;
+		}
+
+		.no-border-bottom {
+			 .vtr-ui-switch-row.white-theme {
+				border-bottom: none !important;
+			}
+		}
+		.border-bottom {
+			border-bottom: 0.1rem solid $shade_lighter;
+		}
+		.bold-title {
+			.vtr-ui-switch-row.white-theme {
+				.title {
+					font-weight: 700 !important;
+					font-size: 1.8rem !important;
+				}
+			}
+		}
+		.col-pad-margin {
+			::ng-deep .vtr-ui-switch-row.white-theme {
+				.vtr-col-pad {
+					margin-right: 0.4rem;
+				}
+			}
+		}
+		.slider-note {
+			margin: 0 0 0 1rem;
+			padding-right: 1.4rem;
+			max-width: 60rem;
+		}
+		.padding-right-07 {
+			padding-right: 0.7rem;
+        }
+		.margin-right-05 {
+			margin-right: 0.5rem;
+		}
 	}
 
-	.auto-screen-lock-timer {
+	.vtr-page-shift-up-medium {
+		@media #{$mediaquery_X5} {
+			margin-top: 0;
+		}
+
+		@media only screen and (min-width: 400px) and (max-width: 768px) {
+			margin-top: -6rem;
+		}
+	}
+
+	.auto-set-checkbox {
+		margin-top: 2rem;
+		position: relative;
+		input {
+			width: 1.5rem;
+			height: 1.5rem;
+			position: absolute;
+			top: 0.5rem;
+			margin-right: 0.5rem;
+		}
+		label {
+			color: $shade_darker;
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			text-align: left;
+			padding-left: 2rem;
+		}
+	}
+	.custom-control-input:disabled ~ .custom-control-label::before {
+		// background-color: $light-grey;
+		//border-color: $shade;
+	}
+
+	.custom-control-input:disabled ~ .custom-control-label {
+		cursor: not-allowed;
+	}
+
+	.custom-control-label {
+		padding-left: 0.5rem;
+		line-height: 1.15;
+		@media #{$mediaquery_14} {
+		line-height: 1.3;
+		}
+		@media #{$mediaquery_19} {
+		line-height: 1.3;
+		}
+		@media #{$mediaquery_X15} {
+		line-height: 1.3;
+		}
+
+		//color: $dark;
+
+		.disabled {
+		color: $light-grey;
+		}
+		// rounded square-box background
+		&::before {
+		top: 0.2rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		}
+
+		// tick mark
+		&::after {
+		top: 0rem;
+		width: 2rem;
+		height: 2rem;
+		left: -1.7rem;
+		}
+	}
+	.smart-assist-checkbox {
+		margin: 1rem 0rem 1rem 0rem;
+		font-size: 1.4rem;
+	}
+
+	.permission-note {
+		background-color: $shade_lightest;
+			border: 1px solid $shade_lighter;
+			padding-right: 1.4rem;
+			max-width: 60rem;
+			span {
+				font-size: $body;
+				color: $main_darker;
+			}
+		.privacy-button {
+			font-size: 2rem;
+			letter-spacing: 0.76px;
+			text-align: left;
+			text-decoration: underline;
+				&:hover {
+					text-decoration: underline;
+				}
+		}
+	}
+	.facial-recognition {
 		h3 {
 			font-weight: $weight_bold;
-			color: $main_darker;
-			margin-top: 0.2rem;
-			letter-spacing: 0.05rem;
+            color: $main_darker;
+            font-size:1.8rem !important;
 		}
-		fa-icon {
-			font-size: 1.8rem;
-			color: $gaming;
-			&:hover {
-				color: $highlight;
-			}
-		}
-	}
-	::ng-deep .vtr-ui-rounded-rectangle-radio {
-		width: 25.5rem;
-		@media #{$mediaquery_X22} {
-			width: 25.5rem;
-		}
-		@media #{$mediaquery_X23} {
-			width: 25.5rem;
-		}
-	}
-
-	.auto-screen-block,
-	.auto-screen-off-block {
-		::ng-deep .vtr-ui-switch-row {
-			border-bottom: none;
-		}
-	}
-
-	.int-screen-desc {
 		p {
 			font-size: $body;
+			font-weight: $weight_light;
+			max-width: 60rem;
 		}
-	}
-
-	.keep-my-display-block {
-		::ng-deep .vtr-ui-switch-row {
-			border-top: 0.1rem solid $shade_lighter;
-			border-bottom: none;
-		}
-		.display-dim-title {
-			font-size: 1.8rem;
-			color: $main_darker;
-			font-weight: $weight_600;
-			letter-spacing: 0.05rem;
-		}
-		::ng-deep .ng5-slider {
-			margin: 20px 0 15px;
-		}
-	}
-
-	.disabled-overlay {
-		background-color: #f6f8f8;
-		z-index: 2;
-		pointer-events: none;
-	}
-	.disabled {
-		pointer-events: none;
-	}
-
-	.no-border-bottom {
-		::ng-deep .vtr-ui-switch-row {
-			border-bottom: none !important;
-		}
-	}
-	.border-bottom {
-		border-bottom: 0.1rem solid $shade_lighter;
-	}
-	.bold-title {
-		::ng-deep .vtr-ui-switch-row.white-theme {
-			.title {
-				font-weight: 700;
-				font-size: 1.8rem;
-				// letter-spacing: 0rem;
-			}
-		}
-	}
-	.col-pad-margin {
-		::ng-deep .vtr-ui-switch-row.white-theme {
-			.vtr-col-pad {
-				margin-right: 0.4rem;
-			}
-		}
-	}
-	.slider-note {
-		margin: 0 0 0 1rem;
-		padding-right: 1.4rem;
-		max-width: 60rem;
-	}
-	.padding-right-07 {
-		padding-right: 0.7rem;
-	}
-	.margin-right-05 {
-		margin-right: 0.5rem;
-	}
-}
-
-.vtr-page-shift-up-medium {
-	@media #{$mediaquery_X5} {
-		margin-top: 0;
-	}
-
-	@media only screen and (min-width: 400px) and (max-width: 768px) {
-		margin-top: -6rem;
 	}
 }

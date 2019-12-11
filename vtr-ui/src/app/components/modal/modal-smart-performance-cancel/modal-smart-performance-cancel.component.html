@@ -1,0 +1,23 @@
+<div class="modal-smart-performance-cancel">
+	<div class="row justify-content-end">
+		<div class="btn-close">
+			<button type="button"
+				class="close"
+				aria-hidden="true"
+				(click)="closeModal()">
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+			</button>
+		</div>
+	</div>
+	<div class="content-block px-3">
+		<h1>Cancel the scan?</h1>
+		<p>If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan at any time.</p>
+		<hr>
+		<div class="row">
+			<button class="btn cancel-button">yes, cancel</button>
+			<div class="py-5 ml-5">
+				<a (click)="closeModal()" class="resume-scan">no, resume scan</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -22,7 +22,7 @@
 		width: 18rem;
 		margin-right: 1rem;
 	}
-	@media #{$mediaquery_X42}{
+	@media #{$mediaquery_X42} {
 		width: 21rem;
 		margin-right: 1rem;
 	}
@@ -44,8 +44,7 @@
 		position: relative;
 		z-index: 2;
 		overflow: hidden;
-
-		.label {
+			.label {
 			// @media #{$mediaquery_X4} {
 			// 	padding-right: .5rem;
 			// 	font-size: 1rem;
@@ -71,6 +70,17 @@
 			color: $main;
 			top: 1.3rem;
 			left: 1.3rem;
+			@media #{$white-on-black}{
+				background-color: $dark;
+				border:none;
+				color: $highlight_bright;
+			}
+			@media #{$black-on-white}{
+				background-color: $light;
+				border: none;
+				color: $high-contrast-white-textselected;
+			}
+	
 		}
 
 		fa-icon.icon {
@@ -79,7 +89,7 @@
 			top: 9rem;
 			font-size: 3.2rem;
 			color: $main;
-		}
+			}
 
 		span.question {
 			position: absolute;
@@ -93,7 +103,7 @@
 	input[type="radio"]:not(:checked) + label::after {
 		opacity: 0;
 		transition: all 1s ease;
-	}
+		}
 	input:checked + label::after {
 		opacity: 1;
 	}
@@ -106,11 +116,40 @@
 	&.border-blue {
 		border: 0.3rem solid $main;
 		// transition: all 50ms ease-in;
+		@media #{$black-on-white} {
+			border: 0.3rem solid $high-contrast-white-textselected;
+		}
+
 	}
 	&.border-grey {
 		border: 0.3rem solid $shade_lightest;
 		// transition: all 50ms ease-in;
+		@media #{$black-on-white} {
+			border: none;
+		}
+
 	}
+	&.border-disabled {
+		border: 0.3rem solid #e6eaeb;
+		cursor: default;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+	&.border-checked-disabled {
+		border: 0.3rem solid #667481;
+		cursor: default;
+		label {
+			.icon-circle {
+				color: $grey_darker;
+			}
+		}
+	}
+}
+.large-width {
+	width: 29rem;
 }
 .large-width {
 	width: 29rem;

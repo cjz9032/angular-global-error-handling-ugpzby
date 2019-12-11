@@ -15,7 +15,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 const httpOptions = {
 	headers: new HttpHeaders({
 		'Content-Type': 'application/json',
-		Authorization: 'Access-Control-Allow-Origin'
 	})
 };
 
@@ -280,12 +279,7 @@ export class CMSService {
 
 	requestCMSArticle(articleId, locInfo, queryParams?) {
 		const defaults = {
-			Lang: locInfo.Lang,
-			GEO: locInfo.GEO,
-			OEM: locInfo.OEM,
-			OS: locInfo.OS,
-			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
+			Lang: locInfo.Lang
 		};
 
 		const CMSOption = this.updateServerSwitchCMSOptions(defaults, queryParams);

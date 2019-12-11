@@ -210,6 +210,12 @@ export class SystemUpdateService {
 				console.log('getScheduleUpdateStatus response', response);
 				this.isImcErrorOrEmptyResponse = false;
 				this.processScheduleUpdate(response, false);
+			}).catch((error) => {
+				if (error && error.errorcode === 606) {
+					setTimeout(() => {
+						this.getScheduleUpdateStatus(canReportProgress);
+					}, 200);
+				}
 			});
 		}
 	}

@@ -1,0 +1,76 @@
+@import '../../../app.theme.scss'; 
+
+.vtr-widget-qa {
+    border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 2rem;
+	@media #{$mediaquery_X7} {
+		padding: 2rem;
+	}
+
+	.qa_head {
+		display: flex;
+		vertical-align: baseline;
+		justify-content: space-between;
+		margin: 0 0 2rem;
+	}
+
+	.qa_title {
+		color: #194A65;
+		font-size: 2.5rem;
+		line-height: 2.9rem;
+		font-weight: normal;
+	}
+	.qa_list {
+		list-style: none;
+		padding: 0;
+		border: 1px solid #ECF0F1;
+		border-radius: 0.5rem;
+		background-color: rgba(236, 240, 241, 0.5);
+		//box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.qa_item {
+		border-top: 1px solid #ECF0F1;
+		cursor: pointer;
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+
+	.item-title {
+		color: #34495E;
+		font-size: 1.6rem;
+		font-weight: 600;
+		line-height: 1.8rem;
+		padding: 1.8rem 0rem 1.5rem 2rem;
+		cursor: pointer;
+	}
+
+	.item-icon {
+		color: #4A81FD;
+		max-width: 2.2rem;
+		font-size: 2.4rem;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .chevron-icon {
+		color: #4A81FD;
+		max-width: 2.2rem;
+		font-size: 2rem;
+        text-align: center;
+        cursor: pointer;
+        margin-left: 1.2rem;
+    }
+
+	.item-description {
+		background-color: #FEFEFE;
+		padding: 1.8rem 2rem 1.8rem 4.2rem;
+		font-size: 1.6rem;
+		line-height: 2.2rem;
+		cursor: default;
+	}
+}

@@ -85,6 +85,10 @@
 								<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
 										class="screenshot-img position-{{screenshot.position}}"
 										id="{{screenshot.id}}"
+										vtrMetrics
+										metricsItem="AppsForYouScreenshot"
+										metricsEvent="FeatureClick"
+										[metricsParent]="metricsParent"
 										(click)="openScreenshotModal(screenshot.imageUrl)"
 										>
 									<img [src]="screenshot.imageUrl" />

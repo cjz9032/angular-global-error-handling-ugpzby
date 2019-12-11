@@ -1,3 +1,4 @@
+import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,7 +9,6 @@ import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wi
 import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityWindowsHelloComponent } from 'src/app/components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
 import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-status/connected-home-status.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -38,13 +38,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
+import { faDatabase } from '@fortawesome/free-solid-svg-icons/faDatabase';
+import { faTools } from '@fortawesome/free-solid-svg-icons/faTools';
+import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
+import { faLockAlt } from '@fortawesome/pro-light-svg-icons/faLockAlt';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faWifi as falWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
-import { faSadCry } from '@fortawesome/pro-light-svg-icons/faSadCry';
-import { faFrown } from '@fortawesome/free-regular-svg-icons/faFrown';
-import { faGrinBeamSweat } from '@fortawesome/pro-light-svg-icons/faGrinBeamSweat';
-import { faLaughWink } from '@fortawesome/free-regular-svg-icons/faLaughWink';
 import { CommonModalModule } from '../common/common-modal.module';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WidgetAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-antivirus/widget-antivirus.component';
@@ -52,21 +53,26 @@ import { WidgetMcafeeStateComponent } from 'src/app/components/pages/page-securi
 import { WidgetMcafeeMetricComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-metric/widget-mcafee-metric.component';
 import { WidgetCommonAntivirusComponent } from '../../components/pages/page-security-antivirus/widget/widget-common-antivirus/widget-common-antivirus.component';
 import { PercentIconPipe } from 'src/app/pipe/widget-security/percent-icon.pipe';
-
-library.add(faCircle);
-library.add(faCheck);
-library.add(faTimes);
-library.add(faWifi);
-library.add(falWifi);
-library.add(falCheck);
-library.add(falTimes);
-library.add(faChevronDown);
-library.add(faChevronUp);
-library.add(faSadCry);
-library.add(faFrown);
-library.add(faGrinBeamSweat);
-library.add(faLaughWink);
-
+import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-qa.component';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
+import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
+library.add(
+	faLockAlt,
+	faQuestionCircle,
+	faKey,
+	faDatabase,
+	faTools,
+	faChevronUp,
+	faChevronDown,
+	falTimes,
+	falCheck,
+	falWifi,
+	faWifi,
+	faTimes,
+	faCheck,
+	faCircle
+);
 
 @NgModule({
 	declarations: [
@@ -78,10 +84,10 @@ library.add(faLaughWink);
 		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
-		PageSecurityWindowsHelloComponent,
 		// Widget
 		WidgetSecurityComponent,
 		WidgetMcafeeComponent,
+		WidgetQaComponent,
 		// UI
 		UiLandingFeatureComponent,
 		UiSecurityStatusbarComponent,
@@ -97,6 +103,8 @@ library.add(faLaughWink);
 		WidgetMcafeeStateComponent,
 		WidgetMcafeeMetricComponent,
 		WidgetCommonAntivirusComponent,
+		WidgetLandingSecurityComponent,
+		WidgetLandingNavComponent,
 	],
 	imports: [
 		CommonModule,
@@ -111,6 +119,8 @@ library.add(faLaughWink);
 		WidgetOfflineModule,
 		UiListChevronModule,
 		CommonModalModule,
+		LocationNoticeModule,
+		PageLayoutModule
 	],
 	providers: [
 		DialogService

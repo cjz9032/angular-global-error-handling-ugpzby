@@ -5,7 +5,7 @@
 	<div class="breached-account__preview" >
 		<div class="breached-account__image">
 			<ng-template #defaultFavicon>
-				<img class="breached-account__img" src="/assets/images/privacy-tab/Unknown.png" alt="unknown favicon">
+				<img class="breached-account__img" src="assets/images/privacy-tab/Unknown.png" alt="unknown favicon">
 			</ng-template>
 			<img class="breached-account__img"
 				 *ngIf="account.domain | sitesFavicon:'/assets/images/privacy-tab/Unknown.png' | async as favicon; else defaultFavicon"
@@ -69,8 +69,8 @@
 	<div class="breached-account__preview">
 		<div class="breached-account__image">
 			<img class="breached-account__img"
-				 src="/assets/images/privacy-tab/unverify.png"
-				 srcset="/assets/images/privacy-tab/unverify@2x.png 2x"
+				 src="assets/images/privacy-tab/unverify.png"
+				 srcset="assets/images/privacy-tab/unverify@2x.png 2x"
 				 alt="unverify icon">
 		</div>
 		<div class="breached-account__text">

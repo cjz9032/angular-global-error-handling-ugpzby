@@ -3,7 +3,7 @@
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup !== 'joined'"
 			title="{{tooltip?label:''}}"
-			[disabled]="isDisabled"
+			[disabled]="isDisabled || isLoading"
 			type="button"
 			class="btn button {{getButtonColor(buttonColor)}}"
 			vtrMetrics
@@ -11,8 +11,8 @@
 			routerLinkActive="active"
 			[href]="href"
 			[id]="linkId"
+			[tabindex]="tabindex ? tabindex : 0"
 			[attr.aria-label]="label"
-			[tabindex]="tabIndex"
 			[metricsItem]="metricsItem"
 			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
@@ -40,8 +40,8 @@
 			class="button disable"
 			[disabled]="false"
 			[id]="linkId"
+			[tabindex]="tabindex ? tabindex : 0"
 			[attr.aria-label]="label"
-			[tabindex]="tabIndex"
 			vtrMetrics
 			[routerLink]="routerPath"
 			routerLinkActive="active"
@@ -56,5 +56,7 @@
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
+		<div *ngIf="isLoading" class="loadingIcon spinner-border text-primary progress-spinner" role="status">
+		</div>
 	</div>
 </div>

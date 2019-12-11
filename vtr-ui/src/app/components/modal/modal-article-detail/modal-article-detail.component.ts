@@ -126,4 +126,11 @@ export class ModalArticleDetailComponent implements OnInit, AfterViewInit {
 	onClickEscape($event) {
 		this.closeModal();
 	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.Article-Detail-Modal') as HTMLElement;
+		modal.focus();
+	}
+
 }

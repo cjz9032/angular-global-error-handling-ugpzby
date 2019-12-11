@@ -2,7 +2,7 @@ import { position } from './../page-privacy/common/components/tooltip/tooltip.co
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { isUndefined } from 'util';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { AutoCloseNeedToAsk } from 'src/app/data-models/gaming/autoclose/autoclose-need-to-ask.model';
@@ -13,11 +13,13 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { UPEService } from 'src/app/services/upe/upe.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: [ './page-autoclose.component.scss' ]
+	styleUrls: ['./page-autoclose.component.scss']
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -25,7 +27,7 @@ export class PageAutocloseComponent implements OnInit {
 	public autoCloseAppList: any;
 	// Toggle status
 	isOnline = true;
-	toggleStatus: boolean;
+	toggleStatus: boolean = this.gamingAutoCloseService.getAutoCloseStatusCache() || false;
 	needToAsk: any;
 	getNeedStatus: boolean;
 	autoCloseStatusObj: AutoCloseStatus = new AutoCloseStatus();
@@ -35,6 +37,7 @@ export class PageAutocloseComponent implements OnInit {
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	backId = 'vtr-gaming-autoclose-btn-back';
+	dynamic_metricsItem: any = 'autoclose_cms_inner_content';
 
 	constructor(
 		private cmsService: CMSService,
@@ -43,7 +46,8 @@ export class PageAutocloseComponent implements OnInit {
 		private upeService: UPEService,
 		private loggerService: LoggerService,
 		private hypService: HypothesisService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		this.fetchCMSArticles();
 		// VAN-5872, server switch feature on language change
@@ -54,14 +58,12 @@ export class PageAutocloseComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// AutoClose Init
+		this.getAutoCloseStatus();
+		this.refreshAutoCloseList();
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-
-		// AutoClose Init
-		this.refreshAutoCloseList();
-		this.toggleStatus = this.gamingAutoCloseService.getAutoCloseStatusCache();
-		this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -97,16 +99,20 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	initTurnOnAction() {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.setAutoCloseStatus(true);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
 
 	initNotNowAction(notNowStatus: boolean) {
+		this.needToAsk = this.getNeedStatus;
+		this.gamingAutoCloseService.setNeedToAskStatusCache(this.needToAsk);
 		this.showAppsModal = true;
 		this.hiddenScroll(true);
 	}
@@ -124,9 +130,9 @@ export class PageAutocloseComponent implements OnInit {
 
 	hiddenScroll(action: boolean) {
 		if (action) {
-			document.body.style.overflow = 'hidden';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = 'hidden';
 		} else {
-			document.body.style.overflow = '';
+			(document.getElementsByClassName('vtr-app')[0] as HTMLElement).style.overflow = '';
 		}
 	}
 
@@ -171,7 +177,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.loggerService.error('Got failure from JS Bridge while adding apps to AutoClose', addApp);
 					}
 				});
-			} catch (error) {}
+			} catch (error) { }
 		} else {
 			const remApp = event.app;
 			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
@@ -192,7 +198,7 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	// Get the CMS content for the container card
@@ -237,6 +243,16 @@ export class PageAutocloseComponent implements OnInit {
 			this.cardContentPositionC = {
 				FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.jpg'
 			};
+		}
+	}
+
+	async getAutoCloseStatus() {
+		try {
+			this.needToAsk = this.gamingAutoCloseService.getNeedToAskStatusCache();
+			this.toggleStatus = await this.gamingAutoCloseService.getAutoCloseStatus();
+			this.gamingAutoCloseService.setAutoCloseStatusCache(this.toggleStatus);
+		} catch (err) {
+			console.log(`ERROR in getAutoCloseStatus()`, err);
 		}
 	}
 }

@@ -160,8 +160,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.eyeCareDataSource = new EyeCareMode();
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
-			this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
-			this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
+		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
+		this.DeviceClass = this.Windows.Devices.Enumeration.DeviceClass;
 		}
 	}
 
@@ -229,9 +229,9 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.eyeCareModeCache = this.commonService.getLocalStorageValue(LocalStorageKey.DisplayEyeCareModeCapability, undefined);
 			if (this.eyeCareModeCache) {
 				this.eyeCareModeStatus.available = this.eyeCareModeCache.available;
-				if (!this.eyeCareModeStatus.available) {
-					return;
-				}
+				// if (!this.eyeCareModeStatus.available) {
+				// 	return;
+				// }
 				this.eyeCareModeStatus.status = this.eyeCareModeCache.toggleStatus;
 				this.eyeCareDataSource = this.eyeCareModeCache.eyeCareDataSource;
 				this.enableSlider = this.eyeCareModeCache.enableSlider;

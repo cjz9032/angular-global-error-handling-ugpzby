@@ -1,41 +1,56 @@
 <div class="vtr-ui-header-subpage container-fluid">
-	<div class="row" *ngIf="title!=undefined">
+	<div class="row"
+		*ngIf="title!=undefined">
 		<div class="col">
-			<h2 class="title" id="{{textId}}-header-title" attr.aria-label="{{textId}}-header-title">
-				{{title}}
+			<h2 class="title"
+				id="{{textId}}-header-title">
+				<span tabindex="0"
+					attr.aria-label="{{title}}'page'"
+					role="text">{{title}}</span>
 			</h2>
 		</div>
 	</div>
-	<div class="row" [ngClass]="{'no-title': title==undefined}"
-	*ngIf="caption || menuTitle || items">
+	<div class="row"
+		[ngClass]="{'no-title': title==undefined}"
+		*ngIf="caption || menuTitle || items">
 		<div class="col left-border header-subpage-content">
 			<div class="col px-20">
 				<div class="row">
 					<div class="col">
-						<div class="caption" id="{{textId}}-header-caption" attr.aria-label="{{textId}}-header-caption">
+						<div class="caption"
+							id="{{textId}}-header-caption"
+							attr.aria-label="{{caption}}"
+							role="text"
+							tabindex="0">
 							{{caption}}
 						</div>
 					</div>
 				</div>
-				<div class="row" *ngIf="menuTitle">
+				<div class="row"
+					*ngIf="menuTitle">
 					<div class="col">
-						<div class="menu-title" id="{{textId}}-jumptToSettings-title" attr.aria-label="{{textId}}-jumptToSettings-title">
+						<div class="menu-title"
+							id="{{textId}}-jumptToSettings-title"
+							attr.aria-label="{{menuTitle}}:">
 							{{menuTitle}}:
 						</div>
 					</div>
 				</div>
-				<div class="row" *ngIf="items">
+				<div class="row"
+					*ngIf="items">
 					<div *ngFor="let item of items; let i=index"
-					 class="col-auto p-0">
+						class="col-auto p-0">
 						<div class="menu-item"
-						tabindex="0"
-						vtrMetrics
-						metricsItem="{{item.metricsItem}}"
-						metricsEvent="FeatureClick"
-						[metricsParent]="metricsParent"
-						id="jumptoSetting-{{item.path}}"
-						attr.aria-label="jumptoSetting-{{item.path}}"
-						 (click)="menuItemClick($event, item)">
+							role="link"
+							tabindex="0"
+							vtrMetrics
+							metricsItem="{{item.metricsItem}}"
+							metricsEvent="FeatureClick"
+							[metricsParent]="metricsParent"
+							id="jumptoSetting-{{item.path}}"
+							attr.aria-label=" 'jump to,' {{item.title | translate}} "
+							(click)="menuItemClick($event, item)"
+							(keydown.enter)="menuItemClick($event, item)">
 							{{item.title | translate}}
 						</div>
 					</div>

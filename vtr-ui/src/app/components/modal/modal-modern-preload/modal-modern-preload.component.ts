@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModernPreloadService, AppItem, DownloadButtonStatusEnum } from 'src/app/services/modern-preload/modern-preload.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -231,5 +231,9 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		this.activeModal.close('close');
 	}
 
-
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.modern-preload-modal') as HTMLElement;
+		modal.focus();
+	}
 }

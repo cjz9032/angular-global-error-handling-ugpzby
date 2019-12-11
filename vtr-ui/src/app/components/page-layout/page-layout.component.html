@@ -1,25 +1,31 @@
 <div class="vtr-page-{{pageCssClass}} vtr-page container-fluid page-content-bg">
 	<div class="row vtr-page-header">
-		<div class="col vtr-col page-header-bg" [ngClass]="{'dcc': deviceService.showDemo}">
-			<div class="container">
-				<vtr-header-main [title]="pageTitle" [back]="backLinkText" [parentPath]="parentPath"
-					[menuItems]="menuItems" [forwardLink]="" [textId]="textId"></vtr-header-main>
-			</div>
+		<div class="col page-header-bg" [ngClass]="{'dcc': deviceService.showDemo}">
+			<vtr-header-main [title]="title"
+				[parentPath]="parentPath"
+				[menuItems]="menuItems"
+				[forwardLink]=""
+				[textId]="textId"
+				[back]="back"
+				[backId]="backId"
+				[hideBack]="hideBack"
+				[isInnerBack]="isInnerBack"
+				(innerBack)="onInnerBack()">
+				<ng-content select="header-content"></ng-content>
+			</vtr-header-main>
 		</div>
 	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-xl-8 vtr-page-left-column">
-				<div class="vtr-page-shift-up nmx-40">
-					<!-- add the select attribute to ng-content -->
-					<ng-content select="left-content"></ng-content>
-				</div>
+	<div class="row vtr-page-columns">
+		<div class="col-lg-7 col-xl-8 vtr-page-column vtr-page-left-column">
+			<div [ngClass]="{'vtr-page-column-shift-up':shiftLeftUp}">
+				<!-- add the select attribute to ng-content -->
+				<ng-content select="left-content"></ng-content>
 			</div>
-			<div class="col-md-6 col-xl-4 vtr-page-right-column">
-				<div class="vtr-page-shift-up">
-					<!-- add the select attribute to ng-content -->
-					<ng-content select="right-content"></ng-content>
-				</div>
+		</div>
+		<div class="col-lg-5 col-xl-4 vtr-page-column vtr-page-right-column">
+			<div [ngClass]="{'vtr-page-column-shift-up':shiftRightUp}">
+				<!-- add the select attribute to ng-content -->
+				<ng-content select="right-content"></ng-content>
 			</div>
 		</div>
 	</div>

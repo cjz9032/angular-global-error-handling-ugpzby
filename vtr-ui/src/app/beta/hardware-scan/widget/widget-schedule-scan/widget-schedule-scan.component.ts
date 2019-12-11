@@ -256,13 +256,16 @@ export class WidgetScheduleScanComponent implements OnInit {
 						} else {
 							this.hardwareScanService.getNextScans().then((response) => {
 								this.items = [];
+								let dateString;
+								let time;
 								for (const req of response.scheduleRequests) {
 									const scheduleScanDelete = {
 										taskID: req.taskID
 									};
 
 									const date = req.scheduleDate[0].split('/');
-									const dateString = date[2] + '-' + date[0] + '-' + date[1];
+									dateString = date[2] + '-' + date[0] + '-' + date[1];
+									time = this.formatTime(req.scheduleTime);
 
 									let type = '';
 									if (req.scheduleType === HardwareScheduleScanType.Quick) {

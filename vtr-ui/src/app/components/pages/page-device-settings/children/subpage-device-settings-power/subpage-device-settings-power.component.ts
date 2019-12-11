@@ -18,14 +18,11 @@ import {
 	FlipToBootSupportedEnum
 } from '../../../../../services/power/flipToBoot.enum';
 import { MetricService } from '../../../../../services/metric/metric.service';
-
-
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/battery-charge-threshold-capability.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -53,7 +50,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public isEnergyStarProduct = false;
 	public energyStarCache: boolean;
 	public isChargeThresholdAvailable = false;
-
 	@Input() isCollapsed = true;
 	@Input() allowCollapse = true;
 	@Input() theme = 'white';
@@ -73,7 +69,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public machineType: any;
 	private batteryCountStatusEventRef: any;
 
-	thresholdWarningSubscription: Subscription;
+	notificationSubscription: Subscription;
 
 	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
@@ -98,7 +94,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 	public isPowerDriverMissing = false;
-
+	smartStandbyCapability: boolean;
+	showPowerSmartSettings = true;
+	tempHeaderMenuItems = [];
 	gaugeResetCapability = false;
 
 	headerMenuItems = [
@@ -229,11 +227,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.tempHeaderMenuItems = this.headerMenuItems;
 		this.getFlipToBootCapability();
 		this.initDataFromCache();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		this.isPowerDriverMissing = this.commonService.getLocalStorageValue(LocalStorageKey.IsPowerDriverMissing);
 		this.getVantageToolBarCapability();
 		this.getEnergyStarCapability();
 		if (this.isDesktopMachine) {
@@ -251,7 +249,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 
-		this.thresholdWarningSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
+		console.log('=============Power Subpage ngOnit ===================');
+		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
@@ -406,14 +405,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.thresholdWarningSubscription) {
-			this.thresholdWarningSubscription.unsubscribe();
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
 		}
 		this.stopMonitor();
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.batteryCountStatusEventRef);
 	}
 
 	onSetSmartStandbyCapability(event: boolean) {
+		this.smartStandbyCapability = event;
 		if (!event) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartStandby');
 			this.checkMenuItemsEmpty();
@@ -453,7 +453,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				break;
 		}
 		this.hideBatteryLink();
-		this.showPowerSettings();
+		this.hidePowerLink();
 	}
 
 	async getVantageToolBarCapability() {
@@ -548,6 +548,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getAlwaysOnUSBStatusThinkPad();
 			} catch (error) {
 				this.logger.error('getAlwaysOnUSBCapabilityThinkPad', error.message);
+				this.alwaysOnUSBStatus.available = false;
 				return EMPTY;
 			}
 		}
@@ -595,6 +596,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.EasyResumeCapability, this.easyResumeCache);
 			} catch (error) {
 				this.logger.error('getEasyResumeCapabilityThinkPad', error.message);
+				this.showEasyResumeSection = false;
 				return EMPTY;
 			}
 		}
@@ -677,6 +679,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.commonService.setLocalStorageValue(LocalStorageKey.AirplanePowerModeCapability, this.airplanePowerCache);
 			} catch (error) {
 				this.logger.error('getAirplaneModeCapabilityThinkPad', error.message);
+				this.showAirplanePowerModeSection = false;
 				return EMPTY;
 			}
 		}
@@ -956,7 +959,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.powerService.setVantageToolBarStatus(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setVantageToolBarStatus.then', event.switchValue);
-						this.getVantageToolBarStatus();
+						setTimeout(() => {
+							this.getVantageToolBarStatus();
+						}, 80);
 					}).catch(error => {
 						this.logger.error('setVantageToolBarStatus', error.message);
 						return EMPTY;
@@ -1013,6 +1018,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	hidePowerSmartSetting(hide: boolean) {
+		this.showPowerSmartSettings = hide;
 		this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'smartSettings');
 		this.checkMenuItemsEmpty();
 	}
@@ -1107,7 +1113,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					break;
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
-					this.checkPowerDriverMissing(this.isPowerDriverMissing);
 					break;
 			}
 
@@ -1237,8 +1242,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	showPowerSettings() {
-		if (this.isDesktopMachine || (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value)) {
+	hidePowerLink() {
+		if (!this.showEasyResumeSection && !this.alwaysOnUSBStatus.available && !this.showFlipToBootSection$.value) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.checkMenuItemsEmpty();
 		}

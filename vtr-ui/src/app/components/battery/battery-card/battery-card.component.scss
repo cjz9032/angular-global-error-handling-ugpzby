@@ -11,7 +11,7 @@
 	}
 }
 .vtr-battery-card {
-	@media #{$mediaquery_11} {
+		@media #{$mediaquery_11} {
 		padding-top: 8.5rem;
 	}
 	// @media #{$mediaquery_X5} {
@@ -31,7 +31,7 @@
 		background-position: right top, right bottom;
 		background-repeat: no-repeat;
 		background-size: contain;
-		.battery-gauge-label {
+			.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
 			font-size: $caption;
@@ -61,8 +61,22 @@
 					.button {
 						background: #e6eaeb;
 						color: #34495e;
+
+
 					}
 				}
+			}
+		}
+		.btn-disabled{
+			@media #{$black-on-white} {
+				border: 0.1rem brown;
+				border-radius: 5rem;
+				padding-top: 25px;
+			}
+			@media #{$white-on-black} {
+				border: 0.1rem green;
+				border-radius: 5rem;
+				padding-top: 25px;
 			}
 		}
 
@@ -83,7 +97,8 @@
 		}
 
 		.battery-conditions-tips {
-			font-size: $base;
+			font-size: $fontsize_md;
+			line-height: 1.2em;
 			width: 100%;
 			letter-spacing: 0;
 			padding: 0.5rem 0;
@@ -97,6 +112,14 @@
 				color: #f17f14;
 			}
 		}
+		.normal-ACAdapter-condition {
+			.icomoon-ConditionACAdapterError {
+				&:before {
+					color: #30d487;
+				}
+			}
+		}
+
 		.icomoon-ConditionBadBattery {
 			&:before {
 				color: #e74c3c;
@@ -133,5 +156,41 @@
 			align-self: center;
 			font-size: $base;
 		}
+
 	}
+	@media #{$black-on-white} {
+
+		border: 0.1rem solid $dark;
+		border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+
+		border: 0.1rem solid $light;
+		border-radius: 1rem;
+	}
+
 }
+.modal-header{
+	@media #{$black-on-white} {
+
+		border: 0.1rem solid $dark;
+		//border-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+
+		border: 0.1rem solid $light;
+		//border-radius: 1rem;
+	}
+	}
+	.modal-body{
+		@media #{$black-on-white} {
+
+			border: 0.1rem solid $dark;
+			//border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+
+			border: 0.1rem solid $light;
+			//border-radius: 1rem;
+		}
+	}

@@ -50,7 +50,7 @@ export class QaService {
 				'faq.question1.para5.span12'
 			],
 			description: `faq.question1.description`,
-			getDescription: function() {
+			getDescription: function () {
 				return `<div>
 				<div style='font-size:4rem;font-weight:bold;'>
 					${this.keys['faq.question1.title']}
@@ -101,7 +101,7 @@ export class QaService {
 						${this.keys['faq.question1.para5.span8']}
 						<span style='font-weight:bold'>${this.keys['faq.question1.para5.span9']}</span> ${this.keys[
 					'faq.question1.para5.span10'
-				]} <span style='font-weight:bold'>
+					]} <span style='font-weight:bold'>
 						${this.keys['faq.question1.para5.span11']}</span>
 						&nbsp;${this.keys['faq.question1.para5.span12']}</div>
 
@@ -166,7 +166,7 @@ export class QaService {
 				'faq.question2.para11'
 			],
 			description: `faq.question2.description`,
-			getDescription: function() {
+			getDescription: function () {
 				return `<div>
 				<div style='font-size:4rem;font-weight:bold;'>
 				${this.keys['faq.question2.title']}
@@ -392,7 +392,7 @@ export class QaService {
 				'faq.question3.para9.line5'
 			],
 			description: `faq.question3.description`,
-			getDescription: function() {
+			getDescription: function () {
 				return `<div style='font-size:4rem;font-weight:bold;'>
 					${this.keys['faq.question3.title']}
 			</div>
@@ -555,7 +555,7 @@ export class QaService {
 				'faq.question4.para6.span10'
 			],
 			description: `faq.question4.description`,
-			getDescription: function() {
+			getDescription: function () {
 				return `<div style='font-size:4rem;font-weight:bold;'>
 				${this.keys['faq.question4.title']}
 			</div>
@@ -718,7 +718,7 @@ export class QaService {
 				'faq.question5.para8.span3'
 			],
 			description: `faq.question5.description`,
-			getDescription: function() {
+			getDescription: function () {
 				return `<div style='font-size:4rem;font-weight:bold;'>
 				${this.keys['faq.question5.title']}
 			</div>
@@ -830,7 +830,7 @@ export class QaService {
 				'faq.question6.para13'
 			],
 			description: `faq.question6.description`,
-			getDescription: function() {
+			getDescription: function () {
 				return `
 
 			<div style='font-size:4rem;font-weight:bold;'>
@@ -924,7 +924,7 @@ export class QaService {
 		isSubscribed: <any>false
 	};
 
-	constructor(private translate: TranslateService) {}
+	constructor(private translate: TranslateService) { }
 
 	setTranslationService(translate: TranslateService) {
 		this.translate = translate;
@@ -1042,7 +1042,7 @@ export class QaService {
 						description: 'faq.question' + qa.id + '.description'
 					};
 				});
-				
+
 				this.preserveTransKeys.isPreserved = true;
 			}
 
@@ -1057,7 +1057,7 @@ export class QaService {
 						//segment or list Title
 						let qaTitleKey = this.preserveTransKeys.qasTransKeys[qa.id].title;
 						qa.title = this.getObjectValue(event.translations, qaTitleKey);
-						console.log('@sahinul in getQATranslation onLangChange qa', qaTitleKey, qa.title);
+						// console.log('@sahinul in getQATranslation onLangChange qa', qaTitleKey, qa.title);
 
 						let qaDescriptionKey = this.preserveTransKeys.qasTransKeys[qa.id].description;
 						qa.description = this.getObjectValue(event.translations, qaDescriptionKey);

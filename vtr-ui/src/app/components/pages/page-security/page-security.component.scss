@@ -1,122 +1,116 @@
 @import "../../../app.theme";
-
-.vtr-page-security {
-	.vtr-page-right-column {
-		.align-center {
-			padding: 0 6rem 0rem 6rem;
-		}
-	}
-
-	.vtr-page-left-column-inner {
-		background-color: $light;
-		box-shadow: $drop_shadow;
-		border-radius: $border_radius;
-
-		.security-widgets-container.left {
-			border-right: solid 1px $main_lightest;
-		}
-
-		.security-widgets-container {
-			.security-widget {
+::ng-deep {
+	.vtr-page-security {
+		.landing-widgets {
+			background-color: $light;
+			box-shadow: $drop_shadow;
+			border-radius: 0 0 $border_radius $border_radius;
+			.widgets-left {
+				border-right: solid 1px $main_lightest;
+			}
+			.landing-widget {
 				border-bottom: solid 1px $main_lightest;
-				padding: 3rem;
-				.security-widget-inner {
+				padding-bottom: 2.5rem;
+				margin-bottom: 2.5rem;
+				.landing-widget-inner {
 					.title {
-						font-size: 2.5rem;
+						font-size: $fontsize_xl;
 						font-weight: $weight_regular;
-						margin-bottom: -1.5rem;
+					}
+					.logo {
+						width: 12rem;
+						padding-top: 1rem;
 					}
 				}
-			}
-			.security-widget .security-widget-wifi {
-				.wifi-history {
-					font-size: 1.3rem;
-					border: 0.1rem solid $shade_lighter;
-					border-top: none;
-					border-bottom-left-radius: 0.9rem;
-					border-bottom-right-radius: 0.9rem;
-					.pt-wifiLength {
-						padding-top: 0.8rem;
-						.wifi-font-icon {
-							font-size: 4rem;
-							color: $main_darker;
-						}
-					}
-					.chevron-list {
-						list-style: none;
-						padding: 0;
-						background-color: $shade_extralight;
+				&.security-widget-wifi {
+					.wifi-history {
+						font-size: 1.3rem;
 						border: 0.1rem solid $shade_lighter;
+						border-top: none;
 						border-bottom-left-radius: 0.9rem;
 						border-bottom-right-radius: 0.9rem;
-						margin: 0.8rem;
-						.wifi-link {
-							padding-left: 15px;
-							a {
-								font-weight: 500;
-								text-decoration: underline;
-								white-space: nowrap;
+						.pt-wifiLength {
+							padding-top: 0.8rem;
+							.wifi-font-icon {
+								font-size: 4rem;
+								color: $main_darker;
+							}
+						}
+						.chevron-list {
+							list-style: none;
+							padding: 0;
+							background-color: $shade_extralight;
+							border: 0.1rem solid $shade_lighter;
+							border-bottom-left-radius: 0.9rem;
+							border-bottom-right-radius: 0.9rem;
+							margin: 0.8rem;
+							.wifi-link {
+								padding-left: 15px;
+								a {
+									font-weight: 500;
+									text-decoration: underline;
+									white-space: nowrap;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									display: inline-block;
+									width: 100%;
+								}
+							}
+							.ellipsis {
 								overflow: hidden;
 								text-overflow: ellipsis;
-								display: inline-block;
-								width: 100%
+								white-space: nowrap;
 							}
-						}
-						.ellipsis {
-							overflow: hidden;
-							text-overflow: ellipsis;
-							white-space: nowrap;
-						}
-						.wifi-good-font {
-							font-weight: 500;
-							font-size: 1.5rem;
-						}
-						li {
-							height: 4rem;
-							padding: 0.5rm 1rem;
-							border-bottom: 0.1rem solid $shade_lighter;
-							color: $main_darker;
-							line-height: 4rem;
-							.icon-bkg {
-								text-align: center;
+							.wifi-good-font {
+								font-weight: 500;
+								font-size: 1.5rem;
 							}
-							.wifi-bg {
-								border-radius: 1rem;
-								color: $light;
+							li {
 								height: 4rem;
-								text-align: right;
-								display: flex;
-								justify-content: center;
-								align-items: center;
-								line-height: 2rem;
-								.wifi-good {
-									height: 50%;
-									border-radius: 5rem;
+								padding: 0.5rm 1rem;
+								border-bottom: 0.1rem solid $shade_lighter;
+								color: $main_darker;
+								line-height: 4rem;
+								.icon-bkg {
 									text-align: center;
-									margin-left: auto;
-									text-overflow: ellipsis;
-									overflow: hidden;
-									white-space: nowrap;
-									padding-top: 0 !important;
-									padding-bottom: 0!important;
 								}
-								.good {
-									background-color: $go_dark;
+								.wifi-bg {
+									border-radius: 1rem;
+									color: $light;
+									height: 4rem;
+									text-align: right;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									line-height: 2rem;
+									.wifi-good {
+										height: 50%;
+										border-radius: 5rem;
+										text-align: center;
+										margin-left: auto;
+										text-overflow: ellipsis;
+										overflow: hidden;
+										white-space: nowrap;
+										padding-top: 0 !important;
+										padding-bottom: 0 !important;
+									}
+									.good {
+										background-color: $go_dark;
+									}
+									.bad {
+										background-color: $stop_dark;
+									}
+									.orange {
+										background-color: $stop_light;
+									}
 								}
-								.bad {
-									background-color: $stop_dark;
+								&:last-child {
+									border-bottom: none;
 								}
-								.orange {
-									background-color: $stop_light;
+								&:last-child {
+									border-bottom: none;
 								}
 							}
-							&:last-child {
-								border-bottom: none;
-							}
-							&:last-child {
-								border-bottom: none;
-							}
-
 						}
 
 					}

@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from '../../../services/cms/cms.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { StatusInfo, SecurityTypeConst } from 'src/app/data-models/security-advisor/status-info.model';
 
 @Component({
 	selector: 'vtr-widget-security',
@@ -10,29 +11,60 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 	styleUrls: ['./widget-security.component.scss']
 })
 export class WidgetSecurityComponent implements OnInit {
-	@Input() percentValue: number;
-	@Input() showWindowsHello: boolean;
+	@Input() statusItem: any;
 	articleId = '1C95D1D5D20D4888AC043821E7355D35';
 	articleCategory: string;
 	region: string;
-	tooltipsTitle = 'security.landing.securityScoreDepends';
-	tooltips: string[];
-	hover: boolean;
 
-	security = {
-		title: [
-			'security.landing.fully',
-			'security.landing.notFully',
+	btnDesc = [
+		'security.landing.notFully',
+		'security.landing.fully'
+	];
+	securityLevelInfo = [
+		{
+			status: 'security.landing.noProtection',
+			title: 'security.landing.noProtection',
+			desc: 'security.landing.noProtectionDesc',
+		},
+		{
+			status: 'security.landing.basic',
+			title: 'security.landing.basicTitle',
+			desc: 'security.landing.basicDesc',
+		},
+		{
+			status: 'security.landing.intermediate',
+			title: 'security.landing.intermediateTitle',
+			desc: 'security.landing.intermediateDesc',
+		},
+		{
+			status: 'security.landing.advanced',
+			title: 'security.landing.advancedTitle',
+			desc: 'security.landing.advancedDesc',
+		}
+	];
+
+	images = [
+		[
+			'assets/images/securityAdvisor/Gauge-No_protection.svg',
+			'assets/images/securityAdvisor/Gauge-blank.svg'
 		],
-		subTitle: [
-			'security.landing.fullyDesc',
-			'security.landing.notFullyDesc',
+		[
+			'assets/images/securityAdvisor/Gauge-Basic_protection-1.svg',
+			'assets/images/securityAdvisor/Gauge-Basic_protection-2.svg',
+			'assets/images/securityAdvisor/Gauge-Basic_protection-3.svg'
 		],
-		subTitle2: [
-			'',
-			''
+		[
+			'assets/images/securityAdvisor/Gauge-Intermediate_protection-1.svg',
+			'assets/images/securityAdvisor/Gauge-Intermediate_protection-2.svg',
+			'assets/images/securityAdvisor/Gauge-Intermediate_protection-3.svg',
+		],
+		[
+			'assets/images/securityAdvisor/Gauge-Advanced_protection-1.svg',
+			'assets/images/securityAdvisor/Gauge-Advanced_protection-2.svg',
+			'assets/images/securityAdvisor/Gauge-Advanced_protection-3.svg',
 		]
-	};
+	];
+
 	constructor(
 		public modalService: NgbModal,
 		private cmsService: CMSService,
@@ -41,24 +73,10 @@ export class WidgetSecurityComponent implements OnInit {
 		this.fetchCMSArticleCategory();
 	}
 
-	ngOnInit() {
-		this.localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-			const tooltipsInit = [
-				'security.landing.antivirus',
-				'security.landing.password',
-				this.region !== 'cn' ? 'security.landing.vpn' : null,
-				'security.landing.wifi',
-				this.showWindowsHello ? 'security.landing.windowsHello' : null
-			];
-			this.tooltips = tooltipsInit.filter(current => current !== undefined && current !== null && current !== '');
-		}).catch(e => {
-			this.region = 'us';
-		});
-	}
+	ngOnInit() {	}
 
 	fetchCMSArticleCategory() {
-		this.cmsService.fetchCMSArticle(this.articleId, {'Lang': 'EN'}).then((response: any) => {
+		this.cmsService.fetchCMSArticle(this.articleId, { Lang: 'EN'}).then((response: any) => {
 			if (response && response.Results && response.Results.Category) {
 				this.articleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
 			}
