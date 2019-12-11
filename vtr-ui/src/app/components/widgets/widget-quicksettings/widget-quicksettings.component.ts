@@ -137,7 +137,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					console.log('DeviceMonitorStatus.MicrophoneStatus', payload);
+					console.log('DeviceMonitorStatus.MicrophoneStatus', JSON.stringify(payload));
 					this.ngZone.run(() => {
 						// microphone payload data is dynamic, need check one by one
 						if(payload.hasOwnProperty('muteDisabled')) {
