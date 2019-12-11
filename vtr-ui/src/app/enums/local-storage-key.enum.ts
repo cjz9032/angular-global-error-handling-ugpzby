@@ -208,5 +208,8 @@ export enum LocalStorageKey {
 	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
 	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig',
 
-	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability'
+	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability',
+
+	// Device Settings storage key
+	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability'
 }

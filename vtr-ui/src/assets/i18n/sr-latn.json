@@ -994,24 +994,24 @@
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
                     "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije.",
+                        "desc2": "Ova funkcija ima režime navedene u nastavku i sada je prilagođava klizač za performanse napajanja operativnog sistema Windows. Možete joj pristupiti tako što ćete kliknuti na ikonu baterije na Windows sistemskoj paleti.",
+                        "desc3": "Neki od režima se mogu automatski prilagoditi većem opsegu performansi na osnovu vaše aktivnosti. Da biste omogućili automatski režim, pritisnite kombinaciju tastera Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Režim automatske baterije",
+                            "desc1": "Klizač je sa leve strane. Režim se dinamički prebacio na Tihi režim ili Režim baterije za najbolji utisak pri radu u DC režimu rada.",
+                            "title2": "Režim automatskog učinka",
+                            "desc2": "Klizač je na sredini ili na sredini desno. Režim se dinamički prebacio na Tihi režim, Ujednačeni režim ili Režim učinka za najbolji utisak pri radu u AC režimu rada.",
+                            "title3": "Režim učinka",
+                            "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tihi režim",
+                            "desc1": "Klizač je sa leve strane. Brzina i performanse ventilatora su smanjene za hladniji, tiši računar i najduže trajanje baterije.",
+                            "title2": "Ujednačeni režim",
+                            "desc2": "Klizač je na sredini ili na sredini desno. Brzina i performanse ventilatora su dinamički izbalansirane radi najboljeg doživljaja.",
+                            "title3": "Režim učinka",
+                            "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
                         }
                     }
                 },

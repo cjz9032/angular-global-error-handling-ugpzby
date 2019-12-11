@@ -994,24 +994,24 @@
                     "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
                     "nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria.",
+                        "desc2": "La funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows. È possibile accedervi facendo clic sull'icona della batteria nella barra delle applicazioni di Windows.",
+                        "desc3": "Le prestazioni di alcune modalità possono essere regolate automaticamente in base all'attività. Per abilitare la modalità automatica, premere Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità automatica batteria",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La modalità silenziosa o la modalità batteria viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CC.",
+                            "title2": "Modalità automatica prestazioni",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La modalità silenziosa, la modalità bilanciata o la modalità prestazioni viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CA.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità silenziosa",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La velocità e le prestazioni della ventola vengono ridotte per ottenere un computer più fresco e silenzioso e la massima durata della batteria.",
+                            "title2": "Modalità bilanciata",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         }
                     }
                 },

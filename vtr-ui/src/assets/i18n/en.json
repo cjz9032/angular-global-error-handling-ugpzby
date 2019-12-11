@@ -842,7 +842,7 @@
 				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
-				"charge": "TIME TO FULLY CHARGE",
+				"charge": "Time to full charge",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",

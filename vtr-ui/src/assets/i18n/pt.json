@@ -994,24 +994,24 @@
                     "description5": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria. Este recurso tem 3 modos (Modo silencioso, Modo Equilibrado e Modo de desempenho) e agora é acessível pelo controle deslizante de desempenho do Windows",
                     "nocqldesc": "O Arrefecimento Inteligente permite ajustar o desempenho e a temperatura do sistema. No modo “Desempenho”, otimiza o desempenho do sistema. No modo “Fresco e silencioso” ajuda a manter o sistema mais fresco e silencioso.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, o desempenho máximo e administra a vida útil da bateria.",
+                        "desc2": "A funcionalidade tem os modos abaixo listados e agora está ajustada pelo controlo de deslize de energia de desempenho do Windows. Poderá aceder à funcionalidade ao clicar no ícone de bateria no tabuleiro de sistema do Windows.",
+                        "desc3": "Alguns dos modos podem ser ajustados automaticamente ao longo de uma gama mais ampla de desempenho em função da sua atividade. Para ativar o modo automático, prima Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modo Bateria Automática",
+                            "desc1": "O controlo de deslize está à esquerda. O modo é alternado dinamicamente para o Modo silencioso ou o Modo de bateria para proporcionar a melhor experiência do modo CC.",
+                            "title2": "Modo de Desempenho Automático",
+                            "desc2": "O controlo de deslize está ao centro ou centro à direita. O modo é alternado dinamicamente para o Modo silencioso, Modo Equilibrado ou Modo de desempenho para proporcionar a melhor experiência do modo CA.",
+                            "title3": "Modo de desempenho",
+                            "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modo silencioso",
+                            "desc1": "O controlo de deslize está à esquerda. O desempenho e a velocidade da ventoinha são reduzidos para arrefecer e diminuir o ruído do computador, e para uma maior duração da bateria.",
+                            "title2": "Modo Equilibrado",
+                            "desc2": "O controlo de deslize está ao centro ou centro à direita. O desempenho e a velocidade da ventoinha são equilibrados de forma dinâmica para obter a melhor experiência.",
+                            "title3": "Modo de desempenho",
+                            "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
                         }
                     }
                 },

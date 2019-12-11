@@ -994,24 +994,24 @@
                     "description5": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd. Deze functie heeft drie modi (Stille modus, Gebalanceerde modus en Prestatiemodus) en is nu toegankelijk via de prestatieschuif in Windows",
                     "nocqldesc": "Intelligent koelen maakt het mogelijk om de systeemprestatie en de thermische temperatuur aan te passen. In de \"Prestatie\"-modus wordt de systeemprestatie geoptimaliseerd. Tegelijkertijd blijft het systeem koeler en stiller in de modus \"Koel & stil\".",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Met Intelligente koeling worden de ventilatorsnelheid en maximale prestaties aangepast en de levensduur van de batterij beheerd.",
+                        "desc2": "De functie biedt onderstaande modi en is nu aangepast door de prestatieschuif in Windows. U kunt de functie benaderen door te klikken op het batterijpictogram in het systeemvak van Windows.",
+                        "desc3": "Sommige modi kunnen automatisch aangepast worden over een breder prestatiebereik gebaseerd op uw activiteit. Druk op Fn+T om de automatische modus in te schakelen.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatische batterijmodus",
+                            "desc1": "De schuifregelaar bevindt zich aan de linkerkant. De modus verschuift dynamisch naar Stille modus of Batterijmodus op basis van de best mogelijke DC-ervaring.",
+                            "title2": "Automatische prestatiemodus",
+                            "desc2": "De schuifregelaar bevindt zich in het midden of rechts van het midden. De modus verschuift dynamisch naar Stille modus, Gebalanceerde modus of Prestatiemodus op basis van de best mogelijke AC-ervaring.",
+                            "title3": "Prestatiemodus",
+                            "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Stille modus",
+                            "desc1": "De schuifregelaar bevindt zich aan de linkerkant. Ventilatorsnelheid en prestaties worden verlaagd voor een koelere, stillere computer en een langere batterijduur.",
+                            "title2": "Gebalanceerde modus",
+                            "desc2": "De schuifregelaar bevindt zich in het midden of rechts van het midden. Ventilatorsnelheid en prestaties worden dynamisch gebalanceerd voor een optimale beleving.",
+                            "title3": "Prestatiemodus",
+                            "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
                         }
                     }
                 },
