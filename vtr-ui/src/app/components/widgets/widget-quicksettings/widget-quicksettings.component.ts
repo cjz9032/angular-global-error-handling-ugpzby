@@ -53,6 +53,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	private Windows: any;
 	private windowsObj: any;
 	private audioClient: any;
+	private audioData: string;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -302,11 +303,18 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 						const win: any = window;
 						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
 							try {
+								const a = performance.now();
 								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
+								const b = performance.now();
+								console.log('audioclient init' + (b-a) + 'ms');
 								if (this.audioClient) {
 									this.audioClient.onchangecallback = (data: string) => {
 										if(data){
+											if (this.audioData && this.audioData.toString() == data) {
+												return;
+											}
 											console.log('data data, got it ' + data);
+											this.audioData = data;
 											const dic = data.split(',');
 											
 											if(['1','0'].includes(dic[0])){
