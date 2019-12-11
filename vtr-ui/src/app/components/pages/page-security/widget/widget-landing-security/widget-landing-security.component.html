@@ -33,7 +33,7 @@
                     'status-loading': item.status === 'loading' || item.status === 'installing'}">
                 {{item.detail}}</span>
             <span *ngIf="item.showOwn" class="badge d-flex align-items-center status-haveOwn ml-auto">
-                {{badgeContent}}</span>
+                {{badgeContent | translate}}</span>
         </div>
         <hr>
     </div>
