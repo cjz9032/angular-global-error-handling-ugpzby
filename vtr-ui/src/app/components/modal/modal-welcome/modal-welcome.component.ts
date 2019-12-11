@@ -9,7 +9,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
-
+import { ConfigService } from 'src/app/services/config/config.service';
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
@@ -33,7 +33,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	interests = [];
 	hideMoreInterestBtn = false;
 	welcomeStart: any = new Date();
-	privacyPolicyLink: 'https://www.lenovo.com/us/en/privacy/';
 	machineInfo: any;
 
 	@Input() tutorialVersion: string;
@@ -44,6 +43,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	shouldManuallyFocusMoreInterest = false;
 
 	constructor(
+		private configService: ConfigService,
 		public deviceService: DeviceService,
 		public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
@@ -216,5 +216,13 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	onFocus(): void {
 		const modal = document.querySelector('.welcome-modal-size') as HTMLElement;
 		modal.focus();
+	}
+
+	privacyPolicyClick(event) {
+		this.configService.getPrivacyPolicyLink().then(policyLink => {
+			window.open(policyLink, '_blank');
+		});
+		event.stopPropagation();
+		event.preventDefault();
 	}
 }

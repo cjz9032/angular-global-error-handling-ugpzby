@@ -1138,7 +1138,7 @@
                         "subHeading1": "comience",
                         "subHeading2": "final",
                         "subHeading3": "utilice esta planificación para",
-                        "endTimeNote": "El tiempo de finalización debe encontrarse en un plazo de 20 horas desde la hora de inicio",
+                        "endTimeNote": "La hora de FINALIZACIÓN debe encontrarse en un plazo de 20 horas desde la hora de INICIO",
                         "timeUnits": {
                             "unit1": "Horas",
                             "unit2": "Minutos",
@@ -1173,7 +1173,7 @@
                         "everyday": "Todos los días",
                         "weekdays": "Entre semana",
                         "weekends": "Fines de semana",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "No se seleccionó el día"
                     },
                     "checkbox": "Ajuste automático del tiempo activo del sistema basándose en su uso",
                     "hyperlinkToGraph": "Haga clic aquí para ver la actividad y el tiempo activo de la tabla sistema",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
+                    "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "URL DEL SITIO WEB",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "La configuración se aplicó satisfactoriamente.",
+                        "invalidURLMessage": "Ingrese una URL válida.",
                         "placeholder": "Empiece con http:// o https://"
                     },
                     "enterText": {
@@ -1947,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2840,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Almacenamiento",
             "wireless": "Inalámbrica"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

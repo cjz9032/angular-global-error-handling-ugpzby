@@ -1,4 +1,4 @@
-import { EventTypes } from '@lenovo/tan-client-bridge';
+import { EventTypes, UAC } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -11,17 +11,17 @@ export class UacLandingViewModel {
 		title: 'security.landing.uac',
 		content: 'security.landing.uacContent',
 		buttonLabel: 'security.landing.visitUac',
-		buttonHref: 'ms-settings:signinoptions',
+		launch() {},
 		noneCheck: true,
 		detail: '',
 		id: 'sa-ov-link-uac',
 	};
 	translateString: any;
 
-	constructor(translate: TranslateService, uacModel, public commonService: CommonService, ) {
-		// waModel.on(EventTypes.pmStatusEvent, (data) => {
-		// 	this.setWaStatus(data);
-		// });
+	constructor(translate: TranslateService, uacModel: UAC, public commonService: CommonService, ) {
+		uacModel.on(EventTypes.uacStatusEvent, (data) => {
+			this.setWaStatus(data);
+		});
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityUacStatus);
 		translate.stream([
 			'common.securityAdvisor.enabled',
@@ -38,7 +38,8 @@ export class UacLandingViewModel {
 			this.uacStatus.title = res['security.landing.uac'];
 			this.uacStatus.content = res['security.landing.uacContent'];
 			this.uacStatus.buttonLabel = res['security.landing.visitUac'];
-			if (uacModel.status) {
+			this.uacStatus.launch = uacModel.launch.bind(uacModel);
+			if (uacModel.status !== 'unknown') {
 				this.setWaStatus(uacModel.status);
 			} else if (cacheStatus) {
 				this.setWaStatus(cacheStatus);
@@ -50,8 +51,8 @@ export class UacLandingViewModel {
 		if (!this.translateString) {
 			return;
 		}
-		this.uacStatus.detail = this.translateString[`common.securityAdvisor.${status === 'active' ? 'enabled' : 'disabled'}`];
-		this.uacStatus.status = status === 'enabled' ? 'enabled' : 'disabled';
+		this.uacStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
+		this.uacStatus.status = status === 'enable' ? 'enabled' : 'disabled';
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityUacStatus, status);
 	}
 }

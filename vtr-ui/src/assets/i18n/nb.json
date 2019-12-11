@@ -1138,7 +1138,7 @@
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
-                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
+                        "endTimeNote": "SLUTT-tidspunktet må være innen 20 timer etter START-tidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1173,7 +1173,7 @@
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
                         "weekends": "Helger",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
                     "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "NETTADRESSE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Innstillingene er tatt i bruk.",
+                        "invalidURLMessage": "Angi en gyldig URL-adresse.",
                         "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
@@ -1947,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2840,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Trådløs"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

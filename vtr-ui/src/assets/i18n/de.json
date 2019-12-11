@@ -1138,7 +1138,7 @@
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
-                        "endTimeNote": "Endzeit darf maximal 20 Stunden nach der Startzeit liegen",
+                        "endTimeNote": "END-Zeit darf maximal 20 Stunden nach der START-Zeit liegen",
                         "timeUnits": {
                             "unit1": "Stunden",
                             "unit2": "Minuten",
@@ -1173,7 +1173,7 @@
                         "everyday": "Jeden Tag",
                         "weekdays": "Wochentage",
                         "weekends": "Wochenenden",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Kein Tag ausgewählt"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
                     "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
+                    "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "WEBSITE-URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Die Einstellungen wurden erfolgreich angewendet.",
+                        "invalidURLMessage": "Geben Sie eine gültige URL ein.",
                         "placeholder": "Starten Sie mit http:// oder https://"
                     },
                     "enterText": {
@@ -1947,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2840,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Speicher",
             "wireless": "Drahtlos"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

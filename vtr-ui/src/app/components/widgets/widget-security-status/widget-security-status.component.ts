@@ -1,4 +1,4 @@
-import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { SecurityAdvisor, EventTypes } from '@lenovo/tan-client-bridge';
 import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
+import { UACWidgetItemViewModel } from 'src/app/data-models/security-advisor/widget-security-status/uac-widget-item.model';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -35,7 +36,8 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	ngOnInit() {
 		this.items = [
 			new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService),
-			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService)
+			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService),
+			new UACWidgetItemViewModel(this.securityAdvisor.uac, this.commonService, this.translateService)
 		];
 		this.localInfoService.getLocalInfo().then(result => {
 			this.region = result.GEO;
@@ -46,11 +48,11 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		});
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
-			this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
+			this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 		}
 		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
 		if (cacheShowWifiSecurity) {
-			this.items.splice(1, 0, new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone));
+			this.items.splice(2, 0, new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone));
 		}
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;

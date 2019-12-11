@@ -14,7 +14,7 @@
     *ngIf="currentPage === 'intermediate-security'"
     [items]="intermediateItems | statusTransform"></vtr-widget-landing-security>
     <vtr-widget-landing-security
-    *ngIf="currentPage === 'advanced-security'"
+    *ngIf="currentPage === 'advanced-security' && advancedItems.length > 0"
     [items]="advancedItems | statusTransform"></vtr-widget-landing-security>
 </section>
 

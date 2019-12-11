@@ -1140,7 +1140,7 @@
                         "subHeading1": "بدء",
                         "subHeading2": "إنهاء",
                         "subHeading3": "استخدم هذا الجدول الزمني لأجل",
-                        "endTimeNote": "يجب أن يقع وقت الإنهاء بعد 20 ساعة من وقت البدء.",
+                        "endTimeNote": "يجب أن يقع وقت الانتهاء‬ بعد 20 ساعة من وقت البدء.",
                         "timeUnits": {
                             "unit1": "ساعات",
                             "unit2": "دقائق",
@@ -1175,7 +1175,7 @@
                         "everyday": "كل يوم",
                         "weekdays": "أيام الأسبوع",
                         "weekends": "عطلة نهاية الأسبوع",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "لم يتم تحديد أي يوم"
                     },
                     "checkbox": "الضبط التلقائي للوقت النشط لجهاز الكمبيوتر استنادًا إلى استخدامك",
                     "hyperlinkToGraph": "انقر لرؤية النشاط والوقت النشط لجدول الكمبيوتر.",
@@ -1219,8 +1219,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
+                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة"
                 }
             },
             "audio": {
@@ -1497,8 +1497,8 @@
                     },
                     "website": {
                         "url": "عنوان URL لموقع الويب",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "تم تطبيق الإعدادات بنجاح.",
+                        "invalidURLMessage": "يرجى إدخال عنوان URL صالح.",
                         "placeholder": "يرجى البدء بـ http:// أو https://"
                     },
                     "enterText": {
@@ -1949,6 +1949,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2842,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1138,7 +1138,7 @@
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
-                        "endTimeNote": "Sluttiden måste infalla högst 20 timmar efter starttiden",
+                        "endTimeNote": "SLUTTIDEN måste infalla högst 20 timmar efter STARTTIDEN",
                         "timeUnits": {
                             "unit1": "Timmar",
                             "unit2": "Minuter",
@@ -1173,7 +1173,7 @@
                         "everyday": "Varje dag",
                         "weekdays": "vardagar",
                         "weekends": "helger",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
                     "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
@@ -1217,8 +1217,8 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
+                    "subTitle2": "Ange vilken tid du använder datorn mest"
                 }
             },
             "audio": {
@@ -1495,8 +1495,8 @@
                     },
                     "website": {
                         "url": "WEBBADRESS",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Inställningarna har tillämpats.",
+                        "invalidURLMessage": "Ange en giltig webbadress.",
                         "placeholder": "Börja med http:// eller https://"
                     },
                     "enterText": {
@@ -1947,6 +1947,7 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
@@ -2840,7 +2841,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Radio"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
