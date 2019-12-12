@@ -92,6 +92,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	// "Wrapper" value to be accessed from the HTML
 	public taskTypeEnum = TaskType;
 
+	// This is used to determine the scan overall status when sending metrics information
+	private resultSeverityConversion = {}
+
 	constructor(
 		public deviceService: DeviceService,
 		private commonService: CommonService,
@@ -117,12 +120,25 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
+		this.initResultSeverityConversion();
 	}
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+	}
+
+	private initResultSeverityConversion() {
+		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
+		// because of that, I'm creating a map with the best order to determine the scan overall status
+		this.resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
+		this.resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
+		this.resultSeverityConversion[HardwareScanTestResult.Na] = 2;
+		this.resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
+		this.resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
+		this.resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
+		this.resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
 	}
 
 	public initComponent() {
@@ -464,6 +480,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private doRecoverBadSectors() {
 		console.log('[Start] Recover Bad Sectors');
+		this.currentTaskType = TaskType.RecoverBadSectors;
 		this.progress = 0;
 
 		const devicesId = [];
@@ -482,12 +499,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		};
 
 		if (this.hardwareScanService) {
+			this.timerService.start();
 			this.hardwareScanService.getRecoverBadSectors(payload)
 				.then((response) => {
 					console.log('[Last Response] doRecoverBadSectors');
 					console.log(response);
 					console.log('[End] Recover Bad Sectors');
 					this.hardwareScanService.setEnableViewResults(true);
+
+					// Sending the RBS's TaskAction metrics
+					const rbsTaskActionResult = this.getRecoverBadSectorsMetricsTaskResult(response);
+					this.sendTaskActionMetrics(TaskType.RecoverBadSectors, rbsTaskActionResult.taskCount,
+						"", rbsTaskActionResult.taskResult, this.timerService.stop());
 				});
 		}
 	}
@@ -862,17 +885,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		let countSuccesses = 0;
 		let overalTestResult = HardwareScanTestResult.Pass;
 
-		// the enum HardwareScanTestResult isn't really in the best order to determine the severity of the results
-		// because of that, I'm creating a map with the best order to determine the scan overall status
-		let resultSeverityConversion = {}
-		resultSeverityConversion[HardwareScanTestResult.NotStarted] = 0;
-		resultSeverityConversion[HardwareScanTestResult.InProgress] = 1;
-		resultSeverityConversion[HardwareScanTestResult.Na] = 2;
-		resultSeverityConversion[HardwareScanTestResult.Pass] = 3;
-		resultSeverityConversion[HardwareScanTestResult.Warning] = 4;
-		resultSeverityConversion[HardwareScanTestResult.Fail] = 5;
-		resultSeverityConversion[HardwareScanTestResult.Cancelled] = 6;
-
 		let resultJson = {
 			Result: "",
 			Reason: "",
@@ -901,7 +913,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					} 
 					
 					// Only change result when finds a worse case
-					if (resultSeverityConversion[overalTestResult] < resultSeverityConversion[test.status]) {
+					if (this.resultSeverityConversion[overalTestResult] < this.resultSeverityConversion[test.status]) {
 						overalTestResult = test.status;
 					}
 					
@@ -917,7 +929,32 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		scanResult.countSuccesses = countSuccesses;
 
 		return scanResult;
-	}	
+	}
+
+	getRecoverBadSectorsMetricsTaskResult(rbsFinalResponse) {
+		let numberOfSuccess = 0;
+		let result = HardwareScanTestResult.Na;
+
+		for (const device of rbsFinalResponse.devices) {
+			// Only change result when finds a worse case
+			if (this.resultSeverityConversion[result] < this.resultSeverityConversion[device.status]) {
+				result = device.status;
+			}
+
+			// Counting the devices where RBS was successful
+			if (device.result == HardwareScanTestResult.Pass) {
+				numberOfSuccess++;
+			}
+		}
+
+		return {
+			taskCount: numberOfSuccess,
+			taskResult: {
+				Reason: "NA",
+				Result: result
+			}
+		};
+	}
 
 	private sendTaskActionMetrics(taskName: TaskType , taskCount: number, taskParam: string,
 		taskResult: any, taskDuration: number){
