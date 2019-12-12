@@ -22,8 +22,13 @@
 
 		<div class="row" *ngIf="devices">
 			<div class="button-row">
-				<button class="col btn" [ngClass]="{'action-button': isSelectedItem(), 'action-button-disable': !isSelectedItem()}" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan"
-					[metricsItem]="'btn.'+textButton" (click)="startRecover()" [disabled]="!isSelectedItem()">
+				<button class="col btn" 
+					[ngClass]="{'action-button': isSelectedItem(), 'action-button-disable': !isSelectedItem()}" 
+					vtrMetrics 
+					metricsEvent="ItemClick" 
+					metricsParent="HardwareScan.RunRecoverBadSectors"
+					metricsItem="RecoverBadSectors.RunRecoverBadSectors" 
+					(click)="startRecover()" [disabled]="!isSelectedItem()">
 					{{textButton}}
 				</button>
 			</div>

@@ -661,10 +661,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = this.getMetricsItemNameClose();
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = this.getMetricsItemNameConfirm();
 
-
-				(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = this.getMetricsItemNameClose();
-				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = this.getMetricsItemNameConfirm();
-
 				modal.result.then((result) => {
 					this.getDoScan(taskType, requests);
 
@@ -922,7 +918,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		let scanResult = new ScanResult();
 		let countSuccesses = 0;
-		let overalTestResult = HardwareScanTestResult.Pass;
+		let overalTestResult = HardwareScanTestResult.Na;
 
 		let resultJson = {
 			Result: "",
