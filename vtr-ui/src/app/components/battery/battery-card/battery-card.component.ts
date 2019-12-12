@@ -269,7 +269,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
 
-		if (this.batteryGauge.isAttached && this.batteryGauge.acWattage !== 0) {
+		if (this.batteryGauge.isAttached && this.batteryGauge.acWattage && this.batteryGauge.acAdapterType) {
 			const adapterType = this.batteryGauge.acAdapterType.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
 			this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: adapterType };
 		}
@@ -331,19 +331,18 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					const percentLimit = (this.batteryInfo[0].fullChargeCapacity / this.batteryInfo[0].designCapacity) * 100;
 					this.param = { value: parseFloat(percentLimit.toFixed(1)) };
 				}
-
-				if (this.batteryHealth === 4) {
-					if (this.batteryInfo.length > 1) {
-						if (this.batteryInfo[1].batteryHealth === 4) {
-							this.batteryIndicator.batteryNotDetected = true;
-							healthCondition = 4;
-						} else {
-							this.batteryIndicator.batteryNotDetected = false;
-							healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
-						}
-					} else {
+			}
+			if (this.batteryHealth === 4) {
+				if (this.batteryInfo.length > 1 && isThinkPad) {
+					if (this.batteryInfo[1].batteryHealth === 4) {
 						this.batteryIndicator.batteryNotDetected = true;
+						healthCondition = 4;
+					} else {
+						this.batteryIndicator.batteryNotDetected = false;
+						healthCondition = BatteryConditionsEnum.PrimaryNotDetected;
 					}
+				} else {
+					this.batteryIndicator.batteryNotDetected = true;
 				}
 			}
 
