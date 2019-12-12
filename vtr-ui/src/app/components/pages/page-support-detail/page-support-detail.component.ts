@@ -3,6 +3,7 @@ import { QaService } from '../../../services/qa/qa.service';
 import { QA } from '../../../data-models/qa/qa.model';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-page-support-detail',
@@ -19,13 +20,15 @@ export class PageSupportDetailComponent implements OnInit, OnDestroy {
 	constructor(
 		public qaService: QaService,
 		private translate: TranslateService,
-		private activateRoute: ActivatedRoute
+		private activateRoute: ActivatedRoute,
+		private commonService: CommonService
 	) {	}
 
 	ngOnInit() {
 		this.qaService.getQATranslation(this.translate); // VAN-5872, server switch feature
 		this.activateRoute.params.subscribe((params) => {
 			this.qa = this.qaService.getById(parseInt(params.id, 10));
+			this.commonService.scrollTop();
 		});
 	}
 
