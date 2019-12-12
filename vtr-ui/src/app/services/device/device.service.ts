@@ -9,6 +9,7 @@ import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { resolve } from 'url';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,14 +22,12 @@ export class DeviceService {
 	public isArm = false;
 	public isAndroid = false;
 	public is64bit = true;
-	public showPrivacy = false;
 	public isGaming = false;
 	public isLiteGaming = false;
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
-	public showSearch = false;
 	public showDemo = false;
 	public machineType: number;
 	constructor(
@@ -46,8 +45,6 @@ export class DeviceService {
 			this.isShellAvailable = true;
 		}
 		this.initIsArm();
-		this.initshowPrivacy();
-		this.initShowSearch();
 	}
 
 	private initIsArm() {
@@ -80,27 +77,6 @@ export class DeviceService {
 		} catch (error) {
 			this.logger.error('getIsARM' + error.message);
 			return isArm;
-		}
-	}
-
-	private initshowPrivacy() {
-		// set this.showPrivacy appropriately based on machineInfo data
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
-				this.showPrivacy = (privacy === 'enabled');
-			}, (error) => {
-				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-			});
-		}
-	}
-
-	private initShowSearch() {
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
-				this.showSearch = ((searchFeature || '').toString() === 'true');
-			}, (error) => {
-				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-			});
 		}
 	}
 
