@@ -14,6 +14,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PowerService } from 'src/app/services/power/power.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -24,6 +25,7 @@ import { EMPTY } from 'rxjs';
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
+	public direction = 'ltr';
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
@@ -51,6 +53,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	constructor(
 		private configService: ConfigService,
+		private languageService: LanguageService,
 		public deviceService: DeviceService,
 		public powerService: PowerService,
 		private logger: LoggerService,
@@ -69,6 +72,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		deviceService.getMachineInfo().then((val) => {
 			this.machineInfo = val;
 		});
+
+		if (this.languageService.currentLanguage.toLowerCase() === 'ar' || this.languageService.currentLanguage.toLowerCase() === 'he' ) {
+			this.direction = 'rtl';
+		}
 	}
 
 	async ngOnInit() {
@@ -77,7 +84,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.usageType = config.usageType;
 		this.interests = config.interests;
 		this.getVantageToolBarCapability();
-		this.SetVantageToolbar(this.vantageToolbar);
 	}
 
 	ngAfterViewInit() {
@@ -174,6 +180,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
 			this.selfSelectService.saveConfig(true);
+			this.SetVantageToolbar(this.vantageToolbar);
 		}
 		this.page = ++page;
 	}
@@ -238,7 +245,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	saveToolbar($event) {
 		this.vantageToolbar = $event.target.checked;
-		this.SetVantageToolbar($event.target.checked);
 	}
 
 	SetVantageToolbar(toolbarStatus) {
