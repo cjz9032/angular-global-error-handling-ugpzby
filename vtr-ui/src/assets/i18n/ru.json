@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
-                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер"
+                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1956,12 +1957,13 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2634,7 +2636,8 @@
         "custom": "Особое использование",
         "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
-        "moreInterest": "+ другие интересы",
+		"moreInterest": "+ другие интересы",
+		"toolbartitle": "Включить панель инструментов Lenovo Vantage (рекомендуется)",
         "title1": "Добро пожаловать в",
         "title2": "Lenovo",
         "title3": "Vantage",

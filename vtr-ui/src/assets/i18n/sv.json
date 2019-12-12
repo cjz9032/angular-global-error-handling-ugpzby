@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "subTitle2": "Ange vilken tid du använder datorn mest"
+                    "subTitle2": "Ange vilken tid du använder datorn mest",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1956,12 +1957,13 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2634,7 +2636,8 @@
         "custom": "Skräddarsydd upplevelse",
         "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
-        "moreInterest": "+ fler intressen",
+		"moreInterest": "+ fler intressen",
+		"toolbartitle": "Aktivera Lenovo Vantage-verktygsfältet (rekommenderas)",
         "title1": "Välkommen till",
         "title2": "Lenovo",
         "title3": "Vantage",
