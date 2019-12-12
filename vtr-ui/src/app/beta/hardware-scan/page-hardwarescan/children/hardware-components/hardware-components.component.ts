@@ -965,7 +965,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			}
 
 			// Counting the devices where RBS was successful
-			if (device.result == HardwareScanTestResult.Pass) {
+			if (device.status == HardwareScanTestResult.Pass) {
 				numberOfSuccess++;
 			}
 		}
