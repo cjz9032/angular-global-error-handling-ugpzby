@@ -34,9 +34,15 @@
 			<div class="row mb-40">
 				<div class="col col-12"
 					[ngClass]="{'battery-unavailable': isDesktopMachine}"
-					attr.aria-label="battery-details"
+					role="text"
+					tabindex="0"
 					id="battery-details">
 					<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-12 help-heading">
+					{{ 'device.deviceSettings.helpful' | translate }}
 				</div>
 			</div>
 			<div class="row mb-40">

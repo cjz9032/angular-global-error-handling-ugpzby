@@ -1,4 +1,4 @@
-<vtr-page-layout [title]="'common.menu.security.title' | translate"
+<vtr-page-layout [title]="'common.menu.security.sub1' | translate"
 	[textId]="'security'"
 	[pageCssClass]="'security'"
 	[shiftLeftUp]="true"
@@ -9,101 +9,24 @@
 	<left-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-12 p-0">
-					<vtr-widget-security *ngIf="isOnline"
-						[showWindowsHello]="windowsHelloLandingViewModel? true : false"
-						[percentValue]="score"></vtr-widget-security>
-					<vtr-widget-offline-info *ngIf="!isOnline"
+				<div class="col-12 p-0 mb-4" *ngIf="!isOnline">
+					<vtr-widget-offline-info
 						[title]="'dashboard.offlineInfo.title' | translate"
 						[isSubtitleVisible]="false"
 						[isButtonVisible]="false"></vtr-widget-offline-info>
 				</div>
-			</div>
-
-			<div class="row landing-widgets p-20">
-				<div class="col-md-12 col-lg-6 p-20 widgets-left">
-
-					<vtr-ui-landing-feature
-						*ngIf="antivirusLandingViewModel?.subject?.status !== undefined && antivirusLandingViewModel?.subject?.status !== null"
-						[feature]='antivirusLandingViewModel'>
-					</vtr-ui-landing-feature>
-
-					<vtr-ui-landing-feature
-						*ngIf="passwordManagerLandingViewModel?.subject?.status !== undefined && passwordManagerLandingViewModel?.subject?.status !== null"
-						[feature]='passwordManagerLandingViewModel'>
-					</vtr-ui-landing-feature>
-
-					<vtr-ui-landing-feature
-						*ngIf="vpnLandingViewModel?.subject?.status !== undefined && vpnLandingViewModel?.subject?.status !== null && showVpn"
-						[feature]='vpnLandingViewModel'>
-					</vtr-ui-landing-feature>
-				</div>
-
-				<div class="col-md-12 col-lg-6 p-20 widgets-right">
-					<div class="landing-widget security-widget-wifi"
-						*ngIf="wifiSecurityLandingViewModel">
-						<div class="landing-widget-inner">
-							<div>
-								<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
-								</vtr-ui-object-title>
-								<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList"
-									metricsEvent="featureClick">
-								</vtr-ui-list-chevron>
-								<div class="wifi-history"
-									*ngIf="wifiHistory && wifiSecurityLandingViewModel?.subject?.status === 0 && wifiHistory.length !== 0">
-									<div class="row align-items-center pt-wifiLength">
-										<div class="col-2 row justify-content-center pl-3">
-											<fa-icon class="wifi-font-icon"
-												[icon]="['fas', 'wifi']"></fa-icon>
-										</div>
-										<div class="col-10">
-											{{'security.landing.maliciousNetwork' | translate: { maliciousWifi: maliciousWifi } }}
-										</div>
-									</div>
-									<ul class="chevron-list">
-										<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
-											class="row no-gutters">
-											<div class="col-2 d-flex justify-content-center align-items-center">
-												<div class="icon-bkg">
-													<fa-icon [icon]="['fas', 'wifi']"></fa-icon>
-												</div>
-											</div>
-											<div class="col-6 pl-0 ellipsis wifi-good-font"
-												title="{{wifi.ssid}}">{{wifi.ssid}}</div>
-											<div class="wifi-bg col-4 pl-0 pr-3 ellipsis">
-												<div class="wifi-good pt-1 pb-1 pr-2 pl-2 "
-													[ngClass]="getWifiStatus(wifi.good)"
-													title="{{getWifiDetail(wifi.good) | translate}}">
-													{{getWifiDetail(wifi.good) | translate}}
-												</div>
-											</div>
-										</li>
-										<li class="wifi-link">
-											<a routerLink="wifi-security"
-												id="sa-ov-link-seeAllNetwork"
-												[queryParams]="{isShowMore:false}"
-												vtrMetrics
-												metricsEvent="FeatureClick"
-												metricsItem="seeAllNetwork"
-												title="{{'security.landing.seeAllNetwork' | translate}}">
-												{{'security.landing.seeAllNetwork' | translate}}
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="pull">
-								<img class="logo"
-									[src]="wifiSecurityLandingViewModel.imgUrl|svgInline|async" />
-							</div>
-						</div>
-					</div>
-					<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel"
-						[feature]='windowsHelloLandingViewModel'>
-					</vtr-ui-landing-feature>
-
+				<div class="col-12 p-0 mb-4">
+					<vtr-widget-security
+						[showWindowsHello]="fingerPrintLandingViewModel? true : false"
+						[statusItem]="statusItem"></vtr-widget-security>
 				</div>
 			</div>
+			<section class="landing-nav mb-40">
+				<vtr-widget-landing-nav
+					[baseItems]="baseItems"
+					[intermediateItems]="intermediateItems"
+					[advancedItems]="advanceItems"></vtr-widget-landing-nav>
+			</section>
 		</div>
 	</left-content>
 

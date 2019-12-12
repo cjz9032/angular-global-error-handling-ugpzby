@@ -3,6 +3,7 @@ import { DeviceService } from '../../../services/device/device.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -17,6 +18,7 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public deviceService: DeviceService,
 		public qaService: QaService,
 		private cmsService: CMSService,
@@ -49,10 +51,18 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 					if (this.cardContentPositionA.BrandName) {
 						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 					}
-					if (cardContentPositionA.ActionLink && cardContentPositionA.ActionLink.indexOf('[SerialNumber]') > -1) {
-						this.deviceService.getMachineInfo().then((data) => {
-							this.cardContentPositionA.ActionLink = cardContentPositionA.ActionLink.replace(/\[SerialNumber\]/g, data.serialnumber);
-						});
+					if (cardContentPositionA.ActionLink) {
+						const isHaveSerialNumber = cardContentPositionA.ActionLink.indexOf('[SerialNumber]') > -1;
+						const isWarrantyAposLink = cardContentPositionA.ActionLink.startsWith('https://www.lenovo.com/us/en/warrantyApos');
+						if (isHaveSerialNumber || isWarrantyAposLink) {
+							this.deviceService.getMachineInfo().then((info) => {
+								if (isWarrantyAposLink && info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')) {
+									this.cardContentPositionA.ActionLink = 'https://item.lenovo.com.cn/product/100785.html?pmf_group=qjz&pmf_medium=qjz&pmf_source=Z00009560T000&_ga=2.136201912.800236951.1571628156-244493281.1561709922';
+								} else if (isHaveSerialNumber && info && info.serialnumber) {
+									this.cardContentPositionA.ActionLink = cardContentPositionA.ActionLink.replace(/\[SerialNumber\]/g, info.serialnumber);
+								}
+							});
+						}
 					}
 				}
 			},

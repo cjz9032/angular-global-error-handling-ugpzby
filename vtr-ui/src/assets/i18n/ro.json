@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -615,7 +632,6 @@
             "wifi": "Securitate WiFi",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ACTIVAT",
             "disabled": "DEZACTIVAT",
             "partiallyProtected": "PROTEJAT PARȚIAL",
@@ -625,7 +641,9 @@
             "installing": "SE INSTALEAZĂ",
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
-            "notRegistered": "NEÎNREGISTRAT"
+            "notRegistered": "NEÎNREGISTRAT",
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -688,7 +706,9 @@
         "offlineInfo": {
             "title": "Nu s-a detectat nicio conexiune la internet",
             "subtitle": "Aflați cum puteți rezolva problemele de conexiune în",
-            "buttonText": "Obțineți asistență"
+            "buttonText": "Obțineți asistență",
+            "welcomeToVantage": "Bun venit la următoarea generaţie de Vantage",
+            "systemHealth": "Funcţionare sistem"
         },
         "feedback": {
             "title": "Oferiţi feedback",
@@ -723,8 +743,8 @@
                 "microphoneNote": "Lenovo Vantage nu are acces la microfon.",
                 "cameraPrivacyNote": "Lenovo Vantage nu are acces la cameră."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Prag",
+            "conservation": "Economisire"
         },
         "systemStatus": {
             "title": "Starea sistemului",
@@ -773,10 +793,10 @@
                 "title": "Actualizare sistem",
                 "notFound": "Actualizarea sistemului a fost găsită",
                 "detail": {
-                    "uptoDate": "Software actualizat",
-                    "updatedOn": "actualizat pe",
-                    "outdated": "Software învechit",
-                    "neverRanUpdate": "nu a fost actualizat niciodată"
+                    "uptoDate": "S-a verificat dacă există actualizări ",
+                    "updatedOn": "s-a verificat la ",
+                    "outdated": "Nu s-a verificat recent dacă există actualizări ",
+                    "neverRanUpdate": "nu s-a verificat niciodată dacă există actualizări"
                 }
             },
             "extendedWarranty": "Extindere garanție",
@@ -879,7 +899,7 @@
                     "NotGood": "<b>Bateria nu este în stare bună.</b>",
                     "NotSupportACAdapter": "<b>Adaptorul c.a. nu este acceptat.</b>",
                     "LimitedACAdapterSupport": "<b>Adaptorul c.a. nu poate furniza suficientă putere.</b>",
-                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>.",
+                    "MissingDriver": "<b>Driverul Lenovo Power Manager</b> nu este instalat sau nu funcționează corect. Rulaţi Windows Update pentru a instala cel mai recent driver. Puteți instala driverul și de <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">aici</a>. După instalare, reporniţi computerul.",
                     "StoreLimitation": "<b>Bateria poate stoca doar {{value}}% din</b> capacitatea iniţială completă de încărcare.",
                     "HighTemperature": "<b>Descărcarea</b> a fost oprită, deoarece <b>temperatura bateriei este prea mare.</b>",
                     "TrickleCharge": "Bateria a fost <b>descărcată complet</b> şi trebuie reîncărcată. Această operaţiune poate dura zece ore sau mai mult.",
@@ -887,12 +907,16 @@
                     "PermanentError": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
-                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
+                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>",
+                    "EmDriverInstalled": "Detaliile privind bateria sunt indisponibile. Rulaţi Windows Update->Căutaţi actualizări pentru a instala driverul <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
-                "thresholdNote": "<b>Notă:</b> Pentru a prelungi durata de viaţă a bateriei, aţi setat ca bateria să oprească încărcarea la {{value}}%.",
+                "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
-                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentare",
@@ -968,7 +992,28 @@
                         }
                     },
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
-                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios."
+                    "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
+                    "dytc6": {
+                        "desc1": "Răcirea inteligentă ajustează viteza ventilatorului, performanţa maximă şi gestionează durata de viaţă a bateriei.",
+                        "desc2": "Caracteristica are modurile afişate mai jos şi poate fi reglată acum prin cursorul pentru performanţa de alimentare Windows. O puteţi accesa făcând clic pe pictograma bateriei din bara de sistem Windows.",
+                        "desc3": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a activa modul automat, apăsaţi Fn+T.",
+                        "autoMode": {
+                            "title1": "Mod automat baterie",
+                            "desc1": "Cursorul este în partea stângă. Modul este comutat dinamic în modul silenţios sau în modul baterie – pentru cea mai bună experienţă în modul de alimentare cu c.c.",
+                            "title2": "Mod automat performanţă",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Modul este comutat dinamic în modul silenţios, în modul echilibrat sau în modul performanţă – pentru cea mai bună experienţă în modul de alimentare cu c.a.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
+                        },
+                        "manualMode": {
+                            "title1": "Mod silenţios",
+                            "desc1": "Cursorul este în partea stângă. Viteza şi performanţa ventilatorului sunt mai reduse – pentru un computer mai silenţios, cu o răcire mai bună şi cu cea mai lungă durată de viaţă a bateriei.",
+                            "title2": "Mod echilibrat",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Viteza şi performanţa ventilatorului sunt echilibrate dinamic – pentru cea mai bună experienţă.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Setări alimentare",
@@ -1057,17 +1102,18 @@
                         },
                         "progressText1": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "progressText2": "{{stage}} din {{stageNum}}: se calibrează la nivel scăzut al bateriei",
+                        "progressText3": "{{stage}} din {{stageNum}}: se calibrează la încărcare completă",
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
-                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
-                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
-                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
-                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
-                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
-                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
+                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1076,7 +1122,8 @@
                             "cancel": "Anulare",
                             "yes": "Da",
                             "description3": "Sigur opriţi resetarea indicatorului bateriei?"
-                        }
+                        },
+                        "dual_note": "Notă: numai o singură baterie poate fi resetată la un moment dat."
                     }
                 },
                 "energyStar": {
@@ -1092,7 +1139,7 @@
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
-                        "endTimeNote": "Ora de oprire trebuie să fie în interval de maximum 20 de ore de la ora de pornire",
+                        "endTimeNote": "Ora de OPRIRE trebuie să fie în interval de maximum 20 de ore de la ora de PORNIRE",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minute",
@@ -1112,7 +1159,8 @@
                             "wed": "miercuri",
                             "thurs": "joi",
                             "fri": "vineri",
-                            "sat": "sâmbătă"
+                            "sat": "sâmbătă",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "duminică",
@@ -1125,13 +1173,53 @@
                         },
                         "everyday": "In fiecare zi",
                         "weekdays": "Zilele saptamanii",
-                        "weekends": "Weekend-uri"
+                        "weekends": "Weekend-uri",
+                        "noDaySelected": "Nicio zi selectată"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
                     "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode"
+                    "subTitle": "Programaţi computerul",
+                    "automaticMode": "Mod Automat",
+                    "manualMode": "Mod Manual",
+                    "subNote": "Computerul este programat în Starea de veghe modernă în funcţie de utilizare.",
+                    "graph": {
+                        "graph1Tittle": "Utilizarea acestui computer",
+                        "graph2Tittle": "Timp activ aplicat",
+                        "graphSubtittle": "În aceste perioade de timp, menţinem computerul pregătit pentru o revenire mai rapidă.",
+                        "graphNote": "Datele privind activitatea acestui computer nu sunt suficiente pentru a oferi un profil de programare automată. Starea de veghe inteligentă va utiliza programarea modului Manual până când vor fi disponibile date suficiente.",
+                        "legends": {
+                            "none": "Niciuna",
+                            "frequent": "Frecvent"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
+                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer"
                 }
             },
             "audio": {
@@ -1317,7 +1405,7 @@
                     },
                     "firstKeyObj": {
                         "tittle": "Fn + Tab",
-                        "description": "activați caracteristica zoom pe ecranele de înaltă rezoluție",
+                        "description": "activaţi caracteristica zoom pe ecranele de înaltă rezoluţie",
                         "image": ""
                     },
                     "secondKeyObj": {
@@ -1407,10 +1495,14 @@
                         "title": "APLICARE"
                     },
                     "website": {
-                        "url": "ADRESĂ URL SITE"
+                        "url": "ADRESĂ URL SITE",
+                        "successMessage": "Setările au fost aplicate cu succes.",
+                        "invalidURLMessage": "Introduceţi o adresă URL validă.",
+                        "placeholder": "Începeţi cu http:// sau https://"
                     },
                     "enterText": {
-                        "title": "TEXT DE INTRODUS"
+                        "title": "TEXT DE INTRODUS",
+                        "placeholder": "Tastaţi aici"
                     }
                 },
                 "fnCtrlKey": {
@@ -1814,9 +1906,7 @@
     "security": {
         "landing": {
             "fully": "Complet protejat",
-            "fullyDesc": "Felicitări! Sunteți bine protejat.",
             "notFully": "Neprotejat complet",
-            "notFullyDesc": "Nu sunteți complet protejat. Aflați acum ce puteți face ca să vă protejați mai bine.",
             "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
             "firewall": "Paravan de protecție",
             "pwdHealth": "Sănătatea parolei",
@@ -1825,27 +1915,53 @@
             "wifiConnected": "WiFi și securitate conectată, la domiciliu",
             "connectedHomeSecurity": "Securitate conectată, la domiciliu",
             "fingerprint": "Cititor de amprentă",
-            "seeAllNetwork": "Vizualizați toate rețelele asociate",
-            "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
-            "good": "BUN",
-            "malicious": "RĂU-INTENȚIONAT",
-            "suspicious": "SUSPECTED",
-            "securityScoreDepends": "Rezultatul dvs. de securitate depinde dacă sunteţi:",
-            "antivirus": "Dacă sunteți protejat de software antivirus",
-            "password": "Dacă aveți parole puternice și complexe gestionate într-un mod sigur",
-            "vpn": "Dacă rețeaua dvs. este monitorizată împotriva expunerii la atacatori",
-            "wifi": "Dacă vă criptați datele personale atunci când utilizați rețele WiFi publice",
-            "windowsHello": "Dacă vă protejați dispozitivul utilizând opțiuni de conectare sigure",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Ce este notificarea UAC?",
+            "uacText": "Control cont utilizator (User Account Control – UAC) este o caracteristică de securitate foarte importantă din Windows, care împiedică efectuarea de modificări în sistemul dvs. de programe potenţial dăunătoare.",
+            "windowsTitle": "De ce trebuie să activez Windows?",
+            "windowsText": "Rularea unei copii Windows care nu este originală poate prezenta un risc mai mare împotriva virusurilor şi a altor ameninţări de securitate.",
+            "encryptionTitle": "Ce este criptarea unităţii HDD?",
+            "encryptionText": "Vă ajută să vă protejaţi datele, oferind criptare pentru întreaga unitate HDD împotriva accesului neautorizat, chiar dacă unitatea este scoasă din PC-ul actual şi este introdusă în alte dispozitive.",
+            "passwordTitle": "Cum să vă protejaţi mai bine parola?",
+            "passwordText": "Stocaţi şi gestionaţi în mod securizat toate parolele criptate cu o aplicaţie profesională de protecţie digitală, în loc să le stocaţi pur şi simplu în browserele dvs., care pot fi accesate cu uşurinţă de către terţe părţi, fără cunoştinţa dvs.",
+            "enhanceTitle": "Ce ar trebui să fac pentru a îmbunătăţi protecţia de securitate?",
+            "enhanceText": "Vă recomandăm în mod special să aveţi dispozitivele protejate de software-uri antivirus şi firewall şi să configuraţi notificarea UAC la nivel minim de protecţie. Şi să creaţi parole puternice, să le gestionaţi într-un mod securizat şi să criptaţi datele cu protecţie avansată în timp ce utilizaţi reţele publice.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1931,7 +2047,7 @@
                 "back": "ÎNAPOI"
             },
             "container": {
-                "title": "Securitate Wifi Lenovo",
+                "title": "Securitate WiFi Lenovo",
                 "name": "SECURITATE WIFI",
                 "enable": "ACTIVAT",
                 "disable": "DEZACTIVAT",
@@ -2111,9 +2227,36 @@
         "logout": "Deconectare",
         "unlockExclusives": "Deblocare Exclusive",
         "user": "Utilizator",
-        "welcomeText": "Păreți plin de energie astăzi, {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Păreți plin de energie astăzi!",
+        "welcomeText1": "Păreți plin de energie astăzi, {{firstName}}!",
+        "welcomeText2": "Ne bucurăm să te revedem, {{firstName}}!",
+        "welcomeText3": "Ce surpriză plăcută, {{firstName}}!",
+        "welcomeText4": "Zâmbește, {{firstName}}! Zâmbetul este contagios. :)",
+        "welcomeText5": "Pregătește-te, {{firstName}}!",
+        "welcomeText6": "Te așteaptă o călătorie extraordinară!",
+        "welcomeText7": "Astăzi este ziua ta, {{firstName}}!",
+        "welcomeText8": "Cui îi plac copăceii fericiți?",
+        "welcomeText9": "Distracția continuă, {{firstName}}!",
+        "welcomeText10": "Păstrează-ți calmul și folosește Vantage",
+        "welcomeText11": "Un Vantage mai cuprinzător, la același cost",
+        "welcomeText12": "Adu acasă Vantage",
+        "welcomeText13": "Mănâncă, dormi, Vantage, repetă.",
+        "welcomeText14": "Vremea pentru Vantage e în fiecare clipă",
+        "welcomeText15": "Vantage cât cuprinde",
+        "welcomeTextWithoutUserName1": "Păreți plin de energie astăzi!",
+        "welcomeTextWithoutUserName2": "Ne bucurăm să te revedem!",
+        "welcomeTextWithoutUserName3": "Ce surpriză plăcută!",
+        "welcomeTextWithoutUserName4": "Zâmbește! Zâmbetul este contagios. :)",
+        "welcomeTextWithoutUserName5": "Pregătește-te!",
+        "welcomeTextWithoutUserName6": "Te așteaptă o călătorie extraordinară!",
+        "welcomeTextWithoutUserName7": "Astăzi este ziua ta!",
+        "welcomeTextWithoutUserName8": "Cui îi plac copăceii fericiți?",
+        "welcomeTextWithoutUserName9": "Distracția continuă!",
+        "welcomeTextWithoutUserName10": "Păstrează-ți calmul și folosește Vantage",
+        "welcomeTextWithoutUserName11": "Un Vantage mai cuprinzător, la același cost",
+        "welcomeTextWithoutUserName12": "Adu acasă Vantage",
+        "welcomeTextWithoutUserName13": "Mănâncă, dormi, Vantage, repetă.",
+        "welcomeTextWithoutUserName14": "Vremea pentru Vantage e în fiecare clipă",
+        "welcomeTextWithoutUserName15": "Vantage cât cuprinde",
         "helloUser": "Bună, {{firstName}}!",
         "ssoErrorTitle": "Eroare",
         "ssoErrorCommon": "Ups, am întâmpinat o eroare. Încercaţi din nou.",
@@ -2405,7 +2548,6 @@
         "question5": {
             "title": "Folosiți PC-ul ca o tabletă",
             "description": "<div class='faqInFs4Fb'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 class='faqInFs25FbP10'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 class='faqInFs25FbP10'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 class='faqInFs25FbP10'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2488,10 +2630,11 @@
         "bullets2": "Consultatul de securitate simplifică gestionarea securității (caracteristică disponibilă pe anumite sisteme).",
         "bullets3": "Actualizările automate vă mențin dispozitivul în stare perfectă (caracteristică disponibilă pe anumite sisteme).",
         "subtitle1": "Cum veți utiliza dispozitivul?",
-        "subtitle2": "Spuneți-ne despre interesele dvs",
+        "subtitle2": "Spuneţi-ne care sunt interesele dvs. (opţional)",
         "personal": "Utilizare personală",
         "business": "Utilizare comercială",
         "custom": "Experiență personalizată",
+        "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
         "title1": "Bun venit la",
@@ -2528,9 +2671,12 @@
         "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
         "deviceStatistics": "Partajare date statistice cu Lenovo",
         "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
-        "userProfile": "User profile",
+        "userProfile": "Profil utilizator",
         "Note": "Notă: ",
-        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației."
+        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
+        "betaSettingTitle": "Program beta",
+        "betaProgram": "Program beta",
+        "betaSettingDescription": "Cele mai recente caracteristici la care lucrăm."
     },
     "modernPreload": {
         "cancel": "Anulare",
@@ -2659,7 +2805,8 @@
                 "description": "Executarea scanării și a reparării poate duce la pierderea datelor. Se recomandă efectuarea unei copii de siguranță înainte de a executa această operație. Sigur doriți să continuați?",
                 "yes": "Da",
                 "no": "Nu"
-            }
+            },
+            "waitAvailability": "Butonul este dezactivat atunci când informaţiile hardware nu au fost încă preluate, dacă dispozitivele de stocare nu acceptă această funcţionalitate sau atunci când se execută recuperarea sectoarelor defecte."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",
@@ -2684,11 +2831,221 @@
         "cancelTextPrompt": "Sigur anulaţi?",
         "cancelTextProgress": "Aşteptaţi anularea progresului",
         "pluginNotUpdate": "Scanarea hardware nu este disponibilă deoarece este depăşită. Vă rugăm să o actualizaţi.",
-        "testNotApplicable": "Nu se aplică la scanarea personalizată"
+        "testNotApplicable": "Nu se aplică la scanarea personalizată",
+        "waitScanStarts": "Aşteptaţi până când începe scanarea",
+        "reminderTimeRetrieveHardwareInformation": "Acest proces poate dura un timp cât timp se preiau informaţiile despre hardware",
+        "retrievingHardwareInformation": "Se preiau informaţiile despre hardware...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Memorie",
+            "motherboard": "Placa de bază",
+            "pci_express": "PCI Express",
+            "storage": "Stocare",
+            "wireless": "Fără fir"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2706,6 +3063,7 @@
             "installButton": {
                 "install": "Instalare",
                 "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
                 "installed": "Instalat",
                 "launch": "Lansare",
                 "seeMore": "Vedeţi mai multe"
@@ -2802,7 +3160,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

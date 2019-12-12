@@ -17,7 +17,7 @@
                         "balText": "Normal CPU ve fan hızı",
                         "quietText": "Düşük CPU kullanımı Düşük fan hızı"
                     },
-                    "wifiSecurity": "Wifi Güvenliği",
+                    "wifiSecurity": "WiFi Güvenliği",
                     "dolby": "Dolby",
                     "rapidCharge": "Hızlı Şarj"
                 },
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -615,7 +632,6 @@
             "wifi": "WiFi Güvenliği",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "ETKİN",
             "disabled": "DEVRE DIŞI",
             "partiallyProtected": "KISMEN KORUNUYOR",
@@ -625,7 +641,9 @@
             "installing": "YÜKLENİYOR",
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
-            "notRegistered": "KAYITLI DEĞİL"
+            "notRegistered": "KAYITLI DEĞİL",
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -688,7 +706,9 @@
         "offlineInfo": {
             "title": "Internet bağlantısı saptanmadı",
             "subtitle": "Bağlantı sorunlarının nasıl çözüleceğini öğrenmek için",
-            "buttonText": "Destek Alın"
+            "buttonText": "Destek Alın",
+            "welcomeToVantage": "Yeni nesil Vantage'a hoş geldiniz",
+            "systemHealth": "Sistem Sağlığı"
         },
         "feedback": {
             "title": "Geri Bildirim Gönder",
@@ -723,8 +743,8 @@
                 "microphoneNote": "Lenovo Vantage, Mikrofon'a erişemiyor.",
                 "cameraPrivacyNote": "Lenovo Vantage, Kamera'ya erişemiyor."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Eşik",
+            "conservation": "Tasarruf"
         },
         "systemStatus": {
             "title": "Sistem Durumu",
@@ -773,10 +793,10 @@
                 "title": "Sistem Güncellemesi",
                 "notFound": "Sistem güncellemesi bulunamadı",
                 "detail": {
-                    "uptoDate": "Yazılım güncel",
-                    "updatedOn": "güncelleme",
-                    "outdated": "Yazılım güncel değil",
-                    "neverRanUpdate": "hiç güncelleme çalıştırılmadı"
+                    "uptoDate": "Güncellemeler denetlendi ",
+                    "updatedOn": "denetlenme tarihi ",
+                    "outdated": "Güncellemeler yakın zamanda denetlenmedi ",
+                    "neverRanUpdate": "güncellemeler hiç denetlenmedi"
                 }
             },
             "extendedWarranty": "Garantiyi uzat",
@@ -879,7 +899,7 @@
                     "NotGood": "<b>Pil iyi durumda değil.</b>",
                     "NotSupportACAdapter": "<b>AC bağdaştırıcısı desteklenmiyor.</b>",
                     "LimitedACAdapterSupport": "<b>AC bağdaştırıcısı yeterli güç sağlayamıyor.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz.",
+                    "MissingDriver": "<b>Lenovo Power Manager sürücüsü</b> yüklü değil veya düzgün çalışmıyor. En son sürücüyü yüklemek için lütfen Windows Update'i çalıştırın. Sürücüyü <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">buradan</a> da yükleyebilirsiniz. Kurulumdan sonra bilgisayarınızı yeniden başlatın.",
                     "StoreLimitation": "<b>Pil orijinal tam dolum kapasitesinin yalnızca {{value}}% kadarını</b> depolayabilir.",
                     "HighTemperature": "<b>Pil çok ısındığı için</b> <b>boşaltma</b> işlemi durduruldu.",
                     "TrickleCharge": "Pil <b>tamamen boşaldı</b> ve yeniden doldurulması gerekiyor. Doldurma işlemi on saat ya da daha fazla sürebilir.",
@@ -887,12 +907,17 @@
                     "PermanentError": "Pil kapasitesi <b>düştü</b>. Lütfen yenisiyle değiştirin.",
                     "NotSupportACAdapterDetail": "<b>AC bağdaştırıcısı desteklenmiyor.</b> Lenovo bilgisayarınız bu AC bağdaştırıcısını desteklemiyor. Aniden kapanmaya neden olabilir. Lütfen doğru AC bağdaştırıcısını bağlayın.",
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>",
+                    "EmDriverInstalled": "Pil ayrıntıları kullanılamıyor. Windows Update->Güncelleştirmeleri denetle seçeneğini kullanarak <b>Lenovo ACPI - Compliant Virtual Power Controller</b> sürücüsünü yükleyin."
+
                 },
                 "batteryNotDetected": "Pil algılanmadı",
-                "thresholdNote": "<b>Not:</b> Pilin ömrünü uzatmak için doldurma işleminin {{value}}% olduğunda durdurulmasını seçtiniz.",
+                "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
                 "seeDetailsLink": "Ayrıntıları görün",
-                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun."
+                "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Güç",
@@ -968,7 +993,28 @@
                         }
                     },
                     "description5": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir. Bu özelliğin 3 kipi (Sessiz kip, Dengeli kip ve Performans kipi) vardır ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir",
-                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur."
+                    "nocqldesc": "Akıllı Soğutma, sistem performansını ve termal sıcaklığı ayarlamanıza olanak tanır. “Performans” kipinde, sistem performansını iyileştirir. “Hızlı ve sessiz” kipinde, sistemin daha hızlı veya daha sessiz çalışmasına yardımcı olur.",
+                    "dytc6": {
+                        "desc1": "Akıllı Soğutma fan hızını ve maksimum performansı ayarlar, ayrıca pilinizin ömrünü yönetir.",
+                        "desc2": "Özellik aşağıda listelenen kiplere sahiptir ve artık Windows performans güç kaydırıcısından ayarlanmaktadır. Windows sistem tepsisindeki pil simgesine tıklayarak erişebilirsiniz.",
+                        "desc3": "Kiplerden bazıları, etkinliğinize göre otomatik olarak daha geniş bir performans aralığına ayarlanabilir. Otomatik kipi etkinleştirmek için Fn+T tuşlarına basın.",
+                        "autoMode": {
+                            "title1": "Otomatik Pil kipi",
+                            "desc1": "Kaydırıcı soldadır. En iyi DC kipi deneyimi için kip dinamik bir şekilde Sessiz veya Pil kipine geçirilir.",
+                            "title2": "Otomatik Performans kipi",
+                            "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi AC kipi deneyimi için kip dinamik bir şekilde Sessiz, Dengeli veya Performans kipine geçirilir.",
+                            "title3": "Performans kipi",
+                            "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
+                        },
+                        "manualMode": {
+                            "title1": "Sessiz kipi",
+                            "desc1": "Kaydırıcı soldadır. Daha serin, daha sessiz bir bilgisayar ve en iyi pil ömrü için fan hızı ve performans düşürülür.",
+                            "title2": "Dengeli kipi",
+                            "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
+                            "title3": "Performans kipi",
+                            "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Güç Ayarları",
@@ -1057,17 +1103,18 @@
                         },
                         "progressText1": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "progressText2": "{{stage}} / {{stageNum}}: Düşük pil gücü için kalibre ediliyor",
+                        "progressText3": "{{stage}} / {{stageNum}}: Tam şarj için kalibre ediliyor",
                         "FCCText": "{{before}} Wh - {{after}} Wh",
                         "note": "Not: Pil göstergesini sıfırlamadan önce, bilgisayarınızı AC gücüne bağladığınızdan emin olun. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Tamamlandı. Başarılı sıfırlama.",
-                            "ERROR_SHUTDOWN": "Tamamlanmadı. Sistemi kapat.",
-                            "ERROR_LOGOFF": "Tamamlanmadı. Kullanıcı oturumunu kapat.",
-                            "ERROR_BATTERY_REMOVE": "Tamamlanmadı. Pil çıkarıldı.",
-                            "ERROR_BATTERY_REPLACE": "Tamamlanmadı. Pil değiştirildi.",
-                            "ERROR_AC_DETTACH": "Tamamlanmadı. AC güç bağdaştırıcısı çıkarıldı.",
-                            "ERROR_USER_CANCEL": "Tamamlanmadı. Kullanıcı tarafından iptal edildi.",
-                            "ERROR_UNEXPECTED": "Tamamlanmadı. Beklenmedik bir hata oluştu."
+                            "ERROR_SUCCESS": "Tamamlandı: Başarılı sıfırlama.",
+                            "ERROR_SHUTDOWN": "Başarısız: Sistem kapatıldı.",
+                            "ERROR_LOGOFF": "Başarısız: Kullanıcı oturumu kapatıldı.",
+                            "ERROR_BATTERY_REMOVE": "Başarısız: Pil çıkarıldı.",
+                            "ERROR_BATTERY_REPLACE": "Başarısız: Pil değiştirildi.",
+                            "ERROR_AC_DETTACH": "Başarısız: AC güç bağdaştırıcısı çıkarıldı.",
+                            "ERROR_USER_CANCEL": "Başarısız: Kullanıcı tarafından iptal edildi.",
+                            "ERROR_UNEXPECTED": "Başarısız: Beklenmedik bir hata oluştu."
                         },
                         "popup": {
                             "description1": "Sıfırlama işlemi şöyledir:<br>Pili tamamen doldurma  -->  Pili tamamen boşaltma  -->  Pili tamamen yeniden doldurma",
@@ -1076,7 +1123,8 @@
                             "cancel": "İptal",
                             "yes": "Evet",
                             "description3": "Pil göstergesi sıfırlama işlemini durdurmak istediğinizden emin misiniz?"
-                        }
+                        },
+                        "dual_note": "Not: Aynı anda yalnızca bir pil sıfırlanabilir."
                     }
                 },
                 "energyStar": {
@@ -1092,7 +1140,7 @@
                         "subHeading1": "bu alanın",
                         "subHeading2": "bitiş",
                         "subHeading3": "bu zamanlamanın kullanılacağı zaman",
-                        "endTimeNote": "Bitiş saati, Başlangıç saatinden sonraki 20 saat içinde olmalıdır",
+                        "endTimeNote": "BİTİŞ saati, BAŞLANGIÇ saatinden sonraki 20 saat içinde olmalıdır",
                         "timeUnits": {
                             "unit1": "Saat",
                             "unit2": "Dakika",
@@ -1112,7 +1160,8 @@
                             "wed": "Çarşamba",
                             "thurs": "Perşembe",
                             "fri": "Cuma",
-                            "sat": "Cumartesi"
+                            "sat": "Cumartesi",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Pazar",
@@ -1125,13 +1174,53 @@
                         },
                         "everyday": "Her gün",
                         "weekdays": "Hafta içi",
-                        "weekends": "Hafta sonları"
+                        "weekends": "Hafta sonları",
+                        "noDaySelected": "Gün seçilmedi"
                     },
                     "checkbox": "Bilgisayarınızın etkinlik süresini kullanımınıza göre otomatik ayarlama",
                     "hyperlinkToGraph": "Etkinlik ve bilgisayarınızın etkinlik süresine ilişkin tabloyu görmek için tıklatın",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode"
+                    "subTitle": "Bilgisayarınızı zamanlama",
+                    "automaticMode": "Otomatik kip",
+                    "manualMode": "Manuel kip",
+                    "subNote": "Bilgisayarınız, kullanımınıza dayalı olarak Modern Bekleme Durumu kipine ayarlanmıştır.",
+                    "graph": {
+                        "graph1Tittle": "Bu bilgisayarın kullanımı",
+                        "graph2Tittle": "Uygulanan etkin zaman",
+                        "graphSubtittle": "Bu zaman aralıklarında, bilgisayarı hazır tutarak beklemeden daha hızlı çıkmasını sağlarız.",
+                        "graphNote": "Bu bilgisayarın etkinlik verileri, otomatik zamanlamaya yönelik bir profil sağlamak için yeterli değil. Akıllı Bekleme, yeterli veri toplanıncaya kadar Manuel kip zamanlamasını kullanacak.",
+                        "legends": {
+                            "none": "Hiçbiri",
+                            "frequent": "Sık"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
+                    "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın"
                 }
             },
             "audio": {
@@ -1407,10 +1496,14 @@
                         "title": "UYGULA"
                     },
                     "website": {
-                        "url": "WEB SİTESİ URL'Sİ"
+                        "url": "WEB SİTESİ URL'Sİ",
+                        "successMessage": "Ayarlar başarıyla uygulandı.",
+                        "invalidURLMessage": "Lütfen geçerli bir URL girin.",
+                        "placeholder": "Lütfen http:// veya https:// ile başlayın"
                     },
                     "enterText": {
-                        "title": "GİRİLECEK METİN"
+                        "title": "GİRİLECEK METİN",
+                        "placeholder": "Lütfen buraya yazın"
                     }
                 },
                 "fnCtrlKey": {
@@ -1814,9 +1907,7 @@
     "security": {
         "landing": {
             "fully": "Tam korunuyor",
-            "fullyDesc": "Tebrikler! Çok iyi korunuyorsunuz.",
             "notFully": "Tam olarak korunmuyor",
-            "notFullyDesc": "Tam olarak korunmuyorsunuz. Kendinizi nasıl daha iyi koruyabileceğinizi öğrenin.",
             "security101": "GÜVENLİK DANIŞMANI 101",
             "firewall": "Güvenlik Duvarı",
             "pwdHealth": "Parola Durumu",
@@ -1825,27 +1916,53 @@
             "wifiConnected": "WiFi ve Bağlı Ev Güvenliği",
             "connectedHomeSecurity": "Bağlı Ev Güvenliği",
             "fingerprint": "Parmak İzi Okuyucu",
-            "seeAllNetwork": "Katılım sağlanan tüm ağları göster",
-            "maliciousNetwork": "Bu ay bilgisayarınızın {{maliciousWifi}} kötü amaçlı ağa katılması önlendi.",
-            "good": "İYİ",
-            "malicious": "KÖTÜ AMAÇLI",
-            "suspicious": "ŞÜPHELİ",
-            "securityScoreDepends": "Güvenlik sonucunuz aşağıdakilere bağlıdır:",
-            "antivirus": "Antivirüs yazılımı tarafından korunup korunmadığınız",
-            "password": "Güvenli bir şekilde yönetilen, güçlü ve karmaşık parolalarınızın olup olmaması",
-            "vpn": "Ağınızın saldırganlara ne kadar açık olduğunu izleyip izlemediğiniz",
-            "wifi": "Genel WiFi kullanırken kişisel verilerinizi şifreleyip şifrelemediğiniz",
-            "windowsHello": "Güvenli oturum seçenekleri kullanarak cihazınızı koruyup korumadığınız",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "UAC bildirimi nedir?",
+            "uacText": "Kullanıcı Hesabı Denetimi, zararlı olabilecek programların sisteminizde değişiklik yapmasını önlemeye yardımcı olan çok önemli bir Windows güvenlik özelliğidir.",
+            "windowsTitle": "Neden etkin bir Windows'a ihtiyacım var?",
+            "windowsText": "Orijinal olmayan bir Windows kopyası çalıştırmak sizi virüslere ve diğer güvenlik tehditlerine karşı daha büyük risk altında bırakabilir.",
+            "encryptionTitle": "Sabit Sürücü Şifrelemesi nedir?",
+            "encryptionText": "Sabit sürücünün tamamı için şifreleme sağlayarak sürücü geçerli bilgisayardan çıkarılıp başka cihazlara yerleştirilse bile verilerinizin yetkisiz erişime karşı korunmasına yardımcı olur.",
+            "passwordTitle": "Parolalar nasıl daha iyi korunur?",
+            "passwordText": "Tüm parolalarınızı 3. tarafların bilginiz olmadan kolayca erişebileceği tarayıcılarınızda saklamak yerine, profesyonel bir dijital koruma uygulamasıyla şifreleyerek güvenle saklayın ve yönetin.",
+            "enhanceTitle": "Güvenlik korumasını geliştirmek için ne yapmalıyım?",
+            "enhanceText": "Cihazlarınızı virüsten koruma yazılımı ve güvenlik duvarı ile korumanızı, UAC bildirimini minimum koruma düzeyine ayarlamanızı önemle tavsiye ederiz. Ayrıca, güçlü parolalar oluşturun ve bunları güvenli bir şekilde yönetin; gelişmiş koruma olarak genel ağları kullanırken verilerinizi şifreleyin.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1931,7 +2048,7 @@
                 "back": "GERİ"
             },
             "container": {
-                "title": "Lenovo Wifi Güvenliği",
+                "title": "Lenovo WiFi Güvenliği",
                 "name": "WIFI GÜVENLİĞİ",
                 "enable": "ETKİN",
                 "disable": "DEVRE DIŞI",
@@ -1941,7 +2058,7 @@
                 "connect": "Son bağlantı",
                 "showmore": "Daha fazlasını göster",
                 "showless": "Ayrıntıları gizle",
-                "button": "Wifi güvenliğini etkinleştirin",
+                "button": "WiFi güvenliğini etkinleştirin",
                 "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
             },
             "threatlocator": {
@@ -2016,7 +2133,7 @@
                 "pass": "BAŞARILI OLDU",
                 "learnMoreAboutSecurityHealth": "Bu bileşenlerin her biri hakkında daha fazla bilgiyi <tag>burada</tag> bulabilirsiniz.",
                 "peaceOfMind": "Daha huzurlu olmak ister misiniz?",
-                "button": "Wifi güvenliğini etkinleştirin"
+                "button": "WiFi güvenliğini etkinleştirin"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2111,9 +2228,36 @@
         "logout": "Oturumu kapat",
         "unlockExclusives": "Özellerin Kilidini Aç",
         "user": "Kullanıcı",
-        "welcomeText": "Bugün çok dinç görünüyorsun {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Bugün çok dinç görünüyorsun!",
+        "welcomeText1": "Bugün çok dinç görünüyorsun, {{firstName}}!",
+        "welcomeText2": "Seni tekrar gördüğüme sevindim, {{firstName}}",
+        "welcomeText3": "Ne hoş bir sürpriz, {{firstName}}",
+        "welcomeText4": "Gülümse, {{firstName}}, gülümsemek bulaşıcıdır :)",
+        "welcomeText5": "Tak, tak, {{firstName}}",
+        "welcomeText6": "Harika yerlere gidiyorsun!",
+        "welcomeText7": "Bugün senin günün, {{firstName}}!",
+        "welcomeText8": "Kim mutlu küçük ağaçları sever?",
+        "welcomeText9": "Eğlenceye devam, {{firstName}}!",
+        "welcomeText10": "Sakin ol ve Vantage'ı açık tut",
+        "welcomeText11": "Paranın karşılığında daha büyük bir Vantage",
+        "welcomeText12": "Vantage'ı eve getir",
+        "welcomeText13": "Ye, uyu, Vantage, tekrar et",
+        "welcomeText14": "Her an yeni bir Vantage",
+        "welcomeText15": "Dolu dolu Vantage",
+        "welcomeTextWithoutUserName1": "Bugün çok dinç görünüyorsun!",
+        "welcomeTextWithoutUserName2": "Seni tekrar gördüğüme sevindim",
+        "welcomeTextWithoutUserName3": "Ne hoş bir sürpriz",
+        "welcomeTextWithoutUserName4": "Gülümse, gülümsemek bulaşıcıdır :)",
+        "welcomeTextWithoutUserName5": "Tak, tak",
+        "welcomeTextWithoutUserName6": "Harika yerlere gidiyorsun!",
+        "welcomeTextWithoutUserName7": "Bugün senin günün!",
+        "welcomeTextWithoutUserName8": "Kim mutlu küçük ağaçları sever?",
+        "welcomeTextWithoutUserName9": "Eğlenceye devam!",
+        "welcomeTextWithoutUserName10": "Sakin ol ve Vantage'ı açık tut",
+        "welcomeTextWithoutUserName11": "Paranın karşılığında daha büyük bir Vantage",
+        "welcomeTextWithoutUserName12": "Vantage'ı eve getir",
+        "welcomeTextWithoutUserName13": "Ye, uyu, Vantage, tekrar et",
+        "welcomeTextWithoutUserName14": "Her an yeni bir Vantage",
+        "welcomeTextWithoutUserName15": "Dolu dolu Vantage",
         "helloUser": "Merhaba, {{firstName}}!",
         "ssoErrorTitle": "Hata",
         "ssoErrorCommon": "Hay aksi, bir hatayla karşılaştık. Lütfen tekrar deneyin.",
@@ -2405,7 +2549,6 @@
         "question5": {
             "title": "Bilgisayarınızın tablet gibi kullanılması",
             "description": "<div class='faqInFs4Fb'>    Bilgisayarınızın tablet gibi kullanılması</div><hr><p>Tablet modu, dokunmatik ekranlı bir cihazınız varsa Windows'u daha sezgisel ve kullanımı kolay hale getirir.</p><h3 class='faqInFs25FbP10'>Tablet modunun kullanılması</h3><p>Tablet modunu açmak için görev çubuğunda <strong>işlem merkezini</strong> açın, ardından <strong>Tablet mode</strong> (Tablet modu) seçeneğini belirleyin.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Not</h3><p>Cihazınızın tablet modunu otomatik olarak açıp açamayacağını öğrenmek için üreticinin web sitesinde cihazınızı arayın. Bu özelliğe yönelik destek donanıma, yüklü sürücüye ve cihazın üretici tarafından nasıl ayarlandığına bağlıdır. </p><p> </p><p>Tablet modunda, uygulamalar tam ekran olarak açılarak size daha fazla çalışma alanı sağlar. Uygulamayı kapatmak için ekranın altına doğru sürükleyin.</p><p> </p><h3 class='faqInFs25FbP10'>İpucu</h3><p>Bilgisayarınız tablet modundayken görev çubuğu kullanılabilir ancak ekranda daha fazla yer açmak istiyorsanız görev çubuğunu gizleyebilirsiniz. <strong>Start </strong>(Başlat) düğmesini seçin, <strong>Settings </strong>(Ayarlar) > <strong>System </strong>(Sistem) > <strong> Tablet mode </strong>(Tablet modu) seçeneğini belirleyin, ardından <strong>Automatically hide the taskbar in tablet mode</strong> (Tablet modunda görev çubuğunu otomatik olarak gizle) seçeneğini açın. Gizli görev çubuğunu görmek için ekranın alt kısmından yukarı doğru kaydırın veya farenizi kullanarak üzerine gelin.</p><h3 class='faqInFs25FbP10'>İki uygulamanın aynı anda kullanılması</h3><p>Tablet modunda iki uygulamayı yan yana kullanmak için açık olan bir uygulamayı aşağı ve yana doğru sürükleyin. Nereye tutturulacağı gösterilir ve uygulamanın yanında açık olan diğer uygulamaları görürsünüz.</p><p>Bu görünümde şunları da yapabilirsiniz:</p><ul>    <li>Her iki uygulamayı aynı anda yeniden boyutlandırmak için iki tutturulmuş uygulama arasındaki paylaşılan kenarı kullanın.</li>    <li>Görev görünümünden yeni bir uygulama açın. Görev çubuğunda <strong>Task view</strong> (Görev görünümü) öğesini seçin, bir uygulama belirleyin, ardından bölünmüş ekranınıza tutturmak için bir tarafa sürükleyin.</li>    <li>Bir uygulamaya geri dönmek veya daha önce kullandığınız bir uygulamayı açmak için görev çubuğundaki geri düğmesini kullanın.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2488,10 +2631,11 @@
         "bullets2": "Güvenlik Danışmanı, güvenliğinizin yönetimini kolaylaştırır (seçili sistemlerde bulunur).",
         "bullets3": "Otomatik güncellemeler, cihazınızı en iyi durumda tutar (seçili sistemlerde bulunur).",
         "subtitle1": "Cihazınızı nasıl kullanacaksınız?",
-        "subtitle2": "Bize ilgi alanlarınızdan bahsedin",
+        "subtitle2": "Bize ilgi alanlarınızdan bahsedin (isteğe bağlı)",
         "personal": "Kişisel Kullanım",
         "business": "İş Amaçlı Kullanım",
         "custom": "Özel Deneyim",
+        "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
         "title1": "WRITEit'e hoş geldiniz",
@@ -2528,9 +2672,12 @@
         "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
         "deviceStatistics": "İstatistik verilerini Lenovo ile paylaş",
         "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
-        "userProfile": "User profile",
+        "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
-        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir."
+        "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
+        "betaSettingTitle": "Beta Programı",
+        "betaProgram": "Beta Programı",
+        "betaSettingDescription": "Üzerinde çalışmakta olduğumuz en yeni özellikleri deneyin."
     },
     "modernPreload": {
         "cancel": "İptal",
@@ -2659,7 +2806,8 @@
                 "description": "Tarama ve onarım işleminin yürütülmesi veri kaybına neden olabilir. Bu işlemi yürütmeden önce yedekleme yapmanız önerilir. Devam etmek istediğinizden emin misiniz?",
                 "yes": "Evet",
                 "no": "Hayır"
-            }
+            },
+            "waitAvailability": "Donanım bilgileri henüz alınmadıysa, depolama cihazlarının bu işlevi desteklememe olasılığına karşı veya bozuk kesimleri kurtar aracı çalıştırılırken düğme devre dışı bırakılır."
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
@@ -2684,11 +2832,221 @@
         "cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
         "cancelTextProgress": "Lütfen ilerlemeyi iptal etmek için bekleyin",
         "pluginNotUpdate": "Donanım Taraması, eski sürümde olduğundan kullanılamıyor. Lütfen yükseltin.",
-        "testNotApplicable": "Özel tarama için geçerli değildir"
+        "testNotApplicable": "Özel tarama için geçerli değildir",
+        "waitScanStarts": "Tarama başlayana kadar bekleyin",
+        "reminderTimeRetrieveHardwareInformation": "Bu işlemin donanım bilgilerinizi toplaması biraz zaman alabilir",
+        "retrievingHardwareInformation": "Donanım bilgileri alınıyor...",
+        "pluginTokens": {
+            "cpu": "İşlemci",
+            "memory": "Bellek",
+            "motherboard": "Ana kart",
+            "pci_express": "PCI Express",
+            "storage": "Depolama alanı",
+            "wireless": "Kablosuz"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2706,6 +3064,7 @@
             "installButton": {
                 "install": "Kur",
                 "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
                 "installed": "Kurulu",
                 "launch": "Başlat",
                 "seeMore": "Daha Fazla"
@@ -2802,7 +3161,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

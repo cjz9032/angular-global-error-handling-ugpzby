@@ -1,0 +1,40 @@
+<section class="vtr-widget-landing-security">
+    <div *ngFor="let item of items" class="item">
+        <div *ngIf="item" class="d-flex flex-nowrap">
+            <div class="text-center">
+                <span [ngClass]="['icomoon', 'icomoon-' + item.icon]"></span>
+            </div>
+            <section class="landing-content">
+                <div class="row">
+                    <h3>{{item.title}}</h3>
+                </div>
+                <p>{{item.content}}</p>
+                <vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
+                    [routerPath]="item.buttonLink" [ngClass]="{'white-button':item.status === 'enabled'}">
+                </vtr-ui-button>
+                <vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
+                    [ngClass]="{'white-button':item.status === 'enabled'}">
+                </vtr-ui-button>
+                <vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
+                    [ngClass]="{'white-button':item.status === 'enabled'}"
+                    (onClick)="item.launch()">
+                </vtr-ui-button>
+                <div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck-{{item.id}}"
+                        [checked]="item.showOwn" attr.aria-label="defaultUnchecked" (change)="haveOwn(item.showOwn, item.id)">
+                    <label class="custom-control-label" for="customCheck-{{item.id}}">
+                        {{item.ownTitle}}
+                    </label>
+                </div>
+            </section>
+            <span *ngIf="!item.showOwn" class="badge d-flex align-items-center ml-auto"
+            [ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' , 
+                    'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
+                    'status-loading': item.status === 'loading' || item.status === 'installing'}">
+                {{item.detail}}</span>
+            <span *ngIf="item.showOwn" class="badge d-flex align-items-center status-haveOwn ml-auto">
+                {{badgeContent | translate}}</span>
+        </div>
+        <hr>
+    </div>
+</section>

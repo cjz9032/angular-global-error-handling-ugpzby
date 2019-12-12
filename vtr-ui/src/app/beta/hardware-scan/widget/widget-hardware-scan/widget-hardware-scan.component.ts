@@ -11,6 +11,7 @@ import { HardwareScanService } from '../../services/hardware-scan/hardware-scan.
 export class WidgetHardwareScanComponent implements OnInit {
 	@Input() title: string = this.title || '';
 	@Input() subTitle: string = this.subTitle || '';
+	@Input() warningMessage = this.translate.instant('hardwareScan.warningMessage');
 	@Input() finalResultCode: string = this.finalResultCode || '';
 	@Input() finalResultCodeText: string = this.finalResultCodeText || '';
 	@Input() buttonText = '';

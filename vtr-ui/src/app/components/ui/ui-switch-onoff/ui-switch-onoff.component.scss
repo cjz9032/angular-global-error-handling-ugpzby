@@ -6,12 +6,19 @@
 	cursor: pointer;
 	label {
 		cursor: pointer;
-		.switch-label, .switch {
+		.switch-label,
+		.switch {
 			cursor: pointer;
 		}
 	}
 	&.switch-disable {
 		pointer-events: none;
+	}
+}
+.switch-disable {
+	pointer-events: none;
+	.switch {
+		background: #e6eaeb !important;
 	}
 }
 
@@ -48,7 +55,7 @@
 
 input + .switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
-	margin-right: 0.7rem;
+	// margin-right: 0.7rem; // changed to match the UI Mockup.
 	@media #{$black-on-white} {
 		background: $dark;
 	}

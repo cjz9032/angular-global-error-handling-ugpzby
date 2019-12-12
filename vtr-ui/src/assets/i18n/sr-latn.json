@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -615,7 +632,6 @@
             "wifi": "WiFi bezbednost",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
-            "windowsHello": "Windows Hello",
             "enabled": "OMOGUĆENO",
             "disabled": "ONEMOGUĆENO",
             "partiallyProtected": "DELIMIČNO ZAŠTIĆEN",
@@ -625,7 +641,9 @@
             "installing": "INSTALIRA SE",
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
-            "notRegistered": "NIJE REGISTROVAN"
+            "notRegistered": "NIJE REGISTROVAN",
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -688,7 +706,9 @@
         "offlineInfo": {
             "title": "Nije otkrivena veza sa internetom",
             "subtitle": "Saznajte više kako da rešite probleme sa vezom u našem članku",
-            "buttonText": "Pronađite podršku"
+            "buttonText": "Pronađite podršku",
+            "welcomeToVantage": "Dobro došli u sledeću generaciju programa Vantage",
+            "systemHealth": "Ispravnost sistema"
         },
         "feedback": {
             "title": "Pružite povratne informacije",
@@ -723,8 +743,8 @@
                 "microphoneNote": "Lenovo Vantage nema pristup mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Prag",
+            "conservation": "Ušteda"
         },
         "systemStatus": {
             "title": "Status sistema",
@@ -773,10 +793,10 @@
                 "title": "Ažuriranje sistema",
                 "notFound": "Ažuriranje sistema nije pronađeno",
                 "detail": {
-                    "uptoDate": "Softver je ažuran",
-                    "updatedOn": "ažurirano",
-                    "outdated": "Softver je zastareo",
-                    "neverRanUpdate": "nikada nije pokrenuto ažuriranje"
+                    "uptoDate": "Ispravke su proverene ",
+                    "updatedOn": "provereno ",
+                    "outdated": "Ispravke nisu nedavno proverene ",
+                    "neverRanUpdate": "ispravke nikada nisu proverene"
                 }
             },
             "extendedWarranty": "Proširenje garancije",
@@ -879,7 +899,7 @@
                     "NotGood": "<b>Baterija nije u dobrom stanju.</b>",
                     "NotSupportACAdapter": "<b>Adapter za naizmeničnu struju nije podržan.</b>",
                     "LimitedACAdapterSupport": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje.</b>",
-                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>.",
+                    "MissingDriver": "<b>Lenovo Power Manager upravljački program</b> nije instaliran ili ne radi ispravno. Pokrenite Windows Update da biste instalirali najnoviji upravljački program. Upravljački program možete da instalirate sa lokacije koja se nalazi <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">ovde</a>. Nakon instalacije, ponovo pokrenite računar.",
                     "StoreLimitation": "<b>Baterija može da uskladišti samo {{value}}%</b> svog originalnog punog kapaciteta.",
                     "HighTemperature": "<b>Pražnjenje</b> je zaustavljeno zato što je <b>temperatura baterije previsoka.</b>",
                     "TrickleCharge": "Baterija je u <b>potpunosti ispražnjena</b> i mora da se napuni. To može potrajati deset sati ili duže.",
@@ -887,12 +907,16 @@
                     "PermanentError": "Kapacitet baterije je <b>smanjen</b>. Zamenite je novom.",
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
                     "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>",
+                    "EmDriverInstalled": "Detalji o bateriji nisu dostupni. Pokrenite Windows Update-> Proveri da li postoje ispravke da biste instalirali upravljački program <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
-                "thresholdNote": "<b>Napomena:</b> Da biste produžili životni vek baterije, podesili ste da baterija prestane da se puni kada je na {{value}}%.",
+                "thresholdNote": "<b>Napomena:</b> Baterija se ne može automatski napuniti kada je omogućen Prag punjenja baterije.",
                 "seeDetailsLink": "Pogledajte detalje",
-                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen."
+                "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napajanje",
@@ -968,7 +992,28 @@
                         }
                     },
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
-                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“"
+                    "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
+                    "dytc6": {
+                        "desc1": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije.",
+                        "desc2": "Ova funkcija ima režime navedene u nastavku i sada je prilagođava klizač za performanse napajanja operativnog sistema Windows. Možete joj pristupiti tako što ćete kliknuti na ikonu baterije na Windows sistemskoj paleti.",
+                        "desc3": "Neki od režima se mogu automatski prilagoditi većem opsegu performansi na osnovu vaše aktivnosti. Da biste omogućili automatski režim, pritisnite kombinaciju tastera Fn+T.",
+                        "autoMode": {
+                            "title1": "Režim automatske baterije",
+                            "desc1": "Klizač je sa leve strane. Režim se dinamički prebacio na Tihi režim ili Režim baterije za najbolji utisak pri radu u DC režimu rada.",
+                            "title2": "Režim automatskog učinka",
+                            "desc2": "Klizač je na sredini ili na sredini desno. Režim se dinamički prebacio na Tihi režim, Ujednačeni režim ili Režim učinka za najbolji utisak pri radu u AC režimu rada.",
+                            "title3": "Režim učinka",
+                            "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
+                        },
+                        "manualMode": {
+                            "title1": "Tihi režim",
+                            "desc1": "Klizač je sa leve strane. Brzina i performanse ventilatora su smanjene za hladniji, tiši računar i najduže trajanje baterije.",
+                            "title2": "Ujednačeni režim",
+                            "desc2": "Klizač je na sredini ili na sredini desno. Brzina i performanse ventilatora su dinamički izbalansirane radi najboljeg doživljaja.",
+                            "title3": "Režim učinka",
+                            "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Postavke napajanja",
@@ -1057,17 +1102,18 @@
                         },
                         "progressText1": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "progressText2": "{{stage}} od {{stageNum}}: kalibracija na nizak nivo napunjenosti baterije",
+                        "progressText3": "{{stage}} od {{stageNum}}: kalibracija na pun kapacitet punjenja",
                         "FCCText": "Sa {{before}} Wh na {{after}} Wh",
                         "note": "Napomena: pre nego što resetujete pokazivač napunjenosti baterije, obavezno povežite računar sa napajanjem naizmeničnom strujom. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Završeno. Uspešan reset.",
-                            "ERROR_SHUTDOWN": "Nije završeno. Sistem se isključio.",
-                            "ERROR_LOGOFF": "Nije završeno. Korisnik se odjavio.",
-                            "ERROR_BATTERY_REMOVE": "Nije završeno. Baterija je uklonjena.",
-                            "ERROR_BATTERY_REPLACE": "Nije završeno. Baterija je zamenjena.",
-                            "ERROR_AC_DETTACH": "Nije završeno. Adapter za naizmeničnu struju je otkačen.",
-                            "ERROR_USER_CANCEL": "Nije završeno. Otkazano od strane korisnika.",
-                            "ERROR_UNEXPECTED": "Nije završeno. Došlo je do neočekivane greške."
+                            "ERROR_SUCCESS": "Završeno: Uspešan reset.",
+                            "ERROR_SHUTDOWN": "Neuspelo: Sistem se isključio.",
+                            "ERROR_LOGOFF": "Neuspelo: Korisnik se odjavio.",
+                            "ERROR_BATTERY_REMOVE": "Neuspelo: Baterija je uklonjena.",
+                            "ERROR_BATTERY_REPLACE": "Neuspelo: Baterija je zamenjena.",
+                            "ERROR_AC_DETTACH": "Neuspelo: Adapter za naizmeničnu struju je otkačen.",
+                            "ERROR_USER_CANCEL": "Neuspelo: Otkazano od strane korisnika.",
+                            "ERROR_UNEXPECTED": "Neuspelo: Došlo je do neočekivane greške."
                         },
                         "popup": {
                             "description1": "Proces resetovanja je sledeći:<br>napunite bateriju-do kraja  -->  potpuno ispraznite bateriju  -->  ponovo potpuno napunite bateriju",
@@ -1076,7 +1122,8 @@
                             "cancel": "Otkaži",
                             "yes": "Da",
                             "description3": "Želite li zaista da zaustavite resetovanje pokazivača napunjenosti baterije?"
-                        }
+                        },
+                        "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju."
                     }
                 },
                 "energyStar": {
@@ -1092,7 +1139,7 @@
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
-                        "endTimeNote": "Vreme završetka mora da bude u roku od 20 časova od vremena početka",
+                        "endTimeNote": "Vreme ZAVRŠETKA mora da bude u roku od 20 časova od vremena POČETKA",
                         "timeUnits": {
                             "unit1": "Sati",
                             "unit2": "Minuti",
@@ -1112,7 +1159,8 @@
                             "wed": "Sreda",
                             "thurs": "Četvrtak",
                             "fri": "Petak",
-                            "sat": "Subota"
+                            "sat": "Subota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "Nedelja",
@@ -1125,13 +1173,53 @@
                         },
                         "everyday": "Svaki dan",
                         "weekdays": "Weekdays",
-                        "weekends": "Vikendom"
+                        "weekends": "Vikendom",
+                        "noDaySelected": "Nije izabran nijedan dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
                     "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode"
+                    "subTitle": "Zakazivanje rada računara",
+                    "automaticMode": "Automatski režim",
+                    "manualMode": "Ručni režim",
+                    "subNote": "Predviđeno je moderno stanje pripravnosti računara na osnovu vašeg korišćenja.",
+                    "graph": {
+                        "graph1Tittle": "Korišćenje ovog računara",
+                        "graph2Tittle": "Primenjeno aktivno vreme",
+                        "graphSubtittle": "Tokom ovih perioda održavamo spremnost računara za brži nastavak rada.",
+                        "graphNote": "Podaci o aktivnosti ovog računara nisu dovoljni da bi se obezbedio profil za automatsko zakazivanje. Pametno stanje pripravnosti će koristiti zakazivanje ručnog režima dok ne bude dostupno dovoljno podataka.",
+                        "legends": {
+                            "none": "Nema",
+                            "frequent": "Često"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
+                    "subTitle2": "Podesite vreme kada obično koristite ovaj računar"
                 }
             },
             "audio": {
@@ -1407,10 +1495,14 @@
                         "title": "PRIMENI"
                     },
                     "website": {
-                        "url": "URL ADRESA VEB LOKACIJE"
+                        "url": "URL ADRESA VEB LOKACIJE",
+                        "successMessage": "Postavke se uspešno primenjuju.",
+                        "invalidURLMessage": "Unesite ispravnu URL adresu.",
+                        "placeholder": "Počnite sa http:// ili https://"
                     },
                     "enterText": {
-                        "title": "TEKST KOJI TREBA UNETI"
+                        "title": "TEKST KOJI TREBA UNETI",
+                        "placeholder": "Unesite ovde"
                     }
                 },
                 "fnCtrlKey": {
@@ -1814,9 +1906,7 @@
     "security": {
         "landing": {
             "fully": "U potpunosti zaštićen",
-            "fullyDesc": "Čestitamo! Dobro ste zaštićeni.",
             "notFully": "Nije u potpunosti zaštićen",
-            "notFullyDesc": "Niste u potpunosti zaštićeni. Saznajte kako da se bolje zaštitite.",
             "security101": "SAVETNIK ZA BEZBEDNOST 101",
             "firewall": "Zaštitni zid",
             "pwdHealth": "Ispravnost lozinke",
@@ -1825,27 +1915,53 @@
             "wifiConnected": "WiFi i povezana kućna bezbednost",
             "connectedHomeSecurity": "Povezana kućna bezbednost",
             "fingerprint": "Čitač otisaka prstiju",
-            "seeAllNetwork": "Pogledajte sve spojene mreže",
-            "maliciousNetwork": "Vaš računar je ovog meseca sprečen pri priključivanju {{maliciousWifi}} zlonamernim mrežama.",
-            "good": "DOBRO",
-            "malicious": "ZLONAMERNO",
-            "suspicious": "SUMNJIVO",
-            "securityScoreDepends": "Vaš rezultat bezbednosti zavisi od toga da li ste:",
-            "antivirus": "Da li ste zaštićeni antivirusnim softverom",
-            "password": "Da li imate jake i složene lozinke kojima upravljate na bezbedan način",
-            "vpn": "Da li nadzirete izloženost mreže napadačima",
-            "wifi": "Da li šifrujete svoje lične podatke kada koristite javni WiFi",
-            "windowsHello": "Da li štitite uređaj korišćenjem opcije za bezbedno prijavljivanje",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Šta je to UAC obaveštenje?",
+            "uacText": "Kontrola korisničkog naloga je veoma važna bezbednosna funkcija operativnog sistema Windows koja pomaže u sprečavanju potencijalno štetnih programa da menjaju vaš sistem.",
+            "windowsTitle": "Zašto treba da aktiviram Windows?",
+            "windowsText": "Korišćenjem neoriginalne kopije operativnog sistema Windows izloženi ste većem riziku od virusa i drugih bezbednosnih pretnji.",
+            "encryptionTitle": "Šta je šifrovanje hard diska?",
+            "encryptionText": "Ono vam pomaže da zaštitite podatke šifrovanjem čitavog hard diska protiv neovlašćenog pristupa, čak i kada se disk ukloni iz postojećeg računara i stavi u neki drugi uređaj.",
+            "passwordTitle": "Kako da bolje zaštitim lozinku?",
+            "passwordText": "Bezbedno smestite sve svoje lozinke i upravljajte njima tako što ćete ih šifrovati pomoću aplikacije za profesionalnu digitalnu zaštitu umesto da ih samo sačuvate u pregledaču gde im treće strane mogu lako pristupiti bez vašeg znanja.",
+            "enhanceTitle": "Šta treba da uradim da bih poboljšao zaštitu bezbednosti?",
+            "enhanceText": "Toplo vam preporučujemo da zaštitite svoje uređaje antivirusnim softverom i zaštitnim zidom, da podesite UAC obaveštenje na minimalnu zaštitu. I da kreirate jake lozinke i upravljate njima na bezbedan način, šifrujte podatke dok koristite javnu mrežu kao naprednu zaštitu.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -2111,9 +2227,36 @@
         "logout": "Odjava",
         "unlockExclusives": "Otključaj ekskluzivnosti",
         "user": "Korisnik",
-        "welcomeText": "Danas izgledate puni energije {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Danas izgledate puni energije!",
+        "welcomeText1": "Danas izgledate puni energije, {{firstName}}!",
+        "welcomeText2": "Drago mi je što vas opet vidim, {{firstName}}",
+        "welcomeText3": "Kakvo prijatno iznenađenje, {{firstName}}",
+        "welcomeText4": "{{firstName}}, osmehnite se, zarazno je :)",
+        "welcomeText5": "Kuc, kuc, {{firstName}}",
+        "welcomeText6": "Zaputili ste se ka sjajnim mestima!",
+        "welcomeText7": "Danas je vaš dan, {{firstName}}!",
+        "welcomeText8": "Ko voli srećno malo drveće?",
+        "welcomeText9": "Neka zabava počne, {{firstName}}!",
+        "welcomeText10": "Sam mirno i uz Vantage",
+        "welcomeText11": "Veći Vantage za vaš novac",
+        "welcomeText12": "Donesite Vantage",
+        "welcomeText13": "Jedite, spavajte, Vantage, ponovite",
+        "welcomeText14": "Svaki trenutak je novi Vantage",
+        "welcomeText15": "Vantage do maksimuma",
+        "welcomeTextWithoutUserName1": "Danas izgledate puni energije!",
+        "welcomeTextWithoutUserName2": "Drago mi je što vas opet vidim",
+        "welcomeTextWithoutUserName3": "Kakvo prijatno iznenađenje",
+        "welcomeTextWithoutUserName4": "Osmehnite se, zarazno je :)",
+        "welcomeTextWithoutUserName5": "Kuc, kuc",
+        "welcomeTextWithoutUserName6": "Zaputili ste se ka sjajnim mestima!",
+        "welcomeTextWithoutUserName7": "Danas je vaš dan!",
+        "welcomeTextWithoutUserName8": "Ko voli srećno malo drveće?",
+        "welcomeTextWithoutUserName9": "Neka zabava počne!",
+        "welcomeTextWithoutUserName10": "Sam mirno i uz Vantage",
+        "welcomeTextWithoutUserName11": "Veći Vantage za vaš novac",
+        "welcomeTextWithoutUserName12": "Donesite Vantage",
+        "welcomeTextWithoutUserName13": "Jedite, spavajte, Vantage, ponovite",
+        "welcomeTextWithoutUserName14": "Svaki trenutak je novi Vantage",
+        "welcomeTextWithoutUserName15": "Vantage do maksimuma",
         "helloUser": "Zdravo, {{firstName}}!",
         "ssoErrorTitle": "Greška",
         "ssoErrorCommon": "Ups! Došlo je do greške. Pokušajte ponovo.",
@@ -2405,7 +2548,6 @@
         "question5": {
             "title": "Korišćenje računara kao tableta",
             "description": "<div class='faqInFs4Fb'>    Korišćenje računara kao tableta</div><hr><p>Uz režim tablet računara, Windows je intuitivniji i lakši za korišćenje kada imate uređaj osetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Korišćenje u režimu tablet računara</h3><p>Da biste uključili režim tablet računara, izaberite <strong>Centar aktivnosti</strong> na traci zadataka, a zatim izaberite <strong>Tablet mode</strong> (Režim tablet računara).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali da li vaš uređaj može automatski da uključi režim tablet računara, potražite vaš uređaj na veb lokaciji proizvođača. Podrška za ovu funkciju zavisi od hardvera, upravljačkog programa koji je instaliran i kako je proizvođač podesio uređaj. </p><p> </p><p>U režimu tablet računara, aplikacije se otvaraju u prikazu preko celog ekrana, dajući vam više prostora za rad. Da biste zatvorili aplikaciju, prevucite je na donji deo ekrana.</p><p> </p><h3 class='faqInFs25FbP10'>Savet</h3><p>Traka zadataka je dostupna kada je vaš računar u režimu tablet računara, ali možete da je sakrijete ako želite više prostora na ekranu. Izaberite dugme <strong>Start</strong>, izaberite <strong>Settings (Postavke) </strong>> <strong>System (Sistem) </strong>> <strong> Tablet mode (Režim tablet računara)</strong>, a zatim uključite opciju <strong>Automatically hide the taskbar in tablet mode</strong> (Automatsko skrivanje trake zadataka u režimu tablet računara). Da biste videli skrivenu traku zadataka, prevucite nagore sa dna ekrana ili pređite mišem preko tog dela.</p><h3 class='faqInFs25FbP10'>Istovremeno korišćenje dve aplikacije</h3><p>Da biste naporedno koristili dve aplikacije u režimu tablet računara, prevucite i otvorite aplikaciju nadole i u stranu. Videćete gde će se prikačiti i videćete sve otvorene aplikacije pored nje.</p><p>U ovom prikazu, možete i da radite sledeće:</p><ul>    <li>Koristite deljenu ivicu između dve prikačene aplikacije kako biste istovremeno promenili veličinu obe aplikacije.</li>    <li>Otvorite novu aplikaciju sa trake zadataka. Izaberite <strong>Task view</strong> (Prikaz zadataka) na traci zadataka, izaberite aplikaciju, prevucite je na jednu stranu kako biste je prikačili na podeljeni ekran.</li>    <li>Koristite dugme „Nazad“ na traci zadataka da biste se vratili u aplikaciji ili da biste otvorili aplikaciju koju ste prethodno koristili.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2488,10 +2630,11 @@
         "bullets2": "Savetnik za bezbednost olakšava upravljanje bezbednošću (dostupno na određenim modelima).",
         "bullets3": "Automatska ažuriranja održavaju uređaj u najboljoj formi (dostupno na određenim sistemima).",
         "subtitle1": "Kako ćete koristiti uređaj?",
-        "subtitle2": "Ispričajte nam o vašim interesovanjima",
+        "subtitle2": "Ispričajte nam o vašim interesovanjima (opcionalno)",
         "personal": "Lična upotreba",
         "business": "Poslovna upotreba",
         "custom": "Prilagođeno iskustvo",
+        "professional": "Profesionalna upotreba",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
         "moreInterest": "+ više oblasti interesovanja",
         "title1": "Dobro došli u",
@@ -2528,9 +2671,12 @@
         "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
         "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
         "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
-        "userProfile": "User profile",
+        "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
-        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju."
+        "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta Program",
+        "betaSettingDescription": "Isprobajte najnovije funkcije na kojima radimo."
     },
     "modernPreload": {
         "cancel": "Otkaži",
@@ -2659,7 +2805,8 @@
                 "description": "Izvršenje skeniranja i popravke može da prouzrokuje gubitak podataka. Preporučujemo da napravite rezervnu kopiju pre izvršavanja ove operacije. Želite li zaista da nastavite?",
                 "yes": "Da",
                 "no": "Ne"
-            }
+            },
+            "waitAvailability": "Dugme je onemogućeno dok informacije o hardveru još uvek nisu preuzete, u slučaju da uređaji za skladištenje ne podržavaju ovu funkcionalnost ili kada je pokrenut neispravan sektor za oporavak."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",
@@ -2684,11 +2831,221 @@
         "cancelTextPrompt": "Želite li zaista da otkažete?",
         "cancelTextProgress": "Sačekajte otkazivanje",
         "pluginNotUpdate": "Hardware Scan nije dostupan jer je zastareo. Nadogradite ga.",
-        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje"
+        "testNotApplicable": "Nije primenjivo na prilagođeno skeniranje",
+        "waitScanStarts": "Sačekajte da skeniranje započne",
+        "reminderTimeRetrieveHardwareInformation": "Ovaj proces može potrajati neko vreme kako bi se preuzele informacije o hardveru",
+        "retrievingHardwareInformation": "Preuzimanje informacija o hardveru...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Memorija",
+            "motherboard": "Matična ploča",
+            "pci_express": "PCI Express",
+            "storage": "Skladištenje",
+            "wireless": "Bežični"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2706,6 +3063,7 @@
             "installButton": {
                 "install": "Instaliraj",
                 "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
                 "installed": "Instalirano",
                 "launch": "Pokreni",
                 "seeMore": "Pogledajte još"
@@ -2802,7 +3160,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

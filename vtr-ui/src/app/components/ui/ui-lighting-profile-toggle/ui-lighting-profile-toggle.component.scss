@@ -80,7 +80,10 @@
 			.num {
 				display: none;
 			}
-			@media #{$small-screen} {
+			@media #{$breakpoint_xl2}{
+				font-size: 1.4rem;
+			}
+			@media #{$breakpoint_xl} {
 				white-space: nowrap;
 				overflow: hidden;
 				//letter-spacing: 2rem;

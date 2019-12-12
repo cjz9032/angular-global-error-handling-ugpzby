@@ -11,6 +11,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 			id: 'sa-widget-lnk-av',
 			path: 'security/anti-virus',
 			type: 'security',
+			isSystemLink: false,
 			metricsItemName: 'Anti-Virus'
 		}, translateService);
 		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
@@ -53,9 +54,12 @@ export class AntivirusWidgetItem extends WidgetItem {
 			if (others.firewall && others.firewall.length > 0) {
 				fwStatus = others.firewall[0].status;
 			}
-		} else {
+		} else if (defender) {
 			avStatus = typeof defender.status === 'boolean' ? defender.status : false;
 			fwStatus = typeof defender.firewallStatus === 'boolean' ? defender.firewallStatus : false;
+		} else {
+			avStatus = null;
+			fwStatus = null;
 		}
 		this.updateStatus(avStatus, fwStatus, commonService);
 	}

@@ -1,14 +1,23 @@
 <div class="beta-vtr-ui-button">
-	<div class="button-box"
+	<div class="button-box" [title]="tooltipText"
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup !== 'joined'"
-			title="{{tooltip?label:''}}"
 			[disabled]="isDisabled"
 			type="button"
 			class="btn button"
 			[routerLink]="routerPath"
 			routerLinkActive="active"
 			[id]="linkId"
+			vtrMetrics
+			[metricsItem]="metricsItem"
+			[metricsEvent]="metricsEvent"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsParent]="metricsParent"
 			[attr.aria-label]="linkId"
 			[ngClass]="{'fullWidth': isFullWidth === true,
 						'halfWidth': isHalfWidth,
@@ -19,12 +28,20 @@
 						'action-button-disable': isDisabled}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
-			title="{{tooltip?label:''}}"
 			type="button"
 			class="button disable"
 			[disabled]="false"
 			[id]="linkId"
 			vtrMetrics
+			[metricsItem]="metricsItem"
+			[metricsEvent]="metricsEvent"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
+			[metricsParent]="metricsParent"
 			[attr.aria-label]="linkId"
 			[routerLink]="routerPath"
 			routerLinkActive="active"

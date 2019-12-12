@@ -1,177 +1,186 @@
-<div class="vtr-page-connected-home-security vtr-page">
-    <div class="row vtr-page-header">
-        <div class="col vtr-col">
-            <vtr-header-main [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
-                [title]="'homeSecurity.title' | translate" [backId]="backId"></vtr-header-main>
-        </div>
-    </div>
-    <div class="row vtr-page-content">
-        <div class="col vtr-col">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-8 vtr-page-left-column">
-                    <div class="vtr-subpage">
-                        <div class="vtr-page-shift-up">
-                            <div class="container-fluid">
-								<vtr-home-security-after-signup
-									*ngIf="account?.state !== 'local'"
-									[allDevices]="allDevicesInfo"
-									[account]="account"
-									[common]="common"
-									[location]="homeSecurityLocation">
-								</vtr-home-security-after-signup>
-								<vtr-home-security-content *ngIf="account?.state === 'local'"
-									page="homeSecurity"
-									[location]="homeSecurityLocation"
-									[permission]="permission">
-								</vtr-home-security-content>
-								<div class="article-card pt-5 col-12 mt-5"
-										*ngIf="account?.state !== 'local' && showContentA">
-									<vtr-container-card order="1" [itemID]="cardContentPositionA.Id"
-										[img]="cardContentPositionA.FeatureImage"
-										[title]="cardContentPositionA.Title"
-										[logoText]="cardContentPositionA.BrandName"
-										[action]="cardContentPositionA.Action"
-										[actionType]="cardContentPositionA.ActionType"
-										[actionLink]="cardContentPositionA.ActionLink" [type]="'article'"
-										[ratioX]="4" [ratioY]="4"
-										ariaLabel="chs-banner-bottom-article"
-										containerCardId="chs-banner-bottom-article">
-									</vtr-container-card>
+<vtr-page-layout [title]="'homeSecurity.title' | translate"
+	[textId]="'connected-home-security'"
+	[pageCssClass]="'connected-home-security'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'myDevice-back-btn'">
+
+	<left-content>
+		<div class="container-fluid">
+			<div class="row"
+				*ngIf="account?.state !== 'local'">
+				<div class="col-12 px-0 pb-20 pt-0">
+					<vtr-home-security-after-signup [allDevices]="allDevicesInfo"
+						[account]="account"
+						[common]="common"
+						[location]="locationPermission">
+					</vtr-home-security-after-signup>
+				</div>
+			</div>
+			<div class="row"
+				*ngIf="account?.state === 'local'">
+				<div class="col-12 px-0 pb-20 pt-0">
+					<vtr-home-security-content page="homeSecurity"
+						[location]="locationPermission"
+						[permission]="permission">
+					</vtr-home-security-content>
+				</div>
+			</div>
+			<div class="row"
+				*ngIf="account?.state !== 'local' && showContentA">
+				<div class="col-12 px-0 pb-20 pt-0">
+					<vtr-container-card order="1"
+						[itemID]="cardContentPositionA.Id"
+						[img]="cardContentPositionA.FeatureImage"
+						[title]="cardContentPositionA.Title"
+						[logoText]="cardContentPositionA.BrandName"
+						[action]="cardContentPositionA.Action"
+						[actionType]="cardContentPositionA.ActionType"
+						[actionLink]="cardContentPositionA.ActionLink"
+						[type]="'article'"
+						[ratioX]="4"
+						[ratioY]="4"
+						ariaLabel="chs-banner-bottom-article"
+						containerCardId="chs-banner-bottom-article">
+					</vtr-container-card>
+				</div>
+			</div>
+			<div class="bottom-content" hidden>
+				<div class="d-none d-md-block">
+					<hr>
+					<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+						[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+						[imgUrl]="'assets/images/coronet-logo.svg'"
+						privacyUrl="https://homesecurity.coro.net/"
+						termsUrl="https://homesecurity.coro.net/">
+					</vtr-widget-powered-by-info>
+				</div>
+			</div>
+		</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col col-12 px-0 pb-20 pt-0">
+					<div class="vtr-security-health">
+						<div class="row">
+							<div class="col-12 p-0">
+								<div class="subTitle">
+									{{'security.homeprotection.securityhealth.title' | translate}}
 								</div>
-								<div class="bottom-content w-100" hidden>
-									<div class="d-none d-md-block">
-										<hr>
-										<vtr-widget-powered-by-info
-											[title]="'homeSecurity.overview.poweredBy'"
-											[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
-											[imgUrl]="'assets/images/coronet-logo.svg'"
-											privacyUrl="https://homesecurity.coro.net/"
-											termsUrl="https://homesecurity.coro.net/">
-										</vtr-widget-powered-by-info>
-									</div>
+								<div class="description"
+									*ngIf="locationPermission?.isLocationServiceOn">
+									<span
+										*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
+										<a id="chs-lnk-sh-learnmore"
+											vtrMetrics
+											metricsEvent="ArticleClick"
+											metricsItemPosition="3"
+											metricsPageNumber="1"
+											[metricsItemID]="devicePostureArticleId"
+											[metricsItemCategory]="devicePostureArticleCategory"
+											href="javascript:void(0)"
+											(click)="openDevicePostureArticle()"
+											target="_blank"></a>
+									</span>
 								</div>
 							</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 vtr-page-right-column">
-                    <div class="vtr-page-shift-up">
-                        <div class="container-fluid">
-                            <div class="row mb-40">
-                                <div class="col col-12">
-									<div class="vtr-security-health">
-										<div class="container-fluid">
-											<div class="row">
-												<div class="col">
-													<div class="subTitle">
-														{{'security.homeprotection.securityhealth.title' | translate}}
-													</div>
-													<div class="description"
-														*ngIf="homeSecurityLocation?.isLocationServiceOn">
-														<span
-															*vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
-															<a  id="chs-lnk-sh-learnmore"
-																vtrMetrics
-																metricsEvent="ArticleClick"
-																metricsItemPosition="3"
-																metricsPageNumber="1"
-																[metricsItemID]="devicePostureArticleId"
-																[metricsItemCategory]="devicePostureArticleCategory"
-																href="javascript:void(0)"
-																(click)="openDevicePostureArticle()"
-																target="_blank"></a>
-														</span>
-													</div>
-												</div>
+						</div>
+
+						<div class="row">
+							<div class="col col-12 px-0 pt-0">
+								<!--Start of Security Health Advisor When LWS is enabled-->
+								<div *ngIf="locationPermission?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
+									class="loading">
+									<div class="spinner-border text-primary progress-spinner"
+										role="status"></div>
+								</div>
+								<vtr-ui-list-chevron [items]="homeSecurityDevicePosture.homeDevicePosture"
+									metricsEvent="featureClick"
+									[chevronVisibility]='false'
+									[clickable]="false"
+									*ngIf="locationPermission?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
+								</vtr-ui-list-chevron>
+								<!--end of Security Health Advisor When LWS is enabled-->
+
+								<!--Start of Security Health Advisor When LWS is disabled-->
+								<div class="security-health-disabled"
+									*ngIf="!locationPermission?.isLocationServiceOn">
+									<div
+										class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
+										<div class="peace-of-mind mb-5"
+											[innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
+										</div>
+										<vtr-ui-button [ngClass]="{'disable': locationPermission?.isLoading}"
+											metricsItem="enableLocationSecurityHealth"
+											metricsEvent="featureClick"
+											(onClick)="dialogService?.openCHSPermissionModal(locationPermission)"
+											[isDisabled]="locationPermission?.isLoading"
+											linkId="chs-btn-enableLocation"
+											[label]="'security.homeprotection.securityhealth.button' | translate">
+										</vtr-ui-button>
+									</div>
+									<div class="coronet-section">
+										<div class="row">
+											<div class="col">
 											</div>
-
-											<div class="row">
-												<div class="col">
-													<!--Start of Security Health Advisor When LWS is enabled-->
-													<div *ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length === 0"
-														class="loading">
-														<div class="spinner-border text-primary progress-spinner"
-															role="status"></div>
-													</div>
-													<vtr-ui-list-chevron
-														[items]="homeSecurityDevicePosture.homeDevicePosture"
-														metricsEvent="featureClick"
-														[chevronVisibility]='false'
-														[clickable]="false"
-														*ngIf="homeSecurityLocation?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
-													</vtr-ui-list-chevron>
-													<!--end of Security Health Advisor When LWS is enabled-->
-
-													<!--Start of Security Health Advisor When LWS is disabled-->
-													<div class="security-health-disabled"
-														*ngIf="!homeSecurityLocation?.isLocationServiceOn">
-														<div class="security-health-disabled-list d-flex flex-column align-items-center justify-content-center">
-															<div class="peace-of-mind mb-5" [innerHTML]="'security.homeprotection.securityhealth.peaceOfMind' | translate">
-															</div>
-															<vtr-ui-button
-																[ngClass]="{'disable': homeSecurityLocation?.isLoading}"
-																metricsItem="enableLocationSecurityHealth"
-																metricsEvent="featureClick"
-																(onClick)="dialogService?.openCHSPermissionModal()"
-																[isDisabled]="homeSecurityLocation?.isLoading"
-																linkId="chs-btn-enableLocation"
-																[label]="'security.homeprotection.securityhealth.button' | translate">
-															</vtr-ui-button>
-														</div>
-														<div class="coronet-section">
-															<div class="row">
-																<div class="col">
-																</div>
-																<div class="p-0">
-																	<div class="pull right">
-																		<img class="coronet_logo_teal"
-																			[src]="'assets/images/coronet-logo.svg' | svgInline | async"/>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<!--end of Security Health Advisor When LWS is disabled-->
+											<div class="p-0">
+												<div class="pull right">
+													<img class="coronet_logo_teal"
+														[src]="'assets/images/coronet-logo.svg' | svgInline | async" />
 												</div>
 											</div>
 										</div>
 									</div>
-                                </div>
-							</div>
-							<div class="row article-card" *ngIf="showContentB">
-								<div class="col col-12">
-									<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"
-										[img]="cardContentPositionB.FeatureImage"
-										[title]="cardContentPositionB.Title"
-										[logoText]="cardContentPositionB.BrandName"
-										[action]="cardContentPositionB.Action"
-										[actionType]="cardContentPositionB.ActionType"
-										[actionLink]="cardContentPositionB.ActionLink" [type]="'article'"
-										[ratioX]="4" [ratioY]="4"
-										type="corner-article"
-										cornerShift="large"
-										sideFlag="r"
-										ariaLabel="chs-modal-right-article"
-										containerCardId="chs-modal-right-article">
-									</vtr-container-card>
 								</div>
+								<!--end of Security Health Advisor When LWS is disabled-->
 							</div>
-                        </div>
-                    </div>
-				</div>
-				<div class="bottom-content w-100" hidden>
-					<div class="d-block d-md-none">
-						<hr>
-						<vtr-widget-powered-by-info
-							[title]="'homeSecurity.overview.poweredBy'"
-							[detail]="'homeSecurity.overview.privacyPolicyAndTermsOfService'"
-							privacyUrl="https://homesecurity.coro.net/"
-							termsUrl="https://homesecurity.coro.net/"
-							[imgUrl]="'assets/images/coronet-logo.svg'">
-						</vtr-widget-powered-by-info>
+						</div>
 					</div>
 				</div>
-            </div>
-        </div>
-    </div>
-</div>
+			</div>
+
+
+
+
+
+			<div class="row"
+				*ngIf="showContentB">
+				<div class="col col-12 px-0 pb-20 pt-0">
+					<vtr-container-card order="2"
+						[itemID]="cardContentPositionB.Id"
+						[img]="cardContentPositionB.FeatureImage"
+						[title]="cardContentPositionB.Title"
+						[logoText]="cardContentPositionB.BrandName"
+						[action]="cardContentPositionB.Action"
+						[actionType]="cardContentPositionB.ActionType"
+						[actionLink]="cardContentPositionB.ActionLink"
+						[type]="'article'"
+						[ratioX]="4"
+						[ratioY]="4"
+						type="corner-article"
+						cornerShift="large"
+						sideFlag="r"
+						ariaLabel="chs-modal-right-article"
+						containerCardId="chs-modal-right-article">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-content">
+			<div class="d-none d-md-block" hidden>
+				<hr>
+				<vtr-widget-powered-by-info [title]="'homeSecurity.overview.poweredBy'"
+					[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+					[imgUrl]="'assets/images/coronet-logo.svg'"
+					privacyUrl="https://homesecurity.coro.net/"
+					termsUrl="https://homesecurity.coro.net/">
+				</vtr-widget-powered-by-info>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>

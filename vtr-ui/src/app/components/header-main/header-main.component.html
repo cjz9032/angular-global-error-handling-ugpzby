@@ -1,5 +1,7 @@
-<div class="vtr-header-main">
-	<div class="vtr-header-main-inner">
+<div class="vtr-header-main"
+	[ngClass]="{'dcc': deviceService.showDemo}">
+	<div class="vtr-header-main-inner"
+		[ngClass]="{'show-back-btn':back && back.length > 0 && !hideBack}">
 		<a class="back"
 			vtrMetrics
 			metricsEvent="FeatureClick"
@@ -9,7 +11,7 @@
 			href="javascript:void();"
 			[attr.aria-label]="back"
 			tabindex="0"
-			*ngIf="back && back.length > 0">
+			*ngIf="back && back.length > 0 && !hideBack">
 			{{backarrow}}
 			<span>
 				{{back}}

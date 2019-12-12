@@ -24,6 +24,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -158,6 +160,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	};
 
 	constructor(
+		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
@@ -167,7 +170,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private translate: TranslateService,
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
-		private router: Router
+		private router: Router,
+		private logger: LoggerService,
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -217,11 +221,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.onNotification(response);
 		});
 
-		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
+		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.updateInfo) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
+			if (this.systemUpdateService.isToastMessageNeeded) {
+				this.showToastMessage(this.systemUpdateService.installedUpdates);
+			}	
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.ignoredRebootDelayUpdates && this.systemUpdateService.ignoredRebootDelayUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
@@ -287,8 +294,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
+		try {
+			if (this.notificationSubscription) {
+				this.notificationSubscription.unsubscribe();
+			}
+		} catch (error) {
+			this.logger.error('PageDeviceUpdatesComponent.ngOnDestroy: ', error);
 		}
 	}
 
@@ -297,23 +308,28 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (!machineInfo) {
 			this.deviceService.getMachineInfo().then((info) => {
 				machineInfo = info;
-				if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
-					const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
-					this.supportLink = specificSupportLink;
-				}
+				this.adjustSupportLinkByMachineInfo(machineInfo);
 			});
-		} else if (machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
-			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
-			this.supportLink = specificSupportLink;
+		} else {
+			this.adjustSupportLinkByMachineInfo(machineInfo);
 		}
 	}
 
-	private setUpdateTitle(title?: string) {
-		if (title) {
-			this.updateTitle = title;
+	private adjustSupportLinkByMachineInfo(machineInfo) {
+		if (machineInfo && machineInfo.serialnumber) {
+			this.supportLink = `https://support.lenovo.com/contactus?serialnumber=${machineInfo.serialnumber}`;
 		} else {
-			this.updateTitle = this.updateToDateTitle;
+			this.supportLink = 'https://support.lenovo.com/contactus';
 		}
+	}
+
+	private setUpdateTitle(titleStatusCode: number = 0) {
+		if (titleStatusCode < 0 || titleStatusCode > SystemUpdateStatusMessage.StatusMessageMap.length - 1) {
+			titleStatusCode = 1; // For unknown status code, display common failure error message
+		}
+		this.translate.stream(SystemUpdateStatusMessage.StatusMessageMap[titleStatusCode].message).subscribe((res) => {
+			this.updateTitle = res;
+		});
 	}
 
 	private getLastUpdateScanDetail() {
@@ -459,10 +475,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public isUpdateListVisible() {
 		const isVisible = ((this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted)
-		&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
-		|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
-		|| (this.optionalUpdates && this.optionalUpdates.length > 0)
-		|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
+			&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
+				|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
+				|| (this.optionalUpdates && this.optionalUpdates.length > 0)
+				|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
 	}
 
@@ -485,7 +501,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		let removeDelayedUpdates = false;
 		let updatesToInstall = [];
 
-		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));;
+		this.systemUpdateService.updateInfo.updateList.map(update => updatesToInstall.push(Object.assign({}, update)));
 		if (!isInstallAll) {
 			updatesToInstall = this.systemUpdateService.getSelectedUpdates(updatesToInstall);
 		} else {
@@ -580,6 +596,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
 			this.isInstallFailedMessageToasted = true;
 		}
+		this.systemUpdateService.isToastMessageNeeded = false;
 	}
 
 	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
@@ -608,26 +625,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		return updateList.map(item => item.packageID).join(',');
 	}
 
-	private mapStatusToMessage(status: number, defaultValue = 'unknown') {
-		let message = defaultValue;
-		for (const key in SystemUpdateStatusMessage) {
-			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
-				if (SystemUpdateStatusMessage[key].code === status) {
-					message = SystemUpdateStatusMessage[key].message;
-				}
-			}
-		}
-		return message;
-	}
-
 	private mapStatusToMessageKey(status: number, defaultValue = 'unknown') {
 		let messageKey = defaultValue;
-		for (const key in SystemUpdateStatusMessage) {
-			if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
-				if (SystemUpdateStatusMessage[key].code === status) {
-					messageKey = key;
-				}
-			}
+		if (status >= 0 && status < SystemUpdateStatusMessage.StatusMessageMap.length) {
+			messageKey = SystemUpdateStatusMessage.StatusMessageMap[status].statusKey;
 		}
 		return messageKey;
 	}
@@ -665,27 +666,23 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
-
 			switch (type) {
 				case UpdateProgress.UpdateCheckInProgress:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = true;
-						this.percentCompleted = this.systemUpdateService.percentCompleted;
+						this.percentCompleted = payload;
 					});
 					break;
 				case UpdateProgress.UpdateCheckCompleted:
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
-
 					let messageKey = 'unknown';
 					if (this.isUserCancelledUpdateCheck) {
 						// when user cancels update check its throwing unknown exception
 						messageKey = 'user cancel';
 					} else {
-						let metricMessage;
-						metricMessage = this.mapStatusToMessage(payload.status);
 						messageKey = this.mapStatusToMessageKey(payload.status);
-						this.setUpdateTitle(metricMessage);
+						this.setUpdateTitle(payload.status);
 					}
 
 					this.metricHelper.sendSystemUpdateMetric(
@@ -708,9 +705,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 
 					break;
-				case UpdateProgress.InstallationStarted:
-					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
-					break;
 				case UpdateProgress.InstallingUpdate:
 					this.isUpdateCheckInProgress = false;
 					this.ngZone.run(() => {
@@ -721,6 +715,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.InstallationComplete:
 					this.systemUpdateService.getUpdateHistory();
+					this.getLastUpdateScanDetail();
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
@@ -765,7 +760,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
-					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					if (this.systemUpdateService && this.systemUpdateService.updateInfo) {
+						this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					}
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
@@ -803,9 +800,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isCheckingPluginStatus = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 					this.isCheckingStatus = false;
-					let message;
-					message = this.mapStatusToMessage(payload);
-					this.setUpdateTitle(message);
+					this.setUpdateTitle(payload);
 					break;
 				case UpdateProgress.ScheduleUpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -850,6 +845,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
+					this.getLastUpdateScanDetail();
 					this.systemUpdateService.getUpdateHistory();
 					// using this check to avoid displaying more than on reboot confimation dialogs.
 					if (!this.isRebootRequested) {
@@ -867,6 +863,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.systemUpdateService.isInstallationSuccess = false;
 		this.systemUpdateService.isInstallationCompleted = false;
 		this.systemUpdateService.isDownloadingCancel = false;
+		this.systemUpdateService.isCheckingCancel = false;
 	}
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {

@@ -9,14 +9,12 @@ import { WifiSecurityComponent } from 'src/app/components/pages/page-security-wi
 import { HomeSecurityComponent } from 'src/app/components/pages/page-security-wifi/children/home-security/home-security.component';
 import { PageSecurityPasswordComponent } from 'src/app/components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from 'src/app/components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityWindowsHelloComponent } from 'src/app/components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { PageSecurityWifiComponent } from 'src/app/components/pages/page-security-wifi/page-security-wifi.component';
 import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-security-wifi/children/connected-home-status/connected-home-status.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetSecurityComponent } from 'src/app/components/widgets/widget-security/widget-security.component';
 import { UiLandingFeatureComponent } from 'src/app/components/ui/ui-landing-feature/ui-landing-feature.component';
-import { UiObjectTitleComponent } from 'src/app/components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from 'src/app/components/ui/ui-security-statusbar/ui-security-statusbar.component';
 import { PipeInstallPipe } from 'src/app/pipe/security-antivirus/pipe-install.pipe';
 import { StatusTransformPipe } from 'src/app/pipe/ui-security-statusbar/status-transform.pipe';
@@ -57,7 +55,8 @@ import { WidgetCommonAntivirusComponent } from '../../components/pages/page-secu
 import { PercentIconPipe } from 'src/app/pipe/widget-security/percent-icon.pipe';
 import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-qa.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
-
+import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
+import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
 library.add(
 	faLockAlt,
 	faQuestionCircle,
@@ -85,14 +84,12 @@ library.add(
 		ConnectedHomeStatusComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
-		PageSecurityWindowsHelloComponent,
 		// Widget
 		WidgetSecurityComponent,
 		WidgetMcafeeComponent,
 		WidgetQaComponent,
 		// UI
 		UiLandingFeatureComponent,
-		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
 		// Pipe
 		SubTransformPipe,
@@ -106,6 +103,8 @@ library.add(
 		WidgetMcafeeStateComponent,
 		WidgetMcafeeMetricComponent,
 		WidgetCommonAntivirusComponent,
+		WidgetLandingSecurityComponent,
+		WidgetLandingNavComponent,
 	],
 	imports: [
 		CommonModule,

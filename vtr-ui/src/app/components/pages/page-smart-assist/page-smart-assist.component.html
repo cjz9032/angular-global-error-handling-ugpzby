@@ -51,9 +51,9 @@
 											[rightIcon]="['far', 'question-circle']"
 											[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.tooltip' | translate">
 										</vtr-ui-row-switch>
-										<div class="bold-title no-border-bottom pb-4 border-bottom"
+										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
+											>
 											<vtr-ui-row-switch [switchId]="'distanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
@@ -182,7 +182,7 @@
 										</div>
 									</li>
 								</ul>
-								<ul class="list-group list-group-flush pt-3"
+								<ul class="list-group list-group-flush pt-3 no-border-bottom"
 									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
 									<li class="auto-screen-block"
@@ -198,8 +198,8 @@
 											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
 											[disabled]="!intelligentSecurity.isHPDEnabled">
-											<div class="row">
-												<div class="col px-20 mt-10 facial-recognition"
+											<div class="row fac-control">
+												<div class="col mt-10 facial-recognition"
 													*ngIf="intelligentSecurity.isZeroTouchLockFacialRecoVisible">
 													<h3 id="smart-assist-zero-touch-lock-faical-recognition-title"
 														attr.aria-label="smart-assist-zero-touch-lock-faical-recognition-title">
@@ -265,7 +265,7 @@
 												</div>
 											</div>
 										</vtr-ui-row-switch>
-										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
+										<div *ngIf="sensitivityVisibility" class="pl-5 bold-title no-border-bottom pb-4"
 										[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled">
 										<vtr-ui-row-switch [switchId]="'thinkpadSensitivity'"
 											[title]="'device.smartAssist.intelligentSecurity.sensitivityAdjusting.title' | translate"
@@ -300,9 +300,8 @@
 											</div>
 										</div>
 									</div>
-										<div class="bold-title no-border-bottom pb-4 border-bottom"
+										<div class="bold-title no-border-bottom pl-5 pb-4 border-bottom"
 											*ngIf="intelligentSecurity.isZeroTouchLockVisible"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLockEnabled"
 											[class.col-pad-margin]="isThinkPad">
 											<vtr-ui-row-switch [switchId]="'autoScreenLockTimer'"
 												[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate"
@@ -484,9 +483,13 @@
 					<!-- Start of Intelligent Media -->
 
 					<vtr-intelligent-media id="media"
-						*ngIf="intelligentMedia.available"
+						*ngIf="intelligentMedia.available || superResolution.available"
 						[isLoading]="isIntelligentMediaLoading"
-						[isChecked]="intelligentMedia.status">
+						[isChecked]="intelligentMedia.status"
+						[isSRLoading]="isSuperResolutionLoading"
+						[isSRChecked]="superResolution.status"
+						[intelligentMediaAvailable]="intelligentMedia.available"
+						[superResolutionAvailable]="superResolution.available">
 					</vtr-intelligent-media>
 
 					<!-- End of Intelligent Media -->

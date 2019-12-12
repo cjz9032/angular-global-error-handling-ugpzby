@@ -7,7 +7,7 @@
 			</vtr-ui-header-subpage>
 		</div>
 	</div>
-	<div class="row px-40">
+	<div class="row">
 		<div class="col">
 			<div class="row py-5 smartsettings-card"
 				id="Input & Accessories"
@@ -147,7 +147,8 @@
 							</ng-template>
 						</vtr-ui-row-switch>
 					</li>
-					<li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
+					<!-- Fn and Ctrl keys swap feature commented due to VAN-12684 -->
+					<!-- <li class="pt-3" *ngIf="machineType == 1 && fnCtrlSwapCapability">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.inputAccessories.fnCtrlKey.title' | translate"
 							componentName="Fn key and Ctrl key swap "
@@ -160,14 +161,17 @@
 							<div class="row">
 								<div class="col-auto pt-3">
 									<img *ngIf="fnCtrlSwapStatus === true"
-										src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
+										src="assets/images/Fn-Ctrl-key.PNG">
 									<img *ngIf="fnCtrlSwapStatus === false"
-										src="../../../../../../assets/images/Fn-Ctrl-key.PNG">
+										src="assets/images/Fn-Ctrl-key.PNG">
 								</div>
 							</div>
 						</vtr-ui-row-switch>
+					</li> -->
+
+					<li *ngIf="machineType === 1">
+						<vtr-user-defined-key></vtr-user-defined-key>
 					</li>
-					<vtr-user-defined-key></vtr-user-defined-key>
 				</ul>
 				<div class="control-options-block" *ngIf="isTouchPadVisible || isMouseVisible">
 					<div class="row">

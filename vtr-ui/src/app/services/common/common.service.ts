@@ -20,6 +20,7 @@ export class CommonService {
 	public isOnline = true;
 	public gamingCapabalities: any = new Subject();
 	private RS5Version = 17600;
+	public osVersion = 0;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -139,6 +140,14 @@ export class CommonService {
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
+	/**
+	 * Removes the key/value pair with the given key
+	 * @param key key use to removes the key/value pair in local storage
+	 */
+	public removeLocalStorageValue(key: LocalStorageKey | DashboardLocalStorageKey) {
+		window.localStorage.removeItem(key);
+	}
+
 	public sendNotification(action: string, payload?: any) {
 		this.notificationSubject.next(new AppNotification(action, payload));
 	}
@@ -147,16 +156,19 @@ export class CommonService {
 		return this.getWindowsVersion() >= this.RS5Version;
 	}
 
-	public getWindowsVersion(): Number {
-		let version = '0';
-		navigator.userAgent.split(' ').forEach((value) => {
-			if (value.indexOf('Edge') !== -1) {
-				const dotIndex = value.indexOf('.');
-				version = value.substring(dotIndex + 1, value.length);
-			}
-		});
-		console.log(version);
-		return Number(version);
+	public getWindowsVersion(): number {
+		if (this.osVersion === 0) {
+			let version = '0';
+			navigator.userAgent.split(' ').forEach((value) => {
+				if (value.indexOf('Edge') !== -1) {
+					const dotIndex = value.indexOf('.');
+					version = value.substring(dotIndex + 1, value.length);
+					this.osVersion = Number(version);
+				}
+			});
+			console.log(`this.ovVersion: ${this.osVersion}`);
+		}
+		return this.osVersion;
 	}
 
 	/**
@@ -191,8 +203,31 @@ export class CommonService {
 	}
 
 	public isFoundInArray(array: any[], path: string) {
-		let element = array.find(e => e.path === path);
+		const element = array.find(e => e.path === path);
 		return element ? true : false;
+	}
+
+	public removeObjById(array: any[], id: string) {
+		return array.filter(e => e.id !== id);
+	}
+
+	public isPresent(array: any[], path: string) {
+		return array.some(e => e.path === path);
+	}
+
+	public sortMenuItems(menuItems) {
+		if (menuItems) {
+			return menuItems.sort((item1, item2) => {
+				let comparison = 0;
+				if (item1.order > item2.order) {
+					comparison = 1;
+				} else if (item1.order < item2.order) {
+					comparison = -1;
+				}
+				return comparison;
+			});
+		}
+		return undefined;
 	}
 
 	public getCapabalitiesNotification(): Observable<any> {
@@ -202,15 +237,12 @@ export class CommonService {
 		this.gamingCapabalities.next({ type: action, payload });
 	}
 
-	public isBetaUser(): Promise<number> {
-		const win: any = window;
-		if (WinRT && win.Windows) {
-			return WinRT.queryUriSupport('mailto:john@doe.com', 'E046963F.LenovoCompanionBeta_k1h2ywk1493x8');
-		}
-	}
-
 	public cloneObj(obj) {
 		// It will not copy reference. It is for assigning object pass by reference.
 		return JSON.parse(JSON.stringify(obj));
+	}
+
+	public scrollTop() {
+		document.querySelector('.vtr-app.container-fluid').scrollTop = 0;
 	}
 }

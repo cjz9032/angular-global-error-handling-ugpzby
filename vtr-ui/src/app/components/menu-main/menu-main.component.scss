@@ -13,11 +13,11 @@
 .vtr-menu-main {
 	position: fixed;
 	top: 0;
-	z-index: 100!important;
+	z-index: 100 !important;
 	width: 100%;
 
 	@media #{$mediaquery_xl} {
-		position: absolute;
+		position: fixed;
 		left: 0%;
 		right: 0%;
 	}
@@ -51,13 +51,18 @@
 			font-size: 5rem;
 			font-weight: $weight_bold;
 			width: $menu_height;
-			height: 100%;
 			border: none;
 			text-align: center;
 			color: $light;
 			overflow: hidden;
+			&.logo-y {
+				background-color: rgba(4, 184, 255, 0.548);
+				height: 9rem;
+				padding-bottom: 0;
+			}
 
 			.menu-main-logo {
+				background-color: #27add7;
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -131,6 +136,9 @@
 			&.show {
 				display: block;
 				// overflow-y: auto;
+				.navbar-nav .nav-item .dropdown-menu .dropdown-item.link {
+					line-height: 4rem;
+				}
 			}
 
 			.navbar-nav {
@@ -296,7 +304,7 @@
 							color: $main_shade;
 							padding: 0.25rem 0.9rem;
 							font-size: 1.5rem;
-							line-height: 2.2rem;
+							line-height: 3.2rem;
 							font-weight: $weight_medium;
 
 							&.link {
@@ -323,7 +331,7 @@
 									margin-top: -0.3rem;
 									width: 0.8rem;
 									height: 0.8rem;
-									background: #DB221F;
+									background: #db221f;
 									border-radius: 50%;
 								}
 							}
@@ -333,7 +341,7 @@
 					&:last-child {
 						.dropdown-menu {
 							min-width: 20rem;
-							max-width: 50rem;
+							max-width: 60rem;
 						}
 					}
 
@@ -353,12 +361,11 @@
 								right: 1.2rem;
 								top: 4rem;
 								@media #{$black-on-white} {
-									
 									background: $high-contrast-blue;
 								}
 								@media #{$white-on-black} {
 									background: $yellow;
-											}
+								}
 							}
 
 							&::before {
@@ -376,8 +383,7 @@
 								}
 								@media #{$white-on-black} {
 									background: $yellow;
-											}
-						
+								}
 							}
 
 							&.user {
@@ -415,6 +421,9 @@
 				background: $main_darker;
 
 				.navbar-nav {
+					max-height: calc(100vh - #{$menu_height});
+					overflow-y: auto;
+
 					.nav-item {
 						padding: 0 0 0.5rem 0;
 
@@ -528,7 +537,7 @@
 	position: absolute;
 	left: 5rem;
 	top: 1.6rem;
-	background: #DB221F;
+	background: #db221f;
 	color: #ffffff;
 	width: 2rem;
 	height: 2rem;

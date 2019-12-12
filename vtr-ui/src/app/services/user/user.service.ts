@@ -4,12 +4,15 @@ import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { LenovoIdKey, LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+import { LenovoIdKey, LenovoIdStatus, ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { DeviceService } from '../../services/device/device.service';
 import { LIDStarterHelper } from './stater.helper';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-
+import { LocalInfoService } from '../local-info/local-info.service';
+import { SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 declare var Windows;
 
@@ -42,7 +45,9 @@ export class UserService {
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private localInfoService: LocalInfoService,
+		private modalService: NgbModal
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
 			if (!this.auth && firstName !== 'lenovoId.user') {
@@ -69,7 +74,46 @@ export class UserService {
 			}
 		}
 
+		this.localInfoService.getLocalInfo().then(localInfo => {
+			if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
+				this.lidSupported = false;
+			}
+		});
+
 		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
+	}
+
+	// error is come from response status of LID contact request
+	popupErrorMessage(error: number) {
+		const modalRef = this.modalService
+			.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'common-confirmation-modal'
+			});
+		const header = 'lenovoId.ssoErrorTitle';
+		let description = 'lenovoId.ssoErrorCommonEx';
+		switch (error) {
+			case ssoErroType.SSO_ErrorType_TimeStampIncorrect:
+				description = 'lenovoId.ssoErrorTimeStampIncorrect';
+				break;
+			case ssoErroType.SSO_ErrorType_DisConnect:
+				description = 'lenovoId.ssoErrorNetworkDisconnected';
+				break;
+			case ssoErroType.SSO_ErrorType_Conmmunicating:
+				description = 'lenovoId.ssoErrorCommunicating';
+				break;
+			case ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist:
+				description = 'lenovoId.ssoErrorAccountPluginNotExist';
+				break;
+			default:
+				description = 'lenovoId.ssoErrorCommonEx';
+				break;
+		}
+		modalRef.componentInstance.CancelText = '';
+		modalRef.componentInstance.header = header;
+		modalRef.componentInstance.description = description;
 	}
 
 	async getStarterIdStatus() {
@@ -231,6 +275,7 @@ export class UserService {
 						TaskParam: ''
 					};
 				} else {
+					self.popupErrorMessage(result.status);
 					metricsData = {
 						ItemType: 'TaskAction',
 						TaskName: 'LID.SignOut',
@@ -245,6 +290,8 @@ export class UserService {
 					self.devService.writeLog('removeAuth() Exception happen when send metric ', res.message);
 				});
 				self.devService.writeLog('LOGOUT: ', result.success);
+			}).catch((error) => {
+				self.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
 			});
 		}
 	}

@@ -8,6 +8,15 @@
 		color: $light;
 		opacity: 0.5;
 		margin: 0 2rem 0.1rem;
+
+		@media #{$breakpoint_xl} {
+			margin: 0 1rem 0.1rem;
+		}
+		@media #{$breakpoint_sm} {
+			margin: 0 0.5rem 0.1rem;
+		}
+
+
 		&:first-child {
 			margin-left: 0.5rem;
 		}
@@ -20,13 +29,20 @@
 		}
 
 		.tab-label {
-			font-size: $subpage_menu_title;
+			font-size: $fontsize_lg;
 			font-weight: $weight_600;
 			padding-bottom: 2rem;
 			cursor: pointer;
-			@media #{$mediaquery_X28} {
-				font-size: 2rem;
+			@media #{$breakpoint_xl} {
+				font-size: $fontsize_md;
 			}
+			@media #{$breakpoint_md} {
+				font-size: $fontsize_sm;
+			}
+			@media #{$breakpoint_sm} {
+				font-size: $fontsize_xs;
+			}
+
 		}
 		fa-icon {
 			&.menu-pointer {
@@ -46,7 +62,7 @@
 				@media #{$white-on-black} {
 					color: $dark;
 				}
-		
+
 
 			}
 		}

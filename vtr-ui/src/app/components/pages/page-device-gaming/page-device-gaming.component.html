@@ -13,7 +13,7 @@
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="!isOnline">
-				<div class="col col-12 px-40 pb-40">
+				<div class="col-12 px-0 pt-0 pb-40">
 					<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
@@ -22,18 +22,18 @@
 						(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
 				</div>
 			</div>
-			<div class="row mb-60">
-				<div class="col col-12 px-40">
+			<div class="row">
+				<div class="col-12 pt-0 pb-20 px-0">
 					<app-widget-system-monitor></app-widget-system-monitor>
 				</div>
 			</div>
-			<div class="row mb-100">
-				<div class="col col-12 px-40">
+			<div class="row">
+				<div class="col-12 py-20 px-0">
 					<vtr-widget-system-tools title=""></vtr-widget-system-tools>
 				</div>
 			</div>
-			<div class="row mb-60">
-				<div class="col col-12 px-40">
+			<div class="row">
+				<div class="col-12 py-20 px-0">
 					<vtr-container-card *ngIf="!isOnline"
 						order="4"
 						role="img"
@@ -90,20 +90,20 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row no-gutters">
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-legion-edge></vtr-widget-legion-edge>
 				</div>
 
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-quicksettings-list
 						title="{{'gaming.dashboard.device.quickSettingstitle.title' | translate}}">
 					</vtr-widget-quicksettings-list>
 				</div>
 
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-lighting title=""></vtr-widget-lighting>
 				</div>
-				<div class="col-sm-12 col-lg-12 mb-60">
+				<div class="col-sm-12 col-lg-12 mb-40">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
 						[actionName]="'dashboard.feedback.button' | translate"

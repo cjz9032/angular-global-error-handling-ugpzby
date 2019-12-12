@@ -1,7 +1,29 @@
 @import '../../../app.theme';
 
-.vtr-page-apps-for-you {
-	.vtr-page-content {
+:host ::ng-deep {
+	.vtr-page-apps-for-you {
+		.vtr-page-columns {
+			.vtr-page-column {
+				padding: 0 $padding_side 4rem !important;
+				@media #{$breakpoint_xl} {
+					padding: 0 $padding_side_sm 4rem !important;
+				}
+
+				&.vtr-page-left-column {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+
+				&.vtr-page-right-column {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+:host ::ng-deep .vtr-page-apps-for-you {
+	.vtr-page-left-column {
 		background: $shade_lightest;
 		min-height: calc(-31.5rem + 100vh);
 		padding: 0 $padding_side;

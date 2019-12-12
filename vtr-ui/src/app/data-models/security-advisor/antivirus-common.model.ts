@@ -45,7 +45,15 @@ export class AntivirusCommon {
 	}
 
 	launch() {
-		// this.antivirus.launch(); // commented to fix build error
+		if (this.antivirus && this.antivirus.mcafee
+			&& !this.antivirus.mcafee.registered
+			&& this.antivirus.mcafee.additionalCapabilities
+			&& this.antivirus.mcafee.additionalCapabilities.includes('OpenWSSInContext')) {
+			this.antivirus.openMcAfeeRegistry();
+		}
+		else {
+			this.antivirus.launch();
+		}
 	}
 
 	private onNotification(notification: AppNotification) {

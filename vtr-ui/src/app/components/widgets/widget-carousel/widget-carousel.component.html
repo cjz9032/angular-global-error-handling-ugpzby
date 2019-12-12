@@ -5,9 +5,8 @@
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
-			ngbSlide>
-			<a *ngIf="isOnline"
-				[href]="model.link"
+			ngbSlide id="ngb-slide-{{cIndex}}">
+			<a [href]="model.link"
 				vtrMetrics
 				id="{{carouselId}}-{{cIndex}}"
 				attr.aria-label="{{carouselId}}-{{cIndex}}"
@@ -26,25 +25,18 @@
 						[style.backgroundImage]="'url(' + model.image + ')'"
 						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
-					<h3 class="source" [innerHTML]="model.source" id="{{carouselId}}-{{cIndex}}-source"
-					attr.aria-label="{{carouselId}}-{{cIndex}}-source"></h3>
-					<h2 class="title" [innerHTML]="model.cardTitle" id="{{carouselId}}-{{cIndex}}-title"
-					attr.aria-label="{{carouselId}}-{{cIndex}}-title"></h2>
+					<h3 class="source"
+						#carouselSource
+						[title]="carouselSource.innerText"
+						[innerHTML]="model.source"
+						id="{{carouselId}}-{{cIndex}}-source"></h3>
+					<h2 class="title"
+						#carouselTitle
+						[title]="carouselTitle.innerText"
+						[innerHTML]="model.cardTitle"
+						id="{{carouselId}}-{{cIndex}}-title"></h2>
 				</div>
 			</a>
-			<div *ngIf="!isOnline"
-				class="carousel-link default-cursor"
-				[ngClass]="{'no-link': !model.link}">
-				<div class="image img-fluid"
-						[style.backgroundImage]="'url(' + model.image + ')'"
-						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
-				<div class="carousel-caption">
-					<h3 class="source" [innerHTML]="model.source" id="{{carouselId}}-{{cIndex}}-source"
-					attr.aria-label="{{carouselId}}-{{cIndex}}-source"></h3>
-					<h2 class="title" [innerHTML]="model.cardTitle" id="{{carouselId}}-{{cIndex}}-title"
-					attr.aria-label="{{carouselId}}-{{cIndex}}-title"></h2>
-				</div>
-			</div>
 		</ng-template>
 	</ngb-carousel>
 </div>

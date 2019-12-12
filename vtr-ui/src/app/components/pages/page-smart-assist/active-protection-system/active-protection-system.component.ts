@@ -77,13 +77,12 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.initAPS(); // get Default or set APS values
 		this.checkAdvance(); // checking advanced features
 	}
-
 	initAPS() {
 		this.smartAssist
 			.getAPSMode()
 			.then(res => {
 				res ? this.apsStatus = true : this.apsStatus = false;
-				console.log('APS IS SET---------------------------------', res);
+				// console.log('APS IS SET---------------------------------', res);
 				this.smartAssist
 					.getAPSSensitivityLevel()
 					.then(res => {
@@ -101,31 +100,34 @@ export class ActiveProtectionSystemComponent implements OnInit {
 								break;
 							}
 						}
-						console.log('APS Sensitivity Level---------------------------------', res);
+						// console.log('APS Sensitivity Level---------------------------------', res);
 					});
 				this.smartAssist
 					.getAutoDisableSetting()
-					.then(res => { this.repeatShock = res; console.log('APS Auto Disable Checkbox---------------------------------', res); });
+					.then(res => { this.repeatShock = res; 
+						// console.log('APS Auto Disable Checkbox---------------------------------', res); 
+					});
 				this.smartAssist
 					.getSnoozeSetting()
 					.then(res => {
 						this.manualSnooze = res;
-						console.log('Manual Sooze Status---------------------------------', res);
+						// console.log('Manual Sooze Status---------------------------------', res);
 						this.smartAssist
 							.getSnoozeTime()
 							.then(res => {
-								console.log('MANUAL SNOOZE TIME --------------------------------- ', res);
+								// console.log('MANUAL SNOOZE TIME --------------------------------- ', res);
 								this.manualSnoozeTime = +(res);
 							});
 					});
-			});
+			})
+			.catch(err => console.log(err));
 	}
 	// APS Advanced
 	checkAdvance() {
 		Promise
 			.all([this.smartAssist.getPenCapability(), this.smartAssist.getTouchCapability(), this.smartAssist.getPSensorCapability()])
 			.then((res: any[]) => {
-				console.log('APS Advanced Status --------------------------------- ', res);
+				// console.log('APS Advanced Status --------------------------------- ', res);
 				(res[0] || res[1] || res[2]) ? this.advanceAvailable = true : this.advanceAvailable = false;
 				res[0] ? this.penCapability = true : this.penCapability = false;
 				res[1] ? this.touchCapability = true : this.touchCapability = false;
@@ -135,7 +137,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 	}
 
 	// APS FUNCTIONS
-	setAPSMode(event) {
+	setAPSMode(event = null) {
 		const value = !this.apsStatus;
 		this.apsStatus = !this.apsStatus;
 		this.smartAssist
@@ -177,14 +179,31 @@ export class ActiveProtectionSystemComponent implements OnInit {
 		this.manualSnooze = !this.manualSnooze;
 		this.smartAssist
 			.setSnoozeSetting(value)
-			.then(res => console.log('SNOOZE STATUS SET --------------------------------- ', res));
+			.then(res => {
+				console.log('SNOOZE STATUS SET --------------------------------- ', res);
+				this.smartAssist
+					.getSnoozeTime()
+					.then(time => {
+						console.log('MANUAL SNOOZE TIME --------------------------------- ', time);
+						this.manualSnoozeTime = +(time);
+					});
+			});
 	}
 
 	setSnoozeTime(event: DropDownInterval) {
 		this.selectedSnoozeTime = event.value;
+		console.log('SNOOZE TIME', this.selectedSnoozeTime);
 		this.smartAssist
 			.setSnoozeTime(event.value.toString())
-			.then(res => console.log('SNOOZE TIME SET ---------------------------------', event.value, res));
+			.then(res => {
+				console.log('SNOOZE TIME SET ---------------------------------', event.value, res);
+				this.smartAssist
+					.getSnoozeTime()
+					.then(time => {
+						console.log('MANUAL SNOOZE TIME --------------------------------- ', time);
+						this.manualSnoozeTime = +(time);
+					});
+			});
 	}
 
 	suspendNow() {

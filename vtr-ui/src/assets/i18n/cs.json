@@ -17,7 +17,7 @@
                         "balText": "Normální CPU a otáčky ventilátoru",
                         "quietText": "Nižší zátěž CPU a otáčky ventilátoru"
                     },
-                    "wifiSecurity": "Zabezpečení Wi-Fi",
+                    "wifiSecurity": "Zabezpečení WiFi",
                     "dolby": "Dolby",
                     "rapidCharge": "Rych-lé nabíjení"
                 },
@@ -507,6 +507,23 @@
                 "red": "rgb red value edit",
                 "green": "rgb green value edit",
                 "blue": "rgb blue value edit"
+            },
+            "lightingProfileModal": {
+                "heading1": "Fantastic Lighting to Improve your Gaming Life",
+                "heading1Content": "Easy ways to set your own lighting profile.",
+                "heading2": "Create your own profile",
+                "heading2Content": "There are three profiles for you to choose from. For each profile, you can define the settings as you need. You also can select <b>Off</b> to close all profiles.",
+                "heading3": "Lighting effect",
+                "heading3Content": "Lighting effects vary by products. if you select the <b>Wave</b> or <b>Rainbow</b> effect, it will be applied on all the light areas (except for single color light).",
+                "heading4": "Brightness (available on some models)",
+                "heading4Content": "You can set the brightness for lighting.",
+                "heading5": "Speed (available on some models)",
+                "heading5Content": "You can set the speed for lighting effect, - such as breath.",
+                "heading6": "Color",
+                "heading6Content1": "You can set the color for your lighting by selecting the color from the palette.",
+                "heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
+                "heading7": "Set to default",
+                "heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
             }
         },
         "autoClose": {
@@ -596,7 +613,7 @@
                 "title": "Zabezpečení",
                 "sub1": "Moje zabezpečení",
                 "sub2": "Antivirus",
-                "sub3": "Zabezpečení Wi-Fi",
+                "sub3": "Zabezpečení WiFi",
                 "sub4": "Stav hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
@@ -612,10 +629,9 @@
             "title": "Bezpečnostního rádce",
             "subtitle": "ZKONTROLUJTE, ZDA JE ZAŘÍZENÍ ZABEZPEČENO.",
             "antiVirus": "Antivirus",
-            "wifi": "Zabezpečení Wi-Fi",
+            "wifi": "Zabezpečení WiFi",
             "pswdMgr": "Správce hesel",
             "vpn": "Síť VPN",
-            "windowsHello": "Windows Dobrý den",
             "enabled": "POVOLENO",
             "disabled": "ZAKÁZÁNO",
             "partiallyProtected": "ČÁSTEČNĚ CHRÁNĚNO",
@@ -625,7 +641,9 @@
             "installing": "INSTALACE",
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
-            "notRegistered": "NENÍ REGISTROVÁNO"
+            "notRegistered": "NENÍ REGISTROVÁNO",
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -688,7 +706,9 @@
         "offlineInfo": {
             "title": "Nebylo zjištěno žádné připojení k Internetu.",
             "subtitle": "Další informace o řešení problémů s připojením naleznete v našem článku",
-            "buttonText": "Získejte podporu"
+            "buttonText": "Získejte podporu",
+            "welcomeToVantage": "Vítejte v další generaci Vantage",
+            "systemHealth": "Stav systému"
         },
         "feedback": {
             "title": "Zaslat zpětnou vazbu",
@@ -723,8 +743,8 @@
                 "microphoneNote": "Lenovo Vantage nemá přístup k mikrofonu.",
                 "cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
             },
-            "threshold": "Threshold",
-            "conservation": "Conservation"
+            "threshold": "Práh",
+            "conservation": "Ochrana baterie"
         },
         "systemStatus": {
             "title": "Stav systému",
@@ -773,10 +793,10 @@
                 "title": "Aktualizace systému",
                 "notFound": "Aktualizace systému nebyla nalezena",
                 "detail": {
-                    "uptoDate": "Software je aktuální",
-                    "updatedOn": "aktualizováno",
-                    "outdated": "Software je zastaralý",
-                    "neverRanUpdate": "nikdy nespouštět aktualizaci"
+                    "uptoDate": "Aktualizace zkontrolovány ",
+                    "updatedOn": "zkontrolováno ",
+                    "outdated": "Aktualizace nebyly dlouho kontrolovány ",
+                    "neverRanUpdate": "Aktualizace nebyly nikdy kontrolovány"
                 }
             },
             "extendedWarranty": "Prodloužit záruku",
@@ -879,7 +899,7 @@
                     "NotGood": "<b>Stav baterie není dobrý.</b>",
                     "NotSupportACAdapter": "<b>Napájecí adaptér není podporován.</b>",
                     "LimitedACAdapterSupport": "<b>Síťový adaptér nemůže poskytnout dostatek energie.</b>",
-                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač. Ovladač můžete nainstalovat také <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>.",
+                    "MissingDriver": "<b>Ovladač Lenovo Power Manager</b> není nainstalován nebo nefunguje správně. Spusťte službu Windows Update a nainstalujte nejnovější ovladač. Ovladač můžete nainstalovat také <a target=\"_blank\"' href=\"https://support.lenovo.com/downloads/ds541411\">odtud</a>. Po instalaci restartujte počítač.",
                     "StoreLimitation": "<b>Baterie je schopna se nabít pouze na {{value}}%</b> své původní kapacity.",
                     "HighTemperature": "<b>Vybíjení</b> bylo zastaveno kvůli <b>přehřátí baterie</b>.",
                     "TrickleCharge": "Baterie je <b>zcela vybitá</b> a je třeba ji nabít. To může trvat deset i více hodin.",
@@ -887,12 +907,16 @@
                     "PermanentError": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>",
+                    "EmDriverInstalled": "Podrobnosti o baterii nejsou dostupné. Pro instalaci ovladače <b>Lenovo ACPI - Compliant Virtual Power Controller</b> přejděte do nabídky Windows Update -> Zkontrolovat aktualizace."
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
-                "thresholdNote": "<b>Poznámka:</b> Abyste prodloužili životnost baterie, nastavili jste ukončení jejího nabíjení při stavu {{value}}%.",
+                "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
-                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
+                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napájení",
@@ -968,7 +992,28 @@
                         }
                     },
                     "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
-                    "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší."
+                    "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší.",
+                    "dytc6": {
+                        "desc1": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie.",
+                        "desc2": "Tato funkce má následující režimy a nyní je upravena pomocí posuvníku výkonu systému Windows. Přístup k ní získáte kliknutím na ikonu baterie na hlavním panelu systému Windows.",
+                        "desc3": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li povolit automatický režim, stiskněte klávesy Fn+T.",
+                        "autoMode": {
+                            "title1": "Automatický režim baterie",
+                            "desc1": "Posuvník je vlevo. Režim se dynamicky přepíná do tichého režimu nebo do režimu baterie pro nejlepší zážitek z režimu DC.",
+                            "title2": "Automatický režim výkonu",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Režim se dynamicky přepíná do tichého režimu, vyváženého režimu nebo do režimu výkonu pro nejlepší zážitek z režimu AC.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
+                        },
+                        "manualMode": {
+                            "title1": "Tichý režim",
+                            "desc1": "Posuvník je vlevo. Rychlost a výkon ventilátoru jsou nižší, takže je počítač chladnější, tišší a baterie má nejdelší životnost.",
+                            "title2": "Vyvážený režim",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Rychlost a výkon ventilátoru jsou dynamicky vyvážené a zajišťují nejvyrovnanější výkon.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
+                        }
+                    }
                 },
                 "powerSettings": {
                     "title": "Nastavení napájení",
@@ -1057,17 +1102,18 @@
                         },
                         "progressText1": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "progressText2": "{{stage}} of {{stageNum}}: Kalibrace na nízký stav baterie",
+                        "progressText3": "{{stage}} z {{stageNum}}: Kalibrace na plné nabití",
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončeno. Reset proběhl úspěšně.",
-                            "ERROR_SHUTDOWN": "Nedokončeno. Systém byl vypnut.",
-                            "ERROR_LOGOFF": "Nedokončeno. Uživatel se odhlásil.",
-                            "ERROR_BATTERY_REMOVE": "Nedokončeno. Byla vyňata baterie.",
-                            "ERROR_BATTERY_REPLACE": "Nedokončeno. Byla vyměněna baterie.",
-                            "ERROR_AC_DETTACH": "Nedokončeno. Byl odpojen napájecí adaptér.",
-                            "ERROR_USER_CANCEL": "Nedokončeno. Zrušeno uživatelem.",
-                            "ERROR_UNEXPECTED": "Nedokončeno. Došlo k neočekávané chybě."
+                            "ERROR_SUCCESS": "Dokončeno: Reset proběhl úspěšně.",
+                            "ERROR_SHUTDOWN": "Selhání: Systém byl vypnut.",
+                            "ERROR_LOGOFF": "Selhání: Uživatel se odhlásil.",
+                            "ERROR_BATTERY_REMOVE": "Selhání: Byla vyňata baterie.",
+                            "ERROR_BATTERY_REPLACE": "Selhání: Byla vyměněna baterie.",
+                            "ERROR_AC_DETTACH": "Selhání: Byl odpojen napájecí adaptér.",
+                            "ERROR_USER_CANCEL": "Selhání: Zrušeno uživatelem.",
+                            "ERROR_UNEXPECTED": "Selhání: Došlo k neočekávané chybě."
                         },
                         "popup": {
                             "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
@@ -1076,7 +1122,8 @@
                             "cancel": "Storno",
                             "yes": "Ano",
                             "description3": "Opravdu chcete reset ukazatele stavu baterie přerušit?"
-                        }
+                        },
+                        "dual_note": "Poznámka: Resetovat lze vždy jen jednu baterii."
                     }
                 },
                 "energyStar": {
@@ -1092,7 +1139,7 @@
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
-                        "endTimeNote": "Koncový čas nesmí být od počátečního času vzdálen více než 20 hodin",
+                        "endTimeNote": "KONCOVý čas nesmí být od POČÁTEČNÍHO času vzdálen více než 20 hodin",
                         "timeUnits": {
                             "unit1": "Hodin",
                             "unit2": "Minut",
@@ -1112,7 +1159,8 @@
                             "wed": "středa",
                             "thurs": "Čtvrtek",
                             "fri": "pátek",
-                            "sat": "sobota"
+                            "sat": "sobota",
+                            "thu": "Thu"
                         },
                         "name": {
                             "sun": "neděle",
@@ -1125,13 +1173,53 @@
                         },
                         "everyday": "Každý den",
                         "weekdays": "Pracovní dny",
-                        "weekends": "Víkendy"
+                        "weekends": "Víkendy",
+                        "noDaySelected": "Není vybrán žádný den"
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode"
+                    "subTitle": "Plánování počítače",
+                    "automaticMode": "Automatický režim",
+                    "manualMode": "Ruční režim",
+                    "subNote": "Váš počítač je naplánován na přepnutí do moderního pohotovostního režimu na základě vašeho použití.",
+                    "graph": {
+                        "graph1Tittle": "Použití tohoto počítače",
+                        "graph2Tittle": "Použitý aktivní čas",
+                        "graphSubtittle": "V těchto časových obdobích udržujeme počítač připravený k rychlejšímu obnovení činnosti.",
+                        "graphNote": "Údaje o aktivitě tohoto počítače nejsou dostatečné k tomu, aby poskytovaly profil pro automatické plánování. Chytrý pohotovostní režim použije plán ručního režimu, dokud nebude k dispozici dostatek dat.",
+                        "legends": {
+                            "none": "Žádné",
+                            "frequent": "Časté"
+                        },
+                        "hours": {
+                            "zero": 0,
+                            "one": 1,
+                            "two": 2,
+                            "three": 3,
+                            "four": 4,
+                            "five": 5,
+                            "six": 6,
+                            "seven": 7,
+                            "eight": 8,
+                            "nine": 9,
+                            "ten": 10,
+                            "eleven": 11,
+                            "twele": 12,
+                            "thirteen": 13,
+                            "fourteen": 14,
+                            "fifteen": 15,
+                            "sixteen": 16,
+                            "seventeen": 17,
+                            "eighteen": 18,
+                            "nineteen": 19,
+                            "twenty": 20,
+                            "twentyOne": 21,
+                            "twentyTwo": 22,
+                            "twentythree": 23
+                        }
+                    },
+                    "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
+                    "subTitle2": "Nastavte čas, kdy počítač obvykle používáte"
                 }
             },
             "audio": {
@@ -1407,10 +1495,14 @@
                         "title": "POUŽÍT"
                     },
                     "website": {
-                        "url": "URL STRÁNKY"
+                        "url": "URL STRÁNKY",
+                        "successMessage": "Nastavení proběhlo úspěšně.",
+                        "invalidURLMessage": "Zadejte platnou webovou adresu.",
+                        "placeholder": "Začněte s http:// nebo https://"
                     },
                     "enterText": {
-                        "title": "TEXT K ZADÁNÍ"
+                        "title": "TEXT K ZADÁNÍ",
+                        "placeholder": "Zadejte sem"
                     }
                 },
                 "fnCtrlKey": {
@@ -1814,9 +1906,7 @@
     "security": {
         "landing": {
             "fully": "Úplná ochrana",
-            "fullyDesc": "Gratulujeme! Jste dobře chráněni.",
             "notFully": "Nejste zcela chráněni",
-            "notFullyDesc": "Vaše ochrana není úplná. Zjistěte, jak se lépe chránit.",
             "security101": "BEZPEČNOSTNÍ RÁDCE 101",
             "firewall": "Firewall",
             "pwdHealth": "Stav hesla",
@@ -1825,27 +1915,53 @@
             "wifiConnected": "Zabezpečení WiFi a připojené domácnosti",
             "connectedHomeSecurity": "Zabezpečení připojené domácnosti",
             "fingerprint": "Snímač otisku prstu",
-            "seeAllNetwork": "Zobrazit všechny připojené sítě",
-            "maliciousNetwork": "Tento měsíc byl váš počítač ochráněn před {{maliciousWifi}} škodlivými sítěmi.",
-            "good": "V POŘÁDKU",
-            "malicious": "ŠKODLIVÝ KÓD",
-            "suspicious": "PODEZŘELÝ KÓD",
-            "securityScoreDepends": "Váš bezpečnostní výsledek závisí na tom, zda jste:",
-            "antivirus": "Chráněni antivirovým softwarem",
-            "password": "Chráněni silnými a složitými hesly s bezpečnou správou",
-            "vpn": "Sledujete svou expozici útočníkům v síti",
-            "wifi": "Při používání veřejných sítít WiFi chráněni šifrováním svých osobních údajů",
-            "windowsHello": "Chráníte své zařízení používáním bezpečných možností přihlášení",
-            "uacTitle": "What is UAC notification?",
-            "uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
-            "windowsTitle": "Why I need to active Windows?",
-            "windowsText": "Running a non-genuine copy of Windows can put you at greater risk for virus and other security threats.",
-            "encryptionTitle": "What is Hard Drive Encryption?",
-            "encryptionText": "It helps to protect your data by providing encryption for entire hard drive from unauthorized access even though the drive is removed from current PC and put into other devices.",
-            "passwordTitle": "How to protect password better?",
-            "passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
-            "enhanceTitle": "What should I do to enhance security protection?",
-            "enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+            "uacTitle": "Co je oznámení UAC?",
+            "uacText": "Řízení uživatelských účtů UAC (User Account Control) je velmi důležitá funkce zabezpečení systému Windows, která pomáhá zabránit potenciálně nebezpečným programům v tom, aby provedly změny systému.",
+            "windowsTitle": "Proč musím aktivovat systém Windows?",
+            "windowsText": "Spuštění jiného než originálního systému Windows vás může silně ohrozit napadením viry a dalšími bezpečnostními hrozbami.",
+            "encryptionTitle": "Co je šifrování pevného disku?",
+            "encryptionText": "Pomáhá chránit vaše data tím, že zajistí šifrování celého pevného disku proti neoprávněnému přístupu i v případě, že bude disková jednotka vyňata ze současného počítače a vložena do jiných zařízení.",
+            "passwordTitle": "Jak lépe chránit heslo?",
+            "passwordText": "Všechna svá zašifrovaná hesla si bezpečně uložte a spravujte je profesionální aplikací digitální ochrany namísto toho, abyste si je jednoduše uložili ve svých prohlížečích, ke kterým mohou jiné strany snadno získat přístup bez vašeho vědomí.",
+            "enhanceTitle": "Co mám dělat k vylepšení ochrany zabezpečení?",
+            "enhanceText": "Důrazně doporučujeme, abyste si svá zařízení chránili antivirovým softwarem a bránou firewall, nastavte oznamování UAC na minimální ochranu. A vytvořte silná hesla a ta spravujte bezpečným způsobem, při používání veřejné sítě šifrujte svá data, což představuje dodatečnou ochranu.",
+            "antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+            "firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+            "windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+            "passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+            "fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+            "uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+            "wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+            "bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+            "vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+            "windows": "Windows Activation",
+            "goAntivirus": "go to antivirus",
+            "goFirewall": "go to firewall",
+            "goPassword": "go to passwordManger",
+            "goWifi": "go to wifi-security",
+            "goVpn": "go to VPN security",
+            "visitWindows": "Visit Windows Activation",
+            "visitFingerprint": "Visit Fingerprint reader",
+            "visitUac": "Visit User Account Control",
+            "visitHde": "Visit Hard drive encryption",
+            "haveOwnPassword": "I have my own password manager",
+            "haveOwnWifi": "I have my own wifi security",
+            "haveOwnVpn": "I have my own wifi security",
+            "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
+            "hde": "Hard drive encryption",
+            "level": "Security Level:",
+            "noProtection": "No protection",
+            "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+            "basic": "BASIC",
+            "basicTitle": "Basic protection",
+            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
+            "advancedTtitle": "Advanced protection",
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
         "antivirus": {
             "common": {
@@ -1931,8 +2047,8 @@
                 "back": "ZPĚT"
             },
             "container": {
-                "title": "Zabezpečení Wifi Lenovo",
-                "name": "ZABEZPEČENÍ WI-FI",
+                "title": "Zabezpečení WiFi Lenovo",
+                "name": "ZABEZPEČENÍ WIFI",
                 "enable": "POVOLENO",
                 "disable": "ZAKÁZÁNO",
                 "less": "Méně informací",
@@ -1941,7 +2057,7 @@
                 "connect": "Poslední připojení",
                 "showmore": "Zobrazit více",
                 "showless": "Zobrazit méně",
-                "button": "Zapnout zabezpečení Wi-Fi",
+                "button": "Zapnout zabezpečení WiFi",
                 "disableDecribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých."
             },
             "threatlocator": {
@@ -2016,7 +2132,7 @@
                 "pass": "ÚSPĚCH",
                 "learnMoreAboutSecurityHealth": "Další informace o jednotlivých součástech <tag>získáte zde</tag>.",
                 "peaceOfMind": "Toužíte po větším klidu?",
-                "button": "Zapnout zabezpečení Wi-Fi"
+                "button": "Zapnout zabezpečení WiFi"
             },
             "homeStatus": {
                 "protected": "Protected",
@@ -2111,9 +2227,36 @@
         "logout": "Odhlásit",
         "unlockExclusives": "Odemknout exkluzivní obsah",
         "user": "Uživatel",
-        "welcomeText": "Vypadáte dnes aktivně {{firstName}}!",
-        "welcomeTextWithouUserName": "Looking energized today!",
-        "welcomeTextWithoutUserName": "Vypadáte dnes aktivně!",
+        "welcomeText1": "Vypadáte dnes aktivně, {{firstName}}!",
+        "welcomeText2": "Rád tě zase vidím, {{firstName}}",
+        "welcomeText3": "To je ale příjemné překvapení, {{firstName}}",
+        "welcomeText4": "Usmívej se, {{firstName}}, je to nakažlivé :)",
+        "welcomeText5": "Ťuk, ťuk, {{firstName}}",
+        "welcomeText6": "Čeká tě spousta zábavy!",
+        "welcomeText7": "Dnes je tvůj den, {{firstName}}!",
+        "welcomeText8": "Kdo má rád šťastné stromečky?",
+        "welcomeText9": "Jede se dál, {{firstName}}!",
+        "welcomeText10": "Chce to klid a Vantage",
+        "welcomeText11": "Za stejně peněz víc Vantage",
+        "welcomeText12": "Hlavně když bude Vantage",
+        "welcomeText13": "Jíst, spát, Vantage, opakovat",
+        "welcomeText14": "Každý okamžik je nový Vantage",
+        "welcomeText15": "Vantage naplno",
+        "welcomeTextWithoutUserName1": "Vypadáte dnes aktivně!",
+        "welcomeTextWithoutUserName2": "Rád tě zase vidím",
+        "welcomeTextWithoutUserName3": "To je ale příjemné překvapení",
+        "welcomeTextWithoutUserName4": "Usmívej se, je to nakažlivé :)",
+        "welcomeTextWithoutUserName5": "Ťuk, ťuk",
+        "welcomeTextWithoutUserName6": "Čeká tě spousta zábavy!",
+        "welcomeTextWithoutUserName7": "Dnes je tvůj den!",
+        "welcomeTextWithoutUserName8": "Kdo má rád šťastné stromečky?",
+        "welcomeTextWithoutUserName9": "Jede se dál!",
+        "welcomeTextWithoutUserName10": "Chce to klid a Vantage",
+        "welcomeTextWithoutUserName11": "Za stejně peněz víc Vantage",
+        "welcomeTextWithoutUserName12": "Hlavně když bude Vantage",
+        "welcomeTextWithoutUserName13": "Jíst, spát, Vantage, opakovat",
+        "welcomeTextWithoutUserName14": "Každý okamžik je nový Vantage",
+        "welcomeTextWithoutUserName15": "Vantage naplno",
         "helloUser": "{{firstName}}, zdravíme vás!",
         "ssoErrorTitle": "Chyba",
         "ssoErrorCommon": "Pozor, zjistili jsme chybu. Zkuste akci opakovat.",
@@ -2405,7 +2548,6 @@
         "question5": {
             "title": "Použití počítače jako tabletu",
             "description": "<div class='faqInFs4Fb'>    Použití počítače jako tabletu</div><hr><p>Pokud máte zařízení s dotykovou obrazovkou, režim tabletu umožňuje intuitivnější a snadnější použití systému Windows.</p><h3 class='faqInFs25FbP10'>Použití režimu tabletu</h3><p>Chcete-li zapnout režim tabletu, na hlavním panelu vyberte <strong>centrum akcí</strong> a zvolte <strong>Režim tabletu</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Poznámka</h3><p>Pokud chcete vědět, zda se vaše zařízení umí automaticky přepnout do režimu tabletu, vyhledejte své zařízení na webu jeho výrobce. Podpora této funkce závisí na hardwaru, nainstalovaném ovladači a způsobu nastavení zařízení výrobcem. </p><p> </p><p>V režimu tabletu se aplikace otevírají na celou obrazovku, díky čemuž máte více prostoru pro práci. Chcete-li aplikaci zavřít, přetáhněte ji do dolní části obrazovky.</p><p> </p><h3 class='faqInFs25FbP10'>Tip</h3><p>V režimu tabletu se zobrazuje hlavní panel, ale pokud chcete na obrazovce více prostoru, můžete jej skrýt. Vyberte tlačítko <strong>Start</strong>, vyberte položky <strong>Nastavení </strong>> <strong>Systém </strong>> <strong>Režim tabletu</strong> a zapněte funkci <strong>Automaticky skrývat hlavní panel v režimu tabletu</strong>. Chcete-li skrytý hlavní panel zobrazit, od dolní části obrazovky přejeďte prstem nahoru nebo do dolní části obrazovky umístěte ukazatel myši.</p><h3 class='faqInFs25FbP10'>Použití dvou aplikací současně</h3><p>Chcete-li v režimu tabletu používat dvě aplikace vedle sebe, přetáhněte otevřenou aplikaci dolů a na stranu. Uvidíte, kam se přichytí, a vedle ní uvidíte všechny otevřené aplikace.</p><p>V tomto zobrazení také můžete:</p><ul>    <li>Pomocí sdílené hrany mezi dvěma přichycenými aplikacemi změnit velikost obou aplikací najednou.</li>    <li>V zobrazení úloh otevřít novou aplikaci: Na hlavním panelu vyberte <strong>zobrazení úloh</strong>, vyberte aplikaci a přetáhněte ji na jednu stranu rozdělené obrazovky.</li>    <li>Pomocí tlačítka Zpět na hlavním panelu přejít zpět do aplikace nebo otevřít aplikaci, kterou jste používali dříve.</li></ul><p> </p>",
-            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2488,10 +2630,11 @@
         "bullets2": "Bezpečnostní poradce usnadňuje správu zabezpečení (dostupný u vybraných systémů).",
         "bullets3": "Automatické aktualizace uchovávají vaše zařízení ve skvělém stavu (dostupné u vybraných systémů).",
         "subtitle1": "Jak budete zařízení používat?",
-        "subtitle2": "Povězte nám o svých zájmech",
+        "subtitle2": "Povězte nám o svých zájmech (nepovinné)",
         "personal": "Osobní použití",
         "business": "Obchodní použití",
         "custom": "Vlastní zkušenost",
+        "professional": "Určeno pro odborníky",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
         "moreInterest": "+ další zájmy",
         "title1": "Vítá vás",
@@ -2528,9 +2671,12 @@
         "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
         "deviceStatistics": "Sdílejte statistická data se společností Lenovo",
         "deviceStatisticsDescription": "Sdílí se společností Lenovo statistické údaje, na jejichž základě je možno zlepšovat spolehlivost, design a optimalizační funkce vašeho počítače.",
-        "userProfile": "User profile",
+        "userProfile": "Profil uživatele",
         "Note": "Poznámka: ",
-        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila."
+        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat opětovné spuštění aplikace, aby se projevila.",
+        "betaSettingTitle": "Beta program",
+        "betaProgram": "Beta program",
+        "betaSettingDescription": "Vyzkoušejte nejnovější funkce, na kterých pracujeme."
     },
     "modernPreload": {
         "cancel": "Storno",
@@ -2659,7 +2805,8 @@
                 "description": "Během procesu kontroly a opravy může dojít ke ztrátě dat. Před spuštěním této operace proto doporučujeme provést zálohu. Opravdu chcete pokračovat?",
                 "yes": "Ano",
                 "no": "Ne"
-            }
+            },
+            "waitAvailability": "Tlačítko je deaktivováno, pokud dosud nebyly načteny informace o hardwaru, úložná zařízení nepodporují tuto funkci nebo byla spuštěna obnova vadných sektorů."
         },
         "support": {
             "title": "Stáhnout profesionální diagnostické nástroje",
@@ -2684,11 +2831,221 @@
         "cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
         "cancelTextProgress": "Počkejte na dokončení procesu zrušení",
         "pluginNotUpdate": "Hardwarové skenování není k dispozici, protože je zastaralé. Upgradujte je.",
-        "testNotApplicable": "Nepoužitelné u vlastních kontrol"
+        "testNotApplicable": "Nepoužitelné u vlastních kontrol",
+        "waitScanStarts": "Počkejte, dokud se nespustí skenování",
+        "reminderTimeRetrieveHardwareInformation": "Načtení informací o hardwaru, které jsou potřebné pro tento proces, může chvíli trvat",
+        "retrievingHardwareInformation": "Načítání informací o hardwaru...",
+        "pluginTokens": {
+            "cpu": "Procesor",
+            "memory": "Paměť",
+            "motherboard": "Základní deska",
+            "pci_express": "PCI Express",
+            "storage": "Úložiště",
+            "wireless": "Bezdrátové"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
-        "back": "BACK"
+        "back": "BACK",
+        "performanceandSecurityCheckTitle": "Performance & Security Check",
+        "performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+        "scanButton": "FREE PC SCAN",
+        "section1Heading": "How would you rate your PC Performance?",
+        "section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+        "critical": "CRITICAL",
+        "allisWell": "ALL IS WELL",
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "tuneUP": "Your PC needs a tune-up",
+        "section2Heading": "Top-notch PC Performance. Always",
+        "section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+        "tunePCPerformance": {
+            "title": "TUNE PC PERFORMANCE",
+            "heading": "Show your computer some extra love",
+            "description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+            "tabSet1": {
+                "tab1": "Accumulated Junk",
+                "tab2": "Usability Issues",
+                "tab3": "Windows Settings",
+                "tab4": "Systems Errors",
+                "tab5": "Registry Errors"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "boostInternetPerformance": {
+            "title": "BOOST INTERNET PERFORMANCE",
+            "extraTitle": "INTERNET PERFORMANCE",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Network Settings",
+                "tab2": "Browser Settings",
+                "tab3": "Browser Security",
+                "tab4": "Wi-Fi Performance",
+                "tab5": "E-junk"
+            },
+            "tabSet2": {
+                "tab1Heading": "ZERO DAY VIRUS",
+                "tab1Description": "We remove even the newest malware infections",
+                "tab2Heading": "SPYWARE REMOVAL",
+                "tab2Description": "We remove all potentially unwanted programs",
+                "tab3Heading": "LIGHT AND FAST",
+                "tab3Description": "Scan typically takes 5-10 minutes"
+            }
+        },
+        "malwareSecurity": {
+            "title": "MALWARE & SECURITY",
+            "heading": "Give your internet a boost",
+            "description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+            "tabSet1": {
+                "tab1": "Malware scan",
+                "tab2": "Zero-day infections",
+                "tab3": "Security settings",
+                "tab4": "Errant programs",
+                "tab5": "Annoying adware"
+            },
+            "tabSet2": {
+                "tab1Heading": "SLOW INTERNET",
+                "tab1Description": "We will help you get maximum performance.",
+                "tab2Heading": "CONNECTIVITY ERRORS",
+                "tab2Description": "We can diagnose and repair your connectivity problems.",
+                "tab3Heading": "BROWSER ISSUES",
+                "tab3Description": "We configure and fix all your popular web browsers."
+            }
+        },
+        "proactiveAutomated": {
+            "title": "PROACTIVE & AUTOMATED",
+            "heading": "Get the power to resolve issues, before they impact you!",
+            "description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+            "tabSet1": {
+                "tab1": "Schedule Scan",
+                "tab2": "On-demand scan",
+                "tab3": "Automated resolution",
+                "tab4": "It's effective",
+                "tab5": "24/7 Protection"
+            },
+            "tabSet2": {
+                "tab1Heading": "IT'S EASY",
+                "tab1Description": "We don't confuse you with tech mumbo jumbp",
+                "tab2Heading": "IT'S FAST",
+                "tab2Description": "Get a 100 point check done in under 5 minutes",
+                "tab3Heading": "IT'S SAFE",
+                "tab3Description": "No scareware, built with best practises"
+            }
+        },
+        "startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+        "subscriptionDetails": {
+            "title": "Subscription details",
+            "description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+            "learnMore": "Learn more",
+            "startDate": "Start date",
+            "endDate": "End date",
+            "status": "Status",
+            "activeStatus": "ACTIVE",
+            "inactiveStatus": "INACTIVE",
+            "manageSubscription": "MANAGE SUBSCRIPTION"
+        },
+        "scanSettings": {
+            "title": "Scan settings",
+            "description": "Enable or disable the scan and set the scan schedule",
+            "enableScan": "Enable Scan",
+            "changeScanTitle": "Change scan schedule",
+            "changeScanDescription": "Edit the scan schedule to run when you need it.",
+            "frequency": "Frequency",
+            "txtDate": "Date",
+            "txtDay": "Day",
+            "txtTime": "Time",
+            "txtSave": "save",
+            "txtCancel": "cancel"
+        },
+        "scanningPage": {
+            "title": "Performance & security check",
+            "description": "Please wait while we scan your system for potential problems and threats.",
+            "scanningSystem": "Scanning system",
+            "complete": "complete",
+            "cancelScan": {
+                "button": "CANCEL SCAN",
+                "title": "Cacel the scan?",
+                "description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+                "yesButton": "YES, CANCEL",
+                "noButton": "NO, RESUME SCAN"
+            },
+            "waiting": "WAITING TO SCAN",
+            "completed": "COMPLETED",
+            "nowScanningDetail": {
+                "cardTitle": "NOW SCANNING DETAIL",
+                "current": "CURRENT: ",
+                "upNext": "UP NEXT"
+            }
+        },
+        "scanCompletePage": {
+            "title": "System scan is complete",
+            "description": "Here is what we found on your Lenovo Vantage 720s.",
+            "scanRates": "Our scan rates your PC at: ",
+            "summary": "Summary",
+            "summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+            "signupRepairButton": "SIGN UP & REPAIR NOW",
+            "monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+            "issueCount": "{{individualIssueCount}} ISSUES",
+            "scannedAreas": "SCANNED AREAS",
+            "recommendedAction": {
+                "title": "RECOMMENDED ACTION",
+                "description": "We will automatically fix these issues. Once today and every week thereafter",
+                "yearlyPricing": "$19.99 / Yr",
+                "monthlyPricing": "LESS THAN $2 PER MONTH.",
+                "longerTerm": "Longer term? Even more savings?",
+                "signupButton": "SIGN UP"
+            }
+        },
+        "subscriberScanHomePage": {
+            "title": "All is well with your Ideapad 720s",
+            "serialNumber": "Serial number: ",
+            "subTitle": "You are subscribed to Lenovo Smart Performance Service",
+            "description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+            "scanNow": "SCAN NOW",
+            "returnto": "RETURN TO DASHBOARD",
+            "mostRecent": "MOST RECENT SCAN:",
+            "nextScheduled": "NEXT SCHEDULED SCAN:",
+            "scanSummary": {
+                "title": "Scan summary:",
+                "description": "We are constantly tuning your computer",
+                "tune": "Tune",
+                "tuneSummary": "Disk space reclaimed",
+                "boost": "Boost",
+                "boostSummary": "Fixes to improve performance",
+                "secure": "Secure",
+                "secureSummary": "Fixes to improve security",
+                "annual": "Annual",
+                "quarterly": "Quarterly",
+                "custom": "Custom",
+                "txtFrom": "From",
+                "txtTo": "To",
+                "txtGo": "Go"
+            },
+            "lastScanResults": {
+                "title": "Last 5 scan results:",
+                "scanDate": "Scan date:",
+                "results": "Results:",
+                "status": "Status"
+            }
+        }
     },
     "appsForYou": {
         "common": {
@@ -2706,6 +3063,7 @@
             "installButton": {
                 "install": "Nainstalujte si",
                 "installing": "Instalace",
+                "downloading": "Stahování",
                 "installed": "Nainstalováno",
                 "launch": "Spustit",
                 "seeMore": "Další informace"
@@ -2802,7 +3160,7 @@
             "welcomeTitle": "welcome to connected home security",
             "welcomeSubTitle": "30 days of protection for free",
             "welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-            "welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+            "welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
             "locationTitle": "Enable location permissions",
             "locationPermission": "Allow Lenovo Vantage to access this device's location?",
             "allow": "Allow",

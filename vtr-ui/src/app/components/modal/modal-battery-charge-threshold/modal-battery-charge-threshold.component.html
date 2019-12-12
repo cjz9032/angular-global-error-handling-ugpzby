@@ -1,14 +1,14 @@
 <div class="modal-body vtr-modal-battery-charge-threshold"
-	role="dialog">
+	role="dialog"
+	aria-modal="true">
 	<div class="row justify-content-end">
 		<div class="btn-close">
 			<button type="button"
-				role="button"
 				class="close"
 				tabindex="0"
 				id="ds-threshold-popup-close-button"
 				aria-hidden="true"
-				attr.aria-label="ds-threshold-popup-close-button"
+				aria-label="close modal"
 				(click)="closeModal()"
 				(keydown.enter)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
@@ -17,34 +17,24 @@
 	</div>
 	<h1 id="ds-threshold-popup"
 		attr.aria-label="ds-threshold-popup"
-		tabindex="0"
-		ngbAutofocus>
-		{{title | translate}}</h1>
+		[innerHTML]="title | translate"></h1>
 	<p id="ds-thresholdpopup-description1"
 		attr.aria-label="ds-thresholdpopup-description1"
-		tabindex="0"
-		[innerHTML]="description1 | translate">
-	</p>
+		[innerHTML]="description1 | translate"></p>
 	<p id="ds-thresholdpopup-description2"
 		attr.aria-label="ds-thresholdpopup-description2"
-		tabindex="0"
-		[innerHTML]="description2 | translate">
-	</p>
+		[innerHTML]="description2 | translate"></p>
 	<hr>
 	<div class="row">
 		<button id="battery-threshold-popup-enable"
-			tabindex="0"
-			role="button"
 			attr.aria-label="battery-threshold-popup-enable"
 			class="btn enable-button"
-			(click)="enableBatteryChargeThreshold()"
-			(keydown.enter)="enableBatteryChargeThreshold()">{{positiveResponseText | translate}}</button>
+			(click)="enableBatteryChargeThreshold()">
+			{{positiveResponseText | translate}}
+		</button>
 		<a id="battery-threshold-popup-cancel"
 			attr.aria-label="battery-threshold-popup-cancel"
-			tabindex="0"
-			role="link"
 			(click)="closeModal()"
-			(keydown.enter)="closeModal()"
 			class="cancel-link active">{{negativeResponseText | translate}}</a>
 	</div>
 

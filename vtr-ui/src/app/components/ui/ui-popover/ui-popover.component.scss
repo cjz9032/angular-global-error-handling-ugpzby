@@ -2,22 +2,27 @@
 
 ui-popover {
 	position: absolute;
-	width: 70rem;
+	width: 60rem;
 	padding: 3rem 5rem;
 	background: $gaming_lightest;
 	z-index: 9;
 	border-radius: 1rem;
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 8rem;
-	top: -12rem;
-	@media #{$small-screen} {
+	top: -13rem;
+	@media #{$breakpoint_xl} {
+		width: 50rem;
+	}
+	@media #{$breakpoint_lg} {
 		width: 45rem;
+		top: -14rem;
 	}
-	@media #{$medium-screen} {
-		width: 55rem;
+	@media #{$breakpoint_md} {
+		width: 40rem;
 	}
-	@media #{$mediaquery_X31} {
-		width: 48rem;
+	@media #{$breakpoint_sm} {
+		width: 35rem;
+		padding: 3rem 3rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;

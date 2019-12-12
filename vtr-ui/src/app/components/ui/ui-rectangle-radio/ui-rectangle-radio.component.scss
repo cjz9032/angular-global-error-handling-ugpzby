@@ -9,7 +9,11 @@
 	width: 15rem;
 	height: 15rem;
 	border-radius: $border_radius_sm;
-	
+	@media #{$breakpoint_sm} {
+		width: 13rem;
+		height: 13rem;
+	}
+
 	label {
 		box-sizing: border-box;
 		padding: 0rem;
@@ -111,20 +115,27 @@
 	opacity: 0.7;
 	border: 0.3rem solid $light-grey;
 
-	label {	
+	label {
 		&:after, &:before {
 			border-color: $light-grey;
-		}	
+		}
 		&:after {
 			background-color: $light-grey;
-		}	
+		}
 		&:hover {
-			cursor: not-allowed;		
-		}	
+			cursor: not-allowed;
+		}
 	}
 }
 .icomoon-Special-function, .icomoon-F1-F12-funciton {
 	&:before {
 		font-size: $svg_icon
+	}
+}
+:host-context(.top-row-key-block) {
+	.vtr-ui-rectangle-radio {
+		.label {
+			word-break: break-all!important;
+		}
 	}
 }

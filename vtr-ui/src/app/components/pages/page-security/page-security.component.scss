@@ -1,6 +1,22 @@
 @import "../../../app.theme";
 ::ng-deep {
 	.vtr-page-security {
+		.vtr-widget-offline-info {
+			.offline-info-background {
+				height: 12rem !important;
+				padding: 1.5rem 6rem !important;
+
+				.offline-icon{
+					.icon {
+						font-size: 6rem !important;
+					}
+				}
+
+				.offline-content{
+					padding-left: 3rem !important;
+				}
+			}
+		}
 		.landing-widgets {
 			background-color: $light;
 			box-shadow: $drop_shadow;
@@ -112,6 +128,27 @@
 								}
 							}
 						}
+
+					}
+				}
+			}
+			.security-widget.wifi-connected-home {
+				.security-widget-inner {
+					.coronet-logo {
+						width: 9rem;
+						padding-top: 1rem;
+					}
+				}
+			}
+			.security-widget.windows-hello {
+				border-bottom: none;
+				.security-widget-inner {
+					.title {
+						color: $go_dark;
+					}
+					.windows-logo {
+						width: 9rem;
+						padding-top: 1rem;
 					}
 				}
 			}

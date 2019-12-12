@@ -28,7 +28,6 @@ ul.list-group {
 		color: $shade_blue;
 		// font-weight: $weight_bold;
 		letter-spacing: 0.89px;
-		font-family: "Segoe UI", Sans-serif;
 		line-height: 23px;
 	}
 }
@@ -39,10 +38,11 @@ ul.list-group {
 	font-size: $body;
 	font-weight: $weight_600;
 	.collapse-header {
-		display: flex;
+		display: inline-flex;
 		color: $blueHyperLink;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
+		width: auto;
 	}
 	.collapse-header-icon {
 		flex-wrap: nowrap;
@@ -64,7 +64,7 @@ ul.list-group {
 			width: 80.9%;
 			margin-top: 1.5rem;
 			line-height: 23px;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 			color: $shade_blue;
 		}
 	}
@@ -100,9 +100,18 @@ ul.list-group {
 	color: $blueHyperLink;
 	text-decoration: underline;
 	margin-top: 3rem;
+	display: inline-block;
 	cursor: pointer;
 }
-
+.disabled {
+	margin-left: 1rem;
+	font-size: $body;
+	font-weight: $weight_light;
+	color: black;
+	text-decoration: none;
+	margin-top: 3rem;
+	cursor: default;
+}
 .container-border {
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;

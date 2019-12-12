@@ -25,6 +25,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() isLoading = true;
 	@Output() toggle = new EventEmitter<boolean>();
 	@Input() switchId: string;
+	@Input() hideOnOffLabel = false;
 	constructor() { }
 
 	ngOnInit() {

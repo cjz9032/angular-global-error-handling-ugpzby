@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-header-main',
@@ -20,9 +21,14 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 	@Input() backId: string;
 	@Input() ariaLabel: string;
 	@Input() isInnerBack = false;
-	@Output() innerBack = new EventEmitter();
 	@Input() textId: string;
-	constructor(private router: Router) { }
+	@Input() hideBack = false;
+	@Output() innerBack = new EventEmitter();
+
+	constructor(
+		private router: Router,
+		public deviceService: DeviceService
+	) { }
 
 	ngOnInit() {
 		const self = this;
@@ -50,8 +56,11 @@ export class HeaderMainComponent implements OnInit, AfterViewInit {
 		if (this.isInnerBack) {
 			this.onInnerBack();
 		} else {
-			if (window.history.length > 1) { return window.history.back(); }
-			this.router.navigate(['dashboard']);
+			if (window.history.length > 1) {
+				return window.history.back();
+			} else if (typeof this.deviceService.isGaming === 'boolean') {
+				this.router.navigate([this.deviceService.isGaming ? 'device-gaming' : 'dashboard']);
+			}
 		}
 	}
 }

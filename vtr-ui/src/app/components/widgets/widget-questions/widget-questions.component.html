@@ -1,13 +1,18 @@
-<div class="vtr-widget-questions p-40"
+<div class="vtr-widget-questions"
 	tabindex="0"
+	role="none"
 	attr.aria-label="{{title}}-{{description}}">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title {{'dirClass' | translate}}" id="{{linkId}}-title"
-				attr.aria-label="{{linkId}}-title"  dir="{{'dir' | translate}}">{{title}}</div>
-				<div class="description {{'dirClass' | translate}}" id="{{linkId}}-description"
-				attr.aria-label="{{linkId}}-description" dir="{{'dir' | translate}}">{{description}}</div>
+				<div class="title {{'dirClass' | translate}}"
+					id="{{linkId}}-title"
+					attr.aria-label="{{linkId}}-title"
+					dir="{{'dir' | translate}}">{{title}}</div>
+				<div class="description {{'dirClass' | translate}}"
+					id="{{linkId}}-description"
+					attr.aria-label="{{linkId}}-description"
+					dir="{{'dir' | translate}}">{{description}}</div>
 			</div>
 		</div>
 		<div class="row filter">

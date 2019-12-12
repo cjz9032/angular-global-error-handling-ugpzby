@@ -1,11 +1,16 @@
-<div class="vtr-widget-status p-40">
+<div class="vtr-widget-status"
+	tabindex="0"
+	role="none"
+	attr.aria-label="{{title}}-{{description}}">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title" id="{{linkId}}-title"
-				 attr.aria-label="{{linkId}}-title">{{title}}</div>
-				<div class="description" id="{{linkId}}-description"
-				attr.aria-label="{{linkId}}-description">{{description}}</div>
+				<div class="title"
+					id="{{linkId}}-title"
+					attr.aria-label="{{linkId}}-title">{{title}}</div>
+				<div class="description"
+					id="{{linkId}}-description"
+					attr.aria-label="{{linkId}}-description">{{description}}</div>
 			</div>
 		</div>
 	</div>
@@ -15,7 +20,9 @@
 				*ngIf="items.length === 0">
 				<vtr-spinner></vtr-spinner>
 			</div>
-			<vtr-ui-list-chevron [items]="items" vtrMetrics metricsEvent="featureclick"
+			<vtr-ui-list-chevron [items]="items"
+				vtrMetrics
+				metricsEvent="featureclick"
 				*ngIf="items.length > 0"
 				[linkId]="linkId"></vtr-ui-list-chevron>
 		</div>

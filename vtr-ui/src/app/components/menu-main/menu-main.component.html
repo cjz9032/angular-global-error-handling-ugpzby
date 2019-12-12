@@ -14,17 +14,17 @@
 				[metricsParent]="'NavBar'"
 				[metricsItem]="items[0].metricsItem"
 				routerLink="/dashboard">
-				<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTYgMjU2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjdBREQ3O30NCgkuc3Qxe2ZpbGw6IzIxMzA2NDt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHk9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IDE5NC44LDE5NS41IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDg4LjUsMzkuNiA4Ni4zLDM5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
+				<img [src]="VantageLogo | sanitize : 'resourceUrl'"
 					alt="L" />
 			</a>
 		</div>
 		<div *ngIf="items.length> 0 && (deviceService.isGaming || loadMenuItem.hideMenus)"
-			class="navbar-brand pt-0">
+			class="navbar-brand pt-0 logo-y">
 
-			<img *ngIf="isGamingHome"
-				src="../../../assets/images/gaming/gaming-logo-small.png"
-				alt="L" />
-
+			<div *ngIf="isGamingHome">
+				<img [src]="headerLogo | sanitize : 'resourceUrl'"
+					alt="L" />
+			</div>
 			<a id="menu-main-lnk-gaming-logo"
 				aria-label="menu-main-lnk-gaming-logo"
 				tabindex="1"
@@ -37,7 +37,7 @@
 				[metricsParent]="'NavBar'"
 				[metricsItem]="items[0].metricsItem"
 				routerLink="/{{items[0].path}}">
-				<img src="../../../assets/images/gaming/gaming-logo-small.png"
+				<img [src]="headerLogo | sanitize : 'resourceUrl'"
 					alt="L" />
 			</a>
 
@@ -110,10 +110,12 @@
 								class="beta">Beta</span>
 						</a>
 					</li>
-					<li ngbDropdown
-						*ngIf="item.subitems.length>0 && isCommomItem(item) && showItem(item)"
-						role="menu"
+					<li ngbDropdown #menudropdown="ngbDropdown"
+						*ngIf="item.subitems.length>0
+						&&isCommomItem(item)
+						&&showItem(item)"
 						class="nav-item dropdown"
+						(mouseleave)="menudropdown.close()"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a ngbDropdownToggle
 							class="nav-link dropdown-toggle {{item.id}}"
@@ -128,8 +130,8 @@
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							data-toggle="dropdown"
-							attr.aria-haspopup="true"
-							attr.aria-expanded="false"
+							aria-haspopup="true"
+							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item);"
 							(keydown.enter)="onMenuItemClick(item)"
@@ -150,7 +152,7 @@
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
 							<span *ngFor="let subitem of item.subitems; let ii=index">
-								<a ngbDropdownItem *ngIf="subitem.externallink"
+								<a ngbDropdownItem *ngIf="subitem.externallink && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{ii}}"
@@ -165,9 +167,9 @@
 									rel="noopener"
 									href="javascript:void(0)"
 									(click)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
-									(keydown.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)"
-									role="menuitem">{{subitem.label | translate}}</a>
-								<a ngbDropdownItem *ngIf="!subitem.externallink"
+									(keyup.enter)="onMenuItemClick(subitem); openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
+								<a ngbDropdownItem
+									*ngIf="!subitem.externallink && showItem(subitem)"
 									vtrMetrics
 									tabindex="1"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{ii}}"
@@ -228,7 +230,7 @@
 						</div>
 					</li>
 					<li ngbDropdown
-						*ngIf="item.id==='user'"
+						*ngIf="item.id==='user' && languageService.isLanguageLoaded"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 									routerLink="/{{item.path}}"
@@ -247,7 +249,6 @@
 							class="nav-link {{item.id}}"
 							id="navbarDropdown"
 							attr.aria-label="navbarDropdown"
-							*ngIf="userService.isLenovoIdSupported()"
 							[ngClass]="{'dropdown-toggle': true}"
 							role="button"
 							tabindex="1"
@@ -256,9 +257,10 @@
 							aria-expanded="false"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
+
 							(keydown.enter)="onMenuItemClick(item)">
 							<div class="user-initials">
-								{{deviceService.isArm || userService.starter || !commonService.isOnline ? 'L' : userService.initials }}
+								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}
 							</div>
 							<span class="unread-count-tag"
 								*ngIf="!deviceService.isArm && UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
@@ -311,7 +313,7 @@
 									*ngIf="!UnreadMessageCount.adobeMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
-								*ngIf="commonService.isOnline && !deviceService.isSMode && !deviceService.isGaming && modernPreloadService.IsEntitled"
+								*ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
 								vtrMetrics
 								tabindex="1"
 								id="menu-main-lnk-open-modern-preload"

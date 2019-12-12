@@ -140,7 +140,7 @@
 		}
 
 		.no-border-bottom {
-			::ng-deep .vtr-ui-switch-row {
+			 .vtr-ui-switch-row.white-theme {
 				border-bottom: none !important;
 			}
 		}
@@ -148,11 +148,10 @@
 			border-bottom: 0.1rem solid $shade_lighter;
 		}
 		.bold-title {
-			::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-ui-switch-row.white-theme {
 				.title {
-					font-weight: 700;
-					font-size: 1.8rem;
-					// letter-spacing: 0rem;
+					font-weight: 700 !important;
+					font-size: 1.8rem !important;
 				}
 			}
 		}
@@ -170,7 +169,7 @@
 		}
 		.padding-right-07 {
 			padding-right: 0.7rem;
-		}
+        }
 		.margin-right-05 {
 			margin-right: 0.5rem;
 		}
@@ -255,16 +254,16 @@
 		background-color: $shade_lightest;
 			border: 1px solid $shade_lighter;
 			padding-right: 1.4rem;
-			max-width: 60rem;
 			span {
 				font-size: $body;
 				color: $main_darker;
 			}
 		.privacy-button {
-			font-size: 1.4rem;
+			font-size: $body;
 			letter-spacing: 0.76px;
 			text-align: left;
 			text-decoration: underline;
+			margin-bottom: 0.5rem;
 				&:hover {
 					text-decoration: underline;
 				}
@@ -273,12 +272,18 @@
 	.facial-recognition {
 		h3 {
 			font-weight: $weight_bold;
-			color: $main_darker;
+            color: $main_darker;
+            font-size:1.8rem !important;
 		}
 		p {
 			font-size: $body;
 			font-weight: $weight_light;
-			max-width: 60rem;
 		}
 	}
+	.fac-control {
+		margin-right: 1rem;
+		margin-left: 2.5rem;
+		padding-top: 1.5rem;
+	}
+	
 }

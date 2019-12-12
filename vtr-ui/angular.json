@@ -30,8 +30,7 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/mock-api",
-							"src/manifest.webmanifest",
-							"src/pre-load.js"
+							"src/manifest.webmanifest"
 						],
 						"styles": [
 							"src/styles.scss"
@@ -53,7 +52,7 @@
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
-							"extractCss": true,
+							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,
 							"extractLicenses": false,
@@ -81,7 +80,7 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": true,
+							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -110,7 +109,11 @@
 							],
 							"optimization": true,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": {
+								"scripts": true,
+								"styles": true,
+								"vendor": true
+							},
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,
@@ -140,7 +143,7 @@
 							"optimization": true,
 							"outputHashing": "all",
 							"sourceMap": false,
-							"extractCss": true,
+							"extractCss": false,
 							"namedChunks": true,
 							"aot": true,
 							"extractLicenses": false,
@@ -168,6 +171,10 @@
 								{
 									"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
 									"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+								},
+								{
+									"replace": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector.ts",
+									"with": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector-mock.ts"
 								}
 							],
 							"optimization": false,
@@ -261,6 +268,25 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/manifest.webmanifest"
+						],
+						"codeCoverage": true,
+						"fileReplacements": [
+							{
+								"replace": "src/environments/environment.ts",
+								"with": "src/environments/environment.mock.ts"
+							},
+							{
+								"replace": "src/app/services/mock/mock.service.ts",
+								"with": "src/app/services/mock/mock.service.prod.ts"
+							},
+							{
+								"replace": "src/app/services/vantage-shell/vantage-shell.service.ts",
+								"with": "src/app/services/vantage-shell/vantage-shell-mock.service.ts"
+							},
+							{
+								"replace": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector.ts",
+								"with": "src/app/components/pages/page-privacy/utils/communication-with-figleaf/figleaf-connector-mock.ts"
+							}
 						]
 					}
 				},

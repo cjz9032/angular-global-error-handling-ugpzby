@@ -9,19 +9,42 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph1Tittle' | translate }}</h4>
-            <!-- <vtr-smart-standby-graph></vtr-smart-standby-graph> -->
-            <!-- <div class="app-smart-standby-activity my-3" #activityChart></div> -->
-            <div #activityChart></div>
+            <div *ngFor="let item of items">
+                <div class="pl-2">
+                    <div class="tittle">{{item.tittle | translate}}</div>
+                    <div class="sub-tittle">{{item.subTittle | translate}}</div>
+                </div>
+                <div #chartContainer [id]="'chartContainer-' + item"></div>
+                <div *ngIf="item && item.legends" class="d-flex justify-content-end legends-row">
+                    <span class="mr-1">
+                        {{'device.deviceSettings.power.smartStandby.graph.legends.none' | translate}}
+                    </span>
+                    <!-- <span *ngFor="let bgcolor of item.colors.first" class="graph-legend" [innerHtml]="item.legends" [style.backgroundColor]="bgcolor"></span> -->
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[0]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[1]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[2]"></span>
+                    <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[3]"></span>
+                        <span class="graph-legend" [innerHtml]="item.legends"
+                        [style.backgroundColor]="colors.first[4]"></span>
+                    <span class="ml-1">
+                        {{'device.deviceSettings.power.smartStandby.graph.legends.frequent' | translate}}
+                    </span>
+                </div>
+            </div>
         </div>
-        <!-- <div class="col-12 mt-3">
-                <h4 class="mb-3">{{ 'device.deviceSettings.power.smartStandby.graph2Tittle' | translate }}</h4>
-                 <div #scheduleChart></div>
-        </div> -->
+        <div class="col-12 mt-3" *ngIf="isAutomatic && isSufficient === false">
+            <div class="note pl-4">
+                <h4> {{'device.deviceSettings.power.smartStandby.graph.graphNote' | translate}} </h4>
+            </div>
+        </div>
         <div>
             <button id="smart-standby-close" role="button" attr.aria-label="smart-standby-close" tabindex="1"
                 class="btn close-button" (click)="closeModal()"
-                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate}}
+                (keydown.enter)="closeModal()">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.intelligentCoolingModesModal.close' | translate | uppercase}}
             </button>
         </div>
     </div>

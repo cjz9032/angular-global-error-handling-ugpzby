@@ -19,7 +19,7 @@
 						"balText": "Normal CPU and fan speed",
 						"quietText": "Lower CPU usage, Lower fan speed"
 					},
-					"wifiSecurity": "Wifi Security",
+					"wifiSecurity": "WiFi Security",
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
 				},
@@ -372,7 +372,7 @@
 			},
 			"brightness": {
 				"text1": {
-					"title": "*Brightness setting doesn't apply on "
+					"title": "*Brightness setting doesn't apply on"
 				},
 				"text2": {
 					"title": " effect"
@@ -526,7 +526,6 @@
 				"heading6Content2": "<b>Note:</b> For Wave and Rainbow effect, the color cannot be changed.",
 				"heading7": "Set to default",
 				"heading7Content": "Click the <b>SET TO DEFAULT</b> button to cancel all the changes you’ve made."
-
 			}
 		},
 		"autoClose": {
@@ -618,7 +617,7 @@
 				"sub2": "Anti-Virus",
 				"sub3": "WiFi Security",
 				"sub4": "Password Health",
-				"sub5": "Internet Protection",
+				"sub5": "VPN Security",
 				"sub6": "Windows Hello"
 			},
 			"support": "Support",
@@ -630,12 +629,12 @@
 		},
 		"securityAdvisor": {
 			"title": "Security Advisor",
-			"subtitle": "CHECK IF YOUR DEVICE IS SECURED.",
+			"subtitle": "Check if your device is secured.",
 			"antiVirus": "Anti-Virus",
 			"wifi": "WiFi Security",
 			"pswdMgr": "Password Manager",
 			"vpn": "VPN",
-			"windowsHello": "Windows Hello",
+			"fingerPrint": "Fingerprint",
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
 			"partiallyProtected": "PARTIALLY PROTECTED",
@@ -645,11 +644,12 @@
 			"installing": "INSTALLING",
 			"notFound": "NOT FOUND",
 			"registered": "REGISTERED",
-			"notRegistered": "NOT REGISTERED"
+			"notRegistered": "NOT REGISTERED",
+			"privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
-			"subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
+			"subtitle": "Find some helpful tips for your device.",
 			"question1": "Backup and Restore your files",
 			"question2": "How to refresh your PC",
 			"question3": "How to know your machine's CPU",
@@ -708,7 +708,9 @@
 		"offlineInfo": {
 			"title": "No internet connection detected",
 			"subtitle": "Learn more on how to solve connection issues in our",
-			"buttonText": "Get Support"
+			"buttonText": "Get Support",
+			"welcomeToVantage": "Welcome to the next generation of Vantage",
+			"systemHealth": "System Health"
 		},
 		"feedback": {
 			"title": "Give Feedback",
@@ -748,7 +750,7 @@
 		},
 		"systemStatus": {
 			"title": "System Status",
-			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+			"subtitle": "Quick catch up your device status.",
 			"memory": {
 				"title": "Memory",
 				"detail": {
@@ -793,10 +795,10 @@
 				"title": "System Update",
 				"notFound": "System Update not found",
 				"detail": {
-					"uptoDate": "Software up to date ",
-					"updatedOn": "updated on ",
-					"outdated": "Software outdated ",
-					"neverRanUpdate": "never ran update"
+					"uptoDate": "Updates checked ",
+					"updatedOn": "checked on ",
+					"outdated": "Updates not checked recently ",
+					"neverRanUpdate": "updates never checked"
 				}
 			},
 			"extendedWarranty": "Extend warranty",
@@ -840,9 +842,9 @@
 				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
-				"charge": "TIME TO FULLY CHARGE",
+				"charge": "Time to full charge",
 				"button": "SEE BATTERY DETAILS",
-				"thresholdNote": "<b>Note:</b> To extend the battery lifespan, you have set your battery to stop charging at {{value}}%.",
+				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
 				"batteryNotDetected": "No battery detected",
 				"seeDetailsLink": "See details",
@@ -899,7 +901,7 @@
 					"Good": "<b>The battery is in good condition.</b>",
 					"Exhaustion": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
 					"Bad": "<b>A battery error has occurred.</b> The battery cannot be charged/discharged. Replace the battery.",
-					"NotDetected": "<b>No battery detected or not</b> plugged in battery.",
+					"NotDetected": "<b>No battery detected.</b>",
 					"NotGood": "<b>The battery is not in a good Condition.</b>",
 					"FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} power is connected.</b>",
 					"NotSupportACAdapter": "<b>AC adapter not supported.</b>",
@@ -911,7 +913,11 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
+					"EmDriverInstalled": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller</b>driver."
+				},
+				"dualConditions": {
+					"NotDetected": "<b>The primary battery is not detected.</b>"
 				}
 			},
 			"power": {
@@ -982,6 +988,27 @@
 							}
 						}
 					},
+					"dytc6": {
+						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
+						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
+						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"autoMode": {
+							"title1": "Auto Battery mode",
+							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
+							"title2": "Auto Performance mode",
+							"desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						},
+						"manualMode": {
+							"title1": "Quiet mode",
+							"desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"title2": "Balanced mode",
+							"desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
+							"title3": "Performance mode",
+							"desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					},
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "INTELLIGENT COOLING",
@@ -1017,19 +1044,20 @@
 					}
 				},
 				"smartStandby": {
-					"title": "Smart Standby",
-					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup capability of",
-					"descriptionLink": "Modern Standby",
-					"subDescription1": "during hours of heavier use.",
-					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set or your computer usage time we get. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
-					"subTitle":"Schedule your computer",
-					"subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+					"title": "Smart standby",
+					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
+					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
+					"oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
+					"subTitle": "Schedule your computer",
+					"description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
+					"subTitle2": "Set time when you typically use this computer",
+					"subNote": "Your computer is scheduled for quicker resume based on the usage.",
 					"timer": {
 						"heading": "The time you typically use this computer:",
 						"subHeading1": "start",
 						"subHeading2": "end",
 						"subHeading3": "use this schedule for",
-						"endTimeNote": "END must be within 20 hours from START time",
+						"endTimeNote": "END time must be within 20 hours from START time",
 						"timeUnits": {
 							"unit1": "Hours",
 							"unit2": "Minutes",
@@ -1048,7 +1076,8 @@
 							"wed": "Wed",
 							"thurs": "Thurs",
 							"fri": "Fri",
-							"sat": "Sat"
+							"sat": "Sat",
+							"thu": "Thu"
 						},
 						"name": {
 							"sun": "Sunday",
@@ -1061,15 +1090,50 @@
 						},
 						"everyday": "Everyday",
 						"weekdays": "Weekdays",
-						"weekends": "Weekends"
+						"weekends": "Weekends",
+						"noDaySelected": "No day selected"
 					},
 					"warningtip": "Please select at least one day.",
 					"checkbox": "Auto adjusting your computer's active time based on your usage",
-					"hyperlinkToGraph": "The usage and Modern Standby schedule for your computer.",
+					"hyperlinkToGraph": "Click to see the usage and applied active time",
 					"automaticMode": "Automatic mode",
 					"manualMode": "Manual mode",
-					"graph1Tittle": "The usage of your computer",
-					"graph2Tittle": "The Modern Standby schedule for your computer"
+					"graph": {
+						"graph1Tittle": "Usage of this computer",
+						"graph2Tittle": "Applied active time",
+						"graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
+						"graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+						"legends": {
+							"none": "None",
+							"frequent": "Frequent"
+						},
+						"hours": {
+							"zero": "0",
+							"one": "1",
+							"two": "2",
+							"three": "3",
+							"four": "4",
+							"five": "5",
+							"six": "6",
+							"seven": "7",
+							"eight": "8",
+							"nine": "9",
+							"ten": "10",
+							"eleven": "11",
+							"twele": "12",
+							"thirteen": "13",
+							"fourteen": "14",
+							"fifteen": "15",
+							"sixteen": "16",
+							"seventeen": "17",
+							"eighteen": "18",
+							"nineteen": "19",
+							"twenty": "20",
+							"twentyOne": "21",
+							"twentyTwo": "22",
+							"twentythree": "23"
+						}
+					}
 				},
 				"batterySettings": {
 					"title": "Battery settings",
@@ -1112,25 +1176,26 @@
 						},
 						"progressText1": "{{stage}} of {{stageNum}}: Calibrating to full charge",
 						"progressText2": "{{stage}} of {{stageNum}}: Calibrating to low battery power",
+						"progressText3": "{{stage}} of {{stageNum}}: Calibrating to high battery power",
 						"FCCText": "From {{before}} Wh to {{after}} Wh",
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
-						"dual_note": "Note: Only one battery can be reset at a time",
+						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete. Successful reset.",
-							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
-							"ERROR_LOGOFF": "Incomplete. User logged off.",
-							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+							"ERROR_SUCCESS": "Complete: Successful reset.",
+							"ERROR_SHUTDOWN": "Failed: System shut down.",
+							"ERROR_LOGOFF": "Failed: User has logged off.",
+							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Failed: Battery was replaced.",
+							"ERROR_AC_DETTACH": "Failed: AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Failed: Cancelled by user.",
+							"ERROR_UNEXPECTED": "Failed: Unexpected error occurred."
 						},
 						"popup": {
-							"description1": "The process of resetting is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
-							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all the open applications and connect your computer to ac power before continuing.<br>3. The Battery charge threshold function will be disabled when resetting.",
-							"continue": "CONTINUE",
-							"cancel": "CANCEL",
-							"yes": "YES",
+							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
+							"description2": "Notes: <br>1. The process may take several hours. Please avoid using the computer during this period.<br>2. Close all open apps and connect your computer to ac power.<br>3. During the process, the battery charge threshold function is disabled.",
+							"continue": "Continue",
+							"cancel": "Cancel",
+							"yes": "Yes",
 							"description3": "Are you sure you want to stop the battery gauge reset?"
 						}
 					},
@@ -1263,11 +1328,11 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "seconds",
-							"minute": "minute",
-							"minutes": "minutes",
+							"seconds": "Seconds",
+							"minute": "Minute",
+							"minutes": "Minutes",
 							"alwaysOn": "Always on",
-							"never": "never",
+							"never": "Never",
 							"halfTime": "Half time of display off timer"
 						},
 						"taskBarDimmer": "TASKBAR DIMMER",
@@ -1343,7 +1408,7 @@
 					},
 					"firstKeyObj": {
 						"tittle": "Fn + Tab",
-						"description": "enable zoom feature on high resolution displays",
+						"description": "enable zooming feature on high resolution displays",
 						"image": ""
 					},
 					"secondKeyObj": {
@@ -1424,10 +1489,14 @@
 						"title": "APPLY"
 					},
 					"website": {
-						"url": "WEBSITE URL"
+						"url": "WEBSITE URL",
+						"successMessage": "The settings are applied successfully.",
+						"invalidURLMessage": "Please input a valid URL.",
+						"placeholder":"Please start with http:// or https://"
 					},
 					"enterText": {
-						"title": "TEXT TO BE ENTERED"
+						"title": "TEXT TO BE ENTERED",
+						"placeholder":"Please type here"
 					},
 					"dropDown": {
 						"title": "ACTION USER DEFINED KEY",
@@ -1682,7 +1751,7 @@
 		},
 		"autoUpdateSettings": {
 			"title": "Auto update settings",
-			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"subtitle": "Automatically install updates",
 			"critical": {
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
@@ -1780,7 +1849,205 @@
 	},
 	"smartPerformance": {
 		"title": "Health & Support",
-		"back": "BACK"
+		"back": "BACK",
+		"performanceandSecurityCheckTitle": "Performance & Security Check",
+		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+		"scanButton": "FREE PC SCAN",
+		"section1Heading": "How would you rate your PC Performance?",
+		"section1Description": "PC running slow? Applications taking too long to respond? Windows errors? Malware concerns? Let's diagnose whats's causing the problem and fix it.",
+		"critical": "CRITICAL",
+		"allisWell": "ALL IS WELL",
+		"zero": "0",
+		"one": "1",
+		"two": "2",
+		"three": "3",
+		"four": "4",
+		"five": "5",
+		"six": "6",
+		"seven": "7",
+		"eight": "8",
+		"nine": "9",
+		"ten": "10",
+		"tuneUP": "Your PC needs a tune-up",
+		"section2Heading": "Top-notch PC Performance. Always",
+		"section2Description": "Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+		"tunePCPerformance": {
+			"title": "TUNE PC PERFORMANCE",
+			"heading": "Show your computer some extra love",
+			"description": "Even the best computer will benefit from periodic tune-ups. Get a tune-up and get more done with our powerful app.",
+			"tabSet1": {
+				"tab1": "Accumulated Junk",
+				"tab2": "Usability Issues",
+				"tab3": "Windows Settings",
+				"tab4": "Systems Errors",
+				"tab5": "Registry Errors"
+			},
+			"tabSet2": {
+				"tab1Heading": "IT'S EASY",
+				"tab1Description": "We don't confuse you with tech mumbo jumbp",
+				"tab2Heading": "IT'S FAST",
+				"tab2Description": "Get a 100 point check done in under 5 minutes",
+				"tab3Heading": "IT'S SAFE",
+				"tab3Description": "No scareware, built with best practises"
+			}
+		},
+		"boostInternetPerformance": {
+			"title": "BOOST INTERNET PERFORMANCE",
+			"extraTitle": "INTERNET PERFORMANCE",
+			"heading": "Give your internet a boost",
+			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+			"tabSet1": {
+				"tab1": "Network Settings",
+				"tab2": "Browser Settings",
+				"tab3": "Browser Security",
+				"tab4": "Wi-Fi Performance",
+				"tab5": "E-junk"
+			},
+			"tabSet2": {
+				"tab1Heading": "ZERO DAY VIRUS",
+				"tab1Description": "We remove even the newest malware infections",
+				"tab2Heading": "SPYWARE REMOVAL",
+				"tab2Description": "We remove all potentially unwanted programs",
+				"tab3Heading": "LIGHT AND FAST",
+				"tab3Description": "Scan typically takes 5-10 minutes"
+			}
+		},
+		"malwareSecurity": {
+			"title": "MALWARE & SECURITY",
+			"heading": "Give your internet a boost",
+			"description": "For many, slow, or, no Wi-Fi, is like living off-grid. Let's configure your internet, Wi-Fi, and browser settings for optimal performance.",
+			"tabSet1": {
+				"tab1": "Malware scan",
+				"tab2": "Zero-day infections",
+				"tab3": "Security settings",
+				"tab4": "Errant programs",
+				"tab5": "Annoying adware"
+			},
+			"tabSet2": {
+				"tab1Heading": "SLOW INTERNET",
+				"tab1Description": "We will help you get maximum performance.",
+				"tab2Heading": "CONNECTIVITY ERRORS",
+				"tab2Description": "We can diagnose and repair your connectivity problems.",
+				"tab3Heading": "BROWSER ISSUES",
+				"tab3Description": "We configure and fix all your popular web browsers."
+			}
+		},
+		"proactiveAutomated": {
+			"title": "PROACTIVE & AUTOMATED",
+			"heading": "Get the power to resolve issues, before they impact you!",
+			"description": "Smart Performance constantly looks for hundreads of issues that impact PC performance. We fix them proactively, giving you peace of mind.",
+			"tabSet1": {
+				"tab1": "Schedule Scan",
+				"tab2": "On-demand scan",
+				"tab3": "Automated resolution",
+				"tab4": "It's effective",
+				"tab5": "24/7 Protection"
+			},
+			"tabSet2": {
+				"tab1Heading": "IT'S EASY",
+				"tab1Description": "We don't confuse you with tech mumbo jumbp",
+				"tab2Heading": "IT'S FAST",
+				"tab2Description": "Get a 100 point check done in under 5 minutes",
+				"tab3Heading": "IT'S SAFE",
+				"tab3Description": "No scareware, built with best practises"
+			}
+		},
+		"startScan": "<b>Ready to start the scan?</b> Let's diagnose and resolve performance and security issues in your computer",
+		"subscriptionDetails": {
+			"title": "Subscription details",
+			"description": "You are subscribed to the Lenovo Smart Performance Service. During this time all the features are fully available to keep your PC protected and running smoothly.",
+			"learnMore": "Learn more",
+			"startDate": "Start date",
+			"endDate": "End date",
+			"status": "Status",
+			"activeStatus": "ACTIVE",
+			"inactiveStatus": "INACTIVE",
+			"manageSubscription": "MANAGE SUBSCRIPTION"
+		},
+		"scanSettings": {
+			"title": "Scan settings",
+			"description": "Enable or disable the scan and set the scan schedule",
+			"enableScan": "Enable Scan",
+			"changeScanTitle": "Change scan schedule",
+			"changeScanDescription": "Edit the scan schedule to run when you need it.",
+			"frequency": "Frequency",
+			"txtDate": "Date",
+			"txtDay": "Day",
+			"txtTime": "Time",
+			"txtSave": "save",
+			"txtCancel": "cancel"
+		},
+		"scanningPage": {
+			"title": "Performance & security check",
+			"description": "Please wait while we scan your system for potential problems and threats.",
+			"scanningSystem": "Scanning system",
+			"complete": "complete",
+			"cancelScan": {
+				"button": "CANCEL SCAN",
+				"title": "Cacel the scan?",
+				"description": "If you leave the current screen the scan will be cancelled and you will be returned to the Dashboard. However, you can run the scan again at any time",
+				"yesButton": "YES, CANCEL",
+				"noButton": "NO, RESUME SCAN"
+			},
+			"waiting": "WAITING TO SCAN",
+			"completed": "COMPLETED",
+			"nowScanningDetail": {
+				"cardTitle": "NOW SCANNING DETAIL",
+				"current": "CURRENT: ",
+				"upNext": "UP NEXT"
+			}
+		},
+		"scanCompletePage": {
+			"title": "System scan is complete",
+			"description": "Here is what we found on your Lenovo Vantage 720s.",
+			"scanRates": "Our scan rates your PC at: ",
+			"summary": "Summary",
+			"summaryDetails": "Our scan found <b>{{issueCount}} issues</b> in following areas below. Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+			"signupRepairButton": "SIGN UP & REPAIR NOW",
+			"monthlyPricing": "<b>Less than $2 per month.</b> We will automatically fix these issues. Once today and every week thereafter <a  href=\"#\">Learn more</a>",
+			"issueCount": "{{individualIssueCount}} ISSUES",
+			"scannedAreas": "SCANNED AREAS",
+			"recommendedAction": {
+				"title": "RECOMMENDED ACTION",
+				"description": "We will automatically fix these issues. Once today and every week thereafter",
+				"yearlyPricing": "$19.99 / Yr",
+				"monthlyPricing": "LESS THAN $2 PER MONTH.",
+				"longerTerm": "Longer term? Even more savings?",
+				"signupButton": "SIGN UP"
+			}
+		},
+		"subscriberScanHomePage": {
+			"title": "All is well with your Ideapad 720s",
+			"serialNumber": "Serial number: ",
+			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
+			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
+			"scanNow": "SCAN NOW",
+			"returnto": "RETURN TO DASHBOARD",
+			"mostRecent": "MOST RECENT SCAN:",
+			"nextScheduled": "NEXT SCHEDULED SCAN:",
+			"scanSummary": {
+				"title": "Scan summary:",
+				"description": "We are constantly tuning your computer",
+				"tune": "Tune",
+				"tuneSummary": "Disk space reclaimed",
+				"boost": "Boost",
+				"boostSummary": "Fixes to improve performance",
+				"secure": "Secure",
+				"secureSummary": "Fixes to improve security",
+				"annual": "Annual",
+				"quarterly": "Quarterly",
+				"custom": "Custom",
+				"txtFrom": "From",
+				"txtTo": "To",
+				"txtGo": "Go"
+			},
+			"lastScanResults": {
+				"title": "Last 5 scan results:",
+				"scanDate": "Scan date:",
+				"results": "Results:",
+				"status": "Status"
+			}
+		}
 	},
 	"homeSecurity": {
 		"title": "Connected Home Security",
@@ -1860,7 +2127,7 @@
 			"welcomeTitle": "welcome to connected home security",
 			"welcomeSubTitle": "30 days of protection for free",
 			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs access your device's location to keep you fully protected.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
 			"locationTitle": "Enable location permissions",
 			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
 			"allow": "Allow",
@@ -1926,7 +2193,7 @@
 		},
 		"needHelp": {
 			"title": "Need Help?",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
@@ -1937,7 +2204,7 @@
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider",
 			"listAboutLenovoVantage": "About Lenovo Vantage"
@@ -1958,29 +2225,14 @@
 	},
 	"security": {
 		"landing": {
-			"fully": "Fully protected",
-			"fullyDesc": "Congratulations! You are well protected.",
-			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
 			"security101": "SECURITY ADVISOR 101",
 			"firewall": "Firewall",
 			"pwdHealth": "Password Health",
 			"vpnSecurity": "VPN Security",
-			"vpnVirtual": "Virtual Private Network",
+			"vpnVirtual": "Virtual Private Network (VPN) security",
 			"wifiConnected": "WiFi Security",
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint Reader",
-			"seeAllNetwork": "See all joined networks",
-			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "GOOD",
-			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"securityScoreDepends": "Your security result depends on if you are:",
-			"antivirus": "Being protected by anti-virus software",
-			"password": "Having strong and complex passwords managed in a safe way",
-			"vpn": "Monitoring your network exposure to attackers",
-			"wifi": "Encrypting your personal data when using public WiFi",
-			"windowsHello": "Protecting your device using safe login options",
 			"uacTitle": "What is UAC notification?",
 			"uacText": "User Account Control is a very important security feature of Windows helps prevent potentially harmful programs from making changes to your system.",
 			"windowsTitle": "Why I need to active Windows?",
@@ -1990,7 +2242,48 @@
 			"passwordTitle": "How to protect password better?",
 			"passwordText": "Securely store and manage all your passwords encrypted by a professional digital protection app instead of simply storing in your browsers which can be easily accessed by 3rd parties without your knowledge.",
 			"enhanceTitle": "What should I do to enhance security protection?",
-			"enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection."
+			"enhanceText": "We highly recommend you to have your devices protected by anti-virus software and firewall, set up UAC notification at minium protection. And create strong passwords and manage in a secure way, encrypt your data while using public network as advanced protection.",
+			"antivirusContent": "Use an Anti-virus software to prevent, detect and remove malware for your devices.",
+			"firewallContent": "Firewall establishes a barrier between a trusted internal network and untrusted external network, which monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+			"windowsActiveContent": "Use a genuine copy of Windows can put you at lower risk for security threats.",
+			"passwordContent": "Use a more secure and easy way to manage your passwords, payments and personal information. And even create strong, complex passwords and login instantly on every site.",
+			"fingerprintContent": "A fast and secure way to sign in to Windows, make payments and connect to apps an services.",
+			"uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
+			"wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
+			"bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
+			"vpnContent": "A Virtual Private Network (VPN) uses encryption to keep your online activity secure and private, and helps prevent hackers from stealing your personal information over Wi-Fi.",
+			"windows": "Windows Activation",
+			"goAntivirus": "go to antivirus",
+			"goFirewall": "go to firewall",
+			"goPassword": "go to passwordManger",
+			"goWifi": "go to wifi-security",
+			"goVpn": "go to VPN security",
+			"haveOwn" : "I have my own",
+			"visitWindows": "Visit Windows Activation",
+			"visitFingerprint": "Visit Fingerprint reader",
+			"visitUac": "Visit User Account Control",
+			"visitHde": "Visit Hard drive encryption",
+			"haveOwnPassword": "I have my own password manager",
+			"haveOwnWifi": "I have my own wifi security",
+			"haveOwnVpn" : "I have my own wifi security",
+			"uac": "User Account Control (UAC)",
+			"uacTitles": "User Account Control",
+			"hde": "Hard drive encryption",
+			"level": "Security Level:",
+			"fully": "To get a better offer protect your device, stay with",
+			"notFully": "To learn how to better protect your device, start with",
+			"noProtection": "No protection",
+			"noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
+			"basic": "BASIC",
+			"basicTitle": "Basic protection",
+			"basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
+			"advancedTtitle": "Advanced protection",
+			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+
 		},
 		"antivirus": {
 			"common": {
@@ -2076,8 +2369,8 @@
 				"back": "BACK"
 			},
 			"container": {
-				"title": "Lenovo Wi-fi Security",
-				"name": "WI-FI SECURITY",
+				"title": "Lenovo WiFi Security",
+				"name": "WIFI SECURITY",
 				"enable": "ENABLED",
 				"disable": "DISABLED",
 				"less": "Less info",
@@ -2086,7 +2379,7 @@
 				"connect": "Connected last",
 				"showmore": "Show more",
 				"showless": "Show less",
-				"button": "Enable Wifi security",
+				"button": "Enable WiFi security",
 				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
 			},
 			"threatlocator": {
@@ -2256,9 +2549,36 @@
 		"logout": "Logout",
 		"unlockExclusives": "Unlock Exclusives",
 		"user": "User",
-		"welcomeText": "Looking energized today {{firstName}}!",
-		"welcomeTextWithouUserName": "Looking energized today!",
-		"welcomeTextWithoutUserName": "Looking energized today!",
+		"welcomeText1": "Looking energized today, {{firstName}}!",
+		"welcomeText2": "Happy to see you again, {{firstName}}",
+		"welcomeText3": "What a pleasant surprise, {{firstName}}",
+		"welcomeText4": "Smile, {{firstName}}, it's contagious :)",
+		"welcomeText5": "Knock, knock, {{firstName}}",
+		"welcomeText6": "You're off to great places!",
+		"welcomeText7": "Today is your day, {{firstName}}!",
+		"welcomeText8": "Who likes happy little trees?",
+		"welcomeText9": "Party on, {{firstName}}!",
+		"welcomeText10": "Keep calm and Vantage on",
+		"welcomeText11": "A bigger Vantage for your buck",
+		"welcomeText12": "Bring home the Vantage",
+		"welcomeText13": "Eat, sleep, Vantage, repeat",
+		"welcomeText14": "Every moment is a fresh Vantage",
+		"welcomeText15": "Vantage to the fullest",
+		"welcomeTextWithoutUserName1": "Looking energized today!",
+		"welcomeTextWithoutUserName2": "Happy to see you again",
+		"welcomeTextWithoutUserName3": "What a pleasant surprise",
+		"welcomeTextWithoutUserName4": "Smile, it's contagious :)",
+		"welcomeTextWithoutUserName5": "Knock, knock",
+		"welcomeTextWithoutUserName6": "You're off to great places!",
+		"welcomeTextWithoutUserName7": "Today is your day!",
+		"welcomeTextWithoutUserName8": "Who likes happy little trees?",
+		"welcomeTextWithoutUserName9": "Party on!",
+		"welcomeTextWithoutUserName10": "Keep calm and Vantage on",
+		"welcomeTextWithoutUserName11": "A bigger Vantage for your buck",
+		"welcomeTextWithoutUserName12": "Bring home the Vantage",
+		"welcomeTextWithoutUserName13": "Eat, sleep, Vantage, repeat",
+		"welcomeTextWithoutUserName14": "Every moment is a fresh Vantage",
+		"welcomeTextWithoutUserName15": "Vantage to the fullest",
 		"helloUser": "Hello, {{firstName}}!",
 		"ssoErrorTitle": "Error",
 		"ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
@@ -2319,7 +2639,7 @@
 		},
 		"question2": {
 			"title": "How to refresh your PC",
-			"description": "<div><div class='faqInFs4Fb'>How to refresh your PC</div><hr><div class='faqInFs25FbP5'>Symptom</div><div class='faqInP5'>If your PC isn&rsquo;t performing as well as it once did, and you don&rsquo;t know why, you can refresh your PC without deleting any of your personal files orchanging your settings. Windows can &ldquo;refresh&rdquo; your PC so it&rsquo;s more like afresh install without deleting your personal files.</div><div class='faqInP5'>Refresh your PC, Here is what will happen: your files and personalizedsettings won&rsquo;t change</div><div class='faqInP5'><ul><li>Your PC settings will be changed back to its defaults</li><li>Apps from windows store will be kept</li><li>Apps you installed from disc or website will be removed</li><li>A list of removed files will be saved on your desktop</li></ul></div><div class='faqInFs25FbP10'>Affected Brands</div><div><ul><li>All Desktop and Laptops</li></ul></div><div class='faqInFs25FbP10'>Operation System</div><div><ul><li>Windows 8, 8.1 & 10</li></ul></div><div class='faqInFs25FbP10'>Solution</div><div><ul class='list-unstyled'><li><span class='faqInFbTdP10'>Windows 8/8.1</span><ol><li class='faqInP5'>Tap or click <span class='faqInFb'> Settings </span></li><li class='faqInP5'>Tap or click <span class='faqInFb'> Update and recovery</span></li><li class='faqInP5'><div>Tap or click <span class='faqInFb'> Recovery</span></div><div class='faqInP5'>Under Refresh your PC without affecting your files, tap or click<span class='faqInFb'> Get started.</span></div><div><img src='./../../../../assets/images/qa/2.1.png' /></div></li><li class='faqInP5'>Click <span class='faqInFb'> 'Next'</span>.</li><li class='faqInP5'>Click <span class='faqInFb'> 'Refresh' </span>to start the refresh process.</li><li class='faqInP5'>Once the refresh process is done, you can find a Removed Apps list on the desktop</li><li class='faqInP5'>You can find the removed apps while refreshing your system</li></ol> </li><li class='faqInP10'><span class='faqInFbTd'>Windows 10</span><ol><li class='faqInP5'> Search for <span class='faqInFb'> refresh </span>in the searchtool available in the Start menu,</li><li class='faqInP5'><div>Click on <span class='faqInFb'> 'Refresh your PC without affecting yourfiles'</span> in the search results as shown below.</div><div><img src='./../../../../assets/images/qa/2.2.jpg' /></div></li><li class='faqInP5'><div>Click on the<span class='faqInFb'> Get started </span>button just below the heading<span class='faqInFb'> 'Refresh your PC withoutaffecting your files'</span> to start refreshing your Windows 10 PC.</div><div><img src='./../../../../assets/images/qa/2.3.jpg' /></div></li></ol></li></ul></div><div class='faqInFs25Fb'>Additional Information</div><div>In most cases, once you start to refresh your PC, it&rsquo;ll finish on its own.However, if Windows needs missing files, you&rsquo;ll be asked to insert recoverymedia, which is typically a DVD disc or thumb drive. If that happens, whatyou&rsquo;ll need depends on your PC.</div><div class='faqInP10'>If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, usethat disc. If you don&rsquo;t have Windows 8.1 or Windows RT 8.1 media, contactMicrosoft Support.</div></div>",
+			"description": "<div><div class='faqInFs4Fb'>How to refresh your PC</div><hr><div class='faqInFs25FbP5'>Symptom</div><div class='faqInP5'>If your PC isn&rsquo;t performing as well as it once did, and you don&rsquo;t know why, you can refresh your PC without deleting any of your personal files or changing your settings. Windows can &ldquo;refresh&rdquo; your PC so it&rsquo;s more like afresh install without deleting your personal files.</div><div class='faqInP5'>Refresh your PC, Here is what will happen: your files and personalized settings won&rsquo;t change</div><div class='faqInP5'><ul><li>Your PC settings will be changed back to its defaults</li><li>Apps from windows store will be kept</li><li>Apps you installed from disc or website will be removed</li><li>A list of removed files will be saved on your desktop</li></ul></div><div class='faqInFs25FbP10'>Affected Brands</div><div><ul><li>All Desktop and Laptops</li></ul></div><div class='faqInFs25FbP10'>Operation System</div><div><ul><li>Windows 8, 8.1 & 10</li></ul></div><div class='faqInFs25FbP10'>Solution</div><div><ul class='list-unstyled'><li><span class='faqInFbTdP10'>Windows 8/8.1</span><ol><li class='faqInP5'>Tap or click <span class='faqInFb'> Settings </span></li><li class='faqInP5'>Tap or click <span class='faqInFb'> Update and recovery</span></li><li class='faqInP5'><div>Tap or click <span class='faqInFb'> Recovery</span></div><div class='faqInP5'>Under Refresh your PC without affecting your files, tap or click<span class='faqInFb'> Get started.</span></div><div><img src='./../../../../assets/images/qa/2.1.png' /></div></li><li class='faqInP5'>Click <span class='faqInFb'> 'Next'</span>.</li><li class='faqInP5'>Click <span class='faqInFb'> 'Refresh' </span>to start the refresh process.</li><li class='faqInP5'>Once the refresh process is done, you can find a Removed Apps list on the desktop</li><li class='faqInP5'>You can find the removed apps while refreshing your system</li></ol> </li><li class='faqInP10'><span class='faqInFbTd'>Windows 10</span><ol><li class='faqInP5'> Search for <span class='faqInFb'> refresh </span>in the search tool available in the Start menu,</li><li class='faqInP5'><div>Click on <span class='faqInFb'> 'Refresh your PC without affecting your files'</span> in the search results as shown below.</div><div><img src='./../../../../assets/images/qa/2.2.jpg' /></div></li><li class='faqInP5'><div>Click on the<span class='faqInFb'> Get started </span>button just below the heading<span class='faqInFb'> 'Refresh your PC without affecting your files'</span> to start refreshing your Windows 10 PC.</div><div><img src='./../../../../assets/images/qa/2.3.jpg' /></div></li></ol></li></ul></div><div class='faqInFs25Fb'>Additional Information</div><div>In most cases, once you start to refresh your PC, it&rsquo;ll finish on its own.However, if Windows needs missing files, you&rsquo;ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you&rsquo;ll need depends on your PC.</div><div class='faqInP10'>If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don&rsquo;t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support.</div></div>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2393,7 +2713,7 @@
 		},
 		"question3": {
 			"title": "How to know your machine's CPU",
-			"description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bitsystem.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktop and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and then click<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>is displayed in the System type field under the System heading.If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong><strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.Or, if you are using a mouse, point to the lower-right corner of the screen, and thenclick <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and thenclick <strong>System Summary.</strong></li>\n<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> fieldunder the Item heading.</li>\n</ol>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>How to know your machine's CPU</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n<li>All Desktop and Laptops</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul>\n<li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button, </strong>right-clicking Computer, and then clicking Properties</li>\n<li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click&nbsp;<strong>Search.</strong></li>\n<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n<li>Tap or click <strong>System</strong></li>\n<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>is displayed in the System type field under the System heading. If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong><strong> 32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click <strong>Search.</strong></li>\n<li>In the search box, type <strong>system information</strong></li>\n<li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then click <strong>System Summary.</strong></li>\n<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>x64-based PC is displayed in the <strong>System type</strong> field under the Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong> version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field under the Item heading.</li>\n</ol>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
 			"heading2": "Affected Brands",
@@ -2482,7 +2802,7 @@
 		},
 		"question4": {
 			"title": "Check your machine's battery use",
-			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in the new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or lastfrom last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,the display.</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of thisfeature.It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+			"description": "<div class='faqInFs4Fb'>Check your machine's battery use</div>\n<hr><h3 class='faqInFs25FbP10'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo; apps&ndash;are using too much power.</p>\n<h3 class='faqInFs25FbP10'>Affected Brands</h3>\n<ul><li>Lenovo laptops, desktops</li></ul>\n<h3 class='faqInFs25FbP10'>Affected Systems</h3>\n<ul><li>All</li></ul>\n<h3 class='faqInFs25FbP10'>Operating System</h3>\n<ul><li>Window 10</li></ul>\n<h3 class='faqInFs25FbP10'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional <strong>control panel </strong>view, this feature is located in the new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n<h3 class='faqInFs25FbP10'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>select <strong>&ldquo;System&rdquo;</strong> and then select <strong>&ldquo;Battery saver.&rdquo;<br /><br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes, the display.</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong> options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>&ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background. This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "Symptom",
 			"para1": {
 				"span1": "Windows 10 includes a new",
@@ -2550,8 +2870,7 @@
 		},
 		"question5": {
 			"title": "Use your PC like a tablet",
-			"description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tabletmode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of thescreen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, andyou'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, thendrag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
-			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+			 "description": "<div class='faqInFs4Fb'>Use your PC like a tablet</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touch screen device.</p>\n<h3 class='faqInFs25FbP10'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet mode</strong> .</p>\n<p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 class='faqInFs25FbP10'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, andhow the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.</p>\n<p> </p>\n<h3 class='faqInFs25FbP10'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the <strong>Start </strong>button, select <strong>Settings </strong>><strong>System </strong>> <strong>Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n<h3 class='faqInFs25FbP10'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n<li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>\n<li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
 			"heading1": "Use tablet mode",
 			"para2": {
 				"span1": "To turn on tablet mode, select",
@@ -2589,12 +2908,12 @@
 			}
 		},
 		"question6": {
-			"title": "Get to know Cortona, your personal assistant",
-			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphoneand talk to Cortana. (Typingworks for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when youselect the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, oreven people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to syncnotifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say'Hey Cortana.' Select the search box on the taskbar to open Cortana home.Then select <strong>Settings</strong>and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
+			"title": "Get to know Cortana, your personal assistant",
+			"description": "<div class='faqInFs4Fb'>Get to know Cortana, your personal assistant</div>\n<hr><h3 class='faqInFs25FbP10'>What is Cortana?</h3>\n<hr /><p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n<li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n<li>Give you reminders based on time, places, or people.</li>\n<li>Track packages, teams, interests, and flights.</li>\n<li>Send emails and texts.</li>\n<li>Manage your calendar and keep you up to date.</li>\n<li>Create and manage lists.</li>\n<li>Chit chat and play games.</li>\n<li>Find facts, files, places, and info.</li>\n<li>Open any app on your system.</li>\n</ul>\n<h3 class='faqInFs25FbP10'>Try this: Set a reminder</h3><hr />\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 class='faqInFs25FbP10'>Hey Cortana?</h3><hr />\n<p>Set Cortana to hear you anytime you say 'Hey Cortana.' Select the search box on the taskbar to open Cortana home. Then select <strong>Settings</strong> and turn on <strong>Let Cortana respond to 'HeyCortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p class='faqInFs25FbP10'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>\n<p> </p>",
 			"heading1": "What is Cortana?",
 			"para1": "Cortana is your digital agent. She'll help you get things done.",
 			"para2": "The more you use Cortana, the more personalized your experience will be.",
-			"para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
+			"para3": "To get started, type a question in the search box, or select the microphone and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
 			"para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
 			"para5": " Home 2. Notebook 3. Settings 4. Feedback",
 			"para6": "Here are some things Cortana can do for you:",
@@ -2633,12 +2952,13 @@
 		"bullets2": "Security Advisor makes managing your security easy. (Available on selected systems)",
 		"bullets3": "Automatic updates keep your device in tip top shape. (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
-		"subtitle2": "Tell us about your interests",
+		"subtitle2": "Tell us about your interests (optional)",
 		"personal": "Personal Use",
 		"business": "Business Use",
+		"professional": "Professional Use",
 		"custom": "Custom Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
-		"moreInterest": "+ more interests",
+		"moreInterest": "+ More interests",
 		"title1": "Welcome to",
 		"title2": "Lenovo",
 		"title3": "Vantage",
@@ -2675,7 +2995,10 @@
 		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
 		"userProfile": "User profile",
 		"Note": "Note: ",
-		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect."
+		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect.",
+		"betaSettingTitle": "Beta program",
+		"betaProgram": "Beta Program",
+		"betaSettingDescription": "Try the latest features we're working on."
 	},
 	"modernPreload": {
 		"cancel": "Cancel",
@@ -2813,7 +3136,8 @@
 				"description": "The execution of scan and repair can cause data loss. It is recommended to make a backup before execute this operation. Are you sure you want to proceed?",
 				"yes": "Yes",
 				"no": "No"
-			}
+			},
+			"waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
 		},
 		"support": {
 			"title": "Download professional diagnostic tools",
@@ -2829,7 +3153,19 @@
 			"title": "Enable Battery Charge Threshold",
 			"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain or below the stop-charging threshold.",
 			"enable": "Enable"
-		}
+		},
+		"waitScanStarts": "Wait until the scan starts",
+		"reminderTimeRetrieveHardwareInformation": "This process might take a while to retrieve your hardware information",
+		"retrievingHardwareInformation": "Retrieving hardware information...",
+		"pluginTokens": {
+			"cpu": "Processor",
+			"memory": "Memory",
+			"motherboard": "Motherboard",
+			"pci_express": "PCI Express",
+			"storage": "Storage",
+			"wireless": "Wireless"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
 	},
 	"appsForYou": {
 		"common": {
@@ -2847,6 +3183,7 @@
 			"installButton": {
 				"install": "Install",
 				"installing": "Installing",
+				"downloading": "Downloading",
 				"installed": "Installed",
 				"launch": "Launch",
 				"seeMore": "See More"
