@@ -51,7 +51,13 @@
 
                     <div class="col col-12 row">
                         <div class="cancel-check" *ngIf="!(percent === 100)" title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
-                            <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" (click)="onCancel()">{{cancelText}}</button>
+                            <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" 
+                                    (click)="onCancel()"
+                                    vtrMetrics
+                                    metricsEvent="FeatureClick" 
+                                    metricsParent="{{itemParentCancel}}"
+			                        metricsItem="{{itemNameCancel}}"
+                            >{{cancelText}}</button>
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>

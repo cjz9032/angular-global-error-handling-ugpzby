@@ -40,6 +40,8 @@ class ScanResult {
 const RootParent = "HardwareScan";
 const ConfirmButton = "Confirm";
 const CloseButton = "Close";
+const CancelButton = "Cancel";
+
 
 @Component({
 	selector: 'vtr-hardware-components',
@@ -59,6 +61,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public progress = 0;
 	public myDevice: MyDevice;
 	public tooltipInformation: any;
+
+	public itemParentCancelScan: string;
+	public itemNameCancelScan: string;
 
 	public isRecoverBadSectorsInProgress = false;
 	public devicesRecoverBadSectors: any[];
@@ -246,7 +251,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			});
 
 			modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
-			modalCancel.componentInstance.CancelItemName = this.getMetricsItemNameCancel();
+			modalCancel.componentInstance.CancelItemName = this.getMetricsItemNameClose();
+			modalCancel.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
+			
+
+			modalCancel.componentInstance.CancelItemName = this.getMetricsItemNameClose();
 			modalCancel.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
 			
 			modalCancel.componentInstance.cancelRequested.subscribe(() => {
@@ -321,6 +330,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		console.log('[Start]: getDoScan()');
 		this.startDate = new Date();
 		this.progress = 0;
+		
+		this.currentScanAction = ScanAction.Run;
 
 		const payload = {
 			'requests': requests,
@@ -332,6 +343,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		if (this.hardwareScanService) {
 
 			this.timerService.start();
+
+			this.itemParentCancelScan = this.getMetricsParentValue();
+			this.itemNameCancelScan = this.getMetricsItemNameCancel();
+
+			this.hardwareScanService.setFinalResponse(null);
 
 			this.hardwareScanService.setFinalResponse(null);
 			this.hardwareScanService.getDoScan(payload, this.modules, this.cancelHandler)
@@ -592,7 +608,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ItemParent = this.getMetricsParentValue();
-				(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = this.getMetricsItemNameCancel();
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = this.getMetricsItemNameClose();
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = this.getMetricsItemNameConfirm();
+
+
+				(<ModalScheduleScanCollisionComponent>modal.componentInstance).CancelItemName = this.getMetricsItemNameClose();
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = this.getMetricsItemNameConfirm();
 
 				modal.result.then((result) => {
@@ -828,8 +848,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + ConfirmButton;
 	}
 
-	private getMetricsItemNameCancel(){
+	private getMetricsItemNameClose(){
 		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + CloseButton;
+	}
+
+	private getMetricsItemNameCancel(){
+		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + CancelButton;
 	}
 
 	private getMetricsTaskResult() {
