@@ -142,9 +142,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				SettingParent: 'WelcomePage'
 			};
 
-			this.metrics.sendAsyncEx(toolbarSettingData, {
-				forced: true
-			});
+			this.metrics.sendAsync(toolbarSettingData);
 
 			const usageData = {
 				ItemType: 'SettingUpdate',
