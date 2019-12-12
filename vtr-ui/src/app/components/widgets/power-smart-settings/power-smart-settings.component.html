@@ -236,13 +236,16 @@
 								tabindex="0"
 								role="link"
 								attr.aria-label="powerSmartSettings-intelligentCooling-more-info">
-								<div class="more-info-button mr-2">
+								<div class="more-info-button mr-2" *ngIf="!isCollapsed">
 									{{'device.deviceSettings.inputAccessories.controlOptions.more' | translate}}
+								</div>
+								<div class="more-info-button mr-2" *ngIf="isCollapsed">
+									{{'device.deviceSettings.inputAccessories.controlOptions.less' | translate}}
 								</div>
 								<fa-icon *ngIf="!isCollapsed"
 										[icon]="['fal', 'chevron-down']"></fa-icon>
-									<fa-icon *ngIf="isCollapsed"
-										[icon]="['fal', 'chevron-up']"></fa-icon>
+								<fa-icon *ngIf="isCollapsed"
+									[icon]="['fal', 'chevron-up']"></fa-icon>
 							</div>
 						</div>
 					</div>

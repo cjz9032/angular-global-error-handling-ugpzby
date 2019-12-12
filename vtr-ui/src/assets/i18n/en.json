@@ -1516,6 +1516,7 @@
 				},
 				"controlOptions": {
 					"more": "MORE",
+					"less": "LESS",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS",
 					"control3": "TRACKPOINT CONTROLS"
