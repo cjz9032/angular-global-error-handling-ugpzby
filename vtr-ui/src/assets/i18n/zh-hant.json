@@ -643,7 +643,7 @@
             "registered": "已註冊",
             "notRegistered": "未註冊",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -2167,8 +2167,7 @@
             "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
             "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
             "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredBySurfEasy": "搭載 SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密碼管理程式",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "監視暗網以保護您的個人資訊",
             "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
             "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredByDashLane": "搭載 Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

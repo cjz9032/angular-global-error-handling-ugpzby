@@ -643,7 +643,7 @@
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -2168,8 +2168,7 @@
             "getStarted1": "SurfEasy VPN'i başlatmak için yukarıdaki “SurfEasy'yi Açın” düğmesine tıklayın.",
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
-            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2197,8 +2196,7 @@
             "allowsYou2": "Kişisel bilgileriniz için karanlık ağ izlemesi",
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
-            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

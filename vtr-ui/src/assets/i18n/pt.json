@@ -643,7 +643,7 @@
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Clique no botão “Abrir SurfEasy” para iniciar a SurfEasy VPN.",
             "getStarted2": "Ative a VPN e aguarde um breve momento pela confirmação de uma ligação segura.",
             "getStarted3": "Altere a região ou localização, caso pretenda, e desfrute de uma utilização da rede segura e privada.",
-            "poweredBySurfEasy": "Com tecnologia SurfEasy",
-            "privacyPolicyAndTermsOfService": "Leia mais na <tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
+            "poweredBySurfEasy": "Com tecnologia SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "GESTOR DE PALAVRAS-PASSE DASHLANE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Monitorizar a dark web relativamente às suas informações pessoais",
             "allowsYou3": "Manter-se seguro em redes WiFi não seguras através da VPN integrada",
             "allowsYou4": "Partilhar palavras-passe de forma segura sem as revelar",
-            "poweredByDashLane": "Com tecnologia Dashlane",
-            "privacyPolicyAndTermsOfService": "Leia mais na <tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
+            "poweredByDashLane": "Com tecnologia Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -643,7 +643,7 @@
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredBySurfEasy": "Från SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredByDashLane": "Från Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

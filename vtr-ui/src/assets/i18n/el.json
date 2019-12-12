@@ -643,7 +643,7 @@
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Κάντε κλικ στο κουμπί \"Άνοιγμα του SurfEasy\" παραπάνω για να ανοίξετε το SurfEasy VPN.",
             "getStarted2": "Ενεργοποιήστε το VPN και περιμένετε λίγο για να λάβετε την επιβεβαίωση ασφαλούς σύνδεσης.",
             "getStarted3": "Αλλάξτε την περιοχή ή την τοποθεσία σας, αν θέλετε, και απολαύστε ασφαλή, ιδιωτική δικτύωση.",
-            "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy",
-            "privacyPolicyAndTermsOfService": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
+            "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ΔΙΑΧΕΙΡΙΣΗ ΚΩΔΙΚΩΝ ΠΡΟΣΒΑΣΗΣ DASHLANE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Παρακολουθείτε τον σκοτεινό ιστό για τις προσωπικές πληροφορίες σας",
             "allowsYou3": "Παραμείνετε ασφαλείς σε μη ασφαλή δίκτυα WiFi με ενσωματωμένο VPN",
             "allowsYou4": "Κοινοποιείτε με ασφάλεια κωδικούς πρόσβασης χωρίς να τους αποκαλύπτετε",
-            "poweredByDashLane": "Υποστηρίζεται από το Dashlane",
-            "privacyPolicyAndTermsOfService": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
+            "poweredByDashLane": "Υποστηρίζεται από το Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

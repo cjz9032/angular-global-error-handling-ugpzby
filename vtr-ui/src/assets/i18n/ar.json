@@ -645,7 +645,7 @@
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -2169,8 +2169,7 @@
             "getStarted1": "انقر فوق الزر \"فتح SurfEasy\" أعلاه لبدء تشغيل SurfEasy VPN.",
             "getStarted2": "شغّل شبكة VPN وانتظر برهة قصيرة لتلقي تأكيد الاتصال الآمن.",
             "getStarted3": "يمكنك تغيير منطقتك أو موقعك، إذا لزم الآمر، والاستمتاع بشبكة آمنة وخاصة.",
-            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "إدارة كلمات المرور في DASHLANE",
@@ -2198,8 +2197,7 @@
             "allowsYou2": "مراقبة الويب المظلم لمعلوماتك الشخصية",
             "allowsYou3": "المحافظة على سلامتك على شبكات WiFi غير الآمنة ذات VPN مضمنة",
             "allowsYou4": "مشاركة كلمات المرور بشكل آمن من دون الكشف عنها",
-            "poweredByDashLane": "مشغّل بواسطة Dashlane",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredByDashLane": "مشغّل بواسطة Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

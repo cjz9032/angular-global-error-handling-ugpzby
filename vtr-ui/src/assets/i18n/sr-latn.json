@@ -643,7 +643,7 @@
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Kliknite iznad na dugme „Otvori SurfEasy“ da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak za potvrdu bezbedne veze.",
             "getStarted3": "Promenite region ili lokaciju ako želite i uživajte u bezbednom, privatnom umrežavanju.",
-            "poweredBySurfEasy": "Obezbeđuje SurfEasy",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
+            "poweredBySurfEasy": "Obezbeđuje SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVLJAČ LOZINKAMA",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Pratite postoje li vaše lične informacije na mračnom internetu",
             "allowsYou3": "Budite bezbedni na nebezbednim WiFi mrežama sa ugrađenim VPN-om",
             "allowsYou4": "Bezbedno delite lozinke bez njihovog otkrivanja",
-            "poweredByDashLane": "Obezbeđuje Dashlane",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
+            "poweredByDashLane": "Obezbeđuje Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -643,7 +643,7 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredBySurfEasy": "Basato su SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredByDashLane": "Basato su Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

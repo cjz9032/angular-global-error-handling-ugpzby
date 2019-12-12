@@ -2489,8 +2489,7 @@
 			"getStarted1": "Click on the “Open SurfEasy” button above to launch SurfEasy VPN.",
 			"getStarted2": "Turn on the VPN and wait a brief moment for confirmation of a secure connection.",
 			"getStarted3": "Change your region or location if desired, and enjoy secure, private networking.",
-			"poweredBySurfEasy": "Powered By SurfEasy",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"poweredBySurfEasy": "Powered By SurfEasy"
 		},
 		"passwordManager": {
 			"statusTitle": "DASHLANE PASSWORD MANAGER",
@@ -2518,8 +2517,7 @@
 			"allowsYou2": "Monitor the dark web for your personal information",
 			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
 			"allowsYou4": "Share passwords securely without revealing them",
-			"poweredByDashLane": "Powered By Dashlane",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"poweredByDashLane": "Powered By Dashlane"
 		},
 		"windowsHello": {
 			"statusTitle": "WINDOWS HELLO",
