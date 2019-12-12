@@ -1328,9 +1328,9 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "Seconds",
-							"minute": "Minute",
-							"minutes": "Minutes",
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
 							"alwaysOn": "Always on",
 							"never": "Never",
 							"halfTime": "Half time of display off timer"

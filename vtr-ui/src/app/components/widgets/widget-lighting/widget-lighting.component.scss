@@ -205,6 +205,9 @@
 				//display: flex;
 				//width: 11rem;
 				//align-items: center;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 				cursor: pointer;
 				color: $shade_light;
 				line-height: 1.5rem;
