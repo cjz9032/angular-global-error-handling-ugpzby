@@ -52,9 +52,7 @@ export class AppSearchService {
 		private betaService: BetaService
 		) {
 		this.betaMenuMapPaths();
-		if (deviceService.showSearch) {
-			this.loadSearchIndex();
-		}
+		this.loadSearchIndex();
 		this.unsupportedFeatures = new Set();
 		const featuresArray = this.commonService.getLocalStorageValue(LocalStorageKey.UnSupportFeatures);
 		if (featuresArray !== undefined && featuresArray.length !== undefined) {
@@ -129,10 +127,11 @@ export class AppSearchService {
 	}
 
 	async loadSearchIndex() {
-		if (this.loaded) {
+		const canShowSearch = await this.configService.canShowSearch();
+
+		if (this.loaded || !canShowSearch) {
 			return;
 		}
-
 
 		if (this.translateService.currentLang && this.translateService.currentLang !== 'en') {
 			return;

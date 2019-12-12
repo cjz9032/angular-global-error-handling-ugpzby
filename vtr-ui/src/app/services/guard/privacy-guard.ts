@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { DeviceService } from '../device/device.service';
+import { ConfigService } from '../config/config.service';
 import { GuardConstants } from './guard-constants';
 
 @Injectable({
@@ -9,21 +9,21 @@ import { GuardConstants } from './guard-constants';
 export class PrivacyGuard implements CanActivate {
 
 	constructor(
-		private deviceService: DeviceService,
+		private congifService: ConfigService,
 		private guardConstants: GuardConstants,
 		) { }
-
-	getShowPrivacy(): boolean {
-		return this.deviceService && this.deviceService.showPrivacy;
-	}
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
-	): boolean | UrlTree {
-		if (this.getShowPrivacy()) {
-			return true;
-		}
-		return this.guardConstants.defaultRoute;
+	): Promise<boolean|UrlTree> {
+		return new Promise(resove => {
+			this.congifService.canShowPrivacy().then(r => {
+				if (r) {
+					resove(true);
+				}
+				resove(this.guardConstants.defaultRoute);
+			});
+		});
 	}
 }
