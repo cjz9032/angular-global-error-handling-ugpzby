@@ -18,6 +18,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../modal/modal-wait/modal-wait.component';
+import { TaskAction } from 'src/app/data-models/metrics/events.model';
 
 enum TaskType {
 	QuickScan,
@@ -26,10 +27,11 @@ enum TaskType {
 	RecoverBadSectors
 }
 
-enum ScanAction {
+enum TaskStep {
 	Confirm,
 	Run,
-	Cancel	
+	Cancel, 
+	Summary
 }
 
 class ScanResult {
@@ -41,6 +43,7 @@ const RootParent = "HardwareScan";
 const ConfirmButton = "Confirm";
 const CloseButton = "Close";
 const CancelButton = "Cancel";
+const ViewResultsButton = "ViewResults"
 
 
 @Component({
@@ -64,6 +67,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public itemParentCancelScan: string;
 	public itemNameCancelScan: string;
+	public itemParentSummary: string;
+	public itemNameSummary: string;
 
 	public isRecoverBadSectorsInProgress = false;
 	public devicesRecoverBadSectors: any[];
@@ -81,7 +86,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private showETicket = false;
 
 	private currentTaskType: TaskType;
-	private currentScanAction: ScanAction;
+	private currentTaskStep: TaskStep;
 
 	private metrics: any;
 
@@ -194,7 +199,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public getEnableViewResults() {
-		return this.hardwareScanService.getEnableViewResults();
+		let isEnableViewResults = this.hardwareScanService.getEnableViewResults();
+		if (isEnableViewResults){
+			this.currentTaskStep = TaskStep.Summary;
+			this.itemParentSummary = this.getMetricsParentValue();
+			this.itemNameSummary = this.getMetricsItemNameSummary();
+		}
+		return isEnableViewResults;
 	}
 
 	public getComponentsTitle() {
@@ -250,7 +261,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public onCancelScan() {
 
-		this.currentScanAction = ScanAction.Cancel;
+		this.currentTaskStep = TaskStep.Cancel;
 
 		if (this.isRecoverExecuting()) {
 			if (this.hardwareScanService  && !this.isDisableCancel()) {
@@ -347,7 +358,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.startDate = new Date();
 		this.progress = 0;
 		
-		this.currentScanAction = ScanAction.Run;
+		this.currentTaskStep = TaskStep.Run;
 
 		const payload = {
 			'requests': requests,
@@ -625,7 +636,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					windowClass: 'schedule-new-modal-size'
 				});
 
-				this.currentScanAction = ScanAction.Confirm;
+				this.currentTaskStep = TaskStep.Confirm;
 
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).error = this.translate.instant('hardwareScan.warning');
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).description = this.batteryMessage;
@@ -725,6 +736,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setIsScanDone(false);
 		this.isScanDone = true;
 	}
+	
 
 	public onViewResultsRecover() {
 		const date = new Date();
@@ -864,19 +876,30 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private getMetricsParentValue(){
-		return RootParent + "." + ScanAction[this.currentScanAction] + TaskType[this.currentTaskType];
+		let taskTypeMetrics = TaskType[this.currentTaskType];
+		if (this.currentTaskStep === TaskStep.Summary) {
+			// For summary metrics, it was defined that only the word "Scan" will be sent, so we should remove "Custom" or "Quick" from it
+			taskTypeMetrics = taskTypeMetrics.replace("Custom", "").replace("Quick", "");
+		}
+		return RootParent + "." + TaskStep[this.currentTaskStep] + taskTypeMetrics;
 	}
 
 	private getMetricsItemNameConfirm(){
-		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + ConfirmButton;
+		return TaskStep[this.currentTaskStep] + TaskType[this.currentTaskType] + "." + ConfirmButton;
 	}
 
 	private getMetricsItemNameClose(){
-		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + CloseButton;
+		return TaskStep[this.currentTaskStep] + TaskType[this.currentTaskType] + "." + CloseButton;
 	}
 
 	private getMetricsItemNameCancel(){
-		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + CancelButton;
+		return TaskStep[this.currentTaskStep] + TaskType[this.currentTaskType] + "." + CancelButton;
+	}
+
+	private getMetricsItemNameSummary() {
+		// For summary metrics, it was defined that only the word "Scan" will be sent, so we should remove "Custom" or "Quick" from it
+		let taskTypeMetrics = TaskType[this.currentTaskType].replace("Custom", "").replace("Quick", "");
+		return TaskStep[this.currentTaskStep] + taskTypeMetrics + "." + ViewResultsButton;
 	}
 
 	private getMetricsTaskResult() {
