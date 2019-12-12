@@ -2276,10 +2276,10 @@
 			"noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
 			"basic": "BASIC",
 			"basicTitle": "Basic protection",
-			"basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+			"basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
 			"intermediate": "INTERMEDIATE",
 			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
 			"advanced": "ADVANCED",
 			"advancedTtitle": "Advanced protection",
 			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"

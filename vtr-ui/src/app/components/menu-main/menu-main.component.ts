@@ -258,7 +258,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	private checkLiteGaming() {
-		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({var: 'DeviceTags.System.Profile.LiteGaming'});
+		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({ var: 'DeviceTags.System.Profile.LiteGaming' });
 		if (filter) {
 			filter.then((hyp) => {
 				if (hyp !== null) {
@@ -530,20 +530,20 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 	private showSmartAssist() {
-		this.logger.info('inside showSmartAssist');
+		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		this.getMenuItems().then(async (items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
 					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
+					const smartAssistCacheValue = this.commonService.getLocalStorageValue(
 						LocalStorageKey.IsSmartAssistSupported,
 						false
 					);
-					this.logger.info('showSmartAssist isSmartAssistSupported cache value', isSmartAssistSupported);
+					this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-					if (isSmartAssistSupported) {
+					if (smartAssistCacheValue) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
 
@@ -554,39 +554,40 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
 						assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getHPDVisibility check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getHPDVisibility check', error);
 					}
 					// lenovo voice  capability check
 					try {
 						assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
 					}
-					// lenovo voice  capability check
+					// video pause capability check
 					try {
 						assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
 					}
-					// lenovo voice  capability check
+					// super resolution  capability check
 					try {
 						assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getSuperResolutionStatus check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 					}
+
+					// APS capability check
 					try {
 						assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
 						assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
 						assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
 						assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0;
 					} catch (error) {
-						this.logger.exception('showSmartAssist APS capability check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist APS capability check', error);
 					}
 
 					this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-					this.logger.info('showSmartAssist capability check', assistCapability);
 
-					const isAvailable =
+					const isSmartAssistAvailable =
 						assistCapability.isIntelligentSecuritySupported ||
 						assistCapability.isLenovoVoiceSupported ||
 						assistCapability.isIntelligentMediaSupported.available ||
@@ -596,16 +597,23 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					// const isAvailable = true;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.IsSmartAssistSupported,
-						isAvailable
+						isSmartAssistAvailable
 					);
 
+					this.logger.error('MenuMainComponent.showSmartAssist capability check',
+						{
+							smartAssistCacheValue,
+							isSmartAssistAvailable,
+							assistCapability
+						});
+
 					// avoid duplicate entry. if not added earlier then add menu
-					if (isAvailable && !isSmartAssistSupported) {
+					if (isSmartAssistAvailable && !smartAssistCacheValue) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
 
 					// if cache is old and new capability call is false then remove it
-					if (!isAvailable) {
+					if (!isSmartAssistAvailable) {
 						this.removeSmartAssistMenu(myDeviceItem);
 					}
 				}
