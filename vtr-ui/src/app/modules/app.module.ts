@@ -60,8 +60,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.loader';
-
-
+import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-feature-tip/modal-new-feature-tip.component';
+import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -71,6 +71,7 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		ModalNewFeatureTipComponent,
 		PageSettingsComponent,
 	],
 	imports: [
@@ -117,6 +118,7 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 		DevService,
 		DisplayService,
 		CookieService,
+		NewFeatureTipService,
 		CommsService,
 		{
 			provide: ErrorHandler,
@@ -129,6 +131,7 @@ import { WebpackTranslateLoader } from '../i18n/loader/webpack-translate-loader.
 		ModalDccDetailComponent,
 		ModalServerSwitchComponent,
 		ModalAppUpdateAvailableComponent,
+		ModalNewFeatureTipComponent,
 	],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -643,7 +643,7 @@
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -1955,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2167,8 +2167,7 @@
             "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
-            "poweredBySurfEasy": "SurfEasyn tarjoama",
-            "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "poweredBySurfEasy": "SurfEasyn tarjoama"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE salasanojen hallinta",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
             "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
-            "poweredByDashLane": "Dashlanen tarjoama",
-            "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "poweredByDashLane": "Dashlanen tarjoama"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2634,8 @@
         "custom": "Mukautettu käyttökokemus",
         "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
-        "moreInterest": "+ muuta kiinnostuksen kohdetta",
+		"moreInterest": "+ muuta kiinnostuksen kohdetta",
+		"toolbartitle": "Ota käyttöön Lenovo Vantage -työkalurivi (suositus)",
         "title1": "Tervetuloa",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
-                "networkError": "Verkkovirhe.",
-                "installationCancelled": "Asennus on peruutettu."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adoben lunastus",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Asenna",
-                "installing": "Asentaminen",
-                "downloading": "Ladataan",
-                "installed": "Asennettu",
-                "launch": "Aloita",
-                "seeMore": "Näytä lisää"
-            },
-            "fieldName": {
-                "description": "Kuvaus",
-                "screenshots": "Näyttökuvat",
-                "additionalInformation": "Lisätietoja",
-                "by": "Tekijä:",
-                "updated": "Päivitetty:",
-                "type": "Tyyppi:",
-                "category": "Luokka:",
-                "legalAgreement": "Laillinen sopimus",
-                "readMore": "Lue enemmän",
-                "readLess": "Lue vähemmän"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyt voit selvittää, onko yksityisiä tietojasi katseltu luvatta tai ovatko verkkoseuraajat käyttäneet niitä tietämättäsi.",
+            "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
+                "networkError": "Verkkovirhe.",
+                "installationCancelled": "Asennus on peruutettu."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adoben lunastus",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Asenna",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
+                "installed": "Asennettu",
+                "launch": "Aloita",
+                "seeMore": "Näytä lisää"
+            },
+            "fieldName": {
+                "description": "Kuvaus",
+                "screenshots": "Näyttökuvat",
+                "additionalInformation": "Lisätietoja",
+                "by": "Tekijä:",
+                "updated": "Päivitetty:",
+                "type": "Tyyppi:",
+                "category": "Luokka:",
+                "legalAgreement": "Laillinen sopimus",
+                "readMore": "Lue enemmän",
+                "readLess": "Lue vähemmän"
+            }
+        }
+    }
 }
