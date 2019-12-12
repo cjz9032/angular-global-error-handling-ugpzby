@@ -81,7 +81,7 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
-					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')))) {
+					if (!this.showWarranty && (!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))) {
 						this.showWarranty = true;
 					}
 					if (info && info.cpuArchitecture) {
