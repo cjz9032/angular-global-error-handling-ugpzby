@@ -643,7 +643,7 @@
             "registered": "רשום",
             "notRegistered": "לא רשום",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -907,7 +907,8 @@
                     "PermanentError": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
                     "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
-                    "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
+                    "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>",
+                    "EmDriverInstalled": "פרטי הסוללה לא זמינים. הפעילו את Windows Update-> בדוק אם קיימים עדכונים להתקנת מנהל ההתקן <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
@@ -993,24 +994,24 @@
                     "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
                     "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\".",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה.",
+                        "desc2": "תכונה זו כוללת את המצבים הרשומים למטה, וניתן לכוונן אותה כעת דרך מחוון צריכת החשמל של ביצועי Windows. ניתן לגשת אליו על ידי לחיצה על סמל הסוללה במגש מערכת Windows.",
+                        "desc3": "ניתן לכוונן חלק מהמצבים באופן אוטומטי לטווח רחב יותר של ביצועים בהתאם לפעילות. כדי להפעיל את המצב האוטומטי, לוחצים על Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "מצב סוללה אוטומטי",
+                            "desc1": "המחוון נמצא בצד שמאל. המצב מועבר באופן דינמי למצב 'שקט' או למצב 'סוללה' לחוויה הטובה ביותר במצב DC.",
+                            "title2": "מצב ביצועים אוטומטי",
+                            "desc2": "המחוון נמצא במרכז או במרכז מימין. המצב מועבר באופן דינמי למצב 'שקט', למצב 'מאוזן' או למצב 'ביצועים' לחוויה הטובה ביותר במצב AC.",
+                            "title3": "מצב ביצועים",
+                            "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "מצב שקט",
+                            "desc1": "המחוון נמצא בצד שמאל. מהירות המאוורר והביצועים הופחתו כדי שהמחשב יהיה קריר ושקט יותר וחיי הסוללה ארוכים יותר.",
+                            "title2": "מצב מאוזן",
+                            "desc2": "המחוון נמצא במרכז או במרכז מימין. מהירות המאוורר והביצועים מאוזנים באופן דינמי כדי להשיג את החוויה הטובה ביותר.",
+                            "title3": "מצב ביצועים",
+                            "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "לחצו על הלחצן \"פתח את SurfEasy\" למעלה כדי להפעיל את SurfEasy VPN.",
             "getStarted2": "הפעילו את רשת ה-VPN והמתינו רגע לאישור החיבור המאובטח.",
             "getStarted3": "שנו את האזור או המיקום שלכם במידת הצורך, ותיהנו מעבודה ברשת פרטית מאובטחת.",
-            "poweredBySurfEasy": "מופעל על ידי SurfEasy",
-            "privacyPolicyAndTermsOfService": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "poweredBySurfEasy": "מופעל על ידי SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "מנהל סיסמאות DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "לוודא שאין מידע אישי שלכם ברשת האפלה",
             "allowsYou3": "להישאר בטוחים ברשתות WiFi לא מאובטחות עם רשת VPN מובנית",
             "allowsYou4": "לשתף סיסמאות באופן מאובטח מבלי לחשוף אותן",
-            "poweredByDashLane": "מופעל על-ידי Dashlane",
-            "privacyPolicyAndTermsOfService": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "poweredByDashLane": "מופעל על-ידי Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

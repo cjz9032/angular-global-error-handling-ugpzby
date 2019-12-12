@@ -643,7 +643,7 @@
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
@@ -907,7 +907,8 @@
                     "PermanentError": "La capacidad de la batería se ha <b>degradado</b>. Sustitúyala con una nueva.",
                     "NotSupportACAdapterDetail": "<b>El adaptador de CA no es compatible.</b> Su sistema Lenovo no admite este adaptador de CA. Puede que se apague repentinamente. Conecte un adaptador de CA correcto.",
                     "LimitedACAdapterSupportDetail": "<b>El adaptador de CA no puede proporcionar la alimentación suficiente</b> a su equipo Lenovo, lo que afectará el rendimiento del sistema y la velocidad de carga. Vuelva a conectar el adaptador de CA correcto.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} La alimentación está conectada.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} La alimentación está conectada.</b>",
+                    "EmDriverInstalled": "Los detalles de la batería no están disponibles. Ejecute Windows Update -> Buscar actualizaciones para instalar el controlador <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "No se detectó ninguna batería",
                 "thresholdNote": "<b>Nota:</b> La batería no se puede cargar completamente cuando se ha habilitado el umbral de carga de la batería.",
@@ -993,24 +994,24 @@
                     "description5": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería. Esta característica tiene 3 modos (modalidad silenciosa, modalidad equilibrada y modalidad de rendimiento) y ahora es accesible mediante el control deslizante de rendimiento de Windows",
                     "nocqldesc": "El Enfriamiento inteligente le permite ajustar el rendimiento del sistema y la temperatura térmica. En modalidad de “Rendimiento”, optimiza el rendimiento del sistema. Mientras que ayuda a mantener el sistema más frío o silencioso en la modalidad de “Fresco y silencioso”.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "El Enfriado inteligente ajusta la velocidad del ventilador, el máximo rendimiento y administra la duración de su batería.",
+                        "desc2": "Esta característica cuenta con las modalidades que se indican a continuación y ahora se ajusta mediante el control de rendimiento de Windows. Para acceder a ella, haga clic en el icono de la batería en la bandeja del sistema Windows.",
+                        "desc3": "Algunas de las modalidades pueden ajustarse automáticamente en un rango de rendimiento más amplio en función de su actividad. Para habilitar la modalidad automática, presione Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalidad de batería automática",
+                            "desc1": "El graduador está a la izquierda. La modalidad cambiará dinámicamente a la Modalidad silenciosa o Modalidad de batería para tener la mejor experiencia de modalidad CC.",
+                            "title2": "Modalidad de rendimiento automático",
+                            "desc2": "El graduador está en el centro o a la derecha. La modalidad cambiará dinámicamente a la Modalidad silenciosa, Modalidad equilibrada o Modalidad de rendimiento para tener la mejor experiencia de modalidad CA.",
+                            "title3": "Modalidad de rendimiento",
+                            "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalidad silenciosa",
+                            "desc1": "El graduador está a la izquierda. La velocidad del ventilador y el rendimiento se reducen para tener un equipo más frío y más silencioso y una mejor vida de la batería.",
+                            "title2": "Modalidad balanceada",
+                            "desc2": "El graduador está en el centro o a la derecha. La velocidad del ventilador y el rendimiento se equilibran de forma dinámica para la mejor experiencia.",
+                            "title3": "Modalidad de rendimiento",
+                            "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Haga clic en el botón “Abrir SurfEasy” anterior para iniciar SurfEasy VPN.",
             "getStarted2": "Encienda el VPN y espere un breve momento para obtener confirmación de una conexión segura.",
             "getStarted3": "Cambie la región o ubicación, si lo desea, y disfrute de una red privada y segura.",
-            "poweredBySurfEasy": "Con tecnología SurfEasy",
-            "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
+            "poweredBySurfEasy": "Con tecnología SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ADMINISTRADOR DE CONTRASEÑA DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Monitoree la web oscura para detectar sus datos personales",
             "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
-            "poweredByDashLane": "Con tecnología Dashlane",
-            "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
+            "poweredByDashLane": "Con tecnología Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -643,7 +643,7 @@
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -907,7 +907,8 @@
                     "PermanentError": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>",
+                    "EmDriverInstalled": "Podrobnosti o baterii nejsou dostupné. Pro instalaci ovladače <b>Lenovo ACPI - Compliant Virtual Power Controller</b> přejděte do nabídky Windows Update -> Zkontrolovat aktualizace."
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
@@ -993,24 +994,24 @@
                     "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
                     "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie.",
+                        "desc2": "Tato funkce má následující režimy a nyní je upravena pomocí posuvníku výkonu systému Windows. Přístup k ní získáte kliknutím na ikonu baterie na hlavním panelu systému Windows.",
+                        "desc3": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li povolit automatický režim, stiskněte klávesy Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatický režim baterie",
+                            "desc1": "Posuvník je vlevo. Režim se dynamicky přepíná do tichého režimu nebo do režimu baterie pro nejlepší zážitek z režimu DC.",
+                            "title2": "Automatický režim výkonu",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Režim se dynamicky přepíná do tichého režimu, vyváženého režimu nebo do režimu výkonu pro nejlepší zážitek z režimu AC.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tichý režim",
+                            "desc1": "Posuvník je vlevo. Rychlost a výkon ventilátoru jsou nižší, takže je počítač chladnější, tišší a baterie má nejdelší životnost.",
+                            "title2": "Vyvážený režim",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Rychlost a výkon ventilátoru jsou dynamicky vyvážené a zajišťují nejvyrovnanější výkon.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Klikněte na tlačítko „Otevřít SurfEasy“ nahoře a spusťte SurfEasy VPN.",
             "getStarted2": "Zapněte VPN a chvíli čekejte na potvrzení bezpečného připojení.",
             "getStarted3": "Dle potřeby změňte oblast nebo polohu a užívejte si bezpečné a soukromé práce v síti.",
-            "poweredBySurfEasy": "Používá technologii SurfEasy",
-            "privacyPolicyAndTermsOfService": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
+            "poweredBySurfEasy": "Používá technologii SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCE HESEL DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Sledování temného webu, zda neobsahuje vaše osobní údaje",
             "allowsYou3": "Ochranu i v nezabezpečených sítích WiFi díky integrované VPN",
             "allowsYou4": "Bezpečné sdílení hesel bez rizika jejich odhalení",
-            "poweredByDashLane": "Používá technologii Dashlane",
-            "privacyPolicyAndTermsOfService": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
+            "poweredByDashLane": "Používá technologii Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

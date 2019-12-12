@@ -643,7 +643,7 @@
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
@@ -907,7 +907,8 @@
                     "PermanentError": "Η χωρητικότητα της μπαταρίας έχει <b>υποβαθμιστεί</b>. Τοποθετήστε νέα μπαταρία.",
                     "NotSupportACAdapterDetail": "<b>Δεν υποστηρίζεται ο μετασχηματιστής εναλλασσόμενου ρεύματος.</b> Ο υπολογιστής Lenovo δεν υποστηρίζει αυτόν τον μετασχηματιστή εναλλασσόμενου ρεύματος. Μπορεί να προκληθεί ξαφνική διακοπή λειτουργίας. Συνδέστε έναν κατάλληλο μετασχηματιστή εναλλασσόμενου ρεύματος.",
                     "LimitedACAdapterSupportDetail": "<b>Ο μετασχηματιστής εναλλασσόμενου ρεύματος δεν μπορεί να παρέχει αρκετό ρεύμα</b> στον υπολογιστή Lenovo ώστε να επηρεάσει την απόδοση του συστήματος και την ταχύτητα φόρτισης. Συνδέστε ξανά το σωστό μετασχηματιστή εναλλασσόμενου ρεύματος.",
-                    "FullACAdapterSupport": "<b>Συνδέεται τροφοδοσία {{acWattage}} W {{acAdapterType}}.</b>"
+                    "FullACAdapterSupport": "<b>Συνδέεται τροφοδοσία {{acWattage}} W {{acAdapterType}}.</b>",
+                    "EmDriverInstalled": "Δεν υπάρχουν διαθέσιμες πληροφορίες για την μπαταρία. Εκτελέστε τη λειτουργία Windows Update->Έλεγχος για ενημερωμένες εκδόσεις για να εγκαταστήσετε το πρόγραμμα οδήγησης <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Δεν εντοπίστηκε μπαταρία",
                 "thresholdNote": "<b>Σημείωση:</b> Δεν είναι δυνατή η πλήρης φόρτιση της μπαταρίας όταν έχει ενεργοποιηθεί το όριο φορτίου μπαταρίας.",
@@ -993,24 +994,24 @@
                     "description5": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας. Αυτή η δυνατότητα έχει 3 λειτουργίες (Αθόρυβη, Ισορροπημένη και Απόδοση) και είναι πλέον προσβάσιμη από το ρυθμιστικό ισχύος απόδοσης των Windows",
                     "nocqldesc": "Η έξυπνη ψύξη σας δίνει τη δυνατότητα να ρυθμίσετε την απόδοση του συστήματος και τη θερμική θερμοκρασία. Στη λειτουργία \"Απόδοση\", βελτιστοποιεί την απόδοση του συστήματος. Ενώ βοηθά να διατηρήσετε το σύστημα πιο δροσερό ή πιο αθόρυβο στη λειτουργία \"Κρύο και αθόρυβο\".",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Η λειτουργία Έξυπνης ψύξης ρυθμίζει την ταχύτητα του ανεμιστήρα, τη μέγιστη απόδοση και διαχειρίζεται τη διάρκεια της μπαταρίας.",
+                        "desc2": "Η δυνατότητα διαθέτει τις λειτουργίες που αναγράφονται παρακάτω και προσαρμόζεται πλέον από το ρυθμιστικό ισχύος επιδόσεων των Windows. Μπορείτε να αποκτήσετε πρόσβαση σε αυτό κάνοντας κλικ στο εικονίδιο της μπαταρίας στην περιοχή ειδοποιήσεων του συστήματος των Windows.",
+                        "desc3": "Ορισμένες από τις λειτουργίες μπορούν να προσαρμοστούν αυτόματα σε ένα μεγαλύτερο εύρος απόδοσης που βασίζεται στη δραστηριότητά σας. Για να ενεργοποιήσετε την αυτόματη λειτουργία, πιέστε Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Αυτόματη λειτουργίας μπαταρίας",
+                            "desc1": "Το ρυθμιστικό βρίσκεται στην αριστερή πλευρά. Η λειτουργία μεταβαίνει δυναμικά σε κατάσταση ηρεμίας ή λειτουργία μπαταρίας για την καλύτερη εμπειρία λειτουργίας DC.",
+                            "title2": "Αυτόματη λειτουργία απόδοσης",
+                            "desc2": "Το ρυθμιστικό βρίσκεται στο κέντρο ή στα δεξιά του κέντρου. Η λειτουργία μεταβαίνει δυναμικά σε κατάσταση ηρεμίας, ισορροπημένη λειτουργία ή λειτουργία απόδοσης για την καλύτερη εμπειρία λειτουργίας AC.",
+                            "title3": "Λειτουργία απόδοσης",
+                            "desc3": "Το ρυθμιστικό βρίσκεται στο δεξιό άκρο. Η ταχύτητα του ανεμιστήρα και η επιτρεπόμενη θερμοκρασία επιφανείας είναι υψηλότερες, για επίτευξη των βέλτιστων επιδόσεων."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Αθόρυβη λειτουργία",
+                            "desc1": "Το ρυθμιστικό βρίσκεται στην αριστερή πλευρά. Η ταχύτητα και η απόδοση του ανεμιστήρα μειώνονται για έναν πιο ψυχρό και αθόρυβο υπολογιστή, όπως και βέλτιστη διάρκεια ζωής της μπαταρίας.",
+                            "title2": "Ισορροπημένη λειτουργία",
+                            "desc2": "Το ρυθμιστικό βρίσκεται στο κέντρο ή στα δεξιά του κέντρου. Η ταχύτητα και η απόδοση του ανεμιστήρα εξισορροπούνται δυναμικά για τη βέλτιστη εμπειρία.",
+                            "title3": "Λειτουργία απόδοσης",
+                            "desc3": "Το ρυθμιστικό βρίσκεται στο δεξιό άκρο. Η ταχύτητα του ανεμιστήρα και η επιτρεπόμενη θερμοκρασία επιφανείας είναι υψηλότερες, για επίτευξη των βέλτιστων επιδόσεων."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Κάντε κλικ στο κουμπί \"Άνοιγμα του SurfEasy\" παραπάνω για να ανοίξετε το SurfEasy VPN.",
             "getStarted2": "Ενεργοποιήστε το VPN και περιμένετε λίγο για να λάβετε την επιβεβαίωση ασφαλούς σύνδεσης.",
             "getStarted3": "Αλλάξτε την περιοχή ή την τοποθεσία σας, αν θέλετε, και απολαύστε ασφαλή, ιδιωτική δικτύωση.",
-            "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy",
-            "privacyPolicyAndTermsOfService": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
+            "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ΔΙΑΧΕΙΡΙΣΗ ΚΩΔΙΚΩΝ ΠΡΟΣΒΑΣΗΣ DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Παρακολουθείτε τον σκοτεινό ιστό για τις προσωπικές πληροφορίες σας",
             "allowsYou3": "Παραμείνετε ασφαλείς σε μη ασφαλή δίκτυα WiFi με ενσωματωμένο VPN",
             "allowsYou4": "Κοινοποιείτε με ασφάλεια κωδικούς πρόσβασης χωρίς να τους αποκαλύπτετε",
-            "poweredByDashLane": "Υποστηρίζεται από το Dashlane",
-            "privacyPolicyAndTermsOfService": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
+            "poweredByDashLane": "Υποστηρίζεται από το Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

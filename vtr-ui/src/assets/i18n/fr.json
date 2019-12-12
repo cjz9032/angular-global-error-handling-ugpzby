@@ -643,7 +643,7 @@
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>"
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
@@ -907,7 +907,8 @@
                     "PermanentError": "La capacité de la batterie est <b>affaiblie</b>. Veuillez la remplacer par une nouvelle.",
                     "NotSupportACAdapterDetail": "<b>L'adaptateur secteur n'est pas pris en charge.</b> L'ordinateur Lenovo ne prend pas en charge cet adaptateur secteur. Cela peut entraîner un arrêt soudain de l'ordinateur. Veuillez brancher un adaptateur secteur correct.",
                     "LimitedACAdapterSupportDetail": "<b>L'adaptateur secteur ne parvient pas à fournir suffisamment d'énergie</b> à l'ordinateur Lenovo ce qui va avoir un impact sur les performances du système et la vitesse de chargement. Branchez l'adaptateur c.a. adéquat.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} de puissance est connecté.</b>",
+                    "EmDriverInstalled": "Détails de la batterie indisponibles. Exécutez Windows Update -> Rechercher les mises à jour pour installer le pilote <b>Lenovo ACPI - Compliant Virtual Power Controller.</b>"
                 },
                 "batteryNotDetected": "Aucune batterie détectée",
                 "thresholdNote": "<b>Remarque :</b> La batterie ne peut pas être complètement chargée lorsque Seuil de chargement de la batterie est activé.",
@@ -993,24 +994,24 @@
                     "description5": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie. Cette fonction dispose de 3 modes (mode silencieux, mode équilibré et mode de performances) et est maintenant accessible par le curseur d'alimentation performances Windows",
                     "nocqldesc": "Le refroidissement intelligent vous permet d'ajuster les performances du système et la température. En mode \"Performance\", il permet d'optimiser les performances du système. En mode \"Frais et silencieux\", il permet de garder le système plus frais ou plus silencieux.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Le refroidissement intelligent règle la vitesse du ventilateur, les performances maximales et gère la durée de vie de votre batterie.",
+                        "desc2": "La fonctionnalité propose les modes affichés ci-dessous et se règle maintenant avec le curseur de l'alimentation de performances Windows. Vous pouvez y accéder en cliquant sur l'icône de la batterie dans la barre d'état système Windows.",
+                        "desc3": "Certains modes peuvent être réglés automatiquement sur une gamme de performances plus vaste en fonction de votre activité. Pour activer le mode automatique, appuyez sur les touches Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Mode batterie automatique",
+                            "desc1": "Le curseur se trouve à gauche. Le mode bascule de manière dynamique en mode silencieux ou en mode batterie pour optimiser les performances sur courant continu.",
+                            "title2": "Mode de performance automatique",
+                            "desc2": "Le curseur se trouve au centre ou est centré à droite. Le mode bascule de manière dynamique en mode silencieux, mode équilibré ou mode de performance pour optimiser les performances sur courant alternatif.",
+                            "title3": "Mode de performance",
+                            "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Mode silencieux",
+                            "desc1": "Le curseur se trouve à gauche. La vitesse du ventilateur et les performances sont réduites pour permettre à l'ordinateur d'être plus froid, plus silencieux et pour une meilleure durée de vie de la batterie.",
+                            "title2": "Mode équilibré",
+                            "desc2": "Le curseur se trouve au centre ou est centré à droite. La vitesse du ventilateur et les performances sont réglées de manière dynamique pour optimiser les performances.",
+                            "title3": "Mode de performance",
+                            "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Cliquez sur le bouton \"Ouvrir SurfEasy\" pour lancer SurfEasy VPN.",
             "getStarted2": "Activer le VPN et attendre un court instant pour la confirmation d'une connexion sécurisée.",
             "getStarted3": "Modifiez votre région ou l'emplacement si vous le souhaitez et profitez de l'utilisation d'un réseau sécurisée et privée.",
-            "poweredBySurfEasy": "Fourni par SurfEasy",
-            "privacyPolicyAndTermsOfService": "Pour en savoir plus, lisez la <tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>"
+            "poweredBySurfEasy": "Fourni par SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "GESTIONNAIRE DE MOT DE PASSE DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Contrôler vos données personnelles sur le \"Dark Web\"",
             "allowsYou3": "Rester en sécurité sur les réseaux WiFi non sécurisés grâce au VPN intégré",
             "allowsYou4": "Partager les mots de passe en sécurité sans les révéler",
-            "poweredByDashLane": "Fourni par Dashlane",
-            "privacyPolicyAndTermsOfService": "Pour en savoir plus, lisez la <tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>"
+            "poweredByDashLane": "Fourni par Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

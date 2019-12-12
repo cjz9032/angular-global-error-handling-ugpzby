@@ -643,7 +643,7 @@
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -907,7 +907,8 @@
                     "PermanentError": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>",
+                    "EmDriverInstalled": "Batteriuppgifter är inte tillgängliga. Kör Windows Update->Sök efter uppdateringar för att installera drivrutinen <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
@@ -993,24 +994,24 @@
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
                     "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden.",
+                        "desc2": "Funktionen har lägena nedan och har nu justerats med reglaget för energifunktioner i Windows. Du kommer åt den genom att klicka på batteriikonen i systemfältet i Windows.",
+                        "desc3": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+T för att aktivera automatiskt läge.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatiskt batteriläge",
+                            "desc1": "Reglaget är skjutet längst till vänster. Detta läge växlar dynamiskt till tyst läge eller batteriläge för att ge bästa möjliga likströmförbrukning.",
+                            "title2": "Automatiskt prestandaläge",
+                            "desc2": "Reglaget är placerat i mitten eller mitten höger. Detta läge växlar dynamiskt till tyst läge, balanserat läge eller prestandaläge för att ge bästa möjliga växelströmförbrukning.",
+                            "title3": "Prestandaläge",
+                            "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tyst läge",
+                            "desc1": "Reglaget är skjutet längst till vänster. Fläkthastighet och prestanda sänks för att göra datorn svalare och tystare och optimera batteritiden.",
+                            "title2": "Balanserat läge",
+                            "desc2": "Reglaget är placerat i mitten eller mitten höger. Fläkthastighet och prestanda balanseras dynamiskt för bästa möjliga upplevelse.",
+                            "title3": "Prestandaläge",
+                            "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredBySurfEasy": "Från SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredByDashLane": "Från Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

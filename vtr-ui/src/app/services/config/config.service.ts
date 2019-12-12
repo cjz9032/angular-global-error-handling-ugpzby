@@ -85,7 +85,7 @@ export class ConfigService {
 			const segment: string = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			let resultMenu = cloneDeep(this.menuItemsGaming);
 			if (isGaming) {
-				if (isBetaUser && this.deviceService.showSearch) {
+				if (isBetaUser && await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 				resolve(resultMenu);
@@ -93,7 +93,8 @@ export class ConfigService {
 			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 			resultMenu = cloneDeep(this.menuItems);
-			if (!this.deviceService.showPrivacy) {
+			const canShowPrivacy = await this.canShowPrivacy();
+			if (!canShowPrivacy) {
 				resultMenu = resultMenu.filter(item => item.id !== 'privacy');
 			}
 			if (this.hypSettings) {
@@ -117,7 +118,7 @@ export class ConfigService {
 			this.showSecurityItem(country.toLowerCase(), resultMenu);
 			if (isBetaUser) {
 				resultMenu.splice(resultMenu.length - 1, 0, ...this.betaItem);
-				if (this.deviceService.showSearch) {
+				if (await this.canShowSearch()) {
 					resultMenu.splice(resultMenu.length - 1, 0, this.appSearch);
 				}
 			}
@@ -216,4 +217,31 @@ export class ConfigService {
 		const appNotification = new AppNotification(MenuItem.MenuItemChange, payload);
 		this.menuItemSubject.next(appNotification);
 	}
+
+	public canShowPrivacy(): Promise<boolean> {
+		return new Promise ( resolve => {
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
+					resolve(privacy === 'enabled');
+				}, (error) => {
+					this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
+					resolve (false);
+				});
+			}
+		});
+	}
+
+	public canShowSearch(): Promise<boolean> {
+		return new Promise(resolve => {
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
+					resolve ((searchFeature || '').toString().toLowerCase() === 'true');
+				}, (error) => {
+					this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+					resolve(false);
+				});
+			}
+		});
+	}
+
 }

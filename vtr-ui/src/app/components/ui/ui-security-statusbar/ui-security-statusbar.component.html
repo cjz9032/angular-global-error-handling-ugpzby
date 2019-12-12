@@ -2,7 +2,7 @@
 	<li class="list-group-item"
 		*ngFor="let list of statusList">
 		<div class="row align-items-center">
-			<div class="col-auto px-3">
+			<div class="col-auto px-3 flex-shrink-0">
 				<div *ngIf="list.status!=='loading' && list.status!=='installing'" class="bullet-icon">
 					<div class="icon-bkg"
 						[ngClass]="list.status | iconClass">
@@ -13,15 +13,17 @@
 					<div class="spinner-border text-primary progress-spinner" role="status"></div>
 				</div>
 			</div>
-			<div class="col-auto text px-0 text-uppercase">
-				{{ list.title | translate }}
-			</div>
-			<div class="col-auto pr-0">
-        <h3><span class="badge badge-pill text-uppercase"
-						[ngClass]="list.status | textClass"
-						title="{{list.status | statusText | translate | uppercase}}">
-          {{ list.status | statusText | translate }}
-        </span></h3>
+			<div class="align-items-center flex-1">
+				<div class="d-inline-block col-auto text pr-4 text-uppercase">
+					{{ list.title | translate }}
+				</div>
+				<div class="d-inline-block pr-0">
+					<h3><span class="badge badge-pill text-uppercase"
+									[ngClass]="list.status | textClass"
+									title="{{list.status | statusText | translate | uppercase}}">
+					{{ list.status | statusText | translate }}
+					</span></h3>
+				</div>
 			</div>
 			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2 ml-auto">
 

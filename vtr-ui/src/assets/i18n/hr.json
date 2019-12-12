@@ -643,7 +643,7 @@
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
@@ -907,7 +907,8 @@
                     "PermanentError": "Kapacitet baterije je <b>degradiran</b>. Zamijenite je novom.",
                     "NotSupportACAdapterDetail": "<b>Prilagodnik izmjeničnog napona nije podržan.</b> Vaše Lenovo računalo ne podržava ovaj prilagodnik izmjeničnog napona. To može uzrokovati naglo isključivanje. Spojite odgovarajući prilagodnik izmjeničnog napona.",
                     "LimitedACAdapterSupportDetail": "<b>Prilagodnik izmjeničnog napajanja ne može isporučiti dovoljno energije</b> na vaše računalo Lenovo, što će utjecati na performanse sustava i brzinu punjenja. Ponovno priključite odgovarajući prilagodnik izmjeničnog napona.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanje je povezano.</b>",
+                    "EmDriverInstalled": "Pojedinosti o bateriji nisu dostupne. Pokrenite Windows ažuriranje-> Provjerite postoje li ažuriranja da biste instalirali Upravljački program za <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Baterija nije pronađena",
                 "thresholdNote": "<b>Napomena:</b> Ako je omogućen prag napunjenosti baterije baterija se ne može potpuno napuniti.",
@@ -993,24 +994,24 @@
                     "description5": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije. Ova značajka ima 3 načina rada (tihi način rada, balansirani način i način performansi), a sada je dostupna putem klizača napajanja sustava Windows",
                     "nocqldesc": "Inteligentno hlađenje vam omogućava podešavanje performansi sustava i temperature zagrijavanja. U načinu \"Performanse\" optimizira performanse sustava. Isto tako, u načinu \"Hladno i tiho\" pomaže u održavanju hladnijeg ili tišeg rada sustava.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Pametno hlađenje podešava brzinu ventilatora i maksimalne performanse te upravlja trajanjem baterije.",
+                        "desc2": "Značajka ima načine navedene u nastavku, a sada ih podešava klizač napajanja performansi sustava Windows. Možete mu pristupiti klikom na ikonu baterije u programskoj traci sustava Windows.",
+                        "desc3": "Neki se načini mogu automatski prilagoditi u širem rasponu performansi na temelju vaše aktivnosti. Da biste omogućili automatski način rada, pritisnite Fn + T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatski način rada baterije",
+                            "desc1": "Klizač je s lijeve strane. Način se dinamički prebacuje u miran način rada ili način rada baterije za najbolji doživljaj istosmjernog načina rada.",
+                            "title2": "Visokoučinkoviti način rada",
+                            "desc2": "Klizač je u sredini ili desno. Način se dinamički prebacuje u miran način rada, uravnoteženi način rada ili način performansi za najbolji doživljaj istosmjernog načina rada.",
+                            "title3": "Način performansi",
+                            "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tih način rada",
+                            "desc1": "Klizač je s lijeve strane. Brzina i performanse ventilatora smanjuju se za hladnije, tiše računalo i najbolji radni vijek baterije.",
+                            "title2": "Uravnoteženi način rada",
+                            "desc2": "Klizač je u sredini ili desno. Brzina i performanse ventilatora dinamički se uravnotežuje za najbolje iskustvo.",
+                            "title3": "Način performansi",
+                            "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Kliknite iznad na gumb \"Otvori SurfEasy\" da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak na potvrdu sigurne veze.",
             "getStarted3": "Promijenite regiju ili lokaciju ako želite i uživajte u sigurnoj, privatnoj mreži.",
-            "poweredBySurfEasy": "Pokreće SurfEasy",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
+            "poweredBySurfEasy": "Pokreće SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "UPRAVITELJ LOZINKI DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Da pratite postoje li vaše osobne informacije na tamnom webu",
             "allowsYou3": "Da ostanete sigurni na nezaštićenim WiFi mrežama s ugrađenim VPN-om",
             "allowsYou4": "Da sigurno dijelite lozinke, a da ih ne otkrijete",
-            "poweredByDashLane": "Pokreće Dashlane",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
+            "poweredByDashLane": "Pokreće Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

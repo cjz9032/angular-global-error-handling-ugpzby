@@ -643,7 +643,7 @@
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -907,7 +907,8 @@
                     "PermanentError": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
-                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
+                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>",
+                    "EmDriverInstalled": "Detaliile privind bateria sunt indisponibile. Rulaţi Windows Update->Căutaţi actualizări pentru a instala driverul <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
@@ -993,24 +994,24 @@
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
                     "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Răcirea inteligentă ajustează viteza ventilatorului, performanţa maximă şi gestionează durata de viaţă a bateriei.",
+                        "desc2": "Caracteristica are modurile afişate mai jos şi poate fi reglată acum prin cursorul pentru performanţa de alimentare Windows. O puteţi accesa făcând clic pe pictograma bateriei din bara de sistem Windows.",
+                        "desc3": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a activa modul automat, apăsaţi Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Mod automat baterie",
+                            "desc1": "Cursorul este în partea stângă. Modul este comutat dinamic în modul silenţios sau în modul baterie – pentru cea mai bună experienţă în modul de alimentare cu c.c.",
+                            "title2": "Mod automat performanţă",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Modul este comutat dinamic în modul silenţios, în modul echilibrat sau în modul performanţă – pentru cea mai bună experienţă în modul de alimentare cu c.a.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Mod silenţios",
+                            "desc1": "Cursorul este în partea stângă. Viteza şi performanţa ventilatorului sunt mai reduse – pentru un computer mai silenţios, cu o răcire mai bună şi cu cea mai lungă durată de viaţă a bateriei.",
+                            "title2": "Mod echilibrat",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Viteza şi performanţa ventilatorului sunt echilibrate dinamic – pentru cea mai bună experienţă.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
                         }
                     }
                 },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
-            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "MANAGER PAROLE DASHLANE",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
             "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
             "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
-            "poweredByDashLane": "Dezvoltat de Dashlane",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredByDashLane": "Dezvoltat de Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
