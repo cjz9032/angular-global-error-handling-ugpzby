@@ -992,6 +992,7 @@
 						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
 						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
 						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
 						"autoMode": {
 							"title1": "Auto Battery mode",
 							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
