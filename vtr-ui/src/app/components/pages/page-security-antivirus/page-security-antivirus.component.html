@@ -6,18 +6,17 @@
 		<div *ngIf="viewModel?.currentPage ==='windows'" class="windows">
 			<div *ngIf="isOnline" class="row justify-content-center">
 				<div class="header w-100 row justify-content-between w-windows">
-					<div class="rounded-card-with-shadow py-4 pl-4 pl-md-0 pr-4 col mr-md-5 part-position">
-						<div class="d-flex flex-column flex-md-row" [vtrAppSearchScroller]="['search-anti-virus']">
+					<div class="rounded-card-with-shadow py-4 pl-4 pl-lg-0 pr-4 col part-position">
+						<div class="d-flex flex-column flex-lg-row" [vtrAppSearchScroller]="['search-anti-virus']">
 							<div class="align-self-center">
 								<img class="img-fluid" src="/assets/images/antivirus/protection.png" />
 							</div>
-							<div class="col align-self-center px-5 mb-5 px-md-0 mb-md-0">
+							<div class="col align-self-center px-5 mb-5 px-lg-0 mb-lg-0">
 								<div class="subtitle p-0"
 									[innerHTML]="'security.antivirus.windowsDefender.optimallyProtected' | translate">
 								</div>
 							</div>
-							<div
-								class="d-md-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-8 row b-border align-self-center">
+							<div class="d-lg-none rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-10 row b-border align-self-center">
 								<img class="align-self-center col-4"
 									[src]=" '/assets/images/antivirus/mcafee_black.png'" />
 								<div class="align-self-center col-8 p-0">
@@ -38,7 +37,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-4 row b-border md-none">
+					<div class="rounded-card-with-shadow bg-white py-4 pl-0 pr-4 col-5 row b-border lg-none">
 						<img class="align-self-center col-4" [src]=" '/assets/images/antivirus/mcafee_black.png'" />
 						<div class="align-self-center col-8 p-0">
 							<div class="title" [innerHTML]="'security.antivirus.windowsDefender.topTip' | translate">

@@ -1955,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
-                "networkError": "Netzwerkfehler.",
-                "installationCancelled": "Installation wurde abgebrochen."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Gutscheine",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installieren",
-                "installing": "Installation",
-                "downloading": "Herunterladen",
-                "installed": "Installiert",
-                "launch": "Starten",
-                "seeMore": "Weitere Informationen anzeigen"
-            },
-            "fieldName": {
-                "description": "Beschreibung",
-                "screenshots": "Screenshots",
-                "additionalInformation": "Weitere Informationen",
-                "by": "Von:",
-                "updated": "Aktualisiert:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Rechtlicher Vertrag",
-                "readMore": "Weiterlesen",
-                "readLess": "Weniger lesen"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
+            "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
+            "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
+                "networkError": "Netzwerkfehler.",
+                "installationCancelled": "Installation wurde abgebrochen."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Gutscheine",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installieren",
+                "installing": "Installation",
+                "downloading": "Herunterladen",
+                "installed": "Installiert",
+                "launch": "Starten",
+                "seeMore": "Weitere Informationen anzeigen"
+            },
+            "fieldName": {
+                "description": "Beschreibung",
+                "screenshots": "Screenshots",
+                "additionalInformation": "Weitere Informationen",
+                "by": "Von:",
+                "updated": "Aktualisiert:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Rechtlicher Vertrag",
+                "readMore": "Weiterlesen",
+                "readLess": "Weniger lesen"
+            }
+        }
+    }
 }
