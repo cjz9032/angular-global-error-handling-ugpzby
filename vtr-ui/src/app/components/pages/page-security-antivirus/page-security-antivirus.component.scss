@@ -104,15 +104,15 @@
 	
 		.mcafee {
 			.vtr-widget-offline-info {
-				@media #{$mediaquery_md} {
+				@media #{$mediaquery_xl} {
 					position: relative;
 					top: -13rem;
 				}
 			}
 	
-			@media #{$mediaquery_md} {
+			@media #{$mediaquery_xl} {
 				position: relative;
-				margin-top: 20rem;
+				margin-top: 12rem;
 			}
 		}
 	
@@ -196,13 +196,13 @@
 					padding: 2rem 4rem 2rem 2rem;
 					color: $main_darker;
 	
-					@media #{$mediaquery_md} {
-						display: none;
+					@media #{$mediaquery_lg} {
+						padding: 2rem;
 					}
 				}
 	
-				.md-display {
-					@media #{$mediaquery_md} {
+				.xl-display {
+					@media #{$mediaquery_xl} {
 						flex-direction: column;
 						position: relative;
 						margin-top: -15rem;
