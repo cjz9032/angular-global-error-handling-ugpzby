@@ -105,8 +105,16 @@
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						display: block;
-						padding: 0.5rem;
+						padding: 0.25rem;
 					}
+					// text wrap
+					span{ 
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						box-sizing: border-box;
+						padding: .25rem;
+						}
 				}
 			}
 			.toggle-stable {
