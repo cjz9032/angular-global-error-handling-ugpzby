@@ -144,12 +144,12 @@
 	.start-button,
 	.stop-button {
 		.button {
-			padding: 1.2rem 8rem !important;
+			padding: 1.2rem 4rem !important;
 			@media #{$mediaquery_13} {
 				padding: 1.2rem 3rem !important;
 			}
 			@media #{$mediaquery_X3} {
-				padding: 1.2rem 6.5rem !important;
+				padding: 1.2rem 4rem !important;
 			}
 		}
 	}
