@@ -593,19 +593,35 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.currentTaskType = taskType;
 
 		let requests;
-		if (taskType === 0) { // quick
+		if (taskType === TaskType.QuickScan) { // quick
 			this.modules = this.hardwareScanService.getQuickScanResponse();
 			requests = this.hardwareScanService.getQuickScanRequest();
 
-		} else if (taskType === 1) { // custom
+		} else if (taskType === TaskType.CustomScan) { // custom
 			this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
 			requests = this.hardwareScanService.getFilteredCustomScanRequest();
 		}
+		
+		// Used for metrics purposes
+		const testMapMetrics = {}
 		const testList = [];
 		for (const scanRequest of requests) {
 			for (const test of scanRequest.testRequestList) {
 				testList.push(test);
+				let testName = test.id.split(":::")[0];
+				if (!(testName in testMapMetrics)) {
+					testMapMetrics[testName] = true;
+				}
+				
 			}
+		}
+
+		// Ideally, FeatureClicks are sent directly through the HTML tags, but in this case, we need ItemParam
+		// data that needs to be processed. This way, we are sending them using the API.
+		if (taskType === TaskType.QuickScan) {
+			this.sendFeatureClickMetrics("HardwareScan.QuickScan", "HardwareScan", testMapMetrics);
+		} else if (taskType === TaskType.CustomScan) {
+			this.sendFeatureClickMetrics("CustomizeScan.RunSelectedTests", "HardwareScan.CustomizeScan", testMapMetrics);
 		}
 
 		console.log('[PRE SCAN TEST LIST]', testList);
@@ -954,7 +970,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return scanResult;
 	}
 
-	getRecoverBadSectorsMetricsTaskResult(rbsFinalResponse) {
+	private getRecoverBadSectorsMetricsTaskResult(rbsFinalResponse) {
 		let numberOfSuccess = 0;
 		let result = HardwareScanTestResult.Na;
 
@@ -977,6 +993,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				Result: HardwareScanTestResult[result]
 			}
 		};
+	}
+
+	private sendFeatureClickMetrics(itemName: string, itemParent: string, itemParam: any) {
+		const data = {
+			ItemType: 'FeatureClick',
+			ItemName: itemName,
+			ItemParent: itemParent,
+			ItemParam: itemParam
+		};
+		if (this.metrics) {
+			this.metrics.sendAsync(data);
+		}
 	}
 
 	private sendTaskActionMetrics(taskName: TaskType , taskCount: number, taskParam: string,

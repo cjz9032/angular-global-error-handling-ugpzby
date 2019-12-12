@@ -14,10 +14,6 @@
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
                         <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" 
-                            vtrMetrics 
-                            metricsEvent="FeatureClick" 
-                            metricsParent="HardwareScan"
-                            metricsItem="HardwareScan.QuickScan"
                             [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
                             [disabled]="disableQuickScan" 
                             (click)="onQuickScan()">{{buttonText}}</button>
