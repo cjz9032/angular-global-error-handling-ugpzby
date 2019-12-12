@@ -2634,7 +2634,8 @@
         "custom": "Особое использование",
         "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
-        "moreInterest": "+ другие интересы",
+		"moreInterest": "+ другие интересы",
+		"toolbartitle": "Включить панель инструментов Lenovo Vantage (рекомендуется)",
         "title1": "Добро пожаловать в",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Не удалось выполнить установку. Повторите попытку.",
-                "networkError": "Сетевая ошибка.",
-                "installationCancelled": "Установка отменена."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Активация Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Установить",
-                "installing": "Идет установка",
-                "downloading": "Скачивание",
-                "installed": "Установлено",
-                "launch": "Запустить",
-                "seeMore": "Дополнительная информация"
-            },
-            "fieldName": {
-                "description": "Описание",
-                "screenshots": "Снимки экрана",
-                "additionalInformation": "Дополнительная информация",
-                "by": "Автор:",
-                "updated": "Дата обновления:",
-                "type": "Тип:",
-                "category": "Категория:",
-                "legalAgreement": "Правовое соглашение",
-                "readMore": "Больше",
-                "readLess": "Меньше"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Теперь вы можете узнать, была ли ваша конфиденциальная информация взломана или использована онлайн-трекерами без вашего ведома.",
+            "security": "Знаете ли вы? Даже если у вас не установлена антивирусная программа, мы обеспечиваем базовую защиту вашего устройства.",
+            "connectedHomeSecurity": "Получайте в режиме реального времени информацию мониторинга и оповещения о безопасности вашей сети дома. Вы первыми узнаете, подвергается ли какое-либо из ваших интеллектуальных устройств атаке на систему безопасности."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Не удалось выполнить установку. Повторите попытку.",
+                "networkError": "Сетевая ошибка.",
+                "installationCancelled": "Установка отменена."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Активация Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Установить",
+                "installing": "Идет установка",
+                "downloading": "Скачивание",
+                "installed": "Установлено",
+                "launch": "Запустить",
+                "seeMore": "Дополнительная информация"
+            },
+            "fieldName": {
+                "description": "Описание",
+                "screenshots": "Снимки экрана",
+                "additionalInformation": "Дополнительная информация",
+                "by": "Автор:",
+                "updated": "Дата обновления:",
+                "type": "Тип:",
+                "category": "Категория:",
+                "legalAgreement": "Правовое соглашение",
+                "readMore": "Больше",
+                "readLess": "Меньше"
+            }
+        }
+    }
 }

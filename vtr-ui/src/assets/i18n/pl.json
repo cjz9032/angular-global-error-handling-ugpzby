@@ -2634,7 +2634,8 @@
         "custom": "Niestandardowe zastosowanie",
         "professional": "Zastosowania profesjonalne",
         "privacytitle": "Pomóż nam w ulepszaniu tej aplikacji, zezwalając na anonimowe gromadzenie statystyk użytkowania.",
-        "moreInterest": "+ więcej zainteresowań",
+		"moreInterest": "+ więcej zainteresowań",
+		"toolbartitle": "Włącz pasek narzędzi Lenovo Vantage (zalecane)",
         "title1": "Witamy w aplikacji",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalacja nie powiodła się. Spróbuj ponownie.",
-                "networkError": "Błąd sieci.",
-                "installationCancelled": "Instalacja anulowana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Aktywacja Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Zainstaluj",
-                "installing": "Instalowanie",
-                "downloading": "Pobieranie",
-                "installed": "Zainstalowane",
-                "launch": "Uruchom",
-                "seeMore": "Zobacz więcej"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Zrzuty ekranu",
-                "additionalInformation": "Dodatkowe informacje",
-                "by": "Autor:",
-                "updated": "Zaktualizowano:",
-                "type": "Typ:",
-                "category": "Kategoria:",
-                "legalAgreement": "Umowa prawna",
-                "readMore": "Dowiedz się więcej",
-                "readLess": "Czytaj mniej"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Teraz możesz dowiedzieć się, czy twoje prywatne dane zostały naruszone lub wykorzystane przez narzędzia do śledzenia online bez twojej wiedzy.",
+            "security": "Czy wiesz? Nawet jeśli nie masz zainstalowanego oprogramowania antywirusowego, nadal zapewniamy podstawową ochronę twojego urządzenia.",
+            "connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalacja nie powiodła się. Spróbuj ponownie.",
+                "networkError": "Błąd sieci.",
+                "installationCancelled": "Instalacja anulowana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Aktywacja Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Zainstaluj",
+                "installing": "Instalowanie",
+                "downloading": "Pobieranie",
+                "installed": "Zainstalowane",
+                "launch": "Uruchom",
+                "seeMore": "Zobacz więcej"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Zrzuty ekranu",
+                "additionalInformation": "Dodatkowe informacje",
+                "by": "Autor:",
+                "updated": "Zaktualizowano:",
+                "type": "Typ:",
+                "category": "Kategoria:",
+                "legalAgreement": "Umowa prawna",
+                "readMore": "Dowiedz się więcej",
+                "readLess": "Czytaj mniej"
+            }
+        }
+    }
 }

@@ -2634,7 +2634,8 @@
         "custom": "Expérience Personnalisée",
         "professional": "Usage Professionnel",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
-        "moreInterest": "+ plus d'intérêts",
+		"moreInterest": "+ plus d'intérêts",
+		"toolbartitle": "Activer la barre d'outils de Lenovo Vantage (recommandé)",
         "title1": "Bienvenue",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Échec de l'installation. Faites une nouvelle tentative.",
-                "networkError": "Erreur réseau.",
-                "installationCancelled": "L'installation a été annulée."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Remboursement Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installer",
-                "installing": "Installation en cours",
-                "downloading": "Téléchargement",
-                "installed": "Installé",
-                "launch": "Lancer",
-                "seeMore": "En savoir plus"
-            },
-            "fieldName": {
-                "description": "Description",
-                "screenshots": "Captures d'écran",
-                "additionalInformation": "Informations supplémentaires",
-                "by": "Par :",
-                "updated": "Dernière mise à jour :",
-                "type": "Type :",
-                "category": "Catégorie :",
-                "legalAgreement": "Accord juridique",
-                "readMore": "Afficher plus",
-                "readLess": "Afficher moins"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Vous pouvez désormais déterminer si vos informations privées ont été compromises ou utilisées par des traqueurs en ligne à votre insu.",
+            "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
+            "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Échec de l'installation. Faites une nouvelle tentative.",
+                "networkError": "Erreur réseau.",
+                "installationCancelled": "L'installation a été annulée."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Remboursement Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installation en cours",
+                "downloading": "Téléchargement",
+                "installed": "Installé",
+                "launch": "Lancer",
+                "seeMore": "En savoir plus"
+            },
+            "fieldName": {
+                "description": "Description",
+                "screenshots": "Captures d'écran",
+                "additionalInformation": "Informations supplémentaires",
+                "by": "Par :",
+                "updated": "Dernière mise à jour :",
+                "type": "Type :",
+                "category": "Catégorie :",
+                "legalAgreement": "Accord juridique",
+                "readMore": "Afficher plus",
+                "readLess": "Afficher moins"
+            }
+        }
+    }
 }

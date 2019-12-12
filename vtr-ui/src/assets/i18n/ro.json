@@ -2634,7 +2634,8 @@
         "custom": "Experiență personalizată",
         "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
-        "moreInterest": "+ mai multe interese",
+		"moreInterest": "+ mai multe interese",
+		"toolbartitle": "Activaţi bara de instrumente Lenovo Vantage (recomandat)",
         "title1": "Bun venit la",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
-                "networkError": "Eroare de rețea.",
-                "installationCancelled": "Instalare anulată."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Rambursare Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instalare",
-                "installing": "Instalare în curs",
-                "downloading": "Descărcare în curs",
-                "installed": "Instalat",
-                "launch": "Lansare",
-                "seeMore": "Vedeţi mai multe"
-            },
-            "fieldName": {
-                "description": "Descriere",
-                "screenshots": "Capturi de ecran",
-                "additionalInformation": "Informaţii suplimentare",
-                "by": "De:",
-                "updated": "Actualizată:",
-                "type": "Tip:",
-                "category": "Categorie:",
-                "legalAgreement": "Acord juridic",
-                "readMore": "Citiţi mai mult",
-                "readLess": "Citiţi maI puţin"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
+            "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
+            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
+                "networkError": "Eroare de rețea.",
+                "installationCancelled": "Instalare anulată."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Rambursare Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalare",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
+                "installed": "Instalat",
+                "launch": "Lansare",
+                "seeMore": "Vedeţi mai multe"
+            },
+            "fieldName": {
+                "description": "Descriere",
+                "screenshots": "Capturi de ecran",
+                "additionalInformation": "Informaţii suplimentare",
+                "by": "De:",
+                "updated": "Actualizată:",
+                "type": "Tip:",
+                "category": "Categorie:",
+                "legalAgreement": "Acord juridic",
+                "readMore": "Citiţi mai mult",
+                "readLess": "Citiţi maI puţin"
+            }
+        }
+    }
 }

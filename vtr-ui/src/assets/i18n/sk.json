@@ -2634,7 +2634,8 @@
         "custom": "Vlastné prostredie",
         "professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
-        "moreInterest": "+ viac záujmov",
+		"moreInterest": "+ viac záujmov",
+		"toolbartitle": "Povoliť panel nástrojov aplikácie Lenovo Vantage (odporúča sa)",
         "title1": "Víta vás aplikácia WRITEit",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Inštalácia zlyhala. Skúste znova.",
-                "networkError": "Chyba siete.",
-                "installationCancelled": "Inštalácia bola zrušená."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Aktivácia Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Nainštalovať",
-                "installing": "Inštalácia",
-                "downloading": "Sťahuje sa",
-                "installed": "Nainštalované",
-                "launch": "Spustiť",
-                "seeMore": "Ukázať viac"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Snímky obrazovky",
-                "additionalInformation": "Ďalšie informácie",
-                "by": "Od:",
-                "updated": "Aktualizované:",
-                "type": "Typ:",
-                "category": "Kategória:",
-                "legalAgreement": "Právna dohoda",
-                "readMore": "Ďalšie informácie",
-                "readLess": "Menej informácií"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Teraz môžete zistiť, či došlo k úniku vašich súkromných údajov alebo či ich bez vášho vedomia použili nástroje na sledovanie online.",
+            "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
+            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Inštalácia zlyhala. Skúste znova.",
+                "networkError": "Chyba siete.",
+                "installationCancelled": "Inštalácia bola zrušená."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Aktivácia Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainštalovať",
+                "installing": "Inštalácia",
+                "downloading": "Sťahuje sa",
+                "installed": "Nainštalované",
+                "launch": "Spustiť",
+                "seeMore": "Ukázať viac"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Ďalšie informácie",
+                "by": "Od:",
+                "updated": "Aktualizované:",
+                "type": "Typ:",
+                "category": "Kategória:",
+                "legalAgreement": "Právna dohoda",
+                "readMore": "Ďalšie informácie",
+                "readLess": "Menej informácií"
+            }
+        }
+    }
 }

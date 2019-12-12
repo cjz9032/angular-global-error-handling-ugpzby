@@ -2634,7 +2634,8 @@
         "custom": "Izkušnja po meri",
         "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
-        "moreInterest": "+ več zanimanj",
+		"moreInterest": "+ več zanimanj",
+		"toolbartitle": "Omogočite orodno vrstico Lenovo Vantage (priporočeno)",
         "title1": "Pozdravljeni v programu WRITEit,",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
-                "networkError": "Omrežna napaka.",
-                "installationCancelled": "Namestitev preklicana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Unovčitev za Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Namestitev",
-                "installing": "Nameščanje",
-                "downloading": "Prenašanje",
-                "installed": "Nameščeno",
-                "launch": "Zaženite",
-                "seeMore": "Več"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Posnetki zaslona",
-                "additionalInformation": "Dodatne informacije",
-                "by": "Avtor:",
-                "updated": "Posodobitev:",
-                "type": "Vrsta:",
-                "category": "Kategorija:",
-                "legalAgreement": "Pravni sporazum",
-                "readMore": "Preberite več",
-                "readLess": "Preberite manj"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
+            "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
+            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
+                "networkError": "Omrežna napaka.",
+                "installationCancelled": "Namestitev preklicana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Unovčitev za Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Namestitev",
+                "installing": "Nameščanje",
+                "downloading": "Prenašanje",
+                "installed": "Nameščeno",
+                "launch": "Zaženite",
+                "seeMore": "Več"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Posnetki zaslona",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Avtor:",
+                "updated": "Posodobitev:",
+                "type": "Vrsta:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Preberite več",
+                "readLess": "Preberite manj"
+            }
+        }
+    }
 }

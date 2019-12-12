@@ -2634,7 +2634,8 @@
         "custom": "Mukautettu käyttökokemus",
         "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
-        "moreInterest": "+ muuta kiinnostuksen kohdetta",
+		"moreInterest": "+ muuta kiinnostuksen kohdetta",
+		"toolbartitle": "Ota käyttöön Lenovo Vantage -työkalurivi (suositus)",
         "title1": "Tervetuloa",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
-                "networkError": "Verkkovirhe.",
-                "installationCancelled": "Asennus on peruutettu."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adoben lunastus",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Asenna",
-                "installing": "Asentaminen",
-                "downloading": "Ladataan",
-                "installed": "Asennettu",
-                "launch": "Aloita",
-                "seeMore": "Näytä lisää"
-            },
-            "fieldName": {
-                "description": "Kuvaus",
-                "screenshots": "Näyttökuvat",
-                "additionalInformation": "Lisätietoja",
-                "by": "Tekijä:",
-                "updated": "Päivitetty:",
-                "type": "Tyyppi:",
-                "category": "Luokka:",
-                "legalAgreement": "Laillinen sopimus",
-                "readMore": "Lue enemmän",
-                "readLess": "Lue vähemmän"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyt voit selvittää, onko yksityisiä tietojasi katseltu luvatta tai ovatko verkkoseuraajat käyttäneet niitä tietämättäsi.",
+            "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
+                "networkError": "Verkkovirhe.",
+                "installationCancelled": "Asennus on peruutettu."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adoben lunastus",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Asenna",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
+                "installed": "Asennettu",
+                "launch": "Aloita",
+                "seeMore": "Näytä lisää"
+            },
+            "fieldName": {
+                "description": "Kuvaus",
+                "screenshots": "Näyttökuvat",
+                "additionalInformation": "Lisätietoja",
+                "by": "Tekijä:",
+                "updated": "Päivitetty:",
+                "type": "Tyyppi:",
+                "category": "Luokka:",
+                "legalAgreement": "Laillinen sopimus",
+                "readMore": "Lue enemmän",
+                "readLess": "Lue vähemmän"
+            }
+        }
+    }
 }
