@@ -563,7 +563,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
 						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
 						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
-						this.toggleAlwaysOnUsbFlag = true;
+						this.toggleAlwaysOnUsbFlag = alwaysOnUsbThinkPad.isEnabled;
 						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
 						this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
