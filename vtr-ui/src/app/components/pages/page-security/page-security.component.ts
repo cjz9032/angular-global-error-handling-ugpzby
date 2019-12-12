@@ -53,6 +53,7 @@ import { BitLockerLandingViewModel } from 'src/app/data-models/security-advisor/
 import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-info.model';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 
 @Component({
@@ -90,6 +91,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	intermediateItems = [];
 	advanceItems = [];
 	statusItem: any;
+	pluginSupport = true;
 
 	constructor(
 		public vantageShellService: VantageShellService,
@@ -100,7 +102,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private guard: GuardService,
 		private router: Router,
-		private windowsHelloService: WindowsHelloService
+		private windowsHelloService: WindowsHelloService,
+		private hypSettings: HypothesisService
 	) { }
 
 	@HostListener('window: focus')
@@ -140,6 +143,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.showVpn = true;
 		}).finally(() => {
 			this.createViewModels();
+			// this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result: boolean) => {
+			// 	this.pluginSupport = result;
+			// });
 		});
 		this.fetchCMSArticles();
 		const antivirus = new AntivirusErrorHandle(this.antivirus);
@@ -196,8 +202,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 			this.updateViewModels();
-		});
-		wifiSecurity.on(EventTypes.wsStateEvent, () => {
+		}).on(EventTypes.wsStateEvent, () => {
 			this.getLevelStatus();
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.ngZone.run(() => {

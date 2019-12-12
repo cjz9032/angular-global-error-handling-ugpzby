@@ -842,7 +842,7 @@
 				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
-				"charge": "TIME TO FULLY CHARGE",
+				"charge": "Time to full charge",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
@@ -913,7 +913,8 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
+					"EmDriverInstalled": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller</b>driver."
 				},
 				"dualConditions": {
 					"NotDetected": "<b>The primary battery is not detected.</b>"
@@ -1182,12 +1183,12 @@
 						"resetLog": {
 							"ERROR_SUCCESS": "Complete: Successful reset.",
 							"ERROR_SHUTDOWN": "Failed: System shut down.",
-							"ERROR_LOGOFF": "Failed: User logged off.",
+							"ERROR_LOGOFF": "Failed: User has logged off.",
 							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
 							"ERROR_BATTERY_REPLACE": "Failed: Battery was replaced.",
 							"ERROR_AC_DETTACH": "Failed: AC power adapter was detached.",
 							"ERROR_USER_CANCEL": "Failed: Cancelled by user.",
-							"ERROR_UNEXPECTED": "Failed: An unexpected error occurred."
+							"ERROR_UNEXPECTED": "Failed: Unexpected error occurred."
 						},
 						"popup": {
 							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
@@ -1327,11 +1328,11 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "seconds",
-							"minute": "minute",
-							"minutes": "minutes",
+							"seconds": "Seconds",
+							"minute": "Minute",
+							"minutes": "Minutes",
 							"alwaysOn": "Always on",
-							"never": "never",
+							"never": "Never",
 							"halfTime": "Half time of display off timer"
 						},
 						"taskBarDimmer": "TASKBAR DIMMER",
@@ -2257,6 +2258,7 @@
 			"goPassword": "go to passwordManger",
 			"goWifi": "go to wifi-security",
 			"goVpn": "go to VPN security",
+			"haveOwn" : "I have my own",
 			"visitWindows": "Visit Windows Activation",
 			"visitFingerprint": "Visit Fingerprint reader",
 			"visitUac": "Visit User Account Control",

@@ -1,5 +1,4 @@
 import { EventTypes, WindowsActivation } from '@lenovo/tan-client-bridge';
-import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,7 +19,9 @@ export class WindowsActiveLandingViewModel {
 
 	constructor(translate: TranslateService, waModel: WindowsActivation, public commonService: CommonService, ) {
 		waModel.on(EventTypes.waStatusEvent, (data) => {
-			this.setWaStatus(data);
+			if (data !== 'unknown') {
+				this.setWaStatus(data);
+			}
 		});
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsActiveStatus);
 		translate.stream([

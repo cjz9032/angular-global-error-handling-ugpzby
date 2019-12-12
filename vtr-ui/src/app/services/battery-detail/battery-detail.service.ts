@@ -12,6 +12,7 @@ export class BatteryDetailService {
 	remainingPercentages: number[] = [];
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;
+	isEmDriverInstalled: boolean;
 
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
