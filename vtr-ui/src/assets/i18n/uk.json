@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Не вдалося встановити. Спробуйте ще раз.",
-                "networkError": "Помилка мережі.",
-                "installationCancelled": "Інсталяцію скасовано."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Активація Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Встановити",
-                "installing": "Інсталяція",
-                "downloading": "Завантаження",
-                "installed": "Установлено",
-                "launch": "Запустити",
-                "seeMore": "Додаткова інформація"
-            },
-            "fieldName": {
-                "description": "Опис",
-                "screenshots": "Знімки екрана",
-                "additionalInformation": "Додаткова інформація",
-                "by": "Автор:",
-                "updated": "Оновлено:",
-                "type": "Тип:",
-                "category": "Категорія:",
-                "legalAgreement": "Юридична угода",
-                "readMore": "Розгорнути",
-                "readLess": "Згорнути"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Тепер ви можете легко дізнатись, якщо онлайн-трекери або зловмисники намагаються отримати вашу приватну інформацію без вашого відома.",
+            "security": "Чи ви знали? Навіть якщо у вас не інстальовано антивірусну програму, ми забезпечуємо мінімальний захист вашого пристрою.",
+            "connectedHomeSecurity": "Отримайте моніторинг у режимі реального часу та сповіщення про безпеку домашньої мережі. Ми оперативно поінформуємо вас, якщо один із ваших смарт-пристроїв зазнає нападу."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Не вдалося встановити. Спробуйте ще раз.",
+                "networkError": "Помилка мережі.",
+                "installationCancelled": "Інсталяцію скасовано."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Активація Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Встановити",
+                "installing": "Інсталяція",
+                "downloading": "Завантаження",
+                "installed": "Установлено",
+                "launch": "Запустити",
+                "seeMore": "Додаткова інформація"
+            },
+            "fieldName": {
+                "description": "Опис",
+                "screenshots": "Знімки екрана",
+                "additionalInformation": "Додаткова інформація",
+                "by": "Автор:",
+                "updated": "Оновлено:",
+                "type": "Тип:",
+                "category": "Категорія:",
+                "legalAgreement": "Юридична угода",
+                "readMore": "Розгорнути",
+                "readLess": "Згорнути"
+            }
+        }
+    }
 }

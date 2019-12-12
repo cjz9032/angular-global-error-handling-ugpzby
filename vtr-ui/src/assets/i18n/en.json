@@ -3165,6 +3165,13 @@
         },
         "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
 	},
+	"notification": {
+		"menu": {
+			"privacy": "Now you can find out if your private information has been breached or used by online trackers without your knowlege.",
+			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
+		}
+	},
 	"appsForYou": {
 		"common": {
 			"errorMessage": {

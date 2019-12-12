@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installazione non riuscita. Riprovare.",
-                "networkError": "Errore di rete.",
-                "installationCancelled": "Installazione annullata."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Codice di attivazione Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installa",
-                "installing": "Installazione",
-                "downloading": "Download in corso",
-                "installed": "Installato",
-                "launch": "Avvia",
-                "seeMore": "Visualizza altro"
-            },
-            "fieldName": {
-                "description": "Descrizione",
-                "screenshots": "Screenshot",
-                "additionalInformation": "Ulteriori informazioni",
-                "by": "Per:",
-                "updated": "Aggiornato:",
-                "type": "Tipo:",
-                "category": "Categoria:",
-                "legalAgreement": "Contratto legale",
-                "readMore": "Ulteriori informazioni",
-                "readLess": "Meno informazioni"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Ora è possibile scoprire se le informazioni personali sono state violate o utilizzate da tracker online a propria insaputa.",
+            "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installazione non riuscita. Riprovare.",
+                "networkError": "Errore di rete.",
+                "installationCancelled": "Installazione annullata."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Codice di attivazione Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installa",
+                "installing": "Installazione",
+                "downloading": "Download in corso",
+                "installed": "Installato",
+                "launch": "Avvia",
+                "seeMore": "Visualizza altro"
+            },
+            "fieldName": {
+                "description": "Descrizione",
+                "screenshots": "Screenshot",
+                "additionalInformation": "Ulteriori informazioni",
+                "by": "Per:",
+                "updated": "Aggiornato:",
+                "type": "Tipo:",
+                "category": "Categoria:",
+                "legalAgreement": "Contratto legale",
+                "readMore": "Ulteriori informazioni",
+                "readLess": "Meno informazioni"
+            }
+        }
+    }
 }

@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安裝失敗。請再試一次。",
-                "networkError": "網路錯誤。",
-                "installationCancelled": "安裝作業已取消。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兌換",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安裝",
-                "installing": "安裝",
-                "downloading": "下載",
-                "installed": "已安裝",
-                "launch": "啟動",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "說明",
-                "screenshots": "螢幕擷取畫面",
-                "additionalInformation": "其他資訊",
-                "by": "提供者：",
-                "updated": "更新時間：",
-                "type": "類型：",
-                "category": "類別：",
-                "legalAgreement": "法律協議",
-                "readMore": "較多內容",
-                "readLess": "較少內容"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
+            "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安裝失敗。請再試一次。",
+                "networkError": "網路錯誤。",
+                "installationCancelled": "安裝作業已取消。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兌換",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安裝",
+                "installing": "安裝",
+                "downloading": "下載",
+                "installed": "已安裝",
+                "launch": "啟動",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "說明",
+                "screenshots": "螢幕擷取畫面",
+                "additionalInformation": "其他資訊",
+                "by": "提供者：",
+                "updated": "更新時間：",
+                "type": "類型：",
+                "category": "類別：",
+                "legalAgreement": "法律協議",
+                "readMore": "較多內容",
+                "readLess": "較少內容"
+            }
+        }
+    }
 }

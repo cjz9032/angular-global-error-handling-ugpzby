@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
-                "networkError": "Nettverksfeil.",
-                "installationCancelled": "Installasjonen er avbrutt."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-innløsning",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installer",
-                "installing": "Installerer",
-                "downloading": "Laster ned",
-                "installed": "Installert",
-                "launch": "Start",
-                "seeMore": "Se mer"
-            },
-            "fieldName": {
-                "description": "Beskrivelse",
-                "screenshots": "Skjermbilder",
-                "additionalInformation": "Tilleggsinformasjon",
-                "by": "Av:",
-                "updated": "Oppdatert:",
-                "type": "Type:",
-                "category": "Kategori:",
-                "legalAgreement": "Juridisk avtale",
-                "readMore": "Les mer",
-                "readLess": "Les mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
+            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
+                "networkError": "Nettverksfeil.",
+                "installationCancelled": "Installasjonen er avbrutt."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-innløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installerer",
+                "downloading": "Laster ned",
+                "installed": "Installert",
+                "launch": "Start",
+                "seeMore": "Se mer"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skjermbilder",
+                "additionalInformation": "Tilleggsinformasjon",
+                "by": "Av:",
+                "updated": "Oppdatert:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk avtale",
+                "readMore": "Les mer",
+                "readLess": "Les mindre"
+            }
+        }
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, ViewContainerRef, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -31,6 +31,7 @@ import { catchError } from 'rxjs/operators';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -114,7 +115,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private searchService: AppSearchService,
 		public dashboardService: DashboardService,
-	) { }
+		private newFeatureTipService: NewFeatureTipService,
+		private viewContainerRef: ViewContainerRef,
+	) {
+			newFeatureTipService.viewContainer = this.viewContainerRef;
+		}
 
 	ngOnInit() {
 		this.headerLogo = '';
@@ -143,6 +148,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.showHWScanMenu = available;
 			});
 		}
+		this.showNewFeatureTipsWithMenuItems();
 	}
 
 	private initComponent() {
@@ -691,4 +697,30 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.dialogService.openModernPreloadModal();
 	}
 
+	showNewFeatureTipsWithMenuItems() {
+		const newFeatureVersion = 3.002000;
+		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		if (!welcomeTutorial || !welcomeTutorial.isDone) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+			return;
+		}
+		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
+		if (!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion) {
+			this.getMenuItems().then(async (items) => {
+				const privacyItem = getItemByItemId('privacy');
+				const securityItem = getItemByItemId('security');
+				const chsItem = getItemByItemId('home-security');
+				let isHideMenuToggle = true;
+				if (window.innerWidth < 1200) { isHideMenuToggle = false; }
+				if (((privacyItem && this.showItem(privacyItem)) ||
+						(securityItem && this.showItem(securityItem)) ||
+						(chsItem && this.showItem(chsItem))
+					) && isHideMenuToggle) {
+					this.newFeatureTipService.create();
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+				function getItemByItemId(itemId: string) { return items.find((item: any) => item.id === itemId); }
+			});
+		}
+	}
 }

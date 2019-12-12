@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
-                "networkError": "Netzwerkfehler.",
-                "installationCancelled": "Installation wurde abgebrochen."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Gutscheine",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installieren",
-                "installing": "Installation",
-                "downloading": "Herunterladen",
-                "installed": "Installiert",
-                "launch": "Starten",
-                "seeMore": "Weitere Informationen anzeigen"
-            },
-            "fieldName": {
-                "description": "Beschreibung",
-                "screenshots": "Screenshots",
-                "additionalInformation": "Weitere Informationen",
-                "by": "Von:",
-                "updated": "Aktualisiert:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Rechtlicher Vertrag",
-                "readMore": "Weiterlesen",
-                "readLess": "Weniger lesen"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
+            "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
+            "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
+                "networkError": "Netzwerkfehler.",
+                "installationCancelled": "Installation wurde abgebrochen."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Gutscheine",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installieren",
+                "installing": "Installation",
+                "downloading": "Herunterladen",
+                "installed": "Installiert",
+                "launch": "Starten",
+                "seeMore": "Weitere Informationen anzeigen"
+            },
+            "fieldName": {
+                "description": "Beschreibung",
+                "screenshots": "Screenshots",
+                "additionalInformation": "Weitere Informationen",
+                "by": "Von:",
+                "updated": "Aktualisiert:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Rechtlicher Vertrag",
+                "readMore": "Weiterlesen",
+                "readLess": "Weniger lesen"
+            }
+        }
+    }
 }

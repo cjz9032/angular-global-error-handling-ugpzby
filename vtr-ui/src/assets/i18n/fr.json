@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Échec de l'installation. Faites une nouvelle tentative.",
-                "networkError": "Erreur réseau.",
-                "installationCancelled": "L'installation a été annulée."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Remboursement Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installer",
-                "installing": "Installation en cours",
-                "downloading": "Téléchargement",
-                "installed": "Installé",
-                "launch": "Lancer",
-                "seeMore": "En savoir plus"
-            },
-            "fieldName": {
-                "description": "Description",
-                "screenshots": "Captures d'écran",
-                "additionalInformation": "Informations supplémentaires",
-                "by": "Par :",
-                "updated": "Dernière mise à jour :",
-                "type": "Type :",
-                "category": "Catégorie :",
-                "legalAgreement": "Accord juridique",
-                "readMore": "Afficher plus",
-                "readLess": "Afficher moins"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Vous pouvez désormais déterminer si vos informations privées ont été compromises ou utilisées par des traqueurs en ligne à votre insu.",
+            "security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
+            "connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Échec de l'installation. Faites une nouvelle tentative.",
+                "networkError": "Erreur réseau.",
+                "installationCancelled": "L'installation a été annulée."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Remboursement Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installation en cours",
+                "downloading": "Téléchargement",
+                "installed": "Installé",
+                "launch": "Lancer",
+                "seeMore": "En savoir plus"
+            },
+            "fieldName": {
+                "description": "Description",
+                "screenshots": "Captures d'écran",
+                "additionalInformation": "Informations supplémentaires",
+                "by": "Par :",
+                "updated": "Dernière mise à jour :",
+                "type": "Type :",
+                "category": "Catégorie :",
+                "legalAgreement": "Accord juridique",
+                "readMore": "Afficher plus",
+                "readLess": "Afficher moins"
+            }
+        }
+    }
 }

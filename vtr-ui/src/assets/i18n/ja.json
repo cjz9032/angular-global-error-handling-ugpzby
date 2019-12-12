@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "インストールが失敗しました。再度試行してください。",
-                "networkError": "ネットワーク・エラー。",
-                "installationCancelled": "インストールがキャンセルされました。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe の引き換え",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "インストール",
-                "installing": "インストール",
-                "downloading": "ダウンロード中",
-                "installed": "インストール済み",
-                "launch": "起動",
-                "seeMore": "詳細を見る"
-            },
-            "fieldName": {
-                "description": "説明",
-                "screenshots": "スクリーンショット",
-                "additionalInformation": "追加情報",
-                "by": "作者:",
-                "updated": "更新:",
-                "type": "タイプ:",
-                "category": "カテゴリー:",
-                "legalAgreement": "法的合意",
-                "readMore": "表示を多くする",
-                "readLess": "表示を少なくする"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
+            "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
+            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "インストールが失敗しました。再度試行してください。",
+                "networkError": "ネットワーク・エラー。",
+                "installationCancelled": "インストールがキャンセルされました。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe の引き換え",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "インストール",
+                "installing": "インストール",
+                "downloading": "ダウンロード中",
+                "installed": "インストール済み",
+                "launch": "起動",
+                "seeMore": "詳細を見る"
+            },
+            "fieldName": {
+                "description": "説明",
+                "screenshots": "スクリーンショット",
+                "additionalInformation": "追加情報",
+                "by": "作者:",
+                "updated": "更新:",
+                "type": "タイプ:",
+                "category": "カテゴリー:",
+                "legalAgreement": "法的合意",
+                "readMore": "表示を多くする",
+                "readLess": "表示を少なくする"
+            }
+        }
+    }
 }

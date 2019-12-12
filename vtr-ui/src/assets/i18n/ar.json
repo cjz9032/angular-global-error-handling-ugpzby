@@ -3047,41 +3047,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "فشل التثبيت. حاول من جديد.",
-                "networkError": "خطأ في الشبكة.",
-                "installationCancelled": "تم إلغاء التثبيت."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "استرداد Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "تثبيت",
-                "installing": "جارِ التثبيت",
-                "downloading": "جارِ التنزيل",
-                "installed": "مثبت",
-                "launch": "اطلاق",
-                "seeMore": "رؤية المزيد"
-            },
-            "fieldName": {
-                "description": "الوصف",
-                "screenshots": "لقطات الشاشة",
-                "additionalInformation": "مزيد من المعلومات",
-                "by": "حسب:",
-                "updated": "تم التحديث:",
-                "type": "النوع:",
-                "category": "الفئة:",
-                "legalAgreement": "الاتفاقية القانونية",
-                "readMore": "اقرأ أكثر",
-                "readLess": "اقرأ أقل"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3195,6 +3160,48 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "notification": {
+        "menu": {
+            "privacy": "يمكنك الآن معرفة ما إذا كانت معلوماتك قد تعرضت للانتهاك أو ما إذا تم استخدامها من قِبل متتبعين عبر الإنترنت من دون علمك.",
+            "security": "هل تعلم؟ حتى لو لم يكن لديك برامج للحماية من الفيروسات مثبتة على جهازك، فنحن نوفر مع ذلك حماية الأمان الأساسية لجهازك.",
+            "connectedHomeSecurity": "احصل على مراقبة وتنبيهات في الوقت الحقيقي حول أمان شبكتك في المنزل. ستكون أول من يعرف ما إذا كان أحد أجهزتك الذكية يتعرض لهجوم أمني."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "فشل التثبيت. حاول من جديد.",
+                "networkError": "خطأ في الشبكة.",
+                "installationCancelled": "تم إلغاء التثبيت."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "استرداد Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "تثبيت",
+                "installing": "جارِ التثبيت",
+                "downloading": "جارِ التنزيل",
+                "installed": "مثبت",
+                "launch": "اطلاق",
+                "seeMore": "رؤية المزيد"
+            },
+            "fieldName": {
+                "description": "الوصف",
+                "screenshots": "لقطات الشاشة",
+                "additionalInformation": "مزيد من المعلومات",
+                "by": "حسب:",
+                "updated": "تم التحديث:",
+                "type": "النوع:",
+                "category": "الفئة:",
+                "legalAgreement": "الاتفاقية القانونية",
+                "readMore": "اقرأ أكثر",
+                "readLess": "اقرأ أقل"
+            }
         }
     }
 }

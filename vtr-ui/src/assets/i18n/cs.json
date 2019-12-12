@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
-                "networkError": "Chyba sítě.",
-                "installationCancelled": "Instalace zrušena."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Kompenzace Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Nainstalujte si",
-                "installing": "Instalace",
-                "downloading": "Stahování",
-                "installed": "Nainstalováno",
-                "launch": "Spustit",
-                "seeMore": "Další informace"
-            },
-            "fieldName": {
-                "description": "Popis",
-                "screenshots": "Snímky obrazovky",
-                "additionalInformation": "Další informace",
-                "by": "Od:",
-                "updated": "Aktualizováno:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Právní ujednání",
-                "readMore": "Další informace",
-                "readLess": "Méně informací"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyní můžete zjistit, zda došlo k úniku vašich osobních údajů nebo zda byly tyto údaje bez vašeho vědomí použity online sledovacími nástroji.",
+            "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
+            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
+                "networkError": "Chyba sítě.",
+                "installationCancelled": "Instalace zrušena."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Kompenzace Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainstalujte si",
+                "installing": "Instalace",
+                "downloading": "Stahování",
+                "installed": "Nainstalováno",
+                "launch": "Spustit",
+                "seeMore": "Další informace"
+            },
+            "fieldName": {
+                "description": "Popis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Další informace",
+                "by": "Od:",
+                "updated": "Aktualizováno:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Právní ujednání",
+                "readMore": "Další informace",
+                "readLess": "Méně informací"
+            }
+        }
+    }
 }

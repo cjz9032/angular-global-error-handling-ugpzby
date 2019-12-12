@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installationen misslyckades. Försök igen.",
-                "networkError": "Nätverksfel.",
-                "installationCancelled": "Installationen avbröts."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-inlösen",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installera",
-                "installing": "Installerar",
-                "downloading": "Hämtar",
-                "installed": "Installerad",
-                "launch": "Starta",
-                "seeMore": "Mer information"
-            },
-            "fieldName": {
-                "description": "Beskrivning",
-                "screenshots": "Skärmbilder",
-                "additionalInformation": "Mer information",
-                "by": "Av:",
-                "updated": "Uppdaterad:",
-                "type": "Typ:",
-                "category": "Kategori:",
-                "legalAgreement": "Avtal",
-                "readMore": "Läs mer",
-                "readLess": "Läs mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nu kan du ta reda på om din privata information har äventyrats eller använts av onlinespårare utan din vetskap.",
+            "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
+            "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installationen misslyckades. Försök igen.",
+                "networkError": "Nätverksfel.",
+                "installationCancelled": "Installationen avbröts."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-inlösen",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installera",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
+                "installed": "Installerad",
+                "launch": "Starta",
+                "seeMore": "Mer information"
+            },
+            "fieldName": {
+                "description": "Beskrivning",
+                "screenshots": "Skärmbilder",
+                "additionalInformation": "Mer information",
+                "by": "Av:",
+                "updated": "Uppdaterad:",
+                "type": "Typ:",
+                "category": "Kategori:",
+                "legalAgreement": "Avtal",
+                "readMore": "Läs mer",
+                "readLess": "Läs mindre"
+            }
+        }
+    }
 }

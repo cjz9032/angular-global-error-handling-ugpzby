@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Η εγκατάσταση απέτυχε. Προσπαθήστε ξανά.",
-                "networkError": "Σφάλμα δικτύου.",
-                "installationCancelled": "Η εγκατάσταση ακυρώθηκε."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Εξαργύρωση Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Εγκατάσταση",
-                "installing": "Εγκατάσταση",
-                "downloading": "Μεταφόρτωση",
-                "installed": "Εγκαταστάθηκε",
-                "launch": "Εκκίνηση",
-                "seeMore": "Δείτε περισσότερα"
-            },
-            "fieldName": {
-                "description": "Περιγραφή",
-                "screenshots": "Στιγμιότυπα οθόνης",
-                "additionalInformation": "Πρόσθετες πληροφορίες",
-                "by": "Ανά:",
-                "updated": "Ενημερώθηκε:",
-                "type": "Τύπος:",
-                "category": "Κατηγορία:",
-                "legalAgreement": "Νομική συμφωνία",
-                "readMore": "Διαβάστε περισσότερα",
-                "readLess": "Διαβάστε λιγότερα"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Τώρα μπορείτε να μάθετε εάν οι προσωπικές σας πληροφορίες έχουν παραβιαστεί ή χρησιμοποιηθεί από διαδικτυακούς ιχνηλάτες χωρίς να το γνωρίζετε.",
+            "security": "Γνωρίζετε; Ακόμη και αν δεν έχετε εγκατεστημένο λογισμικό προστασίας από ιούς, συνεχίζουμε να παρέχουμε βασική προστασία ασφαλείας για τη συσκευή σας.",
+            "connectedHomeSecurity": "Αποκτήστε παρακολούθηση και ειδοποιήσεις σε πραγματικό χρόνο σχετικά με την ασφάλεια του δικτύου σας στο σπίτι. Θα είστε ο πρώτος που θα μάθετε εάν κάποια από τις έξυπνες συσκευές σας αντιμετωπίζει επίθεση ασφαλείας."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Η εγκατάσταση απέτυχε. Προσπαθήστε ξανά.",
+                "networkError": "Σφάλμα δικτύου.",
+                "installationCancelled": "Η εγκατάσταση ακυρώθηκε."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Εξαργύρωση Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Εγκατάσταση",
+                "installing": "Εγκατάσταση",
+                "downloading": "Μεταφόρτωση",
+                "installed": "Εγκαταστάθηκε",
+                "launch": "Εκκίνηση",
+                "seeMore": "Δείτε περισσότερα"
+            },
+            "fieldName": {
+                "description": "Περιγραφή",
+                "screenshots": "Στιγμιότυπα οθόνης",
+                "additionalInformation": "Πρόσθετες πληροφορίες",
+                "by": "Ανά:",
+                "updated": "Ενημερώθηκε:",
+                "type": "Τύπος:",
+                "category": "Κατηγορία:",
+                "legalAgreement": "Νομική συμφωνία",
+                "readMore": "Διαβάστε περισσότερα",
+                "readLess": "Διαβάστε λιγότερα"
+            }
+        }
+    }
 }

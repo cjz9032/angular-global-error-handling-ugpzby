@@ -3045,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installatie mislukt. Probeer het opnieuw.",
-                "networkError": "Netwerkfout.",
-                "installationCancelled": "Installatie geannuleerd."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-inwisseling",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installeer",
-                "installing": "Installeren",
-                "downloading": "Bezig met downloaden",
-                "installed": "Geïnstalleerd",
-                "launch": "Starten",
-                "seeMore": "Meer weergeven"
-            },
-            "fieldName": {
-                "description": "Beschrijving",
-                "screenshots": "Schermopnames",
-                "additionalInformation": "Aanvullende informatie",
-                "by": "Door:",
-                "updated": "Bijgewerkt:",
-                "type": "Type:",
-                "category": "Categorie:",
-                "legalAgreement": "Wettelijke overeenkomst",
-                "readMore": "Meer weergeven",
-                "readLess": "Minder weergeven"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nu kunt u nagaan of uw persoonlijke gegevens zijn geschonden of gebruikt door online trackers zonder dat u ervan af wist.",
+            "security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
+            "connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installatie mislukt. Probeer het opnieuw.",
+                "networkError": "Netwerkfout.",
+                "installationCancelled": "Installatie geannuleerd."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-inwisseling",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installeer",
+                "installing": "Installeren",
+                "downloading": "Bezig met downloaden",
+                "installed": "Geïnstalleerd",
+                "launch": "Starten",
+                "seeMore": "Meer weergeven"
+            },
+            "fieldName": {
+                "description": "Beschrijving",
+                "screenshots": "Schermopnames",
+                "additionalInformation": "Aanvullende informatie",
+                "by": "Door:",
+                "updated": "Bijgewerkt:",
+                "type": "Type:",
+                "category": "Categorie:",
+                "legalAgreement": "Wettelijke overeenkomst",
+                "readMore": "Meer weergeven",
+                "readLess": "Minder weergeven"
+            }
+        }
+    }
 }

@@ -909,7 +909,6 @@
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>",
                     "EmDriverInstalled": "Pil ayrıntıları kullanılamıyor. Windows Update->Güncelleştirmeleri denetle seçeneğini kullanarak <b>Lenovo ACPI - Compliant Virtual Power Controller</b> sürücüsünü yükleyin."
-
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
@@ -3046,41 +3045,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
-                "networkError": "Ağ Hatası.",
-                "installationCancelled": "Kurulum İptal Edildi."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Kullanma",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Kur",
-                "installing": "Kurma",
-                "downloading": "Karşıdan yükleniyor",
-                "installed": "Kurulu",
-                "launch": "Başlat",
-                "seeMore": "Daha Fazla"
-            },
-            "fieldName": {
-                "description": "Açıklama",
-                "screenshots": "Ekran görüntüleri",
-                "additionalInformation": "Ek Bilgi",
-                "by": "Ölçüt:",
-                "updated": "Güncelleme:",
-                "type": "Tip:",
-                "category": "Kategori:",
-                "legalAgreement": "Yasal Sözleşme",
-                "readMore": "Okumaya Devam Et",
-                "readLess": "Okumayı Daralt"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3197,5 +3161,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Artık özel bilgilerinizin çevrimiçi izleyiciler tarafından sizin bilginiz dışında ihlal edilip edilmediğini veya kullanılıp kullanılmadığını öğrenebilirsiniz.",
+            "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
+            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
+                "networkError": "Ağ Hatası.",
+                "installationCancelled": "Kurulum İptal Edildi."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Kullanma",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Kur",
+                "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
+                "installed": "Kurulu",
+                "launch": "Başlat",
+                "seeMore": "Daha Fazla"
+            },
+            "fieldName": {
+                "description": "Açıklama",
+                "screenshots": "Ekran görüntüleri",
+                "additionalInformation": "Ek Bilgi",
+                "by": "Ölçüt:",
+                "updated": "Güncelleme:",
+                "type": "Tip:",
+                "category": "Kategori:",
+                "legalAgreement": "Yasal Sözleşme",
+                "readMore": "Okumaya Devam Et",
+                "readLess": "Okumayı Daralt"
+            }
+        }
+    }
 }
