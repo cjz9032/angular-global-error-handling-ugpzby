@@ -643,7 +643,7 @@
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>"
         },
         "qAndA": {
             "title": "V & A voor uw machine",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Klik hierboven op de knop \"SurfEasy openen\" om SurfEasy VPN te starten.",
             "getStarted2": "Schakel het VPN in en wacht even op bevestiging van een beveiligde verbinding.",
             "getStarted3": "Wijzig zo nodig uw regio of locatie en geniet van een veilig en persoonlijk netwerk.",
-            "poweredBySurfEasy": "Powered By SurfEasy",
-            "privacyPolicyAndTermsOfService": "Meer informatie over het <tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>"
+            "poweredBySurfEasy": "Powered By SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-WACHTWOORDBEHEER",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Het darkweb bewaken voor uw persoonlijke informatie.",
             "allowsYou3": "Veilig blijven in onbeveiligd WiFi-netwerken met ingebouwd VPN.",
             "allowsYou4": "Wachtwoorden veilig delen zonder deze prijs te geven.",
-            "poweredByDashLane": "Powered By Dashlane",
-            "privacyPolicyAndTermsOfService": "Meer informatie over het <tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>"
+            "poweredByDashLane": "Powered By Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

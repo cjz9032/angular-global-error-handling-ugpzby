@@ -643,7 +643,7 @@
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -2167,8 +2167,7 @@
             "getStarted1": "A SurfEasy VPN elindításához kattintson a fenti „A SurfEasy megnyitása” gombra.",
             "getStarted2": "Kapcsolja be a VPN-t, és várjon egy kis ideig, amíg a rendszer visszaigazolja a kapcsolat biztonságosságát.",
             "getStarted3": "Igény szerint módosítsa a régiót vagy a tartózkodási helyet, és máris biztonságosan internetezhet.",
-            "poweredBySurfEasy": "A SurfEasy technológiája",
-            "privacyPolicyAndTermsOfService": "További információ az <tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag> között található"
+            "poweredBySurfEasy": "A SurfEasy technológiája"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE JELSZÓKEZELŐ",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Nyomon követheti, hogy felbukkannak-e az Ön adatai a sötét weben",
             "allowsYou3": "A beépített VPN segítségével a nem biztonságos WiFi-hálózatok is biztonságosan használhatók",
             "allowsYou4": "A jelszavak biztonságos megosztása – nyilvánossá tétel nélkül",
-            "poweredByDashLane": "A Dashlane technológiája",
-            "privacyPolicyAndTermsOfService": "További információ az <tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag> között található"
+            "poweredByDashLane": "A Dashlane technológiája"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

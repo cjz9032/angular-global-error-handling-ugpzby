@@ -643,7 +643,7 @@
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
-            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "MANAGER PAROLE DASHLANE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
             "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
             "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
-            "poweredByDashLane": "Dezvoltat de Dashlane",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredByDashLane": "Dezvoltat de Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

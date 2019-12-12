@@ -643,7 +643,7 @@
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>"
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Натисніть кнопку \"Відкрити SurfEasy\" вище, щоб запустити SurfEasy VPN.",
             "getStarted2": "Увімкніть VPN і зачекайте кілька секунд для підтвердження безпечного з'єднання.",
             "getStarted3": "За потреби змініть свій регіон або розташування й починайте використовувати безпечну приватну мережу.",
-            "poweredBySurfEasy": "Технології SurfEasy",
-            "privacyPolicyAndTermsOfService": "Дізнайтеся більше про <tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>"
+            "poweredBySurfEasy": "Технології SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "МЕНЕДЖЕР ПАРОЛІВ DASHLANE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Моніторинг темної мережі на наявність ваших персональних даних",
             "allowsYou3": "Забезпечення безпеки в незахищених мережах WiFi завдяки вбудованій VPN",
             "allowsYou4": "Безпечний обмін паролями без розкриття",
-            "poweredByDashLane": "Технології Dashlane",
-            "privacyPolicyAndTermsOfService": "Дізнайтеся більше про <tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>"
+            "poweredByDashLane": "Технології Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

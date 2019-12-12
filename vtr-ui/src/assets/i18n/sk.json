@@ -643,7 +643,7 @@
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Kliknite na tlačidlo „Otvoriť SurfEasy“ uvedené vyššie a spustite aplikáciu SurfEasy VPN.",
             "getStarted2": "Zapnite službu VPN a chvíľu počkajte na potvrdenie zabezpečeného pripojenia.",
             "getStarted3": "V prípade potreby zmeňte svoj región alebo polohu a používajte bezpečnú a súkromnú sieť.",
-            "poweredBySurfEasy": "Využíva technológiu SurfEasy",
-            "privacyPolicyAndTermsOfService": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "poweredBySurfEasy": "Využíva technológiu SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCA HESIEL DASHLANE",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Slúži na sledovanie výskytu vašich údajov na temnom webe",
             "allowsYou3": "Zostaňte v bezpečí v nezabezpečených WiFi sieťach vďaka integrovanému VPN",
             "allowsYou4": "Bezpečne zdieľajte heslá bez ich odhalenia",
-            "poweredByDashLane": "Využíva technológiu Dashlane",
-            "privacyPolicyAndTermsOfService": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "poweredByDashLane": "Využíva technológiu Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -643,7 +643,7 @@
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -2167,8 +2167,7 @@
             "getStarted1": "Klik på knappen \"Åbn SurfEasy\" ovenfor for at starte SurfEasy VPN.",
             "getStarted2": "Aktivér VPN, og vent et kort øjeblik for at få bekræftelse på en sikker forbindelse.",
             "getStarted3": "Rediger dit område eller din placering, og nyd sikre og private netværksaktiviteter.",
-            "poweredBySurfEasy": "Udarbejdet af SurfEasy",
-            "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "poweredBySurfEasy": "Udarbejdet af SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE ADGANGSKODEADMINISTRATOR",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
             "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
-            "poweredByDashLane": "Udarbejdet af Dashlane",
-            "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "poweredByDashLane": "Udarbejdet af Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -643,7 +643,7 @@
             "registered": "登録済み",
             "notRegistered": "未登録",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>"
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
@@ -2167,8 +2167,7 @@
             "getStarted1": "上にある「SurfEasy を開く」ボタンをクリックして SurfEasy VPN を起動します。",
             "getStarted2": "VPN をオンにして、接続の保護が確認されるまでしばらく待ちます。",
             "getStarted3": "必要に応じて地域や場所を変更し、安全なプライベート・ネットワークをご活用ください。",
-            "poweredBySurfEasy": "SurfEasy 搭載",
-            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>の詳細を読む"
+            "poweredBySurfEasy": "SurfEasy 搭載"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE パスワード・マネージャー",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "皆様の個人情報についてダーク・ウェブを監視します",
             "allowsYou3": "内蔵の VPN により、安全でない WiFi ネットワークを安心して利用できます",
             "allowsYou4": "パスワードを明らかにせずに安全に共有できます",
-            "poweredByDashLane": "Dashlane 搭載",
-            "privacyPolicyAndTermsOfService": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>の詳細を読む"
+            "poweredByDashLane": "Dashlane 搭載"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
