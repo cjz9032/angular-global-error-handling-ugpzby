@@ -54,7 +54,7 @@
 			font-size: 1.4rem;
 		}
 	}
-	@media #{$breakpoint_md} {
+	@media #{$breakpoint_lg} {
 		.right-container {
 			padding: 1.5rem;
 			margin-top: 17rem;
@@ -90,15 +90,13 @@
 		}
 	}
 
-    // vtr-ui-button {
-    //     ::ng-deep .vtr-ui-button {
-    //       .button-box .button {
-    //         min-height: 3.5rem;
-    //         font-size: 1.5rem;
-    //         font-weight: 600;
-    //       }
-    //     }
-    // }
+    vtr-ui-button {
+        ::ng-deep .vtr-ui-button {
+          .button-box .button {
+            width: 100%;
+          }
+        }
+    }
 
     .offline-icon {
       fa-icon {
