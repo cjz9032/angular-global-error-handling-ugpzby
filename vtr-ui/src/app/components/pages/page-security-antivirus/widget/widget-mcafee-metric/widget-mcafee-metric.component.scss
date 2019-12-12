@@ -5,7 +5,7 @@
   background-color: rgb(20, 2, 63);
   margin-right: 2rem;
   padding: 1.5rem;
-  @media #{$mediaquery_md} {
+  @media #{$mediaquery_xl} {
     margin:0 0 4rem 0;
   }
   button {
