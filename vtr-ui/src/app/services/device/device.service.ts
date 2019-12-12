@@ -30,6 +30,7 @@ export class DeviceService {
 	public machineInfo: any;
 	public showDemo = false;
 	public machineType: number;
+	private Windows: any;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -40,7 +41,7 @@ export class DeviceService {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
-
+		this.Windows = this.shellService.getWindows();
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
@@ -48,35 +49,10 @@ export class DeviceService {
 	}
 
 	private initIsArm() {
-		try {
-			this.getIsARM()
-				.then((status: boolean) => {
-					this.isArm = status;
-				}).catch(error => {
-					this.logger.error('initArm', error.message);
-					return false;
-				});
-		} catch (error) {
-			this.logger.error('initArm' + error.message);
-			return false;
-		}
-	}
-
-	public async getIsARM(): Promise<boolean> {
-		let isArm = false;
 		this.isAndroid = this.androidService.isAndroid;
-		if (this.isAndroid) {
-			return true;
-		}
-		try {
-			if (this.isShellAvailable) {
-				const machineInfo = await this.getMachineInfo();
-				isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-				return isArm;
-			}
-		} catch (error) {
-			this.logger.error('getIsARM' + error.message);
-			return isArm;
+		this.isArm = this.isAndroid;
+		if (this.Windows) {
+			this.isArm = this.Windows.ApplicationModel.Package.current.id.architecture.toString() === '5';
 		}
 	}
 
