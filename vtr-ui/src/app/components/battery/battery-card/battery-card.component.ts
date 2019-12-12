@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild, ViewRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -11,7 +11,7 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 import { BatteryConditionsEnum, BatteryStatus } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Subscription, EMPTY } from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -100,6 +100,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			this.batteryConditions[0] = new BatteryConditionModel(BatteryConditionsEnum.NotDetected, BatteryStatus.Poor);
 			maininfo.percentage = 0;
 			this.batteryIndicator.percent = 0;
+			this.batteryIndicator.batteryNotDetected = true;
 		}
 		this.batteryIndicator.convertMin(time);
 		this.batteryIndicator.timeText = timetype;
@@ -114,16 +115,12 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.updateMainBatteryTime();
 		this.batteryIndicator.charging = this.getAcAttachedStatus();
 		this.isLoading = false;
-		try {
-			const conditions = JSON.parse(window.localStorage.getItem('batteryCondition'));
-			if (Array.isArray(conditions) && conditions.length > 0) {
-				conditions.forEach((condition: BatteryConditionModel, index) => {
-					conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
-				});
-				this.batteryConditions = conditions;
-			}
-		} catch (e) {
-			console.log(e);
+		const conditions = this.commonService.getLocalStorageValue(LocalStorageKey.BatteryCondition);
+		if (Array.isArray(conditions) && conditions.length > 0) {
+			conditions.forEach((condition: BatteryConditionModel, index) => {
+				conditions[index] = new BatteryConditionModel(condition.condition, condition.conditionStatus);
+			});
+			this.batteryConditions = conditions;
 		}
 		this.setConditionTips();
 		this.isWinRTLoading = false;
@@ -434,7 +431,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		// temp cache battery condition
-		window.localStorage.setItem('batteryCondition', JSON.stringify(this.batteryConditions));
+		this.commonService.setLocalStorageValue(LocalStorageKey.BatteryCondition, this.batteryConditions);
 	}
 
 	setConditionTips() {
