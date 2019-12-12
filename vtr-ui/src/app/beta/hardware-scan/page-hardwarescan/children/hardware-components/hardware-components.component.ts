@@ -19,9 +19,11 @@ import { VantageShellService } from '../../../../../services/vantage-shell/vanta
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalWaitComponent } from '../../../modal/modal-wait/modal-wait.component';
 
-enum ScanType {
+enum TaskType {
 	QuickScan,
-	CustomScan
+	CustomScan,
+	RefreshModules,
+	RecoverBadSectors
 }
 
 enum ScanAction {
@@ -73,7 +75,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private culture: any;
 	private showETicket = false;
 
-	private currentScanType: ScanType;
+	private currentTaskType: TaskType;
 	private currentScanAction: ScanAction;
 
 	private metrics: any;
@@ -83,7 +85,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public startScanClicked = false;
 
 	// "Wrapper" value to be accessed from the HTML
-	public scanTypeEnum = ScanType;
+	public taskTypeEnum = TaskType;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -270,9 +272,20 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	public refreshModules() {
+		this.timerService.start();
 		this.hardwareScanService.setLoadingStatus(false);
 		this.hardwareScanService.reloadItemsToScan(true);
 		this.hardwareScanService.initLoadingModules(this.culture);
+
+		this.hardwareScanService.isHardwareModulesLoaded().subscribe((loaded) => {
+			if (loaded) {
+				const taskResult = {
+					Result: "Pass"
+				};
+				this.sendTaskActionMetrics(TaskType.RefreshModules, 1,
+					"", taskResult, this.timerService.stop());
+			}
+		});
 	}
 
 	getItemToDisplay() {
@@ -336,7 +349,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				})
 				.finally(() => {
 					let metricsResult = this.getMetricsTaskResult();
-					this.sendTaskActionMetrics(this.currentScanType, metricsResult.countSuccesses, 
+					this.sendTaskActionMetrics(this.currentTaskType, metricsResult.countSuccesses,
 						"", metricsResult.scanResultJson, this.timerService.stop());
 					this.cleaningUpScan(undefined);
 				});			
@@ -473,7 +486,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		console.log('[MODAL] ', modalRef.componentInstance.items);
 		modalRef.componentInstance.passEntry.subscribe(() => {
 			this.hardwareScanService.filterCustomTests(this.culture);
-			this.checkPreScanInfo(ScanType.CustomScan); // custom scan
+			this.checkPreScanInfo(TaskType.CustomScan); // custom scan
 		});
 
 		modalRef.componentInstance.modalClosing.subscribe(success => {
@@ -499,16 +512,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return modal;
 	}
 
-	public startScanWaitingModules(scanType: number) {
+	public startScanWaitingModules(taskType: number) {
 		this.startScanClicked = true; // Disable button, preventing multiple clicks by the user
 
 		if (!this.hardwareScanService.isLoadingDone()) {
 			const modalWait = this.openWaitHardwareComponentsModal();
 			modalWait.result.then((result) => {
 				// Hardware modules have been retrieved, so let's continue with the Scan process
-				if (scanType === ScanType.QuickScan) {
-					this.checkPreScanInfo(scanType);
-				} else if (scanType === ScanType.CustomScan) {
+				if (taskType === TaskType.QuickScan) {
+					this.checkPreScanInfo(taskType);
+				} else if (taskType === TaskType.CustomScan) {
 					this.onCustomizeScan();
 				}
 			}, (reason) => {
@@ -517,24 +530,24 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			});
 		} else {
 			// Hardware modules is already retrieved, so let's continue with the Scan process
-			if (scanType === ScanType.QuickScan) {
-				this.checkPreScanInfo(scanType);
-			} else if (scanType === ScanType.CustomScan) {
+			if (taskType === TaskType.QuickScan) {
+				this.checkPreScanInfo(taskType);
+			} else if (taskType === TaskType.CustomScan) {
 				this.onCustomizeScan();
 			}
 		}
 	}
 
-	public checkPreScanInfo(scanType: number) {
+	public checkPreScanInfo(taskType: number) {
 		this.hardwareScanService.cleanResponses();
-		this.currentScanType = scanType;
+		this.currentTaskType = taskType;
 
 		let requests;
-		if (scanType === 0) { // quick
+		if (taskType === 0) { // quick
 			this.modules = this.hardwareScanService.getQuickScanResponse();
 			requests = this.hardwareScanService.getQuickScanRequest();
 
-		} else if (scanType === 1) { // custom
+		} else if (taskType === 1) { // custom
 			this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
 			requests = this.hardwareScanService.getFilteredCustomScanRequest();
 		}
@@ -583,7 +596,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				(<ModalScheduleScanCollisionComponent>modal.componentInstance).ConfirmItemName = this.getMetricsItemNameConfirm();
 
 				modal.result.then((result) => {
-					this.getDoScan(scanType, requests);
+					this.getDoScan(taskType, requests);
 
 					// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
 					this.startScanClicked = false;
@@ -594,7 +607,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.startScanClicked = false;
 				});
 			} else {
-				this.getDoScan(scanType, requests);
+				this.getDoScan(taskType, requests);
 			}
 		});
 	}
@@ -808,15 +821,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private getMetricsParentValue(){
-		return RootParent + "." + ScanAction[this.currentScanAction] + ScanType[this.currentScanType];		
+		return RootParent + "." + ScanAction[this.currentScanAction] + TaskType[this.currentTaskType];
 	}
 
 	private getMetricsItemNameConfirm(){
-		return ScanAction[this.currentScanAction] + ScanType[this.currentScanType] + "." + ConfirmButton;
+		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + ConfirmButton;
 	}
 
 	private getMetricsItemNameCancel(){
-		return ScanAction[this.currentScanAction] + ScanType[this.currentScanType] + "." + CloseButton;
+		return ScanAction[this.currentScanAction] + TaskType[this.currentTaskType] + "." + CloseButton;
 	}
 
 	private getMetricsTaskResult() {
@@ -882,11 +895,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return scanResult;
 	}	
 
-	private sendTaskActionMetrics(taskName: ScanType , taskCount: number, taskParam: string, 
+	private sendTaskActionMetrics(taskName: TaskType , taskCount: number, taskParam: string,
 		taskResult: any, taskDuration: number){
 		const data = {
 			ItemType: 'TaskAction',
-			TaskName: ScanType[taskName],
+			TaskName: TaskType[taskName],
 			TaskCount: taskCount,
 			TaskResult: taskResult,
 			TaskParam: taskParam,
