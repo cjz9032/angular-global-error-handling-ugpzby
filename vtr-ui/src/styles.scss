@@ -637,10 +637,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 		p,
 		li,
+		span,
 		ul {
 			font-size: 1.8rem;
 			color: $light-grey;
 			margin-bottom: 1rem;
+			word-wrap: break-word;
 		}
 
 		img,
@@ -648,12 +650,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 			border: none;
-		}
-
-		p,
-		li,
-		ul {
-			word-wrap: break-word;
 		}
 	}
 }

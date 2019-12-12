@@ -643,7 +643,7 @@
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
@@ -909,7 +909,6 @@
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>",
                     "EmDriverInstalled": "Pil ayrıntıları kullanılamıyor. Windows Update->Güncelleştirmeleri denetle seçeneğini kullanarak <b>Lenovo ACPI - Compliant Virtual Power Controller</b> sürücüsünü yükleyin."
-
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
@@ -1956,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2168,8 +2167,7 @@
             "getStarted1": "SurfEasy VPN'i başlatmak için yukarıdaki “SurfEasy'yi Açın” düğmesine tıklayın.",
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
-            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2197,8 +2195,7 @@
             "allowsYou2": "Kişisel bilgileriniz için karanlık ağ izlemesi",
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
-            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,7 +2634,8 @@
         "custom": "Özel Deneyim",
         "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
-        "moreInterest": "+ diğer ilgi alanları",
+		"moreInterest": "+ diğer ilgi alanları",
+		"toolbartitle": "Lenovo Vantage Araç Çubuğu'nu etkinleştir (önerilir)",
         "title1": "WRITEit'e hoş geldiniz",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3048,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
-                "networkError": "Ağ Hatası.",
-                "installationCancelled": "Kurulum İptal Edildi."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Kullanma",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Kur",
-                "installing": "Kurma",
-                "downloading": "Karşıdan yükleniyor",
-                "installed": "Kurulu",
-                "launch": "Başlat",
-                "seeMore": "Daha Fazla"
-            },
-            "fieldName": {
-                "description": "Açıklama",
-                "screenshots": "Ekran görüntüleri",
-                "additionalInformation": "Ek Bilgi",
-                "by": "Ölçüt:",
-                "updated": "Güncelleme:",
-                "type": "Tip:",
-                "category": "Kategori:",
-                "legalAgreement": "Yasal Sözleşme",
-                "readMore": "Okumaya Devam Et",
-                "readLess": "Okumayı Daralt"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3199,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Artık özel bilgilerinizin çevrimiçi izleyiciler tarafından sizin bilginiz dışında ihlal edilip edilmediğini veya kullanılıp kullanılmadığını öğrenebilirsiniz.",
+            "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
+            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
+                "networkError": "Ağ Hatası.",
+                "installationCancelled": "Kurulum İptal Edildi."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Kullanma",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Kur",
+                "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
+                "installed": "Kurulu",
+                "launch": "Başlat",
+                "seeMore": "Daha Fazla"
+            },
+            "fieldName": {
+                "description": "Açıklama",
+                "screenshots": "Ekran görüntüleri",
+                "additionalInformation": "Ek Bilgi",
+                "by": "Ölçüt:",
+                "updated": "Güncelleme:",
+                "type": "Tip:",
+                "category": "Kategori:",
+                "legalAgreement": "Yasal Sözleşme",
+                "readMore": "Okumaya Devam Et",
+                "readLess": "Okumayı Daralt"
+            }
+        }
+    }
 }
