@@ -235,7 +235,7 @@ export class ConfigService {
 		return new Promise(resolve => {
 			if (this.hypSettings) {
 				this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
-					resolve ((searchFeature || '').toString().toLocaleUpperCase() === 'true');
+					resolve ((searchFeature || '').toString().toLowerCase() === 'true');
 				}, (error) => {
 					this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
 					resolve(false);
