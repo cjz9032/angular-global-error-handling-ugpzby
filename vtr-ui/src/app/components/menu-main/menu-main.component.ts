@@ -602,7 +602,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 					this.logger.error('MenuMainComponent.showSmartAssist capability check',
 						{
-							isSmartAssistSupported: smartAssistCacheValue,
+							smartAssistCacheValue,
 							isSmartAssistAvailable,
 							assistCapability
 						});
