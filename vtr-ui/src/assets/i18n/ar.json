@@ -645,7 +645,7 @@
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -909,7 +909,8 @@
                     "PermanentError": "لقد <b>تراجعت</b> سعة البطارية. يرجى استبدالها بواحدة جديدة.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>محول التيار المتردد غير مدعوم.</b> لا يدعم كمبيوتر Lenovo محول التيار المتردد هذا. قد يؤدي إلى توقف التشغيل بشكل مفاجئ. يرجى توصيل محول التيار المتردد الصحيح.</span>",
                     "LimitedACAdapterSupportDetail": "<b>ليس باستطاعة محول التيار المتردد تزويد كمبيوتر Lenovo بطاقة كافية</b> مما يؤدي إلى التأثير في أداء النظام وسرعة الشحن. يُرجى إعادة توصيل محول التيار المتردد المناسب.",
-                    "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>"
+                    "FullACAdapterSupport": "<b>طاقة {{acWattage}} W {{acAdapterType}} موصولة.</b>",
+                    "EmDriverInstalled": "تفاصيل البطارية غير متوفرة. الرجاء تشغيل Windows Update->ابحث عن تحديثات لتثبيت برامج تشغيل <b>Lenovo ACPI - Compliant Virtual Power Controller</b> ."
                 },
                 "batteryNotDetected": "لم يتم الكشف عن أي بطارية",
                 "thresholdNote": "<b>ملاحظة:</b> لا يمكن شحن البطارية بالكامل عند تمكين حد شحن البطارية.",
@@ -995,24 +996,24 @@
                     "description5": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية. تتضمن هذه الميزة 3 أوضاع (الوضع الهادئ والوضع المتوازن ووضع الأداء) ويمكن الوصول إليها الآن بواسطة شريط تمرير أداء Windows",
                     "nocqldesc": "يتيح لك التبريد الذكي ضبط أداء النظام ودرجة الحرارة الحرارية. في وضع \"الأداء\"، يعمل على تحسين أداء النظام. في حين يساعد على تبريد النظام وهدوءه في وضع \"بارد وهادئ\".",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "تضبط ميزة التبريد الذكي سرعة المروحة والحد الأقصى للأداء وتدير عمل البطارية.",
+                        "desc2": "تحتوي هذه الميزة على الأوضاع المسردة أدناه ويمكن الآن تعديلها بواسطة شريط تمرير أداء Windows. يمكنك الوصول إليها عن طريق النقر فوق رمز البطارية في علبة نظام Windows.",
+                        "desc3": "يمكن ضبط بعض الأوضاع تلقائيًا عبر مجموعة واسعة من إعدادات الأداء استنادًا إلى نشاطك. لتمكين الوضع التلقائي، اضغط على Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "وضع البطارية التلقائية",
+                            "desc1": "يوجد شريط التمرير في جهة اليمين. يتم تبديل الوضع ديناميكيًا إلى الوضع الهادئ أو وضع البطارية للحصول على أفضل تجربة لوضع التيار المباشر.",
+                            "title2": "وضع الأداء التلقائي",
+                            "desc2": "يوجد شريط التمرير في المنتصف أو في منتصف جهة اليسار. يتم تبديل الوضع ديناميكيًا إلى الوضع الهادئ أو الوضع المتوازن أو وضع الأداء للحصول على أفضل تجربة لوضع التيار المتردد.",
+                            "title3": "وضع الأداء",
+                            "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "وضع الهدوء",
+                            "desc1": "يوجد شريط التمرير في جهة اليمين. يتم تقليل سرعة المروحة والأداء لجعل جهاز الكمبيوتر باردًا وأكثر هدوءًا وتحقيق أفضل عمر للبطارية.",
+                            "title2": "وضع متوازن",
+                            "desc2": "يوجد شريط التمرير في المنتصف أو في منتصف جهة اليسار. يحدث توازن ديناميكي بين سرعة المروحة والأداء من أجل الحصول على أفضل تجربة ممكنة.",
+                            "title3": "وضع الأداء",
+                            "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
                         }
                     }
                 },
@@ -1956,11 +1957,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2168,8 +2169,7 @@
             "getStarted1": "انقر فوق الزر \"فتح SurfEasy\" أعلاه لبدء تشغيل SurfEasy VPN.",
             "getStarted2": "شغّل شبكة VPN وانتظر برهة قصيرة لتلقي تأكيد الاتصال الآمن.",
             "getStarted3": "يمكنك تغيير منطقتك أو موقعك، إذا لزم الآمر، والاستمتاع بشبكة آمنة وخاصة.",
-            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "إدارة كلمات المرور في DASHLANE",
@@ -2197,8 +2197,7 @@
             "allowsYou2": "مراقبة الويب المظلم لمعلوماتك الشخصية",
             "allowsYou3": "المحافظة على سلامتك على شبكات WiFi غير الآمنة ذات VPN مضمنة",
             "allowsYou4": "مشاركة كلمات المرور بشكل آمن من دون الكشف عنها",
-            "poweredByDashLane": "مشغّل بواسطة Dashlane",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredByDashLane": "مشغّل بواسطة Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

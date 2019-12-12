@@ -13,6 +13,8 @@ import { WindowsHelloService } from 'src/app/services/security/windowsHello.serv
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
 import { UACWidgetItemViewModel } from 'src/app/data-models/security-advisor/widget-security-status/uac-widget-item.model';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -24,14 +26,16 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
 	region: string;
-	isRS5OrLater: boolean;
+	pluginSupport = true;
+
 	@Input() linkId: string;
 	constructor(
 		private commonService: CommonService,
 		private translateService: TranslateService,
-		private localInfoService: LocalInfoService,
+		private deviceService: DeviceService,
 		private ngZone: NgZone,
-		private windowsHelloService: WindowsHelloService) { }
+		private windowsHelloService: WindowsHelloService,
+		private hypSettings: HypothesisService) { }
 
 	ngOnInit() {
 		this.items = [
@@ -39,13 +43,17 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService),
 			new UACWidgetItemViewModel(this.securityAdvisor.uac, this.commonService, this.translateService)
 		];
-		this.localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
+		this.deviceService.getMachineInfo().then(result => {
+			this.region = (result.country ? result.country : 'US').toLowerCase();
 			this.showVpn();
 		}).catch(() => {
 			this.region = 'us';
 			this.showVpn();
 		});
+		// this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result: boolean) => {
+		// 	this.pluginSupport = result;
+		// 	this.showUac();
+		// });
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
 			this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
@@ -82,7 +90,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		const windowsHelloItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-wh'));
 		if (this.windowsHelloService.showWindowsHello()) {
 			if (!windowsHelloItem) {
-				this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
+				this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 		} else {
@@ -102,6 +110,15 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		} else {
 			if (vpnItem) {
 				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-vpn'));
+			}
+		}
+	}
+
+	showUac() {
+		const uacItem = this.items.find(item => item.id.startsWith('sa-widget-lnk-uac'));
+		if (!this.pluginSupport) {
+			if (uacItem) {
+				this.items = this.items.filter(item => !item.id.startsWith('sa-widget-lnk-uac'));
 			}
 		}
 	}

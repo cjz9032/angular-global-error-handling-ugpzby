@@ -643,7 +643,7 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -907,7 +907,8 @@
                     "PermanentError": "Zmogljivost baterije je <b>zmanjšana</b>. Prosimo, zamenjajte jo z novo.",
                     "NotSupportACAdapterDetail": "<b>Napajalnik ni podprt.</b> Vaš računalnik Lenovo ne podpira tega napajalnika. Povzroči lahko nenaden izklop. Priključite pravilen napajalnik.",
                     "LimitedACAdapterSupportDetail": "<b>Napajalnik računalniku Lenovo ne more zagotoviti dovolj energije</b>, kar bo vplivalo na učinkovitost delovanja sistema in hitrost polnjenja. Znova priključite ustrezen napajalnik.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W napajanje {{acAdapterType}} je priključeno.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W napajanje {{acAdapterType}} je priključeno.</b>",
+                    "EmDriverInstalled": "Podatki o bateriji niso na voljo. Zaženite Windows Update->Preveri, ali so na voljo posodobitve, da namestite gonilnik <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Baterija ni zaznana",
                 "thresholdNote": "<b>Opomba:</b> Ko je omogočena funkcija Prag polnjenja baterije, baterije ni mogoče povsem napolniti.",
@@ -993,24 +994,24 @@
                     "description5": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije. Ta funkcija ima 3 načine (tihi način, uravnotežen način in način učinkovitosti delovanja) in je zdaj dostopna z drsnikom za zmogljivost sistema Windows",
                     "nocqldesc": "Pametno hlajenje omogoča prilagajanje učinkovitosti delovanja in temperature sistema. V načinu »Učinkovitost delovanja« optimizira učinkovitost delovanja sistema. V načinu »Hladno in tiho« poskrbi za hladnejše in tišje delovanje sistema.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Pametno hlajenje prilagodi hitrost ventilatorja, največjo zmogljivost in upravlja življenjsko dobo baterije.",
+                        "desc2": "Ta funkcija vključuje spodaj navedene načine delovanja in se odslej upravlja z naprednim drsnikom za nastavljanje zmogljivosti sistema Windows. Funkcijo odprete tako, da kliknite ikono baterije v pladnju sistema Windows.",
+                        "desc3": "Nekateri načini delovanja se lahko na podlagi vaše dejavnosti samodejno prilagajajo v širšem obsegu zmogljivosti. Če želite omogočiti samodejni način, pritisnite Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Samodejni baterijski način",
+                            "desc1": "Drsnik je na levi. Način delovanja se samodejno preklopi na Tihi način ali Baterijski način, da vam zagotovi najboljšo izkušnjo uporabe baterijskega napajanja.",
+                            "title2": "Samodejni zmogljivi način",
+                            "desc2": "Drsnik je na sredini ali desno od sredine. Način delovanja se samodejno preklopi na Tihi način, Uravnoteženi način ali Zmogljivi način, da vam zagotovi najboljšo izkušnjo uporabe omrežnega napajanja.",
+                            "title3": "Zmogljivi način",
+                            "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tihi način",
+                            "desc1": "Drsnik je na levi. Hitrost ventilatorja in zmogljivost se zmanjšata, da se zagotovi tišje in hladnejše delovanje računalnika ter optimalna življenjska doba baterije.",
+                            "title2": "Uravnoteženi način",
+                            "desc2": "Drsnik je na sredini ali desno od sredine. Hitrost ventilatorja in zmogljivost se dinamično uravnotežita za optimalno uporabniško izkušnjo.",
+                            "title3": "Zmogljivi način",
+                            "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
                         }
                     }
                 },
@@ -1954,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredBySurfEasy": "Poganja SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredByDashLane": "Poganja Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

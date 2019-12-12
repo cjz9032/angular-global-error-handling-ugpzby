@@ -643,7 +643,7 @@
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
@@ -907,7 +907,8 @@
                     "PermanentError": "Akun kapasiteetti on <b>heikentynyt</b>. Vaihda uusi.",
                     "NotSupportACAdapterDetail": "<b>Verkkolaite ei ole tuettu.</b> Lenovo-tietokoneesi ei tue tätä verkkolaitetta. Se voi aiheuttaa äkillisen sammumisen. Liitä tietokoneeseen oikea verkkolaite.",
                     "LimitedACAdapterSupportDetail": "<b>Verkkolaite ei voi syöttää riittävästi virtaa</b> Lenovo-tietokoneeseesi, mikä vaikuttaa järjestelmän suorituskykyyn ja latausnopeuteen. Kytke oikea verkkolaite uudelleen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} virta on kytkettynä.</b>",
+                    "EmDriverInstalled": "Akun tiedot eivät ole saatavilla. Suorita Windows Update -> Tarkista päivitykset <b>Lenovo ACPI - Compliant Virtual Power Controller</b> -ohjaimen asennusta varten."
                 },
                 "batteryNotDetected": "Akkua ei havaittu",
                 "thresholdNote": "<b>Huomautus:</b> Akkua ei voi ladata täyteen, kun Akun varauksen kynnysarvo on otettu käyttöön.",
@@ -993,24 +994,24 @@
                     "description5": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa. Tämä ominaisuus sisältää kolme tilaa (hiljainen tila, tasapainotettu tila ja suorituskykytila), ja se on nyt käytettävissä Windowsissa näkyvällä suorituskyvyn ohjauksen liukusäätimellä",
                     "nocqldesc": "Älykäs jäähdytys -toiminnon avulla voit säätää järjestelmän suorituskykyä ja lämpötilaa. \"Suorituskykytilassa\" se optimoi järjestelmän suorituskykyä. Toisaalta se auttaa pitämään järjestelmän viileämpänä tai hiljaisempana \"Viileä ja hiljainen\" -tilassa.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, maksimaalista suorituskykyä ja hallitsee akun kestoaikaa.",
+                        "desc2": "Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä säädetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä. Liukusäätimen saa käyttöön napsauttamalla Windowsin järjestelmäalueella näkyvää akun kuvaketta.",
+                        "desc3": "Jotkin toimintatilat voivat säätyä automaattisesti laajemman suorituskykyskaalan sisällä eri toimintojen mukaan. Jos haluat ottaa käyttöön automaattisen tilan, paina Fn+T-näppäinyhdistelmää.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automaattinen akkutila",
+                            "desc1": "Liukusäädin sijaitsee vasemmalla. Toimintatila siirtyy dynaamisesti hiljaiseen tilaan tai akkutilaan parhaan tasasähkövirran käyttökokemuksen saavuttamiseksi.",
+                            "title2": "Automaattinen suorituskyvyn tila",
+                            "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Toimintatila siirtyy dynaamisesti hiljaiseen tilaan, tasapainotettuun tilaan tai suorituskyvyn tilaan parhaan verkkovirran käyttökokemuksen saavuttamiseksi.",
+                            "title3": "Suorituskykytila",
+                            "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Hiljainen tila",
+                            "desc1": "Liukusäädin sijaitsee vasemmalla. Tuulettimen kierrosnopeutta hidastetaan ja tietokoneen suorituskykyä vähennetään, joten se pysyy viileämpänä ja toimii hiljaisemmin. Samalla akku kestää pidempään.",
+                            "title2": "Tasapainotettu tila",
+                            "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
+                            "title3": "Suorituskykytila",
+                            "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
                         }
                     }
                 },
@@ -1954,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
-            "poweredBySurfEasy": "SurfEasyn tarjoama",
-            "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "poweredBySurfEasy": "SurfEasyn tarjoama"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE salasanojen hallinta",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
             "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
-            "poweredByDashLane": "Dashlanen tarjoama",
-            "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "poweredByDashLane": "Dashlanen tarjoama"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -151,6 +151,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
+				this.keyboardService.GetKeyboardMapCapability().then((response=>{
+					this.keyboardCompatibility = response;
+				}))
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);

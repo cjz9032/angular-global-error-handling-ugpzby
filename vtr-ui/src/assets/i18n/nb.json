@@ -643,7 +643,7 @@
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -907,7 +907,8 @@
                     "PermanentError": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>",
+                    "EmDriverInstalled": "Detaljert batteriinformasjon er utilgjengelig. Kjør Windows Update -> Se etter oppdateringer for å installere <b>Lenovo ACPI – Compliant Virtual Power Controller</b>-driveren."
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
@@ -993,24 +994,24 @@
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
                     "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
+                        "desc2": "Funksjonen har modusene som er oppført nedenfor og kan nå justeres med strømglidebryteren i Windows. Du får tilgang til den ved å klikke på batterisymbolet i Windows-systemskuffen.",
+                        "desc3": "Noen av modusene kan justeres automatisk på tvers av et bredere ytelsesspekter basert på din aktivitet. Du kan aktivere automatisk modus ved å trykke på Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatisk batterimodus",
+                            "desc1": "Glidebryteren er til venstre. Modusen endres dynamisk til Stille modus eller Batterimodus for å få den beste opplevelsen i likestrømmodus.",
+                            "title2": "Modus for automatisk ytelse",
+                            "desc2": "Glidebryteren står på midten eller til høyre for midten. Modusen endres dynamisk til Stille modus, Balansert modus eller Ytelsesmodus for å få den beste opplevelsen i likestrømmodus.",
+                            "title3": "Ytelsesmodus",
+                            "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Stille modus",
+                            "desc1": "Glidebryteren er til venstre. Viftehastighet og ytelse reduseres for å gi en kjøligere og mer stillegående datamaskin og lengst mulig batteritid.",
+                            "title2": "Balansert modus",
+                            "desc2": "Glidebryteren står på midten eller til høyre for midten. Viftehastighet og ytelse balanseres dynamisk for å gi den beste brukeropplevelsen.",
+                            "title3": "Ytelsesmodus",
+                            "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
                         }
                     }
                 },
@@ -1954,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
-            "poweredBySurfEasy": "Leveres av SurfEasy",
-            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "poweredBySurfEasy": "Leveres av SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PASSORDADMINISTRATOR",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "overvåke den mørke weben for å beskytte dine personlige data",
             "allowsYou3": "være trygg på usikrede WiFi-nettverk med innebygd VPN",
             "allowsYou4": "dele passord på en sikker måte uten å oppgi dem",
-            "poweredByDashLane": "Leveres av Dashlane",
-            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "poweredByDashLane": "Leveres av Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

@@ -643,7 +643,7 @@
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
@@ -907,7 +907,8 @@
                     "PermanentError": "Pojemność baterii <b>trwale spadła</b>. Wymień baterię na nową.",
                     "NotSupportACAdapterDetail": "<b>Zasilacz nie jest obsługiwany.</b> Komputer Lenovo nie obsługuje tego zasilacza. Może on spowodować nagłe zamknięcie. Podłącz odpowiedni zasilacz.",
                     "LimitedACAdapterSupportDetail": "<b>Zasilacz nie zapewnia wystarczającej mocy</b> komputerowi Lenovo, co ma wpływ na wydajność systemu i szybkość ładowania. Podłącz ponownie odpowiedni zasilacz.",
-                    "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>"
+                    "FullACAdapterSupport": "<b>Zasilanie {{acWattage}} W {{acAdapterType}} jest podłączone.</b>",
+                    "EmDriverInstalled": "Informacje dotyczące akumulatora niedostępne. Uruchom Windows Update-> Sprawdź aktualizacje, aby zainstalować sterownik <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nie wykryto akumulatora",
                 "thresholdNote": "<b>Uwaga:</b> Nie można w pełni naładować akumulatora, gdy włączony jest próg ładowania akumulatora.",
@@ -993,24 +994,24 @@
                     "description5": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji. Ta funkcja ma trzy tryby (tryb cichy, tryb zrównoważony i tryb wydajności) i jest teraz dostępna za pomocą suwaka wydajności systemu Windows",
                     "nocqldesc": "Inteligentne chłodzenie umożliwia dostosowanie wydajności systemu i parametrów termicznych. W trybie „Wydajność” optymalizuje pracę systemu. Jeśli chcesz, aby komputer nie nagrzewał się lub pracował ciszej, przejdź do trybu „Chłodny i cichy”.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną wydajność oraz zarządza czasem eksploatacji.",
+                        "desc2": "Ta funkcja ma tryby wymienione poniżej, a teraz się ją reguluje za pomocą suwaka wydajności systemu Windows. Aby do niej przejść, kliknij ikonę akumulatora na pasku zadań systemu Windows.",
+                        "desc3": "Niektóre tryby mogą się automatycznie dostosowywać w szerszym zakresie wydajności zależnie od Twojej aktywności. Aby włączyć tryb automatyczny, naciśnij kombinację klawiszy Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatyczny tryb akumulatora",
+                            "desc1": "Suwak znajduje się po lewej stronie. Tryb jest dynamicznie przełączany na Cichy lub Akumulator, aby uzyskać najlepszy efekt pracy na prądzie stałym.",
+                            "title2": "Automatyczny tryb wydajności",
+                            "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Tryb jest dynamicznie przełączany na Cichy, Zrównoważony lub Wydajność, aby uzyskać najlepszy efekt pracy na prądzie przemiennym.",
+                            "title3": "Tryb wydajności",
+                            "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tryb cichy",
+                            "desc1": "Suwak znajduje się po lewej stronie. Szybkość wentylatora i wydajność są obniżone, w wyniku czego komputer staje się chłodniejszy i cichszy, a czas pracy akumulatora najdłuższy.",
+                            "title2": "Tryb zrównoważony",
+                            "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Szybkość wentylatora i wydajność są równoważone według aktualnych potrzeb, aby zapewnić efektywne działanie komputera.",
+                            "title3": "Tryb wydajności",
+                            "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
                         }
                     }
                 },
@@ -1954,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Kliknij na „Otwórz SurfEasy” przycisk powyżej, aby uruchomić SurfEasy VPN.",
             "getStarted2": "Włącz VPN i poczekaj krótką chwilę na potwierdzenie bezpiecznego połączenia.",
             "getStarted3": "W razie potrzeby zmień region lub lokalizację i korzystaj z bezpiecznej sieci prywatnej.",
-            "poweredBySurfEasy": "Zasilane przez SurfEasy",
-            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
+            "poweredBySurfEasy": "Zasilane przez SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE MENEDŻER HASEŁ",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Monitoruj ukrytą sieć w celu kontroli swoich informacji osobistych",
             "allowsYou3": "Bądź bezpieczny w niezabezpieczonych sieciach WiFi z wbudowanym VPN",
             "allowsYou4": "Bezpieczne udostępnianie haseł bez ujawniania ich",
-            "poweredByDashLane": "Zasilany przez Dashlane",
-            "privacyPolicyAndTermsOfService": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>"
+            "poweredByDashLane": "Zasilany przez Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",

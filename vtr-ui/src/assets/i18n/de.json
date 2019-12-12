@@ -643,7 +643,7 @@
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -907,7 +907,8 @@
                     "PermanentError": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
                     "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>",
+                    "EmDriverInstalled": "Details zum Akku sind nicht verfügbar. Führen Sie \"Windows Update\" -> \"Nach Updates suchen\" aus, um den <b>Lenovo ACPI - Compliant Virtual Power Controller</b> zu installieren."
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Der Akku kann nicht vollständig aufgeladen werden, wenn der Schwellenwert für die Akkuladung aktiviert ist.",
@@ -993,24 +994,24 @@
                     "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
                     "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer.",
+                        "desc2": "Die Funktion verfügt über die unten aufgeführten Modi und wird nun über den Windows-Leistungsregler angepasst. Sie können darauf zugreifen, indem Sie auf das Akkusymbol in der Windows-Taskleiste klicken.",
+                        "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatischer Akku-Modus",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den \"Ruhemodus\" oder \"Akkumodus\" umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
+                            "title2": "Automatischer Leistungsmodus",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den \"Ruhemodus\", \"ausbalancierten Modus\" oder \"Leistungsmodus\" umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
+                            "title3": "Leistungsmodus",
+                            "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Ruhiger Modus",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Lüftergeschwindigkeit und Leistung werden angepasst, sodass der Computer kühler und leiser läuft und die optimale Akkulebensdauer bietet.",
+                            "title2": "Ausbalancierter Modus",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Lüftergeschwindigkeit und Leistung werden dynamisch für die beste Benutzererfahrung ausbalanciert.",
+                            "title3": "Leistungsmodus",
+                            "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         }
                     }
                 },
@@ -1954,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2166,8 +2167,7 @@
             "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
-            "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredBySurfEasy": "Unterstützt von SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2195,8 +2195,7 @@
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
-            "poweredByDashLane": "Unterstützt von Dashlane",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredByDashLane": "Unterstützt von Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
