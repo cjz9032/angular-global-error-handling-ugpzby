@@ -643,7 +643,7 @@
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -1955,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2167,8 +2167,7 @@
             "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
-            "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredBySurfEasy": "Unterstützt von SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2196,8 +2195,7 @@
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
-            "poweredByDashLane": "Unterstützt von Dashlane",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredByDashLane": "Unterstützt von Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2634,8 @@
         "custom": "Benutzerdefinierte Erfahrung",
         "professional": "Berufliche Nutzung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
-        "moreInterest": "+ mehr Interessen",
+		"moreInterest": "+ mehr Interessen",
+		"toolbartitle": "Aktivieren Sie die Lenovo Vantage-Symbolleiste (empfohlen)",
         "title1": "Willkommen bei",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
-                "networkError": "Netzwerkfehler.",
-                "installationCancelled": "Installation wurde abgebrochen."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Gutscheine",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installieren",
-                "installing": "Installation",
-                "downloading": "Herunterladen",
-                "installed": "Installiert",
-                "launch": "Starten",
-                "seeMore": "Weitere Informationen anzeigen"
-            },
-            "fieldName": {
-                "description": "Beschreibung",
-                "screenshots": "Screenshots",
-                "additionalInformation": "Weitere Informationen",
-                "by": "Von:",
-                "updated": "Aktualisiert:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Rechtlicher Vertrag",
-                "readMore": "Weiterlesen",
-                "readLess": "Weniger lesen"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
+            "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
+            "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
+                "networkError": "Netzwerkfehler.",
+                "installationCancelled": "Installation wurde abgebrochen."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Gutscheine",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installieren",
+                "installing": "Installation",
+                "downloading": "Herunterladen",
+                "installed": "Installiert",
+                "launch": "Starten",
+                "seeMore": "Weitere Informationen anzeigen"
+            },
+            "fieldName": {
+                "description": "Beschreibung",
+                "screenshots": "Screenshots",
+                "additionalInformation": "Weitere Informationen",
+                "by": "Von:",
+                "updated": "Aktualisiert:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Rechtlicher Vertrag",
+                "readMore": "Weiterlesen",
+                "readLess": "Weniger lesen"
+            }
+        }
+    }
 }
