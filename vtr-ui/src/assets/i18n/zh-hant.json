@@ -642,7 +642,8 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -906,12 +907,16 @@
                     "PermanentError": "電池容量已<b>降級</b>。請更換新的電池。",
                     "NotSupportACAdapterDetail": "<b>不支援 AC 整流器。</b>您的 Lenovo 電腦不支援此 AC 整流器。這可能會造成突然關機。請連接正確的 AC 整流器。",
                     "LimitedACAdapterSupportDetail": "<b>AC 整流器無法提供足夠的電力</b>給您的 Lenovo 電腦，因而影響系統效能和充電速度。請重新連接正確的 AC 整流器。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源已連接。</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 電源已連接。</b>",
+                    "EmDriverInstalled": "未提供電池詳細資訊。請執行 Windows Update -> 檢查更新，以安裝 <b>Lenovo ACPI - Compliant Virtual Power Controller</b> 驅動程式。"
                 },
                 "batteryNotDetected": "未偵測到電池",
                 "thresholdNote": "<b>注意：</b>啟用電池的充電臨界值時，電池無法完全充電。",
                 "seeDetailsLink": "查看詳細資料",
-                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。"
+                "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "電源",
@@ -989,24 +994,24 @@
                     "description5": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。此功能有 3 種模式（安靜模式、平衡模式和效能模式），而且現在可以透過 Windows 效能電源滑桿進行操作",
                     "nocqldesc": "您可以使用智慧型冷卻功能，調整系統效能與散熱溫度。在「效能」模式下調整，使系統效能達到最佳化。而且可在「冷卻及靜音」模式下調整，維持更低溫或更安靜的系統。",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "智慧型冷卻會調整風扇速度、使效能達到最佳化，以及管理電池壽命。",
+                        "desc2": "此功能具有下列模式，而且現在可透過 Windows 效能電源滑桿進行調整。按一下 Windows 系統匣中的電池圖示即可存取。",
+                        "desc3": "部分模式可以根據您的活動在更大的效能範圍內自動調整。若要啟用自動模式，請按 Fn+T。",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "自動電池模式",
+                            "desc1": "滑桿在左邊。此模式會動態切換至安靜模式或電池模式，以達最佳的 DC 模式體驗。",
+                            "title2": "自動效能模式",
+                            "desc2": "滑桿在中央或中間靠右。此模式會動態切換至安靜模式、平衡模式或效能模式，以達最佳的 AC 模式體驗。",
+                            "title3": "效能模式",
+                            "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "安靜模式",
+                            "desc1": "滑桿在左邊。降低風扇速度和效能以獲得更涼爽、更安靜的電腦和最佳的電池續航力。",
+                            "title2": "平衡模式",
+                            "desc2": "滑桿在中央或中間靠右。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
+                            "title3": "效能模式",
+                            "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "從 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重設電池計量器之前，請確定將電腦連接到 AC 電源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "完成，已成功重設。",
-                            "ERROR_SHUTDOWN": "未完成。系統已關閉。",
-                            "ERROR_LOGOFF": "未完成。使用者已登出。",
-                            "ERROR_BATTERY_REMOVE": "未完成。電池已取出。",
-                            "ERROR_BATTERY_REPLACE": "未完成。電池已更換。",
-                            "ERROR_AC_DETTACH": "未完成。AC 電源整流器已卸下。",
-                            "ERROR_USER_CANCEL": "未完成。已由使用者取消。",
-                            "ERROR_UNEXPECTED": "未完成。發生非預期的錯誤。"
+                            "ERROR_SUCCESS": "完成：已成功重設。",
+                            "ERROR_SHUTDOWN": "失敗：系統已關閉。",
+                            "ERROR_LOGOFF": "失敗：使用者已登出。",
+                            "ERROR_BATTERY_REMOVE": "失敗：電池已取出。",
+                            "ERROR_BATTERY_REPLACE": "失敗：電池已更換。",
+                            "ERROR_AC_DETTACH": "失敗：AC 電源整流器已卸下。",
+                            "ERROR_USER_CANCEL": "失敗：已由使用者取消。",
+                            "ERROR_UNEXPECTED": "失敗：發生非預期的錯誤。"
                         },
                         "popup": {
                             "description1": "重設程序如下：<br>電池完整充電  -->  電池完全放電  -->  將電池重新充飽",
@@ -1169,22 +1174,22 @@
                         "everyday": "每天",
                         "weekdays": "週間日",
                         "weekends": "週末",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "未選取日期"
                     },
                     "checkbox": "根據您的使用情形自動調整電腦的啟用時間",
                     "hyperlinkToGraph": "按一下以查看您的計算機表格的活動和啟用時間",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "排程您的電腦",
+                    "automaticMode": "自動模式",
+                    "manualMode": "手動模式",
+                    "subNote": "根據您的使用情形將您的電腦排程為新式待命模式。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "此電腦的使用情形",
+                        "graph2Tittle": "套用的啟用時間",
+                        "graphSubtittle": "在這些時段中，我們讓電腦隨時就續，以加速回復。",
+                        "graphNote": "此電腦的活動資料不足以為自動排程提供設定檔。智慧型待命將使用手動模式排程，直到有足夠的資料為止。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "無",
+                            "frequent": "經常"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
+                    "subTitle2": "設定您一般使用這部電腦的時間",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "網站 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "已成功套用設定。",
+                        "invalidURLMessage": "請輸入有效的 URL。",
+                        "placeholder": "請以 http:// 或 https:// 開頭"
                     },
                     "enterText": {
                         "title": "要輸入的文字",
-                        "placeholder": "Please type here"
+                        "placeholder": "請在這裡輸入"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
             "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
             "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredBySurfEasy": "搭載 SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密碼管理程式",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "監視暗網以保護您的個人資訊",
             "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
             "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredByDashLane": "搭載 Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2630,7 +2636,8 @@
         "custom": "自訂",
         "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
-        "moreInterest": "+ 更多興趣",
+		"moreInterest": "+ 更多興趣",
+		"toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
         "title1": "歡迎使用",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2800,7 +2807,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "如果儲存裝置不支援此功能或回復錯誤磁區正在運作中，在尚未擷取硬體資訊時，此按鈕會停用。"
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "儲存裝置",
             "wireless": "無線"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安裝失敗。請再試一次。",
-                "networkError": "網路錯誤。",
-                "installationCancelled": "安裝作業已取消。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兌換",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安裝",
-                "installing": "安裝",
-                "downloading": "下載",
-                "installed": "已安裝",
-                "launch": "啟動",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "說明",
-                "screenshots": "螢幕擷取畫面",
-                "additionalInformation": "其他資訊",
-                "by": "提供者：",
-                "updated": "更新時間：",
-                "type": "類型：",
-                "category": "類別：",
-                "legalAgreement": "法律協議",
-                "readMore": "較多內容",
-                "readLess": "較少內容"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
+            "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安裝失敗。請再試一次。",
+                "networkError": "網路錯誤。",
+                "installationCancelled": "安裝作業已取消。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兌換",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安裝",
+                "installing": "安裝",
+                "downloading": "下載",
+                "installed": "已安裝",
+                "launch": "啟動",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "說明",
+                "screenshots": "螢幕擷取畫面",
+                "additionalInformation": "其他資訊",
+                "by": "提供者：",
+                "updated": "更新時間：",
+                "type": "類型：",
+                "category": "類別：",
+                "legalAgreement": "法律協議",
+                "readMore": "較多內容",
+                "readLess": "較少內容"
+            }
+        }
+    }
 }

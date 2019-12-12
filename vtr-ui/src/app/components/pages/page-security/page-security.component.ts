@@ -46,13 +46,14 @@ import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Router } from '@angular/router';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { FingerPrintLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/fingerPrint-landing.model';
 import { WindowsActiveLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/windowsActive-landing.model';
 import { UacLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/uac-landing.model';
 import { BitLockerLandingViewModel } from 'src/app/data-models/security-advisor/widegt-security-landing/bitLocker-landing.model';
 import { SecurityTypeConst } from 'src/app/data-models/security-advisor/status-info.model';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 
 @Component({
@@ -90,17 +91,19 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	intermediateItems = [];
 	advanceItems = [];
 	statusItem: any;
+	pluginSupport = true;
 
 	constructor(
 		public vantageShellService: VantageShellService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		private localInfoService: LocalInfoService,
+		private deviceService: DeviceService,
 		private ngZone: NgZone,
 		private guard: GuardService,
 		private router: Router,
-		private windowsHelloService: WindowsHelloService
+		private windowsHelloService: WindowsHelloService,
+		private hypSettings: HypothesisService
 	) { }
 
 	@HostListener('window: focus')
@@ -114,8 +117,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-
-		this.createViewModels();
+		this.uac = this.securityAdvisor.uac;
+		this.windowsActive = this.securityAdvisor.windowsActivation;
+		this.bitLocker = this.securityAdvisor.bitLocker;
 		this.isOnline = this.commonService.isOnline;
 
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -126,10 +130,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.wifiSecurity.getWifiSecurityState();
 		}
 		this.refreshAll();
-
-		this.localInfoService.getLocalInfo().then(result => {
+		this.deviceService.getMachineInfo().then(result => {
 			this.showVpn = true;
-			if (result.GEO === 'cn') {
+			if ((result && result.country ? result.country : 'US').toLowerCase() === 'cn') {
 				this.showVpn = false;
 			}
 			if (this.wifiSecurity) {
@@ -139,7 +142,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}).catch(e => {
 			this.showVpn = true;
 		}).finally(() => {
-			this.getLevelStatus();
+			this.createViewModels();
+			// this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result: boolean) => {
+			// 	this.pluginSupport = result;
+			// });
 		});
 		this.fetchCMSArticles();
 		const antivirus = new AntivirusErrorHandle(this.antivirus);
@@ -165,10 +171,13 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
 		this.windowsActiveLandingViewModel = new WindowsActiveLandingViewModel(this.translate, this.windowsActive, this.commonService);
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
-		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
 		this.uacLandingViewModel = new UacLandingViewModel(this.translate, this.uac, this.commonService);
 		this.bitLockerLandingViewModel = new BitLockerLandingViewModel(this.translate, this.bitLocker, this.commonService);
-		this.baseItems.push(this.antivirusLandingViewModel.avStatus, this.antivirusLandingViewModel.fwStatus, this.windowsActiveLandingViewModel.waStatus);
+		if (this.showVpn) {
+			this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
+		} else {
+			this.vpnLandingViewModel = undefined;
+		}
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		const cacheShowWifiSecurity = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWifiSecurity);
@@ -182,34 +191,43 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		if (windowsHello.fingerPrintStatus) {
 			this.showWindowsHelloItem(windowsHello);
 		}
-		this.intermediateItems.push(this.passwordManagerLandingViewModel.pmStatus,
-			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus : undefined,
-			this.uacLandingViewModel.uacStatus);
-		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
 		if (wifiSecurity.isSupported !== undefined) {
 			this.showWifiSecurityItem();
 		}
-		this.advanceItems.push(
-			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus : undefined,
-			this.bitLockerLandingViewModel.blStatus,
-			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus : undefined);
-		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHelloItem(windowsHello);
+			this.updateViewModels();
 		});
 		this.getLevelStatus();
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
-		});
-		wifiSecurity.on(EventTypes.wsStateEvent, () => {
+			this.updateViewModels();
+		}).on(EventTypes.wsStateEvent, () => {
 			this.getLevelStatus();
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.ngZone.run(() => {
 				this.getLevelStatus();
 			});
 		});
-
+		this.updateViewModels();
 		this.securityAdvisor.refresh();
+	}
+
+	updateViewModels() {
+		this.baseItems = [];
+		this.intermediateItems = [];
+		this.advanceItems = [];
+		this.baseItems.push(this.antivirusLandingViewModel.avStatus, this.antivirusLandingViewModel.fwStatus, this.windowsActiveLandingViewModel.waStatus);
+		this.intermediateItems.push(
+			this.passwordManagerLandingViewModel.pmStatus,
+			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus : undefined,
+			this.uacLandingViewModel.uacStatus);
+		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
+		this.advanceItems.push(
+			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus : undefined,
+			this.bitLockerLandingViewModel ? this.bitLockerLandingViewModel.blStatus : undefined,
+			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus : undefined);
+		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
 	}
 
 	public getLevelStatus() {
@@ -229,9 +247,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.uacLandingViewModel.uacStatus.status
 		).filter(i => i !== undefined);
 		statusList.advanced = new Array(
-			this.wifiSecurityLandingViewModel.wfStatus.status,
-			this.bitLockerLandingViewModel.blStatus.status,
-			this.vpnLandingViewModel.vpnStatus.status,
+			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.status : undefined,
+			this.bitLockerLandingViewModel ? this.bitLockerLandingViewModel.blStatus.status : undefined,
+			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus.status : undefined,
 		).filter(i => i !== undefined);
 
 		const levelStatus = {

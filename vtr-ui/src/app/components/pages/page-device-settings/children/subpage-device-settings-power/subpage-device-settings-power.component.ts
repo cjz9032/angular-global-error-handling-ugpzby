@@ -93,11 +93,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	batteryChargeThresholdCache: BatteryChargeThresholdCapability = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
-	public isPowerDriverMissing = false;
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
 	tempHeaderMenuItems = [];
 	gaugeResetCapability = false;
+	public isEmDriverInstalled = true;
 
 	headerMenuItems = [
 		{
@@ -563,9 +563,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
 						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
 						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
-						if (alwaysOnUsbThinkPad.isEnabled) {
-							this.toggleAlwaysOnUsbFlag = true;
-						}
+						this.toggleAlwaysOnUsbFlag = alwaysOnUsbThinkPad.isEnabled;
 						this.alwaysOnUSBCache.checkbox.status = this.usbChargingCheckboxFlag;
 						this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 						this.commonService.setLocalStorageValue(LocalStorageKey.AlwaysOnUSBCapability, this.alwaysOnUSBCache);
@@ -1030,7 +1028,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getBatteryThresholdInformation();
 	}
 	public async getBatteryThresholdInformation() {
-		let notification;
 		if (this.powerService.isShellAvailable) {
 			try {
 				const res = await this.powerService.getChargeThresholdInfo();
@@ -1042,6 +1039,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.selectedStopAtChargeVal = this.responseData[0].stopValue - (this.responseData[0].stopValue % 5);
 					this.primaryCheckBox = this.responseData[0].checkBoxValue;
 					this.showBatteryThreshold = this.responseData[0].isOn;
+					if (this.batteryService.remainingPercentages && this.batteryService.remainingPercentages.length > 0	) {
+						this.showWarningMsg = this.batteryService.remainingPercentages[0] > this.selectedStartAtChargeVal;
+					}
 					if (this.selectedStartAtChargeVal !== this.responseData[0].startValue ||
 						this.selectedStopAtChargeVal !== this.responseData[0].stopValue) {
 						this.powerService.setChargeThresholdValue(
@@ -1060,6 +1060,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.secondaryCheckBox = this.responseData[1].checkBoxValue;
 						this.selectedStartAtChargeVal1 = this.responseData[1].startValue - (this.responseData[1].startValue % 5);
 						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue - (this.responseData[1].stopValue % 5);
+						if (this.batteryService.remainingPercentages && this.batteryService.remainingPercentages.length > 1) {
+							this.showWarningMsg = this.showWarningMsg || (this.batteryService.remainingPercentages[0] > this.selectedStartAtChargeVal1);
+						}
 						if (this.selectedStartAtChargeVal1 !== this.responseData[1].startValue ||
 							this.selectedStopAtChargeVal1 !== this.responseData[1].stopValue) {
 							this.powerService.setChargeThresholdValue(
@@ -1072,30 +1075,27 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							);
 						}
 					}
-					notification = {
-						isOn: (this.responseData[0].isCapable && this.responseData[0].isOn) || (this.responseData.length > 1 && this.responseData[1].isCapable && this.responseData[1].isOn),
-						stopValue1: this.selectedStopAtChargeVal,
-						stopValue2: this.selectedStopAtChargeVal1
-					};
 
 					// cache value
 					this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
 					this.batteryChargeThresholdCache.toggleStatus = this.showBatteryThreshold;
 
+					this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
 					this.batteryChargeThresholdCache.startAt1 = this.selectedStartAtChargeVal;
 					this.batteryChargeThresholdCache.stopAt1 = this.selectedStopAtChargeVal;
 					this.batteryChargeThresholdCache.checkBox1 = this.primaryCheckBox;
 
+					this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
 					this.batteryChargeThresholdCache.startAt2 = this.selectedStartAtChargeVal1;
 					this.batteryChargeThresholdCache.stopAt2 = this.selectedStopAtChargeVal1;
 					this.batteryChargeThresholdCache.checkBox2 = this.secondaryCheckBox;
 
 					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-					this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
-					this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
+
 					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+					// end cache
 				}
-				this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
+				this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.showBatteryThreshold);
 			} catch (error) {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
@@ -1106,13 +1106,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case 'ThresholdWarningNote':
-					this.showWarningMsg = notification.payload;
-					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-					break;
+				// case 'ThresholdWarningNote':
+				// 	this.showWarningMsg = notification.payload;
+				// 	this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
+				// 	this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+				// 	break;
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
+					break;
+				case 'IsEmDriverInstalled':
+					this.checkEmDriverInstalled(notification.payload);
 					break;
 			}
 
@@ -1120,7 +1123,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	public checkPowerDriverMissing(status) {
-		this.isPowerDriverMissing = status;
 		if (this.machineType === 1 && status) {
 			this.showAirplanePowerModeSection = false;
 			this.isChargeThresholdAvailable = false;
@@ -1128,6 +1130,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.updateBatteryLinkStatus(false);
 			this.checkMenuItemsEmpty();
+		}
+	}
+
+	public checkEmDriverInstalled(status) {
+		this.isEmDriverInstalled = !status;
+		if(this.machineType === 0 && status) {
+		this.getConservationModeStatusIdeaPad();
+		this.getRapidChargeModeStatusIdeaPad();
+		this.getAlwaysOnUSBStatusIdeaPad();
+		this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+		this.getFlipToBootCapability();
+		this.getVantageToolBarCapability();
+		this.getEnergyStarCapability();
+		this.onSetSmartStandbyCapability(this.smartStandbyCapability);
+		this.updateBatteryLinkStatus(false);
+		this.checkMenuItemsEmpty();
 		}
 	}
 

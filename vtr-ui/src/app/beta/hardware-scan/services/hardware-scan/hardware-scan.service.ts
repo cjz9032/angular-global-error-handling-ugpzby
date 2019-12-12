@@ -56,6 +56,7 @@ export class HardwareScanService {
 	private previousResultsResponse: any = undefined;
 	private hardwareModulesLoaded = new Subject<boolean>();
 	private pluginInfoPromise: any = undefined;
+	private pluginVersion: string;
 
 	private iconByModule = {
 		'cpu': 'icon_hardware_processor.svg',
@@ -384,6 +385,10 @@ export class HardwareScanService {
 
 		await this.pluginInfoPromise
 			.then((hwscanPluginInfo: any) => {
+				if (hwscanPluginInfo) {
+					this.pluginVersion = hwscanPluginInfo.PluginVersion;
+				}
+
 				// Shows Hardware Scan menu icon only when the Hardware Scan plugin exists and it is not Legacy (version <= 1.0.38)
 				hardwareScanAvailable = hwscanPluginInfo !== undefined &&
 					   hwscanPluginInfo.LegacyPlugin === false &&
@@ -394,6 +399,29 @@ export class HardwareScanService {
 			});
 
 		return hardwareScanAvailable;
+	}
+
+	private isPluginCompatible(requiredVersion: string) {
+		return this.compareVersion(requiredVersion, this.pluginVersion) <= 0;
+	}
+
+	// This is version compare function which takes version numbers of any length and any number size per segment.
+	// Return values:
+	// - negative number if v1 < v2
+	// - positive number if v1 > v2
+	// - zero if v1 = v2
+	private compareVersion(v1: string, v2: string) {
+		const regExStrip0 = '/(\.0+)+$/';
+		const segmentsA = v1.replace(regExStrip0, '').split('.');
+		const segmentsB = v2.replace(regExStrip0, '').split('.');
+		const min = Math.min(segmentsA.length, segmentsB.length);
+		for (let i = 0; i < min; i++) {
+			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
+			if (diff) {
+				return diff;
+			}
+		}
+		return segmentsA.length - segmentsB.length;
 	}
 
 	public getItemsToScan(scanType: number, culture: string) {
@@ -447,9 +475,11 @@ export class HardwareScanService {
 				this.disableCancel = false;
 			}, cancelHandler)
 				.then((response) => {
-					console.log('[End]: getDoScan() on service');
+					console.log('[End]: getDoScan() on service \n ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n' + response);
 					if (response !== null && response.finalResultCode !== null) {
 						return response;
+					} else {
+						throw new Error('Scan incompleted!');
 					}
 				}).catch((ex: any) => {
 					console.error('[getDoScan on service] An exception has occurred: ', ex);
@@ -1169,6 +1199,30 @@ export class HardwareScanService {
 			case HardwareScanTestResult.Warning:
 				return this.translate.instant('hardwareScan.warning');
 		}
+	}
+
+	public getStatus() {
+        return new Promise((resolve, reject) => {
+			if (!this.isPluginCompatible('1.0.42')) {
+				reject('GetStatus is not implemented on plugin ' + this.pluginVersion);
+			}
+	
+			if (this.hardwareScanBridge) {
+				return this.hardwareScanBridge.getStatus()
+					.then((response) => {
+						if (response) {
+							resolve(response);
+						} else {
+							reject('[GET STATUS] getStatus returned empty response');
+						}
+					})
+					.catch((error) => {
+						reject('[GET STATUS] ' + error);
+					});
+			} else {
+				reject('Invalid hardwareScanBridge');
+			}
+		});
 	}
 
 	public cleanResponses() {

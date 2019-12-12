@@ -642,7 +642,8 @@
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
@@ -906,12 +907,16 @@
                     "PermanentError": "Die Ladekapazität des Akkus ist <b>vermindert</b>. Setzen Sie einen neuen Akku ein.",
                     "NotSupportACAdapterDetail": "<b>Netzteil wird nicht unterstützt.</b> Dieses Netzteil wird nicht von Ihrem Lenovo Computer unterstützt. Der Computer kann daher plötzlich heruntergefahren werden. Schließen Sie ein geeignetes Netzteil an.",
                     "LimitedACAdapterSupportDetail": "<b>Das Netzteil kann Ihren Lenovo Computer nicht ausreichend mit Strom versorgen.</b> Dadurch werden Systemleistung und Ladegeschwindigkeit beeinträchtigt. Schließen Sie das korrekte Netzteil an.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-Leistung sind angeschlossen.</b>",
+                    "EmDriverInstalled": "Details zum Akku sind nicht verfügbar. Führen Sie \"Windows Update\" -> \"Nach Updates suchen\" aus, um den <b>Lenovo ACPI - Compliant Virtual Power Controller</b> zu installieren."
                 },
                 "batteryNotDetected": "Kein Akku erkannt",
                 "thresholdNote": "<b>Hinweis:</b> Der Akku kann nicht vollständig aufgeladen werden, wenn der Schwellenwert für die Akkuladung aktiviert ist.",
                 "seeDetailsLink": "Details anzeigen",
-                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen."
+                "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Stromversorgung",
@@ -989,24 +994,24 @@
                     "description5": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer. Diese Funktion hat drei Modi (Ruhiger Modus, Ausbalancierter Modus und Leistungsmodus) und kann nun über den Windows-Schieberegler für Leistung geändert werden",
                     "nocqldesc": "Mithilfe der intelligenten Kühlung können Sie die Systemleistung und ‑temperatur anpassen. Im Modus \"Leistung\" wird die Systemleistung optimiert. Im Modus \"Kühl und leise\" werden Systemtemperatur und Lüftergeräusche optimiert.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Die intelligente Kühlung passt Lüftergeschwindigkeit und maximale Leistung an und überwacht die Akkulebensdauer.",
+                        "desc2": "Die Funktion verfügt über die unten aufgeführten Modi und wird nun über den Windows-Leistungsregler angepasst. Sie können darauf zugreifen, indem Sie auf das Akkusymbol in der Windows-Taskleiste klicken.",
+                        "desc3": "Einige Modi können je nach Aktivität automatisch über einen größeren Leistungsumfang angepasst werden. Um den Automatikmodus zu aktivieren, drücken Sie die Tastenkombination FN+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatischer Akku-Modus",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Der Modus wird dynamisch in den \"Ruhemodus\" oder \"Akkumodus\" umgeschaltet, um das beste DC-Modus-Erlebnis zu erzielen.",
+                            "title2": "Automatischer Leistungsmodus",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Der Modus wird dynamisch in den \"Ruhemodus\", \"ausbalancierten Modus\" oder \"Leistungsmodus\" umgeschaltet, um das bestmögliche Erlebnis im AC-Modus zu gewährleisten.",
+                            "title3": "Leistungsmodus",
+                            "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Ruhiger Modus",
+                            "desc1": "Der Schieberegler befindet sich auf der linken Seite. Lüftergeschwindigkeit und Leistung werden angepasst, sodass der Computer kühler und leiser läuft und die optimale Akkulebensdauer bietet.",
+                            "title2": "Ausbalancierter Modus",
+                            "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Lüftergeschwindigkeit und Leistung werden dynamisch für die beste Benutzererfahrung ausbalanciert.",
+                            "title3": "Leistungsmodus",
+                            "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fertig. Erfolgreich zurückgesetzt.",
-                            "ERROR_SHUTDOWN": "Nicht abgeschlossen. Das System wird heruntergefahren.",
-                            "ERROR_LOGOFF": "Nicht abgeschlossen. Der Benutzer ist abgemeldet.",
-                            "ERROR_BATTERY_REMOVE": "Nicht abgeschlossen. Der Akku wurde entfernt.",
-                            "ERROR_BATTERY_REPLACE": "Nicht abgeschlossen. Der Akku wurde ausgetauscht.",
-                            "ERROR_AC_DETTACH": "Nicht abgeschlossen. Das Netzteil wurde entfernt.",
-                            "ERROR_USER_CANCEL": "Nicht abgeschlossen. Die Aktion wurde vom Benutzer abgebrochen.",
-                            "ERROR_UNEXPECTED": "Nicht abgeschlossen. Ein unerwarteter Fehler ist aufgetreten."
+                            "ERROR_SUCCESS": "Fertig: Erfolgreich zurückgesetzt.",
+                            "ERROR_SHUTDOWN": "Fehlgeschlagen: System heruntergefahren.",
+                            "ERROR_LOGOFF": "Fehlgeschlagen: Der Benutzer ist abgemeldet.",
+                            "ERROR_BATTERY_REMOVE": "Fehlgeschlagen: Der Akku wurde entfernt.",
+                            "ERROR_BATTERY_REPLACE": "Fehlgeschlagen: Der Akku wurde ersetzt.",
+                            "ERROR_AC_DETTACH": "Fehlgeschlagen: Das Netzteil wurde entfernt.",
+                            "ERROR_USER_CANCEL": "Fehlgeschlagen: Die Aktion wurde vom Benutzer abgebrochen.",
+                            "ERROR_UNEXPECTED": "Fehlgeschlagen: Ein unerwarteter Fehler ist aufgetreten."
                         },
                         "popup": {
                             "description1": "Das Zurücksetzen wird wie folgt durchgeführt:<br>Akku wird vollständig aufgeladen  -->  Akku wird vollständig entladen  -->  Akku wird vollständig aufgeladen",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "innerhalb des Felds",
                         "subHeading2": "Ende",
                         "subHeading3": "Zeitplan nutzen für",
-                        "endTimeNote": "Endzeit darf maximal 20 Stunden nach der Startzeit liegen",
+                        "endTimeNote": "END-Zeit darf maximal 20 Stunden nach der START-Zeit liegen",
                         "timeUnits": {
                             "unit1": "Stunden",
                             "unit2": "Minuten",
@@ -1169,22 +1174,22 @@
                         "everyday": "Jeden Tag",
                         "weekdays": "Wochentage",
                         "weekends": "Wochenenden",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Kein Tag ausgewählt"
                     },
                     "checkbox": "Automatische Anpassung der aktiven Zeit Ihres Computers abhängig von der Verwendung",
                     "hyperlinkToGraph": "Klicken Sie hier, um die Tabelle mit den Aktivitäten und aktiven Zeiten Ihres Computers anzuzeigen",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Zeitplan für Ihren Computer festlegen",
+                    "automaticMode": "Automatischer Modus",
+                    "manualMode": "Manueller Modus",
+                    "subNote": "Für Ihren Computer ist der Modern-Standby-Modus abhängig von der Verwendung festgelegt.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Verwendung dieses Computers",
+                        "graph2Tittle": "Aktive Zeit angewendet",
+                        "graphSubtittle": "In diesen Zeiträumen ist der Computer für schnellere Wiederaufnahme des Betriebs bereit.",
+                        "graphNote": "Die Aktivitätsdaten dieses Computers sind nicht ausreichend, um ein Profil für die automatische Planung zur Verfügung zu stellen. Smart-Standby verwendet den Zeitplan für den manuellen Modus, bis genügend Daten verfügbar sind.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Keine",
+                            "frequent": "Häufig"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
+                    "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "WEBSITE-URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Die Einstellungen wurden erfolgreich angewendet.",
+                        "invalidURLMessage": "Geben Sie eine gültige URL ein.",
+                        "placeholder": "Starten Sie mit http:// oder https://"
                     },
                     "enterText": {
                         "title": "EINZUGEBENDER TEXT",
-                        "placeholder": "Please type here"
+                        "placeholder": "Text hier eingeben"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
-            "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredBySurfEasy": "Unterstützt von SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
-            "poweredByDashLane": "Unterstützt von Dashlane",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredByDashLane": "Unterstützt von Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2630,7 +2636,8 @@
         "custom": "Benutzerdefinierte Erfahrung",
         "professional": "Berufliche Nutzung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
-        "moreInterest": "+ mehr Interessen",
+		"moreInterest": "+ mehr Interessen",
+		"toolbartitle": "Aktivieren Sie die Lenovo Vantage-Symbolleiste (empfohlen)",
         "title1": "Willkommen bei",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2800,7 +2807,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Die Schaltfläche ist deaktiviert, solange die Hardwareinformationen noch nicht abgerufen wurden, falls die Speichergeräte diese Funktionalität nicht unterstützen oder wenn die Wiederherstellung fehlerhafter Sektoren läuft."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "Speicher",
             "wireless": "Drahtlos"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
-                "networkError": "Netzwerkfehler.",
-                "installationCancelled": "Installation wurde abgebrochen."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Gutscheine",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installieren",
-                "installing": "Installation",
-                "downloading": "Herunterladen",
-                "installed": "Installiert",
-                "launch": "Starten",
-                "seeMore": "Weitere Informationen anzeigen"
-            },
-            "fieldName": {
-                "description": "Beschreibung",
-                "screenshots": "Screenshots",
-                "additionalInformation": "Weitere Informationen",
-                "by": "Von:",
-                "updated": "Aktualisiert:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Rechtlicher Vertrag",
-                "readMore": "Weiterlesen",
-                "readLess": "Weniger lesen"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
+            "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
+            "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
+                "networkError": "Netzwerkfehler.",
+                "installationCancelled": "Installation wurde abgebrochen."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Gutscheine",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installieren",
+                "installing": "Installation",
+                "downloading": "Herunterladen",
+                "installed": "Installiert",
+                "launch": "Starten",
+                "seeMore": "Weitere Informationen anzeigen"
+            },
+            "fieldName": {
+                "description": "Beschreibung",
+                "screenshots": "Screenshots",
+                "additionalInformation": "Weitere Informationen",
+                "by": "Von:",
+                "updated": "Aktualisiert:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Rechtlicher Vertrag",
+                "readMore": "Weiterlesen",
+                "readLess": "Weniger lesen"
+            }
+        }
+    }
 }

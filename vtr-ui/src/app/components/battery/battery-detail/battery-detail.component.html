@@ -92,11 +92,11 @@
 								{{ model.remainingTimeText | translate }}</div>
 							<div class="col-6 battery-value-text px-0">
 								<!-- {{ model.remainingTime | minutesToHourmin }} -->
-								<span *ngIf="isValid(remainingHours[i])">
-									{{remainingHours[i]}} {{hourText | translate}}
+								<span *ngIf="isValid(math.trunc(model.remainingTime/60))">
+									{{math.trunc(model.remainingTime/60)}} {{hourText | translate}}
 								</span>
 								<span>
-									{{remainingMinutes[i]}} {{minutesText | translate}}
+									{{model.remainingTime%60}} {{minutesText | translate}}
 								</span>
 							</div>
 						</div>

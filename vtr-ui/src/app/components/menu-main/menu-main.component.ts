@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit, Input, ElementRef, ViewContainerRef, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -12,7 +12,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +31,7 @@ import { catchError } from 'rxjs/operators';
 import { MenuItem } from 'src/app/enums/menuItem.enum';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
+import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -75,6 +75,22 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		adobeMenuClicked: false
 	};
 
+	headerLogo: string;
+
+	VantageLogo = `
+		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
+		3RyYXRvciAyMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4x
+		IiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS9
+		4bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTYgMj
+		U2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMjdBREQ3O30NCgkuc3Qxe2ZpbGw6I
+		zIxMzA2NDt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHk9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNTYiIGhl
+		aWdodD0iMjU2Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDE5NC44LDE5Mi42IDE
+		5NC44LDE5NS41IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iNTguMiwyMTEuNiA4OC41LDE5Mi42IDg4LjUsMzkuNiA4Ni4zLD
+		M5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuN
+		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
+		`;
+	gamingLogo = '../../../assets/images/gaming/gaming-logo-small.png';
+
 	get appsForYouEnum() { return AppsForYouEnum; }
 
 	constructor(
@@ -91,7 +107,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private dialogService: DialogService,
 		private keyboardService: InputAccessoriesService,
 		public modalService: NgbModal,
-		private windowsHelloService: WindowsHelloService,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
@@ -100,9 +115,16 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private searchService: AppSearchService,
 		public dashboardService: DashboardService,
-	) { }
+		private newFeatureTipService: NewFeatureTipService,
+		private viewContainerRef: ViewContainerRef,
+	) {
+			newFeatureTipService.viewContainer = this.viewContainerRef;
+		}
 
 	ngOnInit() {
+		this.headerLogo = '';
+		this.checkLiteGaming();
+
 		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -126,6 +148,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.showHWScanMenu = available;
 			});
 		}
+		this.showNewFeatureTipsWithMenuItems();
 	}
 
 	private initComponent() {
@@ -237,6 +260,21 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						}
 					});
 				});
+		}
+	}
+
+	private checkLiteGaming() {
+		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({ var: 'DeviceTags.System.Profile.LiteGaming' });
+		if (filter) {
+			filter.then((hyp) => {
+				if (hyp !== null) {
+					this.deviceService.isLiteGaming = true;
+					this.headerLogo = this.VantageLogo;
+				} else {
+					this.deviceService.isLiteGaming = false;
+					this.headerLogo = this.gamingLogo;
+				}
+			});
 		}
 	}
 
@@ -498,20 +536,20 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 	private showSmartAssist() {
-		this.logger.info('inside showSmartAssist');
+		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		this.getMenuItems().then(async (items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
 			if (myDeviceItem !== undefined) {
 				const smartAssistItem = myDeviceItem.subitems.find((item) => item.id === 'smart-assist');
 				if (!smartAssistItem) {
 					// if cache has value true for IsSmartAssistSupported, add menu item
-					const isSmartAssistSupported = this.commonService.getLocalStorageValue(
+					const smartAssistCacheValue = this.commonService.getLocalStorageValue(
 						LocalStorageKey.IsSmartAssistSupported,
 						false
 					);
-					this.logger.info('showSmartAssist isSmartAssistSupported cache value', isSmartAssistSupported);
+					this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-					if (isSmartAssistSupported) {
+					if (smartAssistCacheValue) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
 
@@ -522,39 +560,40 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 						assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
 						assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getHPDVisibility check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getHPDVisibility check', error);
 					}
 					// lenovo voice  capability check
 					try {
 						assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
 					}
-					// lenovo voice  capability check
+					// video pause capability check
 					try {
 						assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
 					}
-					// lenovo voice  capability check
+					// super resolution  capability check
 					try {
 						assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
 					} catch (error) {
-						this.logger.exception('showSmartAssist smartAssist.getSuperResolutionStatus check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 					}
+
+					// APS capability check
 					try {
 						assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
 						assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
 						assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
 						assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0;
 					} catch (error) {
-						this.logger.exception('showSmartAssist APS capability check', error);
+						this.logger.exception('MenuMainComponent.showSmartAssist APS capability check', error);
 					}
 
 					this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
-					this.logger.info('showSmartAssist capability check', assistCapability);
 
-					const isAvailable =
+					const isSmartAssistAvailable =
 						assistCapability.isIntelligentSecuritySupported ||
 						assistCapability.isLenovoVoiceSupported ||
 						assistCapability.isIntelligentMediaSupported.available ||
@@ -564,16 +603,23 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					// const isAvailable = true;
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.IsSmartAssistSupported,
-						isAvailable
+						isSmartAssistAvailable
 					);
 
+					this.logger.error('MenuMainComponent.showSmartAssist capability check',
+						{
+							smartAssistCacheValue,
+							isSmartAssistAvailable,
+							assistCapability
+						});
+
 					// avoid duplicate entry. if not added earlier then add menu
-					if (isAvailable && !isSmartAssistSupported) {
+					if (isSmartAssistAvailable && !smartAssistCacheValue) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
 
 					// if cache is old and new capability call is false then remove it
-					if (!isAvailable) {
+					if (!isSmartAssistAvailable) {
 						this.removeSmartAssistMenu(myDeviceItem);
 					}
 				}
@@ -651,4 +697,30 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.dialogService.openModernPreloadModal();
 	}
 
+	showNewFeatureTipsWithMenuItems() {
+		const newFeatureVersion = 3.002000;
+		const welcomeTutorial = this.commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		if (!welcomeTutorial || !welcomeTutorial.isDone) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+			return;
+		}
+		const newFeatureTipsShowComplete = this.commonService.getLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion);
+		if (!newFeatureTipsShowComplete || newFeatureTipsShowComplete < newFeatureVersion) {
+			this.getMenuItems().then(async (items) => {
+				const privacyItem = getItemByItemId('privacy');
+				const securityItem = getItemByItemId('security');
+				const chsItem = getItemByItemId('home-security');
+				let isHideMenuToggle = true;
+				if (window.innerWidth < 1200) { isHideMenuToggle = false; }
+				if (((privacyItem && this.showItem(privacyItem)) ||
+						(securityItem && this.showItem(securityItem)) ||
+						(chsItem && this.showItem(chsItem))
+					) && isHideMenuToggle) {
+					this.newFeatureTipService.create();
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
+				function getItemByItemId(itemId: string) { return items.find((item: any) => item.id === itemId); }
+			});
+		}
+	}
 }

@@ -642,7 +642,8 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -906,12 +907,16 @@
                     "PermanentError": "Capacitatea bateriei s-a <b>degradat</b>. Înlocuiţi-o cu una nouă.",
                     "NotSupportACAdapterDetail": "<b>Adaptorul c.a. nu este acceptat.</b> Calculatorul dvs. Lenovo nu acceptă acest adaptor c.a. Aceasta poate provoca oprirea bruscă. Conectați un adaptor c.a. corect.",
                     "LimitedACAdapterSupportDetail": "<b>Adaptorul c.a. nu poate furniza suficientă energie</b> calculatorului dvs. Lenovo, lucru care va afecta performanța sistemului și viteza de încărcare. Reconectaţi adaptorul c.a. potrivit.",
-                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>"
+                    "FullACAdapterSupport": "<b>Adaptorul {{acAdapterType}} de {{acWattage}} W este conectat.</b>",
+                    "EmDriverInstalled": "Detaliile privind bateria sunt indisponibile. Rulaţi Windows Update->Căutaţi actualizări pentru a instala driverul <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nu se detectează nicio baterie",
                 "thresholdNote": "<b>Notă:</b> bateria nu poate fi încărcată complet atunci când este activat pragul de încărcare a bateriei.",
                 "seeDetailsLink": "Vedeți detaliile",
-                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a."
+                "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Alimentare",
@@ -989,24 +994,24 @@
                     "description5": "Răcirea inteligentă ajustează viteza ventilatorului, performanța maximă și gestionează durata de viață a bateriei. Această caracteristică are 3 moduri (modul silențios, modul echilibrat și modul performanță) și este acum accesibilă prin intermediul glisorului pentru performanța de alimentare Windows",
                     "nocqldesc": "Răcirea inteligentă vă permite să ajustaţi performanţa sistemului şi temperatura. În modul „Performanţă”, optimizează performanţa sistemului. Iar în modul „Rece şi silenţios” menţine sistemul mai rece sau mai silenţios.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Răcirea inteligentă ajustează viteza ventilatorului, performanţa maximă şi gestionează durata de viaţă a bateriei.",
+                        "desc2": "Caracteristica are modurile afişate mai jos şi poate fi reglată acum prin cursorul pentru performanţa de alimentare Windows. O puteţi accesa făcând clic pe pictograma bateriei din bara de sistem Windows.",
+                        "desc3": "Unele dintre moduri se pot regla automat într-o gamă mai largă de performanţă, în funcţie de activitatea dvs. Pentru a activa modul automat, apăsaţi Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Mod automat baterie",
+                            "desc1": "Cursorul este în partea stângă. Modul este comutat dinamic în modul silenţios sau în modul baterie – pentru cea mai bună experienţă în modul de alimentare cu c.c.",
+                            "title2": "Mod automat performanţă",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Modul este comutat dinamic în modul silenţios, în modul echilibrat sau în modul performanţă – pentru cea mai bună experienţă în modul de alimentare cu c.a.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Mod silenţios",
+                            "desc1": "Cursorul este în partea stângă. Viteza şi performanţa ventilatorului sunt mai reduse – pentru un computer mai silenţios, cu o răcire mai bună şi cu cea mai lungă durată de viaţă a bateriei.",
+                            "title2": "Mod echilibrat",
+                            "desc2": "Cursorul este în centru sau în centru-dreapta. Viteza şi performanţa ventilatorului sunt echilibrate dinamic – pentru cea mai bună experienţă.",
+                            "title3": "Mod performanţă",
+                            "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "De la {{before}} Wh la {{after}} Wh",
                         "note": "Notă: înainte de a reseta indicatorul bateriei, asiguraţi-vă ca aţi conectat computerul la o sursă de c.a. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Finalizată. Resetare nereuşită.",
-                            "ERROR_SHUTDOWN": "Incomplet. Sistemul s-a închis.",
-                            "ERROR_LOGOFF": "Incomplet. Utilizatorul s-a deconectat.",
-                            "ERROR_BATTERY_REMOVE": "Incomplet. Bateria a fost scoasă.",
-                            "ERROR_BATTERY_REPLACE": "Incomplet. Bateria a fost înlocuită.",
-                            "ERROR_AC_DETTACH": "Incomplet. Adaptorul de alimentare c.a. a fost deconectat.",
-                            "ERROR_USER_CANCEL": "Incomplet. Anulată de utilizator.",
-                            "ERROR_UNEXPECTED": "Incomplet. A apărut o eroare neaşteptată."
+                            "ERROR_SUCCESS": "Finalizată: Resetare reuşită.",
+                            "ERROR_SHUTDOWN": "Nereuşit: sistemul s-a închis.",
+                            "ERROR_LOGOFF": "Nereuşit: utilizatorul s-a deconectat.",
+                            "ERROR_BATTERY_REMOVE": "Nereuşit: bateria a fost scoasă.",
+                            "ERROR_BATTERY_REPLACE": "Nereuşit: bateria a fost înlocuită.",
+                            "ERROR_AC_DETTACH": "Nereuşit: adaptorul de alimentare cu c.a. a fost deconectat.",
+                            "ERROR_USER_CANCEL": "Nereuşit: anulat de utilizator.",
+                            "ERROR_UNEXPECTED": "Nereuşit: a apărut o eroare neaşteptată."
                         },
                         "popup": {
                             "description1": "Procesul de resetare este următorul:<br>Încărcaţi complet bateria  -->  Descărcaţi complet bateria  -->  Reîncărcaţi complet bateria",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "începeţi",
                         "subHeading2": "oprire",
                         "subHeading3": "utilizați această planificare pentru",
-                        "endTimeNote": "Ora de oprire trebuie să fie în interval de maximum 20 de ore de la ora de pornire",
+                        "endTimeNote": "Ora de OPRIRE trebuie să fie în interval de maximum 20 de ore de la ora de PORNIRE",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minute",
@@ -1169,22 +1174,22 @@
                         "everyday": "In fiecare zi",
                         "weekdays": "Zilele saptamanii",
                         "weekends": "Weekend-uri",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nicio zi selectată"
                     },
                     "checkbox": "Reglarea automată a orelor active ale computerului în funcţie de utilizare",
                     "hyperlinkToGraph": "Faceţi clic pentru a vedea activitatea şi orele active ale computerului",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Programaţi computerul",
+                    "automaticMode": "Mod Automat",
+                    "manualMode": "Mod Manual",
+                    "subNote": "Computerul este programat în Starea de veghe modernă în funcţie de utilizare.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Utilizarea acestui computer",
+                        "graph2Tittle": "Timp activ aplicat",
+                        "graphSubtittle": "În aceste perioade de timp, menţinem computerul pregătit pentru o revenire mai rapidă.",
+                        "graphNote": "Datele privind activitatea acestui computer nu sunt suficiente pentru a oferi un profil de programare automată. Starea de veghe inteligentă va utiliza programarea modului Manual până când vor fi disponibile date suficiente.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Niciuna",
+                            "frequent": "Frecvent"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
+                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "ADRESĂ URL SITE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Setările au fost aplicate cu succes.",
+                        "invalidURLMessage": "Introduceţi o adresă URL validă.",
+                        "placeholder": "Începeţi cu http:// sau https://"
                     },
                     "enterText": {
                         "title": "TEXT DE INTRODUS",
-                        "placeholder": "Please type here"
+                        "placeholder": "Tastaţi aici"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
-            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "MANAGER PAROLE DASHLANE",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
             "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
             "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
-            "poweredByDashLane": "Dezvoltat de Dashlane",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredByDashLane": "Dezvoltat de Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2630,7 +2636,8 @@
         "custom": "Experiență personalizată",
         "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
-        "moreInterest": "+ mai multe interese",
+		"moreInterest": "+ mai multe interese",
+		"toolbartitle": "Activaţi bara de instrumente Lenovo Vantage (recomandat)",
         "title1": "Bun venit la",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2800,7 +2807,7 @@
                 "yes": "Da",
                 "no": "Nu"
             },
-            "waitAvailability": "The button is disabled while the hardware information has not been retrieved yet, in case the storage devices don't support this functionality or when the recover bad sectors is running"
+            "waitAvailability": "Butonul este dezactivat atunci când informaţiile hardware nu au fost încă preluate, dacă dispozitivele de stocare nu acceptă această funcţionalitate sau atunci când se execută recuperarea sectoarelor defecte."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "Stocare",
             "wireless": "Fără fir"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
-                "networkError": "Eroare de rețea.",
-                "installationCancelled": "Instalare anulată."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Rambursare Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instalare",
-                "installing": "Instalare în curs",
-                "downloading": "Descărcare în curs",
-                "installed": "Instalat",
-                "launch": "Lansare",
-                "seeMore": "Vedeţi mai multe"
-            },
-            "fieldName": {
-                "description": "Descriere",
-                "screenshots": "Capturi de ecran",
-                "additionalInformation": "Informaţii suplimentare",
-                "by": "De:",
-                "updated": "Actualizată:",
-                "type": "Tip:",
-                "category": "Categorie:",
-                "legalAgreement": "Acord juridic",
-                "readMore": "Citiţi mai mult",
-                "readLess": "Citiţi maI puţin"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
+            "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
+            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
+                "networkError": "Eroare de rețea.",
+                "installationCancelled": "Instalare anulată."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Rambursare Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalare",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
+                "installed": "Instalat",
+                "launch": "Lansare",
+                "seeMore": "Vedeţi mai multe"
+            },
+            "fieldName": {
+                "description": "Descriere",
+                "screenshots": "Capturi de ecran",
+                "additionalInformation": "Informaţii suplimentare",
+                "by": "De:",
+                "updated": "Actualizată:",
+                "type": "Tip:",
+                "category": "Categorie:",
+                "legalAgreement": "Acord juridic",
+                "readMore": "Citiţi mai mult",
+                "readLess": "Citiţi maI puţin"
+            }
+        }
+    }
 }

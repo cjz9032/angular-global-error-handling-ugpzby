@@ -5,11 +5,12 @@
 
 	.list-group-item {
 		background: $shade_extralight;
+		padding: 1.5rem;
 	}
 
 	.text {
 		color: $shade_extradark;
-		padding: 2rem 0;
+		padding: 0.5rem 0;
 		font-size: 1.4rem;
 		font-weight: $weight_bold;
 	}
@@ -28,15 +29,15 @@
 	.icon-bkg {
 		display: inline-block;
 		border-radius: 50%;
-		height: 3.3rem;
-		width: 3.3rem;
+		height: 2.3rem;
+		width: 2.3rem;
 		border-width: 0.3rem;
 		border-style: solid;
 		text-align: center;
 
 		fa-icon {
-			font-size: 1.6rem;
-			line-height: 2.7rem;
+			font-size: 1.4rem;
+			line-height: 1.7rem;
 			color: $light;
 		}
 	}
@@ -52,19 +53,29 @@
 	}
 
 	.icon-times {
-		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+		background: $gradient_red1;
+		border-color: $button_red_start;
 		background-color: $stop_dark;
-		border-color: $stop_dark;
 	}
 
 	.icon-dot {
-		border-width: 1rem;
-		border-color: $main;
+		border-width: 0.8rem;
+		border-color: $black_light;
 	}
 
 }
 
+.badge-primary {
+	background-color: $black_light;
+}
 
+.badge-danger {
+	background-color: $button_red_start;
+}
+
+.flex-1 {
+	flex: 1;
+}
 
 .badge-item{
 	a:hover{

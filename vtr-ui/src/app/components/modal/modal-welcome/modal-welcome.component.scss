@@ -18,12 +18,23 @@
 	height: 60rem;
 	background: $shade_lightest;
 	overflow: hidden;
+	@media #{$breakpoint_md} {
+		height: 100%;
+	}
 
 	.card-body {
 		display: flex;
 		flex-flow: column;
 		width: 60rem;
 		height: 60rem;
+		@media #{$breakpoint_md} {
+			width: 100%;
+			height: 100%;
+		}
+		@media #{$breakpoint_sm} {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	.banner-page-1 {
@@ -39,10 +50,12 @@
 
 			.title1 {
 				color: $light;
-				font-size: 4.8rem;
+				font-size: 3.6rem;
+				font-weight: $weight_light;
 
 				span {
-					font-weight: bold;
+					font-size: $fontsize_xl2;
+					font-weight: $weight_bold;
 				}
 			}
 		}
@@ -55,6 +68,9 @@
 		width: 100%;
 		flex-shrink: 0;
 		background-position: center;
+		@media #{$breakpoint_sm} {
+			height: 11rem;
+		}
 	}
 
 	.font-14-semi {
@@ -65,11 +81,16 @@
 	.font-12-semi {
 		font-size: 1.6rem;
 		font-weight: 300;
+		.title2 {
+			&:focus {
+				outline: none;
+			}
+		}
 	}
 
 	.font-14-bold {
-		font-size: 1.8rem;
-		font-weight: 600;
+		font-size: $fontsize_xs;
+		font-weight: $weight_bold;
 	}
 
 	.content-page-2 {
@@ -80,6 +101,12 @@
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 		letter-spacing: 0.05rem;
+		@media #{$breakpoint_md} {
+			padding: 3rem 2rem 0;
+		}
+		@media #{$breakpoint_sm} {
+			padding: 3rem 1rem 0;
+		}
 
 		img {
 			width: 100%;
@@ -97,6 +124,9 @@
 			position: relative;
 			border-radius: $border_radius_sm;
 			overflow: hidden;
+			@media #{$breakpoint_md} {
+				width: 12rem;
+			}
 
 			&::after {
 				content: "";
@@ -110,16 +140,18 @@
 			}
 
 			label {
-				// font-family: "Segoe UI Bold", Sans-serif;
-				font-size: 1.4rem;
+				font-size: $fontsize_xs;
 				width: 94%;
 				height: 100%;
 				line-height: 2rem;
 				align-items: center;
 				display: flex;
 				justify-content: center;
-				font-weight: $weight_bold;
+				font-weight: $weight_light;
 				z-index: 2;
+				&:focus {
+					outline: none;
+				}
 			}
 
 			img {
@@ -156,32 +188,30 @@
 			margin-left: 0.6rem;
 
 			.linktext {
-				color: #6f7170;
+				color: $main;
 				text-decoration: underline;
-			}
-
-			hover {
-				color: blue;
 			}
 		}
 
 		.custom-control-label {
 			padding-left: 2rem;
 			line-height: 1.8rem;
-			font-size: 1.4rem;
+			font-size: $fontsize_xs;
 			margin-bottom: 1rem;
-			font-weight: $weight_regular;
+			font-weight: $weight_light;
 
 			// rounded square-box background
 			&::before {
 				width: 1.8rem;
 				height: 1.8rem;
-				top: 0.1rem;
+				top: 0.3rem;
+				box-shadow: inset 0 0 0 0.1rem $light;
+				border: 0.1rem solid $shade_darker;
 			}
 
 			// tick mark
 			&::after {
-				top: 0;
+				top: 0.2rem;
 				width: 2rem;
 				height: 2rem;
 				left: -1.6rem;
@@ -191,15 +221,21 @@
 
 	.content-page-1 {
 		overflow-y: auto;
-		color: $dark;
+		color: $shade_blue;
 		padding: 3rem 4rem 0;
 		height: 100%;
-		font-size: 1.5rem;
-		font-weight: $weight_regular;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		letter-spacing: 0.05rem;
+		text-align: center;
 
-		ul li {
-			margin-bottom: 1.2rem;
+		ul {
+			width: 75%;
+			margin: 0 auto;
+			li {
+				margin-bottom: 1.2rem;
+				text-align: left;
+			}
 		}
 
 		div.row:first-child {
@@ -306,8 +342,8 @@
 		border: 0.1rem solid $shade_btn_light;
 		border-radius: 2.5rem;
 		color: $shade_darkest;
-		font-size: 1.5rem;
-		font-weight: $weight_regular;
+		font-size: $fontsize_xs;
+		font-weight: $weight_light;
 		text-align: center;
 		vertical-align: middle;
 
@@ -456,7 +492,14 @@
 	.more-interests {
 		cursor: pointer;
 		color: black;
-		font-weight: bold;
+		font-weight: $weight_light;
+		font-size: $fontsize_xs;
+		&:hover {
+			color: $dark !important;
+		}
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.html-css {
@@ -481,6 +524,9 @@
 	.content-page-2 .interests input[type="checkbox"] + label,
 	.content-page-2 .privacy-check .custom-checkbox {
 		cursor: pointer;
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.content-page-2 span.more-interests:hover,

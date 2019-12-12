@@ -1,149 +1,191 @@
-<div class="vtr-page-apps-for-you vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="headerTitle | translate" [backarrow]="'&lt; '" [back]="'common.ui.back' | translate"
-				[backId]="backId"></vtr-header-main>
-		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid" 
-				*ngIf="!isOnline">
-				<div class="row offline-content">
-					<div class="col col-12">
-						<vtr-widget-offline-info [isButtonVisible]="false"
-							[isSubtitleVisible]="false"
-							[title]="'dashboard.offlineInfo.title' | translate"
-							[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-							[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
-						</vtr-widget-offline-info>
-					</div>
-				</div>
-			</div>
-			<div class="container-fluid" *ngIf="isOnline">
-				<div class="apps-header row no-gutters" *ngIf="appDetails">
-					<div class="col-2 logo-con" *ngIf="appDetails.image">
-						<img class="img-logo"
-							[src]="appDetails.image"
-							alt="" />
-					</div>
-					<div class="col-4 app-name">
-						<div class="app-title">{{ appDetails.title }}</div>
-					</div>
-					<div class="col-6 btn-content" [ngSwitch]="installButtonStatus">
-						<div class="spinner-content app-spinner" *ngIf="appDetails.showStatus == statusEnum.DOWNLOADING || appDetails.showStatus == statusEnum.INSTALLING">
-							<div class="spinner-border text-primary progress-spinner" role="status"></div>
-						</div>
-						<div class="btn-box">
-							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALL"
-								[isDisabled]="!isOnline"
-								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
-								metricsItem="btn.Install" [isFullWidth]="true"
-								[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
-							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.DOWNLOADING"
-								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
-								metricsItem="btn.Downloading"
-								[isDisabled]="true"
-								[isFullWidth]="true"
-								[label]="'appsForYou.appDetails.installButton.downloading' | translate"></vtr-ui-button>
-							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.INSTALLING"
-								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
-								metricsItem="btn.Installing"
-								[isDisabled]="true"
-								[isFullWidth]="true"
-								[label]="'appsForYou.appDetails.installButton.installing' | translate"></vtr-ui-button>
-							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.LAUNCH"
-								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
-								metricsItem="btn.Launch" [isFullWidth]="true"
-								[label]="'appsForYou.appDetails.installButton.launch' | translate"></vtr-ui-button>
-							<vtr-ui-button *ngSwitchCase="installButtonStatusEnum.SEEMORE"
-								[isDisabled]="!isOnline"
-								(onClick)="clickInstallButton()" metricsEvent="FeatureClick" metricsParent="{{ metricsParent }}"
-								metricsItem="btn.SeeMore" [isFullWidth]="true"
-								[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>
-						</div>
-						<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
-					</div>
-				</div>
+<vtr-page-layout [title]="headerTitle | translate"
+	[back]="'common.ui.back' | translate"
+	[pageCssClass]="'apps-for-you'"
+	[backId]="backId"
+	[shiftLeftUp]="true"
+	[vtrAppSearchScroller]="['search-preference-subscription']"
+	[shiftRightUp]="true">
 
-				<div class="apps-content row no-gutters" *ngIf="appDetails">
-					<div class="description-con mb-40" *ngIf="appDetails.description">
-						<div class="title mb-2">
-							{{'appsForYou.appDetails.fieldName.description' | translate}}
-						</div>
-						<div [innerHTML]="appDetails.description"></div>
-					</div>
-					<!-- <div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length"> -->
-					<div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length">
-						<div class="title mb-2">
-							{{'appsForYou.appDetails.fieldName.screenshots' | translate}}
-						</div>
-						<div class="screenshot-slider">
-							<div class="image-content"
-								#appsForYouImageContent
-								[style.height.px]="appsForYouImageContent.clientWidth / 5">
-								<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
-										class="screenshot-img position-{{screenshot.position}}"
-										id="{{screenshot.id}}"
-										vtrMetrics
-										metricsItem="AppsForYouScreenshot"
-										metricsEvent="FeatureClick"
-										[metricsParent]="metricsParent"
-										(click)="openScreenshotModal(screenshot.imageUrl)"
-										>
-									<img [src]="screenshot.imageUrl" />
-								</div>
-							</div>
-							<div class="arrow-content" *ngIf="showArrows">
-								<div tabindex="0" class="arrow left-arrow" (keyup.enter)="clickLeftArrow()" (click)="clickLeftArrow()">
-									<fa-icon [icon]="['fal', 'chevron-left']"></fa-icon>
-								</div>
-								<div tabindex="0" class="arrow right-arrow" (keyup.enter)="clickRightArrow()" (click)="clickRightArrow()">
-									<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="information-con">
-						<div class="title mb-2">
-							{{'appsForYou.appDetails.fieldName.additionalInformation' | translate}}
-						</div>
-						<div class="infomations row no-gutters" *ngIf="appDetails.showAdditionalInfo">
-							<div class="col-6 row no-gutters">
-								<div class="col-6 info-item" *ngIf="appDetails.by">
-									<div class="sub-title">{{'appsForYou.appDetails.fieldName.by' | translate}}</div>
-									<div [innerHTML]="appDetails.by"></div>
-								</div>
-								<div class="col-6 info-item" *ngIf="appDetails.updated">
-									<div class="sub-title">{{'appsForYou.appDetails.fieldName.updated' | translate}}</div>
-									<div [innerHTML]="appDetails.updated"></div>
-								</div>
-								<div class="col-6 info-item" *ngIf="appDetails.installtype.title">
-									<div class="sub-title">{{'appsForYou.appDetails.fieldName.type' | translate}}</div>
-									<div [innerHTML]="appDetails.installtype.title"></div>
-								</div>
-								<div class="col-6 info-item" *ngIf="appDetails.category.title">
-									<div class="sub-title">{{'appsForYou.appDetails.fieldName.category' | translate}}</div>
-									<div [innerHTML]="appDetails.category.title"></div>
-								</div>
-								<div class="col-6 info-item" *ngIf="appDetails.privacyurl">
-									<a [href]="appDetails.privacyurl" 
-										target="_blank" 
-										class="legal-agreement"
-										vtrMetrics
-										metricsEvent="FeatureClick"
-										[metricsParent]="metricsParent"
-										metricsItem="link.legalAgreement">{{'appsForYou.appDetails.fieldName.legalAgreement' | translate}}</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="spinner-content app-spinner loading-content" *ngIf="!appDetails && isOnline">
-					<div class="spinner-border text-primary progress-spinner" role="status"></div>
+	<left-content>
+		<div class="container-fluid"
+			*ngIf="!isOnline">
+			<div class="row offline-content">
+				<div class="col col-12">
+					<vtr-widget-offline-info [isButtonVisible]="false"
+						[isSubtitleVisible]="false"
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate">
+					</vtr-widget-offline-info>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+		<div class="container-fluid"
+			*ngIf="isOnline">
+			<div class="apps-header row no-gutters"
+				*ngIf="appDetails">
+				<div class="col-2 logo-con"
+					*ngIf="appDetails.image">
+					<img class="img-logo"
+						[src]="appDetails.image"
+						alt="" />
+				</div>
+				<div class="col-4 app-name">
+					<div class="app-title">{{ appDetails.title }}</div>
+				</div>
+				<div class="col-6 btn-content">
+					<div class="spinner-content app-spinner"
+						*ngIf="appDetails.showStatus == statusEnum.DOWNLOADING || appDetails.showStatus == statusEnum.INSTALLING">
+						<div class="spinner-border text-primary progress-spinner"
+							role="status"></div>
+					</div>
+					<div class="btn-box">
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.INSTALL"
+							[isDisabled]="!isOnline"
+							(onClick)="clickInstallButton()"
+							metricsEvent="FeatureClick"
+							metricsParent="{{ metricsParent }}"
+							metricsItem="btn.Install"
+							[isFullWidth]="true"
+							linkId="apps-for-you-btn-install"
+							[label]="'appsForYou.appDetails.installButton.install' | translate"></vtr-ui-button>
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.DOWNLOADING"
+							(onClick)="clickInstallButton()"
+							metricsEvent="FeatureClick"
+							metricsParent="{{ metricsParent }}"
+							metricsItem="btn.Downloading"
+							[isDisabled]="true"
+							[isFullWidth]="true"
+							linkId="apps-for-you-btn-downloading"
+							[label]="'appsForYou.appDetails.installButton.downloading' | translate"></vtr-ui-button>
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.INSTALLING"
+							(onClick)="clickInstallButton()"
+							metricsEvent="FeatureClick"
+							metricsParent="{{ metricsParent }}"
+							metricsItem="btn.Installing"
+							[isDisabled]="true"
+							[isFullWidth]="true"
+							linkId="apps-for-you-btn-installing"
+							[label]="'appsForYou.appDetails.installButton.installing' | translate"></vtr-ui-button>
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.LAUNCH"
+							(onClick)="clickInstallButton()"
+							metricsEvent="FeatureClick"
+							metricsParent="{{ metricsParent }}"
+							metricsItem="btn.Launch"
+							[isFullWidth]="true"
+							linkId="apps-for-you-btn-launch"
+							[label]="'appsForYou.appDetails.installButton.launch' | translate"></vtr-ui-button>
+						<vtr-ui-button [hidden]="installButtonStatus !== installButtonStatusEnum.SEEMORE"
+							[isDisabled]="!isOnline"
+							(onClick)="clickInstallButton()"
+							metricsEvent="FeatureClick"
+							metricsParent="{{ metricsParent }}"
+							metricsItem="btn.SeeMore"
+							[isFullWidth]="true"
+							linkId="apps-for-you-btn-see-more"
+							[label]="'appsForYou.appDetails.installButton.seeMore' | translate"></vtr-ui-button>
+					</div>
+					<div class="error-message"
+						*ngIf="errorMessage">{{ errorMessage }}</div>
+				</div>
+			</div>
+
+			<div class="apps-content row no-gutters"
+				*ngIf="appDetails">
+				<div class="description-con mb-40"
+					*ngIf="appDetails.description">
+					<div class="title mb-2">
+						{{'appsForYou.appDetails.fieldName.description' | translate}}
+					</div>
+					<div [innerHTML]="appDetails.description"></div>
+				</div>
+				<!-- <div class="screenshot-con mb-40" *ngIf="appDetails.screenshots.length"> -->
+				<div class="screenshot-con mb-40"
+					*ngIf="appDetails.screenshots.length">
+					<div class="title mb-2">
+						{{'appsForYou.appDetails.fieldName.screenshots' | translate}}
+					</div>
+					<div class="screenshot-slider">
+						<div class="image-content"
+							#appsForYouImageContent
+							[style.height.px]="appsForYouImageContent.clientWidth / 5">
+							<div *ngFor="let screenshot of appDetails.screenshots, let i = index"
+								class="screenshot-img position-{{screenshot.position}}"
+								id="{{screenshot.id}}"
+								vtrMetrics
+								metricsItem="AppsForYouScreenshot"
+								metricsEvent="FeatureClick"
+								[metricsParent]="metricsParent"
+								(click)="openScreenshotModal(screenshot.imageUrl)">
+								<img [src]="screenshot.imageUrl" />
+							</div>
+						</div>
+						<div class="arrow-content"
+							*ngIf="showArrows">
+							<div tabindex="0"
+								class="arrow left-arrow"
+								(keyup.enter)="clickLeftArrow()"
+								(click)="clickLeftArrow()">
+								<fa-icon [icon]="['fal', 'chevron-left']"></fa-icon>
+							</div>
+							<div tabindex="0"
+								class="arrow right-arrow"
+								(keyup.enter)="clickRightArrow()"
+								(click)="clickRightArrow()">
+								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="information-con">
+					<div class="title mb-2">
+						{{'appsForYou.appDetails.fieldName.additionalInformation' | translate}}
+					</div>
+					<div class="infomations row no-gutters"
+						*ngIf="appDetails.showAdditionalInfo">
+						<div class="col-6 row no-gutters">
+							<div class="col-6 info-item"
+								*ngIf="appDetails.by">
+								<div class="sub-title">{{'appsForYou.appDetails.fieldName.by' | translate}}</div>
+								<div [innerHTML]="appDetails.by"></div>
+							</div>
+							<div class="col-6 info-item"
+								*ngIf="appDetails.updated">
+								<div class="sub-title">{{'appsForYou.appDetails.fieldName.updated' | translate}}</div>
+								<div [innerHTML]="appDetails.updated"></div>
+							</div>
+							<div class="col-6 info-item"
+								*ngIf="appDetails.installtype.title">
+								<div class="sub-title">{{'appsForYou.appDetails.fieldName.type' | translate}}</div>
+								<div [innerHTML]="appDetails.installtype.title"></div>
+							</div>
+							<div class="col-6 info-item"
+								*ngIf="appDetails.category.title">
+								<div class="sub-title">{{'appsForYou.appDetails.fieldName.category' | translate}}</div>
+								<div [innerHTML]="appDetails.category.title"></div>
+							</div>
+							<div class="col-6 info-item"
+								*ngIf="appDetails.privacyurl">
+								<a [href]="appDetails.privacyurl"
+									target="_blank"
+									class="legal-agreement"
+									vtrMetrics
+									metricsEvent="FeatureClick"
+									[metricsParent]="metricsParent"
+									metricsItem="link.legalAgreement">{{'appsForYou.appDetails.fieldName.legalAgreement' | translate}}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="spinner-content app-spinner loading-content"
+				*ngIf="!appDetails && isOnline">
+				<div class="spinner-border text-primary progress-spinner"
+					role="status"></div>
+			</div>
+		</div>
+	</left-content>
+	<right-content>
+	</right-content>
+</vtr-page-layout>
