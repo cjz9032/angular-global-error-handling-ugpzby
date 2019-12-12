@@ -1955,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2634,7 +2634,8 @@
         "custom": "自定义",
         "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
-        "moreInterest": "+更多的兴趣",
+		"moreInterest": "+更多的兴趣",
+		"toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
         "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安装失败。请重试。",
-                "networkError": "网络错误。",
-                "installationCancelled": "已取消安装。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兑换",
-            "lenovoMigrationAssistant": "联想乐换机"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安装",
-                "installing": "正在安装",
-                "downloading": "正在下载",
-                "installed": "已安装",
-                "launch": "启动",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "描述",
-                "screenshots": "屏幕快照",
-                "additionalInformation": "其他信息",
-                "by": "提供者：",
-                "updated": "更新日期：",
-                "type": "类型：",
-                "category": "类别：",
-                "legalAgreement": "法律协议",
-                "readMore": "阅读更多",
-                "readLess": "阅读更少"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
+            "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安装失败。请重试。",
+                "networkError": "网络错误。",
+                "installationCancelled": "已取消安装。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兑换",
+            "lenovoMigrationAssistant": "联想乐换机"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安装",
+                "installing": "正在安装",
+                "downloading": "正在下载",
+                "installed": "已安装",
+                "launch": "启动",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "描述",
+                "screenshots": "屏幕快照",
+                "additionalInformation": "其他信息",
+                "by": "提供者：",
+                "updated": "更新日期：",
+                "type": "类型：",
+                "category": "类别：",
+                "legalAgreement": "法律协议",
+                "readMore": "阅读更多",
+                "readLess": "阅读更少"
+            }
+        }
+    }
 }

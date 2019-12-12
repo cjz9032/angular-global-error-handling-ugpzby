@@ -1955,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2634,7 +2634,8 @@
         "custom": "Egyéni megoldások",
         "professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
-        "moreInterest": "+ további érdeklődési kör",
+		"moreInterest": "+ további érdeklődési kör",
+		"toolbartitle": "A Lenovo Vantage eszköztárának engedélyezése (ajánlott)",
         "title1": "Üdvözli a",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "A telepítés sikertelen. Kérjük, próbálja meg újra!",
-                "networkError": "Hálózati hiba.",
-                "installationCancelled": "A telepítés megszakítva."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe beváltás",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Telepítse",
-                "installing": "Telepítés",
-                "downloading": "Letöltés folyamatban",
-                "installed": "Telepítve",
-                "launch": "Indítás",
-                "seeMore": "Továbbiak megtekintése"
-            },
-            "fieldName": {
-                "description": "Leírás",
-                "screenshots": "Képernyőképek",
-                "additionalInformation": "További információk",
-                "by": "Következőtől:",
-                "updated": "Frissítette:",
-                "type": "Típus:",
-                "category": "Kategória:",
-                "legalAgreement": "Jogi megállapodás",
-                "readMore": "Továbbiak",
-                "readLess": "Kevesebb"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Most kiderítheti, hogy a személyes adataihoz online nyomkövetők illetéktelenül hozzáfértek-e vagy az Ön tudta nélkül felhasználták-e azokat.",
+            "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
+            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "A telepítés sikertelen. Kérjük, próbálja meg újra!",
+                "networkError": "Hálózati hiba.",
+                "installationCancelled": "A telepítés megszakítva."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe beváltás",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Telepítse",
+                "installing": "Telepítés",
+                "downloading": "Letöltés folyamatban",
+                "installed": "Telepítve",
+                "launch": "Indítás",
+                "seeMore": "Továbbiak megtekintése"
+            },
+            "fieldName": {
+                "description": "Leírás",
+                "screenshots": "Képernyőképek",
+                "additionalInformation": "További információk",
+                "by": "Következőtől:",
+                "updated": "Frissítette:",
+                "type": "Típus:",
+                "category": "Kategória:",
+                "legalAgreement": "Jogi megállapodás",
+                "readMore": "Továbbiak",
+                "readLess": "Kevesebb"
+            }
+        }
+    }
 }

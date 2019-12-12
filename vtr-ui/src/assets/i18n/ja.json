@@ -1955,11 +1955,11 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
-            "intermediate": "INTERMEDIATE",
-            "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
-            "advanced": "ADVANCED",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
+			"intermediate": "INTERMEDIATE",
+			"intermediateTitle": "Intermediate protection",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
         },
@@ -2634,7 +2634,8 @@
         "custom": "カスタム・エクスペリエンス",
         "professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
-        "moreInterest": "+ その他のことに興味がある",
+		"moreInterest": "+ その他のことに興味がある",
+		"toolbartitle": "Lenovo Vantage ツールバーを有効にする (推奨)",
         "title1": "ようこそ",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3046,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "インストールが失敗しました。再度試行してください。",
-                "networkError": "ネットワーク・エラー。",
-                "installationCancelled": "インストールがキャンセルされました。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe の引き換え",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "インストール",
-                "installing": "インストール",
-                "downloading": "ダウンロード中",
-                "installed": "インストール済み",
-                "launch": "起動",
-                "seeMore": "詳細を見る"
-            },
-            "fieldName": {
-                "description": "説明",
-                "screenshots": "スクリーンショット",
-                "additionalInformation": "追加情報",
-                "by": "作者:",
-                "updated": "更新:",
-                "type": "タイプ:",
-                "category": "カテゴリー:",
-                "legalAgreement": "法的合意",
-                "readMore": "表示を多くする",
-                "readLess": "表示を少なくする"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3162,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "これで、個人情報が知らないうちにオンライン・トラッカーによって侵害されたり使用されたりしたかどうかを知ることができます。",
+            "security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
+            "connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "インストールが失敗しました。再度試行してください。",
+                "networkError": "ネットワーク・エラー。",
+                "installationCancelled": "インストールがキャンセルされました。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe の引き換え",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "インストール",
+                "installing": "インストール",
+                "downloading": "ダウンロード中",
+                "installed": "インストール済み",
+                "launch": "起動",
+                "seeMore": "詳細を見る"
+            },
+            "fieldName": {
+                "description": "説明",
+                "screenshots": "スクリーンショット",
+                "additionalInformation": "追加情報",
+                "by": "作者:",
+                "updated": "更新:",
+                "type": "タイプ:",
+                "category": "カテゴリー:",
+                "legalAgreement": "法的合意",
+                "readMore": "表示を多くする",
+                "readLess": "表示を少なくする"
+            }
+        }
+    }
 }
