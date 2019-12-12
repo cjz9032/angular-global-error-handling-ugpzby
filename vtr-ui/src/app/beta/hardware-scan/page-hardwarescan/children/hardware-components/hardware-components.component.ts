@@ -974,7 +974,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			taskCount: numberOfSuccess,
 			taskResult: {
 				Reason: "NA",
-				Result: result
+				Result: HardwareScanTestResult[result]
 			}
 		};
 	}
