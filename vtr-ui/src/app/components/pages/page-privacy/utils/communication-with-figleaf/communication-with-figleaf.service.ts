@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { BehaviorSubject, combineLatest, EMPTY, from, Observable, of, Subscription, throwError, timer } from 'rxjs';
+import { BehaviorSubject, EMPTY, from, Observable, Subscription, throwError, timer } from 'rxjs';
 import {
 	catchError,
 	concatMap,
@@ -12,16 +12,13 @@ import {
 	retryWhen,
 	shareReplay,
 	switchMap,
-	take,
-	tap
+	take, tap
 } from 'rxjs/operators';
-
-import { CommunicationSwitcherService } from './communication-switcher.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../common/services/analytics/task-action-with-timeout.service';
-import { StorageService } from '../../common/services/storage.service';
+} from '../../core/services/analytics/task-action-with-timeout.service';
+import { CommunicationSwitcherService } from './communication-switcher.service';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -61,7 +58,6 @@ export class CommunicationWithFigleafService {
 		private ngZone: NgZone,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService,
 		private communicationSwitcherService: CommunicationSwitcherService,
-		private storageService: StorageService
 	) {
 		FigleafConnector.onConnect(() => {
 			// this.ngZone.run(() => this.isFigleafInstalled$.next(true));
@@ -88,15 +84,13 @@ export class CommunicationWithFigleafService {
 			filter((isFigleafNotOnboarded) => isFigleafNotOnboarded),
 			first()
 		).subscribe((res) => this.taskActionWithTimeoutService.finishedAction(TasksName.privacyAppInstallationAction));
-
-		this.storageService.setItem('isExitFlowActivate', 'false');
 	}
 
 	private receiveFigleafReadyForCommunicationState() {
 		const figleafConnectSubscription = timer(0, 3000).pipe(
 			switchMap(() => this.communicationSwitcherService.isPullingActive$.pipe(take(1))),
 			switchMap((res) => {
-				return res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY))
+				return res ? this.sendTestMessage().pipe(catchError(() => EMPTY)) : this.checkIfFigleafInstalled().pipe(catchError(() => EMPTY));
 			}),
 			distinctUntilChanged()
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
@@ -147,10 +141,7 @@ export class CommunicationWithFigleafService {
 	}
 
 	private checkIfFigleafInstalled() {
-		return combineLatest([
-			from(FigleafConnector.checkIfFigleafInstalled()),
-			of(this.storageService.getItem('isExitFlowActivate'))
-		]).pipe(
+		return from(FigleafConnector.checkIfFigleafInstalled()).pipe(
 			map(([checkIfFigleafInstalled, isExitFlowActivate]) => checkIfFigleafInstalled > 0 || JSON.parse(isExitFlowActivate)),
 			map((res) => res ? {type: 'testfigleafStatus', status: FigleafState.exit} : throwError('ooops'))
 		);
