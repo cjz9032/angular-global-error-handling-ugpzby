@@ -2,7 +2,7 @@
 @import "fonts";
 @import "mixins";
 
-$topIndent: -5.6rem;
+$topIndent: -4rem;
 
 %common-block-wrapper {
 	background: #fff;
@@ -35,34 +35,52 @@ $topIndent: -5.6rem;
 	padding: 1.5rem 4rem;
 	min-width: 18rem;
 	max-width: 100%;
-	background: transparent linear-gradient(-270deg, #4980FC 0%, #2E62D9 100%) 0 0 no-repeat;
+	background: linear-gradient(270deg, #346CEF 0%, #2955BC 100%);
 	background-size: 100% auto;
 	transition: background-size .3s linear;
-	border-radius: 2.5rem;
-	font-size: 1.5rem;
+	border-radius: 3rem;
+	font-size: 1.6rem;
+	font-weight: bold;
 	color: #FFFFFF;
 	letter-spacing: 0.1rem;
 	text-align: center;
-	font-weight: 500;
+	position: relative;
 
 	@media (max-width: 1200px) {
 		padding: 1.5rem 1rem;
 	}
 
-	&:focus,
 	&:hover {
-		background-size: 150% auto;
+		background: #2955BC;
+	}
+
+	&:focus {
+		background: #346CEF;
+	}
+
+	&:focus::after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: -0.4rem;
+		top: -0.4rem;
+		border-radius: 500px;
+		width: calc(100% + 0.8rem);
+		height: calc(100% + 0.8rem);
+		border: thin solid #4A81FD;
 	}
 
 	&--transparent {
-		background: none;
-		border: 1px solid #4A81FD;
-		color: #4A81FD;
+		background: #FDFDFD;
+		border: 1px solid #667481;
+		color: #34495E;
 
-		&:focus,
 		&:hover {
-			color: darken(#4A81FD, 10%);
-			border-color: darken(#4A81FD, 10%);
+			background: #F5F7F8;
+		}
+
+		&:focus {
+			background: #FFFFFF;
 		}
 	}
 
@@ -100,13 +118,12 @@ $topIndent: -5.6rem;
 	padding: 0 2.5rem 0 0;
 	margin: 0;
 	letter-spacing: 0.1rem;
-	font-size: 1.3rem;
-	font-weight: 500;
+	font-size: 1.4rem;
+	font-weight: 600;
 	line-height: 1.5rem;
-	text-transform: uppercase;
 	position: relative;
 
-	@include href();
+	@include href(#346CEF, #2955BC, #4A81FD);
 
 	&:before {
 		content: "";
@@ -122,17 +139,68 @@ $topIndent: -5.6rem;
 		background-size: contain;
 	}
 
+	&:hover {
+		&:before {
+			background-image: url("/assets/icons/privacy-tab/icon-blue-arrow-hover.svg");
+		}
+	}
+
+	&:active {
+		&:before {
+			background-image: url("/assets/icons/privacy-tab/icon-blue-arrow-active.svg");
+		}
+	}
+
 	&__text {
 		text-decoration: none;
 		border-bottom: 1px solid;
+		font-weight: bold;
+		&:before {
+			width: 0;
+			height: 0;
+			display: none;
+		}
+	}
+
+	&--padding-0 {
+		padding: 0;
+	}
+
+	&--clear-text {
+		padding-right: 1rem;
+		&:before {
+			width: 0;
+			height: 0;
+			display: none;
+		}
+	}
+
+	&--uppercase {
+		text-transform: uppercase;
 	}
 
 	&--to-right {
+		text-transform: uppercase;
+		font-weight: bold;
 		&:before {
 			transform: translateY(-50%) rotate(0deg);
 			width: 1.4rem;
 			height: 1.4rem;
 			background-image: url("src/assets/icons/privacy-tab/blue-arrow-right-long.svg");
+		}
+
+		&:hover {
+			color: #FFFFFF;
+			&:before {
+				background-image: url("/assets/icons/privacy-tab/blue-arrow-right-long-hover.svg");
+			}
+		}
+
+		&:active {
+			color: #FFFFFF;
+			&:before {
+				background-image: url("/assets/icons/privacy-tab/blue-arrow-right-long-active.svg");
+			}
 		}
 	}
 
@@ -143,6 +211,18 @@ $topIndent: -5.6rem;
 			height: 1.4rem;
 			background-image: url("src/assets/icons/privacy-tab/white-arrow-right-long.svg");
 		}
+
+		&:hover {
+			&:before {
+				background-image: url("/assets/icons/privacy-tab/white-arrow-right-long.svg");
+			}
+		}
+
+		&:active {
+			&:before {
+				background-image: url("/assets/icons/privacy-tab/white-arrow-right-long.svg");
+			}
+		}
 	}
 
 	&--open {
@@ -152,9 +232,17 @@ $topIndent: -5.6rem;
 	}
 
 	&--disabled {
-		&:before {
-			background-image: url("src/assets/icons/privacy-tab/icon-grey-arrow.svg");
-			transform: translateY(-50%) rotate(0deg);
+		color: #C2C9CF;
+		cursor: default;
+		text-transform: initial;
+
+		&:disabled {
+			color: #C2C9CF;
+			&:before {
+				background-image: url("src/assets/icons/privacy-tab/icon-grey-arrow.svg");
+				transform: translateY(-50%) rotate(0deg);
+				background-size: cover;
+			}
 		}
 	}
 }
@@ -165,10 +253,9 @@ $topIndent: -5.6rem;
 	border: none;
 	background: inherit;
 	text-transform: uppercase;
-	opacity: 0.4;
-	color: #444F78;
-	font-size: 11px;
-	font-weight: 500;
+	color: #667481;
+	font-size: 1.4rem;
+	font-weight: bold;
 	letter-spacing: 0.7px;
 	line-height: 13px;
 	text-align: center;

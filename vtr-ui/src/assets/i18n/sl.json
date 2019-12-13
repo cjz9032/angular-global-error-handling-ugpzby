@@ -643,11 +643,11 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
-            "subtitle": "Poišči nekaj koristnih nasvetov za napravo.",
+            "subtitle": "Poiščite nekaj koristnih nasvetov za svojo napravo.",
             "question1": "Varnostno kopiranje in obnovitev datotek",
             "question2": "Osveževanje računalnika",
             "question3": "Ugotavljanje, kateri CPE ima računalnik",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stanje sistema",
-            "subtitle": "HITRO PREVERITE STANJE SISTEMA.",
+            "subtitle": "Hitro preverite stanje naprave.",
             "memory": {
                 "title": "Pomnilnik",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Prikaži podrobnosti",
                 "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Glavna baterija ni zaznana.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Drsnik je na sredini ali desno od sredine. Hitrost ventilatorja in zmogljivost se dinamično uravnotežita za optimalno uporabniško izkušnjo.",
                             "title3": "Zmogljivi način",
                             "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik"
+                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "VEČ",
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
-                    "control3": "KONTROLNIKI TRACKPOINT"
+                    "control3": "KONTROLNIKI TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
                 "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
                     "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potrebujete pomoč?",
-            "description": "OBRNITE SE NA NAS IN POMAGALI VAM BOMO.",
+            "description": "Za pomoč se obrnite na nas.",
             "listLenovoCommunity": "Skupnost Lenovo",
             "listContactCustomerService": "Obrnite se na storitve za stranke",
             "listContactUsOnWechat": "Pišite nam WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Hitre povezave",
-            "description": "OBRNITE SE NA NAS IN POMAGALI VAM BOMO.",
+            "description": "Za pomoč se obrnite na nas.",
             "listETicket": "Zagotovite si podporo z E-vstopnico",
             "listServiceProvider": "Poiščite ponudnika storitev",
             "listAboutLenovoVantage": "O storitvi Lenovo Vantage"
@@ -1955,13 +1958,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2171,7 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredBySurfEasy": "Poganja SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2196,8 +2199,7 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredByDashLane": "Poganja Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2639,7 @@
         "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
+        "toolbartitle": "Omogočite orodno vrstico Lenovo Vantage (priporočeno)",
         "title1": "Pozdravljeni v programu WRITEit,",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2670,10 @@
         "actionTriggered": "Sproženo dejanje",
         "actionTriggeredDescription": "Sporočila, ki jih sproži uporabnik, ko izbere nastavitve, kot je samodejna namestitev nujnih/priporočenih posodobitev.",
         "OtherSettings": "Druge nastavitve",
-        "usageStatistics": "Statistični podatki o uporabi",
-        "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
-        "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
-        "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
+        "usageStatistics": "Statistični podatki o uporabi naprave Vantage",
+        "usageStatisticsDescription": "Pošiljajte anonimne statistične podatke o uporabi, da nam pomagate izboljšati napravo Vantage.",
+        "deviceStatistics": "Statistični podatki o napravi Lenovo",
+        "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
@@ -3047,41 +3050,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
-                "networkError": "Omrežna napaka.",
-                "installationCancelled": "Namestitev preklicana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Unovčitev za Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Namestitev",
-                "installing": "Nameščanje",
-                "downloading": "Prenašanje",
-                "installed": "Nameščeno",
-                "launch": "Zaženite",
-                "seeMore": "Več"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Posnetki zaslona",
-                "additionalInformation": "Dodatne informacije",
-                "by": "Avtor:",
-                "updated": "Posodobitev:",
-                "type": "Vrsta:",
-                "category": "Kategorija:",
-                "legalAgreement": "Pravni sporazum",
-                "readMore": "Preberite več",
-                "readLess": "Preberite manj"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3166,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
+            "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
+            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
+                "networkError": "Omrežna napaka.",
+                "installationCancelled": "Namestitev preklicana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Unovčitev za Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Namestitev",
+                "installing": "Nameščanje",
+                "downloading": "Prenašanje",
+                "installed": "Nameščeno",
+                "launch": "Zaženite",
+                "seeMore": "Več"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Posnetki zaslona",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Avtor:",
+                "updated": "Posodobitev:",
+                "type": "Vrsta:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Preberite več",
+                "readLess": "Preberite manj"
+            }
+        }
+    }
 }

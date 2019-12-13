@@ -643,11 +643,11 @@
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
-            "subtitle": "Finn noen nyttige tips for din enhet.",
+            "subtitle": "Finn noen nyttige tips for enheten din.",
             "question1": "Sikkerhetskopier og gjenopprett filene dine",
             "question2": "Slik oppfrisker du datamaskinen din",
             "question3": "Bli kjent med datamaskinens prosessor",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "SE ENHETSSTATUS RASKT.",
+            "subtitle": "Se enhetsstatusen raskt.",
             "memory": {
                 "title": "Minne",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Finner ikke hovedbatteriet.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Glidebryteren står på midten eller til høyre for midten. Viftehastighet og ytelse balanseres dynamisk for å gi den beste brukeropplevelsen.",
                             "title3": "Ytelsesmodus",
                             "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen"
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-                    "control3": "TRACKPOINT-KONTROLLER"
+                    "control3": "TRACKPOINT-KONTROLLER",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
                 "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
-                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
                     "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Trener du hjelp?",
-            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listLenovoCommunity": "Lenovo-samfunnet",
             "listContactCustomerService": "Kontakt kundeservice",
             "listContactUsOnWechat": "Kontakt oss på WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Hurtigkoblinger",
-            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listETicket": "Få støtte med en e-forespørsel",
             "listServiceProvider": "Finn en tjenesteleverandør",
             "listAboutLenovoVantage": "Om Lenovo Vantage"
@@ -1955,13 +1958,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2171,7 @@
             "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
-            "poweredBySurfEasy": "Leveres av SurfEasy",
-            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "poweredBySurfEasy": "Leveres av SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PASSORDADMINISTRATOR",
@@ -2196,8 +2199,7 @@
             "allowsYou2": "overvåke den mørke weben for å beskytte dine personlige data",
             "allowsYou3": "være trygg på usikrede WiFi-nettverk med innebygd VPN",
             "allowsYou4": "dele passord på en sikker måte uten å oppgi dem",
-            "poweredByDashLane": "Leveres av Dashlane",
-            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "poweredByDashLane": "Leveres av Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2639,7 @@
         "professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
         "moreInterest": "+ flere interesser",
+        "toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2670,10 @@
         "actionTriggered": "Utløst av handlinger",
         "actionTriggeredDescription": "Meldinger som utløses av at man velger innstillinger som automatisk installasjon av kritiske/anbefalte oppdateringer.",
         "OtherSettings": "Andre innstillinger",
-        "usageStatistics": "Statistikk over bruk",
-        "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
-        "deviceStatistics": "Del statistiske data med Lenovo",
-        "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
+        "usageStatistics": "Vantage bruksstatistikk",
+        "usageStatisticsDescription": "Send anonym bruksstatistikk for å hjelpe oss med å forbedre Vantage.",
+        "deviceStatistics": "Lenovo enhetsstatistikk",
+        "deviceStatisticsDescription": "Send anonyme enhetsdata for å hjelpe oss med å forbedre kvalitet og pålitelighet, og utvikle neste generasjon med enheter.",
         "userProfile": "Brukerprofil",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft.",
@@ -3047,41 +3050,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
-                "networkError": "Nettverksfeil.",
-                "installationCancelled": "Installasjonen er avbrutt."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-innløsning",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installer",
-                "installing": "Installerer",
-                "downloading": "Laster ned",
-                "installed": "Installert",
-                "launch": "Start",
-                "seeMore": "Se mer"
-            },
-            "fieldName": {
-                "description": "Beskrivelse",
-                "screenshots": "Skjermbilder",
-                "additionalInformation": "Tilleggsinformasjon",
-                "by": "Av:",
-                "updated": "Oppdatert:",
-                "type": "Type:",
-                "category": "Kategori:",
-                "legalAgreement": "Juridisk avtale",
-                "readMore": "Les mer",
-                "readLess": "Les mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3166,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
+            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
+                "networkError": "Nettverksfeil.",
+                "installationCancelled": "Installasjonen er avbrutt."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-innløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installerer",
+                "downloading": "Laster ned",
+                "installed": "Installert",
+                "launch": "Start",
+                "seeMore": "Se mer"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skjermbilder",
+                "additionalInformation": "Tilleggsinformasjon",
+                "by": "Av:",
+                "updated": "Oppdatert:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk avtale",
+                "readMore": "Les mer",
+                "readLess": "Les mindre"
+            }
+        }
+    }
 }

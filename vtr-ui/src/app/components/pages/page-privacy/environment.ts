@@ -6,7 +6,7 @@ const productionEnvironment = {
 };
 
 const developEnvironment = {
-	backendUrl: 'https://api.sz.figleafapp.com',
+	backendUrl: 'https://api.tz.figleafapp.com',
 	staticUrl: 'https://static.figleafapp.com/anti-tracking/img/'
 };
 

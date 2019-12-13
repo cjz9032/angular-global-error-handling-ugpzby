@@ -643,11 +643,11 @@
             "registered": "등록됨",
             "notRegistered": "등록되지 않음",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>"
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
-            "subtitle": "귀하의 장치에 대한 몇 가지 유용한 정보를 찾으십시오.",
+            "subtitle": "장치에 관한 유용한 팁을 찾을 수 있습니다.",
             "question1": "파일 백업 및 복원",
             "question2": "PC를 새로 고치는 방법",
             "question3": "컴퓨터의 CPU를 아는 방법",
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "세부사항 참조",
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>기본 배터리를 찾을 수 없습니다.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "슬라이더가 가운데 또는 가운데 오른쪽에 있습니다. 최상의 환경을 위해 팬 속도와 성능이 동적으로 균형을 이룹니다.",
                             "title3": "성능 모드",
                             "desc3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "사용량이 많을 때 빠른 시작 시간을 희생시키지 않고 유휴 시간 동안 배터리 절전을 최적화하도록 컴퓨터를 예약하는 기능입니다.",
-                    "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정"
+                    "subTitle2": "이 컴퓨터를 주로 사용하는 시간 설정",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "자세히",
                     "control1": "터치패드 제어",
                     "control2": "마우스 제어",
-                    "control3": "TRACKPOINT 제어"
+                    "control3": "TRACKPOINT 제어",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
                 "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
                     "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "도움이 필요하세요?",
-            "description": "도움을 줄 수 있는 연락처",
+            "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listLenovoCommunity": "Lenovo 커뮤니티",
             "listContactCustomerService": "고객 서비스에 문의하기",
             "listContactUsOnWechat": "WeChat에 문의하기",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "퀵링크",
-            "description": "도움을 줄 수 있는 연락처.",
+            "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listETicket": "E-티켓으로 지원 가져오기",
             "listServiceProvider": "서비스 제공자 찾기",
             "listAboutLenovoVantage": "Lenovo Vantage 소개"
@@ -1955,13 +1958,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2171,7 @@
             "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
-            "poweredBySurfEasy": "SurfEasy로 실행",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기"
+            "poweredBySurfEasy": "SurfEasy로 실행"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 암호 관리자",
@@ -2196,8 +2199,7 @@
             "allowsYou2": "다크 웹에서 개인 정보 모니터",
             "allowsYou3": "내장 VPN으로 비보안 WiFi 네트워크에서 안전하게 유지",
             "allowsYou4": "암호를 노출하지 않고 안전하게 공유",
-            "poweredByDashLane": "Dashlane로 실행",
-            "privacyPolicyAndTermsOfService": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기"
+            "poweredByDashLane": "Dashlane로 실행"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2639,7 @@
         "professional": "전문적 용도",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
         "moreInterest": "+ 취미 추가",
+        "toolbartitle": "Lenovo Vantage 도구 모음 사용 (권장)",
         "title1": "에 오신 것을 환영합니다",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2670,10 @@
         "actionTriggered": "트리거된 작업",
         "actionTriggeredDescription": "중요/권장 업데이트 자동 설치와 같은 사용자 선택 설정에 의해 트리거된 메시지.",
         "OtherSettings": "기타 설정",
-        "usageStatistics": "사용 현황 통계",
-        "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
-        "deviceStatistics": "Lenovo와 통계 데이터 공유",
-        "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
+        "usageStatistics": "Vantage 사용 통계",
+        "usageStatisticsDescription": "Vantage 향상에 도움이 되는 익명의 사용 통계를 보내 주십시오.",
+        "deviceStatistics": "Lenovo 장치 통계",
+        "deviceStatisticsDescription": "품질, 안정성 및 차세대 장치를 개선하는 데 도움이 되는 익명의 장치 데이터를 보내 주십시오.",
         "userProfile": "사용자 프로필",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다.",
@@ -3047,41 +3050,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "설치에 실패했습니다. 다시 시도하십시오.",
-                "networkError": "네트워크 오류가 발생했습니다.",
-                "installationCancelled": "설치가 취소되었습니다."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 상환",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "설치",
-                "installing": "설치",
-                "downloading": "다운로드 중",
-                "installed": "설치됨",
-                "launch": "시작",
-                "seeMore": "자세한 정보"
-            },
-            "fieldName": {
-                "description": "설명",
-                "screenshots": "스크린샷",
-                "additionalInformation": "추가 정보",
-                "by": "개발자:",
-                "updated": "업데이트 날짜:",
-                "type": "유형:",
-                "category": "범주:",
-                "legalAgreement": "합법적 계약",
-                "readMore": "자세히 읽기",
-                "readLess": "간단하게 읽기"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3166,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "이제 사용자 모르게 개인 정보가 온라인 추적기에 의해 침해되거나 사용되었는지 확인할 수 있습니다.",
+            "security": "알고 있습니다? 바이러스 백신 소프트웨어가 설치되어 있지 않더라도, 장치에 대한 기본 보안 보호 기능이 제공됩니다.",
+            "connectedHomeSecurity": "가정에서 네트워크 보안에 대한 실시간 모니터링 및 경고를 얻습니다. 스마트 장치가 보안 공격을 하고 있는 경우, 첫 번째 사용자는 이를 확인할 수 있습니다."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "설치에 실패했습니다. 다시 시도하십시오.",
+                "networkError": "네트워크 오류가 발생했습니다.",
+                "installationCancelled": "설치가 취소되었습니다."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 상환",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "설치",
+                "installing": "설치",
+                "downloading": "다운로드 중",
+                "installed": "설치됨",
+                "launch": "시작",
+                "seeMore": "자세한 정보"
+            },
+            "fieldName": {
+                "description": "설명",
+                "screenshots": "스크린샷",
+                "additionalInformation": "추가 정보",
+                "by": "개발자:",
+                "updated": "업데이트 날짜:",
+                "type": "유형:",
+                "category": "범주:",
+                "legalAgreement": "합법적 계약",
+                "readMore": "자세히 읽기",
+                "readLess": "간단하게 읽기"
+            }
+        }
+    }
 }

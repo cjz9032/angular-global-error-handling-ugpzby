@@ -18,8 +18,9 @@
 			</span>
 		</a>
 		<h1 class="title"
+			*ngIf="title"
 			id="{{textId}}-header-title"
-			attr.aria-label="{{textId}}-header-title">{{title}}</h1>
+			attr.aria-label="{{textId}}-header-title" [innerHtml]="title"></h1>
 		<ng-content></ng-content>
 		<div *ngIf="forwardLink"
 			class="forward-link">

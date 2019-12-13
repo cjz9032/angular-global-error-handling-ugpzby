@@ -3,7 +3,7 @@ import { coefficients } from './coefficients';
 import { catchError, map, startWith } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../../../userDataStatuses';
 import { of } from 'rxjs';
-import { AppStatusesService } from '../../../../common/services/app-statuses/app-statuses.service';
+import { AppStatusesService } from '../../../../core/services/app-statuses/app-statuses.service';
 import { ScoreCalculate } from './score-calculate.interface';
 
 @Injectable({
