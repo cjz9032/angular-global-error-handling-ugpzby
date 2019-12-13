@@ -3,10 +3,10 @@ import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../../../core/services/router-change-handler.service';
 import { Article, ArticlesService } from '../articles.service';
 import { combineLatest, merge, timer } from 'rxjs';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
+import { CommonPopupService } from '../../../core/services/popups/common-popup.service';
 import { CommonService } from '../../../../../../services/common/common.service';
 import { NetworkStatus } from '../../../../../../enums/network-status.enum';
 

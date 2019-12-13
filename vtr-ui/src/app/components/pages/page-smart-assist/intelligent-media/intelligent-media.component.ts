@@ -17,7 +17,7 @@ export class IntelligentMediaComponent implements OnInit {
 
 	@Input() isSRChecked = false;
 	@Input() isSRLoading = true;
-	@Input() superResolutionAvailable = true;
+	@Input() superResolutionAvailable = false;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
 	constructor(
 		private smartAssist: SmartAssistService,

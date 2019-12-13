@@ -1,4 +1,4 @@
-import { VisitedWebsitesInfo } from '../../../common/services/vantage-communication.service';
+import { VisitedWebsitesInfo } from '../../../core/services/vantage-communication.service';
 
 export const topVisitedSites: VisitedWebsitesInfo[] = [
 	{

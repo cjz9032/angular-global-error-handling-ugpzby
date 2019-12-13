@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FaqService, Questions } from '../../../common/services/faq/faq.service';
+import { FaqService, Questions } from '../../../core/services/faq/faq.service';
 import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../../../core/services/router-change-handler.service';
 
 
 @Component({

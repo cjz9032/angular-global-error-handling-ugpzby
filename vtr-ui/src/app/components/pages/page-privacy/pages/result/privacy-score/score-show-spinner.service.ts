@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { AppStatusesService, featuresResult } from '../../../core/services/app-statuses/app-statuses.service';
 import { map, withLatestFrom } from 'rxjs/operators';
 import { AppStatuses, FeaturesStatuses } from '../../../userDataStatuses';
+import { GetFeaturesConsentService } from '../../../core/services/app-statuses/get-features-consent.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { AppStatusesService, featuresResult } from '../../../common/services/app-statuses/app-statuses.service';
-import { GetFeaturesConsentService } from '../../../common/services/app-statuses/get-features-consent.service';
 
 @Injectable({
 	providedIn: 'root'
