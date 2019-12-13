@@ -142,10 +142,14 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}).catch(e => {
 			this.showVpn = true;
 		}).finally(() => {
-			this.createViewModels();
-			// this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result: boolean) => {
-			// 	this.pluginSupport = result;
-			// });
+			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+				if (result === 'true') {
+					this.pluginSupport = true;
+				} else {
+					this.pluginSupport = false;
+				}
+				this.createViewModels();
+			});
 		});
 		this.fetchCMSArticles();
 		const antivirus = new AntivirusErrorHandle(this.antivirus);
@@ -217,16 +221,24 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.baseItems = [];
 		this.intermediateItems = [];
 		this.advanceItems = [];
-		this.baseItems.push(this.antivirusLandingViewModel.avStatus, this.antivirusLandingViewModel.fwStatus, this.windowsActiveLandingViewModel.waStatus);
+		if (!this.pluginSupport) {
+			this.windowsActiveLandingViewModel = undefined;
+			this.uacLandingViewModel = undefined;
+			this.bitLockerLandingViewModel = undefined;
+		}
+		this.baseItems.push(this.antivirusLandingViewModel.avStatus,
+			this.antivirusLandingViewModel.fwStatus,
+			this.windowsActiveLandingViewModel ? this.windowsActiveLandingViewModel.waStatus : undefined);
 		this.intermediateItems.push(
 			this.passwordManagerLandingViewModel.pmStatus,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus : undefined,
-			this.uacLandingViewModel.uacStatus);
-		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
+			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus : undefined);
 		this.advanceItems.push(
 			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus : undefined,
 			this.bitLockerLandingViewModel ? this.bitLockerLandingViewModel.blStatus : undefined,
 			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus : undefined);
+		this.baseItems = this.baseItems.filter(i => i !== undefined && i !== null);
+		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
 		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
 	}
 
