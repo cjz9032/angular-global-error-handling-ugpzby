@@ -1,9 +1,0 @@
-<div class="scan-steps" [class.scan-steps--inner-indent]="innerIndent">
-  <div class="scan-steps__item" *ngFor="let step of _steps; let i = index;">
-    <div class="scan-steps__number-wrapper">
-      <div class="scan-steps__number">{{i+1}}</div>
-    </div>
-    <h4 class="scan-steps__title">{{step.text}}</h4>
-    <p class="scan-steps__text">{{step.subtext}}</p>
-  </div>
-</div>

@@ -1,4 +1,5 @@
 import { MockWindows } from '../moked-api';
+import { throwError } from 'rxjs';
 
 const Windows = window['Windows'] || MockWindows; // this is mocked data for browser
 

@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
+import { RouterChangeHandlerService } from '../../../core/services/router-change-handler.service';
 import { filter, takeUntil, tap } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sidebar-install-widget.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { merge } from 'rxjs';
 import { getFigleafProtectedStatus } from '../../../utils/helpers';
-import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { AppStatusesService } from '../../../core/services/app-statuses/app-statuses.service';
+import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
@@ -17,6 +18,7 @@ import { CommunicationWithFigleafService } from '../../../utils/communication-wi
 export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	primaryButtonText = 'Install Now';
 	linkButtonText = 'Learn more';
+	currentTests = AbTestsName;
 
 	installWidgetSettings: InstallWidgetPageSettings = {
 		visible: false,

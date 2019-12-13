@@ -347,7 +347,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "כבוי"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "פרופיל 1"
@@ -361,7 +361,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "כבוי"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -2636,8 +2636,8 @@
         "custom": "חוויה מותאמת אישית",
         "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
-		"moreInterest": "‏+ תחומי עניין נוספים",
-		"toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
+        "moreInterest": "‏+ תחומי עניין נוספים",
+        "toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
         "title1": "ברוכים הבאים אל",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2668,10 @@
         "actionTriggered": "פעולה מבוצעת",
         "actionTriggeredDescription": "הודעות המופעלות על ידי בחירת הגדרות של המשתמש, כגון עדכונים קריטיים/מומלצים של התקנה אוטומטית.",
         "OtherSettings": "הגדרות נוספות",
-        "usageStatistics": "סטטיסטיקת שימוש",
-        "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
-        "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
-        "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
+        "usageStatistics": "סטטיסטיקת שימוש ב-Vantage",
+        "usageStatisticsDescription": "שלח נתונים סטטיסטיים אנונימיים בנוגע לשימוש כדי לעזור לנו לשפר את Vantage.",
+        "deviceStatistics": "נתונים סטטיסטיים בנוגע למכשיר Lenovo",
+        "deviceStatisticsDescription": "שלחו נתונים אנונימיים בנוגע למכשיר כדי לעזור לנו לשפר את האיכות, את האמינות ואת הדור הבא של המכשירים.",
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
