@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-landing-nav',
@@ -9,6 +9,7 @@ export class WidgetLandingNavComponent implements OnInit {
 	@Input() baseItems;
 	@Input() intermediateItems;
 	@Input() advancedItems;
+	@Output() haveOwnChecked = new EventEmitter<any>();
 	currentPage = 'base-security';
 	featurePagesConfig = [
 		{
@@ -34,6 +35,10 @@ export class WidgetLandingNavComponent implements OnInit {
 
 	changePage(page) {
 		this.currentPage = page;
+	}
+
+	haveOwn(checkedList) {
+		this.haveOwnChecked.emit(checkedList);
 	}
 
 }

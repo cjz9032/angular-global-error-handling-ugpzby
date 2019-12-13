@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
-            "subtitle": "NÁJDETE NIEKOĽKO POTREBNÉ TIPY PRE VAŠE ZARIADENIE.",
+            "subtitle": "Nájdite niekoľko užitočných rád pre svoje zariadenie.",
             "question1": "Zálohovanie a obnova súborov",
             "question2": "Obnovenie nastavenia počítača",
             "question3": "Zistenie informácií o procesore počítača",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stav systému",
-            "subtitle": "RÝCHLO ZISTITE STAV ZARIADENIA.",
+            "subtitle": "Rýchlo si zistite stav svojho zariadenia.",
             "memory": {
                 "title": "Pamäť",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Zobraziť podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Hlavná batéria nebola zistená.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Jazdec sa nachádza v strede alebo v strede na pravej strane. Otáčky ventilátora a výkon sú dynamicky vyvážené s cieľom zaistiť ten najlepší používateľský zážitok.",
                             "title3": "Režim vysokého výkonu",
                             "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "VIAC",
                     "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
                     "control2": "OVLÁDACIE PRVKY MYŠI",
-                    "control3": "OVLÁDACIE PRVKY TRACKPOINT"
+                    "control3": "OVLÁDACIE PRVKY TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
                 "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
-                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
                     "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potrebujete pomoc?",
-            "description": "KONTAKTUJTE NÁS A POMÔŽEME VÁM.",
+            "description": "Kontaktujte nás, aby sme vám pomohli.",
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktujte služby zákazníkom",
             "listContactUsOnWechat": "Kontaktujte nás cez WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Rýchle prepojenia",
-            "description": "KONTAKTUJTE NÁS A POMÔŽEME VÁM.",
+            "description": "Kontaktujte nás, aby sme vám pomohli.",
             "listETicket": "Získajte podporu prostredníctvom elektronickej požiadavky",
             "listServiceProvider": "Nájsť poskytovateľa servisu",
             "listAboutLenovoVantage": "Aplikácia Lenovo Vantage"

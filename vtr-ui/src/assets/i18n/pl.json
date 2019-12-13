@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Pytania i odpowiedzi dotyczące Twojej maszyny",
-            "subtitle": "ZNAJDŹ NIEKTÓRE POMOCNE WSKAZÓWKI DLA TWOJEGO URZĄDZENIA.",
+            "subtitle": "Zobacz przydatne wskazówki dotyczące Twojego urządzenia.",
             "question1": "Tworzenie kopii zapasowych plików i ich przywracanie",
             "question2": "Jak odświeżyć komputer",
             "question3": "Jak sprawdzić procesor komputera",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stan systemu",
-            "subtitle": "SZYBKO SPRAWDŹ STAN URZĄDZENIA.",
+            "subtitle": "Szybko sprawdź stan urządzenia.",
             "memory": {
                 "title": "Pamięć",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Zobacz szczegóły",
                 "gaugeResetWarning": "<b>Uwaga:</b> Trwa resetowanie wskaźnika stanu akumulatora. Proszę zachować zasilacz podłączony.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Nie wykryto podstawowego akumulatora.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Suwak znajduje się na środku lub nieco z prawej strony. Szybkość wentylatora i wydajność są równoważone według aktualnych potrzeb, aby zapewnić efektywne działanie komputera.",
                             "title3": "Tryb wydajności",
                             "desc3": "Suwak znajduje się po prawej stronie. Szybkość wentylatora i dopuszczalna temperatura powierzchni są wyższe dla uzyskania najlepszej wydajności."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "WIĘCEJ",
                     "control1": "PRZYCISKI PANELU DOTYKOWEGO",
                     "control2": "PRZYCISKI MYSZY",
-                    "control3": "PRZYCISKI TRACKPOINTA"
+                    "control3": "PRZYCISKI TRACKPOINTA",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
                 "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
                     "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potrzebujesz pomocy?",
-            "description": "SKONTAKTUJ SIĘ Z NAMI, ABY UZYSKAĆ POMOC.",
+            "description": "Jeżeli potrzebujesz pomocy, skontaktuj się z nami.",
             "listLenovoCommunity": "Społeczność Lenovo",
             "listContactCustomerService": "Skontaktuj się z działem obsługi klienta",
             "listContactUsOnWechat": "Skontaktuj się z nami za pomocą aplikacji WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Szybkie odsyłacze",
-            "description": "SKONTAKTUJ SIĘ Z NAMI, ABY UZYSKAĆ POMOC.",
+            "description": "Jeżeli potrzebujesz pomocy, skontaktuj się z nami.",
             "listETicket": "Uzyskaj pomoc techniczną za pomocą zgłoszenia elektronicznego",
             "listServiceProvider": "Znajdź dostawcę usług",
             "listAboutLenovoVantage": "Informacje o Lenovo Vantage"
