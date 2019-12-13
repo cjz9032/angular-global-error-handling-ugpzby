@@ -101,7 +101,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	gaugeResetCapability = false;
 	isToolBarSetSuccessed = false;
 	isVantageToolbarSetEnd = true;
-	public isEmDriverInstalled = true;
 
 	headerMenuItems = [
 		{
@@ -1159,9 +1158,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					break;
-				case 'IsEmDriverInstalled':
-					this.checkEmDriverInstalled(notification.payload);
-					break;
 			}
 
 		}
@@ -1175,22 +1171,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 			this.updateBatteryLinkStatus(false);
 			this.checkMenuItemsEmpty();
-		}
-	}
-
-	public checkEmDriverInstalled(status) {
-		this.isEmDriverInstalled = !status;
-		if(this.machineType === 0 && status) {
-		this.getConservationModeStatusIdeaPad();
-		this.getRapidChargeModeStatusIdeaPad();
-		this.getAlwaysOnUSBStatusIdeaPad();
-		this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
-		this.getFlipToBootCapability();
-		this.getVantageToolBarCapability();
-		this.getEnergyStarCapability();
-		this.onSetSmartStandbyCapability(this.smartStandbyCapability);
-		this.updateBatteryLinkStatus(false);
-		this.checkMenuItemsEmpty();
 		}
 	}
 

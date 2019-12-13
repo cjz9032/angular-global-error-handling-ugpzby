@@ -12,7 +12,6 @@ export class BatteryDetailService {
 	remainingPercentages: number[] = [];
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;
-	isEmDriverInstalled: boolean;
 	isGaugeResetRunning: boolean;
 
 	public isShellAvailable = false;
