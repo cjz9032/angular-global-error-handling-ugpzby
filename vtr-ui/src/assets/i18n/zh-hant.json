@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "您機器的問答",
-            "subtitle": "為您的設備找到一些有用的提示。",
+            "subtitle": "尋找您裝置適用的實用提示。",
             "question1": "備份及還原檔案",
             "question2": "如何重新整理電腦",
             "question3": "如何知道電腦的 CPU",
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "查看詳細資料",
                 "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>未偵測到主要電池。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "滑桿在中央或中間靠右。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
                             "title3": "效能模式",
                             "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "其他資訊",
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
-                    "control3": "TRACKPOINT 控制項"
+                    "control3": "TRACKPOINT 控制項",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
                 "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label> 此功能可能會影響電池續航力、電池溫度，並造成噪音。啟用時，建議您使用 AC 電源連接電腦。</label></p>",
-                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player <br/> 暴風影音 <br/> 迅雷影音",
+                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "電腦未連接到 AC 電源且電池電量低於 20％。",
@@ -2636,8 +2638,8 @@
         "custom": "自訂",
         "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
-		"moreInterest": "+ 更多興趣",
-		"toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
+        "moreInterest": "+ 更多興趣",
+        "toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
         "title1": "歡迎使用",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "引發的動作",
         "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
         "OtherSettings": "其他設定",
-        "usageStatistics": "使用情形統計資料",
-        "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
-        "deviceStatistics": "與 Lenovo 分享統計資料",
-        "deviceStatisticsDescription": "與 Lenovo 共用統計資料,協助我們提升您電腦功能的可靠性、設計和最佳化。",
+        "usageStatistics": "Vantage 使用情形統計資料",
+		"usageStatisticsDescription": "傳送匿名使用方式統計資料，以協助我們改善 Vantage。",
+		"deviceStatistics": "Lenovo 裝置統計資料",
+		"deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
         "userProfile": "使用者設定檔",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式,此頁面中的所有設定才可生效。",

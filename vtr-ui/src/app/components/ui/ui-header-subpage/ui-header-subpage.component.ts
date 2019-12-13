@@ -25,8 +25,11 @@ export class UiHeaderSubpageComponent implements OnInit {
 			element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 			// Fix for Edge browser
 			window.scrollBy(0, -60);
-			const focusElement = element.querySelector('[tabindex = \'0\']') as HTMLElement;
-			focusElement.focus();
+			// fix for VAN-12795 , focus element only when event is key press for narrator to read element text.
+			if (event.type !== 'click') {
+				const focusElement = element.querySelector('[tabindex = \'0\']') as HTMLElement;
+				focusElement.focus();
+			}
 		}
 	}
 

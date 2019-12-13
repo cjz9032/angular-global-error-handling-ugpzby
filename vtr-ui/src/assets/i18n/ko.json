@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "당신의 기계에 대한 Q & A",
-            "subtitle": "귀하의 장치에 대한 몇 가지 유용한 정보를 찾으십시오.",
+            "subtitle": "장치에 관한 유용한 팁을 찾을 수 있습니다.",
             "question1": "파일 백업 및 복원",
             "question2": "PC를 새로 고치는 방법",
             "question3": "컴퓨터의 CPU를 아는 방법",
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "세부사항 참조",
                 "gaugeResetWarning": "<b>참고:</b> 배터리 게이지 리셋이 진행 중입니다. AC 전원 어댑터를 연결 상태로 두십시오.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>기본 배터리를 찾을 수 없습니다.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "슬라이더가 가운데 또는 가운데 오른쪽에 있습니다. 최상의 환경을 위해 팬 속도와 성능이 동적으로 균형을 이룹니다.",
                             "title3": "성능 모드",
                             "desc3": "슬라이더가 오른쪽 끝에 있습니다. 팬 속도와 허용 표면 온도가 더 높아져 성능을 극대화할 수 있습니다."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "자세히",
                     "control1": "터치패드 제어",
                     "control2": "마우스 제어",
-                    "control3": "TRACKPOINT 제어"
+                    "control3": "TRACKPOINT 제어",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "지능형 미디어",
                 "title": "비디오 해상도 업스케일링",
                 "desc": "<p><label>이 기능을 사용하면 비디오 해상도를 향상시켜 비디오 재생 환경이 향상됩니다. 특히 비디오 해상도가 낮은 경우에 작동합니다.</label></p> <p style='margin-top:4px;'><label> 이 기능은 배터리 수명과 배터리 온도에 영향을 줄 수 있으며, 소음을 유발할 수 있습니다. 사용 가능으로 설정하는 경우, AC 전원을 사용하여 컴퓨터에 연결하는 것이 좋습니다.</label></p>",
-                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "이 기능은 다음 플레이어에서만 작동합니다. <br/> Windows Media player",
                 "note": {
                     "description": "다음의 경우에는 이 기능이 작동하지 않습니다.",
                     "description1": "컴퓨터가 AC 전원에 연결되어 있지 않고, 배터리 전력이 20% 미만입니다.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "도움이 필요하세요?",
-            "description": "도움을 줄 수 있는 연락처",
+            "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listLenovoCommunity": "Lenovo 커뮤니티",
             "listContactCustomerService": "고객 서비스에 문의하기",
             "listContactUsOnWechat": "WeChat에 문의하기",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "퀵링크",
-            "description": "도움을 줄 수 있는 연락처.",
+            "description": "도움이 필요한 경우 Lenovo에 문의하십시오.",
             "listETicket": "E-티켓으로 지원 가져오기",
             "listServiceProvider": "서비스 제공자 찾기",
             "listAboutLenovoVantage": "Lenovo Vantage 소개"
@@ -2636,8 +2638,8 @@
         "custom": "사용 환경의 개인 설정",
         "professional": "전문적 용도",
         "privacytitle": "익명으로 사용 통계를 수집하여 앱 품질을 개선하는 데 도움을 줄 수 있습니다.",
-		"moreInterest": "+ 취미 추가",
-		"toolbartitle": "Lenovo Vantage 도구 모음 사용 (권장)",
+        "moreInterest": "+ 취미 추가",
+        "toolbartitle": "Lenovo Vantage 도구 모음 사용 (권장)",
         "title1": "에 오신 것을 환영합니다",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "트리거된 작업",
         "actionTriggeredDescription": "중요/권장 업데이트 자동 설치와 같은 사용자 선택 설정에 의해 트리거된 메시지.",
         "OtherSettings": "기타 설정",
-        "usageStatistics": "사용 현황 통계",
-        "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
-        "deviceStatistics": "Lenovo와 통계 데이터 공유",
-        "deviceStatisticsDescription": "컴퓨터의 신뢰성과 디자인을 더욱 향상하고 기능을 한층 최적화할 수 있도록 Lenovo와 통계 데이터를 공유합니다.",
+        "usageStatistics": "Vantage 사용 통계",
+        "usageStatisticsDescription": "Vantage 향상에 도움이 되는 익명의 사용 통계를 보내 주십시오.",
+        "deviceStatistics": "Lenovo 장치 통계",
+        "deviceStatisticsDescription": "품질, 안정성 및 차세대 장치를 개선하는 데 도움이 되는 익명의 장치 데이터를 보내 주십시오.",
         "userProfile": "사용자 프로필",
         "Note": "참고: ",
         "settingsNotes": "이 페이지의 모든 설정을 적용하려면, 사용자가 이 응용 프로그램을 시작하여 적용해야 합니다.",

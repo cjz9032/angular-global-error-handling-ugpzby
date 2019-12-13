@@ -114,6 +114,9 @@ $dark: #000;
 $gray: #ccc;
 $charcoal: #434343;
 $purple_navy: #444F78;
+$note_border: #ECF0F1;
+$dim_gray: #707070;
+$solitude: #FBFCFC;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0073ff;
@@ -271,6 +274,7 @@ $mediaquery_X42: "only screen and (min-width: 992px) and (max-width: 1100px)";
 $mediaquery_X43: "only screen and (min-width: 1366px)";
 $mediaquery_X44: "all and (min-width: 992px)";
 $mediaquery_X45: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$mediaquery_X46: "only screen and (min-width: 768px) and (max-width: 992px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";

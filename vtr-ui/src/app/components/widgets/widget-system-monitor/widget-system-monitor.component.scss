@@ -854,7 +854,7 @@
 								}
 							}
 							.hd-item-label {
-								display: block;
+								//display: block;
 								text-align: center;
 								// @media #{$only-small-screen} {
 								// 	display: flex;
@@ -995,6 +995,7 @@
 							padding-left: 1rem;
 							vertical-align: middle;
 							text-align: left;
+							width: 50%;
 							// @media #{$only-small-screen} {
 							// 	display: flex;
 							// 	justify-content: space-between;

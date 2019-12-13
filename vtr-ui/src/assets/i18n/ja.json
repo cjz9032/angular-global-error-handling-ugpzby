@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "あなたの機械のQ&A",
-            "subtitle": "あなたのデバイスのためのいくつかの役に立つヒントを見つけてください。",
+            "subtitle": "ご使用のデバイスのお役立ちヒントを探します。",
             "question1": "ファイルをバックアップし、復元する",
             "question2": "PC を更新する方法",
             "question3": "ご使用のマシンの CPU を知る方法",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "システム状況",
-            "subtitle": "デバイス状況をすばやく確認。",
+            "subtitle": "デバイスの状態をすばやく確認します。",
             "memory": {
                 "title": "メモリー",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "詳細を見る",
                 "gaugeResetWarning": "<b>注:</b> バッテリー・ゲージのリセットが進行中です。AC 電源アダプターを接続したままにしてください。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>プライマリー・バッテリーが検出されませんでした。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "スライダーを中央または中央右に移動します。最適なエクスペリエンスのために、ファンの速度とパフォーマンスが動的にバランスされます。",
                             "title3": "パフォーマンス・モード",
                             "desc3": "スライダーを右端に移動します。最高のパフォーマンスを得るために、ファン速度と許容表面温度が高くなります。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "詳細",
                     "control1": "タッチパッド・コントロール",
                     "control2": "マウス・コントロール",
-                    "control3": "TRACKPOINT 制御"
+                    "control3": "TRACKPOINT 制御",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオ解像度のアップスケーリング",
                 "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
-                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player",
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
                     "description1": "コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",
@@ -2636,8 +2638,8 @@
         "custom": "カスタム・エクスペリエンス",
         "professional": "業務用",
         "privacytitle": "このアプリの品質を改善するために、使用統計の匿名での収集を 許可してご協力ください。",
-		"moreInterest": "+ その他のことに興味がある",
-		"toolbartitle": "Lenovo Vantage ツールバーを有効にする (推奨)",
+        "moreInterest": "+ その他のことに興味がある",
+        "toolbartitle": "Lenovo Vantage ツールバーを有効にする (推奨)",
         "title1": "ようこそ",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "開始されたアクション",
         "actionTriggeredDescription": "重要な/推奨される更新プログラムの自動インストールなど、ユーザーが選択した設定によってトリガーされるメッセージ。",
         "OtherSettings": "他の設定",
-        "usageStatistics": "利用統計",
-        "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
-        "deviceStatistics": "Lenovoと統計データを共有する",
-        "deviceStatisticsDescription": "統計データを Lenovo と共有し、ご使用のコンピューターの機能の信頼性、設計、最適化の改善に役立てます。",
+        "usageStatistics": "Vantage 利用統計",
+        "usageStatisticsDescription": "Vantage の改善に役立てるため、使用状況の統計を匿名で送信します。",
+        "deviceStatistics": "Lenovo デバイス統計",
+        "deviceStatisticsDescription": "品質、信頼性、次世代デバイスの改善に役立てるため、デバイス データを匿名で送信します。",
         "userProfile": "ユーザー・プロフィール",
         "Note": "注:",
         "settingsNotes": "このページのすべての設定で、有効にするために、このアプリを再起動する必要があります。",

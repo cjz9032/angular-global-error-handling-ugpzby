@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
-            "subtitle": "TROVA ALCUNI CONSIGLI UTILI PER IL TUO DISPOSITIVO.",
+            "subtitle": "Trovare alcuni suggerimenti utili per il dispositivo.",
             "question1": "Backup e ripristino dei file",
             "question2": "Come aggiornare il PC",
             "question3": "Informazioni sulla CPU del computer in uso",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stato del sistema",
-            "subtitle": "INFORMAZIONI RAPIDE SULLO STATO DEL DISPOSITIVO.",
+            "subtitle": "Informazioni rapide sullo stato del dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>La batteria principale non è stata rilevata.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
                             "title3": "Modalità prestazioni",
                             "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "ALTRO",
                     "control1": "CONTROLLI TOUCHPAD",
                     "control2": "CONTROLLI MOUSE",
-                    "control3": "CONTROLLI TRACKPOINT"
+                    "control3": "CONTROLLI TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
                 "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Hai bisogno di aiuto?",
-            "description": "CONTATTACI PER RICHIEDERE ASSISTENZA.",
+            "description": "Contattaci per richiedere assistenza.",
             "listLenovoCommunity": "Comunità Lenovo",
             "listContactCustomerService": "Contatta il servizio clienti",
             "listContactUsOnWechat": "Contattaci su WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Collegamenti rapidi",
-            "description": "CONTATTACI PER RICHIEDERE ASSISTENZA.",
+            "description": "Contattaci per richiedere assistenza.",
             "listETicket": "Richiedi supporto con E-ticket",
             "listServiceProvider": "Trova un provider di servizi",
             "listAboutLenovoVantage": "Informazioni su Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Esperienza personalizzata",
         "professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
-		"moreInterest": "+ più interessi",
-		"toolbartitle": "Abilitazione della barra degli strumenti di Lenovo Vantage (consigliato)",
+        "moreInterest": "+ più interessi",
+        "toolbartitle": "Abilitazione della barra degli strumenti di Lenovo Vantage (consigliato)",
         "title1": "Benvenuto in",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Azione attivata",
         "actionTriggeredDescription": "Messaggi attivati dalle impostazioni selezionate dall'utente, come l'installazione automatica degli aggiornamenti critici/consigliati.",
         "OtherSettings": "Altre impostazioni",
-        "usageStatistics": "Statistiche utilizzo",
-        "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
-        "deviceStatistics": "Condividi i dati statistici con Lenovo",
-        "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
+        "usageStatistics": "Statistiche sull'utilizzo di Vantage",
+        "usageStatisticsDescription": "Invia statistiche anonime sull'utilizzo per aiutarci a migliorare Vantage.",
+        "deviceStatistics": "Statistiche sui dispositivi Lenovo",
+        "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",

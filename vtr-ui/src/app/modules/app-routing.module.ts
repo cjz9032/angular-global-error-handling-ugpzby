@@ -56,10 +56,10 @@ const routes: Routes = [
 		path: 'beta',
 		loadChildren: '../beta/beta.module#BetaModule'
 	},
-	// {
-	// 	path: 'device/smart-performance',
-	// 	loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
-	// },
+	{
+		path: 'support/smart-performance',
+		loadChildren: './smart-performance/smart-performance.module#SmartPerformanceModule'
+	},
 	{
 		path: '',
 		component: HomeComponent,
