@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
-            "subtitle": "ENCUENTRA ALGUNOS CONSEJOS ÚTILES PARA TU DISPOSITIVO.",
+            "subtitle": "Encuentre consejos útiles para su dispositivo.",
             "question1": "Cree copias de seguridad y restaure sus archivos",
             "question2": "Cómo renovar su equipo",
             "question3": "Cómo conocer la CPU de su equipo",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Estado del sistema",
-            "subtitle": "ACTUALIZACIÓN RÁPIDA DEL ESTADO DE SU DISPOSITIVO.",
+            "subtitle": "Actualización rápida del estado de su dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Ver detalles",
                 "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>No se detectó la batería principal.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "El graduador está en el centro o a la derecha. La velocidad del ventilador y el rendimiento se equilibran de forma dinámica para la mejor experiencia.",
                             "title3": "Modalidad de rendimiento",
                             "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MÁS",
                     "control1": "CONTROLES DEL ÁREA TÁCTIL",
                     "control2": "CONTROLES DE MOUSE",
-                    "control3": "CONTROLES DE TRACKPOINT"
+                    "control3": "CONTROLES DE TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Medios inteligentes",
                 "title": "Escalado de resolución de video",
                 "desc": "<p><label>Esta característica mejora la experiencia de la reproducción de video mejorando la resolution de video. Funciona especialmente cuando el video tiene una resolución baja.</label></p> <p style='margin-top:4px;'><label> Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. Cuando está habilitada, se recomienda que conecte el sistema a la alimentación de CA.</label></p>",
-                "tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "La característica solo funciona en los siguientes reproductores: <br/> Windows Media player",
                 "note": {
                     "description": "Esta característica no funciona cuando;",
                     "description1": "El sistema no está conectado a la alimentación de CA y la energía de la batería es inferior al 20 %.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "¿Necesita ayuda?",
-            "description": "PÓNGASE EN CONTACTO CON NOSOTROS PARA AYUDARLE.",
+            "description": "Póngase en contacto con nosotros para recibir ayuda.",
             "listLenovoCommunity": "Comunidad de Lenovo",
             "listContactCustomerService": "Póngase en contacto con servicio al cliente",
             "listContactUsOnWechat": "Póngase en contacto con nosotros en WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Enlaces rápidos",
-            "description": "PÓNGASE EN CONTACTO CON NOSOTROS PARA AYUDARLE.",
+            "description": "Póngase en contacto con nosotros para recibir ayuda.",
             "listETicket": "Obtenga soporte con E-Ticket",
             "listServiceProvider": "Encontrar un proveedor de servicio",
             "listAboutLenovoVantage": "Acerca de Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Experiencia personalizada",
         "professional": "Uso profesional",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
-		"moreInterest": "+ más intereses",
-		"toolbartitle": "Active la barra de herramientas de Lenovo Vantage (recomendado)",
+        "moreInterest": "+ más intereses",
+        "toolbartitle": "Active la barra de herramientas de Lenovo Vantage (recomendado)",
         "title1": "Bienvenido a",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Acción activada",
         "actionTriggeredDescription": "Mensajes desencadenados por el usuario seleccionando valores como la instalación automática de las actualizaciones críticas/recomendadas.",
         "OtherSettings": "Otros valores",
-        "usageStatistics": "Estadísticas de uso",
-        "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
-        "deviceStatistics": "Compartir datos estadísticos con Lenovo",
-        "deviceStatisticsDescription": "Comparte datos estadísticos con Lenovo para ayudar a mejorar la confiabilidad, diseño y optimización de las características del sistema.",
+        "usageStatistics": "Estadísticas de uso de Vantage",
+        "usageStatisticsDescription": "Envíe estadísticas de uso anónimas para ayudarnos a mejorar Vantage.",
+        "deviceStatistics": "Estadísticas de dispositivo Lenovo",
+        "deviceStatisticsDescription": "Envíe datos de dispositivo anónimos para ayudarnos a mejorar la calidad, confiabilidad y la próxima generación de dispositivos.",
         "userProfile": "Perfil de usuario",
         "Note": "Nota: ",
         "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien esta aplicación para tener efecto.",

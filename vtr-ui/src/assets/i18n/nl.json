@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "V & A voor uw machine",
-            "subtitle": "VIND ENKELE NUTTIGE TIPS VOOR UW APPARAAT.",
+            "subtitle": "Hier vindt u enkele tips voor uw apparaat.",
             "question1": "Back-ups maken en bestanden terugzetten",
             "question2": "Uw pc vernieuwen",
             "question3": "Weten welke CPU u hebt",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systeemstatus",
-            "subtitle": "SNEL DE STATUS INZICHTELIJK VAN UW APPARAATSTATUS.",
+            "subtitle": "Snel inzicht in de status van uw apparaat.",
             "memory": {
                 "title": "Geheugen",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Bekijk meer informatie",
                 "gaugeResetWarning": "<b>Opmerking:</b> het opnieuw instellen van de batterijmeter wordt uitgevoerd. Zorg dat de netvoedingsadapter blijft aangesloten.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>De primaire batterij is niet gevonden.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "De schuifregelaar bevindt zich in het midden of rechts van het midden. Ventilatorsnelheid en prestaties worden dynamisch gebalanceerd voor een optimale beleving.",
                             "title3": "Prestatiemodus",
                             "desc3": "De schuifregelaar bevindt zich uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MEER",
                     "control1": "TOUCHPAD-BEDIENING",
                     "control2": "MUISBEDIENING",
-                    "control3": "TRACKPOINT-BESTURINGSELEMENTEN"
+                    "control3": "TRACKPOINT-BESTURINGSELEMENTEN",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Intelligente media",
                 "title": "Schaalverhoging beeldschermresolutie",
                 "desc": "<p><label>Deze functie verbetert de beleving van het afspelen van een video door het verbeteren van de beeldschermresolutie. Dit werkt vooral als de video een lage resolutie heeft.</label></p> <p style='margin-top:4px;'><label> Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Als u deze functie inschakelt, wordt het aanbevolen om de computer op de netvoeding aan te sluiten.</label></p>",
-                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Deze functie werkt alleen op de volgende spelers: <br/> Windows Media player",
                 "note": {
                     "description": "Deze functie werkt niet als:",
                     "description1": "De computer niet is aangesloten op de netvoeding en de batterij minder dan 20% vermogen heeft.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Hulp nodig?",
-            "description": "NEEM CONTACT MET ONS OP OM U TE HELPEN.",
+            "description": "Neem voor hulp contact met ons op.",
             "listLenovoCommunity": "Lenovo-community",
             "listContactCustomerService": "Neem contact op met de klantenservice",
             "listContactUsOnWechat": "Neem contact op met ons op WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Snelle links",
-            "description": "NEEM CONTACT MET ONS OP OM U TE HELPEN.",
+            "description": "Neem voor hulp contact met ons op.",
             "listETicket": "Ondersteuning met E-kaart",
             "listServiceProvider": "Een serviceprovider zoeken",
             "listAboutLenovoVantage": "Over Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Aangepaste ervaring",
         "professional": "Beroepsmatig gebruik",
         "privacytitle": "Help ons de kwaliteit van de app te verbeteren door toe te staan dat anoniem gebruiksgegevens worden verzameld.",
-		"moreInterest": "+ meer interesses",
-		"toolbartitle": "Schakel de Lenovo Vantage-werkbalk in (aanbevolen)",
+        "moreInterest": "+ meer interesses",
+        "toolbartitle": "Schakel de Lenovo Vantage-werkbalk in (aanbevolen)",
         "title1": "Welkom bij",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Geactiveerd door handelingen",
         "actionTriggeredDescription": "Berichten die door de gebruiker zijn geactiveerd door het selecteren van instellingen, zoals het automatisch installeren van essentiële/aanbevolen updates.",
         "OtherSettings": "Overige instellingen",
-        "usageStatistics": "Gebruiksstatistieken",
-        "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
-        "deviceStatistics": "Statistische gegevens delen met Lenovo",
-        "deviceStatisticsDescription": "Deelt statistische gegevens met Lenovo om de betrouwbaarheid, het ontwerp en de optimalisatie van functies op uw computer te verbeteren.",
+        "usageStatistics": "Vantage-gebruiksstatistieken",
+        "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken om ons te helpen Vantage te verbeteren.",
+        "deviceStatistics": "Lenovo-apparaatstatistieken",
+        "deviceStatisticsDescription": "Verzend anoniem apparaatgegevens om ons te helpen de kwaliteit, betrouwbaarheid en de volgende generatie apparaten te verbeteren.",
         "userProfile": "Gebruikersprofiel",
         "Note": "Opmerking: ",
         "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers de applicatie opnieuw moeten opstarten om effect te hebben.",

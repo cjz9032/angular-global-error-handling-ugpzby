@@ -48,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	pageTitle = this.isGaming ? 'gaming.common.narrator.pageTitle.device' : '';
 	private totalDuration = 0; // itermittant app duratin will be added to it
 	private vantageFocusHelper = new VantageFocusHelper();
+	private isServerSwitchEnabled = true;
 
 	constructor(
 		private displayService: DisplayService,
@@ -90,6 +91,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.notifyNetworkState();
 		this.addInternetListener();
 		this.vantageFocusHelper.start();
+
 	}
 
 	ngOnInit() {
@@ -107,7 +109,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 		this.metricService.sendAppLaunchMetric();
 
-		window.onresize = () => {}; // this line is necessary, please do not remove.
+		window.onresize = () => { }; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		// this.router.events.subscribe((s) => {
@@ -125,7 +127,11 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 		// VAN-5872, server switch feature
-		this.serverSwitchThis();
+		this.isServerSwitchEnabled = (typeof environment !== 'undefined' ? environment.isServerSwitchEnabled : true);
+		if (this.isServerSwitchEnabled) {
+			this.serverSwitchThis();
+		}
+
 		this.setRunVersionToRegistry();
 		this.abTestsGenerateConfigService.shuffle();
 	}
@@ -333,7 +339,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			}
 
 			// // VAN-5872, server switch feature
-			if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+			if (this.isServerSwitchEnabled === true && event.ctrlKey && event.shiftKey && event.keyCode === 67) {
 				const serverSwitchModal: NgbModalRef = this.modalService.open(ModalServerSwitchComponent, {
 					backdrop: true,
 					size: 'lg',
