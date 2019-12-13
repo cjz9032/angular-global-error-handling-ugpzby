@@ -29,7 +29,8 @@
 			}
 		}
 		.vtr-disabled {
-			opacity: 0.65;
+            opacity: 0.65;
+            pointer-events:none !important;
 		}
 
 		padding: 1.5rem 0.7rem 1.5rem;
