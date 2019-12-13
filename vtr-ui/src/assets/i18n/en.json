@@ -3167,7 +3167,7 @@
 			"storage": "Storage",
 			"wireless": "Wireless"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
 	},
 	"notification": {
 		"menu": {
