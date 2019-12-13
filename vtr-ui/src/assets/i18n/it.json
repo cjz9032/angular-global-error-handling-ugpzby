@@ -643,7 +643,7 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
@@ -907,7 +907,8 @@
                     "PermanentError": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
-                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
+                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>",
+                    "EmDriverInstalled": "Dettagli della batteria non disponibili. Eseguire Windows Update -> Verifica disponibilità aggiornamenti per installare il driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
@@ -993,24 +994,24 @@
                     "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
                     "nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria.",
+                        "desc2": "La funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows. È possibile accedervi facendo clic sull'icona della batteria nella barra delle applicazioni di Windows.",
+                        "desc3": "Le prestazioni di alcune modalità possono essere regolate automaticamente in base all'attività. Per abilitare la modalità automatica, premere Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità automatica batteria",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La modalità silenziosa o la modalità batteria viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CC.",
+                            "title2": "Modalità automatica prestazioni",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La modalità silenziosa, la modalità bilanciata o la modalità prestazioni viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CA.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità silenziosa",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La velocità e le prestazioni della ventola vengono ridotte per ottenere un computer più fresco e silenzioso e la massima durata della batteria.",
+                            "title2": "Modalità bilanciata",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         }
                     }
                 },
@@ -1218,7 +1219,8 @@
                         }
                     },
                     "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer"
+                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1954,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2166,8 +2169,7 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredBySurfEasy": "Basato su SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2195,8 +2197,7 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredByDashLane": "Basato su Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2635,7 +2636,8 @@
         "custom": "Esperienza personalizzata",
         "professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
-        "moreInterest": "+ più interessi",
+		"moreInterest": "+ più interessi",
+		"toolbartitle": "Abilitazione della barra degli strumenti di Lenovo Vantage (consigliato)",
         "title1": "Benvenuto in",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3046,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installazione non riuscita. Riprovare.",
-                "networkError": "Errore di rete.",
-                "installationCancelled": "Installazione annullata."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Codice di attivazione Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installa",
-                "installing": "Installazione",
-                "downloading": "Download in corso",
-                "installed": "Installato",
-                "launch": "Avvia",
-                "seeMore": "Visualizza altro"
-            },
-            "fieldName": {
-                "description": "Descrizione",
-                "screenshots": "Screenshot",
-                "additionalInformation": "Ulteriori informazioni",
-                "by": "Per:",
-                "updated": "Aggiornato:",
-                "type": "Tipo:",
-                "category": "Categoria:",
-                "legalAgreement": "Contratto legale",
-                "readMore": "Ulteriori informazioni",
-                "readLess": "Meno informazioni"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3197,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Ora è possibile scoprire se le informazioni personali sono state violate o utilizzate da tracker online a propria insaputa.",
+            "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installazione non riuscita. Riprovare.",
+                "networkError": "Errore di rete.",
+                "installationCancelled": "Installazione annullata."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Codice di attivazione Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installa",
+                "installing": "Installazione",
+                "downloading": "Download in corso",
+                "installed": "Installato",
+                "launch": "Avvia",
+                "seeMore": "Visualizza altro"
+            },
+            "fieldName": {
+                "description": "Descrizione",
+                "screenshots": "Screenshot",
+                "additionalInformation": "Ulteriori informazioni",
+                "by": "Per:",
+                "updated": "Aggiornato:",
+                "type": "Tipo:",
+                "category": "Categoria:",
+                "legalAgreement": "Contratto legale",
+                "readMore": "Ulteriori informazioni",
+                "readLess": "Meno informazioni"
+            }
+        }
+    }
 }

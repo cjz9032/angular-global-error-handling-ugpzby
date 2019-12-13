@@ -643,7 +643,7 @@
             "registered": "已注册",
             "notRegistered": "未注册",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -908,7 +908,8 @@
                     "PermanentError": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>",
+                    "EmDriverInstalled": "未提供电池详细信息。请运行 Windows 更新 -> 检查更新以安装 <b>Lenovo ACPI - Compliant Virtual Power Controller</b>驱动程序。"
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
@@ -993,24 +994,24 @@
                     },
                     "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "智能冷却可调节风扇速度、最佳性能，并管理您的电池使用时间。",
+                        "desc2": "此功能具有以下所列模式，且现在可以通过 Windows 性能电源滑块进行调节。您可以通过单击 Windows 系统托盘中的电池图标来访问它。",
+                        "desc3": "有些模式可以根据您的活动在更广泛的性能范围内进行自动调节。要启用自动模式，请按 Fn+T。",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "自动电池模式",
+                            "desc1": "滑块位于左边。此模式会动态切换到安静模式或电池模式，以获得最佳的 DC 模式体验。",
+                            "title2": "自动性能模式",
+                            "desc2": "滑块位于中央或中央偏右的位置。此模式会动态切换到安静模式、平衡模式或性能模式，以获得最佳的 AC 模式体验。",
+                            "title3": "性能模式",
+                            "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "安静模式",
+                            "desc1": "滑块位于左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
+                            "title2": "平衡模式",
+                            "desc2": "滑块位于中央或中央偏右的位置。以动态方式平衡风扇速度和性能以获得最佳体验。",
+                            "title3": "性能模式",
+                            "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         }
                     }
                 },
@@ -1218,7 +1219,8 @@
                         }
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "subTitle2": "设置通常使用此计算机的时间"
+                    "subTitle2": "设置通常使用此计算机的时间",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1954,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2166,8 +2169,7 @@
             "getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
             "getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
             "getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
-            "poweredBySurfEasy": "SurfEasy 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+            "poweredBySurfEasy": "SurfEasy 出品"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密码管理器",
@@ -2195,8 +2197,7 @@
             "allowsYou2": "监控暗网保障个人信息安全",
             "allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
             "allowsYou4": "在不显示密码的情况下安全地共享密码",
-            "poweredByDashLane": "Dashlane 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+            "poweredByDashLane": "Dashlane 出品"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2627,7 +2628,7 @@
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
         "bullets2": "安全顾问助您轻松改善系统安全状况。",
-        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用）。",
+        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用)。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "告诉我们您的兴趣（选填）",
         "personal": "个人使用",
@@ -2635,7 +2636,8 @@
         "custom": "自定义",
         "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
-        "moreInterest": "+更多的兴趣",
+		"moreInterest": "+更多的兴趣",
+		"toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
         "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3046,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安装失败。请重试。",
-                "networkError": "网络错误。",
-                "installationCancelled": "已取消安装。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兑换",
-            "lenovoMigrationAssistant": "联想乐换机"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安装",
-                "installing": "正在安装",
-                "downloading": "正在下载",
-                "installed": "已安装",
-                "launch": "启动",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "描述",
-                "screenshots": "屏幕快照",
-                "additionalInformation": "其他信息",
-                "by": "提供者：",
-                "updated": "更新日期：",
-                "type": "类型：",
-                "category": "类别：",
-                "legalAgreement": "法律协议",
-                "readMore": "阅读更多",
-                "readLess": "阅读更少"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3197,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
+            "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安装失败。请重试。",
+                "networkError": "网络错误。",
+                "installationCancelled": "已取消安装。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兑换",
+            "lenovoMigrationAssistant": "联想乐换机"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安装",
+                "installing": "正在安装",
+                "downloading": "正在下载",
+                "installed": "已安装",
+                "launch": "启动",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "描述",
+                "screenshots": "屏幕快照",
+                "additionalInformation": "其他信息",
+                "by": "提供者：",
+                "updated": "更新日期：",
+                "type": "类型：",
+                "category": "类别：",
+                "legalAgreement": "法律协议",
+                "readMore": "阅读更多",
+                "readLess": "阅读更少"
+            }
+        }
+    }
 }

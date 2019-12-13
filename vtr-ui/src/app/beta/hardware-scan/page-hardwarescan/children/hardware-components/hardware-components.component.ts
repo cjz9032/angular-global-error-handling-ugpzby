@@ -332,6 +332,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				})
 				.catch((ex: any) => {
 					console.error('[getDoScan] An exception has occurred: ', ex);
+					this.initComponent();
 				})
 				.finally(() => {
 					let metricsResult = this.getMetricsTaskResult();

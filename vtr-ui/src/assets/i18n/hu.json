@@ -643,7 +643,7 @@
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag>"
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
@@ -907,7 +907,8 @@
                     "PermanentError": "Az akkumulátor kapacitása <b>tartósan csökkent</b>. Kérjük, cserélje ki egy újra.",
                     "NotSupportACAdapterDetail": "<b>A hálózati adapter nem támogatott.</b> Lenovo számítógépe nem támogatja ezt a hálózati adaptert. Ez hirtelen leállást okozhat. Csatlakoztasson egy megfelelő hálózati adaptert.",
                     "LimitedACAdapterSupportDetail": "<b>A hálózati adapter nem tud elegendő energiát biztosítani</b> a Lenovo számítógép számára, ez pedig kihat a rendszer teljesítményére és a töltési sebességre. Csatlakoztassa újra a megfelelő hálózati adaptert.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} tápellátás csatlakoztatva.</b>",
+                    "EmDriverInstalled": "Az akkumulátor részletei nem elérhetők. Futtassa a Windows Update -> Frissítések keresése funkciót a <b>Lenovo ACPI - Compliant Virtual Power Controller</b> illesztőprogram telepítéséhez."
                 },
                 "batteryNotDetected": "A rendszer nem észlel akkumulátort",
                 "thresholdNote": "<b>Jegyzet:</b> Az akkumulátor nem tölthető fel teljesen, ha az akkumulátortöltési küszöbérték engedélyezve van.",
@@ -993,24 +994,24 @@
                     "description5": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát. A funkció három üzemmóddal rendelkezik (Csendes, Kiegyensúlyozott és Teljesítményközpontú mód). A módok között a Windows teljesítmény beállítására szolgáló csúszkájával lehet váltani",
                     "nocqldesc": "Az intelligens hűtés lehetővé teszi a rendszer teljesítményének és hőmérsékletnek a beállítását. „Teljesítmény” módban optimalizálja a rendszer teljesítményét. „Hűvös és csendes” módban pedig elősegíti, hogy a rendszer hűvösebb vagy csendesebb legyen.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Az Intelligens hűtés korrigálja a ventilátor sebességét, maximalizálja a teljesítményt és optimalizálja az akkumulátor élettartamát.",
+                        "desc2": "A funkció az alább felsorolt módokban használható, és már a Windows teljesítmény beállítására szolgáló csúszkájával is beállítható. A Windows tálcáján található akkumulátor ikonra kattintva érhető el.",
+                        "desc3": "Néhány mód automatikusan szélesebb teljesítményskálát állíthat be az Ön tevékenysége alapján. Az automatikus mód engedélyezéséhez nyomja meg az Fn+T gombokat.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatikus akkumulátor mód",
+                            "desc1": "A csúszka a bal oldalon van. Az üzemmód dinamikusan átkapcsolt a Csendes módba vagy az Akkumulátor módba a legjobb DC üzemmód nyújtotta élmény érdekében.",
+                            "title2": "Automatikus teljesítményközpontú üzemmód",
+                            "desc2": "A csúszka középen vagy attól kicsit jobbra van. Az üzemmód dinamikusan átkapcsolt a Csendes módba, a Kiegyensúlyozott módba vagy a Teljesítményközpontú módba a legjobb AC üzemmód nyújtotta élmény érdekében.",
+                            "title3": "Teljesítményközpontú mód",
+                            "desc3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Csendes mód",
+                            "desc1": "A csúszka a bal oldalon van. A ventilátor sebessége és a teljesítmény kisebb, így a számítógép kevésbé melegszik, csendesebb. Az akkumulátor élettartama ilyenkor a leghosszabb.",
+                            "title2": "Kiegyensúlyozott mód",
+                            "desc2": "A csúszka középen vagy attól kicsit jobbra van. A ventilátor sebességét és a teljesítményt a rendszer dinamikusan kiegyensúlyozza, hogy a felhasználói élmény a legjobb legyen.",
+                            "title3": "Teljesítményközpontú mód",
+                            "desc3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa."
                         }
                     }
                 },
@@ -1218,7 +1219,8 @@
                         }
                     },
                     "description2": "A funkció a számítógép működésének ütemezésével úgy optimalizálja az akkumulátor energiafogyasztását a használaton kívüli időszak alatt, hogy a rendszerindítás nem lesz lassabb a gép komolyabb használata során.",
-                    "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet"
+                    "subTitle2": "Adja meg, hogy általában mikor használja a számítógépet",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1954,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2166,8 +2169,7 @@
             "getStarted1": "A SurfEasy VPN elindításához kattintson a fenti „A SurfEasy megnyitása” gombra.",
             "getStarted2": "Kapcsolja be a VPN-t, és várjon egy kis ideig, amíg a rendszer visszaigazolja a kapcsolat biztonságosságát.",
             "getStarted3": "Igény szerint módosítsa a régiót vagy a tartózkodási helyet, és máris biztonságosan internetezhet.",
-            "poweredBySurfEasy": "A SurfEasy technológiája",
-            "privacyPolicyAndTermsOfService": "További információ az <tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag> között található"
+            "poweredBySurfEasy": "A SurfEasy technológiája"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE JELSZÓKEZELŐ",
@@ -2195,8 +2197,7 @@
             "allowsYou2": "Nyomon követheti, hogy felbukkannak-e az Ön adatai a sötét weben",
             "allowsYou3": "A beépített VPN segítségével a nem biztonságos WiFi-hálózatok is biztonságosan használhatók",
             "allowsYou4": "A jelszavak biztonságos megosztása – nyilvánossá tétel nélkül",
-            "poweredByDashLane": "A Dashlane technológiája",
-            "privacyPolicyAndTermsOfService": "További információ az <tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag> között található"
+            "poweredByDashLane": "A Dashlane technológiája"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2635,7 +2636,8 @@
         "custom": "Egyéni megoldások",
         "professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
-        "moreInterest": "+ további érdeklődési kör",
+		"moreInterest": "+ további érdeklődési kör",
+		"toolbartitle": "A Lenovo Vantage eszköztárának engedélyezése (ajánlott)",
         "title1": "Üdvözli a",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3046,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "A telepítés sikertelen. Kérjük, próbálja meg újra!",
-                "networkError": "Hálózati hiba.",
-                "installationCancelled": "A telepítés megszakítva."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe beváltás",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Telepítse",
-                "installing": "Telepítés",
-                "downloading": "Letöltés folyamatban",
-                "installed": "Telepítve",
-                "launch": "Indítás",
-                "seeMore": "Továbbiak megtekintése"
-            },
-            "fieldName": {
-                "description": "Leírás",
-                "screenshots": "Képernyőképek",
-                "additionalInformation": "További információk",
-                "by": "Következőtől:",
-                "updated": "Frissítette:",
-                "type": "Típus:",
-                "category": "Kategória:",
-                "legalAgreement": "Jogi megállapodás",
-                "readMore": "Továbbiak",
-                "readLess": "Kevesebb"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3197,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Most kiderítheti, hogy a személyes adataihoz online nyomkövetők illetéktelenül hozzáfértek-e vagy az Ön tudta nélkül felhasználták-e azokat.",
+            "security": "Tudta ezt? Ha Ön semmilyen antivírus szoftvert nem telepített az eszközére, mi akkor is gondoskodunk egy alapvető biztonsági védelemről.",
+            "connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "A telepítés sikertelen. Kérjük, próbálja meg újra!",
+                "networkError": "Hálózati hiba.",
+                "installationCancelled": "A telepítés megszakítva."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe beváltás",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Telepítse",
+                "installing": "Telepítés",
+                "downloading": "Letöltés folyamatban",
+                "installed": "Telepítve",
+                "launch": "Indítás",
+                "seeMore": "Továbbiak megtekintése"
+            },
+            "fieldName": {
+                "description": "Leírás",
+                "screenshots": "Képernyőképek",
+                "additionalInformation": "További információk",
+                "by": "Következőtől:",
+                "updated": "Frissítette:",
+                "type": "Típus:",
+                "category": "Kategória:",
+                "legalAgreement": "Jogi megállapodás",
+                "readMore": "Továbbiak",
+                "readLess": "Kevesebb"
+            }
+        }
+    }
 }
