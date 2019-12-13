@@ -1,41 +1,46 @@
-<div class="modal-body vtr-modal-battery-charge-threshold"
+<div class="vtr-modal-battery-charge-threshold"
 	role="dialog"
 	aria-modal="true">
-	<div class="row justify-content-end">
-		<div class="btn-close">
-			<button type="button"
-				class="close"
-				tabindex="0"
-				id="ds-threshold-popup-close-button"
-				aria-hidden="true"
-				aria-label="close modal"
-				(click)="closeModal()"
-				(keydown.enter)="closeModal()">
-				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+	<div class="content">
+		<h1 id="ds-threshold-popup"
+			attr.aria-label="ds-threshold-popup"
+			[innerHTML]="title | translate"></h1>
+		<p id="ds-thresholdpopup-description1"
+			attr.aria-label="ds-thresholdpopup-description1"
+			[innerHTML]="description1 | translate"></p>
+		<p id="ds-thresholdpopup-description2"
+			attr.aria-label="ds-thresholdpopup-description2"
+			[innerHTML]="description2 | translate"></p>
+		<hr>
+		<div class="row">
+			<button id="battery-threshold-popup-enable"
+				attr.aria-label="battery-threshold-popup-enable"
+				class="btn enable-button"
+				(click)="enableBatteryChargeThreshold()">
+				{{positiveResponseText | translate}}
 			</button>
+			<a id="battery-threshold-popup-cancel"
+				attr.aria-label="battery-threshold-popup-cancel"
+				(click)="closeModal()"
+				class="cancel-link active">{{negativeResponseText | translate}}</a>
 		</div>
 	</div>
-	<h1 id="ds-threshold-popup"
-		attr.aria-label="ds-threshold-popup"
-		[innerHTML]="title | translate"></h1>
-	<p id="ds-thresholdpopup-description1"
-		attr.aria-label="ds-thresholdpopup-description1"
-		[innerHTML]="description1 | translate"></p>
-	<p id="ds-thresholdpopup-description2"
-		attr.aria-label="ds-thresholdpopup-description2"
-		[innerHTML]="description2 | translate"></p>
-	<hr>
-	<div class="row">
-		<button id="battery-threshold-popup-enable"
-			attr.aria-label="battery-threshold-popup-enable"
-			class="btn enable-button"
-			(click)="enableBatteryChargeThreshold()">
-			{{positiveResponseText | translate}}
-		</button>
-		<a id="battery-threshold-popup-cancel"
-			attr.aria-label="battery-threshold-popup-cancel"
-			(click)="closeModal()"
-			class="cancel-link active">{{negativeResponseText | translate}}</a>
-	</div>
-
+	<a role="button"
+		href="javascript:;"
+		class="close-btn"
+		vtrMetrics
+		metricsItem="ThresholdCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="Page.DeviceSettings.Power"
+		tabindex="0"
+		id="ds-threshold-popup-close-button"
+		aria-hidden="true"
+		aria-label="close modal"
+		(click)="closeModal()"
+		(keydown.enter)="closeModal()"
+		(click)="closeModal()">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
+			alt=""
+			srcset="">
+	</a>
 </div>
