@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RoutersName } from '../../privacy-routing-name';
-import { UserDataStateService } from '../../common/services/app-statuses/user-data-state.service';
+import { UserDataStateService } from '../../core/services/app-statuses/user-data-state.service';
 import { CommsService } from '../../../../../services/comms/comms.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
