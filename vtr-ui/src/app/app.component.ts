@@ -108,17 +108,17 @@ export class AppComponent implements OnInit, OnDestroy {
 		window.onresize = () => {}; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
-		this.router.events.subscribe((s) => {
-			if (s instanceof NavigationEnd) {
-				const tree = this.router.parseUrl(this.router.url);
-				if (tree.fragment) {
-					const element = document.querySelector('#' + tree.fragment);
-					if (element) {
-						element.scrollIntoView(true);
-					}
-				}
-			}
-		});
+		// this.router.events.subscribe((s) => {
+		// 	if (s instanceof NavigationEnd) {
+		// 		const tree = this.router.parseUrl(this.router.url);
+		// 		if (tree.fragment) {
+		// 			const element = document.querySelector('#' + tree.fragment);
+		// 			if (element) {
+		// 				element.scrollIntoView(true);
+		// 			}
+		// 		}
+		// 	}
+		// });
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
@@ -512,4 +512,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	// 		// You should add a fallback so that your program still executes correctly.
 	// 	}
 	// }
+	onActivate() {
+		this.commonService.scrollTop();
+	}
 }

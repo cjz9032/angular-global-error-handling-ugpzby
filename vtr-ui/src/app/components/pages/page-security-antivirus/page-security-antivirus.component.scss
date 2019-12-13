@@ -7,13 +7,13 @@
 	
 		.img-fluid {
 			width: 10rem;
-			@media #{$mediaquery_md} {
-				width: 15rem;
+			@media #{$mediaquery_lg} {
+				width: 12rem;
 			}
 		}
 			
 		.w-windows {
-			@media #{$mediaquery_md} {
+			@media #{$mediaquery_lg} {
 				margin-top: -30rem;
 				width: 80% !important;
 			}
@@ -25,8 +25,8 @@
 		}
 	
 		.mcafee-logo {
-			width: 10rem;
-			padding-top: 0.7rem;
+			width: 8rem;
+			padding-top: 0.9rem;
 		}
 	
 		.divider {
@@ -47,7 +47,7 @@
 	
 				.title {
 					color: $shade_darkest;
-					font-size: 1.6rem;
+					font-size: 1.4rem;
 					font-weight: 600;
 					line-height: 2.9rem;
 				}
@@ -60,6 +60,7 @@
 	
 				.subtitle-color {
 					color: $shade_darkest;
+					font: size 1.2rem;
 				}
 	
 				.date {
@@ -75,9 +76,13 @@
 			}
 	
 			.part-position {
-				@media #{$mediaquery_md} {
+				@media #{$mediaquery_lg} {
 					position: relative;
 					top: 34rem;
+				}
+
+				@media #{$mediaquery_X44}{
+					margin-right: 2rem !important;
 				}
 			}
 	
@@ -86,8 +91,8 @@
 				box-shadow: none;
 			}
 	
-			.md-none {
-				@media #{$mediaquery_md} {
+			.lg-none {
+				@media #{$mediaquery_lg} {
 					display: none;
 				}
 			}
@@ -99,15 +104,15 @@
 	
 		.mcafee {
 			.vtr-widget-offline-info {
-				@media #{$mediaquery_md} {
+				@media #{$mediaquery_xl} {
 					position: relative;
 					top: -13rem;
 				}
 			}
 	
-			@media #{$mediaquery_md} {
+			@media #{$mediaquery_xl} {
 				position: relative;
-				margin-top: 20rem;
+				margin-top: 12rem;
 			}
 		}
 	
@@ -121,7 +126,7 @@
 				border-radius: $border_radius;
 				background: $light;
 	
-				@media #{$mediaquery_md} {
+				@media #{$mediaquery_lg} {
 					margin-bottom: 3rem;
 				}
 	
@@ -191,13 +196,13 @@
 					padding: 2rem 4rem 2rem 2rem;
 					color: $main_darker;
 	
-					@media #{$mediaquery_md} {
-						display: none;
+					@media #{$mediaquery_lg} {
+						padding: 2rem;
 					}
 				}
 	
-				.md-display {
-					@media #{$mediaquery_md} {
+				.xl-display {
+					@media #{$mediaquery_xl} {
 						flex-direction: column;
 						position: relative;
 						margin-top: -15rem;
@@ -212,10 +217,10 @@
 			}
 	
 			.defender-part {
-				flex-basis: 48.5%;
+				width: 48.5%;
 				padding: 2rem;
-				@media #{$mediaquery_md} {
-					flex-basis: 0;
+				@media #{$mediaquery_lg} {
+					width: 100%;
 				}
 				
 				.subtitle {
@@ -230,12 +235,12 @@
 				}
 	
 				img {
-					margin-right: 1rem;
+					margin-right: 0.7rem;
 				}
 			}
 	
 			.offline-part {
-				@media #{$mediaquery_md} {
+				@media #{$mediaquery_lg} {
 					padding-top: 34rem !important;
 				}
 			}
@@ -260,7 +265,7 @@
 		}
 	
 		.antivirus-block {
-			margin-top: 4rem;
+			margin-top: 3rem;
 	
 			ul.list-unstyled {
 				li {
@@ -294,6 +299,8 @@
 					border: 0.1rem solid $main !important;
 					background: $light !important;
 					color: $main !important;
+					min-height: 3rem;
+					min-width: 10rem;
 					&:hover {
 						background: $light;
 						color: $main;

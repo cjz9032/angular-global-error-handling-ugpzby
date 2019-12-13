@@ -1221,7 +1221,8 @@
                         }
                     },
                     "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
-                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة"
+                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1957,13 +1958,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2636,7 +2638,8 @@
         "custom": "تجربة مخصصة",
         "professional": "استخدام مهني",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
-        "moreInterest": "‏+ المزيد من الاهتمامات",
+		"moreInterest": "‏+ المزيد من الاهتمامات",
+		"toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
         "title1": "مرحبًا بك في",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3050,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "فشل التثبيت. حاول من جديد.",
-                "networkError": "خطأ في الشبكة.",
-                "installationCancelled": "تم إلغاء التثبيت."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "استرداد Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "تثبيت",
-                "installing": "جارِ التثبيت",
-                "downloading": "جارِ التنزيل",
-                "installed": "مثبت",
-                "launch": "اطلاق",
-                "seeMore": "رؤية المزيد"
-            },
-            "fieldName": {
-                "description": "الوصف",
-                "screenshots": "لقطات الشاشة",
-                "additionalInformation": "مزيد من المعلومات",
-                "by": "حسب:",
-                "updated": "تم التحديث:",
-                "type": "النوع:",
-                "category": "الفئة:",
-                "legalAgreement": "الاتفاقية القانونية",
-                "readMore": "اقرأ أكثر",
-                "readLess": "اقرأ أقل"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3195,6 +3163,48 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "notification": {
+        "menu": {
+            "privacy": "يمكنك الآن معرفة ما إذا كانت معلوماتك قد تعرضت للانتهاك أو ما إذا تم استخدامها من قِبل متتبعين عبر الإنترنت من دون علمك.",
+            "security": "هل تعلم؟ حتى لو لم يكن لديك برامج للحماية من الفيروسات مثبتة على جهازك، فنحن نوفر مع ذلك حماية الأمان الأساسية لجهازك.",
+            "connectedHomeSecurity": "احصل على مراقبة وتنبيهات في الوقت الحقيقي حول أمان شبكتك في المنزل. ستكون أول من يعرف ما إذا كان أحد أجهزتك الذكية يتعرض لهجوم أمني."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "فشل التثبيت. حاول من جديد.",
+                "networkError": "خطأ في الشبكة.",
+                "installationCancelled": "تم إلغاء التثبيت."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "استرداد Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "تثبيت",
+                "installing": "جارِ التثبيت",
+                "downloading": "جارِ التنزيل",
+                "installed": "مثبت",
+                "launch": "اطلاق",
+                "seeMore": "رؤية المزيد"
+            },
+            "fieldName": {
+                "description": "الوصف",
+                "screenshots": "لقطات الشاشة",
+                "additionalInformation": "مزيد من المعلومات",
+                "by": "حسب:",
+                "updated": "تم التحديث:",
+                "type": "النوع:",
+                "category": "الفئة:",
+                "legalAgreement": "الاتفاقية القانونية",
+                "readMore": "اقرأ أكثر",
+                "readLess": "اقرأ أقل"
+            }
         }
     }
 }

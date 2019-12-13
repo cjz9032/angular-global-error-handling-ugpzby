@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta"
+                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2634,7 +2636,8 @@
         "custom": "Mukautettu käyttökokemus",
         "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
-        "moreInterest": "+ muuta kiinnostuksen kohdetta",
+		"moreInterest": "+ muuta kiinnostuksen kohdetta",
+		"toolbartitle": "Ota käyttöön Lenovo Vantage -työkalurivi (suositus)",
         "title1": "Tervetuloa",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
-                "networkError": "Verkkovirhe.",
-                "installationCancelled": "Asennus on peruutettu."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adoben lunastus",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Asenna",
-                "installing": "Asentaminen",
-                "downloading": "Ladataan",
-                "installed": "Asennettu",
-                "launch": "Aloita",
-                "seeMore": "Näytä lisää"
-            },
-            "fieldName": {
-                "description": "Kuvaus",
-                "screenshots": "Näyttökuvat",
-                "additionalInformation": "Lisätietoja",
-                "by": "Tekijä:",
-                "updated": "Päivitetty:",
-                "type": "Tyyppi:",
-                "category": "Luokka:",
-                "legalAgreement": "Laillinen sopimus",
-                "readMore": "Lue enemmän",
-                "readLess": "Lue vähemmän"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyt voit selvittää, onko yksityisiä tietojasi katseltu luvatta tai ovatko verkkoseuraajat käyttäneet niitä tietämättäsi.",
+            "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
+                "networkError": "Verkkovirhe.",
+                "installationCancelled": "Asennus on peruutettu."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adoben lunastus",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Asenna",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
+                "installed": "Asennettu",
+                "launch": "Aloita",
+                "seeMore": "Näytä lisää"
+            },
+            "fieldName": {
+                "description": "Kuvaus",
+                "screenshots": "Näyttökuvat",
+                "additionalInformation": "Lisätietoja",
+                "by": "Tekijä:",
+                "updated": "Päivitetty:",
+                "type": "Tyyppi:",
+                "category": "Luokka:",
+                "legalAgreement": "Laillinen sopimus",
+                "readMore": "Lue enemmän",
+                "readLess": "Lue vähemmän"
+            }
+        }
+    }
 }
