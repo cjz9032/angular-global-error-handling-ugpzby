@@ -2,12 +2,16 @@
 .list-group.list-group-flush {
     list-style-type: none;
 }
+.border-top{
+    border-top: 1px solid #dee2e6 !important;
+    width: 100%;
+}
 .feature-note {
     background-color: $shade_lightest;
     border: 1px solid $shade_lighter;
     width: 100%;
-    margin-left: 1.5rem !important;
-    margin-right: 1.5rem !important;
+    margin-left: 4rem !important;
+    margin-right: 0.6rem !important;
     margin-bottom: 1.5rem !important;
     p {
         font-size: $body;

@@ -2,7 +2,7 @@
     <form class="check-breaches__form" [formGroup]="emailForm" (submit)="handleEmailScan()">
         <div class="check-breaches__input-wrapper"
              [ngClass]="{
-             	'check-breaches__input-wrapper--small': strategy === 'emitEmail',
+             	'check-breaches__input-wrapper--small': appearance === 'small',
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
 			 	'check-breaches__input-wrapper--validation-error': emailWasSubmitted && emailForm.touched && emailForm.invalid,
 			 	'check-breaches__input-wrapper--server-error': (serverError$ | async) && strategy !== 'emitEmail'
@@ -27,15 +27,44 @@
             <div class="check-breaches__loader" *ngIf="isLoading$ | async">
                 <vtr-simple-loader></vtr-simple-loader>
             </div>
-            <button class="check-breaches__button"
-                    [class.check-breaches__button--error]="(emailForm.touched && emailForm.dirty && emailForm.invalid || (isLoading$ | async))"
+			<vtr-ab-tests [testName]="currentTests.PrimaryButtonPitch" [ngStyle]="{'align-self': 'center'}" *ngIf="runAbTest">
+				<button class="check-breaches__button"
+						*testOption="'Secondary'"
+						[disabled]="isLoading$ | async"
+						[class.check-breaches__button--error]="(emailForm.touched && emailForm.dirty && emailForm.invalid || (isLoading$ | async))"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'RunCheckupButton'"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Secondary'}"
+						vtrOfflineMode
+						type='submit'>
+					Run Checkup
+				</button>
+				<button class="check-breaches__button check-breaches__button--transparent"
+						*testOption="'Primary'"
+						[disabled]="isLoading$ | async"
+						[class.check-breaches__button--error]="(emailForm.touched && emailForm.dirty && emailForm.invalid || (isLoading$ | async))"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'RunCheckupButton'"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Primary'}"
+						vtrOfflineMode
+						type='submit'>
+					Run Checkup
+				</button>
+			</vtr-ab-tests>
+			<button class="check-breaches__button"
+					*ngIf="!runAbTest"
+					[disabled]="isLoading$ | async"
+					[class.check-breaches__button--error]="(emailForm.touched && emailForm.dirty && emailForm.invalid || (isLoading$ | async))"
 					vtrSendAnalytics
-                    [metricsEvent]="'ItemClick'"
-                    [metricsItem]="'RunCheckupButton'"
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="'RunCheckupButton'"
+					[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Secondary'}"
 					vtrOfflineMode
-                    type='submit'>
-                Checkup
-            </button>
+					type='submit'>
+				Run Checkup
+			</button>
         </div>
         <div *ngIf="emailWasSubmitted && emailForm.touched && emailForm.invalid"
              class="check-error check-error--validation">

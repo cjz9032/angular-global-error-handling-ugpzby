@@ -166,6 +166,7 @@ export class PageSmartAssistComponent
 				this.intelligentMedia = this.smartAssistCache.intelligentMedia;
 				this.isAPSAvailable = this.smartAssistCache.isAPSAvailable;
 				this.hpdSensorType = this.smartAssistCache.hpdSensorType;
+				this.sensitivityVisibility = this.smartAssistCache.sensitivityVisibility;
 			} else {
 				this.smartAssistCache = new SmartAssistCache();
 				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
@@ -173,6 +174,7 @@ export class PageSmartAssistComponent
 				this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+				this.smartAssistCache.sensitivityVisibility = this.sensitivityVisibility;
 				this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
 			}
 		} catch (error) {

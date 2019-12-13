@@ -349,7 +349,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "ملف التعريف 1"
@@ -386,7 +386,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -645,7 +645,7 @@
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -917,7 +917,7 @@
                 "seeDetailsLink": "انظر التفاصيل",
                 "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>لم يتم الكشف عن البطارية الرئيسية.</b>"
                 }
             },
             "power": {
@@ -1014,7 +1014,8 @@
                             "desc2": "يوجد شريط التمرير في المنتصف أو في منتصف جهة اليسار. يحدث توازن ديناميكي بين سرعة المروحة والأداء من أجل الحصول على أفضل تجربة ممكنة.",
                             "title3": "وضع الأداء",
                             "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1221,7 +1222,8 @@
                         }
                     },
                     "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
-                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة"
+                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1516,7 +1518,8 @@
                     "more": "المزيد",
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
-                    "control3": "إعدادات تحكم TRACKPOINT"
+                    "control3": "إعدادات تحكم TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1679,7 +1682,7 @@
                 "heading": "الوسائط الذكية",
                 "title": "رفع مستوى دقة الفيديو",
                 "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
-                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player",
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
                     "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
@@ -1875,7 +1878,7 @@
         },
         "needHelp": {
             "title": "هل تحتاج للمساعدة؟",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listLenovoCommunity": "مجتمع Lenovo",
             "listContactCustomerService": "اتصل بخدمة العملاء",
             "listContactUsOnWechat": "اتصل بنا علي WeChat",
@@ -1886,7 +1889,7 @@
         },
         "quicklinks": {
             "title": "روابط سريعة",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listETicket": "احصل علي الدعم من خلال التذكرة الإلكترونية",
             "listServiceProvider": "البحث عن موفر خدمة",
             "listAboutLenovoVantage": "حول Lenovo Vantage"
@@ -1957,13 +1960,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2169,8 +2173,7 @@
             "getStarted1": "انقر فوق الزر \"فتح SurfEasy\" أعلاه لبدء تشغيل SurfEasy VPN.",
             "getStarted2": "شغّل شبكة VPN وانتظر برهة قصيرة لتلقي تأكيد الاتصال الآمن.",
             "getStarted3": "يمكنك تغيير منطقتك أو موقعك، إذا لزم الآمر، والاستمتاع بشبكة آمنة وخاصة.",
-            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "إدارة كلمات المرور في DASHLANE",
@@ -2198,8 +2201,7 @@
             "allowsYou2": "مراقبة الويب المظلم لمعلوماتك الشخصية",
             "allowsYou3": "المحافظة على سلامتك على شبكات WiFi غير الآمنة ذات VPN مضمنة",
             "allowsYou4": "مشاركة كلمات المرور بشكل آمن من دون الكشف عنها",
-            "poweredByDashLane": "مشغّل بواسطة Dashlane",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredByDashLane": "مشغّل بواسطة Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2639,6 +2641,7 @@
         "professional": "استخدام مهني",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
         "moreInterest": "‏+ المزيد من الاهتمامات",
+        "toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
         "title1": "مرحبًا بك في",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2669,10 +2672,10 @@
         "actionTriggered": "الرسائل التي تشغلها إجراءات",
         "actionTriggeredDescription": "الرسائل التي يتم تشغيلها عن طريق اختيار المستخدم للإعدادات مثل تثبيت التحديثات الهامة / الموصى بها تلقائيًا.",
         "OtherSettings": "إعدادات أخرى",
-        "usageStatistics": "إحصائيات الاستخدام",
-        "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
-        "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
-        "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
+        "usageStatistics": "إحصائيات استخدام Vantage",
+        "usageStatisticsDescription": "إرسال إحصائيات الاستخدام مجهولة المصدر لمساعدتنا في تحسين Vantage.",
+        "deviceStatistics": "إحصائيات جهاز Lenovo",
+        "deviceStatisticsDescription": "أرسل بيانات جهاز مجهولة المصدر لمساعدتنا في تحسين الجودة والموثوقية والجيل التالي من الأجهزة.",
         "userProfile": "ملف تعريف المستخدم",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
@@ -3049,41 +3052,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "فشل التثبيت. حاول من جديد.",
-                "networkError": "خطأ في الشبكة.",
-                "installationCancelled": "تم إلغاء التثبيت."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "استرداد Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "تثبيت",
-                "installing": "جارِ التثبيت",
-                "downloading": "جارِ التنزيل",
-                "installed": "مثبت",
-                "launch": "اطلاق",
-                "seeMore": "رؤية المزيد"
-            },
-            "fieldName": {
-                "description": "الوصف",
-                "screenshots": "لقطات الشاشة",
-                "additionalInformation": "مزيد من المعلومات",
-                "by": "حسب:",
-                "updated": "تم التحديث:",
-                "type": "النوع:",
-                "category": "الفئة:",
-                "legalAgreement": "الاتفاقية القانونية",
-                "readMore": "اقرأ أكثر",
-                "readLess": "اقرأ أقل"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3197,6 +3165,48 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "notification": {
+        "menu": {
+            "privacy": "يمكنك الآن معرفة ما إذا كانت معلوماتك قد تعرضت للانتهاك أو ما إذا تم استخدامها من قِبل متتبعين عبر الإنترنت من دون علمك.",
+            "security": "هل تعلم؟ حتى لو لم يكن لديك برامج للحماية من الفيروسات مثبتة على جهازك، فنحن نوفر مع ذلك حماية الأمان الأساسية لجهازك.",
+            "connectedHomeSecurity": "احصل على مراقبة وتنبيهات في الوقت الحقيقي حول أمان شبكتك في المنزل. ستكون أول من يعرف ما إذا كان أحد أجهزتك الذكية يتعرض لهجوم أمني."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "فشل التثبيت. حاول من جديد.",
+                "networkError": "خطأ في الشبكة.",
+                "installationCancelled": "تم إلغاء التثبيت."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "استرداد Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "تثبيت",
+                "installing": "جارِ التثبيت",
+                "downloading": "جارِ التنزيل",
+                "installed": "مثبت",
+                "launch": "اطلاق",
+                "seeMore": "رؤية المزيد"
+            },
+            "fieldName": {
+                "description": "الوصف",
+                "screenshots": "لقطات الشاشة",
+                "additionalInformation": "مزيد من المعلومات",
+                "by": "حسب:",
+                "updated": "تم التحديث:",
+                "type": "النوع:",
+                "category": "الفئة:",
+                "legalAgreement": "الاتفاقية القانونية",
+                "readMore": "اقرأ أكثر",
+                "readLess": "اقرأ أقل"
+            }
         }
     }
 }

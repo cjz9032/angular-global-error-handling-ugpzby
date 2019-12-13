@@ -1,0 +1,46 @@
+<div class="new-feature-tip-dialog"
+	id="new-feature-tip-dialog"
+	role="dialog"
+	tabindex="-1">
+	<div class="tips-mask"
+		id="new-feature-tip-mask"
+		metricsEvent="FeatureClick"
+		metricsParent="New Feature Tips"
+		metricsItem="tipsMask"
+		(click)="nextTips()"
+		(keyup.enter)="nextTips()"
+		tabindex="0">
+		<div class="mask-bg mask-top"></div>
+		<div class="mask-middle">
+			<div class="mask-bg mask-left"
+				[style.width.px]="emptyLeft"></div>
+			<div class="mask-empty-content"
+				*ngIf="emptyLeft"
+				[style.width.px]="emptyWidth">
+				<div class="mask-side mask-side-top-left"></div>
+				<div class="mask-side mask-side-top-right"></div>
+				<div class="mask-side mask-side-bottom-left"></div>
+				<div class="mask-side mask-side-bottom-right"></div>
+			</div>
+			<div class="mask-bg mask-right"></div>
+
+		</div>
+		<div class="mask-bg mask-bottom"></div>
+	</div>
+	<div class="tips-content" id="new-feature-tip-content"
+		*ngIf="contentLeft"
+		[style.left.px]="contentLeft">
+		<div class="arrow-pointer" 
+			[style.left.px]="pointerLeft ? pointerLeft : '10rem'"></div>
+		<div class="description mb-4"
+			[innerHTML]="description | translate"></div>
+		<vtr-ui-button [btnHeight]="true"
+			linkId="new-feature-tip-ok-btn"
+			tabIndex="1"
+			metricsEvent="FeatureClick"
+			metricsParent="New Feature Tips"
+			metricsItem="okButton"
+			(onClick)="nextTips()"
+			label="OK"></vtr-ui-button>
+	</div>
+</div>

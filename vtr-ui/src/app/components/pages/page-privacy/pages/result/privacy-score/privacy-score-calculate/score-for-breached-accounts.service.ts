@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BreachedAccount, BreachedAccountsService } from '../../../../common/services/breached-accounts.service';
+import { BreachedAccount, BreachedAccountsService } from '../../../../feature/check-breached-accounts/services/breached-accounts.service';
 import { combineLatest, of } from 'rxjs';
 import { catchError, filter, map, startWith } from 'rxjs/operators';
 import { coefficients } from './coefficients';
-import { CountNumberOfIssuesService } from '../../../../common/services/count-number-of-issues.service';
+import { CountNumberOfIssuesService } from '../../../../core/services/count-number-of-issues.service';
 import { ScoreCalculate } from './score-calculate.interface';
-import { AppStatusesService } from '../../../../common/services/app-statuses/app-statuses.service';
+import { AppStatusesService } from '../../../../core/services/app-statuses/app-statuses.service';
 import { FeaturesStatuses } from '../../../../userDataStatuses';
 
 @Injectable({

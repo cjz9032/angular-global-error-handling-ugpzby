@@ -643,11 +643,11 @@
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
-            "subtitle": "ENCONTRE ALGUMAS DICAS ÚTEIS PARA SEU DISPOSITIVO.",
+            "subtitle": "Encontre algumas sugestões úteis para o seu dispositivo.",
             "question1": "Faça uma cópia de segurança e restaure os seus ficheiros",
             "question2": "Como atualizar o PC",
             "question3": "Como saber qual a CPU da sua máquina",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Estado do sistema",
-            "subtitle": "FIQUE A SABER RAPIDAMENTE O ESTADO DO DISPOSTIVO.",
+            "subtitle": "Fique a saber rapidamente o estado do dispositivo.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Ver detalhes",
                 "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>A bateria principal não foi detetada.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "O controlo de deslize está ao centro ou centro à direita. O desempenho e a velocidade da ventoinha são equilibrados de forma dinâmica para obter a melhor experiência.",
                             "title3": "Modo de desempenho",
                             "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Esta funcionalidade programa a otimização da poupança de energia da bateria do computador durante períodos de inatividade sem prejudicar um tempo de arranque rápido durante horas de utilização mais intensa.",
-                    "subTitle2": "Hora definida em que geralmente utiliza este computador"
+                    "subTitle2": "Hora definida em que geralmente utiliza este computador",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLOS DO PAINEL TÁTIL",
                     "control2": "CONTROLOS DO RATO",
-                    "control3": "CONTROLOS DO TRACKPOINT"
+                    "control3": "CONTROLOS DO TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Multimédia Inteligente",
                 "title": "Melhorar a resolução de vídeo",
                 "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label> Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Quando ativada, é recomendado ligar o computador à alimentação CA.</label></p>",
-                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player",
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
                     "description1": "O computador não está ligado à alimentação CA e a carga da bateria é inferior a 20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Precisa de Ajuda?",
-            "description": "CONTACTE-NOS PARA OBTER AJUDA.",
+            "description": "Se precisar de ajuda, contacte-nos.",
             "listLenovoCommunity": "Comunidade da Lenovo",
             "listContactCustomerService": "Contactar o serviço de apoio ao cliente",
             "listContactUsOnWechat": "Contacte-nos através de WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Ligações rápidas",
-            "description": "CONTACTE-NOS PARA OBTER AJUDA.",
+            "description": "Se precisar de ajuda, contacte-nos.",
             "listETicket": "Obter suporte através de pedido eletrónico",
             "listServiceProvider": "Encontrar um fornecedor de serviços",
             "listAboutLenovoVantage": "Acerca do Lenovo Vantage"
@@ -1955,13 +1958,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2171,7 @@
             "getStarted1": "Clique no botão “Abrir SurfEasy” para iniciar a SurfEasy VPN.",
             "getStarted2": "Ative a VPN e aguarde um breve momento pela confirmação de uma ligação segura.",
             "getStarted3": "Altere a região ou localização, caso pretenda, e desfrute de uma utilização da rede segura e privada.",
-            "poweredBySurfEasy": "Com tecnologia SurfEasy",
-            "privacyPolicyAndTermsOfService": "Leia mais na <tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
+            "poweredBySurfEasy": "Com tecnologia SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "GESTOR DE PALAVRAS-PASSE DASHLANE",
@@ -2196,8 +2199,7 @@
             "allowsYou2": "Monitorizar a dark web relativamente às suas informações pessoais",
             "allowsYou3": "Manter-se seguro em redes WiFi não seguras através da VPN integrada",
             "allowsYou4": "Partilhar palavras-passe de forma segura sem as revelar",
-            "poweredByDashLane": "Com tecnologia Dashlane",
-            "privacyPolicyAndTermsOfService": "Leia mais na <tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>"
+            "poweredByDashLane": "Com tecnologia Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2639,7 @@
         "professional": "Utilização profissional",
         "privacytitle": "Ajude-nos a melhorar a qualidade da aplicação, permitindo a recolha de estatísticas de utilização anónimas.",
         "moreInterest": "+ mais interesses",
+        "toolbartitle": "Ativar a Barra de Ferramentas do Lenovo Vantage (recomendado)",
         "title1": "Bem-vindo a",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2670,10 @@
         "actionTriggered": "Ação ativada",
         "actionTriggeredDescription": "Mensagens ativadas pelas definições selecionadas pelo utilizador, tais como instalação automática de atualizações críticas/recomendadas.",
         "OtherSettings": "Outras definições",
-        "usageStatistics": "Estatísticas de utilização",
-        "usageStatisticsDescription": "Enviar estatísticas de utilização anónimas para a Lenovo.",
-        "deviceStatistics": "Partilhar dados estatísticos com a Lenovo",
-        "deviceStatisticsDescription": "Partilha dados estatísticos com a Lenovo para ajudar a melhorar a fiabilidade, o design e a otimização das funções no seu computador.",
+        "usageStatistics": "Estatísticas de utilização do Vantage",
+        "usageStatisticsDescription": "Envie estatísticas de utilização anónimas para nos ajudar a melhorar o Vantage.",
+        "deviceStatistics": "Estatísticas do Dispositivo Lenovo",
+        "deviceStatisticsDescription": "Envie dados do dispositivo anónimos para nos ajudar a melhorar a qualidade, a fiabilidade e a nova geração de dispositivos.",
         "userProfile": "Perfil de utilizador",
         "Note": "Nota: ",
         "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito.",
@@ -3047,41 +3050,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "A instalação falhou. Tente novamente.",
-                "networkError": "Erro de rede.",
-                "installationCancelled": "Instalação cancelada."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Resgate do Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instalar",
-                "installing": "Instalar",
-                "downloading": "A descarregar",
-                "installed": "Instalado",
-                "launch": "Iniciar",
-                "seeMore": "Ver Mais"
-            },
-            "fieldName": {
-                "description": "Descrição",
-                "screenshots": "Instantâneos",
-                "additionalInformation": "Informações Adicionais",
-                "by": "Por:",
-                "updated": "Atualizado:",
-                "type": "Tipo:",
-                "category": "Categoria:",
-                "legalAgreement": "Acordo legal",
-                "readMore": "Ler mais",
-                "readLess": "Ler menos"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3166,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Agora pode saber se as suas informações privadas foram comprometidas ou utilizadas por ferramentas de monitorização online sem o seu conhecimento.",
+            "security": "Sabia que... Mesmo que não tenha software antivírus instalado, oferecemos uma proteção de segurança básica ao seu dispositivo.",
+            "connectedHomeSecurity": "Obtenha monitorização e alertas em tempo real sobre a segurança da sua rede em casa. Será o primeiro a saber se algum dos seus dispositivos inteligentes está a ser alvo de um ataque de segurança."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "A instalação falhou. Tente novamente.",
+                "networkError": "Erro de rede.",
+                "installationCancelled": "Instalação cancelada."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Resgate do Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalar",
+                "installing": "Instalar",
+                "downloading": "A descarregar",
+                "installed": "Instalado",
+                "launch": "Iniciar",
+                "seeMore": "Ver Mais"
+            },
+            "fieldName": {
+                "description": "Descrição",
+                "screenshots": "Instantâneos",
+                "additionalInformation": "Informações Adicionais",
+                "by": "Por:",
+                "updated": "Atualizado:",
+                "type": "Tipo:",
+                "category": "Categoria:",
+                "legalAgreement": "Acordo legal",
+                "readMore": "Ler mais",
+                "readLess": "Ler menos"
+            }
+        }
+    }
 }

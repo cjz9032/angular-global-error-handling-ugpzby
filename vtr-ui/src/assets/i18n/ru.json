@@ -643,11 +643,11 @@
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
-            "subtitle": "НАЙТИ НЕКОТОРЫЕ ПОЛЕЗНЫЕ СОВЕТЫ ДЛЯ ВАШЕГО УСТРОЙСТВА.",
+            "subtitle": "Здесь вы найдете полезные рекомендации по вашему устройству.",
             "question1": "Резервное копирование и восстановление файлов",
             "question2": "Восстановление компьютера",
             "question3": "Сведения о модели ЦП в компьютере",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Состояние системы",
-            "subtitle": "КРАТКАЯ СВОДКА О СОСТОЯНИИ ВАШЕГО УСТРОЙСТВА.",
+            "subtitle": "Краткая сводка о состоянии вашего устройства.",
             "memory": {
                 "title": "Память",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "См. подробные сведения",
                 "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Основной аккумулятор не обнаружен.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Ползунок расположен в центре или по центру справа. Скорость вращения вентиляторов и производительность динамически оптимизируются для максимального комфорта использования.",
                             "title3": "Режим производительности",
                             "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
-                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер"
+                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "ДОПОЛНИТЕЛЬНО",
                     "control1": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ СЕНСОРНОЙ ПАНЕЛИ",
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
-                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT"
+                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Интеллектуальная работа с мультимедиа",
                 "title": "Масштабирование разрешения видео",
                 "desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label> Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. При включении этой функции рекомендуется подключить компьютер к сети переменного тока.</label></p>",
-                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player",
                 "note": {
                     "description": "Эта функция не работает, если:",
                     "description1": "компьютер не подключен к сети переменного тока, а заряд аккумулятора ниже 20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Нужна помощь?",
-            "description": "ОБРАТИТЕСЬ К НАМ ЗА ПОМОЩЬЮ.",
+            "description": "Обратитесь к нам за помощью.",
             "listLenovoCommunity": "Сообщество Lenovo",
             "listContactCustomerService": "Обратиться в службу поддержки клиентов",
             "listContactUsOnWechat": "Свяжитесь с нами в WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Быстрые ссылки",
-            "description": "ОБРАТИТЕСЬ К НАМ ЗА ПОМОЩЬЮ.",
+            "description": "Обратитесь к нам за помощью.",
             "listETicket": "Получите поддержку по электронной заявке",
             "listServiceProvider": "Найдите сервис-центр",
             "listAboutLenovoVantage": "О Lenovo Vantage"
@@ -1955,13 +1958,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2171,7 @@
             "getStarted1": "Нажмите кнопку \"Открыть SurfEasy\" сверху, чтобы запустить SurfEasy VPN.",
             "getStarted2": "Включите VPN и немного подождите, пока не появится подтверждение надежного подключения.",
             "getStarted3": "Если необходимо, измените свой регион или местоположение, и пользуйтесь безопасным и конфиденциальным сетевым подключением.",
-            "poweredBySurfEasy": "На основе SurfEasy",
-            "privacyPolicyAndTermsOfService": "Подробнее ознакомьтесь с <tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
+            "poweredBySurfEasy": "На основе SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ДИСПЕТЧЕР ПАРОЛЕЙ DASHLANE",
@@ -2196,8 +2199,7 @@
             "allowsYou2": "мониторинг даркнета на наличие ваших личных данных;",
             "allowsYou3": "обеспечение безопасности в незащищенных сетях WiFi благодаря встроенной функции VPN;",
             "allowsYou4": "безопасное предоставление паролей без их раскрытия.",
-            "poweredByDashLane": "На основе Dashlane",
-            "privacyPolicyAndTermsOfService": "Подробнее ознакомьтесь с <tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
+            "poweredByDashLane": "На основе Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2639,7 @@
         "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
         "moreInterest": "+ другие интересы",
+        "toolbartitle": "Включить панель инструментов Lenovo Vantage (рекомендуется)",
         "title1": "Добро пожаловать в",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2670,10 @@
         "actionTriggered": "Инициированное действие",
         "actionTriggeredDescription": "Сообщения при выборе пользователем таких параметров, как автоматическая установка критических/рекомендуемых обновлений.",
         "OtherSettings": "Другие параметры",
-        "usageStatistics": "Статистика использования",
-        "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
-        "deviceStatistics": "Поделиться статистическими данными с Lenovo",
-        "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
+        "usageStatistics": "Статистика использования Vantage",
+        "usageStatisticsDescription": "Отправка анонимной статистики использования, которая поможет нам улучшить Vantage.",
+        "deviceStatistics": "Статистика устройства Lenovo",
+        "deviceStatisticsDescription": "Отправка анонимных данных об устройстве, которые помогут нам повысить качество, увеличить надежность и улучшить следующее поколение устройств.",
         "userProfile": "Профиль пользователя",
         "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение.",
@@ -3047,41 +3050,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Не удалось выполнить установку. Повторите попытку.",
-                "networkError": "Сетевая ошибка.",
-                "installationCancelled": "Установка отменена."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Активация Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Установить",
-                "installing": "Идет установка",
-                "downloading": "Скачивание",
-                "installed": "Установлено",
-                "launch": "Запустить",
-                "seeMore": "Дополнительная информация"
-            },
-            "fieldName": {
-                "description": "Описание",
-                "screenshots": "Снимки экрана",
-                "additionalInformation": "Дополнительная информация",
-                "by": "Автор:",
-                "updated": "Дата обновления:",
-                "type": "Тип:",
-                "category": "Категория:",
-                "legalAgreement": "Правовое соглашение",
-                "readMore": "Больше",
-                "readLess": "Меньше"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3166,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Теперь вы можете узнать, была ли ваша конфиденциальная информация взломана или использована онлайн-трекерами без вашего ведома.",
+            "security": "Знаете ли вы? Даже если у вас не установлена антивирусная программа, мы обеспечиваем базовую защиту вашего устройства.",
+            "connectedHomeSecurity": "Получайте в режиме реального времени информацию мониторинга и оповещения о безопасности вашей сети дома. Вы первыми узнаете, подвергается ли какое-либо из ваших интеллектуальных устройств атаке на систему безопасности."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Не удалось выполнить установку. Повторите попытку.",
+                "networkError": "Сетевая ошибка.",
+                "installationCancelled": "Установка отменена."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Активация Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Установить",
+                "installing": "Идет установка",
+                "downloading": "Скачивание",
+                "installed": "Установлено",
+                "launch": "Запустить",
+                "seeMore": "Дополнительная информация"
+            },
+            "fieldName": {
+                "description": "Описание",
+                "screenshots": "Снимки экрана",
+                "additionalInformation": "Дополнительная информация",
+                "by": "Автор:",
+                "updated": "Дата обновления:",
+                "type": "Тип:",
+                "category": "Категория:",
+                "legalAgreement": "Правовое соглашение",
+                "readMore": "Больше",
+                "readLess": "Меньше"
+            }
+        }
+    }
 }

@@ -104,6 +104,7 @@ $blueHyperLink: #346cef;
 $green_darker: #00893a;
 $green_dark: #008035;
 $green-light: #00a886;
+$black_dark: #101424;
 $black_light: #424b6c;
 $hover_gray: #c2c8ce;
 $hover_dark: #191c28;
@@ -113,6 +114,9 @@ $dark: #000;
 $gray: #ccc;
 $charcoal: #434343;
 $purple_navy: #444F78;
+$note_border: #ECF0F1;
+$dim_gray: #707070;
+$solitude: #FBFCFC;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0073ff;
@@ -166,9 +170,11 @@ $gaming_hd_diameter_xs: 6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
 $gradient_red: linear-gradient(103deg, $button_red_start 0%, $button_red_end 100%);
+$gradient_red1: linear-gradient(135deg, $button_red_start 0%, $button_red_end 100%);
 $gradient_gray: linear-gradient(90deg, $grey_lighter 0%, $light 100%);
 $blue_gradient: linear-gradient(90deg, $blue-light 0%, $blue-light 100%);
 $green_gradient: linear-gradient(135deg, $green_darker 0%, $green_light 100%);
+$black_gradient: linear-gradient(122deg, $black_dark 0%, $black_light 100%);
 
 //RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
 $fontsize_xl4: 4.6rem;
@@ -268,6 +274,7 @@ $mediaquery_X42: "only screen and (min-width: 992px) and (max-width: 1100px)";
 $mediaquery_X43: "only screen and (min-width: 1366px)";
 $mediaquery_X44: "all and (min-width: 992px)";
 $mediaquery_X45: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$mediaquery_X46: "only screen and (min-width: 768px) and (max-width: 992px)";
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";

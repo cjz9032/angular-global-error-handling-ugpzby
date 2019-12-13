@@ -109,7 +109,8 @@
 					"sub1": "Support",
 					"sub2": "Facebook",
 					"sub3": "Instagram"
-				}
+				}, 
+				"smartPerformance": "Smart Performance"
 			},
 			"narrator": {
 				"pageTitle": {
@@ -992,6 +993,7 @@
 						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
 						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
 						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
 						"autoMode": {
 							"title1": "Auto Battery mode",
 							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
@@ -1181,7 +1183,7 @@
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete: Successful reset.",
+							"ERROR_SUCCESS": "Complete: Reset successfully.",
 							"ERROR_SHUTDOWN": "Failed: System shut down.",
 							"ERROR_LOGOFF": "Failed: User has logged off.",
 							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
@@ -1328,9 +1330,9 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "Seconds",
-							"minute": "Minute",
-							"minutes": "Minutes",
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
 							"alwaysOn": "Always on",
 							"never": "Never",
 							"halfTime": "Half time of display off timer"
@@ -1515,6 +1517,7 @@
 				},
 				"controlOptions": {
 					"more": "MORE",
+					"less": "LESS",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS",
 					"control3": "TRACKPOINT CONTROLS"
@@ -1680,7 +1683,7 @@
 				"heading": "Intelligent Media",
 				"title": "Video Resolution Upscaling",
 				"desc": "<p><label>This feature enhances the experience of video playback by improving the video resolution.It works especially when the video is in poor resolution.</label></p> <p style='margin-top:4px;'><label> This function might impact the battery life,battery temperature,and cause noises.When enabled,it is recommended that you connect your computer with ac power.</label></p>",
-				"tooltip": "This feature works only on the following players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+				"tooltip": "This feature works only on the following players: <br/> Windows Media player",
 				"note": {
 					"description": "The feature does not work when:",
 					"description1": "The computer is not connected to ac power and the battery power is lower than 20%.",
@@ -2276,10 +2279,10 @@
 			"noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
 			"basic": "BASIC",
 			"basicTitle": "Basic protection",
-			"basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+			"basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
 			"intermediate": "INTERMEDIATE",
 			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
 			"advanced": "ADVANCED",
 			"advancedTtitle": "Advanced protection",
 			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
@@ -2489,8 +2492,7 @@
 			"getStarted1": "Click on the “Open SurfEasy” button above to launch SurfEasy VPN.",
 			"getStarted2": "Turn on the VPN and wait a brief moment for confirmation of a secure connection.",
 			"getStarted3": "Change your region or location if desired, and enjoy secure, private networking.",
-			"poweredBySurfEasy": "Powered By SurfEasy",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"poweredBySurfEasy": "Powered By SurfEasy"
 		},
 		"passwordManager": {
 			"statusTitle": "DASHLANE PASSWORD MANAGER",
@@ -2518,8 +2520,7 @@
 			"allowsYou2": "Monitor the dark web for your personal information",
 			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
 			"allowsYou4": "Share passwords securely without revealing them",
-			"poweredByDashLane": "Powered By Dashlane",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"poweredByDashLane": "Powered By Dashlane"
 		},
 		"windowsHello": {
 			"statusTitle": "WINDOWS HELLO",
@@ -2959,6 +2960,7 @@
 		"custom": "Custom Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ More interests",
+		"toolbartitle": "Enable the Lenovo Vantage Toolbar (recommended)",
 		"title1": "Welcome to",
 		"title2": "Lenovo",
 		"title3": "Vantage",
@@ -2989,10 +2991,10 @@
 		"actionTriggered": "Action Triggered",
 		"actionTriggeredDescription": "Messages triggered by user selecting settings such as auto-install critical/recommended updates.",
 		"OtherSettings": "Other settings",
-		"usageStatistics": "Usage Statistics",
-		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
-		"deviceStatistics": "Share statistic data with Lenovo",
-		"deviceStatisticsDescription": "Shares statistical data with Lenovo to help improve the reliability, design, and optimization of features on your computer.",
+		"usageStatistics": "Vantage Usage Statistics",
+		"usageStatisticsDescription": "Send anonymous usage statistics to help us make Vantage better.",
+		"deviceStatistics": "Lenovo Device Statistics",
+		"deviceStatisticsDescription": "Send anonymous device data to help us improve quality, reliability, and the next generation of devices.",
 		"userProfile": "User profile",
 		"Note": "Note: ",
 		"settingsNotes": "all the settings in this page will need users to relaunch this application to take effect.",
@@ -3166,6 +3168,13 @@
 			"wireless": "Wireless"
         },
         "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+	},
+	"notification": {
+		"menu": {
+			"privacy": "Now you can find out if your private information has been breached or used by online trackers without your knowlege.",
+			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
+		}
 	},
 	"appsForYou": {
 		"common": {
