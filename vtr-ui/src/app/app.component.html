@@ -11,7 +11,7 @@
 		[ngClass]="{'is-android': deviceService.isAndroid}">
 		<div class="row">
 			<div class="col p-0">
-				<router-outlet></router-outlet>
+				<router-outlet (activate)="onActivate()"></router-outlet>
 			</div>
 		</div>
 	</div>

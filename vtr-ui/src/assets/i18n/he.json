@@ -643,7 +643,7 @@
             "registered": "רשום",
             "notRegistered": "לא רשום",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
-                    "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב"
+                    "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2169,7 @@
             "getStarted1": "לחצו על הלחצן \"פתח את SurfEasy\" למעלה כדי להפעיל את SurfEasy VPN.",
             "getStarted2": "הפעילו את רשת ה-VPN והמתינו רגע לאישור החיבור המאובטח.",
             "getStarted3": "שנו את האזור או המיקום שלכם במידת הצורך, ותיהנו מעבודה ברשת פרטית מאובטחת.",
-            "poweredBySurfEasy": "מופעל על ידי SurfEasy",
-            "privacyPolicyAndTermsOfService": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "poweredBySurfEasy": "מופעל על ידי SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "מנהל סיסמאות DASHLANE",
@@ -2196,8 +2197,7 @@
             "allowsYou2": "לוודא שאין מידע אישי שלכם ברשת האפלה",
             "allowsYou3": "להישאר בטוחים ברשתות WiFi לא מאובטחות עם רשת VPN מובנית",
             "allowsYou4": "לשתף סיסמאות באופן מאובטח מבלי לחשוף אותן",
-            "poweredByDashLane": "מופעל על-ידי Dashlane",
-            "privacyPolicyAndTermsOfService": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "poweredByDashLane": "מופעל על-ידי Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2636,8 @@
         "custom": "חוויה מותאמת אישית",
         "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
-        "moreInterest": "‏+ תחומי עניין נוספים",
+		"moreInterest": "‏+ תחומי עניין נוספים",
+		"toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
         "title1": "ברוכים הבאים אל",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "ההתקנה נכשלה. נסו שוב.",
-                "networkError": "שגיאת רשת.",
-                "installationCancelled": "ההתקנה בוטלה."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "קודי מימוש של Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "התקן",
-                "installing": "התקנה",
-                "downloading": "הורדה",
-                "installed": "מותקן",
-                "launch": "הפעלה",
-                "seeMore": "פרטים נוספים"
-            },
-            "fieldName": {
-                "description": "תיאור",
-                "screenshots": "צילומי מסך",
-                "additionalInformation": "מידע נוסף",
-                "by": "עד:",
-                "updated": "עודכן:",
-                "type": "סוג:",
-                "category": "קטגוריה:",
-                "legalAgreement": "הסכם משפטי",
-                "readMore": "פרטים נוספים",
-                "readLess": "פחות מידע"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3164,47 @@
         }
     },
     "dir": "rtl",
-    "dirClass": "rtl"
+    "dirClass": "rtl",
+    "notification": {
+        "menu": {
+            "privacy": "כעת תוכלו לגלות אם המידע הפרטי שלכם נפרץ או שנעשה בו שימוש על ידי עוקבים באינטרנט, ללא ידיעתכם.",
+            "security": "האם אתם יודעים? גם אם אין לכם תוכנת אנטי-וירוס מותקנת, אנחנו עדיין מספקים הגנת אבטחה בסיסית למכשיר שלכם.",
+            "connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "ההתקנה נכשלה. נסו שוב.",
+                "networkError": "שגיאת רשת.",
+                "installationCancelled": "ההתקנה בוטלה."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "קודי מימוש של Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "התקן",
+                "installing": "התקנה",
+                "downloading": "הורדה",
+                "installed": "מותקן",
+                "launch": "הפעלה",
+                "seeMore": "פרטים נוספים"
+            },
+            "fieldName": {
+                "description": "תיאור",
+                "screenshots": "צילומי מסך",
+                "additionalInformation": "מידע נוסף",
+                "by": "עד:",
+                "updated": "עודכן:",
+                "type": "סוג:",
+                "category": "קטגוריה:",
+                "legalAgreement": "הסכם משפטי",
+                "readMore": "פרטים נוספים",
+                "readLess": "פחות מידע"
+            }
+        }
+    }
 }

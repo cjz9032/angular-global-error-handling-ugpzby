@@ -643,7 +643,7 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik"
+                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2169,7 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredBySurfEasy": "Poganja SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2196,8 +2197,7 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredByDashLane": "Poganja Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2636,8 @@
         "custom": "Izkušnja po meri",
         "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
-        "moreInterest": "+ več zanimanj",
+		"moreInterest": "+ več zanimanj",
+		"toolbartitle": "Omogočite orodno vrstico Lenovo Vantage (priporočeno)",
         "title1": "Pozdravljeni v programu WRITEit,",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
-                "networkError": "Omrežna napaka.",
-                "installationCancelled": "Namestitev preklicana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Unovčitev za Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Namestitev",
-                "installing": "Nameščanje",
-                "downloading": "Prenašanje",
-                "installed": "Nameščeno",
-                "launch": "Zaženite",
-                "seeMore": "Več"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Posnetki zaslona",
-                "additionalInformation": "Dodatne informacije",
-                "by": "Avtor:",
-                "updated": "Posodobitev:",
-                "type": "Vrsta:",
-                "category": "Kategorija:",
-                "legalAgreement": "Pravni sporazum",
-                "readMore": "Preberite več",
-                "readLess": "Preberite manj"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
+            "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
+            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
+                "networkError": "Omrežna napaka.",
+                "installationCancelled": "Namestitev preklicana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Unovčitev za Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Namestitev",
+                "installing": "Nameščanje",
+                "downloading": "Prenašanje",
+                "installed": "Nameščeno",
+                "launch": "Zaženite",
+                "seeMore": "Več"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Posnetki zaslona",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Avtor:",
+                "updated": "Posodobitev:",
+                "type": "Vrsta:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Preberite več",
+                "readLess": "Preberite manj"
+            }
+        }
+    }
 }

@@ -218,6 +218,15 @@
 		max-width: 60rem !important;
 		margin: 1.75rem auto;
 		overflow-y: initial !important;
+
+		@media #{$breakpoint_md} {
+			max-width: 55rem !important;
+		}
+
+		@media #{$breakpoint_sm} {
+			max-width: 45rem !important;
+			margin: 0 auto;
+		}
 	}
 
 	.modal-content {

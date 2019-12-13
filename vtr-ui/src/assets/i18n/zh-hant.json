@@ -643,7 +643,7 @@
             "registered": "已註冊",
             "notRegistered": "未註冊",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "subTitle2": "設定您一般使用這部電腦的時間"
+                    "subTitle2": "設定您一般使用這部電腦的時間",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2169,7 @@
             "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
             "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
             "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredBySurfEasy": "搭載 SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密碼管理程式",
@@ -2196,8 +2197,7 @@
             "allowsYou2": "監視暗網以保護您的個人資訊",
             "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
             "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredByDashLane": "搭載 Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2636,8 @@
         "custom": "自訂",
         "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
-        "moreInterest": "+ 更多興趣",
+		"moreInterest": "+ 更多興趣",
+		"toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
         "title1": "歡迎使用",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安裝失敗。請再試一次。",
-                "networkError": "網路錯誤。",
-                "installationCancelled": "安裝作業已取消。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兌換",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安裝",
-                "installing": "安裝",
-                "downloading": "下載",
-                "installed": "已安裝",
-                "launch": "啟動",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "說明",
-                "screenshots": "螢幕擷取畫面",
-                "additionalInformation": "其他資訊",
-                "by": "提供者：",
-                "updated": "更新時間：",
-                "type": "類型：",
-                "category": "類別：",
-                "legalAgreement": "法律協議",
-                "readMore": "較多內容",
-                "readLess": "較少內容"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
+            "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安裝失敗。請再試一次。",
+                "networkError": "網路錯誤。",
+                "installationCancelled": "安裝作業已取消。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兌換",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安裝",
+                "installing": "安裝",
+                "downloading": "下載",
+                "installed": "已安裝",
+                "launch": "啟動",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "說明",
+                "screenshots": "螢幕擷取畫面",
+                "additionalInformation": "其他資訊",
+                "by": "提供者：",
+                "updated": "更新時間：",
+                "type": "類型：",
+                "category": "類別：",
+                "legalAgreement": "法律協議",
+                "readMore": "較多內容",
+                "readLess": "較少內容"
+            }
+        }
+    }
 }

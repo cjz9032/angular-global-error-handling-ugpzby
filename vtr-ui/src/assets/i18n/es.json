@@ -643,7 +643,7 @@
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Esta característica programa su equipo para optimizar el ahorro de energía de la batería durante las horas de inactividad sin sacrificar el tiempo de arranque rápido durante las horas de uso más intensivo.",
-                    "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo"
+                    "subTitle2": "Establezca los horarios en los que normalmente utiliza este equipo",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2169,7 @@
             "getStarted1": "Haga clic en el botón “Abrir SurfEasy” anterior para iniciar SurfEasy VPN.",
             "getStarted2": "Encienda el VPN y espere un breve momento para obtener confirmación de una conexión segura.",
             "getStarted3": "Cambie la región o ubicación, si lo desea, y disfrute de una red privada y segura.",
-            "poweredBySurfEasy": "Con tecnología SurfEasy",
-            "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
+            "poweredBySurfEasy": "Con tecnología SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ADMINISTRADOR DE CONTRASEÑA DASHLANE",
@@ -2196,8 +2197,7 @@
             "allowsYou2": "Monitoree la web oscura para detectar sus datos personales",
             "allowsYou3": "Permanezca seguro en las redes WiFi no seguras con VPN integrado",
             "allowsYou4": "Comparta las contraseñas de forma segura sin mostrarlas",
-            "poweredByDashLane": "Con tecnología Dashlane",
-            "privacyPolicyAndTermsOfService": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>"
+            "poweredByDashLane": "Con tecnología Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2636,8 @@
         "custom": "Experiencia personalizada",
         "professional": "Uso profesional",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
-        "moreInterest": "+ más intereses",
+		"moreInterest": "+ más intereses",
+		"toolbartitle": "Active la barra de herramientas de Lenovo Vantage (recomendado)",
         "title1": "Bienvenido a",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Error en la instalación. Inténtelo de nuevo.",
-                "networkError": "Error de red.",
-                "installationCancelled": "Instalación cancelada."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Canje de Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instalar",
-                "installing": "Instalación",
-                "downloading": "Descargando",
-                "installed": "Instalado",
-                "launch": "Inicie",
-                "seeMore": "Ver más"
-            },
-            "fieldName": {
-                "description": "Descripción",
-                "screenshots": "Capturas de pantalla",
-                "additionalInformation": "Información adicional",
-                "by": "Por:",
-                "updated": "Actualizado:",
-                "type": "Tipo:",
-                "category": "Categoría:",
-                "legalAgreement": "Acuerdo legal",
-                "readMore": "Leer más",
-                "readLess": "Leer menos"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Ahora puede averiguar si rastreadores en línea han infringido o utilizado su información privada sin su conocimiento.",
+            "security": "¿Sabía usted? Incluso si no tiene instalado software antivirus, aun así proporcionamos protección básica de seguridad para su dispositivo.",
+            "connectedHomeSecurity": "Obtenga supervisión y alertas en tiempo real sobre la seguridad de su red en el hogar. Será el primero en saber si alguno de sus dispositivos inteligentes está enfrentando un ataque de seguridad."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Error en la instalación. Inténtelo de nuevo.",
+                "networkError": "Error de red.",
+                "installationCancelled": "Instalación cancelada."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Canje de Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalar",
+                "installing": "Instalación",
+                "downloading": "Descargando",
+                "installed": "Instalado",
+                "launch": "Inicie",
+                "seeMore": "Ver más"
+            },
+            "fieldName": {
+                "description": "Descripción",
+                "screenshots": "Capturas de pantalla",
+                "additionalInformation": "Información adicional",
+                "by": "Por:",
+                "updated": "Actualizado:",
+                "type": "Tipo:",
+                "category": "Categoría:",
+                "legalAgreement": "Acuerdo legal",
+                "readMore": "Leer más",
+                "readLess": "Leer menos"
+            }
+        }
+    }
 }

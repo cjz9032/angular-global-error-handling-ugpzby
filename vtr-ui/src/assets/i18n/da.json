@@ -643,7 +643,7 @@
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer"
+                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2169,7 @@
             "getStarted1": "Klik på knappen \"Åbn SurfEasy\" ovenfor for at starte SurfEasy VPN.",
             "getStarted2": "Aktivér VPN, og vent et kort øjeblik for at få bekræftelse på en sikker forbindelse.",
             "getStarted3": "Rediger dit område eller din placering, og nyd sikre og private netværksaktiviteter.",
-            "poweredBySurfEasy": "Udarbejdet af SurfEasy",
-            "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "poweredBySurfEasy": "Udarbejdet af SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE ADGANGSKODEADMINISTRATOR",
@@ -2196,8 +2197,7 @@
             "allowsYou2": "Overvåge det mørke internet, så du er informeret",
             "allowsYou3": "Forblive sikret på ikke-sikre WiFi-netværk med indbygget VPN",
             "allowsYou4": "Dele adgangskoder sikkert uden at afsløre dem",
-            "poweredByDashLane": "Udarbejdet af Dashlane",
-            "privacyPolicyAndTermsOfService": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>"
+            "poweredByDashLane": "Udarbejdet af Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2636,8 @@
         "custom": "Tilpasset oplevelse",
         "professional": "Professionel brug",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
-        "moreInterest": "+ flere interesser",
+		"moreInterest": "+ flere interesser",
+		"toolbartitle": "Aktivér Lenovo Vantage-værktøjslinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installationen mislykkedes. Prøv igen.",
-                "networkError": "Netværksfejl.",
-                "installationCancelled": "Installationen er annulleret."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-indløsning",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installér",
-                "installing": "Installere",
-                "downloading": "Downloader",
-                "installed": "Installeret",
-                "launch": "Start",
-                "seeMore": "Se mere"
-            },
-            "fieldName": {
-                "description": "Beskrivelse",
-                "screenshots": "Skærmbilleder",
-                "additionalInformation": "Flere oplysninger",
-                "by": "Af:",
-                "updated": "Opdateret:",
-                "type": "Type:",
-                "category": "Kategori:",
-                "legalAgreement": "Juridisk aftale",
-                "readMore": "Læs flere",
-                "readLess": "Læs færre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nu kan du finde ud af, om der har været et sikkerhedsbrud, så dine personlige oplysninger er blevet registreret eller brugt af online-trackere, uden at du ved det.",
+            "security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
+            "connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installationen mislykkedes. Prøv igen.",
+                "networkError": "Netværksfejl.",
+                "installationCancelled": "Installationen er annulleret."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-indløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installér",
+                "installing": "Installere",
+                "downloading": "Downloader",
+                "installed": "Installeret",
+                "launch": "Start",
+                "seeMore": "Se mere"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skærmbilleder",
+                "additionalInformation": "Flere oplysninger",
+                "by": "Af:",
+                "updated": "Opdateret:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk aftale",
+                "readMore": "Læs flere",
+                "readLess": "Læs færre"
+            }
+        }
+    }
 }

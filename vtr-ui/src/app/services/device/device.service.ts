@@ -30,6 +30,7 @@ export class DeviceService {
 	public machineInfo: any;
 	public showDemo = false;
 	public machineType: number;
+	private Windows: any;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -40,44 +41,28 @@ export class DeviceService {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
-
+		this.Windows = this.shellService.getWindows();
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
 		this.initIsArm();
+		this.initShowDemo();
 	}
 
 	private initIsArm() {
-		try {
-			this.getIsARM()
-				.then((status: boolean) => {
-					this.isArm = status;
-				}).catch(error => {
-					this.logger.error('initArm', error.message);
-					return false;
-				});
-		} catch (error) {
-			this.logger.error('initArm' + error.message);
-			return false;
+		this.isAndroid = this.androidService.isAndroid;
+		this.isArm = this.isAndroid;
+		if (this.Windows) {
+			this.isArm = this.Windows.ApplicationModel.Package.current.id.architecture.toString() === '5';
 		}
 	}
 
-	public async getIsARM(): Promise<boolean> {
-		let isArm = false;
-		this.isAndroid = this.androidService.isAndroid;
-		if (this.isAndroid) {
-			return true;
-		}
-		try {
-			if (this.isShellAvailable) {
-				const machineInfo = await this.getMachineInfo();
-				isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-				return isArm;
+	private initShowDemo() {
+		this.shellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}').then((hyp) => {
+			if (hyp === 'CES-2019') {
+				this.showDemo = true;
 			}
-		} catch (error) {
-			this.logger.error('getIsARM' + error.message);
-			return isArm;
-		}
+		});
 	}
 
 	public getDeviceInfo(): Promise<MyDevice> {
@@ -105,7 +90,7 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
-					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')))) {
+					if (!this.showWarranty && (!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))) {
 						this.showWarranty = true;
 					}
 					if (info && info.cpuArchitecture) {

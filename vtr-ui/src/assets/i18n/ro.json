@@ -643,7 +643,7 @@
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
-                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer"
+                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2169,7 @@
             "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
-            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "MANAGER PAROLE DASHLANE",
@@ -2196,8 +2197,7 @@
             "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
             "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
             "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
-            "poweredByDashLane": "Dezvoltat de Dashlane",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredByDashLane": "Dezvoltat de Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2636,7 +2636,8 @@
         "custom": "Experiență personalizată",
         "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
-        "moreInterest": "+ mai multe interese",
+		"moreInterest": "+ mai multe interese",
+		"toolbartitle": "Activaţi bara de instrumente Lenovo Vantage (recomandat)",
         "title1": "Bun venit la",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3047,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
-                "networkError": "Eroare de rețea.",
-                "installationCancelled": "Instalare anulată."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Rambursare Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instalare",
-                "installing": "Instalare în curs",
-                "downloading": "Descărcare în curs",
-                "installed": "Instalat",
-                "launch": "Lansare",
-                "seeMore": "Vedeţi mai multe"
-            },
-            "fieldName": {
-                "description": "Descriere",
-                "screenshots": "Capturi de ecran",
-                "additionalInformation": "Informaţii suplimentare",
-                "by": "De:",
-                "updated": "Actualizată:",
-                "type": "Tip:",
-                "category": "Categorie:",
-                "legalAgreement": "Acord juridic",
-                "readMore": "Citiţi mai mult",
-                "readLess": "Citiţi maI puţin"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
+            "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
+            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
+                "networkError": "Eroare de rețea.",
+                "installationCancelled": "Instalare anulată."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Rambursare Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalare",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
+                "installed": "Instalat",
+                "launch": "Lansare",
+                "seeMore": "Vedeţi mai multe"
+            },
+            "fieldName": {
+                "description": "Descriere",
+                "screenshots": "Capturi de ecran",
+                "additionalInformation": "Informaţii suplimentare",
+                "by": "De:",
+                "updated": "Actualizată:",
+                "type": "Tip:",
+                "category": "Categorie:",
+                "legalAgreement": "Acord juridic",
+                "readMore": "Citiţi mai mult",
+                "readLess": "Citiţi maI puţin"
+            }
+        }
+    }
 }

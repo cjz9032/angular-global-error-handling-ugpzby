@@ -210,6 +210,9 @@ export enum LocalStorageKey {
 
 	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability',
 
+		// New feature tips
+	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
+
 	// Device Settings storage key
 	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability'
 }
