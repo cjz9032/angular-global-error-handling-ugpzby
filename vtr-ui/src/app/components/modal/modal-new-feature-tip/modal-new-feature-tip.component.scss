@@ -1,0 +1,131 @@
+$bgOpacity: .6;
+$transition: all .1s;
+.new-feature-tip-dialog {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999999;
+	width: 100vw;
+	height: 100vh;
+
+	.tips-mask {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-flow: column;
+
+		.mask-bg {
+			background: rgba(0, 0, 0, $bgOpacity);
+		}
+
+		.mask-top {
+			width: 100%;
+			height: 1rem;
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+
+		.mask-middle {
+			width: 100%;
+			height: 7rem;
+			flex-grow: 0;
+			flex-shrink: 0;
+			display: flex;
+
+			.mask-left {
+				// width: 40rem;
+				height: 100%;
+				flex-grow: 0;
+				flex-shrink: 0;
+				transition: $transition;
+			}
+
+			.mask-empty-content {
+				// width: 12rem;
+				height: 100%;
+				flex-grow: 0;
+				flex-shrink: 0;
+				position: relative;
+				transition: $transition;
+
+				.mask-side {
+					width: 1.5rem;
+					height: 1.5rem;
+					position: absolute;
+					background-image: url('/assets/images/empty-round-border-radius.png');
+					background-repeat: no-repeat;
+					background-size: 100% 100%;
+					opacity: $bgOpacity;
+
+					&.mask-side-top-left {
+						left: 0;
+						top: 0;
+					}
+
+					&.mask-side-top-right {
+						right: 0;
+						top: 0;
+						transform: rotate(90deg);
+					}
+
+					&.mask-side-bottom-right {
+						right: 0;
+						bottom: 0;
+						transform: rotate(180deg);
+					}
+
+					&.mask-side-bottom-left {
+						left: 0;
+						bottom: 0;
+						transform: rotate(-90deg);
+					}
+				}
+			}
+
+			.mask-right {
+				width: 100%;
+				height: 100%;
+				flex-grow: 1;
+				flex-shrink: 1;
+			}
+		}
+
+		.mask-bottom {
+			width: 100%;
+			height: 100%;
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+	}
+
+	.tips-content {
+		position: absolute;
+		left: 300px;
+		top: 9rem;
+		max-width: 41rem;
+		margin-right: 2rem;
+		background: #fff;
+		border-radius: 1rem;
+		padding: 2.5rem 3rem 2rem;
+		font-size: 1.6rem;
+		transition: $transition;
+
+		.arrow-pointer {
+			width: 1.4rem;
+			height: 1.4rem;
+			position: absolute;
+			left: 10rem;
+			margin-left: -0.7rem;
+			top: -0.7rem;
+			transform: rotate(45deg);
+			background-color: #FFF;
+			border-right: 0px;
+			border-bottom: 0px;
+			cursor: pointer;
+		}
+
+	}
+}

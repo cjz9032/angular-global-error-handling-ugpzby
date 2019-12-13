@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
-                    "subTitle2": "Nastavte čas, kdy počítač obvykle používáte"
+                    "subTitle2": "Nastavte čas, kdy počítač obvykle používáte",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2634,7 +2636,8 @@
         "custom": "Vlastní zkušenost",
         "professional": "Určeno pro odborníky",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
-        "moreInterest": "+ další zájmy",
+		"moreInterest": "+ další zájmy",
+		"toolbartitle": "Povolit nástrojovou lištu Lenovo Vantage (doporučeno)",
         "title1": "Vítá vás",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
-                "networkError": "Chyba sítě.",
-                "installationCancelled": "Instalace zrušena."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Kompenzace Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Nainstalujte si",
-                "installing": "Instalace",
-                "downloading": "Stahování",
-                "installed": "Nainstalováno",
-                "launch": "Spustit",
-                "seeMore": "Další informace"
-            },
-            "fieldName": {
-                "description": "Popis",
-                "screenshots": "Snímky obrazovky",
-                "additionalInformation": "Další informace",
-                "by": "Od:",
-                "updated": "Aktualizováno:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Právní ujednání",
-                "readMore": "Další informace",
-                "readLess": "Méně informací"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyní můžete zjistit, zda došlo k úniku vašich osobních údajů nebo zda byly tyto údaje bez vašeho vědomí použity online sledovacími nástroji.",
+            "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
+            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
+                "networkError": "Chyba sítě.",
+                "installationCancelled": "Instalace zrušena."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Kompenzace Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainstalujte si",
+                "installing": "Instalace",
+                "downloading": "Stahování",
+                "installed": "Nainstalováno",
+                "launch": "Spustit",
+                "seeMore": "Další informace"
+            },
+            "fieldName": {
+                "description": "Popis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Další informace",
+                "by": "Od:",
+                "updated": "Aktualizováno:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Právní ujednání",
+                "readMore": "Další informace",
+                "readLess": "Méně informací"
+            }
+        }
+    }
 }

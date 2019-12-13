@@ -1219,7 +1219,8 @@
                         }
                     },
                     "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
-                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen"
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1955,13 +1956,14 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2634,7 +2636,8 @@
         "custom": "Egendefinert brukeropplevelse",
         "professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
-        "moreInterest": "+ flere interesser",
+		"moreInterest": "+ flere interesser",
+		"toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -3045,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
-                "networkError": "Nettverksfeil.",
-                "installationCancelled": "Installasjonen er avbrutt."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-innløsning",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installer",
-                "installing": "Installerer",
-                "downloading": "Laster ned",
-                "installed": "Installert",
-                "launch": "Start",
-                "seeMore": "Se mer"
-            },
-            "fieldName": {
-                "description": "Beskrivelse",
-                "screenshots": "Skjermbilder",
-                "additionalInformation": "Tilleggsinformasjon",
-                "by": "Av:",
-                "updated": "Oppdatert:",
-                "type": "Type:",
-                "category": "Kategori:",
-                "legalAgreement": "Juridisk avtale",
-                "readMore": "Les mer",
-                "readLess": "Les mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3196,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
+            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
+                "networkError": "Nettverksfeil.",
+                "installationCancelled": "Installasjonen er avbrutt."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-innløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installerer",
+                "downloading": "Laster ned",
+                "installed": "Installert",
+                "launch": "Start",
+                "seeMore": "Se mer"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skjermbilder",
+                "additionalInformation": "Tilleggsinformasjon",
+                "by": "Av:",
+                "updated": "Oppdatert:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk avtale",
+                "readMore": "Les mer",
+                "readLess": "Les mindre"
+            }
+        }
+    }
 }
