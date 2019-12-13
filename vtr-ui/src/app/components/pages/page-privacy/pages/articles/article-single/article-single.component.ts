@@ -33,13 +33,9 @@ export class ArticleSingleComponent implements OnInit {
 		private router: Router,
 		private commonService: CommonService
 	) {
-		this.router.routeReuseStrategy.shouldReuseRoute = function() {
-			return false;
-		};
 	}
 
 	ngOnInit() {
-		this.commonService.scrollTop();
 	}
 
 	openArticle(articleId) {
@@ -47,6 +43,7 @@ export class ArticleSingleComponent implements OnInit {
 			return;
 		}
 		this.router.navigate([`/${RoutersName.PRIVACY}/${RoutersName.ARTICLEDETAILS}`], {queryParams: {articleId}});
+		this.commonService.scrollTop();
 	}
 
 }

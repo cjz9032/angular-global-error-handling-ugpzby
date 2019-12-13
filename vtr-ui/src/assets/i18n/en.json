@@ -992,6 +992,7 @@
 						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
 						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
 						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
 						"autoMode": {
 							"title1": "Auto Battery mode",
 							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
@@ -1181,7 +1182,7 @@
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete: Successful reset.",
+							"ERROR_SUCCESS": "Complete: Reset successfully.",
 							"ERROR_SHUTDOWN": "Failed: System shut down.",
 							"ERROR_LOGOFF": "Failed: User has logged off.",
 							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
@@ -1328,9 +1329,9 @@
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
 						"dropDown": {
-							"seconds": "Seconds",
-							"minute": "Minute",
-							"minutes": "Minutes",
+							"seconds": "seconds",
+							"minute": "minute",
+							"minutes": "minutes",
 							"alwaysOn": "Always on",
 							"never": "Never",
 							"halfTime": "Half time of display off timer"
@@ -1515,6 +1516,7 @@
 				},
 				"controlOptions": {
 					"more": "MORE",
+					"less": "LESS",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS",
 					"control3": "TRACKPOINT CONTROLS"
@@ -2957,6 +2959,7 @@
 		"custom": "Custom Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ More interests",
+		"toolbartitle": "Enable the Lenovo Vantage Toolbar (recommended)",
 		"title1": "Welcome to",
 		"title2": "Lenovo",
 		"title3": "Vantage",

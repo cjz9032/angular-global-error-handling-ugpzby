@@ -347,7 +347,7 @@
 			},
 			"profileheading": {
 				"text1": {
-					"title": "Off"
+					"title": "כבוי"
 				},
 				"text2": {
 					"title": "פרופיל 1"
@@ -361,7 +361,7 @@
 			},
 			"lightingProfileHeading": {
 				"text1": {
-					"title": "Off"
+					"title": "כבוי"
 				},
 				"text2": {
 					"title": 1
@@ -1219,7 +1219,8 @@
 						}
 					},
 					"description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
-					"subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב"
+					"subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
+					"oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
 				}
 			},
 			"audio": {
@@ -1961,7 +1962,8 @@
 			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
 			"advanced": "ADVANCED",
 			"advancedTtitle": "Advanced protection",
-			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+			"haveOwn": "I have my own"
 		},
 		"antivirus": {
 			"common": {
@@ -2635,6 +2637,7 @@
 		"professional": "שימוש מקצועי",
 		"privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
 		"moreInterest": "‏+ תחומי עניין נוספים",
+		"toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
 		"title1": "ברוכים הבאים אל",
 		"title2": "Lenovo",
 		"title3": "Vantage",

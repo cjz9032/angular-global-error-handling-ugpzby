@@ -53,16 +53,24 @@
 	}
 
 	.icon-times {
-		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+		background: $gradient_red1;
+		border-color: $button_red_start;
 		background-color: $stop_dark;
-		border-color: $stop_dark;
 	}
 
 	.icon-dot {
-		border-width: 1rem;
-		border-color: $main;
+		border-width: 0.8rem;
+		border-color: $black_light;
 	}
 
+}
+
+.badge-primary {
+	background-color: $black_light;
+}
+
+.badge-danger {
+	background-color: $button_red_start;
 }
 
 .flex-1 {

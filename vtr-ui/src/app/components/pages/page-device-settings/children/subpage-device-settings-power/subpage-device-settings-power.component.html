@@ -125,7 +125,7 @@
 										[isSwitchChecked]="showBatteryThreshold"
 										(toggleOnOff)="showBatteryThresholdsettings($event.switchValue);"
 										[switchId]="'ds-power-battery-threshold'"
-										[isDisabled]="batteryService.checkIsGaugeResetRunning()"
+										[isDisabled]="batteryService.isGaugeResetRunning"
 										[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 										<div *ngIf="showBatteryThreshold">
 											<vtr-battery-charge-threshold-settings *ngIf="isPrimaryBatteryAvailable"
@@ -140,7 +140,7 @@
 												[selectedStopAtCharge]="selectedStopAtChargeVal"
 												[selectedStartAtCharge]="selectedStartAtChargeVal"
 												[isCheckedAuto]="primaryCheckBox"
-												[isGaugeResetRunning]="batteryService.checkIsGaugeResetRunning()"
+												[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
 												(sendBatteryDetails)="setChargeThresholdValues($event, 1, 'changedValues')"
 												(autoChecked)="setChargeThresholdValues($event, 1, 'autoChecked')"
 												[textId]="'threshold-primary-battery'">
@@ -158,7 +158,7 @@
 												[selectedStopAtCharge]="selectedStopAtChargeVal1"
 												[selectedStartAtCharge]="selectedStartAtChargeVal1"
 												[isCheckedAuto]="secondaryCheckBox"
-												[isGaugeResetRunning]="batteryService.checkIsGaugeResetRunning()"
+												[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
 												(sendBatteryDetails)="setChargeThresholdValues($event, 2, 'changedValues')"
 												(autoChecked)="setChargeThresholdValues($event, 2, 'autoChecked')"
 												[textId]="'threshold-secondary-battery'">
