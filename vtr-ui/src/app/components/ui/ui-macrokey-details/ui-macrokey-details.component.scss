@@ -62,7 +62,8 @@
 				p {
 					font-size: 1.4rem;
 					color: $gaming_lightest;
-					line-height: 1.2rem;
+					line-height: 2rem;
+					padding: 0 2rem;
 					&:before {
 						content: "- ";
 					}
@@ -81,6 +82,7 @@
 						font-weight: normal;
 						color: $gaming_lightest;
 						text-transform: none;
+						padding: 0 2rem;
 					}
 				}
 			}
