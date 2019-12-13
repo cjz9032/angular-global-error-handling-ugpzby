@@ -2809,7 +2809,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "Knappen är inaktiverad medan informationen om maskinvaran ännu inte har hämtats, om lagringsenheterna inte stödjer denna funktion eller om återställningen av skadade sektorer pågår."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",

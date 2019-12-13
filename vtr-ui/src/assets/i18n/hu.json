@@ -2809,7 +2809,7 @@
                 "yes": "Igen",
                 "no": "Nem"
             },
-            "waitAvailability": "A gomb le van tiltva ha a hardverinformációk beolvasása még nem történt meg, ha a tárolóeszközök nem támogatják ezt a funkciót, vagy amíg a rendszer helyreállítja a hibás szektorokat."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Professzionális diagnosztikai eszközök letöltése",

@@ -2809,7 +2809,7 @@
                 "yes": "예",
                 "no": "아니요"
             },
-            "waitAvailability": "저장 장치가 이 기능을 지원하지 않거나 불량 섹터 복구가 실행 중인 경우에는 하드웨어 정보가 검색되지 않으면 이 버튼을 사용할 수 없습니다."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "전문 진단 도구 다운로드",

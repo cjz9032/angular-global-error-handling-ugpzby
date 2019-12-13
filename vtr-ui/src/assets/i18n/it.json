@@ -2809,7 +2809,7 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "Il pulsante è disabilitato se le informazioni sull'hardware non sono ancora state recuperate, se i dispositivi di memorizzazione non supportano questa funzionalità o se è in corso il ripristino dei settori danneggiati."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",

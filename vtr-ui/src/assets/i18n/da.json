@@ -2809,7 +2809,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "Knappen deaktiveres, mens hardwareoplysningerne endnu ikke er hentet, hvis lagerenhederne ikke understøtter denne funktion, eller når gendannelsen af beskadigede sektorer kører."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",

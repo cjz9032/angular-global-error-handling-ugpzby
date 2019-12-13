@@ -2809,7 +2809,7 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão está desativado enquanto as informações de hardware não forem obtidas, para o caso de os dispositivos de armazenamento não suportarem esta funcionalidade ou quando estiver a decorrer a recuperação de setores danificados."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Transferir ferramentas de diagnóstico profissionais",

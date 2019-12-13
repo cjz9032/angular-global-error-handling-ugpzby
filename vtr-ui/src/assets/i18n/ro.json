@@ -2809,7 +2809,7 @@
                 "yes": "Da",
                 "no": "Nu"
             },
-            "waitAvailability": "Butonul este dezactivat atunci când informaţiile hardware nu au fost încă preluate, dacă dispozitivele de stocare nu acceptă această funcţionalitate sau atunci când se execută recuperarea sectoarelor defecte."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",

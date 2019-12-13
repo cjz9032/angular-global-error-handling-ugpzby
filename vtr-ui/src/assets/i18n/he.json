@@ -2809,7 +2809,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "הלחצן מושבת כאשר פרטי החומרה עדיין לא אוחזרו, למקרה שהתקני האחסון אינם תומכים בפונקציונליות זו או כאשר שחזור ההסקטורים הפגומים פועל."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",

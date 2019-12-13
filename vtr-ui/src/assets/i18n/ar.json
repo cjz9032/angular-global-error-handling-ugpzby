@@ -2811,7 +2811,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "يكون الزر معطلاً بينما لم يتم استرداد معلومات الأجهزة بعد، في حال لم تكن أجهزة التخزين تدعم هذه الميزة أو عندما تكون استعادة القطاعات المصابة‬ قيد التشغيل."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",

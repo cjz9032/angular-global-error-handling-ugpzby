@@ -2809,7 +2809,7 @@
                 "yes": "Tak",
                 "no": "Nie"
             },
-            "waitAvailability": "Przycisk jest wyłączony, jeśli informacje o sprzęcie nie zostały jeszcze pobrane lub w przypadku, gdy urządzenia pamięci masowej nie obsługują tej funkcji albo jeśli trwa odzyskiwanie uszkodzonych sektorów."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Pobierz profesjonalne narzędzia diagnostyczne",

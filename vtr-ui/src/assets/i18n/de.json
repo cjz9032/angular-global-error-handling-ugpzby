@@ -2809,7 +2809,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "Die Schaltfläche ist deaktiviert, solange die Hardwareinformationen noch nicht abgerufen wurden, falls die Speichergeräte diese Funktionalität nicht unterstützen oder wenn die Wiederherstellung fehlerhafter Sektoren läuft."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",

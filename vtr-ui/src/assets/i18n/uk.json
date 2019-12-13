@@ -2809,7 +2809,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",

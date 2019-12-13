@@ -2809,7 +2809,7 @@
                 "yes": "Oui",
                 "no": "Non"
             },
-            "waitAvailability": "Le bouton est désactivé lorsque les informations matérielles n'ont pas encore été récupérées, au cas où les unités de stockage ne prennent pas en charge cette fonctionnalité ou lorsque la restauration de secteurs défectueux est en cours d'exécution."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Télécharger les outils de diagnostic professionnels",

@@ -2809,7 +2809,7 @@
                 "yes": "Kyllä",
                 "no": "Ei"
             },
-            "waitAvailability": "Vaikka laitteistotietoja ei ole vielä noudettu, painike ei ole käytettävissä sen varalta, että tallennuslaitteet eivät tue tätä toimintoa tai viallisten sektorien palautus on käynnissä."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",

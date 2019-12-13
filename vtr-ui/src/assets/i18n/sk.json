@@ -2809,7 +2809,7 @@
                 "yes": "Áno",
                 "no": "Nie"
             },
-            "waitAvailability": "Tlačidlo je deaktivované, pokiaľ hardvérové informácie ešte neboli načítané, v prípade, že úložné zariadenia nepodporujú túto funkciu alebo keď je spustená obnova chybných sektorov."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",
