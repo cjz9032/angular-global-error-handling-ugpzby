@@ -7,24 +7,22 @@
 		border-radius: $border_radius;
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
-		padding: 2rem 4rem 4rem 4rem;
-		height: 41rem;
-		@media #{$breakpoint_xl3} {
-			height: 35rem;
-		}
+		padding: 2rem 4rem 2rem 4rem;
+		height:auto;
+		@media #{$breakpoint_xl3} {		}
 		@media #{$breakpoint_xl2} {
-			height: 29rem;
+			//height: 29rem;//removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_xl} {
-			height: auto;
-			padding-bottom: 21rem;
+			//height: auto;
+			//padding-bottom: 21rem;//removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_lg} {
-			padding: 2rem 2rem 0 2rem;
-			// padding-bottom: 22rem;
+			padding: 2rem;
+			// padding-bottom: 22rem; //removed as it is breaking in some points 
 		}
 		@media #{$breakpoint_md} {
-			padding-bottom: 19rem;
+			//padding-bottom: 19rem;removed as it is breaking in some points 
 		}
 
 		// @media #{$mediaquery_5} {
@@ -36,51 +34,43 @@
 		// }
 
 		.monitor-col {
-			padding: 4rem 0;
+			padding:4rem 0;
 			position: relative;
-			// @media #{$mediaquery_5} {
-			// 	padding: 3rem 0;
-			// }
 			&.left {
 				padding-right: 2rem;
 				@media #{$breakpoint_xl} {
-					padding-right: 0;
+					padding-right: 0rem!important;
 				}
 				@media #{$breakpoint_lg} {
-					padding-right: 2rem;
+					padding-right: 0rem!important;
 				}
 				@media #{$breakpoint_sm} {
 					padding-right: 0;
 				}
-				// @media #{$mediaquery_5} {
-				// 	padding-right: 4rem;
-				// }
-				// @media #{$only-small-screen} {
-				// 	padding-right: 0rem;
-				// }
 			}
 			&.right {
 				padding-left: 0rem;
 				@media #{$breakpoint_xl} {
-					padding: 1rem 0;
-				}
-				@media #{$breakpoint_lg} {
-					//padding: 6rem 0;
-					padding: 4rem 0;
+					//padding-left:1rem;
 				}
 				@media #{$breakpoint_md} {
-					//padding: 6rem 0;
 					padding: 2rem 0;
 				}
-				@media #{$breakpoint_sm} {
-					padding: 1rem 0;
+				// @media only screen and (min-width: 572px) and (max-width: 765px){
+				// 	padding:4rem 0 !important;
+				// }
+				@media only screen and (min-width: 991px) and (max-width: 992px){
+					padding-left:2rem!important;
 				}
-				// @media #{$mediaquery_5} {
-				// 	padding-left: 0rem;
-				// }
-				// @media #{$only-small-screen} {
-				// 	padding-left: 0rem;
-				// }
+				@media only screen and (min-width: 572px) and (max-width: 767.9px){
+					padding:2rem 0rem 2rem 0rem!important;
+				}
+				@media #{$breakpoint_lg} {
+					padding: 4rem 0rem 4rem 2rem;
+				}				
+				@media #{$breakpoint_sm} {
+					padding: 2rem 0;
+				}				
 			}
 			&.link-wrapper {
 				padding: 0.5rem;
@@ -150,7 +140,7 @@
 				// 	height: 18rem;
 				// }
 				&.hds {
-					position: absolute;
+					//position: absolute; //removed as it is breaking in some points 
 					width: 100%;
 					border: 1px solid $gaming_darkest;
 					// @media #{$mediaquery_sm} {
@@ -161,6 +151,15 @@
 					// 		height: 13.5rem;
 					// 	}
 					// }
+					.hd-item {
+						@media #{$breakpoint_md} {
+						 max-width: 35rem;
+						 margin: auto;
+					 }
+					 @media #{$breakpoint_sm} {
+						 max-width: 30rem;
+					 }
+					}
 					&.expanded {
 						height: auto;
 					}
@@ -286,7 +285,7 @@
 								&::after {
 									border-bottom: 2rem solid $gaming_lightest;
 									border-left: 2rem solid transparent;
-									left: calc(100% - 1rem);
+									left: calc(100% - 1.15rem);
 									transform: rotate(-45deg);
 									bottom: calc(50% - 1rem);
 								}
@@ -316,7 +315,7 @@
 									border-right: 2rem solid transparent;
 									border-bottom: none;
 									border-left: none;
-									left: -1rem;
+									left: -0.85rem;
 									transform: rotate(-45deg);
 									bottom: calc(50% - 1rem);
 								}
@@ -965,7 +964,7 @@
 							left: 50%;
 							transform: translate(-50%);
 							@media #{$breakpoint_sm}{
-								transform: translate(0);
+								transform: translate(-50%);
 								left: 50%;
 							}
 						}
@@ -996,6 +995,7 @@
 							padding-left: 1rem;
 							vertical-align: middle;
 							text-align: left;
+							width: 40%;
 							// @media #{$only-small-screen} {
 							// 	display: flex;
 							// 	justify-content: space-between;

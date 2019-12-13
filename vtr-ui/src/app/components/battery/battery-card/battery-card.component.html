@@ -104,33 +104,33 @@
 
 		</div>
 		<div class="feature-note p-3 mt-2"
-			*ngIf="chargeThresholdInfo?.isOn || batteryService.checkIsGaugeResetRunning()">
+			*ngIf="batteryIndicator.isChargeThresholdOn || batteryService.isGaugeResetRunning">
 			<div class="row">
 				<p id="myDevice-settings-batteryGauge-threshold-note"
 					role="text">
 					<span role="text"
-						*ngIf="!batteryService.checkIsGaugeResetRunning()"
+						*ngIf="!batteryService.isGaugeResetRunning"
 						[innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate"></span>
 					<span role="text"
-						*ngIf="batteryService.checkIsGaugeResetRunning()"
+						*ngIf="batteryService.isGaugeResetRunning"
 						[innerHTML]="'device.deviceSettings.batteryGauge.gaugeResetWarning' | translate"></span>
 				</p>
 			</div>
 		</div>
 
 		<div class="pt-4 text-center"
-			[class.btn-disabled]="isBatteryDetailsBtnDisabled">
+			[class.btn-disabled]="batteryService.isPowerDriverMissing || !this.batteryService.isEmDriverInstalled">
 			<vtr-ui-button metricsItem="See.Battery.Details"
 				metricsParent="Page.Settings"
 				metricsEvent="FeatureClick"
 				[isFullWidth]="true"
 				(click)="showDetailModal(batteryDetail)"
-				[isDisabled]="isBatteryDetailsBtnDisabled"
+				[isDisabled]="batteryService.isPowerDriverMissing || !this.batteryService.isEmDriverInstalled"
 				id="myDevice-settings-battery-details-btn"
 				[linkId]="'myDevice-settings-battery-details-btn'"
 				[label]="'device.deviceSettings.batteryGauge.button' | translate"
 				attr.aria-label="myDevice-settings-battery-details-btn"
-				[attr.aria-disabled]="isBatteryDetailsBtnDisabled"
+				[attr.aria-disabled]="batteryService.isPowerDriverMissing || !this.batteryService.isEmDriverInstalled"
 				[tabindex]="0"></vtr-ui-button>
 
 

@@ -372,7 +372,7 @@
 			},
 			"brightness": {
 				"text1": {
-					"title": "*Brightness setting doesn't apply on "
+					"title": "*Brightness setting doesn't apply on"
 				},
 				"text2": {
 					"title": " effect"
@@ -842,7 +842,7 @@
 				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
-				"charge": "TIME TO FULLY CHARGE",
+				"charge": "Time to full charge",
 				"button": "SEE BATTERY DETAILS",
 				"thresholdNote": "<b>Note:</b> The battery cannot be fully charged when Battery Charge Threshold is enabled.",
 				"gaugeResetWarning": "<b>Note:</b> The battery gauge reset is in progress. Please keep the ac power adapter connected.",
@@ -913,10 +913,11 @@
 					"HighTemperature": "<b>Discharging</b> has been stopped because the <b>battery temperature is too high.</b>",
 					"TrickleCharge": "The battery was <b>completely discharged</b> and needs to be recharged. This might take ten hours or more.",
 					"OverheatedBattery": "The battery is <b>too hot</b>. Remove it from the computer and cool it to room temperature.",
-					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one."
+					"PermanentError": "The battery capacity has been <b>degraded</b>. Please replace a new one.",
+					"EmDriverInstalled": "Battery details unavailable. Please run Windows Update->Check for updates to install the <b>Lenovo ACPI - Compliant Virtual Power Controller</b>driver."
 				},
 				"dualConditions": {
-					"NotDetected": "<b>The primary battery is not detected</b>"
+					"NotDetected": "<b>The primary battery is not detected.</b>"
 				}
 			},
 			"power": {
@@ -991,6 +992,7 @@
 						"desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
 						"desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
 						"desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+						"desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T.",
 						"autoMode": {
 							"title1": "Auto Battery mode",
 							"desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
@@ -1046,6 +1048,7 @@
 					"title": "Smart standby",
 					"description": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-resume experience of <a target=\"_blank\"' href=\"https://docs.microsoft.com/windows-hardware/design/device-experiences/advantages-of-using-modern-standby-over-s3\">Modern Standby</a> during hours of heavier use.",
 					"tooltip": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set, or your computer usage. The computer switches from hibernation to Modern Standby only on scheduled days , and does not switch when it is inactive for consecutive scheduled days.",
+					"oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days.",
 					"subTitle": "Schedule your computer",
 					"description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
 					"subTitle2": "Set time when you typically use this computer",
@@ -1179,14 +1182,14 @@
 						"note": "Note: Before resetting the battery gauge, be sure to connect your computer to ac power. ",
 						"dual_note": "Note: Only one battery can be reset at a time.",
 						"resetLog": {
-							"ERROR_SUCCESS": "Complete. Successful reset.",
-							"ERROR_SHUTDOWN": "Incomplete. System shut down.",
-							"ERROR_LOGOFF": "Incomplete. User logged off.",
-							"ERROR_BATTERY_REMOVE": "Incomplete. Battery was removed.",
-							"ERROR_BATTERY_REPLACE": "Incomplete. Battery was replaced.",
-							"ERROR_AC_DETTACH": "Incomplete. AC power adapter was detached.",
-							"ERROR_USER_CANCEL": "Incomplete. Cancelled by user.",
-							"ERROR_UNEXPECTED": "Incomplete. An unexpected error occurred."
+							"ERROR_SUCCESS": "Complete: Reset successfully.",
+							"ERROR_SHUTDOWN": "Failed: System shut down.",
+							"ERROR_LOGOFF": "Failed: User has logged off.",
+							"ERROR_BATTERY_REMOVE": "Failed: Battery was removed.",
+							"ERROR_BATTERY_REPLACE": "Failed: Battery was replaced.",
+							"ERROR_AC_DETTACH": "Failed: AC power adapter was detached.",
+							"ERROR_USER_CANCEL": "Failed: Cancelled by user.",
+							"ERROR_UNEXPECTED": "Failed: Unexpected error occurred."
 						},
 						"popup": {
 							"description1": "The resetting process is as follows:<br>Fully charge the battery  -->  Fully discharge the battery  -->  Fully recharge the battery",
@@ -1330,7 +1333,7 @@
 							"minute": "minute",
 							"minutes": "minutes",
 							"alwaysOn": "Always on",
-							"never": "never",
+							"never": "Never",
 							"halfTime": "Half time of display off timer"
 						},
 						"taskBarDimmer": "TASKBAR DIMMER",
@@ -1488,7 +1491,7 @@
 					},
 					"website": {
 						"url": "WEBSITE URL",
-						"successMessage": "The setting is applied successfully.",
+						"successMessage": "The settings are applied successfully.",
 						"invalidURLMessage": "Please input a valid URL.",
 						"placeholder":"Please start with http:// or https://"
 					},
@@ -1513,6 +1516,7 @@
 				},
 				"controlOptions": {
 					"more": "MORE",
+					"less": "LESS",
 					"control1": "TOUCHPAD CONTROLS",
 					"control2": "MOUSE CONTROLS",
 					"control3": "TRACKPOINT CONTROLS"
@@ -1749,7 +1753,7 @@
 		},
 		"autoUpdateSettings": {
 			"title": "Auto update settings",
-			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"subtitle": "Automatically install updates",
 			"critical": {
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
@@ -2191,7 +2195,7 @@
 		},
 		"needHelp": {
 			"title": "Need Help?",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
 			"listContactUsOnWechat": "Contact us on WeChat",
@@ -2202,7 +2206,7 @@
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
-			"description": "CONTACT US TO HELP YOU OUT.",
+			"description": "Contact us to help you out.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider",
 			"listAboutLenovoVantage": "About Lenovo Vantage"
@@ -2249,13 +2253,14 @@
 			"uacContent": "Move the slider to select how much you want User Account Control to protect you from potentially harmful changes.",
 			"wifiContent": "An advanced software service that helps your device differentiate safe wireless networks from potentially malicious ones.",
 			"bitLockerContent": "Help protect your files and folders from unauthorized access by encrypting data on your hard drive.",
-			"vpnContent": "Use a VPN service to encrypts the information you send and receive with public wifi and keep your online activity secure and private.",
+			"vpnContent": "A Virtual Private Network (VPN) uses encryption to keep your online activity secure and private, and helps prevent hackers from stealing your personal information over Wi-Fi.",
 			"windows": "Windows Activation",
 			"goAntivirus": "go to antivirus",
 			"goFirewall": "go to firewall",
 			"goPassword": "go to passwordManger",
 			"goWifi": "go to wifi-security",
 			"goVpn": "go to VPN security",
+			"haveOwn" : "I have my own",
 			"visitWindows": "Visit Windows Activation",
 			"visitFingerprint": "Visit Fingerprint reader",
 			"visitUac": "Visit User Account Control",
@@ -2264,6 +2269,7 @@
 			"haveOwnWifi": "I have my own wifi security",
 			"haveOwnVpn" : "I have my own wifi security",
 			"uac": "User Account Control (UAC)",
+			"uacTitles": "User Account Control",
 			"hde": "Hard drive encryption",
 			"level": "Security Level:",
 			"fully": "To get a better offer protect your device, stay with",
@@ -2272,10 +2278,10 @@
 			"noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
 			"basic": "BASIC",
 			"basicTitle": "Basic protection",
-			"basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+			"basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
 			"intermediate": "INTERMEDIATE",
 			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
 			"advanced": "ADVANCED",
 			"advancedTtitle": "Advanced protection",
 			"advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
@@ -2485,8 +2491,7 @@
 			"getStarted1": "Click on the “Open SurfEasy” button above to launch SurfEasy VPN.",
 			"getStarted2": "Turn on the VPN and wait a brief moment for confirmation of a secure connection.",
 			"getStarted3": "Change your region or location if desired, and enjoy secure, private networking.",
-			"poweredBySurfEasy": "Powered By SurfEasy",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"poweredBySurfEasy": "Powered By SurfEasy"
 		},
 		"passwordManager": {
 			"statusTitle": "DASHLANE PASSWORD MANAGER",
@@ -2514,8 +2519,7 @@
 			"allowsYou2": "Monitor the dark web for your personal information",
 			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
 			"allowsYou4": "Share passwords securely without revealing them",
-			"poweredByDashLane": "Powered By Dashlane",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+			"poweredByDashLane": "Powered By Dashlane"
 		},
 		"windowsHello": {
 			"statusTitle": "WINDOWS HELLO",
@@ -2955,6 +2959,7 @@
 		"custom": "Custom Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ More interests",
+		"toolbartitle": "Enable the Lenovo Vantage Toolbar (recommended)",
 		"title1": "Welcome to",
 		"title2": "Lenovo",
 		"title3": "Vantage",
@@ -3160,6 +3165,14 @@
 			"pci_express": "PCI Express",
 			"storage": "Storage",
 			"wireless": "Wireless"
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+	},
+	"notification": {
+		"menu": {
+			"privacy": "Now you can find out if your private information has been breached or used by online trackers without your knowlege.",
+			"security": "Do you know? Even you don't have anti-virus software installed, we still provide basic security protection for your device.",
+			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack."
 		}
 	},
 	"appsForYou": {

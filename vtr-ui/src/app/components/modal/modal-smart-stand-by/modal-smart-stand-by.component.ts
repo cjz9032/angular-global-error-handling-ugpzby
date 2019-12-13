@@ -30,6 +30,7 @@ export class ModalSmartStandByComponent implements OnInit {
 	public weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 	public days = [];
 	public isSufficient = true;
+	public isAutomatic: boolean;
 	// private legends = [0, 1, 2, 3, 4];
 	constructor(
 		private http: HttpClient,

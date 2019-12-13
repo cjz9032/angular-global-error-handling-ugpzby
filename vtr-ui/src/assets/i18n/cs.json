@@ -642,7 +642,8 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
@@ -906,12 +907,16 @@
                     "PermanentError": "Kapacita baterie <b>degradovala</b>. Vyměňte ji za novou.",
                     "NotSupportACAdapterDetail": "<b>Napájecí adaptér není podporován.</b> Počítač Lenovo tento napájecí adaptér nepodporuje. Může to způsobit náhlé vypnutí. Připojte správný napájecí adaptér.",
                     "LimitedACAdapterSupportDetail": "<b>Napájecí adaptér nemůže poskytnout počítači Lenovo</b> dostatek energie, což ovlivní výkon systému a rychlost nabíjení. Připojte správný napájecí adaptér.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napájení je připojené.</b>",
+                    "EmDriverInstalled": "Podrobnosti o baterii nejsou dostupné. Pro instalaci ovladače <b>Lenovo ACPI - Compliant Virtual Power Controller</b> přejděte do nabídky Windows Update -> Zkontrolovat aktualizace."
                 },
                 "batteryNotDetected": "Baterie nebyla nalezena",
                 "thresholdNote": "<b>Poznámka:</b> Pokud je aktivován Limit nabíjení baterie, nelze baterii plně nabít.",
                 "seeDetailsLink": "Zobrazit podrobnosti",
-                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér."
+                "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Napájení",
@@ -989,24 +994,24 @@
                     "description5": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie. Tato funkce má 3 režimy (tichý režim, vyvážený režim a režim výkonu) a je nyní přístupná posuvníkem výkonu systému Windows",
                     "nocqldesc": "Inteligentní chlazení umožňuje upravovat výkon a teplotu systému. V režimu „Výkon“ optimalizuje výkon systému, v režimu „Chladný a tichý“ pomáhá udržovat systém chladnější a tišší.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální výkon a spravuje životnost baterie.",
+                        "desc2": "Tato funkce má následující režimy a nyní je upravena pomocí posuvníku výkonu systému Windows. Přístup k ní získáte kliknutím na ikonu baterie na hlavním panelu systému Windows.",
+                        "desc3": "Některé režimy se mohou na základě vaší činnosti automaticky přizpůsobit širšímu rozsahu výkonu. Chcete-li povolit automatický režim, stiskněte klávesy Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatický režim baterie",
+                            "desc1": "Posuvník je vlevo. Režim se dynamicky přepíná do tichého režimu nebo do režimu baterie pro nejlepší zážitek z režimu DC.",
+                            "title2": "Automatický režim výkonu",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Režim se dynamicky přepíná do tichého režimu, vyváženého režimu nebo do režimu výkonu pro nejlepší zážitek z režimu AC.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tichý režim",
+                            "desc1": "Posuvník je vlevo. Rychlost a výkon ventilátoru jsou nižší, takže je počítač chladnější, tišší a baterie má nejdelší životnost.",
+                            "title2": "Vyvážený režim",
+                            "desc2": "Posuvník je uprostřed nebo vpravo od středu. Rychlost a výkon ventilátoru jsou dynamicky vyvážené a zajišťují nejvyrovnanější výkon.",
+                            "title3": "Režim výkonu",
+                            "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "Z {{before}} Wh na {{after}} Wh",
                         "note": "Poznámka: Před resetováním ukazatele stavu baterie nezapomeňte připojit počítač k napájení ze sítě. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Dokončeno. Reset proběhl úspěšně.",
-                            "ERROR_SHUTDOWN": "Nedokončeno. Systém byl vypnut.",
-                            "ERROR_LOGOFF": "Nedokončeno. Uživatel se odhlásil.",
-                            "ERROR_BATTERY_REMOVE": "Nedokončeno. Byla vyňata baterie.",
-                            "ERROR_BATTERY_REPLACE": "Nedokončeno. Byla vyměněna baterie.",
-                            "ERROR_AC_DETTACH": "Nedokončeno. Byl odpojen napájecí adaptér.",
-                            "ERROR_USER_CANCEL": "Nedokončeno. Zrušeno uživatelem.",
-                            "ERROR_UNEXPECTED": "Nedokončeno. Došlo k neočekávané chybě."
+                            "ERROR_SUCCESS": "Dokončeno: Reset proběhl úspěšně.",
+                            "ERROR_SHUTDOWN": "Selhání: Systém byl vypnut.",
+                            "ERROR_LOGOFF": "Selhání: Uživatel se odhlásil.",
+                            "ERROR_BATTERY_REMOVE": "Selhání: Byla vyňata baterie.",
+                            "ERROR_BATTERY_REPLACE": "Selhání: Byla vyměněna baterie.",
+                            "ERROR_AC_DETTACH": "Selhání: Byl odpojen napájecí adaptér.",
+                            "ERROR_USER_CANCEL": "Selhání: Zrušeno uživatelem.",
+                            "ERROR_UNEXPECTED": "Selhání: Došlo k neočekávané chybě."
                         },
                         "popup": {
                             "description1": "Proces resetování je následující:<br>Plné nabití baterie  -->  Plné vybití baterie  -->  Plné opětovné nabití baterie",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "pokračovat",
                         "subHeading2": "konec",
                         "subHeading3": "použít toto nastavení pro",
-                        "endTimeNote": "Koncový čas nesmí být od počátečního času vzdálen více než 20 hodin",
+                        "endTimeNote": "KONCOVý čas nesmí být od POČÁTEČNÍHO času vzdálen více než 20 hodin",
                         "timeUnits": {
                             "unit1": "Hodin",
                             "unit2": "Minut",
@@ -1169,22 +1174,22 @@
                         "everyday": "Každý den",
                         "weekdays": "Pracovní dny",
                         "weekends": "Víkendy",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Není vybrán žádný den"
                     },
                     "checkbox": "Automatické přizpůsobení aktivního času počítače na základě používání",
                     "hyperlinkToGraph": "Kliknutím zobrazíte aktivitu a aktivní čas v tabulce pro počítač",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Plánování počítače",
+                    "automaticMode": "Automatický režim",
+                    "manualMode": "Ruční režim",
+                    "subNote": "Váš počítač je naplánován na přepnutí do moderního pohotovostního režimu na základě vašeho použití.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Použití tohoto počítače",
+                        "graph2Tittle": "Použitý aktivní čas",
+                        "graphSubtittle": "V těchto časových obdobích udržujeme počítač připravený k rychlejšímu obnovení činnosti.",
+                        "graphNote": "Údaje o aktivitě tohoto počítače nejsou dostatečné k tomu, aby poskytovaly profil pro automatické plánování. Chytrý pohotovostní režim použije plán ručního režimu, dokud nebude k dispozici dostatek dat.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Žádné",
+                            "frequent": "Časté"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Pomocí této funkce lze optimalizovat výdrž baterie počítače v době, kdy se s ním nepracuje, aniž by to mělo negativní vliv na rychlost jeho opětovného spuštění.",
+                    "subTitle2": "Nastavte čas, kdy počítač obvykle používáte",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "URL STRÁNKY",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Nastavení proběhlo úspěšně.",
+                        "invalidURLMessage": "Zadejte platnou webovou adresu.",
+                        "placeholder": "Začněte s http:// nebo https://"
                     },
                     "enterText": {
                         "title": "TEXT K ZADÁNÍ",
-                        "placeholder": "Please type here"
+                        "placeholder": "Zadejte sem"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "Klikněte na tlačítko „Otevřít SurfEasy“ nahoře a spusťte SurfEasy VPN.",
             "getStarted2": "Zapněte VPN a chvíli čekejte na potvrzení bezpečného připojení.",
             "getStarted3": "Dle potřeby změňte oblast nebo polohu a užívejte si bezpečné a soukromé práce v síti.",
-            "poweredBySurfEasy": "Používá technologii SurfEasy",
-            "privacyPolicyAndTermsOfService": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
+            "poweredBySurfEasy": "Používá technologii SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCE HESEL DASHLANE",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "Sledování temného webu, zda neobsahuje vaše osobní údaje",
             "allowsYou3": "Ochranu i v nezabezpečených sítích WiFi díky integrované VPN",
             "allowsYou4": "Bezpečné sdílení hesel bez rizika jejich odhalení",
-            "poweredByDashLane": "Používá technologii Dashlane",
-            "privacyPolicyAndTermsOfService": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>"
+            "poweredByDashLane": "Používá technologii Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2630,7 +2636,8 @@
         "custom": "Vlastní zkušenost",
         "professional": "Určeno pro odborníky",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
-        "moreInterest": "+ další zájmy",
+		"moreInterest": "+ další zájmy",
+		"toolbartitle": "Povolit nástrojovou lištu Lenovo Vantage (doporučeno)",
         "title1": "Vítá vás",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "Úložiště",
             "wireless": "Bezdrátové"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
-                "networkError": "Chyba sítě.",
-                "installationCancelled": "Instalace zrušena."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Kompenzace Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Nainstalujte si",
-                "installing": "Instalace",
-                "downloading": "Stahování",
-                "installed": "Nainstalováno",
-                "launch": "Spustit",
-                "seeMore": "Další informace"
-            },
-            "fieldName": {
-                "description": "Popis",
-                "screenshots": "Snímky obrazovky",
-                "additionalInformation": "Další informace",
-                "by": "Od:",
-                "updated": "Aktualizováno:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Právní ujednání",
-                "readMore": "Další informace",
-                "readLess": "Méně informací"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyní můžete zjistit, zda došlo k úniku vašich osobních údajů nebo zda byly tyto údaje bez vašeho vědomí použity online sledovacími nástroji.",
+            "security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
+            "connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalace se nezdařila. Zkuste akci opakovat.",
+                "networkError": "Chyba sítě.",
+                "installationCancelled": "Instalace zrušena."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Kompenzace Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainstalujte si",
+                "installing": "Instalace",
+                "downloading": "Stahování",
+                "installed": "Nainstalováno",
+                "launch": "Spustit",
+                "seeMore": "Další informace"
+            },
+            "fieldName": {
+                "description": "Popis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Další informace",
+                "by": "Od:",
+                "updated": "Aktualizováno:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Právní ujednání",
+                "readMore": "Další informace",
+                "readLess": "Méně informací"
+            }
+        }
+    }
 }

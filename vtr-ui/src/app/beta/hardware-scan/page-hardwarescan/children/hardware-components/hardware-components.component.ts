@@ -110,28 +110,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		});
 
 		this.initComponent();
-
-		let self = this;
-		window.onfocus = function(){
-			self.validateScanState();
-		};
-	}
-
-	private validateScanState() {
-		if (this.hardwareScanService.isScanExecuting()) {
-			console.log('Running hwscan');
-			for (const module of this.modules) {
-				for (const test of module.listTest) {
-					if (test.status === HardwareScanTestResult.Cancelled) {
-						// When there are cancelled tests, go back to home
-						console.log('Going back to home due to a cancelled test');
-						location.reload();
-						return;
-					}
-				}
-			}
-			console.log('No cancelled tests found.');
-		}
 	}
 
 	ngOnDestroy() {
@@ -354,6 +332,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				})
 				.catch((ex: any) => {
 					console.error('[getDoScan] An exception has occurred: ', ex);
+					this.initComponent();
 				})
 				.finally(() => {
 					let metricsResult = this.getMetricsTaskResult();
@@ -369,6 +348,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.hardwareScanService.setFinalResponse(response);
 		}
 
+		this.startScanClicked = false;
 		if (!this.hardwareScanService.isCancelRequested()) {
 			this.hardwareScanService.setEnableViewResults(true);
 		} else {
@@ -584,11 +564,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			if(this.batteryMessage !== ''){
 				this.batteryMessage += '\n';
 			}
-			this.batteryMessage += this.translate.instant('hardwareScan.testsMustRunUniterrupted') + ' ' +
-			                       this.translate.instant('hardwareScan.doNotUse') + '\n' +
-			                       this.translate.instant('hardwareScan.doNotCloseOrMinimizeApp') + '\n' +
-			                       this.translate.instant('hardwareScan.doNotSwitchApp') + '\n' +
-			                       this.translate.instant('hardwareScan.doNotSleepOrSignOutOrTurnOffComputer');
 
 			if (this.batteryMessage !== '') {
 				const modal: NgbModalRef = this.modalService.open(ModalScheduleScanCollisionComponent, {

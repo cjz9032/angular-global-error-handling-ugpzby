@@ -151,6 +151,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
+				this.keyboardService.GetKeyboardMapCapability().then((response=>{
+					this.keyboardCompatibility = response;
+				}))
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);
@@ -160,7 +163,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	getAdditionalCapabilitiesFromCache() {
 		this.shortcutKeys = [];
 		if (this.additionalCapabilitiesObj.performance) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
 		}
 
 		this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
@@ -169,7 +172,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
 		}
 		if (this.additionalCapabilitiesObj.magnifier) {
-			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
 		}
 		if (this.additionalCapabilitiesObj.backLight) {
 			this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');
@@ -254,7 +257,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 					// console.log('promise all resonse  here -------------.>', response);
 					if (response && response.length) {
 						if (response[0]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
+							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
 						}
 						this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.secondKeyObj');
 
@@ -262,7 +265,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.thirdKeyObj');
 						}
 						if (response[2]) {
-							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fourthKeyObj');
+							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.firstKeyObj');
 						}
 						if (response[3]) {
 							this.shortcutKeys.push('device.deviceSettings.inputAccessories.inputAccessory.fifthKeyObj');

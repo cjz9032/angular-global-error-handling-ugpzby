@@ -642,7 +642,8 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
         },
         "qAndA": {
             "title": "F & A för din maskin",
@@ -906,12 +907,16 @@
                     "PermanentError": "Batteriets kapacitet har <b>försämrats</b>. Byt ut det mot ett nytt.",
                     "NotSupportACAdapterDetail": "<b>Nätadaptern stöds inte.</b> Din Lenovo-dator saknar stöd för nätadaptern. Detta kan medföra plötslig avstängning. Anslut en lämplig nätadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Nätadaptern ger inte tillräcklig strömförsörjning</b> till din Lenovo-dator, vilket påverkar systemprestanda och laddningshastighet. Anslut rätt nätadapter igen.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}}-ström är ansluten.</b>",
+                    "EmDriverInstalled": "Batteriuppgifter är inte tillgängliga. Kör Windows Update->Sök efter uppdateringar för att installera drivrutinen <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Inget batteri upptäcktes",
                 "thresholdNote": "<b>Obs!</b> Batteriet går inte att ladda helt när Gränsvärde för batteriladdning är aktiverat.",
                 "seeDetailsLink": "Visa information",
-                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten."
+                "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Ström",
@@ -989,24 +994,24 @@
                     "description5": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden. Funktionen har tre lägen (tyst läge, balanserat läge och prestandaläge) och kan ställas in via energireglaget i Windows",
                     "nocqldesc": "Med Intelligent nedkylning kan du justera systemets prestanda och temperatur. I läget ”Prestanda” optimeras systemets prestanda. Datorn blir svalare eller tystare i läget ”Sval och tyst”.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Intelligent nedkylning anpassar fläkthastighet och maximal prestanda och hanterar batteritiden.",
+                        "desc2": "Funktionen har lägena nedan och har nu justerats med reglaget för energifunktioner i Windows. Du kommer åt den genom att klicka på batteriikonen i systemfältet i Windows.",
+                        "desc3": "Vissa av lägena kan justeras automatiskt i ett större prestandaintervall baserat på din aktivitet. Tryck på Fn+T för att aktivera automatiskt läge.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatiskt batteriläge",
+                            "desc1": "Reglaget är skjutet längst till vänster. Detta läge växlar dynamiskt till tyst läge eller batteriläge för att ge bästa möjliga likströmförbrukning.",
+                            "title2": "Automatiskt prestandaläge",
+                            "desc2": "Reglaget är placerat i mitten eller mitten höger. Detta läge växlar dynamiskt till tyst läge, balanserat läge eller prestandaläge för att ge bästa möjliga växelströmförbrukning.",
+                            "title3": "Prestandaläge",
+                            "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Tyst läge",
+                            "desc1": "Reglaget är skjutet längst till vänster. Fläkthastighet och prestanda sänks för att göra datorn svalare och tystare och optimera batteritiden.",
+                            "title2": "Balanserat läge",
+                            "desc2": "Reglaget är placerat i mitten eller mitten höger. Fläkthastighet och prestanda balanseras dynamiskt för bästa möjliga upplevelse.",
+                            "title3": "Prestandaläge",
+                            "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "Från {{before}} Wh till {{after}} Wh",
                         "note": "Obs! Tänk på att ansluta datorn till nätström innan du återställer batterimätaren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Klart. Återställningen lyckades.",
-                            "ERROR_SHUTDOWN": "Ofullständig. Systemavstängning.",
-                            "ERROR_LOGOFF": "Ofullständig. Användare loggade ut.",
-                            "ERROR_BATTERY_REMOVE": "Ofullständig. Batteriet togs bort.",
-                            "ERROR_BATTERY_REPLACE": "Ofullständig. Batteriet byttes ut.",
-                            "ERROR_AC_DETTACH": "Ofullständig. Nätadaptern kopplades bort.",
-                            "ERROR_USER_CANCEL": "Ofullständig. Avbröts av användaren.",
-                            "ERROR_UNEXPECTED": "Ofullständig. Ett oväntat fel inträffade."
+                            "ERROR_SUCCESS": "Klart: Återställningen lyckades.",
+                            "ERROR_SHUTDOWN": "Misslyckades: Systemet stängdes av.",
+                            "ERROR_LOGOFF": "Misslyckades: Användaren loggade ut.",
+                            "ERROR_BATTERY_REMOVE": "Misslyckades: Batteriet togs bort.",
+                            "ERROR_BATTERY_REPLACE": "Misslyckades: Batteriet byttes ut.",
+                            "ERROR_AC_DETTACH": "Misslyckades: Nätadaptern kopplades bort.",
+                            "ERROR_USER_CANCEL": "Misslyckades: Avbröts av användaren.",
+                            "ERROR_UNEXPECTED": "Misslyckades: Ett oväntat fel inträffade."
                         },
                         "popup": {
                             "description1": "Återställningsprocessen består av följande steg:<br>batteriet laddas upp helt  -->  batteriet laddas ur helt  -->  batteriet laddas upp helt",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "start",
                         "subHeading2": "slut",
                         "subHeading3": "använd detta schema för",
-                        "endTimeNote": "Sluttiden måste infalla högst 20 timmar efter starttiden",
+                        "endTimeNote": "SLUTTIDEN måste infalla högst 20 timmar efter STARTTIDEN",
                         "timeUnits": {
                             "unit1": "Timmar",
                             "unit2": "Minuter",
@@ -1169,22 +1174,22 @@
                         "everyday": "Varje dag",
                         "weekdays": "vardagar",
                         "weekends": "helger",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Ingen dag har valts"
                     },
                     "checkbox": "Justera datorns aktiva tid automatiskt utifrån användning",
                     "hyperlinkToGraph": "Klicka om du vill datorns tabell över aktivitet och aktiv tid",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Schemalägg datorn",
+                    "automaticMode": "Automatiskt läge",
+                    "manualMode": "Manuellt läge",
+                    "subNote": "Datorn är schemalagd för modernt vänteläge baserat på din användning.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Datoranvändning",
+                        "graph2Tittle": "Tillämpad aktiv tid",
+                        "graphSubtittle": "Under dessa perioder är datorn aktiverad så att det går snabbare att återuppta arbetet.",
+                        "graphNote": "Det finns inte tillräckligt med aktivitetsdata för att skapa en profil för automatisk schemaläggning. I smart vänteläge används schemat för manuellt läge tills det finns tillräckligt med data.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Regelbunden"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
+                    "subTitle2": "Ange vilken tid du använder datorn mest",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "WEBBADRESS",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Inställningarna har tillämpats.",
+                        "invalidURLMessage": "Ange en giltig webbadress.",
+                        "placeholder": "Börja med http:// eller https://"
                     },
                     "enterText": {
                         "title": "PLATSHÅLLARE FÖR TEXT",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv här"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredBySurfEasy": "Från SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredByDashLane": "Från Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2630,7 +2636,8 @@
         "custom": "Skräddarsydd upplevelse",
         "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
-        "moreInterest": "+ fler intressen",
+		"moreInterest": "+ fler intressen",
+		"toolbartitle": "Aktivera Lenovo Vantage-verktygsfältet (rekommenderas)",
         "title1": "Välkommen till",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Radio"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installationen misslyckades. Försök igen.",
-                "networkError": "Nätverksfel.",
-                "installationCancelled": "Installationen avbröts."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-inlösen",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installera",
-                "installing": "Installerar",
-                "downloading": "Hämtar",
-                "installed": "Installerad",
-                "launch": "Starta",
-                "seeMore": "Mer information"
-            },
-            "fieldName": {
-                "description": "Beskrivning",
-                "screenshots": "Skärmbilder",
-                "additionalInformation": "Mer information",
-                "by": "Av:",
-                "updated": "Uppdaterad:",
-                "type": "Typ:",
-                "category": "Kategori:",
-                "legalAgreement": "Avtal",
-                "readMore": "Läs mer",
-                "readLess": "Läs mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nu kan du ta reda på om din privata information har äventyrats eller använts av onlinespårare utan din vetskap.",
+            "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
+            "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installationen misslyckades. Försök igen.",
+                "networkError": "Nätverksfel.",
+                "installationCancelled": "Installationen avbröts."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-inlösen",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installera",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
+                "installed": "Installerad",
+                "launch": "Starta",
+                "seeMore": "Mer information"
+            },
+            "fieldName": {
+                "description": "Beskrivning",
+                "screenshots": "Skärmbilder",
+                "additionalInformation": "Mer information",
+                "by": "Av:",
+                "updated": "Uppdaterad:",
+                "type": "Typ:",
+                "category": "Kategori:",
+                "legalAgreement": "Avtal",
+                "readMore": "Läs mer",
+                "readLess": "Läs mindre"
+            }
+        }
+    }
 }

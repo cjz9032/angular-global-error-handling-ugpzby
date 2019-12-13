@@ -16,7 +16,7 @@
 						tabindex="0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-							<div class="left-icon-block top-pad-03">
+							<div class="left-icon-block">
 								<fa-icon *ngIf="!isAdminRequired && leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 									class="left-icon"
 									[icon]="leftIcon"></fa-icon>
@@ -116,10 +116,8 @@
 					</ng-template>
 
 				</div>
-
-				<div class="p-0"
-					[ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}"
-					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
+				<!-- [ngClass]="{'pl-4': type==='Camera', 'pl-2': type===undefined}" -->
+				<div class="tool-tip-icon" *ngIf="rightIcon.length > 0 && !voice && !toolTipStatus">
 					<fa-icon id="{{switchId+ '_tooltip_right_icon'}}"
 						attr.aria-label="{{ title }} tooltip, which reads: {{ tooltipText }}"
 						class="right-icon"

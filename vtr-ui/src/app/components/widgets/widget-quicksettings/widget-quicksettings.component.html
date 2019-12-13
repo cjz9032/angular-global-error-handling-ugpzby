@@ -1,4 +1,4 @@
-<div class="vtr-widget-quicksettings vtr-widget">
+<div *ngIf="cameraStatus.available || !deviceService.isSMode" class="vtr-widget-quicksettings vtr-widget">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
@@ -39,8 +39,8 @@
 							[isLoading]="cameraStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div>
-					<!-- <div *ngIf="!deviceService.isSMode"
-						class="text-right">
+					<div *ngIf="!deviceService.isSMode"
+						class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-quick-setting-system-update'"
 							[offIconDefinition]="'icomoon icomoon-quick-setting-system-update'"
 							[value]="true"
@@ -56,9 +56,9 @@
 							[isLoading]="false"
 							[hideOnOffLabel]="true">
 						</vtr-widget-switch-icon>
-					</div> -->
+					</div>
 					<!-- <div *ngIf="vantageToolbarStatus.available"
-						class="text-center">
+						class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
 							[value]="!vantageToolbarStatus.status"
@@ -74,7 +74,7 @@
 							[isLoading]="vantageToolbarStatus.isLoading">
 						</vtr-widget-switch-icon>
 					</div> -->
-					<!-- <div class="text-right">
+					<!-- <div class="">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
 							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
 							[title]="'dashboard.quickSettings.eyeCareMode' | translate"
@@ -88,7 +88,7 @@
 							[disable]="!(eyeCareModeStatus.available && quickSettingsWidget[2].state)"
 							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
 					</div> -->
-					<div class="" *ngIf="machineType ==1">
+					<!-- <div class="" *ngIf="machineType ==1">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
 							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
 							[title]="'dashboard.quickSettings.threshold' | translate"
@@ -115,7 +115,7 @@
 							[isBlocked]="!conservationModeStatus.status"
 							[isLoading]="false">
 						</vtr-widget-switch-icon>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

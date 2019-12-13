@@ -30,7 +30,7 @@ import { Router } from '@angular/router';
 })
 export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public cameraStatus = new FeatureStatus(true, false);
-	public microphoneStatus = new FeatureStatus(false, false);
+	public microphoneStatus = new FeatureStatus(true, false);
 	public eyeCareModeStatus = new FeatureStatus(true, false);
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
@@ -57,6 +57,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	];
 	private Windows: any;
 	private windowsObj: any;
+	private audioClient: any;
+	private audioData: string;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
@@ -112,6 +114,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+		if (this.audioClient) {
+			try {
+				this.audioClient.stopMonitor();
+				console.log('stop audio monitor success in widget');
+			} catch (error) {
+				console.log('core audio stop moniotr error ' + error.message);
+			}
+		} else {
+			this.deviceService.stopMicrophoneMonitor();
+		}
 		this.stopMonitorForCamera();
 		this.deviceService.stopMicrophoneMonitor();
 		// this.stopEyeCareMonitor();
@@ -125,10 +137,18 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					console.log('DeviceMonitorStatus.MicrophoneStatus', payload);
+					console.log('DeviceMonitorStatus.MicrophoneStatus', JSON.stringify(payload));
 					this.ngZone.run(() => {
-						this.microphoneStatus.status = payload.muteDisabled;
-						this.microphoneStatus.permission = payload.permission;
+						// microphone payload data is dynamic, need check one by one
+						if(payload.hasOwnProperty('muteDisabled')) {
+							this.microphoneStatus.status = payload.muteDisabled;
+						}
+						if(payload.hasOwnProperty('permission')) {
+							this.microphoneStatus.permission = payload.permission;
+						}
+						if(payload.hasOwnProperty('available')) {
+							this.microphoneStatus.available = (payload.available == true);
+						}
 					});
 					break;
 				case DeviceMonitorStatus.CameraStatus:
@@ -162,6 +182,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		// 	this.startEyeCareMonitor();
 		// }, 5);
 	}
+	
 	public getCameraPermission() {
 		try {
 			if (this.displayService.isShellAvailable) {
@@ -292,17 +313,53 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	private getMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService
-				.getMicrophoneStatus()
+			this.dashboardService.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getMicrophoneStatus.then', featureStatus);
 					this.microphoneStatus = featureStatus;
 					if (featureStatus.available) {
-						this.deviceService.startMicrophoneMonitor();
+						const win: any = window;
+						if (win.VantageShellExtension && win.VantageShellExtension.AudioClient) {
+							try {
+								const a = performance.now();
+								this.audioClient = win.VantageShellExtension.AudioClient.getInstance();
+								const b = performance.now();
+								console.log('audioclient init' + (b-a) + 'ms');
+								if (this.audioClient) {
+									this.audioClient.onchangecallback = (data: string) => {
+										if(data){
+											if (this.audioData && this.audioData.toString() == data) {
+												return;
+											}
+											console.log('data data, got it ' + data);
+											this.audioData = data;
+											const dic = data.split(',');
+											
+											if(['1','0'].includes(dic[0])){
+												const muteDisabled = (dic[0] === '0');
+										
+												// if (/^\d+$/.test(dic[1])){
+												//   const volume = parseInt(dic[1]);
+												// }
+												this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, {muteDisabled: muteDisabled});
+											} else {
+												console.log('core audio wrong data format');
+											}
+										}
+									};
+								}
+								this.audioClient.startMonitor();
+							} catch (error) {
+								console.log('cannot init core audio for widget quick settings' + error.message);
+							}
+						} else {
+							console.log('current shell version maybe not support core audio');
+							// this.deviceService.startMicrophoneMonitor();
+						}
 					}
 				})
 				.catch(error => {
-					this.logger.error('getCameraStatus', error.message);
+					this.logger.error('getMicrophoneStatus', error.message);
 					return EMPTY;
 				});
 		}
@@ -328,7 +385,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	//#endregion
 
 	public onCameraStatusToggle($event: boolean) {
-
 		this.cameraStatus.isLoading = true;
 		this.quickSettingsWidget[1].state = false;
 		try {
@@ -409,6 +465,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
+	public onSystemUpdateToggle($event: boolean) {
+		this.router.navigate(['device/system-updates'], { queryParams: {action: 'start'}});
+	}
+
 	// private getEyeCareModeCallback(response: any) {
 	// 	this.eyeCareModeStatus.status = response.eyecaremodeState;
 	// }
@@ -436,7 +496,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	onClick(path) {
+	onClick(path: string) {
 		this.deviceService.launchUri(path);
 	}
 
@@ -456,6 +516,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
 	public showBatteryThresholdsettings(event) {
 		this.thresholdStatus = !this.thresholdStatus;
 		this.thresholdLoadingStatus = true;
@@ -477,6 +538,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		}
 
 	}
+
 	public setChargeThresholdValues(batteryDetails: any) {
 		let batteryInfo: any = {};
 		try {
@@ -516,6 +578,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
 	public async setConservationModeStatusIdeaNoteBook(status: any) {
 		console.log('======== setConservationModeStatusIdeaNoteBook.then ======== ');
 		try {

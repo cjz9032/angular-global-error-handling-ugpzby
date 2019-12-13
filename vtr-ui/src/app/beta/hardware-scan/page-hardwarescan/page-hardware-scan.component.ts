@@ -51,6 +51,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		});
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
 
+		let self = this;
+		window.onfocus = function(){
+			self.validateScanState();
+		};
 	}
 
 	ngOnDestroy() {
@@ -61,6 +65,26 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			this.routeSubscription.unsubscribe();
 		}
 
+	}
+	
+	private validateScanState() {
+		if (this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isScanDoneExecuting()) {
+			this.hardwareScanService.getStatus().then((response: any) => {
+				if (response) {
+					if (response.isScanInProgress === false) {
+						console.log('Hardware scan has stopped running by inactivity or system suspended!');
+						// Reloading the page!
+						location.reload();
+					} else {
+						console.log('Hardware scan still working.');
+					}
+				} else {
+					console.error('GetStatus returned an empty response');
+				}
+			}).catch((error) => {
+				console.log('It was not possible to get the scan status:\n' + error);
+			});
+		}
 	}
 
 	private observerURL() {

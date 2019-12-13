@@ -642,7 +642,8 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
@@ -906,12 +907,16 @@
                     "PermanentError": "Batterikapasiteten er <b>redusert</b>. Bytt det ut med et nytt.",
                     "NotSupportACAdapterDetail": "<b>Strømadapteret støttes ikke.</b> Din Lenovo-datamaskin støtter ikke dette strømadapteret. Dette kan føre at datamaskinen plutselig slår seg av. Koble til rett strømadapter.",
                     "LimitedACAdapterSupportDetail": "<b>Strømadapteret kan ikke levere nok strøm</b> til din Lenovo-datamaskin. Dette vil påvirke operativsystemets ytelse og hastigheten på ladingen. Koble til riktig strømadapter på nytt.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} strøm er koblet til.</b>",
+                    "EmDriverInstalled": "Detaljert batteriinformasjon er utilgjengelig. Kjør Windows Update -> Se etter oppdateringer for å installere <b>Lenovo ACPI – Compliant Virtual Power Controller</b>-driveren."
                 },
                 "batteryNotDetected": "Kan ikke gjenkjenne batteri",
                 "thresholdNote": "<b>Merk:</b> Batteriet kan ikke lades fullstendig når batteriladeterskelen er aktivert.",
                 "seeDetailsLink": "For detaljer se",
-                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet."
+                "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "Strøm",
@@ -989,24 +994,24 @@
                     "description5": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden. Denne funksjonen har tre modi (stille modus, balansert modus og ytelsesmodus) og er nå tilgjengelig på glidebryteren for Windows-ytelse",
                     "nocqldesc": "Med Intelligent kjøling kan du justere systemets ytelse og termiske temperatur. I modusen «Ytelse» optimaliserer den systemets ytelse. Samtidig bidrar den til å holde systemet kjøligere eller mer stillegående i modusen «Stille og rolig».",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Intelligent kjøling justerer viftehastighet, maksimal ytelse og håndterer batterilevetiden.",
+                        "desc2": "Funksjonen har modusene som er oppført nedenfor og kan nå justeres med strømglidebryteren i Windows. Du får tilgang til den ved å klikke på batterisymbolet i Windows-systemskuffen.",
+                        "desc3": "Noen av modusene kan justeres automatisk på tvers av et bredere ytelsesspekter basert på din aktivitet. Du kan aktivere automatisk modus ved å trykke på Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Automatisk batterimodus",
+                            "desc1": "Glidebryteren er til venstre. Modusen endres dynamisk til Stille modus eller Batterimodus for å få den beste opplevelsen i likestrømmodus.",
+                            "title2": "Modus for automatisk ytelse",
+                            "desc2": "Glidebryteren står på midten eller til høyre for midten. Modusen endres dynamisk til Stille modus, Balansert modus eller Ytelsesmodus for å få den beste opplevelsen i likestrømmodus.",
+                            "title3": "Ytelsesmodus",
+                            "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Stille modus",
+                            "desc1": "Glidebryteren er til venstre. Viftehastighet og ytelse reduseres for å gi en kjøligere og mer stillegående datamaskin og lengst mulig batteritid.",
+                            "title2": "Balansert modus",
+                            "desc2": "Glidebryteren står på midten eller til høyre for midten. Viftehastighet og ytelse balanseres dynamisk for å gi den beste brukeropplevelsen.",
+                            "title3": "Ytelsesmodus",
+                            "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "Fra {{before}} Wh til {{after}} Wh",
                         "note": "Merk: Koble datamaskinen til strømnettet før du tilbakestiller batterimåleren. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fullfør. Vellykket tilbakestilling.",
-                            "ERROR_SHUTDOWN": "Ikke fullført. Systemet slås av.",
-                            "ERROR_LOGOFF": "Ikke fullført. Bruker logget av.",
-                            "ERROR_BATTERY_REMOVE": "Ikke fullført. Batteriet ble tatt ut.",
-                            "ERROR_BATTERY_REPLACE": "Ikke fullført. Batteriet ble byttet ut.",
-                            "ERROR_AC_DETTACH": "Ikke fullført. Strømadapteren ble koblet fra.",
-                            "ERROR_USER_CANCEL": "Ikke fullført. Avbrutt av bruker.",
-                            "ERROR_UNEXPECTED": "Ikke fullført. Det oppstod en uventet feil."
+                            "ERROR_SUCCESS": "Fullfør: Vellykket tilbakestilling.",
+                            "ERROR_SHUTDOWN": "Mislyktes: Systemet slås av.",
+                            "ERROR_LOGOFF": "Mislyktes: Bruker logget av.",
+                            "ERROR_BATTERY_REMOVE": "Mislyktes: Batteriet ble tatt ut.",
+                            "ERROR_BATTERY_REPLACE": "Mislyktes: Batteriet ble erstattet.",
+                            "ERROR_AC_DETTACH": "Mislyktes: Strømadapteren ble koblet fra.",
+                            "ERROR_USER_CANCEL": "Mislyktes: Avbrutt av bruker.",
+                            "ERROR_UNEXPECTED": "Mislyktes: Det oppstod en uventet feil."
                         },
                         "popup": {
                             "description1": "Tilbakestillingen skjer slik:<br>Lad batteriet helt opp  -->  La batteriet bli helt utladet  -->  Lad batteriet helt opp på nytt",
@@ -1134,7 +1139,7 @@
                         "subHeading1": "begynner",
                         "subHeading2": "slutt",
                         "subHeading3": "bruk denne planen for",
-                        "endTimeNote": "Sluttidspunktet må være innen 20 timer etter starttidspunktet",
+                        "endTimeNote": "SLUTT-tidspunktet må være innen 20 timer etter START-tidspunktet",
                         "timeUnits": {
                             "unit1": "Timer",
                             "unit2": "Minutter",
@@ -1169,22 +1174,22 @@
                         "everyday": "Hver dag",
                         "weekdays": "Uke dager",
                         "weekends": "Helger",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Det er ikke valgt en dag"
                     },
                     "checkbox": "Automatisk justering av datamaskinens aktive tid basert på bruk",
                     "hyperlinkToGraph": "Klikk for å se tabellen for aktivitet og aktiv tid for datamaskinen",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "Opprett kjøreplan for datamaskinen",
+                    "automaticMode": "Automatisk modus",
+                    "manualMode": "Manuell modus",
+                    "subNote": "Datamaskinen din er satt i Modern Standby basert på bruken din.",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "Bruken av denne datamaskinen",
+                        "graph2Tittle": "Brukt aktiv tid",
+                        "graphSubtittle": "I disse tidsperiodene holder vi datamaskinen klar for raskere gjenopptak.",
+                        "graphNote": "Aktivitetsdataene til denne datamaskinen er ikke tilstrekkelig til å gi en profil for automatisk planlegging. Smart Standby vil bruke manuell modusplan til det er nok data tilgjengelig.",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "Ingen",
+                            "frequent": "Frekvens"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Med denne funksjonen kan datamaskinen optimalisere batteristrømsparingen på inaktive tider uten at dette påvirker rask oppstart på tidspunkter med tyngre bruk.",
+                    "subTitle2": "Angi vanlige tidspunkter for bruk av datamaskinen",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "NETTADRESSE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "Innstillingene er tatt i bruk.",
+                        "invalidURLMessage": "Angi en gyldig URL-adresse.",
+                        "placeholder": "Start med http:// eller https://"
                     },
                     "enterText": {
                         "title": "TEKST SOM SKAL SKRIVES INN",
-                        "placeholder": "Please type here"
+                        "placeholder": "Skriv her"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
-            "poweredBySurfEasy": "Leveres av SurfEasy",
-            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "poweredBySurfEasy": "Leveres av SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PASSORDADMINISTRATOR",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "overvåke den mørke weben for å beskytte dine personlige data",
             "allowsYou3": "være trygg på usikrede WiFi-nettverk med innebygd VPN",
             "allowsYou4": "dele passord på en sikker måte uten å oppgi dem",
-            "poweredByDashLane": "Leveres av Dashlane",
-            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+            "poweredByDashLane": "Leveres av Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2630,7 +2636,8 @@
         "custom": "Egendefinert brukeropplevelse",
         "professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
-        "moreInterest": "+ flere interesser",
+		"moreInterest": "+ flere interesser",
+		"toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "Lagring",
             "wireless": "Trådløs"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
-                "networkError": "Nettverksfeil.",
-                "installationCancelled": "Installasjonen er avbrutt."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-innløsning",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installer",
-                "installing": "Installerer",
-                "downloading": "Laster ned",
-                "installed": "Installert",
-                "launch": "Start",
-                "seeMore": "Se mer"
-            },
-            "fieldName": {
-                "description": "Beskrivelse",
-                "screenshots": "Skjermbilder",
-                "additionalInformation": "Tilleggsinformasjon",
-                "by": "Av:",
-                "updated": "Oppdatert:",
-                "type": "Type:",
-                "category": "Kategori:",
-                "legalAgreement": "Juridisk avtale",
-                "readMore": "Les mer",
-                "readLess": "Les mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nå kan du finne ut om personopplysningene dine er på avveie eller brukes av sporingsverktøy på nettet uten at du vet om det.",
+            "security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
+            "connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installasjon mislyktes. Prøv igjen.",
+                "networkError": "Nettverksfeil.",
+                "installationCancelled": "Installasjonen er avbrutt."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-innløsning",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installer",
+                "installing": "Installerer",
+                "downloading": "Laster ned",
+                "installed": "Installert",
+                "launch": "Start",
+                "seeMore": "Se mer"
+            },
+            "fieldName": {
+                "description": "Beskrivelse",
+                "screenshots": "Skjermbilder",
+                "additionalInformation": "Tilleggsinformasjon",
+                "by": "Av:",
+                "updated": "Oppdatert:",
+                "type": "Type:",
+                "category": "Kategori:",
+                "legalAgreement": "Juridisk avtale",
+                "readMore": "Les mer",
+                "readLess": "Les mindre"
+            }
+        }
+    }
 }

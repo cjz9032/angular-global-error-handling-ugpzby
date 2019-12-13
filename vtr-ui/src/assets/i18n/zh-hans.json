@@ -642,7 +642,8 @@
             "notFound": "未找到",
             "registered": "已注册",
             "notRegistered": "未注册",
-            "fingerPrint": "Fingerprint"
+            "fingerPrint": "Fingerprint",
+            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
@@ -907,11 +908,15 @@
                     "PermanentError": "电池容量已<b>降级</b>。请更换一个新电池。",
                     "NotSupportACAdapterDetail": "<b>不支持交流电源适配器。</b>Lenovo 计算机不支持此交流电源适配器。它可能会导致突然关机。请连接正确的交流电源适配器。",
                     "LimitedACAdapterSupportDetail": "<b>交流电源适配器无法</b>为 Lenovo 计算机提供足够的电量，这将影响系统性能和充电速度。请重新连接适当的交流电源适配器。",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} 电源已连接。</b>",
+                    "EmDriverInstalled": "未提供电池详细信息。请运行 Windows 更新 -> 检查更新以安装 <b>Lenovo ACPI - Compliant Virtual Power Controller</b>驱动程序。"
                 },
                 "thresholdNote": "<b>注意：</b>启用电池充电阈值时，电池无法充满电。",
                 "seeDetailsLink": "查看详细信息",
-                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。"
+                "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
+                "dualConditions": {
+                    "NotDetected": "<b>The primary battery is not detected</b>"
+                }
             },
             "power": {
                 "title": "电源管理",
@@ -989,24 +994,24 @@
                     },
                     "nocqldesc": "智能冷却让您能够调整系统性能和散热温度。在“性能”模式下，它可以优化系统性能。同时，在“低温和安静”模式下，它有助于使系统温度更低且更安静。",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "智能冷却可调节风扇速度、最佳性能，并管理您的电池使用时间。",
+                        "desc2": "此功能具有以下所列模式，且现在可以通过 Windows 性能电源滑块进行调节。您可以通过单击 Windows 系统托盘中的电池图标来访问它。",
+                        "desc3": "有些模式可以根据您的活动在更广泛的性能范围内进行自动调节。要启用自动模式，请按 Fn+T。",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "自动电池模式",
+                            "desc1": "滑块位于左边。此模式会动态切换到安静模式或电池模式，以获得最佳的 DC 模式体验。",
+                            "title2": "自动性能模式",
+                            "desc2": "滑块位于中央或中央偏右的位置。此模式会动态切换到安静模式、平衡模式或性能模式，以获得最佳的 AC 模式体验。",
+                            "title3": "性能模式",
+                            "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "安静模式",
+                            "desc1": "滑块位于左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
+                            "title2": "平衡模式",
+                            "desc2": "滑块位于中央或中央偏右的位置。以动态方式平衡风扇速度和性能以获得最佳体验。",
+                            "title3": "性能模式",
+                            "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
                         }
                     }
                 },
@@ -1101,14 +1106,14 @@
                         "FCCText": "从 {{before}} Wh 到 {{after}} Wh",
                         "note": "注意：重置电池电量表之前，请确保将计算机连接到交流电源。",
                         "resetLog": {
-                            "ERROR_SUCCESS": "已完成。已成功重置。",
-                            "ERROR_SHUTDOWN": "未完成。系统已关闭。",
-                            "ERROR_LOGOFF": "未完成。用户已注销。",
-                            "ERROR_BATTERY_REMOVE": "未完成。已卸下电池。",
-                            "ERROR_BATTERY_REPLACE": "未完成。已更换电池。",
-                            "ERROR_AC_DETTACH": "未完成。已拔下交流电源适配器。",
-                            "ERROR_USER_CANCEL": "未完成。已被用户取消。",
-                            "ERROR_UNEXPECTED": "未完成。发生意外错误。"
+                            "ERROR_SUCCESS": "已完成：已成功重置。",
+                            "ERROR_SHUTDOWN": "失败：系统已关闭。",
+                            "ERROR_LOGOFF": "失败：用户已注销。",
+                            "ERROR_BATTERY_REMOVE": "失败：已卸下电池。",
+                            "ERROR_BATTERY_REPLACE": "失败：已更换电池。",
+                            "ERROR_AC_DETTACH": "失败：已拔下交流电源适配器。",
+                            "ERROR_USER_CANCEL": "失败：已被用户取消。",
+                            "ERROR_UNEXPECTED": "失败：发生意外错误。"
                         },
                         "popup": {
                             "description1": "重置过程如下：<br>为电池充满电  -->  将电池完全放电  -->  重新为电池充满电",
@@ -1169,22 +1174,22 @@
                         "everyday": "每天",
                         "weekdays": "工作日",
                         "weekends": "周末",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "未选择日期"
                     },
                     "checkbox": "根据您的使用情况自动调整计算机的活动时间",
                     "hyperlinkToGraph": "单击以查看计算机活动和活动时间表",
-                    "subTitle": "Schedule your computer",
-                    "automaticMode": "Automatic mode",
-                    "manualMode": "Manual mode",
-                    "subNote": "Your computer is scheduled to Modern Standby based on your usage.",
+                    "subTitle": "安排您的计算机",
+                    "automaticMode": "自动模式",
+                    "manualMode": "手动模式",
+                    "subNote": "根据您的使用情况将您的计算机安排为现代待机模式。",
                     "graph": {
-                        "graph1Tittle": "Usage of this computer",
-                        "graph2Tittle": "Applied active time",
-                        "graphSubtittle": "In these time periods, we keep the computer ready for quicker resume.",
-                        "graphNote": "The activity data of this computer is not sufficient to provide a profile for automatic scheduling. Smart Standby will use the Manual mode schedule until enough data is available.",
+                        "graph1Tittle": "此电脑的使用情况",
+                        "graph2Tittle": "应用的活动时间",
+                        "graphSubtittle": "在这些时间段内，我们让计算机保持随时就绪状态，以便实现更快速的恢复。",
+                        "graphNote": "此计算机的活动数据不足以为自动安排提供概要文件。智能待机将使用手动模式安排，直到有足够的数据可用为止。",
                         "legends": {
-                            "none": "None",
-                            "frequent": "Frequent"
+                            "none": "无",
+                            "frequent": "经常"
                         },
                         "hours": {
                             "zero": 0,
@@ -1213,8 +1218,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
+                    "subTitle2": "设置通常使用此计算机的时间",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1491,13 +1497,13 @@
                     },
                     "website": {
                         "url": "Web 站点 URL",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
-                        "placeholder": "Please start with http:// or https://"
+                        "successMessage": "已成功应用设置。",
+                        "invalidURLMessage": "请输入有效 URL。",
+                        "placeholder": "请以 http:// 或 https:// 开头"
                     },
                     "enterText": {
                         "title": "要输入的文本",
-                        "placeholder": "Please type here"
+                        "placeholder": "请在这里输入"
                     }
                 },
                 "fnCtrlKey": {
@@ -1943,19 +1949,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2161,8 +2169,7 @@
             "getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
             "getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
             "getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
-            "poweredBySurfEasy": "SurfEasy 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+            "poweredBySurfEasy": "SurfEasy 出品"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密码管理器",
@@ -2190,8 +2197,7 @@
             "allowsYou2": "监控暗网保障个人信息安全",
             "allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
             "allowsYou4": "在不显示密码的情况下安全地共享密码",
-            "poweredByDashLane": "Dashlane 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+            "poweredByDashLane": "Dashlane 出品"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2542,7 +2548,7 @@
         },
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
-            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注意</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
@@ -2622,7 +2628,7 @@
         "description": "您好！欢迎使用Vantage<br>Vantage是为您量身定做的系统管家。我们在Vantage中集成了多种功能可以帮助您轻松掌握系统状态，并持续保持系统处于最优状态。也可在您系统遇到问题时，为您快速运行诊断程序，定位问题。",
         "bullets1": "系统整体状态在首页清晰可览。",
         "bullets2": "安全顾问助您轻松改善系统安全状况。",
-        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型不可用）。",
+        "bullets3": "自动更新让您的设备处于最佳状态（ARM平台机型 和 windows S mode 机型不可用)。",
         "subtitle1": "您将如何使用您的设备？",
         "subtitle2": "告诉我们您的兴趣（选填）",
         "personal": "个人使用",
@@ -2630,7 +2636,8 @@
         "custom": "自定义",
         "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
-        "moreInterest": "+更多的兴趣",
+		"moreInterest": "+更多的兴趣",
+		"toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
         "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2836,7 +2843,8 @@
             "pci_express": "PCI Express",
             "storage": "存储器",
             "wireless": "无线"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3040,41 +3048,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安装失败。请重试。",
-                "networkError": "网络错误。",
-                "installationCancelled": "已取消安装。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兑换",
-            "lenovoMigrationAssistant": "联想乐换机"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安装",
-                "installing": "正在安装",
-                "downloading": "正在下载",
-                "installed": "已安装",
-                "launch": "启动",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "描述",
-                "screenshots": "屏幕快照",
-                "additionalInformation": "其他信息",
-                "by": "提供者：",
-                "updated": "更新日期：",
-                "type": "类型：",
-                "category": "类别：",
-                "legalAgreement": "法律协议",
-                "readMore": "阅读更多",
-                "readLess": "阅读更少"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3191,5 +3164,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
+            "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安装失败。请重试。",
+                "networkError": "网络错误。",
+                "installationCancelled": "已取消安装。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兑换",
+            "lenovoMigrationAssistant": "联想乐换机"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安装",
+                "installing": "正在安装",
+                "downloading": "正在下载",
+                "installed": "已安装",
+                "launch": "启动",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "描述",
+                "screenshots": "屏幕快照",
+                "additionalInformation": "其他信息",
+                "by": "提供者：",
+                "updated": "更新日期：",
+                "type": "类型：",
+                "category": "类别：",
+                "legalAgreement": "法律协议",
+                "readMore": "阅读更多",
+                "readLess": "阅读更少"
+            }
+        }
+    }
 }

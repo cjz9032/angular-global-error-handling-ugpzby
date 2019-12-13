@@ -1,33 +1,13 @@
 @import "../../app.theme";
 
 .vtr-page {
-	&.page-content-bg {
-		background: $shade_extralight;
-	}
-	.page-header-bg {
+	.vtr-page-header {
 		background: #289cd0;
 		background: linear-gradient(to right, #72d0bb 0%, #289cd0 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#72d0bb", endColorstr="#289cd0", GradientType=1);
-		&::before {
-			content: "";
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			background: url(/assets/images/gaming/GamingTopImage.jpg) center center no-repeat;
+		.page-header-bg {
+			background: url(/assets/images/gaming/GamingTopImage.png) center center no-repeat;
 			background-size: cover;
-			opacity: 0.15;
-		}
-
-		&.dcc {
-			background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185d73", endColorstr="#1e7390", GradientType=1);
-
-			&::before {
-				background: url(/assets/images/dcc/top-image-dcc.jpg) center center no-repeat;
-			}
 		}
 	}
 	.vtr-page-columns {
@@ -58,6 +38,7 @@
 				@media #{$breakpoint_lg} {
 					padding-left: $padding_side_sm;
 					padding-right: $padding_side_sm;
+					padding-bottom: $padding_side_sm;
 				}
 				@media #{$breakpoint_lg} {
 					// padding-top: 2rem;
