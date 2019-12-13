@@ -1,17 +1,20 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, mapTo, startWith, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { EmailScannerService } from '../services/email-scanner.service';
-import { from, merge } from 'rxjs';
+import { EmailVerifyService } from '../services/email-verify.service';
+import { combineLatest, from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateAllFormFields, validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
-import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
+import { BreachedAccountsService } from '../services/breached-accounts.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../../common/services/analytics/task-action-with-timeout.service';
+} from '../../../core/services/analytics/task-action-with-timeout.service';
+import { AbTestsName } from '../../../utils/ab-test/ab-tests.type';
+import { UserEmailService } from '../services/user-email.service';
+import { GetBreachesService } from '../services/get-breaches.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -31,6 +34,8 @@ interface UserProfile {
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	@Input() strategy: 'default' | 'emitEmail' = 'default';
+	@Input() appearance: 'default' | 'small' = 'default';
+	@Input() runAbTest = false;
 	@Output() userEmail = new EventEmitter<string>();
 
 	emailForm = this.formBuilder.group({
@@ -38,16 +43,24 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	});
 	emailWasSubmitted = false;
 	serverError$ = this.listenError();
-	isLoading$ = this.emailScannerService.loadingStatusChanged$;
+
+	isLoading$ = combineLatest([
+		this.emailScannerService.loading$.pipe(startWith(false)),
+		this.getBreachesService.loading$.pipe(startWith(false)),
+	]).pipe(map(([emailVerifyLoading, getBreachesLoading]) => emailVerifyLoading || getBreachesLoading));
+
 	lenovoId = '';
 	islenovoIdOpen = false;
 	isFormFocused = false;
+	currentTests = AbTestsName;
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private emailScannerService: EmailScannerService,
+		private emailScannerService: EmailVerifyService,
 		private userService: UserService,
 		private breachedAccountsService: BreachedAccountsService,
+		private userEmailService: UserEmailService,
+		private getBreachesService: GetBreachesService,
 		private cdr: ChangeDetectorRef,
 		private taskActionWithTimeoutService: TaskActionWithTimeoutService
 	) {
@@ -97,8 +110,13 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 		const userEmail = this.emailForm.value.email;
 
-		this.emailScannerService.setUserEmail(userEmail);
-		this.strategy === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
+		this.userEmailService.setUserEmail(userEmail);
+
+		this.userEmail.emit(userEmail);
+
+		if (this.strategy === 'default') {
+			this.setScanBreachedAccounts();
+		}
 	}
 
 	private handleStartTyping() {
@@ -119,7 +137,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	}
 
 	private setScanBreachedAccounts() {
-		this.emailScannerService.scanNotifierEmit();
+		this.breachedAccountsService.scanNotifierEmit();
 		this.taskActionWithTimeoutService.startAction(TasksName.scanBreachesAction);
 	}
 

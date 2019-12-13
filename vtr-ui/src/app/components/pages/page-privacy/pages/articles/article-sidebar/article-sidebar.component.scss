@@ -1,7 +1,7 @@
 @import "../../../styles/common-blocks";
 
 .article-widget {
-	margin: $topIndent 0 8.6rem 0;
+	margin: $topIndent 0 7.6rem 0;
 
 	&__top-description {
 		display: flex;
@@ -16,20 +16,21 @@
 	}
 
 	&__link {
+		@extend %button-link;
 		@extend %button-link__text;
-		font-size: 1.3rem;
-		color: #4A81FD;
-		font-weight: 500;
-		text-transform: uppercase;
+		@extend %button-link--padding-0;
+		@extend %button-link--uppercase;
+		font-weight: bold;
 	}
+}
+.all-articles-block {
+	padding: 4rem 0;
+	text-align: right;
 }
 
 .all-articles-link {
+	@extend %button-link;
 	@extend %button-link__text;
-	margin-top: 4rem;
-	font-size: 1.3rem;
-	text-transform: uppercase;
-	display: inline-block;
-	float: right;
-	color: #4A81FD;
+	@extend %button-link--uppercase;
+	@extend %button-link--padding-0;
 }

@@ -52,7 +52,7 @@
 			</button>
 		</ng-container>
 	</div>
-	<div [hidden]="!isDetailsExpanded || installedBrowser.accountsCount === 0" class="installed-browser__content" data-analyticsName="Details">
+	<div [hidden]="!isDetailsExpanded || installedBrowser.accountsCount === 0 || isFigleafInstalled" class="installed-browser__content" data-analyticsName="Details">
 		<div [hidden]="!installedBrowser.accounts" class="browser-accounts__wrapper">
 			<div class="accounts-title">
 				<div class="accounts-title__img-col"></div>

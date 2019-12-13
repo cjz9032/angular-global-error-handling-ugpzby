@@ -3,7 +3,7 @@ import { ScoreCalculate } from './score-calculate.interface';
 import { catchError, map, startWith } from 'rxjs/operators';
 import { coefficients } from './coefficients';
 import { of } from 'rxjs';
-import { FigleafOverviewService, FigleafSettings } from '../../../../common/services/figleaf-overview.service';
+import { FigleafOverviewService, FigleafSettings } from '../../../../core/services/figleaf-overview.service';
 
 @Injectable({
 	providedIn: 'root'
