@@ -1678,7 +1678,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
                 "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
-                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
                     "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",

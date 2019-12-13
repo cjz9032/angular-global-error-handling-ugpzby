@@ -1678,7 +1678,7 @@
                 "heading": "Mídia inteligente",
                 "title": "Upscaling da resolução de vídeo",
                 "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
-                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player",
                 "note": {
                     "description": "Esse recurso não funciona quando:",
                     "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
