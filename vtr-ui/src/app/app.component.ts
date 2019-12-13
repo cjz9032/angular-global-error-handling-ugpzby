@@ -32,6 +32,7 @@ import { TimerServiceEx } from 'src/app/services/timer/timer-service-ex.service'
 // import { AppUpdateService } from './services/app-update/app-update.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
+import { AbTestsGenerateConfigService } from './components/pages/page-privacy/core/ab-tests/ab-tests-generate-config.service';
 
 declare var Windows;
 @Component({
@@ -64,6 +65,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		private appUpdateService: AppUpdateService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
+		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
 		// private appUpdateService: AppUpdateService
 	) {
 		// to check web and js bridge version in browser console
@@ -125,6 +127,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		// VAN-5872, server switch feature
 		this.serverSwitchThis();
 		this.setRunVersionToRegistry();
+		this.abTestsGenerateConfigService.shuffle();
 	}
 
 	ngOnDestroy() {

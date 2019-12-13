@@ -9,10 +9,13 @@ export class VerifyEmailComponent {
 	@Input() breachedAccountsLength = 0;
 	@Input() userEmail = '';
 	@Input() isFigleafReadyForCommunication = false;
+	@Input() scanCounter: number;
+	@Input() scanCounterLimit: number;
 
 	@Output() verifyEmailEmit = new EventEmitter<boolean>();
 
 	isShowConfrimation = false;
+	isShowEmailBlock = false;
 
 	tryProductText = {
 		risk: 'With your email and passwords exposed, others have access to your personal information, which could lead to identity theft and financial fraud.',
@@ -26,5 +29,13 @@ export class VerifyEmailComponent {
 		if (!this.isFigleafReadyForCommunication) {
 			this.isShowConfrimation = true;
 		}
+	}
+
+	openInputEmailBlock() {
+		this.isShowEmailBlock = true;
+	}
+
+	hideEmailBlock() {
+		this.isShowEmailBlock = false;
 	}
 }

@@ -1,4 +1,4 @@
-<div class="tracker" *ngIf="(trackingMapSingleData$ | async) as trackingMapSingleData" data-analyticsName="PopupDetails">
+<div class="tracker" *ngIf="trackingMapSingleData" data-analyticsName="PopupDetails">
 	<div class="tracker__wrapper">
 		<div class="tracker__details-wrapper">
 			<div class="tracker__details">
@@ -8,8 +8,8 @@
 							<div class="tracker__progress-brand-img"
 								 [style.background-image]="'url('+ trackingMapSingleData.tracker.logo_url +')'">
 							</div>
-							<span
-								class="tracker__progress-brand-title">{{trackingMapSingleData.tracker.company_name}}</span>
+							<span class="tracker__progress-brand-title">{{trackingMapSingleData.tracker.company_name}}</span>
+							<span class="tracker__text tracker__text--white">Uses tracking tools on {{percentOfTrack}}% of websites you visit</span>
 						</div>
 						<div class="tracker__progress-bar">
 							<div class="tracker__progress-bar-wrapper">
@@ -17,72 +17,34 @@
 								<div class="tracker__progress-bar-fill" [style.width.%]="percentOfTrack"></div>
 							</div>
 						</div>
-						<div class="tracker__text tracker__text--white">
-							Uses tracking tools on {{percentOfTrack}}% of websites you visit
+						<div class="tracker__text tracker__text--white" *ngIf="trackingMapSingleData.tracker.metadata.description">
+							{{trackingMapSingleData.tracker.metadata.description}}
 						</div>
-					</div>
-				</div>
-				<div class="tracker__text tracker__text--main" *ngIf="trackingMapSingleData.tracker.metadata.description">
-					{{trackingMapSingleData.tracker.metadata.description}}
-				</div>
-				<div class="tracker__text tracker__text--main" *ngIf="!trackingMapSingleData.tracker.metadata.description">
-					{{trackingMapSingleData.tracker.company_name}} uses trackers to learn your online behavior and interests, and improve how you interact with its services.
-				</div>
-
-				<div class="tracker__types">
-					<span class="tracker__text tracker__text--bold">Tracking types</span>
-					<div class="tracker__types-block">
-						<div class="tracker__types-item"
-							 *ngFor="let trackingType of trackingMapSingleData.tracker.categories"
-							 [ngClass]="getColorForTrackerTypes(trackingType)">
-							{{trackingType}}
+						<div class="tracker__text tracker__text--white" *ngIf="!trackingMapSingleData.tracker.metadata.description">
+							{{trackingMapSingleData.tracker.company_name}} uses trackers to learn your online behavior and interests, and improve how you interact with its services.
 						</div>
 					</div>
 				</div>
 
-				<div class="tracker__stop-wrapper" *ngIf="!(isFigleafReadyForCommunication$ | async)">
-					<div class="tracker__stop">
-						<h3 class="tracker__stop-title">
-							Choose to block tracking tools completely
-						</h3>
-						<div class="tracker__text">
-							Lenovo Privacy Essentials lets you visit your favorite websites without sharing your private information.
-						</div>
-						<div class="tracker__btn-group">
-							<button class="tracker__btn"
-									vtrSendAnalytics
-									[metricsEvent]="'ItemClick'"
-									[metricsItem]="'InstallButton'"
-									vtrOfflineMode
-									vtrOpenFigleafInstaller>
-								{{'Install Now' | changeActionButtonText | async}}
-							</button>
-							<a class="tracker__link"
-							   routerLink="/privacy/landing"
-							   (click)="closePopup()"
-							   vtrSendAnalytics
-							   [metricsEvent]="'ItemClick'"
-							   [metricsItem]="'LearnMoreLink'">
-								Learn more
-							</a>
-						</div>
+				<div class="tracker__map">
+					<div class="tracker__map-wrapper">
+						<fl-tracking-map-single [trackers]="trackingMapSingleData"
+												[defaultSiteIcon]="defaultIcon.site"
+												[defaultTrackerIcon]="defaultIcon.tracker"
+												height="350"
+												width="800"
+												[positive]="isTrackersBlocked">
+						</fl-tracking-map-single>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="tracker__map">
-			<h3 class="tracker__map-title">
-				Websites you visit with {{trackingMapSingleData.tracker.company_name}} tracking tools
-			</h3>
-			<div class="tracker__map-wrapper">
-				<fl-tracking-map-single [trackers]="trackingMapSingleData"
-										[defaultSiteIcon]="defaultIcon.site"
-										[defaultTrackerIcon]="defaultIcon.tracker"
-										height="600"
-										width="255"
-										[positive]="isTrackersBlocked$ | async">
-				</fl-tracking-map-single>
-			</div>
+		<div class="tracker__stop-wrapper" *ngIf="!isFigleafReadyForCommunication">
+			<vtr-big-pitch
+				[texts]="getText()"
+				[isFigleafInExit]="isFigleafInExit"
+				[isTrackerPitch]="true">
+			</vtr-big-pitch>
 		</div>
 	</div>
 </div>

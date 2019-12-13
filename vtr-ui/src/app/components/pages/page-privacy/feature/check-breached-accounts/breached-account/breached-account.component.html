@@ -13,7 +13,7 @@
 				 [alt]="account.domain">
 			<div class="breached-account__count"
 					   *ngIf="account.domain === 'n/a'">
-			{{otherBreaches.length}}
+			{{otherBreaches.length > 99 ? '99+' : otherBreaches.length}}
 		</div>
 		</div>
         <div class="breached-account__text">
@@ -85,7 +85,7 @@
 						[metricsEvent]="'ItemClick'"
 						[metricsItem]="'SeeInAppVerify'"
 						(click)="openFigleafEmit('')">
-					<span>See in App</span>
+					<span>Details</span>
 				</button>
 			</div>
 		</div>
