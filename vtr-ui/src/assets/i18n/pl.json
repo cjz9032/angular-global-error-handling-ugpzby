@@ -1680,7 +1680,7 @@
                 "heading": "Inteligentne multimedia",
                 "title": "Skalowanie rozdzielczości wideo",
                 "desc": "<p><label>Ta funkcja poprawia jakość odtwarzania wideo, zwiększając rozdzielczość wideo. Szczególnie się sprawdzi, gdy wideo ma niską rozdzielczość.</label></p> <p style='margin-top:4px;'><label> Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Po włączeniu zaleca się podłączenie komputera do prądu przemiennego.</label></p>",
-                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Ta funkcja działa tylko w następujących odtwarzaczach: <br/> Windows Media player",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
                     "description1": "Komputer nie jest podłączony do zasilania prądem przemiennym, a poziom naładowania baterii jest niższy niż 20%.",

@@ -1680,7 +1680,7 @@
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
                 "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
-                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player <br/> 暴风影音 <br/> 迅雷影音",
+                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "计算机未连接交流电源且电池电量低于 20%。",

@@ -1680,7 +1680,7 @@
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
                 "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
-                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
                     "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",

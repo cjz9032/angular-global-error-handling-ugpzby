@@ -1680,7 +1680,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
                 "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
-                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
                     "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",

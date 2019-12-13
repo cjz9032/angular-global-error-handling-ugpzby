@@ -1680,7 +1680,7 @@
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオ解像度のアップスケーリング",
                 "desc": "<p><label>この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。</label></p> <p style='margin-top:4px;'><label> この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。有効にする場合は、コンピューターを AC 電源に接続することをお勧めします。</label></p>",
-                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "この機能は、次のプレイヤーでのみ機能します。<br/> Windows Media player",
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
                     "description1": "コンピューターが AC 電源に接続されておらず、バッテリーの電力が 20% 未満の場合。",

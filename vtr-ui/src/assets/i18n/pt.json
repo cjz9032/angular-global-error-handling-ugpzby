@@ -1680,7 +1680,7 @@
                 "heading": "Multimédia Inteligente",
                 "title": "Melhorar a resolução de vídeo",
                 "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label> Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Quando ativada, é recomendado ligar o computador à alimentação CA.</label></p>",
-                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player",
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
                     "description1": "O computador não está ligado à alimentação CA e a carga da bateria é inferior a 20%.",
