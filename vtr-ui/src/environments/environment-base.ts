@@ -7,4 +7,5 @@ export interface IEnvironment {
 	upeSharedKey: string;
 	allowMockService: boolean;
 	isLoggingEnabled: boolean;
+	isServerSwitchEnabled: boolean;
 }

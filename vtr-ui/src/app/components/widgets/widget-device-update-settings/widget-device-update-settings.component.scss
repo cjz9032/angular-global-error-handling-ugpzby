@@ -35,9 +35,7 @@
 			color: $shade_blue;
 			font-size: 1.6rem;
 			font-weight: $weight_600;
-			@media #{$breakpoint_xl2} {
-				max-width: 15.2rem;
-			}
+			max-width: calc(100% - 10.6rem);
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -91,8 +89,8 @@
 		}
 	}
 }
-.customizable{
-	fa-icon{
+.customizable {
+	fa-icon {
 		display: block !important;
 	}
 }

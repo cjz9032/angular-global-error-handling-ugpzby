@@ -1,4 +1,3 @@
-import { position } from './../page-privacy/common/components/tooltip/tooltip.component';
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { Component, OnInit } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';

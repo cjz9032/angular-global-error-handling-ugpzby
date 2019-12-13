@@ -21,6 +21,7 @@
 		</div>
 
 		<vtr-check-breaches-form strategy="emitEmail"
+								 appearance="small"
 								 class="enter-email__check-form"
 								 (userEmail)="allowEmitter()">
 		</vtr-check-breaches-form>
@@ -39,7 +40,7 @@
 							vtrOpenFigleafInstaller
 							vtrSendAnalytics
 							[metricsEvent]="'ItemClick'"
-							[metricsItem]="'InstallButton'">
+							[metricsItem]="'InstallButton' | changeActionButtonText | async">
 						{{'Install Now' | changeActionButtonText | async}}
 					</button>
 					<div class="scan-limit-pitch__button-link">

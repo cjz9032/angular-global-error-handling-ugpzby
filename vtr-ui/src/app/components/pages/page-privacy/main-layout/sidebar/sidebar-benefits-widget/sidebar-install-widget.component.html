@@ -1,6 +1,6 @@
 <div class="sidebar-install-widget"
 	 data-analyticsName="PromotionBlock"
-	 *ngIf="installWidgetSettings.visible && !isFigleafInstalled  && !(isFigleafInExit$ | async)">
+	 *ngIf="installWidgetSettings.visible && !isFigleafInstalled && !(isFigleafInExit$ | async)">
 	<div class="sidebar-install-widget__inner">
 		<div>
 			<img class="sidebar-install-widget__main-image"
@@ -15,14 +15,29 @@
 			</div>
 		</div>
 		<div class="sidebar-install-widget__button-group">
-			<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
-					vtrOfflineMode
-					vtrOpenFigleafInstaller
-					vtrSendAnalytics
-					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'InstallButton'">
-				{{primaryButtonText | changeActionButtonText | async}}
-			</button>
+			<vtr-ab-tests [testName]="currentTests.PrimaryButtonPitch">
+				<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
+						*testOption="'Secondary'"
+						vtrOfflineMode
+						vtrOpenFigleafInstaller
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'InstallButton' | changeActionButtonText | async"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Secondary'}">
+					{{primaryButtonText | changeActionButtonText | async}}
+				</button>
+				<button class="sidebar-install-widget__button"
+						*testOption="'Primary'"
+						vtrOfflineMode
+						vtrOpenFigleafInstaller
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'InstallButton' | changeActionButtonText | async"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Primary'}">
+					{{primaryButtonText | changeActionButtonText | async}}
+				</button>
+			</vtr-ab-tests>
+
 			<div class="sidebar-install-widget__button-link">
 				<a class="sidebar-install-widget__show-more"
 				   vtrSendAnalytics

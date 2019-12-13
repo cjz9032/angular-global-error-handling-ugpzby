@@ -78,22 +78,22 @@ export class SingleViewCore {
 		this.siteCloud = new SiteCloudCore(this._siteNodes, {
 			title: '',
 
-			position: {x: 0, y: this._props.height / 2 - 250},
+			position: {x: 150, y: this._props.height / 2 - 250},
 			minSizePx: this._props.minSizePx,
 		}, this._style.cloudStyle);
 
 		this.line = {
 			style: {...this._style.lineStyle},
 
-			start: {x: 0, y: this._props.height / 2 - 250},
-			end: {x: 1, y: -this._props.height / 2 + 150},
+			start: {x: -this._props.width / 2 + 100, y: 0},
+			end: {x: -this._props.width / 2 + 450, y: 1},
 		};
 
 		if (this._props.positive) {
-			this.line.end = {x: 1, y: -this._props.height / 2 + 270};
+			this.line.end = {x: -this._props.width / 2 + 300, y: 0};
 		}
 
-		this.chartCircles = ChartCircles.circles(65, 100, this._style.circleStyle);
+		this.chartCircles = ChartCircles.circles(55, 100, this._style.circleStyle);
 
 		const logoT: Transform2 = {
 			position: VectorUtils.ZeroVector(),
@@ -104,8 +104,9 @@ export class SingleViewCore {
 	}
 
 	get logoBlockTransform() {
-		const offset = (this._props.positive) ? 150 : 100;
-		return `translate(${0} ${-this._props.height / 2 + offset})`;
+		const offset = (this._props.positive) ? -300 : -250;
+		// return `translate(${0} ${-this._props.height / 2 + offset})`;
+		return `translate(${-250} ${0})`;
 	}
 
 	get viewBox() {
