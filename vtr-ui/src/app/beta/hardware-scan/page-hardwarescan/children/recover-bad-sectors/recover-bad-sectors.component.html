@@ -26,7 +26,7 @@
 					[ngClass]="{'action-button': isSelectedItem(), 'action-button-disable': !isSelectedItem()}" 
 					vtrMetrics 
 					metricsEvent="ItemClick" 
-					metricsParent="HardwareScan.RunRecoverBadSectors"
+					metricsParent="HardwareScan.RecoverBadSectors"
 					metricsItem="RecoverBadSectors.RunRecoverBadSectors" 
 					(click)="startRecover()" [disabled]="!isSelectedItem()">
 					{{textButton}}
