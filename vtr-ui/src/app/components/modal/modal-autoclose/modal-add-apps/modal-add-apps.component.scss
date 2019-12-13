@@ -181,10 +181,19 @@ ui-popover-apps {
 			overflow-x: hidden;
 			touch-action: none;
 			height: 55vh;
-			margin-top: 1rem;
+			margin-top: 0rem;
 			padding: 0 1.5rem;
 			.text-content {
-				padding-bottom: 3.4rem;
+				//padding-bottom: 3.4rem;
+				.image-content{
+					height:44%;
+					svg{
+						width:100%;
+						max-width:500px;
+						height:auto;
+						max-height:300px;					
+					}
+				}
 				h3 {
 					font-size: 3.5rem;
 					font-weight: $weight_light;
