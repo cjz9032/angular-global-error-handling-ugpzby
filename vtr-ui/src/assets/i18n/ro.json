@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
-            "subtitle": "Găsiți câteva sfaturi bune pentru aparatul Dvs.",
+            "subtitle": "Găsiți câteva sfaturi utile pentru dispozitivul dvs.",
             "question1": "Copii de siguranță și restaurarea fișierelor",
             "question2": "Cum să reîmprospătați PC-ul",
             "question3": "Cum să cunoașteți procesorul dispozitivului",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Starea sistemului",
-            "subtitle": "FIȚI LA CURENT CU STAREA DISPOZITIVULUI DVS.",
+            "subtitle": "Fiți la curent cu starea dispozitivului dvs.",
             "memory": {
                 "title": "Memorie",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Vedeți detaliile",
                 "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Bateria principală nu este detectată.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Cursorul este în centru sau în centru-dreapta. Viteza şi performanţa ventilatorului sunt echilibrate dinamic – pentru cea mai bună experienţă.",
                             "title3": "Mod performanţă",
                             "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MAI MULTE",
                     "control1": "ELEMENTE DE CONTROL TOUCHPAD",
                     "control2": "ELEMENTE DE CONTROL MOUSE",
-                    "control3": "ELEMENTE DE CONTROL TRACKPOINT"
+                    "control3": "ELEMENTE DE CONTROL TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Medii inteligente",
                 "title": "Mărirea rezoluţiei video",
                 "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
-                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player",
                 "note": {
                     "description": "Această caracteristică nu funcţionează când:",
                     "description1": "computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Aveţi nevoie de ajutor?",
-            "description": "CONTACTAȚI-NE PENTRU A VĂ AJUTA.",
+            "description": "Contactați-ne pentru a vă ajuta.",
             "listLenovoCommunity": "Comunitatea Lenovo",
             "listContactCustomerService": "Contactați serviciul pentru clienți",
             "listContactUsOnWechat": "Contactați-ne pe WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Linkuri rapide",
-            "description": "CONTACTAȚI-NE PENTRU A VĂ AJUTA.",
+            "description": "Contactați-ne pentru a vă ajuta.",
             "listETicket": "Obțineți asistență cu E-ticket",
             "listServiceProvider": "Găsiți un furnizor de servicii",
             "listAboutLenovoVantage": "Despre Lenovo Vantage"

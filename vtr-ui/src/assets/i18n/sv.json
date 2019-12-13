@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "F & A för din maskin",
-            "subtitle": "Hitta några hjälpsamma tips för din enhet.",
+            "subtitle": "Läs praktiska tips för din enhet.",
             "question1": "Säkerhetskopiera och återställa filer",
             "question2": "Uppdatera datorn",
             "question3": "Se din dators processor",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "ÖVERSIKT ÖVER ENHETENS STATUS.",
+            "subtitle": "Se enhetens status på ett ögonblick.",
             "memory": {
                 "title": "Minne",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Visa information",
                 "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Det primära batteriet kan inte identifieras.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Reglaget är placerat i mitten eller mitten höger. Fläkthastighet och prestanda balanseras dynamiskt för bästa möjliga upplevelse.",
                             "title3": "Prestandaläge",
                             "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MER",
                     "control1": "HANTERING AV STYRPLATTA",
                     "control2": "HANTERING AV MUS",
-                    "control3": "TRACKPOINT-KONTROLLER"
+                    "control3": "TRACKPOINT-KONTROLLER",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
                 "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label> Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Vi rekommenderar att du ansluter datorn till nätström när funktionen är aktiverad.</label></p>",
-                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player",
                 "note": {
                     "description": "Funktionen fungerar inte när:",
                     "description1": "datorn inte är ansluten till nätström och batterinivån är lägre än 20 %.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Behöver du hjälp?",
-            "description": "KONTAKTA OSS OM DU VILL HA HJÄLP.",
+            "description": "Kontakta oss om du behöver hjälp.",
             "listLenovoCommunity": "Lenovo-forum",
             "listContactCustomerService": "Kontakta kundtjänst",
             "listContactUsOnWechat": "Kontakta oss via WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Snabblänkar",
-            "description": "KONTAKTA OSS OM DU VILL HA HJÄLP.",
+            "description": "Kontakta oss om du behöver hjälp.",
             "listETicket": "Få support med e-kvitto",
             "listServiceProvider": "Hitta en tjänstleverantör",
             "listAboutLenovoVantage": "Om Lenovo Vantage"

@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
-            "subtitle": "TROUVEZ DES CONSEILS UTILES POUR VOTRE APPAREIL.",
+            "subtitle": "Trouvez des astuces utiles pour votre appareil.",
             "question1": "Sauvegarde et restauration de vos fichiers",
             "question2": "Procédure pour l'actualisation de votre ordinateur",
             "question3": "Procédure pour connaître l'unité centrale de votre ordinateur",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "État du système",
-            "subtitle": "DÉTECTEZ RAPIDEMENT L'ÉTAT DE VOTRE PÉRIPHÉRIQUE.",
+            "subtitle": "Détectez rapidement l'état de votre appareil.",
             "memory": {
                 "title": "Mémoire",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Voir les détails",
                 "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>La batterie principale n'est pas détectée.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Le curseur se trouve au centre ou est centré à droite. La vitesse du ventilateur et les performances sont réglées de manière dynamique pour optimiser les performances.",
                             "title3": "Mode de performance",
                             "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "PLUS",
                     "control1": "CONTRÔLES DU PAVÉ TACTILE",
                     "control2": "CONTRÔLE DE LA SOURIS",
-                    "control3": "PARAMÈTRES TRACKPOINT"
+                    "control3": "PARAMÈTRES TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
                 "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
-                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Besoin d'aide ?",
-            "description": "NOUS CONTACTER POUR OBTENIR DE L'AIDE.",
+            "description": "Contactez-nous pour obtenir de l'aide.",
             "listLenovoCommunity": "Communauté Lenovo",
             "listContactCustomerService": "Contacter le service client",
             "listContactUsOnWechat": "Nous contacter sur WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Liens d'accès rapide",
-            "description": "NOUS CONTACTER POUR OBTENIR DE L'AIDE.",
+            "description": "Contactez-nous pour obtenir de l'aide.",
             "listETicket": "Obtenir de l'aide avec E-ticket",
             "listServiceProvider": "Trouver un prestataire de services",
             "listAboutLenovoVantage": "Au sujet de Lenovo Vantage"

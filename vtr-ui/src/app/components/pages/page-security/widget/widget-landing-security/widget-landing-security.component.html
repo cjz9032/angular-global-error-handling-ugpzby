@@ -28,7 +28,7 @@
                 </div>
             </section>
             <span *ngIf="!item.showOwn" class="badge d-flex align-items-center ml-auto"
-            [ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' , 
+            [ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' ,
                     'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
                     'status-loading': item.status === 'loading' || item.status === 'installing'}">
                 {{item.detail}}</span>
