@@ -491,7 +491,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private doRecoverBadSectors() {
 		console.log('[Start] Recover Bad Sectors');
+		
 		this.currentTaskType = TaskType.RecoverBadSectors;
+		this.currentTaskStep = TaskStep.Run;
+		this.itemParentCancelScan = this.getMetricsParentValue();
+		this.itemNameCancelScan = this.getMetricsItemNameCancel();
+
 		this.progress = 0;
 
 		const devicesId = [];
