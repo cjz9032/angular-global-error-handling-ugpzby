@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { OneClickScanSteps } from './one-click-scan-steps.service';
-import { UserAllowService } from '../../../common/services/user-allow.service';
-import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
-import { EmailScannerService } from '../../check-breached-accounts/services/email-scanner.service';
+import { UserAllowService } from '../../../core/services/user-allow.service';
+import { BrowserAccountsService } from '../../non-private-password/services/browser-accounts.service';
+import { BreachedAccountsService } from '../../check-breached-accounts/services/breached-accounts.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +14,7 @@ export class PermitService {
 	constructor(
 		private userAllowService: UserAllowService,
 		private browserAccountsService: BrowserAccountsService,
-		private emailScannerService: EmailScannerService,
+		private breachedAccountsService: BreachedAccountsService,
 	) {
 	}
 
@@ -29,7 +29,7 @@ export class PermitService {
 					this.setPermitTrackersAndPassword();
 					break;
 				case this.oneClickScanSteps.VERIFY_EMAIL:
-					this.emailScannerService.scanNotifierEmit();
+					this.breachedAccountsService.scanNotifierEmit();
 					break;
 				default:
 					break;

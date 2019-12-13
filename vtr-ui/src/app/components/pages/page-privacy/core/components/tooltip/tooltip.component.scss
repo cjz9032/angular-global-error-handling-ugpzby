@@ -1,0 +1,107 @@
+@import "../../../styles/common-blocks";
+
+$triangleSize: 10px;
+
+:host {
+	display: inline-block;
+}
+
+.tooltip-fg {
+	position: relative;
+
+	&__text {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+		cursor: pointer;
+	}
+
+	&__context {
+		@extend %text-common;
+		display: flex;
+		position: absolute;
+		z-index: 2;
+		margin-top: $triangleSize + 3px;
+		padding: 2rem;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		background: white;
+		box-shadow: 0 2px 14px 0 rgba(0,0,0,0.20);
+		border-radius: 14px;
+
+		&:after {
+			content: " ";
+			position: absolute;
+			bottom: 99%;  /* At the top of the tooltip */
+			left: 50%;
+			margin-left: -$triangleSize;
+			border-width: $triangleSize;
+			border-style: solid;
+			border-color: transparent transparent white transparent;
+			-webkit-filter: drop-shadow(0 -3px 2px rgba(0,0,0,.2));
+			filter: drop-shadow(0 -3px 2px rgba(0,0,0,.2));
+		}
+
+		&--left-to-right {
+			transform: translateX(0%);
+			border-radius: 0 14px 14px 14px;
+			margin-top: $triangleSize;
+
+			&:after {
+				margin-left: -($triangleSize / 2);
+				border-width: $triangleSize / 2;
+				border-color: transparent transparent white white;
+				left: $triangleSize / 2;
+			}
+		}
+
+		&--right-to-left {
+			transform: translateX(-100%);
+			border-radius: 14px 0 14px 14px;
+			margin-top: $triangleSize;
+
+			&:after {
+				margin-left: -($triangleSize / 2);
+				border-width: $triangleSize / 2;
+				border-color: transparent white white transparent;
+				left: calc(100% - #{$triangleSize / 2});
+			}
+		}
+
+		&--top-left-to-right {
+			transform: translateX(0%);
+			top: unset;
+			bottom: 250%;
+			border-radius: 14px 14px 14px 0;
+			margin-top: $triangleSize;
+
+			&:after {
+				margin-left: -($triangleSize / 2);
+				border-width: $triangleSize / 2;
+				left: $triangleSize / 2;
+				top: 99%;
+				filter: drop-shadow(0 3px 2px rgba(0,0,0,.2));
+				border-color: white transparent transparent white;
+			}
+		}
+
+		&--top-right-to-left {
+			transform: translateX(-100%);
+			top: unset;
+			bottom: 250%;
+			border-radius: 14px 14px 0 14px;
+			margin-top: $triangleSize;
+
+			&:after {
+				margin-left: -($triangleSize / 2);
+				border-width: $triangleSize / 2;
+				left: calc(100% - #{$triangleSize / 2});
+				top: 99%;
+				filter: drop-shadow(0 3px 2px rgba(0,0,0,.2));
+				border-color: white white transparent transparent;
+			}
+		}
+	}
+}

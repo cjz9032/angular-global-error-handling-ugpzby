@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
-import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
+import { FigleafOverviewService } from '../../../core/services/figleaf-overview.service';
+import { AppStatusesService } from '../../../core/services/app-statuses/app-statuses.service';
 import { AppStatuses } from '../../../userDataStatuses';
 
 @Component({

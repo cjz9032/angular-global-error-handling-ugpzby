@@ -2,7 +2,7 @@
 
 .sidebar-expired-widget {
 	@extend %common-block-wrapper;
-	margin: $topIndent 0 10.6rem 0;
+	margin: $topIndent 0 9.6rem 0;
 	letter-spacing: 0;
 	padding: 0 0 3.5rem 0;
 
@@ -20,8 +20,7 @@
 
 	&__main-image {
 		vertical-align: top;
-		min-width: 150px;
-		max-width: 100%;
+		width: 100%;
 	}
 
 	&__text {
@@ -75,7 +74,6 @@
 
 	&__show-more-text {
 		@extend %button-link__text;
-		color: #4A81FD;
 	}
 
 	&__list {
