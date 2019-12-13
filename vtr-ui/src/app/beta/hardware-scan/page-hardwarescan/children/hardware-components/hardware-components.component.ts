@@ -558,6 +558,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		(<ModalWaitComponent>modal.componentInstance).modalTitle = this.translate.instant('hardwareScan.loadingComponents');
 		(<ModalWaitComponent>modal.componentInstance).modalDescription = this.translate.instant('hardwareScan.retrievingHardwareInformation');
 		(<ModalWaitComponent>modal.componentInstance).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
+		(<ModalWaitComponent>modal.componentInstance).ItemParent = "HardwareScan.LoadingComponents";
+		(<ModalWaitComponent>modal.componentInstance).CancelItemName = "LoadingComponents.Close";
 
 		return modal;
 	}
