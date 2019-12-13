@@ -917,7 +917,7 @@
                 "seeDetailsLink": "انظر التفاصيل",
                 "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>لم يتم الكشف عن البطارية الرئيسية.</b>"
                 }
             },
             "power": {
@@ -1014,7 +1014,8 @@
                             "desc2": "يوجد شريط التمرير في المنتصف أو في منتصف جهة اليسار. يحدث توازن ديناميكي بين سرعة المروحة والأداء من أجل الحصول على أفضل تجربة ممكنة.",
                             "title3": "وضع الأداء",
                             "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1517,7 +1518,8 @@
                     "more": "المزيد",
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
-                    "control3": "إعدادات تحكم TRACKPOINT"
+                    "control3": "إعدادات تحكم TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1876,7 +1878,7 @@
         },
         "needHelp": {
             "title": "هل تحتاج للمساعدة؟",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listLenovoCommunity": "مجتمع Lenovo",
             "listContactCustomerService": "اتصل بخدمة العملاء",
             "listContactUsOnWechat": "اتصل بنا علي WeChat",
@@ -1887,7 +1889,7 @@
         },
         "quicklinks": {
             "title": "روابط سريعة",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listETicket": "احصل علي الدعم من خلال التذكرة الإلكترونية",
             "listServiceProvider": "البحث عن موفر خدمة",
             "listAboutLenovoVantage": "حول Lenovo Vantage"
@@ -2638,8 +2640,8 @@
         "custom": "تجربة مخصصة",
         "professional": "استخدام مهني",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
-		"moreInterest": "‏+ المزيد من الاهتمامات",
-		"toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
+        "moreInterest": "‏+ المزيد من الاهتمامات",
+        "toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
         "title1": "مرحبًا بك في",
         "title2": "Lenovo",
         "title3": "Vantage",

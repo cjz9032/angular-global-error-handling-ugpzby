@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Otázky a odpovědi pro váš stroj",
-            "subtitle": "NÁJDETE NĚKTERÉ POTŘEBNÉ TIPY PRO VAŠE ZAŘÍZENÍ.",
+            "subtitle": "Nalezněte užitečné tipy pro své zařízení.",
             "question1": "Zálohování a obnovení souborů",
             "question2": "Jak obnovit počítač",
             "question3": "Jako poznat typ procesoru v počítači",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stav systému",
-            "subtitle": "RYCHLÉ ZACHYCENÍ STAVU ZAŘÍZENÍ.",
+            "subtitle": "Rychlé zachycení stavu zařízení.",
             "memory": {
                 "title": "Paměť",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Zobrazit podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Probíhá reset měřiče baterie. Ponechejte připojený napájecí adaptér.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Primární baterie nebyla detekována.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Posuvník je uprostřed nebo vpravo od středu. Rychlost a výkon ventilátoru jsou dynamicky vyvážené a zajišťují nejvyrovnanější výkon.",
                             "title3": "Režim výkonu",
                             "desc3": "Posuvník je zcela vpravo. Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "DALŠÍ",
                     "control1": "OVLÁDÁNÍ DOTYKOVÉ PLOŠKY",
                     "control2": "OVLÁDÁNÍ MYŠI",
-                    "control3": "OVLÁDÁNÍ TRACKPOINT"
+                    "control3": "OVLÁDÁNÍ TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potřebujete pomoc?",
-            "description": "KONTAKTUJTE NÁS, POMŮŽEME VÁM.",
+            "description": "Kontaktujte nás, abychom vám mohli pomoci.",
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktovat servisní středisko",
             "listContactUsOnWechat": "Kontaktujte nás ve službě WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Rychlé odkazy",
-            "description": "KONTAKTUJTE NÁS, POMŮŽEME VÁM.",
+            "description": "Kontaktujte nás, abychom vám mohli pomoci.",
             "listETicket": "Získat podporu přes E-ticket",
             "listServiceProvider": "Najít poskytovatele služeb",
             "listAboutLenovoVantage": "Představujeme program Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Vlastní zkušenost",
         "professional": "Určeno pro odborníky",
         "privacytitle": "Pomozte nám vylepšit kvalitu aplikace tím, že povolíte anonymní shromažďování diagnostických údajů.",
-		"moreInterest": "+ další zájmy",
-		"toolbartitle": "Povolit nástrojovou lištu Lenovo Vantage (doporučeno)",
+        "moreInterest": "+ další zájmy",
+        "toolbartitle": "Povolit nástrojovou lištu Lenovo Vantage (doporučeno)",
         "title1": "Vítá vás",
         "title2": "Lenovo",
         "title3": "Vantage",

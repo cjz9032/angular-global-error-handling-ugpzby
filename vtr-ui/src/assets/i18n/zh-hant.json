@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "您機器的問答",
-            "subtitle": "為您的設備找到一些有用的提示。",
+            "subtitle": "尋找您裝置適用的實用提示。",
             "question1": "備份及還原檔案",
             "question2": "如何重新整理電腦",
             "question3": "如何知道電腦的 CPU",
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "查看詳細資料",
                 "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>未偵測到主要電池。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "滑桿在中央或中間靠右。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
                             "title3": "效能模式",
                             "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "其他資訊",
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
-                    "control3": "TRACKPOINT 控制項"
+                    "control3": "TRACKPOINT 控制項",
+                    "less": "LESS"
                 }
             }
         },
@@ -2636,8 +2638,8 @@
         "custom": "自訂",
         "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
-		"moreInterest": "+ 更多興趣",
-		"toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
+        "moreInterest": "+ 更多興趣",
+        "toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
         "title1": "歡迎使用",
         "title2": "Lenovo",
         "title3": "Vantage",

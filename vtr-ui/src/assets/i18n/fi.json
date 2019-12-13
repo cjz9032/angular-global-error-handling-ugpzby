@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
-            "subtitle": "TARKISTA, ETTÄ KOSKEVAT OHJELMAT LAITTEESTA.",
+            "subtitle": "Löydä laitetta koskevia hyödyllisiä ohjeita.",
             "question1": "Tiedostojen varmuuskopiointi ja palauttaminen",
             "question2": "Tietokoneen siivoaminen",
             "question3": "Koneen suorittimen tunnistaminen",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Järjestelmän tila",
-            "subtitle": "PIKAINEN YHTEENVETO LAITTEESI TILASTA.",
+            "subtitle": "Pikainen yhteenveto laitteesi tilasta.",
             "memory": {
                 "title": "Muisti",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
                 "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Ensisijaista akkua ei havaittu.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
                             "title3": "Suorituskykytila",
                             "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "ENEMMÄN",
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
-                    "control3": "TRACKPOINT-TOIMINNOT"
+                    "control3": "TRACKPOINT-TOIMINNOT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Tarvitsetko apua?",
-            "description": "OTA MEIHIN YHTEYTTÄ JOS TARVITSET APUA.",
+            "description": "Ota meihin yhteyttä, niin saat apua.",
             "listLenovoCommunity": "Lenovo-yhteisö",
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Pikalinkit",
-            "description": "OTA MEIHIN YHTEYTTÄ JOS TARVITSET APUA.",
+            "description": "Ota meihin yhteyttä, niin saat apua.",
             "listETicket": "Hae tukea E-lipun kanssa",
             "listServiceProvider": "Etsi palvelun toimittaja",
             "listAboutLenovoVantage": "Tietoja Lenovo Vantage -sovelluksesta"
@@ -2636,8 +2638,8 @@
         "custom": "Mukautettu käyttökokemus",
         "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
-		"moreInterest": "+ muuta kiinnostuksen kohdetta",
-		"toolbartitle": "Ota käyttöön Lenovo Vantage -työkalurivi (suositus)",
+        "moreInterest": "+ muuta kiinnostuksen kohdetta",
+        "toolbartitle": "Ota käyttöön Lenovo Vantage -työkalurivi (suositus)",
         "title1": "Tervetuloa",
         "title2": "Lenovo",
         "title3": "Vantage",

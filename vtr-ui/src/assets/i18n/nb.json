@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
-            "subtitle": "Finn noen nyttige tips for din enhet.",
+            "subtitle": "Finn noen nyttige tips for enheten din.",
             "question1": "Sikkerhetskopier og gjenopprett filene dine",
             "question2": "Slik oppfrisker du datamaskinen din",
             "question3": "Bli kjent med datamaskinens prosessor",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "SE ENHETSSTATUS RASKT.",
+            "subtitle": "Se enhetsstatusen raskt.",
             "memory": {
                 "title": "Minne",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Finner ikke hovedbatteriet.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Glidebryteren står på midten eller til høyre for midten. Viftehastighet og ytelse balanseres dynamisk for å gi den beste brukeropplevelsen.",
                             "title3": "Ytelsesmodus",
                             "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-                    "control3": "TRACKPOINT-KONTROLLER"
+                    "control3": "TRACKPOINT-KONTROLLER",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Trener du hjelp?",
-            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listLenovoCommunity": "Lenovo-samfunnet",
             "listContactCustomerService": "Kontakt kundeservice",
             "listContactUsOnWechat": "Kontakt oss på WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Hurtigkoblinger",
-            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listETicket": "Få støtte med en e-forespørsel",
             "listServiceProvider": "Finn en tjenesteleverandør",
             "listAboutLenovoVantage": "Om Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Egendefinert brukeropplevelse",
         "professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
-		"moreInterest": "+ flere interesser",
-		"toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
+        "moreInterest": "+ flere interesser",
+        "toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",

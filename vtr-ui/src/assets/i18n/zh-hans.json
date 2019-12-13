@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
-            "subtitle": "查找关于设备的实用小提示",
+            "subtitle": "查找适用于设备的有用提示。",
             "question1": "备份和恢复文件",
             "question2": "如何刷新您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "系统状态",
-            "subtitle": "快速了解设备状态",
+            "subtitle": "快速了解设备状态。",
             "memory": {
                 "title": "内存",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "查看详细信息",
                 "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>未检测到主电池。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "滑块位于中央或中央偏右的位置。以动态方式平衡风扇速度和性能以获得最佳体验。",
                             "title3": "性能模式",
                             "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "更多",
                     "control1": "触摸板控制",
                     "control2": "鼠标控制",
-                    "control3": "TRACKPOINT 控制"
+                    "control3": "TRACKPOINT 控制",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "需要帮助",
-            "description": "联系我们以获取帮助。",
+            "description": "请联系我们以便为您提供帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "直通车",
-            "description": "联系我们以获取帮助。",
+            "description": "请联系我们以便为您提供帮助。",
             "listETicket": "通过电子凭单获取支持",
             "listServiceProvider": "查找服务供应商",
             "listAboutLenovoVantage": "关于我们"
@@ -2636,8 +2638,8 @@
         "custom": "自定义",
         "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
-		"moreInterest": "+更多的兴趣",
-		"toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
+        "moreInterest": "+更多的兴趣",
+        "toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
         "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",

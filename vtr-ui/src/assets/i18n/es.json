@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Preguntas y respuestas para su máquina",
-            "subtitle": "ENCUENTRA ALGUNOS CONSEJOS ÚTILES PARA TU DISPOSITIVO.",
+            "subtitle": "Encuentre consejos útiles para su dispositivo.",
             "question1": "Cree copias de seguridad y restaure sus archivos",
             "question2": "Cómo renovar su equipo",
             "question3": "Cómo conocer la CPU de su equipo",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Estado del sistema",
-            "subtitle": "ACTUALIZACIÓN RÁPIDA DEL ESTADO DE SU DISPOSITIVO.",
+            "subtitle": "Actualización rápida del estado de su dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Ver detalles",
                 "gaugeResetWarning": "<b>Nota:</b> el restablecimiento del indicador de la batería está en curso. Mantenga el adaptador de alimentación CA está conectado.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>No se detectó la batería principal.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "El graduador está en el centro o a la derecha. La velocidad del ventilador y el rendimiento se equilibran de forma dinámica para la mejor experiencia.",
                             "title3": "Modalidad de rendimiento",
                             "desc3": "El graduador está en el extremo derecho. La velocidad del ventilador y la temperatura permisible de la superficie son superiores para obtener el rendimiento máximo."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MÁS",
                     "control1": "CONTROLES DEL ÁREA TÁCTIL",
                     "control2": "CONTROLES DE MOUSE",
-                    "control3": "CONTROLES DE TRACKPOINT"
+                    "control3": "CONTROLES DE TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "¿Necesita ayuda?",
-            "description": "PÓNGASE EN CONTACTO CON NOSOTROS PARA AYUDARLE.",
+            "description": "Póngase en contacto con nosotros para recibir ayuda.",
             "listLenovoCommunity": "Comunidad de Lenovo",
             "listContactCustomerService": "Póngase en contacto con servicio al cliente",
             "listContactUsOnWechat": "Póngase en contacto con nosotros en WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Enlaces rápidos",
-            "description": "PÓNGASE EN CONTACTO CON NOSOTROS PARA AYUDARLE.",
+            "description": "Póngase en contacto con nosotros para recibir ayuda.",
             "listETicket": "Obtenga soporte con E-Ticket",
             "listServiceProvider": "Encontrar un proveedor de servicio",
             "listAboutLenovoVantage": "Acerca de Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Experiencia personalizada",
         "professional": "Uso profesional",
         "privacytitle": "Ayúdenos a mejorar la calidad de la aplicación al permitir la recopilación anónima de estadísticas de uso.",
-		"moreInterest": "+ más intereses",
-		"toolbartitle": "Active la barra de herramientas de Lenovo Vantage (recomendado)",
+        "moreInterest": "+ más intereses",
+        "toolbartitle": "Active la barra de herramientas de Lenovo Vantage (recomendado)",
         "title1": "Bienvenido a",
         "title2": "Lenovo",
         "title3": "Vantage",

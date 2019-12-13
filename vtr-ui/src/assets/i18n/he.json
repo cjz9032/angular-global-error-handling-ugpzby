@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
-            "subtitle": "למצוא טיפים מעולים עבור המכשיר שלך.",
+            "subtitle": "מצאו כמה עצות שימושיות למכשיר שלכם.",
             "question1": "גיבוי ושחזור הקבצים",
             "question2": "כיצד לרענן את המחשב",
             "question3": "איך אפשר לדעת מה ה-CPU של המחשב",
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "ראו פרטים",
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>הסוללה הראשית לא זוהתה.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "המחוון נמצא במרכז או במרכז מימין. מהירות המאוורר והביצועים מאוזנים באופן דינמי כדי להשיג את החוויה הטובה ביותר.",
                             "title3": "מצב ביצועים",
                             "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "עוד",
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
-                    "control3": "בקרי TRACKPOINT"
+                    "control3": "בקרי TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "זקוקים לעזרה?",
-            "description": "צרו עמנו קשר כדי שנוכל לעזור.",
+            "description": "צרו קשר כדי שנוכל לעזור.",
             "listLenovoCommunity": "קהילת Lenovo",
             "listContactCustomerService": "צרו קשר עם שירות לקוחות",
             "listContactUsOnWechat": "צרו קשר ב-WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "קישורים מהירים",
-            "description": "צרו עמנו קשר כדי שנוכל לעזור.",
+            "description": "צרו קשר כדי שנוכל לעזור.",
             "listETicket": "קבלו תמיכה עם כרטיס אלקטרוני",
             "listServiceProvider": "מצאו ספק שירות",
             "listAboutLenovoVantage": "אודות Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "חוויה מותאמת אישית",
         "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
-		"moreInterest": "‏+ תחומי עניין נוספים",
-		"toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
+        "moreInterest": "‏+ תחומי עניין נוספים",
+        "toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
         "title1": "ברוכים הבאים אל",
         "title2": "Lenovo",
         "title3": "Vantage",

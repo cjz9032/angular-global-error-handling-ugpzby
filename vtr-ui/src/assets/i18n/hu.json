@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Kérdések és válaszok a gépedhez",
-            "subtitle": "LEGYEN SEGÍTŐ TIPPEK A KÉSZÜLÉKHEZ.",
+            "subtitle": "Ismerjen meg hasznos tippeket eszközével kapcsolatban.",
             "question1": "Fájlok biztonsági mentése és visszaállítása",
             "question2": "A számítógép frissítése",
             "question3": "A számítógép CPU-típusának megtekintése",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Rendszerállapot",
-            "subtitle": "AZ ESZKÖZÁLLAPOT GYORS ÁTTEKINTÉSE.",
+            "subtitle": "Az eszközállapot gyors áttekintése.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Részletek megtekintése",
                 "gaugeResetWarning": "<b>Megjegyzés:</b> Az akkumulátormérő nullázása folyamatban van. Hagyja a hálózati adaptert csatlakoztatott állapotban.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Az elsődleges akkumulátor nem észlelhető.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "A csúszka középen vagy attól kicsit jobbra van. A ventilátor sebességét és a teljesítményt a rendszer dinamikusan kiegyensúlyozza, hogy a felhasználói élmény a legjobb legyen.",
                             "title3": "Teljesítményközpontú mód",
                             "desc3": "A csúszka a jobb oldalon van. A ventilátor sebessége és a gép hőmérséklete a megengedett legnagyobb, hogy a gép a legjobb teljesítményt nyújtsa."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "TOVÁBBIAK",
                     "control1": "ÉRINTŐFELÜLET VEZÉRLŐELEMEI",
                     "control2": "EGÉR VEZÉRLŐELEMEI",
-                    "control3": "TRACKPOINT-VEZÉRLŐK"
+                    "control3": "TRACKPOINT-VEZÉRLŐK",
+                    "less": "LESS"
                 }
             }
         },
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Segítségre van szüksége?",
-            "description": "LÉPJEN KAPCSOLATBA VELÜNK, HOGY SEGÍTHESSÜNK.",
+            "description": "Lépjen kapcsolatba velünk, hogy segíthessünk.",
             "listLenovoCommunity": "Lenovo Közösség",
             "listContactCustomerService": "Kapcsolatfelvétel az ügyfélszolgálattal",
             "listContactUsOnWechat": "Kapcsolatfelvétel WeChaten",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Gyorslinkek",
-            "description": "LÉPJEN KAPCSOLATBA VELÜNK, HOGY SEGÍTHESSÜNK.",
+            "description": "Lépjen kapcsolatba velünk, hogy segíthessünk.",
             "listETicket": "Támogatáskérés e-jeggyel",
             "listServiceProvider": "Szervizszolgáltató keresése",
             "listAboutLenovoVantage": "Információk a Lenovo Vantage szoftverről"
@@ -2636,8 +2638,8 @@
         "custom": "Egyéni megoldások",
         "professional": "Professzionális célú felhasználás",
         "privacytitle": "Segítsen az alkalmazás minőségének javításában: engedélyezze a névtelen használati adatok gyűjtését.",
-		"moreInterest": "+ további érdeklődési kör",
-		"toolbartitle": "A Lenovo Vantage eszköztárának engedélyezése (ajánlott)",
+        "moreInterest": "+ további érdeklődési kör",
+        "toolbartitle": "A Lenovo Vantage eszköztárának engedélyezése (ajánlott)",
         "title1": "Üdvözli a",
         "title2": "Lenovo",
         "title3": "Vantage",
