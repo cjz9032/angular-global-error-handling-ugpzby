@@ -28,6 +28,9 @@ export class WidgetHardwareScanComponent implements OnInit {
 	@Input() offlineText: string;
 	@Input() isOnline = true;
 
+	@Input() itemParentCancel: string;
+	@Input() itemNameCancel: string;
+
 	@Output() startQuickScan = new EventEmitter();
 	@Output() updateProgress = new EventEmitter();
 	@Output() checkCancel = new EventEmitter();

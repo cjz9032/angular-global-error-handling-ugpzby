@@ -10,7 +10,8 @@
 
 	<div class="row">
 		<div class="col button-row">
-			<button class="action-button" vtrMetrics metricsEvent="ItemClick" metricsParent="Device.HardwareScan" (click)="onClickRun()">{{ buttonText }}</button>
+			<button class="action-button" 
+				(click)="onClickRun()">{{ buttonText }}</button>
 		</div>
 	</div>
 
@@ -19,7 +20,8 @@
 		class="close-btn"
 		vtrMetrics
 		metricsEvent="FeatureClick"
-		metricsParent="Device.HardwareScan"
+		metricsParent="HardwareScan.CustomizeScan"
+		metricsItem="CustomizeScan.Close"
 		(click)="closeModal()">
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 			alt=""
