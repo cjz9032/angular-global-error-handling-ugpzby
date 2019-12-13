@@ -30,6 +30,7 @@
 			</ul>
 			<ul class="list-group list-group-flush">
 				<li>
+					<div class="border-top" *ngIf="superResolutionAvailable && intelligentMediaAvailable"></div>
 					<vtr-ui-row-switch *ngIf="superResolutionAvailable"
 					    [switchId]="'superResolution'"
 						[title]="'device.smartAssist.superResolution.title' | translate"
