@@ -21,7 +21,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	public phoenix: any;
 	private shell: any;
-	private isGamingDevice = false;
+	private isGamingDevice = true;
 	constructor(private commonService: CommonService, private http: HttpClient) {
 		this.isShellAvailable = true;
 		this.shell = this.getVantageShell();
