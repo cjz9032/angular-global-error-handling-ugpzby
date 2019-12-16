@@ -18,33 +18,7 @@
 		.subtitle {
 			color: $shade_darker;
 		}
-		.result-code{
-			width: 50%;
-			text-align: right;
-			.result-code-value-text {
-				color: $shade_dark;
-			}
-			.left-code-result{
-				.result-code-complete-text {
-					color: $shade_darker;
-					text-transform: uppercase;
-				}
 
-				.result-code-icon {
-					margin-left: 0.5rem;
-					margin-right: 0.5rem;
-					font-size: 1.4rem;
-					color: $main;
-					cursor: pointer;
-
-					&:hover {
-						color: $highlight;
-					}
-
-
-				}
-			}
-		}
 
 		.details {
 			color: $shade_darker;
@@ -81,6 +55,33 @@
 			  display: inline-block;
 			  // cursor: pointer;
 			  padding: 0 2.5rem;
+			}
+		}
+	}
+	.result-code{
+		width: 100%;
+		text-align: right;
+		.result-code-value-text {
+			color: $shade_dark;
+		}
+		.left-code-result{
+			.result-code-complete-text {
+				color: $shade_darker;
+				text-transform: uppercase;
+			}
+
+			.result-code-icon {
+				margin-left: 0.5rem;
+				margin-right: 0.5rem;
+				font-size: 1.4rem;
+				color: $main;
+				cursor: pointer;
+
+				&:hover {
+					color: $highlight;
+				}
+
+
 			}
 		}
 	}

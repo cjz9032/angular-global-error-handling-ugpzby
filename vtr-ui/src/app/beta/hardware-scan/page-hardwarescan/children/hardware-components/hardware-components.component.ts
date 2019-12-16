@@ -30,7 +30,7 @@ enum TaskType {
 enum TaskStep {
 	Confirm,
 	Run,
-	Cancel, 
+	Cancel,
 	Summary
 }
 
@@ -275,16 +275,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				backdrop: 'static',
 				size: 'lg',
 				centered: true,
+				windowClass: 'cancel-modal-hwscan'
 			});
 
 			modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
 			modalCancel.componentInstance.CancelItemName = this.getMetricsItemNameClose();
 			modalCancel.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
-			
+
 
 			modalCancel.componentInstance.CancelItemName = this.getMetricsItemNameClose();
 			modalCancel.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
-			
+
 			modalCancel.componentInstance.cancelRequested.subscribe(() => {
 				if (this.hardwareScanService) {
 					console.log('[onCancelScan] Start');
@@ -357,7 +358,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		console.log('[Start]: getDoScan()');
 		this.startDate = new Date();
 		this.progress = 0;
-		
+
 		this.currentTaskStep = TaskStep.Run;
 
 		const payload = {
@@ -395,7 +396,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					this.sendTaskActionMetrics(this.currentTaskType, metricsResult.countSuccesses,
 						"", metricsResult.scanResultJson, this.timerService.stop());
 					this.cleaningUpScan(undefined);
-				});			
+				});
 		}
 	}
 
@@ -491,7 +492,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	private doRecoverBadSectors() {
 		console.log('[Start] Recover Bad Sectors');
-		
+
 		this.currentTaskType = TaskType.RecoverBadSectors;
 		this.currentTaskStep = TaskStep.Run;
 		this.itemParentCancelScan = this.getMetricsParentValue();
@@ -608,7 +609,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.modules = this.hardwareScanService.getFilteredCustomScanResponse();
 			requests = this.hardwareScanService.getFilteredCustomScanRequest();
 		}
-		
+
 		// Used for metrics purposes
 		const testMapMetrics = {}
 		const testList = [];
@@ -619,7 +620,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				if (!(testName in testMapMetrics)) {
 					testMapMetrics[testName] = true;
 				}
-				
+
 			}
 		}
 
@@ -755,7 +756,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.hardwareScanService.setIsScanDone(false);
 		this.isScanDone = true;
 	}
-	
+
 
 	public onViewResultsRecover() {
 		const date = new Date();
@@ -942,28 +943,28 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 					if (!(testName in resultJson.TestsList)) {
 						resultJson.TestsList[testName] = []
 					}
-	
+
 					const testObj = {
 						Id: module.groupId,
 						Result: HardwareScanTestResult[test.status],
 						// for now, this field will be "NA". At a later time, more useful information will be sent by the Plugin to fill it.
-						Reason: "NA", 
+						Reason: "NA",
 					}
 
 					if (test.status === HardwareScanTestResult.Pass) {
 						countSuccesses = countSuccesses + 1;
-					} 
-					
+					}
+
 					// Only change result when finds a worse case
 					if (this.resultSeverityConversion[overalTestResult] < this.resultSeverityConversion[test.status]) {
 						overalTestResult = test.status;
 					}
-					
+
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
 		}
-	
+
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
 		resultJson.Reason = "NA";
 
@@ -1024,7 +1025,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.metrics.sendAsync(data);
 		}
 	}
-	
+
 	public isRefreshingModules() {
 		return this.hardwareScanService.isRefreshingModules();
 	}

@@ -10,16 +10,19 @@
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
 
 			.title {
-				font-size: 1.4rem;
-				font-weight: $weight_bold;
+				font-size: $fontsize_xs;
+				font-weight: $weight_600;
 				padding-top: 0rem;
 				padding-left: 1.5rem;
+				color: $shade_blue;
 			}
 
 			.subtitle {
-				font-size: 1.4rem;
+				font-size: $fontsize_xs;
 				padding-top: 0rem;
 				padding-left: 1.5rem;
+				color: $shade_blue;
+				font-weight: $weight_light;
 			}
 		}
 	}
@@ -85,15 +88,17 @@
 					display: block !important;
 					width: 60%;
 					.title {
-						color: $main_dark;
-						font-size: 1.4rem;
-						font-weight: $weight_bold;
+						color: $shade_blue;
+						font-size: $fontsize_xs;
+						font-weight: $weight_600;
 						padding-top: 0rem;
 						padding-left: 1.5rem;
 					}
 
 					.subtitle {
-						font-size: 1.4rem;
+						font-size: $fontsize_xs;
+						color: $shade_blue;
+						font-weight: $weight_light;
 						padding-top: 0rem;
 						padding-left: 1.5rem;
 					}
@@ -129,6 +134,7 @@
 
 		fa-icon {
 			font-size: 2.7rem;
+
 		}
 	}
 
@@ -181,7 +187,7 @@
 	}
 
 	.qr-img {
-		width: 3.5rem;
-		height: 3.5rem;
+		width: 2.4rem;
+		height: 2.4rem;
 	}
 }
