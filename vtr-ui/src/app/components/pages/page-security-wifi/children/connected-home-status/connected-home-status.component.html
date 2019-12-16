@@ -7,7 +7,7 @@
 					<div class="card">
 						<div class="card-header flex align-items-center">
 							<div class="row no-gutters">
-								<div class="col-6 subHeading align-items-center d-flex">
+								<div class="col-7 subHeading align-items-center d-flex">
 									<span class="circle green"
 										*ngIf="homeSecurity?.account?.state === 'trial' || homeSecurity?.account?.state === 'standard'">
 										<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -38,13 +38,13 @@
 										</h3>
 									</div>
 								</div>
-								<div class="col-6 button-container">
+								<div class="col-5 button-container">
 									<vtr-ui-button
 										routerLink="/home-security"
-										metricsItem="goToChs"
+										metricsItem="visit"
 										[linkId]="'sa-ws-btn-goToChs'"
 										btnHeight=true
-										[label]="'security.homeprotection.homesecurity.goToChs' | translate">
+										[label]="'security.homeprotection.homesecurity.visit' | translate">
 									</vtr-ui-button>
 								</div>
 							</div>

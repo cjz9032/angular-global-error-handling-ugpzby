@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
+					"displayColorTemperature": {
+						"title": "Temperatura boje prikaza",
+						"description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
+						"link": {
+							"click": "Kliknite",
+							"here": "ovdje",
+							"rest": "za promjenu temperature boje."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Način rada ugodan za oči",
                         "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Bezbrižan rad",
                 "subtitleDescribe": "Povezana sigurnost doma poslat će vam upozorenje ako otkrije ranjivost na vašem uređaju ili kućnoj mreži ili ako ste povezani s potencijalno zlonamjernom mrežom. Saznajte još više o Povezanoj sigurnosti doma <tag>ovdje</tag>.",
                 "tryNow": "Isprobajte odmah",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Unesite kôd pozivnice",

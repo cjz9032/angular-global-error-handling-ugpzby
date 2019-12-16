@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "디스플레이",
+					"displayColorTemperature": {
+						"title": "디스플레이 색상 온도",
+						"description": "디스플레이의 색상 온도를 조절하여 블루라이트를 필터링하고 눈의 피로감을 줄일 수 있습니다. 일몰 때부터 일출 때까지 따뜻한 색상으로 디스플레이를 조정하여 수면에 도움이 됩니다.",
+						"link": {
+							"click": "색 온도를 바꾸려면",
+							"here": "여기",
+							"rest": "를 클릭하십시오."
+						}
+					},
                     "eyeCareMode": {
                         "title": "아이 케어 모드",
                         "checkbox": "아이 케어 모드를 일몰에서 일출로 예약",
@@ -2099,7 +2108,7 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",
