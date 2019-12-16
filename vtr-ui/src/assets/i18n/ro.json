@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Afișaj",
+					"displayColorTemperature": {
+						"title": "Temperatură culoare afișaj",
+						"description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+						"link": {
+							"click": "Clic",
+							"here": "aici",
+							"rest": "pentru a modifica temperatura culorii."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
                         "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
@@ -1965,7 +1974,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2096,7 +2108,7 @@
                 "subtitle": "Liniştea minţii",
                 "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați mai multe despre Securitate conectată, la domiciliu <tag>aici</tag>.",
                 "tryNow": "Încercați acum",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Introduceți codul invitației",

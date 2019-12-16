@@ -20,7 +20,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 @Component({
 	selector: 'vtr-page-lightingcustomize',
 	templateUrl: './page-lightingcustomize.component.html',
-	styleUrls: ['./page-lightingcustomize.component.scss']
+	styleUrls: [ './page-lightingcustomize.component.scss' ]
 })
 export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	isOnline = true;
@@ -86,12 +86,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'en',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Brand: 'idea'
+			Page: 'lighting'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(

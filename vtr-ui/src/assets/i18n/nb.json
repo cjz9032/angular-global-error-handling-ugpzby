@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Skjerm",
+					"displayColorTemperature": {
+						"title": "Skjermens fargetemperatur",
+						"description": "Du kan justere skjermens fargetemperatur til å filtrere ut blått lys og redusere belastningen på øynene. Justerer skjermer til varmere farger fra solnedgang til soloppgang slik at du får sove bedre.",
+						"link": {
+							"click": "Klikk på",
+							"here": "her",
+							"rest": "for å endre fargetemperaturen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Øyebeskyttelse",
                         "checkbox": "Planlegg øyebeskyttelsesmodus fra solnedgang til soloppgang",
@@ -1965,7 +1974,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2096,7 +2108,7 @@
                 "subtitle": "Trygghet",
                 "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Lær enda mer om Sikkerhet for tilkoblede hjem <tag>her</tag>.",
                 "tryNow": "Prøv nå",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Skriv inn invitasjonskode",

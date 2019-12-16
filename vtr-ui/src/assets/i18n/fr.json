@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Affichage",
+					"displayColorTemperature": {
+						"title": "Température de couleur de l'écran",
+						"description": "Vous pouvez régler la température des couleurs de votre écran pour filtrer la lumière bleue et réduire la fatigue oculaire. Permet d'ajuster les couleurs de l'écran pour qu'elles soient plus chaudes du coucher du soleil jusqu'à l'aube pour vous aider à dormir.",
+						"link": {
+							"click": "Cliquez",
+							"here": "ici",
+							"rest": "pour changer la température des couleurs."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Mode Protection des yeux",
                         "checkbox": "Planifier le mode protection des yeux entre le coucher et le lever du soleil",
@@ -1965,7 +1974,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2096,7 +2108,7 @@
                 "subtitle": "Tranquillité d'esprit",
                 "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. En savoir plus sur la Sécurité domestique connectée <tag>ici</tag>.",
                 "tryNow": "Essayer maintenant",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Entrer le code d'invitation",

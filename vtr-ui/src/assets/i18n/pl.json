@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Wyświetlanie",
+					"displayColorTemperature": {
+						"title": "Temperatura barwowa ekranu",
+						"description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+						"link": {
+							"click": "Kliknij",
+							"here": "tutaj",
+							"rest": "aby zmienić temperaturę barwową."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Tryb ochrony oczu",
                         "checkbox": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
@@ -1965,7 +1974,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2096,7 +2108,7 @@
                 "subtitle": "Spokojny sen",
                 "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się więcej o funkcji Bezpieczny Dom <tag>tutaj</tag>.",
                 "tryNow": "„Wypróbuj teraz”",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Wprowadź kod zaproszenia",
