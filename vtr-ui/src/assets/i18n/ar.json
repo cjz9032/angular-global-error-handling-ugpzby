@@ -1976,7 +1976,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2107,7 +2110,7 @@
                 "subtitle": "راحة البال",
                 "subtitleDescribe": "سوف ترسل لك ميزة أمان المنزل المتصل تنبيهًا إذا كشفت عن وجود ثغرة أمنية في جهازك أو شبكتك المنزلية، أو إذا كنت متصلاً بشبكة من المحتمل أن تكون ضارة. اعرف المزيد حول أمان المنزل المتصل <tag>هنا</tag>.",
                 "tryNow": "جرّبها الآن",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "أدخل رمز الدعوة",

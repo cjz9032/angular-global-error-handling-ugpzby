@@ -7,15 +7,16 @@ import {
 	RouterStateSnapshot,
 	UrlTree
 } from '@angular/router';
+import { BetaService } from 'src/app/services/beta/beta.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class HardwareScanGuard implements CanActivate, CanActivateChild {
-	constructor(private router: Router) {}
+	constructor(private router: Router, private betaService: BetaService) {}
 
 	private available(): boolean {
-		return true;
+		return this.betaService.getBetaStatus();
 	}
 
 	canActivate(

@@ -1974,7 +1974,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2105,7 +2108,7 @@
                 "subtitle": "Miren spanec",
                 "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Še več o povezani domači varnosti preberite <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Vnesite kodo povabila",

@@ -1974,7 +1974,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2105,7 +2108,7 @@
                 "subtitle": "安心を手に入れる",
                 "subtitleDescribe": "接続ホーム・セキュリティーは、デバイスまたはホーム・ネットワークで脆弱性が検出された場合、または悪意がある可能性のネットワークに接続している場合に警告を送信します。接続ホーム・セキュリティーについての詳細は、<tag>ここで</tag>ご確認ください。",
                 "tryNow": "今すぐ試してみる",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "招待コードの入力",
