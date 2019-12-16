@@ -120,7 +120,7 @@
 										</vtr-ui-row-switch>
 									</li>
 									<li class="pt-3 no-border-bottom"
-										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled">
+										>
 										<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -133,7 +133,7 @@
 											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="pl-5 bold-title no-border-bottom pb-4 border-bottom"
-											[class.disabled-overlay]="!intelligentSecurity.isZeroTouchLoginEnabled">
+											>
 											<vtr-ui-row-switch [switchId]="'thinkpadDistanceSensitivity'"
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
