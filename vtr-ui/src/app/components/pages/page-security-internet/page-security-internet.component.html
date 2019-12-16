@@ -76,13 +76,13 @@
 					</div>
 				</div>
 				<div class="row w-100">
-					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40 p-0">
+					<div class="col-12 col-xl-6 order-xl-1 mt-40 p-0">
 						<div class="col mt-4">
 							<img src="../../../../assets/images/surfeasy-left-img.jpg"
 								class="surfeasy-side-left-img" />
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
+					<div class="col-12 col-xl-6 order-xl-2 mt-40">
 						<div class="col">
 							<div class="list-heading">
 								<p class="adjust-left">{{'security.vpn.startUseSufEasy' | translate}}
@@ -195,8 +195,8 @@
 
 				</div>
 			</div>
-			<hr>
-			<vtr-widget-powered-by-info class="pb-40"
+			<hr class="d-none d-lg-block">
+			<vtr-widget-powered-by-info class="pb-40 d-none d-lg-block"
 				[title]="'security.vpn.poweredBySurfEasy'"
 				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
 				[imgUrl]="'assets/images/SurfEasy-logo.png'"
@@ -239,6 +239,15 @@
 					</vtr-container-card>
 				</div>
 			</div>
+			<hr class="d-lg-none">
+			<vtr-widget-powered-by-info class="pb-40 d-lg-none"
+				[title]="'security.vpn.poweredBySurfEasy'"
+				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+				[imgUrl]="'assets/images/SurfEasy-logo.png'"
+				linkId="sa-vpn-lnk"
+				privacyUrl="https://www.surfeasy.com/privacy_policy/"
+				termsUrl="https://www.surfeasy.com/terms_of_service/">
+			</vtr-widget-powered-by-info>
 		</div>
 	</right-content>
 

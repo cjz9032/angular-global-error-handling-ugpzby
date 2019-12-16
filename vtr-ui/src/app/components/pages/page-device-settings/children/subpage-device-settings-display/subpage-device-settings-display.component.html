@@ -25,8 +25,26 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-display'">
 						<ul class="list-group list-group-flush">
+							<li class="pt-3" *ngIf="this.showECMReset">
+								<vtr-ui-row-switch
+									[title]="'device.deviceSettings.displayCamera.display.displayColorTemperature.title' | translate"
+									componentName="Display color temperature"
+									[caption]="'device.deviceSettings.displayCamera.display.displayColorTemperature.description' | translate"
+									[isSwitchVisible]="false"
+									[leftIcon]="['fal', 'eye']"
+									[showChildContent]="true"
+									[theme]="'white'"
+									[switchId]="'day-time-color-temp'">
+									<div class="displayColorTemperatureLink">
+										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.click' | translate}}</span>&nbsp;
+										<a id="goto_nightlight_link" href="javascript:void()" attr.aria-label="goto_nightlight_link" (click)="launchProtocol('ms-settings:nightlight')">{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.here' | translate}}</a>&nbsp;
+										<span>{{'device.deviceSettings.displayCamera.display.displayColorTemperature.link.rest' | translate}}</span>
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+
 							<li class="pt-3"
-								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
+								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available && !this.showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 									componentName="Display color temperature"
@@ -52,9 +70,9 @@
 											</vtr-display-color-temp>
 											<div class="row">
 												<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4"
-													id="day-time-color-temp-note"
-													tabindex="0"
-													attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
+													 id="day-time-color-temp-note"
+													 tabindex="0"
+													 attr.aria-label="eyecare mode note. {{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate }}">
 													<p>
 														{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
 													</p>
@@ -85,13 +103,13 @@
 									<div class="row">
 										<div class="col-12">
 											<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
-												[enableSlider]="!enableSlider"
-												[enableSunsetToSunrise]="enableSunsetToSunrise"
-												[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
-												[manualRefresh]="manualRefresh"
-												(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
-												(resetTemparature)="onResetTemparature($event)"
-												(sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
+															   [enableSlider]="!enableSlider"
+															   [enableSunsetToSunrise]="enableSunsetToSunrise"
+															   [sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
+															   [manualRefresh]="manualRefresh"
+															   (eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
+															   (resetTemparature)="onResetTemparature($event)"
+															   (sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
 										</div>
 									</div>
 									<div class="row">
