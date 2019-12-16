@@ -14,7 +14,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: ['./page-networkboost.component.scss']
+	styleUrls: [ './page-networkboost.component.scss' ]
 })
 export class PageNetworkboostComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -60,34 +60,28 @@ export class PageNetworkboostComponent implements OnInit {
 		// this.toggleStatus = this.commonService.getLocalStorageValue();
 		this.getNetworkBoostStatus();
 		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'EN',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Segment: 'SMB',
-			Brand: 'Lenovo'
+			Page: 'network-boost'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-			const cardContentPositionA = this.cmsService.getOneCMSContent(
+			const cardContentPositionF = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-top-image-title-link',
 				'position-F'
 			)[0];
-			if (cardContentPositionA) {
-				this.cardContentPositionA = cardContentPositionA;
+			if (cardContentPositionF) {
+				this.cardContentPositionF = cardContentPositionF;
 			}
 
-			const cardContentPositionB = this.cmsService.getOneCMSContent(
+			const cardContentPositionC = this.cmsService.getOneCMSContent(
 				response,
 				'half-width-title-description-link-image',
-				'position-B'
+				'position-C'
 			)[0];
-			if (cardContentPositionB) {
-				this.cardContentPositionB = cardContentPositionB;
-				if (this.cardContentPositionB.BrandName) {
-					this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+			if (cardContentPositionC) {
+				this.cardContentPositionC = cardContentPositionC;
+				if (this.cardContentPositionC.BrandName) {
+					this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 				}
 			}
 		});
