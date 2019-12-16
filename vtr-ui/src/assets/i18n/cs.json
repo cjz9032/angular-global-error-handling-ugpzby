@@ -1966,7 +1966,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2097,7 +2100,7 @@
                 "subtitle": "Mír v duši",
                 "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. <tag>Zde</tag> zjistíte ještě více informací o zabezpečení připojené domácnosti.",
                 "tryNow": "Chci to vyzkoušet",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Zadejte kód pozvánky",

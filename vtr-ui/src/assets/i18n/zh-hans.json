@@ -1966,7 +1966,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2097,7 +2100,7 @@
                 "subtitle": "高枕无忧",
                 "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "输入邀请码",

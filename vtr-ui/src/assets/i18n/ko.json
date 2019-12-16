@@ -1966,7 +1966,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2097,7 +2100,7 @@
                 "subtitle": "안심하고 사용",
                 "subtitleDescribe": "장치 또는 홈 네트워크에서 취약한 점이 감지되거나 악성일 가능성이 있는 네트워크에 연결되어 있는 경우, 연결된 홈 보안 장치에서 경고를 보냅니다. 연결된 홈 보안에 대해 자세히 알아보십시오 <tag>여기</tag>.",
                 "tryNow": "지금 사용해 보기",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "초대 코드 입력",

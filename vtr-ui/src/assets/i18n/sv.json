@@ -1966,7 +1966,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2097,7 +2100,7 @@
                 "subtitle": "Sinnesro",
                 "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem <tag>här</tag>.",
                 "tryNow": "Prova nu",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Ange inbjudningskod",

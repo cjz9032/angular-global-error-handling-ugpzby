@@ -1966,7 +1966,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2097,7 +2100,7 @@
                 "subtitle": "Απαλλαχθείτε από τις έννοιες",
                 "subtitleDescribe": "Η Ασφάλεια οικιακής σύνδεσης θα σας ειδοποιήσει, εάν εντοπίσει τρωτό σημείο στη συσκευή ή στο οικιακό δίκτυό σας ή εάν είστε συνδεδεμένοι σε ένα δυνητικά κακόβουλο δίκτυο. Μάθετε ακόμη περισσότερα για την ασφάλεια οικιακής σύνδεσης <tag>εδώ</tag>.",
                 "tryNow": "Δοκιμή τώρα",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Εισαγωγή κωδικού πρόσκλησης",
