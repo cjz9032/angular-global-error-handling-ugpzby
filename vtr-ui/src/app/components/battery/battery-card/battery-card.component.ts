@@ -189,6 +189,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			console.log(methodName + ' : ', response);
 			this.batteryInfo = response.batteryInformation;
 			this.batteryGauge = response.batteryIndicatorInfo;
+			if (this.batteryGauge.isAttached && this.batteryGauge.acWattage && this.batteryGauge.acAdapterType) {
+				const adapterType = this.batteryGauge.acAdapterType.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
+				this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: adapterType };
+			}
 			this.updateBatteryDetails();
 		}
 	}
@@ -266,11 +270,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
-
-		if (this.batteryGauge.isAttached && this.batteryGauge.acWattage && this.batteryGauge.acAdapterType) {
-			const adapterType = this.batteryGauge.acAdapterType.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
-			this.acAdapterInfoParams = { acWattage: this.batteryGauge.acWattage, acAdapterType: adapterType };
-		}
 
 		this.getBatteryCondition();
 	}
