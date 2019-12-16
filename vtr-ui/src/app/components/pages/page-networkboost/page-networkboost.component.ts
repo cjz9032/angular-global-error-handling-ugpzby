@@ -14,7 +14,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-networkboost',
 	templateUrl: './page-networkboost.component.html',
-	styleUrls: [ './page-networkboost.component.scss' ]
+	styleUrls: ['./page-networkboost.component.scss']
 })
 export class PageNetworkboostComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -27,8 +27,6 @@ export class PageNetworkboostComponent implements OnInit {
 	needToAskStatusObj: any = {};
 	isOnline = true;
 	// CMS Content block
-	cardContentPositionA: any = {};
-	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
