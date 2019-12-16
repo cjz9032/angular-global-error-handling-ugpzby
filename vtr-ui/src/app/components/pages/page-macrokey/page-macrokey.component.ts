@@ -16,7 +16,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-macrokey',
 	templateUrl: './page-macrokey.component.html',
-	styleUrls: ['./page-macrokey.component.scss']
+	styleUrls: [ './page-macrokey.component.scss' ]
 })
 export class PageMacrokeyComponent implements OnInit {
 	isOnline = true;
@@ -72,12 +72,7 @@ export class PageMacrokeyComponent implements OnInit {
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'en',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Brand: 'idea'
+			Page: 'macro-key'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
