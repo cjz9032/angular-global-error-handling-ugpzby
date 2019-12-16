@@ -2671,9 +2671,9 @@
         "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
         "OtherSettings": "其他設定",
         "usageStatistics": "Vantage 使用情形統計資料",
-		"usageStatisticsDescription": "傳送匿名使用方式統計資料，以協助我們改善 Vantage。",
-		"deviceStatistics": "Lenovo 裝置統計資料",
-		"deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
+        "usageStatisticsDescription": "傳送匿名使用方式統計資料，以協助我們改善 Vantage。",
+        "deviceStatistics": "Lenovo 裝置統計資料",
+        "deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
         "userProfile": "使用者設定檔",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式,此頁面中的所有設定才可生效。",
@@ -2809,7 +2809,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果儲存裝置不支援此功能或回復錯誤磁區正在運作中，在尚未擷取硬體資訊時，此按鈕會停用。"
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -2846,7 +2846,7 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

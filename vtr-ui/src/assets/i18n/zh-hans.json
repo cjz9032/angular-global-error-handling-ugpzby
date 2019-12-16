@@ -2671,9 +2671,9 @@
         "actionTriggeredDescription": "用户选择设置（如自动安装关键/推荐更新）触发的消息。",
         "OtherSettings": "其他设置",
         "usageStatistics": "Vantage 使用情况统计信息",
-		"usageStatisticsDescription": "发送匿名使用情况统计信息以帮助我们改善 Vantage。",
-		"deviceStatistics": "Lenovo 设备统计信息",
-		"deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
+        "usageStatisticsDescription": "发送匿名使用情况统计信息以帮助我们改善 Vantage。",
+        "deviceStatistics": "Lenovo 设备统计信息",
+        "deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
         "userProfile": "用户概要文件",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
@@ -2809,7 +2809,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -2846,7 +2846,7 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
