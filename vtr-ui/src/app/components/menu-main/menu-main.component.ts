@@ -368,7 +368,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			if (event) {
 				event.fromSearchMenu = true;
 			}
-		} else if (item.id === 'user') {
+		} else if (item.id === 'user' && event) {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
 			const id = idAttr.nodeValue;
