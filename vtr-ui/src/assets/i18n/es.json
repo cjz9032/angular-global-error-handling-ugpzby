@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Pantalla",
+					"displayColorTemperature": {
+						"title": "Temperatura del color de visualización",
+						"description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
+						"link": {
+							"click": "Hacer clic en",
+							"here": "aquí",
+							"rest": "para cambiar la temperatura de color."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
                         "checkbox": "Planificación del modo de cuidado ocular de anochecer a amanecer",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Serenidad",
                 "subtitleDescribe": "La Seguridad de hogar conectado enviará un aviso si detecta una vulnerabilidad en su dispositivo o red doméstica o si está conectado a una red posiblemente malintencionada. Obtenga más información acerca de la Seguridad de hogar conectado <tag>aquí</tag>.",
                 "tryNow": "Probar ahora",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Introduzca código de invitación",

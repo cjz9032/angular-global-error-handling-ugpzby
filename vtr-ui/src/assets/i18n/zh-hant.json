@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "顯示",
+					"displayColorTemperature": {
+						"title": "顯示器色溫",
+						"description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+						"link": {
+							"click": "按一下",
+							"here": "這裡",
+							"rest": "以變更色溫。"
+						}
+					},
                     "eyeCareMode": {
                         "title": "護眼模式",
                         "checkbox": "安排從日落到日出的護眼模式",
@@ -2099,7 +2108,7 @@
                 "subtitle": "安心保障",
                 "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
                 "tryNow": "立即試用",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "輸入邀請代碼",

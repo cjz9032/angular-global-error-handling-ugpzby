@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Skærm",
+					"displayColorTemperature": {
+						"title": "Skærmens farvetemperatur",
+						"description": "Du kan justere skærmens farvetemperatur, så blåt lys filtreres ud, og dine øjne belastes mindre. Justerer skærme til varmere farver fra solnedgang til solopgang, så du lettere kan sove.",
+						"link": {
+							"click": "Klik",
+							"here": "her",
+							"rest": "for at ændre farvetemperaturen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Øjenbeskyttelsestilstand",
                         "checkbox": "Planlæg øjenbeskyttelsestilstand fra solnedgang til solopgang",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
                 "tryNow": "Prøv nu",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",

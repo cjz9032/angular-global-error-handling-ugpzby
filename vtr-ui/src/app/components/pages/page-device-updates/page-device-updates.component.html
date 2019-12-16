@@ -17,7 +17,7 @@
 						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 						(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
-					<vtr-widget-device-update [title]="updateTitle | translate"
+					<vtr-widget-device-update [title]="updateTitle"
 						*ngIf="isOnline"
 						[vtrAppSearchScroller]="['search-check-update']"
 						[subTitle1]="getLastUpdatedText()"

@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Anzeigen",
+					"displayColorTemperature": {
+						"title": "Farbtemperatur der Anzeige",
+						"description": "Sie können die Farbtemperatur der Anzeige so anpassen, dass blaues Licht gefiltert und Ihre Augen geschont werden. Stellt die Farbtemperatur der Anzeige in der Zeit zwischen Sonnenuntergang und ‑aufgang auf wärmere Farben ein, um Ihnen das Einschlafen zu erleichtern.",
+						"link": {
+							"click": "Klicken Sie",
+							"here": "hier",
+							"rest": "um die Farbtemperatur zu ändern."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modus \"Augen schonen\"",
                         "checkbox": "Modus \"Augen schonen\" von Sonnenuntergang bis Sonnenaufgang planen",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Immer auf Nummer sicher",
                 "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Erfahren Sie <tag>hier</tag> noch mehr über Connected Home Security.",
                 "tryNow": "Jetzt testen",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Einladungscode eingeben",

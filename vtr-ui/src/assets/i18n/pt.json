@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Ecrã",
+					"displayColorTemperature": {
+						"title": "Temperatura de cor do ecrã",
+						"description": "É possível ajustar a temperatura de cor do ecrã para filtrar a luz azul e reduzir o cansaço dos olhos. Ajusta os ecrãs para cores mais quentes durante o pôr do sol até ao nascer do sol para o ajudar a dormir.",
+						"link": {
+							"click": "Clique",
+							"here": "aqui",
+							"rest": "para alterar a temperatura de cor."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modo de Cuidados com a Visão",
                         "checkbox": "Programe o Modo de Cuidados com a Visão do pôr ao nascer do sol",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Tranquilidade",
                 "subtitleDescribe": "A Segurança de Casa Conectada enviará um alerta se detetar uma vulnerabilidade no dispositivo ou na rede doméstica, ou se estiver ligado a uma rede potencialmente maliciosa. Fique a saber ainda mais sobre a Segurança de Casa Conectada <tag>aqui</tag>.",
                 "tryNow": "Experimentar agora",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Introduzir código de convite",

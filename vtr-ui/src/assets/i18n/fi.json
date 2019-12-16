@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Näyttö",
+					"displayColorTemperature": {
+						"title": "Näytön värilämpötila",
+						"description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+						"link": {
+							"click": "Napsauta",
+							"here": "tätä",
+							"rest": "muuttaaksesi värilämpötilaa."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Silmien hoitotila",
                         "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Mielenrauhaa",
                 "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Anna kutsukoodi",

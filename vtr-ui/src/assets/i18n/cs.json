@@ -1303,6 +1303,15 @@
                 },
                 "display": {
                     "title": "Displej",
+					"displayColorTemperature": {
+						"title": "Teplota barev displeje",
+						"description": "Můžete upravit teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí. Přizpůsobuje displeje teplejším barvám při západu a východu slunce, aby vám pomohl spát.",
+						"link": {
+							"click": "Kliknutím",
+							"here": "sem",
+							"rest": "změňte teplotu barev."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Režim Péče o oči",
                         "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
@@ -2099,7 +2108,7 @@
                 "subtitle": "Mír v duši",
                 "subtitleDescribe": "Pokud zabezpečení připojené domácnosti zjistí chybu v zabezpečení zařízení nebo domácí síti nebo rozpozná připojení k potenciálně škodlivé síti, odešle vám výstrahu. <tag>Zde</tag> zjistíte ještě více informací o zabezpečení připojené domácnosti.",
                 "tryNow": "Chci to vyzkoušet",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Zadejte kód pozvánky",
