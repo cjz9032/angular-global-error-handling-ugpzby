@@ -18,7 +18,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-autoclose',
 	templateUrl: './page-autoclose.component.html',
-	styleUrls: ['./page-autoclose.component.scss']
+	styleUrls: [ './page-autoclose.component.scss' ]
 })
 export class PageAutocloseComponent implements OnInit {
 	public showTurnOnModal = false;
@@ -98,7 +98,7 @@ export class PageAutocloseComponent implements OnInit {
 		try {
 			this.getNeedStatus = status;
 			this.gamingAutoCloseService.setNeedToAskStatusCache(this.getNeedStatus);
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	initTurnOnAction() {
@@ -176,7 +176,7 @@ export class PageAutocloseComponent implements OnInit {
 						this.loggerService.error('Got failure from JS Bridge while adding apps to AutoClose', addApp);
 					}
 				});
-			} catch (error) { }
+			} catch (error) {}
 		} else {
 			const remApp = event.app;
 			this.gamingAutoCloseService.delAppsAutoCloseList(remApp).then((response: boolean) => {
@@ -197,19 +197,14 @@ export class PageAutocloseComponent implements OnInit {
 					this.gamingAutoCloseService.setAutoCloseListCache(this.autoCloseAppList);
 				}
 			});
-		} catch (err) { }
+		} catch (err) {}
 	}
 
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
-			Page: 'dashboard',
-			Lang: 'en',
-			GEO: 'US',
-			OEM: 'Lenovo',
-			OS: 'Windows',
-			Brand: 'idea'
+			Page: 'auto-close'
 		};
 		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
 			const cardContentPositionF = this.cmsService.getOneCMSContent(
