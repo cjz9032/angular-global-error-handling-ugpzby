@@ -1965,7 +1965,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2096,7 +2099,7 @@
                 "subtitle": "Απαλλαχθείτε από τις έννοιες",
                 "subtitleDescribe": "Η Ασφάλεια οικιακής σύνδεσης θα σας ειδοποιήσει, εάν εντοπίσει τρωτό σημείο στη συσκευή ή στο οικιακό δίκτυό σας ή εάν είστε συνδεδεμένοι σε ένα δυνητικά κακόβουλο δίκτυο. Μάθετε ακόμη περισσότερα για την ασφάλεια οικιακής σύνδεσης <tag>εδώ</tag>.",
                 "tryNow": "Δοκιμή τώρα",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Εισαγωγή κωδικού πρόσκλησης",
@@ -2809,7 +2812,7 @@
                 "yes": "Ναι",
                 "no": "Όχι"
             },
-            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο ενώ οι πληροφορίες υλικού δεν έχουν ανακτηθεί ακόμη, σε περίπτωση που οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη δυνατότητα λειτουργίας ή όταν εκτελείται η λειτουργία αποκατάστασης κατεστραμμένων τομέων δίσκου."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
@@ -2846,7 +2849,7 @@
             "storage": "Χώρος αποθήκευσης",
             "wireless": "Ασύρματο"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -9,8 +9,10 @@
 				[disableCancel]="isDisableCancel()"
 				[lenovoSupport]="'hardwareScan.support.subtitle' | translate"
 				[offlineText]="'dashboard.offlineInfo.title' | translate" [isOnline]="isOnline"
-				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(scanTypeEnum.QuickScan)"
-				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(scanTypeEnum.CustomScan)" [statusText]="finalStatusToken()">
+				[showProgress]="isScanExecuting() || isRecoverExecuting()" (startQuickScan)="startScanWaitingModules(taskTypeEnum.QuickScan)"
+				(checkCancel)="onCancelScan()" (checkAnchor)="startScanWaitingModules(taskTypeEnum.CustomScan)" [statusText]="finalStatusToken()"
+				itemParentCancel="{{itemParentCancelScan}}"
+				itemNameCancel= "{{itemNameCancelScan}}">
 			</vtr-widget-hardware-scan>
 		</div>
 	</div>
@@ -24,7 +26,11 @@
 						{{getComponentsTitle()}}</div>
 					<a class="action-anchor" (click)="isScanExecuting() ? onViewResults() : onViewResultsRecover()"
 						*ngIf="getEnableViewResults()" [routerLink]="viewResultsPath"
-						routerLinkActive="active">{{viewResultsText}}
+						routerLinkActive="active"
+						vtrMetrics 
+						metricsEvent="FeatureClick" 
+						metricsParent="{{itemParentSummary}}"
+						metricsItem="{{itemNameSummary}}">{{viewResultsText}}
 					</a>
 
 					<a class="refresh-button" 
@@ -34,7 +40,8 @@
 						metricsParent="HardwareScan"
 						metricsItem="HardwareScan.RefreshModules" 
 						[title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
-						(click)="refreshModules()">{{refreshText}} 
+						[ngClass]="{'action-anchor': !startScanClicked, 'disabled-anchor': startScanClicked}"
+						(click)="refreshModules()">{{refreshText}}
 						<fa-icon class="refresh-icon" 
 							placement="auto" 
 							[icon]="['fal', 'redo']" 
