@@ -1965,7 +1965,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2096,7 +2099,7 @@
                 "subtitle": "Спокойствие",
                 "subtitleDescribe": "Функция обеспечения безопасности устройств в домашней сети отправит вам уведомление, если в вашем устройстве или домашней сети будет обнаружена уязвимость, а также если вы подключитесь к потенциально вредоносной сети. Узнайте больше о безопасности устройств в домашней сети <tag>здесь</tag>.",
                 "tryNow": "Попробовать сейчас",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Ввести код приглашения",
