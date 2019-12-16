@@ -3,12 +3,14 @@
 		<div class="col">
 			<p class="caption"
 				tabindex="0"
-				id="oled-power-settings-caption1" attr.aria-label="{{ description[0] }}" >
+				id="oled-power-settings-caption1"
+				attr.aria-label="{{ description[0] }}">
 				{{ description[0] }}
 			</p>
 			<p class="caption"
 				tabindex="0"
-				id="oled-power-settings-caption2" attr.aria-label="{{ description[1] }}" >
+				id="oled-power-settings-caption2"
+				attr.aria-label="{{ description[1] }}">
 				{{ description[1] }}
 			</p>
 		</div>
@@ -23,6 +25,7 @@
 			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="taskBarDimmerValue"
+				[textCase]="'oled'"
 				(change)="onTaskBarDimmerChange($event)"
 				vtrMetrics
 				metricsEvent="FeatureClick"
@@ -39,6 +42,7 @@
 			</h5>
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="backgroundDimmerValue"
+				[textCase]="'oled'"
 				(change)="onBackgroundDimmerChange($event)"
 				vtrMetrics
 				metricsEvent="FeatureClick"
@@ -56,6 +60,7 @@
 			<vtr-ui-dropdown [list]="intervals"
 				[value]="displayDimmerValue"
 				(change)="onDisplayDimmerChange($event)"
+				[textCase]="'oled'"
 				vtrMetrics
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Settings"

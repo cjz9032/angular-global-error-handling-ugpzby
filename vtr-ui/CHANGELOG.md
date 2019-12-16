@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.29](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.28...v1.2.29) (2019-12-16)
+
+
+### Features
+
+* **VAN-10543:** remove eye care mode NLS ([7be9b1b](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/7be9b1b))
+* **VAN-12275, VAN-10543:** check whitelist ([abee6e8](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/commits/abee6e8))
+
+
+
 ## [1.2.28](http://git-codecommit.us-east-1.amazonaws.com/v1/repos/tan-client-experience/compare/v1.2.27...v1.2.28) (2019-12-13)
 
 

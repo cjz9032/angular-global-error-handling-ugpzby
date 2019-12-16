@@ -339,6 +339,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				} else {
 					this.batteryIndicator.batteryNotDetected = true;
 				}
+			} else {
+				this.batteryIndicator.batteryNotDetected = false;
 			}
 
 			this.batteryInfo[this.batteryIndex].batteryCondition.forEach((condition) => {
