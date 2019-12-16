@@ -21,8 +21,9 @@ export class PageLayoutComponent implements OnInit {
 	@Input() hideBack = false;
 
 	@Output() innerBack = new EventEmitter();
+	@Input() showDemo: boolean;
 
-	constructor(public deviceService: DeviceService) { }
+	constructor() { }
 
 	ngOnInit() {
 	}
