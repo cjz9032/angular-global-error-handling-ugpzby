@@ -248,7 +248,9 @@ export class SystemUpdateService {
 				this.isUpdateDownloading = true;
 				this.installationPercent = 0;
 				if (response && response.downloadProgress) {
-					this.downloadingPercent = response.downloadProgress.progressinPercentage;
+					if (this.downloadingPercent < 100) {
+						this.downloadingPercent = response.downloadProgress.progressinPercentage;
+					}
 				}
 				if (response.updateTaskList === null) {
 					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading);
@@ -559,7 +561,9 @@ export class SystemUpdateService {
 			console.log('installUpdates callback', progress.installPercentage, progress);
 			this.isUpdateDownloading = true;
 			this.installationPercent = progress.installPercentage;
-			this.downloadingPercent = progress.downloadPercentage;
+			if (this.downloadingPercent < 100) {
+				this.downloadingPercent = progress.downloadPercentage;
+			}
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: any) => {
 			console.log('installUpdates response', response);
