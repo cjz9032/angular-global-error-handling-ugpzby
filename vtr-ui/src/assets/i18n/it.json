@@ -643,11 +643,11 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
-            "subtitle": "TROVA ALCUNI CONSIGLI UTILI PER IL TUO DISPOSITIVO.",
+            "subtitle": "Trovare alcuni suggerimenti utili per il dispositivo.",
             "question1": "Backup e ripristino dei file",
             "question2": "Come aggiornare il PC",
             "question3": "Informazioni sulla CPU del computer in uso",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stato del sistema",
-            "subtitle": "INFORMAZIONI RAPIDE SULLO STATO DEL DISPOSITIVO.",
+            "subtitle": "Informazioni rapide sullo stato del dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -907,14 +907,15 @@
                     "PermanentError": "La capacità della batteria è stata <b>danneggiata</b>. Sostituire la batteria.",
                     "NotSupportACAdapterDetail": "<b>L'adattatore CA non è supportato.</b> Il computer Lenovo non supporta questo adattatore CA. Potrebbe causare un arresto improvviso. Collegare un adattatore CA corretto.",
                     "LimitedACAdapterSupportDetail": "<b>L'adattatore CA non è in grado di fornire energia sufficiente</b> al computer Lenovo, incidendo su prestazioni del sistema e velocità di ricarica. Ricollegare l'adattatore CA appropriato.",
-                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>"
+                    "FullACAdapterSupport": "<b>L'alimentazione {{acAdapterType}} da {{acWattage}} W è collegata.</b>",
+                    "EmDriverInstalled": "Dettagli della batteria non disponibili. Eseguire Windows Update -> Verifica disponibilità aggiornamenti per installare il driver <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Non è stata rilevata alcuna batteria",
                 "thresholdNote": "<b>Nota:</b> la batteria non può essere caricata completamente quando è abilitata l'opzione Soglia di carica batteria.",
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>La batteria principale non è stata rilevata.</b>"
                 }
             },
             "power": {
@@ -993,25 +994,26 @@
                     "description5": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria. Questa funzione dispone di 3 modalità (silenziosa, bilanciata e prestazioni) ed è ora accessibile dal dispositivo di scorrimento delle prestazioni di Windows",
                     "nocqldesc": "Il raffreddamento intelligente consente di regolare la temperatura e le prestazioni del sistema. In modalità \"Prestazioni\" ottimizza le prestazioni del sistema. In modalità \"Raffreddamento e silenzio\" aiuta a mantenere il sistema più fresco o più silenzioso.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Raffreddamento intelligente regola la velocità della ventola e le prestazioni massime, oltre a consentire di gestire la durata della batteria.",
+                        "desc2": "La funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows. È possibile accedervi facendo clic sull'icona della batteria nella barra delle applicazioni di Windows.",
+                        "desc3": "Le prestazioni di alcune modalità possono essere regolate automaticamente in base all'attività. Per abilitare la modalità automatica, premere Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Modalità automatica batteria",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La modalità silenziosa o la modalità batteria viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CC.",
+                            "title2": "Modalità automatica prestazioni",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La modalità silenziosa, la modalità bilanciata o la modalità prestazioni viene attivata in modo dinamico per ottenere la migliore esperienza in modalità CA.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
-                        }
+                            "title1": "Modalità silenziosa",
+                            "desc1": "Il dispositivo di scorrimento si trova a sinistra. La velocità e le prestazioni della ventola vengono ridotte per ottenere un computer più fresco e silenzioso e la massima durata della batteria.",
+                            "title2": "Modalità bilanciata",
+                            "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
+                            "title3": "Modalità prestazioni",
+                            "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1138,7 +1140,7 @@
                         "subHeading1": "si inizi",
                         "subHeading2": "fine",
                         "subHeading3": "usa questa pianificazione per",
-                        "endTimeNote": "L'ora di fine non deve superare le 20 ore da quella di inizio",
+                        "endTimeNote": "L'ora di FINE non deve superare le 20 ore da quella di INIZIO",
                         "timeUnits": {
                             "unit1": "Ore",
                             "unit2": "Minuti",
@@ -1173,7 +1175,7 @@
                         "everyday": "Ogni giorno",
                         "weekdays": "Nei giorni feriali",
                         "weekends": "Fine settimana",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nessun giorno selezionato"
                     },
                     "checkbox": "Regolazione automatica del tempo di utilizzo del computer in base all'utilizzo",
                     "hyperlinkToGraph": "Fare clic per visualizzare l'attività e il tempo di utilizzo della tabella del computer",
@@ -1217,8 +1219,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
+                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1504,8 +1507,8 @@
                     },
                     "website": {
                         "url": "URL SITO WEB",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Le impostazioni sono state applicate correttamente.",
+                        "invalidURLMessage": "Immettere un URL valido.",
                         "placeholder": "Deve iniziare con http:// o https://"
                     },
                     "enterText": {
@@ -1522,7 +1525,8 @@
                     "more": "ALTRO",
                     "control1": "CONTROLLI TOUCHPAD",
                     "control2": "CONTROLLI MOUSE",
-                    "control3": "CONTROLLI TRACKPOINT"
+                    "control3": "CONTROLLI TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1685,7 +1689,7 @@
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
                 "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
@@ -1881,7 +1885,7 @@
         },
         "needHelp": {
             "title": "Hai bisogno di aiuto?",
-            "description": "CONTATTACI PER RICHIEDERE ASSISTENZA.",
+            "description": "Contattaci per richiedere assistenza.",
             "listLenovoCommunity": "Comunità Lenovo",
             "listContactCustomerService": "Contatta il servizio clienti",
             "listContactUsOnWechat": "Contattaci su WeChat",
@@ -1892,7 +1896,7 @@
         },
         "quicklinks": {
             "title": "Collegamenti rapidi",
-            "description": "CONTATTACI PER RICHIEDERE ASSISTENZA.",
+            "description": "Contattaci per richiedere assistenza.",
             "listETicket": "Richiedi supporto con E-ticket",
             "listServiceProvider": "Trova un provider di servizi",
             "listAboutLenovoVantage": "Informazioni su Lenovo Vantage"
@@ -1956,19 +1960,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2174,8 +2180,7 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredBySurfEasy": "Basato su SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2203,8 +2208,7 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredByDashLane": "Basato su Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2644,6 +2648,7 @@
         "professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
+        "toolbartitle": "Abilitazione della barra degli strumenti di Lenovo Vantage (consigliato)",
         "title1": "Benvenuto in",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2674,10 +2679,10 @@
         "actionTriggered": "Azione attivata",
         "actionTriggeredDescription": "Messaggi attivati dalle impostazioni selezionate dall'utente, come l'installazione automatica degli aggiornamenti critici/consigliati.",
         "OtherSettings": "Altre impostazioni",
-        "usageStatistics": "Statistiche utilizzo",
-        "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
-        "deviceStatistics": "Condividi i dati statistici con Lenovo",
-        "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
+        "usageStatistics": "Statistiche sull'utilizzo di Vantage",
+        "usageStatisticsDescription": "Invia statistiche anonime sull'utilizzo per aiutarci a migliorare Vantage.",
+        "deviceStatistics": "Statistiche sui dispositivi Lenovo",
+        "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
@@ -2813,7 +2818,7 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "Il pulsante è disabilitato se le informazioni sull'hardware non sono ancora state recuperate, se i dispositivi di memorizzazione non supportano questa funzionalità o se è in corso il ripristino dei settori danneggiati."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",
@@ -2849,7 +2854,8 @@
             "pci_express": "PCI Express",
             "storage": "Memorizzazione",
             "wireless": "Wireless"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3053,41 +3059,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installazione non riuscita. Riprovare.",
-                "networkError": "Errore di rete.",
-                "installationCancelled": "Installazione annullata."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Codice di attivazione Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installa",
-                "installing": "Installazione",
-                "downloading": "Download in corso",
-                "installed": "Installato",
-                "launch": "Avvia",
-                "seeMore": "Visualizza altro"
-            },
-            "fieldName": {
-                "description": "Descrizione",
-                "screenshots": "Screenshot",
-                "additionalInformation": "Ulteriori informazioni",
-                "by": "Per:",
-                "updated": "Aggiornato:",
-                "type": "Tipo:",
-                "category": "Categoria:",
-                "legalAgreement": "Contratto legale",
-                "readMore": "Ulteriori informazioni",
-                "readLess": "Meno informazioni"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3204,5 +3175,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Ora è possibile scoprire se le informazioni personali sono state violate o utilizzate da tracker online a propria insaputa.",
+            "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installazione non riuscita. Riprovare.",
+                "networkError": "Errore di rete.",
+                "installationCancelled": "Installazione annullata."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Codice di attivazione Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installa",
+                "installing": "Installazione",
+                "downloading": "Download in corso",
+                "installed": "Installato",
+                "launch": "Avvia",
+                "seeMore": "Visualizza altro"
+            },
+            "fieldName": {
+                "description": "Descrizione",
+                "screenshots": "Screenshot",
+                "additionalInformation": "Ulteriori informazioni",
+                "by": "Per:",
+                "updated": "Aggiornato:",
+                "type": "Tipo:",
+                "category": "Categoria:",
+                "legalAgreement": "Contratto legale",
+                "readMore": "Ulteriori informazioni",
+                "readLess": "Meno informazioni"
+            }
+        }
+    }
 }

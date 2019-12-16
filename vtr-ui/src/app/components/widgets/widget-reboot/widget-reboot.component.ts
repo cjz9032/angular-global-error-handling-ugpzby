@@ -29,10 +29,10 @@ export class WidgetRebootComponent implements OnInit {
 			size: 'lg',
 			windowClass: 'common-confirmation-modal'
 		});
-		modalRef.componentInstance.title = 'Hello';
-		modalRef.componentInstance.body = `Protect the airplane AC power outlet by controlling
-		 the power consumption of your system. When Airplane Power Mode is enabled, the computer
-		 reduces power consumption by limiting the battery charging rate and system performance.`;
+		// modalRef.componentInstance.title = 'Hello';
+		// modalRef.componentInstance.body = `Protect the airplane AC power outlet by controlling
+		//  the power consumption of your system. When Airplane Power Mode is enabled, the computer
+		//  reduces power consumption by limiting the battery charging rate and system performance.`;
 		modalRef.componentInstance.packages = ['Package 1', 'Package 2', 'Package 3'];
 	}
 }

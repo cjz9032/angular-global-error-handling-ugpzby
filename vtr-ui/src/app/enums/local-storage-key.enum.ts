@@ -200,7 +200,6 @@ export enum LocalStorageKey {
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
 	IsSubscribed = '[LocalStorageKey] IsSubscribed',
 	SubscribtionDetails = '[LocalStorageKey] SubscribtionDetails',
-	IsPowerDriverMissing = '[LocalStorageKey] IsPowerDriverMissing',
 	IsHidePowerPage = '[LocalStorageKey] IsHidePowerPage',
 	DashboardLastWelcomeText = '[LocalStorageKey] DashboardLastWelcomeText',
 	IsDolbyModeAvailable = '[LocalStorageKey] IsDolbyModeAvailable',
@@ -210,5 +209,11 @@ export enum LocalStorageKey {
 	LocalInfoSegment = '[LocalStorageKey] LocalInfoSegment',
 	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig',
 
-	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability'
+	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability',
+
+		// New feature tips
+	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
+
+	// Device Settings storage key
+	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability'
 }

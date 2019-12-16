@@ -347,7 +347,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "כבוי"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "פרופיל 1"
@@ -361,7 +361,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "כבוי"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -643,11 +643,11 @@
             "registered": "רשום",
             "notRegistered": "לא רשום",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
-            "subtitle": "למצוא טיפים מעולים עבור המכשיר שלך.",
+            "subtitle": "מצאו כמה עצות שימושיות למכשיר שלכם.",
             "question1": "גיבוי ושחזור הקבצים",
             "question2": "כיצד לרענן את המחשב",
             "question3": "איך אפשר לדעת מה ה-CPU של המחשב",
@@ -907,14 +907,15 @@
                     "PermanentError": "קיבולת הסוללה <b>נפגעה</b>. יש להחליף לסוללה חדשה.",
                     "NotSupportACAdapterDetail": "<span dir='rtl'><b>מתאם ה-AC אינו נתמך.</b> מחשב Lenovo שברשותכם אינו תומך במתאם AC זה. הוא עלול לגרום לכיבוי פתאומי. חברו מתאם AC מתאים.</span>",
                     "LimitedACAdapterSupportDetail": "<b>מתאם ה-AC אינו יכול לספק מספיק כוח</b> למחשב Lenovo שברשותכם מה שמשפיע על ביצועי המערכת ועל מהירות הטעינה. חברו את מתאם ה-AC הנכון.",
-                    "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>"
+                    "FullACAdapterSupport": "<b>מתח של {{acWattage}} W {{acAdapterType}} מחובר.</b>",
+                    "EmDriverInstalled": "פרטי הסוללה לא זמינים. הפעילו את Windows Update-> בדוק אם קיימים עדכונים להתקנת מנהל ההתקן <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "לא זוהתה סוללה",
                 "thresholdNote": "<b>הערה:</b> לא ניתן לטעון את הסוללה במלואה כשסף טעינת הסוללה מופעל.",
                 "seeDetailsLink": "ראו פרטים",
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>הסוללה הראשית לא זוהתה.</b>"
                 }
             },
             "power": {
@@ -993,25 +994,26 @@
                     "description5": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה. תכונה זו כוללת שלושה מצבים (מצב שקט, מצב מאוזן ומצב ביצועים) והיא נגישה כעת דרך מחוון צריכת החשמל של ביצועי Windows",
                     "nocqldesc": "הקירור החכם מאפשר לכוונן את ביצועי המערכת ואת הטמפרטורה התרמית. במצב \"ביצועים\", הוא מייעל את ביצועי המערכת. בעוד הוא מסייע בשמירה על קירור או שקט של המערכת במצב \"קריר ושקט\".",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "הקירור החכם מתאים את מהירות המאוורר ואת הביצועים המיטביים ומנהל את חיי הסוללה.",
+                        "desc2": "תכונה זו כוללת את המצבים הרשומים למטה, וניתן לכוונן אותה כעת דרך מחוון צריכת החשמל של ביצועי Windows. ניתן לגשת אליו על ידי לחיצה על סמל הסוללה במגש מערכת Windows.",
+                        "desc3": "ניתן לכוונן חלק מהמצבים באופן אוטומטי לטווח רחב יותר של ביצועים בהתאם לפעילות. כדי להפעיל את המצב האוטומטי, לוחצים על Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "מצב סוללה אוטומטי",
+                            "desc1": "המחוון נמצא בצד שמאל. המצב מועבר באופן דינמי למצב 'שקט' או למצב 'סוללה' לחוויה הטובה ביותר במצב DC.",
+                            "title2": "מצב ביצועים אוטומטי",
+                            "desc2": "המחוון נמצא במרכז או במרכז מימין. המצב מועבר באופן דינמי למצב 'שקט', למצב 'מאוזן' או למצב 'ביצועים' לחוויה הטובה ביותר במצב AC.",
+                            "title3": "מצב ביצועים",
+                            "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
-                        }
+                            "title1": "מצב שקט",
+                            "desc1": "המחוון נמצא בצד שמאל. מהירות המאוורר והביצועים הופחתו כדי שהמחשב יהיה קריר ושקט יותר וחיי הסוללה ארוכים יותר.",
+                            "title2": "מצב מאוזן",
+                            "desc2": "המחוון נמצא במרכז או במרכז מימין. מהירות המאוורר והביצועים מאוזנים באופן דינמי כדי להשיג את החוויה הטובה ביותר.",
+                            "title3": "מצב ביצועים",
+                            "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1173,7 +1175,7 @@
                         "everyday": "כל יום",
                         "weekdays": "ימי חול",
                         "weekends": "סופי שבוע",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "לא נבחר יום"
                     },
                     "checkbox": "התאמה אוטומטית של הזמן הפעיל של המחשב בהתבסס על השימוש שלכם",
                     "hyperlinkToGraph": "לחצו כדי לראות את הפעילות ואת הזמן הפעיל של טבלת המחשב שלכם",
@@ -1217,8 +1219,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
+                    "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1504,8 +1507,8 @@
                     },
                     "website": {
                         "url": "URL של אתר האינטרנט",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "ההגדרות הוחלו בהצלחה.",
+                        "invalidURLMessage": "יש להזין כתובת URL חוקית.",
                         "placeholder": "התחל עם http:// או https://"
                     },
                     "enterText": {
@@ -1522,7 +1525,8 @@
                     "more": "עוד",
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
-                    "control3": "בקרי TRACKPOINT"
+                    "control3": "בקרי TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1685,7 +1689,7 @@
                 "heading": "מדיה חכמה",
                 "title": "הגדלת רזולוציית הווידאו",
                 "desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על-ידי שיפור רזולוציית הווידאו. התכונה פעולת טוב במיוחד כאשר רזולוציית הווידאו גרועה.</label></p> <p style='margin-top:4px;'><label> פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. כאשר התכונה מופעלת, מומלץ לחבר את המחשב לכבל חשמל.</label></p>",
-                "tooltip": "התכונה פועלת רק בנגנים הבאים: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "התכונה פועלת רק בנגנים הבאים: <br/> Windows Media player",
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
                     "description1": "המחשב אינו מחובר לחשמל ועוצמת הסוללה נמוכה מ -20%.",
@@ -1881,7 +1885,7 @@
         },
         "needHelp": {
             "title": "זקוקים לעזרה?",
-            "description": "צרו עמנו קשר כדי שנוכל לעזור.",
+            "description": "צרו קשר כדי שנוכל לעזור.",
             "listLenovoCommunity": "קהילת Lenovo",
             "listContactCustomerService": "צרו קשר עם שירות לקוחות",
             "listContactUsOnWechat": "צרו קשר ב-WeChat",
@@ -1892,7 +1896,7 @@
         },
         "quicklinks": {
             "title": "קישורים מהירים",
-            "description": "צרו עמנו קשר כדי שנוכל לעזור.",
+            "description": "צרו קשר כדי שנוכל לעזור.",
             "listETicket": "קבלו תמיכה עם כרטיס אלקטרוני",
             "listServiceProvider": "מצאו ספק שירות",
             "listAboutLenovoVantage": "אודות Lenovo Vantage"
@@ -1956,19 +1960,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2174,8 +2180,7 @@
             "getStarted1": "לחצו על הלחצן \"פתח את SurfEasy\" למעלה כדי להפעיל את SurfEasy VPN.",
             "getStarted2": "הפעילו את רשת ה-VPN והמתינו רגע לאישור החיבור המאובטח.",
             "getStarted3": "שנו את האזור או המיקום שלכם במידת הצורך, ותיהנו מעבודה ברשת פרטית מאובטחת.",
-            "poweredBySurfEasy": "מופעל על ידי SurfEasy",
-            "privacyPolicyAndTermsOfService": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "poweredBySurfEasy": "מופעל על ידי SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "מנהל סיסמאות DASHLANE",
@@ -2203,8 +2208,7 @@
             "allowsYou2": "לוודא שאין מידע אישי שלכם ברשת האפלה",
             "allowsYou3": "להישאר בטוחים ברשתות WiFi לא מאובטחות עם רשת VPN מובנית",
             "allowsYou4": "לשתף סיסמאות באופן מאובטח מבלי לחשוף אותן",
-            "poweredByDashLane": "מופעל על-ידי Dashlane",
-            "privacyPolicyAndTermsOfService": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>"
+            "poweredByDashLane": "מופעל על-ידי Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2644,6 +2648,7 @@
         "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
+        "toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
         "title1": "ברוכים הבאים אל",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2674,10 +2679,10 @@
         "actionTriggered": "פעולה מבוצעת",
         "actionTriggeredDescription": "הודעות המופעלות על ידי בחירת הגדרות של המשתמש, כגון עדכונים קריטיים/מומלצים של התקנה אוטומטית.",
         "OtherSettings": "הגדרות נוספות",
-        "usageStatistics": "סטטיסטיקת שימוש",
-        "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
-        "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
-        "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
+        "usageStatistics": "סטטיסטיקת שימוש ב-Vantage",
+        "usageStatisticsDescription": "שלח נתונים סטטיסטיים אנונימיים בנוגע לשימוש כדי לעזור לנו לשפר את Vantage.",
+        "deviceStatistics": "נתונים סטטיסטיים בנוגע למכשיר Lenovo",
+        "deviceStatisticsDescription": "שלחו נתונים אנונימיים בנוגע למכשיר כדי לעזור לנו לשפר את האיכות, את האמינות ואת הדור הבא של המכשירים.",
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
@@ -2813,7 +2818,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "הלחצן מושבת כאשר פרטי החומרה עדיין לא אוחזרו, למקרה שהתקני האחסון אינם תומכים בפונקציונליות זו או כאשר שחזור ההסקטורים הפגומים פועל."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
@@ -2849,7 +2854,8 @@
             "pci_express": "PCI Express",
             "storage": "אחסון",
             "wireless": "אלחוטי"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3053,41 +3059,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "ההתקנה נכשלה. נסו שוב.",
-                "networkError": "שגיאת רשת.",
-                "installationCancelled": "ההתקנה בוטלה."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "קודי מימוש של Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "התקן",
-                "installing": "התקנה",
-                "downloading": "הורדה",
-                "installed": "מותקן",
-                "launch": "הפעלה",
-                "seeMore": "פרטים נוספים"
-            },
-            "fieldName": {
-                "description": "תיאור",
-                "screenshots": "צילומי מסך",
-                "additionalInformation": "מידע נוסף",
-                "by": "עד:",
-                "updated": "עודכן:",
-                "type": "סוג:",
-                "category": "קטגוריה:",
-                "legalAgreement": "הסכם משפטי",
-                "readMore": "פרטים נוספים",
-                "readLess": "פחות מידע"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3204,5 +3175,47 @@
         }
     },
     "dir": "rtl",
-    "dirClass": "rtl"
+    "dirClass": "rtl",
+    "notification": {
+        "menu": {
+            "privacy": "כעת תוכלו לגלות אם המידע הפרטי שלכם נפרץ או שנעשה בו שימוש על ידי עוקבים באינטרנט, ללא ידיעתכם.",
+            "security": "האם אתם יודעים? גם אם אין לכם תוכנת אנטי-וירוס מותקנת, אנחנו עדיין מספקים הגנת אבטחה בסיסית למכשיר שלכם.",
+            "connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "ההתקנה נכשלה. נסו שוב.",
+                "networkError": "שגיאת רשת.",
+                "installationCancelled": "ההתקנה בוטלה."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "קודי מימוש של Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "התקן",
+                "installing": "התקנה",
+                "downloading": "הורדה",
+                "installed": "מותקן",
+                "launch": "הפעלה",
+                "seeMore": "פרטים נוספים"
+            },
+            "fieldName": {
+                "description": "תיאור",
+                "screenshots": "צילומי מסך",
+                "additionalInformation": "מידע נוסף",
+                "by": "עד:",
+                "updated": "עודכן:",
+                "type": "סוג:",
+                "category": "קטגוריה:",
+                "legalAgreement": "הסכם משפטי",
+                "readMore": "פרטים נוספים",
+                "readLess": "פחות מידע"
+            }
+        }
+    }
 }

@@ -451,7 +451,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Intelligent-Cooling-Modes-Modal {
 	.modal-dialog {
 		max-width: 49rem;
-		display: table;
 		// RESPONSIVE EFFORT
 		// @media #{$mediaquery_11} {
 		// 	max-width: 75%;
@@ -637,10 +636,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 		p,
 		li,
+		span,
 		ul {
 			font-size: 1.8rem;
 			color: $light-grey;
 			margin-bottom: 1rem;
+			word-wrap: break-word;
 		}
 
 		img,
@@ -649,16 +650,33 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 3rem;
 			border: none;
 		}
-
-		p,
-		li,
-		ul {
-			word-wrap: break-word;
-		}
 	}
 }
 
 .Dcc-Detail-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+
+		@media #{$mediaquery_15} {
+			max-width: 90% !important;
+			margin: 1rem auto !important;
+		}
+	}
+
+	.modal-dialog-centered {
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		overflow: hidden;
+	}
+}
+
+.Threat-Locator-Modal {
 	.modal-dialog {
 		max-width: 70%;
 		overflow-y: initial !important;
@@ -1332,5 +1350,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		.modal-content {
 			border-radius: 1rem;
 		}
+	}
+}
+.subscribe-modal {
+	.modal-dialog {
+		max-width: 70%;
 	}
 }

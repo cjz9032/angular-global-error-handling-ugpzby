@@ -1,13 +1,13 @@
 <div class="vtr-widget-security">
 	<div class="container-fluid">
 		<div class="row security-background justify-content-end">
-			<div class="right-container col-12 col-md-10 d-flex flex-column justify-content-between">
+			<div class="right-container col-12 col-lg-10 d-flex flex-column justify-content-around">
 				<div class="level_desc">
 					<h4 class="title mb-4" [innerHTML]="securityLevelInfo[statusItem.status].title | translate"></h4>
 					<h5 class="desc mb-4" [innerHTML]="securityLevelInfo[statusItem.status].desc | translate"></h5>
 				</div>
 				<div class="row no-gutters align-items-center">
-					<h5 class="col-6 desc" [innerHTML]="btnDesc[statusItem.fullyProtected ? 1 : 0] | translate"></h5>
+					<h5 class="col-6 desc mb-0" [innerHTML]="btnDesc[statusItem.fullyProtected ? 1 : 0] | translate"></h5>
 					<vtr-ui-button class="col-6"
 						metricsItem="securityAdvisor101"
 						metricsEvent="ArticleClick"

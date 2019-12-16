@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
-import { UserAllowService } from '../../common/services/user-allow.service';
-import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
+import { UserAllowService } from '../../core/services/user-allow.service';
+import { CountNumberOfIssuesService } from '../../core/services/count-number-of-issues.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { FeaturesStatuses } from '../../userDataStatuses';
-import { UserDataStateService } from '../../common/services/app-statuses/user-data-state.service';
+import { UserDataStateService } from '../../core/services/app-statuses/user-data-state.service';
 import { getDisplayedCountValueOfIssues } from '../../utils/helpers';
-import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { VantageCommunicationService } from '../../core/services/vantage-communication.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../common/services/analytics/task-action-with-timeout.service';
-import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
-import { Features } from '../../common/components/nav-tabs/nav-tabs.service';
+} from '../../core/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../core/services/app-statuses/app-statuses.service';
+import { Features } from '../../core/components/nav-tabs/nav-tabs.service';
+import { AbTestsName } from '../../utils/ab-test/ab-tests.type';
 
 @Component({
 	// selector: 'app-admin',
@@ -64,6 +65,8 @@ export class TrackersComponent implements OnInit {
 	textForTooltip = 'Your private information is being collected and shared without your permission. ' +
 		'You allowed us to scan your browsing history, and we found that you\'ve visited sites ' +
 		'that frequently use tracking tools.';
+
+	currentTests = AbTestsName;
 
 	constructor(
 		private userAllowService: UserAllowService,

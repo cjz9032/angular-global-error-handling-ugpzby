@@ -212,9 +212,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 		this.percentCompleted = this.systemUpdateService.percentCompleted;
 		this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
-		this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
-		this.installationPercent = this.systemUpdateService.installationPercent;
-		this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 		this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
 
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -226,11 +223,17 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
+			if (this.systemUpdateService.isToastMessageNeeded) {
+				this.showToastMessage(this.systemUpdateService.installedUpdates);
+			}
 		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.ignoredRebootDelayUpdates && this.systemUpdateService.ignoredRebootDelayUpdates.length > 0) {
 			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
 
 		this.getScheduleUpdateStatus(false);
+		this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+		this.installationPercent = this.systemUpdateService.installationPercent;
+		this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 		this.isComponentInitialized = true;
 
 		this.getLastUpdateScanDetail();
@@ -593,6 +596,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
 			this.isInstallFailedMessageToasted = true;
 		}
+		this.systemUpdateService.isToastMessageNeeded = false;
 	}
 
 	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {

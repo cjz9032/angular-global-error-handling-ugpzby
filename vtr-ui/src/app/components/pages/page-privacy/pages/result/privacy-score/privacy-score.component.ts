@@ -1,18 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonPopupService } from '../../../core/services/popups/common-popup.service';
 import { PrivacyScoreService } from './privacy-score.service';
 import { map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { VantageCommunicationService } from '../../../core/services/vantage-communication.service';
 import { AppStatuses } from '../../../userDataStatuses';
 import { combineLatest } from 'rxjs';
-import { ScoreShowSpinnerService } from './score-show-spinner.service';
-import { AppStatusesService } from '../../../common/services/app-statuses/app-statuses.service';
-import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import {
 	TaskActionWithTimeoutService,
 	TasksName
-} from '../../../common/services/analytics/task-action-with-timeout.service';
-import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
+} from '../../../core/services/analytics/task-action-with-timeout.service';
+import { AppStatusesService } from '../../../core/services/app-statuses/app-statuses.service';
+import { ScoreShowSpinnerService } from './score-show-spinner.service';
 
 @Component({
 	selector: 'vtr-privacy-score',
@@ -59,6 +59,8 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 				this.taskActionWithTimeoutService.finishedAction(TasksName.scoreScanAction);
 			}
 		});
+
+		this.setDataAccordingToScore(0, this.appStatuses.firstTimeVisitor);
 	}
 
 	ngOnDestroy() {

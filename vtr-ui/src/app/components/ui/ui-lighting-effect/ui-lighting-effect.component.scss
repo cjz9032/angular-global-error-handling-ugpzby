@@ -97,6 +97,14 @@
 		font-size: 1.6rem;
 		color: $shade_light;
 		margin-bottom: -1.2rem;
+		.name {
+			@media #{$mediaquery_lg_ex} {
+			max-width: 20rem;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			}
+		}
 		.icon {
 			position: relative;
 			font-size: 2.2rem;
@@ -180,7 +188,6 @@
 		}
 		.information {
 			margin: 1.6rem;
-			margin-bottom: 5rem;
 			margin-top: 0;
 			border-top: 1px solid $gaming_darkest;
 			padding-top: 1.6rem;
@@ -199,7 +206,7 @@
 ::ng-deep vtr-ui-lighting-effect {
 	.select-box {
 		ngb-tooltip-window.tooltip {
-			top: 1.5rem !important;
+			top: 0.5rem !important;
 			.arrow {
 				height: 0.5rem;
 				&::before {

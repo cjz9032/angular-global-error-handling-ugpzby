@@ -643,11 +643,11 @@
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
-            "subtitle": "Nađite neke korisne savjete za svoj uređaj.",
+            "subtitle": "Pronađite neke korisne savete za uređaj.",
             "question1": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
             "question2": "Kako da osvežite računar",
             "question3": "Kako da saznate CPU mašine",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Status sistema",
-            "subtitle": "BRZO BUDITE U TOKU SA STATUSOM UREĐAJA.",
+            "subtitle": "Brzo budite u toku sa statusom uređaja.",
             "memory": {
                 "title": "Memorija",
                 "detail": {
@@ -907,14 +907,15 @@
                     "PermanentError": "Kapacitet baterije je <b>smanjen</b>. Zamenite je novom.",
                     "NotSupportACAdapterDetail": "<b>Adapter za naizmeničnu struju nije podržan.</b> Vaš Lenovo računar ne podržava ovaj adapter za naizmeničnu struju. To može izazvati iznenadno isključivanje. Priključite ispravan adapter za naizmeničnu struju.",
                     "LimitedACAdapterSupportDetail": "<b>Adapter za naizmeničnu struju ne može da obezbedi dovoljno napajanje</b> Lenovo računaru što će uticati na performanse sistema i brzinu punjenja. Ponovo priključite ispravan adapter za naizmeničnu struju.",
-                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>"
+                    "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} napajanja je povezano.</b>",
+                    "EmDriverInstalled": "Detalji o bateriji nisu dostupni. Pokrenite Windows Update-> Proveri da li postoje ispravke da biste instalirali upravljački program <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Nije otkrivena baterija",
                 "thresholdNote": "<b>Napomena:</b> Baterija se ne može automatski napuniti kada je omogućen Prag punjenja baterije.",
                 "seeDetailsLink": "Pogledajte detalje",
                 "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Primarna baterija nije pronađena.</b>"
                 }
             },
             "power": {
@@ -993,25 +994,26 @@
                     "description5": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije. Ova funkcija ima 3 režima (tihi režim, balansirani režim i režim performansi) i sada je pristupačna pomoću klizača za performanse napajanja sistema Windows",
                     "nocqldesc": "Inteligentno hlađenje vam omogućava da podesite performanse sistema i temperaturu. U režimu „Performanse“ ono optimizuje performanse sistema. Istovremeno pomaže da sistem bude hladniji ili tiši u režimu „Hladan i tih“",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Pametno hlađenje prilagođava brzinu ventilatora i maksimalne performanse i upravlja radnim vekom baterije.",
+                        "desc2": "Ova funkcija ima režime navedene u nastavku i sada je prilagođava klizač za performanse napajanja operativnog sistema Windows. Možete joj pristupiti tako što ćete kliknuti na ikonu baterije na Windows sistemskoj paleti.",
+                        "desc3": "Neki od režima se mogu automatski prilagoditi većem opsegu performansi na osnovu vaše aktivnosti. Da biste omogućili automatski režim, pritisnite kombinaciju tastera Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Režim automatske baterije",
+                            "desc1": "Klizač je sa leve strane. Režim se dinamički prebacio na Tihi režim ili Režim baterije za najbolji utisak pri radu u DC režimu rada.",
+                            "title2": "Režim automatskog učinka",
+                            "desc2": "Klizač je na sredini ili na sredini desno. Režim se dinamički prebacio na Tihi režim, Ujednačeni režim ili Režim učinka za najbolji utisak pri radu u AC režimu rada.",
+                            "title3": "Režim učinka",
+                            "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
-                        }
+                            "title1": "Tihi režim",
+                            "desc1": "Klizač je sa leve strane. Brzina i performanse ventilatora su smanjene za hladniji, tiši računar i najduže trajanje baterije.",
+                            "title2": "Ujednačeni režim",
+                            "desc2": "Klizač je na sredini ili na sredini desno. Brzina i performanse ventilatora su dinamički izbalansirane radi najboljeg doživljaja.",
+                            "title3": "Režim učinka",
+                            "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1138,7 +1140,7 @@
                         "subHeading1": "započnete",
                         "subHeading2": "završetak",
                         "subHeading3": "koristite ovaj raspored za",
-                        "endTimeNote": "Vreme završetka mora da bude u roku od 20 časova od vremena početka",
+                        "endTimeNote": "Vreme ZAVRŠETKA mora da bude u roku od 20 časova od vremena POČETKA",
                         "timeUnits": {
                             "unit1": "Sati",
                             "unit2": "Minuti",
@@ -1173,7 +1175,7 @@
                         "everyday": "Svaki dan",
                         "weekdays": "Weekdays",
                         "weekends": "Vikendom",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "Nije izabran nijedan dan"
                     },
                     "checkbox": "Automatsko podešavanje aktivnog vremena računara na osnovu vašeg korišćenja",
                     "hyperlinkToGraph": "Kliknite da biste videli aktivnost i aktivno vreme računarske tabele",
@@ -1217,8 +1219,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Ova funkcija zakazuje optimizaciju štednje energije računara tokom časova neaktivnosti bez žrtvovanja vremena bryog pokretanja tokom časova intenzivnijeg korišćenja.",
+                    "subTitle2": "Podesite vreme kada obično koristite ovaj računar",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1504,8 +1507,8 @@
                     },
                     "website": {
                         "url": "URL ADRESA VEB LOKACIJE",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Postavke se uspešno primenjuju.",
+                        "invalidURLMessage": "Unesite ispravnu URL adresu.",
                         "placeholder": "Počnite sa http:// ili https://"
                     },
                     "enterText": {
@@ -1522,7 +1525,8 @@
                     "more": "VIŠE",
                     "control1": "KONTROLE DODIRNE TABLE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "KONTROLE ZA TRACKPOINT"
+                    "control3": "KONTROLE ZA TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1685,7 +1689,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
                 "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
-                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
                     "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
@@ -1881,7 +1885,7 @@
         },
         "needHelp": {
             "title": "Potrebna vam je pomoć?",
-            "description": "KONTAKTIRAJTE NAS DA BISMO VAM POMOGLI.",
+            "description": "Kontaktirajte nas da bismo vam pomogli.",
             "listLenovoCommunity": "Lenovo zajednica",
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
@@ -1892,7 +1896,7 @@
         },
         "quicklinks": {
             "title": "Brze veze",
-            "description": "KONTAKTIRAJTE NAS DA BISMO VAM POMOGLI.",
+            "description": "Kontaktirajte nas da bismo vam pomogli.",
             "listETicket": "Dobijte podršku sa e-zahtevom",
             "listServiceProvider": "Pronađite servisera",
             "listAboutLenovoVantage": "Više o programu Lenovo Vantage"
@@ -1956,19 +1960,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2174,8 +2180,7 @@
             "getStarted1": "Kliknite iznad na dugme „Otvori SurfEasy“ da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak za potvrdu bezbedne veze.",
             "getStarted3": "Promenite region ili lokaciju ako želite i uživajte u bezbednom, privatnom umrežavanju.",
-            "poweredBySurfEasy": "Obezbeđuje SurfEasy",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
+            "poweredBySurfEasy": "Obezbeđuje SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVLJAČ LOZINKAMA",
@@ -2203,8 +2208,7 @@
             "allowsYou2": "Pratite postoje li vaše lične informacije na mračnom internetu",
             "allowsYou3": "Budite bezbedni na nebezbednim WiFi mrežama sa ugrađenim VPN-om",
             "allowsYou4": "Bezbedno delite lozinke bez njihovog otkrivanja",
-            "poweredByDashLane": "Obezbeđuje Dashlane",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>"
+            "poweredByDashLane": "Obezbeđuje Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2644,6 +2648,7 @@
         "professional": "Profesionalna upotreba",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
         "moreInterest": "+ više oblasti interesovanja",
+        "toolbartitle": "Omogućite Lenovo Vantage traku sa alatkama (preporučuje se)",
         "title1": "Dobro došli u",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2674,10 +2679,10 @@
         "actionTriggered": "Pokrenuta radnja",
         "actionTriggeredDescription": "Poruke koje je pokrenuo korisnik izborom postavki poput automatskog instaliranja kritičnih/preporučenih ispravki.",
         "OtherSettings": "Ostale postavke",
-        "usageStatistics": "Statistika korišćenja",
-        "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
-        "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
-        "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
+        "usageStatistics": "Statistika korišćenja programa Vantage",
+        "usageStatisticsDescription": "Pošaljite anonimno statističke podatke o korišćenju kako biste nam pomogli da poboljšamo Vantage.",
+        "deviceStatistics": "Poboljšanje Lenovo uređaja",
+        "deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
@@ -2813,7 +2818,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Dugme je onemogućeno dok informacije o hardveru još uvek nisu preuzete, u slučaju da uređaji za skladištenje ne podržavaju ovu funkcionalnost ili kada je pokrenut neispravan sektor za oporavak."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",
@@ -2849,7 +2854,8 @@
             "pci_express": "PCI Express",
             "storage": "Skladištenje",
             "wireless": "Bežični"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3053,41 +3059,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalacija nije uspela. Pokušajte ponovo.",
-                "networkError": "Greška mreže.",
-                "installationCancelled": "Instalacija je otkazana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Otkup Adobe proizvoda",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instaliraj",
-                "installing": "Instaliranje",
-                "downloading": "Preuzimanje",
-                "installed": "Instalirano",
-                "launch": "Pokreni",
-                "seeMore": "Pogledajte još"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Snimci ekrana",
-                "additionalInformation": "Dodatne informacije",
-                "by": "Obezbeđuje:",
-                "updated": "Ažurirano:",
-                "type": "Tip:",
-                "category": "Kategorija:",
-                "legalAgreement": "Pravni sporazum",
-                "readMore": "Pročitaj više",
-                "readLess": "Pročitaj manje"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3204,5 +3175,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sada možete da saznate da li je privatnost vaših informacija ugrožena ili da vaše privatne informacije koriste sistemi za praćenje na mreži bez vašeg znanja.",
+            "security": "Da li znate? Čak i da nemate instaliran antivirusni softver, mi vam i dalje pružamo osnovnu bezbednosnu zaštitu za uređaj.",
+            "connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalacija nije uspela. Pokušajte ponovo.",
+                "networkError": "Greška mreže.",
+                "installationCancelled": "Instalacija je otkazana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Otkup Adobe proizvoda",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instaliraj",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
+                "installed": "Instalirano",
+                "launch": "Pokreni",
+                "seeMore": "Pogledajte još"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Snimci ekrana",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Obezbeđuje:",
+                "updated": "Ažurirano:",
+                "type": "Tip:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Pročitaj više",
+                "readLess": "Pročitaj manje"
+            }
+        }
+    }
 }

@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailScannerComponent } from './email-scanner/email-scanner.component';
 import { CheckBreachesFormComponent } from './check-breaches/check-breaches-form.component';
-import { ScanStepsComponent } from './scan-steps/scan-steps.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VtrCommonModule } from '../../common/vtr-common.module';
+import { VtrCoreModule } from '../../core/vtr-core.module';
 import { BreachedAccountComponent } from './breached-account/breached-account.component';
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
@@ -20,7 +19,6 @@ import { ExitPitchComponent } from './exit-pitch/exit-pitch.component';
 	declarations: [
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
-		ScanStepsComponent,
 		ConfirmationComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
@@ -34,7 +32,6 @@ import { ExitPitchComponent } from './exit-pitch/exit-pitch.component';
 	exports: [
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
-		ScanStepsComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
@@ -46,7 +43,7 @@ import { ExitPitchComponent } from './exit-pitch/exit-pitch.component';
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
-		VtrCommonModule,
+		VtrCoreModule,
 		AppSearchModule,
 		RouterModule
 	],

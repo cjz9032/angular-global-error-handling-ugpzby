@@ -9,6 +9,7 @@ import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { resolve } from 'url';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,15 +22,14 @@ export class DeviceService {
 	public isArm = false;
 	public isAndroid = false;
 	public is64bit = true;
-	public showPrivacy = false;
 	public isGaming = false;
+	public isLiteGaming = false;
 	public isSMode = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
-	public showSearch = false;
-	public showDemo = false;
 	public machineType: number;
+	private Windows: any;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
@@ -40,66 +40,18 @@ export class DeviceService {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
-
+		this.Windows = this.shellService.getWindows();
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
 		this.initIsArm();
-		this.initshowPrivacy();
-		this.initShowSearch();
 	}
 
 	private initIsArm() {
-		try {
-			this.getIsARM()
-				.then((status: boolean) => {
-					this.isArm = status;
-				}).catch(error => {
-					this.logger.error('initArm', error.message);
-					return false;
-				});
-		} catch (error) {
-			this.logger.error('initArm' + error.message);
-			return false;
-		}
-	}
-
-	public async getIsARM(): Promise<boolean> {
-		let isArm = false;
 		this.isAndroid = this.androidService.isAndroid;
-		if (this.isAndroid) {
-			return true;
-		}
-		try {
-			if (this.isShellAvailable) {
-				const machineInfo = await this.getMachineInfo();
-				isArm = this.isAndroid || machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
-				return isArm;
-			}
-		} catch (error) {
-			this.logger.error('getIsARM' + error.message);
-			return isArm;
-		}
-	}
-
-	private initshowPrivacy() {
-		// set this.showPrivacy appropriately based on machineInfo data
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('PrivacyTab').then((privacy) => {
-				this.showPrivacy = (privacy === 'enabled');
-			}, (error) => {
-				this.logger.error('DeviceService.initshowPrivacy: promise rejected ', error);
-			});
-		}
-	}
-
-	private initShowSearch() {
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
-				this.showSearch = ((searchFeature || '').toString() === 'true');
-			}, (error) => {
-				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-			});
+		this.isArm = this.isAndroid;
+		if (this.Windows) {
+			this.isArm = this.Windows.ApplicationModel.Package.current.id.architecture.toString() === '5';
 		}
 	}
 
@@ -128,7 +80,7 @@ export class DeviceService {
 					this.machineInfo = info;
 					this.isSMode = info.isSMode;
 					this.isGaming = info.isGaming;
-					if (!this.showWarranty && (!info.mtm || (info.mtm && info.mtm.substring(info.mtm.length - 2).toLocaleLowerCase() !== 'cd'))) {
+					if (!this.showWarranty && (!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))) {
 						this.showWarranty = true;
 					}
 					if (info && info.cpuArchitecture) {

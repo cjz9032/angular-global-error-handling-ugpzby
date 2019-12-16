@@ -10,7 +10,7 @@
 					vtrOpenFigleafInstaller
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'InstallButton'">
+					[metricsItem]="'InstallButton' | changeActionButtonText | async">
 				{{'Install now' | changeActionButtonText | async}}
 			</button>
 			<div class="scan-limit-pitch__button-link">

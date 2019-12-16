@@ -643,11 +643,11 @@
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
-            "subtitle": "НАЙТИ НЕКОТОРЫЕ ПОЛЕЗНЫЕ СОВЕТЫ ДЛЯ ВАШЕГО УСТРОЙСТВА.",
+            "subtitle": "Здесь вы найдете полезные рекомендации по вашему устройству.",
             "question1": "Резервное копирование и восстановление файлов",
             "question2": "Восстановление компьютера",
             "question3": "Сведения о модели ЦП в компьютере",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Состояние системы",
-            "subtitle": "КРАТКАЯ СВОДКА О СОСТОЯНИИ ВАШЕГО УСТРОЙСТВА.",
+            "subtitle": "Краткая сводка о состоянии вашего устройства.",
             "memory": {
                 "title": "Память",
                 "detail": {
@@ -907,14 +907,15 @@
                     "PermanentError": "Емкость аккумулятора <b>уменьшилась</b>. Замените аккумулятор на новый.",
                     "NotSupportACAdapterDetail": "<b>Адаптер электропитания не поддерживается.</b> Ваш компьютер Lenovo не поддерживает этот адаптер электропитания. Он может вызвать внезапное отключение. Подключите правильный адаптер электропитания.",
                     "LimitedACAdapterSupportDetail": "<b>Адаптер электропитания не может обеспечить достаточное питание</b> вашему компьютеру Lenovo, что отразится на производительности системы и скорости зарядки. Подключите правильный адаптер электропитания.",
-                    "FullACAdapterSupport": "<b>Подключено питание мощностью {{acWattage}} W {{acAdapterType}}.</b>"
+                    "FullACAdapterSupport": "<b>Подключено питание мощностью {{acWattage}} W {{acAdapterType}}.</b>",
+                    "EmDriverInstalled": "Сведения об аккумуляторе недоступны. Откройте \"Центр обновления Windows\" и нажмите \"Проверить наличие обновлений\", чтобы установить драйвер <b>Lenovo ACPI - Compliant Virtual Power Controller</b>."
                 },
                 "batteryNotDetected": "Аккумулятор не найден",
                 "thresholdNote": "<b>Примечание.</b> Аккумулятор не может быть полностью заряжен, если включен пороговый уровень заряда аккумулятора.",
                 "seeDetailsLink": "См. подробные сведения",
                 "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Основной аккумулятор не обнаружен.</b>"
                 }
             },
             "power": {
@@ -993,25 +994,26 @@
                     "description5": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора. Эта функция может работать в трех режимах: тихий режим, сбалансированный режим и режим производительности. Сейчас управлять этой функцией можно с помощью ползунка выбора режима питания Windows",
                     "nocqldesc": "Интеллектуальное охлаждение позволяет регулировать производительность и температуру системы. В режиме \"Производительность\" оптимизируется производительность системы. В \"Тихий режим\" режиме поддерживается более низкая температура системы, она работает тише.",
                     "dytc6": {
-                        "desc1": "Intelligent Cooling adjusts fan speed, maximum performance, and manages your battery life.",
-                        "desc2": "The feature has modes listed below and now is adjusted by Windows performance power slider. You can access it by clicking the battery icon in the Windows system tray.",
-                        "desc3": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To enable automatic mode, press Fn+ T.",
+                        "desc1": "Функция интеллектуального охлаждения регулирует скорость вращения вентилятора, максимальную производительность и управляет временем работы устройства от аккумулятора.",
+                        "desc2": "Эта функция предоставляет указанные ниже режимы и теперь настраивается с помощью ползунка выбора режима питания Windows. Чтобы открыть его, нажмите значок аккумулятора на панели задач Windows.",
+                        "desc3": "Некоторые режимы могут автоматически изменяться в широком диапазоне производительности в зависимости от вашей активности. Чтобы включить автоматический режим, нажмите сочетание клавиш Fn+T.",
                         "autoMode": {
-                            "title1": "Auto Battery mode",
-                            "desc1": "The slider is on the left. The mode is dynamically switched to Quiet mode or Battery mode for the best DC mode experience.",
-                            "title2": "Auto Performance mode",
-                            "desc2": "The slider is in the center or center right. The mode is dynamically switched to Quiet mode, Balanced mode or Performance mode for the best AC mode experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "title1": "Автоматический режим экономии заряда аккумулятора",
+                            "desc1": "Ползунок расположен слева. Динамическое переключение между тихим режимом и режимом экономии заряда аккумулятора для оптимальной работы режима DC.",
+                            "title2": "Автоматический режим производительности",
+                            "desc2": "Ползунок расположен в центре или по центру справа. Динамическое переключение между тихим режимом, сбалансированным режимом и режимом производительности для оптимальной работы режима AC.",
+                            "title3": "Режим производительности",
+                            "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
                         },
                         "manualMode": {
-                            "title1": "Quiet mode",
-                            "desc1": "The slider is on the left. Fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "title2": "Balanced mode",
-                            "desc2": "The slider is in the center or center right. Fan speed and performance are dynamically balanced for the best experience.",
-                            "title3": "Performance mode",
-                            "desc3": "The slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
-                        }
+                            "title1": "Тихий режим",
+                            "desc1": "Ползунок расположен слева. Скорость вращения вентиляторов и производительность снижены, чтобы сократить уровень нагрева и шума компьютера, а также увеличить время работы аккумулятора.",
+                            "title2": "Сбалансированный режим",
+                            "desc2": "Ползунок расположен в центре или по центру справа. Скорость вращения вентиляторов и производительность динамически оптимизируются для максимального комфорта использования.",
+                            "title3": "Режим производительности",
+                            "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1138,7 +1140,7 @@
                         "subHeading1": "начнете",
                         "subHeading2": "окончание",
                         "subHeading3": "использовать это расписание в",
-                        "endTimeNote": "Время окончания должно быть позже времени начала не более чем на 20 часов",
+                        "endTimeNote": "Время ОКОНЧАНИЯ должно быть позже времени НАЧАЛА не более чем на 20 часов",
                         "timeUnits": {
                             "unit1": "Часы",
                             "unit2": "Минуты",
@@ -1173,7 +1175,7 @@
                         "everyday": "Каждый день",
                         "weekdays": "Будние дни",
                         "weekends": "Выходные дни",
-                        "noDaySelected": "No day selected"
+                        "noDaySelected": "День не выбран"
                     },
                     "checkbox": "Автоматическая регулировка активного времени компьютера с учетом характера использования",
                     "hyperlinkToGraph": "Щелкните для просмотра активности и активного времени рабочего стола компьютера",
@@ -1217,8 +1219,9 @@
                             "twentythree": 23
                         }
                     },
-                    "description2": "This feature schedules your computer to optimize battery power savings during idle hours without sacrificing fast-startup time during hours of heavier use.",
-                    "subTitle2": "Set time when you typically use this computer"
+                    "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
+                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1504,8 +1507,8 @@
                     },
                     "website": {
                         "url": "URL-АДРЕС ВЕБ-САЙТА",
-                        "successMessage": "The setting is applied successfully.",
-                        "invalidURLMessage": "Please input a valid URL.",
+                        "successMessage": "Параметры успешно применены.",
+                        "invalidURLMessage": "Введите действительный URL-адрес.",
                         "placeholder": "Начните с http:// или https://"
                     },
                     "enterText": {
@@ -1522,7 +1525,8 @@
                     "more": "ДОПОЛНИТЕЛЬНО",
                     "control1": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ СЕНСОРНОЙ ПАНЕЛИ",
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
-                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT"
+                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1685,7 +1689,7 @@
                 "heading": "Интеллектуальная работа с мультимедиа",
                 "title": "Масштабирование разрешения видео",
                 "desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label> Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. При включении этой функции рекомендуется подключить компьютер к сети переменного тока.</label></p>",
-                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player",
                 "note": {
                     "description": "Эта функция не работает, если:",
                     "description1": "компьютер не подключен к сети переменного тока, а заряд аккумулятора ниже 20%.",
@@ -1881,7 +1885,7 @@
         },
         "needHelp": {
             "title": "Нужна помощь?",
-            "description": "ОБРАТИТЕСЬ К НАМ ЗА ПОМОЩЬЮ.",
+            "description": "Обратитесь к нам за помощью.",
             "listLenovoCommunity": "Сообщество Lenovo",
             "listContactCustomerService": "Обратиться в службу поддержки клиентов",
             "listContactUsOnWechat": "Свяжитесь с нами в WeChat",
@@ -1892,7 +1896,7 @@
         },
         "quicklinks": {
             "title": "Быстрые ссылки",
-            "description": "ОБРАТИТЕСЬ К НАМ ЗА ПОМОЩЬЮ.",
+            "description": "Обратитесь к нам за помощью.",
             "listETicket": "Получите поддержку по электронной заявке",
             "listServiceProvider": "Найдите сервис-центр",
             "listAboutLenovoVantage": "О Lenovo Vantage"
@@ -1956,19 +1960,21 @@
             "haveOwnWifi": "I have my own wifi security",
             "haveOwnVpn": "I have my own wifi security",
             "uac": "User Account Control (UAC)",
+            "uacTitles": "User Account Control",
             "hde": "Hard drive encryption",
             "level": "Security Level:",
             "noProtection": "No protection",
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2174,8 +2180,7 @@
             "getStarted1": "Нажмите кнопку \"Открыть SurfEasy\" сверху, чтобы запустить SurfEasy VPN.",
             "getStarted2": "Включите VPN и немного подождите, пока не появится подтверждение надежного подключения.",
             "getStarted3": "Если необходимо, измените свой регион или местоположение, и пользуйтесь безопасным и конфиденциальным сетевым подключением.",
-            "poweredBySurfEasy": "На основе SurfEasy",
-            "privacyPolicyAndTermsOfService": "Подробнее ознакомьтесь с <tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
+            "poweredBySurfEasy": "На основе SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ДИСПЕТЧЕР ПАРОЛЕЙ DASHLANE",
@@ -2203,8 +2208,7 @@
             "allowsYou2": "мониторинг даркнета на наличие ваших личных данных;",
             "allowsYou3": "обеспечение безопасности в незащищенных сетях WiFi благодаря встроенной функции VPN;",
             "allowsYou4": "безопасное предоставление паролей без их раскрытия.",
-            "poweredByDashLane": "На основе Dashlane",
-            "privacyPolicyAndTermsOfService": "Подробнее ознакомьтесь с <tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>"
+            "poweredByDashLane": "На основе Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2644,6 +2648,7 @@
         "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
         "moreInterest": "+ другие интересы",
+        "toolbartitle": "Включить панель инструментов Lenovo Vantage (рекомендуется)",
         "title1": "Добро пожаловать в",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2674,10 +2679,10 @@
         "actionTriggered": "Инициированное действие",
         "actionTriggeredDescription": "Сообщения при выборе пользователем таких параметров, как автоматическая установка критических/рекомендуемых обновлений.",
         "OtherSettings": "Другие параметры",
-        "usageStatistics": "Статистика использования",
-        "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
-        "deviceStatistics": "Поделиться статистическими данными с Lenovo",
-        "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
+        "usageStatistics": "Статистика использования Vantage",
+        "usageStatisticsDescription": "Отправка анонимной статистики использования, которая поможет нам улучшить Vantage.",
+        "deviceStatistics": "Статистика устройства Lenovo",
+        "deviceStatisticsDescription": "Отправка анонимных данных об устройстве, которые помогут нам повысить качество, увеличить надежность и улучшить следующее поколение устройств.",
         "userProfile": "Профиль пользователя",
         "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение.",
@@ -2813,7 +2818,7 @@
                 "yes": "Да",
                 "no": "Нет"
             },
-            "waitAvailability": "Кнопка отключена, если сведения об оборудовании еще не получены, устройства хранения данных не поддерживают эту функцию или выполняется восстановление поврежденных секторов."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",
@@ -2849,7 +2854,8 @@
             "pci_express": "PCI Express",
             "storage": "Хранение",
             "wireless": "Беспроводная связь"
-        }
+        },
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3053,41 +3059,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Не удалось выполнить установку. Повторите попытку.",
-                "networkError": "Сетевая ошибка.",
-                "installationCancelled": "Установка отменена."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Активация Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Установить",
-                "installing": "Идет установка",
-                "downloading": "Скачивание",
-                "installed": "Установлено",
-                "launch": "Запустить",
-                "seeMore": "Дополнительная информация"
-            },
-            "fieldName": {
-                "description": "Описание",
-                "screenshots": "Снимки экрана",
-                "additionalInformation": "Дополнительная информация",
-                "by": "Автор:",
-                "updated": "Дата обновления:",
-                "type": "Тип:",
-                "category": "Категория:",
-                "legalAgreement": "Правовое соглашение",
-                "readMore": "Больше",
-                "readLess": "Меньше"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3204,5 +3175,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Теперь вы можете узнать, была ли ваша конфиденциальная информация взломана или использована онлайн-трекерами без вашего ведома.",
+            "security": "Знаете ли вы? Даже если у вас не установлена антивирусная программа, мы обеспечиваем базовую защиту вашего устройства.",
+            "connectedHomeSecurity": "Получайте в режиме реального времени информацию мониторинга и оповещения о безопасности вашей сети дома. Вы первыми узнаете, подвергается ли какое-либо из ваших интеллектуальных устройств атаке на систему безопасности."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Не удалось выполнить установку. Повторите попытку.",
+                "networkError": "Сетевая ошибка.",
+                "installationCancelled": "Установка отменена."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Активация Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Установить",
+                "installing": "Идет установка",
+                "downloading": "Скачивание",
+                "installed": "Установлено",
+                "launch": "Запустить",
+                "seeMore": "Дополнительная информация"
+            },
+            "fieldName": {
+                "description": "Описание",
+                "screenshots": "Снимки экрана",
+                "additionalInformation": "Дополнительная информация",
+                "by": "Автор:",
+                "updated": "Дата обновления:",
+                "type": "Тип:",
+                "category": "Категория:",
+                "legalAgreement": "Правовое соглашение",
+                "readMore": "Больше",
+                "readLess": "Меньше"
+            }
+        }
+    }
 }

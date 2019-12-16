@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
 
 export class EmailScannerComponent {
 	@Input() scanCounter: number;
+	@Input() scanCounterLimit: number;
 	@Input() emailWasScanned = false;
-	scanCounterLimit = 2;
 
 	showEmailScanner() {
 		this.emailWasScanned = false;
