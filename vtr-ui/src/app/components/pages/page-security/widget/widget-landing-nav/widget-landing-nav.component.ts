@@ -13,17 +13,17 @@ export class WidgetLandingNavComponent implements OnInit {
 	currentPage = 'base-security';
 	featurePagesConfig = [
 		{
-			title: 'BASIC SECURITY',
+			title: 'security.landing.basicSecurity',
 			page: 'base-security',
 			display: true
 		},
 		{
-			title: 'INTERMEDIATE SECURITY',
+			title: 'security.landing.intermediateSecurity',
 			page: 'intermediate-security',
 			display: true
 		},
 		{
-			title: 'ADVANCED SECURITY',
+			title: 'security.landing.advancedSecurity',
 			page: 'advanced-security',
 			display: true
 		},
