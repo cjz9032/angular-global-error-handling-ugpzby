@@ -40,15 +40,13 @@
 								class="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"
-								#cornerTitle
-								[title]="cornerTitle.innerText"
+								[title]="title | htmlText"
 								[innerHTML]="title"></div>
 							<div *ngIf="caption"
 								class="caption"
 								id="{{containerCardId+'-caption'}}"
 								role="link"
-								#cornerCaption
-								[title]="cornerCaption.innerText"
+								[title]="caption | htmlText"
 								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -169,15 +167,13 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
-								#cornerArticleTitle
-								[title]="cornerArticleTitle.innerText"
+								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div #cornerArticleCaption
-									[title]="cornerArticleCaption.innerText"
+								<div [title]="caption | htmlText"
 									[innerHtml]="caption"
 									id="{{containerCardId+'-caption'}}"
 									role="link"></div>
@@ -199,15 +195,13 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
-								#cornerArticleTitle
-								[title]="cornerArticleTitle.innerText"
+								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div #cornerArticleCaption
-									[title]="cornerArticleCaption.innerText"
+								<div [title]="caption | htmlText"
 									[innerHtml]="caption"
 									id="{{containerCardId+'-caption'}}"
 									role="link"></div>
@@ -259,8 +253,7 @@
 						[style.height.px]="containerCardHighlight.clientWidth * ratio">
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
-								#highlightTitle
-								[title]="highlightTitle.innerText"
+								[title]="title | htmlText"
 								class="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"
@@ -306,8 +299,7 @@
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
 								class="title"
-								#articleTitle
-								[title]="articleTitle.innerText"
+								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"

@@ -40,7 +40,7 @@
 				font-size: $fontsize_sm;
 			}
 			@media #{$breakpoint_sm} {
-				font-size: $fontsize_xs;
+				font-size: $fontsize_sm;
 			}
 
 		}
@@ -48,11 +48,11 @@
 			&.menu-pointer {
 				display: none;
 				position: absolute;
-				bottom: -2.5rem;
+				bottom: -1.8rem;
 				left: 50%;
 				margin-left: -1.5rem;
 				color: $light;
-				font-size: 3rem;
+				font-size: 2.2rem;
 				transform: rotate(45deg);
 				z-index: 0;
 

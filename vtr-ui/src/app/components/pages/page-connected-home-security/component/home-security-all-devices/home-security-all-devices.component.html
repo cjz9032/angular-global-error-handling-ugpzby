@@ -1,12 +1,12 @@
 <div class="vtr-home-security-all-devices container-fluid">
 	<div class="row">
-		<div class="col col-12 col-sm-6"
+		<div class="col col-12 col-sm-12 col-lg-6"
 			*ngFor="let item of allDevices.allDevicesItem">
 			<div class="row align-items-center">
 				<div class="icon-bkg blue col col-3 text-center">
 					<span [ngClass]="['icomoon', 'icomoon-' + getItemStatusIconClass(item)]"></span>
 				</div>
-				<div class="col col-9">
+				<div class="col col-9 pl-3">
 					<div class="font-weight-600 blue"
 						[innerHTML]="item.count"></div>
 					<div class="text-ellipsis"><span class="text-uppercase font-weight-bold"
