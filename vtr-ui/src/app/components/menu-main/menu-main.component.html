@@ -71,7 +71,7 @@
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 					</fa-icon> -->
 			<span class="unread-count-tag"
-				*ngIf="UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
+				*ngIf="appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 		</a>
 		<div class="collapse navbar-collapse"
 			*ngIf="!loadMenuItem.hideMenus"
@@ -266,7 +266,7 @@
 								{{deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials }}
 							</div>
 							<span class="unread-count-tag"
-								*ngIf="!deviceService.isArm && UnreadMessageCount.totalMessage">{{UnreadMessageCount.totalMessage}}</span>
+								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage">{{appsForYouService.UnreadMessageCount.totalMessage}}</span>
 						</a>
 						<div ngbDropdownMenu
 							class="dropdown-menu {{item.id}} dropdown-menu-id"
@@ -289,12 +289,12 @@
 								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
 								tabindex="1"
 								href="javascript:void(0)"
-								(click)="updateUnreadMessageCount(item, $event)"
-								(keydown.enter)="updateUnreadMessageCount(item, $event)"
+								(click)="onMenuItemClick(item, $event)"
+								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.lenovoMigrationAssistant' | translate }}
 								<span class="unread-tag"
-									*ngIf="!UnreadMessageCount.lmaMenuClicked"></span>
+									*ngIf="!appsForYouService.UnreadMessageCount.lmaMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
 								*ngIf="appsForYouService.showAdobeMenu()"
@@ -308,12 +308,28 @@
 								metricsItem="AdobecRedemptionButton"
 								[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidAdobeCreativeCloud]"
 								href="javascript:void(0)"
-								(click)="updateUnreadMessageCount(item, $event)"
-								(keydown.enter)="updateUnreadMessageCount(item, $event)"
+								(click)="onMenuItemClick(item, $event)"
+								(keydown.enter)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
 								{{ 'appsForYou.menuText.adobeRedemption' | translate }}
 								<span class="unread-tag"
-									*ngIf="!UnreadMessageCount.adobeMenuClicked"></span>
+									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
+							</a>
+							<a ngbDropdownItem
+								*ngIf="appsForYouService.showDccMenu()"
+								class="dropdown-item link link-lma"
+								tabindex="1"
+								vtrMetrics
+								id="menu-main-lnk-open-dcc"
+								attr.aria-label="menu-main-lnk-open-dcc"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="DccRedemptionButton"
+								(click)="onMenuItemClick(item, $event)"
+								href="javascript:void(0)">
+								Lenovo digital offer
+								<span class="unread-tag"
+									*ngIf="!appsForYouService.UnreadMessageCount.dccMenuClicked"></span>
 							</a>
 							<a ngbDropdownItem
 								*ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
