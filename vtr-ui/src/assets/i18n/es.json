@@ -2809,7 +2809,7 @@
                 "yes": "Sí",
                 "no": "No"
             },
-            "waitAvailability": "El botón está inhabilitado mientras la información de hardware aún no se ha recuperado, en el caso de que los dispositivos de almacenamiento no permitan esta funcionalidad o cuando se esté ejecutando la recuperación de sectores defectuosos."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Descargar herramientas de diagnóstico profesionales",
@@ -2846,7 +2846,7 @@
             "storage": "Almacenamiento",
             "wireless": "Inalámbrica"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

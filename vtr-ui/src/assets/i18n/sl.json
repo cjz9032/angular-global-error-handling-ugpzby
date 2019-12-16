@@ -2809,7 +2809,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogočen, če informacije o strojni opremi še niso pridobljene, če shranjevalne naprave ne podpirajo te funkcije ali če se izvaja obnavljanje poškodovanih sektorjev."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Prenos profesionalnih diagnostičnih orodij",
@@ -2846,7 +2846,7 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

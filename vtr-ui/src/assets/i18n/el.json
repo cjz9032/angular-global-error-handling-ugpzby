@@ -2809,7 +2809,7 @@
                 "yes": "Ναι",
                 "no": "Όχι"
             },
-            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο ενώ οι πληροφορίες υλικού δεν έχουν ανακτηθεί ακόμη, σε περίπτωση που οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη δυνατότητα λειτουργίας ή όταν εκτελείται η λειτουργία αποκατάστασης κατεστραμμένων τομέων δίσκου."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
@@ -2846,7 +2846,7 @@
             "storage": "Χώρος αποθήκευσης",
             "wireless": "Ασύρματο"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

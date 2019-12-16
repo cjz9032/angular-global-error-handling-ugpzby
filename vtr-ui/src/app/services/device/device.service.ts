@@ -28,7 +28,6 @@ export class DeviceService {
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
-	public showDemo = false;
 	public machineType: number;
 	private Windows: any;
 	constructor(
@@ -46,7 +45,6 @@ export class DeviceService {
 			this.isShellAvailable = true;
 		}
 		this.initIsArm();
-		this.initShowDemo();
 	}
 
 	private initIsArm() {
@@ -55,14 +53,6 @@ export class DeviceService {
 		if (this.Windows) {
 			this.isArm = this.Windows.ApplicationModel.Package.current.id.architecture.toString() === '5';
 		}
-	}
-
-	private initShowDemo() {
-		this.shellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}').then((hyp) => {
-			if (hyp === 'CES-2019') {
-				this.showDemo = true;
-			}
-		});
 	}
 
 	public getDeviceInfo(): Promise<MyDevice> {
