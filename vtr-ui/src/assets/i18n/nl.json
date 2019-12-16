@@ -1304,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Weergave",
+					"displayColorTemperature": {
+						"title": "Kleurtemperatuur weergeven",
+						"description": "U kunt de kleurtemperatuur van uw beeldscherm aanpassen om blauw licht uit te filteren en uw ogen minder te belasten. Hiermee kunt u uw beeldscherm tussen zonsondergang en zonsopgang warmere kleuren laten weergeven om u beter te laten slapen.",
+						"link": {
+							"click": "Klik",
+							"here": "hier",
+							"rest": "om de kleurtemperatuur te wijzigen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Oogzorg-modus",
                         "checkbox": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",

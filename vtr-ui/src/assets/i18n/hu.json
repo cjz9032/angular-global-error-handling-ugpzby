@@ -1304,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Megjelenítés",
+					"displayColorTemperature": {
+						"title": "A képernyő színhőmérséklete",
+						"description": "Beállíthatja a képernyő színhőmérsékletét oly módon, hogy a kék fény kiszűrésével csökkentse a szem igénybevételét. Napnyugta és napkelte között állítson be melegebb színeket, hogy segítse az alvást.",
+						"link": {
+							"click": "Kattintson",
+							"here": "innen",
+							"rest": "a színhőmérséklet beállításához."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Szemvédő mód",
                         "checkbox": "Ütemezze a naplemente és napkelte közötti időszakra a szemvédő módot",

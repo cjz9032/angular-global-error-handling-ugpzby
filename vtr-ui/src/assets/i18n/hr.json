@@ -1304,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
+					"displayColorTemperature": {
+						"title": "Temperatura boje prikaza",
+						"description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
+						"link": {
+							"click": "Kliknite",
+							"here": "ovdje",
+							"rest": "za promjenu temperature boje."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Način rada ugodan za oči",
                         "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",

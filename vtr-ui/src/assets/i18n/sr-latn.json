@@ -1304,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Ekran",
+					"displayColorTemperature": {
+						"title": "Temperatura boje ekrana",
+						"description": "Temperaturu boja ekrana možete da prilagodite tako da filtrira plavo svetlo i smanji naprezanje očiju. Podešava prikaze na toplije boje između zalaska i izlaska sunca kako biste bolje spavali.",
+						"link": {
+							"click": "Kliknite",
+							"here": "ovde",
+							"rest": "da biste promenili temperaturu boje."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Režim za zaštitu vida",
                         "checkbox": "Zakažite režim za zaštitu vida od zalaska do izlaska sunca",
