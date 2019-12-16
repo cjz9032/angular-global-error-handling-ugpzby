@@ -7,6 +7,7 @@ import {
 	SimpleChanges,
 	OnChanges
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import {
 	DropDownInterval
 } from 'src/app/data-models/common/drop-down-interval.model';
@@ -26,10 +27,10 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() disabled = false;
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
-	public name = 'Select';
-	public placeholder = 'Time';
+	public name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
+	public placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
 
-	constructor() { }
+	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
 		console.log('Setting Dropdown  Value', this.value);
@@ -44,6 +45,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		}
 	}
 
+	
 	private setDropDownValue() {
 		if (this.list) {
 			const interval = this.list.find((ddi: DropDownInterval) => {

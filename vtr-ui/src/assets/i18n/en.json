@@ -1335,7 +1335,9 @@
                             "minutes": "minutes",
                             "alwaysOn": "Always on",
                             "never": "Never",
-                            "halfTime": "Half time of display off timer"
+                            "halfTime": "Half time of display off timer",
+                            "select" : "Select",
+                            "time" : "Time"
                         },
                         "taskBarDimmer": "TASKBAR DIMMER",
                         "backgroundDimmer": "BACKGROUND DIMMER",
