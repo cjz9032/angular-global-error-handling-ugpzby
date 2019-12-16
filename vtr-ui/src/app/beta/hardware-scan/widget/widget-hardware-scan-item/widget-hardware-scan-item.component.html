@@ -37,9 +37,18 @@
 <ng-template #tooltipRefModule>
 	<div [innerHTML]="tooltipText"></div>
 	<div class='button-box'>
-		<a [attr.href]="'https://support.lenovo.com/contactus'"
+		<a
+			[attr.href]="'https://support.lenovo.com/contactus'"
 			target="_blank"
-			><button class='btn button'>{{lenovoSupport}}</button>
+			vtrMetrics
+			metricsItemID="HardwareScan.ResultSupport"
+			metricsItemPosition="r1"
+			metricsItemCategory="partnerarticle"
+			metricsEvent="articleclick"
+			metricsPageNumber="1">
+			<button class='btn button'>
+				{{ lenovoSupport }}
+			</button>
 		</a>
 	</div>
 </ng-template>

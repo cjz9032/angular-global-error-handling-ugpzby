@@ -1965,7 +1965,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2671,9 +2674,9 @@
         "actionTriggeredDescription": "Poruke koje je pokrenuo korisnik izborom postavki poput automatskog instaliranja kritičnih/preporučenih ispravki.",
         "OtherSettings": "Ostale postavke",
         "usageStatistics": "Statistika korišćenja programa Vantage",
-		"usageStatisticsDescription": "Pošaljite anonimno statističke podatke o korišćenju kako biste nam pomogli da poboljšamo Vantage.",
-		"deviceStatistics": "Poboljšanje Lenovo uređaja",
-		"deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
+        "usageStatisticsDescription": "Pošaljite anonimno statističke podatke o korišćenju kako biste nam pomogli da poboljšamo Vantage.",
+        "deviceStatistics": "Poboljšanje Lenovo uređaja",
+        "deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
@@ -2809,7 +2812,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Dugme je onemogućeno dok informacije o hardveru još uvek nisu preuzete, u slučaju da uređaji za skladištenje ne podržavaju ovu funkcionalnost ili kada je pokrenut neispravan sektor za oporavak."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",
@@ -2846,7 +2849,7 @@
             "storage": "Skladištenje",
             "wireless": "Bežični"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

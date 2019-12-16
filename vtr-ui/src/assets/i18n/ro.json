@@ -1965,7 +1965,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2809,7 +2812,7 @@
                 "yes": "Da",
                 "no": "Nu"
             },
-            "waitAvailability": "Butonul este dezactivat atunci când informaţiile hardware nu au fost încă preluate, dacă dispozitivele de stocare nu acceptă această funcţionalitate sau atunci când se execută recuperarea sectoarelor defecte."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",
@@ -2846,7 +2849,7 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

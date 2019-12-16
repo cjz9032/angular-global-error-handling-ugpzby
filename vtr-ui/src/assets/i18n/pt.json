@@ -1965,7 +1965,10 @@
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
             "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
-            "haveOwn": "I have my own"
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2809,7 +2812,7 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão está desativado enquanto as informações de hardware não forem obtidas, para o caso de os dispositivos de armazenamento não suportarem esta funcionalidade ou quando estiver a decorrer a recuperação de setores danificados."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Transferir ferramentas de diagnóstico profissionais",
@@ -2846,7 +2849,7 @@
             "storage": "Memória",
             "wireless": "Sem fios"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

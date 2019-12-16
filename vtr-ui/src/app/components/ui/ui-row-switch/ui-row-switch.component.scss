@@ -84,10 +84,14 @@
 			width: 2rem;
 			color: $icon_color;
 			position: relative;
+			// top: .7em; // commented out to match the UI Mocukp
+		}
+		.top-pad-03 {
+			padding-top: 0rem;
 		}
 
 		.right-icon {
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			color: $icon_color;
 			cursor: pointer;
 
@@ -142,6 +146,7 @@
 
 		.tool-tip-icon{
 			margin-left: 0.9rem;
+			margin-top: 0.3rem;
 		}
 		// .right-align{
 		// 	padding-left: 3.5rem;
