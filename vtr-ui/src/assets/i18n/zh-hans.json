@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
-            "subtitle": "查找关于设备的实用小提示",
+            "subtitle": "查找适用于设备的有用提示。",
             "question1": "备份和恢复文件",
             "question2": "如何刷新您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "系统状态",
-            "subtitle": "快速了解设备状态",
+            "subtitle": "快速了解设备状态。",
             "memory": {
                 "title": "内存",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "查看详细信息",
                 "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>未检测到主电池。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "滑块位于中央或中央偏右的位置。以动态方式平衡风扇速度和性能以获得最佳体验。",
                             "title3": "性能模式",
                             "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "subTitle2": "设置通常使用此计算机的时间"
+                    "subTitle2": "设置通常使用此计算机的时间",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "更多",
                     "control1": "触摸板控制",
                     "control2": "鼠标控制",
-                    "control3": "TRACKPOINT 控制"
+                    "control3": "TRACKPOINT 控制",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
                 "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
-                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player <br/> 暴风影音 <br/> 迅雷影音",
+                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "计算机未连接交流电源且电池电量低于 20%。",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "需要帮助",
-            "description": "联系我们以获取帮助。",
+            "description": "请联系我们以便为您提供帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "直通车",
-            "description": "联系我们以获取帮助。",
+            "description": "请联系我们以便为您提供帮助。",
             "listETicket": "通过电子凭单获取支持",
             "listServiceProvider": "查找服务供应商",
             "listAboutLenovoVantage": "关于我们"
@@ -1956,12 +1959,16 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2099,7 @@
                 "subtitle": "高枕无忧",
                 "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "输入邀请码",
@@ -2635,6 +2642,7 @@
         "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
+        "toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
         "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2673,10 @@
         "actionTriggered": "触发的操作",
         "actionTriggeredDescription": "用户选择设置（如自动安装关键/推荐更新）触发的消息。",
         "OtherSettings": "其他设置",
-        "usageStatistics": "使用情况统计信息",
-        "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
-        "deviceStatistics": "与 Lenovo 共享统计数据",
-        "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
+        "usageStatistics": "Vantage 使用情况统计信息",
+        "usageStatisticsDescription": "发送匿名使用情况统计信息以帮助我们改善 Vantage。",
+        "deviceStatistics": "Lenovo 设备统计信息",
+        "deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
         "userProfile": "用户概要文件",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
@@ -2804,7 +2812,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -2841,7 +2849,7 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

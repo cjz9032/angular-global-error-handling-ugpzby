@@ -24,6 +24,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
 	@Input() disabled = false;
+	@Input() textCase = 'default';
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
 	public name = 'Select';
@@ -70,5 +71,20 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		this.isDropDownOpen = !this.isDropDownOpen;
 		this.change.emit(event);
 		toggle.focus();
+	}
+
+	public customCamelCase(value: string) {
+
+		if (value === null) {
+			return '';
+		}
+		//starts with
+		if (value.match(/^\d/)) {
+			let firstWord = value.substring(0, value.indexOf(' ') + 1);
+			let secondWord = value.substring(value.indexOf(' ') + 1, value.length);
+			return firstWord + secondWord.charAt(0).toUpperCase() + secondWord.slice(1);
+		} else {
+			return value.charAt(0).toUpperCase() + value.slice(1);
+		}
 	}
 }

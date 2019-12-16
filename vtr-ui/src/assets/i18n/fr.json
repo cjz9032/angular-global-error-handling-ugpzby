@@ -347,7 +347,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "Désactivé"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "Profil 1"
@@ -361,7 +361,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "Désactivé"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A pour votre machine",
-            "subtitle": "TROUVEZ DES CONSEILS UTILES POUR VOTRE APPAREIL.",
+            "subtitle": "Trouvez des astuces utiles pour votre appareil.",
             "question1": "Sauvegarde et restauration de vos fichiers",
             "question2": "Procédure pour l'actualisation de votre ordinateur",
             "question3": "Procédure pour connaître l'unité centrale de votre ordinateur",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "État du système",
-            "subtitle": "DÉTECTEZ RAPIDEMENT L'ÉTAT DE VOTRE PÉRIPHÉRIQUE.",
+            "subtitle": "Détectez rapidement l'état de votre appareil.",
             "memory": {
                 "title": "Mémoire",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Voir les détails",
                 "gaugeResetWarning": "<b>Remarque :</b> la réinitialisation de la jauge de la batterie est en cours. Veuillez ne pas débrancher le boîtier d'alimentation.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>La batterie principale n'est pas détectée.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Le curseur se trouve au centre ou est centré à droite. La vitesse du ventilateur et les performances sont réglées de manière dynamique pour optimiser les performances.",
                             "title3": "Mode de performance",
                             "desc3": "Le curseur se trouve à l'extrême droite. La vitesse du ventilateur et la température de la surface autorisée sont plus élevées pour des performances maximales."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Cette fonctionnalité programme votre ordinateur de sorte à optimiser la batterie et réduire sa consommation d'énergie pendant les périodes d'inactivité, tout en permettant un démarrage rapide pendant les heures d'utilisation intense.",
-                    "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur"
+                    "subTitle2": "Définissez les heures pendant lesquelles vous utilisez en général votre ordinateur",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "PLUS",
                     "control1": "CONTRÔLES DU PAVÉ TACTILE",
                     "control2": "CONTRÔLE DE LA SOURIS",
-                    "control3": "PARAMÈTRES TRACKPOINT"
+                    "control3": "PARAMÈTRES TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Support intelligent",
                 "title": "Mise à l'échelle de la résolution vidéo",
                 "desc": "<p><label>Cette fonction optimise l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela fonctionne particulièrement lorsque la vidéo est de faible résolution.</label></p> <p style='margin-top:4px;'><label> Cette fonction peut influencer la durée de vie de la batterie, sa température et produire des sons. Lorsque cette option est activée, il est recommandé de brancher l'ordinateur à l'alimentation secteur.</label></p>",
-                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Cette fonction s'applique uniquement aux lecteurs suivants : <br/> Windows Media player",
                 "note": {
                     "description": "Cette fonction est inopérante quand :",
                     "description1": "L'ordinateur n'est pas branché à l'alimentation secteur et la charge de la batterie est inférieure à 20 %.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Besoin d'aide ?",
-            "description": "NOUS CONTACTER POUR OBTENIR DE L'AIDE.",
+            "description": "Contactez-nous pour obtenir de l'aide.",
             "listLenovoCommunity": "Communauté Lenovo",
             "listContactCustomerService": "Contacter le service client",
             "listContactUsOnWechat": "Nous contacter sur WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Liens d'accès rapide",
-            "description": "NOUS CONTACTER POUR OBTENIR DE L'AIDE.",
+            "description": "Contactez-nous pour obtenir de l'aide.",
             "listETicket": "Obtenir de l'aide avec E-ticket",
             "listServiceProvider": "Trouver un prestataire de services",
             "listAboutLenovoVantage": "Au sujet de Lenovo Vantage"
@@ -1956,12 +1959,16 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2099,7 @@
                 "subtitle": "Tranquillité d'esprit",
                 "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. En savoir plus sur la Sécurité domestique connectée <tag>ici</tag>.",
                 "tryNow": "Essayer maintenant",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Entrer le code d'invitation",
@@ -2635,6 +2642,7 @@
         "professional": "Usage Professionnel",
         "privacytitle": "Aidez-nous à améliorer la qualité de l'application en autorisant la collecte de statistiques d'utilisation anonymes.",
         "moreInterest": "+ plus d'intérêts",
+        "toolbartitle": "Activer la barre d'outils de Lenovo Vantage (recommandé)",
         "title1": "Bienvenue",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2673,10 @@
         "actionTriggered": "Action déclenchée",
         "actionTriggeredDescription": "Messages déclenchés par les paramètres sélectionnés par l'utilisateur, comme les mises à jour critiques ou recommandées, installées automatiquement.",
         "OtherSettings": "Autres paramètres",
-        "usageStatistics": "Statistiques d'utilisation",
-        "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
-        "deviceStatistics": "Partager des données statistiques avec Lenovo",
-        "deviceStatisticsDescription": "Partage des données statistiques avec Lenovo afin d'améliorer la fiabilité, le concept et l'optimisation des fonctionnalités de votre ordinateur.",
+        "usageStatistics": "Statistiques d'utilisation Vantage",
+        "usageStatisticsDescription": "Envoyez des statistiques d'utilisation anonyme pour nous aider à améliorer Vantage.",
+        "deviceStatistics": "Statistiques du périphérique Lenovo",
+        "deviceStatisticsDescription": "Envoyez des données de périphérique anonymes pour nous aider à améliorer la qualité, la fiabilité et la nouvelle génération de périphériques.",
         "userProfile": "Profil utilisateur",
         "Note": "Remarque : ",
         "settingsNotes": "les utilisateurs doivent effectuer un redémarrage de cette application pour que tous les paramètres de cette page soient pris en compte.",
@@ -2804,7 +2812,7 @@
                 "yes": "Oui",
                 "no": "Non"
             },
-            "waitAvailability": "Le bouton est désactivé lorsque les informations matérielles n'ont pas encore été récupérées, au cas où les unités de stockage ne prennent pas en charge cette fonctionnalité ou lorsque la restauration de secteurs défectueux est en cours d'exécution."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Télécharger les outils de diagnostic professionnels",
@@ -2841,7 +2849,7 @@
             "storage": "Stockage",
             "wireless": "Sans fil"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -45,12 +45,6 @@
 
 	&__btn {
 		@extend %button-link;
-		color: #4A81FD;
-		font-size: 1.6rem;
-		font-weight: 500;
-		line-height: 2.3rem;
-		letter-spacing: 0.5px;
-		text-transform: initial;
 
 		&--expanded {
 			@extend %button-link--open;
@@ -58,13 +52,6 @@
 
 		&--disabled {
 			@extend %button-link--disabled;
-			text-transform: initial;
-			color: #C2C9CF;
-			cursor: default;
-
-			&:hover{
-				color: #C2C9CF;
-			}
 		}
 
 		&--action {

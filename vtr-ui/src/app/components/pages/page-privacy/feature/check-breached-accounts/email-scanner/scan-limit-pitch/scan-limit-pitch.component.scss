@@ -40,13 +40,11 @@
 	&__show-more {
 		@extend %button-link;
 		@extend %button-link--to-right;
-		color: #4A81FD;
 		margin-left: 4rem;
 	}
 
 	&__show-more-text {
 		@extend %button-link__text;
-		color: #4A81FD;
 	}
 
 	&__img {

@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
-            "subtitle": "ENCONTRE ALGUMAS DICAS ÚTEIS PARA SEU DISPOSITIVO.",
+            "subtitle": "Encontre dicas úteis para o seu dispositivo.",
             "question1": "Fazer backup e restaurar seus arquivos",
             "question2": "Como atualizar seu PC",
             "question3": "Como saber qual é a CPU da sua máquina",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Status do sistema",
-            "subtitle": "MANTENHA O STATUS DO DISPOSITIVO ATUALIZADO RAPIDAMENTE.",
+            "subtitle": "Mantenha o status do dispositivo atualizado rapidamente.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Ver detalhes",
                 "gaugeResetWarning": "<b>Nota:</b> A redefinição do medidor de bateria está em andamento. Mantenha o adaptador de energia CA conectado.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>A bateria principal não foi detectada.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "O controle deslizante está no centro ou centralizado à direita. A velocidade e desempenho do ventilador são equilibrados dinamicamente para oferecer uma melhor experiência.",
                             "title3": "Modo de desempenho",
                             "desc3": "O controle deslizante está na extremidade à direita. A velocidade do ventilador e a temperatura da superfície permitida são aumentadas para oferecer o máximo de desempenho."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Esse recurso programa o computador para otimizar a economia de carga da bateria durante horas ociosas sem prejudicar o tempo do início rápido durantes horas de maior uso.",
-                    "subTitle2": "Defina a hora em que você geralmente usa este computador"
+                    "subTitle2": "Defina a hora em que você geralmente usa este computador",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLES DO TOUCHPAD",
                     "control2": "CONTROLES DO MOUSE",
-                    "control3": "CONTROLES DE TRACKPOINT"
+                    "control3": "CONTROLES DE TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Mídia inteligente",
                 "title": "Upscaling da resolução de vídeo",
                 "desc": "<p><label>Esse recurso aprimora a experiência de reprodução de vídeo, melhorando a resolução de vídeo. Funciona especialmente quando o vídeo está em baixa resolução.</label></p> <p style='margin-top:4px;'><label> Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Quando ativado, é recomendável conectar o computador à energia CA.</label></p>",
-                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "O recurso funciona apenas nos seguintes players: <br/> Windows Media player",
                 "note": {
                     "description": "Esse recurso não funciona quando:",
                     "description1": "O computador não está conectado à energia CA e a carga da bateria é inferior a 20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Precisa de ajuda?",
-            "description": "FALE CONOSCO PARA QUE POSSAMOS AJUDAR.",
+            "description": "Entre em contato conosco para que possamos ajudar.",
             "listLenovoCommunity": "Comunidade Lenovo",
             "listContactCustomerService": "Entrar em contato com o atendimento ao cliente",
             "listContactUsOnWechat": "Entre em contato pelo WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Links rápidos",
-            "description": "FALE CONOSCO PARA QUE POSSAMOS AJUDAR.",
+            "description": "Entre em contato conosco para que possamos ajudar.",
             "listETicket": "Obter suporte com E-ticket",
             "listServiceProvider": "Encontrar um provedor de serviços",
             "listAboutLenovoVantage": "Sobre o Lenovo Vantage"
@@ -1956,12 +1959,16 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2099,7 @@
                 "subtitle": "Fique tranquilo",
                 "subtitleDescribe": "A Segurança doméstica conectada enviará para você um alerta se uma vulnerabilidade no seu dispositivo ou rede doméstica for detectada, ou se você estiver conectado a uma rede possivelmente perigosa. Saiba mais sobre a Segurança doméstica conectada <tag>aqui</tag>.",
                 "tryNow": "Experimentar agora",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Inserir código de convite",
@@ -2635,6 +2642,7 @@
         "professional": "Uso profissional",
         "privacytitle": "Ajude-nos a melhorar a qualidade do aplicativo permitindo a coleta anônima de estatísticas de uso.",
         "moreInterest": "+ mais interesses",
+        "toolbartitle": "Habilitar a barra de ferramentas do Lenovo Vantage (recomendado)",
         "title1": "Bem-vindo ao",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2673,10 @@
         "actionTriggered": "Ação acionadas",
         "actionTriggeredDescription": "Mensagens acionadas pelo usuário selecionando configurações, como a instalação automática de atualizações críticas/recomendadas.",
         "OtherSettings": "Outras configurações",
-        "usageStatistics": "Estatísticas de Uso",
-        "usageStatisticsDescription": "Enviar estatísticas anônimas de uso para a Lenovo.",
-        "deviceStatistics": "Compartilhar dados estatísticos com a Lenovo",
-        "deviceStatisticsDescription": "Compartilha dados estatísticos com a Lenovo para melhorar a confiabilidade, o design e a otimização de recursos em seu computador.",
+        "usageStatistics": "Estatísticas de Uso do Vantage",
+        "usageStatisticsDescription": "Envie estatísticas anônimas de uso para nos ajudar a melhorar o Vantage.",
+        "deviceStatistics": "Estatísticas do Dispositivo Lenovo",
+        "deviceStatisticsDescription": "Envie dados anônimos do dispositivo para nos ajudar a melhorar a qualidade, a confiabilidade e a próxima geração de dispositivos.",
         "userProfile": "Perfil do usuário",
         "Note": "Nota: ",
         "settingsNotes": "todas as configurações nesta página precisarão que os usuários reiniciem este aplicativo para entrarem em vigor.",
@@ -2804,7 +2812,7 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão é desativado enquanto as informações de hardware ainda não foram recuperadas, caso os dispositivos de armazenamento não suportem essa funcionalidade ou quando a recuperação de setores com defeito está em execução."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Baixar ferramentas de diagnóstico profissional",
@@ -2841,7 +2849,7 @@
             "storage": "Armazenamento",
             "wireless": "Wireless"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

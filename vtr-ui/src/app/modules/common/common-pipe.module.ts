@@ -12,6 +12,7 @@ import { TextClassPipe } from 'src/app/pipe/ui-security-statusbar/text-class.pip
 import { StripTagsPipe } from 'src/app/pipe/strip-tags/strip-tags.pipe';
 import { RemoveSpacePipe } from 'src/app/pipe/remove-space/remove-space.pipe';
 import { DateFormatPipe } from 'src/app/pipe/date-format/date-format.pipe';
+import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 
 @NgModule({
 	declarations: [
@@ -21,6 +22,7 @@ import { DateFormatPipe } from 'src/app/pipe/date-format/date-format.pipe';
 		MinutesToHourminPipe,
 		SeparatePascalCasePipe,
 		StatusTextPipe,
+		HtmlTextPipe,
 		SuccessClassPipe,
 		SvgInlinePipe,
 		TextClassPipe,
@@ -36,6 +38,7 @@ import { DateFormatPipe } from 'src/app/pipe/date-format/date-format.pipe';
 		SanitizeModule,
 		SeparatePascalCasePipe,
 		StatusTextPipe,
+		HtmlTextPipe,
 		SuccessClassPipe,
 		SvgInlinePipe,
 		TextClassPipe,

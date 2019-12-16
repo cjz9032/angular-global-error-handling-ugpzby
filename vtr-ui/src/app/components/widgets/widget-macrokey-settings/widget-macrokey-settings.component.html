@@ -6,8 +6,8 @@
 					<p class="intro-text">{{ 'gaming.macroKey.introLine' | translate }}</p>
 				</div>
 				<div class="col-12 macrokey-status-wrapper" *ngIf="isNumpad">
-					<div class="select-wrapper" ngbTooltip="{{ tooltips_value }}">
-						<vtr-ui-lighting-effect [isRecording]="isRecording" [options]="macroKeyOptions[0]" 
+					<div class="select-wrapper">
+						<vtr-ui-lighting-effect [tooltip_value]= "tooltips_value | translate" [isRecording]="isRecording" [options]="macroKeyOptions[0]" 
 							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus" (change)="optionChanged($event)" [tabindex]="1">
 						</vtr-ui-lighting-effect>
 					</div>

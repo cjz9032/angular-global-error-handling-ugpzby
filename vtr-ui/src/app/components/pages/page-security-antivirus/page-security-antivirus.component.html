@@ -100,13 +100,13 @@
 				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
 			<div class="subheader">
 				<div class="rounded-card-with-shadow p-5 bg-white">
-					<div class="row" [ngClass]="{'md-display': viewModel.showMetricsList}">
-						<div *ngIf="viewModel.showMetricsList" class="col-lg-5 px-0 col-12">
+					<div class="row" [ngClass]="{'xl-display': viewModel.showMetricsList}">
+						<div *ngIf="viewModel.showMetricsList" class="col-xl-5 px-0 col-12">
 							<vtr-widget-mcafee-metric [metricsList]="viewModel.metricsList"
 								[showMetricButton]="viewModel.showMetricButton" [common]="common">
 							</vtr-widget-mcafee-metric>
-							<div
-								*ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'">
+							<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
+								class="d-none d-xl-block">
 								<p class="subtitle sub-font"
 									*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 									<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
@@ -114,7 +114,8 @@
 										href="{{antiVirus.mcafee?.trialUrl}}" target="_blank"></a>
 								</p>
 							</div>
-							<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'">
+							<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'"
+								class="d-none d-xl-block">
 								<p class="subtitle sub-font"
 									*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 									<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
@@ -123,7 +124,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-7 col-12 px-0" [ngClass]="{'col-lg-12': !viewModel.showMetricsList}">
+						<div class="col-xl-7 col-12 px-0" [ngClass]="{'col-xl-12': !viewModel.showMetricsList}">
 							<div class="row justify-content-between">
 								<div class="row col-5 col-md-6">
 									<img class="mcafee-logo align-self-start"
@@ -166,7 +167,7 @@
 							</div>
 						</div>
 						<div *ngIf="viewModel.mcafee.subscription === 'trialActive' || viewModel.mcafee.subscription === 'trialInactive'"
-							class="d-md-none md-margin">
+							class="d-xl-none d-block">
 							<p class="subtitle sub-font"
 								*vtrTranslate="'security.antivirus.mcafee.trialContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 								<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
@@ -174,7 +175,7 @@
 									href="{{antiVirus.mcafee?.trialUrl}}" target="_blank"></a>
 							</p>
 						</div>
-						<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" class="d-md-none md-margin">
+						<div *ngIf="viewModel.mcafee.subscription === 'licenseActive'" class="d-block d-xl-none">
 							<p class="subtitle sub-font"
 								*vtrTranslate="'security.antivirus.mcafee.subscribeContent' | translate:{remainingDays: viewModel.mcafee.expireAt }">
 								<a id="sa-av-link-subscribe" vtrMetrics metricsEvent="itemClick"
@@ -192,7 +193,7 @@
 			<vtr-widget-offline-info *ngIf="!isOnline" [title]="'dashboard.offlineInfo.title' | translate"
 				[isSubtitleVisible]="false" [isButtonVisible]="false"></vtr-widget-offline-info>
 			<div class="subheader">
-				<div class="rounded-card-with-shadow p-5 bg-white mb-5">
+				<div class="rounded-card-with-shadow p-20 bg-white mb-5">
 					<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 						<div class="row">
 							<div class="col-auto px-0 mr-auto">

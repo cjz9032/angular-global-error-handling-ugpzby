@@ -10,6 +10,9 @@
     font-size: 1.4rem;
     font-weight: $weight_regular;
     line-height: 2.3rem;
+    @media #{$mediaquery_X46} { 
+        font-size: 1.2rem;
+    }
 }
 
 .button, button {
@@ -53,6 +56,9 @@
     font-size: 2.5rem;
     font-weight: $weight_regular;
     line-height: 2.9rem;
+    @media #{$mediaquery_X46} { 
+        font-size: 2.2rem;
+    }
 }
 
 .text {
@@ -65,7 +71,29 @@
 }
 
 .md-margin {
-    @media #{$mediaquery_md} {
-        margin-bottom: 4rem;
+    @media #{$mediaquery_X46} {
+        margin-bottom: 2rem;
       }
+}
+
+.vtr-widget-mcafee {
+    @media #{$mediaquery_X46} { 
+        justify-content: center !important;
+    }
+}
+
+.md-col {
+    @media #{$mediaquery_X46} {
+      max-width: 100%;
+      width: 100%;
+      flex-basis: 100%;
+    }
+}
+
+::ng-deep {
+    .vtr-ui-button {
+        @media #{$mediaquery_X46} { 
+            margin-top: 2rem;
+        }
+    }
 }

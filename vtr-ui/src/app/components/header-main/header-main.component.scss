@@ -58,6 +58,19 @@
 			position: relative;
 			z-index: 1;
 			max-width: $max_page_width;
+			::ng-deep {
+				pre {
+					width: 100%;
+					color: inherit;
+					font: inherit;
+					margin-bottom: 0;
+					display: inline-block;
+					word-break: break-word;
+					word-wrap: break-word;
+					white-space: pre-wrap;
+					overflow: visible;
+				}
+			}
 			@media #{$black-on-white} {
 				margin-top: 1rem;
 			}
@@ -132,7 +145,7 @@
 		.menu {
 			position: absolute;
 			bottom: 0;
-			left: $padding_side;
+			//left: $padding_side;
 		}
 	}
 }

@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Spørgsmål og svar til din maskine",
-            "subtitle": "Find nogle hjælpsomme tip til din enhed.",
+            "subtitle": "Find nyttige tip til din enhed.",
             "question1": "Sikkerhedskopiér og gendan dine filer",
             "question2": "Sådan gendanner du din pc",
             "question3": "Sådan får du mere at vide om computerens CPU",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "FÅ ET HURTIGT INDBLIK I DIN ENHEDSSTATUS.",
+            "subtitle": "Få et hurtigt indblik i din enhedsstatus.",
             "memory": {
                 "title": "Hukommelse",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Flere oplysninger",
                 "gaugeResetWarning": "<b>Bemærk:</b> Nulstillingen af batterimåleren er i gang. Sørg for, at vekselstrømsadapteren forbliver tilsluttet.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Det primære batteri blev ikke fundet.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Skyderen er i midten eller i midten til højre. Blæserens hastighed og ydeevnen balanceres dynamisk for at opnå den bedste brugeroplevelse.",
                             "title3": "Ydeevnetilstand",
                             "desc3": "Skyderen er helt til højre. Blæserens hastighed og den tilladte overfladetemperatur er højere for at få den optimale ydeevne."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Denne funktion planlægger, at din computer optimerer besparelse af batteristrøm i inaktive perioder, uden at du mister muligheden for at starte hurtigt op i perioder med mere intens aktivitet.",
-                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer"
+                    "subTitle2": "Angiv det tidspunkt, hvor du normalt bruger denne computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "FLERE",
                     "control1": "KONTROLELEMENTER PÅ NAVIGATIONSPLADE",
                     "control2": "KONTROLELEMENTER PÅ MUS",
-                    "control3": "TRACKPOINT-KONTROLELEMENTER"
+                    "control3": "TRACKPOINT-KONTROLELEMENTER",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Intelligente medier",
                 "title": "Opskalering af videoopløsning",
                 "desc": "<p><label>Denne funktion forbedrer videoopløsningen, så du får en bedre oplevelse i forbindelse med videoafspilning. Den er især effektiv, når videoen er i dårlig opløsning.</label></p> <p style='margin-top:4px;'><label> Denne funktion kan påvirke batteriets levetid, batteriets temperatur og medføre støj. Når funktionen er aktiveret, anbefales det, at du slutter computeren til vekselstrøm.</label></p>",
-                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funktionen fungerer kun på følgende afspillere: <br/> Windows Media player",
                 "note": {
                     "description": "Denne funktion virker ikke i disse situationer:",
                     "description1": "Computeren er ikke tilsluttet til vekselstrøm, og batteriets strømniveau er lavere end 20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Har du brug for hjælp?",
-            "description": "KONTAKT OS, SÅ VI KAN HJÆLPE DIG.",
+            "description": "Kontakt os for at få hjælp.",
             "listLenovoCommunity": "Lenovo-gruppe",
             "listContactCustomerService": "Kontakt kundeservice",
             "listContactUsOnWechat": "Kontakt os på WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Kviklinks",
-            "description": "KONTAKT OS, SÅ VI KAN HJÆLPE DIG.",
+            "description": "Kontakt os for at få hjælp.",
             "listETicket": "Få support med e-anmodning",
             "listServiceProvider": "Find en serviceudbyder",
             "listAboutLenovoVantage": "Om Lenovo Vantage"
@@ -1956,12 +1959,16 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2099,7 @@
                 "subtitle": "Få ro i sindet",
                 "subtitleDescribe": "Tilsluttet Home Security sender en advarsel, hvis systemet registrerer et sikkerhedsproblem i din enhed eller dit hjemmenetværk, eller hvis du er tilsluttet et potentielt skadeligt netværk. Få mere at vide om Tilsluttet Home Security <tag>her</tag>.",
                 "tryNow": "Prøv nu",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Indtast invitationskode",
@@ -2635,6 +2642,7 @@
         "professional": "Professionel brug",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
         "moreInterest": "+ flere interesser",
+        "toolbartitle": "Aktivér Lenovo Vantage-værktøjslinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2673,10 @@
         "actionTriggered": "Udløst handling",
         "actionTriggeredDescription": "Beskeder, der er udløst af brugerens valg af indstillinger, f.eks. automatisk installation af vigtige/anbefalede opdateringer.",
         "OtherSettings": "Andre indstillinger",
-        "usageStatistics": "Brugsstatistikker",
-        "usageStatisticsDescription": "Send anonyme brugsstatistikker til Lenovo.",
-        "deviceStatistics": "Del statistiske data med Lenovo",
-        "deviceStatisticsDescription": "Deler statistiske data med Lenovo for at forbedre pålideligheden, designet og optimeringen af funktioner på computeren.",
+        "usageStatistics": "Brugsstatistikker for Vantage",
+        "usageStatisticsDescription": "Send anonym brugsstatistikker, så vi kan gøre Vantage endnu bedre.",
+        "deviceStatistics": "Statistikker om Lenovo-enhed",
+        "deviceStatisticsDescription": "Send anonyme enhedsdata for at hjælpe os med at forbedre kvalitet, pålidelighed og den næste generation af enheder.",
         "userProfile": "Brugerprofil",
         "Note": "Bemærk: ",
         "settingsNotes": "brugeren skal genstarte dette program, for at alle indstillingerne på denne side kan træde i kraft.",
@@ -2804,7 +2812,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "Knappen deaktiveres, mens hardwareoplysningerne endnu ikke er hentet, hvis lagerenhederne ikke understøtter denne funktion, eller når gendannelsen af beskadigede sektorer kører."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Download professionelle fejlfindingsværktøjer",
@@ -2841,7 +2849,7 @@
             "storage": "Lager",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

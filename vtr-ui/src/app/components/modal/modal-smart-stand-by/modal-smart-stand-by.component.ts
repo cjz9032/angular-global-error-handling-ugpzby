@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
 import * as d3 from 'd3';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
 import { PowerService } from 'src/app/services/power/power.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { EMPTY } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import {ActivitiesData} from './activities-data.mock'
 
 @Component({
 	selector: 'vtr-modal-smart-stand-by',
@@ -15,8 +14,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ModalSmartStandByComponent implements OnInit {
 	@ViewChildren('chartContainer') chartContainer: QueryList<ElementRef>;
-	public activities: SmartStandbyActivityModel[] = [];
-	public scheduleList: SmartStandbyActivityModel[] = [];
+
+	public activities: SmartStandbyActivityModel[];
 	public device = 'device.deviceSettings.power.smartStandby.';
 	public items: any = [
 		{ tittle: this.device + 'graph.graph1Tittle', subTittle: '', legends: `<div></div>` },
@@ -33,17 +32,16 @@ export class ModalSmartStandByComponent implements OnInit {
 	public isAutomatic: boolean;
 	// private legends = [0, 1, 2, 3, 4];
 	constructor(
-		private http: HttpClient,
 		private powerService: PowerService,
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService,
 	) { }
 
 	ngOnInit() {
+		this.activities = ActivitiesData
 		this.getActiviesData();
 		this.getSmartStandbyActiveHours();
 		this.getDays();
-		// this.items[0].colors = this.colors.first
 	}
 	public getDays() {
 		this.days = [];
@@ -226,10 +224,12 @@ export class ModalSmartStandByComponent implements OnInit {
 	}
 
 	public getActiviesData() {
-		this.powerService.getSmartStandbyPresenceData().then(data => {
-			this.activities = data;
-			console.log(data);
-			this.renderToFirstChart(data);
+		this.powerService.getSmartStandbyPresenceData().then((data: SmartStandbyActivityModel[]) => {
+			if (data && data.length > 0) {
+				this.renderToFirstChart(data);
+			} else {
+				this.renderToFirstChart(this.activities)
+			}
 		}).catch(error => {
 			console.log('getSmartStandbyPresenceData error', error.message);
 			return EMPTY;
@@ -237,11 +237,13 @@ export class ModalSmartStandByComponent implements OnInit {
 	}
 
 	public getSmartStandbyActiveHours() {
-		this.powerService.GetSmartStandbyActiveHours().then(data => {
-			this.activities = data;
-			console.log(data);
-			this.renderToSecondChart(data);
-			this.getIsPresenceDataSufficientStatus()
+		this.powerService.GetSmartStandbyActiveHours().then((data: SmartStandbyActivityModel[]) => {
+			if (data && data.length > 0) {
+				this.renderToSecondChart(data);
+				this.getIsPresenceDataSufficientStatus()
+			} else {
+				this.renderToSecondChart(this.activities)
+			}
 		}).catch(error => {
 			console.log('getSmartStandbyActiveHours error', error.message);
 			return EMPTY;
