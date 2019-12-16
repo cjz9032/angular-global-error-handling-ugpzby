@@ -223,6 +223,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
 			this.dashboardService.getSelfSelectStatus().then(value => {
+				this.logger.debug(`MenuMainComponent.loadMenuOptions: getSelfSelectStatus value ${value}`);
 				this.selfSelectStatusVal = value;
 				if (this.selfSelectStatusVal === true) {
 					this.showSmartAssist();
@@ -368,7 +369,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			if (event) {
 				event.fromSearchMenu = true;
 			}
-		} else if (item.id === 'user') {
+		} else if (item.id === 'user' && event) {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
 			const id = idAttr.nodeValue;

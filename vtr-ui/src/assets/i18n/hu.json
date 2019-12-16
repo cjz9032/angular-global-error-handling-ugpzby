@@ -2099,7 +2099,7 @@
                 "subtitle": "Nyugodt lehet",
                 "subtitleDescribe": "A Biztonsági rendszer csatlakoztatott otthonhoz riasztást küld, ha biztonsági rést észlel az eszköz vagy az otthoni hálózat esetében, illetve ha Ön esetlegesen rosszindulatú hálózathoz próbál csatlakozni. A Biztonsági rendszer csatlakoztatott otthonhoz szolgáltatásról <tag>itt</tag> tudhat meg többet.",
                 "tryNow": "Próbálja ki",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Meghívó kód küldése",
