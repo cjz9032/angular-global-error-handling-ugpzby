@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BreachedAccount } from '../../../common/services/breached-accounts.service';
+import { BreachedAccount } from '../services/breached-accounts.service';
 
 @Component({
 	selector: 'vtr-breached-other-description',

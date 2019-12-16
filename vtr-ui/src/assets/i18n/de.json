@@ -643,11 +643,11 @@
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
         },
         "qAndA": {
             "title": "Q & A für Ihre Maschine",
-            "subtitle": "FINDEN SIE HILFREICHE TIPPS FÜR IHR GERÄT.",
+            "subtitle": "Hier finden Sie hilfreiche Tipps für Ihr Gerät.",
             "question1": "Ihre Dateien sichern und wiederherstellen",
             "question2": "So frischen Sie Ihren PC auf",
             "question3": "So finden Sie heraus, welche CPU Ihr Computer hat",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "SCHNELLE ÜBERSICHT ÜBER DEN GERÄTESTATUS.",
+            "subtitle": "Schnelle Übersicht über den Gerätestatus.",
             "memory": {
                 "title": "Hauptspeicher",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Details anzeigen",
                 "gaugeResetWarning": "<b>Hinweis:</b> Der Akkustandsanzeiger wird zurückgesetzt. Lassen Sie das Netzteil angeschlossen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Der primäre Akku wird nicht erkannt.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Der Schieberegler befindet sich in der Mitte oder Mitte rechts. Lüftergeschwindigkeit und Leistung werden dynamisch für die beste Benutzererfahrung ausbalanciert.",
                             "title3": "Leistungsmodus",
                             "desc3": "Der Schieberegler ist ganz rechts. Lüftergeschwindigkeit und zulässige Oberflächentemperatur sind höher für maximale Leistung."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Mit dieser Funktion optimiert Ihr Computer während inaktiver Zeiten den Akkuverbrauch, ohne dass das schnelle Hochfahren bei intensiverer Nutzung beeinträchtigt wird.",
-                    "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen"
+                    "subTitle2": "Typische Nutzungszeiten für diesen Computer festlegen",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "MEHR",
                     "control1": "TOUCHPAD-STEUERUNG",
                     "control2": "MAUS-STEUERUNG",
-                    "control3": "TRACKPOINT-STEUERUNG"
+                    "control3": "TRACKPOINT-STEUERUNG",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Intelligente Medien",
                 "title": "Upscaling der Videoauflösung",
                 "desc": "<p><label>Mit dieser Funktion wird die Videowiedergabe durch Verbesserung der Videoauflösung verbessert, insbesondere bei Videos mit schlechter Auflösung.</label></p> <p style='margin-top:4px;'><label> Diese Funktion kann die Akkulebensdauer und -temperatur beeinflussen und Geräusche verursachen. Wenn diese Funktion aktiviert ist, sollten Sie den Computer an die Stromversorgung anschließen.</label></p>",
-                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Die Funktion funktioniert nur bei folgenden Playern: <br/> Windows Media player",
                 "note": {
                     "description": "Diese Funktion funktioniert nicht, wenn:",
                     "description1": "Der Computer nicht an die Stromversorgung angeschlossen ist und der Akkustand weniger als 20 % beträgt.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Benötigen Sie Hilfe?",
-            "description": "KONTAKTIEREN SIE UNS, WIR HELFEN IHNEN GERNE.",
+            "description": "Kontaktieren Sie uns, damit wir Ihnen helfen können.",
             "listLenovoCommunity": "Lenovo-Community",
             "listContactCustomerService": "Kundenservice kontaktieren",
             "listContactUsOnWechat": "Auf WeChat kontaktieren",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Quick Links",
-            "description": "KONTAKTIEREN SIE UNS, WIR HELFEN IHNEN GERNE.",
+            "description": "Kontaktieren Sie uns, damit wir Ihnen helfen können.",
             "listETicket": "Erhalten Sie Support mit E-Ticket",
             "listServiceProvider": "Service-Provider finden",
             "listAboutLenovoVantage": "Über Lenovo Vantage"
@@ -1955,13 +1958,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2174,7 @@
             "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
             "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
             "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
-            "poweredBySurfEasy": "Unterstützt von SurfEasy",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredBySurfEasy": "Unterstützt von SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE-KENNWORTMANAGER",
@@ -2196,8 +2202,7 @@
             "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
             "allowsYou3": "Sicherheit bei ungesicherten WiFi-Netzwerken dank integriertem VPN.",
             "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
-            "poweredByDashLane": "Unterstützt von Dashlane",
-            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+            "poweredByDashLane": "Unterstützt von Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2642,7 @@
         "professional": "Berufliche Nutzung",
         "privacytitle": "Indem Sie der anonymen Erfassung von Nutzungsstatistiken zustimmen, helfen Sie uns dabei, diese App zu verbessern.",
         "moreInterest": "+ mehr Interessen",
+        "toolbartitle": "Aktivieren Sie die Lenovo Vantage-Symbolleiste (empfohlen)",
         "title1": "Willkommen bei",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2673,10 @@
         "actionTriggered": "Ausgelöste Aktion",
         "actionTriggeredDescription": "Nachrichten, die durch die Auswahl von Einstellungen ausgelöst werden, wie z. B. die automatische Installation kritischer/empfohlener Updates.",
         "OtherSettings": "Weitere Einstellungen",
-        "usageStatistics": "Verwendungsstatistiken",
-        "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
-        "deviceStatistics": "Statistikdaten mit Lenovo teilen",
-        "deviceStatisticsDescription": "Sendet statistische Daten an Lenovo, um die Zuverlässigkeit und das Design Ihres Computers zu verbessern und seine Funktionalität zu optimieren.",
+        "usageStatistics": "Vantage Verwendungsstatistiken",
+        "usageStatisticsDescription": "Senden Sie uns anonyme Verwendungsstatistiken, damit wir Vantage besser machen können.",
+        "deviceStatistics": "Lenovo Gerätestatistiken",
+        "deviceStatisticsDescription": "Senden Sie uns anonyme Gerätedaten, damit wir die Qualität und Zuverlässigkeit sowie die nächste Generation unserer Geräte verbessern können.",
         "userProfile": "Benutzerprofil",
         "Note": "Hinweis: ",
         "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart dieser Anwendung durch den Benutzer, damit sie wirksam werden.",
@@ -2806,7 +2812,7 @@
                 "yes": "Ja",
                 "no": "Nein"
             },
-            "waitAvailability": "Die Schaltfläche ist deaktiviert, solange die Hardwareinformationen noch nicht abgerufen wurden, falls die Speichergeräte diese Funktionalität nicht unterstützen oder wenn die Wiederherstellung fehlerhafter Sektoren läuft."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Professionelle Diagnosetools herunterladen",
@@ -2843,7 +2849,7 @@
             "storage": "Speicher",
             "wireless": "Drahtlos"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3053,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
-                "networkError": "Netzwerkfehler.",
-                "installationCancelled": "Installation wurde abgebrochen."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Gutscheine",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installieren",
-                "installing": "Installation",
-                "downloading": "Herunterladen",
-                "installed": "Installiert",
-                "launch": "Starten",
-                "seeMore": "Weitere Informationen anzeigen"
-            },
-            "fieldName": {
-                "description": "Beschreibung",
-                "screenshots": "Screenshots",
-                "additionalInformation": "Weitere Informationen",
-                "by": "Von:",
-                "updated": "Aktualisiert:",
-                "type": "Typ:",
-                "category": "Kategorie:",
-                "legalAgreement": "Rechtlicher Vertrag",
-                "readMore": "Weiterlesen",
-                "readLess": "Weniger lesen"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3169,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sie können nun herausfinden, ob Ihre persönlichen Daten ohne Ihr Wissen durch Online-Tracking erfasst oder verwendet wurden.",
+            "security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
+            "connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Fehler bei Installation Versuchen Sie es erneut.",
+                "networkError": "Netzwerkfehler.",
+                "installationCancelled": "Installation wurde abgebrochen."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Gutscheine",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installieren",
+                "installing": "Installation",
+                "downloading": "Herunterladen",
+                "installed": "Installiert",
+                "launch": "Starten",
+                "seeMore": "Weitere Informationen anzeigen"
+            },
+            "fieldName": {
+                "description": "Beschreibung",
+                "screenshots": "Screenshots",
+                "additionalInformation": "Weitere Informationen",
+                "by": "Von:",
+                "updated": "Aktualisiert:",
+                "type": "Typ:",
+                "category": "Kategorie:",
+                "legalAgreement": "Rechtlicher Vertrag",
+                "readMore": "Weiterlesen",
+                "readLess": "Weniger lesen"
+            }
+        }
+    }
 }

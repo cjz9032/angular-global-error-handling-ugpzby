@@ -25,10 +25,12 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SecureMath } from '@lenovo/tan-client-bridge';
+import { DccService } from 'src/app/services/dcc/dcc.service';
+
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
-	styleUrls: [ './page-dashboard.component.scss' ]
+	styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
 	submit = this.translate.instant('dashboard.feedback.form.button');
@@ -50,6 +52,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 	cardContentPositionF: any = {};
 
 	heroBannerDemoItems = [];
+	canShowDccDemo$: Promise<boolean>;
 
 	heroBannerItemsCms: []; // tile A
 	cardContentPositionBCms: any = {};
@@ -111,7 +114,8 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 		private hypService: HypothesisService,
 		public warrantyService: WarrantyService,
 		private adPolicyService: AdPolicyService,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+		public dccService: DccService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -168,6 +172,7 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 				});
 			});
 		this.getSelfSelectStatus();
+		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
 	}
 
 	ngDoCheck(): void {
@@ -282,21 +287,9 @@ export class PageDashboardComponent implements OnInit, DoCheck, OnDestroy, After
 			this.fetchUPEContent();
 		});
 
-		this.isShowDccDemo().then(() => {
-			this.getHeroBannerDemoItems();
-		});
-	}
-
-	private isShowDccDemo() {
-		return new Promise((resolve) => {
-			const filter: Promise<any> = this.vantageShellService.calcDeviceFilter('{"var":"DeviceTags.System.Demo"}');
-			if (filter) {
-				filter.then((hyp) => {
-					if (hyp === 'CES-2019') {
-						this.deviceService.showDemo = true;
-						resolve(true);
-					}
-				});
+		this.dccService.canShowDccDemo().then((show) => {
+			if (show) {
+				this.getHeroBannerDemoItems();
 			}
 		});
 	}

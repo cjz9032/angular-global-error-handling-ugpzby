@@ -2,7 +2,7 @@
 
 ui-popover {
 	position: absolute;
-	width: 60rem;
+	max-width: 56rem;
 	padding: 3rem 5rem;
 	background: $gaming_lightest;
 	z-index: 9;
@@ -10,19 +10,15 @@ ui-popover {
 	box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
 	right: 8rem;
 	top: -13rem;
-	@media #{$breakpoint_xl} {
-		width: 50rem;
-	}
-	@media #{$breakpoint_lg} {
-		width: 45rem;
+	width: 35vw;
+	min-width: 56rem;
+	@media #{$breakpoint_md} {
+		min-width: 40rem;
 		top: -14rem;
 	}
-	@media #{$breakpoint_md} {
-		width: 40rem;
-	}
 	@media #{$breakpoint_sm} {
-		width: 35rem;
-		padding: 3rem 3rem;
+		min-width: 36rem;
+		padding: 3rem;
 	}
 	@media #{$black-on-white} {
 		background: $high-contrast-grey;

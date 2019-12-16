@@ -1,18 +1,15 @@
 <ng-container [ngSwitch]="currentStep.step">
 	<vtr-permit-trackers-and-passwords
-		data-analyticsName="ScoreConsentPopup"
 		*ngSwitchCase="oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD"
 		(allow)="handleAllow($event, oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD)">
 		<ng-container class="stepper" [ngTemplateOutlet]="stepper"></ng-container>
 	</vtr-permit-trackers-and-passwords>
 	<vtr-enter-email
-		data-analyticsName="ScoreEmailPopup"
 		*ngSwitchCase="oneClickScanSteps.VERIFY_EMAIL"
 		(allow)="handleAllow($event, oneClickScanSteps.VERIFY_EMAIL)">
 		<ng-container class="stepper" [ngTemplateOutlet]="stepper"></ng-container>
 	</vtr-enter-email>
 	<vtr-scanning
-		data-analyticsName="ScoreScanPopup"
 		*ngSwitchCase="oneClickScanSteps.SCAN"
 		[scanSteps]="getStepForScanning()"
 		(allow)="handleScanAllow($event)">

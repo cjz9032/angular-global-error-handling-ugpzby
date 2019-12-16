@@ -188,7 +188,6 @@
 		}
 		.information {
 			margin: 1.6rem;
-			margin-bottom: 5rem;
 			margin-top: 0;
 			border-top: 1px solid $gaming_darkest;
 			padding-top: 1.6rem;
@@ -207,7 +206,7 @@
 ::ng-deep vtr-ui-lighting-effect {
 	.select-box {
 		ngb-tooltip-window.tooltip {
-			top: 1.5rem !important;
+			top: 0.5rem !important;
 			.arrow {
 				height: 0.5rem;
 				&::before {

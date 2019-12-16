@@ -643,11 +643,11 @@
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
         },
         "qAndA": {
             "title": "Ε & Α για το μηχάνημά σας",
-            "subtitle": "ΒΡΕΙΤΕ ΟΡΙΣΜΕΝΕΣ ΧΡΗΣΙΜΕΣ ΣΥΜΒΟΥΛΕΣ ΓΙΑ ΤΗ ΣΥΣΚΕΥΗ ΣΑΣ.",
+            "subtitle": "Ανατρέξτε σε μερικές χρήσιμες συμβουλές για τη συσκευή σας.",
             "question1": "Δημιουργία αντιγράφων ασφαλείας και επαναφορά των αρχείων σας",
             "question2": "Πώς να ανανεώσετε τον υπολογιστή σας",
             "question3": "Πώς να μάθετε τη CPU του υπολογιστή σας",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Κατάσταση συστήματος",
-            "subtitle": "ΕΛΕΓΞΤΕ ΓΡΗΓΟΡΑ ΤΗΝ ΚΑΤΑΣΤΑΣΗ ΤΗΣ ΣΥΣΚΕΥΗΣ ΣΑΣ.",
+            "subtitle": "Ελέγξτε γρήγορα την κατάσταση της συσκευής σας.",
             "memory": {
                 "title": "Μνήμη",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Βλέπε λεπτομέρειες",
                 "gaugeResetWarning": "<b>Σημείωση:</b> Η επαναφορά του μετρητή μπαταρίας βρίσκεται σε εξέλιξη. Διατηρήστε τον μετασχηματιστή εναλλασσόμενου ρεύματος (ac) συνδεδεμένο.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Η κύρια μπαταρία δεν εντοπίζεται.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Το ρυθμιστικό βρίσκεται στο κέντρο ή στα δεξιά του κέντρου. Η ταχύτητα και η απόδοση του ανεμιστήρα εξισορροπούνται δυναμικά για τη βέλτιστη εμπειρία.",
                             "title3": "Λειτουργία απόδοσης",
                             "desc3": "Το ρυθμιστικό βρίσκεται στο δεξιό άκρο. Η ταχύτητα του ανεμιστήρα και η επιτρεπόμενη θερμοκρασία επιφανείας είναι υψηλότερες, για επίτευξη των βέλτιστων επιδόσεων."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Αυτή η δυνατότητα δημιουργεί χρονοδιαγράμματα στον υπολογιστή σας, ώστε να βελτιστοποιείται η εξοικονόμηση της μπαταρίας κατά τις ώρες αδράνειας χωρίς να επηρεάζεται η γρήγορη εκκίνηση κατά τις ώρες πιο εντατικής χρήσης.",
-                    "subTitle2": "Ρυθμίστε την ώρα κατά την οποία χρησιμοποιείτε συνήθως αυτόν τον υπολογιστή"
+                    "subTitle2": "Ρυθμίστε την ώρα κατά την οποία χρησιμοποιείτε συνήθως αυτόν τον υπολογιστή",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "ΠΕΡΙΣΣΟΤΕΡΑ",
                     "control1": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΛΗΚΤΡΟΛΟΓΙΟΥ ΑΦΗΣ",
                     "control2": "ΧΕΙΡΙΣΤΗΡΙΑ ΠΟΝΤΙΚΙΟΥ",
-                    "control3": "ΧΕΙΡΙΣΤΗΡΙΑ TRACKPOINT"
+                    "control3": "ΧΕΙΡΙΣΤΗΡΙΑ TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Έξυπνα μέσα",
                 "title": "Αναβάθμιση ανάλυσης βίντεο",
                 "desc": "<p><label>Αυτή η δυνατότητα αναβαθμίζει την εμπειρία αναπαραγωγής βίντεο βελτιώνοντας την ανάλυση του βίντεο. Αποδίδει ιδιαίτερα όταν η ανάλυση του βίντεο είναι χαμηλή.</label></p> <p style='margin-top:4px;'><label> Αυτή η λειτουργία ίσως επηρεάσει τη διάρκεια ζωής και τη θερμοκρασία της μπαταρίας και ίσως προκαλέσει θορύβους. Όταν είναι ενεργοποιημένη, συνιστάται να έχετε τον υπολογιστή συνδεδεμένο σε παροχή εναλλασσόμενου ρεύματος.</label></p>",
-                "tooltip": "Η δυνατότητα λειτουργεί μόνο στα ακόλουθα προγράμματα αναπαραγωγής: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Η δυνατότητα λειτουργεί μόνο στα ακόλουθα προγράμματα αναπαραγωγής: <br/> Windows Media player",
                 "note": {
                     "description": "Αυτή η δυνατότητα δεν λειτουργεί όταν:",
                     "description1": "Ο υπολογιστής δεν είναι συνδεδεμένος σε παροχή εναλλασσόμενου ρεύματος και η ισχύς της μπαταρίας είναι χαμηλότερη από 20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Χρειάζεστε βοήθεια;",
-            "description": "ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ ΓΙΑ ΝΑ ΣΑΣ ΒΟΗΘΗΣΟΥΜΕ.",
+            "description": "Επικοινωνήστε μαζί μας για να σας βοηθήσουμε.",
             "listLenovoCommunity": "Κοινότητα Lenovo",
             "listContactCustomerService": "Επικοινωνήστε με την εξυπηρέτηση πελατών",
             "listContactUsOnWechat": "Επικοινωνήστε μαζί μας στο WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Γρήγοροι σύνδεσμοι",
-            "description": "ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ ΓΙΑ ΝΑ ΣΑΣ ΒΟΗΘΗΣΟΥΜΕ.",
+            "description": "Επικοινωνήστε μαζί μας για να σας βοηθήσουμε.",
             "listETicket": "Λήψη υποστήριξης με ηλεκτρονικό εισιτήριο",
             "listServiceProvider": "Εύρεση παρόχου υπηρεσιών",
             "listAboutLenovoVantage": "Πληροφορίες για το Lenovo Vantage"
@@ -1955,13 +1958,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2174,7 @@
             "getStarted1": "Κάντε κλικ στο κουμπί \"Άνοιγμα του SurfEasy\" παραπάνω για να ανοίξετε το SurfEasy VPN.",
             "getStarted2": "Ενεργοποιήστε το VPN και περιμένετε λίγο για να λάβετε την επιβεβαίωση ασφαλούς σύνδεσης.",
             "getStarted3": "Αλλάξτε την περιοχή ή την τοποθεσία σας, αν θέλετε, και απολαύστε ασφαλή, ιδιωτική δικτύωση.",
-            "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy",
-            "privacyPolicyAndTermsOfService": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
+            "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "ΔΙΑΧΕΙΡΙΣΗ ΚΩΔΙΚΩΝ ΠΡΟΣΒΑΣΗΣ DASHLANE",
@@ -2196,8 +2202,7 @@
             "allowsYou2": "Παρακολουθείτε τον σκοτεινό ιστό για τις προσωπικές πληροφορίες σας",
             "allowsYou3": "Παραμείνετε ασφαλείς σε μη ασφαλή δίκτυα WiFi με ενσωματωμένο VPN",
             "allowsYou4": "Κοινοποιείτε με ασφάλεια κωδικούς πρόσβασης χωρίς να τους αποκαλύπτετε",
-            "poweredByDashLane": "Υποστηρίζεται από το Dashlane",
-            "privacyPolicyAndTermsOfService": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>"
+            "poweredByDashLane": "Υποστηρίζεται από το Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2642,7 @@
         "professional": "Επαγγελματική χρήση",
         "privacytitle": "Βοηθήστε μας να βελτιώσουμε την ποιότητα της εφαρμογής, επιτρέποντας την ανώνυμη στατιστικών στοιχείων χρήσης.",
         "moreInterest": "+ περισσότερα ενδιαφέροντα",
+        "toolbartitle": "Ενεργοποίηση της γραμμής εργαλείων του Lenovo Vantage (συνιστάται)",
         "title1": "Καλώς ορίσατε στο",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2673,10 @@
         "actionTriggered": "Ενέργεια που ενεργοποιείται",
         "actionTriggeredDescription": "Μηνύματα που ενεργοποιούνται από τον χρήστη επιλέγοντας ρυθμίσεις όπως αυτόματη εγκατάσταση κρίσιμων/προτεινόμενων ενημερώσεων.",
         "OtherSettings": "Άλλες ρυθμίσεις",
-        "usageStatistics": "Στατιστικά χρήσης",
-        "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
-        "deviceStatistics": "Κοινοποίηση στατιστικών δεδομένων στη Lenovo",
-        "deviceStatisticsDescription": "Κάνει κοινή χρήση στατιστικών δεδομένων με τη Lenovo προκειμένου να βελτιωθεί η αξιοπιστία και ο σχεδιασμός και να βελτιστοποιηθούν οι δυνατότητες του υπολογιστή σας.",
+        "usageStatistics": "Στατιστικά χρήσης του Vantage",
+        "usageStatisticsDescription": "Στείλτε ανώνυμα στατιστικά στοιχεία χρήσης για να μας βοηθήσετε να κάνουμε το Vantage καλύτερο.",
+        "deviceStatistics": "Στατιστικά στοιχεία συσκευής Lenovo",
+        "deviceStatisticsDescription": "Στείλτε ανώνυμα δεδομένα σχετικά με τη συσκευή για να μας βοηθήσετε να βελτιώσουμε την ποιότητα, την αξιοπιστία και τις συσκευές επόμενης γενιάς.",
         "userProfile": "Προφίλ χρήστη",
         "Note": "Σημείωση: ",
         "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση της εφαρμογής από τον χρήστη.",
@@ -2806,7 +2812,7 @@
                 "yes": "Ναι",
                 "no": "Όχι"
             },
-            "waitAvailability": "Το κουμπί είναι απενεργοποιημένο ενώ οι πληροφορίες υλικού δεν έχουν ανακτηθεί ακόμη, σε περίπτωση που οι συσκευές αποθήκευσης δεν υποστηρίζουν αυτή τη δυνατότητα λειτουργίας ή όταν εκτελείται η λειτουργία αποκατάστασης κατεστραμμένων τομέων δίσκου."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Κατεβάστε επαγγελματικά διαγνωστικά εργαλεία",
@@ -2843,7 +2849,7 @@
             "storage": "Χώρος αποθήκευσης",
             "wireless": "Ασύρματο"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3053,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Η εγκατάσταση απέτυχε. Προσπαθήστε ξανά.",
-                "networkError": "Σφάλμα δικτύου.",
-                "installationCancelled": "Η εγκατάσταση ακυρώθηκε."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Εξαργύρωση Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Εγκατάσταση",
-                "installing": "Εγκατάσταση",
-                "downloading": "Μεταφόρτωση",
-                "installed": "Εγκαταστάθηκε",
-                "launch": "Εκκίνηση",
-                "seeMore": "Δείτε περισσότερα"
-            },
-            "fieldName": {
-                "description": "Περιγραφή",
-                "screenshots": "Στιγμιότυπα οθόνης",
-                "additionalInformation": "Πρόσθετες πληροφορίες",
-                "by": "Ανά:",
-                "updated": "Ενημερώθηκε:",
-                "type": "Τύπος:",
-                "category": "Κατηγορία:",
-                "legalAgreement": "Νομική συμφωνία",
-                "readMore": "Διαβάστε περισσότερα",
-                "readLess": "Διαβάστε λιγότερα"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3169,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Τώρα μπορείτε να μάθετε εάν οι προσωπικές σας πληροφορίες έχουν παραβιαστεί ή χρησιμοποιηθεί από διαδικτυακούς ιχνηλάτες χωρίς να το γνωρίζετε.",
+            "security": "Γνωρίζετε; Ακόμη και αν δεν έχετε εγκατεστημένο λογισμικό προστασίας από ιούς, συνεχίζουμε να παρέχουμε βασική προστασία ασφαλείας για τη συσκευή σας.",
+            "connectedHomeSecurity": "Αποκτήστε παρακολούθηση και ειδοποιήσεις σε πραγματικό χρόνο σχετικά με την ασφάλεια του δικτύου σας στο σπίτι. Θα είστε ο πρώτος που θα μάθετε εάν κάποια από τις έξυπνες συσκευές σας αντιμετωπίζει επίθεση ασφαλείας."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Η εγκατάσταση απέτυχε. Προσπαθήστε ξανά.",
+                "networkError": "Σφάλμα δικτύου.",
+                "installationCancelled": "Η εγκατάσταση ακυρώθηκε."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Εξαργύρωση Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Εγκατάσταση",
+                "installing": "Εγκατάσταση",
+                "downloading": "Μεταφόρτωση",
+                "installed": "Εγκαταστάθηκε",
+                "launch": "Εκκίνηση",
+                "seeMore": "Δείτε περισσότερα"
+            },
+            "fieldName": {
+                "description": "Περιγραφή",
+                "screenshots": "Στιγμιότυπα οθόνης",
+                "additionalInformation": "Πρόσθετες πληροφορίες",
+                "by": "Ανά:",
+                "updated": "Ενημερώθηκε:",
+                "type": "Τύπος:",
+                "category": "Κατηγορία:",
+                "legalAgreement": "Νομική συμφωνία",
+                "readMore": "Διαβάστε περισσότερα",
+                "readLess": "Διαβάστε λιγότερα"
+            }
+        }
+    }
 }

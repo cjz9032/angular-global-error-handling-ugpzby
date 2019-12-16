@@ -68,12 +68,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	}
 	
 	private validateScanState() {
-		if (this.hardwareScanService.isScanExecuting()) {
-			console.log('Running hwscan');
-
-			this.hardwareScanService.getStatus().then((response) => {
+		if (this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isScanDoneExecuting()) {
+			this.hardwareScanService.getStatus().then((response: any) => {
 				if (response) {
-					if (!response.isScanInProgress) {
+					if (response.isScanInProgress === false) {
 						console.log('Hardware scan has stopped running by inactivity or system suspended!');
 						// Reloading the page!
 						location.reload();
@@ -81,10 +79,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 						console.log('Hardware scan still working.');
 					}
 				} else {
-					console.error('GetStatus returned an invalid response');
+					console.error('GetStatus returned an empty response');
 				}
 			}).catch((error) => {
-				console.log('Get status error ---> ' + error);
+				console.log('It was not possible to get the scan status:\n' + error);
 			});
 		}
 	}

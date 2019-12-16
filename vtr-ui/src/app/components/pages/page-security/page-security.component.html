@@ -23,6 +23,7 @@
 			</div>
 			<section class="landing-nav mb-40">
 				<vtr-widget-landing-nav
+					(haveOwnChecked)="updateStatus($event)"
 					[baseItems]="baseItems"
 					[intermediateItems]="intermediateItems"
 					[advancedItems]="advanceItems"></vtr-widget-landing-nav>

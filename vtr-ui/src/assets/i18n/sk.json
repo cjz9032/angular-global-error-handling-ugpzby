@@ -643,11 +643,11 @@
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
         },
         "qAndA": {
             "title": "Otázky a odpovede pre váš stroj",
-            "subtitle": "NÁJDETE NIEKOĽKO POTREBNÉ TIPY PRE VAŠE ZARIADENIE.",
+            "subtitle": "Nájdite niekoľko užitočných rád pre svoje zariadenie.",
             "question1": "Zálohovanie a obnova súborov",
             "question2": "Obnovenie nastavenia počítača",
             "question3": "Zistenie informácií o procesore počítača",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stav systému",
-            "subtitle": "RÝCHLO ZISTITE STAV ZARIADENIA.",
+            "subtitle": "Rýchlo si zistite stav svojho zariadenia.",
             "memory": {
                 "title": "Pamäť",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Zobraziť podrobnosti",
                 "gaugeResetWarning": "<b>Poznámka:</b> Prebieha vynulovanie ukazovateľa batérie. Neodpájajte napájací adaptér.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Hlavná batéria nebola zistená.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Jazdec sa nachádza v strede alebo v strede na pravej strane. Otáčky ventilátora a výkon sú dynamicky vyvážené s cieľom zaistiť ten najlepší používateľský zážitok.",
                             "title3": "Režim vysokého výkonu",
                             "desc3": "Jazdec sa nachádza úplne vľavo. Otáčky ventilátora a povolená teplota povrchu počítača sú vyššie s cieľom zaistiť maximálny výkon."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Táto funkcia nastaví plán činnosti počítača s cieľom optimalizovať šetrenie energiou batérie počas nečinnosti, pričom neprídete o rýchle spustenie pri náročnejšom využívaní.",
-                    "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač"
+                    "subTitle2": "Nastavte čas, v ktorom zvyčajne používate počítač",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "VIAC",
                     "control1": "OVLÁDACIE PRVKY DOTYKOVÉHO PANELA",
                     "control2": "OVLÁDACIE PRVKY MYŠI",
-                    "control3": "OVLÁDACIE PRVKY TRACKPOINT"
+                    "control3": "OVLÁDACIE PRVKY TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Inteligentné médiá",
                 "title": "Zvýšenie rozlíšenia videa",
                 "desc": "<p><label>Táto funkcia zlepšuje zážitok z prehrávania videa zvýšením rozlíšenia videa. Prejaví sa najmä pri nízkom rozlíšení videa.</label></p> <p style='margin-top:4px;'><label> Táto funkcia môže ovplyvniť výdrž batérie, teplotu batérie a vytvárať hluk. Ak je povolená, odporúča sa pripojiť počítač k zdroju napájania.</label></p>",
-                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Táto funkcia funguje iba pri použití týchto prehrávačov: <br/> Windows Media player",
                 "note": {
                     "description": "Funkcia nefunguje v týchto prípadoch:",
                     "description1": "Počítač nie je pripojený k zdroju napájania a batéria je nabitá na menej než 20 %.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potrebujete pomoc?",
-            "description": "KONTAKTUJTE NÁS A POMÔŽEME VÁM.",
+            "description": "Kontaktujte nás, aby sme vám pomohli.",
             "listLenovoCommunity": "Komunita Lenovo",
             "listContactCustomerService": "Kontaktujte služby zákazníkom",
             "listContactUsOnWechat": "Kontaktujte nás cez WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Rýchle prepojenia",
-            "description": "KONTAKTUJTE NÁS A POMÔŽEME VÁM.",
+            "description": "Kontaktujte nás, aby sme vám pomohli.",
             "listETicket": "Získajte podporu prostredníctvom elektronickej požiadavky",
             "listServiceProvider": "Nájsť poskytovateľa servisu",
             "listAboutLenovoVantage": "Aplikácia Lenovo Vantage"
@@ -1955,13 +1958,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2167,8 +2174,7 @@
             "getStarted1": "Kliknite na tlačidlo „Otvoriť SurfEasy“ uvedené vyššie a spustite aplikáciu SurfEasy VPN.",
             "getStarted2": "Zapnite službu VPN a chvíľu počkajte na potvrdenie zabezpečeného pripojenia.",
             "getStarted3": "V prípade potreby zmeňte svoj región alebo polohu a používajte bezpečnú a súkromnú sieť.",
-            "poweredBySurfEasy": "Využíva technológiu SurfEasy",
-            "privacyPolicyAndTermsOfService": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "poweredBySurfEasy": "Využíva technológiu SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "SPRÁVCA HESIEL DASHLANE",
@@ -2196,8 +2202,7 @@
             "allowsYou2": "Slúži na sledovanie výskytu vašich údajov na temnom webe",
             "allowsYou3": "Zostaňte v bezpečí v nezabezpečených WiFi sieťach vďaka integrovanému VPN",
             "allowsYou4": "Bezpečne zdieľajte heslá bez ich odhalenia",
-            "poweredByDashLane": "Využíva technológiu Dashlane",
-            "privacyPolicyAndTermsOfService": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>"
+            "poweredByDashLane": "Využíva technológiu Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2637,6 +2642,7 @@
         "professional": "Určené pre odborníkov",
         "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
         "moreInterest": "+ viac záujmov",
+        "toolbartitle": "Povoliť panel nástrojov aplikácie Lenovo Vantage (odporúča sa)",
         "title1": "Víta vás aplikácia WRITEit",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2673,10 @@
         "actionTriggered": "Akcia bola spustená",
         "actionTriggeredDescription": "Správy aktivované nastaveniami používateľa, ako je napríklad automatická inštalácia kritických/odporúčaných aktualizácií.",
         "OtherSettings": "Ďalšie nastavenia",
-        "usageStatistics": "Štatistika používania",
-        "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
-        "deviceStatistics": "Zdieľať štatistické údaje so spoločnosťou Lenovo",
-        "deviceStatisticsDescription": "Zdieľa štatistické údaje so spoločnosťou Lenovo na zlepšenie spoľahlivosti, koncepcie a na optimalizáciu funkcií počítača.",
+        "usageStatistics": "Štatistika používania Vantage",
+        "usageStatisticsDescription": "Odosielajte anonymné štatistiky používania, aby ste nám pomohli vylepšiť Vantage.",
+        "deviceStatistics": "Štatistiky zariadenia Lenovo",
+        "deviceStatisticsDescription": "Odosielajte anonymné údaje zariadenia, aby ste nám pomohli zlepšiť kvalitu, spoľahlivosť a novú generáciu zariadení.",
         "userProfile": "Profil používateľa",
         "Note": "Poznámka: ",
         "settingsNotes": "Prejavenie všetkých nastavení na tejto stránke bude vyžadovať opätovné spustenie tejto aplikácie.",
@@ -2806,7 +2812,7 @@
                 "yes": "Áno",
                 "no": "Nie"
             },
-            "waitAvailability": "Tlačidlo je deaktivované, pokiaľ hardvérové informácie ešte neboli načítané, v prípade, že úložné zariadenia nepodporujú túto funkciu alebo keď je spustená obnova chybných sektorov."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Stiahnite si profesionálne diagnostické nástroje",
@@ -2843,7 +2849,7 @@
             "storage": "Ukladací priestor",
             "wireless": "Bezdrôtové"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3053,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Inštalácia zlyhala. Skúste znova.",
-                "networkError": "Chyba siete.",
-                "installationCancelled": "Inštalácia bola zrušená."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Aktivácia Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Nainštalovať",
-                "installing": "Inštalácia",
-                "downloading": "Sťahuje sa",
-                "installed": "Nainštalované",
-                "launch": "Spustiť",
-                "seeMore": "Ukázať viac"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Snímky obrazovky",
-                "additionalInformation": "Ďalšie informácie",
-                "by": "Od:",
-                "updated": "Aktualizované:",
-                "type": "Typ:",
-                "category": "Kategória:",
-                "legalAgreement": "Právna dohoda",
-                "readMore": "Ďalšie informácie",
-                "readLess": "Menej informácií"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3169,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Teraz môžete zistiť, či došlo k úniku vašich súkromných údajov alebo či ich bez vášho vedomia použili nástroje na sledovanie online.",
+            "security": "Vedeli ste to? Aj keď nemáte nainštalovaný antivírusový softvér, poskytujeme základnú bezpečnostnú ochranu vášho zariadenia.",
+            "connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Inštalácia zlyhala. Skúste znova.",
+                "networkError": "Chyba siete.",
+                "installationCancelled": "Inštalácia bola zrušená."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Aktivácia Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Nainštalovať",
+                "installing": "Inštalácia",
+                "downloading": "Sťahuje sa",
+                "installed": "Nainštalované",
+                "launch": "Spustiť",
+                "seeMore": "Ukázať viac"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Snímky obrazovky",
+                "additionalInformation": "Ďalšie informácie",
+                "by": "Od:",
+                "updated": "Aktualizované:",
+                "type": "Typ:",
+                "category": "Kategória:",
+                "legalAgreement": "Právna dohoda",
+                "readMore": "Ďalšie informácie",
+                "readLess": "Menej informácií"
+            }
+        }
+    }
 }
