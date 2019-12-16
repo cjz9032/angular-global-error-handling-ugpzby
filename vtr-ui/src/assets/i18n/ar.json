@@ -349,7 +349,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "ملف التعريف 1"
@@ -386,7 +386,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -917,7 +917,7 @@
                 "seeDetailsLink": "انظر التفاصيل",
                 "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>لم يتم الكشف عن البطارية الرئيسية.</b>"
                 }
             },
             "power": {
@@ -1014,7 +1014,8 @@
                             "desc2": "يوجد شريط التمرير في المنتصف أو في منتصف جهة اليسار. يحدث توازن ديناميكي بين سرعة المروحة والأداء من أجل الحصول على أفضل تجربة ممكنة.",
                             "title3": "وضع الأداء",
                             "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1517,7 +1518,8 @@
                     "more": "المزيد",
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
-                    "control3": "إعدادات تحكم TRACKPOINT"
+                    "control3": "إعدادات تحكم TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1680,7 +1682,7 @@
                 "heading": "الوسائط الذكية",
                 "title": "رفع مستوى دقة الفيديو",
                 "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
-                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player",
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
                     "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
@@ -1876,7 +1878,7 @@
         },
         "needHelp": {
             "title": "هل تحتاج للمساعدة؟",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listLenovoCommunity": "مجتمع Lenovo",
             "listContactCustomerService": "اتصل بخدمة العملاء",
             "listContactUsOnWechat": "اتصل بنا علي WeChat",
@@ -1887,7 +1889,7 @@
         },
         "quicklinks": {
             "title": "روابط سريعة",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listETicket": "احصل علي الدعم من خلال التذكرة الإلكترونية",
             "listServiceProvider": "البحث عن موفر خدمة",
             "listAboutLenovoVantage": "حول Lenovo Vantage"
@@ -2638,8 +2640,8 @@
         "custom": "تجربة مخصصة",
         "professional": "استخدام مهني",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
-		"moreInterest": "‏+ المزيد من الاهتمامات",
-		"toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
+        "moreInterest": "‏+ المزيد من الاهتمامات",
+        "toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
         "title1": "مرحبًا بك في",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2670,10 +2672,10 @@
         "actionTriggered": "الرسائل التي تشغلها إجراءات",
         "actionTriggeredDescription": "الرسائل التي يتم تشغيلها عن طريق اختيار المستخدم للإعدادات مثل تثبيت التحديثات الهامة / الموصى بها تلقائيًا.",
         "OtherSettings": "إعدادات أخرى",
-        "usageStatistics": "إحصائيات الاستخدام",
-        "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
-        "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
-        "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
+        "usageStatistics": "إحصائيات استخدام Vantage",
+        "usageStatisticsDescription": "إرسال إحصائيات الاستخدام مجهولة المصدر لمساعدتنا في تحسين Vantage.",
+        "deviceStatistics": "إحصائيات جهاز Lenovo",
+        "deviceStatisticsDescription": "أرسل بيانات جهاز مجهولة المصدر لمساعدتنا في تحسين الجودة والموثوقية والجيل التالي من الأجهزة.",
         "userProfile": "ملف تعريف المستخدم",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
@@ -2809,7 +2811,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "يكون الزر معطلاً بينما لم يتم استرداد معلومات الأجهزة بعد، في حال لم تكن أجهزة التخزين تدعم هذه الميزة أو عندما تكون استعادة القطاعات المصابة‬ قيد التشغيل."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -2846,7 +2848,7 @@
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1,5 +1,5 @@
 <div class="trackers-page"
-	 data-analyticsName="WebsiteTrackersBlock"
+	 data-analyticsName="VisibleToOnlineTrackers.WebsiteTrackersBlock"
 	 vtrSendAnalytics
 	 [metricsEvent]="'PageView'">
 	<div class="trackers-page__header">
@@ -14,13 +14,13 @@
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
 				[metricsItem]="'ViewInLenovoPrivacyEssentialsButton'"
-				*ngIf="(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0"
+				*ngIf="(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0 && (isConsentGiven$ | async)"
 				(click)="openFigleafApp()">
-			Block in Lenovo Privacy Essentials
+			Block in the app
 		</button>
 		<vtr-why-seeing-tooltip
 			[contextText]="textForTooltip"
-			*ngIf="!(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0">
+			*ngIf="!(isFigleafReadyForCommunication$ | async) && (websiteTrackersCount$ | async) > 0 && (isConsentGiven$ | async)">
 		</vtr-why-seeing-tooltip>
 
 	</div>
@@ -32,13 +32,27 @@
 			</p>
 		</div>
 		<div class="trackers-concent__btn-wrapper">
-			<button class="trackers-concent__btn"
-					vtrSendAnalytics
-					[metricsEvent]="'ItemClick'"
-					[metricsItem]="'WebsiteTrackersAcceptAndScanButton'"
-					(click)="giveConcent()">
-				Accept & scan
-			</button>
+			<vtr-ab-tests [testName]="currentTests.PrimaryButtonPitch">
+				<button class="trackers-concent__btn"
+						*testOption="'Secondary'"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'WebsiteTrackersAcceptAndScanButton'"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Secondary'}"
+						(click)="giveConcent()">
+					Accept & scan
+				</button>
+				<button class="trackers-concent__btn trackers-concent__btn--transparent"
+						*testOption="'Primary'"
+						vtrSendAnalytics
+						[metricsEvent]="'ItemClick'"
+						[metricsItem]="'WebsiteTrackersAcceptAndScanButton'"
+						[metricsParam]="{Test: 'PrimaryButtonPitch', Variant: 'Primary'}"
+						(click)="giveConcent()">
+					Accept & scan
+				</button>
+			</vtr-ab-tests>
+
 		</div>
 	</div>
 

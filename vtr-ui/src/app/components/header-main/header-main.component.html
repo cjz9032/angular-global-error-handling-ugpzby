@@ -1,5 +1,4 @@
-<div class="vtr-header-main"
-	[ngClass]="{'dcc': deviceService.showDemo}">
+<div class="vtr-header-main" [class.dcc]="showDemo">
 	<div class="vtr-header-main-inner"
 		[ngClass]="{'show-back-btn':back && back.length > 0 && !hideBack}">
 		<a class="back"

@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A para sua máquina",
-            "subtitle": "ENCONTRE ALGUMAS DICAS ÚTEIS PARA SEU DISPOSITIVO.",
+            "subtitle": "Encontre algumas sugestões úteis para o seu dispositivo.",
             "question1": "Faça uma cópia de segurança e restaure os seus ficheiros",
             "question2": "Como atualizar o PC",
             "question3": "Como saber qual a CPU da sua máquina",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Estado do sistema",
-            "subtitle": "FIQUE A SABER RAPIDAMENTE O ESTADO DO DISPOSTIVO.",
+            "subtitle": "Fique a saber rapidamente o estado do dispositivo.",
             "memory": {
                 "title": "Memória",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Ver detalhes",
                 "gaugeResetWarning": "<b>Nota:</b> A reposição do indicador de bateria está em curso. Mantenha o transformador CA conectado.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>A bateria principal não foi detetada.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "O controlo de deslize está ao centro ou centro à direita. O desempenho e a velocidade da ventoinha são equilibrados de forma dinâmica para obter a melhor experiência.",
                             "title3": "Modo de desempenho",
                             "desc3": "O controlo de deslize está na extremidade direita. A velocidade da ventoinha e a temperatura superficial permitida são superiores para obter o máximo desempenho."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MAIS",
                     "control1": "CONTROLOS DO PAINEL TÁTIL",
                     "control2": "CONTROLOS DO RATO",
-                    "control3": "CONTROLOS DO TRACKPOINT"
+                    "control3": "CONTROLOS DO TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Multimédia Inteligente",
                 "title": "Melhorar a resolução de vídeo",
                 "desc": "<p><label>Esta funcionalidade melhora a experiência de reprodução de vídeo melhorando a resolução de vídeo. Funciona especialmente quando o vídeo tem uma fraca resolução.</label></p> <p style='margin-top:4px;'><label> Esta função poderá ter impacto na duração da bateria, na temperatura da bateria e causar ruídos. Quando ativada, é recomendado ligar o computador à alimentação CA.</label></p>",
-                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "A funcionalidade apenas funciona nos seguintes leitores de vídeo: <br/> Windows Media player",
                 "note": {
                     "description": "Esta funcionalidade não funciona quando:",
                     "description1": "O computador não está ligado à alimentação CA e a carga da bateria é inferior a 20%.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Precisa de Ajuda?",
-            "description": "CONTACTE-NOS PARA OBTER AJUDA.",
+            "description": "Se precisar de ajuda, contacte-nos.",
             "listLenovoCommunity": "Comunidade da Lenovo",
             "listContactCustomerService": "Contactar o serviço de apoio ao cliente",
             "listContactUsOnWechat": "Contacte-nos através de WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Ligações rápidas",
-            "description": "CONTACTE-NOS PARA OBTER AJUDA.",
+            "description": "Se precisar de ajuda, contacte-nos.",
             "listETicket": "Obter suporte através de pedido eletrónico",
             "listServiceProvider": "Encontrar um fornecedor de serviços",
             "listAboutLenovoVantage": "Acerca do Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Experiência personalizada",
         "professional": "Utilização profissional",
         "privacytitle": "Ajude-nos a melhorar a qualidade da aplicação, permitindo a recolha de estatísticas de utilização anónimas.",
-		"moreInterest": "+ mais interesses",
-		"toolbartitle": "Ativar a Barra de Ferramentas do Lenovo Vantage (recomendado)",
+        "moreInterest": "+ mais interesses",
+        "toolbartitle": "Ativar a Barra de Ferramentas do Lenovo Vantage (recomendado)",
         "title1": "Bem-vindo a",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Ação ativada",
         "actionTriggeredDescription": "Mensagens ativadas pelas definições selecionadas pelo utilizador, tais como instalação automática de atualizações críticas/recomendadas.",
         "OtherSettings": "Outras definições",
-        "usageStatistics": "Estatísticas de utilização",
-        "usageStatisticsDescription": "Enviar estatísticas de utilização anónimas para a Lenovo.",
-        "deviceStatistics": "Partilhar dados estatísticos com a Lenovo",
-        "deviceStatisticsDescription": "Partilha dados estatísticos com a Lenovo para ajudar a melhorar a fiabilidade, o design e a otimização das funções no seu computador.",
+        "usageStatistics": "Estatísticas de utilização do Vantage",
+        "usageStatisticsDescription": "Envie estatísticas de utilização anónimas para nos ajudar a melhorar o Vantage.",
+        "deviceStatistics": "Estatísticas do Dispositivo Lenovo",
+        "deviceStatisticsDescription": "Envie dados do dispositivo anónimos para nos ajudar a melhorar a qualidade, a fiabilidade e a nova geração de dispositivos.",
         "userProfile": "Perfil de utilizador",
         "Note": "Nota: ",
         "settingsNotes": "todas as definições nesta página irão necessitar que o utilizador reinicie esta aplicação para que tenham efeito.",
@@ -2807,7 +2809,7 @@
                 "yes": "Sim",
                 "no": "Não"
             },
-            "waitAvailability": "O botão está desativado enquanto as informações de hardware não forem obtidas, para o caso de os dispositivos de armazenamento não suportarem esta funcionalidade ou quando estiver a decorrer a recuperação de setores danificados."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Transferir ferramentas de diagnóstico profissionais",
@@ -2844,7 +2846,7 @@
             "storage": "Memória",
             "wireless": "Sem fios"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

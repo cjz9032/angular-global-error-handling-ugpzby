@@ -22,9 +22,9 @@ $leftIndent: 7.5rem;
 
 	&__count {
 		position: absolute;
-		border-radius: 50%;
+		border-radius: 80px;
 		padding: 3px;
-		width: 16px;
+		min-width: 16px;
 		height: 16px;
 		left: 3rem;
 		bottom: 0.5rem;
@@ -72,6 +72,10 @@ $leftIndent: 7.5rem;
 		&--unverify {
 			width: auto;
 		}
+	}
+
+	&__social-description {
+		width: 100%;
 	}
 
 	&__chips {
@@ -122,6 +126,11 @@ $leftIndent: 7.5rem;
 		font-size: 1.7rem;
 		font-weight: bold;
 		line-height: 2.3rem;
+		display: block;
+		max-width: 95%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 
 		&--red {
 			color: red;
@@ -153,11 +162,6 @@ $leftIndent: 7.5rem;
 	&__preview-link {
 		@extend %button-link;
 
-		color: #4A81FD;
-		font-size: 1.6rem;
-		font-weight: 600;
-		line-height: 2.3rem;
-		letter-spacing: 0.5px;
 		display: none;
 
 		&:before {
@@ -187,11 +191,6 @@ $leftIndent: 7.5rem;
 		@extend %button-link;
 		text-transform: capitalize;
 		cursor: pointer;
-		color: #4A81FD;
-		font-size: 1.6rem;
-		font-weight: 500;
-		line-height: 2.3rem;
-		letter-spacing: 0.5px;
 
 		& span {
 			cursor: pointer;

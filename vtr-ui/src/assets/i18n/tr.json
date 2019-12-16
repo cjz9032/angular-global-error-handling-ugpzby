@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
-            "subtitle": "CİHAZINIZ İÇİN BAZI YARDIM İPUÇLARI BULUN.",
+            "subtitle": "Cihazınız için bazı yararlı ipuçları bulun.",
             "question1": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
             "question2": "Bilgisayarınızın yenilenmesi",
             "question3": "Makinenizin CPU\\'sunun öğrenilmesi",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Sistem Durumu",
-            "subtitle": "CİHAZINIZIN DURUMUNA HIZLI GENEL BAKIŞ.",
+            "subtitle": "Cihazınızın durumuna hızlı genel bakış.",
             "memory": {
                 "title": "Bellek",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Ayrıntıları görün",
                 "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Birincil pil algılanmadı.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
                             "title3": "Performans kipi",
                             "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "DAHA FAZLA",
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
-                    "control3": "TRACKPOINT KONTROLLERİ"
+                    "control3": "TRACKPOINT KONTROLLERİ",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
                 "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
-                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
                     "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Yardım mı Gerekiyor?",
-            "description": "YARDIM ALMAK İÇİN BİZE ULAŞIN.",
+            "description": "Size yardımcı olmamız için bize ulaşın.",
             "listLenovoCommunity": "Lenovo Topluluğu",
             "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
             "listContactUsOnWechat": "WeChat'te bize ulaşın",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Hızlı Bağlantılar",
-            "description": "YARDIM ALMAK İÇİN BİZE ULAŞIN.",
+            "description": "Size yardımcı olmamız için bize ulaşın.",
             "listETicket": "E-bilet ile destek alın",
             "listServiceProvider": "Garanti Hizmet Çözüm Ortağı bulun",
             "listAboutLenovoVantage": "Lenovo Vantage hakkında"
@@ -2636,8 +2638,8 @@
         "custom": "Özel Deneyim",
         "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
-		"moreInterest": "+ diğer ilgi alanları",
-		"toolbartitle": "Lenovo Vantage Araç Çubuğu'nu etkinleştir (önerilir)",
+        "moreInterest": "+ diğer ilgi alanları",
+        "toolbartitle": "Lenovo Vantage Araç Çubuğu'nu etkinleştir (önerilir)",
         "title1": "WRITEit'e hoş geldiniz",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Tetiklenen Eylem",
         "actionTriggeredDescription": "Kullanıcının kritik/önerilen güncellemeleri otomatik olarak yükleme gibi ayarları seçmesiyle tetiklenen iletiler.",
         "OtherSettings": "Diğer ayarlar",
-        "usageStatistics": "Kullanım İstatistikleri",
-        "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
-        "deviceStatistics": "İstatistik verilerini Lenovo ile paylaş",
-        "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
+        "usageStatistics": "Vantage Kullanım İstatistikleri",
+        "usageStatisticsDescription": "Vantage'ı daha iyi hale getirmemize yardımcı olmak için anonim kullanım istatistikleri gönderin.",
+        "deviceStatistics": "Lenovo Cihaz İstatistikleri",
+        "deviceStatisticsDescription": "Kaliteli, güvenilir ve yeni nesil cihazlar geliştirmemize yardımcı olmak için anonim cihaz verileri gönderin.",
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
@@ -2807,7 +2809,7 @@
                 "yes": "Evet",
                 "no": "Hayır"
             },
-            "waitAvailability": "Donanım bilgileri henüz alınmadıysa, depolama cihazlarının bu işlevi desteklememe olasılığına karşı veya bozuk kesimleri kurtar aracı çalıştırılırken düğme devre dışı bırakılır."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
@@ -2844,7 +2846,7 @@
             "storage": "Depolama alanı",
             "wireless": "Kablosuz"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

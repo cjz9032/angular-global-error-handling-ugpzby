@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
-            "subtitle": "Poišči nekaj koristnih nasvetov za napravo.",
+            "subtitle": "Poiščite nekaj koristnih nasvetov za svojo napravo.",
             "question1": "Varnostno kopiranje in obnovitev datotek",
             "question2": "Osveževanje računalnika",
             "question3": "Ugotavljanje, kateri CPE ima računalnik",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Stanje sistema",
-            "subtitle": "HITRO PREVERITE STANJE SISTEMA.",
+            "subtitle": "Hitro preverite stanje naprave.",
             "memory": {
                 "title": "Pomnilnik",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Prikaži podrobnosti",
                 "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Glavna baterija ni zaznana.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Drsnik je na sredini ali desno od sredine. Hitrost ventilatorja in zmogljivost se dinamično uravnotežita za optimalno uporabniško izkušnjo.",
                             "title3": "Zmogljivi način",
                             "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "VEČ",
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
-                    "control3": "KONTROLNIKI TRACKPOINT"
+                    "control3": "KONTROLNIKI TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
                 "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
                     "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potrebujete pomoč?",
-            "description": "OBRNITE SE NA NAS IN POMAGALI VAM BOMO.",
+            "description": "Za pomoč se obrnite na nas.",
             "listLenovoCommunity": "Skupnost Lenovo",
             "listContactCustomerService": "Obrnite se na storitve za stranke",
             "listContactUsOnWechat": "Pišite nam WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Hitre povezave",
-            "description": "OBRNITE SE NA NAS IN POMAGALI VAM BOMO.",
+            "description": "Za pomoč se obrnite na nas.",
             "listETicket": "Zagotovite si podporo z E-vstopnico",
             "listServiceProvider": "Poiščite ponudnika storitev",
             "listAboutLenovoVantage": "O storitvi Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Izkušnja po meri",
         "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
-		"moreInterest": "+ več zanimanj",
-		"toolbartitle": "Omogočite orodno vrstico Lenovo Vantage (priporočeno)",
+        "moreInterest": "+ več zanimanj",
+        "toolbartitle": "Omogočite orodno vrstico Lenovo Vantage (priporočeno)",
         "title1": "Pozdravljeni v programu WRITEit,",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Sproženo dejanje",
         "actionTriggeredDescription": "Sporočila, ki jih sproži uporabnik, ko izbere nastavitve, kot je samodejna namestitev nujnih/priporočenih posodobitev.",
         "OtherSettings": "Druge nastavitve",
-        "usageStatistics": "Statistični podatki o uporabi",
-        "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
-        "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
-        "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
+        "usageStatistics": "Statistični podatki o uporabi naprave Vantage",
+        "usageStatisticsDescription": "Pošiljajte anonimne statistične podatke o uporabi, da nam pomagate izboljšati napravo Vantage.",
+        "deviceStatistics": "Statistični podatki o napravi Lenovo",
+        "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
@@ -2807,7 +2809,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogočen, če informacije o strojni opremi še niso pridobljene, če shranjevalne naprave ne podpirajo te funkcije ali če se izvaja obnavljanje poškodovanih sektorjev."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Prenos profesionalnih diagnostičnih orodij",
@@ -2844,7 +2846,7 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

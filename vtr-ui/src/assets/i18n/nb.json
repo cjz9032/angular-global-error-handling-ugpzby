@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Spørsmål & Svar for din maskin",
-            "subtitle": "Finn noen nyttige tips for din enhet.",
+            "subtitle": "Finn noen nyttige tips for enheten din.",
             "question1": "Sikkerhetskopier og gjenopprett filene dine",
             "question2": "Slik oppfrisker du datamaskinen din",
             "question3": "Bli kjent med datamaskinens prosessor",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "SE ENHETSSTATUS RASKT.",
+            "subtitle": "Se enhetsstatusen raskt.",
             "memory": {
                 "title": "Minne",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "For detaljer se",
                 "gaugeResetWarning": "<b>Merk:</b> Tilbakestilling av batterimåler pågår. Hold strømadapteren tilkoblet.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Finner ikke hovedbatteriet.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Glidebryteren står på midten eller til høyre for midten. Viftehastighet og ytelse balanseres dynamisk for å gi den beste brukeropplevelsen.",
                             "title3": "Ytelsesmodus",
                             "desc3": "Glidebryteren er helt til høyre. Viftehastigheten og den tillatte overflatetemperaturen er høyere for maksimal ytelse."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "MER",
                     "control1": "PEKEPLATEKONTROLLER",
                     "control2": "MUSEKONTROLLER",
-                    "control3": "TRACKPOINT-KONTROLLER"
+                    "control3": "TRACKPOINT-KONTROLLER",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Intelligent medieavspilling",
                 "title": "Oppskalering av videooppløsning",
                 "desc": "<p><label>Denne funksjonen gir en bedre videoopplevelse ved å forbedre oppløsningen på videoen. Den fungerer spesielt bra når videoen har dårlig oppløsning.</label></p> <p style='margin-top:4px;'><label> Denne funksjonen kan påvirke batteritiden, batteritemperaturen og forårsake støy. Når den er aktivert, anbefales det at du kobler datamaskinen til strømnettet.</label></p>",
-                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funksjonen fungerer bare på disse spillerne: <br/> Windows Media player",
                 "note": {
                     "description": "Denne funksjonen fungerer ikke når følgende er tilfelle:",
                     "description1": "Datamaskinen er ikke koblet til strømnettet, og batterinivået er lavere enn 20 %.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Trener du hjelp?",
-            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listLenovoCommunity": "Lenovo-samfunnet",
             "listContactCustomerService": "Kontakt kundeservice",
             "listContactUsOnWechat": "Kontakt oss på WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Hurtigkoblinger",
-            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "description": "Kontakt oss slik at vi kan hjelpe deg.",
             "listETicket": "Få støtte med en e-forespørsel",
             "listServiceProvider": "Finn en tjenesteleverandør",
             "listAboutLenovoVantage": "Om Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Egendefinert brukeropplevelse",
         "professional": "Profesjonell bruk",
         "privacytitle": "Hjelp oss å forbedre appen ved å tillate anonym innsamling av bruksstatistikk.",
-		"moreInterest": "+ flere interesser",
-		"toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
+        "moreInterest": "+ flere interesser",
+        "toolbartitle": "Aktiver Lenovo Vantage-verktøylinjen (anbefales)",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Utløst av handlinger",
         "actionTriggeredDescription": "Meldinger som utløses av at man velger innstillinger som automatisk installasjon av kritiske/anbefalte oppdateringer.",
         "OtherSettings": "Andre innstillinger",
-        "usageStatistics": "Statistikk over bruk",
-        "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
-        "deviceStatistics": "Del statistiske data med Lenovo",
-        "deviceStatisticsDescription": "Del statistiske data med Lenovo for å hjelpe oss å forbedre datamaskinenes pålitelighet, design og funksjonalitet.",
+        "usageStatistics": "Vantage bruksstatistikk",
+        "usageStatisticsDescription": "Send anonym bruksstatistikk for å hjelpe oss med å forbedre Vantage.",
+        "deviceStatistics": "Lenovo enhetsstatistikk",
+        "deviceStatisticsDescription": "Send anonyme enhetsdata for å hjelpe oss med å forbedre kvalitet og pålitelighet, og utvikle neste generasjon med enheter.",
         "userProfile": "Brukerprofil",
         "Note": "Merk: ",
         "settingsNotes": "Alle innstillingene på denne siden krever omstart av dette programmet for å tre i kraft.",
@@ -2812,7 +2814,7 @@
                 "no": "Nei",
                 "description": "Å skanne og reparere kan føre til tap av data. Vi anbefaler å sikkerhetskopiere før du gjør dette. Er du sikker på at du vil fortsette?"
             },
-            "waitAvailability": "Knappen er deaktivert siden maskinvareinformasjonen ikke er hentet ennå, i tilfelle lagringsenhetene ikke støtter denne funksjonaliteten eller når de gjenopprette dårlige sektorene kjører."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Last ned profesjonelle feil søkings verktøy",
@@ -2844,7 +2846,7 @@
             "storage": "Lagring",
             "wireless": "Trådløs"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

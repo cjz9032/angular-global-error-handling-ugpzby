@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
-            "subtitle": "Nađite neke korisne savjete za svoj uređaj.",
+            "subtitle": "Pronađite neke korisne savete za uređaj.",
             "question1": "Pravljenje rezervne kopije i vraćanje datoteka u prethodno stanje",
             "question2": "Kako da osvežite računar",
             "question3": "Kako da saznate CPU mašine",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Status sistema",
-            "subtitle": "BRZO BUDITE U TOKU SA STATUSOM UREĐAJA.",
+            "subtitle": "Brzo budite u toku sa statusom uređaja.",
             "memory": {
                 "title": "Memorija",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Pogledajte detalje",
                 "gaugeResetWarning": "<b>Napomena:</b> resetovanje pokazivača napunjenosti baterije je u toku. Neka adapter za naizmeničnu struju ostane priključen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Primarna baterija nije pronađena.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Klizač je na sredini ili na sredini desno. Brzina i performanse ventilatora su dinamički izbalansirane radi najboljeg doživljaja.",
                             "title3": "Režim učinka",
                             "desc3": "Klizač je sasvim desno. Brzina ventilatora i dozvoljena temperatura površine više su radi najviših performansi."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1515,7 +1516,8 @@
                     "more": "VIŠE",
                     "control1": "KONTROLE DODIRNE TABLE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "KONTROLE ZA TRACKPOINT"
+                    "control3": "KONTROLE ZA TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1680,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Poboljšavanje video rezolucije",
                 "desc": "<p><label>Ova funkcija poboljšava doživljaj video reprodukcije tako što poboljšava video rezoluciju. To je posebno korisno kada je video u slaboj rezoluciji.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i može da izazove buku. Kada je omogućena, preporučuje se da računar povežete na napajanje naizmeničnom strujom.</label></p>",
-                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funkcija funkcioniše samo u sledećim playerima: <br/> Windows Media player",
                 "note": {
                     "description": "Ova funkcija ne radi kada:",
                     "description1": "Računar nije povezan na napajanje naizmeničnom strujom i baterija je niža od 20%.",
@@ -1874,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Potrebna vam je pomoć?",
-            "description": "KONTAKTIRAJTE NAS DA BISMO VAM POMOGLI.",
+            "description": "Kontaktirajte nas da bismo vam pomogli.",
             "listLenovoCommunity": "Lenovo zajednica",
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
@@ -1885,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Brze veze",
-            "description": "KONTAKTIRAJTE NAS DA BISMO VAM POMOGLI.",
+            "description": "Kontaktirajte nas da bismo vam pomogli.",
             "listETicket": "Dobijte podršku sa e-zahtevom",
             "listServiceProvider": "Pronađite servisera",
             "listAboutLenovoVantage": "Više o programu Lenovo Vantage"
@@ -2636,8 +2638,8 @@
         "custom": "Prilagođeno iskustvo",
         "professional": "Profesionalna upotreba",
         "privacytitle": "Dozvolite nam anonimno prikupljanje podataka o statistici korišćenja kako bismo poboljšali kvalitet aplikacije.",
-		"moreInterest": "+ više oblasti interesovanja",
-		"toolbartitle": "Omogućite Lenovo Vantage traku sa alatkama (preporučuje se)",
+        "moreInterest": "+ više oblasti interesovanja",
+        "toolbartitle": "Omogućite Lenovo Vantage traku sa alatkama (preporučuje se)",
         "title1": "Dobro došli u",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2670,10 @@
         "actionTriggered": "Pokrenuta radnja",
         "actionTriggeredDescription": "Poruke koje je pokrenuo korisnik izborom postavki poput automatskog instaliranja kritičnih/preporučenih ispravki.",
         "OtherSettings": "Ostale postavke",
-        "usageStatistics": "Statistika korišćenja",
-        "usageStatisticsDescription": "Pošaljite anonimne podatke o statistici korišćenja kompaniji Lenovo.",
-        "deviceStatistics": "Podelite statističke podatke sa kompanijom Lenovo",
-        "deviceStatisticsDescription": "Deli statističke podatke sa kompanijom Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije funkcija na računaru.",
+        "usageStatistics": "Statistika korišćenja programa Vantage",
+        "usageStatisticsDescription": "Pošaljite anonimno statističke podatke o korišćenju kako biste nam pomogli da poboljšamo Vantage.",
+        "deviceStatistics": "Poboljšanje Lenovo uređaja",
+        "deviceStatisticsDescription": "Pošaljite anonimno podatke o uređaju kako biste nam pomogli da poboljšamo kvalitet, pouzdanost i sledeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
         "settingsNotes": "kako bi sva podešavanja na ovoj stranici stupila na snagu, korisnici će morati ponovo da pokrenu ovu aplikaciju.",
@@ -2807,7 +2809,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Dugme je onemogućeno dok informacije o hardveru još uvek nisu preuzete, u slučaju da uređaji za skladištenje ne podržavaju ovu funkcionalnost ili kada je pokrenut neispravan sektor za oporavak."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alatke",
@@ -2844,7 +2846,7 @@
             "storage": "Skladištenje",
             "wireless": "Bežični"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -62,7 +62,8 @@
 				p {
 					font-size: 1.4rem;
 					color: $gaming_lightest;
-					line-height: 1.2rem;
+					line-height: 2rem;
+					padding: 0 2rem;
 					&:before {
 						content: "- ";
 					}
@@ -81,6 +82,7 @@
 						font-weight: normal;
 						color: $gaming_lightest;
 						text-transform: none;
+						padding: 0 2rem;
 					}
 				}
 			}
@@ -144,12 +146,12 @@
 	.start-button,
 	.stop-button {
 		.button {
-			padding: 1.2rem 8rem !important;
+			padding: 1.2rem 4rem !important;
 			@media #{$mediaquery_13} {
 				padding: 1.2rem 3rem !important;
 			}
 			@media #{$mediaquery_X3} {
-				padding: 1.2rem 6.5rem !important;
+				padding: 1.2rem 4rem !important;
 			}
 		}
 	}
