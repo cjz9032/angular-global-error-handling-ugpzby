@@ -1,5 +1,5 @@
 <div class="vtr-home-security-after-signup">
-	<div *ngIf="account?.role === 'admin'" class="content-container p-40 mb-5">
+	<div *ngIf="account?.role === 'admin'" class="content-container p-20 mb-5">
 		<div class="d-flex justify-content-between mb-4">
 			<p class="subscription-title" *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
 				[innerHTML]="'homeSecurity.overview.trialTitle' | translate">
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="row detail-container">
-			<div class="p-0 pb-5 col-12 col-sm-12 col-md-6">
+			<div class="pl-0 pb-5 col-12 col-sm-12 col-lg-6">
 				<p class="m-0 pl-0 pr-5" *ngIf="account?.state === 'trial'"
 					[innerHTML]="'homeSecurity.overview.inTrialDetail' | translate">
 				</p>
@@ -27,7 +27,7 @@
 					[innerHTML]="'homeSecurity.overview.subscriptionExpiredDetail' | translate">
 				</p>
 			</div>
-			<div class="col-12 col-sm-12 col-md-6 p-0 pb-5">
+			<div class="col-12 col-sm-12 col-lg-6 pl-0 pb-5">
 				<ng-container *ngIf="account?.state === 'trial'">
 					<p class="m-0 pl-0"
 						*vtrTranslate="'homeSecurity.overview.trialPeriod' | translate: {remainingDay: account?.expirationDay }">
@@ -85,7 +85,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="content-container p-40">
+	<div class="content-container p-20">
 		<div class="row heading mb-4" [innerHTML]="'homeSecurity.overview.overviewTitle' | translate"></div>
 		<div class="row content-body mb-4">
 			<div class="container-fluid sub-container p-4">
