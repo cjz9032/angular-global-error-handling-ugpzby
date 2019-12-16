@@ -50,10 +50,14 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.region = 'us';
 			this.showVpn();
 		});
-		// this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result: boolean) => {
-		// 	this.pluginSupport = result;
-		// 	this.showUac();
-		// });
+		this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+			if (result === 'true') {
+				this.pluginSupport = true;
+			} else {
+				this.pluginSupport = false;
+			}
+			this.showUac();
+		});
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
 			this.items.splice(this.items.length - 1, 0, new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));

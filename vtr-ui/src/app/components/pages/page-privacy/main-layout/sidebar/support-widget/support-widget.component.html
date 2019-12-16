@@ -1,0 +1,14 @@
+<aside *ngIf="wasSupportWidgetDisplayed" class="support-widget" data-analyticsName="GotQuestionsBlock">
+  <h3 class="support-widget__title">Got privacy questions?</h3>
+  <p class="support-widget__text">We’re standing by to help, whenever you need it.</p>
+  <button class="support-widget__button"
+		  vtrSendAnalytics
+		  vtrOfflineMode
+		  display="block"
+		  [metricsEvent]="'ItemClick'"
+		  [metricsItem]="'ContactSupportButton'"
+		  (click)="openPopup('support-popup')">
+	  Contact support
+  </button>
+</aside>
+<vtr-support-popup></vtr-support-popup>

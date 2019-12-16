@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Питання та відповіді для вашої машини",
-            "subtitle": "Знайдіть деякі корисні поради для вашого пристрою.",
+            "subtitle": "Знайдіть корисні поради для свого пристрою.",
             "question1": "Резервне копіювання та відновлення файлів",
             "question2": "Оновлення комп'ютера",
             "question3": "Як дізнатися модель процесора комп'ютера",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Стан системи",
-            "subtitle": "ШВИДКО ДІЗНАВАЙТЕСЯ СТАН СИСТЕМИ ПРИСТРОЮ.",
+            "subtitle": "Швидко дізнавайтеся стан системи пристрою.",
             "memory": {
                 "title": "Пам’ять",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "Показати відомості",
                 "gaugeResetWarning": "<b>Примітка.</b> Триває скидання акумуляторного вольтметра. Тримайте адаптер змінного струму підключеним.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Основний акумулятор не знайдено.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Повзунок розташований по центру або справа по центру. Швидкість вентилятора та швидкодія динамічно збалансовані для найкращої роботи.",
                             "title3": "Режим продуктивності",
                             "desc3": "Повзунок розташований із правого краю. Швидкість вентилятора та припустима температура поверхні вищі, ніж в інших режимах. Комп'ютер має найвищу швидкодію."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Ця функція допомагає комп’ютеру заощаджувати заряд акумулятора в години простою та зберігати швидкість запуску для періодів інтенсивного використання.",
-                    "subTitle2": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером"
+                    "subTitle2": "Укажіть час, коли ви зазвичай користуєтеся комп’ютером",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "ДОКЛАДНІШЕ",
                     "control1": "ЕЛЕМЕНТИ КЕРУВАННЯ СЕНСОРНОЇ ПАНЕЛІ",
                     "control2": "ЕЛЕМЕНТИ КЕРУВАННЯ МИШІ",
-                    "control3": "ЕЛЕМЕНТИ КЕРУВАННЯ TRACKPOINT"
+                    "control3": "ЕЛЕМЕНТИ КЕРУВАННЯ TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Інтелектуальне відтворення мультимедіа",
                 "title": "Підвищення роздільної здатності відео",
                 "desc": "<p><label>Ця функція збільшує задоволення від перегляду відео завдяки підвищенню його роздільної. Вона особливо стає в пригоді, якщо відео має низьку роздільну здатність.</label></p> <p style='margin-top:4px;'><label> Ця функція може впливати на термін служби акумулятора, температуру акумулятора та викликати шум. Коли ви вмикаєте цю функцію, рекомендуємо підключати комп'ютер до джерела живлення змінного струму.</label></p>",
-                "tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Ця функція працює лише в таких програвачах: <br/> Windows Media player",
                 "note": {
                     "description": "Ця функція не працює, коли:",
                     "description1": "Комп'ютер не підключено до джерела живлення змінного струму, і рівень заряду акумулятора нижче 20 %.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Потрібна допомога?",
-            "description": "ЗВ'ЯЖІТЬСЯ З НАМИ, ЩОБ ОТРИМАТИ ДОПОМОГУ.",
+            "description": "Зверніться до нас, щоб отримати допомогу.",
             "listLenovoCommunity": "Спільнота Lenovo",
             "listContactCustomerService": "Зв'язатися зі службою підтримки",
             "listContactUsOnWechat": "Зв'язатися з нами через WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Швидкі посилання",
-            "description": "ЗВ'ЯЖІТЬСЯ З НАМИ, ЩОБ ОТРИМАТИ ДОПОМОГУ.",
+            "description": "Зверніться до нас, щоб отримати допомогу.",
             "listETicket": "Залишити електронну заявку на підтримку",
             "listServiceProvider": "Знайти постачальника послуг",
             "listAboutLenovoVantage": "Про Lenovo Vantage"
@@ -1956,12 +1959,13 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2635,6 +2639,7 @@
         "professional": "Професійне використання",
         "privacytitle": "Допоможіть удосконалити цю програму — дозвольте нам збирати анонімну статистику використання.",
         "moreInterest": "+ більше вподобань",
+        "toolbartitle": "Увімкнути панель інструментів Lenovo Vantage (рекомендовано)",
         "title1": "Вітаємо в",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2670,10 @@
         "actionTriggered": "Сповіщення про дії",
         "actionTriggeredDescription": "Повідомлення, пов’язані з вибором автоматичної інсталяції критично важливих або рекомендованих оновлень.",
         "OtherSettings": "Інші настройки",
-        "usageStatistics": "Статистика використання",
-        "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
-        "deviceStatistics": "Поділіться статистичними даними з Lenovo",
-        "deviceStatisticsDescription": "Передає статистичні дані до компанії Lenovo, щоб покращити надійність, дизайн і оптимізувати функції на вашому комп'ютері.",
+        "usageStatistics": "Статистика використання Vantage",
+        "usageStatisticsDescription": "Надсилати анонімну статистику використання, щоб допомогти нам вдосконалювати Vantage.",
+        "deviceStatistics": "Статистика пристрою Lenovo",
+        "deviceStatisticsDescription": "Надсилати анонімні дані пристрою, щоб допомогти нам удосконалювати якість, надійність і наступне покоління пристроїв.",
         "userProfile": "Профіль користувача",
         "Note": "Примітка. ",
         "settingsNotes": "всі зміни, внесені на цій сторінці, необхідно перезавантажити програму.",
@@ -2804,7 +2809,7 @@
                 "yes": "Так",
                 "no": "Ні"
             },
-            "waitAvailability": "Кнопку відключена, доки інформація про обладнання ще не отримана, якщо пристрої збереження даних не підтримують цю функціональність або коли запущено відновлення поганих секторів."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Завантаження професійних інструментів діагностики",
@@ -2841,7 +2846,7 @@
             "storage": "Пам'ять",
             "wireless": "Безпровідні підключення"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

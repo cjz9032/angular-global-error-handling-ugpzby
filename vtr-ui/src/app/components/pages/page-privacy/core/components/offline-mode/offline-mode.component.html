@@ -1,0 +1,19 @@
+<ng-template #content>
+	<ng-content></ng-content>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="content" *ngIf="isOnline"></ng-container>
+
+<vtr-tooltip *ngIf="!isOnline" [positionContextTo]='positionContextTo' [display]="display">
+	<ng-template #tooltipText>
+		<ng-container [ngTemplateOutlet]="content"></ng-container>
+	</ng-template>
+	<ng-container>
+		<ng-template #tooltipContext>
+			<div class="tooltip-context"
+				 [ngClass]="{'tooltip-context--small': contextSize === 'small'}">
+				Connect to the internet to use this feature
+			</div>
+		</ng-template>
+	</ng-container>
+</vtr-tooltip>

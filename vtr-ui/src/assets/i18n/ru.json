@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A для вашей машины",
-            "subtitle": "НАЙТИ НЕКОТОРЫЕ ПОЛЕЗНЫЕ СОВЕТЫ ДЛЯ ВАШЕГО УСТРОЙСТВА.",
+            "subtitle": "Здесь вы найдете полезные рекомендации по вашему устройству.",
             "question1": "Резервное копирование и восстановление файлов",
             "question2": "Восстановление компьютера",
             "question3": "Сведения о модели ЦП в компьютере",
@@ -748,7 +748,7 @@
         },
         "systemStatus": {
             "title": "Состояние системы",
-            "subtitle": "КРАТКАЯ СВОДКА О СОСТОЯНИИ ВАШЕГО УСТРОЙСТВА.",
+            "subtitle": "Краткая сводка о состоянии вашего устройства.",
             "memory": {
                 "title": "Память",
                 "detail": {
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "См. подробные сведения",
                 "gaugeResetWarning": "<b>Примечание.</b> Выполняется сброс индикатора аккумулятора. Не отключайте адаптер электропитания.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Основной аккумулятор не обнаружен.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "Ползунок расположен в центре или по центру справа. Скорость вращения вентиляторов и производительность динамически оптимизируются для максимального комфорта использования.",
                             "title3": "Режим производительности",
                             "desc3": "Ползунок в крайнем правом положении. Скорость вращения вентиляторов и допустимая температура поверхности увеличены для максимальной производительности."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "Эта функция позволяет компьютеру оптимизировать экономию энергии аккумулятора при бездействии с сохранением возможности быстрого запуска в часы интенсивного использования.",
-                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер"
+                    "subTitle2": "Укажите время, когда вы обычно используете этот компьютер",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "ДОПОЛНИТЕЛЬНО",
                     "control1": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ СЕНСОРНОЙ ПАНЕЛИ",
                     "control2": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ МЫШИ",
-                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT"
+                    "control3": "ЭЛЕМЕНТЫ УПРАВЛЕНИЯ TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "Интеллектуальная работа с мультимедиа",
                 "title": "Масштабирование разрешения видео",
                 "desc": "<p><label>Эта функция улучшает качество воспроизведения видео, повышая разрешение видео.Ее действие особо заметно при низком разрешении видео.</label></p> <p style='margin-top:4px;'><label> Эта функция может повлиять на время работы и температуру аккумулятора, а также привести к возникновению шума. При включении этой функции рекомендуется подключить компьютер к сети переменного тока.</label></p>",
-                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Эта функция работает только в следующих проигрывателях: <br/> Windows Media player",
                 "note": {
                     "description": "Эта функция не работает, если:",
                     "description1": "компьютер не подключен к сети переменного тока, а заряд аккумулятора ниже 20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "Нужна помощь?",
-            "description": "ОБРАТИТЕСЬ К НАМ ЗА ПОМОЩЬЮ.",
+            "description": "Обратитесь к нам за помощью.",
             "listLenovoCommunity": "Сообщество Lenovo",
             "listContactCustomerService": "Обратиться в службу поддержки клиентов",
             "listContactUsOnWechat": "Свяжитесь с нами в WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "Быстрые ссылки",
-            "description": "ОБРАТИТЕСЬ К НАМ ЗА ПОМОЩЬЮ.",
+            "description": "Обратитесь к нам за помощью.",
             "listETicket": "Получите поддержку по электронной заявке",
             "listServiceProvider": "Найдите сервис-центр",
             "listAboutLenovoVantage": "О Lenovo Vantage"
@@ -1956,12 +1959,13 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2635,6 +2639,7 @@
         "professional": "Профессиональное использование",
         "privacytitle": "Помогите нам повысить качество этого приложения, разрешив анонимный сбор статистики использования.",
         "moreInterest": "+ другие интересы",
+        "toolbartitle": "Включить панель инструментов Lenovo Vantage (рекомендуется)",
         "title1": "Добро пожаловать в",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2670,10 @@
         "actionTriggered": "Инициированное действие",
         "actionTriggeredDescription": "Сообщения при выборе пользователем таких параметров, как автоматическая установка критических/рекомендуемых обновлений.",
         "OtherSettings": "Другие параметры",
-        "usageStatistics": "Статистика использования",
-        "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
-        "deviceStatistics": "Поделиться статистическими данными с Lenovo",
-        "deviceStatisticsDescription": "Отправляет статистические данные в компанию Lenovo, чтобы помочь ей повысить надежность и улучшить реализацию функций компьютера, а также оптимизировать их.",
+        "usageStatistics": "Статистика использования Vantage",
+        "usageStatisticsDescription": "Отправка анонимной статистики использования, которая поможет нам улучшить Vantage.",
+        "deviceStatistics": "Статистика устройства Lenovo",
+        "deviceStatisticsDescription": "Отправка анонимных данных об устройстве, которые помогут нам повысить качество, увеличить надежность и улучшить следующее поколение устройств.",
         "userProfile": "Профиль пользователя",
         "Note": "Замечание: ",
         "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить это приложение.",
@@ -2804,7 +2809,7 @@
                 "yes": "Да",
                 "no": "Нет"
             },
-            "waitAvailability": "Кнопка отключена, если сведения об оборудовании еще не получены, устройства хранения данных не поддерживают эту функцию или выполняется восстановление поврежденных секторов."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Скачать профессиональные инструменты диагностики",
@@ -2841,7 +2846,7 @@
             "storage": "Хранение",
             "wireless": "Беспроводная связь"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

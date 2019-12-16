@@ -1,5 +1,4 @@
-<div class="vtr-header-main"
-	[ngClass]="{'dcc': deviceService.showDemo}">
+<div class="vtr-header-main" [class.dcc]="showDemo">
 	<div class="vtr-header-main-inner"
 		[ngClass]="{'show-back-btn':back && back.length > 0 && !hideBack}">
 		<a class="back"
@@ -18,6 +17,7 @@
 			</span>
 		</a>
 		<h1 class="title"
+			*ngIf="title"
 			id="{{textId}}-header-title"
 			attr.aria-label="{{textId}}-header-title" [innerHtml]="title"></h1>
 		<ng-content></ng-content>

@@ -36,6 +36,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges{
     @Input() public enableDescription: Boolean = true;
 	@Input() isRecording: Boolean = false;
 	defaultLanguage: any;
+	@Input() tooltip_value: any;
 	//end
 
 	constructor(

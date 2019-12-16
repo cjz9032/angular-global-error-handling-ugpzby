@@ -16,6 +16,7 @@ import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macr
 import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macrokey-input-change.model';
 import { TranslateService } from '@ngx-translate/core';
 
+
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
@@ -32,6 +33,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 					id: 'macro key settings on',
 					label: 'gaming.macroKey.narrator.macrokeySettings1.option1',
 					metricitem: 'macrokey_settings_on',
+					show_tool_tip: false,
 					value: 1
 				},
 				{
@@ -41,6 +43,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 					id: 'macro key settings enabled when gaming',
 					label: 'gaming.macroKey.narrator.macrokeySettings1.option2',
 					metricitem: 'macrokey_settings_enabled_when_gaming',
+					show_tool_tip: true,
 					value: 2
 				},
 				{
@@ -50,6 +53,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 					id: 'macro key settings off',
 					label: 'gaming.macroKey.narrator.macrokeySettings1.option3',
 					metricitem: 'macrokey_settings_off',
+					show_tool_tip: false,
 					value: 3
 				}
 			]
@@ -110,6 +114,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		// 		}
 		// 	});
 		// }
+		//this.ngbtconfig.triggers = 'hover';
+		//this.ngbtconfig.placement = 'right';
 		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
 			this.tooltips_value = this.translate.instant('gaming.macroKey.status.whileGaming.title');
 		}

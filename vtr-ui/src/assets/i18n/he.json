@@ -347,7 +347,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "כבוי"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "פרופיל 1"
@@ -361,7 +361,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "כבוי"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -647,7 +647,7 @@
         },
         "qAndA": {
             "title": "Q & A עבור המחשב שלך",
-            "subtitle": "למצוא טיפים מעולים עבור המכשיר שלך.",
+            "subtitle": "מצאו כמה עצות שימושיות למכשיר שלכם.",
             "question1": "גיבוי ושחזור הקבצים",
             "question2": "כיצד לרענן את המחשב",
             "question3": "איך אפשר לדעת מה ה-CPU של המחשב",
@@ -915,7 +915,7 @@
                 "seeDetailsLink": "ראו פרטים",
                 "gaugeResetWarning": "<b>הערה:</b> איפוס מד הסוללה מתבצע. השאירו את מתאם מתח ה-AC מחובר.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>הסוללה הראשית לא זוהתה.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1012,8 @@
                             "desc2": "המחוון נמצא במרכז או במרכז מימין. מהירות המאוורר והביצועים מאוזנים באופן דינמי כדי להשיג את החוויה הטובה ביותר.",
                             "title3": "מצב ביצועים",
                             "desc3": "המחוון נמצא בצד ימין. מהירות המאוורר וטמפרטורת המשטח המותרת גבוהות יותר כדי להשיג את הביצועים הטובים ביותר."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1220,8 @@
                         }
                     },
                     "description2": "תכונה זו קובעת זמן למחשב שלכם שבו יבוצע מיטוב של חסכון באנרגיית הסוללה כאשר המחשב אינו בפעולה, כדי שלא לפגוע בזמן הפעלה מחדש מהירה שנדרש בשעות שבהן נעשה שימוש במחשב.",
-                    "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב"
+                    "subTitle2": "הגדירו את הזמן שבו אתם בדרך כלל משתמשים במחשב",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1514,7 +1516,8 @@
                     "more": "עוד",
                     "control1": "בקרי משטח מגע",
                     "control2": "בקרי עכבר",
-                    "control3": "בקרי TRACKPOINT"
+                    "control3": "בקרי TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1680,7 @@
                 "heading": "מדיה חכמה",
                 "title": "הגדלת רזולוציית הווידאו",
                 "desc": "<p><label>תכונה זו משפרת את חוויית הפעלת הווידאו על-ידי שיפור רזולוציית הווידאו. התכונה פעולת טוב במיוחד כאשר רזולוציית הווידאו גרועה.</label></p> <p style='margin-top:4px;'><label> פונקציה זו עלולה להשפיע על חיי הסוללה, על טמפרטורת הסוללה ועלולה לגרום לרעש. כאשר התכונה מופעלת, מומלץ לחבר את המחשב לכבל חשמל.</label></p>",
-                "tooltip": "התכונה פועלת רק בנגנים הבאים: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "התכונה פועלת רק בנגנים הבאים: <br/> Windows Media player",
                 "note": {
                     "description": "התכונה אינה פועלת כאשר:",
                     "description1": "המחשב אינו מחובר לחשמל ועוצמת הסוללה נמוכה מ -20%.",
@@ -1873,7 +1876,7 @@
         },
         "needHelp": {
             "title": "זקוקים לעזרה?",
-            "description": "צרו עמנו קשר כדי שנוכל לעזור.",
+            "description": "צרו קשר כדי שנוכל לעזור.",
             "listLenovoCommunity": "קהילת Lenovo",
             "listContactCustomerService": "צרו קשר עם שירות לקוחות",
             "listContactUsOnWechat": "צרו קשר ב-WeChat",
@@ -1884,7 +1887,7 @@
         },
         "quicklinks": {
             "title": "קישורים מהירים",
-            "description": "צרו עמנו קשר כדי שנוכל לעזור.",
+            "description": "צרו קשר כדי שנוכל לעזור.",
             "listETicket": "קבלו תמיכה עם כרטיס אלקטרוני",
             "listServiceProvider": "מצאו ספק שירות",
             "listAboutLenovoVantage": "אודות Lenovo Vantage"
@@ -1956,12 +1959,13 @@
             "basic": "BASIC",
             "basicTitle": "Basic protection",
             "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
-			"intermediate": "INTERMEDIATE",
-			"intermediateTitle": "Intermediate protection",
-			"intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
-			"advanced": "ADVANCED",
+            "intermediate": "INTERMEDIATE",
+            "intermediateTitle": "Intermediate protection",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own"
         },
         "antivirus": {
             "common": {
@@ -2635,6 +2639,7 @@
         "professional": "שימוש מקצועי",
         "privacytitle": "עזרו לנו לשפר את איכות היישום בכך שתאפשרו איסוף של נתוני שימוש אנונימיים.",
         "moreInterest": "‏+ תחומי עניין נוספים",
+        "toolbartitle": "הפעילו את סרגל הכלים של Lenovo Vantage (מומלץ)",
         "title1": "ברוכים הבאים אל",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2665,10 +2670,10 @@
         "actionTriggered": "פעולה מבוצעת",
         "actionTriggeredDescription": "הודעות המופעלות על ידי בחירת הגדרות של המשתמש, כגון עדכונים קריטיים/מומלצים של התקנה אוטומטית.",
         "OtherSettings": "הגדרות נוספות",
-        "usageStatistics": "סטטיסטיקת שימוש",
-        "usageStatisticsDescription": "שליחת נתוני שימוש אנונימיים אל Lenovo.",
-        "deviceStatistics": "שתפו נתונים סטטיסטיים עם Lenovo",
-        "deviceStatisticsDescription": "שתפו נתונים סטטיסטיים עם Lenovo כדי לסייע בשיפור האמינות, העיצוב והמיטוב של תכונות המחשב שלכם.",
+        "usageStatistics": "סטטיסטיקת שימוש ב-Vantage",
+        "usageStatisticsDescription": "שלח נתונים סטטיסטיים אנונימיים בנוגע לשימוש כדי לעזור לנו לשפר את Vantage.",
+        "deviceStatistics": "נתונים סטטיסטיים בנוגע למכשיר Lenovo",
+        "deviceStatisticsDescription": "שלחו נתונים אנונימיים בנוגע למכשיר כדי לעזור לנו לשפר את האיכות, את האמינות ואת הדור הבא של המכשירים.",
         "userProfile": "פרופיל משתמש",
         "Note": "שימו לב: ",
         "settingsNotes": "כדי להחיל את כל ההגדרות בדף זה המשתמשים צריכים לבצע הפעלה מחדש של יישום זה.",
@@ -2804,7 +2809,7 @@
                 "yes": "כן",
                 "no": "לא"
             },
-            "waitAvailability": "הלחצן מושבת כאשר פרטי החומרה עדיין לא אוחזרו, למקרה שהתקני האחסון אינם תומכים בפונקציונליות זו או כאשר שחזור ההסקטורים הפגומים פועל."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "הורידו כלי אבחון מקצועיים",
@@ -2841,7 +2846,7 @@
             "storage": "אחסון",
             "wireless": "אלחוטי"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { InstalledBrowserDataState } from '../../../common/services/browser-accounts.service';
-import { Features } from '../../../common/components/nav-tabs/nav-tabs.service';
+import { Features } from '../../../core/components/nav-tabs/nav-tabs.service';
+import { InstalledBrowserDataState } from '../services/browser-accounts.service';
 
 @Component({
 	selector: 'vtr-browser-stored-accounts',

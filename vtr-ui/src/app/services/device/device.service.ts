@@ -28,7 +28,6 @@ export class DeviceService {
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
-	public showDemo = false;
 	public machineType: number;
 	private Windows: any;
 	constructor(
