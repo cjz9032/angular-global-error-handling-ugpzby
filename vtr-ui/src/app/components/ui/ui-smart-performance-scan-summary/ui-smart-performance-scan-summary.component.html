@@ -3,12 +3,11 @@
 [pageCssClass]="'device'"
 [shiftLeftUp]="true"
 [shiftRightUp]="true"
-[back]="'common.ui.back' | translate"
-[backId]="'myDevice-back-btn'">
+>
 <left-content>
 	<div class="row vtr-page-content" *ngIf="!isScanning && !isScanningCompleted">
 		<div class="col vtr-col">
-			<div class="container-fluid">
+			<div class="container-fluid mb-5">
 				<div class="row">
 					<div class="vtr-page-left-column">
 						<div class="vtr-page-shift-up">
@@ -58,7 +57,7 @@
 										</div>
 										<div class="row">
 											<div class="summary-block" *ngIf="!isSubscribed">
-												<h2 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h2>
+												<h1 class="title-big mb-3">{{'smartPerformance.scanCompletePage.summary' |translate }}</h1>
 												<p [innerHTML]="'smartPerformance.scanCompletePage.summaryDetails' |translate:{issueCount: issueCount }"></p>
 												<div class="d-flex justify-content-between my-5">
 													<button class="action-button" (click)=openSubscribeModal()>{{'smartPerformance.scanCompletePage.signupRepairButton' |translate }}</button>

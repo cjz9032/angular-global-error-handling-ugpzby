@@ -9,20 +9,19 @@
 	<div class="vtr-ui-smart-performance vtr-page">
 	<div class="row vtr-page-content"  *ngIf="!isScanning && !isScanningCompleted && !isSubscribed">
 		<div class="col vtr-col">
-			<div class="container-fluid">
+			<div class="container-fluid mb-5">
 				<div class="row">
+					<div class="vtr-page-left-column">
 					<div class="vtr-page-shift-up">
 						<div class="vtr-device-information">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col col-12 offline-info-background py-5">
+									<div class="col col-12 offline-info-background py-5 px-10">
 										<div class="d-flex justify-content-center w-100">
-											<div class="row">
-												<div class="icon icon-computer-scan-756353"></div>
-												<div class="mt-5 pt-5 pl-5">
-													<h1>{{'smartPerformance.performanceandSecurityCheckTitle' |translate }}</h1>
-													<h3>{{'smartPerformance.performanceandSecurityCheckSubTitle' |translate }}</h3>
-												</div>
+											<div class="icon icon-computer-scan-756353"></div>
+											<div class="mt-5 pt-5 pl-5">
+												<h1>{{'smartPerformance.performanceandSecurityCheckTitle' |translate }}</h1>
+												<h3>{{'smartPerformance.performanceandSecurityCheckSubTitle' |translate }}</h3>
 											</div>
 										</div>
 										<div class="d-flex justify-content-center mb-4">
@@ -65,7 +64,7 @@
 								<div class="row">
 									<div class="col col-12 pc-performance-block">
 										<h2>{{'smartPerformance.section2Heading' |translate }}</h2>
-										<h3>{{'smartPerformance.section2Description' |translate }}</h3>
+										<h5>{{'smartPerformance.section2Description' |translate }}</h5>
 
 									</div>
 								</div>
@@ -79,7 +78,7 @@
 													</ng-template>
 													<ng-template ngbTabContent>
 														<h2>{{'smartPerformance.tunePCPerformance.heading' |translate }}</h2>
-														<h3>{{'smartPerformance.tunePCPerformance.description' |translate }}</h3>
+														<h5>{{'smartPerformance.tunePCPerformance.description' |translate }}</h5>
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
@@ -127,7 +126,7 @@
 													</ng-template>
 													<ng-template ngbTabContent>
 														<h2>{{'smartPerformance.boostInternetPerformance.heading' |translate }}</h2>
-														<h3>{{'smartPerformance.boostInternetPerformance.description' |translate }}</h3>
+														<h5>{{'smartPerformance.boostInternetPerformance.description' |translate }}</h5>
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
@@ -175,7 +174,7 @@
 													</ng-template>
 													<ng-template ngbTabContent>
 														<h2>{{'smartPerformance.malwareSecurity.heading' |translate }}</h2>
-														<h3>{{'smartPerformance.malwareSecurity.description' |translate }}</h3>
+														<h5>{{'smartPerformance.malwareSecurity.description' |translate }}</h5>
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
@@ -224,7 +223,7 @@
 													</ng-template>
 													<ng-template ngbTabContent>
 														<h2>{{'smartPerformance.proactiveAutomated.heading' |translate }}</h2>
-														<h3>{{'smartPerformance.proactiveAutomated.description' |translate }}</h3>
+														<h5>{{'smartPerformance.proactiveAutomated.description' |translate }}</h5>
 														<div class="icon-bar my-5">
 															<ul class="listed-task-icons d-flex justify-content-between align-items-center py-3">
 																<li class="icon-box d-flex justify-content-center align-items-center py-3">
@@ -348,6 +347,7 @@
 							</div>
 						</div>							
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>
