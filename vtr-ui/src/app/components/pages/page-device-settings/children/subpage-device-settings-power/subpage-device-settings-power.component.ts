@@ -987,10 +987,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 								throw res;
 							} else {
 								this.isToolBarSetSuccessed = true;
+								this.vantageToolbarStatus = res;
 								return res;
 							}
-						}
-						),
+						}),
 						backoff(3, 200),
 						finalize(() => {
 							if (this.isToolBarSetSuccessed) {

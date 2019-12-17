@@ -13,7 +13,7 @@ export class WindowsActiveLandingViewModel {
 		buttonHref: 'ms-settings:activation',
 		noneCheck: true,
 		detail: '',
-		id: 'sa-ov-link-windowsActive',
+		id: 'sa-ov-btn-windowsActive',
 	};
 	translateString: any;
 

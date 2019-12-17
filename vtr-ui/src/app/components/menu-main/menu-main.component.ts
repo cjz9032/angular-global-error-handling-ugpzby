@@ -70,7 +70,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	hideDropDown = false;
 	private isSmartAssistApiCalled = false;
 	segment: string;
-
+	private isSmartAssistAvailable = false;
 	headerLogo: string;
 
 	VantageLogo = `
@@ -485,11 +485,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 	private showSmartAssist() {
-		// its getting invoked twice due to Menu Change event.
-		if (this.isSmartAssistApiCalled) {
-			return;
-		}
-		this.isSmartAssistApiCalled = true;
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		this.getMenuItems().then(async (items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
@@ -503,12 +498,18 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					);
 					this.logger.info('MenuMainComponent.showSmartAssist smartAssistCacheValue', smartAssistCacheValue);
 
-					if (smartAssistCacheValue) {
+					if (smartAssistCacheValue || this.isSmartAssistAvailable) {
 						this.addSmartAssistMenu(myDeviceItem);
+					}
+
+					// its getting invoked twice due to Menu Change event.
+					if (this.isSmartAssistApiCalled) {
+						return;
 					}
 
 					// raj: promise.all breaks if any one function is breaks. adding feature wise capability check
 					const assistCapability: SmartAssistCapability = new SmartAssistCapability();
+					this.isSmartAssistApiCalled = true;
 					// HPD and Intelligent Screen capability check
 					try {
 						this.logger.info('MenuMainComponent.showSmartAssist: HPD and Intelligent Screen capability check');
@@ -558,33 +559,33 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
 					this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCapability, assistCapability);
 
-					const isSmartAssistAvailable =
+					this.isSmartAssistAvailable =
 						assistCapability.isIntelligentSecuritySupported ||
 						assistCapability.isLenovoVoiceSupported ||
 						assistCapability.isIntelligentMediaSupported.available ||
 						assistCapability.isIntelligentScreenSupported ||
 						assistCapability.isSuperResolutionSupported.available ||
 						assistCapability.isAPSSupported;
-					// const isAvailable = true;
+
 					this.commonService.setLocalStorageValue(
 						LocalStorageKey.IsSmartAssistSupported,
-						isSmartAssistAvailable
+						this.isSmartAssistAvailable
 					);
 
 					this.logger.error('MenuMainComponent.showSmartAssist capability check',
 						{
 							smartAssistCacheValue,
-							isSmartAssistAvailable,
+							isSmartAssistAvailable: this.isSmartAssistAvailable,
 							assistCapability
 						});
 
 					// avoid duplicate entry. if not added earlier then add menu
-					if (isSmartAssistAvailable && !smartAssistCacheValue) {
+					if (this.isSmartAssistAvailable && !smartAssistCacheValue) {
 						this.addSmartAssistMenu(myDeviceItem);
 					}
 
 					// if cache is old and new capability call is false then remove it
-					if (!isSmartAssistAvailable) {
+					if (!this.isSmartAssistAvailable) {
 						this.removeSmartAssistMenu(myDeviceItem);
 					}
 				}

@@ -111,6 +111,7 @@
 						}
 						font-size: $fontsize_md;
 						font-weight: $weight_light;
+						line-height: 1.2;
 					}
 
 					.logo {
@@ -276,6 +277,8 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_xl2;
+						font-weight: $weight_light;
 					}
 
 					.description {
@@ -288,6 +291,9 @@
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						cursor: pointer;
+						font-size: $fontsize_md;
+						font-weight: $weight_light;
+						line-height: 1.2;
 
 						div {
 							cursor: pointer;
@@ -495,10 +501,13 @@
 			.title {
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: $fontsize_xl;
-				line-height: 4.6rem;
+				font-size: $fontsize_xl2;
+				font-weight: $weight_light;
+				line-height: 1.4;
 				cursor: pointer;
-				white-space: normal !important;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 
 			.read-more {
@@ -577,7 +586,7 @@
 		.description {
 			color: $main_dark;
 			font-size: 1.1rem;
-			line-height: 1.4;
+			line-height: 1.2;
 		}
 
 		.caption {
