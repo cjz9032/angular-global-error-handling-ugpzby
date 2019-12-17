@@ -25,8 +25,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div *ngIf="!deviceService.isGaming" class="col col-12 pt-0 pb-40 px-0">
-					<div class="tryMcAfee card">
+				<div class="col col-12 pt-0 pb-40 px-0">
 						<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionF.Id"
 							[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
 							[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
@@ -35,11 +34,8 @@
 							[actionLink]="cardContentPositionF.ActionLink" [type]="'article'" [ratioX]="4"
 							[ratioY]="4" id="lighting_customize_crm_card_A" aria-label="lighting_customize_crm_card_A">
 						</vtr-container-card>
-					</div>
 				</div>
-
 				<div class="col col-12 pt-0 pb-40 px-0">
-					<div class="manage-pass card">
 						<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionC.id"
 							[dynamicmetricsItem]="dynamic_metricsItem" [img]="cardContentPositionC.FeatureImage"
 							[caption]="cardContentPositionC.Description" [title]="cardContentPositionC.Title"
@@ -50,7 +46,6 @@
 							[ratioY]="2" [cornerShift]="'large'" id="lighting_customize_crm_card_B"
 							aria-label="lighting_customize_crm_card_B">
 						</vtr-container-card>
-					</div>
 				</div>
 			</div>
 		</div>

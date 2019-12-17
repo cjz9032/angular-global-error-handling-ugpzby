@@ -27,8 +27,6 @@ export class PageNetworkboostComponent implements OnInit {
 	needToAskStatusObj: any = {};
 	isOnline = true;
 	// CMS Content block
-	cardContentPositionA: any = {};
-	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	dynamic_metricsItem: any = 'networkboost_cms_inner_content';

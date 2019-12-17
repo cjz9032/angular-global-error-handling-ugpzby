@@ -116,7 +116,7 @@ export class ActiveProtectionSystemComponent implements OnInit {
 							.getSnoozeTime()
 							.then(res => {
 								// console.log('MANUAL SNOOZE TIME --------------------------------- ', res);
-								this.manualSnoozeTime = +(res);
+								this.selectedSnoozeTime = this.manualSnoozeTime = +(res);
 							});
 					});
 			})

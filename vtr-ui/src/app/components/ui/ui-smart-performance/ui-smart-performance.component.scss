@@ -15,16 +15,21 @@
 			background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 			padding: 0rem 4rem;
+			&.px-10{
+				padding-left: 10rem;
+				padding-right: 10rem;
+			}
 			h1 {
 				color: $light;
 				font-size: 3.5rem;
 				font-weight: $weight_light;
 			}
 			h3 {
-				font-size: 2rem;
+				font-size: $fontsize_sm;
 				color: $light;
 				opacity: 0.5;
 				line-height: 2;
+				font-weight: $weight_regular;
 			}
 			.icon {
 				color: #7D5FEF;
@@ -48,25 +53,25 @@
 			}
 		}
 		.pc-performance-block {
-			padding: 3rem;
+			padding: 3rem 3rem 0 3rem;
 			h1 {
-				font-size: 4rem;
+				font-size: $fontsize_xl2;
 				font-weight: $weight_light;
 				color: $shade_darkest;
 				margin-bottom: 2rem;
 			}
 			h2 {
-				font-size: 3rem;
+				font-size: $fontsize_xl;
 				font-weight: $weight_light;
 				color: $shade_darkest;
 				margin-bottom: 2rem;
 				padding: 0;
 			}
 			h5 {
-				font-size: 2rem;
+				font-size: $fontsize_sm;
 				font-weight: $weight_light;
 				color: $shade_darkest;
-				line-height: 1;
+				line-height: 1.5;
 			}
 			.performance-slider-block {
 				margin: 2rem 0;
@@ -176,7 +181,8 @@
 					font-weight: $weight_bold;
 				}
 				p {
-					font-size: 1.8rem;
+					font-size: $fontsize_sm;
+					color: $shade_blue;
 				}
 				> div {
 					position: relative;
@@ -535,7 +541,6 @@
 			}
 		}
 	}
-
 }
 
 

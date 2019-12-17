@@ -23,7 +23,7 @@ import { BatteryChargeThresholdCapability } from 'src/app/data-models/device/bat
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { retryWhen, map, mergeMap, tap, finalize, takeWhile ,switchMap, debounce } from 'rxjs/operators';
+import { retryWhen, map, mergeMap, tap, finalize, takeWhile, switchMap, debounce } from 'rxjs/operators';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -962,49 +962,49 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.isVantageToolbarSetEnd = false;
 				// for fix van-11383
-					function backoff(maxTries, ms) {
-						return pipe( 
-							retryWhen(attempts => zip(range(1, maxTries), attempts)
-							  .pipe(
+				function backoff(maxTries, ms) {
+					return pipe(
+						retryWhen(attempts => zip(range(1, maxTries), attempts)
+							.pipe(
 								map(([i]) => i * i),
-								mergeMap(i =>  timer(i * ms)),
-							  )
-							),
-						  );
-					}
-	
-					const setEvent$ = from(this.powerService.setVantageToolBarStatus(event.switchValue))
+								mergeMap(i => timer(i * ms)),
+							)
+						),
+					);
+				}
+
+				const setEvent$ = from(this.powerService.setVantageToolBarStatus(event.switchValue))
 					.pipe(
 						tap(() => console.log(`powerService.setVantageToolBarStatus - start stream`))
 					);
-	
-					const retry$ = of([])
-						.pipe(
-							switchMap(() => this.powerService.getVantageToolBarStatus()),
-							map( res => {
-								if (res.status !== event.switchValue){
-									
-									throw res;
-								} else {
-									this.isToolBarSetSuccessed = true;
-									return res;
-								}
-							}
-							),
-							backoff(3,200),
-							finalize(() => {
-								if (this.isToolBarSetSuccessed) {
-									this.isToolBarSetSuccessed = false;
-								} else {
-									this.getVantageToolBarStatus();
-								}	
-								this.isVantageToolbarSetEnd = true;
-							})
-						)
-					 const deboEvent$ = retry$.pipe(debounce(() => timer(0)));
 
-					 this.toolBarSubscription = combineLatest(setEvent$, deboEvent$).subscribe(() =>console.log(`combineLatest( setEvent$ + deboEvent$ )`)
-					 );
+				const retry$ = of([])
+					.pipe(
+						switchMap(() => this.powerService.getVantageToolBarStatus()),
+						map(res => {
+							if (res.status !== event.switchValue) {
+
+								throw res;
+							} else {
+								this.isToolBarSetSuccessed = true;
+								return res;
+							}
+						}
+						),
+						backoff(3, 200),
+						finalize(() => {
+							if (this.isToolBarSetSuccessed) {
+								this.isToolBarSetSuccessed = false;
+							} else {
+								this.getVantageToolBarStatus();
+							}
+							this.isVantageToolbarSetEnd = true;
+						})
+					);
+				const deboEvent$ = retry$.pipe(debounce(() => timer(0)));
+
+				this.toolBarSubscription = combineLatest([setEvent$, deboEvent$]).subscribe(() => console.log(`combineLatest( setEvent$ + deboEvent$ )`)
+				);
 			}
 		} catch (error) {
 			this.isVantageToolbarSetEnd = true;
@@ -1071,6 +1071,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.responseData = response;
 		this.getBatteryThresholdInformation();
 	}
+
+	isThresholdWarningMsgShown() {
+		if (this.batteryService.remainingPercentages && this.batteryService.remainingPercentages.length > 0) {
+			this.showWarningMsg = this.batteryService.remainingPercentages[0] > this.selectedStopAtChargeVal;
+			if (this.batteryService.remainingPercentages.length > 1 && this.selectedStopAtChargeVal1) {
+				this.showWarningMsg = this.showWarningMsg || (this.batteryService.remainingPercentages[0] > this.selectedStopAtChargeVal1);
+			}
+		}
+	}
+
 	public async getBatteryThresholdInformation() {
 		if (this.powerService.isShellAvailable) {
 			try {
@@ -1119,6 +1129,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							);
 						}
 					}
+					this.isThresholdWarningMsgShown();
 
 					// cache value
 					this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
@@ -1150,11 +1161,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				// case 'ThresholdWarningNote':
-				// 	this.showWarningMsg = notification.payload;
-				// 	this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-				// 	this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-				// 	break;
 				case 'IsPowerDriverMissing':
 					this.checkPowerDriverMissing(notification.payload);
 					break;
@@ -1245,11 +1251,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					this.powerService
 						.setChargeThresholdValue(batteryInfo)
 						.then((value: any) => {
-							const notification = {
-								isOn: true,
-								stopValue1: this.selectedStopAtChargeVal, stopValue2: this.selectedStopAtChargeVal1
-							};
-							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
+							this.logger.info('setChargeThresholdValue success');
+							this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, true);
+							this.isThresholdWarningMsgShown();
 						})
 						.catch(error => {
 							this.logger.error('change threshold value', error.message);
@@ -1258,11 +1262,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				} else {
 					if (inputString === 'autoChecked') {
 						this.powerService.setCtAutoCheckbox(batteryInfo);
-						const notification = {
-							isOn: true,
-							stopValue1: this.selectedStopAtChargeVal, stopValue2: this.selectedStopAtChargeVal1
-						};
-						this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, notification);
 					}
 				}
 			}

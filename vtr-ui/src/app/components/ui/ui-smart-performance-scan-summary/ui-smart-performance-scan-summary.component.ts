@@ -14,6 +14,7 @@ export class UiSmartPerformanceScanSummaryComponent implements OnInit {
   public today = new Date();
   public items: any = [];
    isSubscribed:any;
+   title = 'smartPerformance.title';
  public menuItems: any = [{ itemName: 'Annual' }, { itemName: 'Quarterly' }, { itemName: 'Custom' }]
   // subscriptionDetails:any;
   // startDate:any;
