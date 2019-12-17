@@ -43,9 +43,9 @@
 	}
 
 	.img-medium {
-		position: relative;
 		max-width: 100%;
-		height: 340px;
+		min-height: 340px;
+		padding: 2.4rem;
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -61,31 +61,26 @@
 		}
 		.icons {
 			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			.link-icons {
-				width: 24.5rem;
-				height: 24.5rem;
-				.button-dcc {
-					float: left;
-					width: 8rem;
-					height: 8rem;
-					margin: 2rem;
-					img {
-						width: 100%;
-						height: 100%;
-					}
+			flex-wrap: nowrap;
+			justify-content: center;
+			.button {
+				display: inline-block;
+				width: 5rem;
+				height: 5rem;
+				margin: 2rem;
+				img {
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}
 		.body {
-			font-size: 1.8rem;
+			font-size: 1.5rem;
 			color: $blue-dark;
 		}
 		.white-button {
 			display: flex;
 			align-items: center;
-			margin-top: 2rem;
 			.button-box {
 				.button {
 					border: 0.1rem solid $main !important;
@@ -100,32 +95,6 @@
 				}
 			}
 		}
-		.text-content {
-			position: absolute;
-			left: calc(10% + 32rem);
-			top: 0;
-			width: calc(90% - 32rem);
-			height: 100%;
-			padding-right: 2rem;
-			display: flex;
-			flex-flow: column;
-			justify-content: center;
-			align-content: center;
-			.subtitle1 {
-				font-size: 2.5rem;
-				font-weight: bold;
-				color: $dark;
-			}
-			.body1 {
-				font-size: 1.8rem;
-				color: $blue-dark;
-			}
-			@media #{$mediaquery_15} {
-				left: calc(6% + 24rem);
-				width: calc(94% - 24rem);
-			}
-		}
-		
 	}
 
 	.img-bottom {
