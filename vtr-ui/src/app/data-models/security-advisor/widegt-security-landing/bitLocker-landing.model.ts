@@ -13,7 +13,7 @@ export class BitLockerLandingViewModel {
 		launch() {},
 		noneCheck: true,
 		detail: '',
-		id: 'sa-ov-link-bitLocker',
+		id: 'sa-ov-btn-bitLocker',
 	};
 	translateString: any;
 

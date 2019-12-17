@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [class.default-cursor]="isOfflineArm"
-						[attr.href]="!actionLink ? null : actionLink"
+						[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(actionType, actionLink)"
 						vtrMetrics
 						id="{{containerCardId+'_doc_link'}}"
@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<ng-container *ngIf="isOnline">
-						<a [attr.href]="!actionLink ? null : actionLink"
+						<a [attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 							(click)="linkClicked(actionType, actionLink)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
@@ -151,7 +151,7 @@
 					<a *ngIf="isOnline"
 						tabindex="0"
 						attr.aria-label="{{ title }} . {{ caption }}"
-						[attr.href]="!actionLink ? null : actionLink"
+						[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(actionType, actionLink)"
 						target="_blank"
 						rel="noopener"
@@ -237,7 +237,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [attr.href]="!actionLink ? null : actionLink"
+					<a [attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(actionType, actionLink)"
 						metricsItemCategory="highlight"
 						vtrMetrics
@@ -273,7 +273,7 @@
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
-				[attr.href]="!actionLink ? null : actionLink"
+				[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 				(click)="linkClicked(actionType, actionLink)"
 				metricsItemCategory="article"
 				vtrMetrics
@@ -346,7 +346,7 @@
 					</div>
 					<div class="row">
 						<a *ngIf="isOnline"
-							[attr.href]="!actionLink ? null : actionLink"
+							[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 							target="_blank"
 							rel="noopener"
 							vtrMetrics
@@ -358,6 +358,7 @@
 							<div class="col col-12 content">
 								<div *ngIf="title"
 									class="title"
+									[title]="title | htmlText"
 									[innerHtml]="title"
 									id="{{containerCardId+'-title'}}"
 									role="link"></div>
