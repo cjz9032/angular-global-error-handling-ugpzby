@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BacklightComponent } from './backlight.component';
 import { CommonUiModule } from '../../../../../../modules/common/common-ui.module';
 import { SharedModule } from '../../../../../../modules/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
 	declarations: [BacklightComponent],
 	imports: [
-		CommonModule,
+		BrowserModule,
 		CommonUiModule,
 		SharedModule
 	],

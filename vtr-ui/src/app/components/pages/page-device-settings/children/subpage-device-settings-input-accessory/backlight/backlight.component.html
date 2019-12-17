@@ -1,4 +1,4 @@
-<ng-template [ngSwitch]="supportType$ | async">
+<div [ngSwitch]="supportType$ | async">
 	<vtr-ui-row-switch
 		*ngSwitchCase="backlightLevelEnum.ONE_LEVEL"
 		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
@@ -9,6 +9,7 @@
 		[isLastChild]="isLastChild"
 		[isSwitchVisible]="true"
 		[isSwitchChecked]="false"
+		(toggleOnOff)="onToggleOnOff($event)"
 		[switchId]="'inputAccessories-Backlight'"
 		automationId="[Backlight.title, Backlight.description.base]">
 	</vtr-ui-row-switch>
@@ -24,7 +25,7 @@
 		[switchId]="'inputAccessories-Backlight'"
 		automationId="[Backlight.title, Backlight.description.base]">
 		<vtr-ui-circle-radio-with-checkbox
-			*ngFor="let mode of modes"
+			*ngFor="let mode of modes$ | async"
 			[theme]="'blue'"
 			[radioId]="'backlightMode' + mode | removeSpace"
 			[group]="'backlight'"
@@ -32,6 +33,7 @@
 			[value]='mode.value'
 			[checked]="mode.checked"
 			(change)="update$.next(mode)"
+			[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
 			[processIcon]="true"
 			[textId]="'myDevice-settings-inputAccessories-backlight'">
 		</vtr-ui-circle-radio-with-checkbox>
@@ -48,7 +50,7 @@
 		[switchId]="'inputAccessories-Backlight'"
 		automationId="[Backlight.title, Backlight.description.auto]">
 		<vtr-ui-circle-radio-with-checkbox
-			*ngFor="let mode of modes"
+			*ngFor="let mode of modes$ | async"
 			[theme]="'blue'"
 			[radioId]="'backlightMode' + mode | removeSpace"
 			[group]="'backlight'"
@@ -56,8 +58,9 @@
 			[value]='mode.value'
 			[checked]="mode.checked"
 			(change)="update$.next(mode)"
+			[disabled]="mode.value === backlightStatusEnum.DISABLED_OFF"
 			[processIcon]="true"
 			[textId]="'myDevice-settings-inputAccessories-backlight'">
 		</vtr-ui-circle-radio-with-checkbox>
 	</vtr-ui-row-switch>
-</ng-template>
+</div>
