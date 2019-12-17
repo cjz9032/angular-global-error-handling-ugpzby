@@ -144,8 +144,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.securityAdvisor.refresh();
-		this.showVpn();
+		setTimeout(() => {
+			this.securityAdvisor.refresh();
+			this.showVpn();
+		}, 0);
 	}
 
 }
