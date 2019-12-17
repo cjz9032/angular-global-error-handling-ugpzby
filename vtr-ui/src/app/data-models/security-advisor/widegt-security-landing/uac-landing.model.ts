@@ -13,7 +13,7 @@ export class UacLandingViewModel {
 		launch() {},
 		noneCheck: true,
 		detail: '',
-		id: 'sa-ov-link-uac',
+		id: 'sa-ov-btn-uac',
 	};
 	translateString: any;
 

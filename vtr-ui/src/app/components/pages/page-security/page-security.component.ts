@@ -167,6 +167,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	private refreshAll() {
 		this.securityAdvisor.refresh().then(() => {
+			this.updateViewModels();
 			this.updateStatus();
 		});
 	}
@@ -251,7 +252,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		statusList.basic = new Array(
 			this.antivirusLandingViewModel.avStatus.status,
 			this.antivirusLandingViewModel.fwStatus.status,
-			this.windowsActiveLandingViewModel.waStatus.status
+			this.windowsActiveLandingViewModel ? this.windowsActiveLandingViewModel.waStatus.status : undefined
 		).filter(i => i !== undefined);
 		let pmOwnStatus;
 		let wfOwnStatus;
@@ -262,13 +263,13 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			vpnOwnStatus = haveOwnList.vpn === true;
 		} else {
 			pmOwnStatus = this.passwordManagerLandingViewModel.pmStatus.showOwn === true;
-			wfOwnStatus = this.wifiSecurityLandingViewModel.wfStatus.showOwn === true;
+			wfOwnStatus = this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.showOwn === true : undefined;
 			vpnOwnStatus = this.vpnLandingViewModel ? (this.vpnLandingViewModel.vpnStatus.showOwn === true) : undefined;
 		}
 		statusList.intermediate = new Array(
 			pmOwnStatus ? 'true' : this.passwordManagerLandingViewModel.pmStatus.status,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus.status : undefined,
-			this.uacLandingViewModel.uacStatus.status
+			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus.status : undefined
 		).filter(i => i !== undefined);
 		statusList.advanced = new Array(
 			wfOwnStatus ? 'true' : this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.status : undefined,
@@ -318,7 +319,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			fullyProtected: false,
 			icon: 0
 		};
-		if (levelStatus.basicValid > 0 || levelStatus.intermediateValid > 0 || levelStatus.advancedValid > 0) {
+		if (levelStatus.basicValid > 0) {
 			if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
 				if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
 					item.status = 3;

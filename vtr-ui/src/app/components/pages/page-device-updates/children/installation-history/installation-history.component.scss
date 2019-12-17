@@ -10,7 +10,7 @@
 		.btn-link {
 			font-size: $fontsize_sm;
 			font-weight: $weight_light;
-			@media#{$breakpoint_xl} {
+			@media #{$breakpoint_xl} {
 				font-size: $fontsize_xs;
 			}
 		}
@@ -76,7 +76,7 @@
 						}
 
 						&::before {
-							content: '';
+							content: "";
 						}
 					}
 					.icon-times {
@@ -99,7 +99,7 @@
 						}
 
 						&::before {
-							content: '';
+							content: "";
 						}
 					}
 
