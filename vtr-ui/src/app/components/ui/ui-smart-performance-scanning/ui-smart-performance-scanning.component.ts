@@ -14,6 +14,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 	@ViewChild('acc', {static:false}) accordionComponent: NgbAccordion;
 	loop;
 	delay;
+	title = 'smartPerformance.title';
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
@@ -156,7 +157,7 @@ export class UiSmartPerformanceScanningComponent implements OnInit {
 			 }
 			
 			}
-		 }, 5000);
+		 }, 2000);
 	
 	}
 }

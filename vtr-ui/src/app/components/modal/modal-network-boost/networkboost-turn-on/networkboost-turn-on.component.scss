@@ -21,7 +21,8 @@ ui-popover-turn-on {
 	margin: auto;
 	top: 0;
 	bottom: 0;
-	height: 35rem;
+	height: auto;
+	max-height:38rem;
 	max-width: 56rem;
 	@media #{$breakpoint_xl} {
 		width: 80%; 

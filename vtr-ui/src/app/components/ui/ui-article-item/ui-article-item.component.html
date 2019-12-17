@@ -39,8 +39,7 @@
 					class="col col-12 content">
 					<div href="javascript:;"
 						class="title"
-						#articleTitle
-						[title]="articleTitle.innerText"
+						[title]="item.Title | htmlText"
 						[style.font-size.px]="articleItemDiv.clientWidth * 28 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
 						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"
@@ -101,8 +100,7 @@
 				<div *ngIf="item.Title"
 					class="col col-12 content">
 					<div class="title"
-						#articleTitle
-						[title]="articleTitle.innerText"
+						[title]="item.Title | htmlText"
 						[style.font-size.px]="articleItemDiv.clientWidth * 28 / 430"
 						[style.height.px]="articleItemDiv.clientWidth * 72 / 430"
 						[style.line-height.px]="articleItemDiv.clientWidth * 36 / 430"

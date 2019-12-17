@@ -70,7 +70,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 	currentUrl: string;
 	isSMode: boolean;
 	hideDropDown = false;
-
+	private isSmartAssistApiCalled = false;
 	segment: string;
 
 	headerLogo: string;
@@ -119,8 +119,8 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		public cardService: CardService,
 		private backlightService: BacklightService
 	) {
-			newFeatureTipService.viewContainer = this.viewContainerRef;
-		}
+		newFeatureTipService.viewContainer = this.viewContainerRef;
+	}
 
 	ngOnInit() {
 		this.headerLogo = '';
@@ -227,6 +227,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (machineType === 0 || machineType === 1) {
 			// checking self select status for HW Settings
 			this.dashboardService.getSelfSelectStatus().then(value => {
+				this.logger.debug(`MenuMainComponent.loadMenuOptions: getSelfSelectStatus value ${value}`);
 				this.selfSelectStatusVal = value;
 				if (this.selfSelectStatusVal === true) {
 					this.showSmartAssist();
@@ -387,7 +388,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 			if (event) {
 				event.fromSearchMenu = true;
 			}
-		} else if (item.id === 'user') {
+		} else if (item.id === 'user' && event) {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
 			const id = idAttr.nodeValue;
@@ -503,6 +504,11 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 	private showSmartAssist() {
+		// its getting invoked twice due to Menu Change event.
+		if (this.isSmartAssistApiCalled) {
+			return;
+		}
+		this.isSmartAssistApiCalled = true;
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		this.getMenuItems().then(async (items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
@@ -680,9 +686,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				let isHideMenuToggle = true;
 				if (window.innerWidth < 1200) { isHideMenuToggle = false; }
 				if (((privacyItem && this.showItem(privacyItem)) ||
-						(securityItem && this.showItem(securityItem)) ||
-						(chsItem && this.showItem(chsItem))
-					) && isHideMenuToggle) {
+					(securityItem && this.showItem(securityItem)) ||
+					(chsItem && this.showItem(chsItem))
+				) && isHideMenuToggle) {
 					this.newFeatureTipService.create();
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.NewFeatureTipsVersion, newFeatureVersion);
