@@ -21,14 +21,14 @@ ui-popover-turn-on {
 	margin: auto;
 	top: 0;
 	bottom: 0;
-	height: auto;
-	max-height:38rem;
+	height: 35rem;
 	max-width: 56rem;
 	@media #{$breakpoint_xl} {
 		width: 80%; 
 	}
 	@media #{$breakpoint_sm} {
 		width: 90%;
+		height: 42rem;
 	}
 	@media #{$black-on-white}{
 		border:0.1rem solid $dark;
@@ -136,7 +136,12 @@ ui-popover-turn-on {
 			transform: scale(0.95);
 		}
 	}
-
+	.nextbuton {
+		display: inline-block;
+		@media #{$breakpoint_sm} {
+			display: block;
+		}
+	}
 	.cancel-link {
 		height: 3.2rem;
 		color: $btn_secondary_color;
@@ -147,6 +152,7 @@ ui-popover-turn-on {
 		margin-top: 1.8rem;
 		margin-left: 3rem;
 		border-bottom: 2px solid $btn_secondary_color;
+		display: inline-block;
 		cursor: pointer;
 		&:hover {
 			color: $btn_primary_color;
@@ -155,6 +161,9 @@ ui-popover-turn-on {
 		}
 		&:active {
 			transform: scale(0.95);
+		}
+		@media #{$breakpoint_sm} {
+			margin-left: 0;
 		}
 	}
 }
