@@ -47,10 +47,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:focus')
 	onFocus(): void {
-		const id = document.activeElement.id;
-		if (id !== 'sa-av-button-launch-mcafee') {
+		setTimeout(() => {
 			this.antiVirus.refresh();
-		}
+		}, 0);
 	}
 
 	constructor(
