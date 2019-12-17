@@ -22,10 +22,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="row-reverse">
+		<div class="row">
 			<div class="col pt-3">
-			<div class="result-code" *ngIf="item.resultCode">
-				<div class="result-code-value-text"><span>{{resultCodeText}}:</span></div>
+			<div class="result-code d-flex justify-content-end" *ngIf="item.resultCode">
+				<div class="result-code-value-text pr-2"><span>{{resultCodeText}}:</span></div>
 				<div class="left-code-result">
 					<span class="result-code-complete-text"> {{item.resultCode}}</span>
 					<fa-icon *ngIf="item.information" class="result-code-icon" triggers="click:blur"

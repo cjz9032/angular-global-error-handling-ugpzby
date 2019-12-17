@@ -18,8 +18,9 @@
 		}
 
 		.heading2 {
-			color: $main;
-			font-size: 3rem;
+			color: $menu_hover;
+			font-size: 2.5rem;
+			font-weight: $weight_light;
 
 			&::first-letter {
 				text-transform: uppercase;

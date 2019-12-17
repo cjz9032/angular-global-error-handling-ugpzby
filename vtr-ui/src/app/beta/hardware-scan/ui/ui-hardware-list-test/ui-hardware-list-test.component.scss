@@ -83,12 +83,12 @@
 			}
 
 			.name {
-				font-size: 1.5rem;
-				font-weight: $weight_bold;
+				font-size: $fontsize_xs;
+				font-weight: $weight_600;
 			}
 
 			.subname {
-				font-weight: $weight_medium !important;
+				font-weight: $weight_light !important;
 			}
 
 			.name-test {
@@ -107,10 +107,10 @@
 		}
 	}
 
-	// .modal-scroll {
-	// 	max-height: calc(100vh - 32rem);
-	// 	overflow-y: auto;
-	// }
+	.modal-scroll {
+		max-height: calc(100vh - 32rem);
+		overflow-y: auto;
+	}
 
 	.options {
 		padding: 1.1rem 0;
