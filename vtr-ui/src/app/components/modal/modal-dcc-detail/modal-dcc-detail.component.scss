@@ -40,77 +40,58 @@
 	}
 
 	.img-medium {
-		position: relative;
 		max-width: 100%;
-		height: 340px;
+		min-height: 340px;
+		padding: 2.4rem;
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-image: url(/assets/images/dcc/img-dcc-detail-bg-2.jpg);
 		display: flex;
-		.link-content {
-			position: absolute;
-			left: 10%;
-			top: 0;
-			width: 26rem;
-			height: 100%;
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			.link-icons {
-				width: 24.5rem;
-				height: 24.5rem;
-				.button-dcc {
-					float: left;
-					width: 8rem;
-					height: 8rem;
-					margin: 2rem;
-					img {
-						width: 100%;
-						height: 100%;
-					}
-				}
-			}
-			@media #{$mediaquery_15}{
-				left: 6%;
-				width: 22rem;
-				.link-icons {
-					width: 20.5rem;
-					height: 20.5rem;
-					.button-dcc {
-						width: 7rem;
-						height: 7rem;
-						margin: 1.5rem;
-					}
-				}
-			}
+		flex-direction: column;
+		justify-content: center;
+		.subtitle {
+			font-size: 2.0rem;
+			font-weight: bold;
+			color: $dark;
+			text-align: center;
 		}
-		.text-content {
-			position: absolute;
-			left: calc(10% + 32rem);
-			top: 0;
-			width: calc(90% - 32rem);
-			height: 100%;
-			padding-right: 2rem;
+		.icons {
 			display: flex;
-			flex-flow: column;
+			flex-wrap: nowrap;
 			justify-content: center;
-			align-content: center;
-			.subtitle1 {
-				font-size: 2.5rem;
-				font-weight: bold;
-				color: $dark;
-			}
-			.body1 {
-				font-size: 1.8rem;
-				color: $blue-dark;
-			}
-			@media #{$mediaquery_15} {
-				left: calc(6% + 24rem);
-				width: calc(94% - 24rem);
+			.button {
+				display: inline-block;
+				width: 5rem;
+				height: 5rem;
+				margin: 2rem;
+				img {
+					width: 100%;
+					height: 100%;
+				}
 			}
 		}
-		
+		.body {
+			font-size: 1.5rem;
+			color: $blue-dark;
+		}
+		.white-button {
+			display: flex;
+			align-items: center;
+			.button-box {
+				.button {
+					border: 0.1rem solid $main !important;
+					background: $light !important;
+					color: $main !important;
+					min-height: 3rem;
+					min-width: 10rem;
+					&:hover {
+						background: $light;
+						color: $main;
+					}
+				}
+			}
+		}
 	}
 
 	.img-bottom {
