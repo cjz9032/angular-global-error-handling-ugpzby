@@ -7,14 +7,14 @@
 			color: $main_darker;
 			font-size: 3.5rem;
 			line-height: 1;
-			@media#{$breakpoint_xl2} {
+			@media #{$breakpoint_xl2} {
 				font-size: 2.8rem;
 			}
 
-			@media#{$breakpoint_lg} {
+			@media #{$breakpoint_lg} {
 				font-size: $fontsize_xl;
 			}
-			@media#{$breakpoint_md} {
+			@media #{$breakpoint_md} {
 				font-size: $fontsize_md;
 			}
 		}
@@ -70,9 +70,9 @@
 	}
 
 	vtr-ui-button {
-		::ng-deep .vtr-ui-button{
+		::ng-deep .vtr-ui-button {
 			max-width: 100% !important;
-			.button-box .button{
+			.button-box .button {
 				max-width: 100% !important;
 			}
 		}

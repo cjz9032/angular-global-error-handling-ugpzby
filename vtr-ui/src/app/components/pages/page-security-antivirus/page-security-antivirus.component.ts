@@ -16,7 +16,6 @@ import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
-import { setTimeout } from 'timers';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',

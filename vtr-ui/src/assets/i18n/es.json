@@ -841,7 +841,7 @@
                 "hour": "hora",
                 "minutes": "minutos",
                 "minute": "minuto",
-                "charge": "TIME DE CARGA COMPLETA",
+                "charge": "Tiempo de carga completa",
                 "button": "VER DETALLES DE BATERÍA",
                 "details": {
                     "title": "Detalles de la batería",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Pantalla",
-					"displayColorTemperature": {
-						"title": "Temperatura del color de visualización",
-						"description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
-						"link": {
-							"click": "Hacer clic en",
-							"here": "aquí",
-							"rest": "para cambiar la temperatura de color."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura del color de visualización",
+                        "description": "Puede ajustar la temperatura del color de la pantalla para filtrar la luz azul y reducir el esfuerzo para los ojos. Ajusta la pantalla a colores más cálidos desde el atardecer al amanecer para ayudarle a dormir.",
+                        "link": {
+                            "click": "Hacer clic en",
+                            "here": "aquí",
+                            "rest": "para cambiar la temperatura de color."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modalidad de cuidado de la visión",
                         "checkbox": "Planificación del modo de cuidado ocular de anochecer a amanecer",
@@ -1362,7 +1362,9 @@
                             "minutes": "minutos",
                             "alwaysOn": "Siempre activo",
                             "never": "nunca",
-                            "halfTime": "Mitad del tiempo del temporizador de apagado de pantalla"
+                            "halfTime": "Mitad del tiempo del temporizador de apagado de pantalla",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ATENUADOR DE BARRA DE TAREAS",
                         "backgroundDimmer": "ATENUADOR DE FONDO",

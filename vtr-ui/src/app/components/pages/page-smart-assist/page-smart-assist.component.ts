@@ -417,6 +417,8 @@ export class PageSmartAssistComponent
 
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
+				this.intelligentSecurity.isIntelligentSecuritySupported = false;
+
 			}
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);

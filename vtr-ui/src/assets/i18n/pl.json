@@ -841,7 +841,7 @@
                 "hour": "godzina",
                 "minutes": "minut(y)",
                 "minute": "minuta",
-                "charge": "CZAS CAŁKOWITEGO NAŁADOWANIA",
+                "charge": "Czas całkowitego ładowania",
                 "button": "ZOBACZ INFORMACJE DOTYCZĄCE AKUMULATORA",
                 "details": {
                     "title": "Informacje dotyczące akumulatora",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Wyświetlanie",
-					"displayColorTemperature": {
-						"title": "Temperatura barwowa ekranu",
-						"description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
-						"link": {
-							"click": "Kliknij",
-							"here": "tutaj",
-							"rest": "aby zmienić temperaturę barwową."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatura barwowa ekranu",
+                        "description": "Możesz dostosowywać temperaturę barwową ekranu, odfiltrowując niebieskie światło męczące oczy. Z kolei w okresie od zachodu do wschodu słońca ustawiaj cieplejsze kolory, które nie zaburzają snu.",
+                        "link": {
+                            "click": "Kliknij",
+                            "here": "tutaj",
+                            "rest": "aby zmienić temperaturę barwową."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Tryb ochrony oczu",
                         "checkbox": "Ustaw tryb ochrony oczu od zachodu do wschodu słońca",
@@ -1362,7 +1362,9 @@
                             "minutes": "minut(y)",
                             "alwaysOn": "Zawsze włączone",
                             "never": "nigdy",
-                            "halfTime": "Połowa czasu wyłączenia wyświetlacza"
+                            "halfTime": "Połowa czasu wyłączenia wyświetlacza",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "PRZYCIEMNIANIE PASKA ZADAŃ",
                         "backgroundDimmer": "PRZYCIEMNIANIE TŁA",
