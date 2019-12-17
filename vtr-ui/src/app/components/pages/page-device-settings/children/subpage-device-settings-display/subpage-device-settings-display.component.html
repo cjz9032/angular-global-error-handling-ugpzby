@@ -25,7 +25,7 @@
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-display'">
 						<ul class="list-group list-group-flush">
-							<li class="pt-3" *ngIf="this.showECMReset">
+							<li class="pt-3" *ngIf="showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.displayColorTemperature.title' | translate"
 									componentName="Display color temperature"
@@ -44,7 +44,7 @@
 							</li>
 
 							<li class="pt-3"
-								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available && !this.showECMReset">
+								*ngIf="displayColorTempDataSource && displayColorTempDataSource.available && !showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 									componentName="Display color temperature"
@@ -84,7 +84,7 @@
 							</li>
 
 							<li class="pt-3"
-								*ngIf="eyeCareModeStatus.available">
+								*ngIf="eyeCareModeStatus.available && !showECMReset">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 									componentName="Eye Care Mode"
