@@ -12,6 +12,7 @@ import { StatusInfo, SecurityTypeConst } from 'src/app/data-models/security-advi
 })
 export class WidgetSecurityComponent implements OnInit {
 	@Input() statusItem: any;
+	@Input() isOnline: boolean;
 	articleId = '1C95D1D5D20D4888AC043821E7355D35';
 	articleCategory: string;
 	region: string;

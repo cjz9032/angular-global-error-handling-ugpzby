@@ -2,6 +2,11 @@
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
+vtr-ui-smart-performance-scan-summary {
+	.vtr-page-header {
+		display: none;
+	}
+}
 .vtr-ui-smart-performance-scan-summary {
 	.vtr-scan-information {
 		// box-shadow: $drop_shadow;
@@ -283,8 +288,10 @@
 						}
                         .heading {
                             h3, h2{
-                                font-size: 2rem;
-                                color: $main_shade !important;
+                                font-size: $fontsize_md;
+								color: $main_shade !important;
+								letter-spacing: 0;
+								font-weight: $weight_bold;
                             }
                             .icon{
                                 color: $menu_hover;
@@ -351,6 +358,7 @@
 							color: $shade_dark;
 							position: absolute;
 							right: 5rem;
+							letter-spacing: 0;
 							// top: 40%;
 						}
 						vtr-widget-speedometer {
@@ -427,14 +435,15 @@
 			font-weight: $weight_light;
 		}
 		h3 {
-			font-size: 2rem;
+			font-size: $fontsize_sm;
 			color: $light;
 			opacity: 0.5;
 			line-height: 2;
+			font-weight: $weight_regular;
 		}
 		.icon {
 			color: #7D5FEF;
-			font-size: 13rem;
+			font-size: 10rem;
 			margin-bottom: -4.5rem;
 		}
 		.action-button {
@@ -562,9 +571,10 @@
 		}
 	}
 	.summary-block{
-		padding: 7rem 4rem 0;
+		padding: 3rem 3rem 0;
 		.title-big{
-			padding: 0 !important;
+			font-size: 3.5rem;
+			font-weight: $weight_light;
 		}
 		h3{
             font-size: 2rem;
@@ -572,7 +582,7 @@
             margin-bottom: 1rem;
         }
 		p {
-			font-size: 1.8rem;
+			font-size: $fontsize_sm;
 			line-height: 2.2rem;
 		}
 		.action-button {
