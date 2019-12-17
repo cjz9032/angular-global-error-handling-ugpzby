@@ -9,9 +9,11 @@ import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
 import { EMPTY, Observable, Subscription } from 'rxjs';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { StringBooleanEnum } from './top-row-functions-ideapad/top-row-functions-ideapad.interface';
 import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { BacklightService } from './backlight/backlight.service';
+import { map } from 'rxjs/operators';
+import { StringBooleanEnum } from '../../../../../data-models/common/common.interface';
+import { BacklightLevelEnum } from './backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -89,7 +91,10 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			});
 		});
-		this.backlightService
+		this.backlightCapability$ = this.backlightService.backlight.pipe(
+			map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
+			map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY)
+		);
 	}
 
 	getVoipHotkeysSettings() {
@@ -156,9 +161,9 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				}
 			} else {
 				this.inputAccessoriesCapability = new InputAccessoriesCapability();
-				this.keyboardService.GetKeyboardMapCapability().then((response=>{
+				this.keyboardService.GetKeyboardMapCapability().then((response => {
 					this.keyboardCompatibility = response;
-				}))
+				}));
 			}
 		} catch (error) {
 			console.log('initHiddenKbdFnFromCache', error);

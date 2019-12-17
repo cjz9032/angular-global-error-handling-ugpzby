@@ -1483,6 +1483,19 @@
                         "noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first."
                     }
                 },
+				"backlight": {
+					"title": "Keyboard backlight",
+					"description": {
+						"base": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can also trigger on or change the keyboard backlight by pressing Fn+ Space key simultaneously.",
+						"auto": "Active the keyboard backlight to facilitate typing in a dark or poor light condition. You can manually change the backlight options or set to \"Auto\" mode which will automatically adjust the keyboard backlight according to the ambient light. You can also trigger on or change the keyboard backlight by pressing Fn+ Space key simultaneously."
+					},
+					"level": {
+						"auto": "Auto",
+						"low": "Low",
+						"high": "High",
+						"off": "Off"
+					}
+				},
                 "userDefinedKey": {
                     "title": "User-defined Key",
                     "caption": "The key represented by the star icon allows you to set user defined function",

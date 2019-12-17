@@ -1,1 +1,63 @@
-<p>backlight works!</p>
+<ng-template [ngSwitch]="supportType$ | async">
+	<vtr-ui-row-switch
+		*ngSwitchCase="backlightLevelEnum.ONE_LEVEL"
+		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
+		componentName="Input Accessories"
+		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.description.base' | translate"
+		[leftIcon]="['fal', 'keyboard']"
+		[theme]="'white'"
+		[isLastChild]="isLastChild"
+		[isSwitchVisible]="true"
+		[isSwitchChecked]="false"
+		[switchId]="'inputAccessories-Backlight'"
+		automationId="[Backlight.title, Backlight.description.base]">
+	</vtr-ui-row-switch>
+	<vtr-ui-row-switch
+		*ngSwitchCase="backlightLevelEnum.TWO_LEVELS"
+		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
+		componentName="Input Accessories"
+		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.description.base' | translate"
+		[leftIcon]="['fal', 'keyboard']"
+		[showChildContent]="true"
+		[theme]="'white'"
+		[isLastChild]="isLastChild"
+		[switchId]="'inputAccessories-Backlight'"
+		automationId="[Backlight.title, Backlight.description.base]">
+		<vtr-ui-circle-radio-with-checkbox
+			*ngFor="let mode of modes"
+			[theme]="'blue'"
+			[radioId]="'backlightMode' + mode | removeSpace"
+			[group]="'backlight'"
+			[label]="mode.title"
+			[value]='mode.value'
+			[checked]="mode.checked"
+			(change)="update$.next(mode)"
+			[processIcon]="true"
+			[textId]="'myDevice-settings-inputAccessories-backlight'">
+		</vtr-ui-circle-radio-with-checkbox>
+	</vtr-ui-row-switch>
+	<vtr-ui-row-switch
+		*ngSwitchCase="backlightLevelEnum.TWO_LEVELS_AUTO"
+		[title]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.title' | translate"
+		componentName="Input Accessories"
+		[caption]="'device.deviceSettings.inputAccessories.inputAccessory.Backlight.description.auto' | translate"
+		[leftIcon]="['fal', 'keyboard']"
+		[showChildContent]="true"
+		[theme]="'white'"
+		[isLastChild]="isLastChild"
+		[switchId]="'inputAccessories-Backlight'"
+		automationId="[Backlight.title, Backlight.description.auto]">
+		<vtr-ui-circle-radio-with-checkbox
+			*ngFor="let mode of modes"
+			[theme]="'blue'"
+			[radioId]="'backlightMode' + mode | removeSpace"
+			[group]="'backlight'"
+			[label]="mode.title"
+			[value]='mode.value'
+			[checked]="mode.checked"
+			(change)="update$.next(mode)"
+			[processIcon]="true"
+			[textId]="'myDevice-settings-inputAccessories-backlight'">
+		</vtr-ui-circle-radio-with-checkbox>
+	</vtr-ui-row-switch>
+</ng-template>
