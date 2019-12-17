@@ -318,7 +318,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			fullyProtected: false,
 			icon: 0
 		};
-		if (levelStatus.basicValid > 0 || levelStatus.intermediateValid > 0 || levelStatus.advancedValid > 0) {
+		if (levelStatus.basicValid > 0) {
 			if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
 				if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
 					item.status = 3;
