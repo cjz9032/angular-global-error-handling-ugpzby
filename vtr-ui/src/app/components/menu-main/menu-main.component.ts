@@ -32,9 +32,9 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
 import { CardService } from 'src/app/services/card/card.service';
-import { BacklightEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlightLevelEnum';
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { StringBooleanEnum } from '../../data-models/common/common.interface';
+import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -88,7 +88,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
 		`;
 	gamingLogo = '../../../assets/images/gaming/gaming-logo-small.png';
-	private backlightCapability$;
+	private backlightCapabilitySubscription: Subscription;
 
 	get appsForYouEnum() { return AppsForYouEnum; }
 
@@ -235,9 +235,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 				}
 			});
 			this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, false);
-			this.backlightCapability$ = this.backlightService.backlight.pipe(
+			this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
 				map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
-				map(res => res.value !== BacklightEnum.NO_CAPABILITY),
+				map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
 				tap(res => {
 					this.commonService.setLocalStorageValue(LocalStorageKey.BacklightCapability, res);
 				}),
@@ -245,7 +245,7 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
 					return undefined;
 				})
-			);
+			).subscribe();
 		}
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
@@ -302,6 +302,9 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
+		}
+		if (this.backlightCapabilitySubscription) {
+			this.backlightCapabilitySubscription.unsubscribe();
 		}
 	}
 
