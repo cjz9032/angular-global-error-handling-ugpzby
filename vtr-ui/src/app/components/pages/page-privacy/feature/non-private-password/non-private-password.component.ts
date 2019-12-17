@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
-import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
+import { FigleafOverviewService } from '../../core/services/figleaf-overview.service';
+import { BrowserAccountsService } from './services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { FeaturesStatuses } from '../../userDataStatuses';
-import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
-import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
+import { VantageCommunicationService } from '../../core/services/vantage-communication.service';
+import { CommonPopupService } from '../../core/services/popups/common-popup.service';
+import { CountNumberOfIssuesService } from '../../core/services/count-number-of-issues.service';
 import { combineLatest } from 'rxjs';
-import { AppStatusesService } from '../../common/services/app-statuses/app-statuses.service';
+import { AppStatusesService } from '../../core/services/app-statuses/app-statuses.service';
 
 @Component({
 	selector: 'vtr-non-private-password',

@@ -47,7 +47,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:focus')
 	onFocus(): void {
-		this.antiVirus.refresh();
+		setTimeout(() => {
+			this.antiVirus.refresh();
+		}, 0);
 	}
 
 	constructor(

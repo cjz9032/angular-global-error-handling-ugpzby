@@ -17,12 +17,13 @@
 				</div>
 				<div class="col-12 p-0 mb-4">
 					<vtr-widget-security
-						[showWindowsHello]="fingerPrintLandingViewModel? true : false"
+						[isOnline]="isOnline"
 						[statusItem]="statusItem"></vtr-widget-security>
 				</div>
 			</div>
 			<section class="landing-nav mb-40">
 				<vtr-widget-landing-nav
+					(haveOwnChecked)="updateStatus($event)"
 					[baseItems]="baseItems"
 					[intermediateItems]="intermediateItems"
 					[advancedItems]="advanceItems"></vtr-widget-landing-nav>

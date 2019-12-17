@@ -107,7 +107,8 @@
                     "sub1": "Support",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
         },
         "qAndA": {
             "title": "F & A för din maskin",
-            "subtitle": "Hitta några hjälpsamma tips för din enhet.",
+            "subtitle": "Läs praktiska tips för din enhet.",
             "question1": "Säkerhetskopiera och återställa filer",
             "question2": "Uppdatera datorn",
             "question3": "Se din dators processor",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Systemstatus",
-            "subtitle": "ÖVERSIKT ÖVER ENHETENS STATUS.",
+            "subtitle": "Se enhetens status på ett ögonblick.",
             "memory": {
                 "title": "Minne",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "Visa information",
                 "gaugeResetWarning": "<b>Obs!</b> Återställning av batterimätare pågår. Se till att nätadaptern är ansluten.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Det primära batteriet kan inte identifieras.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "Reglaget är placerat i mitten eller mitten höger. Fläkthastighet och prestanda balanseras dynamiskt för bästa möjliga upplevelse.",
                             "title3": "Prestandaläge",
                             "desc3": "Reglaget är skjutet längst åt höger. Fläkthastighet och tillåten yttemperatur ökas för maximal prestanda."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "Denna funktion schemalägger datorn för att optimera batteriförbrukningen under tider då datorn inte används och säkerställa att den startar snabbt under tider då den används mer frekvent.",
-                    "subTitle2": "Ange vilken tid du använder datorn mest"
+                    "subTitle2": "Ange vilken tid du använder datorn mest",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Skärm",
+					"displayColorTemperature": {
+						"title": "Bildskärmens färgtemperatur",
+						"description": "Du kan justera bildskärmens färgtemperatur för att minska avgivningen av blått ljus och därmed belastningen på ögonen. Bildskärmen justeras till varmare färger från solnedgång till soluppgång för att hjälpa dig att sova.",
+						"link": {
+							"click": "Klicka",
+							"here": "här",
+							"rest": "för att ändra färgtemperaturen."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Ögonskyddsläge",
                         "checkbox": "Schemalägg ögonskyddsläge från morgon till kväll",
@@ -1514,7 +1526,8 @@
                     "more": "MER",
                     "control1": "HANTERING AV STYRPLATTA",
                     "control2": "HANTERING AV MUS",
-                    "control3": "TRACKPOINT-KONTROLLER"
+                    "control3": "TRACKPOINT-KONTROLLER",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "Intelligenta medier",
                 "title": "Öka videoupplösningen",
                 "desc": "<p><label>Med denna funktion kan du förbättra videouppspelningen genom att förbättra upplösningen. Detta är särskilt praktiskt om videon har låg upplösning.</label></p> <p style='margin-top:4px;'><label> Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Vi rekommenderar att du ansluter datorn till nätström när funktionen är aktiverad.</label></p>",
-                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funktionen fungerar endast på följande spelare: <br/> Windows Media player",
                 "note": {
                     "description": "Funktionen fungerar inte när:",
                     "description1": "datorn inte är ansluten till nätström och batterinivån är lägre än 20 %.",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Behöver du hjälp?",
-            "description": "KONTAKTA OSS OM DU VILL HA HJÄLP.",
+            "description": "Kontakta oss om du behöver hjälp.",
             "listLenovoCommunity": "Lenovo-forum",
             "listContactCustomerService": "Kontakta kundtjänst",
             "listContactUsOnWechat": "Kontakta oss via WeChat",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Snabblänkar",
-            "description": "KONTAKTA OSS OM DU VILL HA HJÄLP.",
+            "description": "Kontakta oss om du behöver hjälp.",
             "listETicket": "Få support med e-kvitto",
             "listServiceProvider": "Hitta en tjänstleverantör",
             "listAboutLenovoVantage": "Om Lenovo Vantage"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "Sinnesro",
                 "subtitleDescribe": "Säkerhet för uppkopplat hem skickar ett meddelande om det upptäcker en sårbarhet på enheten eller i hemnätverket eller om du ansluter till ett skadligt nätverk. Läs mer om Säkerhet för uppkopplat hem <tag>här</tag>.",
                 "tryNow": "Prova nu",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Ange inbjudningskod",
@@ -2167,8 +2184,7 @@
             "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
-            "poweredBySurfEasy": "Från SurfEasy",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredBySurfEasy": "Från SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE LÖSENORDSHANTERARE",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "övervaka om din personliga information finns på dark web",
             "allowsYou3": "skydda dig i osäkra WiFi-nätverk med inbyggt VPN",
             "allowsYou4": "dela lösenord på ett säkert sätt utan att avslöja dem.",
-            "poweredByDashLane": "Från Dashlane",
-            "privacyPolicyAndTermsOfService": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>"
+            "poweredByDashLane": "Från Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "Kontrollera datorns batteriförbrukning",
-            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4 Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5 Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6 Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7 Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8 Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Kontrollera datorns batteriförbrukning</div><hr><h3 class='faqInFs25FbP10'>Symptom</h3><p>Windows 10 har en ny <strong>”batterianvändnings-skärm”</strong> som visar vad det är som tömmer datorns batteri. Det betyder att du kan se exakt vilka appar (både skrivbordsappar och Windows 10:s universalappar) som använder för mycket batteri.</p><h3 class='faqInFs25FbP10'>Berörda varumärken</h3><ul>    <li>Lenovos bärbara och stationära datorer</li></ul><h3 class='faqInFs25FbP10'>Berörda system</h3><ul>    <li>Alla</li></ul><h3 class='faqInFs25FbP10'>Operativsystem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Lösning</h3><p>Den här funktionen är ny i Windows 10, vi behöver hitta den här funktionen eftersom den inte finns i din vanliga <strong>kontrollpanel</strong>. Du hittar den istället i den nya appen <strong>”Inställningar”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hitta batterianvändningsskärmen</h3></p><p>1. Klicka eller tryck på alternativet <strong>Inställningar</strong> i startmenyn</p><p>2. Väl inne i <strong>Inställningar</strong> klickar du på <strong>”System”</strong> och sedan <strong>”Batterisparfunktionen”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Klicka eller tryck på länken <strong>”Batterianvändning”</strong> under rubriken för att se detaljer. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysera din energiförbrukning</h3><p>4 Du kan ändra från att visa batterianvändning för de senaste 24 timmarna till de senaste 48 timmarna eller den senaste veckan</p><p>5 Procent för <strong>”System,”</strong> ”<strong>Bildskärm</strong>” och ”<strong>Wi-Fi”</strong>. Detta visas hur mycket av batteriet som har används av systemet, bildskärmen,</p><p>6 Alternativen <strong>”Används”</strong> och <strong>”Bakgrund”</strong> visar hur mycket energi som används av appar medan de används jämfört med appar som körs i bakgrunden.</p><p>7 Om appar använder energi i bakgrunden kan du klicka eller trycka på <strong>Ändra inställningarna för bakgrundsappar</strong> och konfigurera appar så att de inte körs i bakgrunden. Detta fungerar endast för universella Windows 10-appar.</p><p>8 Längre ned hittar du en lista på appar, och den är den mest användbara delen av den här funktionen. Den visar alla appar som har använt batteri under den valda perioden och hur stor del av batterienergin i procent som varje app har använt</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "Använda datorn som pekplatta",
-            "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Använda datorn som pekplatta</div><hr><p>Surfplatteläget gör Windows mer intuitivt och användarvänligt när du använder en enhet med pekskärm.</p><h3 class='faqInFs25FbP10'>Använda surfplatteläge</h3><p>Aktivera surfplatteläge genom att klicka på <strong>åtgärdscenter</strong> i aktivitetsfältet och sedan markera <strong>Surfplatteläge</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Anmärkning</h3><p>Vissa enheter kan automatiskt aktivera surfplatteläge. Sök efter din enhet på tillverkarens webbplats för att se om din kan det. Stöd för den här funktionen beror på maskinvaran, drivrutinen och hur enheten konfigurerats av tillverkaren. </p><p> </p><p>I surfplatteläge öppnas appar på hela skärmen, vilket ger dig mer plats att arbeta på. Om du vill stänga en app drar du den längst ner på skärmen.</p><p> </p><h3 class='faqInFs25FbP10'>Tips</h3><p>Aktivitetsfältet visas när datorn är i surfplatteläge, men du kan dölja det om du vill ha mer utrymme på skärmen. Klicka på <strong>Start</strong>-knappen och sedan <strong>Inställningar </strong>> <strong>System </strong>> <strong> Surfplatteläge</strong>. Tryck sedan på <strong>Dölj aktivitetsfältet automatiskt i surfplatteläge</strong>. För att se det dolda aktivitetsfältet sveper du uppåt från skärmens nederkant eller håller muspekaren där.</p><h3 class='faqInFs25FbP10'>Använda två appar samtidigt</h3><p>För att använda två appar sida vid sida i surfplatteläge drar du en öppen app nedåt och åt ena sidan. Du ser var den fäster och sedan ser du alla andra öppna appar vid sidan av den.</p><p>I samma vy kan du också:</p><ul>    <li>Ta tag i kanten mellan de två fästa apparna för att ändra storlek på båda två på samma gång.</li>    <li>Öppna en ny app från aktivitetsvyn. Klicka på <strong>Aktivitetsvy</strong> i aktivitetsfältet, välj en app och dra den åt sidan för att fästa den på din delade skärm.</li>    <li>Använd tillbakaknappen på aktivitetsfältet för att gå tillbaka i appen eller för att öppna en app du använde tidigare.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2637,6 +2652,7 @@
         "professional": "Användning i arbetet",
         "privacytitle": "Hjälp oss förbättra kvaliteten på appen genom att tillåta anonym insamling av användningsstatistik.",
         "moreInterest": "+ fler intressen",
+        "toolbartitle": "Aktivera Lenovo Vantage-verktygsfältet (rekommenderas)",
         "title1": "Välkommen till",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "Åtgärdsbaserat",
         "actionTriggeredDescription": "Meddelanden som utgår från dina inställningar, till exempel viktiga automatiska installationer eller rekommenderade uppdateringar.",
         "OtherSettings": "Andra inställningar",
-        "usageStatistics": "Användningsstatistik",
-        "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
-        "deviceStatistics": "Dela statistisk information med Lenovo",
-        "deviceStatisticsDescription": "Delar statistiska data med Lenovo för att förbättra tillförlitlighet och design, och för att optimera funktioner på din dator.",
+        "usageStatistics": "Användningsstatistik för Vantage",
+        "usageStatisticsDescription": "Skicka anonym användningsstatistik för att hjälpa oss göra Vantage bättre.",
+        "deviceStatistics": "Statistik för Lenovo-enhet",
+        "deviceStatisticsDescription": "Skicka anonym enhetsdata för att hjälpa oss förbättra kvaliteten, tillförlitligheten och nästa generations enheter.",
         "userProfile": "Användarprofil",
         "Note": "Obs! ",
         "settingsNotes": "Alla inställningar på denna sida får effekt först efter att programmet har startats om.",
@@ -2806,7 +2822,7 @@
                 "yes": "Ja",
                 "no": "Nej"
             },
-            "waitAvailability": "Knappen är inaktiverad medan informationen om maskinvaran ännu inte har hämtats, om lagringsenheterna inte stödjer denna funktion eller om återställningen av skadade sektorer pågår."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Hämta professionella diagnostikverktyg",
@@ -2843,7 +2859,7 @@
             "storage": "Lagring",
             "wireless": "Radio"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installationen misslyckades. Försök igen.",
-                "networkError": "Nätverksfel.",
-                "installationCancelled": "Installationen avbröts."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe-inlösen",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installera",
-                "installing": "Installerar",
-                "downloading": "Hämtar",
-                "installed": "Installerad",
-                "launch": "Starta",
-                "seeMore": "Mer information"
-            },
-            "fieldName": {
-                "description": "Beskrivning",
-                "screenshots": "Skärmbilder",
-                "additionalInformation": "Mer information",
-                "by": "Av:",
-                "updated": "Uppdaterad:",
-                "type": "Typ:",
-                "category": "Kategori:",
-                "legalAgreement": "Avtal",
-                "readMore": "Läs mer",
-                "readLess": "Läs mindre"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nu kan du ta reda på om din privata information har äventyrats eller använts av onlinespårare utan din vetskap.",
+            "security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
+            "connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installationen misslyckades. Försök igen.",
+                "networkError": "Nätverksfel.",
+                "installationCancelled": "Installationen avbröts."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe-inlösen",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installera",
+                "installing": "Installerar",
+                "downloading": "Hämtar",
+                "installed": "Installerad",
+                "launch": "Starta",
+                "seeMore": "Mer information"
+            },
+            "fieldName": {
+                "description": "Beskrivning",
+                "screenshots": "Skärmbilder",
+                "additionalInformation": "Mer information",
+                "by": "Av:",
+                "updated": "Uppdaterad:",
+                "type": "Typ:",
+                "category": "Kategori:",
+                "legalAgreement": "Avtal",
+                "readMore": "Läs mer",
+                "readLess": "Läs mindre"
+            }
+        }
+    }
 }

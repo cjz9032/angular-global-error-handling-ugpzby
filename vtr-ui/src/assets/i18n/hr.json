@@ -107,7 +107,8 @@
                     "sub1": "Podrška",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
         },
         "qAndA": {
             "title": "Pitanja i odgovori za vaš stroj",
-            "subtitle": "Nađite neke korisne savjete za svoj uređaj.",
+            "subtitle": "Pronađite nekoliko korisnih savjeta za svoj uređaj.",
             "question1": "Sigurnosno kopiranje i vraćanje datoteka",
             "question2": "Kako osvježiti računalo",
             "question3": "Kako znati kojim se CPU-om vaš uređaj koristi",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Status sustava",
-            "subtitle": "BRZE NOVOSTI O STATUSU UREĐAJA.",
+            "subtitle": "Brzo shvatite status svog uređaja.",
             "memory": {
                 "title": "Memorija",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "Prikaži pojedinosti",
                 "gaugeResetWarning": "<b>Napomena:</b> U tijeku je ponovno postavljanje mjerača baterije. Neka prilagodnik izmjeničnog napona ostane priključen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Primarna baterija nije otkrivena.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "Klizač je u sredini ili desno. Brzina i performanse ventilatora dinamički se uravnotežuje za najbolje iskustvo.",
                             "title3": "Način performansi",
                             "desc3": "Klizač je skroz s desne strane. Brzina ventilatora i dopuštena temperatura površine povećani su za najbolje performanse."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "Ova značajka zakazuje optimizaciju baterije računala radi uštede njezina napajanja tijekom neaktivnosti bez žrtvovanja vremena brzog pokretanja tijekom rada s većim opterećenjem.",
-                    "subTitle2": "Postavite vrijeme kada obično koristite računalo"
+                    "subTitle2": "Postavite vrijeme kada obično koristite računalo",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
+					"displayColorTemperature": {
+						"title": "Temperatura boje prikaza",
+						"description": "Možete prilagoditi temperaturu boje vašeg zaslona da filtrira plavu svjetlost čime se smanjuje naprezanje očiju. Prilagođava zaslon toplijim bojama tijekom zalaska sunca do izlaska sunca kako bi vam to pomoglo da zaspite.",
+						"link": {
+							"click": "Kliknite",
+							"here": "ovdje",
+							"rest": "za promjenu temperature boje."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Način rada ugodan za oči",
                         "checkbox": "Zakažite način rada ugodan za oči od zalaska do izlaska sunca",
@@ -1514,7 +1526,8 @@
                     "more": "DODATNO",
                     "control1": "KONTROLE DODIRNE PLOČICE",
                     "control2": "KONTROLE MIŠA",
-                    "control3": "TRACKPOINT KONTROLE"
+                    "control3": "TRACKPOINT KONTROLE",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Povećanje razlučivosti videozapisa",
                 "desc": "<p><label>Ova značajka unapređuje iskustvo reprodukcije videozapisa poboljšanjem razlučivosti videozapisa. Posebno je korisna u slučaju niske razlučivosti videozapisa.</label></p> <p style='margin-top:4px;'><label> Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Kad je omogućena, preporučuje se da računalo povežete na napajanje izmjeničnim naponom.</label></p>",
-                "tooltip": "Značajka radi samo na sljedećim reproduktorima videosadržaja: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Značajka radi samo na sljedećim reproduktorima videosadržaja: <br/> Windows Media player",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
                     "description1": "računalo nije priključeno na napajanje izmjeničnim naponom, a napunjenost baterije je niža od 20%.",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Trebate li pomoć?",
-            "description": "KONTAKTIRAJTE NAS DA VAM POMOGNEMO.",
+            "description": "Obratite nam se kako bismo vam pomogli.",
             "listLenovoCommunity": "Zajednica oko tvrtke Lenovo",
             "listContactCustomerService": "Kontaktirajte službu za korisnike",
             "listContactUsOnWechat": "Kontaktirajte nas na WeChat",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Brze veze",
-            "description": "KONTAKTIRAJTE NAS DA VAM POMOGNEMO.",
+            "description": "Obratite nam se kako bismo vam pomogli.",
             "listETicket": "Ostvarite podršku uz E-zahtjev",
             "listServiceProvider": "Pronalaženje davatelja usluga",
             "listAboutLenovoVantage": "Više o programu Lenovo Vantage"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "Bezbrižan rad",
                 "subtitleDescribe": "Povezana sigurnost doma poslat će vam upozorenje ako otkrije ranjivost na vašem uređaju ili kućnoj mreži ili ako ste povezani s potencijalno zlonamjernom mrežom. Saznajte još više o Povezanoj sigurnosti doma <tag>ovdje</tag>.",
                 "tryNow": "Isprobajte odmah",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Unesite kôd pozivnice",
@@ -2167,8 +2184,7 @@
             "getStarted1": "Kliknite iznad na gumb \"Otvori SurfEasy\" da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak na potvrdu sigurne veze.",
             "getStarted3": "Promijenite regiju ili lokaciju ako želite i uživajte u sigurnoj, privatnoj mreži.",
-            "poweredBySurfEasy": "Pokreće SurfEasy",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
+            "poweredBySurfEasy": "Pokreće SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "UPRAVITELJ LOZINKI DASHLANE",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "Da pratite postoje li vaše osobne informacije na tamnom webu",
             "allowsYou3": "Da ostanete sigurni na nezaštićenim WiFi mrežama s ugrađenim VPN-om",
             "allowsYou4": "Da sigurno dijelite lozinke, a da ih ne otkrijete",
-            "poweredByDashLane": "Pokreće Dashlane",
-            "privacyPolicyAndTermsOfService": "Pročitajte više o <tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>"
+            "poweredByDashLane": "Pokreće Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "Provjerite korištenje baterije uređaja",
-            "description": "<div class='faqInFs4Fb'>    Provjerite korištenje baterije uređaja</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.</p><h3 class='faqInFs25FbP10'>Zahvaćene robne marke</h3><ul>    <li>Lenovo prijenosna računala, stolna računala</li></ul><h3 class='faqInFs25FbP10'>Zahvaćeni sustavi</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operacijski sustav</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rješenje</h3><p>Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite zaslon za upotrebu baterije</h3></p><p>1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start</p><p>2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije).<br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte potrošnju energije</h3><p>4 Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna</p><p>5 Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu,</p><p>6 Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.</p><p>7 Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.</p><p>8 Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Provjerite korištenje baterije uređaja</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 obuhvaća novi zaslon „<strong>Battery Use”</strong> (Korištenje baterije) koji vam pokazuje što troši energiju prijenosnog računala. To znači da će vam točno reći koje aplikacije, aplikacije radne ploče i „univerzalne” aplikacije sustava Windows 10, upotrebljavaju previše energije.</p><h3 class='faqInFs25FbP10'>Zahvaćene robne marke</h3><ul>    <li>Lenovo prijenosna računala, stolna računala</li></ul><h3 class='faqInFs25FbP10'>Zahvaćeni sustavi</h3><ul>    <li>Sve</li></ul><h3 class='faqInFs25FbP10'>Operacijski sustav</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rješenje</h3><p>Ova je značajka nova u sustavu Windows 10, a trebamo je najprije pronaći jer nije pohranjena u vašem standardnom prikazu <strong>upravljačke ploče</strong>, ta se značajka se nalazi u novoj aplikaciji <strong> „Settings”</strong> (Postavke)</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Pronađite zaslon za upotrebu baterije</h3></p><p>1. Kliknite ili dodirnite <strong>„Settings</strong>” (Postavke) u izborniku Start</p><p>2. U <strong>Settings </strong> (Postavke) odaberite <strong>„System”</strong> (Sustav), a zatim odaberite <strong>„Battery saver” (Ušteda baterije).<br /><br /></strong><strong><br /><br /></strong></p><p><img src='./../../../assets/images/qa/4.1.png'  /></p><p>3. Kliknite ili dodirnite <strong>„Battery use”</strong> (Korištenje baterije) ispod ovog naslova kako biste pogledali više pojedinosti. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte potrošnju energije</h3><p>4 Možete promijeniti zaslon za korištenje baterije kako bi se prikazala potrošnja baterije od zadnja 24 sata do 48 sati ili posljednja od prošlog tjedna</p><p>5 Postotci za <strong>„System”</strong> (Sustav), „<strong>Display</strong>” (Prikaz) i „<strong>Wi-Fi”</strong>. To pokazuje koliko je napajanja baterije korišteno u procesima sustava, zaslonu,</p><p>6 Opcije <strong>„In use”</strong> (U upotrebi) i <strong>„Background”</strong> (Pozadina) pokazuju koliko energije troše aplikacije dok ih upotrebljavate u usporedbi s aplikacijama koje se izvode u pozadini.</p><p>7 Ako aplikacije u pozadini troše napajanje, možete kliknuti ili dodirnuti poveznicu <strong>„Change background app settings”</strong> (Promjena postavki pozadinskih aplikacija) i konfigurirati aplikacije da ne rade u pozadini. Ovo funkcionira samo za univerzalne aplikacije sustava Windows 10.</p><p>8 Pomaknite se prema dolje i vidjet ćete popis aplikacija, što se smatra najkorisnijim dijelom ove značajke. Prikazat će se popis aplikacija koje su u tom razdoblju trošile napajanje baterije i prikazat će se postotak napajanja koji je svaka aplikacija potrošila</p><p><img src='./../../../assets/images/qa/4.2.png'  /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "Upotrebljavajte računalo kao tablet",
-            "description": "<div class='faqInFs4Fb'>    Upotrebljavajte računalo kao tablet</div><hr><p>Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Upotrijebi način rada za tablet</h3><p>Da biste uključili način rada za tablet, odaberite <strong>Action center</strong> (Akcijski centar) na programskoj traci, a zatim odaberite <strong>Tablet mode</strong> (Način rada tableta).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali može li vaš uređaj automatski uključiti način rada tableta, potražite uređaj na web-mjestu proizvođača. Podrška za ovu značajku ovisi o hardveru, instaliranom upravljačkom programu i načinu na koji je proizvođač postavio uređaj. </p><p> </p><p>U načinu rada tableta aplikacije se otvaraju na cijelom zaslonu, što vam daje više prostora za rad. Da biste zatvorili aplikaciju, povucite je na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Savjet</h3><p>Programska traka dostupna je kada je računalo u načinu rada tableta, ali ga možete sakriti ako želite više prostora na zaslonu. Odaberite gumb <strong>Start</strong>, odaberite <strong>Settings </strong>(Postavke) > <strong>System </strong> (Sustav) > <strong> Tablet mode </strong> (Način rada tableta), a zatim uključite <strong>Automatically hide the taskbar in tablet mode</strong> (Automatski sakrij programsku traku u načinu rada tableta). Da biste vidjeli skrivenu programsku traku, prijeđite prstom prema gore s dna zaslona ili lebdite s pomoću miša.</p><h3 class='faqInFs25FbP10'>Upotreba dviju aplikacija istodobno</h3><p>Da biste se u načinu rada tableta istodobno koristili dvjema aplikacijama jednom uz drugu, povucite otvorenu aplikaciju dolje i na stranu. Vidjet ćete gdje će se poravnati, a vidjet ćete i sve otvorene aplikacije pored nje.</p><p>U ovom prikazu možete i:</p><ul>    <li>Upotrebljavati zajednički rub između dviju aplikacija prikazanih na dijelu zaslona da biste istodobno promijenili veličinu obiju aplikacija.</li>    <li>Otvorite novu aplikaciju u prikazu zadatka, odaberite <strong>Task view</strong> (Prikaz zadatka) na programskoj traci, odaberite aplikaciju, a zatim je povucite na jednu stranu da biste je poravnali u podijeljeni zaslon.</li>    <li>S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Upotrebljavajte računalo kao tablet</div><hr><p>Način rada tableta čini Windows intuitivnijim i jednostavnijim za upotrebu kada imate uređaj osjetljiv na dodir.</p><h3 class='faqInFs25FbP10'>Upotrijebi način rada za tablet</h3><p>Da biste uključili način rada za tablet, odaberite <strong>Action center</strong> (Akcijski centar) na programskoj traci, a zatim odaberite <strong>Tablet mode</strong> (Način rada tableta).</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png'  /></p><h3 class='faqInFs25FbP10'>Napomena</h3><p>Da biste saznali može li vaš uređaj automatski uključiti način rada tableta, potražite uređaj na web-mjestu proizvođača. Podrška za ovu značajku ovisi o hardveru, instaliranom upravljačkom programu i načinu na koji je proizvođač postavio uređaj. </p><p> </p><p>U načinu rada tableta aplikacije se otvaraju na cijelom zaslonu, što vam daje više prostora za rad. Da biste zatvorili aplikaciju, povucite je na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Savjet</h3><p>Programska traka dostupna je kada je računalo u načinu rada tableta, ali ga možete sakriti ako želite više prostora na zaslonu. Odaberite gumb <strong>Start</strong>, odaberite <strong>Settings </strong>(Postavke) > <strong>System </strong> (Sustav) > <strong> Tablet mode </strong> (Način rada tableta), a zatim uključite <strong>Automatically hide the taskbar in tablet mode</strong> (Automatski sakrij programsku traku u načinu rada tableta). Da biste vidjeli skrivenu programsku traku, prijeđite prstom prema gore s dna zaslona ili lebdite s pomoću miša.</p><h3 class='faqInFs25FbP10'>Upotreba dviju aplikacija istodobno</h3><p>Da biste se u načinu rada tableta istodobno koristili dvjema aplikacijama jednom uz drugu, povucite otvorenu aplikaciju dolje i na stranu. Vidjet ćete gdje će se poravnati, a vidjet ćete i sve otvorene aplikacije pored nje.</p><p>U ovom prikazu možete i:</p><ul>    <li>Upotrebljavati zajednički rub između dviju aplikacija prikazanih na dijelu zaslona da biste istodobno promijenili veličinu obiju aplikacija.</li>    <li>Otvorite novu aplikaciju u prikazu zadatka, odaberite <strong>Task view</strong> (Prikaz zadatka) na programskoj traci, odaberite aplikaciju, a zatim je povucite na jednu stranu da biste je poravnali u podijeljeni zaslon.</li>    <li>S pomoću gumba Natrag na programskoj traci možete se vratiti u aplikaciju ili otvoriti aplikaciju koju ste upotrebljavali prije toga.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2586,7 +2601,7 @@
         },
         "question6": {
             "title": "Upoznajte Cortanu, svoju osobnu pomoćnicu",
-            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortanu, svoju osobnu pomoćnicu</div><hr><h3 class='faqInFs25FbP10'>Što je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.</p><p>Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.</p><p>Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)</p><p>Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može učiniti za vas:</p><ul>    <li>Dati vam podsjetnike na temelju vremena, mjesta ili osoba.</li>    <li>Pratite pakete, timove, interese i letove.</li>    <li>Slati e-poštu i tekstove.</li>    <li>Upravljati vašim kalendarom i obavještavati vas o svemu.</li>    <li>Izrađivati popise i upravljati njima.</li>    <li>Razgovarati i igrati igre.</li>    <li>Pronaći činjenice, datoteke, mjesta i informacije.</li>    <li>Otvoriti bilo koju aplikaciju u vašem sustavu.</li></ul><h3 class='faqInFs25FbP10'>Pokušajte sljedeće: postavite podsjetnik</h3><hr /><p>Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.</p><p>Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove.”</p><p>Podsjetnik će se pojaviti kada dobijete poziv od Tanye.</p><p>Dodatni bonus &mdash; ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Postavite Cortanu da vas čuje kad god kažete: \"Hej Cortana\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \"Hey Cortana.\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)</p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Upoznajte Cortanu, svoju osobnu pomoćnicu</div><hr><h3 class='faqInFs25FbP10'>Što je Cortana?</h3><hr /><p>Cortana je vaš digitalni agent. Pomoći će vam da obavite posao.</p><p>Što se više koristite Cortanom, to će vaše iskustvo biti personaliziranije.</p><p>Da biste započeli, upišite pitanje u okvir za pretraživanje ili odaberite mikrofon i razgovarajte s Cortanom. (Tipkanje funkcionira za sve vrste računala, ali za razgovor trebate mikrofon.)</p><p>Ako niste sigurni što reći, vidjet ćete prijedloge na zaključanom zaslonu i na početnoj stranici Cortane kada odaberete okvir za pretraživanje u programskoj traci.</p><p><img src='./../../../assets/images/qa/6.1.png'  /></p><ol>    <li>Početna stranica 2. Bilježnica 3. Postavke 4. Povratne informacije</li></ol><p>Evo nekih stvari koje Cortana može učiniti za vas:</p><ul>    <li>Dati vam podsjetnike na temelju vremena, mjesta ili osoba.</li>    <li>Pratite pakete, timove, interese i letove.</li>    <li>Slati e-poštu i tekstove.</li>    <li>Upravljati vašim kalendarom i obavještavati vas o svemu.</li>    <li>Izrađivati popise i upravljati njima.</li>    <li>Razgovarati i igrati igre.</li>    <li>Pronaći činjenice, datoteke, mjesta i informacije.</li>    <li>Otvoriti bilo koju aplikaciju u vašem sustavu.</li></ul><h3 class='faqInFs25FbP10'>Pokušajte sljedeće: postavite podsjetnik</h3><hr /><p>Jedna od stvari koje Cortana može učiniti jest da vas podsjeti na nešto. Može vas podsjetiti da radite stvari na temelju vremena, mjesta ili čak osoba.</p><p>Primjerice, utipkajte ili recite: „Podsjeti me da čestitam Tanyi sljedeći put kad nazove.”</p><p>Podsjetnik će se pojaviti kada dobijete poziv od Tanye.</p><p>Dodatni bonus &mdash; ako imate Windows Phone ili Cortanu za iPhone ili Android, možete postaviti Cortanu da sinkronizira obavijesti između računala i telefona.</p><p><img src='./../../../assets/images/qa/6.2.png'  /></p><h3 class='faqInFs25FbP10'>Hej Cortana?</h3><hr /><p>Postavite Cortanu da vas čuje kad god kažete: \"Hej Cortana\". Odaberite okvir za pretraživanje na programskoj traci da biste otvorili početnu stranicu Cortane. Zatim odaberite <strong>Settings</strong> (Postavke) i uključite <strong>Let Cortana respond to \"Hey Cortana.\"</strong> (Neka Cortana odgovara na „Hej Cortana”.)</p><p><img src='./../../../assets/images/qa/6.3.png'  /></p><p class='faqInFs25FbP10'>Napomena</p><p>Cortana je dostupna samo u određenim zemljama/regijama, a neke značajke Cortane možda nisu dostupne svugdje.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2637,6 +2652,7 @@
         "professional": "Stručna uporaba",
         "privacytitle": "Pomozite nam poboljšati kvalitetu ove aplikacije omogućavanjem prikupljanja anonimnih statističkih podataka o korištenju.",
         "moreInterest": "+ više područja interesa",
+        "toolbartitle": "Omogući alatnu traku Lenovo Vantage (preporučeno)",
         "title1": "Dobrodošli u",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "Akcija je pokrenuta",
         "actionTriggeredDescription": "Poruke koje pokreću korisnici odabirom postavki kao što su automatsko instaliranje kritičnih / preporučenih ažuriranja.",
         "OtherSettings": "Ostale postavke",
-        "usageStatistics": "Statistički podaci o upotrebi",
-        "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
-        "deviceStatistics": "Podijelite statističke podatke s tvrtkom Lenovo",
-        "deviceStatisticsDescription": "Šalje statističke podatke tvrtki Lenovo radi poboljšanja pouzdanosti, dizajna i optimizacije značajki na računalu.",
+        "usageStatistics": "Statistički podaci o korištenju Vantage-a",
+        "usageStatisticsDescription": "Pošaljite anonimne statistike upotrebe kako bismo nam pomogli poboljšati Vantage.",
+        "deviceStatistics": "Statistika uređaja Lenovo",
+        "deviceStatisticsDescription": "Pošaljite anonimne podatke uređaja koji će nam pomoći da poboljšamo kvalitetu, pouzdanost i sljedeću generaciju uređaja.",
         "userProfile": "Korisnički profil",
         "Note": "Napomena: ",
         "settingsNotes": "sve postavke na ovoj stranici zahtijevat će da korisnici ponovno pokrenu aplikaciju da bi stupili na snagu.",
@@ -2806,7 +2822,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogućen dok podaci o hardveru još nisu dohvaćeni, u slučaju da uređaji za pohranu ne podržavaju ovu funkciju ili kada se pokreću loši sektori."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Preuzmite profesionalne dijagnostičke alate",
@@ -2843,7 +2859,7 @@
             "storage": "Pohrana",
             "wireless": "Bežična veza"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalacija nije uspjela. Pokušajte ponovno poslije.",
-                "networkError": "Pogreška mreže.",
-                "installationCancelled": "Instalacija je otkazana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Otkup Adobea",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instaliranje",
-                "installing": "Instaliranje",
-                "downloading": "Preuzimanje",
-                "installed": "Instalirano",
-                "launch": "Pokretanje",
-                "seeMore": "Potražite više"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Snimke zaslona",
-                "additionalInformation": "Dodatne informacije",
-                "by": "Autor:",
-                "updated": "Ažurirano:",
-                "type": "Vrsta:",
-                "category": "Kategorija:",
-                "legalAgreement": "Pravni sporazum",
-                "readMore": "Pročitajte više",
-                "readLess": "Pročitajte manje"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Sada možete saznati jesu li internetski tragači zloupotrijebili ili koristili vaše privatne podatke bez vašeg znanja.",
+            "security": "Znate li? Čak i ako nemate instaliran antivirusni softver, još uvijek vam pružamo osnovnu sigurnosnu zaštitu vašeg uređaja.",
+            "connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalacija nije uspjela. Pokušajte ponovno poslije.",
+                "networkError": "Pogreška mreže.",
+                "installationCancelled": "Instalacija je otkazana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Otkup Adobea",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instaliranje",
+                "installing": "Instaliranje",
+                "downloading": "Preuzimanje",
+                "installed": "Instalirano",
+                "launch": "Pokretanje",
+                "seeMore": "Potražite više"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Snimke zaslona",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Autor:",
+                "updated": "Ažurirano:",
+                "type": "Vrsta:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Pročitajte više",
+                "readLess": "Pročitajte manje"
+            }
+        }
+    }
 }

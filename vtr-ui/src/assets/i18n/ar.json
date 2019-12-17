@@ -109,7 +109,8 @@
                     "sub1": "الدعم",
                     "sub2": "‏Facebook",
                     "sub3": "‏Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -349,7 +350,7 @@
             },
             "profileheading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": "ملف التعريف 1"
@@ -386,7 +387,7 @@
             },
             "lightingProfileHeading": {
                 "text1": {
-                    "title": "إيقاف"
+                    "title": "Off"
                 },
                 "text2": {
                     "title": 1
@@ -645,7 +646,7 @@
             "registered": "مسجل",
             "notRegistered": "غير مسجل",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
         },
         "qAndA": {
             "title": "سؤال وجواب لجهازك",
@@ -917,7 +918,7 @@
                 "seeDetailsLink": "انظر التفاصيل",
                 "gaugeResetWarning": "<b>ملاحظة:</b> إعادة تعيين مقياس البطارية قيد التقدم. يرجى إبقاء محول طاقة التيار المتردد متصلاً.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>لم يتم الكشف عن البطارية الرئيسية.</b>"
                 }
             },
             "power": {
@@ -1014,7 +1015,8 @@
                             "desc2": "يوجد شريط التمرير في المنتصف أو في منتصف جهة اليسار. يحدث توازن ديناميكي بين سرعة المروحة والأداء من أجل الحصول على أفضل تجربة ممكنة.",
                             "title3": "وضع الأداء",
                             "desc3": "يوجد شريط التمرير في أقصى اليسار. سرعة المروحة ودرجة حرارة سطح الكمبيوتر المسموحة من أجل الحصول على الأداء الأقصى."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1221,7 +1223,8 @@
                         }
                     },
                     "description2": "تعمل هذه الميزة على جدولة الكمبيوتر لتحسين معدلات توفير طاقة البطارية خلال ساعات الخمول دون التضحية بفترة بدء التشغيل السريع خلال ساعات الاستعمال الأكثر كثافة.",
-                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة"
+                    "subTitle2": "اضبط الوقت الذي تستخدم فيه هذا الكمبيوتر عادة",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1303,6 +1306,15 @@
                 },
                 "display": {
                     "title": "جهاز العرض",
+					"displayColorTemperature": {
+						"title": "درجة حرارة ألوان جهاز العرض",
+						"description": "يمكنك ضبط درجة حرارة ألوان الشاشة لترشيح الضوء الأزرق وتقليل إجهاد العين. قم بضبط شاشات العرض على ألوان أكثر دفئًا أثناء فترة غروب الشمس وحتى شروق الشمس لمساعدتك في النوم.",
+						"link": {
+							"click": "انقر",
+							"here": "هنا",
+							"rest": "لتغيير درجة حرارة اللون."
+						}
+					},
                     "eyeCareMode": {
                         "title": "وضع العناية بالعين",
                         "checkbox": "جدولة وضع العناية بالعين من غروب الشمس حتى شروقها",
@@ -1516,7 +1528,8 @@
                     "more": "المزيد",
                     "control1": "إعدادات تحكم لوحة اللمس",
                     "control2": "إعدادات تحكم الماوس",
-                    "control3": "إعدادات تحكم TRACKPOINT"
+                    "control3": "إعدادات تحكم TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1679,7 +1692,7 @@
                 "heading": "الوسائط الذكية",
                 "title": "رفع مستوى دقة الفيديو",
                 "desc": "<p><label>تعمل هذه الميزة على تحسين تجربة تشغيل الفيديو عن طريق تحسين دقة الفيديو. إنها تعمل على وجه التحديد عندما تكون دقة الفيديو سيئة.</label></p> <p style='margin-top:4px;'><label> قد تؤثر هذه الوظيفة على عمر البطارية ودرجة حرارة البطارية، وقد تتسبب في حدوث ضوضاء. عند تمكين هذه الميزة، من المستحسن أن تقوم بتوصيل الكمبيوتر بطاقة التيار المتردد.</label></p>",
-                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "تعمل الميزة على المشغلات التالية فقط:<br/> Windows Media player",
                 "note": {
                     "description": "لا تعمل هذه الميزة في الحالات التالية:",
                     "description1": "الكمبيوتر غير متصل بطاقة التيار المتردد وطاقة البطارية أقل من 20%.",
@@ -1875,7 +1888,7 @@
         },
         "needHelp": {
             "title": "هل تحتاج للمساعدة؟",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listLenovoCommunity": "مجتمع Lenovo",
             "listContactCustomerService": "اتصل بخدمة العملاء",
             "listContactUsOnWechat": "اتصل بنا علي WeChat",
@@ -1886,7 +1899,7 @@
         },
         "quicklinks": {
             "title": "روابط سريعة",
-            "description": "اتصل بنا لمساعدتك.",
+            "description": "اتصل بنا كي نساعدك.",
             "listETicket": "احصل علي الدعم من خلال التذكرة الإلكترونية",
             "listServiceProvider": "البحث عن موفر خدمة",
             "listAboutLenovoVantage": "حول Lenovo Vantage"
@@ -1957,13 +1970,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2094,7 +2111,7 @@
                 "subtitle": "راحة البال",
                 "subtitleDescribe": "سوف ترسل لك ميزة أمان المنزل المتصل تنبيهًا إذا كشفت عن وجود ثغرة أمنية في جهازك أو شبكتك المنزلية، أو إذا كنت متصلاً بشبكة من المحتمل أن تكون ضارة. اعرف المزيد حول أمان المنزل المتصل <tag>هنا</tag>.",
                 "tryNow": "جرّبها الآن",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "أدخل رمز الدعوة",
@@ -2169,8 +2186,7 @@
             "getStarted1": "انقر فوق الزر \"فتح SurfEasy\" أعلاه لبدء تشغيل SurfEasy VPN.",
             "getStarted2": "شغّل شبكة VPN وانتظر برهة قصيرة لتلقي تأكيد الاتصال الآمن.",
             "getStarted3": "يمكنك تغيير منطقتك أو موقعك، إذا لزم الآمر، والاستمتاع بشبكة آمنة وخاصة.",
-            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "إدارة كلمات المرور في DASHLANE",
@@ -2198,8 +2214,7 @@
             "allowsYou2": "مراقبة الويب المظلم لمعلوماتك الشخصية",
             "allowsYou3": "المحافظة على سلامتك على شبكات WiFi غير الآمنة ذات VPN مضمنة",
             "allowsYou4": "مشاركة كلمات المرور بشكل آمن من دون الكشف عنها",
-            "poweredByDashLane": "مشغّل بواسطة Dashlane",
-            "privacyPolicyAndTermsOfService": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>"
+            "poweredByDashLane": "مشغّل بواسطة Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2481,7 +2496,7 @@
         },
         "question4": {
             "title": "التحقق من استخدام بطارية الجهاز",
-            "description": "<div class='faqInFs4Fb'>    التحقق من استخدام بطارية الجهاز</div><hr><h3 class='faqInFs25FbP10'>العرض</h3><p>يتضمن Windows 10 شاشة جديدة \"<strong>استخدام البطارية\"</strong> تبين لك الأسباب التي تستنزف طاقة الكمبيوتر المحمول. يعني هذا الأمر أن هذه الشاشة ستعلمك بشكل دقيق عن التطبيقات، التطبيقات \"العالمية\" لنظام Windows 10 وتطبيقات سطح المكتب، التي تستهلك قدرًا كبيرًا من الطاقة.</p><h3 class='faqInFs25FbP10'>العلامات التجارية المتأثرة</h3><ul>    <li>أجهزة الكمبيوتر المحمولة وأجهزة كمبيوتر سطح المكتب من Lenovo</li></ul><h3 class='faqInFs25FbP10'>الأنظمة المتأثرة</h3><ul>    <li>كل</li></ul><h3 class='faqInFs25FbP10'>نظام التشغيل</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>الحل</h3><p>تعتبر هذه الميزة جديدة في نظام التشغيل Windows 10، ونحن نحتاج إلى العثور على هذه الميزة أولاً لأنها غير مخزنة في طريقة عرض <strong>لوحة التحكم </strong>التقليدية. تقع هذه الميزة في تطبيق <strong>“الإعدادات”</strong> الجديد</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>أ. ابحث عن شاشة استخدام البطارية</h3></p><p>1. انقر أو اضغط على الخيار <strong>\"الإعدادات</strong>\" من قائمة البدء.</p><p>2. في <strong>الإعدادات </strong>، حدد <strong>“النظام”</strong>ثم حدد <strong>“موفر البطارية.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. انقر أو اضغط على الارتباط <strong>\"استخدام البطارية\"</strong> تحت هذا العنوان لرؤية المزيد من التفاصيل. </p><p> </p><h3 class='faqInFs25FbP10'>ب. تحليل استخدام الطاقة لديك</h3><p>4 يمكنك تغيير شاشة استخدام البطارية بحيث تعرض معلومات حول استخدام البطارية من آخر 24 ساعة وصولاً إلى آخر 48 ساعة أو أخيرًا من الأسبوع الماضي</p><p>5 النسب المئوية لكل من <strong>“النظام،”</strong> “<strong>جهاز العرض،</strong>” و\"<strong>Wi-Fi”</strong>. توضح هذه النسب مقدار طاقة البطارية المستخدمة بواسطة عمليات النظام، وجهاز العرض.</p><p>6 يُظهر الخيار <strong>“قيد الاستخدام”</strong> بالإضافة إلى الخيار <strong>“الخفية”</strong> مقدار الطاقة الذي تستخدمه التطبيقات أثناء استخدامك لها، مقارنةً بالتطبيقات التي تعمل في الخلفية.</p><p>7 إذا كانت التطبيقات تستخدم الطاقة في الخلفية، فيمكنك الضغط أو النقر فوق الارتباط <strong> “تغيير إعدادات التطبيقات في الخلفية” </strong>وتكوين التطبيقات بحيث لا تعمل في الخلفية هذا يعمل فقط مع تطبيقات Windows 10 العالمية.</p><p>8 قم بالتمرير لأسفل إلى أبعد من ذلك وسترى قائمة بالتطبيقات، ويعتبر هذا القسم الأكثر إفادة في هذه الميزة. سيعرض قائمة بالتطبيقات التي استخدمت طاقة البطارية في تلك الفترة، وسيظهر لك النسبة المئوية من طاقة البطارية التي استخدمها كل تطبيق</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    التحقق من استخدام بطارية الجهاز</div><hr><h3 class='faqInFs25FbP10'>العرض</h3><p>يتضمن Windows 10 شاشة جديدة \"<strong>استخدام البطارية\"</strong> تبين لك الأسباب التي تستنزف طاقة الكمبيوتر المحمول. يعني هذا الأمر أن هذه الشاشة ستعلمك بشكل دقيق عن التطبيقات، التطبيقات \"العالمية\" لنظام Windows 10 وتطبيقات سطح المكتب، التي تستهلك قدرًا كبيرًا من الطاقة.</p><h3 class='faqInFs25FbP10'>العلامات التجارية المتأثرة</h3><ul>    <li>أجهزة الكمبيوتر المحمولة وأجهزة كمبيوتر سطح المكتب من Lenovo</li></ul><h3 class='faqInFs25FbP10'>الأنظمة المتأثرة</h3><ul>    <li>كل</li></ul><h3 class='faqInFs25FbP10'>نظام التشغيل</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>الحل</h3><p>تعتبر هذه الميزة جديدة في نظام التشغيل Windows 10، ونحن نحتاج إلى العثور على هذه الميزة أولاً لأنها غير مخزنة في طريقة عرض <strong>لوحة التحكم </strong>التقليدية. تقع هذه الميزة في تطبيق <strong>“الإعدادات”</strong> الجديد</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>أ. ابحث عن شاشة استخدام البطارية</h3></p><p>1. انقر أو اضغط على الخيار <strong>\"الإعدادات</strong>\" من قائمة البدء.</p><p>2. في <strong>الإعدادات </strong>، حدد <strong>“النظام”</strong>ثم حدد <strong>“موفر البطارية.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. انقر أو اضغط على الارتباط <strong>\"استخدام البطارية\"</strong> تحت هذا العنوان لرؤية المزيد من التفاصيل. </p><p> </p><h3 class='faqInFs25FbP10'>ب. تحليل استخدام الطاقة لديك</h3><p>4 يمكنك تغيير شاشة استخدام البطارية بحيث تعرض معلومات حول استخدام البطارية من آخر 24 ساعة وصولاً إلى آخر 48 ساعة أو أخيرًا من الأسبوع الماضي</p><p>5 النسب المئوية لكل من <strong>“النظام،”</strong> “<strong>جهاز العرض،</strong>” و\"<strong>Wi-Fi”</strong>. توضح هذه النسب مقدار طاقة البطارية المستخدمة بواسطة عمليات النظام، وجهاز العرض.</p><p>6 يُظهر الخيار <strong>“قيد الاستخدام”</strong> بالإضافة إلى الخيار <strong>“الخفية”</strong> مقدار الطاقة الذي تستخدمه التطبيقات أثناء استخدامك لها، مقارنةً بالتطبيقات التي تعمل في الخلفية.</p><p>7 إذا كانت التطبيقات تستخدم الطاقة في الخلفية، فيمكنك الضغط أو النقر فوق الارتباط <strong> “تغيير إعدادات التطبيقات في الخلفية” </strong>وتكوين التطبيقات بحيث لا تعمل في الخلفية هذا يعمل فقط مع تطبيقات Windows 10 العالمية.</p><p>8 قم بالتمرير لأسفل إلى أبعد من ذلك وسترى قائمة بالتطبيقات، ويعتبر هذا القسم الأكثر إفادة في هذه الميزة. سيعرض قائمة بالتطبيقات التي استخدمت طاقة البطارية في تلك الفترة، وسيظهر لك النسبة المئوية من طاقة البطارية التي استخدمها كل تطبيق</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2549,7 +2564,7 @@
         },
         "question5": {
             "title": "استخدام الكمبيوتر الشخصي ككمبيوتر لوحي",
-            "description": "<div class='faqInFs4Fb'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 class='faqInFs25FbP10'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 class='faqInFs25FbP10'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 class='faqInFs25FbP10'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    استخدام الكمبيوتر الشخصي ككمبيوتر لوحي</div><hr><p>يضفي وضع الكمبيوتر اللوحي المزيد من السهولة والبساطة على استخدام Windows عندما يكون لديك جهاز مزود بشاشة تعمل باللمس.</p><h3 class='faqInFs25FbP10'>استخدام وضع الكمبيوتر اللوحي</h3><p>لتشغيل وضع الكمبيوتر اللوحي، حدد <strong>مركز الإجراءات</strong> على شريط المهام، ثم حدد <strong>وضع الكمبيوتر اللوحي</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>ملحوظة</h3><p>لمعرفة ما إذا كان باستطاعة جهازك تشغيل وضع الكمبيوتر اللوحي تلقائيًا، ابحث عن جهازك على موقع الشركة المصنعة على الويب. يتوقف دعم هذه الميزة على الأجهزة وبرنامج التشغيل المثبت وكيفية إعداد جهازك بواسطة الشركة المصنعة. </p><p> </p><p>في وضع الكمبيوتر اللوحي، تفتح التطبيقات في ملء الشاشة، مما يمنحك مساحة أكبر للعمل. لإغلاق تطبيق، اسحبه إلى أسفل الشاشة.</p><p> </p><h3 class='faqInFs25FbP10'>تلميح</h3><p>يتوفر شريط المهام عندما يكون الكمبيوتر في وضع الكمبيوتر اللوحي، ولكن إذا أردت الحصول على مساحة أكبر على الشاشة، فاعمل على إخفائه. حدد زر <strong>البدء</strong>، وحدد <strong>الإعدادات </strong>> <strong>النظام </strong>> <strong> وضع الكمبيوتر اللوحي </strong>، ثم قم بتشغيل الخيار <strong>إخفاء شريط المهام تلقائيًا في وضع الكمبيوتر اللوحي</strong>. لرؤية شريط المهام المخفي، اسحب لأعلى من أسفل الشاشة، أو استخدم الماوس للتمرير هناك.</p><h3 class='faqInFs25FbP10'>استخدام تطبيقين في الوقت نفسه</h3><p>لاستخدام تطبيقين جنبًا إلى جنب في وضع الكمبيوتر اللوحي، اسحب تطبيقًا مفتوحًا إلى الأسفل وإلى الجانب. سترى المكان حيث ستتم محاذاته، وسترى أي تطبيقات مفتوحة إلى جانبه.</p><p>في طريقة العرض هذه، يمكنك أيضًا:</p><ul>    <li>استخدام الحافة المشتركة بين تطبيقين مصغرين لتغيير حجم التطبيقين في نفس الوقت.</li>    <li>فتح تطبيق جديد من طريقة عرض المهمة&mdash;حدد <strong>طريقة عرض المهمة</strong> على شريط المهام، وتحديد تطبيق، ثم سحبه إلى جانب واحد لمحاذاته على شاشتك المقسمة.</li>    <li>استخدام زر السابق على شريط المهام للعودة إلى أحد التطبيقات، أو لفتح تطبيق كنت تستخدمه من قبل.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2639,6 +2654,7 @@
         "professional": "استخدام مهني",
         "privacytitle": "ساعد على تحسين جودة التطبيق من خلال السماح بعملية جمع إحصاءات الاستخدام مجهولة المصدر.",
         "moreInterest": "‏+ المزيد من الاهتمامات",
+        "toolbartitle": "تمكين شريط أدوات Lenovo Vantage (مستحسن)",
         "title1": "مرحبًا بك في",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2669,10 +2685,10 @@
         "actionTriggered": "الرسائل التي تشغلها إجراءات",
         "actionTriggeredDescription": "الرسائل التي يتم تشغيلها عن طريق اختيار المستخدم للإعدادات مثل تثبيت التحديثات الهامة / الموصى بها تلقائيًا.",
         "OtherSettings": "إعدادات أخرى",
-        "usageStatistics": "إحصائيات الاستخدام",
-        "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
-        "deviceStatistics": "مشاركة البيانات الإحصائية مع Lenovo",
-        "deviceStatisticsDescription": "لمشاركة البيانات الإحصائية مع Lenovo بهدف المساعدة على تحسين موثوقية الميزات على الكمبيوتر وتصميمها وتحقيق أمثليتها.",
+        "usageStatistics": "إحصائيات استخدام Vantage",
+        "usageStatisticsDescription": "إرسال إحصائيات الاستخدام مجهولة المصدر لمساعدتنا في تحسين Vantage.",
+        "deviceStatistics": "إحصائيات جهاز Lenovo",
+        "deviceStatisticsDescription": "أرسل بيانات جهاز مجهولة المصدر لمساعدتنا في تحسين الجودة والموثوقية والجيل التالي من الأجهزة.",
         "userProfile": "ملف تعريف المستخدم",
         "Note": "ملاحظة: ",
         "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة إلى قيام المستخدمين بإعادة تشغيل هذا التطبيق حتى يصبح نافذ المفعول.",
@@ -2808,7 +2824,7 @@
                 "yes": "نعم",
                 "no": "لا"
             },
-            "waitAvailability": "يكون الزر معطلاً بينما لم يتم استرداد معلومات الأجهزة بعد، في حال لم تكن أجهزة التخزين تدعم هذه الميزة أو عندما تكون استعادة القطاعات المصابة‬ قيد التشغيل."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "تنزيل أدوات تشخيص احترافية",
@@ -2845,7 +2861,7 @@
             "storage": "السعة التخزينية",
             "wireless": "اللاسلكية"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3049,41 +3065,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "فشل التثبيت. حاول من جديد.",
-                "networkError": "خطأ في الشبكة.",
-                "installationCancelled": "تم إلغاء التثبيت."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "استرداد Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "تثبيت",
-                "installing": "جارِ التثبيت",
-                "downloading": "جارِ التنزيل",
-                "installed": "مثبت",
-                "launch": "اطلاق",
-                "seeMore": "رؤية المزيد"
-            },
-            "fieldName": {
-                "description": "الوصف",
-                "screenshots": "لقطات الشاشة",
-                "additionalInformation": "مزيد من المعلومات",
-                "by": "حسب:",
-                "updated": "تم التحديث:",
-                "type": "النوع:",
-                "category": "الفئة:",
-                "legalAgreement": "الاتفاقية القانونية",
-                "readMore": "اقرأ أكثر",
-                "readLess": "اقرأ أقل"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3197,6 +3178,48 @@
             "disconnectedTitle": "Disconnect from protection?",
             "disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
             "disconnecting": "Disconnecting..."
+        }
+    },
+    "notification": {
+        "menu": {
+            "privacy": "يمكنك الآن معرفة ما إذا كانت معلوماتك قد تعرضت للانتهاك أو ما إذا تم استخدامها من قِبل متتبعين عبر الإنترنت من دون علمك.",
+            "security": "هل تعلم؟ حتى لو لم يكن لديك برامج للحماية من الفيروسات مثبتة على جهازك، فنحن نوفر مع ذلك حماية الأمان الأساسية لجهازك.",
+            "connectedHomeSecurity": "احصل على مراقبة وتنبيهات في الوقت الحقيقي حول أمان شبكتك في المنزل. ستكون أول من يعرف ما إذا كان أحد أجهزتك الذكية يتعرض لهجوم أمني."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "فشل التثبيت. حاول من جديد.",
+                "networkError": "خطأ في الشبكة.",
+                "installationCancelled": "تم إلغاء التثبيت."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "استرداد Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "تثبيت",
+                "installing": "جارِ التثبيت",
+                "downloading": "جارِ التنزيل",
+                "installed": "مثبت",
+                "launch": "اطلاق",
+                "seeMore": "رؤية المزيد"
+            },
+            "fieldName": {
+                "description": "الوصف",
+                "screenshots": "لقطات الشاشة",
+                "additionalInformation": "مزيد من المعلومات",
+                "by": "حسب:",
+                "updated": "تم التحديث:",
+                "type": "النوع:",
+                "category": "الفئة:",
+                "legalAgreement": "الاتفاقية القانونية",
+                "readMore": "اقرأ أكثر",
+                "readLess": "اقرأ أقل"
+            }
         }
     }
 }

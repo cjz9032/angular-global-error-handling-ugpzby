@@ -12,55 +12,56 @@
 			[isSubtitleVisible]="false"
 			[isButtonVisible]="false"></vtr-widget-offline-info>
 		<div class="container-fluid p-0">
-			<div class="row security-card p-40">
-
-					<div class="container-fluid p-0">
-				<div class="row"
-					[vtrAppSearchScroller]="['search-internet-protection']">
-					<div class="col">
-						<div class="heading">{{'security.vpn.header' | translate}}</div>
+			<div class="row security-card p-20">
+				<div class="container-fluid p-0">
+					<div class="row"
+						[vtrAppSearchScroller]="['search-internet-protection']">
+						<div class="col">
+							<div class="heading">{{'security.vpn.header' | translate}}</div>
+						</div>
+						<div class="pull right"><img class="surfeasy_logo_teal"
+								src="../../../../assets/images/SurfEasy-logo.png" /></div>
 					</div>
-					<div class="pull right"><img class="surfeasy_logo_teal"
-							src="../../../../assets/images/SurfEasy-logo.png" /></div>
-				</div>
-				<div class="row mt-20">
-					<div class="col">
-						<div class="text-regular">
-							{{'security.vpn.whatIsSufEasy' | translate}}
+					<div class="row mt-20">
+						<div class="col">
+							<div class="text-regular">
+								{{'security.vpn.whatIsSufEasy' | translate}}
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row mt-40">
-					<div class="col get-app-code-box">
-						<vtr-ui-security-statusbar [statusList]="[statusItem]">
-						</vtr-ui-security-statusbar>
-					</div>
-				</div>
-				<div class="row mt-40">
-					<div class="col text-regular">
-						{{'security.vpn.helpKeep' | translate}}
-					</div>
-					<div class=" pull right">
-						<div class="col-12">
-							<vtr-ui-button
-								*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
-								(onClick)="getSurfEasy()"
-								metricsEvent="FeatureClick"
-								metricsItem="getSurfEasy"
-								[linkId]="'sa-vpn-btn-getsufeasy'"
-								[isDisabled]="statusItem.status === 'installing' || isOnline === false"
-								[label]="'security.vpn.getSufEasy' | translate">
-							</vtr-ui-button>
-							<vtr-ui-button *ngIf="statusItem.status === 'installed'"
-								(onClick)="openSurfEasy()"
-								metricsEvent="FeatureClick"
-								metricsItem="openSurfEasy"
-								[linkId]="'sa-vpn-btn-opensufeasy'"
-								[label]="'security.vpn.openSufEasy' | translate">
-							</vtr-ui-button>
+					<div class="row mt-40">
+						<div class="col get-app-code-box">
+							<vtr-ui-security-statusbar [statusList]="[statusItem]">
+							</vtr-ui-security-statusbar>
 						</div>
 					</div>
-				</div>
+					<div class="row mt-40">
+						<div class="col text-regular min-width-50 flex-100 d-flex align-items-center">
+							{{'security.vpn.helpKeep' | translate}}
+						</div>
+						<div class="d-flex pull right align-items-center flex-1">
+							<div class="col-12 p-0">
+								<vtr-ui-button
+									*ngIf="statusItem.status === 'not-installed' || statusItem.status === 'installing'"
+									(onClick)="getSurfEasy()"
+									metricsEvent="FeatureClick"
+									metricsItem="getSurfEasy"
+									btnHeight=true
+									[linkId]="'sa-vpn-btn-getsufeasy'"
+									[isDisabled]="statusItem.status === 'installing' || isOnline === false"
+									[label]="'security.vpn.getSufEasy' | translate">
+								</vtr-ui-button>
+								<vtr-ui-button *ngIf="statusItem.status === 'installed'"
+									(onClick)="openSurfEasy()"
+									metricsEvent="FeatureClick"
+									metricsItem="openSurfEasy"
+									btnHeight=true
+									[linkId]="'sa-vpn-btn-opensufeasy'"
+									[label]="'security.vpn.openSufEasy' | translate">
+								</vtr-ui-button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row"
@@ -75,13 +76,13 @@
 					</div>
 				</div>
 				<div class="row w-100">
-					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40 p-0">
+					<div class="col-12 col-xl-6 order-xl-1 mt-40 p-0">
 						<div class="col mt-4">
 							<img src="../../../../assets/images/surfeasy-left-img.jpg"
 								class="surfeasy-side-left-img" />
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
+					<div class="col-12 col-xl-6 order-xl-2 mt-40">
 						<div class="col">
 							<div class="list-heading">
 								<p class="adjust-left">{{'security.vpn.startUseSufEasy' | translate}}
@@ -194,29 +195,15 @@
 
 				</div>
 			</div>
-			<div class="row top-line">
-				<div class="col">
-					<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
-					<p class="text-regular"
-						*vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
-
-						<a id="sa-vpn-lnk-privacypolicy"
-							vtrMetrics
-							metricsEvent="featureClick"
-							metricsItem="privacyPolicy"
-							href="https://www.surfeasy.com/privacy_policy/"
-							target="_blank"></a>
-						<a id="sa-vpn-lnk-termsofservices"
-							vtrMetrics
-							metricsEvent="featureClick"
-							metricsItem="termsOfServices"
-							href="https://www.surfeasy.com/terms_of_service/"
-							target="_blank"></a>
-					</p>
-				</div>
-				<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
-						src="../../../../assets/images/SurfEasy-logo.png" /></div>
-			</div>
+			<hr class="d-none d-lg-block">
+			<vtr-widget-powered-by-info class="pb-40 d-none d-lg-block"
+				[title]="'security.vpn.poweredBySurfEasy'"
+				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+				[imgUrl]="'assets/images/SurfEasy-logo.png'"
+				linkId="sa-vpn-lnk"
+				privacyUrl="https://www.surfeasy.com/privacy_policy/"
+				termsUrl="https://www.surfeasy.com/terms_of_service/">
+			</vtr-widget-powered-by-info>
 		</div>
 	</left-content>
 
@@ -252,6 +239,15 @@
 					</vtr-container-card>
 				</div>
 			</div>
+			<hr class="d-lg-none">
+			<vtr-widget-powered-by-info class="pb-40 d-lg-none"
+				[title]="'security.vpn.poweredBySurfEasy'"
+				[detail]="'common.securityAdvisor.privacyPolicyAndTermsOfService'"
+				[imgUrl]="'assets/images/SurfEasy-logo.png'"
+				linkId="sa-vpn-lnk"
+				privacyUrl="https://www.surfeasy.com/privacy_policy/"
+				termsUrl="https://www.surfeasy.com/terms_of_service/">
+			</vtr-widget-powered-by-info>
 		</div>
 	</right-content>
 

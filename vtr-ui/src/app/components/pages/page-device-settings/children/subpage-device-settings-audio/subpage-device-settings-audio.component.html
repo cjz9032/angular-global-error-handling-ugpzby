@@ -167,9 +167,8 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class=""
-								*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
+								*ngIf="microphoneProperties.keyboardNoiseSuppression">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
 									[name]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
@@ -189,9 +188,8 @@
 									[switchId]="'audio-microphone-suppress'">
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class=""
-								*ngIf="microphoneProperties.AEC != undefined">
+								*ngIf="microphoneProperties.AEC">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 									[name]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
@@ -211,9 +209,8 @@
 									[switchId]="'audio-microphone-acousticEcho'">
 								</vtr-ui-row-switch>
 							</li>
-
 							<li class=""
-								*ngIf="!isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
+								*ngIf="isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 									componentName="Optimize my microphone for"

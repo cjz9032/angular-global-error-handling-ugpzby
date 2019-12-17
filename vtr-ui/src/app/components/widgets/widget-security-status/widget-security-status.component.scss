@@ -1,0 +1,64 @@
+@import "../../../app.theme";
+vtr-widget-status ::ng-deep {
+	vtr-ui-list-chevron {
+		li {
+			&.good {
+				.item-icon {
+					.icon-bkg {
+						background: $green_gradient !important;
+						border-color: $green_dark !important;
+					}
+				}
+			}
+
+			&.bad {
+				.item-icon {
+					.icon-bkg {
+						background: $gradient_red1 !important;
+						border-color: $button_red_start !important;
+					}
+				}
+			}
+
+			&.black,
+			&.text-blue {
+				.item-icon {
+					.icon-bkg {
+						background: $black_gradient !important;
+						border-color: $black_light !important;
+					}
+				}
+			}
+			.item-text {
+				.detail {
+					display: flex !important;
+					align-items: center !important;
+					justify-content: flex-end !important;
+					flex-basis: 45% !important;
+					padding-right: 1rem;
+					text-overflow: clip !important;
+					white-space: normal !important;
+					&.good {
+						color: $green_dark !important;
+					}
+
+					&.bad {
+						color: $button_red_start !important;
+					}
+
+					&.black {
+						color: $black_light !important;
+					}
+				}
+
+				.title {
+					display: flex;
+					align-items: center !important;
+					flex-basis: 55% !important;
+					text-overflow: clip !important;
+					white-space: normal !important;
+				}
+			}
+		}
+	}
+}

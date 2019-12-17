@@ -107,7 +107,8 @@
                     "sub1": "Asistenţă",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
         },
         "qAndA": {
             "title": "Întrebări și răspunsuri pentru mașina dvs.",
-            "subtitle": "Găsiți câteva sfaturi bune pentru aparatul Dvs.",
+            "subtitle": "Găsiți câteva sfaturi utile pentru dispozitivul dvs.",
             "question1": "Copii de siguranță și restaurarea fișierelor",
             "question2": "Cum să reîmprospătați PC-ul",
             "question3": "Cum să cunoașteți procesorul dispozitivului",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Starea sistemului",
-            "subtitle": "FIȚI LA CURENT CU STAREA DISPOZITIVULUI DVS.",
+            "subtitle": "Fiți la curent cu starea dispozitivului dvs.",
             "memory": {
                 "title": "Memorie",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "Vedeți detaliile",
                 "gaugeResetWarning": "<b>Notă:</b> resetarea indicatorului bateriei este în curs. Menţineţi conectat adaptorul de alimentare cu c.a.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Bateria principală nu este detectată.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "Cursorul este în centru sau în centru-dreapta. Viteza şi performanţa ventilatorului sunt echilibrate dinamic – pentru cea mai bună experienţă.",
                             "title3": "Mod performanţă",
                             "desc3": "Cursorul este în partea dreaptă. Viteza ventilatorului şi temperatura permisă a suprafeţei sunt mai ridicate – pentru performanţă maximă."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "Această caracteristică programează computerul dvs. să optimizeze energaia bateriei în timpul orelor de inactivitate, fără a renunţa la timpul rapid de pornire în orele de utilizare mai intensivă.",
-                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer"
+                    "subTitle2": "Setaţi orele la care utilizaţi de obicei acest computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Afișaj",
+					"displayColorTemperature": {
+						"title": "Temperatură culoare afișaj",
+						"description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+						"link": {
+							"click": "Clic",
+							"here": "aici",
+							"rest": "pentru a modifica temperatura culorii."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
                         "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
@@ -1514,7 +1526,8 @@
                     "more": "MAI MULTE",
                     "control1": "ELEMENTE DE CONTROL TOUCHPAD",
                     "control2": "ELEMENTE DE CONTROL MOUSE",
-                    "control3": "ELEMENTE DE CONTROL TRACKPOINT"
+                    "control3": "ELEMENTE DE CONTROL TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "Medii inteligente",
                 "title": "Mărirea rezoluţiei video",
                 "desc": "<p><label>Această caracteristică îmbunătăţeşte experienţa de redare a videoclipurilor, mărind rezoluţia video. Aceasta funcţionează mai ales atunci când videoclipul are o rezoluţie mică.</label></p> <p style='margin-top:4px;'><label> Această caracteristică ar putea afecta durata de viaţă a bateriei, temperatura bateriei şi poate provoca zgomote. Atunci când este activată, se recomandă să conectaţi computerul la o sursă de c.a.</label></p>",
-                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Caracteristica funcţionează numai în următoarele playere: <br/> Windows Media player",
                 "note": {
                     "description": "Această caracteristică nu funcţionează când:",
                     "description1": "computerul nu este conectat la o sursă de c.a. şi energia bateriei este mai mică de 20%.",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Aveţi nevoie de ajutor?",
-            "description": "CONTACTAȚI-NE PENTRU A VĂ AJUTA.",
+            "description": "Contactați-ne pentru a vă ajuta.",
             "listLenovoCommunity": "Comunitatea Lenovo",
             "listContactCustomerService": "Contactați serviciul pentru clienți",
             "listContactUsOnWechat": "Contactați-ne pe WeChat",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Linkuri rapide",
-            "description": "CONTACTAȚI-NE PENTRU A VĂ AJUTA.",
+            "description": "Contactați-ne pentru a vă ajuta.",
             "listETicket": "Obțineți asistență cu E-ticket",
             "listServiceProvider": "Găsiți un furnizor de servicii",
             "listAboutLenovoVantage": "Despre Lenovo Vantage"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "Liniştea minţii",
                 "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați mai multe despre Securitate conectată, la domiciliu <tag>aici</tag>.",
                 "tryNow": "Încercați acum",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Introduceți codul invitației",
@@ -2167,8 +2184,7 @@
             "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
-            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "MANAGER PAROLE DASHLANE",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
             "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
             "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
-            "poweredByDashLane": "Dezvoltat de Dashlane",
-            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+            "poweredByDashLane": "Dezvoltat de Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "Verificați utilizarea bateriei dispozitivului",
-            "description": "<div class='faqInFs4Fb'>    Verificați utilizarea bateriei dispozitivului</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 include un nou ecran „<strong>Battery Use”</strong> care vă arată ce utilizează bateria laptopului. Aceasta înseamnă că vă va spune exact ce aplicații (atât desktop, cât și aplicații „universale” Windows 10) utilizează prea multă energie.</p><h3 class='faqInFs25FbP10'>Mărci afectate</h3><ul>    <li>Laptopuri, desktopuri Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sisteme afectate</h3><ul>    <li>Toate</li></ul><h3 class='faqInFs25FbP10'>Sistem de operare</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Soluție</h3><p>Această caracteristică este nouă în Windows 10. Întâi trebuie să găsim caracteristica, deoarece nu se află în vizualizarea tradițională <strong>Control Panel, </strong>ci în noua aplicație <strong>„Settings”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Găsiți ecranul Battery Use</h3></p><p>1. Dați clic pe sau atingeți opțiunea <strong>„Settings</strong>” din meniul Start</p><p>2. În <strong>Settings </strong> selectați <strong>„System”</strong>și apoi selectați <strong>„Battery saver.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Dați clic pe sau atingeți linkul <strong>„Battery use”</strong> de sub acest titlu pentru a vedea mai multe detalii. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizați utilizarea energiei</h3><p>4 Puteți modifica ecranul Battery Use pentru a afișa utilizarea bateriei din ultimele 24 de ore în ultimele 48 de ore sau ultima săptămână</p><p>5 Procentaje <strong>„System,”</strong> „<strong>Display,</strong>” și „ <strong>Wi-Fi”</strong>. Acestea arată cât de multă energie a bateriei a fost utilizată de procesele de sistem, de afișaj,</p><p>6 Opțiunile <strong>„In use”</strong> și <strong>„Background”</strong> arată cât de multă energie este utilizată de aplicații în timp ce le folosiți, în comparație cu aplicațiile care rulează în fundal.</p><p>7 Dacă aplicațiile utilizează energie în fundal, să dați clic pe sau să atingeți linkul <strong> „Change background app settings” </strong>și să configurați aplicațiile să nu mai ruleze în fundal. Aceasta funcționează doar pentru aplicațiile universale Windows 10.</p><p>8 Derulați mai jos și veți vedea o listă de aplicații. Aceasta este considerată cea mai utilă secțiune a caracteristicii. Aici sunt afișate aplicațiile care au utilizat energia bateriei în acea perioadă și vă arată ce procentaj din energia bateriei a fost utilizat de fiecare aplicație</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Verificați utilizarea bateriei dispozitivului</div><hr><h3 class='faqInFs25FbP10'>Simptom</h3><p>Windows 10 include un nou ecran „<strong>Battery Use”</strong> care vă arată ce utilizează bateria laptopului. Aceasta înseamnă că vă va spune exact ce aplicații (atât desktop, cât și aplicații „universale” Windows 10) utilizează prea multă energie.</p><h3 class='faqInFs25FbP10'>Mărci afectate</h3><ul>    <li>Laptopuri, desktopuri Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sisteme afectate</h3><ul>    <li>Toate</li></ul><h3 class='faqInFs25FbP10'>Sistem de operare</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Soluție</h3><p>Această caracteristică este nouă în Windows 10. Întâi trebuie să găsim caracteristica, deoarece nu se află în vizualizarea tradițională <strong>Control Panel, </strong>ci în noua aplicație <strong>„Settings”</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Găsiți ecranul Battery Use</h3></p><p>1. Dați clic pe sau atingeți opțiunea <strong>„Settings</strong>” din meniul Start</p><p>2. În <strong>Settings </strong> selectați <strong>„System”</strong>și apoi selectați <strong>„Battery saver.”<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Dați clic pe sau atingeți linkul <strong>„Battery use”</strong> de sub acest titlu pentru a vedea mai multe detalii. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizați utilizarea energiei</h3><p>4 Puteți modifica ecranul Battery Use pentru a afișa utilizarea bateriei din ultimele 24 de ore în ultimele 48 de ore sau ultima săptămână</p><p>5 Procentaje <strong>„System,”</strong> „<strong>Display,</strong>” și „ <strong>Wi-Fi”</strong>. Acestea arată cât de multă energie a bateriei a fost utilizată de procesele de sistem, de afișaj,</p><p>6 Opțiunile <strong>„In use”</strong> și <strong>„Background”</strong> arată cât de multă energie este utilizată de aplicații în timp ce le folosiți, în comparație cu aplicațiile care rulează în fundal.</p><p>7 Dacă aplicațiile utilizează energie în fundal, să dați clic pe sau să atingeți linkul <strong> „Change background app settings” </strong>și să configurați aplicațiile să nu mai ruleze în fundal. Aceasta funcționează doar pentru aplicațiile universale Windows 10.</p><p>8 Derulați mai jos și veți vedea o listă de aplicații. Aceasta este considerată cea mai utilă secțiune a caracteristicii. Aici sunt afișate aplicațiile care au utilizat energia bateriei în acea perioadă și vă arată ce procentaj din energia bateriei a fost utilizat de fiecare aplicație</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "Folosiți PC-ul ca o tabletă",
-            "description": "<div class='faqInFs4Fb'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 class='faqInFs25FbP10'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 class='faqInFs25FbP10'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 class='faqInFs25FbP10'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Folosiți PC-ul ca o tabletă</div><hr><p>Modul Tabletă face sistemul Windows mai intuitiv și mai ușor de folosit dacă aveți un dispozitiv cu touchscreen.</p><h3 class='faqInFs25FbP10'>modul Tabletă</h3><p>Pentru a activa modul Tabletă, selectați <strong>action center</strong> din bara de activități, apoi selectați <strong>Tablet mode</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Notă</h3><p>Pentru a afla dacă dispozitivul dvs. poate activa automat modul Tabletă, căutați dispozitivul pe site-ul web al producătorului. Compatibilitatea cu această caracteristică depinde de hardware, de driverul instalat și de modul în care dispozitivul a fost configurat de producător. </p><p> </p><p>În modul Tabletă, aplicațiile se deschid în modul ecran complet, oferindu-vă mai mult spațiu de lucru. Pentru a închide o aplicație, trageți-o în partea de jos a ecranului.</p><p> </p><h3 class='faqInFs25FbP10'>Sfat</h3><p>Bara de activități este disponibilă când computerul este în modul Tabletă, dar o puteți ascunde dacă doriți mai mult spațiu pe ecran. Selectați butonul <strong>Start, </strong>selectați <strong>Settings </strong>> <strong>System </strong>> <strong> Tablet mode, </strong>apoi activați <strong>Automatically hide the taskbar in tablet mode</strong>. Pentru a vedea bara de activități ascunsă, glisați în sus de la marginea de jos a ecranului sau plasați mouse-ul în acea zonă.</p><h3 class='faqInFs25FbP10'>Utilizați simultan două aplicații</h3><p>Pentru a utiliza două aplicații una lângă alta, trageți o aplicație deschisă în joi, iar apoi în lateral. Veți vedea unde se va alinia și veți vedea celelalte aplicații deschise lângă aceasta.</p><p>În această vizualizare, puteți și să:</p><ul>    <li>Utilizați marginea partajată dintre două aplicații aliniate pentru a redimensiona ambele aplicații simultan.</li>    <li>Deschideți o nouă aplicație din Task view &mdash; selectați <strong>Task view</strong> din bara de activități, selectați o aplicație, apoi trageți-o în lateral pentru a o alinia în ecranul divizat.</li>    <li>Utilizați butonul înapoi de pe bara de activități pentru a vă întoarce într-o aplicație sau pentru a deschide o aplicație pe care ați utilizat-o înainte.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2637,6 +2652,7 @@
         "professional": "Utilizare la nivel profesionist",
         "privacytitle": "Ajutați-ne să îmbunătățim calitatea aplicației permițând colectarea anonimă a statisticilor de utilizare.",
         "moreInterest": "+ mai multe interese",
+        "toolbartitle": "Activaţi bara de instrumente Lenovo Vantage (recomandat)",
         "title1": "Bun venit la",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "Acțiuni declanșate",
         "actionTriggeredDescription": "Mesaje declanșate de setările alese de utilizator, precum instalarea automată a actualizărilor critice/recomandate.",
         "OtherSettings": "Alte setări",
-        "usageStatistics": "Statistici utilizare",
-        "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
-        "deviceStatistics": "Partajare date statistice cu Lenovo",
-        "deviceStatisticsDescription": "Partajează cu Lenovo datele statistice pentru a ajuta la îmbunătăţirea fiabilităţii, designului şi optimizării funcţiilor de pe computer.",
+        "usageStatistics": "Statistici utilizare Vantage",
+        "usageStatisticsDescription": "Trimiteți statistici anonime de utilizare pentru a ne ajuta să îmbunătățim Vantage.",
+        "deviceStatistics": "Statistici privind dispozitivele Lenovo",
+        "deviceStatisticsDescription": "Trimiteți date anonime ale dispozitivului pentru a ne ajuta să îmbunătățim calitatea, fiabilitatea și următoarea generație de dispozitive.",
         "userProfile": "Profil utilizator",
         "Note": "Notă: ",
         "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornirea aplicației.",
@@ -2806,7 +2822,7 @@
                 "yes": "Da",
                 "no": "Nu"
             },
-            "waitAvailability": "Butonul este dezactivat atunci când informaţiile hardware nu au fost încă preluate, dacă dispozitivele de stocare nu acceptă această funcţionalitate sau atunci când se execută recuperarea sectoarelor defecte."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Descărcare instrumente profesionale de diagnosticare",
@@ -2843,7 +2859,7 @@
             "storage": "Stocare",
             "wireless": "Fără fir"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
-                "networkError": "Eroare de rețea.",
-                "installationCancelled": "Instalare anulată."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Rambursare Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Instalare",
-                "installing": "Instalare în curs",
-                "downloading": "Descărcare în curs",
-                "installed": "Instalat",
-                "launch": "Lansare",
-                "seeMore": "Vedeţi mai multe"
-            },
-            "fieldName": {
-                "description": "Descriere",
-                "screenshots": "Capturi de ecran",
-                "additionalInformation": "Informaţii suplimentare",
-                "by": "De:",
-                "updated": "Actualizată:",
-                "type": "Tip:",
-                "category": "Categorie:",
-                "legalAgreement": "Acord juridic",
-                "readMore": "Citiţi mai mult",
-                "readLess": "Citiţi maI puţin"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Acum puteţi afla dacă informaţiile dvs. private au fost încălcate sau utilizate de trackerele online, fără să ştiţi.",
+            "security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
+            "connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Instalare nereuşită. Încercaţi din nou.",
+                "networkError": "Eroare de rețea.",
+                "installationCancelled": "Instalare anulată."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Rambursare Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Instalare",
+                "installing": "Instalare în curs",
+                "downloading": "Descărcare în curs",
+                "installed": "Instalat",
+                "launch": "Lansare",
+                "seeMore": "Vedeţi mai multe"
+            },
+            "fieldName": {
+                "description": "Descriere",
+                "screenshots": "Capturi de ecran",
+                "additionalInformation": "Informaţii suplimentare",
+                "by": "De:",
+                "updated": "Actualizată:",
+                "type": "Tip:",
+                "category": "Categorie:",
+                "legalAgreement": "Acord juridic",
+                "readMore": "Citiţi mai mult",
+                "readLess": "Citiţi maI puţin"
+            }
+        }
+    }
 }

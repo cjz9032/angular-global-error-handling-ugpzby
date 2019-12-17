@@ -107,7 +107,8 @@
                     "sub1": "支援",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "已註冊",
             "notRegistered": "未註冊",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隱私權政策</tag>和<tag>服務條款</tag>"
         },
         "qAndA": {
             "title": "您機器的問答",
-            "subtitle": "為您的設備找到一些有用的提示。",
+            "subtitle": "尋找您裝置適用的實用提示。",
             "question1": "備份及還原檔案",
             "question2": "如何重新整理電腦",
             "question3": "如何知道電腦的 CPU",
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "查看詳細資料",
                 "gaugeResetWarning": "<b>注意：</b>電池計量器重設正在進行中。請讓 AC 電源整流器保持連接。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>未偵測到主要電池。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "滑桿在中央或中間靠右。風扇速度和效能能以動態方式平衡，以達最佳體驗。",
                             "title3": "效能模式",
                             "desc3": "滑桿在最右邊。風扇速度和允許的表面溫度可以提高，以達最佳效能。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "這個功能會排程您的電腦以便在閒置時達到最佳的電池省電效能，在工作負荷較重時仍可快速開機。",
-                    "subTitle2": "設定您一般使用這部電腦的時間"
+                    "subTitle2": "設定您一般使用這部電腦的時間",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "顯示",
+					"displayColorTemperature": {
+						"title": "顯示器色溫",
+						"description": "您可以調整顯示器的色溫，以濾除藍光並減輕眼睛疲勞。在日落到日出期間，將顯示器調整為暖色，以幫助您入睡。",
+						"link": {
+							"click": "按一下",
+							"here": "這裡",
+							"rest": "以變更色溫。"
+						}
+					},
                     "eyeCareMode": {
                         "title": "護眼模式",
                         "checkbox": "安排從日落到日出的護眼模式",
@@ -1514,7 +1526,8 @@
                     "more": "其他資訊",
                     "control1": "觸控板控制項",
                     "control2": "滑鼠控制項",
-                    "control3": "TRACKPOINT 控制項"
+                    "control3": "TRACKPOINT 控制項",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "智慧型媒體",
                 "title": "視訊解析度提升",
                 "desc": "<p><label>此功能可提升視訊解析度，進而強化視訊播放的體驗，特別適合視訊解析度不佳時。</label></p> <p style='margin-top:4px;'><label> 此功能可能會影響電池續航力、電池溫度，並造成噪音。啟用時，建議您使用 AC 電源連接電腦。</label></p>",
-                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player <br/> 暴風影音 <br/> 迅雷影音",
+                "tooltip": "此功能僅適用於下列播放程式：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "電腦未連接到 AC 電源且電池電量低於 20％。",
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "安心保障",
                 "subtitleDescribe": "如果連線家庭安全性偵測到裝置或家庭網路有漏洞，或是如果您連線至潛在的惡意網路，將會向您傳送警示。<tag>這裡</tag>還可進一步瞭解連線家庭安全性。",
                 "tryNow": "立即試用",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "輸入邀請代碼",
@@ -2167,8 +2184,7 @@
             "getStarted1": "按一下上方的「開啟 SurfEasy」按鈕以啟動 SurfEasy VPN。",
             "getStarted2": "開啟 VPN 並稍待片刻，確認連線的安全。",
             "getStarted3": "如有需要，請變更您的區域或位置，並享有安全的私人網路。",
-            "poweredBySurfEasy": "搭載 SurfEasy",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredBySurfEasy": "搭載 SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密碼管理程式",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "監視暗網以保護您的個人資訊",
             "allowsYou3": "透過內建 VPN，在不安全的 WiFi 網路上保持安全",
             "allowsYou4": "在不顯示密碼的情況下安全地共用密碼",
-            "poweredByDashLane": "搭載 Dashlane",
-            "privacyPolicyAndTermsOfService": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>"
+            "poweredByDashLane": "搭載 Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "檢查電腦的電池使用情況",
-            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5 <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6 <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    檢查電腦的電池使用情況</div><hr><h3 class='faqInFs25FbP10'>問題狀況</h3><p>Windows 10 包含一個全新的<strong>電池使用情況</strong>螢幕，其中顯示筆記型電腦電量使用情況。從這裡可以明確知道，包括桌上型電腦和 Windows 10「通用」應用程式，哪種應用程式耗用最多電力。</p><h3 class='faqInFs25FbP10'>受影響的品牌</h3><ul>    <li>Lenovo 筆記型電腦、桌上型電腦</li></ul><h3 class='faqInFs25FbP10'>受影響的系統</h3><ul>    <li>所有</li></ul><h3 class='faqInFs25FbP10'>作業系統</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解決方案</h3><p>這是 Windows 10 首度推出的新功能，我們需要先找出此功能，因為這個功能並未儲存在傳統<strong>控制面板</strong>檢視中，而是儲存在全新的<strong>設定</strong>應用程式中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. 找出電池使用情況螢幕</h3></p><p>1.從開始功能表按一下或輕點<strong>設定</strong>選項</p><p>2.在<strong>設定</strong>中，選取<strong>「系統」</strong>，然後選取<strong>「省電功能」。<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3.在這個標題下，按一下或輕按<strong>「電池使用情況」</strong>連結以查看詳細資料。</p><p> </p><h3 class='faqInFs25FbP10'>B. 分析電源使用</h3><p>4 電池使用情況螢幕可以變更成顯示從過去 24 小時到過去 48 小時、或從上週開始的電池使用情況</p><p>5 <strong>「系統」</strong>、<strong>「顯示器」</strong>和 <strong>「Wi-Fi」</strong>百分比。這會顯示系統作業，也就是顯示器，使用了多少電池電量；</p><p>6 <strong>「正在使用」</strong>和<strong>「背景」</strong>選項顯示正在使用與背景中的應用程式使用多少電力的比較。</p><p>7 如果應用程式在背景中使用電力，則您可以按一下或輕點<strong>「變更背景應用程式設定」</strong>連接，並將應用程式設定成不在背景執行。這個設定僅適用通用 Windows 10 應用程式。</p><p>8 繼續向下捲動，您將看到一個應用程式清單，而這堪稱此項功能最有用的部分。它將顯示列出該時段內使用電池電量的應用程式清單，並且列出每個應用程式所使用電池電量的百分比</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "將電腦當作平板電腦使用",
-            "description": "<div class='faqInFs4Fb'>    將電腦當作平板電腦使用</div><hr><p>平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。</p><h3 class='faqInFs25FbP10'>使用平板電腦模式</h3><p>若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>備注</h3><p>若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 </p><p> </p><p>在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>要訣</h3><p>當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。</p><h3 class='faqInFs25FbP10'>同時使用兩個應用程式</h3><p>若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。</p><p>在這個檢視中，您也可以：</p><ul>    <li>使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。</li>    <li>從任務檢視中開啟新的應用程式&mdash;在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。</li>    <li>使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    將電腦當作平板電腦使用</div><hr><p>平板電腦模式讓 Windows 搭配觸控螢幕裝置使用時，更加直覺又輕鬆。</p><h3 class='faqInFs25FbP10'>使用平板電腦模式</h3><p>若要開啟平板電腦模式、請在工作列上選取<strong>動作中心</strong>，然後選取<strong>平板電腦模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>備注</h3><p>若要了解您的裝置是否可以自動啟用平板電腦模式，請在製造商網站上搜尋您的裝置。這項功能的支援會依硬體、所安裝的驅動程式和製造商對於裝置的設定方式而有差異。 </p><p> </p><p>在平板電腦模式下，應用程式會開啟全螢幕，提供更多的工作空間。若要關閉應用程式，請將其拖曳到螢幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>要訣</h3><p>當電腦處於平板電腦模式時，工作列將會出現，但可在想要更多螢幕空間時將其隱藏起來。選取<strong>開始 </strong>按鈕，接著依序選取<strong>設定 </strong>> <strong>系統 </strong>> <strong> 平板電腦模式</strong>，然後啟動<strong>在平板電腦模式中自動隱藏工作列</strong>。若要查看隱藏的工作列，請從螢幕底部向上滑動，或使用滑鼠移至該處。</p><h3 class='faqInFs25FbP10'>同時使用兩個應用程式</h3><p>若要在平板電腦模式下並排使用兩個應用程式，請將開啟的應用程式往下拖動到側面。您會看到兩個應用程式貼齊到一處，而且旁邊會有任何開啟的應用程式。</p><p>在這個檢視中，您也可以：</p><ul>    <li>使用位於兩個貼齊應用程式之間的共用邊緣，同時重新調整兩個應用程式的大小。</li>    <li>從任務檢視中開啟新的應用程式&mdash;在工作列上選取<strong>工作檢視</strong>，然後選取一個應用程式，接著將其拖到一側，以便將它貼齊到分隔的螢幕。</li>    <li>使用工作列上的返回按鈕來返回應用程式，或者開啟先前使用的應用程式。</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2637,6 +2652,7 @@
         "professional": "專業使用",
         "privacytitle": "透過允許匿名收集使用方式統計資料,協助我們改善應用程式的品質。",
         "moreInterest": "+ 更多興趣",
+        "toolbartitle": "啟用 Lenovo Vantage 工具列（建議）",
         "title1": "歡迎使用",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "引發的動作",
         "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
         "OtherSettings": "其他設定",
-        "usageStatistics": "使用情形統計資料",
-        "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
-        "deviceStatistics": "與 Lenovo 分享統計資料",
-        "deviceStatisticsDescription": "與 Lenovo 共用統計資料,協助我們提升您電腦功能的可靠性、設計和最佳化。",
+        "usageStatistics": "Vantage 使用情形統計資料",
+        "usageStatisticsDescription": "傳送匿名使用方式統計資料，以協助我們改善 Vantage。",
+        "deviceStatistics": "Lenovo 裝置統計資料",
+        "deviceStatisticsDescription": "傳送匿名裝置資料，以協助我們提升品質、可靠性和新一代的裝置。",
         "userProfile": "使用者設定檔",
         "Note": "附註：",
         "settingsNotes": "使用者必須重新啟動此應用程式,此頁面中的所有設定才可生效。",
@@ -2806,7 +2822,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果儲存裝置不支援此功能或回復錯誤磁區正在運作中，在尚未擷取硬體資訊時，此按鈕會停用。"
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "下載專業診斷工具",
@@ -2843,7 +2859,7 @@
             "storage": "儲存裝置",
             "wireless": "無線"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安裝失敗。請再試一次。",
-                "networkError": "網路錯誤。",
-                "installationCancelled": "安裝作業已取消。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兌換",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安裝",
-                "installing": "安裝",
-                "downloading": "下載",
-                "installed": "已安裝",
-                "launch": "啟動",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "說明",
-                "screenshots": "螢幕擷取畫面",
-                "additionalInformation": "其他資訊",
-                "by": "提供者：",
-                "updated": "更新時間：",
-                "type": "類型：",
-                "category": "類別：",
-                "legalAgreement": "法律協議",
-                "readMore": "較多內容",
-                "readLess": "較少內容"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "現在您可以查明您的私人資訊是否已外洩，或在您不知情的情況下被線上追蹤器所使用。",
+            "security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
+            "connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安裝失敗。請再試一次。",
+                "networkError": "網路錯誤。",
+                "installationCancelled": "安裝作業已取消。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兌換",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安裝",
+                "installing": "安裝",
+                "downloading": "下載",
+                "installed": "已安裝",
+                "launch": "啟動",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "說明",
+                "screenshots": "螢幕擷取畫面",
+                "additionalInformation": "其他資訊",
+                "by": "提供者：",
+                "updated": "更新時間：",
+                "type": "類型：",
+                "category": "類別：",
+                "legalAgreement": "法律協議",
+                "readMore": "較多內容",
+                "readLess": "較少內容"
+            }
+        }
+    }
 }

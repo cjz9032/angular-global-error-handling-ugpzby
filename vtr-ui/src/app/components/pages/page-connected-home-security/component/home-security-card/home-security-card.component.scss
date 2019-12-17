@@ -12,27 +12,26 @@
 		.container-fluid {
 			padding: 2rem;
 			.title {
-				height: 8rem;
 				color: $shade_blue;
 				font-size: 2rem;
 				font-weight: $weight_bold;
-				line-height: 3rem;
-				padding-bottom: 2rem;
 			}
 
 			.description {
 				color: $shade_blue;
 				font-size: 1.6rem;
 				font-weight: 400;
-				height: 10rem;
-				margin-top: 0.5rem;
 				overflow: hidden;
+				margin-bottom: 4rem;
 			}
 
 			vtr-ui-button{
 				display: inline-block;
 			}
 		}
+	}
+	.button-box {
+		bottom: 2rem;
 	}
 
 	@media #{$medium-screen} {

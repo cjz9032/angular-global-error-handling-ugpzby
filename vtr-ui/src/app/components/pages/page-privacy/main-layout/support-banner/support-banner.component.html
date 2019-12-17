@@ -1,0 +1,17 @@
+<div class="support-banner" data-analyticsName="Home.GotQuestionsBlock">
+    <div class="support-banner__col">
+        <h3 class="support-banner__title">Got questions?</h3>
+        <p class="support-banner__text">We’re standing by, whenever you need help.</p>
+    </div>
+    <div class="support-banner__col">
+        <button class="support-banner__button"
+                vtrSendAnalytics
+                [metricsEvent]="'ItemClick'"
+                [metricsItem]="'ContactSupportButton'"
+				vtrOfflineMode
+                (click)="openPopup('support-popup')">
+			CONTACT SUPPORT
+        </button>
+    </div>
+</div>
+<vtr-support-popup></vtr-support-popup>
