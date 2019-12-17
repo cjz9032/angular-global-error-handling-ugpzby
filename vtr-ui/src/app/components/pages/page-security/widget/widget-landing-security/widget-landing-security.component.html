@@ -10,17 +10,24 @@
                 </div>
                 <p>{{item.content}}</p>
                 <vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
+                    [metricsItem]="item.id"
                     [routerPath]="item.buttonLink" [ngClass]="{'white-button':item.status === 'enabled'}">
                 </vtr-ui-button>
                 <vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
+                    [metricsItem]="item.id"
                     [ngClass]="{'white-button':item.status === 'enabled'}">
                 </vtr-ui-button>
                 <vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
+                    [metricsItem]="item.id"
                     [ngClass]="{'white-button':item.status === 'enabled'}"
                     (onClick)="item.launch()">
                 </vtr-ui-button>
                 <div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="customCheck-{{item.id}}"
+                        vtrMetrics
+                        [metricsEvent]="'featureClick'"
+						[metricsParent]="'security'"
+						[metricsItem]="(item.showOwn ? 'haveOwn' :'notHaveOwn') + ':' +item.id"
                         [checked]="item.showOwn" attr.aria-label="defaultUnchecked" (change)="haveOwn(item.showOwn, item.id)">
                     <label class="custom-control-label" for="customCheck-{{item.id}}">
                         {{item.ownTitle}}

@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "显示",
-					"displayColorTemperature": {
-						"title": "显示色温",
-						"description": "您可以调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
-						"link": {
-							"click": "单击",
-							"here": "此处",
-							"rest": "以更改色温。"
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "显示色温",
+                        "description": "您可以调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
+                        "link": {
+                            "click": "单击",
+                            "here": "此处",
+                            "rest": "以更改色温。"
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "护眼模式",
                         "checkbox": "设定从日落到日出的护眼模式",
@@ -1342,7 +1342,9 @@
                             "minutes": "分钟",
                             "alwaysOn": "始终开启",
                             "never": "永不",
-                            "halfTime": "显示屏关闭计时器的一半时间"
+                            "halfTime": "显示屏关闭计时器的一半时间",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "任务栏调光器",
                         "backgroundDimmer": "背景调光器",

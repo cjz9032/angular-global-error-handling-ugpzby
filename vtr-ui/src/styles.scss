@@ -801,7 +801,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .feedback-modal {
 	.modal-dialog {
 		margin: 1.75rem auto;
-		width: 47.8rem;
+		width: 52rem;
+		max-width: 90%;
 	}
 
 	.modal-content {

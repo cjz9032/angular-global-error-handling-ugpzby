@@ -417,6 +417,8 @@ export class PageSmartAssistComponent
 
 			if (!this.intelligentSecurity.isIntelligentSecuritySupported) {
 				this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'security');
+				this.intelligentSecurity.isIntelligentSecuritySupported = false;
+
 			}
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SmartAssistCache, this.smartAssistCache);
@@ -604,6 +606,14 @@ export class PageSmartAssistComponent
 				this.getHPDLeaveSensitivityStatus();
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
+			if ( this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
+				this.smartAssist.resetFacialRecognitionStatus().then((res) =>{
+					if (this.smartAssist.isShellAvailable) {
+						this.getFacialRecognitionStatus();
+					}
+					console.log(`HPDReset - resetFacialRecognitionStatus ${res}`);
+				})
+			}
 	}
 
 	private getVideoPauseResumeStatus() {

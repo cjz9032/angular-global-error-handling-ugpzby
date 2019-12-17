@@ -84,7 +84,7 @@ ui-popover-apps {
 			padding: 3rem 4rem;
 			overflow-y: auto;
 			overflow-x: hidden;
-			max-height: 51vh;
+			max-height: 44vh;
 			touch-action: none;
 			@media #{$breakpoint_sm} {
 				padding: 2rem 1rem;
@@ -187,7 +187,7 @@ ui-popover-apps {
 			overflow-x: hidden;
 			touch-action: none;
 			height:55vh;
-			margin-top: 0rem;
+			margin-top: 2.5rem;
 			padding: 0 1.5rem;
 			.image-content{
 				height:44%;

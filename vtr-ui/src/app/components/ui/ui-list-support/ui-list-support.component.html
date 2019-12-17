@@ -1,7 +1,7 @@
 <div class="vtr-ui-list-support">
 	<ul class="support-list">
 		<li *ngFor="let item of items">
-			<button
+			<a role="link"
 				tabindex="100"
 				id="{{item.metricsItem}}"
 				attr.aria-label="{{item.title | translate}}"
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 				</div>
-			</button>
+			</a>
 		</li>
 	</ul>
 </div>

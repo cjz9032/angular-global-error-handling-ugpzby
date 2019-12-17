@@ -108,6 +108,10 @@ export class SmartAssistService {
 
 	}
 
+	public resetFacialRecognitionStatus(): Promise<boolean> {
+		return this.intelligentSensing.resetFacialRecognitionStatus();
+	}
+
 	public getZeroTouchLoginVisibility(): Promise<boolean> {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDApproachCapability();
