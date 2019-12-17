@@ -21,7 +21,7 @@ export class FingerPrintLandingViewModel {
 		buttonLabel: 'security.landing.visitFingerprint',
 		buttonHref: 'ms-settings:signinoptions',
 		noneCheck: true,
-		id: 'sa-ov-link-windowsHello',
+		id: 'sa-ov-btn-fingerPrint',
 		detail: '',
 	};
 	translateString: any;
