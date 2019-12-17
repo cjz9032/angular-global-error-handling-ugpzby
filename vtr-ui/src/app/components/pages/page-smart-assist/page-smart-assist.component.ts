@@ -606,6 +606,14 @@ export class PageSmartAssistComponent
 				this.getHPDLeaveSensitivityStatus();
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
+			if ( this.intelligentSecurity.isZeroTouchLockFacialRecoVisible) {
+				this.smartAssist.resetFacialRecognitionStatus().then((res) =>{
+					if (this.smartAssist.isShellAvailable) {
+						this.getFacialRecognitionStatus();
+					}
+					console.log(`HPDReset - resetFacialRecognitionStatus ${res}`);
+				})
+			}
 	}
 
 	private getVideoPauseResumeStatus() {
