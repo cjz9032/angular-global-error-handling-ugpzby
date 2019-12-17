@@ -511,36 +511,47 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 					const assistCapability: SmartAssistCapability = new SmartAssistCapability();
 					// HPD and Intelligent Screen capability check
 					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: HPD and Intelligent Screen capability check');
 						assistCapability.isIntelligentSecuritySupported = await this.smartAssist.getHPDVisibility();
 						assistCapability.isIntelligentScreenSupported = await this.smartAssist.getIntelligentScreenVisibility();
+						this.logger.info('MenuMainComponent.showSmartAssist: HPD and Intelligent Screen capability check completed');
 					} catch (error) {
 						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getHPDVisibility check', error);
 					}
-					// lenovo voice  capability check
+					// lenovo voice capability check
 					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: lenovo voice capability check');
 						assistCapability.isLenovoVoiceSupported = await this.smartAssist.isLenovoVoiceAvailable();
+						this.logger.info('MenuMainComponent.showSmartAssist: lenovo voice capability check completed');
+
 					} catch (error) {
 						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.isLenovoVoiceAvailable check', error);
 					}
 					// video pause capability check
 					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: video pause capability check');
 						assistCapability.isIntelligentMediaSupported = await this.smartAssist.getVideoPauseResumeStatus(); // returns object
+						this.logger.info('MenuMainComponent.showSmartAssist: video pause capability check completed');
+
 					} catch (error) {
 						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getVideoPauseResumeStatus check', error);
 					}
-					// super resolution  capability check
+					// super resolution capability check
 					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check');
 						assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+						this.logger.info('MenuMainComponent.showSmartAssist: super resolution capability check completed');
 					} catch (error) {
 						this.logger.exception('MenuMainComponent.showSmartAssist smartAssist.getSuperResolutionStatus check', error);
 					}
 
 					// APS capability check
 					try {
+						this.logger.info('MenuMainComponent.showSmartAssist: APS capability check');
 						assistCapability.isAPSCapable = await this.smartAssist.getAPSCapability();
 						assistCapability.isAPSSensorSupported = await this.smartAssist.getSensorStatus();
 						assistCapability.isAPSHDDStatus = await this.smartAssist.getHDDStatus();
-						assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0;
+						assistCapability.isAPSSupported = assistCapability.isAPSCapable && assistCapability.isAPSSensorSupported && assistCapability.isAPSHDDStatus > 0; this.logger.info('MenuMainComponent.showSmartAssist: APS capability check completed');
 					} catch (error) {
 						this.logger.exception('MenuMainComponent.showSmartAssist APS capability check', error);
 					}
