@@ -250,7 +250,8 @@
 						class="card-image"
 						[class.default-cursor]="isOfflineArm"
 						[style.background-image]="'url(' + img + ')'"
-						[style.height.px]="containerCardHighlight.clientWidth * ratio">
+						[style.height.px]="containerCardHighlight.clientWidth * ratio"
+						style="background-color: #2f3447;">
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
 								[title]="title | htmlText"

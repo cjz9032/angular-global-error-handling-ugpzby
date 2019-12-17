@@ -92,7 +92,7 @@ describe('BatteryCardComponent', () => {
 
 	const thresholdNotification: AppNotification = {
 		type: ChargeThresholdInformation.ChargeThresholdInfo,
-		payload: { isOn: true, stopValue1: 75, stopValue2: undefined }
+		payload: true
 	};
 
 	const airplaneModeNotification: AppNotification = {
@@ -181,14 +181,10 @@ describe('BatteryCardComponent', () => {
 
 		it('#onNotification should show threshold warning note and call sendThresholdWarning', () => {
 			const { fixture, component } = setup();
-			spyOn(component, 'sendThresholdWarning');
 			fixture.detectChanges();
 			const notification = thresholdNotification;
 			component.onNotification(notification);
-			expect(component.chargeThresholdInfo).toEqual(notification.payload);
-			// TODO
-			// expect(component.param1).toEqual({ value: component.chargeThresholdInfo.stopValue1 });
-			expect(component.sendThresholdWarning).toHaveBeenCalled();
+			expect(component.batteryIndicator.isChargeThresholdOn).toEqual(notification.payload);
 		});
 
 		it('#onNotification should show Airplane mode Icon inside battery', () => {
@@ -213,13 +209,12 @@ describe('BatteryCardComponent', () => {
 			expect(component.batteryInfo[0].batteryCondition).toEqual(['Normal']);
 		});
 
-		it('#updateBatteryDetails should call initBatteryInformation, initialize batteryIndicator, send remaining percentages to threshold and call getBatteryCondition', () => {
+		it('#updateBatteryDetails should call initBatteryInformation, initialize batteryIndicator and call getBatteryCondition', () => {
 			const { fixture, component } = setup();
 			component.batteryGauge = info.batteryIndicatorInfo;
 			component.batteryInfo = info.batteryInformation;
 
 			spyOn(component, 'initBatteryInformation');
-			spyOn(component, 'sendThresholdWarning');
 			spyOn(component, 'getBatteryCondition');
 			spyOn(component, 'updateBatteryDetails').and.callThrough();
 			fixture.detectChanges();
@@ -229,7 +224,6 @@ describe('BatteryCardComponent', () => {
 			expect(component.initBatteryInformation).toHaveBeenCalled();
 
 			expect(component.remainingPercentages).toEqual([component.batteryInfo[0].remainingPercent]);
-			expect(component.sendThresholdWarning).toHaveBeenCalled();
 			expect(component.batteryHealth).toEqual(component.batteryInfo[0].batteryHealth);
 			expect(component.batteryIndicator.batteryNotDetected).toBeFalsy();
 			expect(component.batteryIndicator.percent).toEqual(component.batteryGauge.percentage);
@@ -240,25 +234,6 @@ describe('BatteryCardComponent', () => {
 			expect(component.getBatteryCondition).toHaveBeenCalled();
 		});
 
-		it('#sendThresholdWarning should call commonService sendNotification with false', () => {
-			const { fixture, component, commonService } = setup();
-			component.remainingPercentages = [65];
-			component.chargeThresholdInfo = thresholdNotification.payload;
-			spyOn(commonService, 'sendNotification');
-			fixture.detectChanges();
-			component.sendThresholdWarning();
-			expect(commonService.sendNotification).toHaveBeenCalledWith('ThresholdWarningNote', false);
-		});
-
-		it('#sendThresholdWarning should call commonService sendNotification with true', () => {
-			const { fixture, component, commonService } = setup();
-			component.remainingPercentages = [85];
-			component.chargeThresholdInfo = thresholdNotification.payload;
-			spyOn(commonService, 'sendNotification');
-			fixture.detectChanges();
-			component.sendThresholdWarning();
-			expect(commonService.sendNotification).toHaveBeenCalledWith('ThresholdWarningNote', true);
-		});
 
 		it('#showDetailModal should call modalService open method', () => {
 			const { fixture, component, modalService } = setup();
