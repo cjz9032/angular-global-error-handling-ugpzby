@@ -92,7 +92,7 @@ export class AntiVirusLandingViewModel {
 			this.currentPage = 'others';
 			this.setAntivirusStatus(
 				antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : null,
-				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : null,
+				antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus,
 				this.currentPage
 			);
 		} else {
@@ -123,7 +123,6 @@ export class AntiVirusLandingViewModel {
 		} else if (typeof fw !== 'boolean' && typeof av === 'boolean') {
 			this.avStatus.status = av ? 'enabled' : 'disabled';
 			this.avStatus.detail = this.translateString[`common.securityAdvisor.${av ? 'enabled' : 'disabled'}`];
-			this.fwStatus.status = null;
 			if (currentPage === 'windows') {
 				this.fwStatus.status = 'loading';
 				this.fwStatus.detail = this.translateString['common.securityAdvisor.loading'];
@@ -131,14 +130,10 @@ export class AntiVirusLandingViewModel {
 		} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 			this.fwStatus.status = fw ? 'enabled' : 'disabled';
 			this.fwStatus.detail = this.translateString[`common.securityAdvisor.${fw ? 'enabled' : 'disabled'}`];
-			this.avStatus.status = null;
 			if (currentPage === 'windows') {
 				this.avStatus.status = 'loading';
 				this.avStatus.detail = this.translateString['common.securityAdvisor.loading'];
 			}
-		} else {
-			this.fwStatus.status = null;
-			this.avStatus.status = null;
 		}
 	}
 }
