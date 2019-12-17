@@ -47,7 +47,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public fnCtrlSwapCapability = false;
 	public fnCtrlSwapStatus = false;
 	public isRestartRequired = false;
-	voipAppName = ['Skype For Business', 'Microsoft Teams'];
+	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
 	iconName: string[] = ['icon-s4b', 'icon-teams'];
 
 	public inputAccessoriesCapability: InputAccessoriesCapability;
