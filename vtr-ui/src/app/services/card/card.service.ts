@@ -3,6 +3,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalDccDetailComponent } from 'src/app/components/modal/modal-dcc-detail/modal-dcc-detail.component';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,6 +12,7 @@ export class CardService {
 
 	constructor(
 		private modalService: NgbModal,
+		private appsForYouService: AppsForYouService
 	) { }
 
 	linkClicked(actionType: string, actionLink: string, isOfflineArm?: boolean) {
@@ -28,7 +30,8 @@ export class CardService {
 		if (isProtocol) {
 			WinRT.launchUri(actionLink);
 		} else if (isDccDemo) {
-			this.openDccDemoModal();
+			this.appsForYouService.updateUnreadMessageCount('menu-main-lnk-open-dcc');
+			this.openDccDetailModal();
 		} else {
 			this.openArticleModal(actionLink);
 		}
@@ -54,7 +57,7 @@ export class CardService {
 		articleDetailModal.componentInstance.articleId = articleId;
 	}
 
-	openDccDemoModal() {
+	openDccDetailModal() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalDccDetailComponent, {
 			backdrop: true, /*'static',*/
 			size: 'lg',

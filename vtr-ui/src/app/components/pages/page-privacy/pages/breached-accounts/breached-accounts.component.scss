@@ -34,6 +34,10 @@
 
 	&__button {
 		@extend %theme-btn;
+
+		&--max-width {
+			min-width: 24rem;
+		}
 	}
 }
 
@@ -53,6 +57,7 @@
 	&__clear-data-wrapper {
 		width: 100%;
 		text-align: right;
+		margin-top: 2rem;
 		padding-top: 2rem;
 	}
 

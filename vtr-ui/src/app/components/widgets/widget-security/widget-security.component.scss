@@ -54,29 +54,13 @@
 			font-size: 1.4rem;
 		}
 	}
-	@media #{$breakpoint_md} {
-		.right-container {
-			padding: 1.5rem;
-			margin-top: 17rem;
-			min-height: 20rem;
-		}
-		.left-container {
-			left: 50%;
-			top: 0;
-			margin-left: -10rem;
-			.circle-box {
-				background: transparent;
-				width: 20rem;
-				height: 20rem;
-			}
-		}
-	}
 	@media #{$mediaquery_X45} {
 		.right-container {
 			flex: 0 0 100%;
 			max-width: 100%;
 			padding: 1.5rem;
-			margin-top: 17rem;
+			margin-top: 18rem;
+			min-height: auto;
 		}
 		.left-container {
 			left: 50%;
@@ -90,15 +74,31 @@
 		}
 	}
 
-    // vtr-ui-button {
-    //     ::ng-deep .vtr-ui-button {
-    //       .button-box .button {
-    //         min-height: 3.5rem;
-    //         font-size: 1.5rem;
-    //         font-weight: 600;
-    //       }
-    //     }
-    // }
+	@media #{$breakpoint_lg} {
+		.right-container {
+			padding: 1.5rem;
+			margin-top: 18rem;
+			min-height: auto;
+		}
+		.left-container {
+			left: 50%;
+			top: 0;
+			margin-left: -10rem;
+			.circle-box {
+				background: transparent;
+				width: 20rem;
+				height: 20rem;
+			}
+		}
+	}
+
+    vtr-ui-button {
+        ::ng-deep .vtr-ui-button {
+          .button-box .button {
+            width: 100%;
+          }
+        }
+    }
 
     .offline-icon {
       fa-icon {

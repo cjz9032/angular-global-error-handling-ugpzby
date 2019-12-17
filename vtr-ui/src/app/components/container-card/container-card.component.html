@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<a [class.default-cursor]="isOfflineArm"
-						[attr.href]="!actionLink ? null : actionLink"
+						[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(actionType, actionLink)"
 						vtrMetrics
 						id="{{containerCardId+'_doc_link'}}"
@@ -40,15 +40,13 @@
 								class="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"
-								#cornerTitle
-								[title]="cornerTitle.innerText"
+								[title]="title | htmlText"
 								[innerHTML]="title"></div>
 							<div *ngIf="caption"
 								class="caption"
 								id="{{containerCardId+'-caption'}}"
 								role="link"
-								#cornerCaption
-								[title]="cornerCaption.innerText"
+								[title]="caption | htmlText"
 								[innerHtml]="caption"></div>
 							<div *ngIf="logo || logoText"
 								class="logo">
@@ -75,7 +73,7 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<ng-container *ngIf="isOnline">
-						<a [attr.href]="!actionLink ? null : actionLink"
+						<a [attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 							(click)="linkClicked(actionType, actionLink)"
 							vtrMetrics
 							id="{{containerCardId+'_link'}}"
@@ -153,7 +151,7 @@
 					<a *ngIf="isOnline"
 						tabindex="0"
 						attr.aria-label="{{ title }} . {{ caption }}"
-						[attr.href]="!actionLink ? null : actionLink"
+						[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(actionType, actionLink)"
 						target="_blank"
 						rel="noopener"
@@ -169,15 +167,13 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
-								#cornerArticleTitle
-								[title]="cornerArticleTitle.innerText"
+								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div #cornerArticleCaption
-									[title]="cornerArticleCaption.innerText"
+								<div [title]="caption | htmlText"
 									[innerHtml]="caption"
 									id="{{containerCardId+'-caption'}}"
 									role="link"></div>
@@ -199,15 +195,13 @@
 						<div class="inner-content">
 							<div *ngIf="title"
 								class="title"
-								#cornerArticleTitle
-								[title]="cornerArticleTitle.innerText"
+								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"></div>
 							<div *ngIf="caption"
 								class="caption">
-								<div #cornerArticleCaption
-									[title]="cornerArticleCaption.innerText"
+								<div [title]="caption | htmlText"
 									[innerHtml]="caption"
 									id="{{containerCardId+'-caption'}}"
 									role="link"></div>
@@ -243,7 +237,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [attr.href]="!actionLink ? null : actionLink"
+					<a [attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 						(click)="linkClicked(actionType, actionLink)"
 						metricsItemCategory="highlight"
 						vtrMetrics
@@ -256,11 +250,11 @@
 						class="card-image"
 						[class.default-cursor]="isOfflineArm"
 						[style.background-image]="'url(' + img + ')'"
-						[style.height.px]="containerCardHighlight.clientWidth * ratio">
+						[style.height.px]="containerCardHighlight.clientWidth * ratio"
+						style="background-color: #2f3447;">
 						<div class="inner-content">
 							<div *ngIf="title && !isOfflineArm"
-								#highlightTitle
-								[title]="highlightTitle.innerText"
+								[title]="title | htmlText"
 								class="title"
 								id="{{containerCardId+'-title'}}"
 								role="link"
@@ -279,7 +273,7 @@
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
-				[attr.href]="!actionLink ? null : actionLink"
+				[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 				(click)="linkClicked(actionType, actionLink)"
 				metricsItemCategory="article"
 				vtrMetrics
@@ -306,8 +300,7 @@
 						<div class="col col-12 content">
 							<div *ngIf="title && !isOfflineArm"
 								class="title"
-								#articleTitle
-								[title]="articleTitle.innerText"
+								[title]="title | htmlText"
 								[innerHtml]="title"
 								id="{{containerCardId+'-title'}}"
 								[style.margin-top.px]="containerCardArticle.clientWidth * 13 / 436"
@@ -353,7 +346,7 @@
 					</div>
 					<div class="row">
 						<a *ngIf="isOnline"
-							[attr.href]="!actionLink ? null : actionLink"
+							[attr.href]="!actionLink ? null : (actionLink | sanitize : 'resourceUrl')"
 							target="_blank"
 							rel="noopener"
 							vtrMetrics
@@ -365,6 +358,7 @@
 							<div class="col col-12 content">
 								<div *ngIf="title"
 									class="title"
+									[title]="title | htmlText"
 									[innerHtml]="title"
 									id="{{containerCardId+'-title'}}"
 									role="link"></div>

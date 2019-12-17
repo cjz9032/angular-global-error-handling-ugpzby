@@ -12,7 +12,7 @@ export class BatteryDetailService {
 	remainingPercentages: number[] = [];
 	gaugeResetInfo: BatteryGaugeReset[];
 	isPowerDriverMissing: boolean;
-	isEmDriverInstalled: boolean;
+	isGaugeResetRunning: boolean;
 
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
@@ -46,14 +46,6 @@ export class BatteryDetailService {
 	public stopMonitor() {
 		if (this.isShellAvailable) {
 			this.battery.stopBatteryMonitor((response: boolean) => { });
-		}
-	}
-
-	checkIsGaugeResetRunning() {
-		if (this.gaugeResetInfo) {
-			return (this.gaugeResetInfo.length > 0 && this.gaugeResetInfo[0].isResetRunning) || (this.gaugeResetInfo.length > 1 && this.gaugeResetInfo[1].isResetRunning);
-		} else {
-			return false;
 		}
 	}
 }

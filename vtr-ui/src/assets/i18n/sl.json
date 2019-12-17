@@ -107,7 +107,8 @@
                     "sub1": "Podpora",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
         },
         "qAndA": {
             "title": "Vprašanja in odgovori za vaš računalnik",
-            "subtitle": "Poišči nekaj koristnih nasvetov za napravo.",
+            "subtitle": "Poiščite nekaj koristnih nasvetov za svojo napravo.",
             "question1": "Varnostno kopiranje in obnovitev datotek",
             "question2": "Osveževanje računalnika",
             "question3": "Ugotavljanje, kateri CPE ima računalnik",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Stanje sistema",
-            "subtitle": "HITRO PREVERITE STANJE SISTEMA.",
+            "subtitle": "Hitro preverite stanje naprave.",
             "memory": {
                 "title": "Pomnilnik",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "Prikaži podrobnosti",
                 "gaugeResetWarning": "<b>Opomba:</b> poteka ponastavitev merilnika baterije. Poskrbite, da bo napajalnik vseskozi priključen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Glavna baterija ni zaznana.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "Drsnik je na sredini ali desno od sredine. Hitrost ventilatorja in zmogljivost se dinamično uravnotežita za optimalno uporabniško izkušnjo.",
                             "title3": "Zmogljivi način",
                             "desc3": "Drsnik je skrajno desno. Hitrost ventilatorja in dopustna površinska temperatura sta višja za največjo učinkovitost delovanja."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "Ta funkcija določi časovni razpored, na podlagi katerega lahko računalnik optimizira prihranek energije baterije, ko je nedejaven, in zagotovi hiter zagon, ko je stalno v uporabi.",
-                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik"
+                    "subTitle2": "Nastavite uro, ko običajno uporabljate ta računalnik",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Prikaz",
+					"displayColorTemperature": {
+						"title": "Barvna temperatura zaslona",
+						"description": "Barvno temperaturo zaslona lahko prilagodite, tako da filtrirate modro svetlobo in zmanjšate utrujenost oči. Sistem prilagodi zaslon na toplejše barve med sončnim zahodom in sončnim vzhodom, da lažje zaspite.",
+						"link": {
+							"click": "Kliknite",
+							"here": "tukaj",
+							"rest": "da spremenite barvno temperaturo."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Očem prijazen način",
                         "checkbox": "Načrtujte očem prijazen način od sončnega zahoda do sončnega vzhoda",
@@ -1514,7 +1526,8 @@
                     "more": "VEČ",
                     "control1": "KONTROLNIKI SLEDILNE PLOŠČICE",
                     "control2": "KONTROLNIKI MIŠKE",
-                    "control3": "KONTROLNIKI TRACKPOINT"
+                    "control3": "KONTROLNIKI TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "Inteligentni mediji",
                 "title": "Povečanje ločljivosti videoposnetkov",
                 "desc": "<p><label>Ta funkcija omogoča prijetnejšo izkušnjo ogleda videoposnetkov z izboljšanjem ločljivosti videoposnetka. Zlasti uporabna je, če je ločljivost videoposnetka nizka.</label></p> <p style='margin-top:4px;'><label> Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Priporočamo, da takrat, ko je omogočena, računalnik priključite na izmenično napajanje.</label></p>",
-                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Funkcija deluje samo s temi predvajalniki: <br/> Windows Media player",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
                     "description1": "Računalnik ni priključen na izmenično napajanje in baterija je manj kot 20 % napolnjena.",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Potrebujete pomoč?",
-            "description": "OBRNITE SE NA NAS IN POMAGALI VAM BOMO.",
+            "description": "Za pomoč se obrnite na nas.",
             "listLenovoCommunity": "Skupnost Lenovo",
             "listContactCustomerService": "Obrnite se na storitve za stranke",
             "listContactUsOnWechat": "Pišite nam WeChat",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Hitre povezave",
-            "description": "OBRNITE SE NA NAS IN POMAGALI VAM BOMO.",
+            "description": "Za pomoč se obrnite na nas.",
             "listETicket": "Zagotovite si podporo z E-vstopnico",
             "listServiceProvider": "Poiščite ponudnika storitev",
             "listAboutLenovoVantage": "O storitvi Lenovo Vantage"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "Miren spanec",
                 "subtitleDescribe": "Povezana domača varnost vam bo poslala opozorilo, če zazna ranljivost v vaši napravi ali domačem omrežju ali če ste povezani z morebitno zlonamerno mrežo. Še več o povezani domači varnosti preberite <tag>tukaj</tag>.",
                 "tryNow": "Preskusite zdaj",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Vnesite kodo povabila",
@@ -2167,8 +2184,7 @@
             "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
-            "poweredBySurfEasy": "Poganja SurfEasy",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredBySurfEasy": "Poganja SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE UPRAVITELJ GESEL",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "Spremljajte temni splet za vaše osebne podatke",
             "allowsYou3": "Ostanite varni na nezavarovanih omrežjih WiFi z vgrajeno v VPN",
             "allowsYou4": "Varno delite gesla, ne da bi jih razkrili",
-            "poweredByDashLane": "Poganja Dashlane",
-            "privacyPolicyAndTermsOfService": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>"
+            "poweredByDashLane": "Poganja Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "Preverjanje uporabe baterije računalnika",
-            "description": "<div class='faqInFs4Fb'>    Preverjanje uporabe baterije računalnika</div><hr><h3 class='faqInFs25FbP10'>Znamenje težav</h3><p>Sistem Windows 10 vključuje nov zaslon <strong>Poraba energije baterije</strong>, na katerem so prikazani največji porabniki energije baterije prenosnega računalnika. To pomeni, da si lahko natančno ogledate, kateri programi – t.i. univerzalni programi tako za namizne računalnike kot sistema Windows 10 – porabljajo preveč energije.</p><h3 class='faqInFs25FbP10'>Blagovne znamke, na katere to vpliva</h3><ul>    <li>Prenosni in namizni računalniki Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemi, na katere to vpliva</h3><ul>    <li>Vse</li></ul><h3 class='faqInFs25FbP10'>Operacijski sistem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rešitev</h3><p>Ta funkcija je novost v sistemu Windows 10 in jo je treba najprej poiskati, saj ni vključena v običajnem pogledu <strong>nadzorne plošče</strong>. Funkcijo najdete v novem programu <strong>Nastavitve</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Poiščite zaslon »Poraba energije baterije«</h3></p><p>1. V meniju Start kliknite ali tapnite možnost <strong>Nastavitve</strong></p><p>2. V oknu <strong>Nastavitve</strong> izberite <strong>Sistem</strong> in nato še <strong>Ohranjevalnik baterije</strong>.<br /> <br /> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Če si želite ogledati več podrobnosti, pod naslovom kliknite ali tapnite povezavo <strong>Poraba energije baterije</strong>. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte porabo energije</h3><p>4. Na zaslonu »Poraba energije baterije« lahko izbirate med prikazom porabe energije baterije v zadnjih 24 ali 48 urah ali v zadnjem tednu</p><p>5. Poraba je izražena v odstotkih za razdelke <strong>Sistem</strong>, <strong>Zaslon</strong> in <strong>Wi-Fi</strong>. Prikazano je, koliko energije baterije so porabili sistemski procesi in zaslon.</p><p>6. Možnosti <strong>V uporabi</strong> in <strong>V ozadju</strong> prikazujeta primerjavo med porabo energije programov, ki jih uporabljate, in programov, ki se izvajajo v ozadju.</p><p>7. Če programi porabljajo energijo v ozadju, lahko kliknete ali tapnete povezavo <strong>Spremenite nastavitve izvajanja programov v ozadju</strong> in nastavite, naj se posamezni programi ne izvajajo v ozadju. To velja samo za univerzalne programe sistema Windows 10.</p><p>8. Če se pomaknete navzdol, si lahko ogledate seznam programov, ki je najuporabnejši del te funkcije. Prikaže se seznam programov, ki so v izbranem obdobju porabljale energijo baterije, ob vsakem od njih pa je naveden odstotek porabe</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Preverjanje uporabe baterije računalnika</div><hr><h3 class='faqInFs25FbP10'>Znamenje težav</h3><p>Sistem Windows 10 vključuje nov zaslon <strong>Poraba energije baterije</strong>, na katerem so prikazani največji porabniki energije baterije prenosnega računalnika. To pomeni, da si lahko natančno ogledate, kateri programi – t.i. univerzalni programi tako za namizne računalnike kot sistema Windows 10 – porabljajo preveč energije.</p><h3 class='faqInFs25FbP10'>Blagovne znamke, na katere to vpliva</h3><ul>    <li>Prenosni in namizni računalniki Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemi, na katere to vpliva</h3><ul>    <li>Vse</li></ul><h3 class='faqInFs25FbP10'>Operacijski sistem</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Rešitev</h3><p>Ta funkcija je novost v sistemu Windows 10 in jo je treba najprej poiskati, saj ni vključena v običajnem pogledu <strong>nadzorne plošče</strong>. Funkcijo najdete v novem programu <strong>Nastavitve</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Poiščite zaslon »Poraba energije baterije«</h3></p><p>1. V meniju Start kliknite ali tapnite možnost <strong>Nastavitve</strong></p><p>2. V oknu <strong>Nastavitve</strong> izberite <strong>Sistem</strong> in nato še <strong>Ohranjevalnik baterije</strong>.<br /> <br /> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Če si želite ogledati več podrobnosti, pod naslovom kliknite ali tapnite povezavo <strong>Poraba energije baterije</strong>. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizirajte porabo energije</h3><p>4. Na zaslonu »Poraba energije baterije« lahko izbirate med prikazom porabe energije baterije v zadnjih 24 ali 48 urah ali v zadnjem tednu</p><p>5. Poraba je izražena v odstotkih za razdelke <strong>Sistem</strong>, <strong>Zaslon</strong> in <strong>Wi-Fi</strong>. Prikazano je, koliko energije baterije so porabili sistemski procesi in zaslon.</p><p>6. Možnosti <strong>V uporabi</strong> in <strong>V ozadju</strong> prikazujeta primerjavo med porabo energije programov, ki jih uporabljate, in programov, ki se izvajajo v ozadju.</p><p>7. Če programi porabljajo energijo v ozadju, lahko kliknete ali tapnete povezavo <strong>Spremenite nastavitve izvajanja programov v ozadju</strong> in nastavite, naj se posamezni programi ne izvajajo v ozadju. To velja samo za univerzalne programe sistema Windows 10.</p><p>8. Če se pomaknete navzdol, si lahko ogledate seznam programov, ki je najuporabnejši del te funkcije. Prikaže se seznam programov, ki so v izbranem obdobju porabljale energijo baterije, ob vsakem od njih pa je naveden odstotek porabe</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "Uporaba računalnika kot tabličnega računalnika",
-            "description": "<div class='faqInFs4Fb'>    Uporaba računalnika kot tabličnega računalnika</div><hr><p>S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.</p><h3 class='faqInFs25FbP10'>Uporaba tabličnega načina</h3><p>Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Opomba</h3><p>Če želite izvedeti, ali lahko vaša naprava samodejno vklopi tablični način, jo poiščite na spletnem mestu proizvajalca. Možnost uporabe te funkcije je odvisna od strojne opreme, nameščenega gonilnika in proizvajalčeve nastavitve naprave. </p><p> </p><p>V tabličnem načinu se programi odpirajo v celozaslonskem pogledu, da imate na voljo večjo delovno površino. Program zaprete tako, da ga povlečete na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Namig</h3><p>Ko je računalnik v tabličnem načinu, je opravilna vrstica prikazana. Če pa želite imeti večjo delovno površino, jo lahko po želji skrijete. Izberite gumb <strong>Start</strong>, odprite <strong>Nastavitve</strong> > <strong>Sistem</strong> > <strong>Tablični način</strong> in vklopite možnost <strong>Samodejno skrij opravilno vrstico v tabličnem načinu</strong>. Če želite prikazati skrito opravilno vrstico, s prstom povlecite z dna zaslona navzgor ali pa miško zadržite na dnu zaslona.</p><h3 class='faqInFs25FbP10'>Hkratna uporaba dveh aplikacij</h3><p>Če želite v tabličnem načinu dva programa uporabljati enega ob drugem, povlecite odprti program navzdol in na stran. S tem program zataknete za rob, ob njem pa se prikažejo morebitni preostali odprti programi.</p><p>V tem pogledu lahko storite tudi to:</p><ul>    <li>Z vlečenjem skupne stranice lahko spreminjate velikost obeh za rob zataknjenih programov hkrati.</li>    <li>V pogledu opravil lahko odprete nov program: v opravilni vrstici izberite <strong>Pogled opravil</strong> in želeni program, ki ga nato povlečete na eno stran, da se zatakne ob rob razdeljenega zaslona.</li>    <li>Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Uporaba računalnika kot tabličnega računalnika</div><hr><p>S tabličnim načinom lahko naredite sistem Windows intuitivnejši in preprostejši za uporabo, če ima naprava vgrajen zaslon na dotik.</p><h3 class='faqInFs25FbP10'>Uporaba tabličnega načina</h3><p>Če želite vklopiti tablični način, v opravilni vrstici izberite <strong>Središče za opravila</strong> in nato še <strong>Tablični način</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Opomba</h3><p>Če želite izvedeti, ali lahko vaša naprava samodejno vklopi tablični način, jo poiščite na spletnem mestu proizvajalca. Možnost uporabe te funkcije je odvisna od strojne opreme, nameščenega gonilnika in proizvajalčeve nastavitve naprave. </p><p> </p><p>V tabličnem načinu se programi odpirajo v celozaslonskem pogledu, da imate na voljo večjo delovno površino. Program zaprete tako, da ga povlečete na dno zaslona.</p><p> </p><h3 class='faqInFs25FbP10'>Namig</h3><p>Ko je računalnik v tabličnem načinu, je opravilna vrstica prikazana. Če pa želite imeti večjo delovno površino, jo lahko po želji skrijete. Izberite gumb <strong>Start</strong>, odprite <strong>Nastavitve</strong> > <strong>Sistem</strong> > <strong>Tablični način</strong> in vklopite možnost <strong>Samodejno skrij opravilno vrstico v tabličnem načinu</strong>. Če želite prikazati skrito opravilno vrstico, s prstom povlecite z dna zaslona navzgor ali pa miško zadržite na dnu zaslona.</p><h3 class='faqInFs25FbP10'>Hkratna uporaba dveh aplikacij</h3><p>Če želite v tabličnem načinu dva programa uporabljati enega ob drugem, povlecite odprti program navzdol in na stran. S tem program zataknete za rob, ob njem pa se prikažejo morebitni preostali odprti programi.</p><p>V tem pogledu lahko storite tudi to:</p><ul>    <li>Z vlečenjem skupne stranice lahko spreminjate velikost obeh za rob zataknjenih programov hkrati.</li>    <li>V pogledu opravil lahko odprete nov program: v opravilni vrstici izberite <strong>Pogled opravil</strong> in želeni program, ki ga nato povlečete na eno stran, da se zatakne ob rob razdeljenega zaslona.</li>    <li>Gumb za vračanje nazaj v opravilni vrstici lahko uporabite za pomik nazaj v programu ali odpiranje predhodno uporabljenega programa.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2637,6 +2652,7 @@
         "professional": "Profesionalna uporaba",
         "privacytitle": "Pomagajte nam izboljšati kakovost aplikacije tako, da dovolite anonimno zbiranje statističnih podatkov o uporabi.",
         "moreInterest": "+ več zanimanj",
+        "toolbartitle": "Omogočite orodno vrstico Lenovo Vantage (priporočeno)",
         "title1": "Pozdravljeni v programu WRITEit,",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "Sproženo dejanje",
         "actionTriggeredDescription": "Sporočila, ki jih sproži uporabnik, ko izbere nastavitve, kot je samodejna namestitev nujnih/priporočenih posodobitev.",
         "OtherSettings": "Druge nastavitve",
-        "usageStatistics": "Statistični podatki o uporabi",
-        "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
-        "deviceStatistics": "Delite statistične podatke s podjetjem Lenovo (PDF)",
-        "deviceStatisticsDescription": "Pošilja statistične podatke podjetju Lenovo za pomoč pri izboljšanju zanesljivosti, oblikovanja in optimiziranja funkcij računalnika.",
+        "usageStatistics": "Statistični podatki o uporabi naprave Vantage",
+        "usageStatisticsDescription": "Pošiljajte anonimne statistične podatke o uporabi, da nam pomagate izboljšati napravo Vantage.",
+        "deviceStatistics": "Statistični podatki o napravi Lenovo",
+        "deviceStatisticsDescription": "Pošiljajte anonimne podatke o napravi, da nam pomagate izboljšati kakovost in zanesljivost delovanja naprave te in prihodnje generacije.",
         "userProfile": "Uporabniški profil",
         "Note": "Opomba: ",
         "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati to aplikacijo.",
@@ -2806,7 +2822,7 @@
                 "yes": "Da",
                 "no": "Ne"
             },
-            "waitAvailability": "Gumb je onemogočen, če informacije o strojni opremi še niso pridobljene, če shranjevalne naprave ne podpirajo te funkcije ali če se izvaja obnavljanje poškodovanih sektorjev."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Prenos profesionalnih diagnostičnih orodij",
@@ -2843,7 +2859,7 @@
             "storage": "Pomnilnik",
             "wireless": "Brezžično"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
-                "networkError": "Omrežna napaka.",
-                "installationCancelled": "Namestitev preklicana."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Unovčitev za Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Namestitev",
-                "installing": "Nameščanje",
-                "downloading": "Prenašanje",
-                "installed": "Nameščeno",
-                "launch": "Zaženite",
-                "seeMore": "Več"
-            },
-            "fieldName": {
-                "description": "Opis",
-                "screenshots": "Posnetki zaslona",
-                "additionalInformation": "Dodatne informacije",
-                "by": "Avtor:",
-                "updated": "Posodobitev:",
-                "type": "Vrsta:",
-                "category": "Kategorija:",
-                "legalAgreement": "Pravni sporazum",
-                "readMore": "Preberite več",
-                "readLess": "Preberite manj"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Zdaj lahko ugotovite, ali so spletni sledilci brez vaše vednosti kršili ali uporabljali vaše zasebne podatke.",
+            "security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
+            "connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Namestitev ni uspela. Prosimo, poskusite znova.",
+                "networkError": "Omrežna napaka.",
+                "installationCancelled": "Namestitev preklicana."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Unovčitev za Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Namestitev",
+                "installing": "Nameščanje",
+                "downloading": "Prenašanje",
+                "installed": "Nameščeno",
+                "launch": "Zaženite",
+                "seeMore": "Več"
+            },
+            "fieldName": {
+                "description": "Opis",
+                "screenshots": "Posnetki zaslona",
+                "additionalInformation": "Dodatne informacije",
+                "by": "Avtor:",
+                "updated": "Posodobitev:",
+                "type": "Vrsta:",
+                "category": "Kategorija:",
+                "legalAgreement": "Pravni sporazum",
+                "readMore": "Preberite več",
+                "readLess": "Preberite manj"
+            }
+        }
+    }
 }

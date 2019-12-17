@@ -19,7 +19,8 @@
 }
 ui-popover {
 	position: absolute;
-	max-width: 40%;
+	min-width: 45rem;
+	width: 40%;
 	padding: 3rem 5rem;
 	background: #fbfdff;
 	z-index: 9;

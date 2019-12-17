@@ -107,7 +107,8 @@
                     "sub1": "支持服务",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "已注册",
             "notRegistered": "未注册",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>隐私策略</tag>和<tag>服务条款</tag>"
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
-            "subtitle": "查找关于设备的实用小提示",
+            "subtitle": "查找适用于设备的有用提示。",
             "question1": "备份和恢复文件",
             "question2": "如何刷新您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "系统状态",
-            "subtitle": "快速了解设备状态",
+            "subtitle": "快速了解设备状态。",
             "memory": {
                 "title": "内存",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "查看详细信息",
                 "gaugeResetWarning": "<b>注意：</b>正在进行电池量表重置。请使交流电源适配器处于连接状态。",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>未检测到主电池。</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "滑块位于中央或中央偏右的位置。以动态方式平衡风扇速度和性能以获得最佳体验。",
                             "title3": "性能模式",
                             "desc3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "此功能可合理安排设定计算机，使得既能在空闲时间节省电池电量，又不影响繁忙使用期间的快速启动时间。",
-                    "subTitle2": "设置通常使用此计算机的时间"
+                    "subTitle2": "设置通常使用此计算机的时间",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "显示",
+					"displayColorTemperature": {
+						"title": "显示色温",
+						"description": "您可以调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。在日落到日出期间将显示屏调整为暖色调，以帮助您入睡。",
+						"link": {
+							"click": "单击",
+							"here": "此处",
+							"rest": "以更改色温。"
+						}
+					},
                     "eyeCareMode": {
                         "title": "护眼模式",
                         "checkbox": "设定从日落到日出的护眼模式",
@@ -1514,7 +1526,8 @@
                     "more": "更多",
                     "control1": "触摸板控制",
                     "control2": "鼠标控制",
-                    "control3": "TRACKPOINT 控制"
+                    "control3": "TRACKPOINT 控制",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "智能媒体",
                 "title": "提高视频分辨率",
                 "desc": "<p><label>此功能通过提高视频分辨率来改善视频播放体验。尤其在视频分辨率较低时，此功能十分有效。</label></p> <p style='margin-top:4px;'><label> 此功能可能会影响电池寿命、电池温度并产生噪音。启用后，建议您使用交流电源连接计算机。</label></p>",
-                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player <br/> 暴风影音 <br/> 迅雷影音",
+                "tooltip": "此功能仅适用于以下播放器：<br/> Windows Media player",
                 "note": {
                     "description": "此功能在以下情况下无效：",
                     "description1": "计算机未连接交流电源且电池电量低于 20%。",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "需要帮助",
-            "description": "联系我们以获取帮助。",
+            "description": "请联系我们以便为您提供帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "直通车",
-            "description": "联系我们以获取帮助。",
+            "description": "请联系我们以便为您提供帮助。",
             "listETicket": "通过电子凭单获取支持",
             "listServiceProvider": "查找服务供应商",
             "listAboutLenovoVantage": "关于我们"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "高枕无忧",
                 "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。可在<tag>此处</tag>了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "输入邀请码",
@@ -2167,8 +2184,7 @@
             "getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
             "getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
             "getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
-            "poweredBySurfEasy": "SurfEasy 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+            "poweredBySurfEasy": "SurfEasy 出品"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密码管理器",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "监控暗网保障个人信息安全",
             "allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
             "allowsYou4": "在不显示密码的情况下安全地共享密码",
-            "poweredByDashLane": "Dashlane 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+            "poweredByDashLane": "Dashlane 出品"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2480,7 +2495,7 @@
         },
         "question4": {
             "title": "检查计算机的电池使用情况",
-            "description": "<div class='faqInFs4Fb'>    检查计算机的电池使用情况</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 包含一个新<strong>“电池使用情况”</strong>屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><ul>    <li>Lenovo 笔记本电脑、台式机</li></ul><h3 class='faqInFs25FbP10'>受影响的系统</h3><ul>    <li>全部</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解决方案</h3><p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的<strong>控制面板</strong>视图中，而是位于新的<strong>“设置”</strong>应用程序中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A。找到“电池使用情况”屏幕</h3></p><p>1.单击或轻触开始菜单中的<strong>“设置”</strong>选项</p><p>2.在<strong>设置</strong>中选择<strong>“系统”</strong>，然后选择<strong>“节电模式”<br /><br /></strong><strong><br /><br /></strong>。</p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3.单击或轻触此标题下的<strong>“电池使用情况”</strong>链接以查看更多详细信息。</p><p> </p><h3 class='faqInFs25FbP10'>B。分析电源使用情况</h3><p>4 您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p><p>5 <strong>“系统”</strong>、“<strong>显示器</strong>”和“<strong>Wi-Fi”</strong>百分比。这将显示系统进程、显示器使用的电量</p><p>6 <strong>“使用中”</strong>和<strong>“后台”</strong>选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p><p>7 如果应用程序在后台消耗电量，可点击或轻触<strong>“更改后台应用设置”</strong>链接，然后配置让应用程序不在后台运行。此功能仅适用于通用 Windows 10 应用程序。</p><p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    检查计算机的电池使用情况</div><hr><h3 class='faqInFs25FbP10'>症状</h3><p>Windows 10 包含一个新<strong>“电池使用情况”</strong>屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。</p><h3 class='faqInFs25FbP10'>受影响的品牌</h3><ul>    <li>Lenovo 笔记本电脑、台式机</li></ul><h3 class='faqInFs25FbP10'>受影响的系统</h3><ul>    <li>全部</li></ul><h3 class='faqInFs25FbP10'>操作系统</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>解决方案</h3><p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的<strong>控制面板</strong>视图中，而是位于新的<strong>“设置”</strong>应用程序中</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A。找到“电池使用情况”屏幕</h3></p><p>1.单击或轻触开始菜单中的<strong>“设置”</strong>选项</p><p>2.在<strong>设置</strong>中选择<strong>“系统”</strong>，然后选择<strong>“节电模式”<br /><br /></strong><strong><br /><br /></strong>。</p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3.单击或轻触此标题下的<strong>“电池使用情况”</strong>链接以查看更多详细信息。</p><p> </p><h3 class='faqInFs25FbP10'>B。分析电源使用情况</h3><p>4 您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p><p>5 <strong>“系统”</strong>、“<strong>显示器</strong>”和“<strong>Wi-Fi”</strong>百分比。这将显示系统进程、显示器使用的电量</p><p>6 <strong>“使用中”</strong>和<strong>“后台”</strong>选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p><p>7 如果应用程序在后台消耗电量，可点击或轻触<strong>“更改后台应用设置”</strong>链接，然后配置让应用程序不在后台运行。此功能仅适用于通用 Windows 10 应用程序。</p><p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "症状",
             "para1": {
                 "span1": "Windows 10 包含一个新",
@@ -2548,7 +2563,7 @@
         },
         "question5": {
             "title": "像使用平板电脑一样使用您的计算机",
-            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>注意</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    像使用平板电脑一样使用您的计算机</div><hr><p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p><h3 class='faqInFs25FbP10'>使用平板电脑模式</h3><p>要开启平板电脑模式，请在任务栏上选择<strong>操作中心</strong>，然后选择<strong>平板模式</strong>。</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>注意</h3><p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。 </p><p> </p><p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。</p><p> </p><h3 class='faqInFs25FbP10'>提示</h3><p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择<strong>开始</strong>按钮，选择<strong>设置</strong> > <strong>系统</strong> > <strong>平板模式</strong>，然后打开<strong>在平板模式下自动隐藏任务栏</strong>。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。</p><h3 class='faqInFs25FbP10'>同时使用两个应用程序</h3><p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。您将看到它贴靠的位置并看到它旁边的所有打开的应用程序。</p><p>在此视图中，您还可以：</p><ul>    <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>    <li>在任务视图中打开一个新应用程序&mdash;&mdash;在任务栏上选择<strong>任务视图</strong>，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。</li>    <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。</li></ul><p> </p>",
             "heading1": "使用平板电脑模式",
             "para2": {
                 "span1": "要开启平板电脑模式，请在任务栏上选择 ",
@@ -2637,6 +2652,7 @@
         "professional": "专业使用",
         "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
         "moreInterest": "+更多的兴趣",
+        "toolbartitle": "启用 Lenovo Vantage 工具栏（推荐）",
         "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "触发的操作",
         "actionTriggeredDescription": "用户选择设置（如自动安装关键/推荐更新）触发的消息。",
         "OtherSettings": "其他设置",
-        "usageStatistics": "使用情况统计信息",
-        "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
-        "deviceStatistics": "与 Lenovo 共享统计数据",
-        "deviceStatisticsDescription": "与 Lenovo 共享统计数据有助于改进计算机上各项功能的可靠性、设计及对其进行优化。",
+        "usageStatistics": "Vantage 使用情况统计信息",
+        "usageStatisticsDescription": "发送匿名使用情况统计信息以帮助我们改善 Vantage。",
+        "deviceStatistics": "Lenovo 设备统计信息",
+        "deviceStatisticsDescription": "发送匿名设备数据以帮助我们改进质量、可靠性和新一代设备。",
         "userProfile": "用户概要文件",
         "Note": "注意：",
         "settingsNotes": "用户需重新启动此应用程序才能使此页面中的所有设置生效。",
@@ -2806,7 +2822,7 @@
                 "yes": "是",
                 "no": "否"
             },
-            "waitAvailability": "如果存储设备不支持此功能，或恢复坏扇区正在运行中，则在尚未检索硬件信息时，将禁用此按钮。"
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "下载专业诊断工具",
@@ -2843,7 +2859,7 @@
             "storage": "存储器",
             "wireless": "无线"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "安装失败。请重试。",
-                "networkError": "网络错误。",
-                "installationCancelled": "已取消安装。"
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe 兑换",
-            "lenovoMigrationAssistant": "联想乐换机"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "安装",
-                "installing": "正在安装",
-                "downloading": "正在下载",
-                "installed": "已安装",
-                "launch": "启动",
-                "seeMore": "查看更多"
-            },
-            "fieldName": {
-                "description": "描述",
-                "screenshots": "屏幕快照",
-                "additionalInformation": "其他信息",
-                "by": "提供者：",
-                "updated": "更新日期：",
-                "type": "类型：",
-                "category": "类别：",
-                "legalAgreement": "法律协议",
-                "readMore": "阅读更多",
-                "readLess": "阅读更少"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "现在，您可以查找您的私人信息是否已外泄，或在您不知情的情况下被在线跟踪器所使用。",
+            "security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
+            "connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。"
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "安装失败。请重试。",
+                "networkError": "网络错误。",
+                "installationCancelled": "已取消安装。"
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe 兑换",
+            "lenovoMigrationAssistant": "联想乐换机"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "安装",
+                "installing": "正在安装",
+                "downloading": "正在下载",
+                "installed": "已安装",
+                "launch": "启动",
+                "seeMore": "查看更多"
+            },
+            "fieldName": {
+                "description": "描述",
+                "screenshots": "屏幕快照",
+                "additionalInformation": "其他信息",
+                "by": "提供者：",
+                "updated": "更新日期：",
+                "type": "类型：",
+                "category": "类别：",
+                "legalAgreement": "法律协议",
+                "readMore": "阅读更多",
+                "readLess": "阅读更少"
+            }
+        }
+    }
 }

@@ -46,7 +46,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row">
-				<div *ngIf="!deviceService.isGaming" class="col col-12 px-0 pt-0 pb-40">
+				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="1" [itemID]="cardContentPositionF.Id"
 						[img]="cardContentPositionF.FeatureImage" [title]="cardContentPositionF.Title"
 						[logoText]="cardContentPositionF.BrandName" [action]="cardContentPositionF.Action"
@@ -57,11 +57,11 @@
 				</div>
 
 				<div class="col col-12 px-0 pt-0 pb-40">
-					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionB.id"
-						[img]="cardContentPositionB.FeatureImage" [caption]="cardContentPositionB.Description"
-						[title]="cardContentPositionB.Title" [logoText]="cardContentPositionB.BrandName"
-						[action]="cardContentPositionB.Action" [dataSource]="cardContentPositionB.DataSource"
-						[actionType]="cardContentPositionB.ActionType" [actionLink]="cardContentPositionB.ActionLink"
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"  order="2" [itemID]="cardContentPositionC.id"
+						[img]="cardContentPositionC.FeatureImage" [caption]="cardContentPositionC.Description"
+						[title]="cardContentPositionC.Title" [logoText]="cardContentPositionC.BrandName"
+						[action]="cardContentPositionC.Action" [dataSource]="cardContentPositionC.DataSource"
+						[actionType]="cardContentPositionC.ActionType" [actionLink]="cardContentPositionC.ActionLink"
 						[type]="'corner'" [ratioX]="4" [ratioY]="2" [cornerShift]="'large'"
 						[dynamicmetricsItem]="dynamic_metricsItem">
 					</vtr-container-card>

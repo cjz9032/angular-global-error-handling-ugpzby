@@ -26,13 +26,11 @@
 						[style.height.px]="carouselContainer.clientWidth * 340 / 944"></div>
 				<div class="carousel-caption">
 					<h3 class="source"
-						#carouselSource
-						[title]="carouselSource.innerText"
+						[title]="model.source | htmlText"
 						[innerHTML]="model.source"
 						id="{{carouselId}}-{{cIndex}}-source"></h3>
 					<h2 class="title"
-						#carouselTitle
-						[title]="carouselTitle.innerText"
+						[title]="model.cardTitle | htmlText"
 						[innerHTML]="model.cardTitle"
 						id="{{carouselId}}-{{cIndex}}-title"></h2>
 				</div>

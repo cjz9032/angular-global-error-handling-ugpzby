@@ -2,6 +2,7 @@
  * this enum is for local storage keys. new keys can be added here. please give meaningful names to key.
  */
 export enum LocalStorageKey {
+	EyeCareModeResetStatus = '[LocalStorageKey] EyeCareModeResetStatus',
 	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
@@ -209,6 +210,9 @@ export enum LocalStorageKey {
 	ChangedSelfSelectConfig = '[LocalStorageKey] ChangedSelfSelectConfig',
 
 	GaugeResetCapability = '[LocalStorageKey] GaugeResetCapability',
+
+		// New feature tips
+	NewFeatureTipsVersion = '[LocalStorageKey] NewFeatureTipsVersion',
 
 	// Device Settings storage key
 	MicrohoneCapability = '[LocalStorageKey] MicrohoneCapability',

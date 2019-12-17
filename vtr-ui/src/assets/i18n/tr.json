@@ -107,7 +107,8 @@
                     "sub1": "Destek",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag>"
         },
         "qAndA": {
             "title": "Makineniz için Q & A",
-            "subtitle": "CİHAZINIZ İÇİN BAZI YARDIM İPUÇLARI BULUN.",
+            "subtitle": "Cihazınız için bazı yararlı ipuçları bulun.",
             "question1": "Dosyalarınızın yedeklenmesi ve geri yüklenmesi",
             "question2": "Bilgisayarınızın yenilenmesi",
             "question3": "Makinenizin CPU\\'sunun öğrenilmesi",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Sistem Durumu",
-            "subtitle": "CİHAZINIZIN DURUMUNA HIZLI GENEL BAKIŞ.",
+            "subtitle": "Cihazınızın durumuna hızlı genel bakış.",
             "memory": {
                 "title": "Bellek",
                 "detail": {
@@ -909,14 +910,13 @@
                     "LimitedACAdapterSupportDetail": "<b>AC bağdaştırıcısı, Lenovo bilgisayarınıza yeterince güç sağlayamıyor</b>. Bu durum, sistem performansını ve şarj olma hızını etkiler. Lütfen uygun AC güç bağdaştırıcısını bağlayın.",
                     "FullACAdapterSupport": "<b>{{acWattage}} W {{acAdapterType}} gücü bağlı.</b>",
                     "EmDriverInstalled": "Pil ayrıntıları kullanılamıyor. Windows Update->Güncelleştirmeleri denetle seçeneğini kullanarak <b>Lenovo ACPI - Compliant Virtual Power Controller</b> sürücüsünü yükleyin."
-
                 },
                 "batteryNotDetected": "Pil algılanmadı",
                 "thresholdNote": "<b>Not:</b> Pil Şarj Eşiği etkinleştirildiğinde pil tam olarak doldurulamaz.",
                 "seeDetailsLink": "Ayrıntıları görün",
                 "gaugeResetWarning": "<b>Not:</b> Pil göstergesi sıfırlama işlemi devam ediyor. Lütfen AC güç bağdaştırıcısı bağlı tutun.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Birincil pil algılanmadı.</b>"
                 }
             },
             "power": {
@@ -1013,7 +1013,8 @@
                             "desc2": "Kaydırıcı ortada veya ortanın sağındadır. En iyi deneyim için fan hızı ve performans dinamik olarak dengelenir.",
                             "title3": "Performans kipi",
                             "desc3": "Kaydırıcı en sağdadır. Maksimum performans için fan hızı ve izin verilen yüzey sıcaklığı daha yüksektir."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1220,7 +1221,8 @@
                         }
                     },
                     "description2": "Bu özellik, yoğun kullanım zamanlarında hızlı başlatmadan ödün vermeden, bilgisayar boşta olduğunda pil güç tasarrufunu iyileştirmek için bilgisayarınızı zamanlar.",
-                    "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın"
+                    "subTitle2": "Bu bilgisayarı genelde kullandığınız saatleri ayarlayın",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1302,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Ekran",
+					"displayColorTemperature": {
+						"title": "Ekran rengi sıcaklığı",
+						"description": "Mavi ışığı filtrelemek ve göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlayabilirsiniz. Uyumanıza yardımcı olmak için ekranları günbatımı ile güneşin doğuşuna kadar daha sıcak renklere ayarlar.",
+						"link": {
+							"click": "Renk sıcaklığını değiştirmek için",
+							"here": "buraya",
+							"rest": "tıklayın."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Göz Koruması Kipi",
                         "checkbox": "Göz koruması kipini gün batımından gün doğumuna kadar sürecek şekilde ayarlayın",
@@ -1515,7 +1526,8 @@
                     "more": "DAHA FAZLA",
                     "control1": "TOUCHPAD DENETİMLERİ",
                     "control2": "FARE DENETİMLERİ",
-                    "control3": "TRACKPOINT KONTROLLERİ"
+                    "control3": "TRACKPOINT KONTROLLERİ",
+                    "less": "LESS"
                 }
             }
         },
@@ -1678,7 +1690,7 @@
                 "heading": "Akıllı Medya",
                 "title": "Video Çözünürlüğünü Yükseltme",
                 "desc": "<p><label>Bu özellik, videoyu çözünürlüğünü iyileştirerek video kayıttan yürütme deneyimini geliştirir. Özellikle video çözünürlüğü düşük olduğunda çalışır.</label></p> <p style='margin-top:4px;'><label> Bu işlev pil ömrünü, pil sıcaklığını etkileyebilir ve gürültüye neden olabilir. Etkinleştirildiğinde, bilgisayarınızı bir AC gücüne bağlamanız önerilir.</label></p>",
-                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Özellik yalnızca şu oynatıcılarda çalışır: <br/> Windows Media player",
                 "note": {
                     "description": "Bu özellik şu durumlarda çalışmaz:",
                     "description1": "Bilgisayar AC gücüne bağlı değil ve pil gücü %20'den düşük.",
@@ -1874,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Yardım mı Gerekiyor?",
-            "description": "YARDIM ALMAK İÇİN BİZE ULAŞIN.",
+            "description": "Size yardımcı olmamız için bize ulaşın.",
             "listLenovoCommunity": "Lenovo Topluluğu",
             "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
             "listContactUsOnWechat": "WeChat'te bize ulaşın",
@@ -1885,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Hızlı Bağlantılar",
-            "description": "YARDIM ALMAK İÇİN BİZE ULAŞIN.",
+            "description": "Size yardımcı olmamız için bize ulaşın.",
             "listETicket": "E-bilet ile destek alın",
             "listServiceProvider": "Garanti Hizmet Çözüm Ortağı bulun",
             "listAboutLenovoVantage": "Lenovo Vantage hakkında"
@@ -1956,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2093,7 +2109,7 @@
                 "subtitle": "İçiniz Rahat Olsun",
                 "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. Bağlı Ev Güvenliği hakkında daha fazla bilgiye <tag>buradan</tag> ulaşabilirsiniz.",
                 "tryNow": "Şimdi Deneyin",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Davet kodunu girin",
@@ -2168,8 +2184,7 @@
             "getStarted1": "SurfEasy VPN'i başlatmak için yukarıdaki “SurfEasy'yi Açın” düğmesine tıklayın.",
             "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
             "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
-            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
@@ -2197,8 +2212,7 @@
             "allowsYou2": "Kişisel bilgileriniz için karanlık ağ izlemesi",
             "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
             "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
-            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
-            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2480,7 +2494,7 @@
         },
         "question4": {
             "title": "Makinenizin pil kullanımının denetlenmesi",
-            "description": "<div class='faqInFs4Fb'>    Makinenizin pil kullanımının denetlenmesi</div><hr><h3 class='faqInFs25FbP10'>Belirti</h3><p>Windows 10, dizüstü bilgisayarınızın enerjisini nelerin tükettiğini gösteren yeni bir “<strong>Battery Use”</strong> (Pil Kullanımı) alanı içermektedir. Bu, masaüstü ve Windows 10 “evrensel” uygulamalarından tam olarak hangilerinin çok fazla güç tükettiğini söyleyeceği anlamına gelir.</p><h3 class='faqInFs25FbP10'>Etkilenen Markalar</h3><ul>    <li>Lenovo dizüstü bilgisayarlar, masaüstü bilgisayarlar</li></ul><h3 class='faqInFs25FbP10'>Etkilenen Sistemler</h3><ul>    <li>Tümü</li></ul><h3 class='faqInFs25FbP10'>İşletim Sistemi</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Çözüm</h3><p>Bu özellik, Windows 10'da yenidir. İlk olarak, geleneksel <strong>denetim masası </strong>görünümünüzde bulunmadığından bu özelliği bulmamız gerekir. Bu özellik yeni <strong>“Settings”</strong> (Ayarlar) uygulamasında yer almaktadır.</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Battery Use (Pil Kullanımı) Ekranının Bulunması</h3></p><p>1. Start (Başlat) menüsünden <strong>“Settings</strong>” (Ayarlar) seçeneğine tıklayın veya dokunun</p><p>2. <strong>Settings </strong> (Ayarlar) seçeneğinde, <strong>“System”</strong> (Sistem) ve ardından <strong>“Battery saver”<br /> (Pil tasarrufu) öğesini seçin. <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Daha ayrıntılı bilgi için bu başlığın altındaki <strong>“Battery use”</strong> (Pil kullanımı) bağlantısına tıklayın veya dokunun. </p><p> </p><h3 class='faqInFs25FbP10'>B. Güç Kullanımınızın Analiz Edilmesi</h3><p>4 Battery use (Pil kullanımı) ekranını son 24 saatten son 48 saate veya son haftadan itibaren pil kullanımını görüntüleyecek şekilde değiştirebilirsiniz</p><p>5 <strong>“System”</strong> (Sistem), “<strong>Display</strong>” (Monitör) ve “<strong>Wi-Fi”</strong> yüzdeleri. Bu, sistem işlemleri ve ekran tarafından ne kadar pil gücünün kullanıldığını gösterir,</p><p>6 <strong>“In use”</strong> (Kullanımda) ve <strong>“Background”</strong> (Arka Plan) seçenekleri, arka planda çalışan uygulamalarla karşılaştırıldığında bu uygulamaları kullanırken uygulamalar tarafından ne kadar güç kullanıldığını gösterir.</p><p>7 Uygulamalar arka planda güç kullanıyorsa <strong> “Change background app settings” </strong>(Arka plan uygulaması ayarlarını değiştir) bağlantısına tıklayabilir veya dokunabilir ve uygulamaları arka planda çalışmayacak şekilde yapılandırabilirsiniz. Bu, yalnızca evrensel Windows 10 uygulamalarında çalışır.</p><p>8 Aşağı doğru biraz daha kaydırdığınızda uygulamaların yer aldığı bir liste görürsünüz. Bu liste, bu özelliğin en kullanışlı bölümü olarak kabul edilir. Söz konusu dönemde pil gücünü kullanan uygulamaları, her bir uygulamanın pil gücünün yüzde kaçını kullandığı bilgisiyle birlikte liste olarak gösterir</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Makinenizin pil kullanımının denetlenmesi</div><hr><h3 class='faqInFs25FbP10'>Belirti</h3><p>Windows 10, dizüstü bilgisayarınızın enerjisini nelerin tükettiğini gösteren yeni bir “<strong>Battery Use”</strong> (Pil Kullanımı) alanı içermektedir. Bu, masaüstü ve Windows 10 “evrensel” uygulamalarından tam olarak hangilerinin çok fazla güç tükettiğini söyleyeceği anlamına gelir.</p><h3 class='faqInFs25FbP10'>Etkilenen Markalar</h3><ul>    <li>Lenovo dizüstü bilgisayarlar, masaüstü bilgisayarlar</li></ul><h3 class='faqInFs25FbP10'>Etkilenen Sistemler</h3><ul>    <li>Tümü</li></ul><h3 class='faqInFs25FbP10'>İşletim Sistemi</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Çözüm</h3><p>Bu özellik, Windows 10'da yenidir. İlk olarak, geleneksel <strong>denetim masası </strong>görünümünüzde bulunmadığından bu özelliği bulmamız gerekir. Bu özellik yeni <strong>“Settings”</strong> (Ayarlar) uygulamasında yer almaktadır.</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Battery Use (Pil Kullanımı) Ekranının Bulunması</h3></p><p>1. Start (Başlat) menüsünden <strong>“Settings</strong>” (Ayarlar) seçeneğine tıklayın veya dokunun</p><p>2. <strong>Settings </strong> (Ayarlar) seçeneğinde, <strong>“System”</strong> (Sistem) ve ardından <strong>“Battery saver”<br /> (Pil tasarrufu) öğesini seçin. <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Daha ayrıntılı bilgi için bu başlığın altındaki <strong>“Battery use”</strong> (Pil kullanımı) bağlantısına tıklayın veya dokunun. </p><p> </p><h3 class='faqInFs25FbP10'>B. Güç Kullanımınızın Analiz Edilmesi</h3><p>4 Battery use (Pil kullanımı) ekranını son 24 saatten son 48 saate veya son haftadan itibaren pil kullanımını görüntüleyecek şekilde değiştirebilirsiniz</p><p>5 <strong>“System”</strong> (Sistem), “<strong>Display</strong>” (Monitör) ve “<strong>Wi-Fi”</strong> yüzdeleri. Bu, sistem işlemleri ve ekran tarafından ne kadar pil gücünün kullanıldığını gösterir,</p><p>6 <strong>“In use”</strong> (Kullanımda) ve <strong>“Background”</strong> (Arka Plan) seçenekleri, arka planda çalışan uygulamalarla karşılaştırıldığında bu uygulamaları kullanırken uygulamalar tarafından ne kadar güç kullanıldığını gösterir.</p><p>7 Uygulamalar arka planda güç kullanıyorsa <strong> “Change background app settings” </strong>(Arka plan uygulaması ayarlarını değiştir) bağlantısına tıklayabilir veya dokunabilir ve uygulamaları arka planda çalışmayacak şekilde yapılandırabilirsiniz. Bu, yalnızca evrensel Windows 10 uygulamalarında çalışır.</p><p>8 Aşağı doğru biraz daha kaydırdığınızda uygulamaların yer aldığı bir liste görürsünüz. Bu liste, bu özelliğin en kullanışlı bölümü olarak kabul edilir. Söz konusu dönemde pil gücünü kullanan uygulamaları, her bir uygulamanın pil gücünün yüzde kaçını kullandığı bilgisiyle birlikte liste olarak gösterir</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2548,7 +2562,7 @@
         },
         "question5": {
             "title": "Bilgisayarınızın tablet gibi kullanılması",
-            "description": "<div class='faqInFs4Fb'>    Bilgisayarınızın tablet gibi kullanılması</div><hr><p>Tablet modu, dokunmatik ekranlı bir cihazınız varsa Windows'u daha sezgisel ve kullanımı kolay hale getirir.</p><h3 class='faqInFs25FbP10'>Tablet modunun kullanılması</h3><p>Tablet modunu açmak için görev çubuğunda <strong>işlem merkezini</strong> açın, ardından <strong>Tablet mode</strong> (Tablet modu) seçeneğini belirleyin.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Not</h3><p>Cihazınızın tablet modunu otomatik olarak açıp açamayacağını öğrenmek için üreticinin web sitesinde cihazınızı arayın. Bu özelliğe yönelik destek donanıma, yüklü sürücüye ve cihazın üretici tarafından nasıl ayarlandığına bağlıdır. </p><p> </p><p>Tablet modunda, uygulamalar tam ekran olarak açılarak size daha fazla çalışma alanı sağlar. Uygulamayı kapatmak için ekranın altına doğru sürükleyin.</p><p> </p><h3 class='faqInFs25FbP10'>İpucu</h3><p>Bilgisayarınız tablet modundayken görev çubuğu kullanılabilir ancak ekranda daha fazla yer açmak istiyorsanız görev çubuğunu gizleyebilirsiniz. <strong>Start </strong>(Başlat) düğmesini seçin, <strong>Settings </strong>(Ayarlar) > <strong>System </strong>(Sistem) > <strong> Tablet mode </strong>(Tablet modu) seçeneğini belirleyin, ardından <strong>Automatically hide the taskbar in tablet mode</strong> (Tablet modunda görev çubuğunu otomatik olarak gizle) seçeneğini açın. Gizli görev çubuğunu görmek için ekranın alt kısmından yukarı doğru kaydırın veya farenizi kullanarak üzerine gelin.</p><h3 class='faqInFs25FbP10'>İki uygulamanın aynı anda kullanılması</h3><p>Tablet modunda iki uygulamayı yan yana kullanmak için açık olan bir uygulamayı aşağı ve yana doğru sürükleyin. Nereye tutturulacağı gösterilir ve uygulamanın yanında açık olan diğer uygulamaları görürsünüz.</p><p>Bu görünümde şunları da yapabilirsiniz:</p><ul>    <li>Her iki uygulamayı aynı anda yeniden boyutlandırmak için iki tutturulmuş uygulama arasındaki paylaşılan kenarı kullanın.</li>    <li>Görev görünümünden yeni bir uygulama açın. Görev çubuğunda <strong>Task view</strong> (Görev görünümü) öğesini seçin, bir uygulama belirleyin, ardından bölünmüş ekranınıza tutturmak için bir tarafa sürükleyin.</li>    <li>Bir uygulamaya geri dönmek veya daha önce kullandığınız bir uygulamayı açmak için görev çubuğundaki geri düğmesini kullanın.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Bilgisayarınızın tablet gibi kullanılması</div><hr><p>Tablet modu, dokunmatik ekranlı bir cihazınız varsa Windows'u daha sezgisel ve kullanımı kolay hale getirir.</p><h3 class='faqInFs25FbP10'>Tablet modunun kullanılması</h3><p>Tablet modunu açmak için görev çubuğunda <strong>işlem merkezini</strong> açın, ardından <strong>Tablet mode</strong> (Tablet modu) seçeneğini belirleyin.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Not</h3><p>Cihazınızın tablet modunu otomatik olarak açıp açamayacağını öğrenmek için üreticinin web sitesinde cihazınızı arayın. Bu özelliğe yönelik destek donanıma, yüklü sürücüye ve cihazın üretici tarafından nasıl ayarlandığına bağlıdır. </p><p> </p><p>Tablet modunda, uygulamalar tam ekran olarak açılarak size daha fazla çalışma alanı sağlar. Uygulamayı kapatmak için ekranın altına doğru sürükleyin.</p><p> </p><h3 class='faqInFs25FbP10'>İpucu</h3><p>Bilgisayarınız tablet modundayken görev çubuğu kullanılabilir ancak ekranda daha fazla yer açmak istiyorsanız görev çubuğunu gizleyebilirsiniz. <strong>Start </strong>(Başlat) düğmesini seçin, <strong>Settings </strong>(Ayarlar) > <strong>System </strong>(Sistem) > <strong> Tablet mode </strong>(Tablet modu) seçeneğini belirleyin, ardından <strong>Automatically hide the taskbar in tablet mode</strong> (Tablet modunda görev çubuğunu otomatik olarak gizle) seçeneğini açın. Gizli görev çubuğunu görmek için ekranın alt kısmından yukarı doğru kaydırın veya farenizi kullanarak üzerine gelin.</p><h3 class='faqInFs25FbP10'>İki uygulamanın aynı anda kullanılması</h3><p>Tablet modunda iki uygulamayı yan yana kullanmak için açık olan bir uygulamayı aşağı ve yana doğru sürükleyin. Nereye tutturulacağı gösterilir ve uygulamanın yanında açık olan diğer uygulamaları görürsünüz.</p><p>Bu görünümde şunları da yapabilirsiniz:</p><ul>    <li>Her iki uygulamayı aynı anda yeniden boyutlandırmak için iki tutturulmuş uygulama arasındaki paylaşılan kenarı kullanın.</li>    <li>Görev görünümünden yeni bir uygulama açın. Görev çubuğunda <strong>Task view</strong> (Görev görünümü) öğesini seçin, bir uygulama belirleyin, ardından bölünmüş ekranınıza tutturmak için bir tarafa sürükleyin.</li>    <li>Bir uygulamaya geri dönmek veya daha önce kullandığınız bir uygulamayı açmak için görev çubuğundaki geri düğmesini kullanın.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2638,6 +2652,7 @@
         "professional": "Profesyonel Kullanım",
         "privacytitle": "Kullanım verilerinin anonim olarak toplanmasına izin vererek bu uygulamanın kalitesinin iyileştirilmesine yardımcı olun.",
         "moreInterest": "+ diğer ilgi alanları",
+        "toolbartitle": "Lenovo Vantage Araç Çubuğu'nu etkinleştir (önerilir)",
         "title1": "WRITEit'e hoş geldiniz",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2668,10 +2683,10 @@
         "actionTriggered": "Tetiklenen Eylem",
         "actionTriggeredDescription": "Kullanıcının kritik/önerilen güncellemeleri otomatik olarak yükleme gibi ayarları seçmesiyle tetiklenen iletiler.",
         "OtherSettings": "Diğer ayarlar",
-        "usageStatistics": "Kullanım İstatistikleri",
-        "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
-        "deviceStatistics": "İstatistik verilerini Lenovo ile paylaş",
-        "deviceStatisticsDescription": "Bilgisayarınızdaki özelliklerin güvenilirliğinin, tasarımının ve iyileştirilmesinin gelişimine yardımcı olmak için Lenovo ile istatiksel veri paylaşır.",
+        "usageStatistics": "Vantage Kullanım İstatistikleri",
+        "usageStatisticsDescription": "Vantage'ı daha iyi hale getirmemize yardımcı olmak için anonim kullanım istatistikleri gönderin.",
+        "deviceStatistics": "Lenovo Cihaz İstatistikleri",
+        "deviceStatisticsDescription": "Kaliteli, güvenilir ve yeni nesil cihazlar geliştirmemize yardımcı olmak için anonim cihaz verileri gönderin.",
         "userProfile": "Kullanıcı profili",
         "Note": "Not: ",
         "settingsNotes": "bu sayfadaki tüm ayarların geçerli olması için kullanıcının uygulamayı yeniden başlatması gerekir.",
@@ -2807,7 +2822,7 @@
                 "yes": "Evet",
                 "no": "Hayır"
             },
-            "waitAvailability": "Donanım bilgileri henüz alınmadıysa, depolama cihazlarının bu işlevi desteklememe olasılığına karşı veya bozuk kesimleri kurtar aracı çalıştırılırken düğme devre dışı bırakılır."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Profesyonel tanılama araçlarını indirin",
@@ -2844,7 +2859,7 @@
             "storage": "Depolama alanı",
             "wireless": "Kablosuz"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3048,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
-                "networkError": "Ağ Hatası.",
-                "installationCancelled": "Kurulum İptal Edildi."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adobe Kullanma",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Kur",
-                "installing": "Kurma",
-                "downloading": "Karşıdan yükleniyor",
-                "installed": "Kurulu",
-                "launch": "Başlat",
-                "seeMore": "Daha Fazla"
-            },
-            "fieldName": {
-                "description": "Açıklama",
-                "screenshots": "Ekran görüntüleri",
-                "additionalInformation": "Ek Bilgi",
-                "by": "Ölçüt:",
-                "updated": "Güncelleme:",
-                "type": "Tip:",
-                "category": "Kategori:",
-                "legalAgreement": "Yasal Sözleşme",
-                "readMore": "Okumaya Devam Et",
-                "readLess": "Okumayı Daralt"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3199,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Artık özel bilgilerinizin çevrimiçi izleyiciler tarafından sizin bilginiz dışında ihlal edilip edilmediğini veya kullanılıp kullanılmadığını öğrenebilirsiniz.",
+            "security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
+            "connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Yüklenemedi. Lütfen tekrar deneyin.",
+                "networkError": "Ağ Hatası.",
+                "installationCancelled": "Kurulum İptal Edildi."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adobe Kullanma",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Kur",
+                "installing": "Kurma",
+                "downloading": "Karşıdan yükleniyor",
+                "installed": "Kurulu",
+                "launch": "Başlat",
+                "seeMore": "Daha Fazla"
+            },
+            "fieldName": {
+                "description": "Açıklama",
+                "screenshots": "Ekran görüntüleri",
+                "additionalInformation": "Ek Bilgi",
+                "by": "Ölçüt:",
+                "updated": "Güncelleme:",
+                "type": "Tip:",
+                "category": "Kategori:",
+                "legalAgreement": "Yasal Sözleşme",
+                "readMore": "Okumaya Devam Et",
+                "readLess": "Okumayı Daralt"
+            }
+        }
+    }
 }

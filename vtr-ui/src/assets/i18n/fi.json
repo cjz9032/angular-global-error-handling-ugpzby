@@ -107,7 +107,8 @@
                     "sub1": "Tuki",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
         },
         "qAndA": {
             "title": "Kysymyksiä ja vastauksia koneellesi",
-            "subtitle": "TARKISTA, ETTÄ KOSKEVAT OHJELMAT LAITTEESTA.",
+            "subtitle": "Löydä laitetta koskevia hyödyllisiä ohjeita.",
             "question1": "Tiedostojen varmuuskopiointi ja palauttaminen",
             "question2": "Tietokoneen siivoaminen",
             "question3": "Koneen suorittimen tunnistaminen",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Järjestelmän tila",
-            "subtitle": "PIKAINEN YHTEENVETO LAITTEESI TILASTA.",
+            "subtitle": "Pikainen yhteenveto laitteesi tilasta.",
             "memory": {
                 "title": "Muisti",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "Lisätietoja on seuraavissa",
                 "gaugeResetWarning": "<b>Huomautus:</b> Akkumittarin nollaus on meneillään. Pidä verkkolaite liitettynä tietokoneeseen.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>Ensisijaista akkua ei havaittu.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "Liukusäädin sijaitsee keskellä tai keskialueen oikealla puolella. Tuulettimen kierrosnopeus ja tietokoneen suorituskyky tasapainotetaan dynaamisesti parhaan käyttökokemuksen varmistamiseksi.",
                             "title3": "Suorituskykytila",
                             "desc3": "Liukusäädin on ääriasennossa oikealla. Tuulettimen kierrosnopeus ja sallittu pinnan lämpötila ovat suurempia parhaan suorituskyvyn turvaamiseksi."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "Tämän ominaisuuden avulla voit ajoittaa tietokoneen optimoimaan akun virransäästön käyttämättömyysajan aikana ilman, että käynnistysaika hidastuu kovan käytön aikana.",
-                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta"
+                    "subTitle2": "Määritä aika, jolloin yleensä käytät tätä tietokonetta",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Näyttö",
+					"displayColorTemperature": {
+						"title": "Näytön värilämpötila",
+						"description": "Voit säätää näytön värilämpötilaa suodattamaan sinistä valoa niin, että rasitus silmille vähenee Säätää näytön värit lämpimämmiksi auringonlaskusta auringonnousuun helpottamaan nukkumista.",
+						"link": {
+							"click": "Napsauta",
+							"here": "tätä",
+							"rest": "muuttaaksesi värilämpötilaa."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Silmien hoitotila",
                         "checkbox": "Ajoita silmien hoitotila auringonlaskusta auringonnousuun",
@@ -1514,7 +1526,8 @@
                     "more": "ENEMMÄN",
                     "control1": "KOSKETUSLEVYN OHJAIMET",
                     "control2": "HIIRITOIMINNOT",
-                    "control3": "TRACKPOINT-TOIMINNOT"
+                    "control3": "TRACKPOINT-TOIMINNOT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "Älykäs tietoväline",
                 "title": "Näytön tarkkuuden skaalaus",
                 "desc": "<p><label>Tämä toiminto parantaa videoiden toistokokemusta parantamalla videoiden tarkkuutta. Se toimii erityisesti silloin, kun näytön resoluutio on heikko.</label></p> <p style='margin-top:4px;'><label> Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Kun tämä asetus on käytössä, tietokone on suositeltavaa kytkeä verkko virtaan.</label></p>",
-                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "Ominaisuus toimii vain seuraavissa soittimissa: <br/> Windows Media player",
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
                     "description1": "Tietokone ei ole liitettynä verkkovirtaan, ja akun varaustaso on alhaisempi kuin 20 %.",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Tarvitsetko apua?",
-            "description": "OTA MEIHIN YHTEYTTÄ JOS TARVITSET APUA.",
+            "description": "Ota meihin yhteyttä, niin saat apua.",
             "listLenovoCommunity": "Lenovo-yhteisö",
             "listContactCustomerService": "Ota asiakaspalveluun yhteyttä",
             "listContactUsOnWechat": "Ota meihin yhteyttä WeChat-palvelussa",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Pikalinkit",
-            "description": "OTA MEIHIN YHTEYTTÄ JOS TARVITSET APUA.",
+            "description": "Ota meihin yhteyttä, niin saat apua.",
             "listETicket": "Hae tukea E-lipun kanssa",
             "listServiceProvider": "Etsi palvelun toimittaja",
             "listAboutLenovoVantage": "Tietoja Lenovo Vantage -sovelluksesta"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "Mielenrauhaa",
                 "subtitleDescribe": "Connected Home -suojaus lähettää sinulle hälytyksen havaitessaan haavoittuvuuden laitteessasi tai kotiverkossasi tai, jos olet yhdistynyt mahdollisesti vahingolliseen verkkoon. Lue lisää Connected Home -suojauksesta <tag>tästä</tag>.",
                 "tryNow": "Kokeile nyt",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Anna kutsukoodi",
@@ -2167,8 +2184,7 @@
             "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
-            "poweredBySurfEasy": "SurfEasyn tarjoama",
-            "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "poweredBySurfEasy": "SurfEasyn tarjoama"
         },
         "passwordManager": {
             "statusTitle": "DASHLANE salasanojen hallinta",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "Tarkkailla, onko pimeässä verkossa henkilökohtaisia tietojasi",
             "allowsYou3": "Käyttää turvaamattomia WiFi-verkkoja turvallisesti sisäänrakennetun VPN-yhteyden avulla",
             "allowsYou4": "Jakaa salasanoja turvallisesti paljastamatta niitä",
-            "poweredByDashLane": "Dashlanen tarjoama",
-            "privacyPolicyAndTermsOfService": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>"
+            "poweredByDashLane": "Dashlanen tarjoama"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2275,7 +2290,7 @@
         },
         "question1": {
             "title": "Tiedostojen varmuuskopiointi ja palauttaminen",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div class='faqInMb7'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div class='faqInFs3Fb'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span class='faqInFb'>Käynnistä</span>-painike ja sitten <span class='faqInFb'>Asetukset</span> > <span class='faqInFb'>Päivittäminen ja suojaus</span> > <span class='faqInFb'>Varmuuskopiointi</span> > <span class='faqInFb'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png' />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\\\Users\\\\username) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span class='faqInFb'>Lisää vaihtoehtoja</span>.    </div>    <div class='faqInFs3Fb'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span class='faqInFb'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='faqInFb'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span class='faqInFb'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span class='faqInFb'>Palauta</span>-painiketta, valitse <span class='faqInFb'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tiedostojen varmuuskopiointi ja palauttaminen    </div>    <hr />    <div class='faqInMb7'>        Varmuuskopiointi on aina hyvä asia. Säilytä tiedostojen kopioita toisella asemalla siltä varalta, että alkuperäisille tapahtuu jotain.    </div>    <div class='faqInFs3Fb'>        Varmuuskopioinnin määritys    </div>    <hr />    <div class='mb-5'>        Valitse <span class='faqInFb'>Käynnistä</span>-painike ja sitten <span class='faqInFb'>Asetukset</span> > <span class='faqInFb'>Päivittäminen ja suojaus</span> > <span class='faqInFb'>Varmuuskopiointi</span> > <span class='faqInFb'>Lisää asema</span>, ja valitse sitten ulkoinen asema tai verkkosijainti.varmuuskopiointia varten.    </div>    <div class='mb-5'>        <img src='./../../../../assets/images/qa/1.1.png'  />    </div>    <div class='mb-5'>        Valmista. Varmuuskopioimme kaikki käyttäjän kansiossa olevat tiedostot (C:\\\\Users\\\\username) tunnin väliajoin. Jos haluat määrittää, mitkä tiedostot varmuuskopioidaan tai kuinka usein varmuuskopiointi tapahtuu, siirry kohtaan <span class='faqInFb'>Lisää vaihtoehtoja</span>.    </div>    <div class='faqInFs3Fb'>        Tiedostojen palauttaminen    </div>    <div class='mb-5'>        Jos sinulta puuttuu tärkeä tiedosto tai kansio, voit palauttaa sen seuraavasti:    </div>    <div>        <div class='mb-3'>1. Kirjoita <span class='faqInFb'>Tiedostojen palautus</span> tehtäväpalkin hakuruutuun ja valitse sitten <span class='faqInFb'> Palauta tiedostot ja tiedostohistoria</span>.</div>        <div class='mb-3'>2. Etsi tarvitsemasi tiedosto ja tarkastele kaikkia sen versioita nuolien avulla</div>        <div class='mb-3'>3. Kun löydät haluamasi version, valitse <span class='faqInFb'>Palauta</span>, jos haluat tallentaa tiedoston sen alkuperäiseen sijaintipaikkaan. Jos haluat tallentaa sen eri paikkaan, paina pitkään (tai napsauta hiiren kakkospainikkeella) <span class='faqInFb'>Palauta</span>-painiketta, valitse <span class='faqInFb'>Palauta sijaintiin</span> -vaihtoehto ja valitse sitten uusi sijainti.</div>    </div></div>",
             "para1": {
                 "line1": "It's always good to have a backup.",
                 "line2": "Keep copies of your files on another drive in case something happens to the originals."
@@ -2316,7 +2331,7 @@
         },
         "question2": {
             "title": "Tietokoneen siivoaminen",
-            "description": "<div>    <div class='faqInFs4Fb'>        Tietokoneen siivoaminen    </div>    <hr>    <div class='faqInFs25FbP5'>        Tilanne    </div>    <div class='faqInP5'>        Jos tietokoneesi ei toimi yhtä hyvin kuin aiemmin etkä tiedä miksi, voit päivittää tietokoneen poistamatta henkilökohtaisia tiedostoja tai muuttamatta asetuksia. Windows voi ”päivittää” tietokoneen niin, että se on kuin vasta asennettu ilman, että henkilökohtaisia tiedostojasi poistetaan.    </div>    <div class='faqInP5'>        Siivoa tietokone -toiminnossa tapahtuu seuraava: tiedostot ja mukautetut asetukset eivät muutu    </div>    <div class='faqInP5'>        <ul>            <li>Tietokoneen asetukset muutetaan takaisin oletusasetuksiksi</li>            <li>Windows-kaupan sovellukset säilyvät</li>            <li>Ohjelmat, jotka on asennettu levyltä tai verkkosivustosta, poistetaan</li>            <li>Luettelo poistetuista tiedostoista tallennetaan työpöydälle</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Tuotemerkit, joita tämä koskee    </div>    <div>        <ul>            <li>Kaikki pöytätietokoneet ja kannettavat</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Käyttöjärjestelmä    </div>    <div>        <ul>            <li>Windows 8, 8.1 ja 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Ratkaisu    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Valitse <span class='faqInFb'> Asetukset </span>                    </li>                    <li class='faqInP5'>                        Valitse <span class='faqInFb'> Päivitys ja palautus</span>                    </li>                    <li class='faqInP5'>                        <div>Valitse <span class='faqInFb'> Palautus</span></div>                        <div class='faqInP5'>Valitse Siivoa tietokone vaikuttamatta tiedostoihisi -kohdassa <span class='faqInFb'> Aloittaminen.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>                    </li>                    <li class='faqInP5'>                        Napauta <span class='faqInFb'> 'Seuraava'</span>.                    </li>                    <li class='faqInP5'>                        Aloita päivitysprosessi valitsemalla <span class='faqInFb'> 'Päivitä'</span>.                    </li>                    <li class='faqInP5'>                        Kun päivitysprosessi on valmis, voit etsiä Poistetut sovellukset -luettelon työpöydältä                    </li>                    <li class='faqInP5'>                        Voit etsiä poistetut sovellukset samalla, kun päivität järjestelmän                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Etsi <span class='faqInFb'> Päivitys </span>aloitusvalikon hakutyökalussa.</li>                    <li class='faqInP5'>                        <div>Valitse <span class='faqInFb'> 'Siivoa tietokoneesi vaikuttamatta tiedostoihin'</span> alla näkyvistä hakutuloksista.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>                    </li>                    <li class='faqInP5'>                        <div>Aloita Windows 10 -tietokoneesi päivitys valitsemalla <span class='faqInFb'> Aloitus </span>-painike heti otsikon <span class='faqInFb'> 'Siivoa tietokone vaikuttamatta tiedostoihisi'</span> alla.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Lisätietoja    </div>    <div>        Useimmiten, kun aloitat tietokoneen siivoamisen, se suorittaa toiminnon loppuun itse. Jos Windows kuitenkin tarvitsee puuttuvia tiedostoja, ohjelma pyytää asettamaan tietokoneeseen elvytystietovälineen, joka on yleensä DVD-levy tai muistitikku. Jos näin käy, tarvittavat toimenpiteet riippuvat tietokoneestasi.    </div>    <div class='faqInP10'>        Jos olet päivittänyt tietokoneesi Windows 8.1- tai Windows RT 8.1 -versioon DVD-levyn avulla, käytä kyseistä levyä. Jos sinulla ei ole Windows 8.1 tai Windows RT 8.1 -tietovälinettä, ota yhteys Microsoftin tukipalveluun.    </div></div>",
+            "description": "<div>    <div class='faqInFs4Fb'>        Tietokoneen siivoaminen    </div>    <hr>    <div class='faqInFs25FbP5'>        Tilanne    </div>    <div class='faqInP5'>        Jos tietokoneesi ei toimi yhtä hyvin kuin aiemmin etkä tiedä miksi, voit päivittää tietokoneen poistamatta henkilökohtaisia tiedostoja tai muuttamatta asetuksia. Windows voi ”päivittää” tietokoneen niin, että se on kuin vasta asennettu ilman, että henkilökohtaisia tiedostojasi poistetaan.    </div>    <div class='faqInP5'>        Siivoa tietokone -toiminnossa tapahtuu seuraava: tiedostot ja mukautetut asetukset eivät muutu    </div>    <div class='faqInP5'>        <ul>            <li>Tietokoneen asetukset muutetaan takaisin oletusasetuksiksi</li>            <li>Windows-kaupan sovellukset säilyvät</li>            <li>Ohjelmat, jotka on asennettu levyltä tai verkkosivustosta, poistetaan</li>            <li>Luettelo poistetuista tiedostoista tallennetaan työpöydälle</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Tuotemerkit, joita tämä koskee    </div>    <div>        <ul>            <li>Kaikki pöytätietokoneet ja kannettavat</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Käyttöjärjestelmä    </div>    <div>        <ul>            <li>Windows 8, 8.1 ja 10</li>        </ul>    </div>    <div class='faqInFs25FbP10'>        Ratkaisu    </div>    <div>        <ul class='list-unstyled'>            <li>                <span class='faqInFbTdP10'>Windows 8/8.1</span>                <ol>                    <li class='faqInP5'>                        Valitse <span class='faqInFb'> Asetukset </span>                    </li>                    <li class='faqInP5'>                        Valitse <span class='faqInFb'> Päivitys ja palautus</span>                    </li>                    <li class='faqInP5'>                        <div>Valitse <span class='faqInFb'> Palautus</span></div>                        <div class='faqInP5'>Valitse Siivoa tietokone vaikuttamatta tiedostoihisi -kohdassa <span class='faqInFb'> Aloittaminen.</span></div>                        <div><img src='./../../../../assets/images/qa/2.1.png'  /></div>                    </li>                    <li class='faqInP5'>                        Napauta <span class='faqInFb'> 'Seuraava'</span>.                    </li>                    <li class='faqInP5'>                        Aloita päivitysprosessi valitsemalla <span class='faqInFb'> 'Päivitä'</span>.                    </li>                    <li class='faqInP5'>                        Kun päivitysprosessi on valmis, voit etsiä Poistetut sovellukset -luettelon työpöydältä                    </li>                    <li class='faqInP5'>                        Voit etsiä poistetut sovellukset samalla, kun päivität järjestelmän                    </li>                </ol>            </li>            <li class='faqInP10'>                <span class='faqInFbTd'>Windows 10</span>                <ol>                    <li class='faqInP5'> Etsi <span class='faqInFb'> Päivitys </span>aloitusvalikon hakutyökalussa.</li>                    <li class='faqInP5'>                        <div>Valitse <span class='faqInFb'> 'Siivoa tietokoneesi vaikuttamatta tiedostoihin'</span> alla näkyvistä hakutuloksista.</div>                        <div><img src='./../../../../assets/images/qa/2.2.jpg'  /></div>                    </li>                    <li class='faqInP5'>                        <div>Aloita Windows 10 -tietokoneesi päivitys valitsemalla <span class='faqInFb'> Aloitus </span>-painike heti otsikon <span class='faqInFb'> 'Siivoa tietokone vaikuttamatta tiedostoihisi'</span> alla.</div>                        <div><img src='./../../../../assets/images/qa/2.3.jpg'  /></div>                    </li>                </ol>            </li>        </ul>    </div>    <div class='faqInFs25Fb'>        Lisätietoja    </div>    <div>        Useimmiten, kun aloitat tietokoneen siivoamisen, se suorittaa toiminnon loppuun itse. Jos Windows kuitenkin tarvitsee puuttuvia tiedostoja, ohjelma pyytää asettamaan tietokoneeseen elvytystietovälineen, joka on yleensä DVD-levy tai muistitikku. Jos näin käy, tarvittavat toimenpiteet riippuvat tietokoneestasi.    </div>    <div class='faqInP10'>        Jos olet päivittänyt tietokoneesi Windows 8.1- tai Windows RT 8.1 -versioon DVD-levyn avulla, käytä kyseistä levyä. Jos sinulla ei ole Windows 8.1 tai Windows RT 8.1 -tietovälinettä, ota yhteys Microsoftin tukipalveluun.    </div></div>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "Tarkista koneen akun käyttö",
-            "description": "<div class='faqInFs4Fb'>    Tarkista koneen akun käyttö</div><hr><h3 class='faqInFs25FbP10'>Tilanne</h3><p>Windows 10 -käyttöjärjestelmään kuuluu uusi ”<strong>Akun käyttö”</strong> -näyttö, josta näet mikä tyhjentää kannettavasi akkua. Tämä tarkoittaa, että se kertoo tarkalleen, mitkä sovellukset – sekä työpöytäversiot että Windows 10 -käyttöjärjestelmän yleissovellukset – käyttävät liikaa virtaa.</p><h3 class='faqInFs25FbP10'>Tuotemerkit, joita tämä koskee</h3><ul>    <li>Lenovon kannettavat tietokoneet, pöytätietokoneet</li></ul><h3 class='faqInFs25FbP10'>Järjestelmät</h3><ul>    <li>Kaikki</li></ul><h3 class='faqInFs25FbP10'>Käyttöjärjestelmä</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Ratkaisu</h3><p>Tämä ominaisuus on uusi Windows 10:ssä, joten se on löydettävä ensin, koska sitä ei ole tallennettu perinteiseen <strong>ohjauspaneeli</strong>-näkymään. Tämä ominaisuus sijaitsee uudessa <strong>”Asetukset”</strong>-sovelluksessa</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hae Akun käyttö -näyttö</h3></p><p>1. Valitse <strong>Käynnistysvalikon </strong>” Asetukset”-vaihtoehto</p><p>2. Valitse <strong>Asetukset</strong>-kohdassa <strong>”Järjestelmä”</strong>ja valitse sitten <strong>”Akun säästö”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Lisätietoja saat napauttamalla <strong>”Akun käyttö”</strong>-linkkiä tämän otsikon alla. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysoi virran käyttöäsi</h3><p>4 Voit muuttaa akun käyttönäytön näyttämään akun käytön viimeisten 24 – 48 tunnin aikana tai edellisen viikon aikana</p><p>5 <strong>”Järjestelmä”,</strong> ”<strong>Näyttö,</strong>” ja ”<strong>Wi-Fi”</strong> prosentit. Tämä näyttää, paljonko akkuvirtaa järjestelmän prosessit ja näyttö ovat käyttäneet.</p><p>6 Vaihtoehdot <strong>”Käytössä”</strong> ja <strong>”Taustalla”</strong> näyttävät, kuinka paljon sovellukset käyttävät virtaa niiden käytön aikana verrattuna taustalla käynnissä oleviin sovelluksiin.</p><p>7 Jos sovellukset käyttävät virtaa taustalla, voit napauttaa <strong>”Muuta taustasovellusten asetuksia” </strong>-linkkiä ja estää sovelluksia olemasta käynnissä taustalla. Tämä toimii vain Windows 10:n yleissovelluksissa.</p><p>8 Vieritä pidemmälle alaspäin ja näet luettelon sovelluksista. Tätä pidetään tämän toiminnon hyödyllisimpänä osiona. Se tuo näkyviin luettelon sovelluksista, jotka ovat käyttäneet akkuvirtaa kyseisenä ajanjaksona ja näyttää, kuinka monta prosenttia akkuvirtaa kukin sovellus on käyttänyt</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Tarkista koneen akun käyttö</div><hr><h3 class='faqInFs25FbP10'>Tilanne</h3><p>Windows 10 -käyttöjärjestelmään kuuluu uusi ”<strong>Akun käyttö”</strong> -näyttö, josta näet mikä tyhjentää kannettavasi akkua. Tämä tarkoittaa, että se kertoo tarkalleen, mitkä sovellukset – sekä työpöytäversiot että Windows 10 -käyttöjärjestelmän yleissovellukset – käyttävät liikaa virtaa.</p><h3 class='faqInFs25FbP10'>Tuotemerkit, joita tämä koskee</h3><ul>    <li>Lenovon kannettavat tietokoneet, pöytätietokoneet</li></ul><h3 class='faqInFs25FbP10'>Järjestelmät</h3><ul>    <li>Kaikki</li></ul><h3 class='faqInFs25FbP10'>Käyttöjärjestelmä</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Ratkaisu</h3><p>Tämä ominaisuus on uusi Windows 10:ssä, joten se on löydettävä ensin, koska sitä ei ole tallennettu perinteiseen <strong>ohjauspaneeli</strong>-näkymään. Tämä ominaisuus sijaitsee uudessa <strong>”Asetukset”</strong>-sovelluksessa</p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Hae Akun käyttö -näyttö</h3></p><p>1. Valitse <strong>Käynnistysvalikon </strong>” Asetukset”-vaihtoehto</p><p>2. Valitse <strong>Asetukset</strong>-kohdassa <strong>”Järjestelmä”</strong>ja valitse sitten <strong>”Akun säästö”.<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png'  /></p><p>3. Lisätietoja saat napauttamalla <strong>”Akun käyttö”</strong>-linkkiä tämän otsikon alla. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analysoi virran käyttöäsi</h3><p>4 Voit muuttaa akun käyttönäytön näyttämään akun käytön viimeisten 24 – 48 tunnin aikana tai edellisen viikon aikana</p><p>5 <strong>”Järjestelmä”,</strong> ”<strong>Näyttö,</strong>” ja ”<strong>Wi-Fi”</strong> prosentit. Tämä näyttää, paljonko akkuvirtaa järjestelmän prosessit ja näyttö ovat käyttäneet.</p><p>6 Vaihtoehdot <strong>”Käytössä”</strong> ja <strong>”Taustalla”</strong> näyttävät, kuinka paljon sovellukset käyttävät virtaa niiden käytön aikana verrattuna taustalla käynnissä oleviin sovelluksiin.</p><p>7 Jos sovellukset käyttävät virtaa taustalla, voit napauttaa <strong>”Muuta taustasovellusten asetuksia” </strong>-linkkiä ja estää sovelluksia olemasta käynnissä taustalla. Tämä toimii vain Windows 10:n yleissovelluksissa.</p><p>8 Vieritä pidemmälle alaspäin ja näet luettelon sovelluksista. Tätä pidetään tämän toiminnon hyödyllisimpänä osiona. Se tuo näkyviin luettelon sovelluksista, jotka ovat käyttäneet akkuvirtaa kyseisenä ajanjaksona ja näyttää, kuinka monta prosenttia akkuvirtaa kukin sovellus on käyttänyt</p><p><img src='./../../../assets/images/qa/4.2.png'  /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "Tietokoneen käyttö taulutietokoneen tavoin",
-            "description": "<div class='faqInFs4Fb'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 class='faqInFs25FbP10'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 class='faqInFs25FbP10'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 class='faqInFs25FbP10'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Tietokoneen käyttö taulutietokoneen tavoin</div><hr><p>Muistiotila tekee Windows-käyttöjärjestelmästä entistä intuitiivisemman ja helppokäyttöisemmän, kun käytössä on kosketusnäytöllinen laite.</p><h3 class='faqInFs25FbP10'>Muistiotila</h3><p>Voit ottaa muistiotilan käyttöön napsauttamalla tehtäväpalkissa <strong>toimintokeskus</strong> ja valitsemalla sitten <strong>Muistiotila</strong>.</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png'  /></p><h3 class='faqInFs25FbP10'>Huomautus</h3><p>Saat lisätietoja siitä, miten laite ottaa muistiotilan automaattisesti käyttöön etsimällä laitteesi valmistajan verkkosivulta. Tämän toiminnon tuki riippuu laitteistosta, asennetusta ohjaimesta ja siitä, miten valmistaja on määrittänyt laitteen asetukset. </p><p> </p><p>Muistiotilassa sovellukset avautuvat koko näytön kokoisiksi, mikä tuo työskentelylle lisätilaa. Jos haluat sulkea sovelluksen, vedä se näytön alareunaan.</p><p> </p><h3 class='faqInFs25FbP10'>Vinkki</h3><p>Tehtäväpalkki on käytettävissä, kun tietokone on muistiotilassa. Voit kuitenkin piilottaa sen, jos haluat lisää tilaa näyttöön. Valitse <strong>Käynnistä</strong>-painike ja sitten <strong>Asetukset </strong>> <strong>Järjestelmä </strong>> <strong> Muistiotila</strong> ja ota <strong>Piilota tehtäväpalkki automaattisesti muistiotilassa</strong>. Voit tuoda piilotetun tehtäväpalkin näkyviin sipaisemalla näytön alareunasta ylöspäin tai viemällä hiiren osoittimen tämän kohdan päälle.</p><h3 class='faqInFs25FbP10'>Kahden sovelluksen käyttö samanaikaisesti</h3><p>Jos haluat käyttää kahta sovellusta rinnakkain muistiotilassa, vedä avoin sovellus alaspäin ja sivulle. Näet, mihin se loksahtaa paikalleen ja näet avoinna olevat sovellukset sen vieressä.</p><p>Tässä näkymässä voit myös:</p><ul>    <li>Muuttaa molempien sovellusten kokoa samanaikaisesti käyttämällä kahden näytöllä olevan sovelluksen välistä jaettua reunaa.</li>    <li>Avaa uusi sovellus tehtävänäkymästä, valitse tehtäväpalkissa <strong>Tehtävänäkymä</strong>, valitse sovellus ja vedä se sitten toiseen laitaan, kun haluat sijoittaa sen jaetulle näytölle.</li>    <li>Voit siirtyä takaisin sovellukseen tai avata aiemmin käyttämäsi sovelluksen napsauttamalla tehtäväpalkin Edellinen-painiketta.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2586,7 +2601,7 @@
         },
         "question6": {
             "title": "Tutustu Cortanaan, henkilökohtaiseen avustajaasi",
-            "description": "<div class='faqInFs4Fb'>    Tutustu Cortanaan, henkilökohtaiseen avustajaasi</div><hr><h3 class='faqInFs25FbP10'>Mikä Cortana on?</h3><hr /><p>Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.</p><p>Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.</p><p>Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)</p><p>Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.</p><p><img src='./../../../assets/images/qa/6.1.png' /></p><ol>    <li>Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute</li></ol><p>Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:</p><ul>    <li>Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.</li>    <li>Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.</li>    <li>Lähetä sähköposteja ja tekstiviestejä.</li>    <li>Hallitse kalenteriasi ja pidä itsesi ajan tasalla.</li>    <li>Luo ja hallinnoi luetteloja.</li>    <li>Jutustele ja pelata pelejä.</li>    <li>Hae faktoja, tiedostoja, paikkoja ja tietoja.</li>    <li>Avaa mikä tahansa järjestelmän sovellus.</li></ul><h3 class='faqInFs25FbP10'>Kokeile tätä: muistutuksen asetus</h3><hr /><p>Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.</p><p>Voit esimerkiksi kirjoittaa tai sanoa: \"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\".</p><p>Muistutus tulee näkyviin, kun Tarja soittaa sinulle.</p><p>Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.</p><p><img src='./../../../assets/images/qa/6.2.png' /></p><h3 class='faqInFs25FbP10'>Hei Cortana?</h3><hr /><p>Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \"Hei Cortana\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \"Hei Cortana\" -komentoon.</strong></p><p><img src='./../../../assets/images/qa/6.3.png' /></p><p class='faqInFs25FbP10'>Huomautus</p><p>Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla.</p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Tutustu Cortanaan, henkilökohtaiseen avustajaasi</div><hr><h3 class='faqInFs25FbP10'>Mikä Cortana on?</h3><hr /><p>Cortana on digitaalinen agenttisi. Hän auttaa sinua saamaan asioita aikaan.</p><p>Mitä enemmän käytät Cortanaa, sitä räätälöidympi kokemuksesi tulee olemaan.</p><p>Aloita kirjoittamalla kysymys hakukenttään, tai valitse mikrofoni ja puhu Cortanalle. (Kirjoitus toimii kaikentyyppisissä tietokoneissa, mutta sinulla on oltava mikrofoni, jotta voit ohjata sovellusta puheella.)</p><p>Jos et ole varma siitä, mitä haluat sanoa, näet ehdotukset lukitusnäytössä ja Cortanan aloitusnäytöllä, kun olet valinnut tehtäväpalkin hakuruudun.</p><p><img src='./../../../assets/images/qa/6.1.png'  /></p><ol>    <li>Koti 2. Kannettava tietokone 3. Asetukset 4. Palaute</li></ol><p>Seuraavassa on joitakin tapoja, joilla Cortana voi auttaa sinua:</p><ul>    <li>Saat aikaan, paikkoihin tai henkilöihin perustuvia muistutuksia.</li>    <li>Seuraa paketteja, tiimejä, kiinnostuksen kohteita ja lentoja.</li>    <li>Lähetä sähköposteja ja tekstiviestejä.</li>    <li>Hallitse kalenteriasi ja pidä itsesi ajan tasalla.</li>    <li>Luo ja hallinnoi luetteloja.</li>    <li>Jutustele ja pelata pelejä.</li>    <li>Hae faktoja, tiedostoja, paikkoja ja tietoja.</li>    <li>Avaa mikä tahansa järjestelmän sovellus.</li></ul><h3 class='faqInFs25FbP10'>Kokeile tätä: muistutuksen asetus</h3><hr /><p>Yksi asioista, jotka Cortana voi tehdä, on antaa sinulle muistutuksia. Hän voi muistuttaa sinua tekemään asioita perustuen aikaan, paikkoihin tai jopa ihmisiin.</p><p>Voit esimerkiksi kirjoittaa tai sanoa: \"Muistuta minua onnittelemaan Tarjaa, kun hän soittaa seuraavan kerran\".</p><p>Muistutus tulee näkyviin, kun Tarja soittaa sinulle.</p><p>Lisäbonus: Jos sinulla on Windows-puhelin tai Cortana for iPhone tai Android -sovellus, voit määrittää Cortanan synkronoimaan ilmoitukset tietokoneen ja puhelimen välillä.</p><p><img src='./../../../assets/images/qa/6.2.png'  /></p><h3 class='faqInFs25FbP10'>Hei Cortana?</h3><hr /><p>Voit asettaa Cortanan kuuntelemaan aina, kun sanot: \"Hei Cortana\". Avaa Cortanan aloitusnäyttö valitsemalla tehtäväpalkista hakuruutu. Valitse sitten <strong>Asetukset</strong> ja ota käyttöön <strong>Anna Cortanan vastata \"Hei Cortana\" -komentoon.</strong></p><p><img src='./../../../assets/images/qa/6.3.png'  /></p><p class='faqInFs25FbP10'>Huomautus</p><p>Cortana on käytettävissä vain tietyissä maissa tai joillakin alueilla, ja jotkin Cortanan ominaisuudet eivät ehkä ole käytettävissä kaikkialla.</p><p> </p>",
             "heading1": "What is Cortana?",
             "para1": "Cortana is your digital agent. She'll help you get things done.",
             "para2": "The more you use Cortana, the more personalized your experience will be.",
@@ -2637,6 +2652,7 @@
         "professional": "Ammattikäyttö",
         "privacytitle": "Auta meitä parantamaan sovellusta sallimalla nimettömien käyttötilastojen kerääminen.",
         "moreInterest": "+ muuta kiinnostuksen kohdetta",
+        "toolbartitle": "Ota käyttöön Lenovo Vantage -työkalurivi (suositus)",
         "title1": "Tervetuloa",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "Toiminto käynnistetty",
         "actionTriggeredDescription": "Käyttäjän asetusvalintojen avulla käynnistämät sanomat, kuten tärkeiden tai suositeltujen päivitysten automaattinen asennus.",
         "OtherSettings": "Muut asetukset",
-        "usageStatistics": "Käyttötilastot",
-        "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
-        "deviceStatistics": "Jaa tilastotiedot Lenovolle",
-        "deviceStatisticsDescription": "Ohjelma jakaa tilastotietoja Lenovolle, jotta se voi parantaa tietokoneen luotettavuutta, ominaisuuksia ja ominaisuuksien optimointia.",
+        "usageStatistics": "Vantage-käyttötilastot",
+        "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja, jotta voimme kehittää Vantage-sovellusta.",
+        "deviceStatistics": "Lenovo-laitetilastot",
+        "deviceStatisticsDescription": "Lähetä nimettömiä laitetietoja, jotta voimme kehittää laatua, luotettavuutta ja seuraavan sukupolven laitteita.",
         "userProfile": "Käyttäjäprofiili",
         "Note": "Huomautus: ",
         "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt sovelluksen uudelleen.",
@@ -2806,7 +2822,7 @@
                 "yes": "Kyllä",
                 "no": "Ei"
             },
-            "waitAvailability": "Vaikka laitteistotietoja ei ole vielä noudettu, painike ei ole käytettävissä sen varalta, että tallennuslaitteet eivät tue tätä toimintoa tai viallisten sektorien palautus on käynnissä."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Lataa ammattimaiset vianmääritystyökalut",
@@ -2843,7 +2859,7 @@
             "storage": "Tallennus",
             "wireless": "Langattomat yhteydet"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
-                "networkError": "Verkkovirhe.",
-                "installationCancelled": "Asennus on peruutettu."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Adoben lunastus",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Asenna",
-                "installing": "Asentaminen",
-                "downloading": "Ladataan",
-                "installed": "Asennettu",
-                "launch": "Aloita",
-                "seeMore": "Näytä lisää"
-            },
-            "fieldName": {
-                "description": "Kuvaus",
-                "screenshots": "Näyttökuvat",
-                "additionalInformation": "Lisätietoja",
-                "by": "Tekijä:",
-                "updated": "Päivitetty:",
-                "type": "Tyyppi:",
-                "category": "Luokka:",
-                "legalAgreement": "Laillinen sopimus",
-                "readMore": "Lue enemmän",
-                "readLess": "Lue vähemmän"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Nyt voit selvittää, onko yksityisiä tietojasi katseltu luvatta tai ovatko verkkoseuraajat käyttäneet niitä tietämättäsi.",
+            "security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
+            "connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Asennus epäonnistui. Yritä uudelleen.",
+                "networkError": "Verkkovirhe.",
+                "installationCancelled": "Asennus on peruutettu."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Adoben lunastus",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Asenna",
+                "installing": "Asentaminen",
+                "downloading": "Ladataan",
+                "installed": "Asennettu",
+                "launch": "Aloita",
+                "seeMore": "Näytä lisää"
+            },
+            "fieldName": {
+                "description": "Kuvaus",
+                "screenshots": "Näyttökuvat",
+                "additionalInformation": "Lisätietoja",
+                "by": "Tekijä:",
+                "updated": "Päivitetty:",
+                "type": "Tyyppi:",
+                "category": "Luokka:",
+                "legalAgreement": "Laillinen sopimus",
+                "readMore": "Lue enemmän",
+                "readLess": "Lue vähemmän"
+            }
+        }
+    }
 }

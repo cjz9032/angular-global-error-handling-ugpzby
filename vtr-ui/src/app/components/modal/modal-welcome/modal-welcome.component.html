@@ -76,7 +76,7 @@
 					</div>
 					<div class="row mb-5"
 						[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming}">
-						<div class="col-4 device-image-content">
+						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
 								id="tutorial_personalUse"
 								attr.aria-label="tutorial_personalUse"
@@ -98,7 +98,7 @@
 									class="centered">{{ "welcometutorial.personal" | translate }}</label>
 							</div>
 						</div>
-						<div class="col-4 device-image-content">
+						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
 								id="tutorial_businessUse"
 								attr.aria-label="tutorial_businessUse"
@@ -119,7 +119,7 @@
 									class="centered">{{ "welcometutorial.business" | translate }}</label>
 							</div>
 						</div>
-						<div class="col-4 device-image-content">
+						<div class="col-4 device-image-content d-flex justify-content-center">
 							<div class="device-image"
 								id="tutorial_professionalExp"
 								attr.aria-label="tutorial_professionalExp"
@@ -174,6 +174,22 @@
 								class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
 						</div>
 					</div>
+					<div class="row privacy-check mt-3"
+						*ngIf="vantageToolbarStatus.available">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" tabindex="6" (keypress)="onKeyPress($event)"
+								(click)="saveToolbar($event)"
+								[checked]="vantageToolbar"
+								class="custom-control-input"
+								id="chkbox-vantage-toolbar"
+								role="checkbox">
+							<label class="custom-control-label" dir="{{direction}}"
+								for="chkbox-vantage-toolbar">
+								{{ "welcometutorial.toolbartitle" | translate }}
+							</label>
+						</div>
+					</div>
+
 					<div class="row privacy-check mt-3">
 						<div class="custom-control custom-checkbox">
 							<input type="checkbox"
@@ -190,7 +206,7 @@
 								<a class="linktext"
 									tabindex="7"
 									[ngClass]="{'lang-he-privacy-link':machineInfo.locale=='he'}"
-									(click) = "privacyPolicyClick($event)"
+									(click)="privacyPolicyClick($event)"
 									href="#"
 									rel="noopener"
 									[innerHTML]="'welcometutorial.privacypolicy' | translate">
@@ -206,7 +222,7 @@
 						(keypress)="btnDoneOnKeyPress($event)">
 						<vtr-ui-button metricsParent="WelcomePage"
 							metricsEvent="featureClick"
-							[tabIndex]='1'
+							[tabIndex]='8'
 							[tooltip]="false"
 							[metricsItem]="'DONE'"
 							[label]="'welcometutorial.done' | translate"

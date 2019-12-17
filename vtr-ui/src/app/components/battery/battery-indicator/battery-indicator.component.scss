@@ -82,7 +82,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			// left: 3.3%; // small
 			// width: 91.3%;
 
-			left: 2%; // big
+			left: 1.8%; // big
 			width: 91%;
 			border: 0.8rem solid var(--border-color);
 			opacity: 1;
@@ -116,12 +116,12 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 			height: 12rem;
 			border: 0.2rem solid var(--border-color);
 			border-radius: 0.3rem;
-			left: -1rem;
+			left: -0.7rem;
 			@media #{$medium-screen} {
-				left: -2.2rem;
+				left: -1.6rem;
 			}
 			@media #{$mediaquery_X4} {
-				left: -1.6rem;
+				left: -1rem;
 			}
 			/* battery notch */
 			&:after {
@@ -179,7 +179,6 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					z-index: 5;
 					text-align: center;
 					width: calc(100% - 0.8rem);
-					font-size: 4.5rem;
 					font-weight: bold;
 				}
 
@@ -187,14 +186,14 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 					@extend .base-percentage-text;
 					// font-size: 3rem;
 					// // color: $stop;
-					// top: calc(30%);
+					top: 2.5rem;
 
 					.error-icon {
 						font-size: 3.5rem;
 						align-self: center;
 						position: relative;
-						bottom: 2rem;
-						right: 3rem;
+						bottom: 1.2rem;
+						right: 2.5rem;
 					}
 					.icomoon-NoBatteryError {
 						&:before {
@@ -211,6 +210,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 
 				.percentage {
 					@extend .base-percentage-text;
+					font-size: 4.5rem;
 					color: $main_dark;
 
 					.percentage-symbol {

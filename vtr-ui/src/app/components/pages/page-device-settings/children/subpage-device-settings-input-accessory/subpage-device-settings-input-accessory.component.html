@@ -43,8 +43,8 @@
 													<div class="img-preview"
 														[style.background-image]="additionalCapabilitiesObj.backLight ? 'url(' + kbdBlIcon + ')': ''">
 														<div class="img-preview"
-															[style.background-image]="additionalCapabilitiesObj.magnifier ? 'url(' + merlynIcon + ')': ''">
-															<img *ngIf="additionalCapabilitiesObj.performance"
+															[style.background-image]="additionalCapabilitiesObj.performance ? 'url(' + merlynIcon + ')': ''">
+															<img *ngIf="additionalCapabilitiesObj.magnifier"
 																[src]="zoomIcon"
 																class="image" />
 														</div>

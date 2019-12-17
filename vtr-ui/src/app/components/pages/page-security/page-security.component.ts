@@ -142,10 +142,14 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		}).catch(e => {
 			this.showVpn = true;
 		}).finally(() => {
-			this.createViewModels();
-			// this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result: boolean) => {
-			// 	this.pluginSupport = result;
-			// });
+			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
+				if (result === 'true') {
+					this.pluginSupport = true;
+				} else {
+					this.pluginSupport = false;
+				}
+				this.createViewModels();
+			});
 		});
 		this.fetchCMSArticles();
 		const antivirus = new AntivirusErrorHandle(this.antivirus);
@@ -163,7 +167,8 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	private refreshAll() {
 		this.securityAdvisor.refresh().then(() => {
-			this.getLevelStatus();
+			this.updateViewModels();
+			this.updateStatus();
 		});
 	}
 
@@ -198,15 +203,15 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.showWindowsHelloItem(windowsHello);
 			this.updateViewModels();
 		});
-		this.getLevelStatus();
+		this.updateStatus();
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 			this.updateViewModels();
 		}).on(EventTypes.wsStateEvent, () => {
-			this.getLevelStatus();
+			this.updateStatus();
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.ngZone.run(() => {
-				this.getLevelStatus();
+				this.updateStatus();
 			});
 		});
 		this.updateViewModels();
@@ -217,20 +222,28 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.baseItems = [];
 		this.intermediateItems = [];
 		this.advanceItems = [];
-		this.baseItems.push(this.antivirusLandingViewModel.avStatus, this.antivirusLandingViewModel.fwStatus, this.windowsActiveLandingViewModel.waStatus);
+		if (!this.pluginSupport) {
+			this.windowsActiveLandingViewModel = undefined;
+			this.uacLandingViewModel = undefined;
+			this.bitLockerLandingViewModel = undefined;
+		}
+		this.baseItems.push(this.antivirusLandingViewModel.avStatus,
+			this.antivirusLandingViewModel.fwStatus,
+			this.windowsActiveLandingViewModel ? this.windowsActiveLandingViewModel.waStatus : undefined);
 		this.intermediateItems.push(
 			this.passwordManagerLandingViewModel.pmStatus,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus : undefined,
-			this.uacLandingViewModel.uacStatus);
-		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
+			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus : undefined);
 		this.advanceItems.push(
 			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus : undefined,
 			this.bitLockerLandingViewModel ? this.bitLockerLandingViewModel.blStatus : undefined,
 			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus : undefined);
+		this.baseItems = this.baseItems.filter(i => i !== undefined && i !== null);
+		this.intermediateItems = this.intermediateItems.filter(i => i !== undefined && i !== null);
 		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
 	}
 
-	public getLevelStatus() {
+	public updateStatus(haveOwnList?) {
 		const statusList = {
 			basic: [],
 			intermediate: [],
@@ -239,19 +252,35 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		statusList.basic = new Array(
 			this.antivirusLandingViewModel.avStatus.status,
 			this.antivirusLandingViewModel.fwStatus.status,
-			this.windowsActiveLandingViewModel.waStatus.status
+			this.windowsActiveLandingViewModel ? this.windowsActiveLandingViewModel.waStatus.status : undefined
 		).filter(i => i !== undefined);
+		let pmOwnStatus;
+		let wfOwnStatus;
+		let vpnOwnStatus;
+		if (haveOwnList) {
+			pmOwnStatus = haveOwnList.passwordManager === true;
+			wfOwnStatus = haveOwnList.wifiSecurity === true;
+			vpnOwnStatus = haveOwnList.vpn === true;
+		} else {
+			pmOwnStatus = this.passwordManagerLandingViewModel.pmStatus.showOwn === true;
+			wfOwnStatus = this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.showOwn === true : undefined;
+			vpnOwnStatus = this.vpnLandingViewModel ? (this.vpnLandingViewModel.vpnStatus.showOwn === true) : undefined;
+		}
 		statusList.intermediate = new Array(
-			this.passwordManagerLandingViewModel.pmStatus.status,
+			pmOwnStatus ? 'true' : this.passwordManagerLandingViewModel.pmStatus.status,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus.status : undefined,
-			this.uacLandingViewModel.uacStatus.status
+			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus.status : undefined
 		).filter(i => i !== undefined);
 		statusList.advanced = new Array(
-			this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.status : undefined,
+			wfOwnStatus ? 'true' : this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.status : undefined,
 			this.bitLockerLandingViewModel ? this.bitLockerLandingViewModel.blStatus.status : undefined,
-			this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus.status : undefined,
+			vpnOwnStatus ? 'true' : this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus.status : undefined,
 		).filter(i => i !== undefined);
 
+		this.getLevelStatus(statusList);
+	}
+
+	public getLevelStatus(statusList) {
 		const levelStatus = {
 			basicValid: 0,
 			basicSuccess: false,
@@ -265,15 +294,15 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				const element = statusList[key];
 				switch (key) {
 					case SecurityTypeConst.Basic:
-						levelStatus.basicValid = element.filter(i => i === true || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.basicValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
 						levelStatus.basicSuccess = element.length === levelStatus.basicValid;
 						break;
 					case SecurityTypeConst.Intermediate:
-						levelStatus.intermediateValid = element.filter(i => i === true || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.intermediateValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
 						levelStatus.intermediateSuccess = element.length === levelStatus.intermediateValid;
 						break;
 					case SecurityTypeConst.Advanced:
-						levelStatus.advancedValid = element.filter(i => i === true || i === 'enabled' || i === 'installed' || i === 'registered').length;
+						levelStatus.advancedValid = element.filter(i => i === 'true' || i === 'enabled' || i === 'installed' || i === 'registered').length;
 						levelStatus.advancedSuccess = element.length === levelStatus.advancedValid;
 						break;
 					default:
@@ -281,26 +310,30 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				}
 			}
 		}
+		this.calcSecurityLevel(levelStatus);
+	}
+
+	public calcSecurityLevel(levelStatus) {
 		const item = {
 			status: 0,
 			fullyProtected: false,
 			icon: 0
 		};
-		if (levelStatus.basicValid > 0 || levelStatus.intermediateValid > 0 || levelStatus.advancedValid > 0) {
+		if (levelStatus.basicValid > 0) {
 			if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
 				if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
 					item.status = 3;
 					item.fullyProtected = true;
-					item.icon = levelStatus.advancedValid;
+					item.icon = levelStatus.advancedValid - 1;
 				} else {
 					item.status = 2;
 					item.fullyProtected = false;
-					item.icon = levelStatus.intermediateValid;
+					item.icon = levelStatus.intermediateValid - 1;
 				}
 			} else {
 				item.status = 1;
 				item.fullyProtected = false;
-				item.icon = levelStatus.basicValid;
+				item.icon = levelStatus.basicValid - 1;
 			}
 
 		} else {

@@ -107,7 +107,8 @@
                     "sub1": "Supporto",
                     "sub2": "Facebook",
                     "sub3": "Instagram"
-                }
+                },
+                "smartPerformance": "Smart Performance"
             },
             "narrator": {
                 "pageTitle": {
@@ -643,11 +644,11 @@
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO",
             "fingerPrint": "Fingerprint",
-            "privacyPolicyAndTermsOfService": "<tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+            "privacyPolicyAndTermsOfService": "<tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
         },
         "qAndA": {
             "title": "Domande e risposte per la tua macchina",
-            "subtitle": "TROVA ALCUNI CONSIGLI UTILI PER IL TUO DISPOSITIVO.",
+            "subtitle": "Trovare alcuni suggerimenti utili per il dispositivo.",
             "question1": "Backup e ripristino dei file",
             "question2": "Come aggiornare il PC",
             "question3": "Informazioni sulla CPU del computer in uso",
@@ -748,7 +749,7 @@
         },
         "systemStatus": {
             "title": "Stato del sistema",
-            "subtitle": "INFORMAZIONI RAPIDE SULLO STATO DEL DISPOSITIVO.",
+            "subtitle": "Informazioni rapide sullo stato del dispositivo.",
             "memory": {
                 "title": "Memoria",
                 "detail": {
@@ -915,7 +916,7 @@
                 "seeDetailsLink": "Visualizza dettagli",
                 "gaugeResetWarning": "<b>Nota:</b> è in corso la reimpostazione dell'indicatore della batteria. Non scollegare l'adattatore di alimentazione CA.",
                 "dualConditions": {
-                    "NotDetected": "<b>The primary battery is not detected</b>"
+                    "NotDetected": "<b>La batteria principale non è stata rilevata.</b>"
                 }
             },
             "power": {
@@ -1012,7 +1013,8 @@
                             "desc2": "Il dispositivo di scorrimento si trova al centro o al centro a destra. La velocità e le prestazioni della ventola sono bilanciate in modo dinamico per garantire la migliore esperienza.",
                             "title3": "Modalità prestazioni",
                             "desc3": "Il dispositivo di scorrimento si trova all'estrema destra. La velocità della ventola e la temperatura consentita della superficie sono più elevate per ottenere le massime prestazioni."
-                        }
+                        },
+                        "desc3_1": "Some of the modes can automatically adjust across a wider range of performance based on your activity. To disable automatic mode, press Fn+ T."
                     }
                 },
                 "powerSettings": {
@@ -1219,7 +1221,8 @@
                         }
                     },
                     "description2": "Questa funzione pianifica l'ottimizzazione del risparmio energetico della batteria durante i periodi di inutilizzo del computer, senza comprometterne l'avvio rapido durante i picchi di utilizzo.",
-                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer"
+                    "subTitle2": "Impostare l'ora in cui generalmente si utilizza il computer",
+                    "oldTooltipText": "When Smart Standby is enabled, your computer switches to Modern Standby before the scheduled START time and enters hibernation after it is inactive for a certain period of time on battery power. This time period is optimized based on the schedule you set. The computer switches from hibernation to Modern Standby only on scheduled days, and does not switch when it is inactive for consecutive scheduled days."
                 }
             },
             "audio": {
@@ -1301,6 +1304,15 @@
                 },
                 "display": {
                     "title": "Visualizza",
+					"displayColorTemperature": {
+						"title": "Temperatura colore schermo",
+						"description": "È possibile regolare la temperatura del colore dello schermo per filtrare la luce blu e ridurre l'affaticamento degli occhi. Consente di regolare gli schermi con colori più caldi dal tramonto all'alba, per favorire il riposo notturno.",
+						"link": {
+							"click": "Fare clic",
+							"here": "qui",
+							"rest": "per modificare la temperatura del colore."
+						}
+					},
                     "eyeCareMode": {
                         "title": "Modalità Comfort Visivo",
                         "checkbox": "Pianifica la modalità Comfort visivo dal tramonto all'alba",
@@ -1514,7 +1526,8 @@
                     "more": "ALTRO",
                     "control1": "CONTROLLI TOUCHPAD",
                     "control2": "CONTROLLI MOUSE",
-                    "control3": "CONTROLLI TRACKPOINT"
+                    "control3": "CONTROLLI TRACKPOINT",
+                    "less": "LESS"
                 }
             }
         },
@@ -1677,7 +1690,7 @@
                 "heading": "Supporti intelligenti",
                 "title": "Upscaling della risoluzione video",
                 "desc": "<p><label>Questa funzione migliora l'esperienza di riproduzione dei video, aumentandone la risoluzione. Risulta particolarmente efficiente con i video in bassa risoluzione.</label></p> <p style='margin-top:4px;'><label> Questa funzione potrebbe influire sulla durata e la temperatura della batteria, aumentando la rumorosità del dispositivo. Se abilitata, si consiglia di collegare il computer all'alimentazione CA.</label></p>",
-                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player <br/> Storm player <br/> Thunderbolt player",
+                "tooltip": "La funzione può essere utilizzata solo sui seguenti lettori: <br/> Windows Media player",
                 "note": {
                     "description": "Questa funzione non può essere utilizzata quando:",
                     "description1": "Il computer non è collegato all'alimentazione CA e l'alimentazione della batteria è inferiore al 20%.",
@@ -1873,7 +1886,7 @@
         },
         "needHelp": {
             "title": "Hai bisogno di aiuto?",
-            "description": "CONTATTACI PER RICHIEDERE ASSISTENZA.",
+            "description": "Contattaci per richiedere assistenza.",
             "listLenovoCommunity": "Comunità Lenovo",
             "listContactCustomerService": "Contatta il servizio clienti",
             "listContactUsOnWechat": "Contattaci su WeChat",
@@ -1884,7 +1897,7 @@
         },
         "quicklinks": {
             "title": "Collegamenti rapidi",
-            "description": "CONTATTACI PER RICHIEDERE ASSISTENZA.",
+            "description": "Contattaci per richiedere assistenza.",
             "listETicket": "Richiedi supporto con E-ticket",
             "listServiceProvider": "Trova un provider di servizi",
             "listAboutLenovoVantage": "Informazioni su Lenovo Vantage"
@@ -1955,13 +1968,17 @@
             "noProtectionDesc": "Your device has no security protection, so we enable Windows Defender for you as a minimum protection. To protect your device from incoming threats, try installing anti-virus software.",
             "basic": "BASIC",
             "basicTitle": "Basic protection",
-            "basicDesc": "Your device has basic security protection enabled. This is your first line of defense against incoming threats. For better protection, try enabling UAC notifications and using a password manager.",
+            "basicDesc": "Your device has only basic security protection enabled. For better protection, try enabling UAC notifications and using a password manager.",
             "intermediate": "INTERMEDIATE",
             "intermediateTitle": "Intermediate protection",
-            "intermediateDesc": "Good job! Your device has basic and intermediate security protection enabled! To get advanced protection, try encrypting your data and monitoring your network security breaches.",
+            "intermediateDesc": "Good job! You are only one step way from getting advanced protection, try encrypting your data and monitoring your network security breaches.",
             "advanced": "ADVANCED",
             "advancedTtitle": "Advanced protection",
-            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!"
+            "advancedDesc": "Congratulations! Your device has basic, intermediate and advanced security protection enabled, great job!",
+            "haveOwn": "I have my own",
+            "basicSecurity": "BASIC SECURITY",
+            "advancedSecurity": "ADVANCED SECURITY",
+            "intermediateSecurity": "INTERMEDIATE SECURITY"
         },
         "antivirus": {
             "common": {
@@ -2092,7 +2109,7 @@
                 "subtitle": "Protezione garantita",
                 "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili <tag>qui</tag>.",
                 "tryNow": "Provalo ora",
-                "goToChs": "go to connected home security"
+                "visit": "Visit"
             },
             "invitationcode": {
                 "button": "Immettere il codice invito",
@@ -2167,8 +2184,7 @@
             "getStarted1": "Fare clic sul pulsante \"Avvia SurfEasy\" in alto, per avviare SurfEasy VPN.",
             "getStarted2": "Attiva la rete VPN e attendi qualche istante per la conferma della connessione sicura.",
             "getStarted3": "Modifica l'area geografica o la posizione se necessario e inizia a utilizzare la rete privata sicura.",
-            "poweredBySurfEasy": "Basato su SurfEasy",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredBySurfEasy": "Basato su SurfEasy"
         },
         "passwordManager": {
             "statusTitle": "STRUMENTO PER LA GESTIONE DELLE PASSWORD DASHLANE",
@@ -2196,8 +2212,7 @@
             "allowsYou2": "Monitorare le informazioni personali sul web oscuro",
             "allowsYou3": "Proteggere i dispositivi collegati alle reti WiFi non sicure con la rete VPN integrata",
             "allowsYou4": "Condividere le password in modo sicuro",
-            "poweredByDashLane": "Basato su Dashlane",
-            "privacyPolicyAndTermsOfService": "Ulteriori informazioni sulle <tag>Norme di tutela della privacy</tag> e sui <tag>Termini del servizio</tag>"
+            "poweredByDashLane": "Basato su Dashlane"
         },
         "windowsHello": {
             "statusTitle": "WINDOWS HELLO",
@@ -2479,7 +2494,7 @@
         },
         "question4": {
             "title": "Informazioni sull'uso della batteria del computer in uso",
-            "description": "<div class='faqInFs4Fb'>    Informazioni sull'uso della batteria del computer in uso</div><hr><h3 class='faqInFs25FbP10'>Sintomo</h3><p>Windows 10 include una nuova schermata \"<strong>Uso batteria\"</strong> che mostra le risorse che stanno utilizzando maggiormente la batteria del notebook. Ciò significa che in questa schermata vengono visualizzate le app desktop e le app universali di Windows 10 che richiedono più potenza.</p><h3 class='faqInFs25FbP10'>Marchi interessati</h3><ul>    <li>Desktop, notebook Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemi interessati</h3><ul>    <li>Tutto</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Soluzione</h3><p>Questa nuova funzione di Windows 10 non si trova nella finestra del <strong>pannello di controllo </strong>tradizionale, ma nella nuova app <strong>\"Impostazioni\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Individuare la schermata \"Uso batteria\"</h3></p><p>1. Fare clic o toccare l'opzione <strong>\"Impostazioni</strong>\" dal menu Start</p><p>2. In <strong>Impostazioni </strong> selezionare <strong>\"Sistema\"</strong>e scegliere <strong>\"Risparmia batteria.\"<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.jpg' /></p><p>3. Fare clic o toccare il collegamento <strong>\"Uso batteria\"</strong> sotto questa intestazione per visualizzare maggiori dettagli. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizzare il consumo di energia</h3><p>4 È possibile modificare le impostazioni della schermata \"Uso batteria\" per visualizzare l'utilizzo della batteria nelle ultime 24-48 ore o nell'ultima settimana</p><p>5 <strong>\"Sistema,\"</strong> “<strong>Schermo,</strong>\" e \" percentuali <strong>Wi-Fi”</strong>. Questa finestra mostra la percentuale di batteria utilizzata dai processi di sistema e dallo schermo.</p><p>6 Le opzioni <strong>\"In uso\"</strong> e <strong>\"In background\"</strong>  mostrano quante risorse vengono utilizzate dalle applicazioni in esecuzione e in background.</p><p>7 Se le app utilizzano risorse in background, è possibile fare clic o toccare il collegamento <strong> \"Modifica le impostazioni per le app in background\" </strong>e configurare le app da non eseguire in background. Questo funzione è disponibile solo per le app universali di Windows 10.</p><p>8 Scorrere verso il basso per visualizzare la funzione più utile: un elenco delle applicazioni. In questa sezione è disponibile un elenco di tutte le app che hanno utilizzato la batteria in un determinato periodo di tempo e la percentuale di batteria usata da ogni app</p><p><img src='./../../../assets/images/qa/4.2.jpg' /></p><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Informazioni sull'uso della batteria del computer in uso</div><hr><h3 class='faqInFs25FbP10'>Sintomo</h3><p>Windows 10 include una nuova schermata \"<strong>Uso batteria\"</strong> che mostra le risorse che stanno utilizzando maggiormente la batteria del notebook. Ciò significa che in questa schermata vengono visualizzate le app desktop e le app universali di Windows 10 che richiedono più potenza.</p><h3 class='faqInFs25FbP10'>Marchi interessati</h3><ul>    <li>Desktop, notebook Lenovo</li></ul><h3 class='faqInFs25FbP10'>Sistemi interessati</h3><ul>    <li>Tutto</li></ul><h3 class='faqInFs25FbP10'>Sistema operativo</h3><ul>    <li>Windows 10</li></ul><h3 class='faqInFs25FbP10'>Soluzione</h3><p>Questa nuova funzione di Windows 10 non si trova nella finestra del <strong>pannello di controllo </strong>tradizionale, ma nella nuova app <strong>\"Impostazioni\"</strong></p><p><br /> </p><p>    <h3 class='faqInFs25FbP10'>A. Individuare la schermata \"Uso batteria\"</h3></p><p>1. Fare clic o toccare l'opzione <strong>\"Impostazioni</strong>\" dal menu Start</p><p>2. In <strong>Impostazioni </strong> selezionare <strong>\"Sistema\"</strong>e scegliere <strong>\"Risparmia batteria.\"<br /> <br /> </strong> <strong><br /> <br /> </strong></p><p><img src='./../../../assets/images/qa/4.1.png' /></p><p>3. Fare clic o toccare il collegamento <strong>\"Uso batteria\"</strong> sotto questa intestazione per visualizzare maggiori dettagli. </p><p> </p><h3 class='faqInFs25FbP10'>B. Analizzare il consumo di energia</h3><p>4 È possibile modificare le impostazioni della schermata \"Uso batteria\" per visualizzare l'utilizzo della batteria nelle ultime 24-48 ore o nell'ultima settimana</p><p>5 <strong>\"Sistema,\"</strong> “<strong>Schermo,</strong>\" e \" percentuali <strong>Wi-Fi”</strong>. Questa finestra mostra la percentuale di batteria utilizzata dai processi di sistema e dallo schermo.</p><p>6 Le opzioni <strong>\"In uso\"</strong> e <strong>\"In background\"</strong>  mostrano quante risorse vengono utilizzate dalle applicazioni in esecuzione e in background.</p><p>7 Se le app utilizzano risorse in background, è possibile fare clic o toccare il collegamento <strong> \"Modifica le impostazioni per le app in background\" </strong>e configurare le app da non eseguire in background. Questo funzione è disponibile solo per le app universali di Windows 10.</p><p>8 Scorrere verso il basso per visualizzare la funzione più utile: un elenco delle applicazioni. In questa sezione è disponibile un elenco di tutte le app che hanno utilizzato la batteria in un determinato periodo di tempo e la percentuale di batteria usata da ogni app</p><p><img src='./../../../assets/images/qa/4.2.png' /></p><p> </p>",
             "heading1": "Symptom",
             "para1": {
                 "span1": "Windows 10 includes a new",
@@ -2547,7 +2562,7 @@
         },
         "question5": {
             "title": "Utilizzo del PC come un tablet",
-            "description": "<div class='faqInFs4Fb'>    Utilizzo del PC come un tablet</div><hr><p>La modalità tablet rende Windows più intuitivo e più facile da usare quando si dispone di un dispositivo touchscreen.</p><h3 class='faqInFs25FbP10'>Utilizzo della modalità tablet</h3><p>Per attivare la modalità tablet, selezionare <strong>Centro notifiche</strong> sulla barra delle applicazioni, quindi scegliere <strong>Modalità tablet</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.jpg' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Per verificare se il dispositivo è in grado di attivare automaticamente la modalità tablet, cercare il dispositivo sul sito Web del produttore. Il supporto di questa funzione dipende da hardware, driver installato e modalità di configurazione del dispositivo da parte del produttore. </p><p> </p><p>In modalità tablet, le app vengono visualizzate a schermo intero, offrendo più spazio per lavorare. Per chiudere un'app, trascinarla nella parte inferiore dello schermo.</p><p> </p><h3 class='faqInFs25FbP10'>Suggerimento</h3><p>La barra delle applicazioni è disponibile quando il PC è in modalità tablet, ma è possibile nasconderla se si desidera più spazio sullo schermo. Selezionare il pulsante <strong>Start </strong>, scegliere <strong>Impostazioni </strong>> <strong>Sistema </strong>> <strong> Modalità tablet </strong>, quindi attivare <strong>Nascondi automaticamente la barra delle applicazioni in modalità tablet</strong>. Per visualizzare la barra delle applicazioni, scorrere verso l'alto dalla parte inferiore dello schermo o utilizzare il mouse per passarvi sopra.</p><h3 class='faqInFs25FbP10'>Utilizzo contemporaneo di due app</h3><p>Per utilizzare due app affiancate in modalità tablet, trascinare un'app aperta giù e di lato. L'app verrà ancorata e verranno visualizzate tutte le app aperte accanto.</p><p>In questa vista, è anche possibile:</p><ul>    <li>Usare il bordo condiviso tra due app ancorate per ridimensionare contemporaneamente entrambe le app.</li>    <li>Aprire una nuova app da \"Visualizzazione attività\" - selezionare <strong>Visualizzazione attività</strong> sulla barra delle applicazioni, selezionare un'app e trascinala su un lato per ancorarla allo schermo diviso.</li>    <li>Utilizzare il pulsante Indietro sulla barra delle applicazioni per tornare a un'app o per aprire un'app che si stava utilizzando.</li></ul><p> </p>",
+            "description": "<div class='faqInFs4Fb'>    Utilizzo del PC come un tablet</div><hr><p>La modalità tablet rende Windows più intuitivo e più facile da usare quando si dispone di un dispositivo touchscreen.</p><h3 class='faqInFs25FbP10'>Utilizzo della modalità tablet</h3><p>Per attivare la modalità tablet, selezionare <strong>Centro notifiche</strong> sulla barra delle applicazioni, quindi scegliere <strong>Modalità tablet</strong> .</p><p> </p><p><img src='./../../../assets/images/qa/5.1.png' /></p><h3 class='faqInFs25FbP10'>Nota</h3><p>Per verificare se il dispositivo è in grado di attivare automaticamente la modalità tablet, cercare il dispositivo sul sito Web del produttore. Il supporto di questa funzione dipende da hardware, driver installato e modalità di configurazione del dispositivo da parte del produttore. </p><p> </p><p>In modalità tablet, le app vengono visualizzate a schermo intero, offrendo più spazio per lavorare. Per chiudere un'app, trascinarla nella parte inferiore dello schermo.</p><p> </p><h3 class='faqInFs25FbP10'>Suggerimento</h3><p>La barra delle applicazioni è disponibile quando il PC è in modalità tablet, ma è possibile nasconderla se si desidera più spazio sullo schermo. Selezionare il pulsante <strong>Start </strong>, scegliere <strong>Impostazioni </strong>> <strong>Sistema </strong>> <strong> Modalità tablet </strong>, quindi attivare <strong>Nascondi automaticamente la barra delle applicazioni in modalità tablet</strong>. Per visualizzare la barra delle applicazioni, scorrere verso l'alto dalla parte inferiore dello schermo o utilizzare il mouse per passarvi sopra.</p><h3 class='faqInFs25FbP10'>Utilizzo contemporaneo di due app</h3><p>Per utilizzare due app affiancate in modalità tablet, trascinare un'app aperta giù e di lato. L'app verrà ancorata e verranno visualizzate tutte le app aperte accanto.</p><p>In questa vista, è anche possibile:</p><ul>    <li>Usare il bordo condiviso tra due app ancorate per ridimensionare contemporaneamente entrambe le app.</li>    <li>Aprire una nuova app da \"Visualizzazione attività\" - selezionare <strong>Visualizzazione attività</strong> sulla barra delle applicazioni, selezionare un'app e trascinala su un lato per ancorarla allo schermo diviso.</li>    <li>Utilizzare il pulsante Indietro sulla barra delle applicazioni per tornare a un'app o per aprire un'app che si stava utilizzando.</li></ul><p> </p>",
             "heading1": "Use tablet mode",
             "para2": {
                 "span1": "To turn on tablet mode, select",
@@ -2637,6 +2652,7 @@
         "professional": "Uso professionale",
         "privacytitle": "Aiutaci a migliorare la qualità dell'app, consentendo la raccolta anonima delle statistiche sull'utilizzo.",
         "moreInterest": "+ più interessi",
+        "toolbartitle": "Abilitazione della barra degli strumenti di Lenovo Vantage (consigliato)",
         "title1": "Benvenuto in",
         "title2": "Lenovo",
         "title3": "Vantage",
@@ -2667,10 +2683,10 @@
         "actionTriggered": "Azione attivata",
         "actionTriggeredDescription": "Messaggi attivati dalle impostazioni selezionate dall'utente, come l'installazione automatica degli aggiornamenti critici/consigliati.",
         "OtherSettings": "Altre impostazioni",
-        "usageStatistics": "Statistiche utilizzo",
-        "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
-        "deviceStatistics": "Condividi i dati statistici con Lenovo",
-        "deviceStatisticsDescription": "Consente di condividere i dati statistici con Lenovo per migliorare l'affidabilità, la progettazione e l'ottimizzazione delle funzioni del computer.",
+        "usageStatistics": "Statistiche sull'utilizzo di Vantage",
+        "usageStatisticsDescription": "Invia statistiche anonime sull'utilizzo per aiutarci a migliorare Vantage.",
+        "deviceStatistics": "Statistiche sui dispositivi Lenovo",
+        "deviceStatisticsDescription": "Invia dati anonimi sui dispositivi per migliorare la qualità, l'affidabilità e la nuova generazione di dispositivi.",
         "userProfile": "Profilo utente",
         "Note": "Nota: ",
         "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario riavviare l'applicazione.",
@@ -2806,7 +2822,7 @@
                 "yes": "Sì",
                 "no": "No"
             },
-            "waitAvailability": "Il pulsante è disabilitato se le informazioni sull'hardware non sono ancora state recuperate, se i dispositivi di memorizzazione non supportano questa funzionalità o se è in corso il ripristino dei settori danneggiati."
+            "waitAvailability": "The button is disabled if the storage devices don't support this functionality or while the hardware information is being loaded."
         },
         "support": {
             "title": "Scarica strumenti di diagnostica professionali",
@@ -2843,7 +2859,7 @@
             "storage": "Memorizzazione",
             "wireless": "Wireless"
         },
-        "warningMessage": "Keep in mind that the tests will be cancelled if the system enters in suspended mode"
+        "warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates"
     },
     "smartPerformance": {
         "title": "Health & Support",
@@ -3047,41 +3063,6 @@
             }
         }
     },
-    "appsForYou": {
-        "common": {
-            "errorMessage": {
-                "installationFailed": "Installazione non riuscita. Riprovare.",
-                "networkError": "Errore di rete.",
-                "installationCancelled": "Installazione annullata."
-            }
-        },
-        "menuText": {
-            "adobeRedemption": "Codice di attivazione Adobe",
-            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
-        },
-        "appDetails": {
-            "installButton": {
-                "install": "Installa",
-                "installing": "Installazione",
-                "downloading": "Download in corso",
-                "installed": "Installato",
-                "launch": "Avvia",
-                "seeMore": "Visualizza altro"
-            },
-            "fieldName": {
-                "description": "Descrizione",
-                "screenshots": "Screenshot",
-                "additionalInformation": "Ulteriori informazioni",
-                "by": "Per:",
-                "updated": "Aggiornato:",
-                "type": "Tipo:",
-                "category": "Categoria:",
-                "legalAgreement": "Contratto legale",
-                "readMore": "Ulteriori informazioni",
-                "readLess": "Meno informazioni"
-            }
-        }
-    },
     "homeSecurity": {
         "title": "Connected Home Security",
         "notification": {
@@ -3198,5 +3179,47 @@
         }
     },
     "dir": "ltr",
-    "dirClass": "ltr"
+    "dirClass": "ltr",
+    "notification": {
+        "menu": {
+            "privacy": "Ora è possibile scoprire se le informazioni personali sono state violate o utilizzate da tracker online a propria insaputa.",
+            "security": "Anche se non si dispone di software antivirus installato, viene comunque garantita una protezione di base per il dispositivo.",
+            "connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza."
+        }
+    },
+    "appsForYou": {
+        "common": {
+            "errorMessage": {
+                "installationFailed": "Installazione non riuscita. Riprovare.",
+                "networkError": "Errore di rete.",
+                "installationCancelled": "Installazione annullata."
+            }
+        },
+        "menuText": {
+            "adobeRedemption": "Codice di attivazione Adobe",
+            "lenovoMigrationAssistant": "Lenovo Migration Assistant"
+        },
+        "appDetails": {
+            "installButton": {
+                "install": "Installa",
+                "installing": "Installazione",
+                "downloading": "Download in corso",
+                "installed": "Installato",
+                "launch": "Avvia",
+                "seeMore": "Visualizza altro"
+            },
+            "fieldName": {
+                "description": "Descrizione",
+                "screenshots": "Screenshot",
+                "additionalInformation": "Ulteriori informazioni",
+                "by": "Per:",
+                "updated": "Aggiornato:",
+                "type": "Tipo:",
+                "category": "Categoria:",
+                "legalAgreement": "Contratto legale",
+                "readMore": "Ulteriori informazioni",
+                "readLess": "Meno informazioni"
+            }
+        }
+    }
 }

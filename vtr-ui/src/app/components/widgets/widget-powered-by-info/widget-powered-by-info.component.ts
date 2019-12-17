@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class WidgetPoweredByInfoComponent {
 	@Input() title: string;
+	@Input() linkId: string;
 	@Input() imgUrl: string;
 	@Input() detail: string;
 	@Input() privacyUrl: string;
