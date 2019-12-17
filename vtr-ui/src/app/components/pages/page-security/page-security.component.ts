@@ -167,6 +167,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	private refreshAll() {
 		this.securityAdvisor.refresh().then(() => {
+			this.updateViewModels();
 			this.updateStatus();
 		});
 	}
