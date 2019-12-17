@@ -28,7 +28,7 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.openInvitationCodeDialog();
 		} else {
-			this.showPermissionDialog();
+			this.showPermissionDialog('join');
 		}
 	}
 
@@ -38,11 +38,11 @@ export class HomeSecurityCardComponent implements OnInit {
 		} else if (this.location && this.location.isLocationServiceOn) {
 			this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
 		} else {
-			this.showPermissionDialog();
+			this.showPermissionDialog('trail');
 		}
 	}
 
-	showPermissionDialog() {
+	showPermissionDialog(dialog: string) {
 		if (this.location
 			&& !this.location.hasSystemPermissionShowed
 			&& this.location.isAllAppsServiceOn
@@ -50,7 +50,11 @@ export class HomeSecurityCardComponent implements OnInit {
 			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 				if (status) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
-					this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
+					if (dialog === 'join') {
+						this.dialogService.openInvitationCodeDialog();
+					} else if (dialog === 'trial') {
+						this.dialogService.homeSecurityTrialModal(CHSTrialModalPage.loading);
+					}
 				}
 			});
 		} else {
