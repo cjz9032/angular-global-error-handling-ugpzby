@@ -841,7 +841,7 @@
                 "hour": "oră",
                 "minutes": "minute",
                 "minute": "minut",
-                "charge": "TIMP PÂNĂ LA ÎNCĂRCAREA COMPLETĂ",
+                "charge": "Timp până la încărcarea completă",
                 "button": "VEDEȚI DETALIILE BATERIEI",
                 "details": {
                     "title": "Detalii baterie",
@@ -1304,15 +1304,15 @@
                 },
                 "display": {
                     "title": "Afișaj",
-					"displayColorTemperature": {
-						"title": "Temperatură culoare afișaj",
-						"description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
-						"link": {
-							"click": "Clic",
-							"here": "aici",
-							"rest": "pentru a modifica temperatura culorii."
-						}
-					},
+                    "displayColorTemperature": {
+                        "title": "Temperatură culoare afișaj",
+                        "description": "Puteți ajusta temperatura culorii ecranului dvs. pentru a filtra lumina albastră protejându-vă ochii. Ajustează ecranul astfel încât să afișeze culori mai calde între apusul și răsăritul soarelui, pentru a nu vă afecta somnul.",
+                        "link": {
+                            "click": "Clic",
+                            "here": "aici",
+                            "rest": "pentru a modifica temperatura culorii."
+                        }
+                    },
                     "eyeCareMode": {
                         "title": "Modul de îngrijire a ochilor",
                         "checkbox": "Programați modul de protejare a ochilor de la apus până la răsărit",
@@ -1362,7 +1362,9 @@
                             "minutes": "minute",
                             "alwaysOn": "Mereu pornit",
                             "never": "niciodată",
-                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului"
+                            "halfTime": "Jumătate din timpul pentru dezactivarea afișajului",
+                            "select": "Select",
+                            "time": "Time"
                         },
                         "taskBarDimmer": "ESTOMPAREA BAREI DE ACTIVITĂȚI",
                         "backgroundDimmer": "ESTOMPAREA FUNDALULUI",
