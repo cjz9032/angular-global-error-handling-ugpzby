@@ -167,7 +167,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 
 	private refreshAll() {
 		this.securityAdvisor.refresh().then(() => {
-			this.getLevelStatus();
+			this.updateStatus();
 		});
 	}
 
@@ -202,15 +202,15 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			this.showWindowsHelloItem(windowsHello);
 			this.updateViewModels();
 		});
-		this.getLevelStatus();
+		this.updateStatus();
 		wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, () => {
 			this.showWifiSecurityItem();
 			this.updateViewModels();
 		}).on(EventTypes.wsStateEvent, () => {
-			this.getLevelStatus();
+			this.updateStatus();
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.ngZone.run(() => {
-				this.getLevelStatus();
+				this.updateStatus();
 			});
 		});
 		this.updateViewModels();
@@ -242,7 +242,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		this.advanceItems = this.advanceItems.filter(i => i !== undefined && i !== null);
 	}
 
-	public getLevelStatus(haveOwnList?) {
+	public updateStatus(haveOwnList?) {
 		const statusList = {
 			basic: [],
 			intermediate: [],
@@ -251,7 +251,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		statusList.basic = new Array(
 			this.antivirusLandingViewModel.avStatus.status,
 			this.antivirusLandingViewModel.fwStatus.status,
-			this.windowsActiveLandingViewModel.waStatus.status
+			this.windowsActiveLandingViewModel ? this.windowsActiveLandingViewModel.waStatus.status : undefined
 		).filter(i => i !== undefined);
 		let pmOwnStatus;
 		let wfOwnStatus;
@@ -262,13 +262,13 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			vpnOwnStatus = haveOwnList.vpn === true;
 		} else {
 			pmOwnStatus = this.passwordManagerLandingViewModel.pmStatus.showOwn === true;
-			wfOwnStatus = this.wifiSecurityLandingViewModel.wfStatus.showOwn === true;
+			wfOwnStatus = this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.showOwn === true : undefined;
 			vpnOwnStatus = this.vpnLandingViewModel ? (this.vpnLandingViewModel.vpnStatus.showOwn === true) : undefined;
 		}
 		statusList.intermediate = new Array(
 			pmOwnStatus ? 'true' : this.passwordManagerLandingViewModel.pmStatus.status,
 			this.fingerPrintLandingViewModel ? this.fingerPrintLandingViewModel.whStatus.status : undefined,
-			this.uacLandingViewModel.uacStatus.status
+			this.uacLandingViewModel ? this.uacLandingViewModel.uacStatus.status : undefined
 		).filter(i => i !== undefined);
 		statusList.advanced = new Array(
 			wfOwnStatus ? 'true' : this.wifiSecurityLandingViewModel ? this.wifiSecurityLandingViewModel.wfStatus.status : undefined,
@@ -276,6 +276,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			vpnOwnStatus ? 'true' : this.vpnLandingViewModel ? this.vpnLandingViewModel.vpnStatus.status : undefined,
 		).filter(i => i !== undefined);
 
+		this.getLevelStatus(statusList);
+	}
+
+	public getLevelStatus(statusList) {
 		const levelStatus = {
 			basicValid: 0,
 			basicSuccess: false,
@@ -305,6 +309,10 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				}
 			}
 		}
+		this.calcSecurityLevel(levelStatus);
+	}
+
+	public calcSecurityLevel(levelStatus) {
 		const item = {
 			status: 0,
 			fullyProtected: false,

@@ -7,6 +7,7 @@ import {
 	SimpleChanges,
 	OnChanges
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import {
 	DropDownInterval
 } from 'src/app/data-models/common/drop-down-interval.model';
@@ -24,12 +25,13 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	@Input() list: DropDownInterval[];
 	@Input() value: number;
 	@Input() disabled = false;
+	@Input() textCase = 'default';
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
-	public name = 'Select';
-	public placeholder = 'Time';
+	public name = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.select');
+	public placeholder = this.translate.instant('device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.time');
 
-	constructor() { }
+	constructor(private translate: TranslateService) { }
 
 	ngOnInit() {
 		console.log('Setting Dropdown  Value', this.value);
@@ -44,6 +46,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		}
 	}
 
+	
 	private setDropDownValue() {
 		if (this.list) {
 			const interval = this.list.find((ddi: DropDownInterval) => {
@@ -70,5 +73,20 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		this.isDropDownOpen = !this.isDropDownOpen;
 		this.change.emit(event);
 		toggle.focus();
+	}
+
+	public customCamelCase(value: string) {
+
+		if (value === null) {
+			return '';
+		}
+		//starts with
+		if (value.match(/^\d/)) {
+			let firstWord = value.substring(0, value.indexOf(' ') + 1);
+			let secondWord = value.substring(value.indexOf(' ') + 1, value.length);
+			return firstWord + secondWord.charAt(0).toUpperCase() + secondWord.slice(1);
+		} else {
+			return value.charAt(0).toUpperCase() + value.slice(1);
+		}
 	}
 }

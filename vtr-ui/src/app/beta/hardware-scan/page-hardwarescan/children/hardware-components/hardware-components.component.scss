@@ -36,6 +36,15 @@
 			}
 		}
 
+		.disabled-anchor {
+			font-size: 1.3rem;
+			color: $shade_light;
+			text-decoration: underline;
+			text-transform: capitalize;
+			cursor: default;
+			pointer-events: none !important;
+		}
+
 		.refresh-button {
 			font-weight: bold;
 			font-size: 1.5rem;

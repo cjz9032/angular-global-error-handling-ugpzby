@@ -14,10 +14,6 @@
                 <div *ngIf="!showProgress" class="row">
                     <div class="col button-row">
                         <button [ngClass]="{'action-button': !disableQuickScan, 'action-button-disable': disableQuickScan}" 
-                            vtrMetrics 
-                            metricsEvent="FeatureClick" 
-                            metricsParent="HardwareScan"
-                            metricsItem="HardwareScan.QuickScan"
                             [title]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
                             [disabled]="disableQuickScan" 
                             (click)="onQuickScan()">{{buttonText}}</button>
@@ -51,7 +47,13 @@
 
                     <div class="col col-12 row">
                         <div class="cancel-check" *ngIf="!(percent === 100)" title="{{ disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''}}">
-                            <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" (click)="onCancel()">{{cancelText}}</button>
+                            <button [ngClass]="{'cancel-button': !disableCancel, 'cancel-button-disable': disableCancel}" 
+                                    (click)="onCancel()"
+                                    vtrMetrics
+                                    metricsEvent="FeatureClick" 
+                                    metricsParent="{{itemParentCancel}}"
+                                    metricsItem="{{itemNameCancel}}"
+                            >{{cancelText}}</button>
                         </div>
                         <div class="container final-result-code" *ngIf="getFinalResultCode()">
                             <span class="result-code-value-text">{{finalResultCodeText}}:</span>
@@ -68,8 +70,18 @@
 <ng-template #tooltipFinalResultCode>
     <div [innerHTML]="getTooltipInformation()"></div>
     <div class='button-box'>
-        <a [attr.href]="'https://support.lenovo.com/contactus'" target="_blank"><button
-				class='btn button'>{{ lenovoSupport }}</button>
+        <a
+			[attr.href]="'https://support.lenovo.com/contactus'"
+			target="_blank"
+			vtrMetrics
+			metricsItemID="HardwareScan.ResultSupport"
+			metricsItemPosition="r1"
+			metricsItemCategory="partnerarticle"
+			metricsEvent="articleclick"
+			metricsPageNumber="1">
+			<button class='btn button'>
+				{{ lenovoSupport }}
+			</button>
 		</a>
     </div>
 </ng-template>

@@ -1,6 +1,6 @@
 <div class="vtr-page-{{pageCssClass}} vtr-page container-fluid page-content-bg">
 	<div class="row vtr-page-header">
-		<div class="col page-header-bg" [ngClass]="{'dcc': deviceService.showDemo}">
+		<div class="col page-header-bg" [class.dcc]="showDemo">
 			<vtr-header-main [title]="title"
 				[parentPath]="parentPath"
 				[menuItems]="menuItems"
@@ -10,6 +10,7 @@
 				[backId]="backId"
 				[hideBack]="hideBack"
 				[isInnerBack]="isInnerBack"
+				[showDemo]="showDemo"
 				(innerBack)="onInnerBack()">
 				<ng-content select="header-content"></ng-content>
 			</vtr-header-main>
