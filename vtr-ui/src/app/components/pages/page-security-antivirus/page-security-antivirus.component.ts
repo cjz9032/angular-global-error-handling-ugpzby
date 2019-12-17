@@ -16,6 +16,7 @@ import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AntivirusErrorHandle } from 'src/app/data-models/security-advisor/antivirus-error-handle.model';
+import { setTimeout } from 'timers';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -47,10 +48,9 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:focus')
 	onFocus(): void {
-		const id = document.activeElement.id;
-		if (id !== 'sa-av-button-launch-mcafee') {
+		setTimeout(() => {
 			this.antiVirus.refresh();
-		}
+		}, 0);
 	}
 
 	constructor(

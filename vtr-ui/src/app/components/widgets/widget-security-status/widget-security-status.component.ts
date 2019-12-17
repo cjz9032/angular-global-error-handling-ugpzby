@@ -144,11 +144,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		const id = document.activeElement.id;
-		if (id !== 'sa-av-button-launch-mcafee') {
+		setTimeout(() => {
 			this.securityAdvisor.refresh();
 			this.showVpn();
-		}
+		}, 0);
 	}
 
 }
