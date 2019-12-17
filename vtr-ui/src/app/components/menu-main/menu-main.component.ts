@@ -485,8 +485,6 @@ export class MenuMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		});
 	}
 	private showSmartAssist() {
-
-		this.isSmartAssistApiCalled = true;
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
 		this.getMenuItems().then(async (items) => {
 			const myDeviceItem = items.find((item) => item.id === this.constantDevice);
