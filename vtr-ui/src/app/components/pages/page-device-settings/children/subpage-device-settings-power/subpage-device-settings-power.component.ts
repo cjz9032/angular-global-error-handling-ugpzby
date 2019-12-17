@@ -1124,27 +1124,31 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						}
 					}
 					this.isThresholdWarningMsgShown();
-
-					// cache value
-					this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
-					this.batteryChargeThresholdCache.toggleStatus = this.showBatteryThreshold;
-
-					this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
-					this.batteryChargeThresholdCache.startAt1 = this.selectedStartAtChargeVal;
-					this.batteryChargeThresholdCache.stopAt1 = this.selectedStopAtChargeVal;
-					this.batteryChargeThresholdCache.checkBox1 = this.primaryCheckBox;
-
-					this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
-					this.batteryChargeThresholdCache.startAt2 = this.selectedStartAtChargeVal1;
-					this.batteryChargeThresholdCache.stopAt2 = this.selectedStopAtChargeVal1;
-					this.batteryChargeThresholdCache.checkBox2 = this.secondaryCheckBox;
-
-					this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
-
-					this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
-					// end cache
+				} else {
+					this.isChargeThresholdAvailable = false;
+					this.showBatteryThreshold = false;
 				}
+
 				this.commonService.sendNotification(ChargeThresholdInformation.ChargeThresholdInfo, this.showBatteryThreshold);
+
+				// cache value
+				this.batteryChargeThresholdCache.available = this.isChargeThresholdAvailable;
+				this.batteryChargeThresholdCache.toggleStatus = this.showBatteryThreshold;
+
+				this.batteryChargeThresholdCache.isPrimaryBatteryAvailable = this.isPrimaryBatteryAvailable;
+				this.batteryChargeThresholdCache.startAt1 = this.selectedStartAtChargeVal;
+				this.batteryChargeThresholdCache.stopAt1 = this.selectedStopAtChargeVal;
+				this.batteryChargeThresholdCache.checkBox1 = this.primaryCheckBox;
+
+				this.batteryChargeThresholdCache.isSecondBatteryAvailable = this.isSecondBatteryAvailable;
+				this.batteryChargeThresholdCache.startAt2 = this.selectedStartAtChargeVal1;
+				this.batteryChargeThresholdCache.stopAt2 = this.selectedStopAtChargeVal1;
+				this.batteryChargeThresholdCache.checkBox2 = this.secondaryCheckBox;
+
+				this.batteryChargeThresholdCache.showWarningMsg = this.showWarningMsg;
+
+				this.commonService.setLocalStorageValue(LocalStorageKey.BatteryChargeThresholdCapability, this.batteryChargeThresholdCache);
+				// end cache
 			} catch (error) {
 				this.logger.error('getBatteryThresholdInformation :: error', error.message);
 				return EMPTY;
