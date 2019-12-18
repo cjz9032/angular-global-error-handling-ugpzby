@@ -363,15 +363,15 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	// Defect fix VAN-2988
-	@HostListener('window:keydown', ['$event'])
-	disableCtrlA($event: KeyboardEvent) {
-		const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
+	// @HostListener('window:keydown', ['$event'])
+	// disableCtrlA($event: KeyboardEvent) {
+	// 	const isPrivacyTab = this.router.parseUrl(this.router.url).toString().includes(RoutersName.PRIVACY);
 
-		if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
-			$event.stopPropagation();
-			$event.preventDefault();
-		}
-	}
+	// 	if (($event.ctrlKey || $event.metaKey) && $event.keyCode === 65 && !isPrivacyTab) {
+	// 		$event.stopPropagation();
+	// 		$event.preventDefault();
+	// 	}
+	// }
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
