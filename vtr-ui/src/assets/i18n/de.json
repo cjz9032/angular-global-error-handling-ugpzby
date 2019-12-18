@@ -1108,7 +1108,7 @@
                         "FCCText": "Von {{before}} Wh auf {{after}} Wh",
                         "note": "Hinweis: Vor dem Zurücksetzen des Akkustandsanzeigers muss Ihr Computer an die Stromversorgung angeschlossen werden. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Fertig: Erfolgreich zurückgesetzt.",
+                            "ERROR_SUCCESS": "Fertig: Wiederherstellung erfolgreich abgeschlossen.",
                             "ERROR_SHUTDOWN": "Fehlgeschlagen: System heruntergefahren.",
                             "ERROR_LOGOFF": "Fehlgeschlagen: Der Benutzer ist abgemeldet.",
                             "ERROR_BATTERY_REMOVE": "Fehlgeschlagen: Der Akku wurde entfernt.",

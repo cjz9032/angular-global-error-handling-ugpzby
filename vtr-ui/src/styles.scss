@@ -1368,3 +1368,42 @@ vtr-ui-smart-performance-scanning {
 		max-width: 70%;
 	}
 }
+
+.schedule-new-modal-size {
+	.modal-dialog {
+		max-width: 55%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 70%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 75%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 80%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+		}
+	}
+}
+
+.cancel-modal-hwscan {
+	.modal-dialog {
+		max-width: 50%;
+		margin: 0 auto;
+		@media #{$breakpoint_lg} {
+			max-width: 60%;
+		}
+		@media #{$breakpoint_md} {
+			max-width: 65%;
+		}
+		@media #{$breakpoint_sm} {
+			max-width: 80%;
+		}
+		.modal-content {
+			border-radius: 1rem;
+		}
+	}
+
+}

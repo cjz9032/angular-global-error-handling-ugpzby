@@ -1108,14 +1108,14 @@
                         "FCCText": "De {{before}} Wh a {{after}} Wh",
                         "note": "Nota: antes de restablecer el indicador de la batería, asegúrese de conectar el sistema a la alimentación de CA. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Completo: Restablecimiento satisfactorio.",
+                            "ERROR_SUCCESS": "Completado: Restablecer exitosamente.",
                             "ERROR_SHUTDOWN": "Error: Se apagó el sistema.",
-                            "ERROR_LOGOFF": "Error: Se cerró la sesión del usuario.",
+                            "ERROR_LOGOFF": "Error: El usuario cerró la sesión.",
                             "ERROR_BATTERY_REMOVE": "Error: Se extrajo la batería.",
                             "ERROR_BATTERY_REPLACE": "Error: Se sustituyó la batería.",
                             "ERROR_AC_DETTACH": "Error: Se desconectó el adaptador de alimentación de CA.",
                             "ERROR_USER_CANCEL": "Error: Cancelado por el usuario.",
-                            "ERROR_UNEXPECTED": "Error: Ha ocurrido un error inesperado."
+                            "ERROR_UNEXPECTED": "Error: Ocurrió un error inesperado."
                         },
                         "popup": {
                             "description1": "El proceso de restablecimiento es el siguiente:<br>Cargue completamente la batería  -->  Descargue completamente la batería  -->  Recargue totalmente la batería",

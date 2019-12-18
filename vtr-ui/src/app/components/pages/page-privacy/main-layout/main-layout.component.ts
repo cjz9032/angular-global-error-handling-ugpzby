@@ -11,6 +11,7 @@ import { TaskObserverService } from '../core/services/analytics/task-observer.se
 import { WidgetDataService } from '../core/services/widget-data.service';
 import { AbTestsGenerateConfigService } from '../core/ab-tests/ab-tests-generate-config.service';
 import { CommunicationSwitcherService } from '../utils/communication-with-figleaf/communication-switcher.service';
+import { CommonService } from 'src/app/services/common/common.service';
 
 interface PageSettings {
 	showPrivacyScore: boolean;
@@ -66,7 +67,8 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private taskObserverService: TaskObserverService,
 		private widgetDataService: WidgetDataService,
 		private abTestsGenerateConfigService: AbTestsGenerateConfigService,
-		private communicationSwitcherService: CommunicationSwitcherService
+		private communicationSwitcherService: CommunicationSwitcherService,
+		private commonService: CommonService
 	) {
 	}
 
@@ -97,5 +99,6 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 
 	private setCurrentRouterPage(routerPage: string) {
 		this.currentPageSettings = this.pagesSettings[routerPage];
+		this.commonService.scrollTop();
 	}
 }

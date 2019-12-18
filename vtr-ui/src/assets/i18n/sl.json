@@ -1108,7 +1108,7 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Opomba: pred ponastavitvijo merilnika za baterijo poskrbite, da bo računalnik priključen na izmenično napajanje. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Končano: Uspešna ponastavitev",
+                            "ERROR_SUCCESS": "Dokončano: Uspešna ponastavitev.",
                             "ERROR_SHUTDOWN": "Neuspešno: Sistem se je zaustavil.",
                             "ERROR_LOGOFF": "Neuspešno: Uporabnik se je odjavil.",
                             "ERROR_BATTERY_REMOVE": "Neuspešno: Baterija je bila odstranjena.",

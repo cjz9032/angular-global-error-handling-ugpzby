@@ -1108,14 +1108,14 @@
                         "FCCText": "{{before}}Wh- {{after}} Wh",
                         "note": "Huomautus: Ennen kuin nollaat akkumittarin, varmista, että olet liittänyt tietokoneen verkkovirtaan. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Valmis: Nollaus onnistui.",
+                            "ERROR_SUCCESS": "Valmis: Palautus onnistui.",
                             "ERROR_SHUTDOWN": "Epäonnistui: Järjestelmä sammui.",
-                            "ERROR_LOGOFF": "Epäonnistui: Käyttäjä kirjautui ulos.",
+                            "ERROR_LOGOFF": "Epäonnistui: Käyttäjä on kirjautunut ulos.",
                             "ERROR_BATTERY_REMOVE": "Epäonnistui: Akku poistettiin.",
                             "ERROR_BATTERY_REPLACE": "Epäonnistui: Akku vaihdettiin.",
                             "ERROR_AC_DETTACH": "Epäonnistui: Verkkolaite irrotettiin.",
                             "ERROR_USER_CANCEL": "Epäonnistui: Käyttäjä peruutti toiminnon.",
-                            "ERROR_UNEXPECTED": "Epäonnistui: On tapahtunut odottamaton virhe."
+                            "ERROR_UNEXPECTED": "Epäonnistui: Tapahtui odottamaton virhe."
                         },
                         "popup": {
                             "description1": "Nollausprosessi on seuraavanlainen:<br>Akun lataus täyteen varaukseen  -->  Akun varauksen purku kokonaan  -->  Akun lataus täyteen",

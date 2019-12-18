@@ -1108,14 +1108,14 @@
                         "FCCText": "Od {{before}} Wh do {{after}} Wh",
                         "note": "Uwaga: Przed zresetowaniem wskaźnika stanu akumulatora należy podłączyć komputer do zasilania sieciowego. ",
                         "resetLog": {
-                            "ERROR_SUCCESS": "Ukończono: Resetowanie zakończyło się powodzeniem.",
+                            "ERROR_SUCCESS": "Ukończone: resetowanie powiodło się.",
                             "ERROR_SHUTDOWN": "Niepowodzenie: System zostanie zamknięty.",
-                            "ERROR_LOGOFF": "Niepowodzenie: Wylogowano użytkownika.",
+                            "ERROR_LOGOFF": "Niepowodzenie: wylogowano użytkownika.",
                             "ERROR_BATTERY_REMOVE": "Niepowodzenie: Wyjęto akumulator.",
                             "ERROR_BATTERY_REPLACE": "Niepowodzenie: Wymieniono akumulator.",
                             "ERROR_AC_DETTACH": "Niepowodzenie: Odłączono zasilacz.",
                             "ERROR_USER_CANCEL": "Niepowodzenie: Zadanie anulowane przez użytkownika.",
-                            "ERROR_UNEXPECTED": "Niepowodzenie: Wystąpił nieoczekiwany błąd."
+                            "ERROR_UNEXPECTED": "Niepowodzenie: wystąpił nieoczekiwany błąd."
                         },
                         "popup": {
                             "description1": "Proces resetowania wygląda następująco:<br> Całkowicie naładuj akumulator  -->  Całkowicie rozładuj akumulator  -->  Całkowicie naładuj akumulator",

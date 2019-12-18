@@ -49,7 +49,13 @@ export class AntivirusCommon {
 			&& !this.antivirus.mcafee.registered
 			&& this.antivirus.mcafee.additionalCapabilities
 			&& this.antivirus.mcafee.additionalCapabilities.includes('OpenWSSInContext')) {
-			this.antivirus.openMcAfeeRegistry();
+			this.antivirus.openMcAfeeRegistry().then((response) => {
+				if (response && response.result === false) {
+					this.antivirus.launch();
+				}
+			}).catch(() => {
+				this.antivirus.launch();
+			});
 		}
 		else {
 			this.antivirus.launch();

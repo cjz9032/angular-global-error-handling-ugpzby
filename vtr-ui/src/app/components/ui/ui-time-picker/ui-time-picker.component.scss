@@ -12,19 +12,23 @@
 	.main-block {
 		border-bottom: 1px solid $shade_light;
 		.timer-block {
-			width: 70%;
+			width: 100%;
 			margin: 0;
 			padding: 0;
-			@media #{$mediaquery_12} {
-				width: 80%;
-			}
-			@media #{$mediaquery_X42} {
-				width: 75%
-			}
+			// @media #{$mediaquery_12} {
+			// 	width: 80%;
+			// }
+			// @media #{$mediaquery_X42} {
+			// 	width: 75%
+			// }
 		}
 		.hours-block,
 		.minutes-block,
-		.am-pm {
+		.am-pm,
+		.empty-block {
+			width: 25%;
+			text-align: center;
+			display: inline-block;
 			.toggle-icon {
 				fa-icon {
 					font-size: 3rem;
@@ -56,11 +60,11 @@
 		.minutes-block {
 			border-left: 1px solid $shade_light;
 			border-right: 1px solid $shade_light;
-			padding: 0 5rem;
-			margin-left: 12px;
+			// padding: 0 5rem;
+			// margin-left: 12px;
 			@media #{$mediaquery_12} {
-				padding: 0 4rem;
-				margin-left: 0px;
+				// padding: 0 4rem;
+				// margin-left: 0px;
 			}
 		}
 	}
@@ -170,7 +174,9 @@
 	}
 
 	.time-headings {
-		margin: 0 1rem;
+		// margin: 0 1rem;
+		width: 25%;
+		text-align: center;
 
 		p {
 			color: rgba(66, 78, 123, 0.4);
@@ -197,6 +203,7 @@
 		}
 	}
 
+
 	.disabled {
 		opacity: 0.5;
 		pointer-events: none;
@@ -206,4 +213,9 @@
 .ml-52{
 margin-left: 1rem;
 
+}
+
+.align-right {
+	text-align: right !important;
+	width: 25%;
 }
